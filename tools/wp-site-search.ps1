@@ -2,6 +2,9 @@ param(
   [Parameter(Mandatory = $true)]
   [string] $Term,
 
+  # Emit only matching URLs to the pipeline (no extra text).
+  [switch] $RawUrls,
+
   [switch] $Json
 )
 
@@ -43,6 +46,9 @@ try {
         Head       = $Head
         Urls       = @()
       } | ConvertTo-Json -Depth 6
+    } elseif ($RawUrls) {
+      # Nothing to emit.
+      exit 0
     } else {
       Write-Host "URL: $Url"
       Write-Host ("status {0}" -f [int]$Resp.StatusCode)
@@ -60,6 +66,9 @@ try {
         Head       = $Head
         Urls       = @($links)
       } | ConvertTo-Json -Depth 6
+    } elseif ($RawUrls) {
+      $links | ForEach-Object { Write-Output $_ }
+      exit 0
     } else {
       Write-Host "URL: $Url"
       Write-Host ("status {0}" -f [int]$Resp.StatusCode)

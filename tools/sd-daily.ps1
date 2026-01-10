@@ -106,8 +106,18 @@ if ($ShowRawTrends) {
   }
 }
 
-$needles = @($Keywords | Where-Object { $_ -and $_.Trim() -ne '' })
-$boost = @($BoostKeywords | Where-Object { $_ -and $_.Trim() -ne '' })
+$needles = @(
+  $Keywords |
+    ForEach-Object { ([string]$_) -split ',' } |
+    ForEach-Object { $_.Trim() } |
+    Where-Object { $_ }
+)
+$boost = @(
+  $BoostKeywords |
+    ForEach-Object { ([string]$_) -split ',' } |
+    ForEach-Object { $_.Trim() } |
+    Where-Object { $_ }
+)
 $since = (Get-Date).AddHours(-1 * $SinceHours)
 
 $entries = @(
@@ -177,7 +187,7 @@ $dupes = $null
 if ($needles.Count -gt 0) {
   $sd = Join-Path $PSScriptRoot 'sd-search.ps1'
   if (Test-Path $sd) {
-    $internal = & powershell -NoProfile -ExecutionPolicy Bypass -File $sd -Keywords $needles -Json | ConvertFrom-Json
+    $internal = & powershell -NoProfile -ExecutionPolicy Bypass -File $sd -Keywords ($needles -join ',') -Json | ConvertFrom-Json
   } else {
     $internal = $null
   }
