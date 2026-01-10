@@ -1,6 +1,8 @@
 param(
   [Parameter(Mandatory = $true)]
-  [string] $Term
+  [string] $Term,
+
+  [switch] $Json
 )
 
 $ErrorActionPreference = 'Stop'
@@ -9,15 +11,10 @@ $UserAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) StartDebuggingBot/1.0'
 $Encoded = [uri]::EscapeDataString($Term)
 $Url = "https://startdebugging.net/?s=$Encoded"
 
-Write-Host "URL: $Url"
-
 try {
   $Resp = Invoke-WebRequest -UseBasicParsing -Headers @{ 'User-Agent' = $UserAgent } -Uri $Url -TimeoutSec 30
   $Html = [string]$Resp.Content
-  Write-Host ("status {0}" -f [int]$Resp.StatusCode)
-  Write-Host ("len {0}" -f $Html.Length)
   $Head = $Html.Substring(0, [Math]::Min(500, $Html.Length)).Replace("`r", " ").Replace("`n", " ")
-  Write-Host ("head: " + $Head)
 
   # Prefer result links (WordPress typically marks them as rel="bookmark").
   $bookmarkPattern = 'rel=["'']bookmark["''][^>]*href=["'']([^"''<>\\s]+)["'']|href=["'']([^"''<>\\s]+)["''][^>]*rel=["'']bookmark["'']'
@@ -37,14 +34,54 @@ try {
     Select-Object -Unique
 
   if ($links.Count -eq 0) {
-    Write-Host "RESULTS: (no links found on the search page)"
+    if ($Json) {
+      [pscustomobject]@{
+        Term       = $Term
+        Url        = $Url
+        StatusCode = [int]$Resp.StatusCode
+        HtmlLength = $Html.Length
+        Head       = $Head
+        Urls       = @()
+      } | ConvertTo-Json -Depth 6
+    } else {
+      Write-Host "URL: $Url"
+      Write-Host ("status {0}" -f [int]$Resp.StatusCode)
+      Write-Host ("len {0}" -f $Html.Length)
+      Write-Host ("head: " + $Head)
+      Write-Host "RESULTS: (no links found on the search page)"
+    }
   } else {
-    Write-Host "RESULTS:"
-    $links | ForEach-Object { Write-Host $_ }
+    if ($Json) {
+      [pscustomobject]@{
+        Term       = $Term
+        Url        = $Url
+        StatusCode = [int]$Resp.StatusCode
+        HtmlLength = $Html.Length
+        Head       = $Head
+        Urls       = @($links)
+      } | ConvertTo-Json -Depth 6
+    } else {
+      Write-Host "URL: $Url"
+      Write-Host ("status {0}" -f [int]$Resp.StatusCode)
+      Write-Host ("len {0}" -f $Html.Length)
+      Write-Host ("head: " + $Head)
+      Write-Host "RESULTS:"
+      $links | ForEach-Object { Write-Host $_ }
+    }
   }
 }
 catch {
-  Write-Host ("ERROR: {0}" -f $_.Exception.Message)
+  if ($Json) {
+    [pscustomobject]@{
+      Term  = $Term
+      Url   = $Url
+      Error = $_.Exception.Message
+      Urls  = @()
+    } | ConvertTo-Json -Depth 6
+  } else {
+    Write-Host "URL: $Url"
+    Write-Host ("ERROR: {0}" -f $_.Exception.Message)
+  }
 }
 
 

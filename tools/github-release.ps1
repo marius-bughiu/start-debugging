@@ -3,7 +3,8 @@ param(
   [string] $Repo, # e.g. "dotnet/sdk"
 
   [string] $Tag,
-  [switch] $Body
+  [switch] $Body,
+  [switch] $Json
 )
 
 $ErrorActionPreference = 'Stop'
@@ -18,8 +19,32 @@ if ([string]::IsNullOrWhiteSpace($Tag)) {
 try {
   $Rel = Invoke-RestMethod -Headers @{ 'User-Agent' = $UserAgent } -Uri $ApiUrl -TimeoutSec 30
 } catch {
-  Write-Host ("ERROR: {0}" -f $_.Exception.Message)
-  exit 1
+  if ($Json) {
+    [pscustomobject]@{
+      Repo  = $Repo
+      Tag   = $Tag
+      Error = $_.Exception.Message
+    } | ConvertTo-Json -Depth 8
+    exit 0
+  } else {
+    Write-Host ("ERROR: {0}" -f $_.Exception.Message)
+    exit 1
+  }
+}
+
+if ($Json) {
+  [pscustomobject]@{
+    Repo        = $Repo
+    Tag         = [string]$Rel.tag_name
+    Name        = [string]$Rel.name
+    Draft       = [bool]$Rel.draft
+    Prerelease  = [bool]$Rel.prerelease
+    PublishedAt = [string]$Rel.published_at
+    Url         = [string]$Rel.html_url
+    Assets      = @($Rel.assets | ForEach-Object { [pscustomobject]@{ Name = $_.name; Url = $_.browser_download_url } })
+    Body        = (if ($Body) { [string]$Rel.body } else { $null })
+  } | ConvertTo-Json -Depth 10
+  exit 0
 }
 
 Write-Host ("repo: {0}" -f $Repo)

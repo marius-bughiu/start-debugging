@@ -1,6 +1,8 @@
 param(
   [Parameter(Mandatory = $true)]
-  [string] $Query
+  [string] $Query,
+
+  [switch] $Json
 )
 
 $ErrorActionPreference = 'Stop'
@@ -41,9 +43,17 @@ $Text = Invoke-SearchText -Url $GoogleUrl
 $Urls = Extract-StartDebuggingUrls -Text $Text
 
 if ($Urls.Count -gt 0) {
-  Write-Host "QUERY: $Query"
-  Write-Host "ENGINE: google (via r.jina.ai)"
-  $Urls | ForEach-Object { Write-Host $_ }
+  if ($Json) {
+    [pscustomobject]@{
+      Query  = $Query
+      Engine = 'google (via r.jina.ai)'
+      Urls   = @($Urls)
+    } | ConvertTo-Json -Depth 6
+  } else {
+    Write-Host "QUERY: $Query"
+    Write-Host "ENGINE: google (via r.jina.ai)"
+    $Urls | ForEach-Object { Write-Host $_ }
+  }
   exit 0
 }
 
@@ -52,13 +62,24 @@ $BingUrl = "https://r.jina.ai/http://www.bing.com/search?q=$Encoded&count=10"
 $Text = Invoke-SearchText -Url $BingUrl
 $Urls = Extract-StartDebuggingUrls -Text $Text
 
-Write-Host "QUERY: $Query"
-if ($Urls.Count -gt 0) {
-  Write-Host "ENGINE: bing (via r.jina.ai)"
-} else {
-  Write-Host "ENGINE: google/bing (no startdebugging.net results found)"
-}
+if ($Json) {
+  $engine = 'google/bing (no startdebugging.net results found)'
+  if ($Urls.Count -gt 0) { $engine = 'bing (via r.jina.ai)' }
 
-$Urls | ForEach-Object { Write-Host $_ }
+  [pscustomobject]@{
+    Query  = $Query
+    Engine = $engine
+    Urls   = @($Urls)
+  } | ConvertTo-Json -Depth 6
+} else {
+  Write-Host "QUERY: $Query"
+  if ($Urls.Count -gt 0) {
+    Write-Host "ENGINE: bing (via r.jina.ai)"
+  } else {
+    Write-Host "ENGINE: google/bing (no startdebugging.net results found)"
+  }
+
+  $Urls | ForEach-Object { Write-Host $_ }
+}
 
 

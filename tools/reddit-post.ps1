@@ -1,6 +1,7 @@
 param(
   [Parameter(Mandatory = $true)]
-  [string] $Url
+  [string] $Url,
+  [switch] $Json
 )
 
 $ErrorActionPreference = 'Stop'
@@ -63,6 +64,21 @@ $Post = (Invoke-RestMethod -Headers @{ 'User-Agent' = $UserAgent } -Uri $JsonUrl
 
 $CreatedUtc = [DateTimeOffset]::FromUnixTimeSeconds([int64]([double]$Post.created_utc)).UtcDateTime.ToString('s') + 'Z'
 
+$Links = Extract-Links -Text ([string]$Post.selftext)
+
+if ($Json) {
+  [pscustomobject]@{
+    Title      = [string]$Post.title
+    CreatedUtc = $CreatedUtc
+    Permalink  = ("https://www.reddit.com{0}" -f $Post.permalink)
+    Url        = [string]$Post.url
+    IsSelf     = [bool]$Post.is_self
+    SelfText   = [string]$Post.selftext
+    Links      = @($Links)
+  } | ConvertTo-Json -Depth 8
+  exit 0
+}
+
 Write-Host ("title: {0}" -f $Post.title)
 Write-Host ("created_utc: {0}" -f $CreatedUtc)
 Write-Host ("permalink: https://www.reddit.com{0}" -f $Post.permalink)
@@ -75,7 +91,6 @@ if (-not [string]::IsNullOrWhiteSpace([string]$Post.selftext)) {
   Write-Host $Post.selftext
 }
 
-$Links = Extract-Links -Text ([string]$Post.selftext)
 if ($Links.Count -gt 0) {
   Write-Host ''
   Write-Host 'links:'

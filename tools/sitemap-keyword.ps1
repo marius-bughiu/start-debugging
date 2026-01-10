@@ -5,7 +5,9 @@ param(
   [string[]] $Sitemaps = @(
     'https://startdebugging.net/post-sitemap.xml',
     'https://startdebugging.net/page-sitemap.xml'
-  )
+  ),
+
+  [switch] $Json
 )
 
 $ErrorActionPreference = 'Stop'
@@ -34,8 +36,6 @@ foreach ($sm in $Sitemaps) {
 
 $AllLocs = $AllLocs | Select-Object -Unique
 
-Write-Host ("Loaded {0} URLs from {1} sitemaps." -f $AllLocs.Count, $Sitemaps.Count)
-
 $needles = $Keywords | ForEach-Object { $_.ToLowerInvariant() }
 
 $matches = $AllLocs | Where-Object {
@@ -46,11 +46,22 @@ $matches = $AllLocs | Where-Object {
   return $false
 } | Select-Object -Unique
 
-if ($matches.Count -eq 0) {
-  Write-Host "MATCHES: (none)"
+if ($Json) {
+  [pscustomobject]@{
+    Keywords      = @($Keywords)
+    Sitemaps      = @($Sitemaps)
+    LoadedUrls    = $AllLocs.Count
+    Matches       = @($matches)
+    MatchCount    = ($matches | Measure-Object).Count
+  } | ConvertTo-Json -Depth 6
 } else {
-  Write-Host "MATCHES:"
-  $matches | ForEach-Object { Write-Host $_ }
+  Write-Host ("Loaded {0} URLs from {1} sitemaps." -f $AllLocs.Count, $Sitemaps.Count)
+  if ($matches.Count -eq 0) {
+    Write-Host "MATCHES: (none)"
+  } else {
+    Write-Host "MATCHES:"
+    $matches | ForEach-Object { Write-Host $_ }
+  }
 }
 
 

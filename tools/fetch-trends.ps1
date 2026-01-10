@@ -1,22 +1,27 @@
+param(
+  [int] $SinceHours = 48,
+  [string] $UserAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) StartDebuggingBot/1.0',
+  [string[]] $Urls = @(
+    'https://devblogs.microsoft.com/dotnet/feed/',
+    'https://github.com/dotnet/runtime/releases.atom',
+    'https://github.com/dotnet/sdk/releases.atom',
+    'https://github.com/dotnet/aspnetcore/releases.atom',
+    'https://github.com/flutter/flutter/releases.atom',
+    'https://github.com/dart-lang/sdk/releases.atom',
+
+    # Community / real-time (RSS/Atom)
+    'https://www.reddit.com/r/dotnet/new/.rss',
+    'https://www.reddit.com/r/csharp/new/.rss',
+    'https://www.reddit.com/r/FlutterDev/new/.rss',
+    'https://hnrss.org/frontpage?count=50'
+  ),
+  [switch] $Quiet,
+  [switch] $Json
+)
+
 $ErrorActionPreference = 'Stop'
 
-$UserAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) StartDebuggingBot/1.0'
-$Since = (Get-Date).AddDays(-2)
-
-$Urls = @(
-  'https://devblogs.microsoft.com/dotnet/feed/',
-  'https://github.com/dotnet/runtime/releases.atom',
-  'https://github.com/dotnet/sdk/releases.atom',
-  'https://github.com/dotnet/aspnetcore/releases.atom',
-  'https://github.com/flutter/flutter/releases.atom',
-  'https://github.com/dart-lang/sdk/releases.atom',
-
-  # Community / real-time (RSS/Atom)
-  'https://www.reddit.com/r/dotnet/new/.rss',
-  'https://www.reddit.com/r/csharp/new/.rss',
-  'https://www.reddit.com/r/FlutterDev/new/.rss',
-  'https://hnrss.org/frontpage?count=50'
-)
+$Since = (Get-Date).AddHours(-1 * $SinceHours)
 
 function Get-LinkHref {
   param([Parameter(ValueFromPipeline=$true)] $LinkNode)
@@ -38,12 +43,24 @@ function Write-Entry {
 
   # Stable, grep-friendly format:
   # 2026-01-10T12:34:56 | Source | Title | Link
-  '{0} | {1} | {2} | {3}' -f $Date.ToString('s'), $Source, ($Title.Trim()), $Link
+  if ($Json) {
+    [pscustomobject]@{
+      Date   = $Date.ToString('s')
+      Source = $Source
+      Title  = ($Title.Trim())
+      Link   = $Link
+    }
+  } else {
+    '{0} | {1} | {2} | {3}' -f $Date.ToString('s'), $Source, ($Title.Trim()), $Link
+  }
 }
 
+$out = @()
 foreach ($Url in $Urls) {
-  Write-Host ''
-  Write-Host ("=== $Url ===")
+  if (-not $Quiet) {
+    Write-Host ''
+    Write-Host ("=== $Url ===")
+  }
 
   try {
     $Resp = Invoke-WebRequest -UseBasicParsing -Uri $Url -Headers @{ 'User-Agent' = $UserAgent } -TimeoutSec 30
@@ -53,7 +70,8 @@ foreach ($Url in $Urls) {
       foreach ($Item in $Xml.rss.channel.item) {
         $Date = Get-Date $Item.pubDate
         if ($Date -ge $Since) {
-          Write-Entry -Date $Date -Title ([string]$Item.title) -Link ([string]$Item.link) -Source $Url
+          $e = Write-Entry -Date $Date -Title ([string]$Item.title) -Link ([string]$Item.link) -Source $Url
+          if ($Json) { $out += $e } else { Write-Output $e }
         }
       }
       continue
@@ -66,7 +84,8 @@ foreach ($Url in $Urls) {
         $Date = Get-Date $DateString
         if ($Date -ge $Since) {
           $Link = $Entry.link | Get-LinkHref
-          Write-Entry -Date $Date -Title ([string]$Entry.title) -Link $Link -Source $Url
+          $e = Write-Entry -Date $Date -Title ([string]$Entry.title) -Link $Link -Source $Url
+          if ($Json) { $out += $e } else { Write-Output $e }
         }
       }
       continue
@@ -79,4 +98,7 @@ foreach ($Url in $Urls) {
   }
 }
 
+if ($Json) {
+  $out | ConvertTo-Json -Depth 6
+}
 

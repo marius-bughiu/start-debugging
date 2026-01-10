@@ -1,6 +1,7 @@
 param(
   [Parameter(Mandatory = $true)]
-  [string] $IdOrUrl
+  [string] $IdOrUrl,
+  [switch] $Json
 )
 
 $ErrorActionPreference = 'Stop'
@@ -28,10 +29,38 @@ $ApiUrl = "https://hn.algolia.com/api/v1/items/$id"
 try {
   $Item = Invoke-RestMethod -Headers @{ 'User-Agent' = $UserAgent } -Uri $ApiUrl -TimeoutSec 30
 } catch {
-  Write-Host ("ERROR: could not fetch HN item {0}. Check the id/url." -f $id)
-  Write-Host ("api: {0}" -f $ApiUrl)
-  Write-Host ("details: {0}" -f $_.Exception.Message)
-  exit 1
+  if ($Json) {
+    [pscustomobject]@{
+      Id     = $id
+      ApiUrl = $ApiUrl
+      Error  = $_.Exception.Message
+    } | ConvertTo-Json -Depth 8
+    exit 0
+  } else {
+    Write-Host ("ERROR: could not fetch HN item {0}. Check the id/url." -f $id)
+    Write-Host ("api: {0}" -f $ApiUrl)
+    Write-Host ("details: {0}" -f $_.Exception.Message)
+    exit 1
+  }
+}
+
+$target = $Item.url
+if ([string]::IsNullOrWhiteSpace($target)) {
+  $target = "https://news.ycombinator.com/item?id=$id"
+}
+
+if ($Json) {
+  [pscustomobject]@{
+    Id        = $id
+    Title     = [string]$Item.title
+    Author    = [string]$Item.author
+    CreatedAt = [string]$Item.created_at
+    Points    = [int]$Item.points
+    Comments  = [int](($Item.children | Measure-Object).Count)
+    Url       = [string]$target
+    HnUrl     = ("https://news.ycombinator.com/item?id={0}" -f $id)
+  } | ConvertTo-Json -Depth 8
+  exit 0
 }
 
 Write-Host ("id: {0}" -f $id)
@@ -40,11 +69,6 @@ Write-Host ("author: {0}" -f $Item.author)
 Write-Host ("created_at: {0}" -f $Item.created_at)
 Write-Host ("points: {0}" -f $Item.points)
 Write-Host ("comments: {0}" -f ($Item.children | Measure-Object).Count)
-
-$target = $Item.url
-if ([string]::IsNullOrWhiteSpace($target)) {
-  $target = "https://news.ycombinator.com/item?id=$id"
-}
 Write-Host ("url: {0}" -f $target)
 Write-Host ("hn_url: https://news.ycombinator.com/item?id={0}" -f $id)
 

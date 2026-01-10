@@ -2,7 +2,8 @@ param(
   [Parameter(Mandatory = $true)]
   [string[]] $Keywords,
 
-  [switch] $RawUrls
+  [switch] $RawUrls,
+  [switch] $Json
 )
 
 $ErrorActionPreference = 'Stop'
@@ -27,6 +28,21 @@ $smOutput = & powershell -NoProfile -ExecutionPolicy Bypass -File $sm -Keywords 
 $smUrls = @($smOutput | Where-Object { $_ -match '^https?://startdebugging\.net/' } | Select-Object -Unique)
 
 $all = @($wpUrls + $smUrls) | Select-Object -Unique
+
+if ($Json) {
+  [pscustomobject]@{
+    Keywords    = @($terms)
+    WordPress   = @($wpUrls)
+    Sitemap     = @($smUrls)
+    All         = @($all)
+    Counts      = [pscustomobject]@{
+      WordPress = $wpUrls.Count
+      Sitemap   = $smUrls.Count
+      Total     = $all.Count
+    }
+  } | ConvertTo-Json -Depth 6
+  exit 0
+}
 
 if ($RawUrls) {
   $all | ForEach-Object { Write-Output $_ }
