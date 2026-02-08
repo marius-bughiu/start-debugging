@@ -1,0 +1,157 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0b1020;
+  --panel: rgba(255, 255, 255, 0.06);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.72);
+  --link: #8bd3ff;
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow: rgba(0, 0, 0, 0.35);
+  --max: 980px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f7f7fb;
+    --panel: rgba(0, 0, 0, 0.04);
+    --text: rgba(0, 0, 0, 0.88);
+    --muted: rgba(0, 0, 0, 0.64);
+    --link: #0b65c2;
+    --border: rgba(0, 0, 0, 0.12);
+    --shadow: rgba(0, 0, 0, 0.12);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+    Cantarell, Noto Sans, sans-serif;
+  background: radial-gradient(
+      1200px 800px at 20% 10%,
+      rgba(139, 211, 255, 0.18),
+      transparent 50%
+    ),
+    radial-gradient(
+      1200px 800px at 90% 20%,
+      rgba(151, 255, 193, 0.14),
+      transparent 55%
+    ),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main,
+header,
+footer {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header {
+  padding-top: 28px;
+  padding-bottom: 8px;
+}
+
+footer {
+  padding-top: 12px;
+  padding-bottom: 28px;
+  color: var(--muted);
+}
+
+.panel {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--panel);
+  box-shadow: 0 12px 30px var(--shadow);
+}
+
+.stack {
+  display: grid;
+  gap: 14px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.card {
+  padding: 18px;
+}
+
+.h1 {
+  font-size: clamp(26px, 3.2vw, 38px);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.prose :global(p) {
+  margin: 0.8em 0;
+}
+
+.prose :global(code) {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    Liberation Mono, monospace;
+  font-size: 0.95em;
+  padding: 0.15em 0.35em;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.prose :global(pre) {
+  padding: 14px;
+  overflow: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.prose :global(pre code) {
+  padding: 0;
+  background: transparent;
+}
+

@@ -1,0 +1,16 @@
+{
+  "name": "start-debugging-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.2",
+    "astro": "^5.17.1",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,10 @@
+# Astro site (in /site)
+site/node_modules/
+site/dist/
+.astro/
+site/.astro/
+site/.cache/
+
+# OS/editor
+.DS_Store
+Thumbs.db

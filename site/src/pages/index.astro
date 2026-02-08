@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog"))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 5);
+---
+
+<BaseLayout
+  title="Start Debugging"
+  description="Start Debugging: short, technical notes and articles."
+>
+  <section class="panel card stack">
+    <div class="stack">
+      <p class="pill">Static site built at deploy time</p>
+      <h1 class="h1">Start Debugging</h1>
+      <p class="muted">
+        This site is generated at build time with Astro and deployed to GitHub Pages on every
+        push to <code>main</code>.
+      </p>
+      <div class="row">
+        <a class="pill" href={`${import.meta.env.BASE_URL}blog/`}>Read the blog</a>
+        <a class="pill" href="https://github.com/marius-bughiu/start-debugging">Repo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack" style="margin-top: 18px;">
+    <h2 class="h2">Latest posts</h2>
+    <div class="stack">
+      {posts.map((post) => (
+        <a class="panel card stack" href={`${import.meta.env.BASE_URL}blog/${post.slug}/`}>
+          <div class="row">
+            <span class="pill">{post.data.pubDate.toISOString().slice(0, 10)}</span>
+            {post.data.tags?.slice(0, 2).map((t) => <span class="pill">{t}</span>)}
+          </div>
+          <div class="stack">
+            <div class="h2">{post.data.title}</div>
+            {post.data.description ? <div class="muted">{post.data.description}</div> : null}
+          </div>
+        </a>
+      ))}
+      {posts.length === 0 ? (
+        <div class="panel card muted">No posts yet. Add Markdown files under <code>site/src/content/blog/</code>.</div>
+      ) : null}
+    </div>
+  </section>
+</BaseLayout>
+

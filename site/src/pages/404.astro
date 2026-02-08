@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Not found" description="Page not found.">
+  <section class="panel card stack">
+    <h1 class="h1">404</h1>
+    <p class="muted">That page does not exist.</p>
+    <div class="row">
+      <a class="pill" href={`${import.meta.env.BASE_URL}`}>Go home</a>
+      <a class="pill" href={`${import.meta.env.BASE_URL}blog/`}>Browse blog</a>
+    </div>
+  </section>
+</BaseLayout>
+
