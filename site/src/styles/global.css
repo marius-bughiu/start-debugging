@@ -129,6 +129,16 @@ footer {
   align-items: center;
 }
 
+/* Allow flex children to shrink (prevents mobile "zoomed out" viewport) */
+.row > * {
+  min-width: 0;
+}
+
+/* Allow grid children to shrink (prevents long text/URLs from overflowing) */
+.stack > * {
+  min-width: 0;
+}
+
 .muted {
   color: var(--muted);
 }
@@ -143,10 +153,16 @@ footer {
   background: rgba(255, 255, 255, 0.03);
   color: var(--muted);
   font-size: 14px;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .card {
   padding: 18px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .h1 {
@@ -210,5 +226,37 @@ footer {
 .prose pre code {
   padding: 0;
   background: transparent;
+}
+
+/* Mobile: prevent long tokens from forcing horizontal overflow */
+.prose {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.prose a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.prose :is(p, li, blockquote, h1, h2, h3, h4, h5, h6) code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.prose pre {
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.prose :is(img, video, iframe) {
+  max-width: 100%;
+  height: auto;
+}
+
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
