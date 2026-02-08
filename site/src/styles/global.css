@@ -75,6 +75,19 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Post list cards: keep whole card clickable, underline title only */
+a.panel.card:hover,
+a.panel.card:focus-visible {
+  text-decoration: none;
+}
+
+a.panel.card:hover .h2,
+a.panel.card:focus-visible .h2 {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
 main,
 header,
 footer {
