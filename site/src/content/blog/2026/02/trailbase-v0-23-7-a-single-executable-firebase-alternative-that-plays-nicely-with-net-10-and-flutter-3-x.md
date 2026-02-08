@@ -3,7 +3,10 @@ title: "TrailBase v0.23.7: a single-executable “Firebase alternative” that p
 description: "TrailBase shipped v0.23.7 on Feb 6, 2026. The release notes are mostly UI cleanup and robustness fixes, but the product pitch is the real reason it is trending: TrailBase aims to be an open, single-executable backend with auth and an admin UI, built on Rust, SQLite, and Wasmtime. If you build mobile or desktop apps…"
 pubDate: 2026-02-07
 tags:
-  - "uncategorized"
+  - "dotnet"
+  - "flutter"
+  - "sqlite"
+  - "windows"
 ---
 TrailBase shipped **v0.23.7** on **Feb 6, 2026**. The release notes are mostly UI cleanup and robustness fixes, but the product pitch is the real reason it is trending: TrailBase aims to be an open, **single-executable** backend with auth and an admin UI, built on **Rust, SQLite, and Wasmtime**.
 
