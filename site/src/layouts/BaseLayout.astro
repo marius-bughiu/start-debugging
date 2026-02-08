@@ -10,9 +10,6 @@ export interface Props {
 const { title, description, includeAdsense = false } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL;
 
-// Google integrations (hardcoded)
-const GA_MEASUREMENT_ID = "G-QFYE38MD6S";
-const ADSENSE_CLIENT_ID = "ca-pub-1537458730659685";
 ---
 
 <!doctype html>
@@ -24,23 +21,21 @@ const ADSENSE_CLIENT_ID = "ca-pub-1537458730659685";
     {description ? <meta name="description" content={description} /> : null}
     <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
 
-    <!-- Google Analytics (GA4) -->
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
-    <script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFYE38MD6S"></script>
+    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', GA_MEASUREMENT_ID);
+
+      gtag('config', 'G-QFYE38MD6S');
     </script>
 
     {includeAdsense ? (
       <>
         <!-- Google AdSense -->
-        <script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
-          crossorigin="anonymous"
-        />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1537458730659685"
+     crossorigin="anonymous"></script>
       </>
     ) : null}
   </head>
