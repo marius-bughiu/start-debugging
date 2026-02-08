@@ -6,7 +6,13 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "wp:migrate": "node scripts/wp-migrate.mjs"
+  },
+  "dependencies": {
+    "he": "^1.2.0",
+    "jsdom": "^26.1.0",
+    "turndown": "^7.2.0"
   },
   "devDependencies": {
     "@types/node": "^25.2.2",

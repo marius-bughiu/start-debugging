@@ -15,7 +15,7 @@ const posts = (await getCollection("blog"))
 
   <section class="stack" style="margin-top: 18px;">
     {posts.map((post) => (
-      <a class="panel card stack" href={`${import.meta.env.BASE_URL}blog/${post.slug}/`}>
+      <a class="panel card stack" href={`${import.meta.env.BASE_URL}${post.slug}/`}>
         <div class="row">
           <span class="pill">{post.data.pubDate.toISOString().slice(0, 10)}</span>
           {post.data.tags?.slice(0, 3).map((t) => <span class="pill">{t}</span>)}

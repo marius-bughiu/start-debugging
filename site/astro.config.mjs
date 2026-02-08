@@ -1,8 +1,8 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://marius-bughiu.github.io",
-  base: "/start-debugging/",
+  site: "https://startdebugging.net",
+  base: "/",
   output: "static",
   trailingSlash: "always",
 });

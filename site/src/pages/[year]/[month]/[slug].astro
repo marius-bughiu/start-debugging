@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+type BlogPost = CollectionEntry<"blog">;
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+
+  return posts
+    .filter((p) => !p.data.draft)
+    .flatMap((post) => {
+      const m = post.slug.match(/^(\d{4})\/(\d{2})\/([^/]+)$/);
+      if (!m) return [];
+      return [
+        {
+          params: { year: m[1], month: m[2], slug: m[3] },
+          props: { post },
+        },
+      ];
+    });
+}
+
+const { post } = Astro.props as { post: BlogPost };
+const { Content } = await post.render();
+---
+
+<BaseLayout title={`${post.data.title} - Start Debugging`} description={post.data.description}>
+  <article class="panel card stack prose">
+    <div class="stack">
+      <div class="row">
+        <span class="pill">{post.data.pubDate.toISOString().slice(0, 10)}</span>
+        {post.data.tags?.slice(0, 4).map((t) => <span class="pill">{t}</span>)}
+      </div>
+      <h1 class="h1">{post.data.title}</h1>
+      {post.data.description ? <p class="muted">{post.data.description}</p> : null}
+    </div>
+
+    <Content />
+  </article>
+
+  <div class="row" style="margin-top: 14px;">
+    <a class="pill" href={`${import.meta.env.BASE_URL}blog/`}>Back to blog</a>
+  </div>
+</BaseLayout>
+

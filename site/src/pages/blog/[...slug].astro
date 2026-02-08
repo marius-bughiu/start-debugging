@@ -6,6 +6,8 @@ export async function getStaticPaths() {
   const posts = await getCollection("blog");
   return posts
     .filter((p) => !p.data.draft)
+    // Avoid generating duplicate pages for canonical `/<YYYY>/<MM>/<slug>/` routes.
+    .filter((p) => !/^\d{4}\/\d{2}\//.test(p.slug))
     .map((post) => ({
       params: { slug: post.slug },
       props: { post },

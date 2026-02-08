@@ -1,0 +1,40 @@
+---
+title: "C# Access private property backing field using Unsafe Accessor"
+description: "One less-known feature of the UnsafeAccessorAttribute is that it also allows you to access auto-generated backing fields of auto-properties – fields with unspeakable names. The way to access them is very similar to accesing fields, the only difference being the member name pattern, which looks like this: Let’s take the following class as an example:…"
+pubDate: 2023-11-08
+tags:
+  - "c-sharp"
+  - "net"
+  - "net-8"
+---
+One less-known feature of the `UnsafeAccessorAttribute` is that it also allows you to access auto-generated backing fields of auto-properties – fields with unspeakable names.
+
+The way to access them is very similar to accesing fields, the only difference being the member name pattern, which looks like this:
+
+```plaintext
+<MyProperty>k__BackingField
+```
+
+Let’s take the following class as an example:
+
+```cs
+class Foo
+{
+    private string InstanceProperty { get; set; } = "instance-property";
+}
+```
+
+Below you have the unsafe accessor for the backing field of this property and examples on how to read the private backing field and how to modify it’s value.
+
+```cs
+[UnsafeAccessor(UnsafeAccessorKind.Field, Name = "<InstanceProperty>k__BackingField")]
+extern static ref string InstancePropertyBackingField(Foo @this);
+
+var instance = new Foo();
+
+// Read
+_ = InstancePropertyBackingField(instance);
+
+// Modify
+InstancePropertyBackingField(instance) = Guid.NewGuid().ToString();
+```
