@@ -8,6 +8,7 @@
   --border: rgba(255, 255, 255, 0.12);
   --shadow: rgba(0, 0, 0, 0.35);
   --max: 980px;
+  --code-bg: rgba(36, 41, 46, 0.78);
 }
 
 @media (prefers-color-scheme: light) {
@@ -19,6 +20,7 @@
     --link: #0b65c2;
     --border: rgba(0, 0, 0, 0.12);
     --shadow: rgba(0, 0, 0, 0.12);
+    --code-bg: rgba(246, 248, 250, 0.92);
   }
 }
 
@@ -158,11 +160,36 @@ footer {
   margin: 0;
 }
 
-.prose :global(p) {
-  margin: 0.8em 0;
+.prose p {
+  margin: 0 0 1em;
 }
 
-.prose :global(code) {
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose li {
+  margin: 0 0 0.5em;
+}
+
+.prose li:last-child {
+  margin-bottom: 0;
+}
+
+.prose li > p {
+  margin: 0;
+}
+
+.prose :is(ul, ol) {
+  margin: 0 0 1em;
+  padding-left: 1.25em;
+}
+
+.prose :is(ul, ol):last-child {
+  margin-bottom: 0;
+}
+
+.prose :is(p, li, blockquote, h1, h2, h3, h4, h5, h6) code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     Liberation Mono, monospace;
   font-size: 0.95em;
@@ -171,15 +198,16 @@ footer {
   background: rgba(255, 255, 255, 0.08);
 }
 
-.prose :global(pre) {
-  padding: 14px;
+.prose pre {
+  padding: 16px;
   overflow: auto;
-  border-radius: 12px;
+  border-radius: 16px;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.06);
+  /* Shiki may set inline background-color; !important overrides it */
+  background-color: var(--code-bg) !important;
 }
 
-.prose :global(pre code) {
+.prose pre code {
   padding: 0;
   background: transparent;
 }
