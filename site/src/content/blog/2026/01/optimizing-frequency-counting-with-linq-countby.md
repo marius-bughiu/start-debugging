@@ -3,8 +3,8 @@ title: "Optimizing Frequency Counting with LINQ CountBy"
 description: "Replace GroupBy with CountBy in .NET 9 for cleaner, more efficient frequency counting. Reduces allocations from O(N) to O(K) by skipping intermediate grouping structures."
 pubDate: 2026-01-01
 tags:
-  - "net"
-  - "net-9"
+  - "dotnet"
+  - "dotnet-9"
 ---
 One of the most common operations in data processing is calculating the frequency of items in a collection. For years, C# developers have relied on the `GroupBy` pattern to achieve this. While functional, it often incurs unnecessary overhead by allocating bucket objects for groups that are immediately discarded after counting.
 

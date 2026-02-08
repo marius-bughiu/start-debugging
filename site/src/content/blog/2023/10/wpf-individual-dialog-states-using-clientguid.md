@@ -4,8 +4,8 @@ description: "Use the ClientGuid property in .NET 8 to persist individual dialog
 pubDate: 2023-10-13
 updatedDate: 2023-11-05
 tags:
-  - "net"
-  - "net-8"
+  - "dotnet"
+  - "dotnet-8"
   - "wpf"
 ---
 A new `ClientGuid` property, introduced with .NET 8, allows you to uniquely identify dialogs such as the `OpenFileDialog` and the `OpenFolderDialog`, with the purpose of storing state – such as window size, position and last used folder – separately per dialog.

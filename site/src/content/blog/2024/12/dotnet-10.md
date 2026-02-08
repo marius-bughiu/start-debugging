@@ -4,8 +4,8 @@ description: "What's new in .NET 10: LTS release with 3 years of support, new JI
 pubDate: 2024-12-01
 updatedDate: 2026-01-04
 tags:
-  - "net"
-  - "net-10"
+  - "dotnet"
+  - "dotnet-10"
 ---
 .NET 10 will be released in November 2025. .NET 10 is a Long Term Support (LTS) version, which will receive free support and patches for 3 years from the release date, up until November 2028.
 

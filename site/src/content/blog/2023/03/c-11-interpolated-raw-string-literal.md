@@ -4,7 +4,7 @@ description: "Learn how to use interpolated raw string literals in C# 11, includ
 pubDate: 2023-03-17
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 C# 11 introduces the concept of [raw string literals](/2023/03/c-raw-string-literals/) to the language and with that come a set of new features for string interpolation as well.
 

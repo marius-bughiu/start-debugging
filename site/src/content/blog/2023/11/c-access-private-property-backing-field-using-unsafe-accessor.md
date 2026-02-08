@@ -3,9 +3,9 @@ title: "C# Access private property backing field using Unsafe Accessor"
 description: "Use UnsafeAccessorAttribute in .NET 8 to access auto-generated backing fields of private auto-properties in C# without reflection."
 pubDate: 2023-11-08
 tags:
-  - "c-sharp"
-  - "net"
-  - "net-8"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-8"
 ---
 One less-known feature of the `UnsafeAccessorAttribute` is that it also allows you to access auto-generated backing fields of auto-properties – fields with unspeakable names.
 

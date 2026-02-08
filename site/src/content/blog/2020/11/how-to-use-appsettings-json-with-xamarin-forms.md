@@ -4,7 +4,7 @@ description: "Learn how to use appsettings.json configuration files with Xamarin
 pubDate: 2020-11-13
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
   - "xamarin-forms"
 ---
 There are two key differences compared to ASP.NET:

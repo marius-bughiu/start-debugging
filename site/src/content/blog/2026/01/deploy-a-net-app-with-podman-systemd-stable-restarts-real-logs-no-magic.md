@@ -4,7 +4,7 @@ description: "Deploy .NET 9 and .NET 10 services on a Linux VM using Podman and 
 pubDate: 2026-01-10
 tags:
   - "docker"
-  - "net"
+  - "dotnet"
 ---
 This showed up in r/dotnet today: people are still looking for a “boring deployment” story for .NET services that is not Kubernetes and not a fragile `nohup` script. If you are on a Linux VM, Podman plus systemd is a solid middle ground: a containerized app managed like a real service.
 

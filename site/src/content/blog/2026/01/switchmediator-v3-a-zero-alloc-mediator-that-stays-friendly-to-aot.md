@@ -3,8 +3,8 @@ title: "SwitchMediator v3: A Zero-Alloc Mediator That Stays Friendly to AOT"
 description: "SwitchMediator v3 targets zero-allocation, AOT-friendly dispatch for .NET 9 and .NET 10 CQRS services. Here is what that means and how to benchmark your own mediator."
 pubDate: 2026-01-08
 tags:
-  - "net"
-  - "net-10"
+  - "dotnet"
+  - "dotnet-10"
 ---
 If you have ever profiled a “clean” CQRS codebase and found death by a thousand allocations in the mediator layer, today’s **SwitchMediator v3** release is worth a look. The author is explicitly calling out **zero-allocation** and **AOT-friendly** behavior, which is exactly the combination you want in .NET 9 and .NET 10 services that care about latency.
 

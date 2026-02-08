@@ -4,10 +4,10 @@ description: "How to fix 'Feature is not available in C# 12.0' and switch your p
 pubDate: 2025-01-01
 updatedDate: 2025-01-02
 tags:
-  - "13"
-  - "c-sharp"
-  - "net"
-  - "net-9"
+  - "csharp-13"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-9"
 ---
 While trying out C# 13 features, it’s possible you might come across errors similar to these:
 

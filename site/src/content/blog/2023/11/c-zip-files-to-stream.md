@@ -3,9 +3,9 @@ title: "C# ZIP files to Stream"
 description: ".NET 8 includes new CreateFromDirectory and ExtractToDirectory overloads that let you create and extract ZIP files directly to and from a Stream, without writing to disk."
 pubDate: 2023-11-06
 tags:
-  - "c-sharp"
-  - "net"
-  - "net-8"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-8"
 ---
 .NET 8 includes new `CreateFromDirectory` overloads which enable you to create a ZIP file without writing it to disk. This is particularly useful in situations where you don't need to store the zipped resources and only use the ZIP content for transfer.
 

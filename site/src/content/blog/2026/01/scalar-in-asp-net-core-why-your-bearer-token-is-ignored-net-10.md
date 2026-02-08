@@ -3,9 +3,9 @@ title: "Scalar in ASP.NET Core: why your Bearer token is ignored (.NET 10)"
 description: "If your Bearer token works in Postman but not in Scalar, the problem is likely your OpenAPI document. Here is how to declare a proper security scheme in .NET 10."
 pubDate: 2026-01-23
 tags:
-  - "asp-net"
-  - "net"
-  - "net-10"
+  - "aspnet"
+  - "dotnet"
+  - "dotnet-10"
 ---
 Scalar is showing up more and more as a clean alternative UI for OpenAPI docs in ASP.NET Core. A fresh r/dotnet question highlights a common trap: you paste a token in Scalar’s auth UI, Postman works, but Scalar calls still hit your API without `Authorization: Bearer ...`: [https://www.reddit.com/r/dotnet/comments/1qkjvb0/need_help_with_authentication_using_scalar_aspnet/](https://www.reddit.com/r/dotnet/comments/1qkjvb0/need_help_with_authentication_using_scalar_aspnet/).
 

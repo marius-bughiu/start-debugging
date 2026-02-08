@@ -3,9 +3,9 @@ title: "C# Randomly choose items from a list"
 description: "In C#, you can randomly select items from a list using Random.GetItems, a method introduced in .NET 8. Learn how it works with practical examples."
 pubDate: 2023-11-12
 tags:
-  - "c-sharp"
-  - "net"
-  - "net-8"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-8"
 ---
 In C#, you can randomly select items from a list using `Random.GetItems`, a method introduced in .NET 8.
 

@@ -4,8 +4,8 @@ description: "Use the new WithAddedModifier extension method in .NET 8 to easily
 pubDate: 2023-10-25
 updatedDate: 2023-11-01
 tags:
-  - "net"
-  - "net-8"
+  - "dotnet"
+  - "dotnet-8"
 ---
 There are some situations in which creating a whole new `IJsonTypeInfoResolver` will seem overkill, when the default (or any other already defined) type info serializer could do the job with only one or two small modifications.
 

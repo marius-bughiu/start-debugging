@@ -5,11 +5,53 @@ export interface Props {
   title: string;
   description?: string;
   includeAdsense?: boolean;
+  canonicalUrl?: string;
+  publishedDate?: Date;
+  updatedDate?: Date;
+  tags?: string[];
+  type?: "website" | "article";
 }
 
-const { title, description, includeAdsense = false } = Astro.props;
-const baseUrl = import.meta.env.BASE_URL;
+const {
+  title,
+  description,
+  includeAdsense = false,
+  canonicalUrl,
+  publishedDate,
+  updatedDate,
+  tags,
+  type = "website",
+} = Astro.props;
 
+const baseUrl = import.meta.env.BASE_URL;
+const siteUrl = Astro.site?.origin ?? "https://startdebugging.net";
+const siteName = "Start Debugging";
+const canonical = canonicalUrl ?? Astro.url.href;
+
+// JSON-LD structured data
+const jsonLd =
+  type === "article" && publishedDate
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: title.replace(/ - Start Debugging$/, ""),
+        description: description ?? "",
+        url: canonical,
+        datePublished: publishedDate.toISOString(),
+        ...(updatedDate ? { dateModified: updatedDate.toISOString() } : {}),
+        ...(tags?.length ? { keywords: tags.join(", ") } : {}),
+        publisher: {
+          "@type": "Organization",
+          name: siteName,
+          url: siteUrl,
+        },
+      }
+    : {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: siteName,
+        url: siteUrl,
+      };
 ---
 
 <!doctype html>
@@ -20,6 +62,23 @@ const baseUrl = import.meta.env.BASE_URL;
     <title>{title}</title>
     {description ? <meta name="description" content={description} /> : null}
     <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title={siteName} href={`${siteUrl}/rss.xml`} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    {description ? <meta property="og:description" content={description} /> : null}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content={type === "article" ? "article" : "website"} />
+    <meta property="og:site_name" content={siteName} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    {description ? <meta name="twitter:description" content={description} /> : null}
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFYE38MD6S"></script>
@@ -63,4 +122,3 @@ const baseUrl = import.meta.env.BASE_URL;
     </footer>
   </body>
 </html>
-

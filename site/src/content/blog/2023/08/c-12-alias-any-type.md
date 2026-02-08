@@ -4,7 +4,7 @@ description: "The using alias directive has been relaxed in C# 12 to allow alias
 pubDate: 2023-08-06
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 The using alias directive has been relaxed in C# 12 to allow aliasing any sort of type, not just named types. This means that you can now alias tuples, pointers, array types, generic types, etc. So instead of using the full structural form of a tuple, you can now alias it with a short descriptive name which you can use everywhere.
 

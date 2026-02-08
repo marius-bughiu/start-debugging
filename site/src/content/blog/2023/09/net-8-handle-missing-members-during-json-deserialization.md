@@ -4,8 +4,8 @@ description: "Learn how to throw exceptions for unmapped JSON properties during 
 pubDate: 2023-09-02
 updatedDate: 2023-11-05
 tags:
-  - "net"
-  - "net-8"
+  - "dotnet"
+  - "dotnet-8"
 ---
 By default, if you have additional properties in a JSON payload you are trying to deserialize, they are simply ignored. But what if you wanted the deserialization to fail and throw an exception when there are extra properties in the JSON? That is possible starting with .NET 8.
 

@@ -4,9 +4,9 @@ description: "A practical profiling loop for .NET 9 and .NET 10: capture traces 
 pubDate: 2026-01-21
 updatedDate: 2026-01-23
 tags:
-  - "net"
-  - "net-10"
-  - "net-9"
+  - "dotnet"
+  - "dotnet-10"
+  - "dotnet-9"
   - "performance"
 ---
 The fastest way to get unstuck on “it’s slow” in .NET is to stop guessing and start looking at a timeline. A neat write-up making the rounds this week shows a clean workflow: capture traces with `dotnet-trace`, then inspect them in Perfetto (the same trace viewer ecosystem many people know from Android and Chromium land): [Using dotnet-trace with Perfetto](https://dfamonteiro.com/posts/using-dotnet-trace-with-perfetto/).

@@ -4,8 +4,8 @@ description: "The evolution of C# has transformed it into a modern, high-perform
 pubDate: 2024-12-01
 updatedDate: 2026-02-08
 tags:
-  - "c-sharp"
-  - "net"
+  - "csharp"
+  - "dotnet"
 ---
 The evolution of C# has transformed it into a modern, high-performance language. This guide tracks every major milestone.
 

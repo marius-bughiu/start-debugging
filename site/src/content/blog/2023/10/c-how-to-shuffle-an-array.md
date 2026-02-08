@@ -4,9 +4,9 @@ description: "The easiest way to shuffle an array in C# is using Random.Shuffle,
 pubDate: 2023-10-26
 updatedDate: 2023-11-01
 tags:
-  - "c-sharp"
-  - "net"
-  - "net-8"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-8"
 ---
 The easiest way to shuffle an array in C# is using `Random.Shuffle`. This method has been introduced in .NET 8 and works both with arrays and spans.
 

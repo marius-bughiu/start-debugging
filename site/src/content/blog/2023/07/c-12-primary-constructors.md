@@ -4,7 +4,7 @@ description: "Starting from C# 12, it is possible to define a primary constructo
 pubDate: 2023-07-30
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 Starting from C# 12, it is possible to define a primary constructor within classes and structs. The parameters are placed in parentheses right after the type name.
 

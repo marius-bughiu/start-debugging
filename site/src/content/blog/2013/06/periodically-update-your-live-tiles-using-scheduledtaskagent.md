@@ -4,7 +4,7 @@ description: "Use a ScheduledTaskAgent to periodically update your Windows Phone
 pubDate: 2013-06-23
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
   - "windows-phone"
 ---
 I’ve covered in a previous post [how to create wide tiles for your Windows Phone 7 application](/2013/05/creating-wide-tiles-for-your-windows-phone-7-app/). Now it’s time to bring them to life. The easiest way to do so is by using a ScheduledTaskAgent. To create one go ahead and add a new project to your solution and from the project templates list choose ‘Windows Phone Scheduled Task Agent’.

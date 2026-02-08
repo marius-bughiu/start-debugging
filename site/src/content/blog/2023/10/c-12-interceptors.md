@@ -4,8 +4,8 @@ description: "Learn about C# 12 interceptors, an experimental .NET 8 compiler fe
 pubDate: 2023-10-12
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
-  - "net"
+  - "csharp"
+  - "dotnet"
 ---
 Interceptors are an experimental compiler feature introduced in .NET 8, meaning it may change or be removed in a future release of the framework. To see what else is new in .NET 8, check out our [What’s new in .NET 8](/2023/06/whats-new-in-net-8/) page.
 

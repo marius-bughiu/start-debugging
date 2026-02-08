@@ -4,7 +4,7 @@ description: "How to track NuGet dependencies and container OS packages for a .N
 pubDate: 2026-01-10
 tags:
   - "docker"
-  - "net"
+  - "dotnet"
 ---
 A DevOps thread asked a question I keep seeing: “How do I track both NuGet dependencies and container OS packages for a .NET app shipped as a Docker image?” The author was already close to the right approach: CycloneDX for the .NET project graph, Syft for the image, then ingestion in Dependency-Track.
 

@@ -4,7 +4,7 @@ description: "An overview of new features in C# 12, including primary constructo
 pubDate: 2023-06-10
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 C# 12 brings a host of new features and enhancements that streamline the coding experience and open up new possibilities in software development.
 

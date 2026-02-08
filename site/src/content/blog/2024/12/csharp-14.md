@@ -4,10 +4,10 @@ description: "A summary of all new features in C# 14.0, including the field keyw
 pubDate: 2024-12-01
 updatedDate: 2025-04-11
 tags:
-  - "14"
-  - "c-sharp"
-  - "net"
-  - "net-10"
+  - "csharp-14"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-10"
 ---
 C# 14.0 will be released later this year, in November, at the same time as .NET 10. See here [what’s new in the .NET 10 runtime, including performance benchmarks](/2024/12/dotnet-10/).
 

@@ -3,8 +3,8 @@ title: "How to start programming with C#"
 description: "A beginner's guide to getting started with C# programming, from setting up Visual Studio to writing your first program and finding learning resources."
 pubDate: 2023-06-11
 tags:
-  - "c-sharp"
-  - "net"
+  - "csharp"
+  - "dotnet"
 ---
 C# is a modern, general-purpose, object-oriented programming language developed by Microsoft. It is widely used for Windows desktop applications, games (especially using the Unity engine), and web development through the ASP.NET framework.
 

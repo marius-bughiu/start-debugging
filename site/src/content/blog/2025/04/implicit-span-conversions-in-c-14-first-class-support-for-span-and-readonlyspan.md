@@ -3,10 +3,10 @@ title: "Implicit Span conversions in C# 14 – First-class support for Span and 
 description: "C# 14 adds built-in implicit conversions between Span, ReadOnlySpan, arrays, and strings, enabling cleaner APIs, better type inference, and fewer manual AsSpan() calls."
 pubDate: 2025-04-06
 tags:
-  - "14"
-  - "c-sharp"
-  - "net"
-  - "net-10"
+  - "csharp-14"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-10"
 ---
 **C# 14** introduces a significant enhancement for high-performance code: first-class language support for spans. In particular, it adds new **implicit conversions** between **`Span<T>`**, **`ReadOnlySpan<T>`**, and arrays (`T[]`). This change makes it much easier to work with these types that represent safe, contiguous memory slices without extra allocations. In this article, we’ll explore what span conversions are, how C# 14 changed the rules, and why it matters for your code.
 

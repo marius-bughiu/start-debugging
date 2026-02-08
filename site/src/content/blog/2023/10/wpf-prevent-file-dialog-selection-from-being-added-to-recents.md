@@ -4,8 +4,8 @@ description: "Prevent WPF file dialog selections from appearing in Windows Explo
 pubDate: 2023-10-18
 updatedDate: 2023-11-05
 tags:
-  - "net"
-  - "net-8"
+  - "dotnet"
+  - "dotnet-8"
   - "wpf"
 ---
 Files opened or saved using WPF’s file dialogs (`OpenFileDialog`, `SaveFileDialog` or `OpenFolderDialog`) are by default added to the Windows Explorer’s recent files list and can also impact the Recommended section of the Start Menu in Windows 11.

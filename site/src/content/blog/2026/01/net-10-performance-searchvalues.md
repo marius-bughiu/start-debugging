@@ -3,8 +3,8 @@ title: ".NET 10 Performance: SearchValues"
 description: "Use SearchValues in .NET 10 for high-performance multi-string searching. Replaces foreach loops with SIMD-accelerated matching using Aho-Corasick and Teddy algorithms."
 pubDate: 2026-01-04
 tags:
-  - "net"
-  - "net-10"
+  - "dotnet"
+  - "dotnet-10"
 ---
 In .NET 8, Microsoft introduced `SearchValues<T>`, a specialized type that optimized searching for a _set_ of values (like bytes or chars) within a span. It vectorized the search, making it significantly faster than `IndexOfAny`.
 

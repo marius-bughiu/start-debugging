@@ -4,7 +4,7 @@ description: "Learn how to install the prerequisites for .NET Aspire development
 pubDate: 2023-11-15
 tags:
   - "aspire"
-  - "net"
+  - "dotnet"
 ---
 .NET Aspire is a comprehensive, cloud-oriented framework designed for creating scalable, observable, and production-grade distributed applications. In this article we’ll look at the prerequisites of getting started with .NET Aspire. If you want an overview of .NET Aspire and what it brings to the table, check out our [What is .NET Aspire](/2023/11/what-is-net-aspire/) article.
 

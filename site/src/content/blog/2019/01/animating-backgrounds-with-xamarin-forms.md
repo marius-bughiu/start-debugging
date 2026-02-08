@@ -4,7 +4,7 @@ description: "Create a smooth animated background effect in Xamarin Forms using 
 pubDate: 2019-01-02
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
   - "xamarin"
   - "xamarin-forms"
 ---

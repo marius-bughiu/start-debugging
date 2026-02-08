@@ -3,8 +3,8 @@ title: ".NET 10: Array Enumeration Performance Improvements (JIT Array De-Abstra
 description: "In .NET 10, the JIT compiler reduces the overhead of iterating arrays through interfaces. See benchmarks comparing .NET 9 vs .NET 10 with foreach, IEnumerable, and conditional escape analysis."
 pubDate: 2025-04-06
 tags:
-  - "net"
-  - "net-10"
+  - "dotnet"
+  - "dotnet-10"
   - "performance"
 ---
 In .NET 10 Preview 1, the JIT compiler got better at optimizing how arrays are used with interfaces, especially when looping through them using `foreach`. This was the first step toward reducing the extra cost that comes with using enumerators to go through arrays. Preview 2 builds on this work with even more improvements.

@@ -3,9 +3,9 @@ title: "C# 14 Extension Members: Extension Properties, Operators, and Static Ext
 description: "C# 14 introduces extension members, allowing you to add extension properties, operators, and static members to existing types using the new extension keyword."
 pubDate: 2026-02-08
 tags:
-  - "c-sharp"
+  - "csharp"
   - "csharp-14"
-  - "net-10"
+  - "dotnet-10"
   - "extension-members"
 ---
 

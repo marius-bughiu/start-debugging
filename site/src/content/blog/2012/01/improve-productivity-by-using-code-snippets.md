@@ -4,7 +4,7 @@ description: "Learn how code snippets in Visual Studio can improve your producti
 pubDate: 2012-01-06
 updatedDate: 2023-11-04
 tags:
-  - "c-sharp"
+  - "csharp"
   - "visual-studio"
 ---
 Code snippets are a great way of improving your productivity because they allow you to define pieces of code which you can later on insert into your projects by using a short alias.

@@ -4,8 +4,8 @@ description: "Learn how to display AdMob banner ads in your .NET MAUI app on bot
 pubDate: 2023-11-17
 tags:
   - "maui"
-  - "net"
-  - "net-8"
+  - "dotnet"
+  - "dotnet-8"
 ---
 One of the first things people think about when developing for a new platform / using a new technology is monetization; and in my case the question is: how easy is it to integrate AdMob? For .NET MAUI the answer would be: “It depends” – it depends on luck & on the complexity of what you want to achieve; but I will detail this as we move along.
 

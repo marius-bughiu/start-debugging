@@ -4,8 +4,8 @@ description: "The ref readonly modifier in C# provides a more transparent way of
 pubDate: 2023-10-28
 updatedDate: 2023-11-01
 tags:
-  - "c-sharp"
-  - "net"
+  - "csharp"
+  - "dotnet"
 ---
 The `ref readonly` modifier enables a more transparent way of passing read-only references to a method. Passing of readonly references was already possible in C# by using the `in` modifier ever since version 7.2, but that syntax had some limitations, or rather too little constraints.
 

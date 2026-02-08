@@ -4,9 +4,9 @@ description: "Starting with C# 12, a new ExperimentalAttribute lets you mark typ
 pubDate: 2023-10-29
 updatedDate: 2023-11-01
 tags:
-  - "c-sharp"
-  - "net"
-  - "net-8"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-8"
 ---
 Starting with C# 12, a new `ExperimentalAttribute` is introduced allowing you to mark types, methods, properties or assemblies as being experimental features. This will trigger a compiler warning during usage which can be disabled using a `#pragma` tag.
 

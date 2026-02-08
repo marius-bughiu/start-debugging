@@ -4,8 +4,8 @@ description: "Fix the ASP.NET Core Identity error where AppDbContext can't be co
 pubDate: 2023-09-28
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
-  - "net"
+  - "csharp"
+  - "dotnet"
 ---
 This exception is thrown when you are building an identity DbContext without providing the user and role stores using `AddUserStore` and `AddRoleStore`.
 

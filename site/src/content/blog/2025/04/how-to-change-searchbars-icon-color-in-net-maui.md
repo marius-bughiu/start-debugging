@@ -4,8 +4,8 @@ description: "How to change the SearchBar icon color in .NET MAUI using the new 
 pubDate: 2025-04-10
 tags:
   - "maui"
-  - "net"
-  - "net-10"
+  - "dotnet"
+  - "dotnet-10"
 ---
 Starting with .NET 10, MAUI’s search bar comes with a new property for changing the `SearchBar`‘s search icon color: `SearchIconColor`.
 

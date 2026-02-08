@@ -4,8 +4,8 @@ description: "Learn how to use the new DeepClone() and DeepEquals() methods on J
 pubDate: 2023-10-22
 updatedDate: 2023-11-05
 tags:
-  - "net"
-  - "net-8"
+  - "dotnet"
+  - "dotnet-8"
 ---
 Starting with .NET 8, several new methods have been added to the `JsonNode` class to help with the deep cloning of nodes and checking whether they are equal or not.
 

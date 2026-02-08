@@ -3,8 +3,8 @@ title: "dotnet workload clean"
 description: "Learn how to use dotnet workload clean in .NET 8 to remove leftover workload packs after SDK or Visual Studio updates."
 pubDate: 2023-09-04
 tags:
-  - "net"
-  - "net-8"
+  - "dotnet"
+  - "dotnet-8"
 ---
 Note: this command is only available starting with .NET 8.
 

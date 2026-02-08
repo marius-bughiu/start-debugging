@@ -4,7 +4,7 @@ description: "Benchmarking how long it takes a PC to count to one trillion and b
 pubDate: 2013-10-13
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 This is a question that came up during a discussion with a colleague over some company worth over 20 trillion dollars -- and we just couldn't imagine what that much money would look like in cash. Just to get an idea of it, we calculated how many hundred dollar bills it would take to circle the Earth once – the answer was I believe around 240.000.000 meaning around 24 billion US dollars. That’s a lot of money. How much would it take a person to count that much money? Well, nobody can say for sure, but it’s somewhere in the tens of thousands of years.
 

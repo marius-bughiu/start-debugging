@@ -4,9 +4,9 @@ description: "Learn how to deserialize JSON into non-public properties in .NET 8
 pubDate: 2023-09-21
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
-  - "net"
-  - "net-8"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-8"
 ---
 Similar to [serializing into non-public members](/2023/09/net-8-include-non-public-members-in-json-serialization/), you can deserialize into non-public members by providing a constructor with parameters matching the non-public member names and by annotating the non-public members with the `JsonInclude` attribute.
 

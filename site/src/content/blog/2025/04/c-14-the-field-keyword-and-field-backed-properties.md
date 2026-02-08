@@ -3,10 +3,10 @@ title: "C# 14 – The field keyword and field-backed properties"
 description: "C# 14 introduces the field contextual keyword for property accessors, letting you add custom logic to auto-properties without declaring a separate backing field."
 pubDate: 2025-04-05
 tags:
-  - "14"
-  - "c-sharp"
-  - "net"
-  - "net-10"
+  - "csharp-14"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-10"
 ---
 C# 14 introduces a new contextual keyword, **`field`**, that can be used inside a property’s accessors (the `get`, `set`, or `init` blocks) to refer to the property’s backing storage​. In simpler terms, `field` is a placeholder representing the hidden variable where a property’s value is stored. This keyword lets you add custom logic to automatically implemented properties without manually declaring a separate private field. It was first made available as a preview in C# 13 (requiring .NET 9 with the language version set to preview)​, and is officially part of the language in C# 14.
 

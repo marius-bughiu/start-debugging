@@ -4,7 +4,7 @@ description: "Learn how to publish a .NET 8 container as a tar.gz archive using 
 pubDate: 2023-11-11
 tags:
   - "docker"
-  - "net"
+  - "dotnet"
 ---
 Starting with .NET 8, it’s possible to directly generate a tar.gz container archive. This is particularly advantageous for more complex workflows where activities like scanning the images before pushing them are needed. After creating the archive, it can be transferred, scanned, or incorporated into your local Docker setup.
 

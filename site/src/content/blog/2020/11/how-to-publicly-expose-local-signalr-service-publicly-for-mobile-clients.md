@@ -3,7 +3,7 @@ title: "How to publicly expose your local SignalR service for consumption by mob
 description: "Use ngrok to publicly expose your local SignalR service so mobile clients can connect without network configuration or SSL workarounds."
 pubDate: 2020-11-04
 tags:
-  - "c-sharp"
+  - "csharp"
   - "signalr"
   - "xamarin-forms"
 ---

@@ -24,18 +24,30 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props as { post: BlogPost };
 const { Content } = await post.render();
+const canonicalUrl = Astro.url.href;
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
   title={`${post.data.title} - Start Debugging`}
   description={post.data.description}
   includeAdsense={true}
+  canonicalUrl={canonicalUrl}
+  publishedDate={post.data.pubDate}
+  updatedDate={post.data.updatedDate}
+  tags={post.data.tags}
+  type="article"
 >
   <article class="panel card stack prose">
     <div class="stack">
       <div class="row">
         <span class="pill">{post.data.pubDate.toISOString().slice(0, 10)}</span>
-        {post.data.tags?.slice(0, 4).map((t) => <span class="pill">{t}</span>)}
+        {post.data.updatedDate ? (
+          <span class="pill">Updated {post.data.updatedDate.toISOString().slice(0, 10)}</span>
+        ) : null}
+        {post.data.tags?.slice(0, 4).map((t) => (
+          <a class="pill" href={`${baseUrl}tag/${t}/`}>{t}</a>
+        ))}
       </div>
       <h1 class="h1">{post.data.title}</h1>
       {post.data.description ? <p class="muted">{post.data.description}</p> : null}
@@ -45,7 +57,6 @@ const { Content } = await post.render();
   </article>
 
   <div class="row" style="margin-top: 14px;">
-    <a class="pill" href={`${import.meta.env.BASE_URL}`}>&lt; Back</a>
+    <a class="pill" href={baseUrl}>&lt; Back</a>
   </div>
 </BaseLayout>
-

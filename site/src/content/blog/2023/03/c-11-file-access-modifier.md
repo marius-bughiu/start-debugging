@@ -4,7 +4,7 @@ description: "Learn how the C# 11 file access modifier restricts a type's scope 
 pubDate: 2023-03-18
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 The **file** modifier restricts a type’s scope and visibility to the file in which it is declared. This is especially useful in situations where you want to avoid name collisions among types – like in the case of generated types using source generators.
 

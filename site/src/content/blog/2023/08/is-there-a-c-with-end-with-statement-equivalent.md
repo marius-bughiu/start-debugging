@@ -4,7 +4,7 @@ description: "The With…End With statement in VB allows you to execute a series
 pubDate: 2023-08-05
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 The With…End With statement in VB allows you to execute a series of statements that repeatedly refer to a single object. Thus the statements can use a simplified syntax for accessing members of the object. For example:
 

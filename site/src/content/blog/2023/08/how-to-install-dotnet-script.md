@@ -5,7 +5,7 @@ pubDate: 2023-08-29
 updatedDate: 2023-11-05
 tags:
   - "dotnet-script"
-  - "net"
+  - "dotnet"
 ---
 `dotnet script` enables you to run C# scripts (`.CSX`) from the .NET CLI. The only requirement is to have .NET 6 or newer installed on your machine.
 

@@ -4,7 +4,7 @@ description: "Use ArgumentNullException.ThrowIfNull in .NET 6+ for concise null 
 pubDate: 2023-03-11
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 .NET 6 introduced a few new helper methods to deal with throwing exceptions, and one of them is **ThrowIfNull**. The usage is simple:
 

@@ -4,7 +4,7 @@ description: "Learn how to define and use generic attributes in C# 11, including
 pubDate: 2023-03-21
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 All right folks, generic attributes are finally a thing in C#! 🥳
 

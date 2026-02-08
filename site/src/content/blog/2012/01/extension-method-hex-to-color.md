@@ -4,7 +4,7 @@ description: "A C# extension method that converts hex color codes (both RGB and 
 pubDate: 2012-01-21
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 Below you have an extension method that can help you convert any hex color code to a `Color` object.
 

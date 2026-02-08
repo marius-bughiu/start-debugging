@@ -4,8 +4,8 @@ description: "Learn how to use the new snake_case and kebab-case JSON naming pol
 pubDate: 2023-08-06
 updatedDate: 2023-11-05
 tags:
-  - "net"
-  - "net-8"
+  - "dotnet"
+  - "dotnet-8"
 ---
 .NET 8 introduces several new naming policies that can be used with the `System.Text.Json` serializer. To name them:
 

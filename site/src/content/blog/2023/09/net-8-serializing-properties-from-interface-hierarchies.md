@@ -4,9 +4,9 @@ description: ".NET 8 adds support for serializing properties from interface hier
 pubDate: 2023-09-25
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
-  - "net"
-  - "net-8"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-8"
 ---
 .NET 8 adds support for serializing properties from interface hierarchies. This means that all the properties from all interfaces in the hierarchy will be included in the serialization. The most important thing is where you start.
 

@@ -4,8 +4,8 @@ description: "Learn how to use the new OpenFolderDialog in WPF with .NET 8 to le
 pubDate: 2023-10-09
 updatedDate: 2023-11-05
 tags:
-  - "net"
-  - "net-8"
+  - "dotnet"
+  - "dotnet-8"
   - "wpf"
 ---
 .NET 8 introduces a new `OpenFolderDialog` to Windows Presentation Foundation (WPF). This enables application users to browse and select one or multiple folders.

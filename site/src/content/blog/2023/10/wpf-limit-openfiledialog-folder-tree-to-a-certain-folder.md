@@ -4,8 +4,8 @@ description: "Learn how to constrain the WPF OpenFileDialog folder tree to a spe
 pubDate: 2023-10-12
 updatedDate: 2023-11-05
 tags:
-  - "net"
-  - "net-8"
+  - "dotnet"
+  - "dotnet-8"
   - "wpf"
 ---
 Starting with .NET 8, you can constrain the `OpenFileDialog` and `OpenFolderDialog` folder tree to a given root folder. You can do so by setting the `RootDirectory` property on the dialog before calling `ShowDialog()`.

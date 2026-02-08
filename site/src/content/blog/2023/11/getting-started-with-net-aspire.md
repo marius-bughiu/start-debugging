@@ -4,7 +4,7 @@ description: "A step-by-step guide to building your first .NET Aspire applicatio
 pubDate: 2023-11-15
 tags:
   - "aspire"
-  - "net"
+  - "dotnet"
 ---
 This article will guide you through building your first .NET Aspire application. If you want an overview of .NET Aspire and what it brings to the table, check out our [What is .NET Aspire](/2023/11/what-is-net-aspire/) article.
 

@@ -4,9 +4,9 @@ description: "Starting with .NET 8, both Memory<byte> and ReadOnlyMemory<byte> a
 pubDate: 2023-09-06
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
-  - "net"
-  - "net-8"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-8"
 ---
 Starting with .NET 8, both `Memory<byte>` and `ReadOnlyMemory<byte>` are serialized as Base64 strings. Let's look at a quick example:
 

@@ -4,7 +4,7 @@ description: "Fix the 'command dotnet-ef not found' error by installing the Enti
 pubDate: 2023-06-11
 updatedDate: 2023-11-05
 tags:
-  - "asp-net"
+  - "aspnet"
   - "entity-framework"
 ---
 > Could not execute because the specified command or file was not found.  

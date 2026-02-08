@@ -4,7 +4,7 @@ description: "Learn how to use C# 11 raw string literals to include whitespace, 
 pubDate: 2023-03-15
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 Raw string literals are a new format which enables you to include whitespace, new lines, embedded quotes, and other special characters in your string, without requiring escape sequences.
 

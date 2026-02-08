@@ -4,7 +4,7 @@ description: "Inline arrays enable you to create an array of fixed size in a str
 pubDate: 2023-08-31
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 Inline arrays enable you to create an array of fixed size in a `struct` type. Such a struct, with an inline buffer, should provide performance comparable to an unsafe fixed size buffer.
 

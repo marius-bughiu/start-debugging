@@ -4,8 +4,8 @@ description: "Learn how to deserialize JSON into read-only properties without a 
 pubDate: 2023-09-03
 updatedDate: 2023-11-05
 tags:
-  - "net"
-  - "net-8"
+  - "dotnet"
+  - "dotnet-8"
 ---
 Starting with .NET 8 you can deserialize into properties which do not have a `set` accessor. You can opt-in for this behavior using `JsonSerializerOptions`, or on a per-type basis using the `JsonObjectCreationHandling` attribute.
 

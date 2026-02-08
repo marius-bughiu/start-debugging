@@ -4,9 +4,9 @@ description: "How to fix error CS0246 for InterceptsLocationAttribute in C# inte
 pubDate: 2023-09-14
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
-  - "net"
-  - "net-8"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-8"
 ---
 If you’re just getting started with interceptors, you might be getting one of the following errors:
 

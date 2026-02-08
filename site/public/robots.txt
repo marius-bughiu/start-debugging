@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://startdebugging.net/sitemap-index.xml

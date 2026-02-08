@@ -3,9 +3,9 @@ title: ".NET 8 Performance: UnsafeAccessor vs. Reflection"
 description: "Benchmarking UnsafeAccessor vs Reflection in .NET 8. See how UnsafeAccessor achieves zero-overhead performance compared to traditional reflection."
 pubDate: 2023-11-01
 tags:
-  - "c-sharp"
-  - "net"
-  - "net-8"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-8"
 ---
 In a previous article we covered [how to access private members using `UnsafeAccessor`](/2023/10/unsafe-accessor/). This time around, we want to look at its performance compared to Reflection, and to see whether it’s truly zero-overhead or not.
 

@@ -4,10 +4,10 @@ description: "C# 14 lets you declare instance constructors and events as partial
 pubDate: 2025-04-08
 updatedDate: 2025-04-12
 tags:
-  - "14"
-  - "c-sharp"
-  - "net"
-  - "net-10"
+  - "csharp-14"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-10"
 ---
 C# 14 introduces a new capability to declare **instance constructors** and **events** as `partial` members. This means you can split a constructor or event definition across two parts of a partial class, similar to how C# has long allowed partial methods and partial properties. One part of a partial class can **declare** a constructor or event, and another part can **implement** it. This is especially useful in scenarios like code generation, where one file might be auto-generated and another maintained manually by a developer.
 

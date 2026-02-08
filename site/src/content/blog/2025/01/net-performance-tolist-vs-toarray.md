@@ -4,9 +4,9 @@ description: ".NET 9 significantly improves ToArray performance using InlineArra
 pubDate: 2025-01-06
 updatedDate: 2025-04-04
 tags:
-  - "c-sharp"
-  - "net"
-  - "net-9"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-9"
   - "performance"
 ---
 .NET 9 brings significant improvements to LINQ’s `ToArray` method, both in terms of speed, as well as memory allocation. To achieve this, the new implementation makes use of new runtime features such as `InlineArray` to significantly reduce memory allocations and improve speed, especially when dealing with an `IEnumerable<T>` of unknown length. If you’re curious about the implementation, you can [check out the PR on GitHub](https://github.com/dotnet/runtime/pull/96570).

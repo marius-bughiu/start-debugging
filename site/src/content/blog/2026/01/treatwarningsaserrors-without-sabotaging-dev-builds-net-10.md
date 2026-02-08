@@ -3,8 +3,8 @@ title: "TreatWarningsAsErrors without sabotaging dev builds (.NET 10)"
 description: "How to enforce TreatWarningsAsErrors in Release builds and CI while keeping Debug flexible for local development in .NET 10, using Directory.Build.props."
 pubDate: 2026-01-23
 tags:
-  - "net"
-  - "net-10"
+  - "dotnet"
+  - "dotnet-10"
 ---
 If you have ever flipped `TreatWarningsAsErrors` to `true` and immediately regretted it, you are not alone. A recent r/dotnet thread making the rounds suggests a simple adjustment: enforce warning-free code in Release (and CI), but keep Debug flexible for local exploration: [https://www.reddit.com/r/dotnet/comments/1qjum3h/treating_warnings_as_errors_in_dotnet_the_right/](https://www.reddit.com/r/dotnet/comments/1qjum3h/treating_warnings_as_errors_in_dotnet_the_right/)
 

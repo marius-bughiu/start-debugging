@@ -37,6 +37,8 @@ const nextHref = page + 1 <= totalPages ? `${baseUrl}page/${page + 1}/` : null;
 <BaseLayout
   title={`Blog (Page ${page}) - Start Debugging`}
   description="Articles and notes."
+  canonicalUrl={Astro.url.href}
+  type="website"
 >
   <section class="stack">
     <h1 class="h1">Blog</h1>

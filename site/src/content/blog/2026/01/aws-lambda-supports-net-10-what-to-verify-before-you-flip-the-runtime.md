@@ -4,8 +4,8 @@ description: "AWS Lambda now supports .NET 10, but the runtime upgrade is not th
 pubDate: 2026-01-08
 tags:
   - "aws"
-  - "net"
-  - "net-10"
+  - "dotnet"
+  - "dotnet-10"
 ---
 AWS Lambda support for **.NET 10** is starting to show up in community channels today, and it is the kind of change that looks “done” until you hit cold starts, trimming, or a native dependency in production.
 

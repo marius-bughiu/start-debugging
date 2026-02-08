@@ -4,7 +4,7 @@ description: "C# 12 introduces a new simplified syntax for creating arrays. It l
 pubDate: 2023-08-30
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 C# 12 introduces a new simplified syntax for creating arrays. It looks like this:
 

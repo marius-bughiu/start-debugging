@@ -4,10 +4,10 @@ description: "C# 13 extends the params modifier beyond arrays to support Span, R
 pubDate: 2025-01-02
 updatedDate: 2025-01-07
 tags:
-  - "13"
-  - "c-sharp"
-  - "net"
-  - "net-9"
+  - "csharp-13"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-9"
 ---
 The `params` modifier in C# has traditionally been associated with array types, allowing methods to accept a variable number of arguments. However, [starting with C# 13](/2025/01/how-to-switch-to-c-13/), you can now use params collections with a variety of collection types, broadening its applicability and making your code even more versatile.
 

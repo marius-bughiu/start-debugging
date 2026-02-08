@@ -3,8 +3,8 @@ title: "Queryable Encryption + Vector Search in the MongoDB EF Core Provider (an
 description: "The MongoDB EF Core provider now supports Queryable Encryption and vector search. Here is what that means for .NET 9 and .NET 10 apps that already use EF Core."
 pubDate: 2026-01-08
 tags:
-  - "net"
-  - "net-10"
+  - "dotnet"
+  - "dotnet-10"
 ---
 Microsoft published a nice security-meets-search update on Jan 7, 2026: the MongoDB EF Core provider now supports **Queryable Encryption** (equality and range) and **vector search** from an EF Core style LINQ surface. If your .NET 9 or .NET 10 app already speaks EF Core fluently, this is one of those features that can reduce the amount of “special MongoDB code” that leaks into your domain layer.
 

@@ -4,8 +4,8 @@ description: "With .NET 8 we are introduced to a new dictionary type which impro
 pubDate: 2024-04-27
 updatedDate: 2025-03-27
 tags:
-  - "net"
-  - "net-8"
+  - "dotnet"
+  - "dotnet-8"
 ---
 With .NET 8 we are introduced to a new dictionary type which improves the performance of read operations. The catch: you are not allowed to make any changes to the keys and values once the collection is created. This type is particularly useful for collections that are populated on first use and then persisted for the duration of a long-lived service.
 

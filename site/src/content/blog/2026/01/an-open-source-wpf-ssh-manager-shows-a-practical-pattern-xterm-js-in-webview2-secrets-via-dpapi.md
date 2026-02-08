@@ -3,8 +3,8 @@ title: "An open-source WPF SSH manager shows a practical pattern: xterm.js in We
 description: "SshManager is an open-source WPF SSH manager built on .NET 8. It shows a practical pattern: xterm.js inside WebView2 for terminal rendering, EF Core + SQLite for persistence, and DPAPI for local credential protection."
 pubDate: 2026-01-18
 tags:
-  - "net"
-  - "net-8"
+  - "dotnet"
+  - "dotnet-8"
   - "webview2"
   - "wpf"
 ---

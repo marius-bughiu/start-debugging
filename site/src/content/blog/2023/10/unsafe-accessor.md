@@ -4,8 +4,8 @@ description: "Learn how to access private members in C# without reflection using
 pubDate: 2023-10-31
 updatedDate: 2023-11-05
 tags:
-  - "net"
-  - "net-8"
+  - "dotnet"
+  - "dotnet-8"
 ---
 Reflection allows you to obtain type information at runtime and to access private members of a class using that information. This can be particularly useful when dealing with classes outside of your control – provided by a third-party package. While powerful, reflection is also very slow, which is one of the main deterrents in using it. No more.
 

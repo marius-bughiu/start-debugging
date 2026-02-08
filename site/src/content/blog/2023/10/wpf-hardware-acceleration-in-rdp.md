@@ -4,8 +4,8 @@ description: "Learn how to enable WPF hardware acceleration over RDP in .NET 8 f
 pubDate: 2023-10-09
 updatedDate: 2023-11-05
 tags:
-  - "net"
-  - "net-8"
+  - "dotnet"
+  - "dotnet-8"
   - "wpf"
 ---
 WPF applications by default use software rendering when accessed over remote desktop, even if the system has hardware rendering capabilities. With .NET 8, a new option is introduced which allows you to opt into hardware acceleration when using the Remote Desktop Protocol. This can result in improved performance and an overall more responsive application.

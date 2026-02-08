@@ -3,8 +3,8 @@ title: "Polars.NET: a Rust DataFrame engine for .NET 10 that leans on LibraryImp
 description: "A new Polars.NET project is trending after a Feb 6, 2026 community post. The headline is simple: a .NET-friendly DataFrame API backed by Rust Polars, with a stable C ABI and LibraryImport-based interop to keep overhead low."
 pubDate: 2026-02-08
 tags:
-  - "net"
-  - "c-sharp"
+  - "dotnet"
+  - "csharp"
   - "performance"
   - "interop"
 ---

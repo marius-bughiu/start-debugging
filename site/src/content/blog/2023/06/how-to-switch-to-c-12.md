@@ -4,7 +4,7 @@ description: "Fix C# 12 language version errors by updating your target framewor
 pubDate: 2023-06-10
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 While trying out C# 12 features, it’s possible you might come across errors similar to these:
 

@@ -3,10 +3,10 @@ title: "C# 14: nameof support for unbound generic types"
 description: "C# 14 enhances the nameof expression to support unbound generic types like List<> and Dictionary<,>, eliminating the need for placeholder type arguments."
 pubDate: 2025-04-07
 tags:
-  - "14"
-  - "c-sharp"
-  - "net"
-  - "net-10"
+  - "csharp-14"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-10"
 ---
 C# 14 introduces several small but helpful improvements to the language. One of these new features is an enhancement to the `nameof` expression – it now supports _unbound generic types_. In simple terms, you no longer need to plug in a placeholder type argument just to get the name of a generic type. This update removes a little annoyance that C# developers have faced for years and makes code using `nameof` cleaner and easier to maintain.
 

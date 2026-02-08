@@ -3,9 +3,9 @@ title: "C# 14 Null-Conditional Assignment: Using ?. and ?[] on the Left Side"
 description: "C# 14 extends null-conditional operators to work on the left-hand side of assignments, eliminating verbose null checks when setting properties or indexers."
 pubDate: 2026-02-08
 tags:
-  - "c-sharp"
+  - "csharp"
   - "csharp-14"
-  - "net-10"
+  - "dotnet-10"
   - "null-safety"
 ---
 

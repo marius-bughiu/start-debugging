@@ -3,8 +3,8 @@ title: "How to fix: ‘Point’ does not have a predefined size, therefore sizeo
 description: "Fix the C# error where sizeof cannot be used with Point outside an unsafe context. Two solutions: enabling unsafe code or using Marshal.SizeOf instead."
 pubDate: 2023-11-09
 tags:
-  - "c-sharp"
-  - "net"
+  - "csharp"
+  - "dotnet"
 ---
 The error you’re encountering is because in C#, `sizeof` can only be used with types that have a predefined size known at compile-time, and the `Point` structure is not one of those types unless you’re in an unsafe context.
 

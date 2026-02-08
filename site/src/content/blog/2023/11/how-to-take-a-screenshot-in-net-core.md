@@ -3,8 +3,8 @@ title: "How to take a screenshot in .NET core"
 description: "Learn how to capture a screenshot of your entire desktop from a .NET console application using System.Windows.Forms. Windows-only solution covering all displays."
 pubDate: 2023-11-04
 tags:
-  - "c-sharp"
-  - "net"
+  - "csharp"
+  - "dotnet"
 ---
 In this article we’re going to look at how you can grab a screenshot of your entire desktop – that means all your displays, not just the primary one – from a console application using .NET core. This solution relies on Windows-only dependencies, so it will not work cross-platform, it will only work on Windows.
 

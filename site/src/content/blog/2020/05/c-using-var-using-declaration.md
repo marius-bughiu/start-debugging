@@ -4,7 +4,7 @@ description: "Learn how C# 8 using declarations (using var) simplify resource ma
 pubDate: 2020-05-01
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 Ever wished you could declare something that gets disposed automatically when its enclosing scope finishes executing, without adding yet another set of curly braces and indentation to your code? You are not alone. Say hello to C# 8 using declarations 🥰.
 

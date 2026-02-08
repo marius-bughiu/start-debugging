@@ -4,9 +4,9 @@ description: "Learn how to add or remove TypeInfoResolver instances on existing 
 pubDate: 2023-10-19
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
-  - "net"
-  - "net-8"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-8"
 ---
 Starting with .NET 8, the `JsonSerializerOptions` class features a new `TypeInfoResolverChain` property in addition to the existing `TypeInfoResolver` property. With this new property, you are no longer required to specify all the resolvers in the same place. Instead, you can add them later as needed.
 

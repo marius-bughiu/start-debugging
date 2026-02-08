@@ -4,9 +4,9 @@ description: "Learn how to use the new JsonStringEnumConverter<TEnum> in .NET 8 
 pubDate: 2023-09-17
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
-  - "net"
-  - "net-8"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-8"
 ---
 [JsonStringEnumConverter](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.serialization.jsonstringenumconverter) is not compatible with native AOT. To fix that, .NET 8 introduces a new converter type [JsonStringEnumConverter<TEnum>](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.serialization.jsonstringenumconverter-1?view=net-8.0) that is compatible with native AOT.
 

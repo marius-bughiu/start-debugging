@@ -3,8 +3,8 @@ title: "C# 14 idea: interceptors could make System.Text.Json source generation f
 description: "A community discussion proposed using C# 14 interceptors to rewrite JsonSerializer calls so they automatically use a generated JsonSerializerContext, keeping AOT-friendly source generation with cleaner call sites."
 pubDate: 2026-02-08
 tags:
-  - "c-sharp"
-  - "net"
+  - "csharp"
+  - "dotnet"
   - "system-text-json"
   - "aot"
 ---

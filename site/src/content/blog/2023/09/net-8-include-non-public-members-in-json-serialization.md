@@ -4,9 +4,9 @@ description: "Learn how to include private, protected, and internal properties i
 pubDate: 2023-09-05
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
-  - "net"
-  - "net-8"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-8"
 ---
 Starting with .NET 8 you can include non-public properties in the serialization when using `System.Text.Json`. To do so, simply decorate the non-public property with the [JsonIncludeAttribute](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.serialization.jsonincludeattribute?view=net-8.0) attribute.
 

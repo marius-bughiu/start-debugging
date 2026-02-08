@@ -4,7 +4,7 @@ description: "C# 12 lets you specify default parameter values and params arrays 
 pubDate: 2023-05-09
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 Starting with C# version 12, you can specify default values for your parameters in lambda expressions. The syntax and the restrictions on the default parameter values are the same as for methods and local functions.
 

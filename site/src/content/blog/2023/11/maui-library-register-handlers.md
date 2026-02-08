@@ -3,9 +3,9 @@ title: "MAUI: How to register handlers in a library"
 description: "Learn how to register view handlers and services from within a .NET MAUI library using the builder pattern and MauiAppBuilder extension methods."
 pubDate: 2023-11-10
 tags:
-  - "c-sharp"
+  - "csharp"
   - "maui"
-  - "net"
+  - "dotnet"
 ---
 Whether you are developing a custom controls library or simply organizing your solution into multiple projects, you will most likely end up in the situation where you want to register some view handlers and services from within a MAUI library.
 

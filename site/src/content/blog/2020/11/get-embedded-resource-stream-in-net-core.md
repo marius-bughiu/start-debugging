@@ -4,7 +4,7 @@ description: "Learn how to retrieve an embedded resource stream in .NET Core by 
 pubDate: 2020-11-20
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 In order to retrieve an embedded resource in .NET Core, we first need to understand how the resource name is composed. It’s got 3 elements, all joined by dots (`.`):
 

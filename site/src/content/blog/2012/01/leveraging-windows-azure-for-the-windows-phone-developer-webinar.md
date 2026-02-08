@@ -4,7 +4,7 @@ description: "Upcoming SilverlightShow webinar by Samidip Basu on leveraging Win
 pubDate: 2012-01-02
 updatedDate: 2023-11-04
 tags:
-  - "windows-azure"
+  - "azure"
   - "windows-phone"
 ---
 Just letting you know that there’s an upcoming webinar on the 4th of this month about Windows Azure and how we can benefit from it in Windows Phone. The webinar will be presented by Samidip Basu and has the following agenda:

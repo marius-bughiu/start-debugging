@@ -4,7 +4,7 @@ description: "Fix the 'Feature is not available in C# 10.0' error by switching t
 pubDate: 2023-03-14
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 > Feature is not available in C# 10.0. Please use language version 11.0 or later.
 

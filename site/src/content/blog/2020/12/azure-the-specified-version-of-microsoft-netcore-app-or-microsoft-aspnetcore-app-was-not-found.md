@@ -4,7 +4,7 @@ description: "Fix the 'Microsoft.NetCore.App or Microsoft.AspNetCore.App was not
 pubDate: 2020-12-20
 updatedDate: 2023-11-05
 tags:
-  - "asp-net"
+  - "aspnet"
   - "azure"
   - "docker"
 ---

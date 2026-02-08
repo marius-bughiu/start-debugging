@@ -4,7 +4,7 @@ description: "Create wide live tiles for both Windows Phone 7 and 8 using the Ma
 pubDate: 2013-05-05
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
   - "windows-phone"
 ---
 I’ve recently come across an article in the Nokia Developer Wiki about creating live tiles (including wide tile) for both Windows Phone 7 and Windows Phone 8 by writing a single piece of code that works in both versions of the OS.

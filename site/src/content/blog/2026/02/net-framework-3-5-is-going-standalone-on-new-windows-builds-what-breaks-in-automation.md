@@ -3,7 +3,7 @@ title: ".NET Framework 3.5 Goes Standalone on New Windows Builds: What Breaks"
 description: "Starting with Windows 11 Build 27965, .NET Framework 3.5 is no longer an optional Windows component. Here is what breaks in CI, provisioning, and golden images, and how to fix it."
 pubDate: 2026-02-07
 tags:
-  - "net"
+  - "dotnet"
   - "windows"
 ---
 Microsoft changed something that a lot of devs and IT folks automated and then forgot about: starting with **Windows 11 Insider Preview Build 27965**, **.NET Framework 3.5 is no longer included as an optional Windows component**. If you need it, you now have to obtain it as a **standalone installer**.

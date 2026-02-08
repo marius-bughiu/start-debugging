@@ -3,8 +3,8 @@ title: ".NET 10 made your NIC list explode? Filtering GetAllNetworkInterfaces() 
 description: "How to filter GetAllNetworkInterfaces() in .NET 10 when virtual adapters from Hyper-V, Docker, WSL, and VPNs flood the list. Includes a two-stage filter with explicit tradeoffs."
 pubDate: 2026-01-08
 tags:
-  - "net"
-  - "net-10"
+  - "dotnet"
+  - "dotnet-10"
 ---
 If you just migrated an app from .NET 8 to .NET 10 and suddenly `NetworkInterface.GetAllNetworkInterfaces()` returns 80 adapters instead of 10, you are not imagining it. This popped up in a Jan 7, 2026 thread, with exactly the kind of real-world pain that makes “minor” behavior changes feel like breaking changes: virtual interfaces from Hyper-V, Docker, WSL, VPNs, loopback, and other system adapters start crowding out the “real” Ethernet and Wi-Fi devices.
 

@@ -4,8 +4,8 @@ description: "Explore the new .NET 8 API additions to JsonNode and JsonArray, in
 pubDate: 2023-10-23
 updatedDate: 2023-11-01
 tags:
-  - "net"
-  - "net-8"
+  - "dotnet"
+  - "dotnet-8"
 ---
 Part of .NET 8, `JsonNode` and `JsonArray` get a few new additions to their API. We’ve already covered [deep copy and deep equality in an earlier article](/2023/10/deep-cloning-and-deep-equality-of-a-jsonnode/), but there’s more.
 

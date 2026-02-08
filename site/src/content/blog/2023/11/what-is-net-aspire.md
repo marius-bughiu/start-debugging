@@ -5,7 +5,7 @@ pubDate: 2023-11-14
 updatedDate: 2023-11-16
 tags:
   - "aspire"
-  - "net"
+  - "dotnet"
 ---
 .NET Aspire is a comprehensive, cloud-oriented framework designed for creating scalable, observable, and production-grade distributed applications. It was introduced in preview as part of the .NET 8 release.
 

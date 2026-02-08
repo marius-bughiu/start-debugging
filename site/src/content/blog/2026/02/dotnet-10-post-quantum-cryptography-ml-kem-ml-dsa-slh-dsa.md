@@ -3,7 +3,7 @@ title: ".NET 10 Post-Quantum Cryptography: ML-KEM, ML-DSA, and SLH-DSA"
 description: ".NET 10 adds native support for post-quantum cryptography algorithms ML-KEM, ML-DSA, and SLH-DSA, preparing your applications for a quantum-resistant future."
 pubDate: 2026-02-08
 tags:
-  - "net-10"
+  - "dotnet-10"
   - "cryptography"
   - "security"
   - "post-quantum"

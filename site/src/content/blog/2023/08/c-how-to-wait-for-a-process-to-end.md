@@ -4,8 +4,8 @@ description: "You can use the WaitForExit method to wait for the process to comp
 pubDate: 2023-08-11
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
-  - "net"
+  - "csharp"
+  - "dotnet"
 ---
 You can use the `WaitForExit` method to wait for the process to complete. Your code will wait synchronously for the process to finish, then it will resume execution.
 

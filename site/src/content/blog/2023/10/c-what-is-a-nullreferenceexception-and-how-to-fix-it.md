@@ -4,7 +4,7 @@ description: "Learn what causes a NullReferenceException in C#, how to debug it,
 pubDate: 2023-10-20
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 A `NullReferenceException` is a common runtime error which occurs when your code tries to access or manipulate an object or a member of an object, but the object reference is currently set to `null` (meaning it doesn’t reference any valid object in memory). In other words, you’re trying to perform an operation on something that doesn’t exist.
 

@@ -4,8 +4,8 @@ description: ".NET 8 was released on November 14, 2023 as an LTS (Long Term Supp
 pubDate: 2023-06-10
 updatedDate: 2023-11-15
 tags:
-  - "net"
-  - "net-8"
+  - "dotnet"
+  - "dotnet-8"
 ---
 .NET 8 was released on **November 14, 2023** as an LTS (Long Term Support) version, meaning it will continue to receive support, updates, and bug fixes for at least three years from its release date.
 

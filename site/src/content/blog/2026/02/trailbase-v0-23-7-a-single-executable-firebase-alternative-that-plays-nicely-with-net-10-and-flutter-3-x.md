@@ -3,7 +3,7 @@ title: "TrailBase v0.23.7: A Single-Binary Firebase Alternative for .NET 10 and 
 description: "TrailBase is an open-source, single-executable backend built on Rust, SQLite, and Wasmtime. Version 0.23.7 ships UI fixes and improved error handling."
 pubDate: 2026-02-07
 tags:
-  - "net"
+  - "dotnet"
   - "flutter"
   - "sqlite"
 ---

@@ -4,7 +4,7 @@ description: "Learn how the C# 8.0 null-coalescing assignment operator (??=) wor
 pubDate: 2020-04-05
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
+  - "csharp"
 ---
 The operator enables you to assign the right-hand operand value to the left-hand operand only if the left-hand operand value evaluates to null.
 

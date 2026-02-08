@@ -5,8 +5,8 @@ pubDate: 2025-04-11
 updatedDate: 2026-01-08
 tags:
   - "maui"
-  - "net"
-  - "net-10"
+  - "dotnet"
+  - "dotnet-10"
 ---
 .NET MAUI 10 was released in November 2025 along with .NET 10 and C# 14.  
   

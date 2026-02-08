@@ -4,9 +4,9 @@ description: "System.Text.Json in .NET 8 adds built-in serialization support for
 pubDate: 2023-09-07
 updatedDate: 2023-11-12
 tags:
-  - "c-sharp"
-  - "net"
-  - "net-8"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-8"
 ---
 `System.Text.Json` brings out of the box support for additional types:
 

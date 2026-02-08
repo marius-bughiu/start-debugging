@@ -4,9 +4,9 @@ description: "Learn how to mark JsonSerializerOptions instances as read-only in 
 pubDate: 2023-09-11
 updatedDate: 2023-11-05
 tags:
-  - "c-sharp"
-  - "net"
-  - "net-8"
+  - "csharp"
+  - "dotnet"
+  - "dotnet-8"
 ---
 Starting with .NET 8, you can mark `JsonSerializerOptions` instances as read-only, preventing further changes to the instance. To freeze the instance, simply call `MakeReadOnly` on the options instance.
 
