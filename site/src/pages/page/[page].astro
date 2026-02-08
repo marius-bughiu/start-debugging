@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPublishedBlogPosts } from "../../lib/blog";
+
+const baseUrl = import.meta.env.BASE_URL;
+
+export async function getStaticPaths() {
+  const PAGE_SIZE = 10;
+  const posts = await getPublishedBlogPosts();
+  const totalPages = Math.max(1, Math.ceil(posts.length / PAGE_SIZE));
+
+  return Array.from({ length: totalPages }, (_, idx) => {
+    const page = idx + 1;
+    return {
+      params: { page: String(page) },
+      props: { page, totalPages },
+    };
+  });
+}
+
+const { page, totalPages } = Astro.props as { page: number; totalPages: number };
+
+// Keep the canonical first page at `/`.
+if (page === 1) {
+  return Astro.redirect(baseUrl, 301);
+}
+
+const PAGE_SIZE = 10;
+const allPosts = await getPublishedBlogPosts();
+const start = (page - 1) * PAGE_SIZE;
+const posts = allPosts.slice(start, start + PAGE_SIZE);
+
+const prevHref = page - 1 === 1 ? `${baseUrl}` : `${baseUrl}page/${page - 1}/`;
+const nextHref = page + 1 <= totalPages ? `${baseUrl}page/${page + 1}/` : null;
+---
+
+<BaseLayout
+  title={`Blog (Page ${page}) - Start Debugging`}
+  description="Articles and notes."
+>
+  <section class="stack">
+    <h1 class="h1">Blog</h1>
+    <p class="muted">
+      Page {page} of {totalPages}
+    </p>
+  </section>
+
+  <section class="stack" style="margin-top: 18px;">
+    {posts.map((post) => (
+      <a class="panel card stack" href={`${baseUrl}${post.slug}/`}>
+        <div class="row">
+          <span class="pill">{post.data.pubDate.toISOString().slice(0, 10)}</span>
+          {post.data.tags?.slice(0, 3).map((t) => <span class="pill">{t}</span>)}
+        </div>
+        <div class="stack">
+          <div class="h2">{post.data.title}</div>
+          {post.data.description ? <div class="muted">{post.data.description}</div> : null}
+        </div>
+      </a>
+    ))}
+
+    {posts.length === 0 ? <div class="panel card muted">No posts found.</div> : null}
+  </section>
+
+  <div class="row" style="margin-top: 14px;">
+    <a class="pill" href={prevHref}>Prev</a>
+    {nextHref ? <a class="pill" href={nextHref}>Next</a> : <span class="muted">End</span>}
+  </div>
+</BaseLayout>
+

@@ -1,51 +1,46 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
+import { getPublishedBlogPosts } from "../lib/blog";
 
-const posts = (await getCollection("blog"))
-  .filter((p) => !p.data.draft)
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 5);
+const PAGE_SIZE = 10;
+const baseUrl = import.meta.env.BASE_URL;
+
+const allPosts = await getPublishedBlogPosts();
+const posts = allPosts.slice(0, PAGE_SIZE);
+const totalPages = Math.max(1, Math.ceil(allPosts.length / PAGE_SIZE));
 ---
 
 <BaseLayout
   title="Start Debugging"
   description="Start Debugging: short, technical notes and articles."
 >
-  <section class="panel card stack">
-    <div class="stack">
-      <p class="pill">Static site built at deploy time</p>
-      <h1 class="h1">Start Debugging</h1>
-      <p class="muted">
-        This site is generated at build time with Astro and deployed to GitHub Pages on every
-        push to <code>main</code>.
-      </p>
-      <div class="row">
-        <a class="pill" href={`${import.meta.env.BASE_URL}blog/`}>Read the blog</a>
-        <a class="pill" href="https://github.com/marius-bughiu/start-debugging">Repo</a>
-      </div>
-    </div>
+  <section class="stack">
+    <h1 class="h1">Blog</h1>
+    <p class="muted">Static posts generated at build time.</p>
   </section>
 
   <section class="stack" style="margin-top: 18px;">
-    <h2 class="h2">Latest posts</h2>
-    <div class="stack">
-      {posts.map((post) => (
-        <a class="panel card stack" href={`${import.meta.env.BASE_URL}${post.slug}/`}>
-          <div class="row">
-            <span class="pill">{post.data.pubDate.toISOString().slice(0, 10)}</span>
-            {post.data.tags?.slice(0, 2).map((t) => <span class="pill">{t}</span>)}
-          </div>
-          <div class="stack">
-            <div class="h2">{post.data.title}</div>
-            {post.data.description ? <div class="muted">{post.data.description}</div> : null}
-          </div>
-        </a>
-      ))}
-      {posts.length === 0 ? (
-        <div class="panel card muted">No posts yet. Add Markdown files under <code>site/src/content/blog/</code>.</div>
-      ) : null}
-    </div>
+    {posts.map((post) => (
+      <a class="panel card stack" href={`${baseUrl}${post.slug}/`}>
+        <div class="row">
+          <span class="pill">{post.data.pubDate.toISOString().slice(0, 10)}</span>
+          {post.data.tags?.slice(0, 3).map((t) => <span class="pill">{t}</span>)}
+        </div>
+        <div class="stack">
+          <div class="h2">{post.data.title}</div>
+          {post.data.description ? <div class="muted">{post.data.description}</div> : null}
+        </div>
+      </a>
+    ))}
+
+    {posts.length === 0 ? <div class="panel card muted">No posts yet.</div> : null}
   </section>
+
+  {totalPages > 1 ? (
+    <div class="row" style="margin-top: 14px;">
+      <span class="muted">Page 1 of {totalPages}</span>
+      <a class="pill" href={`${baseUrl}page/2/`}>Next</a>
+    </div>
+  ) : null}
 </BaseLayout>
 
