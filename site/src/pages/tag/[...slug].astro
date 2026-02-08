@@ -83,6 +83,5 @@ const nextHref = page < totalPages ? `${tagBase}${page + 1}/` : null;
   <div class="row" style="margin-top: 14px;">
     {prevHref ? <a class="pill" href={prevHref}>Prev</a> : null}
     {nextHref ? <a class="pill" href={nextHref}>Next</a> : null}
-    <a class="pill" href={baseUrl}>&lt; Home</a>
   </div>
 </BaseLayout>
