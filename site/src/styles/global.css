@@ -31,10 +31,26 @@ body {
   height: 100%;
 }
 
+html {
+  background: var(--bg);
+}
+
 body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
     Cantarell, Noto Sans, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  position: relative;
+  isolation: isolate;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background: radial-gradient(
       1200px 800px at 20% 10%,
       rgba(139, 211, 255, 0.18),
@@ -46,8 +62,8 @@ body {
       transparent 55%
     ),
     var(--bg);
-  color: var(--text);
-  line-height: 1.55;
+  background-repeat: no-repeat;
+  pointer-events: none;
 }
 
 a {
