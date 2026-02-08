@@ -1,6 +1,6 @@
 ---
 title: "Flutter Text: the `leadingDistribution` detail that changes how your UI “breathes”"
-description: "A Flutter tutorial video published on 2026-01-16 reminded me of a subtle but very real source of “why does this look off?” bugs: the Text widget is simple until you start combining custom fonts, tight line heights, and multi-line layouts. Source: Video and the original r/FlutterDev post. Line height is not just TextStyle.height On Flutter…"
+description: "The leadingDistribution property in Flutter's TextHeightBehavior controls how extra leading is distributed above and below glyphs. Here is when it matters and how to fix text that looks vertically off."
 pubDate: 2026-01-18
 tags:
   - "dart"

@@ -1,6 +1,6 @@
 ---
 title: "Implementation type Data.AppDbContext can’t be converted to service type Microsoft.AspNetCore.Identity.IUserStore"
-description: "This exception is thrown when you are building an identity DbContext without providing the user and role stores using AddUserStore and AddRoleStore. You can provide both configurations with a single call to AddEntityFrameworkStores like in the example below: The full exception for reference: System.AggregateException: ‘Some services are not able to be constructed (Error while validating…"
+description: "Fix the ASP.NET Core Identity error where AppDbContext can't be converted to IUserStore by adding AddEntityFrameworkStores to your identity configuration."
 pubDate: 2023-09-28
 updatedDate: 2023-11-05
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Use your Android phone as a webcam for Streamlabs"
-description: "Need a webcam to use for streaming? Why not use one of the broken/outdated phones you currently have lying around the house? Most phones are capable of taking pictures and recording at a higher resolution and with a better quality than your typical webcam. This makes them an ideal replacement for a webcam when streaming,…"
+description: "Turn your old Android phone into a webcam for Streamlabs OBS using DroidCam, with step-by-step setup instructions."
 pubDate: 2019-04-30
 updatedDate: 2020-08-06
 tags:
@@ -33,7 +33,7 @@ Final step is adding the video source into Streamlabs. To do so, open up Streaml
 
 ![](/wp-content/uploads/2019/04/image-5-1024x555.png)
 
-In the popup that opens select Video Capture Device and click Add Source. In the next screen just click Add New Source. Now you get to play with the settings for the device. First, select the DroidCam from the Device dropdown – in my case it’s called DroidCam Srouce. Then play around with the setting until you get the desired result; for me the defaults worked just fine. When you’re finished, click Done.
+In the popup that opens select Video Capture Device and click Add Source. In the next screen just click Add New Source. Now you get to play with the settings for the device. First, select the DroidCam from the Device dropdown – in my case it’s called DroidCam Source. Then play around with the setting until you get the desired result; for me the defaults worked just fine. When you’re finished, click Done.
 
 ![](/wp-content/uploads/2019/04/image-10.png)
 

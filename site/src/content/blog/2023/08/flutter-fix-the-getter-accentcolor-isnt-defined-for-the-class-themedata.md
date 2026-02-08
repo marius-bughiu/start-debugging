@@ -1,6 +1,6 @@
 ---
 title: "Flutter – Fix The getter ‘accentColor’ isn’t defined for the class ‘ThemeData’"
-description: "The most likely cause of this error is an update to Flutter (flutter upgrade) which led to some imcompatibility with your existing code or your project’s dependencies. The Theme.of(context).accentColor property has been deprecated since Flutter 1.17 and is entirely removed from the current version, thus the error your are seeing. What to use instead Or, if…"
+description: "The most likely cause of this error is an update to Flutter (flutter upgrade) which led to some incompatibility with your existing code or your project's dependencies. The Theme.of(context).accentColor property has been deprecated since Flutter 1.17 and is entirely removed from the current version, thus the error you are seeing. What to use instead Or, if…"
 pubDate: 2023-08-18
 updatedDate: 2023-11-05
 tags:
@@ -13,9 +13,9 @@ Try correcting the name to the name of an existing getter, or defining a getter 
         themeData.textTheme.headline5?.copyWith(color: themeData.accentColor);
 ```
 
-The most likely cause of this error is an update to Flutter (`flutter upgrade`) which led to some imcompatibility with your existing code or your project’s dependencies.
+The most likely cause of this error is an update to Flutter (`flutter upgrade`) which led to some incompatibility with your existing code or your project’s dependencies.
 
-The `Theme.of(context).accentColor` property [has been deprecated since Flutter 1.17](https://docs.flutter.dev/release/breaking-changes/theme-data-accent-properties) and is entirely removed from the current version, thus the error your are seeing.
+The `Theme.of(context).accentColor` property [has been deprecated since Flutter 1.17](https://docs.flutter.dev/release/breaking-changes/theme-data-accent-properties) and is entirely removed from the current version, thus the error you are seeing.
 
 ## What to use instead
 

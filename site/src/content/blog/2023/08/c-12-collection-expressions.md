@@ -16,7 +16,7 @@ It’s important to note that the array type needs to be specified explicitly, s
 
 Similarly, if you wanted to create a `Span<int>`, you can do:
 
-```autohotkey
+```cs
 Span<int> bar = [1, 2, 3];
 ```
 
@@ -34,11 +34,11 @@ And with the new syntax:
 int[][] _2d = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 ```
 
-A lot more simple an intuitive, isn’t it?
+A lot more simple and intuitive, isn't it?
 
 ## Merged arrays using the spread operator
 
-With the new syntax comes a new spread operator as well – `..` – which replaces the argument it’s applied to with it’s elements, effectively allowing you to merge collections together. Let’s look at a few examples.
+With the new syntax comes a new spread operator as well – `..` – which replaces the argument it's applied to with its elements, effectively allowing you to merge collections together. Let’s look at a few examples.
 
 Starting with the most simple one – merging multiple arrays into one:
 
@@ -50,7 +50,7 @@ int[] a3 = [7, 8, 9];
 int[] merged = [..a1, ..a2, ..a3];
 ```
 
-The spread operator can be applies on any `IEnumerable`, and can be used to combine different `IEnumerable`s into a single collection.
+The spread operator can be applied to any `IEnumerable`, and can be used to combine different `IEnumerable`s into a single collection.
 
 ```cs
 int[] a1 = [1, 2, 3];
@@ -100,4 +100,4 @@ List<int> a = [1, 2, 3, .. a1, 4, 5];
 
 > Error CS8652 The feature ‘collection literals’ is currently in Preview and _unsupported_. To use Preview features, use the ‘preview’ language version.
 
-These errors means that your project does not use C# 12 yet, so you cannot use the new language features. If you wish to switch to C# 12 and don’t know how, check out [our guide to switching your project to C# 12](/2023/06/how-to-switch-to-c-12/).
+These errors mean that your project does not use C# 12 yet, so you cannot use the new language features. If you wish to switch to C# 12 and don’t know how, check out [our guide to switching your project to C# 12](/2023/06/how-to-switch-to-c-12/).

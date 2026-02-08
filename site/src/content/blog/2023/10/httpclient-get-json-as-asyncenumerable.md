@@ -1,13 +1,13 @@
 ---
 title: "HttpClient get JSON as AsyncEnumerable"
-description: "A new extension method – GetFromJsonAsAsyncEnumerable<T> – has been added to the HttpClient part of .NET 8. This new mthod will take the response body JSON and deserialize it into an async enumerable operation. The complete signature of the extension method is as follows: Let’s take a look at how to use it. First thing…"
+description: "The new GetFromJsonAsAsyncEnumerable extension method in .NET 8 deserializes HTTP response JSON into an IAsyncEnumerable. Learn how to use it with await foreach."
 pubDate: 2023-10-24
 updatedDate: 2023-11-01
 tags:
   - "net"
   - "net-8"
 ---
-A new extension method – `GetFromJsonAsAsyncEnumerable<T>` – has been added to the `HttpClient` part of .NET 8. This new mthod will take the response body JSON and deserialize it into an async enumerable operation.
+A new extension method – `GetFromJsonAsAsyncEnumerable<T>` – has been added to the `HttpClient` part of .NET 8. This new method will take the response body JSON and deserialize it into an async enumerable operation.
 
 The complete signature of the extension method is as follows:
 
@@ -36,7 +36,7 @@ await foreach (var hotel in hotels)
 }
 ```
 
-Inside the body of the `foreach` you can do anything you want want with your `hotel`. Full example below:
+Inside the body of the `foreach` you can do anything you want with your `hotel`. Full example below:
 
 ```cs
 using System.Net.Http.Json;

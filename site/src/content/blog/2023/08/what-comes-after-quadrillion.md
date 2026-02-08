@@ -1,6 +1,6 @@
 ---
 title: "What comes after quadrillion?"
-description: "This is quite a frequent question. You’ve got: But what comes after quadrillion? The answer is: quintillion. A quintillion, has 18 zeroes. That’s a lot of zeroes: 1.000.000.000.000.000.000. But there’s more. If you look past the quintillion, you’ve got: Interested in how long it would take a PC to count to a trillion? Check out…"
+description: "After quadrillion comes quintillion, with 18 zeroes. Discover the full list of large number names from million all the way to centillion."
 pubDate: 2023-08-07
 updatedDate: 2023-10-27
 tags:
@@ -15,7 +15,7 @@ This is quite a frequent question. You’ve got:
 
 But what comes after quadrillion?
 
-The answer is: **quintillion**. A quintillion, has 18 zeroes. That’s a lot of zeroes: 1.000.000.000.000.000.000.
+The answer is: **quintillion**. A quintillion has 18 zeroes. That’s a lot of zeroes: 1.000.000.000.000.000.000.
 
 But there’s more. If you look past the quintillion, you’ve got:
 

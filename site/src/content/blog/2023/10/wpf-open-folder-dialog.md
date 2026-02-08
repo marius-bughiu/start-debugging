@@ -1,6 +1,6 @@
 ---
 title: "WPF Open Folder Dialog"
-description: ".NET 8 introduces a new OpenFolderDialog to Windows Presentation Foundation (WPF). This enables application users to browse and select one or multiple folders. Usage is simple: create a new OpenFolderDialog, provide a Title, and an InitialDirectory. And if you want to allow your users to select multiple folders, set Multiselect to true. Next, a simple…"
+description: "Learn how to use the new OpenFolderDialog in WPF with .NET 8 to let users browse and select one or multiple folders."
 pubDate: 2023-10-09
 updatedDate: 2023-11-05
 tags:
@@ -40,7 +40,7 @@ dialog.FolderName -> "C:\Users\test\OneDrive\Documents\Fiddler2"
 dialog.SafeFolderName -> "Fiddler2"
 ```
 
-In case of muliple select, you can use:
+In case of multiple select, you can use:
 
 ```cs
 dialog.FolderNames -> [ "C:\Users\test\OneDrive\Documents\Fiddler2", "C:\Users\mariu\OneDrive\Documents\Graphics" ]

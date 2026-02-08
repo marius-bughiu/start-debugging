@@ -1,6 +1,6 @@
 ---
 title: "Audit your site’s performance, accessibility and user experience using Google Lighthouse"
-description: "Lighthouse is an automated tool for auditing the performance, accessibility and overall user experience of any web page. It was initially meant to audit PWAs (Progressive Web Apps) but it’s much more than that. Easiest way to audit your website is using the latest version of Chrome. Navigate to your website and open up the…"
+description: "Learn how to use Google Lighthouse to audit your website's performance, accessibility, and user experience directly from Chrome DevTools."
 pubDate: 2019-04-29
 updatedDate: 2023-11-05
 tags:
@@ -13,7 +13,7 @@ Easiest way to audit your website is using the latest version of [Chrome](https:
 
 ![Google Lighthouse - Report summary](/wp-content/uploads/2019/04/image.png)
 
-As you can see, this blog ain’t doing so good. Luckily, Lighthouse gives you a very detailed report explaining your score and each line gets accompanied by a Learn more link where you can find out more details about the issue and how to improve your rating
+As you can see, this blog ain’t doing so good. Luckily, Lighthouse gives you a very detailed report explaining your score and each line gets accompanied by a Learn more link where you can find out more details about the issue and how to improve your rating.
 
 ![Google Lighthouse- Opportunities report](/wp-content/uploads/2019/04/image-1.png)
 

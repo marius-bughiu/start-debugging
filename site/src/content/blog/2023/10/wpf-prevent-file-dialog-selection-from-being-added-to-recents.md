@@ -1,6 +1,6 @@
 ---
 title: "WPF – Prevent file dialog selection from being added to recents"
-description: "Files opened or saved using WPF’s file dialogs (OpenFileDialog, SaveFileDialog or OpenFolderDialog) are by default added to the Windows Explorer’s recent files list and can also impact the Recommended section of the Start Menu in Windows 11. To disable this behavior, you can set AddToRecent to false on your dialog before calling the ShowDialog() method…."
+description: "Prevent WPF file dialog selections from appearing in Windows Explorer recents and the Start Menu by setting AddToRecent to false in .NET 8."
 pubDate: 2023-10-18
 updatedDate: 2023-11-05
 tags:
@@ -10,7 +10,7 @@ tags:
 ---
 Files opened or saved using WPF’s file dialogs (`OpenFileDialog`, `SaveFileDialog` or `OpenFolderDialog`) are by default added to the Windows Explorer’s recent files list and can also impact the Recommended section of the Start Menu in Windows 11.
 
-To disable this behavior, you can set `AddToRecent` to `false` on your dialog before calling the `ShowDialog()` method. Note: this property has been added part of .NET 8, so in case you don’t have it available, make sure your project is targeting .NET 8 or newer.
+To disable this behavior, you can set `AddToRecent` to `false` on your dialog before calling the `ShowDialog()` method. Note: this property was added as part of .NET 8, so in case you don’t have it available, make sure your project is targeting .NET 8 or newer.
 
 And for a very quick example:
 

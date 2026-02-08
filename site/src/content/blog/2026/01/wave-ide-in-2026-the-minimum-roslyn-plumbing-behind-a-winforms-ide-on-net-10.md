@@ -1,6 +1,6 @@
 ---
 title: "Wave-IDE in 2026: the minimum Roslyn plumbing behind a WinForms IDE on .NET 10"
-description: "A post on r/csharp shared “Wave”, a WinForms IDE built as a personal C# project, with the repo linked right in the thread. It’s a good reminder that on modern .NET 9 and .NET 10 you can still build serious desktop tooling with boring tech: WinForms for UI, Roslyn for language services, and some discipline…"
+description: "Wave-IDE shows that WinForms and Roslyn on .NET 10 are enough to build a working C# IDE. Here is the minimum plumbing for incremental analysis, completion, and diagnostics."
 pubDate: 2026-01-10
 tags:
   - "net"

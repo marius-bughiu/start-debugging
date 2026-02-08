@@ -1,6 +1,6 @@
 ---
 title: "JsonNode – .NET 8 API updates"
-description: "Part of .NET 8, JsonNode and JsonArray get a few new additions to their API. We’ve already covered deep copy and deep equality in an earlier article, but there’s more. GetValueKind Returns the JsonValueKind of the current instance. GetPropertyName Returns property name of the current node from the parent object. Throws an InvalidOperationException if the…"
+description: "Explore the new .NET 8 API additions to JsonNode and JsonArray, including GetValueKind, GetPropertyName, GetElementIndex, ReplaceWith, and ParseAsync."
 pubDate: 2023-10-23
 updatedDate: 2023-11-01
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "TypeMonkey is a good reminder: Flutter desktop apps need architecture first, polish later"
-description: "A small Flutter desktop project showed up on r/FlutterDev today: TypeMonkey, a MonkeyType-like typing app that is explicitly positioned as “early, but structured”. Source: the original post and the repository: r/FlutterDev thread and BaldGhost-git/typemonkey. Desktop is where “just ship UI” stops working On mobile you can sometimes get away with a single state object and…"
+description: "TypeMonkey, a Flutter desktop typing app, shows why desktop projects need clean architecture from day one: sealed states, interface boundaries, and testable logic."
 pubDate: 2026-01-18
 tags:
   - "dart"

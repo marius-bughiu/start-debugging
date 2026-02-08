@@ -1,6 +1,6 @@
 ---
-title: ".NET Framework 3.5 is going “standalone” on new Windows builds (what breaks in automation)"
-description: "Microsoft changed something that a lot of devs and IT folks automated and then forgot about: starting with Windows 11 Insider Preview Build 27965, .NET Framework 3.5 is no longer included as an optional Windows component. If you need it, you now have to obtain it as a standalone installer. This is a .NET Framework…"
+title: ".NET Framework 3.5 Goes Standalone on New Windows Builds: What Breaks"
+description: "Starting with Windows 11 Build 27965, .NET Framework 3.5 is no longer an optional Windows component. Here is what breaks in CI, provisioning, and golden images, and how to fix it."
 pubDate: 2026-02-07
 tags:
   - "net"
@@ -8,7 +8,7 @@ tags:
 ---
 Microsoft changed something that a lot of devs and IT folks automated and then forgot about: starting with **Windows 11 Insider Preview Build 27965**, **.NET Framework 3.5 is no longer included as an optional Windows component**. If you need it, you now have to obtain it as a **standalone installer**.
 
-This is a .NET Framework story, but it will hit teams building modern services in **.NET 10** and **C# 14** because the pain shows up in places like fresh developer machines, ephemeral CI agents, golden images, and locked down networks.
+This is a .NET Framework story, but it will hit teams building modern services in **.NET 10** and **C# 14** because the pain shows up in places like fresh developer machines, ephemeral CI agents, golden images, and locked-down networks.
 
 ## The key detail: “NetFx3” is not guaranteed anymore
 
@@ -61,5 +61,5 @@ So the immediate win is not “stay on 3.5”. The immediate win is making your 
 
 Sources:
 
--   .NET Blog post: [https://devblogs.microsoft.com/dotnet/dotnet-framework-3-5-moves-to-standalone-deployment-in-new-versions-of-windows/](https://devblogs.microsoft.com/dotnet/dotnet-framework-3-5-moves-to-standalone-deployment-in-new-versions-of-windows/)
--   Microsoft Learn guidance link (from the post): [https://go.microsoft.com/fwlink/?linkid=2348700](https://go.microsoft.com/fwlink/?linkid=2348700)
+-   [.NET Blog post: .NET Framework 3.5 moves to standalone deployment](https://devblogs.microsoft.com/dotnet/dotnet-framework-3-5-moves-to-standalone-deployment-in-new-versions-of-windows/)
+-   [Microsoft Learn guidance: installers, compatibility, and migration](https://go.microsoft.com/fwlink/?linkid=2348700)

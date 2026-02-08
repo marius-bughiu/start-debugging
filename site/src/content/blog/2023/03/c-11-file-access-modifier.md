@@ -1,6 +1,6 @@
 ---
 title: "C# 11 – file access modifier & file-scoped types"
-description: "The file modifier restricts a type’s scope and visibility to the file in which it is declared. This is especially useful in situations where you want to avoid name collisions among types – like in the case of generated types using source generators. A quick example: In terms of restrictions we have the following: On…"
+description: "Learn how the C# 11 file access modifier restricts a type's scope to the file in which it is declared, helping avoid name collisions with source generators."
 pubDate: 2023-03-18
 updatedDate: 2023-11-05
 tags:
@@ -16,7 +16,7 @@ file class MyLocalType { }
 
 In terms of restrictions we have the following:
 
--   types nested inside a file-scoped type will only be visible withing the file in which they are declared
+-   types nested inside a file-scoped type will only be visible within the file in which they are declared
 -   other types in the assembly may use the same fully qualified name as the file-scoped type without creating a name collision
 -   file-local types can’t be used as the return type or parameter of any member that is more visible than the `file` scope
 -   similarly, a file-scoped type can’t be a field member of a type that is more visible than the `file` scope

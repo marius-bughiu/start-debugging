@@ -1,6 +1,6 @@
 ---
 title: "C# – ref readonly parameters"
-description: "The ref readonly modifier enables a more transparent way of passing read-only references to a method. Passing of readonly references was already possible in C# by using the in modifier ever since version 7.2, but that syntax had some limitations, or rather too little constraints. So how does the new modifier work? Let’s assume the…"
+description: "The ref readonly modifier in C# provides a more transparent way of passing read-only references. Learn how it improves on the in modifier with better constraints and caller visibility."
 pubDate: 2023-10-28
 updatedDate: 2023-11-01
 tags:
@@ -33,7 +33,7 @@ Let’s take them one by one.
 
 This is one of the improvements over using the `in` modifier. `ref readonly` make it explicit to the caller that the value is being passed as a reference. With `in`, this was not transparent to the caller and could lead to confusion.
 
-To fix CS9192, simply change the call to explicitly specify `FooRef(ref x)` or `FooRef(in x)`. The two annotations are mostly equivalent, the main difference being that `in` is more permissive and allows for unassignable values to be passed, while `ref` requires an assignable variables.
+To fix CS9192, simply change the call to explicitly specify `FooRef(ref x)` or `FooRef(in x)`. The two annotations are mostly equivalent, the main difference being that `in` is more permissive and allows for unassignable values to be passed, while `ref` requires an assignable variable.
 
 For example:
 
@@ -44,8 +44,8 @@ FooRef(in y);
 FooRef(ref y);
 ```
 
-`FooRef(in y)` will work without any issues, while `FooRef(y)` will trigger a compiler error saying that the ref value must be an assignable variable.
+`FooRef(in y)` will work without any issues, while `FooRef(ref y)` will trigger a compiler error saying that the ref value must be an assignable variable.
 
 ## `FooRef(42)` – only variables are allowed
 
-This is the other improvement which `ref readonly` brings over `in` – it will start complaining when you try to pass it an `lvalue` – a value without a location. This plays hand in hand with the warning above, because if you try to use `FooRef(ref 42)` you will instantly get a compiler error saying CS1510: A ref or out value must be an assignable variable.
+This is the other improvement which `ref readonly` brings over `in` – it will start complaining when you try to pass it an rvalue -- a value without a location. This plays hand in hand with the warning above, because if you try to use `FooRef(ref 42)` you will instantly get a compiler error saying CS1510: A ref or out value must be an assignable variable.

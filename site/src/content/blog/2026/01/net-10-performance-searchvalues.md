@@ -1,6 +1,6 @@
 ---
 title: ".NET 10 Performance: SearchValues"
-description: "In .NET 8, Microsoft introduced SearchValues<T>, a specialized type that optimized searching for a set of values (like bytes or chars) within a span. It vectorized the search, making it significantly faster than IndexOfAny. In .NET 10, this power has been extended to strings. SearchValues<string> allows you to search for multiple substrings simultaneously with incredible…"
+description: "Use SearchValues in .NET 10 for high-performance multi-string searching. Replaces foreach loops with SIMD-accelerated matching using Aho-Corasick and Teddy algorithms."
 pubDate: 2026-01-04
 tags:
   - "net"
@@ -36,7 +36,7 @@ This is O(N \* M) where N is input length and M is the number of words. It scans
 
 With .NET 10, you can pre-compute the search strategy.
 
-```php
+```cs
 using System.Buffers;
 
 // 1. Create the optimized searcher (do this once, statically)

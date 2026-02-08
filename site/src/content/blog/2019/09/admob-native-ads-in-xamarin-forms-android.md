@@ -1,13 +1,13 @@
 ---
 title: "AdMob Native Ads in Xamarin Forms (Android)"
-description: "Until recently NativeAds were in a closed beta and only certain developers had access to the ad format, but now, it’s available to everyone. Here’s how you can go about adding one to you Android Xamarin Forms app using a custom renderer. Step 1: Create a view to act as a placeholder for the ad…"
+description: "Step-by-step guide to implementing AdMob Native Ads in a Xamarin Forms Android app using a custom renderer."
 pubDate: 2019-09-20
 updatedDate: 2023-11-05
 tags:
   - "xamarin"
   - "xamarin-forms"
 ---
-Until recently NativeAds were in a closed beta and only certain developers had access to the ad format, but now, it’s available to everyone. Here’s how you can go about adding one to you Android Xamarin Forms app using a custom renderer.
+Until recently NativeAds were in a closed beta and only certain developers had access to the ad format, but now, it’s available to everyone. Here’s how you can go about adding one to your Android Xamarin Forms app using a custom renderer.
 
 ## Step 1: Create a view to act as a placeholder for the ad
 
@@ -211,11 +211,11 @@ For this, go into your Android project Resources > layout and create a new file 
 </com.google.android.gms.ads.formats.UnifiedNativeAdView>
 ```
 
-Feel free to modify it however you want, but keep all text/image/media elements in there. Currently, the SDK displays a warning when not elements are configured but in the future this will not be allowed.
+Feel free to modify it however you want, but keep all text/image/media elements in there. Currently, the SDK displays a warning when not all elements are configured but in the future this will not be allowed.
 
 ## Step 3: Add the custom renderer
 
-This custom renderer will initiate the ad request and the inflate the above layout into the actual ad control.
+This custom renderer will initiate the ad request and inflate the above layout into the actual ad control.
 
 ```cs
 using Android.Content;

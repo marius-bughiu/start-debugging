@@ -1,6 +1,6 @@
 ---
 title: "How to fix: Command dotnet ef not found"
-description: "Could not execute because the specified command or file was not found.Possible reasons for this include:– You misspelled a built-in dotnet command.– You intended to execute a .NET Core program, but dotnet-ef does not exist.– You intended to run a global tool, but a dotnet-prefixed executable with this name could not be found on the…"
+description: "Fix the 'command dotnet-ef not found' error by installing the Entity Framework Core CLI tool globally or locally."
 pubDate: 2023-06-11
 updatedDate: 2023-11-05
 tags:
@@ -23,7 +23,7 @@ For example, to be able to manage migrations or scaffold a **DbContext**, instal
 dotnet tool install --global dotnet-ef
 ```
 
-If you want to install a specific version, you can specify the **–version** parameter. For example:
+If you want to install a specific version, you can specify the **--version** parameter. For example:
 
 ```shell
 dotnet tool install --global dotnet-ef --version 3.*

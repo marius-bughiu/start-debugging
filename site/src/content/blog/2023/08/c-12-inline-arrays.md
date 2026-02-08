@@ -1,6 +1,6 @@
 ---
 title: "C# 12 – Inline arrays"
-description: "Inline arrays enable you to create an array of fixed size in a struct type. Such a struct, with an inline buffer, should provide performance comparable to an unsafe fixed size buffer. Inline arrays are mosly to be used by the runtime team and some library authors to improve performance in certain scenarios. You likely…"
+description: "Inline arrays enable you to create an array of fixed size in a struct type. Such a struct, with an inline buffer, should provide performance comparable to an unsafe fixed size buffer. Inline arrays are mostly to be used by the runtime team and some library authors to improve performance in certain scenarios. You likely…"
 pubDate: 2023-08-31
 updatedDate: 2023-11-05
 tags:
@@ -8,7 +8,7 @@ tags:
 ---
 Inline arrays enable you to create an array of fixed size in a `struct` type. Such a struct, with an inline buffer, should provide performance comparable to an unsafe fixed size buffer.
 
-Inline arrays are mosly to be used by the runtime team and some library authors to improve performance in certain scenarios. You likely won’t declare your own inline arrays, but you will use them transparently when they are exposed as `Span<T>` or `ReadOnlySpan<T>` objects by the runtime.
+Inline arrays are mostly to be used by the runtime team and some library authors to improve performance in certain scenarios. You likely won’t declare your own inline arrays, but you will use them transparently when they are exposed as `Span<T>` or `ReadOnlySpan<T>` objects by the runtime.
 
 ## How to declare an inline array
 
@@ -46,7 +46,7 @@ First thing to note is that during the initialization, we do not specify the siz
 
 ### InlineArray doesn’t have a Length property
 
-Some of you might have noticed that in the `for` loop above we iterated until `10` instead of `arr.Length` – and that is because inline arrays don’t have a `Length` property exposed like notmal arrays do.
+Some of you might have noticed that in the `for` loop above we iterated until `10` instead of `arr.Length` – and that is because inline arrays don’t have a `Length` property exposed like normal arrays do.
 
 It gets even weirder…
 

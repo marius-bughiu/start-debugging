@@ -1,6 +1,6 @@
 ---
 title: "The specified version of Microsoft.NetCore.App or Microsoft.AspNetCore.App was not found."
-description: "This error usually means that there is a mismatch between the AppService Stack and .NET version and your app’s target framework. This can happen when you upgrade your web app, but you do not update the runtime of the App Service. This is a common occurence for ASP.NET MVC and Web API projects going through…"
+description: "Fix the 'Microsoft.NetCore.App or Microsoft.AspNetCore.App was not found' error by updating your Azure App Service stack and .NET runtime version."
 pubDate: 2020-12-20
 updatedDate: 2023-11-05
 tags:
@@ -10,7 +10,7 @@ tags:
 ---
 This error usually means that there is a mismatch between the AppService Stack and .NET version and your app’s target framework. This can happen when you upgrade your web app, but you do not update the runtime of the App Service.  
   
-This is a common occurence for ASP.NET MVC and Web API projects going through a .NET major version upgrade, and it’s quite simple to fix.
+This is a common occurrence for ASP.NET MVC and Web API projects going through a .NET major version upgrade, and it’s quite simple to fix.
 
 If you get this error, go to your App Service > Settings > Configuration and make sure that the Stack and the framework version match your app. In our case, after upgrading from .NET Core 3.1 to .NET 5 we had to switch the Stack from .NET Core to .NET and choose version 5.  
   

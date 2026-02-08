@@ -1,6 +1,6 @@
 ---
 title: "Creating wide tiles for your Windows Phone 7 app"
-description: "I’ve recently come across an article in the Nokia Developer Wiki about creating live tiles (including wide tile) for both Windows Phone 7 and Windows Phone 8 by writing a single piece of code that works in both versions of the OS. To do this you will need to use the MangoPollo library which you…"
+description: "Create wide live tiles for both Windows Phone 7 and 8 using the MangoPollo library with a single piece of code."
 pubDate: 2013-05-05
 updatedDate: 2023-11-05
 tags:
@@ -29,7 +29,7 @@ if (tile != null)
 
 That’s all you need to do. Both the normal and wide live tiles should now be available when resizing the tile of your app. Now all that’s left for you to do is to update it.
 
-Also, one thing that wasn’t so obvious for me – you can use absolute URIs for the tile images. eaning that you can give as a source a image directly from the internet and the OS will download and cache it for you.
+Also, one thing that wasn't so obvious for me -- you can use absolute URIs for the tile images. Meaning that you can give as a source an image directly from the internet and the OS will download and cache it for you.
 
 ```cs
 tileData.WideBackgroundImage = new Uri("http://cdn.marketplaceimages.windowsphone.com/v8/images/0a539106-8940-4898-99c2-744cbc7a6097?imageType=ws_icon_small", UriKind.Absolute);

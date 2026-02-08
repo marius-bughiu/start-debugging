@@ -1,6 +1,6 @@
 ---
 title: "Perfetto + dotnet-trace: a practical profiling loop for .NET 9/.NET 10"
-description: "The fastest way to get unstuck on “it’s slow” in .NET is to stop guessing and start looking at a timeline. A neat write-up making the rounds this week shows a clean workflow: capture traces with dotnet-trace, then inspect them in Perfetto (the same trace viewer ecosystem many people know from Android and Chromium land):…"
+description: "A practical profiling loop for .NET 9 and .NET 10: capture traces with dotnet-trace, visualize them in Perfetto, and iterate on CPU, GC, and thread pool issues."
 pubDate: 2026-01-21
 updatedDate: 2026-01-23
 tags:
@@ -9,7 +9,7 @@ tags:
   - "net-9"
   - "performance"
 ---
-The fastest way to get unstuck on “it’s slow” in .NET is to stop guessing and start looking at a timeline. A neat write-up making the rounds this week shows a clean workflow: capture traces with `dotnet-trace`, then inspect them in Perfetto (the same trace viewer ecosystem many people know from Android and Chromium land): `https://dfamonteiro.com/posts/using-dotnet-trace-with-perfetto/`.
+The fastest way to get unstuck on “it’s slow” in .NET is to stop guessing and start looking at a timeline. A neat write-up making the rounds this week shows a clean workflow: capture traces with `dotnet-trace`, then inspect them in Perfetto (the same trace viewer ecosystem many people know from Android and Chromium land): [Using dotnet-trace with Perfetto](https://dfamonteiro.com/posts/using-dotnet-trace-with-perfetto/).
 
 ## Why Perfetto is worth adding to your toolbox
 
@@ -68,4 +68,4 @@ If you can, run the slow path in Release (closer to production), but still keep 
 
 Keep it boring: stable input, stable configuration, short traces, repeat.
 
-If you want the detailed Perfetto steps and screenshots, the original post is the best reference to keep open while you run the loop: `https://dfamonteiro.com/posts/using-dotnet-trace-with-perfetto/`.
+If you want the detailed Perfetto steps and screenshots, the original post is the best reference to keep open while you run the loop: [Using dotnet-trace with Perfetto](https://dfamonteiro.com/posts/using-dotnet-trace-with-perfetto/).

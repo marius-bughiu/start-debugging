@@ -1,13 +1,13 @@
 ---
 title: ".NET 8 performance: 10x faster GetGenericTypeDefinition"
-description: ".NET 8 brings some neat performance for existing APIs that handle type information. One such API that has seen a significant improvement is GetGenericTypeDefinition. In my benchmarks, the .NET 8 implementation is almost 10 times faster compared to the .NET 7 version. You can run this benchmark yourself if you’d like using BenchmarkDotNet: Or if…"
+description: "Benchmarking GetGenericTypeDefinition in .NET 8 vs .NET 7 shows nearly 10x faster performance. See benchmark code and results using BenchmarkDotNet."
 pubDate: 2023-11-05
 tags:
   - "c-sharp"
   - "net"
   - "net-8"
 ---
-.NET 8 brings some neat performance for existing APIs that handle type information. One such API that has seen a significant improvement is `GetGenericTypeDefinition`.
+.NET 8 brings some neat performance improvements for existing APIs that handle type information. One such API that has seen a significant improvement is `GetGenericTypeDefinition`.
 
 In my benchmarks, the .NET 8 implementation is almost 10 times faster compared to the .NET 7 version.
 

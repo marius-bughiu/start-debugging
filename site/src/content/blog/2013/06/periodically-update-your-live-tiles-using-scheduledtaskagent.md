@@ -1,6 +1,6 @@
 ---
 title: "Periodically update your live tiles using ScheduledTaskAgent"
-description: "I’ve covered in a previous post how to create wide tiles for your Windows Phone 7 application. Now it’s time to bring them to life. The easiest way to do so is by using a ScheduledTaskAgent. To create one go ahead and add a new project to your solution and from the project templates list…"
+description: "Use a ScheduledTaskAgent to periodically update your Windows Phone live tiles from an RSS feed."
 pubDate: 2013-06-23
 updatedDate: 2023-11-05
 tags:
@@ -24,7 +24,7 @@ protected override void OnInvoke(ScheduledTask task)
             DownloadStringCompleted(s, e);
             NotifyComplete();
         };
-    client.DownloadStringAsync(new Uri("http://blogs.windows.com/windows_phone/b/windowsphone/rss.aspx";));
+    client.DownloadStringAsync(new Uri("http://blogs.windows.com/windows_phone/b/windowsphone/rss.aspx"));
 }
 ```
 

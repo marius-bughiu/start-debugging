@@ -1,6 +1,6 @@
 ---
 title: ".NET 10 made your NIC list explode? Filtering GetAllNetworkInterfaces() without lying to yourself"
-description: "If you just migrated an app from .NET 8 to .NET 10 and suddenly NetworkInterface.GetAllNetworkInterfaces() returns 80 adapters instead of 10, you are not imagining it. This popped up in a Jan 7, 2026 thread, with exactly the kind of real-world pain that makes “minor” behavior changes feel like breaking changes: virtual interfaces from Hyper-V,…"
+description: "How to filter GetAllNetworkInterfaces() in .NET 10 when virtual adapters from Hyper-V, Docker, WSL, and VPNs flood the list. Includes a two-stage filter with explicit tradeoffs."
 pubDate: 2026-01-08
 tags:
   - "net"
@@ -10,7 +10,7 @@ If you just migrated an app from .NET 8 to .NET 10 and suddenly `NetworkInterfac
 
 Source: [NetworkInterface.GetAllNetworkInterfaces breaking change (r/dotnet)](https://www.reddit.com/r/dotnet/comments/1q6ippd/networkinterfacegetallnetworkinterfaces_breaking/)
 
-### The uncomfortable truth: “physical” is a heuristic
+## The uncomfortable truth: "physical" is a heuristic
 
 `System.Net.NetworkInformation` does not give you a single, official “this is a physical NIC” boolean you can trust across machines, drivers, and Windows features. The safest strategy is to **build a filter that matches your product needs**, and to make that filter auditable and testable.
 
@@ -22,7 +22,7 @@ Start with strict signals that usually correlate with “useful for connectivity
 
 Then add softer, environment-specific exclusions (Docker, Hyper-V, WSL, VPN) as a second stage.
 
-### A two-stage filter that is explicit about tradeoffs
+## A two-stage filter that is explicit about tradeoffs
 
 The thread proposed this approach (trimmed and slightly hardened for readability):
 
@@ -61,7 +61,7 @@ If you want to make it less fragile, avoid relying only on strings:
 -   Consider whether you require a default gateway (`GatewayAddresses`) or DNS servers (`DnsAddresses`).
 -   Log what you filtered out (type, description, id) so you can adjust when a new driver or VPN client shows up.
 
-### Debug it like a production incident, not a curiosity
+## Debug it like a production incident, not a curiosity
 
 When your adapter count changes across .NET versions, treat it like an observable behavior difference:
 

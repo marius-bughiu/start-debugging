@@ -1,16 +1,17 @@
 ---
 title: "AWS Lambda Supports .NET 10: What to Verify Before You Flip the Runtime"
-description: "AWS Lambda support for .NET 10 is starting to show up in community channels today, and it is the kind of change that looks “done” until you hit cold starts, trimming, or a native dependency in production. Source discussion: https://www.reddit.com/r/dotnet/comments/1q7p9t3/aws_lambda_supports_net_10/ Runtime support is the easy part, your deployment shape is the hard part Moving a…"
+description: "AWS Lambda now supports .NET 10, but the runtime upgrade is not the hard part. Here is a practical checklist covering cold starts, trimming, native AOT, and deployment shape."
 pubDate: 2026-01-08
 tags:
+  - "aws"
   - "net"
   - "net-10"
 ---
 AWS Lambda support for **.NET 10** is starting to show up in community channels today, and it is the kind of change that looks “done” until you hit cold starts, trimming, or a native dependency in production.
 
-Source discussion: [https://www.reddit.com/r/dotnet/comments/1q7p9t3/aws\_lambda\_supports\_net\_10/](https://www.reddit.com/r/dotnet/comments/1q7p9t3/aws_lambda_supports_net_10/)
+Source discussion: [r/dotnet thread](https://www.reddit.com/r/dotnet/comments/1q7p9t3/aws_lambda_supports_net_10/)
 
-## Runtime support is the easy part, your deployment shape is the hard part
+## Runtime support is the easy part; your deployment shape is the hard part
 
 Moving a Lambda from .NET 8/9 to **.NET 10** is not just a target framework bump. The runtime you select drives:
 

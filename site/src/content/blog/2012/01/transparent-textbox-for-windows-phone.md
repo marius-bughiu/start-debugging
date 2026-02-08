@@ -1,12 +1,12 @@
 ---
 title: "Transparent TextBox for Windows Phone"
-description: "Below you have a style which applied to your textbox will make it fully transparent. The difference between applying this style and simply setting the Background property of your textbox to transparent or removing it completely is that the style also removes the focus effect the textbox gets when tapped. I mean no matter what…"
+description: "A XAML style for Windows Phone that makes a TextBox fully transparent, including removing the white background focus effect when tapped."
 pubDate: 2012-01-02
 updatedDate: 2023-11-04
 tags:
   - "windows-phone"
 ---
-Below you have a style which applied to your textbox will make it fully transparent. The difference between applying this style and simply setting the `Background` property of your textbox to transparent or removing it completely is that the style also removes the focus effect the textbox gets when tapped. I mean no matter what background color you set when the textbox gets focused the background turns white.
+Below you have a style which, when applied to your textbox, will make it fully transparent. The difference between applying this style and simply setting the `Background` property of your textbox to transparent or removing it completely is that the style also removes the focus effect the textbox gets when tapped. No matter what background color you set, when the textbox gets focused the background turns white.
 
 So here’s the style (you need to add this to your app/page/user control resources):
 

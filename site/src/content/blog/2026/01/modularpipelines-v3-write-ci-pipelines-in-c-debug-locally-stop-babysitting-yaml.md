@@ -1,6 +1,6 @@
 ---
 title: "ModularPipelines V3: write CI pipelines in C#, debug locally, stop babysitting YAML"
-description: "This week I saw another reminder that CI does not have to be a blind push-and-pray loop: ModularPipelines V3 is actively shipping (latest tag v3.0.86 was published on 2026-01-18) and it leans hard into a simple idea: your pipeline is just a .NET app. Source: ModularPipelines repo and the v3.0.86 release. The part that changes…"
+description: "ModularPipelines V3 lets you write CI pipelines in C# instead of YAML. Run them locally with dotnet run, get compile-time safety, and debug with breakpoints."
 pubDate: 2026-01-18
 tags:
   - "c-sharp"

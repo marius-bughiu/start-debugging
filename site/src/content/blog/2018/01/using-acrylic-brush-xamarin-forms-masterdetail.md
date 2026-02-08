@@ -1,6 +1,6 @@
 ---
 title: "UWP – Using an Acrylic Brush in your Xamarin Forms MasterDetail menu"
-description: "Right, so you are one of those guys targeting UWP with their Xamarin Forms app… aand you want to use the new Acrylic brush to make you application stand out. Say no more. We won’t be using any 3rd party library/package to do this and we’ll be working in the platform specific project; so open…"
+description: "Apply the UWP Acrylic Brush to a Xamarin Forms MasterDetail menu using a native platform renderer without any third-party libraries."
 pubDate: 2018-01-16
 updatedDate: 2023-11-05
 tags:
@@ -8,7 +8,7 @@ tags:
   - "xamarin"
   - "xamarin-forms"
 ---
-Right, so you are one of those guys targeting UWP with their Xamarin Forms app… aand you want to use the new Acrylic brush to make you application stand out. Say no more.
+Right, so you are one of those targeting UWP with their Xamarin Forms app and you want to use the new Acrylic brush to make your application stand out. Say no more.
 
 ![Gazeta Acrylic menu on UWP](https://image.ibb.co/fTPyrm/gazeta_acrylic.gif)
 
@@ -18,7 +18,7 @@ We won’t be using any 3rd party library/package to do this and we’ll be work
 var masterPage = (app.MainPage as Xamarin.Forms.MasterDetailPage).Master;
 ```
 
-Next, you need to the native renderer for the Master page. This is what will allow us to modify the Background brush.
+Next, you need to get the native renderer for the Master page. This is what will allow us to modify the Background brush.
 
 ```cs
 var renderer = Platform.GetRenderer(masterPage) as PageRenderer;
@@ -43,7 +43,7 @@ I’ve set the TintColor and FallbackColor to match the color that I’ve set in
 > -   **BackgroundSource**: the flag to specify whether you want background or in-app acrylic.
 > -   **FallbackColor**: the solid color that replaces acrylic in low-battery mode. For background acrylic, fallback color also replaces acrylic when your app isn’t in the active desktop window or when the app is running on phone and Xbox.
 
-You can read [this](https://docs.microsoft.com/en-us/windows/uwp/design/style/acrylic) for more info on how the Acrylic material works. Also, just in case something doesn’t work, here’s the whole MainPage:
+You can read [this](https://learn.microsoft.com/en-us/windows/apps/design/style/acrylic) for more info on how the Acrylic material works. Also, just in case something doesn’t work, here’s the whole MainPage:
 
 ```cs
 public sealed partial class MainPage

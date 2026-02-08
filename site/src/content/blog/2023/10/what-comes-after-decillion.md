@@ -1,6 +1,6 @@
 ---
 title: "What comes after decillion?"
-description: "This is quite a frequent question. You’ve got: But what comes after decillion? The answer is: undecillion. An undecillion, has 36 zeroes. That’s a lot of zeroes: 1,000,000,000,000,000,000,000,000,000,000,000. But there’s more. If you look past the undecillion, you’ve got: Interested in how long it would take a PC to count to a trillion? Check out this…"
+description: "What comes after decillion? The answer is undecillion, with 36 zeroes. See the full list of large numbers from million to centillion."
 pubDate: 2023-10-27
 updatedDate: 2023-10-29
 tags:
@@ -21,7 +21,7 @@ This is quite a frequent question. You’ve got:
 
 But what comes after decillion?
 
-The answer is: **undecillion**. An undecillion, has 36 zeroes. That’s a lot of zeroes: 1,000,000,000,000,000,000,000,000,000,000,000.
+The answer is: **undecillion**. An undecillion has 36 zeroes. That's a lot of zeroes: 1,000,000,000,000,000,000,000,000,000,000,000,000.
 
 But there’s more. If you look past the undecillion, you’ve got:
 

@@ -1,12 +1,12 @@
 ---
 title: "3D Animations Using Pure CSS3"
-description: "What determined me to write this post and a few others was this page (works in Chrome and Safari only). Amazing what you can do by using only CSS. So, let’s take a look under the hood – the css for that effect looks like this: Kind of messy. But if we strip out the…"
+description: "Learn how to create 3D animations using pure CSS3 perspective and transform transitions, with cross-browser support for WebKit and Firefox."
 pubDate: 2012-03-04
 updatedDate: 2023-11-05
 tags:
   - "css"
 ---
-What determined me to write this post and a few others was [this page](http://demo.marcofolio.net/3d_animation_css3/ "CSS3 3D Animations") (works in Chrome and Safari only). Amazing what you can do by using only CSS. So, let’s take a look under the hood – the css for that effect looks like this:
+What inspired me to write this post and a few others was [this page](http://demo.marcofolio.net/3d_animation_css3/ "CSS3 3D Animations") (works in Chrome and Safari only). It's amazing what you can do using only CSS. So, let's take a look under the hood -- the CSS for that effect looks like this:
 
 ```css
 #movieposters li { 
@@ -68,7 +68,7 @@ You can play with the values and see what other nice effects you can obtain. May
 
 ## Making it work in Firefox
 
-Now what really intrigued me was the fact that it didn´t work in Firefox. Why? After doing a couple of searches on Google the answer became obvious, -webkit- commands are for webkit-based browsers while Firefox requires commands prefixed with -moz-. I guess I should’ve known that already…
+Now what really intrigued me was the fact that it didn't work in Firefox. Why? After doing a couple of searches on Google the answer became obvious, -webkit- commands are for webkit-based browsers while Firefox requires commands prefixed with -moz-. I guess I should’ve known that already…
 
 So I’ve added new lines for each command and replaced the -webkit- with -moz- thinking that it will work. It did, except for the fact that it had no animation. Couple of searches later and still no answer, so in the true spirit of a developer I typed in stackoverflow.com and asked my question. A couple of hours later I had my first answer and fortunately it held the solution to my problem ([check it out here if you want](http://stackoverflow.com/questions/9549624/moz-transition-duration-not-working "Firefox Transitions not working")). The transition-property had to be a -moz- property as well. Simple properties like transform or perspective don’t work like they do in webkit so I had to use -moz-transform and -moz-perspective instead.
 

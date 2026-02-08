@@ -34,17 +34,17 @@ While kebab case may not have as long a history as other naming conventions, its
 
 Kebab case is commonly used in various modern programming contexts, especially in web development. Here are some usage examples:
 
-###### HTML and CSS
+### HTML and CSS
 
-```javascript
+```html
 <div class="user-profile">
 ```
 
 In HTML and CSS, kebab case is often used for class names to style specific elements.
 
-###### URLs and Routing
+### URLs and Routing
 
-```php
+```javascript
 // Express.js route definition
 app.get('/user-profile', (req, res) => {
   // Route handling logic
@@ -53,7 +53,7 @@ app.get('/user-profile', (req, res) => {
 
 Kebab case is often used for defining routes in web frameworks like Express.js. It’s also commonly used in URLs.
 
-###### Command-Line Options
+### Command-Line Options
 
 ```bash
 my-script --option-name value
@@ -61,9 +61,9 @@ my-script --option-name value
 
 In command-line tools and scripts, kebab case is sometimes used for naming command-line options and arguments.
 
-###### File Names (Web Development)
+### File Names (Web Development)
 
-```css
+```
 header-styles.css
 analytics-script.js
 privacy-policy.html
@@ -71,7 +71,7 @@ privacy-policy.html
 
 Kebab case is sometimes used for naming files in web development to maintain consistency with HTML and CSS conventions.
 
-###### Package Names (Node.js)
+### Package Names (Node.js)
 
 ```
 npm install my-package-name
@@ -79,7 +79,7 @@ npm install my-package-name
 
 In Node.js, kebab case is often used for package names when publishing or installing packages via npm.
 
-###### Attribute Names in HTML and XML
+### Attribute Names in HTML and XML
 
 ```xml
 <button data-toggle-modal="my-modal">Open Modal</button>
@@ -87,7 +87,7 @@ In Node.js, kebab case is often used for package names when publishing or instal
 
 Kebab case is used for custom data attributes in HTML and XML to make them more human-readable and maintain consistency.
 
-###### CSS Variables
+### CSS Variables
 
 ```css
 --primary-color: #3498db;
@@ -95,7 +95,7 @@ Kebab case is used for custom data attributes in HTML and XML to make them more 
 
 Kebab case is commonly used for naming CSS variables for better readability and maintainability.
 
-###### Front-End Frameworks
+### Front-End Frameworks
 
 ```xml
 <MyComponent prop-name="value" />

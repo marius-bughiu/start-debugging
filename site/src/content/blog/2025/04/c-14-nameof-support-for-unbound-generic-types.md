@@ -1,6 +1,6 @@
 ---
 title: "C# 14: nameof support for unbound generic types"
-description: "C# 14 introduces several small but helpful improvements to the language. One of these new features is an enhancement to the nameof expression – it now supports unbound generic types. In simple terms, you no longer need to plug in a placeholder type argument just to get the name of a generic type. This update…"
+description: "C# 14 enhances the nameof expression to support unbound generic types like List<> and Dictionary<,>, eliminating the need for placeholder type arguments."
 pubDate: 2025-04-07
 tags:
   - "14"
@@ -72,7 +72,7 @@ Allowing unbound generic types in `nameof` might seem like a small tweak, but it
 
 ## Conclusion
 
-Support for unbound generic types in the `nameof` expression is a welcome improvement in C# 14 that makes the language a bit more developer-friendly. By allowing constructs like `nameof(List<>)`, C# eliminates an old annoyance and lets developers express their intent without unnecessary boilerplate. This change benefits all C# users – beginners can avoid confusion when using `nameof` with generics, and seasoned developers get more streamlined code that is resilient to future changes. It’s a great example of the C# team addressing a “papercut” in the language and improving consistency. As you adopt C# 14, keep this feature in mind whenever you need the name of a generic type, and enjoy writing one less angle bracket content in your code.
+Support for unbound generic types in the `nameof` expression is a welcome improvement in C# 14 that makes the language a bit more developer-friendly. By allowing constructs like `nameof(List<>)`, C# eliminates an old annoyance and lets developers express their intent without unnecessary boilerplate. This change benefits all C# users – beginners can avoid confusion when using `nameof` with generics, and seasoned developers get more streamlined code that is resilient to future changes. It’s a great example of the C# team addressing a “papercut” in the language and improving consistency. As you adopt C# 14, keep this feature in mind whenever you need the name of a generic type, and enjoy writing cleaner, more concise code.
 
 ## References
 

@@ -1,6 +1,6 @@
 ---
 title: "How to switch to C# 12"
-description: "While trying out C# 12 features, it’s possible you might come across errors similar to these: Feature is not available in C# 11.0. Please use language version 12.0 or later. or Error CS8652: The feature ‘<feature name>’ is currently in Preview and unsupported. To use Preview features, use the ‘preview’ language version. There are two…"
+description: "Fix C# 12 language version errors by updating your target framework to .NET 8 or setting LangVersion in your .csproj file."
 pubDate: 2023-06-10
 updatedDate: 2023-11-05
 tags:
@@ -39,7 +39,7 @@ The Language version cannot be changed from the **Properties** window of the pro
 
 If you must override the language version, you have to do it as specified above, by modifying the **.csproj** file and specifying the **LangVersion**.
 
-Remember that each C# language version has a minimum supportet .NET version. C# 12 is supported only on .NET 8 and newer versions. C# 11 is supported only on .NET 7 and newer versions. C# 10 is supported only on .NET 6 and newer versions. And so on.
+Remember that each C# language version has a minimum supported .NET version. C# 12 is supported only on .NET 8 and newer versions. C# 11 is supported only on .NET 7 and newer versions. C# 10 is supported only on .NET 6 and newer versions. And so on.
 
 ## C# LangVersion options
 

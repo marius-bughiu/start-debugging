@@ -1,6 +1,6 @@
 ---
 title: "biometric_signature 10.0.0: `simplePrompt()` is the feature, new `BiometricError` values are the real breaking change (Flutter 3.x)"
-description: "On Feb 6, 2026, the Flutter package biometric_signature published v10.0.0. The changelog looks small, but it forces a real decision in your app: do you treat biometric failures as a closed set of outcomes, or do you write your auth UI to be resilient to new platform states? This matters for modern apps on Flutter…"
+description: "biometric_signature 10.0.0 adds simplePrompt() and new BiometricError values. Here is how to handle the breaking change and future-proof your Flutter 3.x auth flows."
 pubDate: 2026-02-07
 tags:
   - "dart"
@@ -16,10 +16,10 @@ Two items are worth your attention:
 
 -   **Feature**: `simplePrompt()` for lightweight biometric authentication without cryptographic operations.
 -   **Breaking**: new `BiometricError` enum values. If you use exhaustive switches, you must handle:
--   `securityUpdateRequired`
--   `notSupported`
--   `systemCanceled`
--   `promptError`
+    -   `securityUpdateRequired`
+    -   `notSupported`
+    -   `systemCanceled`
+    -   `promptError`
 
 ## The migration trap: exhaustive `switch` on error codes
 

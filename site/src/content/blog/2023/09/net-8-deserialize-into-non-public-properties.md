@@ -1,6 +1,6 @@
 ---
-title: "NET 8 – Deserialize into non-public properties"
-description: "Similar to serializing into non-public members, you can deserialize into non-public members by providing a constructor with parameters matching the non-public member names and by annotating the non-public members with the JsonInclude attribute. Let’s jump straight to an example: Note how we haven’t annotated PublicProperty in any way and we haven’t included it in the…"
+title: ".NET 8 – Deserialize into non-public properties"
+description: "Learn how to deserialize JSON into non-public properties in .NET 8 using the JsonInclude attribute and parameterized constructors."
 pubDate: 2023-09-21
 updatedDate: 2023-11-05
 tags:
@@ -35,7 +35,7 @@ public class MyClass
 }
 ```
 
-Note how we haven’t annotated `PublicProperty` in any way and we haven’t included it in the constructor either. That’s not necesary, because the property is public and it has a public setter, so it can be assigned after the object instance is created.
+Note how we haven’t annotated `PublicProperty` in any way and we haven’t included it in the constructor either. That's not necessary, because the property is public and it has a public setter, so it can be assigned after the object instance is created.
 
 To try out deserializing into the type defined above, we can do this:
 

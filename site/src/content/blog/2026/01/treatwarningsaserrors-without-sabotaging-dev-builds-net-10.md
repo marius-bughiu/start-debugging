@@ -1,6 +1,6 @@
 ---
 title: "TreatWarningsAsErrors without sabotaging dev builds (.NET 10)"
-description: "If you have ever flipped TreatWarningsAsErrors to true and immediately regretted it, you are not alone. A recent r/dotnet thread making the rounds suggests a simple adjustment: enforce warning-free code in Release (and CI), but keep Debug flexible for local exploration: https://www.reddit.com/r/dotnet/comments/1qjum3h/treating_warnings_as_errors_in_dotnet_the_right/ Release-only enforcement is a policy, not a toggle What you are really trying…"
+description: "How to enforce TreatWarningsAsErrors in Release builds and CI while keeping Debug flexible for local development in .NET 10, using Directory.Build.props."
 pubDate: 2026-01-23
 tags:
   - "net"
@@ -61,7 +61,7 @@ And if you need to temporarily suppress a noisy analyzer in one project:
 
 If you are using Roslyn analyzers (common in modern .NET 10 solutions), also consider `.editorconfig` for severity control, because it is discoverable and keeps the policy close to the code:
 
-```xml
+```ini
 # .editorconfig
 [*.cs]
 dotnet_diagnostic.CA2007.severity = warning

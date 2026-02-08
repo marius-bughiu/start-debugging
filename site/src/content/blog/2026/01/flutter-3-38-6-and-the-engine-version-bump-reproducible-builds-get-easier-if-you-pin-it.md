@@ -1,6 +1,6 @@
 ---
 title: "Flutter 3.38.6 and the `engine.version` Bump: Reproducible Builds Get Easier (If You Pin It)"
-description: "Flutter 3.38.6 landed with an “engine.version bump” release entry, and that small phrase matters more than it looks. If your CI builds have ever drifted because one machine picked a slightly different engine artifact, pinning becomes the difference between “it works” and “we can reproduce this build next week”. Release entry: https://github.com/flutter/flutter/releases/tag/3.38.6 engine.version is the…"
+description: "Flutter 3.38.6 bumped engine.version, and that matters for reproducible builds. Learn how to pin the SDK in CI, avoid engine drift, and diagnose 'what changed' when builds break with no code changes."
 pubDate: 2026-01-08
 tags:
   - "flutter"

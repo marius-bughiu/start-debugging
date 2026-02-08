@@ -1,6 +1,6 @@
 ---
 title: "C# Convert Hex To Color"
-description: "Below you have an extension method that can help you convert any hex color code to a Color object. The method above can only convert 8 characters ARGB color codes.In order to convert simple RGB codes too we will check for the length of the string (9 = ARGB and 7 = RGB) and in…"
+description: "A C# extension method that converts hex color codes (both RGB and ARGB formats) to Color objects."
 pubDate: 2012-01-21
 updatedDate: 2023-11-05
 tags:
@@ -19,8 +19,8 @@ public static Color ToColor(this string hexColor)
 }
 ```
 
-The method above can only convert 8 characters ARGB color codes.  
-In order to convert simple RGB codes too we will check for the length of the string (9 = ARGB and 7 = RGB) and in case it’s 7 we will add the alpha to our string as FF ( 255 – opaque) and only then return the color.
+The method above can only convert 8-character ARGB color codes.
+In order to convert simple RGB codes too, we will check the length of the string (9 = ARGB and 7 = RGB) and in case it's 7, we will add the alpha to our string as FF (255 -- opaque) and only then return the color.
 
 ```cs
 public static Color ToColor(this string hexColor)
@@ -42,8 +42,10 @@ We should also do something in case the hex color code is not actually a hex col
 public static Color ToColor(this string hexColor)
 {
    string tempHexColor = string.Empty;
-   if (tempHexColor.Length == 7)
+   if (hexColor.Length == 7)
       tempHexColor = "#FF" + hexColor.Substring(1,6);
+   else
+      tempHexColor = hexColor;
    if (tempHexColor.Length != 9)
       tempHexColor = "#00000000";
    return Color.FromArgb(
@@ -59,5 +61,5 @@ How to use it:
 ```cs
 string myHexString = "#78196DFD";
 Color myColor = new Color();
-mycolor = myHexString.ToColor();
+myColor = myHexString.ToColor();
 ```

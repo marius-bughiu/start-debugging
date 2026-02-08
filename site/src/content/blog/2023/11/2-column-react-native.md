@@ -1,16 +1,16 @@
 ---
 title: "How to create a 2 column Flexbox layout in React Native"
-description: "Creating a two column layout in React Native, given a list of items, is quite a common task. This react native 2 column layout can be achieved quite easily using flex. The examble below shows how to achieve the two-column layout with spacing between the elements. This is our view: And this is our style:…"
+description: "Learn how to create a 2 column Flexbox layout in React Native using flex-wrap, with adjustable column counts and spacing between elements."
 pubDate: 2023-11-07
 updatedDate: 2023-11-15
 tags:
   - "react-native"
 ---
-Creating a two column layout in React Native, given a list of items, is quite a common task. This react native 2 column layout can be achieved quite easily using flex. The examble below shows how to achieve the two-column layout with spacing between the elements.
+Creating a two column layout in React Native, given a list of items, is quite a common task. This react native 2 column layout can be achieved quite easily using flex. The example below shows how to achieve the two-column layout with spacing between the elements.
 
 This is our view:
 
-```xml
+```jsx
 <View style={styles.container}>
     <View style={styles.itemContainer}><View style={styles.item}><Text>{'item1'}</Text></View></View>
     <View style={styles.itemContainer}><View style={styles.item}><Text>{'item2'}</Text></View></View>

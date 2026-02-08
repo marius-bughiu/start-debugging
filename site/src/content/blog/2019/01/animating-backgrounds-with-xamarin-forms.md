@@ -1,6 +1,6 @@
 ---
 title: "Animating backgrounds with Xamarin Forms"
-description: "I’ve started playing with animations in Xamarin Forms only recently and created a cool background animation for one of my apps (Charades for Dota 2) which I thought I would share. So without any extra introduction, this is the final result: The GIF is a bit jittery but that’s just because by PC can’t handle…"
+description: "Create a smooth animated background effect in Xamarin Forms using ScaleTo animations on layered BoxViews."
 pubDate: 2019-01-02
 updatedDate: 2023-11-05
 tags:
@@ -12,7 +12,7 @@ I’ve started playing with animations in Xamarin Forms only recently and create
 
 ![](/wp-content/uploads/2019/01/animations3.gif)
 
-The GIF is a bit jittery but that’s just because by PC can’t handle the emulator properly. On a device, the animations are smooth.
+The GIF is a bit jittery but that's just because my PC can't handle the emulator properly. On a device, the animations are smooth.
 
 Right, so how we did this: first, we pick the colors. In our case, we need 5 colors, one acting as the background for our app and 4 for the different layers that we want to animate. To make things easy – pick a [material color](https://material-ui.com/style/color/); we’ll be using the shades from 500 to 900. Add these colors as resources in your app or page.
 
@@ -26,7 +26,7 @@ Right, so how we did this: first, we pick the colors. In our case, we need 5 col
 </ContentPage.Resources>
 ```
 
-Next, setup your page so that you have 4 background layers – each layer being a `BoxView` with it’s own color. Notice how we order the colors from the darkest shade to the lightest.
+Next, setup your page so that you have 4 background layers – each layer being a `BoxView` with its own color. Notice how we order the colors from the darkest shade to the lightest.
 
 ```xml
 <Grid x:Name="LayoutRoot" BackgroundColor="{StaticResource Color900}">

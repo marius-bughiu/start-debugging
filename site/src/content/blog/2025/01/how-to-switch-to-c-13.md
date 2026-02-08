@@ -1,10 +1,10 @@
 ---
 title: "How to switch to C# 13"
-description: "While trying out C# 13 features, it’s possible you might come across errors similar to these: Feature is not available in C# 12.0. Please use language version 13.0 or later. or Error CS8652: The feature ‘<feature name>’ is currently in Preview and unsupported. To use Preview features, use the ‘preview’ language version. There are two…"
+description: "How to fix 'Feature is not available in C# 12.0' and switch your project to C# 13 by changing the target framework or setting LangVersion in your .csproj file."
 pubDate: 2025-01-01
 updatedDate: 2025-01-02
 tags:
-  - "c-13"
+  - "13"
   - "c-sharp"
   - "net"
   - "net-9"
@@ -42,7 +42,7 @@ The Language version cannot be changed from the **Properties** window of the pro
 
 If you must override the language version, you have to do it as specified above, by modifying the **.csproj** file and specifying the **LangVersion**.
 
-Remember that each C# language version has a minimum supportet .NET version. C# 13 is supported only on .NET 9 and newer versions. C# 12 is supported only on .NET 8 and newer versions.
+Remember that each C# language version has a minimum supported .NET version. C# 13 is supported only on .NET 9 and newer versions. C# 12 is supported only on .NET 8 and newer versions.
 
 ## C# LangVersion options
 
@@ -52,7 +52,7 @@ Besides the version numbers, there are certain keywords that can be used to spec
 -   **latest** – the latest released version (including minor version)
 -   **latestMajor** or **default** – the latest released major version
 
-#### Not what you’re looking for?
+## Not what you're looking for?
 
 You might be looking to switch to a different version of C#, in that case:
 

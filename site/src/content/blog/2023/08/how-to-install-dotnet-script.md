@@ -41,7 +41,7 @@ This will create your script file along with the launch configuration needed to 
 
 ## Implicit usings
 
-dotnet script comes with some namespaces included by default, similar to the implicit usings feature you’re used with in .NET SDK projects. Below you have the full list of namespaces implicitly available in dotnet-script.
+dotnet script comes with some namespaces included by default, similar to the implicit usings feature you're used to in .NET SDK projects. Below you have the full list of namespaces implicitly available in dotnet-script.
 
 ```cs
 System

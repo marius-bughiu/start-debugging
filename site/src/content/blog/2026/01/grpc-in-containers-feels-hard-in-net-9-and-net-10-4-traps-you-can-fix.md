@@ -1,6 +1,6 @@
 ---
 title: "gRPC in Containers Feels “Hard” in .NET 9 and .NET 10: 4 Traps You Can Fix"
-description: "This popped up again today in r/dotnet: “Why is hosting gRPC services in containers so hard?” The short answer is that gRPC is opinionated about HTTP/2, and containers make the network edge more explicit. You are forced to decide where TLS terminates, which ports speak HTTP/2, and what proxy sits in front. Source discussion: https://www.reddit.com/r/dotnet/comments/1q93h2h/why_is_hosting_grpc_services_in_containers_so_hard/…"
+description: "Four common traps when hosting gRPC in containers with .NET 9 and .NET 10: HTTP/2 protocol mismatches, TLS termination confusion, broken health checks, and proxy misconfiguration -- with fixes for each."
 pubDate: 2026-01-10
 tags:
   - "grpc"
@@ -10,7 +10,7 @@ tags:
 ---
 This popped up again today in r/dotnet: “Why is hosting gRPC services in containers so hard?” The short answer is that gRPC is opinionated about HTTP/2, and containers make the network edge more explicit. You are forced to decide where TLS terminates, which ports speak HTTP/2, and what proxy sits in front.
 
-Source discussion: [https://www.reddit.com/r/dotnet/comments/1q93h2h/why\_is\_hosting\_grpc\_services\_in\_containers\_so\_hard/](https://www.reddit.com/r/dotnet/comments/1q93h2h/why_is_hosting_grpc_services_in_containers_so_hard/)
+Source discussion: [https://www.reddit.com/r/dotnet/comments/1q93h2h/why_is_hosting_grpc_services_in_containers_so_hard/](https://www.reddit.com/r/dotnet/comments/1q93h2h/why_is_hosting_grpc_services_in_containers_so_hard/)
 
 ## Trap 1: Your container port is reachable, but not speaking HTTP/2
 

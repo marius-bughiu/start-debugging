@@ -1,6 +1,6 @@
 ---
 title: "System.Text.Json – Disable reflection-based serialization"
-description: "Starting with .NET 8 you can disable the default reflection-based serializer that comes with System.Text.Json. This can be useful in trimmed and native AOT applications where you don’t want to include the reflection components in your build. You can enable this feature by setting the JsonSerializerIsReflectionEnabledByDefault property to false in your .csproj file. As a…"
+description: "Learn how to disable reflection-based serialization in System.Text.Json starting with .NET 8 for trimmed and native AOT applications using the JsonSerializerIsReflectionEnabledByDefault property."
 pubDate: 2023-10-21
 updatedDate: 2023-11-05
 tags:

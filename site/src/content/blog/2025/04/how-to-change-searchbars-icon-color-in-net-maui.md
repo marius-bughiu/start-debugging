@@ -1,6 +1,6 @@
 ---
 title: "How to change SearchBar’s icon color in .NET MAUI"
-description: "Starting with .NET 10, MAUI’s search bar comes with a new property for changing the SearchBar‘s search icon color: SearchIconColor. As with any dependency property, you can assign it a color value like Purple or bind it to a resource as follows:"
+description: "How to change the SearchBar icon color in .NET MAUI using the new SearchIconColor property introduced in .NET 10."
 pubDate: 2025-04-10
 tags:
   - "maui"
@@ -11,7 +11,7 @@ Starting with .NET 10, MAUI’s search bar comes with a new property for changin
 
 [![](/wp-content/uploads/2025/04/image.png)](/wp-content/uploads/2025/04/image.png)
 
-As with any dependency property, you can assign it a color value like `Purple` or bind it to a resource as follows:
+As with any bindable property, you can assign it a color value like `Purple` or bind it to a resource as follows:
 
 ```xml
 <Grid>

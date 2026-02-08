@@ -1,13 +1,13 @@
 ---
 title: ".NET 8 Performance: UnsafeAccessor vs. Reflection"
-description: "In a previous article we covered how to access private members using UnsafeAccessor. This time around, we want to look at it’s performance compared to Reflection, and to see whether it’s truly zero-overhead or not. We’re going to do four benchmarks. If you want to run the benchmarks yourself, you have the code below: Benchmark…"
+description: "Benchmarking UnsafeAccessor vs Reflection in .NET 8. See how UnsafeAccessor achieves zero-overhead performance compared to traditional reflection."
 pubDate: 2023-11-01
 tags:
   - "c-sharp"
   - "net"
   - "net-8"
 ---
-In a previous article we covered [how to access private members using `UnsafeAccessor`](/2023/10/unsafe-accessor/). This time around, we want to look at it’s performance compared to Reflection, and to see whether it’s truly zero-overhead or not.
+In a previous article we covered [how to access private members using `UnsafeAccessor`](/2023/10/unsafe-accessor/). This time around, we want to look at its performance compared to Reflection, and to see whether it’s truly zero-overhead or not.
 
 We’re going to do four benchmarks.
 
@@ -48,7 +48,7 @@ public class Benchmarks
 
 ## Benchmark results
 
-```javascript
+```plaintext
 | Method              | Mean       | Error     | StdDev    |
 |-------------------- |-----------:|----------:|----------:|
 | Reflection          | 35.9979 ns | 0.1670 ns | 0.1562 ns |
@@ -57,7 +57,7 @@ public class Benchmarks
 | DirectAccess        |  0.0028 ns | 0.0024 ns | 0.0023 ns |
 ```
 
-The results are quite impressive. Comparing direct access to unsafe accessor, there’s literally no difference. The few nanoseconds diference between the two can be discarded as noise – in fact, if you run the benchmarks a few times, you might even get instances where unsafe accessors are faster. That’s perfectly normal, and it’s basically telling us that the two are equivalent – thus zero-overhead.
+The results are quite impressive. Comparing direct access to unsafe accessor, there’s literally no difference. The few nanoseconds difference between the two can be discarded as noise – in fact, if you run the benchmarks a few times, you might even get instances where unsafe accessors are faster. That’s perfectly normal, and it’s basically telling us that the two are equivalent – thus zero-overhead.
 
 There’s almost no point in comparing `UnsafeAccessor` to reflection. Performance-wise you have no overhead, and as a bonus you also get all the sugar that comes with having an actual method signature.
 

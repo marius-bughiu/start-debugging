@@ -1,6 +1,6 @@
 ---
 title: "CV Shortlist: an AI-powered .NET 10 SaaS went open-source, and the stack is worth studying"
-description: "A C# post I bookmarked today is not “another demo app”. It is a full, opinionated SaaS that was built as a commercial product, then open-sourced as an educational reference: CV Shortlist. Source: CV Shortlist repo and the original r/csharp post. The useful part is the integration boundary, not the UI Most AI sample apps…"
+description: "CV Shortlist is an open-source .NET 10 SaaS that pairs Azure Document Intelligence with an OpenAI model. The stack, config discipline, and AI integration boundary are worth studying."
 pubDate: 2026-01-18
 tags:
   - "c-sharp"

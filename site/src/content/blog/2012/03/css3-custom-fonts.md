@@ -1,12 +1,12 @@
 ---
 title: "CSS How to use Custom Fonts"
-description: "CSS3 allows the use of custom fonts trough the @font-face rule. They are really easy to add and the syntax looks like this: This declares a font for use within your web page. An example would be: Now to apply the custom font to your text you can use the font-family property: A great source…"
+description: "Learn how to use custom fonts in CSS3 with the @font-face rule, including syntax examples and a demo."
 pubDate: 2012-03-02
 updatedDate: 2023-11-05
 tags:
   - "css"
 ---
-CSS3 allows the use of custom fonts trough the `@font-face` rule. They are really easy to add and the syntax looks like this:
+CSS3 allows the use of custom fonts through the `@font-face` rule. They are really easy to add and the syntax looks like this:
 
 ```css
 @font-face {
@@ -26,7 +26,7 @@ This declares a font for use within your web page. An example would be:
 
 Now to apply the custom font to your text you can use the font-family property:
 
-```xml
+```html
 <h1 style="font-family: CODEBold">Start Debugging</h1>
 ```
 

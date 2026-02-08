@@ -1,6 +1,6 @@
 ---
 title: "How to switch to C# 11"
-description: "Feature is not available in C# 10.0. Please use language version 11.0 or later. There are two ways to approach this: Language version is greyed out and cannot be modified The Language version cannot be changed from the Properties window of the project. The version is linked to the target .NET framework version of your…"
+description: "Fix the 'Feature is not available in C# 10.0' error by switching to C# 11 via target framework or LangVersion in your .csproj file."
 pubDate: 2023-03-14
 updatedDate: 2023-11-05
 tags:
@@ -33,7 +33,7 @@ The Language version cannot be changed from the **Properties** window of the pro
 
 If you must override the language version, you have to do it as specified above, by modifying the **.csproj** file and specifying the **LangVersion**.
 
-Remember that each C# language version has a minimum supportet .NET version. C# 11 is supported only on .NET 7 and newer versions. C# 10 is supported only on .NET 6 and newer versions. C# 9 is supported only on .NET 5 and newer versions.
+Remember that each C# language version has a minimum supported .NET version. C# 11 is supported only on .NET 7 and newer versions. C# 10 is supported only on .NET 6 and newer versions. C# 9 is supported only on .NET 5 and newer versions.
 
 ## C# LangVersion options
 

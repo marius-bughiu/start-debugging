@@ -1,6 +1,6 @@
 ---
 title: "C# 11 – Raw string literals"
-description: "Raw string literals are a new format which enables you to include whitespace, new lines, embedded quotes, and other special characters in your string, without requiring escape sequences. How does it work: A quick example: This will output the following: Whitespace before the closing sequence The whitespace before the closing double-quotes controls the whitespace which…"
+description: "Learn how to use C# 11 raw string literals to include whitespace, new lines, and embedded quotes without escape sequences."
 pubDate: 2023-03-15
 updatedDate: 2023-11-05
 tags:
@@ -37,7 +37,7 @@ Lorem ipsum "dolor" sit amet,
 
 The whitespace before the closing double-quotes controls the whitespace which is removed from your raw string expression. In the example above, we had 4 white spaces before the **“””** sequence, so four spaces were removed from each line of the expression. If we only had 2 white spaces before the end sequence, only 2 white space characters would have been removed from each line of the raw string.
 
-#### Example: No whitespace before the end sequence
+### Example: No whitespace before the end sequence
 
 In the previous example – if we didn’t specify any whitespace before the end sequence, the resulting string would maintain the indentation exactly as it was.
 

@@ -1,6 +1,6 @@
 ---
 title: "Dart 3.12 dev tags are moving fast: How to read them (and what to do) as a Flutter 3.x developer"
-description: "The Dart SDK release feed has been unusually active over the last 48 hours, with multiple Dart 3.12 dev tags landing back-to-back (for example 3.12.0-12.0.dev). Even if you ship Flutter 3.x stable, these tags matter because they are an early signal for upcoming language, analyzer, and VM changes. Source: Dart SDK 3.12.0-12.0.dev A dev tag…"
+description: "Dart 3.12 dev tags are landing fast. Here is how to read the version string, pin a dev SDK in CI, and triage failures so your Flutter 3.x migration is a small PR instead of a fire drill."
 pubDate: 2026-01-10
 tags:
   - "dart"

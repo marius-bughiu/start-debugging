@@ -1,11 +1,11 @@
 ---
 title: "Flutter Particles 2.0.2: a quick tour (and a tiny integration snippet) on Flutter 3.x"
-description: "If you build Flutter UIs that need “life” (ambient background motion, subtle celebration effects, loading screens that are not boring), particle systems are one of the highest leverage tools you can add. A release thread from the last 48 hours announces particles_flutter 2.0.2 with a real feature bump: shapes, rotation, boundary behaviors, and emitters: https://www.reddit.com/r/FlutterDev/comments/1qfjp1g/just_released_flutter_particles_200_major/…."
+description: "particles_flutter 2.0.2 adds particle shapes, rotation, boundary modes, and emitters. A quick tour of what changed and a tiny integration snippet for Flutter 3.x projects."
 pubDate: 2026-01-23
 tags:
   - "flutter"
 ---
-If you build Flutter UIs that need “life” (ambient background motion, subtle celebration effects, loading screens that are not boring), particle systems are one of the highest leverage tools you can add. A release thread from the last 48 hours announces `particles_flutter` 2.0.2 with a real feature bump: shapes, rotation, boundary behaviors, and emitters: [https://www.reddit.com/r/FlutterDev/comments/1qfjp1g/just\_released\_flutter\_particles\_200\_major/](https://www.reddit.com/r/FlutterDev/comments/1qfjp1g/just_released_flutter_particles_200_major/).
+If you build Flutter UIs that need “life” (ambient background motion, subtle celebration effects, loading screens that are not boring), particle systems are one of the highest leverage tools you can add. A release thread from the last 48 hours announces `particles_flutter` 2.0.2 with a real feature bump: shapes, rotation, boundary behaviors, and emitters: [https://www.reddit.com/r/FlutterDev/comments/1qfjp1g/just_released_flutter_particles_200_major/](https://www.reddit.com/r/FlutterDev/comments/1qfjp1g/just_released_flutter_particles_200_major/).
 
 Upstream:
 
@@ -77,4 +77,4 @@ When you wire the real particle widget in, aim for predictable defaults:
 -   Prefer preloaded images over runtime decoding.
 -   Pause effects when the screen is not visible.
 
-If you want the authoritative API surface, use the upstream docs and examples as the source of truth: [https://pub.dev/packages/particles\_flutter and https://github.com/rajajain08/particles\_flutter](https://pub.dev/packages/particles_flutter and https://github.com/rajajain08/particles_flutter).
+If you want the authoritative API surface, use the upstream docs and examples as the source of truth: [pub.dev](https://pub.dev/packages/particles_flutter) and [GitHub](https://github.com/rajajain08/particles_flutter).

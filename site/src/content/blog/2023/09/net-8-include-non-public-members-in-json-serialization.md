@@ -1,6 +1,6 @@
 ---
-title: "NET 8 – Include non-public members in JSON serialization"
-description: "Starting with .NET 8 you can include non public properties in the serialization when using System.Text.Json. To do so, simply decorate the non-public property with the JsonIncludeAttribute attribute. The attribute works with any non-public modifier, such as private, protected or internal. Let’s look at an example: As expected, this will output the following:"
+title: ".NET 8 – Include non-public members in JSON serialization"
+description: "Learn how to include private, protected, and internal properties in JSON serialization in .NET 8 using the JsonInclude attribute."
 pubDate: 2023-09-05
 updatedDate: 2023-11-05
 tags:
@@ -8,7 +8,7 @@ tags:
   - "net"
   - "net-8"
 ---
-Starting with .NET 8 you can include non public properties in the serialization when using `System.Text.Json.` To do so, simply decorate the non-public property with the [JsonIncludeAttribute](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.serialization.jsonincludeattribute?view=net-8.0) attribute.
+Starting with .NET 8 you can include non-public properties in the serialization when using `System.Text.Json`. To do so, simply decorate the non-public property with the [JsonIncludeAttribute](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.serialization.jsonincludeattribute?view=net-8.0) attribute.
 
 ```cs
 [System.AttributeUsage(System.AttributeTargets.Field | System.AttributeTargets.Property, AllowMultiple=false)]

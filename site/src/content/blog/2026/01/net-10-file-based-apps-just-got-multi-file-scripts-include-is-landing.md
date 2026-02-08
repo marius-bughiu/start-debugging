@@ -1,6 +1,6 @@
 ---
 title: ".NET 10 file-based apps just got multi-file scripts: `#:include` is landing"
-description: "The .NET 10 “file-based apps” story keeps getting more practical. A new SDK pull request adds support for #:include, which means dotnet run foo.cs no longer has to be “one file or nothing”. This is tracked in the SDK as “File-based apps: add support for #:include” and it’s meant to solve the obvious scripting use…"
+description: ".NET 10 adds #:include support for file-based apps, letting dotnet run scripts span multiple .cs files without creating a full project."
 pubDate: 2026-01-10
 tags:
   - "net"
@@ -23,7 +23,7 @@ The desired behavior is spelled out in the SDK issue: `dotnet run file.cs` shoul
 
 With `#:include`, the main file can pull in other `.cs` files so the compiler sees a single compilation unit for the run. It’s the missing bridge between “script feel” and “real code organization”.
 
-This is not a C# language feature, it’s a .NET SDK capability for file-based apps. That matters because it can evolve quickly in .NET 10 previews without waiting for a language version.
+This is not a C# language feature; it's a .NET SDK capability for file-based apps. That matters because it can evolve quickly in .NET 10 previews without waiting for a language version.
 
 ## A tiny multi-file script you can actually run
 

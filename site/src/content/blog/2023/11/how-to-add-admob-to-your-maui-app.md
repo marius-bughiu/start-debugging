@@ -1,6 +1,6 @@
 ---
 title: "How to: Add AdMob to your MAUI app"
-description: "One of the first things people think about when developing for a new platform / using a new technology is monetization; and in my case the question is: how easy is it to integrate AdMob? For .NET MAUI the answer would be: “It depends” – it depends on luck & on the complexity of what…"
+description: "Learn how to display AdMob banner ads in your .NET MAUI app on both Android and iOS, with step-by-step setup and platform-specific handler implementations."
 pubDate: 2023-11-17
 tags:
   - "maui"
@@ -151,7 +151,7 @@ With the platform-specific handlers implemented, we can go ahead and use the `Ba
 <admob:BannerAd AdUnitId="ca-app-pub-3940256099942544/6300978111" />
 ```
 
-And that’s it! If your run the app, you should now see a test ad being displayed on both platforms.
+And that's it! If you run the app, you should now see a test ad being displayed on both platforms.
 
 ### Read next
 

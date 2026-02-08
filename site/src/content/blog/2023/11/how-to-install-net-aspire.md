@@ -1,6 +1,6 @@
 ---
 title: "How to install .NET Aspire"
-description: ".NET Aspire is a comprehensive, cloud-oriented framework designed for creating scalable, observable, and production-grade distributed applications. In this article we’ll look at the prerequisites of getting started with .NET Aspire. If you want an overview of .NET Aspire and what it brings to the table, check out our What is .NET Aspire article. There are…"
+description: "Learn how to install the prerequisites for .NET Aspire development: .NET 8, the Aspire workload, and Docker Desktop."
 pubDate: 2023-11-15
 tags:
   - "aspire"
@@ -10,9 +10,9 @@ tags:
 
 There are three main things you will need in order to develop applications using .NET Aspire:
 
--   [.NET 8](/#net8)
--   the [.NET Aspire workload](/#net-aspire-workload)
--   and [Docker for Desktop](/#docker-desktop)
+-   [.NET 8](#install-net-8)
+-   the [.NET Aspire workload](#install-the-net-aspire-workload)
+-   and [Docker Desktop](#install-docker-desktop)
 
 If you are planning to use Visual Studio for developing your application, note that you will need to use Visual Studio 2022 Preview, version 17.9 or higher.
 

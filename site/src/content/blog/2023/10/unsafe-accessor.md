@@ -1,6 +1,6 @@
 ---
 title: "How to access private members without reflection in C#"
-description: "Reflection allows you to obtain type information at runtime and to access private members of a class using that information. This can be particularly useful when dealing with classes outside of your control – provided by a third-party package. While powerful, reflection is also very slow, which is one of the main deterrents in using…"
+description: "Learn how to access private members in C# without reflection using the UnsafeAccessor attribute introduced in .NET 8, with zero overhead."
 pubDate: 2023-10-31
 updatedDate: 2023-11-05
 tags:
@@ -95,7 +95,7 @@ Console.WriteLine(InstanceGetter(instance1));
 
 ## Static methods and properties
 
-They behave identical to the instance members, the only difference being that you have to specify `UnsafeAccessorKind.StaticMethod` in the `UnsafeAccessor` attribute. You even need to provide an object instance of that type when making the call.
+They behave identically to the instance members, the only difference being that you have to specify `UnsafeAccessorKind.StaticMethod` in the `UnsafeAccessor` attribute. You even need to provide an object instance of that type when making the call.
 
 What about `static` classes? Static classes are not currently supported by `UnsafeAccessor`s. There’s currently an API proposal that aims to bridge the gap, targeting .NET 9: [\[API Proposal\]: UnsafeAccessorTypeAttribute for static or private type access](https://github.com/dotnet/runtime/issues/90081)
 
@@ -130,4 +130,4 @@ InstanceField(instance1) = 3;
 StaticField(instance1) = 4;
 ```
 
-Want to give this feature for a spin? You can [find all the examples above on GitHub](https://github.com/Start-Debugging/dotnet-samples/blob/main/unsafe-accessor/UnsafeAccessor/Program.cs).
+Want to give this feature a spin? You can [find all the examples above on GitHub](https://github.com/Start-Debugging/dotnet-samples/blob/main/unsafe-accessor/UnsafeAccessor/Program.cs).

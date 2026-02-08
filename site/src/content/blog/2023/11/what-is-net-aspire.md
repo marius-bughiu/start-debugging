@@ -1,13 +1,13 @@
 ---
 title: "What is .NET Aspire?"
-description: ".NET Aspire is a comprehensive, cloud-oriented framework designed for creating scalable, observable, and production-grade distributed applications. It was introduced in preview part of the .NET 8 release. The framework is provided through a set of NuGet packages, each addressing different aspects of cloud-native application development, which are typically structured as a network of microservices rather…"
+description: "An overview of .NET Aspire, the cloud-oriented framework for building scalable distributed applications, covering orchestration, components, and tooling."
 pubDate: 2023-11-14
 updatedDate: 2023-11-16
 tags:
   - "aspire"
   - "net"
 ---
-.NET Aspire is a comprehensive, cloud-oriented framework designed for creating scalable, observable, and production-grade distributed applications. It was introduced in preview part of the .NET 8 release.
+.NET Aspire is a comprehensive, cloud-oriented framework designed for creating scalable, observable, and production-grade distributed applications. It was introduced in preview as part of the .NET 8 release.
 
 The framework is provided through a set of NuGet packages, each addressing different aspects of cloud-native application development, which are typically structured as a network of microservices rather than a single, large codebase, and rely heavily on a variety of services like databases, messaging systems, and caching solutions.
 

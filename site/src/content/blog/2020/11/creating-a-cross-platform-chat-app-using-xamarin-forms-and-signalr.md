@@ -1,6 +1,6 @@
 ---
 title: "Creating a cross-platform chat app using Xamarin Forms and SignalR"
-description: "In less than 5 minutes. First step is to create your Xamarin Forms projects – start with a blank shell app – and add an additional blank ASP.NET Core project to the solution – we will use it to host our SignalR backend. Once the projects are setup, we begin by implementing the ChatHub which…"
+description: "Build a cross-platform real-time chat app in under 5 minutes using Xamarin Forms for the client and ASP.NET Core SignalR for the backend."
 pubDate: 2020-11-09
 updatedDate: 2023-11-05
 tags:
@@ -12,7 +12,7 @@ In less than 5 minutes.
 
 First step is to create your Xamarin Forms projects – start with a blank shell app – and add an additional blank ASP.NET Core project to the solution – we will use it to host our SignalR backend.
 
-Once the projects are setup, we begin by implementing the `ChatHub` which in our case is really basic.
+Once the projects are set up, we begin by implementing the `ChatHub` which in our case is really basic.
 
 ```cs
 public class ChatHub : Hub
@@ -32,7 +32,7 @@ All that’s left to do is to register SignalR and the ChatHub and we’re done 
 services.AddSignalR();
 ```
 
-And inside the `Configure` method add and endpoint mapping for your hub. You already have a default mapping in there, so just add it next to it. This is how it should look:
+And inside the `Configure` method add an endpoint mapping for your hub. You already have a default mapping in there, so just add it next to it. This is how it should look:
 
 ```cs
 app.UseEndpoints(endpoints =>
@@ -46,7 +46,7 @@ app.UseEndpoints(endpoints =>
         });
 ```
 
-Build and run the web project, if everything is ok, you will see “Hello World!” in your browser window.
+Build and run the web project. If everything is OK, you will see "Hello World!" in your browser window.
 
 ## The Xamarin client
 

@@ -1,6 +1,6 @@
 ---
 title: "C# How to update a readonly field using UnsafeAccessor"
-description: "Unsafe accessors can be used to access private members of a class, just like you would with reflection. And the same can be said about changing the value of a readonly field. Let’s assume the following class: Let’s say that for some reason you want to change the value of that read-only field. You could…"
+description: "Learn how to update a readonly field in C# using UnsafeAccessor, an alternative to reflection without the performance penalty. Available in .NET 8."
 pubDate: 2023-11-02
 tags:
   - "c-sharp"
@@ -30,7 +30,7 @@ typeof(Foo)
 Console.WriteLine(instance.readonlyField); // 42
 ```
 
-But the same can be achieved using the `UnsafeAccessorAttribute` without the performance penalty associated with reflection. Modifying read only fields is no different than modifying any other field when it comes to unsafe accessors.
+But the same can be achieved using the `UnsafeAccessorAttribute` without the performance penalty associated with reflection. Modifying readonly fields is no different than modifying any other field when it comes to unsafe accessors.
 
 ```cs
 var instance = new Foo();

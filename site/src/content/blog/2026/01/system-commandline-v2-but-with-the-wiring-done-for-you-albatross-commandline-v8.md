@@ -1,6 +1,6 @@
 ---
 title: "System.CommandLine v2, but with the wiring done for you: `Albatross.CommandLine` v8"
-description: "System.CommandLine v2 shipped with a much cleaner focus: parsing first, a simplified execution pipeline, fewer “magic” behaviors. That’s great, but most real CLIs still end up with repetitive plumbing: DI setup, handler binding, shared options, cancellation, and hosting. Albatross.CommandLine v8 is a fresh take on that exact gap. It builds on System.CommandLine v2 and adds…"
+description: "Albatross.CommandLine v8 builds on System.CommandLine v2 with a source generator, DI integration, and hosting layer to eliminate CLI boilerplate in .NET 9 and .NET 10 apps."
 pubDate: 2026-01-10
 tags:
   - "net"

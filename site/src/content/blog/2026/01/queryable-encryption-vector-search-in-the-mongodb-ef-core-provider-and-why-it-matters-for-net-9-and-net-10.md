@@ -1,6 +1,6 @@
 ---
 title: "Queryable Encryption + Vector Search in the MongoDB EF Core Provider (and why it matters for .NET 9 and .NET 10)"
-description: "Microsoft published a nice security-meets-search update on Jan 7, 2026: the MongoDB EF Core provider now supports Queryable Encryption (equality and range) and vector search from an EF Core style LINQ surface. If your .NET 9 or .NET 10 app already speaks EF Core fluently, this is one of those features that can reduce the…"
+description: "The MongoDB EF Core provider now supports Queryable Encryption and vector search. Here is what that means for .NET 9 and .NET 10 apps that already use EF Core."
 pubDate: 2026-01-08
 tags:
   - "net"
@@ -10,7 +10,7 @@ Microsoft published a nice security-meets-search update on Jan 7, 2026: the Mong
 
 ### Encrypted queries that still look like LINQ
 
-Queryable Encryption is interesting because it is not just “encrypt at rest”. The point is that you can still express _equality_ and _range_ predicates, while keeping sensitive fields encrypted.
+Queryable Encryption is interesting because it is not just "encrypt at rest." The point is that you can still express _equality_ and _range_ predicates while keeping sensitive fields encrypted.
 
 The mapping is explicit in `OnModelCreating`. The post shows encryption configuration like this:
 
@@ -45,7 +45,7 @@ The big win is architectural: you can keep query intent in code reviews (who is 
 
 ### Vector search from your DbContext
 
-Vector search is showing up everywhere because “search” is shifting from keyword matching to similarity matching. The provider adds mapping for vector fields and a vector search query API.
+Vector search is showing up everywhere because search is shifting from keyword matching to similarity matching. The provider adds mapping for vector fields and a vector search query API.
 
 From the DevBlogs post, you map a float array as a binary vector:
 

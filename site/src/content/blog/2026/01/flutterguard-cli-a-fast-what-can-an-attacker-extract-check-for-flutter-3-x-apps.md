@@ -1,6 +1,6 @@
 ---
 title: "FlutterGuard CLI: A Fast “What Can an Attacker Extract?” Check for Flutter 3.x Apps"
-description: "The last 48 hours brought a new open-source tool to the Flutter ecosystem: FlutterGuard CLI, shared as “just released” in r/FlutterDev. If you ship Flutter 3.x apps and your security review is still a spreadsheet plus guesswork, this is a nice, practical trigger to tighten your build outputs and verify what you are leaking. Source:…"
+description: "FlutterGuard CLI scans your Flutter 3.x build artifacts for leaked secrets, debug symbols, and metadata. A practical workflow for integrating it into CI and handling what it finds."
 pubDate: 2026-01-10
 tags:
   - "flutter"

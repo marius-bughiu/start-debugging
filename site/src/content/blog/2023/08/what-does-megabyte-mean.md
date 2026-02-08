@@ -1,6 +1,6 @@
 ---
 title: "What does megabyte mean?"
-description: "The megabyte is a unit of digital information, denoted by the symbol MB. In the International System of Units (SI), the prefix “mega” represents a multiplier of 1,000,000 (10^6). Hence, one megabyte is equivalent to one million bytes of information, and this definition is now an integral part of the International System of Quantities. However,…"
+description: "A megabyte (MB) equals one million bytes in the SI system, but can also mean 1,048,576 bytes in computing. Learn about the different definitions and conventions."
 pubDate: 2023-08-08
 tags:
   - "informational"
@@ -9,7 +9,7 @@ The megabyte is a unit of digital information, denoted by the symbol MB. In the 
 
 However, in the computer and information technology fields, alternative definitions have been utilized due to historical convenience. One common usage designates a megabyte as 1,048,576 bytes (2^20 B), which conveniently aligns with the binary architecture of digital computer memory. This definition has been deprecated by standards bodies in favor of a new set of binary prefixes. The unit “mebibyte” (MiB) is now used to represent this specific quantity of 1,048,576 bytes.
 
-If you want a more detailed explanation on the diference between a mebibyte and a megabyte, check out this article: [What is the difference between MB and MiB?](/2020/08/what-is-the-difference-between-a-megabyte-mb-and-a-mebibyte-mib/)
+If you want a more detailed explanation on the difference between a mebibyte and a megabyte, check out this article: [What is the difference between MB and MiB?](/2020/08/what-is-the-difference-between-a-megabyte-mb-and-a-mebibyte-mib/)
 
 ## Definitions
 

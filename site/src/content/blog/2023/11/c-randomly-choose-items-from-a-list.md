@@ -1,13 +1,13 @@
 ---
 title: "C# Randomly choose items from a list"
-description: "In C#, you can randomly slect items from a list using Random.GetItems, a method introduced in .NET 8. The method takes in two parameters: There are two important things to note about this method: With all this being said, let’s take a few examples. Let’s assume the following array of choices: For selecting 2 random…"
+description: "In C#, you can randomly select items from a list using Random.GetItems, a method introduced in .NET 8. Learn how it works with practical examples."
 pubDate: 2023-11-12
 tags:
   - "c-sharp"
   - "net"
   - "net-8"
 ---
-In C#, you can randomly slect items from a list using `Random.GetItems`, a method introduced in .NET 8.
+In C#, you can randomly select items from a list using `Random.GetItems`, a method introduced in .NET 8.
 
 ```cs
 public T[] GetItems<T>(T[] choices, int length)
@@ -41,7 +41,7 @@ For selecting 2 random fruits from that list, we simply call:
 var chosen = Random.Shared.GetItems(fruits, 2);
 ```
 
-Now, as I’ve said before, the two chosen fruits are not necessarily unique. You could end up for example with `[ "kiwi", "kiwi" ]` as your `chosen` array. You can test this out easily with a d-while:
+Now, as I’ve said before, the two chosen fruits are not necessarily unique. You could end up for example with `[ "kiwi", "kiwi" ]` as your `chosen` array. You can test this out easily with a do-while:
 
 ```cs
 string[] chosen = null;

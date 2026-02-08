@@ -1,6 +1,6 @@
 ---
 title: "Monitor Background Jobs in .NET 9 and .NET 10 Without Hangfire: Health + Metrics + Alerts"
-description: "This question came up today in r/dotnet: “How do you monitor and alert on background jobs in .NET (without Hangfire)?” The main mistake is thinking “the service is up” means “the job is running”. For background work you need a liveness signal that is tied to job progress. Source discussion: https://www.reddit.com/r/dotnet/comments/1q86tv7/how_do_you_monitor_alert_on_background_jobs_in/ The three signals that…"
+description: "Monitor BackgroundService jobs in .NET 9 and .NET 10 without Hangfire using heartbeat health checks, duration metrics, and failure alerts with a practical code example."
 pubDate: 2026-01-10
 tags:
   - "net"

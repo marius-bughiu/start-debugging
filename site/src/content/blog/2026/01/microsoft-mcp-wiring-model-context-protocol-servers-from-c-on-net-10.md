@@ -1,6 +1,6 @@
 ---
 title: "Microsoft `mcp`: Wiring Model Context Protocol Servers from C# on .NET 10"
-description: "Today’s GitHub Trending (C#, daily) includes microsoft/mcp, Microsoft’s repo for Model Context Protocol (MCP). If you are building internal tools on .NET 10 and you want a clean boundary between an LLM client and your real systems (files, tickets, databases, CI), MCP is the shape to watch. Source: microsoft/mcp The useful shift: tools become a…"
+description: "How to wire Model Context Protocol (MCP) servers in C# on .NET 10 using microsoft/mcp. Covers tool contracts, input validation, auth, observability, and production-readiness patterns."
 pubDate: 2026-01-10
 tags:
   - "14"

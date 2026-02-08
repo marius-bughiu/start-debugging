@@ -1,6 +1,6 @@
 ---
 title: ".NET 10: Stack allocation of arrays of value types"
-description: "Starting with .NET 9, the JIT compiler got smarter about how it allocates memory for objects. If it can tell that an object won’t be used after the method where it was created ends, it can put that object on the stack instead of the heap. This is a big win for performance because the…"
+description: "In .NET 10, the JIT can stack-allocate small fixed-size arrays of value types, eliminating heap allocations and delivering up to 60% faster performance compared to .NET 9."
 pubDate: 2025-04-12
 tags:
   - "net"

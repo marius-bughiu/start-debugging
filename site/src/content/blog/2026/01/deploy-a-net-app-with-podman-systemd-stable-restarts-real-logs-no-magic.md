@@ -1,6 +1,6 @@
 ---
 title: "Deploy a .NET App with Podman + systemd: Stable Restarts, Real Logs, No Magic"
-description: "This showed up in r/dotnet today: people are still looking for a “boring deployment” story for .NET services that is not Kubernetes and not a fragile nohup script. If you are on a Linux VM, Podman plus systemd is a solid middle ground: a containerized app managed like a real service. Source discussion: https://www.reddit.com/r/dotnet/comments/1q8gq1u/how_to_deploy_net_applications_with_systemd_and/ Why…"
+description: "Deploy .NET 9 and .NET 10 services on a Linux VM using Podman and systemd. Get stable restarts, real logs via journald, and a containerized app managed like a proper service -- no Kubernetes required."
 pubDate: 2026-01-10
 tags:
   - "docker"
@@ -8,7 +8,7 @@ tags:
 ---
 This showed up in r/dotnet today: people are still looking for a “boring deployment” story for .NET services that is not Kubernetes and not a fragile `nohup` script. If you are on a Linux VM, Podman plus systemd is a solid middle ground: a containerized app managed like a real service.
 
-Source discussion: [https://www.reddit.com/r/dotnet/comments/1q8gq1u/how\_to\_deploy\_net\_applications\_with\_systemd\_and/](https://www.reddit.com/r/dotnet/comments/1q8gq1u/how_to_deploy_net_applications_with_systemd_and/)
+Source discussion: [https://www.reddit.com/r/dotnet/comments/1q8gq1u/how_to_deploy_net_applications_with_systemd_and/](https://www.reddit.com/r/dotnet/comments/1q8gq1u/how_to_deploy_net_applications_with_systemd_and/)
 
 ## Why this works well for .NET 9 and .NET 10 services
 
@@ -46,7 +46,7 @@ podman run -d --name myapp -p 8080:8080 myapp:1
 
 ## Let systemd own it (the useful part)
 
-Podman can generate a unit file that systemd understands:
+Podman can generate a unit file that systemd understands. Note: `podman generate systemd` is deprecated in Podman 4.4+ in favor of [Quadlet](https://docs.podman.io/en/latest/markdown/podman-systemd.unit.5.html), but the generated output still works and shows the concept clearly:
 
 ```bash
 podman generate systemd --new --name myapp --files

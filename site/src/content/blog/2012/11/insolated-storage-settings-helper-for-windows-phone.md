@@ -1,6 +1,6 @@
 ---
-title: "Insolated Storage Settings Helper for Windows Phone"
-description: "Decided that I’d share a really simple helper class that I often use in my Windows Phone apps. It’s called IsolatedStorageSettingsHelper and it only has three methods: This is not much, but that’s all I ever needed for my apps. Hope it will be of help. Code below."
+title: "Isolated Storage Settings Helper for Windows Phone"
+description: "A simple IsolatedStorageSettingsHelper class for Windows Phone with methods to get, save, and batch-save items in IsolatedStorageSettings."
 pubDate: 2012-11-03
 updatedDate: 2023-11-05
 tags:
@@ -14,7 +14,7 @@ Decided that I’d share a really simple helper class that I often use in my Win
 
 This is not much, but that’s all I ever needed for my apps. Hope it will be of help. Code below.
 
-```cs
+```csharp
 public class IsolatedStorageSettingsHelper
 {
    public static void SaveItem(string key, object item)
@@ -23,19 +23,19 @@ public class IsolatedStorageSettingsHelper
       IsolatedStorageSettings.ApplicationSettings.Save();
    }
 
-   public static void SaveItems(Dictionary&lt;string, object&gt; items)
+   public static void SaveItems(Dictionary<string, object> items)
    {
       foreach (var item in items)
          IsolatedStorageSettings.ApplicationSettings[item.Key] = item.Value;
       IsolatedStorageSettings.ApplicationSettings.Save();
    }
 
-   public static T GetItem&lt;T&gt;(string key)
+   public static T GetItem<T>(string key)
    {
       T item;
       try
       {
-         IsolatedStorageSettings.ApplicationSettings.TryGetValue&lt;T&gt;(key, out item);
+         IsolatedStorageSettings.ApplicationSettings.TryGetValue<T>(key, out item);
       }
       catch (InvalidCastException ice)
       {

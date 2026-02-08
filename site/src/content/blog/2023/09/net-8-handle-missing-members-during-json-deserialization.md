@@ -1,6 +1,6 @@
 ---
-title: "NET 8 – Handle missing members during JSON deserialization"
-description: "By default, if you have additional properties in a JSON payload you are trying to deserialize, they are simply ignored. But what if you wanted the deserialization to fail and throw an exception when there are extra properties in the JSON? That is possible starting with .NET 8. There are several in which you can…"
+title: ".NET 8 – Handle missing members during JSON deserialization"
+description: "Learn how to throw exceptions for unmapped JSON properties during deserialization in .NET 8 using JsonUnmappedMemberHandling."
 pubDate: 2023-09-02
 updatedDate: 2023-11-05
 tags:
@@ -9,9 +9,9 @@ tags:
 ---
 By default, if you have additional properties in a JSON payload you are trying to deserialize, they are simply ignored. But what if you wanted the deserialization to fail and throw an exception when there are extra properties in the JSON? That is possible starting with .NET 8.
 
-There are several in which you can opt in for this behavior when using the `System.Text.Json` serializer.
+There are several ways in which you can opt in for this behavior when using the `System.Text.Json` serializer.
 
-### 1\. Using the JsonUnmappedMemberHandling attribute
+## 1\. Using the JsonUnmappedMemberHandling attribute
 
 You can annotate your type with the `[System.Text.Json.Serialization.JsonUnmappedMemberHandlingAttribute]`, passing your option as a parameter.
 
@@ -23,7 +23,7 @@ public class Foo
 }
 ```
 
-### 2\. Using JsonSerializerOptions
+## 2\. Using JsonSerializerOptions
 
 You can set the `JsonSerializerOptions.UnmappedMemberHandling` property to `Disallow` and pass it along to the `Deserialize` method.
 

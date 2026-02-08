@@ -26,4 +26,4 @@ process.Start();
 process.WaitForExit();
 ```
 
-The code above will start a new `cmd.exe` process, and execute the `timeout 5` command. The `process.WaitForExit()` call will force your program to wait untill the process finishes executing the `timeout` command. Then it will resume the execution of the thread.
+The code above will start a new `cmd.exe` process, and execute the `timeout 5` command. The `process.WaitForExit()` call will force your program to wait until the process finishes executing the `timeout` command. Then it will resume the execution of the thread.

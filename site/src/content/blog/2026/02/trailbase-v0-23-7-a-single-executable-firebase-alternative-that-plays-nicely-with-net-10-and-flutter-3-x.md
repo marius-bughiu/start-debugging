@@ -1,12 +1,11 @@
 ---
-title: "TrailBase v0.23.7: a single-executable “Firebase alternative” that plays nicely with .NET 10 and Flutter 3.x"
-description: "TrailBase shipped v0.23.7 on Feb 6, 2026. The release notes are mostly UI cleanup and robustness fixes, but the product pitch is the real reason it is trending: TrailBase aims to be an open, single-executable backend with auth and an admin UI, built on Rust, SQLite, and Wasmtime. If you build mobile or desktop apps…"
+title: "TrailBase v0.23.7: A Single-Binary Firebase Alternative for .NET 10 and Flutter"
+description: "TrailBase is an open-source, single-executable backend built on Rust, SQLite, and Wasmtime. Version 0.23.7 ships UI fixes and improved error handling."
 pubDate: 2026-02-07
 tags:
-  - "dotnet"
+  - "net"
   - "flutter"
   - "sqlite"
-  - "windows"
 ---
 TrailBase shipped **v0.23.7** on **Feb 6, 2026**. The release notes are mostly UI cleanup and robustness fixes, but the product pitch is the real reason it is trending: TrailBase aims to be an open, **single-executable** backend with auth and an admin UI, built on **Rust, SQLite, and Wasmtime**.
 
@@ -27,7 +26,7 @@ A single binary with a local depot directory is boring in a good way. It makes �
 
 TrailBase documents a Windows install script and a simple `run` command. This is the fastest way to evaluate it:
 
-```bash
+```powershell
 # Install (Windows)
 iwr https://trailbase.io/install.ps1 | iex
 
@@ -42,7 +41,7 @@ On first start, TrailBase bootstraps a `./traildepot` folder, creates an admin u
 
 If you want the auth UI component, the README shows:
 
-```bash
+```powershell
 trail components add trailbase/auth_ui
 
 # Auth endpoints include:
@@ -85,5 +84,5 @@ If you are evaluating the project, “maintenance releases” like this are usua
 
 Sources:
 
--   Release v0.23.7: [https://github.com/trailbaseio/trailbase/releases/tag/v0.23.7](https://github.com/trailbaseio/trailbase/releases/tag/v0.23.7)
--   Project README (install + run + endpoints): [https://github.com/trailbaseio/trailbase](https://github.com/trailbaseio/trailbase)
+-   [Release v0.23.7 on GitHub](https://github.com/trailbaseio/trailbase/releases/tag/v0.23.7)
+-   [TrailBase repository (install + run + endpoints)](https://github.com/trailbaseio/trailbase)

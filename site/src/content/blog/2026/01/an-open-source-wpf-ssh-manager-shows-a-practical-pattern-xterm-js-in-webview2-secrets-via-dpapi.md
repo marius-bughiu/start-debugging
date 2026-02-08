@@ -1,6 +1,6 @@
 ---
 title: "An open-source WPF SSH manager shows a practical pattern: xterm.js in WebView2, secrets via DPAPI"
-description: "Today a neat Windows desktop project popped up on r/csharp: SshManager, an open-source SSH and serial manager built with .NET 8 and WPF. Source: the original post on Reddit and the repository: r/csharp thread and tomertec/sshmanager. The interesting bit is not “SSH in C#” SSH itself is solved. What is worth studying is how this…"
+description: "SshManager is an open-source WPF SSH manager built on .NET 8. It shows a practical pattern: xterm.js inside WebView2 for terminal rendering, EF Core + SQLite for persistence, and DPAPI for local credential protection."
 pubDate: 2026-01-18
 tags:
   - "net"

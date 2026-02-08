@@ -1,6 +1,6 @@
 ---
 title: "Flutter 3.x gets a new “offline RAG” building block: `mobile_rag_engine` (Rust core)"
-description: "On-device RAG is showing up in Flutter land as something you can actually ship, not just demo. mobile_rag_engine was published on pub.dev just the other day and it’s opinionated in the right way: a Rust core for the heavy lifting, a Flutter API for integration, and prebuilt binaries so you do not set up Rust,…"
+description: "mobile_rag_engine brings on-device RAG to Flutter with a Rust core, ONNX embeddings, HNSW vector search, and SQLite storage. A practical look at the API, integration flow, and shipping constraints."
 pubDate: 2026-01-10
 tags:
   - "dart"
@@ -81,5 +81,5 @@ Embedding generation is the expensive step. Your UI should be honest about it: b
 
 If you want the canonical references:
 
--   pub.dev: [https://pub.dev/packages/mobile\_rag\_engine](https://pub.dev/packages/mobile_rag_engine)
--   GitHub: [https://github.com/dev07060/mobile\_rag\_engine](https://github.com/dev07060/mobile_rag_engine)
+-   pub.dev: [https://pub.dev/packages/mobile_rag_engine](https://pub.dev/packages/mobile_rag_engine)
+-   GitHub: [https://github.com/dev07060/mobile_rag_engine](https://github.com/dev07060/mobile_rag_engine)

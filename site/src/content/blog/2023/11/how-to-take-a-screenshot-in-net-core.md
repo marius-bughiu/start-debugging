@@ -1,6 +1,6 @@
 ---
 title: "How to take a screenshot in .NET core"
-description: "In this article we’re going to look at how you can grab a screenshot of your entire desktop – that means all your displays, not just the primary one – from a console application using .NET core. This solution relies on Windows-only dependencies, so it will not work cross-platform, it will only work on Windows…."
+description: "Learn how to capture a screenshot of your entire desktop from a .NET console application using System.Windows.Forms. Windows-only solution covering all displays."
 pubDate: 2023-11-04
 tags:
   - "c-sharp"
@@ -16,7 +16,7 @@ We start with a bit of project setup. In order to grab the screen information, w
 </ItemGroup>
 ```
 
-Now that we have a reference so `System.Windows.Forms`, we can get hold of the screen’s dimensions – we’re interested in the starting coordinates (`x` and `y`) and it’s size (`w` and `h`). We get this information from `SystemInformation.VirtualScreen`.
+Now that we have a reference to `System.Windows.Forms`, we can get hold of the screen's dimensions – we're interested in the starting coordinates (`x` and `y`) and its size (`w` and `h`). We get this information from `SystemInformation.VirtualScreen`.
 
 ```cs
 var screen = SystemInformation.VirtualScreen;

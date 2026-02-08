@@ -1,6 +1,6 @@
 ---
 title: "A WinUI 3 “local-only notes” app is the right kind of boring: offline-first, SQLite, keyboard-first"
-description: "Another nice “small but real” desktop app showed up on r/csharp today: Miyanyedi Quick Note, a lightweight note-taking tool built with WinUI 3 and SQLite, explicitly designed to be offline-first and privacy-friendly. Source: the original post and the Microsoft Store listing: r/csharp thread and Microsoft Store app page. “Local-only” is a feature, not a missing…"
+description: "Miyanyedi Quick Note is a WinUI 3 + SQLite note-taking app that is offline-first and privacy-friendly. Here is why local-only is a feature, plus a minimal SQLite snippet for .NET 8 desktop apps."
 pubDate: 2026-01-18
 tags:
   - "c-sharp"

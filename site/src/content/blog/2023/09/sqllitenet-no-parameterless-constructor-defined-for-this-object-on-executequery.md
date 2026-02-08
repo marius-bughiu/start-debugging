@@ -1,6 +1,6 @@
 ---
-title: "SqlLiteNet – no parameterless constructor defined for this object on ExecuteQuery"
-description: "You are likely trying to retrieve a single column from a table in your database by passing something similar with SELECT <column_name> FROM <table_name> to an ExecuteQuery<string> or ExecuteQuery<int>. The problem with that is that ExecuteQuery<string> expects a type having a parameterless constructor – for which string does not qualify. There are two possible solutions:…"
+title: "SQLite-net – No parameterless constructor defined for this object on ExecuteQuery"
+description: "How to fix the 'no parameterless constructor defined' error in SQLite-net when using ExecuteQuery with primitive types like string or int."
 pubDate: 2023-09-01
 updatedDate: 2023-11-05
 tags:

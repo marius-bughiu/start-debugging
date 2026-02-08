@@ -1,6 +1,6 @@
 ---
 title: "How to use appsettings.json with Xamarin.Forms"
-description: "There are two key differences compared to ASP.NET: To get started, add an appsettings.json file in your shared project. Make sure you set it’s Build Action to Embeded Resource. Add some keys + value in the file that we can use for testing. For example: Next, we need to get hold of the resource stream…."
+description: "Learn how to use appsettings.json configuration files with Xamarin.Forms by embedding the file as a resource and building an IConfiguration object."
 pubDate: 2020-11-13
 updatedDate: 2023-11-05
 tags:
@@ -9,10 +9,10 @@ tags:
 ---
 There are two key differences compared to ASP.NET:
 
--   first, we’ll be working with an Embeded Resource as opposed to a file on the disk
+-   first, we'll be working with an Embedded Resource as opposed to a file on the disk
 -   second – we will register the `appsettings.json` file ourselves
 
-To get started, add an `appsettings.json` file in your shared project. Make sure you set it’s `Build Action` to `Embeded Resource`. Add some keys + value in the file that we can use for testing. For example:
+To get started, add an `appsettings.json` file in your shared project. Make sure you set its `Build Action` to `Embedded Resource`. Add some keys + value in the file that we can use for testing. For example:
 
 ```json
 {

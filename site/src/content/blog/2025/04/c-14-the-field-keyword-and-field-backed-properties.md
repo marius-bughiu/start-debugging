@@ -1,6 +1,6 @@
 ---
 title: "C# 14 – The field keyword and field-backed properties"
-description: "C# 14 introduces a new contextual keyword, field, that can be used inside a property’s accessors (the get, set, or init blocks) to refer to the property’s backing storage​. In simpler terms, field is a placeholder representing the hidden variable where a property’s value is stored. This keyword lets you add custom logic to automatically…"
+description: "C# 14 introduces the field contextual keyword for property accessors, letting you add custom logic to auto-properties without declaring a separate backing field."
 pubDate: 2025-04-05
 tags:
   - "14"
@@ -20,9 +20,11 @@ The `field` keyword was introduced to make property declarations more concise an
 -   **Keeping property state encapsulated:** The backing field created by the compiler is only accessible through the property’s accessors (via `field`), not elsewhere in your class. This prevents accidental misuse of the field from other methods or properties, ensuring that any invariants or validations in the property accessor can’t be bypassed​.
 -   **Easier property logic (validation, lazy initialization, etc.):** It provides a smooth path to add logic to auto-properties. Common scenarios include:
     
-    -   _Validation or range checking:_ e.g. ensuring a value is non-negative or within a range before accepting it._Change notification:_ e.g. raising `INotifyPropertyChanged` events after setting a new value._Lazy initialization or defaulting:_ e.g. in a getter, initialize `field` on first access or return a default if it’s not set.
-    
-      
+    -   _Validation or range checking:_ e.g. ensuring a value is non-negative or within a range before accepting it.
+    -   _Change notification:_ e.g. raising `INotifyPropertyChanged` events after setting a new value.
+    -   _Lazy initialization or defaulting:_ e.g. in a getter, initialize `field` on first access or return a default if it's not set.
+
+
     In earlier C# versions, these scenarios required writing a full property with a separate field. With `field`, you can implement them directly in the property’s `get`/`set` logic without extra fields​.
 -   **Mixing auto and custom accessors:** C# 14 allows you to have one accessor auto-implemented and the other with a body using `field`. For example, you can provide a custom `set` and leave `get` as automatic, or vice versa​. The compiler generates whatever is needed for the accessor you don’t write. This was not possible before – previously, adding a body to one accessor meant you had to provide an explicit implementation for both.
 

@@ -1,6 +1,6 @@
 ---
 title: "Getting started with CSS in Xamarin Forms 3"
-description: "There’s a couple of new things coming with this new version of Xamarin Forms, and one of them is Cascading StyleSheets (CSS). Yup, that’s right, CSS in XAML. Not sure yet how useful it will be and how adopted it will become – as quite a few features are still missing but I’m guessing it…"
+description: "Learn how to use Cascading StyleSheets (CSS) in Xamarin Forms 3, including inline CDATA styles and embedded CSS files."
 pubDate: 2018-04-18
 updatedDate: 2023-11-05
 tags:
@@ -12,7 +12,7 @@ There’s a couple of new things coming with this new version of Xamarin Forms, 
 So, to jump right into it – there’s two ways of adding CSS to your application:
 
 -   first is by dropping your styles right into your elements resources and wrapping it into a CDATA tag
--   And the second one involved actual .css files added as embedded resources into your project
+-   And the second one involves actual .css files added as embedded resources into your project
 
 And once you have the CSS included, you use it by either specifying **StyleClass** or the shorthand **class** property on your XAML element.
 
@@ -44,7 +44,7 @@ Now, we need to use this new .my-list-item class. Find your ListView’s ItemTem
 
 And that’s it.
 
-Now let’s have a look at the second approach, the one using embedded CSS files. First, create a new folder in your app called Styles and create a new file inside it called about.css (we’re going to style the about page for this part). After you create the file, make sure you right click > Properties and set the **Build action** to **Embeded resource**; otherwise it won’t work.
+Now let’s have a look at the second approach, the one using embedded CSS files. First, create a new folder in your app called Styles and create a new file inside it called about.css (we’re going to style the about page for this part). After you create the file, make sure you right click > Properties and set the **Build action** to **Embedded resource**; otherwise it won’t work.
 
 Now in our view – AboutPage.xaml – add the following right above <ContentPage.BindingContext> element. This will reference our CSS file in our page. The fact that the path starts with a “/” means it starts from the root. You can also specify relative paths by omitting the first slash.
 

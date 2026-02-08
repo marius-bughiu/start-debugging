@@ -1,6 +1,6 @@
 ---
 title: "Polls for Streamlabs – interact with your viewers"
-description: "Interacting with and engaging your viewers is as important as the content you create and it’s important to give your audience a voice. But how to do that in an easy way? The answer is simple, through Polls. Now in this article we’re going to have a look at the Polls app from Streamlabs’ app…"
+description: "Learn how to set up and use Streamlabs Polls to interact with your viewers in real-time during your stream using chat-based voting."
 pubDate: 2020-08-06
 updatedDate: 2023-11-05
 tags:
@@ -30,7 +30,7 @@ If you’re a Prime subscriber already, just go to the [app store](https://platf
 
 ## Step 2: Create a new poll
 
-Click on the green + button on the left side and begin customizing your poll. In the first part you’ll be setting up your poll question, the possible answers and all the colors associated with each. This will affects the options in the poll chart and the colors associated with each.
+Click on the green + button on the left side and begin customizing your poll. In the first part you’ll be setting up your poll question, the possible answers and all the colors associated with each. This will affect the options in the poll chart and the colors associated with each.
 
 You can choose from a set of predefined themes or color sets for your options or you can change both the background color and the text color of your poll options individually. Play around with them until you find the perfect combination.
 
@@ -38,7 +38,7 @@ You can choose from a set of predefined themes or color sets for your options or
 
 Streamlabs Polls – General settings tab
 
-Next, you get to modify it’s appearance. First, you need to choose the chart type. You get to chose between a horizontal chart, a pie chart and a doughnut chart. Don’t worry about making a final decision at this time, all these setting can be changed at any time.
+Next, you get to modify its appearance. First, you need to choose the chart type. You get to choose between a horizontal chart, a pie chart, and a doughnut chart. Don't worry about making a final decision at this time; all these settings can be changed at any time.
 
 Next, choose where to display a legend for your chart, where to position it, what colors, font sizes and spacing to use and also the background color of the chart and the corner radius. Make sure they all integrate nicely with the other elements of your stream.
 

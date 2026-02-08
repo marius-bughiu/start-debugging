@@ -1,6 +1,6 @@
 ---
 title: "System.Text.Json – How to modify existing type info resolver"
-description: "There are some situations in which creating a whole new IJsonTypeInfoResolver will seem overkill, when the default (or any other already defined) type info serializer could do the job with only one or two small modifications. Until now, you could play with the DefaultJsonTypeInfoResolver.Modifiers property for the default type info resolver, but you didn’t have…"
+description: "Use the new WithAddedModifier extension method in .NET 8 to easily modify any IJsonTypeInfoResolver serialization contract without creating a new resolver from scratch."
 pubDate: 2023-10-25
 updatedDate: 2023-11-01
 tags:

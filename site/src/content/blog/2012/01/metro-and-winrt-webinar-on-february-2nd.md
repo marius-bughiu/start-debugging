@@ -1,6 +1,6 @@
 ---
 title: "Metro and WinRT Webinar on February 2nd"
-description: "Are you a Silverlight / WPF developer? Want to start developing for Windows 8 as well? If that’s the case, this upcoming SilverlightShow webinar is guaranteed to give you a jump start. The webinar will teach you how to use your Silverlight / WPF experience to build amazing Windows 8 apps by presenting the similarities…"
+description: "SilverlightShow webinar on Metro and WinRT for Silverlight/WPF developers, covering how to build Windows 8 apps using your existing XAML experience."
 pubDate: 2012-01-26
 updatedDate: 2023-11-05
 tags:
@@ -20,5 +20,5 @@ Also, as usual, SilverlightShow is giving away 6 eBooks:
 Good luck!
 
 Presenter: [Gill Cleer](http://www.snowball.be/)  
-Webinar registration page: [Metro and WinRT for the Silverlight/WPF Developer  
-](https://www1.gotomeeting.com/register/180940864)More details about the webinar: [SilverlightShow](http://www.silverlightshow.net/news/Free-SilverlightShow-Webinar-Metro-and-WinRT-for-the-Silverlight-WPF-Developer-.aspx "SilverlightShow")
+Webinar registration page: [Metro and WinRT for the Silverlight/WPF Developer](https://www1.gotomeeting.com/register/180940864)
+More details about the webinar: [SilverlightShow](http://www.silverlightshow.net/news/Free-SilverlightShow-Webinar-Metro-and-WinRT-for-the-Silverlight-WPF-Developer-.aspx "SilverlightShow")

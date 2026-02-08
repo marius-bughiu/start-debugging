@@ -1,6 +1,6 @@
 ---
 title: "How to fix: ‘Point’ does not have a predefined size, therefore sizeof can only be used in an unsafe context"
-description: "The error you’re encountering is because in C#, sizeof can only be used with types that have a predefined size known at compile-time, and the Point structure is not one of those types unless you’re in an unsafe context. There are two ways you can resolve this. Use unsafe code This would allow the use…"
+description: "Fix the C# error where sizeof cannot be used with Point outside an unsafe context. Two solutions: enabling unsafe code or using Marshal.SizeOf instead."
 pubDate: 2023-11-09
 tags:
   - "c-sharp"
@@ -42,4 +42,4 @@ IntPtr sizeOfPoint = (IntPtr)Marshal.SizeOf(typeof(Point));
 using System.Runtime.InteropServices;
 ```
 
-One thing to note is that `Marshal.SizeOf` does come with a very slight performance penalty compared to the unsafe `sizeOf`. That is something you might want to take into consideration when choosing the solution that best suits your needs.
+One thing to note is that `Marshal.SizeOf` does come with a very slight performance penalty compared to the unsafe `sizeof`. That is something you might want to take into consideration when choosing the solution that best suits your needs.

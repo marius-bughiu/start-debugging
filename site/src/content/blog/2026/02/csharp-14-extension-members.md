@@ -4,7 +4,7 @@ description: "C# 14 introduces extension members, allowing you to add extension 
 pubDate: 2026-02-08
 tags:
   - "c-sharp"
-  - "14"
+  - "csharp-14"
   - "net-10"
   - "extension-members"
 ---

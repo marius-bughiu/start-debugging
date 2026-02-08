@@ -1,6 +1,6 @@
 ---
 title: "Streaming Tasks with .NET 9 Task.WhenEach"
-description: "Handling multiple parallel tasks has always been a bit binary in .NET. You either wait for everything to finish (Task.WhenAll) or you wait for the first one (Task.WhenAny). But what if you want to process results as they arrive? Before .NET 9, you had to write a complex loop involving Task.WhenAny, removing finished tasks from…"
+description: ".NET 9 introduces Task.WhenEach, which returns an IAsyncEnumerable of tasks as they complete. Here is how it simplifies processing parallel results as they arrive."
 pubDate: 2026-01-04
 tags:
   - "net"

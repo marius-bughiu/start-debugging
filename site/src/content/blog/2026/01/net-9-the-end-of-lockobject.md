@@ -1,6 +1,6 @@
 ---
 title: ".NET 9: The End of lock(object)"
-description: "For nearly two decades, C# developers have relied on a simple pattern for thread synchronization: creating a private object instance and passing it to the lock statement. While effective, this approach carries hidden performance costs that .NET 9 finally eliminates with the introduction of System.Threading.Lock. The Hidden Cost of Monitor When you write lock (myObj),…"
+description: ".NET 9 introduces System.Threading.Lock, a dedicated lightweight synchronization primitive that replaces lock(object) with better performance and clearer intent."
 pubDate: 2026-01-02
 tags:
   - "net"

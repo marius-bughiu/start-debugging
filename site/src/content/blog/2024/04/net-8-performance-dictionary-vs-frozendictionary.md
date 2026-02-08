@@ -16,7 +16,7 @@ Let’s have a look at what this means in numbers. I am interested in two things
 
 ## Performance impact on creation
 
-For this test, we take 10.000 pre-instantiated `KeyValuePair<string, string>` and create three different types of dictionaries:
+For this test, we take 10,000 pre-instantiated `KeyValuePair<string, string>` and create three different types of dictionaries:
 
 -   a normal dictionary: `new Dictionary(source)`
 -   a frozen dictionary: `source.ToFrozenDictionary(optimizeForReading: false)`
@@ -24,7 +24,7 @@ For this test, we take 10.000 pre-instantiated `KeyValuePair<string, string>` an
 
 And we benchmark how long each of these operations take using BenchmarkDotNet. These are the results:
 
-```javascript
+```plaintext
 |                              Method |       Mean |    Error |   StdDev |
 |------------------------------------ |-----------:|---------:|---------:|
 |                          Dictionary |   284.2 us |  1.26 us |  1.05 us |
@@ -38,7 +38,7 @@ Already, with no optimization, we can see that creating the `FrozenDictionary` t
 
 In this first scenario, where we test retrieving a single key from the ‘middle’ of the dictionary, we get the following results:
 
-```javascript
+```plaintext
 |                              Method |      Mean |     Error |    StdDev |
 |------------------------------------ |----------:|----------:|----------:|
 |                          Dictionary | 11.609 ns | 0.0170 ns | 0.0142 ns |
@@ -56,7 +56,7 @@ Let’s take a couple more test scenarios and see what impact they have on perfo
 
 The multiples seem to stay the same when dealing with a smaller dictionary. In terms of cost benefit, we seem to be profiting a little earlier – after about 4800 read operations.
 
-```javascript
+```plaintext
 |                                     Method |      Mean |     Error |    StdDev |
 |------------------------------------------- |----------:|----------:|----------:|
 |                          Dictionary_Create |  1.477 us | 0.0033 us | 0.0028 us |
@@ -69,7 +69,7 @@ The multiples seem to stay the same when dealing with a smaller dictionary. In t
 
 In this scenario we test if the performance is in any way impacted by the key we are retrieving (where it’s positioned in the internal data structure). And based on the results, it has no impact whatsoever on the read performance.
 
-```javascript
+```plaintext
 |                                     Method |      Mean |     Error |    StdDev |
 |------------------------------------------- |----------:|----------:|----------:|
 |  FrozenDictionaryOptimizedForReading_First |  4.314 ns | 0.0102 ns | 0.0085 ns |
@@ -81,7 +81,7 @@ In this scenario we test if the performance is in any way impacted by the key we
 
 In the case of large dictionaries, the read performance remains almost the same. We see an 18% increase in read time, despite a `1000x` increase in dictionary size. However, the target number of reads needed to have a net performance gain goes up significantly, to 2,135,735,439 – that’s over 2 billion reads.
 
-```javascript
+```plaintext
 |                                     Method |        Mean |     Error |    StdDev |
 |------------------------------------------- |------------:|----------:|----------:|
 |                          Dictionary_Create |    905.1 ms |   2.56 ms |   2.27 ms |
@@ -103,9 +103,9 @@ public class MyKey
 }
 ```
 
-And as we can see, there is almost no peformance improvements on the read in this case compared to the normal `Dictionary`, while the dictionary creation is about 4 times slower.
+And as we can see, there are almost no performance improvements on the read in this case compared to the normal `Dictionary`, while the dictionary creation is about 4 times slower.
 
-```javascript
+```plaintext
 |                                     Method |     Mean |     Error |    StdDev |
 |------------------------------------------- |---------:|----------:|----------:|
 |                          Dictionary_Create | 247.7 us |   3.27 us |   3.05 us |
@@ -118,7 +118,7 @@ And as we can see, there is almost no peformance improvements on the read in thi
 
 But what if we used a `record` instead of a `class`? That ought to offer more performance, right? Apparently not. It’s even more strange as the read times jump from `6 ns` to `44 ns`.
 
-```javascript
+```plaintext
 |                                     Method |       Mean |    Error |   StdDev |
 |------------------------------------------- |-----------:|---------:|---------:|
 |                          Dictionary_Create |   654.1 us |  2.29 us |  2.14 us |
@@ -131,4 +131,4 @@ But what if we used a `record` instead of a `class`? That ought to offer more pe
 
 Based on the tested scenarios, the only improvement we saw was when using `string` keys. Anything else we tried thus far, has led to the same read performance as the normal `Dictionary`, with an added overhead on creation.
 
-Even when using `string`s as your `FrozenDictionary` key, you have to consider how many reads you’re going to make in the lifetime of that dictionary as there is an overhead associated with the creation of the dictionary. In the 10.000 items test, that overhead was of about 4299000 ns. The read performance saw a `2.4x` improvement, with a drop from `11.6 ns` to `4.8 ns`, but this still means that you need roughly 630351 read operations on the dictionary before you have a net performance gain.
+Even when using `string`s as your `FrozenDictionary` key, you have to consider how many reads you’re going to make in the lifetime of that dictionary as there is an overhead associated with the creation of the dictionary. In the 10,000 items test, that overhead was of about 4299000 ns. The read performance saw a `2.4x` improvement, with a drop from `11.6 ns` to `4.8 ns`, but this still means that you need roughly 630351 read operations on the dictionary before you have a net performance gain.

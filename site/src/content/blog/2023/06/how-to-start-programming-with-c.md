@@ -1,6 +1,6 @@
 ---
 title: "How to start programming with C#"
-description: "C# is a modern, general-purpose, object-oriented programming language developed by Microsoft. It is widely used for Windows desktop applications, games (especially using the Unity engine), and web development through the ASP.NET framework. C# is considered to be beginner-friendly and is a great language for new programmers. Below we explore some of the reasons why C#…"
+description: "A beginner's guide to getting started with C# programming, from setting up Visual Studio to writing your first program and finding learning resources."
 pubDate: 2023-06-11
 tags:
   - "c-sharp"
@@ -8,7 +8,7 @@ tags:
 ---
 C# is a modern, general-purpose, object-oriented programming language developed by Microsoft. It is widely used for Windows desktop applications, games (especially using the Unity engine), and web development through the ASP.NET framework.
 
-C# is considered to be beginner-friendly and is a great language for new programmers. Below we explore some of the reasons why C# it’s considered beginner-friendly:
+C# is considered to be beginner-friendly and is a great language for new programmers. Below we explore some of the reasons why C# is considered beginner-friendly:
 
 -   **Syntax** – the syntax of C# is clear, consistent, and easy to understand, which is ideal for beginners. Also, if you know C# it’s relatively easy to pick up other C-like languages (Java, C++).
 -   **Strongly-typed language** – being a strongly-typed language, C# ensures you define what type of data you are working with, such as integers or strings. This can lead to less error-prone code.
@@ -68,11 +68,11 @@ A console window displaying “Hello, World!”.
 
 ## Learning resources
 
-Now that your environment is properly set up and you’ve ran your first C# program, it’s time to start learning more about the language. To that end, there are several great resources available to get you started. We’ll enumerate a few below:
+Now that your environment is properly set up and you've run your first C# program, it’s time to start learning more about the language. To that end, there are several great resources available to get you started. We’ll enumerate a few below:
 
 -   [Microsoft Learn](https://dotnet.microsoft.com/en-us/learn/csharp) – Microsoft’s official platform offers several free C# learning paths, modules, and tutorials. It’s a great resource to learn C# directly from the source.
--   [Code Academy](https://www.codecademy.com/learn/learn-c-sharp) – Codecademy provides interactive lessons and projects that can help you learn C#. It’s beginner-friendly and the interactive nature of learning is highly effective for many learners.
+-   [Codecademy](https://www.codecademy.com/learn/learn-c-sharp) – Codecademy provides interactive lessons and projects that can help you learn C#. It’s beginner-friendly and the interactive nature of learning is highly effective for many learners.
 -   [Coursera](https://www.coursera.org/courses?query=c%20sharp) – Coursera offers courses from universities and companies. The C# Programming for Unity Game Development specialization from the University of Colorado is a good course if you’re interested in game development.
--   [Pluralsight](https://www.pluralsight.com/browse/software-development/c-sharp) – Pluralsight (now part of Skillshare) has a comprehensive library of C# courses covering beginner to advanced topics. It’s a paid platform but offers a 10-day free trial.
+-   [Pluralsight](https://www.pluralsight.com/browse/software-development/c-sharp) – Pluralsight has a comprehensive library of C# courses covering beginner to advanced topics. It's a paid platform but offers a free trial.
 -   [Udemy](https://www.udemy.com/topic/c-sharp/) – Udemy has a wide variety of C# courses for different levels and uses, including web development with ASP.NET, game development with Unity, etc. Wait for their frequent sales to get a good deal.
 -   [LeetCode](https://leetcode.com/) – LeetCode is a problem-solving platform where you can practice coding in C#. It is not a tutorial site but it is invaluable for practicing and improving your skills once you know the basics.

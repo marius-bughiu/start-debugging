@@ -1,14 +1,14 @@
 ---
 title: "What’s new in C# 12"
-description: "As technology continues to evolve, so does the C# programming language. With the release of C# 12 on the horizon, developers can look forward to a host of exciting new features and enhancements that promise to streamline their coding experience and open up new possibilities in software development. If you haven’t yet switched to C#…"
+description: "An overview of new features in C# 12, including primary constructors, default lambda parameters, collection expressions, inline arrays, and more."
 pubDate: 2023-06-10
 updatedDate: 2023-11-05
 tags:
   - "c-sharp"
 ---
-As technology continues to evolve, so does the C# programming language. With the release of C# 12 on the horizon, developers can look forward to a host of exciting new features and enhancements that promise to streamline their coding experience and open up new possibilities in software development.
+C# 12 brings a host of new features and enhancements that streamline the coding experience and open up new possibilities in software development.
 
-If you haven’t yet switched to [C# 12, here’s how you can switch](/2023/06/how-to-switch-to-c-12/).
+If you haven't yet switched to C# 12, [here's how you can switch](/2023/06/how-to-switch-to-c-12/).
 
 Let’s dive deep into the list of new features for C# 12:
 

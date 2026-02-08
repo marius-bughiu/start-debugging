@@ -1,6 +1,6 @@
 ---
 title: "Flet in 2026: Flutter UI, Python logic, and the trade-offs you need to admit upfront"
-description: "A r/FlutterDev thread resurfaced Flet as “build Flutter apps in Python”. It’s not a new idea, but it’s a persistent one because the motivation is real: a lot of teams have deep Python expertise and want a cross-platform UI without adopting Dart on day one. Sources: the Reddit thread and flet.dev. What Flet is (and…"
+description: "Flet lets you build Flutter UIs with Python logic. Here are the real trade-offs: latency from event chatter, ecosystem mismatch with Dart plugins, and split-brain debugging -- plus when it actually makes sense."
 pubDate: 2026-01-10
 tags:
   - "flutter"

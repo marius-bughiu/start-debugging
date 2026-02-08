@@ -1,6 +1,6 @@
 ---
 title: "Azure Functions vs WebJobs – Which to choose"
-description: "Both are code-first technologies targeting developers (as opposed to design-first workflow services). They enable the orchestration and integration of different business applications into a single workflow and provide more control over the performance of your workflow plus the ability to write custom code as part of the business process. Azure WebJobs WebJobs are a part…"
+description: "Compare Azure Functions and WebJobs: key differences in scaling, pricing, triggers, and when to choose one over the other."
 pubDate: 2020-11-18
 updatedDate: 2021-02-19
 tags:
@@ -20,9 +20,9 @@ For determining the actions of your WebJob, you can write code in several differ
 
 ## Azure Functions
 
-An Azure Functions is in many ways similar to a WebJob, the main difference between them being that you don’t need to worry about the infrastructure at all.
+An Azure Function is in many ways similar to a WebJob, the main difference between them being that you don't need to worry about the infrastructure at all.
 
-It is ideal for running small pieces of code in the cloud. Azure will automatically scale your function in response to demand demand, and with the consumption plan , you only pay for the time your code takes to run.
+It is ideal for running small pieces of code in the cloud. Azure will automatically scale your function in response to demand, and with the consumption plan, you only pay for the time your code takes to run.
 
 They can run on a series of different triggers like for example:
 
@@ -33,51 +33,15 @@ They can run on a series of different triggers like for example:
 
 ## Differences
 
-Azure WebJobs
-
-Azure Functions
-
-Automatic scaling
-
-No
-
-Yes
-
-Development and testing in a browser
-
-No
-
-Yes
-
-Pay-per-use pricing
-
-No
-
-Yes
-
-Integration with Logic Apps
-
-No
-
-Yes
-
-Package managers
-
-NuGet if you are using the WebJobs SDK
-
-Nuget and NPM
-
-Can be part of an App Service application
-
-Yes
-
-No
-
-Provides close control of `JobHost`
-
-Yes
-
-No
+| Feature | Azure WebJobs | Azure Functions |
+| --- | --- | --- |
+| Automatic scaling | No | Yes |
+| Development and testing in a browser | No | Yes |
+| Pay-per-use pricing | No | Yes |
+| Integration with Logic Apps | No | Yes |
+| Package managers | NuGet if you are using the WebJobs SDK | NuGet and NPM |
+| Can be part of an App Service application | Yes | No |
+| Provides close control of `JobHost` | Yes | No |
 
 ## Conclusions
 

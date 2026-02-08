@@ -1,6 +1,6 @@
 ---
 title: "C# 11 – Generic attributes"
-description: "All right folks, generic attributes are finally a thing in C#! 🥳 You can define one just as you would define any other generic class: And use it like you would use any other attribute: Generic attribute restrictions When applying the attribute, all the generic type arguments must be provided. In other words, the generic…"
+description: "Learn how to define and use generic attributes in C# 11, including restrictions on type arguments and common error messages."
 pubDate: 2023-03-21
 updatedDate: 2023-11-05
 tags:
@@ -39,7 +39,7 @@ Types which require metadata annotations are not allowed as generic attribute ty
 
 -   `dynamic` is not allowed. Use `object` instead
 -   nullable reference types are not allowed. Instead of `string?` you can simply use `string`
--   tuple types using C# tuple syntax are not allowed. You can use `ValueTuple` instead. (e.g. `ValueTuple<string, int>` instead of `(string foo, int bar)`
+-   tuple types using C# tuple syntax are not allowed. You can use `ValueTuple` instead (e.g. `ValueTuple<string, int>` instead of `(string foo, int bar)`)
 
 ## Errors
 
@@ -53,7 +53,7 @@ Nullable reference types are not allowed as type parameters in generic attribute
 
 > CS8970 Type ‘dynamic’ cannot be used in this context because it cannot be represented in metadata.
 
-`dynamic` can not be used as a type argument for a generic attribute. Use `object` instead.
+`dynamic` cannot be used as a type argument for a generic attribute. Use `object` instead.
 
 > CS8970 Type ‘(string foo, int bar)’ cannot be used in this context because it cannot be represented in metadata.
 

@@ -1,6 +1,6 @@
 ---
 title: "SBOM for .NET in Docker: stop trying to force one tool to see everything"
-description: "A DevOps thread asked a question I keep seeing: “How do I track both NuGet dependencies and container OS packages for a .NET app shipped as a Docker image?” The author was already close to the right approach: CycloneDX for the .NET project graph, Syft for the image, then ingestion in Dependency-Track. Source: Reddit thread…."
+description: "How to track NuGet dependencies and container OS packages for a .NET Docker image using CycloneDX, Syft, and Dependency-Track -- and why one SBOM is not enough."
 pubDate: 2026-01-10
 tags:
   - "docker"
@@ -28,11 +28,11 @@ That’s why “make one tool do everything” usually ends in blind spots.
 
 This is the practical pipeline:
 
--   SBOM A (app-level): generate from the solution or project at build time.
--   Tooling: [cyclonedx-dotnet](https://github.com/CycloneDX/cyclonedx-dotnet)
--   SBOM B (image-level): generate from the built image.
--   Tooling: [Syft](https://github.com/anchore/syft)
--   Ingest and monitor: upload both to [Dependency-Track](https://dependencytrack.org/).
+-   **SBOM A** (app-level): generate from the solution or project at build time.
+    -   Tooling: [cyclonedx-dotnet](https://github.com/CycloneDX/cyclonedx-dotnet)
+-   **SBOM B** (image-level): generate from the built image.
+    -   Tooling: [Syft](https://github.com/anchore/syft)
+-   **Ingest and monitor**: upload both to [Dependency-Track](https://dependencytrack.org/).
 
 The key is provenance. You want to be able to answer: “Is this CVE in my base image or in my NuGet graph?” without guesswork.
 
@@ -61,7 +61,7 @@ In Dependency-Track, this often becomes two projects: `myapp` and `myapp-image`.
 
 ## Why Syft “misses NuGet” and what to do about it
 
-Syft is strong at images and filesystems. It remembers what it can identify from what it can see. If you want authoritative NuGet dependencies, generate from the project graph with CycloneDX tooling.
+Syft is strong at images and filesystems. It reports what it can identify from what it can see. If you want authoritative NuGet dependencies, generate from the project graph with CycloneDX tooling.
 
 You can experiment with scanning the published output (for example `syft dir:publish/`), but treat that as a supplement. The “what packages did we reference and at what versions?” question belongs to the build graph, not to a layer scan.
 

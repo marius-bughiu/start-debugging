@@ -1,13 +1,13 @@
 ---
 title: "C# Proposal: Discriminated Unions"
-description: "The “holy grail” of C# features has been in talks for years now. And after years of relying on third-party libraries like OneOf or verbose class hierarchies, it looks like we will finally get native support for Discriminated Unions (DUs) in C# 15. The Problem: Representing “One Of” If you wanted a function to return…"
+description: "A look at the C# discriminated unions proposal: the union keyword, exhaustive pattern matching, and how it could replace OneOf libraries and class hierarchies."
 pubDate: 2026-01-02
 updatedDate: 2026-01-04
 tags:
   - "c-sharp"
   - "csharp-proposals"
 ---
-The “holy grail” of C# features has been in talks for years now. And after years of relying on third-party libraries like `OneOf` or verbose class hierarchies, it looks like we will finally get native support for **Discriminated Unions (DUs)** in C# 15.
+The “holy grail” of C# features has been in talks for years now. And after years of relying on third-party libraries like `OneOf` or verbose class hierarchies, it looks like we may finally get native support for **Discriminated Unions (DUs)** in a future version of C#.
 
 ## The Problem: Representing “One Of”
 
@@ -47,4 +47,4 @@ public string HandleResult(Result<int> result) => result switch
 
 ## Why This Matters
 
-This feature fundamentally changes error handling in .NET. You can now model domain states precisely (e.g., `Loading`, `Loaded`, `Error`) without the runtime overhead of class allocations or the cognitive overhead of complex visitor patterns.
+If accepted, this feature would fundamentally change error handling in .NET. You could model domain states precisely (e.g., `Loading`, `Loaded`, `Error`) without the runtime overhead of class allocations or the cognitive overhead of complex visitor patterns.

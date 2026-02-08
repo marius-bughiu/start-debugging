@@ -1,6 +1,6 @@
 ---
 title: ".NET Performance: ToList vs ToArray"
-description: ".NET 9 brings significant improvements to LINQ’s ToArray method, both in terms of speed, as well as memory allocation. To achieve this, the new implementation makes use of new runtime features such as InlineArray to significantly reduce memory allocations and improve speed, especially when dealing with an IEnumerable<T> of unknown length. If you’re curious about the implementation,…"
+description: ".NET 9 significantly improves ToArray performance using InlineArray, making it faster and more memory-efficient than ToList. See benchmarks comparing .NET 8 vs .NET 9."
 pubDate: 2025-01-06
 updatedDate: 2025-04-04
 tags:
@@ -33,7 +33,7 @@ AMD Zen 2, 1 CPU, 8 logical and 4 physical cores
   .NET 9.0 : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
 ```
 
-While the results vary slightly depending on the number of items in the iterator, you still get an up to 38% reduction in CPU time and a whooping 57% in allocated memory. That’s quite good!
+While the results vary slightly depending on the number of items in the iterator, you still get an up to 38% reduction in CPU time and a whopping 57% in allocated memory. That’s quite good!
 
 ## ToList vs ToArray
 

@@ -1,6 +1,6 @@
 ---
-title: "NET 8 – Memory<byte[]> is serialized as base64"
-description: "Starting with .NET 8, both Memory<byte[]> and ReadOnlyMemory<byte[]> are serialized as Base64 strings. Let’s look at a quick example: In contrast, Memory<int> and the likes will continue to be serialized as JSON arrays."
+title: ".NET 8 – Memory<byte> is serialized as base64"
+description: "Starting with .NET 8, both Memory<byte> and ReadOnlyMemory<byte> are serialized as Base64 strings, while other types like Memory<int> remain JSON arrays."
 pubDate: 2023-09-06
 updatedDate: 2023-11-05
 tags:
@@ -8,7 +8,7 @@ tags:
   - "net"
   - "net-8"
 ---
-Starting with .NET 8, both `Memory<byte[]>` and `ReadOnlyMemory<byte[]>` are serialized as Base64 strings. Let’s look at a quick example:
+Starting with .NET 8, both `Memory<byte>` and `ReadOnlyMemory<byte>` are serialized as Base64 strings. Let's look at a quick example:
 
 ```cs
 var bar = new byte[] { 28, 70, 0 };

@@ -1,6 +1,6 @@
 ---
 title: "C# 8.0 Null-coalescing assignment ??="
-description: "The operator enables you to assign the right-hand operand value to the left-hand operand only if the left-hand operand value evaluates to null. Let’s take a very basic example: In the example above we declare a nullable int variable i and then make two null-coalescing assignments on it. During the first assignment i will evaluate…"
+description: "Learn how the C# 8.0 null-coalescing assignment operator (??=) works, with practical examples including caching and conditional assignment."
 pubDate: 2020-04-05
 updatedDate: 2023-11-05
 tags:
@@ -19,7 +19,7 @@ i ??= 2;
 
 In the example above we declare a nullable `int` variable `i` and then make two null-coalescing assignments on it. During the first assignment `i` will evaluate to `null`, which means that `i` will be assigned the value of `1`. On the next assignment `i` will be `1` – which is not `null` – so the assignment will be skipped.
 
-As expected, the right-hand operand value will only be evaluated if the lef-hand operand is `null`.
+As expected, the right-hand operand value will only be evaluated if the left-hand operand is `null`.
 
 ```cs
 int? i = null;

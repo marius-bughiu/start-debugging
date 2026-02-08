@@ -1,6 +1,6 @@
 ---
 title: "How to fix WordPress Missing MySQL extension after MultiPHP upgrade on HostGator"
-description: "After upgrading your WordPress site’s PHP version using the MultiPHP manager to use PHP 7, you might be running into the following error: Your PHP installation appears to be missing the MySQL extension which is required by WordPress. This is caused by an obsolete handler in your .htaccess file. Fixing it OR Save the file…"
+description: "Fix the 'Missing MySQL extension' WordPress error after upgrading PHP via the MultiPHP manager on HostGator by removing the obsolete handler from .htaccess."
 pubDate: 2020-11-06
 updatedDate: 2023-11-05
 tags:

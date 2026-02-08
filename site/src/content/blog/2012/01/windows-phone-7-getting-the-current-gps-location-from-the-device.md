@@ -1,6 +1,6 @@
 ---
 title: "Windows Phone 7: Getting the current GPS location from the device"
-description: "Getting the current GPS location on a Windows Phone device is rather easy. In order to start you will need to add a reference to System.Device in your project and then a using statement inside the class that you want to get the geo-location. Next we would need to declare an object of type GeoCoordinateWatcher…."
+description: "How to get the current GPS location on a Windows Phone 7 device using GeoCoordinateWatcher and the PositionChanged event."
 pubDate: 2012-01-15
 updatedDate: 2023-11-04
 tags:
@@ -24,7 +24,7 @@ Next to do is: create an instance of GeoCoordinateWatcher, create an event handl
 geoWatcher = new GeoCoordinateWatcher();
 ```
 
-This will create a GeoCoordinateWatcher object in the variable we previously declared. In case the location you need has to have a certain accuracy, the class provides you with an overload for the contructor which takes your desired accuracy as a parameter.
+This will create a GeoCoordinateWatcher object in the variable we previously declared. In case the location you need has to have a certain accuracy, the class provides you with an overload for the constructor which takes your desired accuracy as a parameter.
 
 ```cs
  geoWatcher = new GeoCoordinateWatcher(GeoPositionAccuracy.High);
@@ -49,7 +49,7 @@ void geoWatcher_PositionChanged(object sender, GeoPositionChangedEventArgs<GeoCo
 }
 ```
 
-Next we want to get the coordinates for our location. That is really simple. You can get them in a **GeoCoordinate** object by accesing **e.Position.Location** in the event handler, or if you want to get them as individual values you can save **e.Position.Location.Latitude**, **e.Position.Location.Longitude** and **e.Position.Location.Altitude** in three double variables. Example below:
+Next we want to get the coordinates for our location. That is really simple. You can get them in a **GeoCoordinate** object by accessing **e.Position.Location** in the event handler, or if you want to get them as individual values you can save **e.Position.Location.Latitude**, **e.Position.Location.Longitude** and **e.Position.Location.Altitude** in three double variables. Example below:
 
 ```cs
 void geoWatcher_PositionChanged(object sender, GeoPositionChangedEventArgs<GeoCoordinate> e)
@@ -57,7 +57,7 @@ void geoWatcher_PositionChanged(object sender, GeoPositionChangedEventArgs<GeoCo
     GeoCoordinate currentLocation = e.Position.Location; 
     double currentAltitude = e.Position.Location.Altitude; 
     double currentLongitude = e.Position.Location.Longitude; 
-    double currnetLatitude = e.Position.Location.Latitude; 
+    double currentLatitude = e.Position.Location.Latitude; 
 }
 ```
 
@@ -69,6 +69,6 @@ geoWatcher.Dispose();
 geoWatcher = null;
 ```
 
-In order to test the code I just wrote I will add three textboxes to my application in which I will write the data I read in them. You can do the same. Anyways that’s it. If you got any questions leave a comment and I’ll answer them asap.
+In order to test the code I just wrote I will add three textboxes to my application in which I will display the data. You can do the same. Anyway, that's it. If you have any questions leave a comment and I'll answer them as soon as possible.
 
 You can get the project from [here](https://www.dropbox.com/s/rt1k190mor3c2g0/LocationSample.zip?dl=0).

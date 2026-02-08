@@ -1,6 +1,6 @@
 ---
-title: "NET 8 – Serialization of Half, Int128, and UInt128"
-description: "System.Text.Json brings out of the box support for additional types: Let’s look at an example:"
+title: ".NET 8 – Serialization of Half, Int128, and UInt128"
+description: "System.Text.Json in .NET 8 adds built-in serialization support for the Half, Int128, and UInt128 numeric types."
 pubDate: 2023-09-07
 updatedDate: 2023-11-12
 tags:

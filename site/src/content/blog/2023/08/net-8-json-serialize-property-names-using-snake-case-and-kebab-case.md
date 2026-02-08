@@ -1,6 +1,6 @@
 ---
 title: ".NET 8 – JSON serialize property names using snake case and kebab case"
-description: ".NET 8 introduces several new naming policies that can be used with the System.Text.Json serializer. To name them: Let’s look at the serialized output for each of them. For this, we’re going to use a Car class with the following definition: And we are going to serialize the following object instance: Lower snake case (snake_case)…"
+description: "Learn how to use the new snake_case and kebab-case JSON naming policies introduced in .NET 8 with System.Text.Json."
 pubDate: 2023-08-06
 updatedDate: 2023-11-05
 tags:
@@ -51,7 +51,7 @@ And the output will be:
 {"make":"Mazda","model_id":"MX-5","launch_year":1989}
 ```
 
-### Upper snake case (SNAKE\_CASE)
+## Upper snake case (SNAKE\_CASE)
 
 Just like above, using `JsonNamingPolicy.SnakeCaseUpper` as the property naming policy. The output will be:
 
@@ -74,7 +74,7 @@ This will output the following JSON:
 {"make":"Mazda","model-id":"MX-5","launch-year":1989}
 ```
 
-### Upper kebab case (KEBAB-CASE)
+## Upper kebab case (KEBAB-CASE)
 
 Just like the previous example, but using `JsonNamingPolicy.KebabCaseUpper` for the property naming policy. You will get the following output:
 

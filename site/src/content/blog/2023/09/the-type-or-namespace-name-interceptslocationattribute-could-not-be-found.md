@@ -1,6 +1,6 @@
 ---
 title: "The type or namespace name InterceptsLocationAttribute could not be found"
-description: "If you’re just getting started with interceptors, you might be getting one of the following errors: Error CS0246 The type or namespace name ‘InterceptsLocationAttribute’ could not be found (are you missing a using directive or an assembly reference?) Error CS0246 The type or namespace name ‘InterceptsLocation’ could not be found (are you missing a using…"
+description: "How to fix error CS0246 for InterceptsLocationAttribute in C# interceptors by defining the attribute yourself."
 pubDate: 2023-09-14
 updatedDate: 2023-11-05
 tags:
@@ -30,7 +30,7 @@ namespace System.Runtime.CompilerServices
 
 ### Error CS8652 The feature ‘primary constructors’ is currently in Preview and _unsupported_. To use Preview features, use the ‘preview’ language version.
 
-This means that you are using .NET 8, but you haven’t switched yet to C# 12. You can either [switch to C# 12](/2023/06/how-to-switch-to-c-12/) or defined the attribute without using primary constructors, like so:
+This means that you are using .NET 8, but you haven’t switched yet to C# 12. You can either [switch to C# 12](/2023/06/how-to-switch-to-c-12/) or define the attribute without using primary constructors, like so:
 
 ```cs
 namespace System.Runtime.CompilerServices

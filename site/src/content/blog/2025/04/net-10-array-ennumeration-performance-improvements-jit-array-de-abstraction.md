@@ -1,6 +1,6 @@
 ---
-title: ".NET 10: Array ennumeration performance improvements (JIT array de-abstraction)"
-description: "In .NET 10 Preview 1, the JIT compiler got better at optimizing how arrays are used with interfaces, especially when looping through them using foreach. This was the first step toward reducing the extra cost that comes with using enumerators to go through arrays. Preview 2 builds on this work with even more improvements. Take…"
+title: ".NET 10: Array Enumeration Performance Improvements (JIT Array De-Abstraction)"
+description: "In .NET 10, the JIT compiler reduces the overhead of iterating arrays through interfaces. See benchmarks comparing .NET 9 vs .NET 10 with foreach, IEnumerable, and conditional escape analysis."
 pubDate: 2025-04-06
 tags:
   - "net"
@@ -19,7 +19,7 @@ public class ArrayDeAbstraction
     static readonly int[] array = new int[512];
 
     [Benchmark(Baseline = true)]
-    public int Ennumeration()
+    public int Enumeration()
     {
         int sum = 0;
         foreach (int i in array) sum += i;
@@ -27,7 +27,7 @@ public class ArrayDeAbstraction
     }
 
     [Benchmark]
-    public int EnnumerationViaInterface()
+    public int EnumerationViaInterface()
     {
         IEnumerable<int> o = array;
         int sum = 0;
@@ -42,8 +42,8 @@ In the first method, the array type is known at compile time, so the JIT can gen
 ```clean
 | Method                   | Mean     | Ratio | Gen0   | Allocated | Alloc Ratio |
 |------------------------- |---------:|------:|-------:|----------:|------------:|
-| Ennumeration             | 303.6 ns |  1.00 |      - |         - |        0.00 |
-| EnnumerationViaInterface | 616.1 ns |  2.03 | 0.0153 |      32 B |        1.00 |
+| Enumeration             | 303.6 ns |  1.00 |      - |         - |        0.00 |
+| EnumerationViaInterface | 616.1 ns |  2.03 | 0.0153 |      32 B |        1.00 |
 ```
 
 Thanks to further improvements in .NET 10, such as better inlining, smarter memory use, and improved loop handling, that extra allocation is now gone and performance is much better:
@@ -51,8 +51,8 @@ Thanks to further improvements in .NET 10, such as better inlining, smarter memo
 ```clean
 | Method                   | Runtime   | Mean     | Ratio | Gen0   | Allocated | Alloc Ratio |
 |------------------------- |---------- |---------:|------:|-------:|----------:|------------:|
-| EnnumerationViaInterface | .NET 10.0 | 216.2 ns |  0.35 |      - |         - |        0.00 |
-| EnnumerationViaInterface | .NET 9.0  | 615.8 ns |  1.00 | 0.0153 |      32 B |        1.00 |
+| EnumerationViaInterface | .NET 10.0 | 216.2 ns |  0.35 |      - |         - |        0.00 |
+| EnumerationViaInterface | .NET 9.0  | 615.8 ns |  1.00 | 0.0153 |      32 B |        1.00 |
 ```
 
 The goal is to close the gap entirely, even in more complex cases. Here’s a tougher example:
@@ -70,7 +70,7 @@ public class ArrayDeAbstraction
     IEnumerable<int> GetOpaqueArray() => array;
 
     [Benchmark]
-    public int EnnumerationViaInterface()
+    public int EnumerationViaInterface()
     {
         IEnumerable<int> o = GetOpaqueArray();
         int sum = 0;
@@ -89,8 +89,8 @@ Thanks to this, we get much better results in .NET 10 compared to .NET 9:
 ```clean
 | Method                   | Runtime   | Mean     | Ratio | Gen0   | Allocated | Alloc Ratio |
 |------------------------- |---------- |---------:|------:|-------:|----------:|------------:|
-| EnnumerationViaInterface | .NET 10.0 | 162.5 ns |  0.26 |      - |         - |        0.00 |
-| EnnumerationViaInterface | .NET 9.0  | 617.5 ns |  1.00 | 0.0153 |      32 B |        1.00 |
+| EnumerationViaInterface | .NET 10.0 | 162.5 ns |  0.26 |      - |         - |        0.00 |
+| EnumerationViaInterface | .NET 9.0  | 617.5 ns |  1.00 | 0.0153 |      32 B |        1.00 |
 ```
 
 As you can see, .NET is getting smarter about how it handles array iteration, even when it’s wrapped behind interfaces. This leads to better performance and lower memory use, especially in real-world code where these patterns are common.

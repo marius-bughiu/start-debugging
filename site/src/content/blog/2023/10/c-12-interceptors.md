@@ -1,6 +1,6 @@
 ---
 title: "C# 12 – Interceptors"
-description: "Interceptors are an experimental compiler feature introduced in .NET 8, meaning it may change or be removed in a future release of the framework. To see what else is new in .NET 8, check out our What’s new in .NET 8 page. To enable the feature, you’ll need to turn on a feature flag by…"
+description: "Learn about C# 12 interceptors, an experimental .NET 8 compiler feature that lets you replace method calls at compile time using the InterceptsLocation attribute."
 pubDate: 2023-10-12
 updatedDate: 2023-11-05
 tags:
@@ -95,7 +95,7 @@ The first thing to notice is the signature of the interceptor method: it’s an 
 public static void InterceptorA(this Foo foo, int param)
 ```
 
-This is a preview limitation which will be removed before the feature exists preview.
+This is a preview limitation which will be removed before the feature exits preview.
 
 ### The `filePath` parameter
 

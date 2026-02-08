@@ -1,12 +1,12 @@
 ---
 title: "How to create your own code snippets in Visual Studio"
-description: "Okay, so what I will do here is explain you how to create your own code snippets to use in Visual Studio 2010 without using any add-ins related to snippet designing. A post on snippet designers / explorers and how you can use them to build better snippets faster will come sometime next week I…"
+description: "Step-by-step guide to creating your own code snippets in Visual Studio 2010, including simple snippets and using literals for replaceable parameters."
 pubDate: 2012-01-14
 updatedDate: 2023-11-04
 tags:
   - "visual-studio"
 ---
-Okay, so what I will do here is explain you how to create your own code snippets to use in Visual Studio 2010 without using any add-ins related to snippet designing. A post on snippet designers / explorers and how you can use them to build better snippets faster will come sometime next week I believe, but this time I can’t promise.
+Okay, so what I will do here is explain to you how to create your own code snippets to use in Visual Studio 2010 without using any add-ins related to snippet designing. A post on snippet designers / explorers and how you can use them to build better snippets faster will come sometime next week I believe, but this time I can't promise.
 
 ## Part 1: Creating a simple code snippet
 
@@ -19,7 +19,7 @@ So let’s get started. Open up your Visual Studio and go to **File – New File
 </CodeSnippets>
 ```
 
-Now we can really start work on our snippet. First thing we need to do is set up the header of our snippet. The header can contain various information like the **Title, Description, Author,  Keywords** in case you want to make your snippet available online, a **Shortcut** for your snipped and also a **HelpUrl** where people can go and ask for help in case something doesn’t work as expected. I suggest you always add a title and a description to your snippets even if they are not mandatory.
+Now we can really start work on our snippet. First thing we need to do is set up the header of our snippet. The header can contain various information like the **Title, Description, Author,  Keywords** in case you want to make your snippet available online, a **Shortcut** for your snippet and also a **HelpUrl** where people can go and ask for help in case something doesn’t work as expected. I suggest you always add a title and a description to your snippets even if they are not mandatory.
 
 Here’s an example of a header containing all possible elements:
 
@@ -52,7 +52,7 @@ Now that the header is set up, we can start writing the code. First thing here i
 </CodeSnippets>
 ```
 
-The code which we want the snipped to insert must be added in the **Code** element of the **Snippet** between `<![CDATA[` and `]]>` brackets. In this example, as you’ve probably figured out from the description, our code snippet will simply display a message box containing the text “Hello World!”.  Bellow you can see how the **Code** element of the snippet looks like after adding the code.
+The code which we want the snippet to insert must be added in the **Code** element of the **Snippet** between `<![CDATA[` and `]]>` brackets. In this example, as you’ve probably figured out from the description, our code snippet will simply display a message box containing the text “Hello World!”.  Below you can see how the **Code** element of the snippet looks after adding the code.
 
 ```xml
 <Snippet>
@@ -172,9 +172,9 @@ As you can see, the property name is used several times as well as the property 
 </Snippet>
 ```
 
-As you can see, each of my literals has three fields: **ID** – used to identify replaceable portions of code, **Default** – representing the default value of the literal when the snippet is inserted and **ToolTip** which is a small description of he literal which shows up at mouse over.
+As you can see, each of my literals has three fields: **ID** – used to identify replaceable portions of code, **Default** – representing the default value of the literal when the snippet is inserted and **ToolTip** which is a small description of the literal which shows up on mouse over.
 
-Having these literals set up what we need to next is replace the already defined names and types in our code with literals. This is done by using **$ID$** instead of the predefined value (ex: $PropertyName$, $PropertyType$, $ClassName$).
+Having these literals set up what we need to do next is replace the already defined names and types in our code with literals. This is done by using **$ID$** instead of the predefined value (ex: $PropertyName$, $PropertyType$, $ClassName$).
 
 This is how your code should look like inside the snippet after adding the literals:
 

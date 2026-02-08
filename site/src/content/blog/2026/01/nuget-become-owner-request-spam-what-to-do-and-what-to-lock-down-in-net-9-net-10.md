@@ -1,6 +1,6 @@
 ---
 title: "NuGet “become owner” request spam: what to do (and what to lock down) in .NET 9/.NET 10"
-description: "A thread from the last 48 hours warns about suspicious “become owner” requests on NuGet.org, allegedly sent at scale to package maintainers: https://www.reddit.com/r/dotnet/comments/1qf9lnp/nuget_gallery_supply_chain_attack/. Even if the details change by tomorrow, the defensive checklist is stable. The goal is simple: reduce the chance that an unexpected ownership change turns into a compromised dependency in your .NET…"
+description: "Defend your .NET packages against NuGet ownership request spam. Lock files, Package Source Mapping, and Central Package Management practices for .NET 9 and .NET 10."
 pubDate: 2026-01-23
 tags:
   - "net"

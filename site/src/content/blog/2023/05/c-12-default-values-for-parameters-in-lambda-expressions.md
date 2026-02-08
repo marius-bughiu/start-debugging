@@ -1,6 +1,6 @@
 ---
 title: "C# 12 – Default values for parameters in lambda expressions"
-description: "Starting with C# version 12, you can specify default values for your parameters in lambda expressions. The syntax and the restrictions on the default parameter values are the same as for methods and local functions. Let’s take an example: This lambda can now be consumed as follows: params array in lambda expressions You can also…"
+description: "C# 12 lets you specify default parameter values and params arrays in lambda expressions, just like in methods and local functions."
 pubDate: 2023-05-09
 updatedDate: 2023-11-05
 tags:
@@ -54,4 +54,4 @@ Console.WriteLine(total); // 15
 
 > The feature ‘lambda optional parameters’ is currently in Preview and _unsupported_. To use Preview features, use the ‘preview’ language version.
 
-Your project needs to be targeting .NET 8 and C# 12 or newer in order to use the lambda optional parameters feature. If you’re not sure how to switch to C# 12 you can check out this article: [https://startdebugging.net/2023/06/how-to-switch-to-c-12/](/2023/06/how-to-switch-to-c-12/)
+Your project needs to be targeting .NET 8 and C# 12 or newer in order to use the lambda optional parameters feature. If you're not sure how to switch to C# 12, check out this article: [How to switch to C# 12](/2023/06/how-to-switch-to-c-12/).

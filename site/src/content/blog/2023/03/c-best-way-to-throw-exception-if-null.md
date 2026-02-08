@@ -1,6 +1,6 @@
 ---
 title: "C# – Best way to Throw Exception If Null"
-description: ".NET 6 introduced a few new helper methods to deal with throwing exceptions, and one of them is ThrowIfNull. The usage is simple: The method will throw a ArgumentNullException when myParam is null. It will do nothing otherwise. ThrowIfNull can take in two parameters: Note: paramName uses CallerArgumentExpressionAttribute to retrieve the name of your parameter…"
+description: "Use ArgumentNullException.ThrowIfNull in .NET 6+ for concise null checks, or use throw expressions in C# 7+ for older frameworks."
 pubDate: 2023-03-11
 updatedDate: 2023-11-05
 tags:
@@ -12,7 +12,7 @@ tags:
 ArgumentNullException.ThrowIfNull(myParam);
 ```
 
-The method will throw a **ArgumentNullException** when **myParam** is **null**. It will do nothing otherwise.
+The method will throw an **ArgumentNullException** when **myParam** is **null**. It will do nothing otherwise.
 
 ThrowIfNull can take in two parameters:
 
@@ -23,13 +23,13 @@ ThrowIfNull can take in two parameters:
 
 ## Throw expressions
 
-If you are not yet on .NET 6 or newer, but you can use C# 7+, than you can use throw expressions to make your code more readable:
+If you are not yet on .NET 6 or newer, but you can use C# 7+, then you can use throw expressions to make your code more readable:
 
 ```cs
 var myVar = myParam ?? throw new ArgumentNullException(nameof(myParam), "Parameter is required.");
 ```
 
-Alternatively, you could chose to define your own implementation of ThrowIfNull, like so:
+Alternatively, you could choose to define your own implementation of ThrowIfNull, like so:
 
 ```cs
 /// <summary>Throws an <see cref="ArgumentNullException"/> if <paramref name="argument"/> is null.</summary>

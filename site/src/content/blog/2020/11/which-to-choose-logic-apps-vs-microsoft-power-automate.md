@@ -1,6 +1,6 @@
 ---
 title: "Which to choose: Logic Apps vs Microsoft Power Automate"
-description: "Both are design-first technologies, meaning that they provide user interfaces allowing you to draw-out your workflows as opposed to coding them. Other similarities between the two: They both can accept inputs Can run actions Able to control the workflow using conditions Can produce outputs Logic Apps Logic Apps is a service provided by Azure which…"
+description: "Compare Azure Logic Apps and Microsoft Power Automate to determine which workflow automation service is best suited for your use case."
 pubDate: 2020-11-18
 tags:
   - "azure"
@@ -9,16 +9,16 @@ tags:
 ---
 Both are design-first technologies, meaning that they provide user interfaces allowing you to draw-out your workflows as opposed to coding them. Other similarities between the two:
 
--   They both can accept inputs
--   Can run actions
--   Able to control the workflow using conditions
--   Can produce outputs
+-   They can accept inputs
+-   They can run actions
+-   They can control the workflow using conditions
+-   They can produce outputs
 
 ## Logic Apps
 
 Logic Apps is a service provided by Azure which you can use to automate, orchestrate, and integrate disparate components of a distributed application. Through Logic Apps, you can draw out complex workflows that model complex business processes.
 
-Logic Apps also provide a code view which allow you to create and edit workflows using JSON notation.
+Logic Apps also provide a code view which allows you to create and edit workflows using JSON notation.
 
 They are ideal for integration projects as the service provides hundreds of different connectors for different apps and external services. Additionally you can easily create your own custom connectors as well.
 
@@ -33,37 +33,16 @@ There are four different types of workflows:
 -   **Scheduled**: A flow that executes on a regular basis.
 -   **Business process**: A flow that models a business process and can have: notification to required people; with their approval recorded; calendar dates for steps; and recorded time of flow steps.
 
-In terms of connectors, Microsoft Power Apps has the exact same connectors as Logic Apps, including the ability to create and use custom connectors.
+In terms of connectors, Microsoft Power Automate has the exact same connectors as Logic Apps, including the ability to create and use custom connectors.
 
-## Diferences
+## Differences
 
-Microsoft Power Automate
-
-Logic Apps
-
-Intended users
-
-Office workers and business analysts
-
-Developers and IT pros
-
-Intended scenarios
-
-Self-service workflow creation
-
-Advanced integration projects
-
-Design tools
-
-GUI only. Browser and mobile app
-
-Browser and Visual Studio designer. Code editing is possible using JSON
-
-Application Lifecycle Management
-
-Power Automate includes testing and production environments
-
-Logic Apps source code can be included in Azure DevOps and source code management systems
+| | Microsoft Power Automate | Logic Apps |
+| --- | --- | --- |
+| **Intended users** | Office workers and business analysts | Developers and IT pros |
+| **Intended scenarios** | Self-service workflow creation | Advanced integration projects |
+| **Design tools** | GUI only. Browser and mobile app | Browser and Visual Studio designer. Code editing is possible using JSON |
+| **Application Lifecycle Management** | Power Automate includes testing and production environments | Logic Apps source code can be included in Azure DevOps and source code management systems |
 
 ## Conclusions
 

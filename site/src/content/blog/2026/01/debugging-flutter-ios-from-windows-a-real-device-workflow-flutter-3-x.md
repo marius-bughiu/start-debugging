@@ -1,6 +1,6 @@
 ---
 title: "Debugging Flutter iOS from Windows: a real device workflow (Flutter 3.x)"
-description: "Every few weeks, the same pain point resurfaces: “I’m on Windows. I want to debug my Flutter iOS app on a real iPhone. Do I really need a Mac?” A fresh r/FlutterDev post proposes a pragmatic workaround: offload the iOS build to macOS in GitHub Actions, then install and attach for debugging from Windows: https://www.reddit.com/r/FlutterDev/comments/1qkm5pd/develop_flutter_ios_apps_on_windows_with_a_real/…"
+description: "A pragmatic workflow for debugging Flutter iOS apps from Windows: offload the build to macOS in GitHub Actions, install the IPA on a real iPhone, and use flutter attach for hot reload and DevTools."
 pubDate: 2026-01-23
 tags:
   - "flutter"
@@ -71,4 +71,4 @@ This workflow is useful, but it is not magic:
 -   **You still need a device**: simulators do not run on Windows.
 -   **Your CI job becomes part of your dev loop**: optimize build times and cache dependencies.
 
-If you want the original write-up and the repo that triggered this, start here: [https://github.com/MobAI-App/ios-builder](https://github.com/MobAI-App/ios-builder). For official Flutter guidance on iOS debugging, keep the platform docs nearby too: [https://docs.flutter.dev/platform-integration/ios/ios-debugging](https://docs.flutter.dev/platform-integration/ios/ios-debugging)
+If you want the original write-up and the repo that triggered this, start here: [https://github.com/MobAI-App/ios-builder](https://github.com/MobAI-App/ios-builder). For official Flutter guidance on iOS debugging, keep the platform docs nearby too: [https://docs.flutter.dev/platform-integration/ios/ios-debugging](https://docs.flutter.dev/platform-integration/ios/ios-debugging).

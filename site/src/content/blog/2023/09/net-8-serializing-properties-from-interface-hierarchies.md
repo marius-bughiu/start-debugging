@@ -1,6 +1,6 @@
 ---
-title: "NET 8 – Serializing properties from interface hierarchies"
-description: ".NET 8 adds support for serializing properties from interface hierarchies. This means that all the properties from all interfaces in the hierarchy will be included in the serialization. The most important thing is where you start. Let’s take the following hierarchy as an example: Now, during serialization, if you pass along a Derived2Impl instance stored…"
+title: ".NET 8 – Serializing properties from interface hierarchies"
+description: ".NET 8 adds support for serializing properties from interface hierarchies, including all properties from all interfaces depending on the declared variable type."
 pubDate: 2023-09-25
 updatedDate: 2023-11-05
 tags:
@@ -54,7 +54,7 @@ JsonSerializer.Serialize(value);
 // Output: {"Derived":1,"Base":0}
 ```
 
-And for an `IBase` variable, as expected, only one property will be serialized, despite the fact that the object we’re deserializing is of type `Derived2Impl` – has all 3 interfaces implemented, thus all 3 properties defined.
+And for an `IBase` variable, as expected, only one property will be serialized, despite the fact that the object we're serializing is of type `Derived2Impl` – has all 3 interfaces implemented, thus all 3 properties defined.
 
 ```cs
 IBase value = new Derived2Impl { Base = 0, Derived = 1, Derived2 = 2 };

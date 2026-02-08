@@ -1,6 +1,6 @@
 ---
 title: "How to: Detect text language using Azure AI Language service"
-description: "The Azure AI Language service provides developers with an API for common text analysis techniques, such as the ability to detect language from text, perform sentiment analysis, key phrase extraction, and named entity recognition and linking. Provisioning The first step in analyzing text with Azure AI Language is provisioning a Language service resource in Azure…."
+description: "Learn how to detect text language using the Azure AI Language service, including provisioning, API payloads, and C# SDK examples with TextAnalyticsClient."
 pubDate: 2023-11-16
 tags:
   - "ai"
@@ -21,11 +21,11 @@ Besides the tier limits, you should also take into account the request limits:
 
 After the resource is created, navigate to **Keys and Endpoint** to retrieve your endpoint URL and your authorization key (any of the two will work). We will need these later when we start making calls to the API.
 
-# Detect language API
+## Detect language API
 
 The language detection API takes in one or more text documents, and for each of them it provides in return the detected language along with a confidence score. This can be useful when dealing with arbitrary text input, when you don’t know the language of the text, and that could play an important role in subsequent analysis or actions. For example, in a chat bot scenario, you might use this information to assist the user in their own language.
 
-Each input document is made up of it’s `text` content and a unique `id` (unique in the context of this request). Additionally, you can provide a `countryHint` for each of the input documents to improve the prediction performance.
+Each input document is made up of its `text` content and a unique `id` (unique in the context of this request). Additionally, you can provide a `countryHint` for each of the input documents to improve the prediction performance.
 
 Let’s look at a sample JSON payload:
 

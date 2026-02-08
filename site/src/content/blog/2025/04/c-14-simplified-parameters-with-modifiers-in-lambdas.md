@@ -1,6 +1,6 @@
 ---
 title: "C# 14: Simplified parameters with modifiers in lambdas"
-description: "Lambda expressions have been a core feature of C# for many years, allowing developers to write inline functions or callbacks in a concise way. In C#, a lambda can have explicitly typed parameters (where you specify each parameter’s type) or implicitly typed parameters (where the types are inferred from context). Prior to C# 14, if…"
+description: "C# 14 allows using ref, out, in, scoped, and ref readonly modifiers on implicitly typed lambda parameters, eliminating the need to explicitly declare parameter types."
 pubDate: 2025-04-09
 tags:
   - "14"

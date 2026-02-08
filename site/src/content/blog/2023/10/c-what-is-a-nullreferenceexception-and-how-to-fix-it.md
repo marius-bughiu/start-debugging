@@ -1,6 +1,6 @@
 ---
 title: "C# – What is a NullReferenceException, and how to fix it?"
-description: "A NullReferenceException is a common runtime error which occurs when your code tries to access or manipulate an object or a member of an object, but the object reference is currently set to null (meaning it doesn’t reference any valid object in memory). In other words, you’re trying to perform an operation on something that…"
+description: "Learn what causes a NullReferenceException in C#, how to debug it, and how to prevent it using null checks, the null-conditional operator, and nullable reference types."
 pubDate: 2023-10-20
 updatedDate: 2023-11-05
 tags:
@@ -47,7 +47,7 @@ string myString = null;
 int? length = myString?.Length; // 'length' will be null if 'myString' is null.
 ```
 
-###### Nullable reference types
+### Nullable reference types
 
 Another way to avoid `NullReferenceException`s is by enabling nullable reference types, a feature introduced in C# 8.0. It helps developers write safer and more reliable code by providing a way to express whether a reference type (e.g., classes and interfaces) can be null or non-null. This feature helps catch potential null reference exceptions at compile time and improves code readability and maintainability.
 

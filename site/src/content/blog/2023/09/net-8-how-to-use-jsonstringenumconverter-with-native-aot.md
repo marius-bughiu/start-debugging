@@ -1,6 +1,6 @@
 ---
-title: "NET 8 – How to use JsonStringEnumConverter with native AOT"
-description: "JsonStringEnumConverter is not compatible with native AOT. To fix that, NET 8 introduces a new converter type JsonStringEnumConverter<TEnum> that is compatible with native AOT. To use the new type, simply annotate your types as follows: Keep in mind: enum deserialization is case insensitive, while serialization can be cusomized via JsonNamingPolicy. What happens if you try…"
+title: ".NET 8 – How to use JsonStringEnumConverter with native AOT"
+description: "Learn how to use the new JsonStringEnumConverter<TEnum> in .NET 8 for native AOT-compatible enum serialization with System.Text.Json."
 pubDate: 2023-09-17
 updatedDate: 2023-11-05
 tags:
@@ -8,7 +8,7 @@ tags:
   - "net"
   - "net-8"
 ---
-[JsonStringEnumConverter](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.serialization.jsonstringenumconverter) is not compatible with native AOT. To fix that, NET 8 introduces a new converter type [JsonStringEnumConverter<TEnum>](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.serialization.jsonstringenumconverter-1?view=net-8.0) that is compatible with native AOT.
+[JsonStringEnumConverter](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.serialization.jsonstringenumconverter) is not compatible with native AOT. To fix that, .NET 8 introduces a new converter type [JsonStringEnumConverter<TEnum>](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.serialization.jsonstringenumconverter-1?view=net-8.0) that is compatible with native AOT.
 
 To use the new type, simply annotate your types as follows:
 
@@ -20,9 +20,9 @@ public enum MyEnum { Foo, Bar }
 public partial class MyJsonSerializerContext : JsonSerializerContext { }
 ```
 
-Keep in mind: enum deserialization is case insensitive, while serialization can be cusomized via [JsonNamingPolicy](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.jsonnamingpolicy?view=net-8.0).
+Keep in mind: enum deserialization is case insensitive, while serialization can be customized via [JsonNamingPolicy](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.jsonnamingpolicy?view=net-8.0).
 
-### What happens if you try to use JsonStringEnumConverter and NativeAOT?
+## What happens if you try to use JsonStringEnumConverter and NativeAOT?
 
 The first warning sign you will see is during compilation, where you will get a warning that:
 

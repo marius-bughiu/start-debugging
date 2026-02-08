@@ -1,10 +1,10 @@
 ---
 title: "C# 14 idea: interceptors could make System.Text.Json source generation feel automatic"
-description: "A Feb 7, 2026 discussion proposed using interceptors to rewrite JsonSerializer calls so they automatically flow through a generated JsonSerializerContext. The appeal is obvious: keep AOT-friendly source generation, but get back the clean call sites most codebases want."
+description: "A community discussion proposed using C# 14 interceptors to rewrite JsonSerializer calls so they automatically use a generated JsonSerializerContext, keeping AOT-friendly source generation with cleaner call sites."
 pubDate: 2026-02-08
 tags:
-  - "csharp"
-  - "dotnet"
+  - "c-sharp"
+  - "net"
   - "system-text-json"
   - "aot"
 ---

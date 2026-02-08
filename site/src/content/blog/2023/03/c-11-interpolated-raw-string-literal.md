@@ -1,6 +1,6 @@
 ---
 title: "C# 11 – Interpolated raw string literal"
-description: "C# 11 introduces the concept of raw string literals to the language and with that come a set of new features for string interpolation as well. First of all, you can continue to use the interpolation syntax as you know it in combination with raw string literals like this: The output will be: Escaping braces…"
+description: "Learn how to use interpolated raw string literals in C# 11, including escaping braces, multiple $ characters, and conditional operators."
 pubDate: 2023-03-17
 updatedDate: 2023-11-05
 tags:
@@ -53,11 +53,11 @@ var interpolatedRaw3 = $$$"""The sum of "{{{x}}}" and "{{{y}}}" is "{{{ x + y }}
 The colon (:) has special meaning in interpolated strings, and as a result, conditional expressions need an additional set of round brackets ( ) to work. For example:
 
 ```cs
-var conditionalInterpolated = $"I am "{x}" year{(age == 1 ? "" : "s")} old.";
+var conditionalInterpolated = $"I am {x} year{(x == 1 ? "" : "s")} old.";
 ```
 
 ## Errors
 
 > Error CS9006 The interpolated raw string literal does not start with enough ‘$’ characters to allow this many consecutive opening braces as content.
 
-This compiler error occurs when your string contains a sequence of brace characters which is equal to or greater than double the lenght of the sequence of the $ characters found at the start of your string.
+This compiler error occurs when your string contains a sequence of brace characters which is equal to or greater than double the length of the sequence of the $ characters found at the start of your string.

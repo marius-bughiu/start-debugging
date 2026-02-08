@@ -1,6 +1,6 @@
 ---
 title: "Flutter: Your project requires a newer version of the Kotlin Gradle plugin"
-description: "This can be fixed in two simple steps:"
+description: "Fix the Flutter error 'Your project requires a newer version of the Kotlin Gradle plugin' by updating the ext.kotlin_version in your build.gradle file to the latest Kotlin release."
 pubDate: 2023-08-18
 updatedDate: 2023-11-05
 tags:

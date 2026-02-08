@@ -1,11 +1,11 @@
 ---
 title: "The AI revolution – Should software engineers be afraid for their jobs?"
-description: "This is a question I get asked often, and it comes both from people whithin the industry as well as others from outside our tiny little circle – people at the start of their careers or people worried I might be out of a job soon. And whenever I try to explain why I’m not…"
+description: "Will AI replace software engineers? Exploring the reality behind AI-generated websites, prompt engineering, specialized AI, and why AI is a copilot rather than a replacement."
 pubDate: 2023-10-08
 tags:
   - "opinion"
 ---
-This is a question I get asked often, and it comes both from people whithin the industry as well as others from outside our tiny little circle – people at the start of their careers or people worried I might be out of a job soon. And whenever I try to explain why I’m not afraid – why software engineers and others in general should not be afraid – I’m usually met with some resistance – “_but AI already does that and that, surely it can do that as well in no time!_“.
+This is a question I get asked often, and it comes both from people within the industry as well as others from outside our tiny little circle – people at the start of their careers or people worried I might be out of a job soon. And whenever I try to explain why I’m not afraid – why software engineers and others in general should not be afraid – I’m usually met with some resistance – “_but AI already does that and that, surely it can do that as well in no time!_“.
 
 Maybe.
 
@@ -31,11 +31,11 @@ All this has created a new job title: **Prompt Engineer**.
 
 ## Specialized AIs
 
-While Skynet may be far away – it’s low-level building blocks are already here.
+While Skynet may be far away -- its low-level building blocks are already here.
 
-From core things like understanding intent in natural language, detecting and identifying objects, extracting text from documents to very domain-specific implementations of these bits and pieces like chatbots, classifying documents or self-driving cars. These building blocks are already doing hard work as we speak, and soon, there will be such a specialized AI for almost anything you can dream of. The trick will be puting them all together.
+From core things like understanding intent in natural language, detecting and identifying objects, extracting text from documents to very domain-specific implementations of these bits and pieces like chatbots, classifying documents or self-driving cars. These building blocks are already doing hard work as we speak, and soon, there will be such a specialized AI for almost anything you can dream of. The trick will be putting them all together.
 
-But maybe Skynet is not the goal. For example, in the case of a robot surgeon, I would want it specialized in surgery – I could care less if it knows how to play football, maybe it doesn’t even have legs… And the same applies in almost every case.
+But maybe Skynet is not the goal. For example, in the case of a robot surgeon, I would want it specialized in surgery – I couldn't care less if it knows how to play football, maybe it doesn’t even have legs… And the same applies in almost every case.
 
 And even if we were able to build such a thing in the first place, we’d have nowhere to run it. Just look at the current state where organizations literally want to throw money at OpenAI, but they simply cannot meet demand. And with the risk of over-simplifying, we’re talking about a chat-bot.
 

@@ -1,6 +1,6 @@
 ---
 title: "Leveraging Windows Azure for the Windows Phone Developer – Webinar"
-description: "Just letting you know that there’s an upcoming webinar on the 4th of this month about Windows Azure and how we can benefit from it in Windows Phone. The webinar will be presented by Samidip Basu and has the following agenda: Date and time: January 4th at 10 AM PDT (check your local time)Registration link:…"
+description: "Upcoming SilverlightShow webinar by Samidip Basu on leveraging Windows Azure for Windows Phone development, covering push notifications, OData, SQL Azure, and more."
 pubDate: 2012-01-02
 updatedDate: 2023-11-04
 tags:
@@ -22,4 +22,4 @@ Registration link: [https://www1.gotomeeting.com/register/386800777](https://www
 
 By tweeting about this webinar using the tag **#webinarsilverlightshow** you get the chance to win the [Windows Phone 7 Silverlight Cookbook](http://www.silverlightshow.net/items/Book-Review-Window-Phone-7-Silverlight-Cookbook.aspx) and at the end of the webinar by giving a constructive feedback you can also get for free the  [OData & Cloud Augmentation of Windows Phone Applications](http://www.silverlightshow.net/ebooks/odata_cloud.aspx) ebook.
 
-For more details about the webinar and the free ebooks feel free to visit [SilverlightShow.NET](http://www.silverlightshow.net/news/Free-SilverlightShow-Webinar-Leveraging-Windows-Azure-for-the-Windows-Phone-Developer.aspx "SilverlightShow.NET")
+For more details about the webinar and the free ebooks feel free to visit [SilverlightShow.NET](http://www.silverlightshow.net/news/Free-SilverlightShow-Webinar-Leveraging-Windows-Azure-for-the-Windows-Phone-Developer.aspx "SilverlightShow.NET").

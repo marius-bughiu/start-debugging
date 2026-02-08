@@ -1,6 +1,6 @@
 ---
 title: "How To: Add AdMob to your Xamarin Forms app"
-description: "One of the first things people think about when developing for a new platform / using a new technology is monetization; and in my case the question is: how easy is it to integrate AdMob? For Xamarin Forms the answer would be: “It depends” – it depends on luck & on the complexity of what…"
+description: "Step-by-step guide to integrating AdMob ads into your Xamarin Forms app on Android and iOS using custom view renderers."
 pubDate: 2015-09-27
 updatedDate: 2023-11-18
 tags:
@@ -9,15 +9,15 @@ tags:
 ---
 One of the first things people think about when developing for a new platform / using a new technology is monetization; and in my case the question is: how easy is it to integrate AdMob? For Xamarin Forms the answer would be: “It depends” – it depends on luck & on the complexity of what you want to achieve; but I will detail this as we move along.
 
-The first thing you need to do is add the required components to your projects. For this walktrough I will be using Visual Studio but it should be relatively the same when using Xamarin Studio. Here, things go separate ways for each of the platforms:
+The first thing you need to do is add the required components to your projects. For this walkthrough I will be using Visual Studio but it should be relatively the same when using Xamarin Studio. Here, things go separate ways for each of the platforms:
 
 -   for Android – add Nuget package Xamarin.GooglePlayServices.Ads.Lite
 -   for iOS – add Nuget package Xamarin.Google.iOS.MobileAds
 -   for Windows Phone – download the SDK from here and add it as a reference platform no longer supported
 
-By now, you Android project should no longer be building & you should be receiving a COMPILETODALVIK : UNEXPECTED TOP-LEVEL error. To fix that, go into your Droid project properties, select the Android Options tab and then under Advanced modify the value for the Java Max Heap Size to 1G. Your project should now build without any errors.
+By now, your Android project should no longer be building and you should be receiving a COMPILETODALVIK : UNEXPECTED TOP-LEVEL error. To fix that, go into your Droid project properties, select the Android Options tab and then under Advanced modify the value for the Java Max Heap Size to 1G. Your project should now build without any errors.
 
-Next, inside your shared / PCL project add a new Content View and call it AdMobView. Remove the code generated inside it’s constructor & it should look like this:
+Next, inside your shared / PCL project add a new Content View and call it AdMobView. Remove the code generated inside its constructor and it should look like this:
 
 ```cs
 public class AdMobView : ContentView

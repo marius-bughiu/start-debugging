@@ -1,6 +1,6 @@
 ---
 title: "What’s new in .NET 8"
-description: ".NET 8 was released on November 14, 2023 as an LTS (Long Term Support) version, meaning it will continue to receive support, updates, and bug fixes for at least three years from its release date. As usual, .NET 8 brings support for a new version of the C# languange, namely C# 12. Check out our dedicated page…"
+description: ".NET 8 was released on November 14, 2023 as an LTS (Long Term Support) version, meaning it will continue to receive support, updates, and bug fixes for at least three years from its release date. As usual, .NET 8 brings support for a new version of the C# language, namely C# 12. Check out our dedicated page…"
 pubDate: 2023-06-10
 updatedDate: 2023-11-15
 tags:
@@ -9,7 +9,7 @@ tags:
 ---
 .NET 8 was released on **November 14, 2023** as an LTS (Long Term Support) version, meaning it will continue to receive support, updates, and bug fixes for at least three years from its release date.
 
-As usual, .NET 8 brings support for a new version of the C# languange, namely C# 12. Check out our dedicated page covering [what’s new in C# 12](/2023/06/whats-new-in-c-12/).
+As usual, .NET 8 brings support for a new version of the C# language, namely C# 12. Check out our dedicated page covering [what’s new in C# 12](/2023/06/whats-new-in-c-12/).
 
 Let’s dive into the list of changes and new features in .NET 8:
 

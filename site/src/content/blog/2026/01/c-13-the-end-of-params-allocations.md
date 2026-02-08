@@ -1,8 +1,10 @@
 ---
 title: "C# 13: The End of `params` Allocations"
-description: "For over two decades, the params keyword in C# has come with a hidden tax: implicit array allocations. Every time you called a method like string.Format or your own helper with a variable number of arguments, the compiler silently created a new array. In high-performance scenarios (hot paths), these allocations added up, triggering unnecessary Garbage…"
+description: "C# 13 finally eliminates the hidden array allocation behind params. You can now use params with Span, ReadOnlySpan, List, and other collection types for zero-allocation variadic methods."
 pubDate: 2026-01-02
 tags:
+  - "c-13"
+  - "c-sharp"
   - "net"
   - "net-9"
 ---
