@@ -3,7 +3,9 @@
   UserAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) StartDebuggingBot/1.0'
 
   # Default time window for “what’s new”.
-  SinceHours = 48
+  # 96h covers long weekends and quiet stretches without pulling in stale content.
+  # Override per-run with: sd-daily.ps1 -SinceHours 168
+  SinceHours = 96
 
   # Feeds used by fetch-trends.ps1 (sd-daily will call fetch-trends with this list).
   TrendUrls = @(
