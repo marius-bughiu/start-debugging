@@ -3,7 +3,6 @@
 This repo is the working set for the **Start Debugging** daily publishing workflow:
 
 - **Strategy + prompts** live in `content-strategy/`
-- **Tiny PowerShell helpers** live in `tools/`
 - **Astro website** lives in `site/` (static output deployed to GitHub Pages)
 
 ## Website (Astro + GitHub Pages)
@@ -28,32 +27,15 @@ npm ci
 npm run build
 ```
 
-## Daily workflow (fast path)
+## Daily workflow
 
-1. Get a shortlist of recent candidate topics (ranked):
+Research and writing are driven entirely by the prompt in `content-strategy/daily-prompt.md`, using WebSearch + WebFetch. There are no local PowerShell helpers - the prompt is self-contained.
 
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File tools\sd-daily.ps1 -Top 10
-```
-
-2. If you already have keywords, run the built-in duplication checks:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File tools\sd-daily.ps1 -Keywords dotnet,grpc,containers -Top 10
-```
-
-3. Create a draft file from a title:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File tools\new-draft.ps1 -Title "gRPC in Containers: 4 traps in .NET 9/.NET 10"
-```
-
-4. Open `content-strategy/daily-prompt.md`, follow the prompt, and publish.
+A scheduled agent runs the prompt daily at 8 AM, researches trends, writes 1-2 posts under `site/src/content/blog/YYYY/MM/<slug>.md`, then commits and pushes so GitHub Pages rebuilds.
 
 ## Key files
 
 - `content-strategy/daily-prompt.md`: the master prompt used each day
 - `content-strategy/style-guide.md`: voice + formatting rules
-- `content-strategy/tips-and-tricks.md`: research workflow + tool recipes
-- `content-strategy/drafts/`: generated draft markdowns
-
+- `content-strategy/trend-sources.md`: where to look for trending topics
+- `content-strategy/tips-and-tricks.md`: research + duplicate-check tips
