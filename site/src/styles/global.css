@@ -260,3 +260,77 @@ footer {
   overflow-x: auto;
 }
 
+/* Byline under the article H1 */
+.byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  align-items: baseline;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.byline .byline-author {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.byline .byline-sep {
+  opacity: 0.5;
+}
+
+/* Share row under the article body */
+.share-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.share-label {
+  color: var(--muted);
+  font-size: 14px;
+  margin-right: 6px;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.share-btn:hover,
+.share-btn:focus-visible {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Footer navigation */
+.footer-nav {
+  gap: 16px;
+  margin-bottom: 6px;
+}
+
+.footer-nav a {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.footer-nav a:hover {
+  color: var(--link);
+}
+
+.footer-copy {
+  font-size: 13px;
+}
+
+

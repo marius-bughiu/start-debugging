@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="About - Start Debugging"
+  description="Start Debugging is Marius Bughiu's notes on .NET, C#, EF Core, MAUI, Blazor, and Flutter - written for developers who ship."
+  canonicalUrl={Astro.url.href}
+  type="website"
+>
+  <article class="panel card stack prose">
+    <div class="stack">
+      <h1 class="h1">About Start Debugging</h1>
+      <p class="muted">
+        Programming notes on .NET, C#, EF Core, MAUI, Blazor, Flutter, and the tooling around them.
+      </p>
+    </div>
+
+    <p>
+      Hi, I'm <strong>Marius Bughiu</strong>. I write here to keep my own notes
+      honest and searchable, and because the stuff I chase down at work usually
+      helps someone else a week later. The focus is narrow on purpose:
+      up-to-date .NET and Flutter content with real code, real version numbers,
+      and no filler.
+    </p>
+
+    <p>
+      Each post targets a specific feature, release, or pattern, usually in the
+      300 to 600 word range, occasionally much longer for deep dives and
+      migration guides. Expect opinions on what actually ships well, not vendor
+      copy.
+    </p>
+
+    <p>
+      You can follow along via <a href="/rss.xml">RSS</a>, reach me on
+      <a href="https://x.com/mariusbughiu" rel="noopener">X</a>,
+      <a href="https://github.com/marius-bughiu" rel="noopener">GitHub</a>, or
+      <a href="https://www.linkedin.com/in/mariusbughiu/" rel="noopener">LinkedIn</a>.
+      The full source for this site lives on
+      <a href="https://github.com/marius-bughiu/start-debugging" rel="noopener">GitHub</a>.
+    </p>
+  </article>
+
+  <div class="row" style="margin-top: 14px;">
+    <a class="pill" href={baseUrl}>&lt; Back</a>
+  </div>
+</BaseLayout>

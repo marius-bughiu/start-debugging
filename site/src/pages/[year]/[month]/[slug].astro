@@ -2,6 +2,10 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import {
+  estimateReadingTimeMinutes,
+  ogImagePathForPost,
+} from "../../../lib/blog";
 
 type BlogPost = CollectionEntry<"blog">;
 
@@ -26,6 +30,18 @@ const { post } = Astro.props as { post: BlogPost };
 const { Content } = await post.render();
 const canonicalUrl = Astro.url.href;
 const baseUrl = import.meta.env.BASE_URL;
+const ogImage = ogImagePathForPost(post);
+
+const readingMinutes = estimateReadingTimeMinutes(post.body);
+const pubDateIso = post.data.pubDate.toISOString().slice(0, 10);
+
+// Pre-encoded share payloads. We share the canonical URL + title.
+const shareTitle = encodeURIComponent(post.data.title);
+const shareUrl = encodeURIComponent(canonicalUrl);
+const shareX = `https://x.com/intent/post?text=${shareTitle}&url=${shareUrl}&via=mariusbughiu`;
+const shareHn = `https://news.ycombinator.com/submitlink?u=${shareUrl}&t=${shareTitle}`;
+const shareReddit = `https://www.reddit.com/submit?url=${shareUrl}&title=${shareTitle}`;
+const shareLinkedIn = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
 ---
 
 <BaseLayout
@@ -37,11 +53,12 @@ const baseUrl = import.meta.env.BASE_URL;
   updatedDate={post.data.updatedDate}
   tags={post.data.tags}
   type="article"
+  ogImage={ogImage}
 >
   <article class="panel card stack prose">
     <div class="stack">
       <div class="row">
-        <span class="pill">{post.data.pubDate.toISOString().slice(0, 10)}</span>
+        <span class="pill">{pubDateIso}</span>
         {post.data.updatedDate ? (
           <span class="pill">Updated {post.data.updatedDate.toISOString().slice(0, 10)}</span>
         ) : null}
@@ -51,12 +68,47 @@ const baseUrl = import.meta.env.BASE_URL;
       </div>
       <h1 class="h1">{post.data.title}</h1>
       {post.data.description ? <p class="muted">{post.data.description}</p> : null}
+      <div class="byline">
+        <span>By <span class="byline-author">Marius Bughiu</span></span>
+        <span class="byline-sep">&middot;</span>
+        <span>{readingMinutes} min read</span>
+        <span class="byline-sep">&middot;</span>
+        <time datetime={post.data.pubDate.toISOString()}>{pubDateIso}</time>
+      </div>
     </div>
 
     <Content />
+
+    <div class="share-row" data-share-row>
+      <span class="share-label">Share:</span>
+      <a class="share-btn" href={shareX} rel="noopener" target="_blank" data-share="x">X</a>
+      <a class="share-btn" href={shareHn} rel="noopener" target="_blank" data-share="hn">Hacker News</a>
+      <a class="share-btn" href={shareReddit} rel="noopener" target="_blank" data-share="reddit">Reddit</a>
+      <a class="share-btn" href={shareLinkedIn} rel="noopener" target="_blank" data-share="linkedin">LinkedIn</a>
+      <button class="share-btn" type="button" data-copy-link data-copy-url={canonicalUrl}>Copy link</button>
+    </div>
   </article>
 
   <div class="row" style="margin-top: 14px;">
     <a class="pill" href={baseUrl}>&lt; Back</a>
   </div>
 </BaseLayout>
+
+<script>
+  // Copy-link button: writes canonical URL to clipboard and gives a visual ack.
+  document.querySelectorAll<HTMLButtonElement>("button[data-copy-link]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const url = btn.getAttribute("data-copy-url") ?? window.location.href;
+      const original = btn.textContent;
+      try {
+        await navigator.clipboard.writeText(url);
+        btn.textContent = "Copied!";
+      } catch {
+        btn.textContent = "Copy failed";
+      }
+      setTimeout(() => {
+        btn.textContent = original;
+      }, 1500);
+    });
+  });
+</script>

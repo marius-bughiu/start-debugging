@@ -5,6 +5,10 @@ site/dist/
 site/.astro/
 site/.cache/
 
+# Generated OG images and derived logo (produced by scripts/generate-og-images.mjs)
+site/public/og/
+site/public/logo-512.png
+
 # OS/editor
 .DS_Store
 Thumbs.db
