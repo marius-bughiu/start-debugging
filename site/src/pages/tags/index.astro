@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPublishedBlogPosts } from "../../lib/blog";
+
+const baseUrl = import.meta.env.BASE_URL;
+
+// Aggregate tag counts across all published posts, sorted by count desc then
+// alphabetically for stable ordering of equal-count tags.
+const allPosts = await getPublishedBlogPosts();
+const counts = new Map<string, number>();
+for (const post of allPosts) {
+  for (const tag of post.data.tags ?? []) {
+    counts.set(tag, (counts.get(tag) ?? 0) + 1);
+  }
+}
+
+const tags = Array.from(counts.entries())
+  .map(([tag, count]) => ({ tag, count }))
+  .sort((a, b) => {
+    if (b.count !== a.count) return b.count - a.count;
+    return a.tag.localeCompare(b.tag);
+  });
+
+const totalTags = tags.length;
+const totalPosts = allPosts.length;
+---
+
+<BaseLayout
+  title="All tags - Start Debugging"
+  description={`Browse every tag used across ${totalPosts} posts on Start Debugging.`}
+  canonicalUrl={Astro.url.href}
+  type="website"
+>
+  <section class="stack">
+    <h1 class="h1">All tags</h1>
+    <p class="muted">
+      {totalTags} tag{totalTags !== 1 ? "s" : ""} across {totalPosts} post{totalPosts !== 1 ? "s" : ""}.
+    </p>
+  </section>
+
+  <section class="stack" style="margin-top: 18px;">
+    <div class="row tag-cloud">
+      {tags.map(({ tag, count }) => (
+        <a class="pill" href={`${baseUrl}tag/${tag}/`}>
+          {tag}
+          <span class="tag-count muted">{count}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <div class="row" style="margin-top: 14px;">
+    <a class="pill" href={baseUrl}>&lt; Back</a>
+  </div>
+</BaseLayout>

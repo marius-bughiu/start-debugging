@@ -1,0 +1,49 @@
+{
+  "intro": "New here? These are the posts I'd point a developer at first. They're longer, more evergreen, or do more teaching than the daily news posts. Updated whenever I write something I'd genuinely recommend.",
+  "sections": [
+    {
+      "heading": "C# language",
+      "blurb": "What actually changed in the language and how it lands in real code.",
+      "slugs": [
+        "2026/02/csharp-14-extension-members",
+        "2026/02/csharp-14-null-conditional-assignment",
+        "2026/04/csharp-15-union-types-dotnet-11-preview-2"
+      ]
+    },
+    {
+      "heading": "EF Core",
+      "blurb": "Core data-access features I've dug into in EF Core 10 and 11.",
+      "slugs": [
+        "2026/04/efcore-11-sql-server-vector-search-diskann-indexes",
+        "2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries",
+        "2026/04/efcore-11-cosmos-transactional-batches"
+      ]
+    },
+    {
+      "heading": "Performance and profiling",
+      "blurb": "Posts that show the moving parts, not just the feature flags.",
+      "slugs": [
+        "2026/01/net-10-performance-searchvalues",
+        "2026/01/perfetto-dotnet-trace-a-practical-profiling-loop-for-net-9-net-10",
+        "2026/04/building-a-microsecond-database-engine-in-csharp"
+      ]
+    },
+    {
+      "heading": ".NET runtime and tooling",
+      "blurb": "Things that change how day-to-day .NET work feels.",
+      "slugs": [
+        "2026/04/dotnet-11-runtime-async-cleaner-stack-traces",
+        "2026/04/aspnetcore-11-native-opentelemetry-tracing"
+      ]
+    },
+    {
+      "heading": "MAUI and Flutter",
+      "blurb": "Mobile-side posts with enough detail to be actionable.",
+      "slugs": [
+        "2026/04/maui-11-long-press-gesture-recognizer",
+        "2026/04/dotnet-maui-11-map-pin-clustering",
+        "2026/01/flutter-text-the-leadingdistribution-detail-that-changes-how-your-ui-breathes"
+      ]
+    }
+  ]
+}

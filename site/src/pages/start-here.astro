@@ -1,0 +1,98 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPublishedBlogPosts } from "../lib/blog";
+import type { BlogPost } from "../lib/blog";
+import startHereData from "../data/start-here.json";
+
+const baseUrl = import.meta.env.BASE_URL;
+
+type StartHereData = {
+  intro: string;
+  sections: { heading: string; blurb?: string; slugs: string[] }[];
+};
+const data = startHereData as StartHereData;
+
+// Resolve slugs against the published-post index so missing or renamed slugs
+// are silently dropped (and logged) rather than crashing the build. The
+// content team can drop any slug in the JSON and the page keeps working.
+const allPosts = await getPublishedBlogPosts();
+const postBySlug = new Map(allPosts.map((p) => [p.slug, p] as const));
+
+type ResolvedSection = {
+  heading: string;
+  blurb?: string;
+  posts: BlogPost[];
+  missing: string[];
+};
+
+const sections: ResolvedSection[] = data.sections.map((s) => {
+  const posts: BlogPost[] = [];
+  const missing: string[] = [];
+  for (const slug of s.slugs) {
+    const p = postBySlug.get(slug);
+    if (p) posts.push(p);
+    else missing.push(slug);
+  }
+  return { heading: s.heading, blurb: s.blurb, posts, missing };
+});
+
+if (import.meta.env.DEV) {
+  for (const s of sections) {
+    if (s.missing.length) {
+      console.warn(
+        `[start-here] section "${s.heading}" is missing slugs: ${s.missing.join(", ")}`,
+      );
+    }
+  }
+}
+
+const totalPicks = sections.reduce((n, s) => n + s.posts.length, 0);
+---
+
+<BaseLayout
+  title="Start here - Start Debugging"
+  description="A curated entry point to Start Debugging: the evergreen posts worth reading first, grouped by topic."
+  canonicalUrl={Astro.url.href}
+  type="website"
+>
+  <section class="stack">
+    <h1 class="h1">Start here</h1>
+    <p class="muted">{data.intro}</p>
+    {totalPicks > 0 ? (
+      <p class="muted">
+        {totalPicks} post{totalPicks !== 1 ? "s" : ""} &middot; grouped by topic
+      </p>
+    ) : null}
+  </section>
+
+  <section class="stack start-here-sections" style="margin-top: 18px;">
+    {sections.map((s) => (
+      <section class="panel card stack start-here-section">
+        <div class="stack">
+          <h2 class="h2">{s.heading}</h2>
+          {s.blurb ? <p class="muted start-here-blurb">{s.blurb}</p> : null}
+        </div>
+        {s.posts.length > 0 ? (
+          <ul class="start-here-list">
+            {s.posts.map((p) => (
+              <li class="start-here-item">
+                <a class="start-here-link" href={`${baseUrl}${p.slug}/`}>
+                  {p.data.title}
+                </a>
+                {p.data.description ? (
+                  <div class="muted start-here-desc">{p.data.description}</div>
+                ) : null}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="muted">No posts available yet for this topic.</p>
+        )}
+      </section>
+    ))}
+  </section>
+
+  <div class="row" style="margin-top: 14px;">
+    <a class="pill" href={baseUrl}>&lt; Back</a>
+  </div>
+</BaseLayout>

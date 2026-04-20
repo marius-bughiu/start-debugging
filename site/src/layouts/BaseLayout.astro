@@ -180,16 +180,120 @@ if (type === "article" && publishedDate) {
   </head>
   <body>
     <header>
-      <div class="row">
+      <div class="row header-row">
         <a class="pill" href={baseUrl}>
           Start Debugging
         </a>
-        <!--<nav class="row">
-          <a href={`${baseUrl}`}>Home</a>
-          <a href={`${baseUrl}`}>Blog</a>
-        </nav>-->
+        <div class="header-search">
+          <button
+            type="button"
+            class="pill header-search-trigger"
+            data-search-open
+            aria-label="Search posts"
+          >
+            <span aria-hidden="true">&#x1F50D;</span>
+            <span class="header-search-label">Search</span>
+            <kbd class="header-search-kbd" aria-hidden="true">/</kbd>
+          </button>
+        </div>
       </div>
     </header>
+
+    <!-- Pagefind search overlay. The UI library is loaded lazily on first
+         interaction so the homepage stays light. -->
+    <div
+      class="search-overlay"
+      data-search-overlay
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="search-overlay-title"
+    >
+      <div class="search-overlay-backdrop" data-search-close aria-hidden="true"></div>
+      <div class="search-overlay-panel panel">
+        <div class="row search-overlay-header">
+          <h2 class="h2" id="search-overlay-title">Search</h2>
+          <button
+            type="button"
+            class="pill search-overlay-close"
+            data-search-close
+            aria-label="Close search"
+          >Close</button>
+        </div>
+        <div id="pagefind-search"></div>
+      </div>
+    </div>
+
+    <link rel="stylesheet" href={`${baseUrl}pagefind/pagefind-ui.css`} />
+    <script is:inline define:vars={{ baseUrl }}>
+      (function () {
+        const overlay = document.querySelector('[data-search-overlay]');
+        const opener = document.querySelector('[data-search-open]');
+        const closers = document.querySelectorAll('[data-search-close]');
+        if (!overlay || !opener) return;
+
+        let loaded = false;
+        function loadPagefind() {
+          if (loaded) return Promise.resolve();
+          loaded = true;
+          return new Promise(function (resolve, reject) {
+            const s = document.createElement('script');
+            s.src = baseUrl + 'pagefind/pagefind-ui.js';
+            s.onload = function () {
+              try {
+                // eslint-disable-next-line no-undef
+                new PagefindUI({
+                  element: '#pagefind-search',
+                  showSubResults: true,
+                  resetStyles: false,
+                });
+                resolve();
+              } catch (err) {
+                reject(err);
+              }
+            };
+            s.onerror = reject;
+            document.head.appendChild(s);
+          });
+        }
+
+        function openOverlay() {
+          overlay.hidden = false;
+          document.documentElement.style.overflow = 'hidden';
+          loadPagefind().then(function () {
+            const input = overlay.querySelector('input');
+            if (input) input.focus();
+          }).catch(function () {
+            // Pagefind index not built yet (e.g. astro dev). Show a hint.
+            const target = overlay.querySelector('#pagefind-search');
+            if (target && !target.dataset.devHint) {
+              target.dataset.devHint = '1';
+              target.innerHTML =
+                '<p class="muted" style="padding:12px;">Search index not available in dev. Run <code>npm run build</code> to generate it.</p>';
+            }
+          });
+        }
+        function closeOverlay() {
+          overlay.hidden = true;
+          document.documentElement.style.overflow = '';
+        }
+
+        opener.addEventListener('click', openOverlay);
+        closers.forEach(function (c) { c.addEventListener('click', closeOverlay); });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && !overlay.hidden) closeOverlay();
+          // "/" shortcut when not typing in a form field.
+          if (
+            e.key === '/' &&
+            overlay.hidden &&
+            !/^(input|textarea|select)$/i.test(document.activeElement && document.activeElement.tagName || '')
+          ) {
+            e.preventDefault();
+            openOverlay();
+          }
+        });
+      })();
+    </script>
 
     <main>
       <slot />
@@ -198,6 +302,9 @@ if (type === "article" && publishedDate) {
     <footer>
       <nav class="footer-nav row">
         <a href={`${baseUrl}about/`}>About</a>
+        <a href={`${baseUrl}start-here/`}>Start here</a>
+        <a href={`${baseUrl}tags/`}>Tags</a>
+        <a href={`${baseUrl}archive/`}>Archive</a>
         <a href={`${siteUrl}/rss.xml`}>RSS</a>
         <a href="https://github.com/marius-bughiu/start-debugging" rel="noopener" target="_blank">GitHub</a>
       </nav>

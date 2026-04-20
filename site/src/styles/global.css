@@ -90,6 +90,50 @@ a.panel.card:focus-visible .h2 {
   text-underline-offset: 3px;
 }
 
+/*
+ * Post cards that host interactive children (clickable tag pills).
+ * We use the stretched-link pattern: the card itself is not an <a>, the title
+ * anchor's ::before overlay fills the card, and tag <a>s sit above the
+ * overlay via position: relative + z-index: 1 so clicks on tags go to the
+ * tag page while clicks elsewhere on the card go to the post.
+ */
+.post-card {
+  position: relative;
+}
+
+.post-card .post-card-title-link {
+  color: var(--text);
+}
+
+.post-card .post-card-title-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  /* Keep above card background but below interactive children */
+  z-index: 0;
+}
+
+.post-card .post-card-title-link:hover .h2,
+.post-card .post-card-title-link:focus-visible .h2 {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.post-card a.pill,
+.post-card .post-card-title-link .h2 {
+  position: relative;
+  z-index: 1;
+}
+
+.post-card a.pill:hover,
+.post-card a.pill:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  text-decoration: none;
+}
+
 main,
 header,
 footer {
@@ -312,6 +356,339 @@ footer {
 .share-btn:focus-visible {
   text-decoration: none;
   background: rgba(255, 255, 255, 0.08);
+}
+
+/* Header layout + search trigger */
+.header-row {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.header-search-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: var(--muted);
+  font: inherit;
+}
+
+.header-search-trigger:hover,
+.header-search-trigger:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+}
+
+.header-search-kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--muted);
+}
+
+/* Pagefind search overlay */
+.search-overlay[hidden] {
+  display: none;
+}
+
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 48px 16px 16px;
+}
+
+.search-overlay-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.search-overlay-panel {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  max-height: calc(100vh - 64px);
+  overflow: auto;
+  padding: 18px;
+  background: var(--bg);
+}
+
+.search-overlay-header {
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.search-overlay-close {
+  cursor: pointer;
+}
+
+/* Pagefind UI overrides: match site tokens where practical */
+.pagefind-ui {
+  --pagefind-ui-font: inherit;
+  --pagefind-ui-background: transparent;
+  --pagefind-ui-text: var(--text);
+  --pagefind-ui-border: var(--border);
+  --pagefind-ui-primary: var(--link);
+}
+
+/* Homepage hero */
+.home-hero {
+  margin-top: 18px;
+}
+
+.home-tagline {
+  margin: 0;
+  font-size: clamp(16px, 1.6vw, 18px);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.home-cta {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.home-cta:hover,
+.home-cta:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+}
+
+/* Featured row */
+.featured-section {
+  margin-top: 24px;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featured-card {
+  height: 100%;
+}
+
+/* Start here page */
+.start-here-sections {
+  gap: 18px;
+}
+
+.start-here-blurb {
+  margin: 0;
+}
+
+.start-here-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.start-here-item {
+  display: grid;
+  gap: 4px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+}
+
+.start-here-item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.start-here-item:last-child {
+  padding-bottom: 0;
+}
+
+.start-here-link {
+  font-weight: 600;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.start-here-link:hover {
+  color: var(--link);
+}
+
+.start-here-desc {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+/* Archive page */
+.archive-year-index {
+  margin-top: 4px;
+}
+
+.archive-sections {
+  gap: 18px;
+}
+
+.archive-year {
+  scroll-margin-top: 12px;
+}
+
+.archive-year-head {
+  justify-content: space-between;
+}
+
+.archive-month {
+  gap: 8px;
+}
+
+.archive-month-head {
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 0;
+}
+
+.archive-month-count {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.archive-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.archive-item {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 4px 0;
+  border-top: 1px solid var(--border);
+}
+
+.archive-item:first-child {
+  border-top: 0;
+}
+
+.archive-date {
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.archive-link {
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.archive-link:hover {
+  color: var(--link);
+}
+
+@media (max-width: 640px) {
+  .archive-item {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+/* Tag cloud on /tags/ index */
+.tag-cloud {
+  gap: 10px;
+}
+
+.tag-cloud a.pill {
+  color: var(--text);
+}
+
+.tag-cloud .tag-count {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+/* Prev / Next post navigation */
+.prev-next {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+@media (max-width: 640px) {
+  .prev-next {
+    grid-template-columns: 1fr;
+  }
+}
+
+.prev-next-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.prev-next-item:hover,
+.prev-next-item:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+}
+
+.prev-next-next {
+  text-align: right;
+}
+
+.prev-next-label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.prev-next-title {
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.prev-next-empty {
+  /* Reserve grid cell so a lonely Next stays on the right */
+  visibility: hidden;
+  border: 0;
+  background: transparent;
+}
+
+/* Related posts section below a post */
+.related-section {
+  margin-top: 28px;
+}
+
+.related-heading {
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
 }
 
 /* Footer navigation */

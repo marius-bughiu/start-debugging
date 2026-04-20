@@ -24,4 +24,10 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [rehypeLazyImages],
   },
+  // Allow overriding Vite's cache directory via env for sandboxed build
+  // environments where node_modules/.vite is not writable. Defaults to Vite's
+  // own behaviour (inside node_modules) when unset.
+  ...(process.env.VITE_CACHE_DIR
+    ? { vite: { cacheDir: process.env.VITE_CACHE_DIR } }
+    : {}),
 });

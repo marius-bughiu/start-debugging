@@ -4,6 +4,8 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import {
   estimateReadingTimeMinutes,
+  getAdjacentPosts,
+  getRelatedPosts,
   ogImagePathForPost,
 } from "../../../lib/blog";
 
@@ -42,6 +44,12 @@ const shareX = `https://x.com/intent/post?text=${shareTitle}&url=${shareUrl}&via
 const shareHn = `https://news.ycombinator.com/submitlink?u=${shareUrl}&t=${shareTitle}`;
 const shareReddit = `https://www.reddit.com/submit?url=${shareUrl}&title=${shareTitle}`;
 const shareLinkedIn = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
+
+// Prev/next in chronological order. `prev` is older, `next` is newer.
+const { prev, next } = await getAdjacentPosts(post);
+
+// Tag-overlap-scored related posts, with recency tiebreaker + fallback.
+const related = await getRelatedPosts(post, 4);
 ---
 
 <BaseLayout
@@ -55,7 +63,11 @@ const shareLinkedIn = `https://www.linkedin.com/sharing/share-offsite/?url=${sha
   type="article"
   ogImage={ogImage}
 >
-  <article class="panel card stack prose">
+  <article
+    class="panel card stack prose"
+    data-pagefind-body
+    data-pagefind-meta={`date:${pubDateIso}${post.data.tags?.length ? `, tags:${post.data.tags.join(", ")}` : ""}`}
+  >
     <div class="stack">
       <div class="row">
         <span class="pill">{pubDateIso}</span>
@@ -88,6 +100,45 @@ const shareLinkedIn = `https://www.linkedin.com/sharing/share-offsite/?url=${sha
       <button class="share-btn" type="button" data-copy-link data-copy-url={canonicalUrl}>Copy link</button>
     </div>
   </article>
+
+  {(prev || next) ? (
+    <nav class="prev-next" aria-label="Post navigation">
+      {prev ? (
+        <a class="prev-next-item prev-next-prev" href={`${baseUrl}${prev.slug}/`} rel="prev">
+          <span class="prev-next-label">&lsaquo; Previous</span>
+          <span class="prev-next-title">{prev.data.title}</span>
+        </a>
+      ) : <span class="prev-next-item prev-next-empty" />}
+      {next ? (
+        <a class="prev-next-item prev-next-next" href={`${baseUrl}${next.slug}/`} rel="next">
+          <span class="prev-next-label">Next &rsaquo;</span>
+          <span class="prev-next-title">{next.data.title}</span>
+        </a>
+      ) : <span class="prev-next-item prev-next-empty" />}
+    </nav>
+  ) : null}
+
+  {related.length > 0 ? (
+    <section class="stack related-section" aria-labelledby="related-heading">
+      <h2 id="related-heading" class="h2 related-heading">Related posts</h2>
+      <div class="stack">
+        {related.map((r) => (
+          <article class="panel card stack post-card">
+            <div class="row">
+              <span class="pill">{r.data.pubDate.toISOString().slice(0, 10)}</span>
+              {r.data.tags?.slice(0, 3).map((t) => (
+                <a class="pill" href={`${baseUrl}tag/${t}/`}>{t}</a>
+              ))}
+            </div>
+            <a class="post-card-title-link stack" href={`${baseUrl}${r.slug}/`}>
+              <div class="h2">{r.data.title}</div>
+              {r.data.description ? <div class="muted">{r.data.description}</div> : null}
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+  ) : null}
 
   <div class="row" style="margin-top: 14px;">
     <a class="pill" href={baseUrl}>&lt; Back</a>

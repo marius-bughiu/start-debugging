@@ -65,16 +65,18 @@ const nextHref = page < totalPages ? `${tagBase}${page + 1}/` : null;
 
   <section class="stack" style="margin-top: 18px;">
     {posts.map((post) => (
-      <a class="panel card stack" href={`${baseUrl}${post.slug}/`}>
+      <article class="panel card stack post-card">
         <div class="row">
           <span class="pill">{post.data.pubDate.toISOString().slice(0, 10)}</span>
-          {post.data.tags?.slice(0, 3).map((t) => <span class="pill">{t}</span>)}
+          {post.data.tags?.slice(0, 3).map((t) => (
+            <a class="pill" href={`${baseUrl}tag/${t}/`}>{t}</a>
+          ))}
         </div>
-        <div class="stack">
+        <a class="post-card-title-link stack" href={`${baseUrl}${post.slug}/`}>
           <div class="h2">{post.data.title}</div>
           {post.data.description ? <div class="muted">{post.data.description}</div> : null}
-        </div>
-      </a>
+        </a>
+      </article>
     ))}
 
     {posts.length === 0 ? <div class="panel card muted">No posts found.</div> : null}

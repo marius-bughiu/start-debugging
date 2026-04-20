@@ -1,0 +1,108 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPublishedBlogPosts } from "../../lib/blog";
+import type { BlogPost } from "../../lib/blog";
+
+const baseUrl = import.meta.env.BASE_URL;
+
+const allPosts = await getPublishedBlogPosts();
+
+// Bucket posts by year then month. `allPosts` is already newest-first, so
+// iterating in order preserves the desc-by-date ordering within each month.
+type MonthBucket = { month: string; posts: BlogPost[] };
+type YearBucket = { year: string; months: MonthBucket[]; total: number };
+
+const byYear = new Map<string, Map<string, BlogPost[]>>();
+for (const post of allPosts) {
+  const m = post.slug.match(/^(\d{4})\/(\d{2})\//);
+  if (!m) continue;
+  const [, year, month] = m;
+  if (!byYear.has(year)) byYear.set(year, new Map());
+  const months = byYear.get(year)!;
+  if (!months.has(month)) months.set(month, []);
+  months.get(month)!.push(post);
+}
+
+const years: YearBucket[] = Array.from(byYear.entries())
+  .map(([year, monthMap]) => {
+    const months: MonthBucket[] = Array.from(monthMap.entries())
+      .map(([month, posts]) => ({ month, posts }))
+      .sort((a, b) => b.month.localeCompare(a.month));
+    const total = months.reduce((n, mb) => n + mb.posts.length, 0);
+    return { year, months, total };
+  })
+  .sort((a, b) => b.year.localeCompare(a.year));
+
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+---
+
+<BaseLayout
+  title="Archive - Start Debugging"
+  description={`Every post on Start Debugging, grouped by year and month. ${allPosts.length} posts total.`}
+  canonicalUrl={Astro.url.href}
+  type="website"
+>
+  <section class="stack">
+    <h1 class="h1">Archive</h1>
+    <p class="muted">
+      {allPosts.length} post{allPosts.length !== 1 ? "s" : ""} across {years.length} year{years.length !== 1 ? "s" : ""}.
+    </p>
+
+    <div class="row archive-year-index">
+      {years.map((y) => (
+        <a class="pill" href={`#y-${y.year}`}>
+          {y.year}
+          <span class="tag-count muted">{y.total}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="stack archive-sections" style="margin-top: 24px;">
+    {years.map((y) => (
+      <section class="panel card stack archive-year" id={`y-${y.year}`}>
+        <div class="row archive-year-head">
+          <h2 class="h2">{y.year}</h2>
+          <span class="muted">{y.total} post{y.total !== 1 ? "s" : ""}</span>
+        </div>
+        {y.months.map((mb) => (
+          <section class="stack archive-month" id={`y-${y.year}-m-${mb.month}`}>
+            <h3 class="archive-month-head">
+              {monthNames[parseInt(mb.month, 10) - 1]} {y.year}
+              <span class="muted archive-month-count"> &middot; {mb.posts.length}</span>
+            </h3>
+            <ul class="archive-list">
+              {mb.posts.map((post) => (
+                <li class="archive-item">
+                  <span class="archive-date muted">
+                    {post.data.pubDate.toISOString().slice(0, 10)}
+                  </span>
+                  <a class="archive-link" href={`${baseUrl}${post.slug}/`}>
+                    {post.data.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </section>
+    ))}
+  </section>
+
+  <div class="row" style="margin-top: 14px;">
+    <a class="pill" href={baseUrl}>&lt; Back</a>
+  </div>
+</BaseLayout>
