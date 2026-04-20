@@ -99,6 +99,39 @@ const related = await getRelatedPosts(post, 4);
       <a class="share-btn" href={shareLinkedIn} rel="noopener" target="_blank" data-share="linkedin">LinkedIn</a>
       <button class="share-btn" type="button" data-copy-link data-copy-url={canonicalUrl}>Copy link</button>
     </div>
+
+    <aside class="inline-subscribe" aria-labelledby="inline-subscribe-heading">
+      <h2 id="inline-subscribe-heading" class="h2 inline-subscribe-heading">
+        Enjoyed this post?
+      </h2>
+      <p class="muted inline-subscribe-copy">
+        Get a short weekly digest of the best new .NET, C#, MAUI, and Flutter posts.
+        One email on Monday, no spam.
+      </p>
+      <form
+        class="inline-subscribe-form row"
+        action="https://buttondown.com/api/emails/embed-subscribe/startdebugging"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.com/startdebugging', 'popupwindow');"
+      >
+        <label class="sr-only" for={`inline-subscribe-${post.slug.replace(/\//g, "-")}`}>Email address</label>
+        <input
+          id={`inline-subscribe-${post.slug.replace(/\//g, "-")}`}
+          class="inline-subscribe-input"
+          type="email"
+          name="email"
+          placeholder="you@domain.com"
+          required
+          autocomplete="email"
+        />
+        <input type="hidden" name="tag" value={`post:${post.slug}`} />
+        <button class="pill inline-subscribe-submit" type="submit">Subscribe</button>
+      </form>
+      <p class="muted inline-subscribe-alt">
+        Or <a href={`${baseUrl}subscribe/`}>read what's in the newsletter first</a>.
+      </p>
+    </aside>
   </article>
 
   {(prev || next) ? (

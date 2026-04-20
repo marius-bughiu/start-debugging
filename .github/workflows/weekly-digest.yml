@@ -1,0 +1,78 @@
+name: Weekly digest
+
+# Every Monday at 09:00 UTC, build a digest from the past 7 days of posts
+# and save it as a DRAFT in Buttondown. Deliberately does not send by
+# default - you review the draft in Buttondown and hit "Send" yourself
+# for the first few weeks. Once you trust the output, switch to --send
+# below (or set SEND=1 on a manual dispatch).
+
+on:
+  # Cron is PARKED while we test one channel (X) end-to-end first.
+  # Re-enable by uncommenting when BUTTONDOWN_API_KEY is set and you've
+  # reviewed at least one manual run.
+  # schedule:
+  #   - cron: "0 9 * * 1"
+  workflow_dispatch:
+    inputs:
+      send:
+        description: "Send immediately instead of saving a draft (yes/no)."
+        required: false
+        default: "no"
+      days:
+        description: "Lookback window in days (default 7)."
+        required: false
+        default: "7"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install dependencies
+        working-directory: site
+        run: npm ci
+
+      - name: Build and send weekly digest
+        working-directory: site
+        env:
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+        run: |
+          SEND_FLAG=""
+          if [ "${{ github.event.inputs.send }}" = "yes" ]; then
+            SEND_FLAG="--send"
+          fi
+          DAYS_FLAG=""
+          if [ -n "${{ github.event.inputs.days }}" ]; then
+            DAYS_FLAG="--days=${{ github.event.inputs.days }}"
+          fi
+          node scripts/weekly-digest.mjs --apply $SEND_FLAG $DAYS_FLAG
+
+      - name: Commit log update
+        run: |
+          git config user.name "start-debugging-bot"
+          git config user.email "noreply@startdebugging.net"
+          git add content-strategy/weekly-digest-log.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No log changes to commit."
+          else
+            git commit -m "chore(digest): record weekly send [skip ci]"
+            git push
+          fi

@@ -9,6 +9,12 @@ site/.cache/
 site/public/og/
 site/public/logo-512.png
 
+# Distribution credentials (see site/.env.example). Never commit these.
+site/.env
+site/.env.local
+.env
+.env.local
+
 # OS/editor
 .DS_Store
 Thumbs.db

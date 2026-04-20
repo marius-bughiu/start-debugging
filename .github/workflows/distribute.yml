@@ -1,0 +1,130 @@
+name: Distribute new post
+
+# Fires when a new (or edited) blog post is pushed to main. The scripts
+# are idempotent: they track per-slug state in content-strategy/*-log.json
+# and skip anything they've already posted, so re-runs on rebuilds / doc
+# edits are safe.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/src/content/blog/**/*.md"
+  workflow_dispatch:
+    inputs:
+      file:
+        description: "Path to a specific post file (leave blank for latest commit)."
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: distribute
+  cancel-in-progress: false
+
+jobs:
+  distribute:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          # Use a token that can push back with the log updates. The default
+          # GITHUB_TOKEN can push; just make sure Repo -> Settings ->
+          # Actions -> Workflow permissions is set to "Read and write".
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install dependencies
+        working-directory: site
+        run: npm ci
+
+      # -----------------------------------------------------------------
+      # Enabled: X only (testing one channel end-to-end first).
+      # To enable the other steps later, uncomment the matching blocks
+      # below AND add the `content-strategy/<name>-log.json` entry to the
+      # `git add` line in the final step.
+      # -----------------------------------------------------------------
+
+      - name: Post to X
+        working-directory: site
+        continue-on-error: true
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+        run: |
+          if [ -n "${{ inputs.file }}" ]; then
+            node scripts/social-post.mjs --apply --platforms=x --file="${{ inputs.file }}"
+          else
+            node scripts/social-post.mjs --apply --platforms=x
+          fi
+
+      # - name: Post to Bluesky + Mastodon
+      #   working-directory: site
+      #   continue-on-error: true
+      #   env:
+      #     BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+      #     BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+      #     MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+      #     MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
+      #   run: |
+      #     if [ -n "${{ inputs.file }}" ]; then
+      #       node scripts/social-post.mjs --apply --platforms=bluesky,mastodon --file="${{ inputs.file }}"
+      #     else
+      #       node scripts/social-post.mjs --apply --platforms=bluesky,mastodon
+      #     fi
+
+      # - name: Cross-post to dev.to + Hashnode
+      #   working-directory: site
+      #   continue-on-error: true
+      #   env:
+      #     DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+      #     HASHNODE_TOKEN: ${{ secrets.HASHNODE_TOKEN }}
+      #     HASHNODE_PUBLICATION_ID: ${{ secrets.HASHNODE_PUBLICATION_ID }}
+      #   run: |
+      #     if [ -n "${{ inputs.file }}" ]; then
+      #       node scripts/cross-post.mjs --apply --file="${{ inputs.file }}"
+      #     else
+      #       node scripts/cross-post.mjs --apply
+      #     fi
+
+      # - name: Mirror to LinkedIn
+      #   working-directory: site
+      #   continue-on-error: true
+      #   env:
+      #     LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+      #     LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
+      #   run: |
+      #     if [ -n "${{ inputs.file }}" ]; then
+      #       node scripts/linkedin-mirror.mjs --apply --file="${{ inputs.file }}"
+      #     else
+      #       node scripts/linkedin-mirror.mjs --apply
+      #     fi
+
+      - name: Commit log updates
+        # The scripts write to content-strategy/*-log.json for idempotency.
+        # Only commit if something actually changed. The [skip ci] tag
+        # prevents this commit from re-triggering the deploy or this
+        # workflow. Add the other log files back to `git add` once you
+        # enable the corresponding steps above.
+        run: |
+          git config user.name "start-debugging-bot"
+          git config user.email "noreply@startdebugging.net"
+          git add content-strategy/social-post-log.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No log changes to commit."
+          else
+            git commit -m "chore(distribute): record post IDs [skip ci]"
+            git push
+          fi

@@ -300,12 +300,46 @@ if (type === "article" && publishedDate) {
     </main>
 
     <footer>
+      <section class="footer-newsletter" aria-labelledby="footer-newsletter-heading">
+        <h2 id="footer-newsletter-heading" class="h2 footer-newsletter-heading">
+          Subscribe to the newsletter
+        </h2>
+        <p class="muted footer-newsletter-copy">
+          A weekly digest of the best .NET, C#, MAUI, and Flutter posts on Start Debugging.
+          No spam, unsubscribe anytime.
+        </p>
+        <form
+          class="footer-newsletter-form row"
+          action="https://buttondown.com/api/emails/embed-subscribe/startdebugging"
+          method="post"
+          target="popupwindow"
+          onsubmit="window.open('https://buttondown.com/startdebugging', 'popupwindow');"
+        >
+          <label class="sr-only" for="footer-newsletter-email">Email address</label>
+          <input
+            id="footer-newsletter-email"
+            class="footer-newsletter-input"
+            type="email"
+            name="email"
+            placeholder="you@domain.com"
+            required
+            autocomplete="email"
+          />
+          <input type="hidden" name="tag" value="footer" />
+          <button class="pill footer-newsletter-submit" type="submit">Subscribe</button>
+        </form>
+        <p class="muted footer-newsletter-alt">
+          Prefer RSS? <a href={`${siteUrl}/rss.xml`}>Subscribe via RSS</a> instead.
+        </p>
+      </section>
+
       <nav class="footer-nav row">
         <a href={`${baseUrl}about/`}>About</a>
         <a href={`${baseUrl}start-here/`}>Start here</a>
         <a href={`${baseUrl}pillars/`}>Pillars</a>
         <a href={`${baseUrl}tags/`}>Tags</a>
         <a href={`${baseUrl}archive/`}>Archive</a>
+        <a href={`${baseUrl}subscribe/`}>Subscribe</a>
         <a href={`${siteUrl}/rss.xml`}>RSS</a>
         <a href="https://github.com/marius-bughiu/start-debugging" rel="noopener noreferrer">GitHub</a>
       </nav>

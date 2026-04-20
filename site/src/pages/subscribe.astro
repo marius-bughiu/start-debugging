@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const baseUrl = import.meta.env.BASE_URL;
+const title = "Subscribe - Start Debugging";
+const description =
+  "Get a weekly digest of the best .NET, C#, MAUI, and Flutter posts on Start Debugging delivered to your inbox.";
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="panel card stack subscribe-hero" aria-labelledby="subscribe-heading">
+    <h1 id="subscribe-heading" class="h1">Subscribe to Start Debugging</h1>
+    <p class="lead">
+      One short email on <strong>Monday morning</strong> with the best new posts of the week.
+      Mostly .NET, C#, EF Core, MAUI, Flutter, and "how do I actually fix this" walkthroughs.
+    </p>
+
+    <form
+      class="subscribe-form stack"
+      action="https://buttondown.com/api/emails/embed-subscribe/startdebugging"
+      method="post"
+      target="popupwindow"
+      onsubmit="window.open('https://buttondown.com/startdebugging', 'popupwindow');"
+    >
+      <label class="subscribe-label" for="subscribe-email">Email address</label>
+      <input
+        id="subscribe-email"
+        class="subscribe-input"
+        type="email"
+        name="email"
+        placeholder="you@domain.com"
+        required
+        autocomplete="email"
+      />
+      <input type="hidden" name="tag" value="subscribe-page" />
+      <button class="subscribe-submit" type="submit">Subscribe</button>
+      <p class="muted subscribe-fine-print">
+        Powered by <a href="https://buttondown.com/refer/startdebugging" rel="noopener">Buttondown</a>.
+        You can unsubscribe any time with one click in the email footer.
+      </p>
+    </form>
+  </section>
+
+  <section class="stack subscribe-why" aria-labelledby="why-heading">
+    <h2 id="why-heading" class="h2">What you'll get</h2>
+    <ul class="subscribe-bullets">
+      <li>
+        <strong>A curated weekly digest.</strong> 5 posts, one sentence each, explaining why they matter.
+        If it's a slow week, the email just doesn't go out. No filler.
+      </li>
+      <li>
+        <strong>Occasional longer posts.</strong> When a release (.NET, EF Core, MAUI, Flutter) genuinely
+        changes how you'd write code, I'll write a longer take and send it straight to subscribers first.
+      </li>
+      <li>
+        <strong>No sales.</strong> No course launches, no sponsor-drop slots, no "here's my affiliate link".
+        The site runs on AdSense and a tiny Buttondown bill.
+      </li>
+    </ul>
+
+    <h2 class="h2">Prefer a different channel?</h2>
+    <p>
+      The same posts go out via <a href={`${Astro.site?.origin ?? "https://startdebugging.net"}/rss.xml`}>RSS</a>,
+      and I post the highlights on
+      <a href="https://x.com/mariusbughiu" rel="noopener">X</a>,
+      <a href="https://bsky.app/profile/mariusbughiu.bsky.social" rel="noopener">Bluesky</a>, and
+      <a href="https://mastodon.social/@mariusbughiu" rel="noopener">Mastodon</a>.
+    </p>
+
+    <h2 class="h2">Privacy</h2>
+    <p>
+      Your email goes straight to Buttondown. I never share the list, and there's no tracking pixel
+      in the digest itself. The only link tags are UTM parameters pointing back to posts on this site,
+      which I use to tell roughly which topics resonate.
+    </p>
+
+    <div class="row">
+      <a class="pill" href={baseUrl}>&lt; Home</a>
+      <a class="pill" href={`${baseUrl}start-here/`}>Start here</a>
+      <a class="pill" href={`${baseUrl}archive/`}>Archive</a>
+    </div>
+  </section>
+</BaseLayout>

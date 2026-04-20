@@ -14,9 +14,18 @@
     "link-pass:apply": "node scripts/link-pass.mjs --apply",
     "freshness-pass": "node scripts/freshness-pass.mjs",
     "freshness-pass:apply": "node scripts/freshness-pass.mjs --apply",
+    "social-post": "node scripts/social-post.mjs",
+    "social-post:apply": "node scripts/social-post.mjs --apply",
+    "cross-post": "node scripts/cross-post.mjs",
+    "cross-post:apply": "node scripts/cross-post.mjs --apply",
+    "weekly-digest": "node scripts/weekly-digest.mjs",
+    "weekly-digest:apply": "node scripts/weekly-digest.mjs --apply",
+    "linkedin-mirror": "node scripts/linkedin-mirror.mjs",
+    "linkedin-mirror:apply": "node scripts/linkedin-mirror.mjs --apply",
     "wp:migrate": "node scripts/wp-migrate.mjs"
   },
   "dependencies": {
+    "dotenv": "^16.6.1",
     "he": "^1.2.0",
     "jsdom": "^26.1.0",
     "turndown": "^7.2.0"
