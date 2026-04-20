@@ -273,6 +273,8 @@ async function main() {
   const slug = slugFromFile(file);
   const log = await loadLog();
   const entry = log[slug] ?? {};
+  const originalKeys = new Set(Object.keys(entry));
+  let anyFailed = false;
 
   const rewritten = rewriteInternalLinks(content);
   const withNote = appendCanonicalNote(rewritten, slug);
@@ -316,15 +318,26 @@ async function main() {
       entry[name] = { at: new Date().toISOString(), id: res.id, url: res.url ?? null };
     } catch (err) {
       console.error(`  - ${name}: FAILED ${err.message}`);
+      anyFailed = true;
     }
   }
 
   if (APPLY) {
-    log[slug] = entry;
-    await saveLog(log);
+    // Only persist if a platform actually succeeded. Writing an unchanged
+    // (or empty) entry back would dirty the log and cause the distribute
+    // workflow's aggregator job to commit a no-op.
+    const hasNew = Object.keys(entry).some((k) => !originalKeys.has(k));
+    if (hasNew) {
+      log[slug] = entry;
+      await saveLog(log);
+    } else {
+      console.log("\nNo successful cross-posts this run - log not updated.");
+    }
   } else {
     console.log("\nDry run - no network calls made, no log written. Re-run with --apply.");
   }
+
+  if (anyFailed) process.exitCode = 1;
 }
 
 main().catch((err) => {

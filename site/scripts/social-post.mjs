@@ -361,6 +361,8 @@ async function main() {
   const slug = slugFromFile(file);
   const log = await loadLog();
   const entry = log[slug] ?? {};
+  const originalKeys = new Set(Object.keys(entry));
+  let anyFailed = false;
 
   console.log(`[social-post] slug=${slug}`);
   console.log(`[social-post] title=${data.title}`);
@@ -392,15 +394,29 @@ async function main() {
       entry[name] = { at: new Date().toISOString(), id: res.id ?? res.uri ?? null };
     } catch (err) {
       console.error(`  - ${name}: FAILED ${err.message}`);
+      anyFailed = true;
     }
   }
 
   if (APPLY) {
-    log[slug] = entry;
-    await saveLog(log);
+    // Only persist if a platform actually succeeded. Writing an unchanged
+    // (or empty) entry back would dirty the log and cause the distribute
+    // workflow's aggregator job to commit a no-op.
+    const hasNew = Object.keys(entry).some((k) => !originalKeys.has(k));
+    if (hasNew) {
+      log[slug] = entry;
+      await saveLog(log);
+    } else {
+      console.log("\nNo successful posts this run - log not updated.");
+    }
   } else {
     console.log("\nDry run - no network calls made, no log written. Re-run with --apply.");
   }
+
+  // Mark the process (and therefore the GitHub Actions step) as failed if
+  // any platform errored. `fail-fast: false` on the matrix still lets the
+  // sibling channels complete; we just want the failing one to go red.
+  if (anyFailed) process.exitCode = 1;
 }
 
 main().catch((err) => {
