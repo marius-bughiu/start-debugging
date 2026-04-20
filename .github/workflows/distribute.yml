@@ -36,6 +36,10 @@ concurrency:
 
 jobs:
   distribute:
+    # Default name would be "distribute (x, scripts/social-post.mjs, ...)"
+    # because GitHub concatenates every matrix key. Override with just
+    # the channel for a readable UI.
+    name: distribute on ${{ matrix.channel }}
     runs-on: ubuntu-latest
     strategy:
       # Keep running the other channels even if one fails. This is the
