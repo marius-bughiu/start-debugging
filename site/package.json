@@ -12,6 +12,8 @@
     "og:generate": "node scripts/generate-og-images.mjs",
     "link-pass": "node scripts/link-pass.mjs",
     "link-pass:apply": "node scripts/link-pass.mjs --apply",
+    "freshness-pass": "node scripts/freshness-pass.mjs",
+    "freshness-pass:apply": "node scripts/freshness-pass.mjs --apply",
     "wp:migrate": "node scripts/wp-migrate.mjs"
   },
   "dependencies": {

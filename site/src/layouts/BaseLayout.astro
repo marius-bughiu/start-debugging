@@ -303,14 +303,15 @@ if (type === "article" && publishedDate) {
       <nav class="footer-nav row">
         <a href={`${baseUrl}about/`}>About</a>
         <a href={`${baseUrl}start-here/`}>Start here</a>
+        <a href={`${baseUrl}pillars/`}>Pillars</a>
         <a href={`${baseUrl}tags/`}>Tags</a>
         <a href={`${baseUrl}archive/`}>Archive</a>
         <a href={`${siteUrl}/rss.xml`}>RSS</a>
-        <a href="https://github.com/marius-bughiu/start-debugging" rel="noopener" target="_blank">GitHub</a>
+        <a href="https://github.com/marius-bughiu/start-debugging" rel="noopener noreferrer">GitHub</a>
       </nav>
-      <div class="muted footer-copy">
-        &copy; {new Date().getUTCFullYear()} Marius Bughiu. Built with Astro.
-      </div>
+      <p class="footer-copy muted">
+        &copy; {new Date().getFullYear()} Marius Bughiu. Built with Astro.
+      </p>
     </footer>
   </body>
 </html>

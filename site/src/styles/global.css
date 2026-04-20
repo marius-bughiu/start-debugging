@@ -710,4 +710,31 @@ footer {
   font-size: 13px;
 }
 
+/* Pillar index page */
+.pillar-index {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.pillar-index-group {
+  margin-top: 10px;
+}
+
+.pillar-index-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.pillar-index-item a {
+  font-weight: 600;
+}
+
+.pillar-index-item .muted {
+  font-size: 14px;
+  margin-top: 2px;
+}
+
 

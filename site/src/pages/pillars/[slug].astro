@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import {
+  getPublishedPillars,
+  getPillarPosts,
+  type Pillar,
+} from "../../lib/blog";
+
+export async function getStaticPaths() {
+  const pillars = await getPublishedPillars();
+  return pillars.map((p: Pillar) => ({
+    params: { slug: p.slug },
+    props: { pillar: p },
+  }));
+}
+
+const baseUrl = import.meta.env.BASE_URL;
+
+interface Props {
+  pillar: Pillar;
+}
+const { pillar } = Astro.props;
+
+const posts = await getPillarPosts(pillar.data.indexTags);
+const { Content } = await pillar.render();
+
+// Group posts by YYYY/MM for a scannable table of contents.
+const groups = new Map<string, typeof posts>();
+for (const p of posts) {
+  const m = p.slug.match(/^(\d{4})\/(\d{2})\//);
+  const key = m ? `${m[1]}-${m[2]}` : "other";
+  if (!groups.has(key)) groups.set(key, [] as typeof posts);
+  groups.get(key)!.push(p);
+}
+const groupKeys = Array.from(groups.keys()).sort((a, b) =>
+  b.localeCompare(a),
+);
+---
+
+<BaseLayout
+  title={`${pillar.data.title} - Start Debugging`}
+  description={pillar.data.description}
+  canonicalUrl={Astro.url.href}
+  type="article"
+  publishedTime={pillar.data.pubDate.toISOString()}
+  modifiedTime={(pillar.data.updatedDate ?? pillar.data.pubDate).toISOString()}
+>
+  <article class="stack">
+    <h1 class="h1">{pillar.data.title}</h1>
+    {pillar.data.tagline ? (
+      <p class="muted" style="font-size: 18px;">{pillar.data.tagline}</p>
+    ) : null}
+
+    <section class="prose stack">
+      <Content />
+    </section>
+
+    <section class="stack pillar-index" style="margin-top: 24px;">
+      <h2 class="h2">Index ({posts.length} post{posts.length !== 1 ? "s" : ""})</h2>
+      {groupKeys.map((key) => {
+        const items = groups.get(key)!;
+        const label = key === "other" ? "Other" : key.replace("-", " / ");
+        return (
+          <section class="stack pillar-index-group">
+            <h3 class="h3" style="margin-top: 12px;">{label}</h3>
+            <ul class="pillar-index-list">
+              {items.map((p) => (
+                <li class="pillar-index-item">
+                  <a href={`${baseUrl}${p.slug}/`}>{p.data.title}</a>
+                  {p.data.description ? (
+                    <p class="muted">{p.data.description}</p>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          </section>
+        );
+      })}
+    </section>
+  </article>
+
+  <div class="row" style="margin-top: 18px;">
+    <a class="pill" href={`${baseUrl}pillars/`}>All pillars</a>
+    <a class="pill" href={baseUrl}>Home</a>
+  </div>
+</BaseLayout>

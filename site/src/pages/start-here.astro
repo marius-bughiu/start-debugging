@@ -92,7 +92,9 @@ const totalPicks = sections.reduce((n, s) => n + s.posts.length, 0);
     ))}
   </section>
 
-  <div class="row" style="margin-top: 14px;">
-    <a class="pill" href={baseUrl}>&lt; Back</a>
+  <div class="row" style="margin-top: 18px;">
+    <a class="pill" href={baseUrl}>Home</a>
+    <a class="pill" href={`${baseUrl}pillars/`}>Pillars</a>
+    <a class="pill" href={`${baseUrl}tags/`}>All tags</a>
   </div>
 </BaseLayout>

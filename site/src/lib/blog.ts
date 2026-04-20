@@ -1,6 +1,7 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 
 export type BlogPost = CollectionEntry<"blog">;
+export type Pillar = CollectionEntry<"pillars">;
 
 export async function getPublishedBlogPosts(): Promise<BlogPost[]> {
   return (await getCollection("blog"))
@@ -59,7 +60,7 @@ export async function getAdjacentPosts(
  * Score posts by shared-tag count relative to `post`, then by recency as a
  * tiebreaker, and return the top `limit` matches. Never includes the source
  * post itself. Posts with zero tag overlap are still included at the tail so
- * the "Related" section always fills — for a new post with a brand-new tag,
+ * the "Related" section always fills - for a new post with a brand-new tag,
  * falling back to recent posts is better than showing nothing.
  */
 export async function getRelatedPosts(
@@ -84,4 +85,25 @@ export async function getRelatedPosts(
   });
 
   return scored.slice(0, limit).map((s) => s.post);
+}
+
+/**
+ * Return every published blog post that shares at least one tag with the
+ * pillar's `indexTags`, sorted newest-first. The pillar page renders this
+ * list as its annotated table of contents.
+ */
+export async function getPillarPosts(indexTags: string[]): Promise<BlogPost[]> {
+  const wanted = new Set(indexTags.map((t) => t.toLowerCase()));
+  const posts = await getPublishedBlogPosts();
+  return posts.filter((p) => {
+    const tags = (p.data.tags ?? []).map((t) => t.toLowerCase());
+    for (const t of tags) if (wanted.has(t)) return true;
+    return false;
+  });
+}
+
+export async function getPublishedPillars(): Promise<Pillar[]> {
+  return (await getCollection("pillars"))
+    .filter((p) => !p.data.draft)
+    .sort((a, b) => a.data.title.localeCompare(b.data.title));
 }

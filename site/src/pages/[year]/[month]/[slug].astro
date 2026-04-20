@@ -154,8 +154,9 @@ const related = await getRelatedPosts(post, 4);
       try {
         await navigator.clipboard.writeText(url);
         btn.textContent = "Copied!";
-      } catch {
+      } catch (err) {
         btn.textContent = "Copy failed";
+        console.error(err);
       }
       setTimeout(() => {
         btn.textContent = original;

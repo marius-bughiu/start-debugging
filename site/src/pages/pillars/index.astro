@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPublishedPillars, getPillarPosts } from "../../lib/blog";
+
+const baseUrl = import.meta.env.BASE_URL;
+
+const pillars = await getPublishedPillars();
+const withCounts = await Promise.all(
+  pillars.map(async (p) => ({
+    pillar: p,
+    count: (await getPillarPosts(p.data.indexTags)).length,
+  })),
+);
+---
+
+<BaseLayout
+  title="Pillars - Start Debugging"
+  description="Topic pillars that index every related post in one place: .NET 11, EF Core 11, C# 14, and more."
+  canonicalUrl={Astro.url.href}
+  type="website"
+>
+  <section class="stack">
+    <h1 class="h1">Pillars</h1>
+    <p class="muted">
+      Curated topic indexes that collect every post about a theme in one place. Each pillar pulls posts by tag, so the list stays current as new posts land.
+    </p>
+  </section>
+
+  <section class="stack" style="margin-top: 18px;">
+    {withCounts.map(({ pillar, count }) => (
+      <article class="panel card stack post-card">
+        <a class="post-card-title-link" href={`${baseUrl}pillars/${pillar.slug}/`}>
+          <h2 class="h2">{pillar.data.title}</h2>
+        </a>
+        {pillar.data.tagline ? <p class="muted">{pillar.data.tagline}</p> : null}
+        <p>{pillar.data.description}</p>
+        <p class="muted">{count} post{count !== 1 ? "s" : ""} indexed</p>
+      </article>
+    ))}
+  </section>
+
+  <div class="row" style="margin-top: 14px;">
+    <a class="pill" href={baseUrl}>Home</a>
+  </div>
+</BaseLayout>
