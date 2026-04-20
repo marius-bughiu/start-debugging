@@ -20,8 +20,6 @@
     "cross-post:apply": "node scripts/cross-post.mjs --apply",
     "weekly-digest": "node scripts/weekly-digest.mjs",
     "weekly-digest:apply": "node scripts/weekly-digest.mjs --apply",
-    "linkedin-mirror": "node scripts/linkedin-mirror.mjs",
-    "linkedin-mirror:apply": "node scripts/linkedin-mirror.mjs --apply",
     "wp:migrate": "node scripts/wp-migrate.mjs"
   },
   "dependencies": {

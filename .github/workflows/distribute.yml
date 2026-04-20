@@ -1,9 +1,16 @@
 name: Distribute new post
 
-# Fires when a new (or edited) blog post is pushed to main. The scripts
-# are idempotent: they track per-slug state in content-strategy/*-log.json
-# and skip anything they've already posted, so re-runs on rebuilds / doc
-# edits are safe.
+# Fires when a new (or edited) blog post is pushed to main. Each channel
+# runs as an independent parallel job so a failure on (say) Mastodon does
+# not block X or Bluesky from publishing. The scripts are idempotent:
+# they track per-slug state in content-strategy/*-log.json and skip
+# anything they've already posted, so re-runs on rebuilds / doc edits
+# are safe.
+#
+# All log writes are serialised in the final `commit-logs` aggregator
+# job, which downloads each channel's log artifact and pushes a single
+# commit. That avoids the parallel-push race you'd get if every matrix
+# job tried to `git push` on its own.
 
 on:
   push:
@@ -21,21 +28,57 @@ permissions:
   contents: write
 
 concurrency:
+  # Queue new pushes rather than cancelling an in-flight distribution -
+  # cancelling mid-post could leave a tweet published but the log
+  # uncommitted, causing a duplicate on the next run.
   group: distribute
   cancel-in-progress: false
 
 jobs:
   distribute:
     runs-on: ubuntu-latest
+    strategy:
+      # Keep running the other channels even if one fails. This is the
+      # whole reason the workflow is split per-channel.
+      fail-fast: false
+      matrix:
+        # -----------------------------------------------------------------
+        # Enabled: X only (testing one channel end-to-end first).
+        # To enable another channel, uncomment its include block AND add
+        # the matching `<name>-log.json` entry to the `git add` line in
+        # the `commit-logs` job below.
+        # -----------------------------------------------------------------
+        include:
+          - channel: x
+            script: scripts/social-post.mjs
+            flags: --platforms=x
+            log_env: SOCIAL_POST_LOG_PATH
+            log_name: social-post-x-log.json
+          # - channel: bluesky
+          #   script: scripts/social-post.mjs
+          #   flags: --platforms=bluesky
+          #   log_env: SOCIAL_POST_LOG_PATH
+          #   log_name: social-post-bluesky-log.json
+          # - channel: mastodon
+          #   script: scripts/social-post.mjs
+          #   flags: --platforms=mastodon
+          #   log_env: SOCIAL_POST_LOG_PATH
+          #   log_name: social-post-mastodon-log.json
+          # - channel: devto
+          #   script: scripts/cross-post.mjs
+          #   flags: --platforms=devto
+          #   log_env: CROSS_POST_LOG_PATH
+          #   log_name: cross-post-devto-log.json
+          # - channel: hashnode
+          #   script: scripts/cross-post.mjs
+          #   flags: --platforms=hashnode
+          #   log_env: CROSS_POST_LOG_PATH
+          #   log_name: cross-post-hashnode-log.json
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          # Use a token that can push back with the log updates. The default
-          # GITHUB_TOKEN can push; just make sure Repo -> Settings ->
-          # Actions -> Workflow permissions is set to "Read and write".
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -48,80 +91,89 @@ jobs:
         working-directory: site
         run: npm ci
 
-      # -----------------------------------------------------------------
-      # Enabled: X only (testing one channel end-to-end first).
-      # To enable the other steps later, uncomment the matching blocks
-      # below AND add the `content-strategy/<name>-log.json` entry to the
-      # `git add` line in the final step.
-      # -----------------------------------------------------------------
-
-      - name: Post to X
+      - name: Post to ${{ matrix.channel }}
         working-directory: site
-        continue-on-error: true
         env:
+          # Pass every secret to every channel; each script only reads
+          # the env vars it actually needs and silently skips if they
+          # are missing. Unused secrets leaking into a job's env is not
+          # a meaningful risk - workflows already have full access.
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+          MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+          HASHNODE_TOKEN: ${{ secrets.HASHNODE_TOKEN }}
+          HASHNODE_PUBLICATION_ID: ${{ secrets.HASHNODE_PUBLICATION_ID }}
+          # We can't interpolate matrix.log_env as a dynamic env-var
+          # NAME, so set both possible overrides to the same path. Each
+          # script only reads its own env var, so this is harmless.
+          SOCIAL_POST_LOG_PATH: ${{ github.workspace }}/content-strategy/${{ matrix.log_name }}
+          CROSS_POST_LOG_PATH: ${{ github.workspace }}/content-strategy/${{ matrix.log_name }}
         run: |
           if [ -n "${{ inputs.file }}" ]; then
-            node scripts/social-post.mjs --apply --platforms=x --file="${{ inputs.file }}"
+            node ${{ matrix.script }} --apply ${{ matrix.flags }} --file="${{ inputs.file }}"
           else
-            node scripts/social-post.mjs --apply --platforms=x
+            node ${{ matrix.script }} --apply ${{ matrix.flags }}
           fi
 
-      # - name: Post to Bluesky + Mastodon
-      #   working-directory: site
-      #   continue-on-error: true
-      #   env:
-      #     BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
-      #     BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
-      #     MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
-      #     MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
-      #   run: |
-      #     if [ -n "${{ inputs.file }}" ]; then
-      #       node scripts/social-post.mjs --apply --platforms=bluesky,mastodon --file="${{ inputs.file }}"
-      #     else
-      #       node scripts/social-post.mjs --apply --platforms=bluesky,mastodon
-      #     fi
+      - name: Upload log artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: log-${{ matrix.channel }}
+          path: content-strategy/${{ matrix.log_name }}
+          if-no-files-found: ignore
+          retention-days: 7
 
-      # - name: Cross-post to dev.to + Hashnode
-      #   working-directory: site
-      #   continue-on-error: true
-      #   env:
-      #     DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
-      #     HASHNODE_TOKEN: ${{ secrets.HASHNODE_TOKEN }}
-      #     HASHNODE_PUBLICATION_ID: ${{ secrets.HASHNODE_PUBLICATION_ID }}
-      #   run: |
-      #     if [ -n "${{ inputs.file }}" ]; then
-      #       node scripts/cross-post.mjs --apply --file="${{ inputs.file }}"
-      #     else
-      #       node scripts/cross-post.mjs --apply
-      #     fi
+  commit-logs:
+    # Single-writer aggregator. Runs regardless of whether individual
+    # channel jobs succeeded or failed - we still want to record post
+    # IDs for whichever channels *did* succeed.
+    needs: distribute
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      # - name: Mirror to LinkedIn
-      #   working-directory: site
-      #   continue-on-error: true
-      #   env:
-      #     LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
-      #     LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
-      #   run: |
-      #     if [ -n "${{ inputs.file }}" ]; then
-      #       node scripts/linkedin-mirror.mjs --apply --file="${{ inputs.file }}"
-      #     else
-      #       node scripts/linkedin-mirror.mjs --apply
-      #     fi
+      - name: Download all log artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: _artifacts
+
+      - name: Merge logs into content-strategy/
+        run: |
+          shopt -s nullglob
+          # Artifacts download as _artifacts/log-<channel>/<log_name>.
+          # Copy each into content-strategy/, overwriting any stale copy.
+          count=0
+          for f in _artifacts/log-*/*-log.json; do
+            echo "merging $f"
+            cp "$f" content-strategy/
+            count=$((count+1))
+          done
+          echo "merged $count log files"
 
       - name: Commit log updates
-        # The scripts write to content-strategy/*-log.json for idempotency.
-        # Only commit if something actually changed. The [skip ci] tag
-        # prevents this commit from re-triggering the deploy or this
-        # workflow. Add the other log files back to `git add` once you
-        # enable the corresponding steps above.
+        # The [skip ci] tag prevents this commit from re-triggering the
+        # deploy or this workflow. When enabling more channels above,
+        # add their <name>-log.json to the `git add` line below.
         run: |
           git config user.name "start-debugging-bot"
           git config user.email "noreply@startdebugging.net"
-          git add content-strategy/social-post-log.json 2>/dev/null || true
+          git add content-strategy/social-post-x-log.json 2>/dev/null || true
+          # git add content-strategy/social-post-bluesky-log.json 2>/dev/null || true
+          # git add content-strategy/social-post-mastodon-log.json 2>/dev/null || true
+          # git add content-strategy/cross-post-devto-log.json 2>/dev/null || true
+          # git add content-strategy/cross-post-hashnode-log.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No log changes to commit."
           else

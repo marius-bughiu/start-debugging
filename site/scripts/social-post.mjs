@@ -38,7 +38,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SITE_ROOT = path.resolve(__dirname, "..");
 const REPO_ROOT = path.resolve(SITE_ROOT, "..");
 const CONTENT_ROOT = path.join(SITE_ROOT, "src", "content", "blog");
-const LOG_PATH = path.join(REPO_ROOT, "content-strategy", "social-post-log.json");
+// Per-platform log paths keep parallel GitHub Actions jobs from racing on
+// a single shared file. Set SOCIAL_POST_LOG_PATH to redirect; default is
+// the shared file for local / single-process use.
+const LOG_PATH = process.env.SOCIAL_POST_LOG_PATH
+  ? path.resolve(process.env.SOCIAL_POST_LOG_PATH)
+  : path.join(REPO_ROOT, "content-strategy", "social-post-log.json");
 const SITE_URL = "https://startdebugging.net";
 
 // --- CLI ------------------------------------------------------------------
