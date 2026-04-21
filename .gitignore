@@ -19,3 +19,4 @@ site/.env.local
 .DS_Store
 Thumbs.db
 .claude/settings.local.json
+/.claude/worktrees
