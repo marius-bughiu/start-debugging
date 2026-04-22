@@ -438,6 +438,43 @@ footer {
   --pagefind-ui-text: var(--text);
   --pagefind-ui-border: var(--border);
   --pagefind-ui-primary: var(--link);
+  --pagefind-ui-tag: var(--panel);
+}
+
+/* showImages:false still leaves the grid column reservation on some
+   Pagefind UI versions — force a single-column layout so results don't
+   appear indented as if there were a missing thumbnail. */
+.pagefind-ui .pagefind-ui__result {
+  grid-template-columns: 1fr;
+}
+
+.pagefind-ui .pagefind-ui__result-thumb,
+.pagefind-ui .pagefind-ui__result-image {
+  display: none;
+}
+
+/* Date/tags chip was rendering near-white text on a near-white background. */
+.pagefind-ui .pagefind-ui__result-tags {
+  color: var(--muted);
+  background: var(--panel);
+  border: 1px solid var(--border);
+}
+
+/* Match the in-input Clear button to the site's pill style. */
+.pagefind-ui .pagefind-ui__search-clear {
+  background: var(--panel);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.pagefind-ui .pagefind-ui__search-clear:hover,
+.pagefind-ui .pagefind-ui__search-clear:focus-visible {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* Homepage hero */
