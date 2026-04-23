@@ -134,6 +134,18 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
+      - name: Upload tasks artifact
+        # Post copy lives in tasks/<channel>.json; each successful post
+        # splices its task out. We ship the modified file back to the
+        # aggregator so the single-writer commit captures the removal.
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tasks-${{ matrix.channel }}
+          path: tasks/${{ matrix.channel }}.json
+          if-no-files-found: ignore
+          retention-days: 7
+
   commit-logs:
     # Single-writer aggregator. Runs regardless of whether individual
     # channel jobs succeeded or failed - we still want to record post
@@ -153,33 +165,44 @@ jobs:
         with:
           path: _artifacts
 
-      - name: Merge logs into content-strategy/
+      - name: Merge logs and tasks back into the repo
         run: |
           shopt -s nullglob
-          # Artifacts download as _artifacts/log-<channel>/<log_name>.
-          # Copy each into content-strategy/, overwriting any stale copy.
+          # Artifacts download as _artifacts/<artifact-name>/<file>. For single-
+          # file uploads, upload-artifact strips any directory prefix, so
+          # tasks/x.json ships as x.json under its artifact folder.
           count=0
           for f in _artifacts/log-*/*-log.json; do
-            echo "merging $f"
+            echo "merging log $f"
             cp "$f" content-strategy/
             count=$((count+1))
           done
-          echo "merged $count log files"
+          mkdir -p tasks
+          for f in _artifacts/tasks-*/*.json; do
+            echo "merging task $f"
+            cp "$f" tasks/
+            count=$((count+1))
+          done
+          echo "merged $count files"
 
-      - name: Commit log updates
+      - name: Commit log and task updates
         # The [skip ci] tag prevents this commit from re-triggering the
         # deploy or this workflow. When enabling more channels above,
-        # add their <name>-log.json to the `git add` line below.
+        # add their <name>-log.json and tasks/<name>.json to the `git add`
+        # lines below.
         run: |
           git config user.name "start-debugging-bot"
           git config user.email "noreply@startdebugging.net"
           git add content-strategy/social-post-x-log.json 2>/dev/null || true
           git add content-strategy/social-post-bluesky-log.json 2>/dev/null || true
           git add content-strategy/social-post-mastodon-log.json 2>/dev/null || true
+          git add tasks/x.json 2>/dev/null || true
+          git add tasks/bluesky.json 2>/dev/null || true
+          git add tasks/mastodon.json 2>/dev/null || true
           # git add content-strategy/cross-post-devto-log.json 2>/dev/null || true
           # git add content-strategy/cross-post-hashnode-log.json 2>/dev/null || true
           if git diff --cached --quiet; then
-            echo "No log changes to commit."
+            echo "No log or task changes to commit."
           else
             git commit -m "chore(distribute): record post IDs [skip ci]"
             git push

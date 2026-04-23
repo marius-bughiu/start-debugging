@@ -7,6 +7,14 @@
  * missing is skipped silently. Dry-run by default; add --apply to actually
  * hit the network.
  *
+ * Post copy is NOT the article title. It comes from per-platform task files
+ * at `tasks/x.json`, `tasks/bluesky.json`, `tasks/mastodon.json` (each an
+ * array of `{ slug, text }`). The article author (LLM or human) writes an
+ * eye-catching summary into each file; this script consumes the first task
+ * matching the current slug and removes it on successful post. If no task
+ * exists for a slug, the platform is skipped silently - no fallback to
+ * title.
+ *
  * Usage:
  *   node scripts/social-post.mjs                              # latest post, dry-run
  *   node scripts/social-post.mjs --file=src/content/blog/...  # explicit post
@@ -44,6 +52,7 @@ const CONTENT_ROOT = path.join(SITE_ROOT, "src", "content", "blog");
 const LOG_PATH = process.env.SOCIAL_POST_LOG_PATH
   ? path.resolve(process.env.SOCIAL_POST_LOG_PATH)
   : path.join(REPO_ROOT, "content-strategy", "social-post-log.json");
+const TASKS_ROOT = path.join(REPO_ROOT, "tasks");
 const SITE_URL = "https://startdebugging.net";
 
 // --- CLI ------------------------------------------------------------------
@@ -132,6 +141,33 @@ async function saveLog(log) {
   await fs.writeFile(LOG_PATH, JSON.stringify(log, null, 2) + "\n", "utf8");
 }
 
+function tasksFileFor(platform) {
+  return path.join(TASKS_ROOT, `${platform}.json`);
+}
+
+async function loadTasks(platform) {
+  try {
+    const raw = await fs.readFile(tasksFileFor(platform), "utf8");
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) {
+      throw new Error(`tasks/${platform}.json must contain a JSON array`);
+    }
+    return parsed;
+  } catch (err) {
+    if (err.code === "ENOENT") return [];
+    throw err;
+  }
+}
+
+async function saveTasks(platform, arr) {
+  await fs.mkdir(TASKS_ROOT, { recursive: true });
+  await fs.writeFile(
+    tasksFileFor(platform),
+    JSON.stringify(arr, null, 2) + "\n",
+    "utf8",
+  );
+}
+
 function slugFromFile(file) {
   // site/src/content/blog/YYYY/MM/<slug>.md -> YYYY/MM/<slug>
   const rel = path.relative(CONTENT_ROOT, file).replace(/\\/g, "/");
@@ -209,7 +245,7 @@ function oauth1Header({ method, url, consumerKey, consumerSecret, token, tokenSe
 
 // --- Platform: X (Twitter v2, OAuth 1.0a user context) -------------------
 
-async function postToX({ title, slug }) {
+async function postToX({ summary, slug }) {
   const consumerKey = process.env.X_API_KEY;
   const consumerSecret = process.env.X_API_SECRET;
   const token = process.env.X_ACCESS_TOKEN;
@@ -222,7 +258,7 @@ async function postToX({ title, slug }) {
   if (missing.length) return { skipped: true, reason: `no ${missing.join(" / ")}` };
 
   const url = buildUrl(slug, "x");
-  const text = composeText(title, url, { maxLen: 280 });
+  const text = composeText(summary, url, { maxLen: 280 });
 
   if (!APPLY) return { skipped: false, dryRun: true, text };
 
@@ -254,7 +290,7 @@ async function postToX({ title, slug }) {
 
 // --- Platform: Bluesky (AT Protocol) --------------------------------------
 
-async function postToBluesky({ title, slug }) {
+async function postToBluesky({ summary, slug }) {
   const handle = process.env.BLUESKY_HANDLE;
   const appPassword = process.env.BLUESKY_APP_PASSWORD;
   if (!handle || !appPassword) {
@@ -262,7 +298,7 @@ async function postToBluesky({ title, slug }) {
   }
 
   const url = buildUrl(slug, "bluesky");
-  const text = composeText(title, url, { maxLen: 300 }); // Bluesky = 300 graphemes
+  const text = composeText(summary, url, { maxLen: 300 }); // Bluesky = 300 graphemes
 
   if (!APPLY) return { skipped: false, dryRun: true, text };
 
@@ -315,7 +351,7 @@ async function postToBluesky({ title, slug }) {
 
 // --- Platform: Mastodon ---------------------------------------------------
 
-async function postToMastodon({ title, slug }) {
+async function postToMastodon({ summary, slug }) {
   const instance = process.env.MASTODON_INSTANCE;
   const token = process.env.MASTODON_ACCESS_TOKEN;
   if (!instance || !token) {
@@ -323,8 +359,8 @@ async function postToMastodon({ title, slug }) {
   }
 
   const url = buildUrl(slug, "mastodon");
-  // Mastodon default = 500 chars; longer titles are fine here.
-  const text = composeText(title, url, { maxLen: 500 });
+  // Mastodon default = 500 chars; longer summaries are fine here.
+  const text = composeText(summary, url, { maxLen: 500 });
 
   if (!APPLY) return { skipped: false, dryRun: true, text };
 
@@ -375,12 +411,37 @@ async function main() {
   ].filter(([name]) => PLATFORM_FILTER.includes(name));
 
   for (const [name, fn] of platforms) {
-    if (entry[name] && !FORCE && APPLY) {
+    const tasks = await loadTasks(name);
+    const taskIndex = tasks.findIndex((t) => t && t.slug === slug);
+    const alreadyPosted = Boolean(entry[name]);
+
+    // Already posted in APPLY mode: skip and clean up any orphaned task. In
+    // dry-run we still want to preview, so this guard only fires under --apply.
+    if (alreadyPosted && !FORCE && APPLY) {
       console.log(`  - ${name}: already posted at ${entry[name].at}, skipping (use --force)`);
+      if (taskIndex !== -1) {
+        tasks.splice(taskIndex, 1);
+        await saveTasks(name, tasks);
+        console.log(`  - ${name}: removed stale task for already-posted slug`);
+      }
       continue;
     }
+
+    // Strict: no task = no post. The LLM is expected to write a summary for
+    // every article via content-strategy/news-prompt.md and evergreen-prompt.md.
+    if (taskIndex === -1) {
+      console.log(`  - ${name}: skipped (no task in tasks/${name}.json for slug ${slug})`);
+      continue;
+    }
+
+    const summary = tasks[taskIndex].text;
+    if (typeof summary !== "string" || !summary.trim()) {
+      console.log(`  - ${name}: skipped (task entry has no text)`);
+      continue;
+    }
+
     try {
-      const res = await fn({ title: data.title, slug });
+      const res = await fn({ summary, slug });
       if (res.skipped) {
         console.log(`  - ${name}: skipped (${res.reason})`);
         continue;
@@ -392,6 +453,11 @@ async function main() {
       }
       console.log(`  - ${name}: posted${res.id ? ` id=${res.id}` : res.uri ? ` uri=${res.uri}` : ""}`);
       entry[name] = { at: new Date().toISOString(), id: res.id ?? res.uri ?? null };
+
+      if (APPLY) {
+        tasks.splice(taskIndex, 1);
+        await saveTasks(name, tasks);
+      }
     } catch (err) {
       console.error(`  - ${name}: FAILED ${err.message}`);
       anyFailed = true;
