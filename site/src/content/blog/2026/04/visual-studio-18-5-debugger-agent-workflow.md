@@ -6,6 +6,8 @@ tags:
   - "visual-studio"
   - "debugging"
   - "copilot"
+  - "github-copilot"
+  - "ai-agents"
   - "dotnet"
 ---
 

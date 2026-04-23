@@ -5,6 +5,8 @@ pubDate: 2026-04-14
 tags:
   - "dotnet"
   - "copilot"
+  - "github-copilot"
+  - "ai-agents"
   - "modernization"
   - "dotnet-10"
 ---

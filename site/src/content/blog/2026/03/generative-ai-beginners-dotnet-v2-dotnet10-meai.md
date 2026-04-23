@@ -6,6 +6,8 @@ tags:
   - "dotnet"
   - "dotnet-10"
   - "ai"
+  - "ai-agents"
+  - "llm"
   - "microsoft-extensions-ai"
   - "generative-ai"
 ---

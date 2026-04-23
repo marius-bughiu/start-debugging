@@ -7,6 +7,8 @@ tags:
   - "csharp"
   - "dotnet"
   - "dotnet-10"
+  - "mcp"
+  - "ai-agents"
 ---
 Today’s GitHub Trending (C#, daily) includes **`microsoft/mcp`**, Microsoft’s repo for Model Context Protocol (MCP). If you are building internal tools on **.NET 10** and you want a clean boundary between an LLM client and your real systems (files, tickets, databases, CI), MCP is the shape to watch.
 
