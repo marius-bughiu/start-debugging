@@ -1,14 +1,17 @@
 #!/usr/bin/env node
 // GSC page-2 query harvester.
 //
-// Reads GSC_CREDENTIALS_JSON (path to a service account key file) and
-// GSC_SITE_URL (the verified property in Search Console, e.g. "sc-domain:startdebugging.net"
-// or "https://startdebugging.net/"). Queries the last 7 days of Search Analytics
-// data, filters to queries ranking in positions 11-20 (page 2 of search results),
-// and writes candidates to content-strategy/gsc-candidates.json.
+// Queries the last 7 days of Search Analytics data, filters to queries ranking
+// in positions 11-20 (page 2 of search results), and writes candidates to
+// content-strategy/gsc-candidates.json.
 //
-// Exits 0 with a log message if credentials, env vars, or the googleapis package
-// are missing, so the scheduled task can skip cleanly without failing.
+// Credentials and site URL are hardcoded below. The key file lives under
+// .env/ which is gitignored. If the property in Search Console is a URL-prefix
+// property instead of a Domain property, change SITE_URL to e.g.
+// "https://startdebugging.net/".
+//
+// Exits 0 with a log message if credentials or the googleapis package are
+// missing, so the scheduled task can skip cleanly without failing.
 
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -18,15 +21,12 @@ const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..", "..");
 const OUTPUT = path.join(ROOT, "content-strategy", "gsc-candidates.json");
 
-const credsPath = process.env.GSC_CREDENTIALS_JSON;
-const siteUrl = process.env.GSC_SITE_URL;
-
-if (!credsPath || !siteUrl) {
-  console.log(
-    "[gsc-harvest] GSC_CREDENTIALS_JSON or GSC_SITE_URL not set. Skipping.",
-  );
-  process.exit(0);
-}
+const credsPath = path.join(
+  ROOT,
+  ".env",
+  "start-debugging-942488b48cf5.json",
+);
+const siteUrl = "https://startdebugging.net/";
 
 let google;
 try {
