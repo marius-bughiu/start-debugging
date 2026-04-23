@@ -20,6 +20,8 @@
     "cross-post:apply": "node scripts/cross-post.mjs --apply",
     "weekly-digest": "node scripts/weekly-digest.mjs",
     "weekly-digest:apply": "node scripts/weekly-digest.mjs --apply",
+    "gsc-harvest": "node scripts/gsc-harvest.mjs",
+    "link-rot-check": "node scripts/link-rot-check.mjs",
     "wp:migrate": "node scripts/wp-migrate.mjs"
   },
   "dependencies": {
