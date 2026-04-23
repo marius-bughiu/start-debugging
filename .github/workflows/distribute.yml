@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         # -----------------------------------------------------------------
-        # Enabled: X, Bluesky.
+        # Enabled: X, Bluesky, Mastodon.
         # To enable another channel, uncomment its include block AND add
         # the matching `<name>-log.json` entry to the `git add` line in
         # the `commit-logs` job below.
@@ -63,11 +63,11 @@ jobs:
             flags: --platforms=bluesky
             log_env: SOCIAL_POST_LOG_PATH
             log_name: social-post-bluesky-log.json
-          # - channel: mastodon
-          #   script: scripts/social-post.mjs
-          #   flags: --platforms=mastodon
-          #   log_env: SOCIAL_POST_LOG_PATH
-          #   log_name: social-post-mastodon-log.json
+          - channel: mastodon
+            script: scripts/social-post.mjs
+            flags: --platforms=mastodon
+            log_env: SOCIAL_POST_LOG_PATH
+            log_name: social-post-mastodon-log.json
           # - channel: devto
           #   script: scripts/cross-post.mjs
           #   flags: --platforms=devto
@@ -175,7 +175,7 @@ jobs:
           git config user.email "noreply@startdebugging.net"
           git add content-strategy/social-post-x-log.json 2>/dev/null || true
           git add content-strategy/social-post-bluesky-log.json 2>/dev/null || true
-          # git add content-strategy/social-post-mastodon-log.json 2>/dev/null || true
+          git add content-strategy/social-post-mastodon-log.json 2>/dev/null || true
           # git add content-strategy/cross-post-devto-log.json 2>/dev/null || true
           # git add content-strategy/cross-post-hashnode-log.json 2>/dev/null || true
           if git diff --cached --quiet; then
