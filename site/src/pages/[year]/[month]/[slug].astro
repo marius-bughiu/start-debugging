@@ -40,7 +40,7 @@ const pubDateIso = post.data.pubDate.toISOString().slice(0, 10);
 // Pre-encoded share payloads. We share the canonical URL + title.
 const shareTitle = encodeURIComponent(post.data.title);
 const shareUrl = encodeURIComponent(canonicalUrl);
-const shareX = `https://x.com/intent/post?text=${shareTitle}&url=${shareUrl}&via=mariusstartdebugging`;
+const shareX = `https://x.com/intent/post?text=${shareTitle}&url=${shareUrl}&via=startdebugging_`;
 const shareHn = `https://news.ycombinator.com/submitlink?u=${shareUrl}&t=${shareTitle}`;
 const shareReddit = `https://www.reddit.com/submit?url=${shareUrl}&title=${shareTitle}`;
 const shareLinkedIn = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
