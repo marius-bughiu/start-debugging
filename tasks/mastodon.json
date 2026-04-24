@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/04/how-to-read-a-large-csv-in-dotnet-11-without-running-out-of-memory",
-    "text": "TL;DR for anyone fighting OOM on large CSV reads in .NET 11: stop materialising, start streaming. File.ReadLines covers 80% of cases. CsvHelper's GetRecordsAsync gives you typed records without buffering. Sylvan.Data.Csv exposes GetFieldSpan so you never allocate a string per cell, and hits ~2.5M rows/s. Only drop to System.IO.Pipelines with Utf8Parser if you've measured a real bottleneck in UTF-16 conversion. Plus the usual gotchas: quoted multi-line fields, the Excel BOM, and FileShare flags if another process wants to rename the file."
-  }
-]
+[]
