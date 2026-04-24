@@ -5,13 +5,18 @@
 // in positions 11-20 (page 2 of search results), and writes candidates to
 // content-strategy/gsc-candidates.json.
 //
-// Credentials and site URL are hardcoded below. The key file lives under
-// .env/ which is gitignored. If the property in Search Console is a URL-prefix
-// property instead of a Domain property, change SITE_URL to e.g.
-// "https://startdebugging.net/".
+// Authenticates via Google Application Default Credentials (ADC). Set up once
+// with:
+//   gcloud auth application-default login --scopes=openid,\
+//     https://www.googleapis.com/auth/userinfo.email,\
+//     https://www.googleapis.com/auth/cloud-platform,\
+//     https://www.googleapis.com/auth/webmasters.readonly
 //
-// Exits 0 with a log message if credentials or the googleapis package are
-// missing, so the scheduled task can skip cleanly without failing.
+// This runs as the signed-in user, so the GSC property owner (not a service
+// account) must be the one who logs in.
+//
+// Exits 0 with a log message if ADC is missing or googleapis isn't installed,
+// so the scheduled task can skip cleanly without failing.
 
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -21,12 +26,7 @@ const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..", "..");
 const OUTPUT = path.join(ROOT, "content-strategy", "gsc-candidates.json");
 
-const credsPath = path.join(
-  ROOT,
-  ".env",
-  "start-debugging-942488b48cf5.json",
-);
-const siteUrl = "https://startdebugging.net/";
+const siteUrl = "sc-domain:startdebugging.net";
 
 let google;
 try {
@@ -38,21 +38,19 @@ try {
   process.exit(0);
 }
 
-let creds;
+let auth;
 try {
-  creds = JSON.parse(await fs.readFile(credsPath, "utf8"));
+  auth = new google.auth.GoogleAuth({
+    scopes: ["https://www.googleapis.com/auth/webmasters.readonly"],
+  });
+  // Force credential resolution now so missing ADC fails fast with a clear log.
+  await auth.getClient();
 } catch (err) {
   console.log(
-    `[gsc-harvest] Could not read credentials at ${credsPath}: ${err.message}. Skipping.`,
+    `[gsc-harvest] Application Default Credentials not available: ${err.message}. Run \`gcloud auth application-default login --scopes=...\` (see script header). Skipping.`,
   );
   process.exit(0);
 }
-
-const auth = new google.auth.JWT({
-  email: creds.client_email,
-  key: creds.private_key,
-  scopes: ["https://www.googleapis.com/auth/webmasters.readonly"],
-});
 
 const webmasters = google.webmasters({ version: "v3", auth });
 
