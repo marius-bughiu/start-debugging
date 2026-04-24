@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/04/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering",
-    "text": "Serving large files from ASP.NET Core without buffering them into memory first. Three tiers: PhysicalFileResult for on-disk files (Kestrel uses sendfile), Results.Stream for blobs, and Response.BodyWriter for generated payloads."
-  }
-]
+[]

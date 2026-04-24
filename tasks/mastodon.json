@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/04/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering",
-    "text": "New evergreen: how to stream a file from an ASP.NET Core 11 endpoint without buffering. Three tiers depending on your source: PhysicalFileResult for on-disk files (Kestrel uses sendfile -- zero managed memory), Results.Stream for Azure Blob or S3 objects, and writing directly to Response.BodyWriter for dynamically generated content like CSV reports or ZIP archives. Covers range requests, the Results.File regression in .NET 7, and the common mistake of copying to MemoryStream before returning."
-  }
-]
+[]
