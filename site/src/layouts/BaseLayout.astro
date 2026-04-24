@@ -252,37 +252,39 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
         <a class="pill" href={lang === "en" ? baseUrl : `${baseUrl}${lang}/`}>
           {t("site.brand", lang)}
         </a>
-        <div class="header-search">
-          <button
-            type="button"
-            class="pill header-search-trigger"
-            data-search-open
-            aria-label={t("search.openAria", lang)}
-          >
-            <span aria-hidden="true">&#x1F50D;</span>
-            <span class="header-search-label">{t("search.label", lang)}</span>
-            <kbd class="header-search-kbd" aria-hidden="true">/</kbd>
-          </button>
+        <div class="header-actions">
+          <div class="header-search">
+            <button
+              type="button"
+              class="pill header-search-trigger"
+              data-search-open
+              aria-label={t("search.openAria", lang)}
+            >
+              <span aria-hidden="true">&#x1F50D;</span>
+              <span class="header-search-label">{t("search.label", lang)}</span>
+              <kbd class="header-search-kbd" aria-hidden="true">/</kbd>
+            </button>
+          </div>
+          {showLangSwitcher ? (
+            <details class="header-lang">
+              <summary class="pill header-lang-trigger" aria-label={`Language: ${LOCALE_NATIVE_NAME[lang]}`}>
+                <span aria-hidden="true">&#x1F310;</span>
+                <span class="header-lang-code">{LOCALE_SHORT_CODE[lang]}</span>
+                <span class="header-lang-caret" aria-hidden="true">&#x25BE;</span>
+              </summary>
+              <ul class="header-lang-menu" role="menu">
+                {translationEntries.map(([l, href]) => (
+                  <li role="menuitem">
+                    <a href={href} hreflang={LOCALE_HREFLANG[l]} lang={LOCALE_HREFLANG[l]}>
+                      <span class="header-lang-menu-code">{LOCALE_SHORT_CODE[l]}</span>
+                      <span>{LOCALE_NATIVE_NAME[l]}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          ) : null}
         </div>
-        {showLangSwitcher ? (
-          <details class="header-lang">
-            <summary class="pill header-lang-trigger" aria-label={`Language: ${LOCALE_NATIVE_NAME[lang]}`}>
-              <span aria-hidden="true">&#x1F310;</span>
-              <span class="header-lang-code">{LOCALE_SHORT_CODE[lang]}</span>
-              <span class="header-lang-caret" aria-hidden="true">&#x25BE;</span>
-            </summary>
-            <ul class="header-lang-menu" role="menu">
-              {translationEntries.map(([l, href]) => (
-                <li role="menuitem">
-                  <a href={href} hreflang={LOCALE_HREFLANG[l]} lang={LOCALE_HREFLANG[l]}>
-                    <span class="header-lang-menu-code">{LOCALE_SHORT_CODE[l]}</span>
-                    <span>{LOCALE_NATIVE_NAME[l]}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </details>
-        ) : null}
       </div>
     </header>
 

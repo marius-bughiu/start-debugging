@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getPublishedBlogPosts } from "../lib/blog";
+import { buildLocaleUrlMap, getPublishedBlogPosts } from "../lib/blog";
 import type { BlogPost } from "../lib/blog";
 import featuredData from "../data/featured.json";
 
@@ -10,6 +10,13 @@ const baseUrl = import.meta.env.BASE_URL;
 const allPosts = await getPublishedBlogPosts();
 const posts = allPosts.slice(0, PAGE_SIZE);
 const totalPages = Math.max(1, Math.ceil(allPosts.length / PAGE_SIZE));
+
+// Every locale has its own homepage, so the switcher should always show
+// all alternates on `/`.
+const siteOrigin = Astro.site?.origin ?? "https://startdebugging.net";
+const translations = buildLocaleUrlMap(siteOrigin, (l) =>
+  l === "en" ? "/" : `/${l}/`,
+);
 
 // Resolve featured slugs against the published-post index. Missing/renamed
 // slugs are dropped silently (logged in dev) so the homepage keeps rendering.
@@ -34,6 +41,7 @@ const tagline =
   description={tagline}
   canonicalUrl={Astro.url.href}
   type="website"
+  translations={translations}
 >
   <section class="stack home-hero">
     <p class="home-tagline">{tagline}</p>

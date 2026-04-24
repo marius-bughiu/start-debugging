@@ -365,6 +365,16 @@ footer {
   gap: 10px;
 }
 
+/* Right-hand action group: search + language switcher, grouped so they
+   sit together on the right of the header rather than being spread by
+   the .header-row space-between. */
+.header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .header-search-trigger {
   display: inline-flex;
   align-items: center;

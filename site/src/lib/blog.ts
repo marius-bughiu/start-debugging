@@ -210,6 +210,23 @@ export async function getTranslations(
   return result;
 }
 
+/**
+ * Build a complete locale -> URL map for a page that exists in every locale
+ * (homepage, pillars index, archive index if mirrored, etc.). Takes a builder
+ * function that returns the path for a given locale so each caller can encode
+ * its own URL shape.
+ */
+export function buildLocaleUrlMap(
+  siteOrigin: string,
+  pathForLocale: (lang: Locale) => string,
+): Partial<Record<Locale, string>> {
+  const out: Partial<Record<Locale, string>> = {};
+  for (const lang of LOCALES) {
+    out[lang] = siteOrigin + pathForLocale(lang);
+  }
+  return out;
+}
+
 /** Same as `getTranslations` but for pillars. */
 export async function getPillarTranslations(
   pillar: Pillar,

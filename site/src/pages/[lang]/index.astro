@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import {
+  buildLocaleUrlMap,
   getPublishedBlogPosts,
   isLocale,
   LOCALES,
@@ -29,6 +30,11 @@ const langPrefix = `${baseUrl}${lang}/`;
 const allPosts = await getPublishedBlogPosts(lang);
 const posts = allPosts.slice(0, PAGE_SIZE);
 const totalPages = Math.max(1, Math.ceil(allPosts.length / PAGE_SIZE));
+
+const siteOrigin = Astro.site?.origin ?? "https://startdebugging.net";
+const translations = buildLocaleUrlMap(siteOrigin, (l) =>
+  l === "en" ? "/" : `/${l}/`,
+);
 ---
 
 <BaseLayout
@@ -37,6 +43,7 @@ const totalPages = Math.max(1, Math.ceil(allPosts.length / PAGE_SIZE));
   canonicalUrl={Astro.url.href}
   type="website"
   lang={lang}
+  translations={translations}
 >
   <section class="stack home-hero">
     <p class="home-tagline">{t("site.tagline", lang)}</p>
