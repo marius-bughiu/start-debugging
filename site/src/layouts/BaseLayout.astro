@@ -1,5 +1,12 @@
 ---
 import "../styles/global.css";
+import {
+  LOCALES,
+  LOCALE_HREFLANG,
+  LOCALE_OG,
+  type Locale,
+} from "../lib/blog";
+import { t } from "../i18n";
 
 export interface Props {
   title: string;
@@ -16,6 +23,18 @@ export interface Props {
    * provided. Post pages should pass this explicitly.
    */
   ogImage?: string;
+  /**
+   * Content language of this page. Drives <html lang>, og:locale, and
+   * JSON-LD inLanguage. Defaults to English.
+   */
+  lang?: Locale;
+  /**
+   * Absolute URLs of this page's translations, keyed by locale. Powers
+   * hreflang alternates. Pass only the locales that actually have a
+   * translation; the current page's own locale should also be included.
+   * Omit for pages without translations.
+   */
+  translations?: Partial<Record<Locale, string>>;
 }
 
 const {
@@ -28,6 +47,8 @@ const {
   tags,
   type = "website",
   ogImage,
+  lang = "en",
+  translations,
 } = Astro.props;
 
 const baseUrl = import.meta.env.BASE_URL;
@@ -35,9 +56,18 @@ const siteUrl = Astro.site?.origin ?? "https://startdebugging.net";
 const siteName = "Start Debugging";
 const canonical = canonicalUrl ?? Astro.url.href;
 
-// Absolute OG image URL. Fall back to the site-wide default card.
 const ogImagePath = ogImage ?? "/og/default.png";
 const ogImageUrl = new URL(ogImagePath, siteUrl).href;
+
+const htmlLang = LOCALE_HREFLANG[lang];
+const ogLocale = LOCALE_OG[lang];
+
+// Derive alternate locales present on this page (excluding the current one).
+const translationEntries = translations
+  ? (Object.entries(translations).filter(
+      ([l, href]) => !!href && l !== lang,
+    ) as [Locale, string][])
+  : [];
 
 // Author identity used in JSON-LD (mirrors site/src/pages/about.astro).
 const author = {
@@ -77,6 +107,7 @@ const primaryJsonLd =
         datePublished: publishedDate.toISOString(),
         ...(updatedDate ? { dateModified: updatedDate.toISOString() } : {}),
         ...(tags?.length ? { keywords: tags.join(", ") } : {}),
+        inLanguage: ogLocale.replace("_", "-"),
         author,
         publisher,
       }
@@ -85,14 +116,14 @@ const primaryJsonLd =
         "@type": "WebSite",
         name: siteName,
         url: siteUrl,
+        inLanguage: ogLocale.replace("_", "-"),
         publisher,
       };
 
-// BreadcrumbList for post pages. We only include URLs that actually resolve
-// (Home -> post title). Year/month archive pages are a Phase 2 task; once
-// they exist, add intermediate items here.
+// BreadcrumbList for post pages. Home -> post title.
 let breadcrumbJsonLd: Record<string, unknown> | null = null;
 if (type === "article" && publishedDate) {
+  const homeUrl = lang === "en" ? siteUrl + "/" : `${siteUrl}/${lang}/`;
   breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -101,7 +132,7 @@ if (type === "article" && publishedDate) {
         "@type": "ListItem",
         position: 1,
         name: siteName,
-        item: siteUrl + "/",
+        item: homeUrl,
       },
       {
         "@type": "ListItem",
@@ -112,10 +143,13 @@ if (type === "article" && publishedDate) {
     ],
   };
 }
+
+// RSS feed URL for the active language.
+const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xml`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={htmlLang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -123,7 +157,31 @@ if (type === "article" && publishedDate) {
     {description ? <meta name="description" content={description} /> : null}
     <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" type="application/rss+xml" title={siteName} href={`${siteUrl}/rss.xml`} />
+    <link rel="alternate" type="application/rss+xml" title={siteName} href={rssUrl} />
+    {LOCALES.filter((l) => l !== lang).map((l) => (
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        hreflang={LOCALE_HREFLANG[l]}
+        title={`${siteName} (${LOCALE_HREFLANG[l]})`}
+        href={l === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${l}/rss.xml`}
+      />
+    ))}
+
+    {/* hreflang alternates — only emit when this page has translations. */}
+    {translations && translationEntries.length > 0 ? (
+      <>
+        <link rel="alternate" hreflang={LOCALE_HREFLANG[lang]} href={canonical} />
+        {translationEntries.map(([l, href]) => (
+          <link rel="alternate" hreflang={LOCALE_HREFLANG[l]} href={href} />
+        ))}
+        <link
+          rel="alternate"
+          hreflang="x-default"
+          href={translations.en ?? canonical}
+        />
+      </>
+    ) : null}
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
@@ -131,6 +189,10 @@ if (type === "article" && publishedDate) {
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content={type === "article" ? "article" : "website"} />
     <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content={ogLocale} />
+    {translationEntries.map(([l]) => (
+      <meta property="og:locale:alternate" content={LOCALE_OG[l]} />
+    ))}
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -142,7 +204,7 @@ if (type === "article" && publishedDate) {
       <meta property="article:modified_time" content={updatedDate.toISOString()} />
     ) : null}
     {type === "article" && tags?.length
-      ? tags.map((t) => <meta property="article:tag" content={t} />)
+      ? tags.map((tag) => <meta property="article:tag" content={tag} />)
       : null}
 
     <!-- Twitter Card -->
@@ -181,26 +243,24 @@ if (type === "article" && publishedDate) {
   <body>
     <header>
       <div class="row header-row">
-        <a class="pill" href={baseUrl}>
-          Start Debugging
+        <a class="pill" href={lang === "en" ? baseUrl : `${baseUrl}${lang}/`}>
+          {t("site.brand", lang)}
         </a>
         <div class="header-search">
           <button
             type="button"
             class="pill header-search-trigger"
             data-search-open
-            aria-label="Search posts"
+            aria-label={t("search.openAria", lang)}
           >
             <span aria-hidden="true">&#x1F50D;</span>
-            <span class="header-search-label">Search</span>
+            <span class="header-search-label">{t("search.label", lang)}</span>
             <kbd class="header-search-kbd" aria-hidden="true">/</kbd>
           </button>
         </div>
       </div>
     </header>
 
-    <!-- Pagefind search overlay. The UI library is loaded lazily on first
-         interaction so the homepage stays light. -->
     <div
       class="search-overlay"
       data-search-overlay
@@ -212,20 +272,20 @@ if (type === "article" && publishedDate) {
       <div class="search-overlay-backdrop" data-search-close aria-hidden="true"></div>
       <div class="search-overlay-panel panel">
         <div class="row search-overlay-header">
-          <h2 class="h2" id="search-overlay-title">Search</h2>
+          <h2 class="h2" id="search-overlay-title">{t("search.heading", lang)}</h2>
           <button
             type="button"
             class="pill search-overlay-close"
             data-search-close
-            aria-label="Close search"
-          >Close</button>
+            aria-label={t("search.closeAria", lang)}
+          >{t("search.close", lang)}</button>
         </div>
         <div id="pagefind-search"></div>
       </div>
     </div>
 
     <link rel="stylesheet" href={`${baseUrl}pagefind/pagefind-ui.css`} />
-    <script is:inline define:vars={{ baseUrl }}>
+    <script is:inline define:vars={{ baseUrl, devHint: t("search.devHint", lang) }}>
       (function () {
         const overlay = document.querySelector('[data-search-overlay]');
         const opener = document.querySelector('[data-search-open]');
@@ -265,12 +325,10 @@ if (type === "article" && publishedDate) {
             const input = overlay.querySelector('input');
             if (input) input.focus();
           }).catch(function () {
-            // Pagefind index not built yet (e.g. astro dev). Show a hint.
             const target = overlay.querySelector('#pagefind-search');
             if (target && !target.dataset.devHint) {
               target.dataset.devHint = '1';
-              target.innerHTML =
-                '<p class="muted" style="padding:12px;">Search index not available in dev. Run <code>npm run build</code> to generate it.</p>';
+              target.innerHTML = '<p class="muted" style="padding:12px;">' + devHint + '</p>';
             }
           });
         }
@@ -283,7 +341,6 @@ if (type === "article" && publishedDate) {
         closers.forEach(function (c) { c.addEventListener('click', closeOverlay); });
         document.addEventListener('keydown', function (e) {
           if (e.key === 'Escape' && !overlay.hidden) closeOverlay();
-          // "/" shortcut when not typing in a form field.
           if (
             e.key === '/' &&
             overlay.hidden &&
@@ -303,11 +360,10 @@ if (type === "article" && publishedDate) {
     <footer>
       <section class="footer-newsletter" aria-labelledby="footer-newsletter-heading">
         <h2 id="footer-newsletter-heading" class="h2 footer-newsletter-heading">
-          Subscribe to the newsletter
+          {t("subscribe.footer.heading", lang)}
         </h2>
         <p class="muted footer-newsletter-copy">
-          A weekly digest of the best .NET, C#, MAUI, and Flutter posts on Start Debugging.
-          No spam, unsubscribe anytime.
+          {t("subscribe.footer.blurb", lang)}
         </p>
         <form
           class="footer-newsletter-form row"
@@ -322,29 +378,29 @@ if (type === "article" && publishedDate) {
             class="footer-newsletter-input"
             type="email"
             name="email"
-            placeholder="you@domain.com"
+            placeholder={t("subscribe.footer.placeholder", lang)}
             required
             autocomplete="email"
           />
           <input type="hidden" name="tag" value="footer" />
-          <button class="pill footer-newsletter-submit" type="submit">Subscribe</button>
+          <button class="pill footer-newsletter-submit" type="submit">{t("subscribe.footer.submit", lang)}</button>
         </form>
         <p class="muted footer-newsletter-alt">
-          Prefer RSS? <a href={`${siteUrl}/rss.xml`}>Subscribe via RSS</a> instead.
+          {t("subscribe.footer.altRss", lang)} <a href={rssUrl}>{t("subscribe.footer.altRssLink", lang)}</a> {t("subscribe.footer.altRssAfter", lang)}
         </p>
       </section>
 
       <nav class="footer-nav row">
-        <a href={`${baseUrl}about/`}>About</a>
-        <a href={`${baseUrl}start-here/`}>Start here</a>
-        <a href={`${baseUrl}pillars/`}>Pillars</a>
-        <a href={`${baseUrl}tags/`}>Tags</a>
-        <a href={`${baseUrl}archive/`}>Archive</a>
-        <a href={`${baseUrl}subscribe/`}>Subscribe</a>
-        <a href={`${siteUrl}/rss.xml`}>RSS</a>
+        <a href={lang === "en" ? `${baseUrl}about/` : `${baseUrl}${lang}/about/`}>{t("nav.about", lang)}</a>
+        <a href={lang === "en" ? `${baseUrl}start-here/` : `${baseUrl}${lang}/start-here/`}>{t("nav.startHere", lang)}</a>
+        <a href={lang === "en" ? `${baseUrl}pillars/` : `${baseUrl}${lang}/pillars/`}>{t("nav.pillars", lang)}</a>
+        <a href={lang === "en" ? `${baseUrl}tags/` : `${baseUrl}${lang}/tags/`}>{t("nav.tags", lang)}</a>
+        <a href={lang === "en" ? `${baseUrl}archive/` : `${baseUrl}${lang}/archive/`}>{t("nav.archive", lang)}</a>
+        <a href={lang === "en" ? `${baseUrl}subscribe/` : `${baseUrl}${lang}/subscribe/`}>{t("nav.subscribe", lang)}</a>
+        <a href={rssUrl}>{t("nav.rss", lang)}</a>
       </nav>
       <p class="footer-copy muted">
-        &copy; {new Date().getFullYear()} Marius Bughiu. Built with Astro.
+        &copy; {new Date().getFullYear()} {t("site.copyright", lang)}
       </p>
     </footer>
   </body>

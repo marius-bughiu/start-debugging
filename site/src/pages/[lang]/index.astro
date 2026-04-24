@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import {
+  getPublishedBlogPosts,
+  isLocale,
+  LOCALES,
+  urlPathForPost,
+  type Locale,
+} from "../../lib/blog";
+import { t } from "../../i18n";
+
+export async function getStaticPaths() {
+  return LOCALES.filter((l) => l !== "en").map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+
+const { lang } = Astro.props as { lang: Locale };
+
+if (!isLocale(Astro.params.lang ?? "") || Astro.params.lang === "en") {
+  return Astro.redirect("/404");
+}
+
+const PAGE_SIZE = 10;
+const baseUrl = import.meta.env.BASE_URL;
+const langPrefix = `${baseUrl}${lang}/`;
+
+const allPosts = await getPublishedBlogPosts(lang);
+const posts = allPosts.slice(0, PAGE_SIZE);
+const totalPages = Math.max(1, Math.ceil(allPosts.length / PAGE_SIZE));
+---
+
+<BaseLayout
+  title="Start Debugging"
+  description={t("site.tagline", lang)}
+  canonicalUrl={Astro.url.href}
+  type="website"
+  lang={lang}
+>
+  <section class="stack home-hero">
+    <p class="home-tagline">{t("site.tagline", lang)}</p>
+    <div class="row">
+      <a class="pill home-cta" href={`${langPrefix}pillars/`}>{t("nav.pillars", lang)} &rsaquo;</a>
+    </div>
+  </section>
+
+  <section class="stack" style="margin-top: 18px;">
+    <h2 class="h2 related-heading">{t("listing.latest", lang)}</h2>
+    {posts.map((post) => (
+      <article class="panel card stack post-card">
+        <div class="row">
+          <span class="pill">{post.data.pubDate.toISOString().slice(0, 10)}</span>
+          {post.data.tags?.slice(0, 3).map((tag) => (
+            <span class="pill">{tag}</span>
+          ))}
+        </div>
+        <a class="post-card-title-link stack" href={urlPathForPost(post)}>
+          <div class="h2">{post.data.title}</div>
+          {post.data.description ? <div class="muted">{post.data.description}</div> : null}
+        </a>
+      </article>
+    ))}
+
+    {posts.length === 0 ? <div class="panel card muted">{t("listing.noPostsYet", lang)}</div> : null}
+  </section>
+
+  {totalPages > 1 ? (
+    <div class="row" style="margin-top: 14px;">
+      <span class="muted">{t("listing.page", lang)} 1 {t("listing.of", lang)} {totalPages}</span>
+    </div>
+  ) : null}
+</BaseLayout>

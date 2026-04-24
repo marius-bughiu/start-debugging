@@ -1,0 +1,69 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import {
+  getPublishedPillars,
+  getPillarPosts,
+  isLocale,
+  LOCALES,
+  type Locale,
+} from "../../../lib/blog";
+import { t } from "../../../i18n";
+
+export async function getStaticPaths() {
+  return LOCALES.filter((l) => l !== "en").map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+
+const { lang } = Astro.props as { lang: Locale };
+
+if (!isLocale(Astro.params.lang ?? "") || Astro.params.lang === "en") {
+  return Astro.redirect("/404");
+}
+
+const baseUrl = import.meta.env.BASE_URL;
+const langPrefix = `${baseUrl}${lang}/`;
+
+const pillars = await getPublishedPillars(lang);
+const withCounts = await Promise.all(
+  pillars.map(async (p) => {
+    const slug = p.slug.replace(new RegExp(`^${lang}/`), "");
+    return {
+      pillar: p,
+      slug,
+      count: (await getPillarPosts(p.data.indexTags, lang)).length,
+    };
+  }),
+);
+---
+
+<BaseLayout
+  title={`${t("pillars.heading", lang)} - Start Debugging`}
+  description={t("pillars.blurb", lang)}
+  canonicalUrl={Astro.url.href}
+  type="website"
+  lang={lang}
+>
+  <section class="stack">
+    <h1 class="h1">{t("pillars.heading", lang)}</h1>
+    <p class="muted">{t("pillars.blurb", lang)}</p>
+  </section>
+
+  <section class="stack" style="margin-top: 18px;">
+    {withCounts.map(({ pillar, slug, count }) => (
+      <article class="panel card stack post-card">
+        <a class="post-card-title-link" href={`${langPrefix}pillars/${slug}/`}>
+          <h2 class="h2">{pillar.data.title}</h2>
+        </a>
+        {pillar.data.tagline ? <p class="muted">{pillar.data.tagline}</p> : null}
+        <p>{pillar.data.description}</p>
+        <p class="muted">{count} {count === 1 ? t("postCount.singular", lang) : t("postCount.plural", lang)} {t("pillars.indexed", lang)}</p>
+      </article>
+    ))}
+  </section>
+
+  <div class="row" style="margin-top: 14px;">
+    <a class="pill" href={langPrefix}>{t("nav.home", lang)}</a>
+  </div>
+</BaseLayout>

@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import {
@@ -7,11 +7,13 @@ import {
   getAdjacentPosts,
   getRelatedPosts,
   getTranslations,
+  isLocale,
   langOf,
   ogImagePathForPost,
   urlPathForPost,
   type Locale,
-} from "../../../lib/blog";
+} from "../../../../lib/blog";
+import { t } from "../../../../i18n";
 
 type BlogPost = CollectionEntry<"blog">;
 
@@ -19,13 +21,14 @@ export async function getStaticPaths() {
   const posts = await getCollection("blog");
 
   return posts
-    .filter((p) => !p.data.draft && langOf(p) === "en")
+    .filter((p) => !p.data.draft && langOf(p) !== "en")
     .flatMap((post) => {
-      const m = post.slug.match(/^(\d{4})\/(\d{2})\/([^/]+)$/);
+      const lang = langOf(post);
+      const m = post.slug.match(/^[^/]+\/(\d{4})\/(\d{2})\/([^/]+)$/);
       if (!m) return [];
       return [
         {
-          params: { year: m[1], month: m[2], slug: m[3] },
+          params: { lang, year: m[1], month: m[2], slug: m[3] },
           props: { post },
         },
       ];
@@ -39,18 +42,15 @@ const baseUrl = import.meta.env.BASE_URL;
 const ogImage = ogImagePathForPost(post);
 const lang = langOf(post);
 
+// Defensive: ensure params.lang matches the post's lang. Without this, a
+// stray route like /es/2026/04/slug/ for an English post would 404 silently.
+if (!isLocale(Astro.params.lang ?? "") || Astro.params.lang !== lang) {
+  return Astro.redirect("/404");
+}
+
 const readingMinutes = estimateReadingTimeMinutes(post.body, lang);
 const pubDateIso = post.data.pubDate.toISOString().slice(0, 10);
 
-// Translations keyed by locale, each as absolute URL for hreflang emission.
-const siteOrigin = Astro.site?.origin ?? "https://startdebugging.net";
-const translationsMap = await getTranslations(post);
-const translations: Partial<Record<Locale, string>> = {};
-for (const [l, p] of translationsMap) {
-  translations[l] = siteOrigin + urlPathForPost(p);
-}
-
-// Pre-encoded share payloads. We share the canonical URL + title.
 const shareTitle = encodeURIComponent(post.data.title);
 const shareUrl = encodeURIComponent(canonicalUrl);
 const shareX = `https://x.com/intent/post?text=${shareTitle}&url=${shareUrl}&via=startdebugging_`;
@@ -58,11 +58,17 @@ const shareHn = `https://news.ycombinator.com/submitlink?u=${shareUrl}&t=${share
 const shareReddit = `https://www.reddit.com/submit?url=${shareUrl}&title=${shareTitle}`;
 const shareLinkedIn = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
 
-// Prev/next in chronological order. `prev` is older, `next` is newer.
 const { prev, next } = await getAdjacentPosts(post);
-
-// Tag-overlap-scored related posts, with recency tiebreaker + fallback.
 const related = await getRelatedPosts(post, 4);
+
+const siteOrigin = Astro.site?.origin ?? "https://startdebugging.net";
+const translationsMap = await getTranslations(post);
+const translations: Partial<Record<Locale, string>> = {};
+for (const [l, p] of translationsMap) {
+  translations[l] = siteOrigin + urlPathForPost(p);
+}
+
+const langPrefix = `${baseUrl}${lang}/`;
 ---
 
 <BaseLayout
@@ -81,24 +87,24 @@ const related = await getRelatedPosts(post, 4);
   <article
     class="panel card stack prose"
     data-pagefind-body
-    data-pagefind-meta={`date:${pubDateIso}${post.data.tags?.length ? `, tags:${post.data.tags.join(", ")}` : ""}`}
+    data-pagefind-meta={`date:${pubDateIso}${post.data.tags?.length ? `, tags:${post.data.tags.join(", ")}` : ""}, lang:${lang}`}
   >
     <div class="stack">
       <div class="row">
         <span class="pill">{pubDateIso}</span>
         {post.data.updatedDate ? (
-          <span class="pill">Updated {post.data.updatedDate.toISOString().slice(0, 10)}</span>
+          <span class="pill">{t("post.updated", lang)} {post.data.updatedDate.toISOString().slice(0, 10)}</span>
         ) : null}
-        {post.data.tags?.slice(0, 4).map((t) => (
-          <a class="pill" href={`${baseUrl}tag/${t}/`}>{t}</a>
+        {post.data.tags?.slice(0, 4).map((tag) => (
+          <a class="pill" href={`${langPrefix}tag/${tag}/`}>{tag}</a>
         ))}
       </div>
       <h1 class="h1">{post.data.title}</h1>
       {post.data.description ? <p class="muted">{post.data.description}</p> : null}
       <div class="byline">
-        <span>By <span class="byline-author">Marius Bughiu</span></span>
+        <span>{t("post.by", lang)} <span class="byline-author">Marius Bughiu</span></span>
         <span class="byline-sep">&middot;</span>
-        <span>{readingMinutes} min read</span>
+        <span>{readingMinutes} {t("post.minRead", lang)}</span>
         <span class="byline-sep">&middot;</span>
         <time datetime={post.data.pubDate.toISOString()}>{pubDateIso}</time>
       </div>
@@ -107,59 +113,26 @@ const related = await getRelatedPosts(post, 4);
     <Content />
 
     <div class="share-row" data-share-row>
-      <span class="share-label">Share:</span>
+      <span class="share-label">{t("post.share", lang)}</span>
       <a class="share-btn" href={shareX} rel="noopener" target="_blank" data-share="x">X</a>
       <a class="share-btn" href={shareHn} rel="noopener" target="_blank" data-share="hn">Hacker News</a>
       <a class="share-btn" href={shareReddit} rel="noopener" target="_blank" data-share="reddit">Reddit</a>
       <a class="share-btn" href={shareLinkedIn} rel="noopener" target="_blank" data-share="linkedin">LinkedIn</a>
-      <button class="share-btn" type="button" data-copy-link data-copy-url={canonicalUrl}>Copy link</button>
+      <button class="share-btn" type="button" data-copy-link data-copy-url={canonicalUrl}>{t("post.copyLink", lang)}</button>
     </div>
-
-    <aside class="inline-subscribe" aria-labelledby="inline-subscribe-heading">
-      <h2 id="inline-subscribe-heading" class="h2 inline-subscribe-heading">
-        Enjoyed this post?
-      </h2>
-      <p class="muted inline-subscribe-copy">
-        Get a short weekly digest of the best new .NET, C#, MAUI, and Flutter posts.
-        One email on Monday, no spam.
-      </p>
-      <form
-        class="inline-subscribe-form row"
-        action="https://buttondown.com/api/emails/embed-subscribe/startdebugging"
-        method="post"
-        target="popupwindow"
-        onsubmit="window.open('https://buttondown.com/startdebugging', 'popupwindow');"
-      >
-        <label class="sr-only" for={`inline-subscribe-${post.slug.replace(/\//g, "-")}`}>Email address</label>
-        <input
-          id={`inline-subscribe-${post.slug.replace(/\//g, "-")}`}
-          class="inline-subscribe-input"
-          type="email"
-          name="email"
-          placeholder="you@domain.com"
-          required
-          autocomplete="email"
-        />
-        <input type="hidden" name="tag" value={`post:${post.slug}`} />
-        <button class="pill inline-subscribe-submit" type="submit">Subscribe</button>
-      </form>
-      <p class="muted inline-subscribe-alt">
-        Or <a href={`${baseUrl}subscribe/`}>read what's in the newsletter first</a>.
-      </p>
-    </aside>
   </article>
 
   {(prev || next) ? (
     <nav class="prev-next" aria-label="Post navigation">
       {prev ? (
-        <a class="prev-next-item prev-next-prev" href={`${baseUrl}${prev.slug}/`} rel="prev">
-          <span class="prev-next-label">&lsaquo; Previous</span>
+        <a class="prev-next-item prev-next-prev" href={urlPathForPost(prev)} rel="prev">
+          <span class="prev-next-label">{t("post.prev", lang)}</span>
           <span class="prev-next-title">{prev.data.title}</span>
         </a>
       ) : <span class="prev-next-item prev-next-empty" />}
       {next ? (
-        <a class="prev-next-item prev-next-next" href={`${baseUrl}${next.slug}/`} rel="next">
-          <span class="prev-next-label">Next &rsaquo;</span>
+        <a class="prev-next-item prev-next-next" href={urlPathForPost(next)} rel="next">
+          <span class="prev-next-label">{t("post.next", lang)}</span>
           <span class="prev-next-title">{next.data.title}</span>
         </a>
       ) : <span class="prev-next-item prev-next-empty" />}
@@ -168,17 +141,17 @@ const related = await getRelatedPosts(post, 4);
 
   {related.length > 0 ? (
     <section class="stack related-section" aria-labelledby="related-heading">
-      <h2 id="related-heading" class="h2 related-heading">Related posts</h2>
+      <h2 id="related-heading" class="h2 related-heading">{t("post.related", lang)}</h2>
       <div class="stack">
         {related.map((r) => (
           <article class="panel card stack post-card">
             <div class="row">
               <span class="pill">{r.data.pubDate.toISOString().slice(0, 10)}</span>
-              {r.data.tags?.slice(0, 3).map((t) => (
-                <a class="pill" href={`${baseUrl}tag/${t}/`}>{t}</a>
+              {r.data.tags?.slice(0, 3).map((tag) => (
+                <a class="pill" href={`${langPrefix}tag/${tag}/`}>{tag}</a>
               ))}
             </div>
-            <a class="post-card-title-link stack" href={`${baseUrl}${r.slug}/`}>
+            <a class="post-card-title-link stack" href={urlPathForPost(r)}>
               <div class="h2">{r.data.title}</div>
               {r.data.description ? <div class="muted">{r.data.description}</div> : null}
             </a>
@@ -189,21 +162,20 @@ const related = await getRelatedPosts(post, 4);
   ) : null}
 
   <div class="row" style="margin-top: 14px;">
-    <a class="pill" href={baseUrl}>&lt; Back</a>
+    <a class="pill" href={langPrefix}>{t("nav.back", lang)}</a>
   </div>
 </BaseLayout>
 
 <script>
-  // Copy-link button: writes canonical URL to clipboard and gives a visual ack.
   document.querySelectorAll<HTMLButtonElement>("button[data-copy-link]").forEach((btn) => {
     btn.addEventListener("click", async () => {
       const url = btn.getAttribute("data-copy-url") ?? window.location.href;
       const original = btn.textContent;
       try {
         await navigator.clipboard.writeText(url);
-        btn.textContent = "Copied!";
+        btn.textContent = btn.dataset.copiedLabel ?? "Copied!";
       } catch (err) {
-        btn.textContent = "Copy failed";
+        btn.textContent = btn.dataset.copyFailedLabel ?? "Copy failed";
         console.error(err);
       }
       setTimeout(() => {

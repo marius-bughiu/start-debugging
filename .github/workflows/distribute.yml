@@ -15,8 +15,16 @@ name: Distribute new post
 on:
   push:
     branches: [main]
+    # Translations ship alongside the English post in the same commit, but
+    # social posting is English-only. Exclude per-language subdirectories so
+    # a translation-only commit never re-fires the distribution jobs.
     paths:
       - "site/src/content/blog/**/*.md"
+      - "!site/src/content/blog/es/**"
+      - "!site/src/content/blog/pt-br/**"
+      - "!site/src/content/blog/de/**"
+      - "!site/src/content/blog/ru/**"
+      - "!site/src/content/blog/ja/**"
   workflow_dispatch:
     inputs:
       file:

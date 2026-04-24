@@ -20,13 +20,34 @@ export default defineConfig({
   base: "/",
   output: "static",
   trailingSlash: "always",
-  integrations: [sitemap()],
+  // Locale keys mirror the URL segment used for each non-English locale.
+  // English stays at the root (prefixDefaultLocale: false).
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "es", "pt-br", "de", "ru", "ja"],
+    routing: {
+      prefixDefaultLocale: false,
+      redirectToDefaultLocale: false,
+    },
+  },
+  integrations: [
+    sitemap({
+      i18n: {
+        defaultLocale: "en",
+        locales: {
+          en: "en-US",
+          es: "es-ES",
+          "pt-br": "pt-BR",
+          de: "de-DE",
+          ru: "ru-RU",
+          ja: "ja-JP",
+        },
+      },
+    }),
+  ],
   markdown: {
     rehypePlugins: [rehypeLazyImages],
   },
-  // Allow overriding Vite's cache directory via env for sandboxed build
-  // environments where node_modules/.vite is not writable. Defaults to Vite's
-  // own behaviour (inside node_modules) when unset.
   ...(process.env.VITE_CACHE_DIR
     ? { vite: { cacheDir: process.env.VITE_CACHE_DIR } }
     : {}),

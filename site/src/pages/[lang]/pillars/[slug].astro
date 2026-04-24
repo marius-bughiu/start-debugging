@@ -1,30 +1,56 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
 import {
   getPublishedPillars,
   getPillarPosts,
   getPillarTranslations,
+  isLocale,
+  langOf,
+  LOCALES,
   urlPathForPillar,
+  urlPathForPost,
   type Locale,
   type Pillar,
-} from "../../lib/blog";
+} from "../../../lib/blog";
+import { t } from "../../../i18n";
 
 export async function getStaticPaths() {
-  const pillars = await getPublishedPillars();
-  return pillars.map((p: Pillar) => ({
-    params: { slug: p.slug },
-    props: { pillar: p },
-  }));
+  const paths: {
+    params: { lang: string; slug: string };
+    props: { pillar: Pillar; lang: Locale };
+  }[] = [];
+
+  for (const lang of LOCALES) {
+    if (lang === "en") continue;
+    const pillars = await getPublishedPillars(lang);
+    for (const pillar of pillars) {
+      // Translated pillar slug is `{lang}/base-slug`. Strip the prefix so the
+      // URL segment matches the English pillar slug (e.g. `csharp-14-features`).
+      const m = pillar.slug.match(new RegExp(`^${lang}/(.+)$`));
+      const slug = m ? m[1] : pillar.slug;
+      paths.push({
+        params: { lang, slug },
+        props: { pillar, lang },
+      });
+    }
+  }
+
+  return paths;
 }
 
 const baseUrl = import.meta.env.BASE_URL;
 
 interface Props {
   pillar: Pillar;
+  lang: Locale;
 }
-const { pillar } = Astro.props;
+const { pillar, lang } = Astro.props;
 
-const posts = await getPillarPosts(pillar.data.indexTags);
+if (!isLocale(Astro.params.lang ?? "") || Astro.params.lang === "en") {
+  return Astro.redirect("/404");
+}
+
+const posts = await getPillarPosts(pillar.data.indexTags, lang);
 const { Content } = await pillar.render();
 
 const siteOrigin = Astro.site?.origin ?? "https://startdebugging.net";
@@ -37,14 +63,15 @@ for (const [l, p] of translationsMap) {
 // Group posts by YYYY/MM for a scannable table of contents.
 const groups = new Map<string, typeof posts>();
 for (const p of posts) {
-  const m = p.slug.match(/^(\d{4})\/(\d{2})\//);
+  const base = p.slug.replace(new RegExp(`^${lang}/`), "");
+  const m = base.match(/^(\d{4})\/(\d{2})\//);
   const key = m ? `${m[1]}-${m[2]}` : "other";
   if (!groups.has(key)) groups.set(key, [] as typeof posts);
   groups.get(key)!.push(p);
 }
-const groupKeys = Array.from(groups.keys()).sort((a, b) =>
-  b.localeCompare(a),
-);
+const groupKeys = Array.from(groups.keys()).sort((a, b) => b.localeCompare(a));
+
+const langPrefix = `${baseUrl}${lang}/`;
 ---
 
 <BaseLayout
@@ -54,6 +81,7 @@ const groupKeys = Array.from(groups.keys()).sort((a, b) =>
   type="article"
   publishedDate={pillar.data.pubDate}
   updatedDate={pillar.data.updatedDate ?? pillar.data.pubDate}
+  lang={lang}
   translations={Object.keys(translations).length > 1 ? translations : undefined}
 >
   <article class="stack">
@@ -67,17 +95,17 @@ const groupKeys = Array.from(groups.keys()).sort((a, b) =>
     </section>
 
     <section class="stack pillar-index" style="margin-top: 24px;">
-      <h2 class="h2">Index ({posts.length} post{posts.length !== 1 ? "s" : ""})</h2>
+      <h2 class="h2">{t("pillars.index", lang)} ({posts.length} {posts.length === 1 ? t("postCount.singular", lang) : t("postCount.plural", lang)})</h2>
       {groupKeys.map((key) => {
         const items = groups.get(key)!;
-        const label = key === "other" ? "Other" : key.replace("-", " / ");
+        const label = key === "other" ? t("pillars.other", lang) : key.replace("-", " / ");
         return (
           <section class="stack pillar-index-group">
             <h3 class="h3" style="margin-top: 12px;">{label}</h3>
             <ul class="pillar-index-list">
               {items.map((p) => (
                 <li class="pillar-index-item">
-                  <a href={`${baseUrl}${p.slug}/`}>{p.data.title}</a>
+                  <a href={urlPathForPost(p)}>{p.data.title}</a>
                   {p.data.description ? (
                     <p class="muted">{p.data.description}</p>
                   ) : null}
@@ -91,7 +119,7 @@ const groupKeys = Array.from(groups.keys()).sort((a, b) =>
   </article>
 
   <div class="row" style="margin-top: 18px;">
-    <a class="pill" href={`${baseUrl}pillars/`}>All pillars</a>
-    <a class="pill" href={baseUrl}>Home</a>
+    <a class="pill" href={`${langPrefix}pillars/`}>{t("pillars.all", lang)}</a>
+    <a class="pill" href={langPrefix}>{t("nav.home", lang)}</a>
   </div>
 </BaseLayout>
