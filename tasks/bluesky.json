@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/04/how-to-build-an-mcp-server-in-typescript-that-wraps-a-cli",
-    "text": "Most internal CLIs have no API -- MCP is the bridge. With @modelcontextprotocol/sdk 1.29 you can wrap any CLI as a typed tool in ~100 lines of TypeScript. The guide covers the stdout trap, spawn vs exec, injection-safe argument handling, and wiring to Claude Desktop."
-  }
-]
+[]

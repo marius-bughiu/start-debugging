@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/04/how-to-build-an-mcp-server-in-typescript-that-wraps-a-cli",
-    "text": "New guide: wrap any CLI as an MCP server using the TypeScript SDK 1.29. The working example exposes git log and git diff as typed tools over stdio. Key gotchas covered: never call console.log() in a stdio server (it corrupts the JSON-RPC stream), always use spawn with shell: false to block injection, and cap large output before it blows past client limits. Includes Claude Desktop config and MCP Inspector for local testing."
-  }
-]
+[]
