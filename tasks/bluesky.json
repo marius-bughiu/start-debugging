@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/04/dotnet-10-ubuntu-2604-resolute-container-tags",
-    "text": "Ubuntu 26.04 launched with .NET 10 LTS already in the archive, no Microsoft package feed required. New -resolute container tags replace -noble on mcr.microsoft.com/dotnet, and dotnet-sdk-aot-10.0 makes Native AOT a single apt install."
-  }
-]
+[]

@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/04/dotnet-10-ubuntu-2604-resolute-container-tags",
-    "text": "Ubuntu 26.04 Resolute Raccoon went GA on April 23 with .NET 10 LTS in the archive from day one. Container images on mcr.microsoft.com/dotnet add a -resolute tag alongside -noble, chiseled variants included, so the upgrade is a Dockerfile tag swap. The quieter win: dotnet-sdk-aot-10.0 is now a first-class apt package, so Native AOT builds on a stock LTS no longer need hand-assembled toolchains. .NET 8 and 9 remain available via the dotnet-backports PPA on a best-effort basis."
-  }
-]
+[]
