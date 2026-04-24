@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/04/how-to-read-a-large-csv-in-dotnet-11-without-running-out-of-memory",
+    "text": "File.ReadAllLines on a 2 GB CSV puts a 4 GB string[] on the LOH. Swap it for File.ReadLines, CsvHelper GetRecordsAsync, or Sylvan's CsvDataReader and your working set stays under 30 MB regardless of file size. .NET 11, with code."
+  }
+]
