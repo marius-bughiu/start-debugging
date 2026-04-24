@@ -3,7 +3,9 @@ import "../styles/global.css";
 import {
   LOCALES,
   LOCALE_HREFLANG,
+  LOCALE_NATIVE_NAME,
   LOCALE_OG,
+  LOCALE_SHORT_CODE,
   type Locale,
 } from "../lib/blog";
 import { t } from "../i18n";
@@ -68,6 +70,10 @@ const translationEntries = translations
       ([l, href]) => !!href && l !== lang,
     ) as [Locale, string][])
   : [];
+
+// Show the language switcher only when at least one translation of the
+// current page exists. Otherwise the control would mislead readers.
+const showLangSwitcher = translationEntries.length > 0;
 
 // Author identity used in JSON-LD (mirrors site/src/pages/about.astro).
 const author = {
@@ -258,6 +264,25 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
             <kbd class="header-search-kbd" aria-hidden="true">/</kbd>
           </button>
         </div>
+        {showLangSwitcher ? (
+          <details class="header-lang">
+            <summary class="pill header-lang-trigger" aria-label={`Language: ${LOCALE_NATIVE_NAME[lang]}`}>
+              <span aria-hidden="true">&#x1F310;</span>
+              <span class="header-lang-code">{LOCALE_SHORT_CODE[lang]}</span>
+              <span class="header-lang-caret" aria-hidden="true">&#x25BE;</span>
+            </summary>
+            <ul class="header-lang-menu" role="menu">
+              {translationEntries.map(([l, href]) => (
+                <li role="menuitem">
+                  <a href={href} hreflang={LOCALE_HREFLANG[l]} lang={LOCALE_HREFLANG[l]}>
+                    <span class="header-lang-menu-code">{LOCALE_SHORT_CODE[l]}</span>
+                    <span>{LOCALE_NATIVE_NAME[l]}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </details>
+        ) : null}
       </div>
     </header>
 

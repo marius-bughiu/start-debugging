@@ -25,6 +25,27 @@ export const LOCALE_OG: Record<Locale, string> = {
   ja: "ja_JP",
 };
 
+// Native-language labels for the UI language switcher. Respects how each
+// community writes its own language name.
+export const LOCALE_NATIVE_NAME: Record<Locale, string> = {
+  en: "English",
+  es: "Español",
+  "pt-br": "Português (BR)",
+  de: "Deutsch",
+  ru: "Русский",
+  ja: "日本語",
+};
+
+// Short code label used in the collapsed switcher button.
+export const LOCALE_SHORT_CODE: Record<Locale, string> = {
+  en: "EN",
+  es: "ES",
+  "pt-br": "PT-BR",
+  de: "DE",
+  ru: "RU",
+  ja: "JA",
+};
+
 const LOCALE_SET: ReadonlySet<Locale> = new Set(LOCALES);
 
 export function isLocale(s: string | undefined): s is Locale {
