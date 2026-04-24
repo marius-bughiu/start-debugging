@@ -3,11 +3,11 @@ title: "Wie man eine Datei von einem ASP.NET Core Endpunkt ohne Pufferung stream
 description: "Grosse Dateien aus ASP.NET Core 11 ohne Laden in den Arbeitsspeicher ausliefern. Drei Stufen: PhysicalFileResult fur Dateien auf der Festplatte, Results.Stream fur beliebige Streams und Response.BodyWriter fur generierten Inhalt -- mit Code fur jeden Fall."
 pubDate: 2026-04-24
 tags:
-  - "ASP.NET Core"
+  - "aspnet-core"
   - "dotnet"
-  - ".NET 11"
-  - "Performance"
-  - "Streaming"
+  - "dotnet-11"
+  - "performance"
+  - "streaming"
 lang: "de"
 translationOf: "2026/04/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering"
 translatedBy: "claude"

@@ -3,11 +3,11 @@ title: "Node.js Addons на C#: .NET Native AOT заменяет C++ и node-gyp
 description: "Команда C# Dev Kit сменила свой C++ Node.js addon на библиотеку .NET 10 Native AOT, используя N-API, UnmanagedCallersOnly и LibraryImport для производства единого файла .node без Python и node-gyp."
 pubDate: 2026-04-21
 tags:
-  - ".NET 10"
-  - "Native AOT"
-  - "C#"
-  - "Node.js"
-  - "Interop"
+  - "dotnet-10"
+  - "native-aot"
+  - "csharp"
+  - "nodejs"
+  - "interop"
 lang: "ru"
 translationOf: "2026/04/nodejs-addons-dotnet-native-aot"
 translatedBy: "claude"

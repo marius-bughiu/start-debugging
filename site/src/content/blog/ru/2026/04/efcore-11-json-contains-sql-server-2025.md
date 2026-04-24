@@ -3,11 +3,11 @@ title: "EF Core 11 транслирует Contains в JSON_CONTAINS на SQL Ser
 description: "EF Core 11 автоматически транслирует LINQ Contains по JSON-коллекциям в новую функцию JSON_CONTAINS из SQL Server 2025 и добавляет EF.Functions.JsonContains для запросов с путём и режимом, способных задействовать JSON-индекс."
 pubDate: 2026-04-20
 tags:
-  - ".NET 11"
-  - "EF Core 11"
-  - "SQL Server"
-  - "JSON"
-  - "LINQ"
+  - "dotnet-11"
+  - "ef-core-11"
+  - "sql-server"
+  - "json"
+  - "linq"
 lang: "ru"
 translationOf: "2026/04/efcore-11-json-contains-sql-server-2025"
 translatedBy: "claude"

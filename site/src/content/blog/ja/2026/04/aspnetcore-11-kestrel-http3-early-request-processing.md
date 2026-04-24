@@ -3,11 +3,11 @@ title: ".NET 11 Preview 3 で Kestrel が SETTINGS フレーム前に HTTP/3 リ
 description: ".NET 11 Preview 3 では、Kestrel がピアの control stream と SETTINGS フレームの到着を待たずに HTTP/3 リクエストを処理できるようになり、新しい QUIC 接続のたびに最初のリクエストの handshake レイテンシが削減されます。"
 pubDate: 2026-04-20
 tags:
-  - ".NET 11"
-  - "ASP.NET Core"
-  - "Kestrel"
-  - "HTTP/3"
-  - "Performance"
+  - "dotnet-11"
+  - "aspnet-core"
+  - "kestrel"
+  - "http-3"
+  - "performance"
 lang: "ja"
 translationOf: "2026/04/aspnetcore-11-kestrel-http3-early-request-processing"
 translatedBy: "claude"

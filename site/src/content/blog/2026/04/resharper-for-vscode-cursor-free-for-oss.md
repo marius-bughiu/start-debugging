@@ -3,10 +3,10 @@ title: "ReSharper Lands in VS Code and Cursor, Free for Non-Commercial Use"
 description: "JetBrains shipped ReSharper as a VS Code extension with full C# analysis, refactoring, and unit testing. It works in Cursor and Google Antigravity too, and costs nothing for OSS and learning."
 pubDate: 2026-04-12
 tags:
-  - "ReSharper"
-  - "VS Code"
-  - "C#"
-  - "Tooling"
+  - "resharper"
+  - "vs-code"
+  - "csharp"
+  - "tooling"
 ---
 
 For years, ReSharper meant one thing: a Visual Studio extension. If you wanted JetBrains-grade C# analysis outside of Visual Studio, Rider was the answer. That changed on March 5, 2026, when JetBrains [released ReSharper for Visual Studio Code](https://blog.jetbrains.com/dotnet/2026/03/05/resharper-for-visual-studio-code-cursor-and-compatible-editors-is-out/), Cursor, and Google Antigravity. The [2026.1 release](https://blog.jetbrains.com/dotnet/2026/03/30/resharper-2026-1-released/) on March 30 followed up with performance monitoring and tighter integration.

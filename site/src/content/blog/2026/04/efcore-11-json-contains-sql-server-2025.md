@@ -3,11 +3,11 @@ title: "EF Core 11 translates Contains to JSON_CONTAINS on SQL Server 2025"
 description: "EF Core 11 auto-translates LINQ Contains over JSON collections to the new SQL Server 2025 JSON_CONTAINS function, and adds EF.Functions.JsonContains for path-scoped and mode-specific queries that can hit a JSON index."
 pubDate: 2026-04-20
 tags:
-  - ".NET 11"
-  - "EF Core 11"
-  - "SQL Server"
-  - "JSON"
-  - "LINQ"
+  - "dotnet-11"
+  - "ef-core-11"
+  - "sql-server"
+  - "json"
+  - "linq"
 ---
 
 SQL Server 2025 added a native [`JSON_CONTAINS`](https://learn.microsoft.com/en-us/sql/t-sql/functions/json-contains-transact-sql) function, and EF Core 11 is the release that plugs into it. Two things change for anyone storing collections as JSON columns: `Contains` over JSON collections now gets a direct translation instead of the old `OPENJSON` join, and there is a new `EF.Functions.JsonContains()` for cases where you need a JSON path or a specific search mode. The work is part of [EF Core 11 Preview 3](https://github.com/dotnet/core/blob/main/release-notes/11.0/preview/preview3/efcore.md).

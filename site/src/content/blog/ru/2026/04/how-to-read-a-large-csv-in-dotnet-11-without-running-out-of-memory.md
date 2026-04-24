@@ -3,11 +3,11 @@ title: "Как прочитать большой CSV в .NET 11 и не слов
 description: "Стримьте CSV в несколько гигабайт на .NET 11 без OutOfMemoryException. File.ReadLines, CsvHelper, Sylvan и Pipelines в сравнении с кодом и измерениями."
 pubDate: 2026-04-24
 tags:
-  - ".NET 11"
-  - "C# 14"
-  - "Performance"
-  - "CSV"
-  - "Streaming"
+  - "dotnet-11"
+  - "csharp-14"
+  - "performance"
+  - "csv"
+  - "streaming"
 lang: "ru"
 translationOf: "2026/04/how-to-read-a-large-csv-in-dotnet-11-without-running-out-of-memory"
 translatedBy: "claude"

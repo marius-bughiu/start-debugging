@@ -3,11 +3,11 @@ title: "dotnet new webworker: first-class Web Workers for Blazor in .NET 11 Prev
 description: "A new project template in .NET 11 Preview 2 scaffolds the JS plumbing, WebWorkerClient, and JSExport boilerplate needed to run .NET code in a browser Web Worker."
 pubDate: 2026-04-05
 tags:
-  - ".NET 11"
-  - "Blazor"
-  - "WebAssembly"
-  - "Web Workers"
-  - "ASP.NET Core"
+  - "dotnet-11"
+  - "blazor"
+  - "webassembly"
+  - "web-workers"
+  - "aspnet-core"
 ---
 
 Running CPU-heavy work in Blazor WebAssembly has always had the same nasty side effect: the UI thread stalls, animations jank, and the user suspects their browser has crashed. In [.NET 11 Preview 2](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-2/) the team shipped a proper fix for that problem in the shape of a brand new project template, `dotnet new webworker`, which scaffolds every piece of plumbing you previously had to hand-roll.

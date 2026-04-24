@@ -3,10 +3,10 @@ title: "EF Core 11 Preview 3 bringt RemoveDbContext für saubere Provider-Swaps 
 description: "EF Core 11 Preview 3 führt RemoveDbContext, RemoveExtension und eine parameterlose Überladung von AddPooledDbContextFactory ein - das Boilerplate beim Provider-Wechsel in Tests fällt weg und Pooled-Factory-Konfiguration wird zentralisiert."
 pubDate: 2026-04-23
 tags:
-  - ".NET 11"
-  - "EF Core 11"
+  - "dotnet-11"
+  - "ef-core-11"
   - "testing"
-  - "dependency injection"
+  - "dependency-injection"
 lang: "de"
 translationOf: "2026/04/efcore-11-removedbcontext-pooled-factory-test-swap"
 translatedBy: "claude"

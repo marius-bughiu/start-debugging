@@ -3,11 +3,11 @@ title: "Kestrel starts processing HTTP/3 requests before the SETTINGS frame in .
 description: ".NET 11 Preview 3 lets Kestrel serve HTTP/3 requests before the peer's control stream and SETTINGS frame arrive, shaving handshake latency off the first request on every new QUIC connection."
 pubDate: 2026-04-20
 tags:
-  - ".NET 11"
-  - "ASP.NET Core"
-  - "Kestrel"
-  - "HTTP/3"
-  - "Performance"
+  - "dotnet-11"
+  - "aspnet-core"
+  - "kestrel"
+  - "http-3"
+  - "performance"
 ---
 
 One of the small but visible wins in the [.NET 11 Preview 3 announcement](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-3/) is a Kestrel change for HTTP/3: the server no longer waits for the client's control stream and SETTINGS frame to land before it starts processing requests. The change landed in [dotnet/aspnetcore #65399](https://github.com/dotnet/aspnetcore/pull/65399) and targets first-request latency on brand-new QUIC connections, which is exactly where HTTP/3 used to lose ground to an already-warm HTTP/2 connection.

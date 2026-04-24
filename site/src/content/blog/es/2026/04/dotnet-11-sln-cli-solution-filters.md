@@ -3,10 +3,10 @@ title: "dotnet sln por fin edita filtros de solución desde la CLI en .NET 11 Pr
 description: ".NET 11 Preview 3 le enseña a dotnet sln a crear, añadir, remover y listar proyectos en filtros de solución .slnf, así los mono-repos grandes pueden cargar un subconjunto sin abrir Visual Studio."
 pubDate: 2026-04-18
 tags:
-  - ".NET 11"
-  - "SDK"
-  - "dotnet CLI"
-  - "MSBuild"
+  - "dotnet-11"
+  - "sdk"
+  - "dotnet-cli"
+  - "msbuild"
 lang: "es"
 translationOf: "2026/04/dotnet-11-sln-cli-solution-filters"
 translatedBy: "claude"

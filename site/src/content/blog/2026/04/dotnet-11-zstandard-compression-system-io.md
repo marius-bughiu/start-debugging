@@ -3,10 +3,10 @@ title: ".NET 11 Adds Native Zstandard Compression to System.IO.Compression"
 description: ".NET 11 Preview 1 ships ZstandardStream, ZstandardEncoder, and ZstandardDecoder in System.IO.Compression, giving you fast, inbox zstd support with no third-party packages."
 pubDate: 2026-04-13
 tags:
-  - ".NET 11"
-  - "C#"
-  - "Performance"
-  - "Compression"
+  - "dotnet-11"
+  - "csharp"
+  - "performance"
+  - "compression"
 ---
 
 .NET developers who needed Zstandard compression have relied on third-party wrappers like ZstdSharp or ZstdNet for years. Starting with [.NET 11 Preview 1](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-1/), that changes: `System.IO.Compression` now ships `ZstandardStream`, `ZstandardEncoder`, and `ZstandardDecoder` as first-class APIs, no NuGet detour required.

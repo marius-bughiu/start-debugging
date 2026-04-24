@@ -3,10 +3,10 @@ title: "Building a Microsecond-Latency Database Engine in C#"
 description: "Loic Baumann's Typhon project targets 1-2 microsecond ACID commits using ref structs, hardware intrinsics, and pinned memory, proving C# can compete at the systems programming level."
 pubDate: 2026-04-14
 tags:
-  - "C#"
-  - ".NET"
-  - "Performance"
-  - "Database"
+  - "csharp"
+  - "dotnet"
+  - "performance"
+  - "database"
 ---
 
 The assumption that high-performance database engines require C, C++, or Rust is deeply ingrained. Loic Baumann's [Typhon project](https://nockawa.github.io/blog/why-building-database-engine-in-csharp/) challenges that directly: an embedded ACID database engine written in C#, targeting 1-2 microsecond transaction commits. The project recently [hit the front page of Hacker News](https://news.ycombinator.com/item?id=47720060), sparking a lively debate about what modern .NET can actually do.

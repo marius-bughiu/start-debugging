@@ -3,11 +3,11 @@ title: "Kestrel начинает обрабатывать HTTP/3 запросы 
 description: ".NET 11 Preview 3 позволяет Kestrel обслуживать HTTP/3 запросы до прибытия control stream и SETTINGS-кадра пира, срезая задержку handshake у первого запроса каждого нового QUIC-соединения."
 pubDate: 2026-04-20
 tags:
-  - ".NET 11"
-  - "ASP.NET Core"
-  - "Kestrel"
-  - "HTTP/3"
-  - "Performance"
+  - "dotnet-11"
+  - "aspnet-core"
+  - "kestrel"
+  - "http-3"
+  - "performance"
 lang: "ru"
 translationOf: "2026/04/aspnetcore-11-kestrel-http3-early-request-processing"
 translatedBy: "claude"

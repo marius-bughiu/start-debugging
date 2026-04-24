@@ -3,10 +3,10 @@ title: "EF Core 11 Preview 3 Adds RemoveDbContext for Clean Test Provider Swaps"
 description: "EF Core 11 Preview 3 introduces RemoveDbContext, RemoveExtension, and a parameterless AddPooledDbContextFactory overload, removing the boilerplate around swapping providers in tests and centralizing pooled factory configuration."
 pubDate: 2026-04-23
 tags:
-  - ".NET 11"
-  - "EF Core 11"
+  - "dotnet-11"
+  - "ef-core-11"
   - "testing"
-  - "dependency injection"
+  - "dependency-injection"
 ---
 
 EF Core 11 Preview 3 quietly fixes one of the longest-standing annoyances in integration testing with EF Core: the need to undo a parent project's `AddDbContext` call before registering a different provider. The release introduces `RemoveDbContext<TContext>()` and `RemoveExtension<TExtension>()` helpers, plus a parameterless overload for `AddPooledDbContextFactory<TContext>()` that reuses configuration declared inside the context itself.

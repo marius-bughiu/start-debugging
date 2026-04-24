@@ -3,11 +3,11 @@ title: "Node.js Addons in C#: .NET Native AOT Replaces C++ and node-gyp"
 description: "The C# Dev Kit team swapped its C++ Node.js addon for a .NET 10 Native AOT library, using N-API, UnmanagedCallersOnly, and LibraryImport to produce a single .node file without Python or node-gyp."
 pubDate: 2026-04-21
 tags:
-  - ".NET 10"
-  - "Native AOT"
-  - "C#"
-  - "Node.js"
-  - "Interop"
+  - "dotnet-10"
+  - "native-aot"
+  - "csharp"
+  - "nodejs"
+  - "interop"
 ---
 
 Drew Noakes from the C# Dev Kit team [announced on April 20, 2026](https://devblogs.microsoft.com/dotnet/writing-nodejs-addons-with-dotnet-native-aot/) that the extension's native Node.js addon is now written entirely in C# and compiled with .NET 10 Native AOT. That means the Windows Registry access the extension depends on ships as a plain `.node` file produced by `dotnet publish`, with no C++, no Python, and no node-gyp in the build chain.

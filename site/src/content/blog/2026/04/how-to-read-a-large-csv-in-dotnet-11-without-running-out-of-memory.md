@@ -3,11 +3,11 @@ title: "How to read a large CSV in .NET 11 without running out of memory"
 description: "Stream a multi-gigabyte CSV in .NET 11 without OutOfMemoryException. File.ReadLines, CsvHelper, Sylvan, and Pipelines compared with code and measurements."
 pubDate: 2026-04-24
 tags:
-  - ".NET 11"
-  - "C# 14"
-  - "Performance"
-  - "CSV"
-  - "Streaming"
+  - "dotnet-11"
+  - "csharp-14"
+  - "performance"
+  - "csv"
+  - "streaming"
 ---
 
 If your process dies with `OutOfMemoryException` while reading a CSV, the fix is almost always the same one sentence: stop materialising the file, start streaming it. On .NET 11 and C# 14, `File.ReadLines` covers 80% of cases, `CsvHelper.GetRecords<T>()` covers typed parsing without buffering, and `Sylvan.Data.Csv` plus `System.IO.Pipelines` give you the last order of magnitude when the file is in the 5-50 GB range. The worst thing you can do is call `File.ReadAllLines` or `File.ReadAllText` on anything bigger than a few megabytes, because both load the whole payload into a `string[]` that has to live on the Large Object Heap until the GC is convinced nobody is touching it.

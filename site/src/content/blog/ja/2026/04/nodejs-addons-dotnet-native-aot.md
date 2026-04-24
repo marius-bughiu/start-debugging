@@ -3,11 +3,11 @@ title: "C# で書く Node.js Addons: .NET Native AOT が C++ と node-gyp を置
 description: "C# Dev Kit チームは C++ の Node.js addon を .NET 10 Native AOT ライブラリに入れ替え、N-API、UnmanagedCallersOnly、LibraryImport を使って Python や node-gyp なしで単一の .node ファイルを生成しました。"
 pubDate: 2026-04-21
 tags:
-  - ".NET 10"
-  - "Native AOT"
-  - "C#"
-  - "Node.js"
-  - "Interop"
+  - "dotnet-10"
+  - "native-aot"
+  - "csharp"
+  - "nodejs"
+  - "interop"
 lang: "ja"
 translationOf: "2026/04/nodejs-addons-dotnet-native-aot"
 translatedBy: "claude"

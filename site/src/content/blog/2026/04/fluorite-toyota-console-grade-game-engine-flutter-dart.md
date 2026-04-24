@@ -3,11 +3,11 @@ title: "Fluorite: Toyota Built a Console-Grade Game Engine on Flutter and Dart"
 description: "Fluorite is an open-source 3D game engine that embeds Google Filament rendering inside Flutter widgets and lets you write game logic in Dart."
 pubDate: 2026-04-13
 tags:
-  - "Flutter"
-  - "Dart"
-  - "Game Development"
-  - "Fluorite"
-  - "Open Source"
+  - "flutter"
+  - "dart"
+  - "game-development"
+  - "fluorite"
+  - "open-source"
 ---
 
 Toyota Connected North America open-sourced [Fluorite](https://fluorite.game/), a 3D game engine that runs entirely inside Flutter. It was introduced at [FOSDEM 2026](https://fosdem.org/2026/schedule/event/7ZJJWW-fluorite-game-engine-flutter/) in Brussels and has been picking up attention on [Hacker News](https://news.ycombinator.com/item?id=46976911) since. The pitch: console-grade rendering, a C++ ECS core, and game logic written in Dart using Flutter's standard tooling.

@@ -3,10 +3,10 @@ title: "ASP.NET Core 11 Ships Native OpenTelemetry Tracing: Drop the Extra NuGet
 description: "ASP.NET Core in .NET 11 Preview 2 adds OpenTelemetry semantic attributes directly to HTTP server activity, removing the need for OpenTelemetry.Instrumentation.AspNetCore."
 pubDate: 2026-04-12
 tags:
-  - "ASP.NET Core"
-  - ".NET 11"
-  - "OpenTelemetry"
-  - "Observability"
+  - "aspnet-core"
+  - "dotnet-11"
+  - "opentelemetry"
+  - "observability"
 ---
 
 Every ASP.NET Core project that exports traces has the same line in its `.csproj`: a reference to `OpenTelemetry.Instrumentation.AspNetCore`. That package subscribes to the framework's `Activity` source and stamps each span with the semantic attributes exporters expect: `http.request.method`, `url.path`, `http.response.status_code`, `server.address`, and so on.

@@ -3,10 +3,10 @@ title: "EF Core 11 Adds GetEntriesForState to Skip DetectChanges"
 description: "EF Core 11 Preview 3 introduces ChangeTracker.GetEntriesForState, a state-filtered enumerator that avoids an extra DetectChanges pass in hot paths like SaveChanges interceptors and audit hooks."
 pubDate: 2026-04-16
 tags:
-  - "EF Core"
-  - ".NET 11"
-  - "Performance"
-  - "C#"
+  - "ef-core"
+  - "dotnet-11"
+  - "performance"
+  - "csharp"
 ---
 
 `ChangeTracker.Entries()` has one quirk that bites every app that uses it in a hot path: it implicitly calls `DetectChanges()` before returning. For an audit interceptor or a pre-`SaveChanges` validator, that cost is paid again on the actual save, doubling the scan over every tracked entity. [EF Core 11 Preview 3](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-3/) introduces `GetEntriesForState` specifically to remove that redundant pass.

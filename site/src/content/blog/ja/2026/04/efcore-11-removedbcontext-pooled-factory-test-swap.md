@@ -3,10 +3,10 @@ title: "EF Core 11 Preview 3 がテストでクリーンなプロバイダース
 description: "EF Core 11 Preview 3 は RemoveDbContext、RemoveExtension、そして AddPooledDbContextFactory の引数なしオーバーロードを導入し、テストでのプロバイダー切り替え周りのボイラープレートを除去して pooled factory 設定を集約します。"
 pubDate: 2026-04-23
 tags:
-  - ".NET 11"
-  - "EF Core 11"
+  - "dotnet-11"
+  - "ef-core-11"
   - "testing"
-  - "dependency injection"
+  - "dependency-injection"
 lang: "ja"
 translationOf: "2026/04/efcore-11-removedbcontext-pooled-factory-test-swap"
 translatedBy: "claude"

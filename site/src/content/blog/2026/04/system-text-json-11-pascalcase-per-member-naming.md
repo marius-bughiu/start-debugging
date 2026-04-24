@@ -3,10 +3,10 @@ title: "System.Text.Json in .NET 11 Preview 3 adds PascalCase and per-member nam
 description: ".NET 11 Preview 3 finishes the naming-policy story in System.Text.Json: JsonNamingPolicy.PascalCase, a member-level [JsonNamingPolicy] attribute, and a type-level [JsonIgnore] default for cleaner DTOs."
 pubDate: 2026-04-18
 tags:
-  - ".NET 11"
-  - "System.Text.Json"
-  - "C#"
-  - "Serialization"
+  - "dotnet-11"
+  - "system-text-json"
+  - "csharp"
+  - "serialization"
 ---
 
 [.NET 8 introduced](https://startdebugging.net/2023/08/net-8-json-serialize-property-names-using-snake-case-and-kebab-case/) the first batch of built-in naming policies for `System.Text.Json`: camel, snake, and kebab in both casings. Preview 3 of .NET 11 closes the last obvious gap and adds two more knobs that make hand-rolled `JsonConverter`s unnecessary for most DTO shapes. The work shipped via [dotnet/runtime #124644](https://github.com/dotnet/runtime/pull/124644), [#124645](https://github.com/dotnet/runtime/pull/124645), and [#124646](https://github.com/dotnet/runtime/pull/124646).

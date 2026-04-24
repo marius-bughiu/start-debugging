@@ -3,10 +3,10 @@ title: "dotnet sln finally edits solution filters from the CLI in .NET 11 Previe
 description: ".NET 11 Preview 3 teaches dotnet sln to create, add, remove, and list projects in .slnf solution filters, so large mono-repos can load a subset without opening Visual Studio."
 pubDate: 2026-04-18
 tags:
-  - ".NET 11"
-  - "SDK"
-  - "dotnet CLI"
-  - "MSBuild"
+  - "dotnet-11"
+  - "sdk"
+  - "dotnet-cli"
+  - "msbuild"
 ---
 
 Solution filters (`.slnf`) have existed since Visual Studio 2019, but editing them outside the IDE meant hand-writing JSON. [.NET 11 Preview 3](https://github.com/dotnet/core/blob/main/release-notes/11.0/preview/preview3/sdk.md) fixes that: `dotnet sln` now creates, edits, and lists the contents of `.slnf` files directly, via [dotnet/sdk #51156](https://github.com/dotnet/sdk/pull/51156). For large repositories this is the difference between opening a twenty-project subset from the terminal and keeping a shell script that pokes at JSON by hand.

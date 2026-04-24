@@ -3,10 +3,10 @@ title: ".NET 11 Preview 3 で dotnet sln がついに CLI から solution filter
 description: ".NET 11 Preview 3 は dotnet sln に .slnf の solution filter でプロジェクトを作成、追加、削除、一覧するやり方を教えます。大規模モノレポが Visual Studio を開かずにサブセットをロードできるようになります。"
 pubDate: 2026-04-18
 tags:
-  - ".NET 11"
-  - "SDK"
-  - "dotnet CLI"
-  - "MSBuild"
+  - "dotnet-11"
+  - "sdk"
+  - "dotnet-cli"
+  - "msbuild"
 lang: "ja"
 translationOf: "2026/04/dotnet-11-sln-cli-solution-filters"
 translatedBy: "claude"

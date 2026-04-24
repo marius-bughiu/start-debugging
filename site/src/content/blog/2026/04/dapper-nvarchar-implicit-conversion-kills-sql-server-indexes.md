@@ -3,11 +3,11 @@ title: "How Dapper's Default nvarchar Parameters Silently Kill Your SQL Server I
 description: "C# strings sent through Dapper default to nvarchar(4000), forcing SQL Server into implicit conversions and full index scans. Here's how to fix it with DbType.AnsiString."
 pubDate: 2026-04-14
 tags:
-  - "C#"
-  - ".NET"
-  - "SQL Server"
-  - "Dapper"
-  - "Performance"
+  - "csharp"
+  - "dotnet"
+  - "sql-server"
+  - "dapper"
+  - "performance"
 ---
 
 A query that should take milliseconds is suddenly crawling. The execution plan shows an index scan instead of a seek, and the CPU is working overtime converting every row. The culprit? A C# `string` parameter passed through Dapper against a `varchar` column.

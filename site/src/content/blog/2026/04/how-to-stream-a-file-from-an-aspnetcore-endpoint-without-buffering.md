@@ -3,11 +3,11 @@ title: "How to stream a file from an ASP.NET Core endpoint without buffering"
 description: "Serve large files from ASP.NET Core 11 without loading them into memory. Three tiers: PhysicalFileResult for on-disk files, Results.Stream for arbitrary streams, and Response.BodyWriter for generated payloads -- with code for each."
 pubDate: 2026-04-24
 tags:
-  - "ASP.NET Core"
+  - "aspnet-core"
   - "dotnet"
-  - ".NET 11"
-  - "Performance"
-  - "Streaming"
+  - "dotnet-11"
+  - "performance"
+  - "streaming"
 ---
 
 Use `PhysicalFileResult` (or `Results.File(path, contentType)` in minimal APIs) for files already on disk -- Kestrel calls the OS `sendfile` syscall under the hood, so the file bytes never touch managed memory. For streams that don't exist on disk -- Azure Blob, an S3 object, a dynamically generated archive -- return a `FileStreamResult` or `Results.Stream(factory, contentType)` and open the underlying `Stream` lazily inside the factory delegate. For fully generated payloads, write directly to `HttpContext.Response.BodyWriter`. In all three cases the one pattern that silently kills scalability is copying the source into a `MemoryStream` first: that forces the entire payload onto the managed heap, typically on the Large Object Heap, before a single byte reaches the client.

@@ -3,10 +3,10 @@ title: ".NET MAUI 11 Ships a Built-in LongPressGestureRecognizer"
 description: ".NET MAUI 11 Preview 3 adds LongPressGestureRecognizer as a first-party gesture, with duration, movement threshold, state events, and command binding, replacing the common Community Toolkit behavior."
 pubDate: 2026-04-16
 tags:
-  - ".NET MAUI"
-  - ".NET 11"
-  - "XAML"
-  - "Mobile"
+  - "dotnet-maui"
+  - "dotnet-11"
+  - "xaml"
+  - "mobile"
 ---
 
 Until now, detecting a long press in .NET MAUI meant reaching for a third-party behavior, the [Community Toolkit's TouchBehavior](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/behaviors/touch-behavior), or writing platform handlers per OS. [.NET MAUI 11 Preview 3](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-3/) promotes the pattern to a first-party API with `LongPressGestureRecognizer`, landing via [dotnet/maui #33432](https://github.com/dotnet/maui/pull/33432).

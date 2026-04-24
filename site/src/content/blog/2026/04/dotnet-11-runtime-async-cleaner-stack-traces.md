@@ -3,7 +3,7 @@ title: ".NET 11 Runtime Async Replaces State Machines with Cleaner Stack Traces"
 description: "Runtime Async in .NET 11 moves async/await handling from compiler-generated state machines into the runtime itself, producing readable stack traces, correct breakpoints, and fewer heap allocations."
 pubDate: 2026-04-06
 tags:
-  - ".NET 11"
+  - "dotnet-11"
   - "csharp"
   - "async"
   - "performance"

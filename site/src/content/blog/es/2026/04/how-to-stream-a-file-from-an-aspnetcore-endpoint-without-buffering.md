@@ -3,11 +3,11 @@ title: "Como transmitir un archivo desde un endpoint de ASP.NET Core sin bufferi
 description: "Sirve archivos grandes desde ASP.NET Core 11 sin cargarlos en memoria. Tres niveles: PhysicalFileResult para archivos en disco, Results.Stream para flujos arbitrarios y Response.BodyWriter para contenido generado -- con codigo para cada caso."
 pubDate: 2026-04-24
 tags:
-  - "ASP.NET Core"
+  - "aspnet-core"
   - "dotnet"
-  - ".NET 11"
-  - "Performance"
-  - "Streaming"
+  - "dotnet-11"
+  - "performance"
+  - "streaming"
 lang: "es"
 translationOf: "2026/04/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering"
 translatedBy: "claude"

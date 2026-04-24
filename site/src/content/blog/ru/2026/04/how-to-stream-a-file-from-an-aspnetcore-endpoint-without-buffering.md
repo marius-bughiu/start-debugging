@@ -3,11 +3,11 @@ title: "Как передавать файл из конечной точки AS
 description: "Отдавайте большие файлы из ASP.NET Core 11, не загружая их в память. Три уровня: PhysicalFileResult для файлов на диске, Results.Stream для произвольных потоков и Response.BodyWriter для генерируемого контента -- с кодом для каждого случая."
 pubDate: 2026-04-24
 tags:
-  - "ASP.NET Core"
+  - "aspnet-core"
   - "dotnet"
-  - ".NET 11"
-  - "Performance"
-  - "Streaming"
+  - "dotnet-11"
+  - "performance"
+  - "streaming"
 lang: "ru"
 translationOf: "2026/04/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering"
 translatedBy: "claude"

@@ -3,11 +3,11 @@ title: "Kestrel empieza a procesar requests HTTP/3 antes del frame SETTINGS en .
 description: ".NET 11 Preview 3 deja a Kestrel servir requests HTTP/3 antes de que lleguen el control stream del peer y el frame SETTINGS, recortando latencia del handshake en el primer request de cada nueva conexión QUIC."
 pubDate: 2026-04-20
 tags:
-  - ".NET 11"
-  - "ASP.NET Core"
-  - "Kestrel"
-  - "HTTP/3"
-  - "Performance"
+  - "dotnet-11"
+  - "aspnet-core"
+  - "kestrel"
+  - "http-3"
+  - "performance"
 lang: "es"
 translationOf: "2026/04/aspnetcore-11-kestrel-http3-early-request-processing"
 translatedBy: "claude"

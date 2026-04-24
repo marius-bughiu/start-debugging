@@ -3,10 +3,10 @@ title: "System.Text.Json in .NET 11 Preview 3 fügt PascalCase und Per-Member-Na
 description: ".NET 11 Preview 3 schließt die Naming-Policy-Geschichte in System.Text.Json ab: JsonNamingPolicy.PascalCase, ein Member-Level-Attribut [JsonNamingPolicy] und ein Type-Level-Default [JsonIgnore] für sauberere DTOs."
 pubDate: 2026-04-18
 tags:
-  - ".NET 11"
-  - "System.Text.Json"
-  - "C#"
-  - "Serialization"
+  - "dotnet-11"
+  - "system-text-json"
+  - "csharp"
+  - "serialization"
 lang: "de"
 translationOf: "2026/04/system-text-json-11-pascalcase-per-member-naming"
 translatedBy: "claude"
