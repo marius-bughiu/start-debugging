@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/04/how-to-build-an-mcp-server-in-typescript-that-wraps-a-cli",
+    "text": "Any CLI can become an MCP tool in ~100 lines of TypeScript. The gotcha nobody warns you about: console.log() in a stdio server corrupts the JSON-RPC stream and kills the connection silently. Here's the full pattern with git_log and git_diff."
+  }
+]
