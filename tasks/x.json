@@ -1,0 +1,6 @@
+[
+  {
+    "slug": "2026/04/dotnet-10-ubuntu-2604-resolute-container-tags",
+    "text": "Ubuntu 26.04 Resolute Raccoon shipped today with .NET 10 in the archive. Container tags rotate from -noble to -resolute, chiseled included. One apt install now pulls Native AOT: 1.4 MB hello world, 3 ms cold start."
+  }
+]
