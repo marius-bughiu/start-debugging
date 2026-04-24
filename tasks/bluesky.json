@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/04/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering",
+    "text": "Returning a file from ASP.NET Core 11 without loading it into memory. PhysicalFileResult lets Kestrel use the OS sendfile syscall (zero bytes in managed memory). For blobs or generated CSVs the right primitives are Results.Stream and Response.BodyWriter -- not MemoryStream."
+  }
+]
