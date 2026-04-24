@@ -77,17 +77,10 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Post list cards: keep whole card clickable, underline title only */
+/* Post list cards: keep whole card clickable */
 a.panel.card:hover,
 a.panel.card:focus-visible {
   text-decoration: none;
-}
-
-a.panel.card:hover .h2,
-a.panel.card:focus-visible .h2 {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
 }
 
 /*
@@ -101,8 +94,39 @@ a.panel.card:focus-visible .h2 {
   position: relative;
 }
 
+.post-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    800px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px),
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+  );
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+@media (prefers-color-scheme: light) {
+  .post-card::after {
+    background: radial-gradient(
+      800px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px),
+      rgba(0, 0, 0, 0.04),
+      transparent 40%
+    );
+  }
+}
+
+.post-card:hover::after {
+  opacity: 1;
+}
+
 .post-card .post-card-title-link {
   color: var(--text);
+  text-decoration: none;
 }
 
 .post-card .post-card-title-link::before {
@@ -114,11 +138,9 @@ a.panel.card:focus-visible .h2 {
   z-index: 0;
 }
 
-.post-card .post-card-title-link:hover .h2,
-.post-card .post-card-title-link:focus-visible .h2 {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
+.post-card .post-card-title-link:hover,
+.post-card .post-card-title-link:focus-visible {
+  text-decoration: none;
 }
 
 .post-card a.pill,
@@ -127,8 +149,8 @@ a.panel.card:focus-visible .h2 {
   z-index: 1;
 }
 
-.post-card a.pill:hover,
-.post-card a.pill:focus-visible {
+a.pill:hover,
+a.pill:focus-visible {
   background: rgba(255, 255, 255, 0.08);
   color: var(--text);
   text-decoration: none;
@@ -972,10 +994,32 @@ footer {
   outline-offset: 2px;
 }
 
+.footer-newsletter-submit {
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  padding: 8px 16px;
+  font: inherit;
+}
+
+.footer-newsletter-submit:hover,
+.footer-newsletter-submit:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+}
+
 .inline-subscribe-submit {
   cursor: pointer;
   border: 1px solid var(--border);
   background: var(--panel);
+  padding: 8px 16px;
+  font: inherit;
+}
+
+.inline-subscribe-submit:hover,
+.inline-subscribe-submit:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
 }
 
 .inline-subscribe-alt {
@@ -995,48 +1039,6 @@ footer {
   margin: 0;
 }
 
-.subscribe-form {
-  display: grid;
-  gap: 8px;
-  max-width: 480px;
-}
-
-.subscribe-label {
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.subscribe-input {
-  padding: 10px 14px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: var(--bg, #fff);
-  color: inherit;
-  font: inherit;
-  font-size: 16px;
-}
-
-.subscribe-input:focus {
-  outline: 2px solid var(--accent, #4f8cff);
-  outline-offset: 2px;
-}
-
-.subscribe-submit {
-  padding: 10px 18px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: var(--accent, #4f8cff);
-  color: #fff;
-  font: inherit;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  justify-self: start;
-}
-
-.subscribe-submit:hover {
-  filter: brightness(1.05);
-}
 
 .subscribe-fine-print {
   margin: 0;

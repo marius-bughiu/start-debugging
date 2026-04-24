@@ -16,16 +16,16 @@ const description =
     </p>
 
     <form
-      class="subscribe-form stack"
+      class="inline-subscribe-form row"
       action="https://buttondown.com/api/emails/embed-subscribe/startdebugging"
       method="post"
       target="popupwindow"
       onsubmit="window.open('https://buttondown.com/startdebugging', 'popupwindow');"
     >
-      <label class="subscribe-label" for="subscribe-email">Email address</label>
+      <label class="sr-only" for="subscribe-email">Email address</label>
       <input
         id="subscribe-email"
-        class="subscribe-input"
+        class="inline-subscribe-input"
         type="email"
         name="email"
         placeholder="you@domain.com"
@@ -33,12 +33,12 @@ const description =
         autocomplete="email"
       />
       <input type="hidden" name="tag" value="subscribe-page" />
-      <button class="subscribe-submit" type="submit">Subscribe</button>
-      <p class="muted subscribe-fine-print">
-        Powered by <a href="https://buttondown.com/refer/startdebugging" rel="noopener">Buttondown</a>.
-        You can unsubscribe any time with one click in the email footer.
-      </p>
+      <button class="pill inline-subscribe-submit" type="submit">Subscribe</button>
     </form>
+    <p class="muted subscribe-fine-print">
+      Powered by <a href="https://buttondown.com/refer/startdebugging" rel="noopener">Buttondown</a>.
+      You can unsubscribe any time with one click in the email footer.
+    </p>
   </section>
 
   <section class="stack subscribe-why" aria-labelledby="why-heading">

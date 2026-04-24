@@ -249,8 +249,9 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
   <body>
     <header>
       <div class="row header-row">
-        <a class="pill" href={lang === "en" ? baseUrl : `${baseUrl}${lang}/`}>
-          {t("site.brand", lang)}
+        <a class="pill" href={lang === "en" ? baseUrl : `${baseUrl}${lang}/`} style="padding: 4px 12px 4px 6px; gap: 8px;">
+          <img src={`${baseUrl}brand-logo.jpg`} alt="" width="24" height="24" style="border-radius: 50%;" />
+          <span style="line-height: 1; margin-bottom: -1px;">{t("site.brand", lang)}</span>
         </a>
         <div class="header-actions">
           <div class="header-search">
@@ -430,5 +431,17 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
         &copy; {new Date().getFullYear()} {t("site.copyright", lang)}
       </p>
     </footer>
+    <script is:inline>
+      document.addEventListener("mousemove", (e) => {
+        const cards = document.querySelectorAll(".post-card");
+        for (const card of cards) {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty("--mouse-x", `${x}px`);
+          card.style.setProperty("--mouse-y", `${y}px`);
+        }
+      });
+    </script>
   </body>
 </html>
