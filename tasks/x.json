@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/04/how-to-generate-strongly-typed-client-from-openapi-spec-dotnet-11",
+    "text": "Stop hand-rolling HttpClient wrappers. Kiota turns your OpenAPI spec into a fluent, strongly typed C# client in one command. Works on .NET 8 through .NET 11."
+  }
+]

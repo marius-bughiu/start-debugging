@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/04/how-to-generate-strongly-typed-client-from-openapi-spec-dotnet-11",
+    "text": "New post: how to generate a strongly typed C# client from an OpenAPI spec in .NET 11 using Kiota. Covers the full workflow: install as a dotnet local tool, run kiota generate with --include-path to avoid 600-file monsters, add Microsoft.Kiota.Bundle, wire into ASP.NET Core DI via IHttpClientFactory, and configure Bearer auth. NSwag alternative also covered for teams already using it."
+  }
+]
