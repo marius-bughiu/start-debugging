@@ -12,6 +12,10 @@ site/.cache/
 site/public/og/
 site/public/logo-512.png
 
+# Generated AI-search indexes (produced by scripts/generate-llms-txt.mjs on prebuild)
+site/public/llms.txt
+site/public/llms-full.txt
+
 # Distribution credentials (see site/.env.example). Never commit these.
 site/.env
 site/.env.local
