@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output",
-    "text": "A walkthrough of dotnet-trace on .NET 11: install, find the PID, pick a profile, capture from startup with --diagnostic-port, then read the .nettrace in PerfView or convert to Speedscope/Chromium for the browser. Plus the gotchas that make traces look empty (the 256 MB buffer is the usual culprit)."
-  }
-]
+[]
