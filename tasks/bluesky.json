@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/04/aspire-13-2-4-opentelemetry-cve-2026-40894-baggage-dos",
+    "text": "Aspire 13.2.4 ships an OTel patch for CVE-2026-40894. Crafted baggage headers blow up Gen0 on ASP.NET Core. Pin 1.15.3."
+  }
+]
