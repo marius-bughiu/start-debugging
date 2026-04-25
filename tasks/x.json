@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp",
+    "text": "BlockingCollection blocks a thread per consumer. System.Threading.Channels does not. Direct migration table inside."
+  }
+]

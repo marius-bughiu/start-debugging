@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp",
+    "text": "BlockingCollection<T> parks a thread per blocked consumer. In ASP.NET Core or any worker service that hurts. System.Threading.Channels is the async-first replacement: WriteAsync/ReadAsync, ReadAllAsync over IAsyncEnumerable, real backpressure via Wait mode, and a clean migration table from Add/Take/CompleteAdding."
+  }
+]
