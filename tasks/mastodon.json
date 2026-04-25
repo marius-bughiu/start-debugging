@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/04/how-to-write-a-custom-jsonconverter-in-system-text-json",
-    "text": "Custom JsonConverter<T> in System.Text.Json, end to end: when a converter is the right tool vs a naming policy, the Utf8JsonReader cursor rules that quietly skip the next property if you get them wrong, JsonConverterFactory for closed generics, and the trim/AOT story. Targets .NET 11 but the API has been stable since .NET Core 3.0."
-  }
-]
+[]
