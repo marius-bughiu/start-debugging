@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/04/how-to-build-a-custom-mcp-server-in-python-with-the-official-sdk",
-    "text": "Build a working MCP server in Python with the official mcp 1.27 SDK and FastMCP. Pydantic schemas give you JSON Schema for free, raising ValueError becomes a tool error the agent can read, and one stray print() to stdout corrupts the JSON-RPC stream. Walks through wiring it to Claude Desktop and Claude Code."
-  }
-]
+[]
