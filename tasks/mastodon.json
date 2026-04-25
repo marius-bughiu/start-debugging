@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/04/aspire-13-2-4-opentelemetry-cve-2026-40894-baggage-dos",
-    "text": "Aspire 13.2.4 lands a same-week patch for CVE-2026-40894, an allocation-amplification DoS in OpenTelemetry .NET. The baggage, b3, and uber-trace-id parsers split on delimiters before validating length, so 5000 commas in a header materialize thousands of empty Gen0 strings. Pin OpenTelemetry.Api and Propagators to 1.15.3."
-  }
-]
+[]
