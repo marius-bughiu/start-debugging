@@ -17,14 +17,11 @@ export interface Props {
 
 const { post } = Astro.props as Props;
 
-// Default cutoff: posts before 2024 don't get comments unless explicitly
-// opted in via frontmatter. Older archive posts pull search traffic but
-// almost never generate organic discussion — clutter not worth it.
-const COMMENTS_CUTOFF = new Date("2024-01-01");
-
-const explicit = post.data.comments;
-const passesCutoff = post.data.pubDate >= COMMENTS_CUTOFF;
-const enabledByPolicy = explicit ?? passesCutoff;
+// Comments default-on for every post. The widget is lazy-loaded so an
+// unread archive post pays zero cost; meanwhile older error-page posts
+// still earn high-intent search traffic where commenting is most useful.
+// Set `comments: false` in frontmatter to suppress on a specific post.
+const enabledByPolicy = post.data.comments ?? true;
 
 // Read config from env. PUBLIC_ prefix exposes these to client/static
 // builds in Astro. Required: REPO, REPO_ID, CATEGORY, CATEGORY_ID. The
