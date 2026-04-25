@@ -1,0 +1,232 @@
+/*
+ * Custom Giscus theme for startdebugging.net.
+ *
+ * Mirrors site palette tokens from `site/src/styles/global.css` so the
+ * comments iframe blends into the page in both light and dark modes.
+ *
+ * Loaded by the Giscus iframe via the `data-theme` attribute pointing to
+ * https://startdebugging.net/giscus.css. Configured in
+ * `.github/workflows/deploy-pages.yml` (PUBLIC_GISCUS_THEME).
+ *
+ * Targets `main` per Giscus theme convention. The default block is the
+ * dark theme (matches the site default); the `prefers-color-scheme: light`
+ * block flips to the light variant. Both follow the same site tokens.
+ */
+
+main {
+  /* --- canvases (backgrounds) --- */
+  --color-canvas-default: #0b1020;            /* --bg */
+  --color-canvas-overlay: #131938;            /* slightly lifted bg for menus */
+  --color-canvas-inset: rgba(0, 0, 0, 0.25);  /* input wells, code blocks */
+  --color-canvas-subtle: rgba(255, 255, 255, 0.04); /* comment cards */
+
+  /* --- borders --- */
+  --color-border-default: rgba(255, 255, 255, 0.12); /* --border */
+  --color-border-muted: rgba(255, 255, 255, 0.08);
+
+  /* --- foreground (text) --- */
+  --color-fg-default: rgba(255, 255, 255, 0.92);     /* --text */
+  --color-fg-muted: rgba(255, 255, 255, 0.72);       /* --muted */
+  --color-fg-subtle: rgba(255, 255, 255, 0.55);
+  --color-fg-on-emphasis: #ffffff;
+
+  /* --- accent (links / primary actions) --- */
+  --color-accent-fg: #8bd3ff;                  /* --link */
+  --color-accent-emphasis: #1f6feb;
+  --color-accent-muted: rgba(139, 211, 255, 0.4);
+  --color-accent-subtle: rgba(139, 211, 255, 0.15);
+
+  /* --- neutral interactive states --- */
+  --color-neutral-muted: rgba(255, 255, 255, 0.06); /* --panel */
+  --color-neutral-subtle: rgba(255, 255, 255, 0.03);
+  --color-neutral-emphasis-plus: rgba(255, 255, 255, 0.18);
+
+  /* --- status colors --- */
+  --color-success-fg: #56d364;
+  --color-success-emphasis: #238636;
+  --color-attention-fg: #e3b341;
+  --color-attention-emphasis: #9e6a03;
+  --color-attention-muted: rgba(187, 128, 9, 0.4);
+  --color-attention-subtle: rgba(187, 128, 9, 0.15);
+  --color-danger-fg: #f85149;
+  --color-danger-emphasis: #da3633;
+
+  /* --- buttons --- */
+  --color-btn-text: rgba(255, 255, 255, 0.92);
+  --color-btn-bg: rgba(255, 255, 255, 0.06);
+  --color-btn-border: rgba(255, 255, 255, 0.12);
+  --color-btn-shadow: 0 0 transparent;
+  --color-btn-inset-shadow: 0 0 transparent;
+  --color-btn-hover-bg: rgba(255, 255, 255, 0.10);
+  --color-btn-hover-border: rgba(255, 255, 255, 0.18);
+  --color-btn-active-bg: rgba(255, 255, 255, 0.08);
+  --color-btn-active-border: rgba(255, 255, 255, 0.18);
+  --color-btn-selected-bg: rgba(255, 255, 255, 0.12);
+
+  --color-btn-primary-text: #ffffff;
+  --color-btn-primary-bg: #1f6feb;
+  --color-btn-primary-border: rgba(255, 255, 255, 0.04);
+  --color-btn-primary-shadow: 0 0 transparent;
+  --color-btn-primary-inset-shadow: 0 0 transparent;
+  --color-btn-primary-hover-bg: #388bfd;
+  --color-btn-primary-hover-border: rgba(255, 255, 255, 0.04);
+  --color-btn-primary-selected-bg: #1158c7;
+  --color-btn-primary-selected-shadow: 0 0 transparent;
+  --color-btn-primary-disabled-text: rgba(255, 255, 255, 0.5);
+  --color-btn-primary-disabled-bg: rgba(31, 111, 235, 0.6);
+  --color-btn-primary-disabled-border: rgba(255, 255, 255, 0.04);
+
+  /* --- action list (popovers) --- */
+  --color-action-list-item-default-hover-bg: rgba(255, 255, 255, 0.08);
+
+  /* --- shadows --- */
+  --color-shadow-small: 0 0 transparent;
+  --color-shadow-medium: 0 3px 6px rgba(0, 0, 0, 0.35);
+  --color-shadow-large: 0 8px 24px rgba(0, 0, 0, 0.45);
+
+  /* --- primer (used by code/diff highlighting) --- */
+  --color-primer-shadow-inset: 0 0 transparent;
+  --color-primer-shadow-focus: 0 0 0 3px rgba(31, 111, 235, 0.3);
+
+  /* --- syntax highlighting (matches GitHub dark dimmed; only the most
+        common tokens — anything we miss falls back to default colors) --- */
+  --color-prettylights-syntax-comment: #768390;
+  --color-prettylights-syntax-constant: #6cb6ff;
+  --color-prettylights-syntax-entity: #dcbdfb;
+  --color-prettylights-syntax-storage-modifier-import: #adbac7;
+  --color-prettylights-syntax-entity-tag: #8ddb8c;
+  --color-prettylights-syntax-keyword: #f47067;
+  --color-prettylights-syntax-string: #96d0ff;
+  --color-prettylights-syntax-variable: #f69d50;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #e5534b;
+  --color-prettylights-syntax-invalid-illegal-text: #cdd9e5;
+  --color-prettylights-syntax-invalid-illegal-bg: #922323;
+  --color-prettylights-syntax-carriage-return-text: #cdd9e5;
+  --color-prettylights-syntax-carriage-return-bg: #ad2e2c;
+  --color-prettylights-syntax-string-regexp: #8ddb8c;
+  --color-prettylights-syntax-markup-list: #eac55f;
+  --color-prettylights-syntax-markup-heading: #316dca;
+  --color-prettylights-syntax-markup-italic: #adbac7;
+  --color-prettylights-syntax-markup-bold: #adbac7;
+  --color-prettylights-syntax-markup-deleted-text: #ffd8d3;
+  --color-prettylights-syntax-markup-deleted-bg: #78191b;
+  --color-prettylights-syntax-markup-inserted-text: #b4f1b4;
+  --color-prettylights-syntax-markup-inserted-bg: #1b4721;
+  --color-prettylights-syntax-markup-changed-text: #ffddb0;
+  --color-prettylights-syntax-markup-changed-bg: #682d0f;
+  --color-prettylights-syntax-markup-ignored-text: #adbac7;
+  --color-prettylights-syntax-markup-ignored-bg: #255ab2;
+  --color-prettylights-syntax-meta-diff-range: #dcbdfb;
+  --color-prettylights-syntax-brackethighlighter-angle: #768390;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #545d68;
+  --color-prettylights-syntax-constant-other-reference-link: #96d0ff;
+}
+
+@media (prefers-color-scheme: light) {
+  main {
+    /* --- canvases --- */
+    --color-canvas-default: #f7f7fb;            /* --bg */
+    --color-canvas-overlay: #ffffff;
+    --color-canvas-inset: rgba(0, 0, 0, 0.04);
+    --color-canvas-subtle: rgba(0, 0, 0, 0.025);
+
+    /* --- borders --- */
+    --color-border-default: rgba(0, 0, 0, 0.12); /* --border */
+    --color-border-muted: rgba(0, 0, 0, 0.08);
+
+    /* --- foreground --- */
+    --color-fg-default: rgba(0, 0, 0, 0.88);     /* --text */
+    --color-fg-muted: rgba(0, 0, 0, 0.64);       /* --muted */
+    --color-fg-subtle: rgba(0, 0, 0, 0.5);
+    --color-fg-on-emphasis: #ffffff;
+
+    /* --- accent --- */
+    --color-accent-fg: #0b65c2;                  /* --link */
+    --color-accent-emphasis: #0b65c2;
+    --color-accent-muted: rgba(11, 101, 194, 0.4);
+    --color-accent-subtle: rgba(11, 101, 194, 0.12);
+
+    /* --- neutral --- */
+    --color-neutral-muted: rgba(0, 0, 0, 0.04);  /* --panel */
+    --color-neutral-subtle: rgba(0, 0, 0, 0.02);
+    --color-neutral-emphasis-plus: rgba(0, 0, 0, 0.18);
+
+    /* --- status --- */
+    --color-success-fg: #1a7f37;
+    --color-success-emphasis: #2da44e;
+    --color-attention-fg: #9a6700;
+    --color-attention-emphasis: #bf8700;
+    --color-attention-muted: rgba(212, 167, 44, 0.4);
+    --color-attention-subtle: rgba(255, 245, 222, 1);
+    --color-danger-fg: #cf222e;
+    --color-danger-emphasis: #cf222e;
+
+    /* --- buttons --- */
+    --color-btn-text: rgba(0, 0, 0, 0.88);
+    --color-btn-bg: #ffffff;
+    --color-btn-border: rgba(0, 0, 0, 0.15);
+    --color-btn-hover-bg: #f3f4f6;
+    --color-btn-hover-border: rgba(0, 0, 0, 0.2);
+    --color-btn-active-bg: #ebecf0;
+    --color-btn-active-border: rgba(0, 0, 0, 0.2);
+    --color-btn-selected-bg: #ebecf0;
+
+    --color-btn-primary-text: #ffffff;
+    --color-btn-primary-bg: #0b65c2;
+    --color-btn-primary-border: rgba(0, 0, 0, 0.1);
+    --color-btn-primary-hover-bg: #0a5aaf;
+    --color-btn-primary-hover-border: rgba(0, 0, 0, 0.1);
+    --color-btn-primary-selected-bg: #094e96;
+    --color-btn-primary-disabled-text: rgba(255, 255, 255, 0.6);
+    --color-btn-primary-disabled-bg: rgba(11, 101, 194, 0.6);
+
+    /* --- action list --- */
+    --color-action-list-item-default-hover-bg: rgba(0, 0, 0, 0.06);
+
+    /* --- shadows --- */
+    --color-shadow-medium: 0 3px 6px rgba(0, 0, 0, 0.12);
+    --color-shadow-large: 0 8px 24px rgba(0, 0, 0, 0.16);
+
+    --color-primer-shadow-focus: 0 0 0 3px rgba(11, 101, 194, 0.3);
+
+    /* --- syntax highlighting (GitHub light) --- */
+    --color-prettylights-syntax-comment: #57606a;
+    --color-prettylights-syntax-constant: #0550ae;
+    --color-prettylights-syntax-entity: #6639ba;
+    --color-prettylights-syntax-storage-modifier-import: #24292f;
+    --color-prettylights-syntax-entity-tag: #116329;
+    --color-prettylights-syntax-keyword: #cf222e;
+    --color-prettylights-syntax-string: #0a3069;
+    --color-prettylights-syntax-variable: #953800;
+    --color-prettylights-syntax-brackethighlighter-unmatched: #82071e;
+    --color-prettylights-syntax-invalid-illegal-text: #f6f8fa;
+    --color-prettylights-syntax-invalid-illegal-bg: #82071e;
+    --color-prettylights-syntax-carriage-return-text: #f6f8fa;
+    --color-prettylights-syntax-carriage-return-bg: #cf222e;
+    --color-prettylights-syntax-string-regexp: #116329;
+    --color-prettylights-syntax-markup-list: #3b2300;
+    --color-prettylights-syntax-markup-heading: #0550ae;
+    --color-prettylights-syntax-markup-italic: #24292f;
+    --color-prettylights-syntax-markup-bold: #24292f;
+    --color-prettylights-syntax-markup-deleted-text: #82071e;
+    --color-prettylights-syntax-markup-deleted-bg: #ffebe9;
+    --color-prettylights-syntax-markup-inserted-text: #116329;
+    --color-prettylights-syntax-markup-inserted-bg: #dafbe1;
+    --color-prettylights-syntax-markup-changed-text: #953800;
+    --color-prettylights-syntax-markup-changed-bg: #ffd8b5;
+    --color-prettylights-syntax-meta-diff-range: #8250df;
+    --color-prettylights-syntax-brackethighlighter-angle: #57606a;
+    --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f;
+    --color-prettylights-syntax-constant-other-reference-link: #0a3069;
+  }
+}
+
+/*
+ * Force the iframe's own scrollbar/inset to inherit the theme — the parent
+ * iframe element gets transparent so the page bg shows through, and the
+ * inner main fills with our canvas color. Avoids the GitHub gray flash on
+ * load.
+ */
+main, body, html {
+  background-color: var(--color-canvas-default) !important;
+}

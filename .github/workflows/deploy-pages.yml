@@ -34,6 +34,15 @@ jobs:
 
       - name: Build
         working-directory: site
+        env:
+          # Giscus comments config. These IDs are not secrets — they ship in
+          # the deployed HTML so visitors can hit GitHub's Discussions API.
+          # See site/src/components/Giscus.astro and site/.env.example.
+          PUBLIC_GISCUS_REPO: marius-bughiu/start-debugging
+          PUBLIC_GISCUS_REPO_ID: R_kgDOQ3cH_A
+          PUBLIC_GISCUS_CATEGORY: Blog comments
+          PUBLIC_GISCUS_CATEGORY_ID: DIC_kwDOQ3cH_M4C7sYA
+          PUBLIC_GISCUS_THEME: https://startdebugging.net/giscus.css
         run: npm run build
 
       - name: Upload Pages artifact
