@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/04/how-to-build-a-custom-mcp-server-in-python-with-the-official-sdk",
+    "text": "A working Python MCP server with FastMCP and Pydantic, plus the stdout trap that breaks every first stdio attempt. mcp 1.27."
+  }
+]

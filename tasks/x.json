@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/04/how-to-build-a-custom-mcp-server-in-python-with-the-official-sdk",
+    "text": "Wrap any Python function as an MCP tool with the official mcp 1.27 SDK. Decorator + Pydantic, no JSON Schema."
+  }
+]
