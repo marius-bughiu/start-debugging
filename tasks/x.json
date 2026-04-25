@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output",
+    "text": "dotnet-trace, no native profiler, no restart. Capture, then read .nettrace in PerfView, Speedscope, or Perfetto."
+  }
+]

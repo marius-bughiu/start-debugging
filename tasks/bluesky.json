@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output",
+    "text": "Profile a .NET 11 app with dotnet-trace: capture, pick the right profile, then read .nettrace in PerfView, Speedscope, or Perfetto."
+  }
+]
