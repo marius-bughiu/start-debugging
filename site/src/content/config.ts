@@ -15,6 +15,16 @@ const blog = defineCollection({
     translationOf: z.string().optional(),
     translatedBy: z.enum(["claude", "human"]).optional(),
     translationDate: z.date().optional(),
+    // Drives schema.org JSON-LD selection: error-page → FAQPage,
+    // how-to/migration → HowTo, vs → unchanged BlogPosting. New posts set
+    // this from the matching `content-strategy/templates/*.md`.
+    template: z
+      .enum(["error-page", "how-to", "migration", "vs"])
+      .optional(),
+    // Per-post comments override. Default cutoff is `pubDate >= 2024-01-01`.
+    // Set `comments: false` to suppress the widget on a post that would
+    // otherwise show it; set `comments: true` to opt an older post in.
+    comments: z.boolean().optional(),
   }),
 });
 

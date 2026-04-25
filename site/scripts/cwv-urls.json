@@ -1,0 +1,15 @@
+{
+  "comment": "URLs sampled for the Core Web Vitals audit (Roadmap 5.3). Mix of homepage, pillars, AdSense-bearing posts, and templated content shapes so we can spot which page types fail. Edit freely.",
+  "urls": [
+    { "label": "homepage",                   "path": "/",                                                                                  "adsense": false },
+    { "label": "pillar / .NET 11",           "path": "/pillars/dotnet-11-tracker/",                                                        "adsense": false },
+    { "label": "pillar / EF Core 11",        "path": "/pillars/efcore-11-cheat-sheet/",                                                    "adsense": false },
+    { "label": "error / dotnet-ef",          "path": "/2023/06/how-to-fix-command-dotnet-ef-not-found/",                                   "adsense": true  },
+    { "label": "how-to / install Aspire",    "path": "/2023/11/how-to-install-net-aspire/",                                                "adsense": true  },
+    { "label": "evergreen / snake_case JSON","path": "/2023/08/net-8-json-serialize-property-names-using-snake-case-and-kebab-case/",     "adsense": true  },
+    { "label": "WPF / older post",           "path": "/2023/10/wpf-open-folder-dialog/",                                                   "adsense": true  },
+    { "label": "vs / FrozenDictionary",      "path": "/2024/04/net-8-performance-dictionary-vs-frozendictionary/",                         "adsense": true  },
+    { "label": "recent / vector search",     "path": "/2026/04/efcore-11-sql-server-vector-search-diskann-indexes/",                       "adsense": true  },
+    { "label": "evergreen / ThrowIfNull",    "path": "/2023/03/c-best-way-to-throw-exception-if-null/",                                    "adsense": true  }
+  ]
+}

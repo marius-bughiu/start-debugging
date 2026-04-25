@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Giscus from "../../../components/Giscus.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import {
@@ -77,6 +78,8 @@ const related = await getRelatedPosts(post, 4);
   ogImage={ogImage}
   lang={lang}
   translations={Object.keys(translations).length > 1 ? translations : undefined}
+  template={post.data.template}
+  body={post.body}
 >
   <article
     class="panel card stack prose"
@@ -187,6 +190,8 @@ const related = await getRelatedPosts(post, 4);
       </div>
     </section>
   ) : null}
+
+  <Giscus post={post} />
 
   <div class="row" style="margin-top: 14px;">
     <a class="pill" href={baseUrl}>&lt; Back</a>

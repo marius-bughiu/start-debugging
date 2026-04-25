@@ -31,6 +31,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { execSync } from "node:child_process";
 import matter from "gray-matter";
+import { buildUtmUrl } from "./lib/utm.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SITE_ROOT = path.resolve(__dirname, "..");
@@ -146,8 +147,11 @@ function rewriteInternalLinks(markdown) {
 
 // Append a short canonical footer. Some platforms strip <link rel="canonical">
 // from user-submitted HTML, so an inline note is a belt-and-braces signal.
-function appendCanonicalNote(markdown, slug) {
-  const url = canonicalUrl(slug);
+// The footer link carries UTM tags so we can attribute click-throughs from
+// dev.to / Hashnode in GA4. The <link rel=canonical> emitted by the platform
+// stays UTM-free — that's the SEO signal Google reads.
+function appendCanonicalNote(markdown, slug, source) {
+  const url = buildUtmUrl(slug, { source, medium: "syndication", campaign: "auto" });
   return (
     markdown.trimEnd() +
     "\n\n---\n\n*This post was originally published on [Start Debugging](" +
@@ -277,15 +281,6 @@ async function main() {
   let anyFailed = false;
 
   const rewritten = rewriteInternalLinks(content);
-  const withNote = appendCanonicalNote(rewritten, slug);
-
-  const payload = {
-    title: data.title,
-    description: data.description,
-    tags: data.tags ?? [],
-    body: withNote,
-    slug,
-  };
 
   console.log(`[cross-post] slug=${slug}`);
   console.log(`[cross-post] title=${data.title}`);
@@ -301,6 +296,14 @@ async function main() {
       console.log(`  - ${name}: already mirrored at ${entry[name].at}, skipping (use --force)`);
       continue;
     }
+    // Per-platform body so the canonical footer carries the right UTM source.
+    const payload = {
+      title: data.title,
+      description: data.description,
+      tags: data.tags ?? [],
+      body: appendCanonicalNote(rewritten, slug, name),
+      slug,
+    };
     try {
       const res = await fn(payload);
       if (res.skipped) {

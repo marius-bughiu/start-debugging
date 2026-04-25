@@ -8,6 +8,12 @@ import {
   LOCALE_SHORT_CODE,
   type Locale,
 } from "../lib/blog";
+import {
+  buildFaqPageJsonLd,
+  buildHowToJsonLd,
+  extractFaqFromMarkdown,
+  extractHowToFromMarkdown,
+} from "../lib/schema";
 import { t } from "../i18n";
 
 export interface Props {
@@ -37,6 +43,18 @@ export interface Props {
    * Omit for pages without translations.
    */
   translations?: Partial<Record<Locale, string>>;
+  /**
+   * Frontmatter `template` for posts using the templated content shapes
+   * defined under `content-strategy/templates/*.md`. Drives extra schema.org
+   * emission: `error-page` → FAQPage, `how-to`/`migration` → HowTo. Passed
+   * straight through from post frontmatter.
+   */
+  template?: "error-page" | "how-to" | "migration" | "vs";
+  /**
+   * Raw markdown body for posts. Used by the FAQPage / HowTo extractors. Only
+   * needed when `template` is set; ignored otherwise.
+   */
+  body?: string;
 }
 
 const {
@@ -51,6 +69,8 @@ const {
   ogImage,
   lang = "en",
   translations,
+  template,
+  body,
 } = Astro.props;
 
 const baseUrl = import.meta.env.BASE_URL;
@@ -150,6 +170,30 @@ if (type === "article" && publishedDate) {
   };
 }
 
+// AI-search optimization: emit FAQPage / HowTo schema for templated posts.
+// Only English posts ship this for now — translated posts share the canonical
+// JSON-LD via the en URL and we don't want to mint divergent FAQs per locale.
+let faqJsonLd: Record<string, unknown> | null = null;
+let howToJsonLd: Record<string, unknown> | null = null;
+if (type === "article" && body && template && lang === "en") {
+  const cleanTitle = title.replace(/ - Start Debugging$/, "");
+  if (template === "error-page") {
+    const faqs = extractFaqFromMarkdown(body, cleanTitle);
+    if (faqs) faqJsonLd = buildFaqPageJsonLd(faqs);
+  } else if (template === "how-to" || template === "migration") {
+    const steps = extractHowToFromMarkdown(body);
+    if (steps) {
+      howToJsonLd = buildHowToJsonLd({
+        name: cleanTitle,
+        description,
+        steps,
+        url: canonical,
+        image: ogImageUrl,
+      });
+    }
+  }
+}
+
 // RSS feed URL for the active language.
 const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xml`;
 ---
@@ -227,6 +271,12 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
     {breadcrumbJsonLd ? (
       <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
     ) : null}
+    {faqJsonLd ? (
+      <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+    ) : null}
+    {howToJsonLd ? (
+      <script type="application/ld+json" set:html={JSON.stringify(howToJsonLd)} />
+    ) : null}
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFYE38MD6S"></script>
@@ -238,11 +288,129 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
       gtag('config', 'G-QFYE38MD6S');
     </script>
 
+    <!-- Custom GA4 events: share clicks, scroll depth, outbound clicks,
+         newsletter subscribe. See TRAFFIC_ROADMAP.md task 5.1. -->
+    <script is:inline>
+      (function () {
+        function track(name, params) {
+          if (typeof window.gtag !== 'function') return;
+          window.gtag('event', name, params || {});
+        }
+
+        // Share row: any [data-share] anchor or the copy-link button.
+        document.addEventListener('click', function (e) {
+          var t = e.target instanceof Element ? e.target.closest('[data-share],[data-copy-link]') : null;
+          if (!t) return;
+          var network = t.getAttribute('data-share') || (t.hasAttribute('data-copy-link') ? 'copy' : null);
+          if (!network) return;
+          track('share_click', {
+            network: network,
+            page_path: location.pathname,
+          });
+        }, true);
+
+        // Newsletter subscribe: footer form + inline post-page form. We can't
+        // see the cross-origin Buttondown response so track on submit
+        // intent — close enough for funnel measurement.
+        document.addEventListener('submit', function (e) {
+          var f = e.target instanceof HTMLFormElement ? e.target : null;
+          if (!f) return;
+          var action = (f.getAttribute('action') || '').toLowerCase();
+          if (action.indexOf('buttondown.com') === -1) return;
+          var tagInput = f.querySelector('input[name="tag"]');
+          var placement = tagInput && tagInput.value ? tagInput.value : 'unknown';
+          track('newsletter_subscribe', {
+            placement: placement,
+            page_path: location.pathname,
+          });
+        }, true);
+
+        // Outbound clicks: any external <a> not on startdebugging.net.
+        document.addEventListener('click', function (e) {
+          var t = e.target instanceof Element ? e.target.closest('a[href]') : null;
+          if (!t) return;
+          var href = t.getAttribute('href') || '';
+          if (!/^https?:\/\//i.test(href)) return;
+          try {
+            var u = new URL(href);
+            if (u.hostname.endsWith('startdebugging.net')) return;
+            track('outbound_click', {
+              outbound_url: href,
+              outbound_domain: u.hostname,
+              page_path: location.pathname,
+            });
+          } catch (_err) { /* ignore */ }
+        }, true);
+
+        // Scroll depth: fire 25/50/75/100 once each per page.
+        var fired = { 25: false, 50: false, 75: false, 100: false };
+        var ticking = false;
+        function scrollDepthCheck() {
+          ticking = false;
+          var doc = document.documentElement;
+          var scrollTop = window.pageYOffset || doc.scrollTop || 0;
+          var viewport = window.innerHeight || doc.clientHeight || 0;
+          var fullHeight = Math.max(
+            doc.scrollHeight,
+            doc.offsetHeight,
+            document.body ? document.body.scrollHeight : 0,
+            document.body ? document.body.offsetHeight : 0,
+          );
+          var scrollable = Math.max(fullHeight - viewport, 1);
+          var pct = (scrollTop / scrollable) * 100;
+          [25, 50, 75, 100].forEach(function (mark) {
+            if (!fired[mark] && pct >= mark) {
+              fired[mark] = true;
+              track('scroll_depth', { percent: mark, page_path: location.pathname });
+            }
+          });
+        }
+        window.addEventListener('scroll', function () {
+          if (!ticking) {
+            window.requestAnimationFrame(scrollDepthCheck);
+            ticking = true;
+          }
+        }, { passive: true });
+        // Catch short pages where the user never scrolls (still hit 25%).
+        window.addEventListener('load', scrollDepthCheck);
+      })();
+    </script>
+
     {includeAdsense ? (
       <>
-        <!-- Google AdSense -->
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1537458730659685"
-     crossorigin="anonymous"></script>
+        <!-- Google AdSense (deferred). Loading the AdSense bundle eagerly tanks LCP/INP on
+             mobile — defer until the page is idle or the user interacts. -->
+        <script is:inline>
+          (function () {
+            var loaded = false;
+            function loadAdsense() {
+              if (loaded) return;
+              loaded = true;
+              var s = document.createElement('script');
+              s.async = true;
+              s.crossOrigin = 'anonymous';
+              s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1537458730659685';
+              document.head.appendChild(s);
+            }
+            // Load on first user interaction or, failing that, when the browser
+            // is idle. Cap at 8s after `load` so headless / no-interaction
+            // sessions still bring it in (ad fill matters; abandonment matters
+            // less than CWV impact during the initial paint).
+            var events = ['scroll', 'pointerdown', 'keydown', 'touchstart'];
+            function once() {
+              events.forEach(function (e) { window.removeEventListener(e, once, { passive: true }); });
+              loadAdsense();
+            }
+            events.forEach(function (e) { window.addEventListener(e, once, { passive: true, once: true }); });
+            window.addEventListener('load', function () {
+              if ('requestIdleCallback' in window) {
+                window.requestIdleCallback(loadAdsense, { timeout: 8000 });
+              } else {
+                setTimeout(loadAdsense, 4000);
+              }
+            });
+          })();
+        </script>
       </>
     ) : null}
   </head>

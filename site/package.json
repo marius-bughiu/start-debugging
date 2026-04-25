@@ -4,12 +4,13 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "node scripts/generate-og-images.mjs",
+    "prebuild": "node scripts/generate-og-images.mjs && node scripts/generate-llms-txt.mjs",
     "build": "astro build",
     "postbuild": "pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
     "og:generate": "node scripts/generate-og-images.mjs",
+    "llms:generate": "node scripts/generate-llms-txt.mjs",
     "link-pass": "node scripts/link-pass.mjs",
     "link-pass:apply": "node scripts/link-pass.mjs --apply",
     "freshness-pass": "node scripts/freshness-pass.mjs",
@@ -21,6 +22,8 @@
     "weekly-digest": "node scripts/weekly-digest.mjs",
     "weekly-digest:apply": "node scripts/weekly-digest.mjs --apply",
     "gsc-harvest": "node scripts/gsc-harvest.mjs",
+    "cwv-audit": "node scripts/cwv-audit.mjs",
+    "cwv-audit:baseline": "node scripts/cwv-audit.mjs --baseline --label=baseline",
     "link-rot-check": "node scripts/link-rot-check.mjs",
     "wp:migrate": "node scripts/wp-migrate.mjs"
   },

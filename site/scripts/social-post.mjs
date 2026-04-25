@@ -41,6 +41,7 @@ import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { execSync } from "node:child_process";
 import matter from "gray-matter";
+import { buildUtmUrl } from "./lib/utm.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SITE_ROOT = path.resolve(__dirname, "..");
@@ -175,12 +176,7 @@ function slugFromFile(file) {
 }
 
 function buildUrl(slug, source) {
-  const qs = new URLSearchParams({
-    utm_source: source,
-    utm_medium: "social",
-    utm_campaign: "auto",
-  });
-  return `${SITE_URL}/${slug}/?${qs.toString()}`;
+  return buildUtmUrl(slug, { source, medium: "social", campaign: "auto" });
 }
 
 // X/Bluesky have tight limits. Truncate the title so the final post still

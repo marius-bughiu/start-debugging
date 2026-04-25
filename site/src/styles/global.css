@@ -837,6 +837,29 @@ footer {
   font-weight: 600;
 }
 
+/* Comments section (giscus) below related posts. Match heading style with
+   .related-heading; the iframe handles its own internal styling. */
+.comments-section {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comments-section h2 {
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 0;
+}
+
+.comments-section .giscus,
+.comments-section .giscus-frame {
+  width: 100%;
+}
+
 /* Footer navigation */
 .footer-nav {
   gap: 16px;

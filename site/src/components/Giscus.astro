@@ -1,0 +1,84 @@
+---
+// Giscus comments widget. GitHub-Discussions-backed, lazy-loaded.
+//
+// Configuration is read from PUBLIC_GISCUS_* env vars at build time so we
+// can flip comments on/off and rotate the backing repo without changing
+// code. If any required value is missing, the component renders nothing —
+// post pages stay clean until you've actually set up the backing repo.
+//
+// See `site/.env.example` for setup. The IDs come from giscus.app after
+// you point it at your public comments repo (TRAFFIC_ROADMAP.md task 6.4).
+
+import { langOf, type BlogPost, type Locale } from "../lib/blog";
+
+export interface Props {
+  post: BlogPost;
+}
+
+const { post } = Astro.props as Props;
+
+// Default cutoff: posts before 2024 don't get comments unless explicitly
+// opted in via frontmatter. Older archive posts pull search traffic but
+// almost never generate organic discussion — clutter not worth it.
+const COMMENTS_CUTOFF = new Date("2024-01-01");
+
+const explicit = post.data.comments;
+const passesCutoff = post.data.pubDate >= COMMENTS_CUTOFF;
+const enabledByPolicy = explicit ?? passesCutoff;
+
+// Read config from env. PUBLIC_ prefix exposes these to client/static
+// builds in Astro. Required: REPO, REPO_ID, CATEGORY, CATEGORY_ID. The
+// rest have safe defaults.
+const repo = import.meta.env.PUBLIC_GISCUS_REPO ?? "";
+const repoId = import.meta.env.PUBLIC_GISCUS_REPO_ID ?? "";
+const category = import.meta.env.PUBLIC_GISCUS_CATEGORY ?? "Blog comments";
+const categoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID ?? "";
+const theme = import.meta.env.PUBLIC_GISCUS_THEME ?? "preferred_color_scheme";
+
+const configured = !!(repo && repoId && categoryId);
+const showWidget = enabledByPolicy && configured;
+
+// Map Astro locale to a giscus-supported language code. Giscus localizes
+// the widget chrome (button labels, prompts) but not user-authored
+// comments, so this is purely for the framing UI.
+const lang = langOf(post) as Locale;
+const giscusLang =
+  lang === "pt-br" ? "pt"
+  : lang === "ja" ? "ja"
+  : lang === "ru" ? "ru"
+  : lang === "de" ? "de"
+  : lang === "es" ? "es"
+  : "en";
+---
+
+{showWidget ? (
+  <section
+    class="comments-section"
+    aria-labelledby="comments-heading"
+    data-pagefind-ignore
+  >
+    <h2 id="comments-heading" class="h2">Comments</h2>
+    <p class="muted">
+      Sign in with GitHub to comment. Reactions and replies thread back to
+      <a href={`https://github.com/${repo}/discussions`} rel="noopener">the comments repo</a>.
+    </p>
+    <div class="giscus" />
+    <script
+      src="https://giscus.app/client.js"
+      data-repo={repo}
+      data-repo-id={repoId}
+      data-category={category}
+      data-category-id={categoryId}
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme={theme}
+      data-lang={giscusLang}
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async
+    />
+  </section>
+) : null}
