@@ -5,6 +5,9 @@ site/dist/
 site/.astro/
 site/.cache/
 
+# Root vite cache (not committed)
+/node_modules/
+
 # Generated OG images and derived logo (produced by scripts/generate-og-images.mjs)
 site/public/og/
 site/public/logo-512.png
@@ -14,6 +17,13 @@ site/.env
 site/.env.local
 .env
 .env.local
+
+# Editorial / content-ops working set (kept private)
+/content-strategy/
+/TRAFFIC_ROADMAP.md
+
+# Local-only MCP server config
+/.mcp.json
 
 # OS/editor
 .DS_Store
