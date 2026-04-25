@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/04/how-to-write-a-custom-jsonconverter-in-system-text-json",
+    "text": "Custom JsonConverter<T> in System.Text.Json: read/write rules, generic factories, AOT pitfalls, and the Utf8JsonReader cursor bug everyone hits."
+  }
+]
