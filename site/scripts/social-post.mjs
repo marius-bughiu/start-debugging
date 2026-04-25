@@ -29,9 +29,9 @@
  *   BLUESKY_HANDLE, BLUESKY_APP_PASSWORD
  *   MASTODON_INSTANCE (e.g. https://mastodon.social), MASTODON_ACCESS_TOKEN
  *
- * The script is idempotent-ish: it records "what I posted when" to
- * `content-strategy/social-post-log.json` so that re-running for the same
- * slug + platform is a no-op (unless --force is passed).
+ * Idempotency comes from the task file itself: a successful post splices its
+ * task entry out of `tasks/<channel>.json`, so re-running for the same slug
+ * is a no-op (the task is gone, nothing to post). No separate log is kept.
  */
 
 import "dotenv/config";
@@ -47,12 +47,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SITE_ROOT = path.resolve(__dirname, "..");
 const REPO_ROOT = path.resolve(SITE_ROOT, "..");
 const CONTENT_ROOT = path.join(SITE_ROOT, "src", "content", "blog");
-// Per-platform log paths keep parallel GitHub Actions jobs from racing on
-// a single shared file. Set SOCIAL_POST_LOG_PATH to redirect; default is
-// the shared file for local / single-process use.
-const LOG_PATH = process.env.SOCIAL_POST_LOG_PATH
-  ? path.resolve(process.env.SOCIAL_POST_LOG_PATH)
-  : path.join(REPO_ROOT, "content-strategy", "social-post-log.json");
 const TASKS_ROOT = path.join(REPO_ROOT, "tasks");
 const SITE_URL = "https://startdebugging.net";
 
@@ -66,7 +60,6 @@ const flagValue = (name) => {
 };
 
 const APPLY = has("--apply");
-const FORCE = has("--force");
 const FILE_ARG = flagValue("file");
 const PLATFORM_FILTER = (flagValue("platforms") ?? "x,bluesky,mastodon")
   .split(",")
@@ -127,19 +120,6 @@ async function walk(dir) {
     else if (ent.isFile() && full.endsWith(".md")) out.push(full);
   }
   return out;
-}
-
-async function loadLog() {
-  try {
-    const raw = await fs.readFile(LOG_PATH, "utf8");
-    return JSON.parse(raw);
-  } catch {
-    return {};
-  }
-}
-
-async function saveLog(log) {
-  await fs.writeFile(LOG_PATH, JSON.stringify(log, null, 2) + "\n", "utf8");
 }
 
 function tasksFileFor(platform) {
@@ -391,9 +371,6 @@ async function main() {
   if (!data.title) throw new Error(`Missing title in ${file}`);
 
   const slug = slugFromFile(file);
-  const log = await loadLog();
-  const entry = log[slug] ?? {};
-  const originalKeys = new Set(Object.keys(entry));
   let anyFailed = false;
 
   console.log(`[social-post] slug=${slug}`);
@@ -409,22 +386,10 @@ async function main() {
   for (const [name, fn] of platforms) {
     const tasks = await loadTasks(name);
     const taskIndex = tasks.findIndex((t) => t && t.slug === slug);
-    const alreadyPosted = Boolean(entry[name]);
 
-    // Already posted in APPLY mode: skip and clean up any orphaned task. In
-    // dry-run we still want to preview, so this guard only fires under --apply.
-    if (alreadyPosted && !FORCE && APPLY) {
-      console.log(`  - ${name}: already posted at ${entry[name].at}, skipping (use --force)`);
-      if (taskIndex !== -1) {
-        tasks.splice(taskIndex, 1);
-        await saveTasks(name, tasks);
-        console.log(`  - ${name}: removed stale task for already-posted slug`);
-      }
-      continue;
-    }
-
-    // Strict: no task = no post. The LLM is expected to write a summary for
-    // every article via content-strategy/news-prompt.md and evergreen-prompt.md.
+    // Strict: no task = no post. Absence of a task entry is also the
+    // idempotency signal - successful posts splice their task out below,
+    // so re-running for the same slug naturally skips.
     if (taskIndex === -1) {
       console.log(`  - ${name}: skipped (no task in tasks/${name}.json for slug ${slug})`);
       continue;
@@ -448,7 +413,6 @@ async function main() {
         continue;
       }
       console.log(`  - ${name}: posted${res.id ? ` id=${res.id}` : res.uri ? ` uri=${res.uri}` : ""}`);
-      entry[name] = { at: new Date().toISOString(), id: res.id ?? res.uri ?? null };
 
       if (APPLY) {
         tasks.splice(taskIndex, 1);
@@ -460,19 +424,8 @@ async function main() {
     }
   }
 
-  if (APPLY) {
-    // Only persist if a platform actually succeeded. Writing an unchanged
-    // (or empty) entry back would dirty the log and cause the distribute
-    // workflow's aggregator job to commit a no-op.
-    const hasNew = Object.keys(entry).some((k) => !originalKeys.has(k));
-    if (hasNew) {
-      log[slug] = entry;
-      await saveLog(log);
-    } else {
-      console.log("\nNo successful posts this run - log not updated.");
-    }
-  } else {
-    console.log("\nDry run - no network calls made, no log written. Re-run with --apply.");
+  if (!APPLY) {
+    console.log("\nDry run - no network calls made. Re-run with --apply.");
   }
 
   // Mark the process (and therefore the GitHub Actions step) as failed if

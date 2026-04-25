@@ -3,12 +3,11 @@ name: Distribute new post
 # Fires when a new (or edited) blog post is pushed to main. Each channel
 # runs as an independent parallel job so a failure on (say) Mastodon does
 # not block X or Bluesky from publishing. The scripts are idempotent:
-# they track per-slug state in content-strategy/*-log.json and skip
-# anything they've already posted, so re-runs on rebuilds / doc edits
-# are safe.
+# successful posts splice their entry out of `tasks/<channel>.json`, so
+# re-runs on rebuilds / doc edits are safe.
 #
-# All log writes are serialised in the final `commit-logs` aggregator
-# job, which downloads each channel's log artifact and pushes a single
+# All task writes are serialised in the final `commit-logs` aggregator
+# job, which downloads each channel's tasks artifact and pushes a single
 # commit. That avoids the parallel-push race you'd get if every matrix
 # job tried to `git push` on its own.
 
@@ -37,7 +36,7 @@ permissions:
 
 concurrency:
   # Queue new pushes rather than cancelling an in-flight distribution -
-  # cancelling mid-post could leave a tweet published but the log
+  # cancelling mid-post could leave a tweet published but the task
   # uncommitted, causing a duplicate on the next run.
   group: distribute
   cancel-in-progress: false
@@ -57,35 +56,25 @@ jobs:
         # -----------------------------------------------------------------
         # Enabled: X, Bluesky, Mastodon.
         # To enable another channel, uncomment its include block AND add
-        # the matching `<name>-log.json` entry to the `git add` line in
-        # the `commit-logs` job below.
+        # the matching `tasks/<channel>.json` entry to the `git add` line
+        # in the `commit-logs` job below.
         # -----------------------------------------------------------------
         include:
           - channel: x
             script: scripts/social-post.mjs
             flags: --platforms=x
-            log_env: SOCIAL_POST_LOG_PATH
-            log_name: social-post-x-log.json
           - channel: bluesky
             script: scripts/social-post.mjs
             flags: --platforms=bluesky
-            log_env: SOCIAL_POST_LOG_PATH
-            log_name: social-post-bluesky-log.json
           - channel: mastodon
             script: scripts/social-post.mjs
             flags: --platforms=mastodon
-            log_env: SOCIAL_POST_LOG_PATH
-            log_name: social-post-mastodon-log.json
           # - channel: devto
           #   script: scripts/cross-post.mjs
           #   flags: --platforms=devto
-          #   log_env: CROSS_POST_LOG_PATH
-          #   log_name: cross-post-devto-log.json
           # - channel: hashnode
           #   script: scripts/cross-post.mjs
           #   flags: --platforms=hashnode
-          #   log_env: CROSS_POST_LOG_PATH
-          #   log_name: cross-post-hashnode-log.json
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -121,26 +110,12 @@ jobs:
           DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
           HASHNODE_TOKEN: ${{ secrets.HASHNODE_TOKEN }}
           HASHNODE_PUBLICATION_ID: ${{ secrets.HASHNODE_PUBLICATION_ID }}
-          # We can't interpolate matrix.log_env as a dynamic env-var
-          # NAME, so set both possible overrides to the same path. Each
-          # script only reads its own env var, so this is harmless.
-          SOCIAL_POST_LOG_PATH: ${{ github.workspace }}/content-strategy/${{ matrix.log_name }}
-          CROSS_POST_LOG_PATH: ${{ github.workspace }}/content-strategy/${{ matrix.log_name }}
         run: |
           if [ -n "${{ inputs.file }}" ]; then
             node ${{ matrix.script }} --apply ${{ matrix.flags }} --file="${{ inputs.file }}"
           else
             node ${{ matrix.script }} --apply ${{ matrix.flags }}
           fi
-
-      - name: Upload log artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: log-${{ matrix.channel }}
-          path: content-strategy/${{ matrix.log_name }}
-          if-no-files-found: ignore
-          retention-days: 7
 
       - name: Upload tasks artifact
         # Post copy lives in tasks/<channel>.json; each successful post
@@ -156,8 +131,8 @@ jobs:
 
   commit-logs:
     # Single-writer aggregator. Runs regardless of whether individual
-    # channel jobs succeeded or failed - we still want to record post
-    # IDs for whichever channels *did* succeed.
+    # channel jobs succeeded or failed - we still want to capture task
+    # mutations for whichever channels *did* succeed.
     needs: distribute
     if: always()
     runs-on: ubuntu-latest
@@ -168,24 +143,19 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Download all log artifacts
+      - name: Download all task artifacts
         uses: actions/download-artifact@v4
         with:
           path: _artifacts
 
-      - name: Merge logs and tasks back into the repo
+      - name: Merge tasks back into the repo
         run: |
           shopt -s nullglob
           # Artifacts download as _artifacts/<artifact-name>/<file>. For single-
           # file uploads, upload-artifact strips any directory prefix, so
           # tasks/x.json ships as x.json under its artifact folder.
-          count=0
-          for f in _artifacts/log-*/*-log.json; do
-            echo "merging log $f"
-            cp "$f" content-strategy/
-            count=$((count+1))
-          done
           mkdir -p tasks
+          count=0
           for f in _artifacts/tasks-*/*.json; do
             echo "merging task $f"
             cp "$f" tasks/
@@ -193,24 +163,18 @@ jobs:
           done
           echo "merged $count files"
 
-      - name: Commit log and task updates
+      - name: Commit task updates
         # The [skip ci] tag prevents this commit from re-triggering the
         # deploy or this workflow. When enabling more channels above,
-        # add their <name>-log.json and tasks/<name>.json to the `git add`
-        # lines below.
+        # add their tasks/<name>.json to the `git add` lines below.
         run: |
           git config user.name "start-debugging-bot"
           git config user.email "noreply@startdebugging.net"
-          git add content-strategy/social-post-x-log.json 2>/dev/null || true
-          git add content-strategy/social-post-bluesky-log.json 2>/dev/null || true
-          git add content-strategy/social-post-mastodon-log.json 2>/dev/null || true
           git add tasks/x.json 2>/dev/null || true
           git add tasks/bluesky.json 2>/dev/null || true
           git add tasks/mastodon.json 2>/dev/null || true
-          # git add content-strategy/cross-post-devto-log.json 2>/dev/null || true
-          # git add content-strategy/cross-post-hashnode-log.json 2>/dev/null || true
           if git diff --cached --quiet; then
-            echo "No log or task changes to commit."
+            echo "No task changes to commit."
           else
             git commit -m "chore(distribute): record post IDs [skip ci]"
             git push

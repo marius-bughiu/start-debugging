@@ -40,7 +40,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SITE_ROOT = path.resolve(__dirname, "..");
 const REPO_ROOT = path.resolve(SITE_ROOT, "..");
 const CONTENT_ROOT = path.join(SITE_ROOT, "src", "content", "blog");
-const LOG_PATH = path.join(REPO_ROOT, "content-strategy", "weekly-digest-log.json");
+const LOG_PATH = path.join(REPO_ROOT, "tasks", "weekly-digest-log.json");
 const SITE_URL = "https://startdebugging.net";
 
 // --- CLI ------------------------------------------------------------------
