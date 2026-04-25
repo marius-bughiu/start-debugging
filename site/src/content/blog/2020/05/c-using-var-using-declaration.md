@@ -1,6 +1,6 @@
 ---
 title: "C# using var (using declaration)"
-description: "Learn how C# 8 using declarations (using var) simplify resource management by eliminating extra curly braces and indentation for IDisposable objects."
+description: "Use C# 8 `using var` declarations to dispose IDisposable objects without nested braces. Syntax, scope rules, and when to prefer `using` blocks instead."
 pubDate: 2020-05-01
 updatedDate: 2023-11-05
 tags:

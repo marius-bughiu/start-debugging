@@ -1,5 +1,5 @@
 ---
-title: "C# – Best way to Throw Exception If Null"
+title: "C# throw if null: ArgumentNullException.ThrowIfNull (.NET 6+)"
 description: "Use ArgumentNullException.ThrowIfNull in .NET 6+ for concise null checks, or use throw expressions in C# 7+ for older frameworks."
 pubDate: 2023-03-11
 updatedDate: 2023-11-05

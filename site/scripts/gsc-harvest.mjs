@@ -1,9 +1,11 @@
 #!/usr/bin/env node
-// GSC page-2 query harvester.
+// GSC harvester. Produces three artefacts under content-strategy/:
 //
-// Queries the last 7 days of Search Analytics data, filters to queries ranking
-// in positions 11-20 (page 2 of search results), and writes candidates to
-// content-strategy/gsc-candidates.json.
+//   gsc-candidates.json       page-2 queries (positions 11-20), last 7 days
+//   gsc-rising.json           queries with the largest week-over-week
+//                             impression delta, current position <= 30
+//   gsc-low-ctr-pages.json    pages with high impressions but CTR < 2%,
+//                             last 28 days
 //
 // Authenticates via Google Application Default Credentials (ADC). Set up once
 // with:
@@ -24,7 +26,9 @@ import url from "node:url";
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..", "..");
-const OUTPUT = path.join(ROOT, "content-strategy", "gsc-candidates.json");
+const CANDIDATES_OUT = path.join(ROOT, "content-strategy", "gsc-candidates.json");
+const RISING_OUT = path.join(ROOT, "content-strategy", "gsc-rising.json");
+const LOW_CTR_OUT = path.join(ROOT, "content-strategy", "gsc-low-ctr-pages.json");
 
 const siteUrl = "sc-domain:startdebugging.net";
 
@@ -54,26 +58,31 @@ try {
 
 const webmasters = google.webmasters({ version: "v3", auth });
 
+const isoDay = (d) => d.toISOString().slice(0, 10);
+const dayMs = 24 * 60 * 60 * 1000;
 const now = new Date();
-const end = now.toISOString().slice(0, 10);
-const start = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000)
-  .toISOString()
-  .slice(0, 10);
 
-console.log(`[gsc-harvest] Querying ${siteUrl} from ${start} to ${end}`);
+const last7End = isoDay(now);
+const last7Start = isoDay(new Date(now.getTime() - 7 * dayMs));
+const prior7End = isoDay(new Date(now.getTime() - 7 * dayMs - dayMs));
+const prior7Start = isoDay(new Date(now.getTime() - 14 * dayMs - dayMs));
+const last28End = last7End;
+const last28Start = isoDay(new Date(now.getTime() - 28 * dayMs));
 
-const res = await webmasters.searchanalytics.query({
+// 1. Page-2 queries (positions 11-20), last 7 days. Format unchanged so
+//    monthly-retro-prompt.md can keep reading it.
+console.log(`[gsc-harvest] Querying ${siteUrl} for page-2 candidates ${last7Start} to ${last7End}`);
+const candidatesRes = await webmasters.searchanalytics.query({
   siteUrl,
   requestBody: {
-    startDate: start,
-    endDate: end,
+    startDate: last7Start,
+    endDate: last7End,
     dimensions: ["query"],
     rowLimit: 1000,
   },
 });
-
-const rows = res.data.rows || [];
-const page2 = rows
+const candidatesRows = candidatesRes.data.rows || [];
+const page2 = candidatesRows
   .filter((r) => r.position >= 11 && r.position <= 20)
   .map((r) => ({
     query: r.keys[0],
@@ -83,8 +92,75 @@ const page2 = rows
     ctr: Number(r.ctr.toFixed(4)),
   }))
   .sort((a, b) => b.impressions - a.impressions);
-
-await fs.writeFile(OUTPUT, JSON.stringify(page2, null, 2) + "\n");
+await fs.writeFile(CANDIDATES_OUT, JSON.stringify(page2, null, 2) + "\n");
 console.log(
-  `[gsc-harvest] Wrote ${page2.length} page-2 candidates to ${path.relative(ROOT, OUTPUT)}`,
+  `[gsc-harvest] Wrote ${page2.length} page-2 candidates to ${path.relative(ROOT, CANDIDATES_OUT)}`,
+);
+
+// 2. Rising queries: week-over-week impression delta, current position <= 30.
+console.log(
+  `[gsc-harvest] Querying prior-week baseline ${prior7Start} to ${prior7End}`,
+);
+const priorRes = await webmasters.searchanalytics.query({
+  siteUrl,
+  requestBody: {
+    startDate: prior7Start,
+    endDate: prior7End,
+    dimensions: ["query"],
+    rowLimit: 1000,
+  },
+});
+const priorByQuery = new Map();
+for (const r of priorRes.data.rows || []) {
+  priorByQuery.set(r.keys[0], r.impressions);
+}
+const rising = candidatesRows
+  .filter((r) => r.position <= 30)
+  .map((r) => {
+    const priorImpressions = priorByQuery.get(r.keys[0]) || 0;
+    return {
+      query: r.keys[0],
+      currentPosition: Number(r.position.toFixed(2)),
+      currentImpressions: r.impressions,
+      priorImpressions,
+      delta: r.impressions - priorImpressions,
+      ctr: Number(r.ctr.toFixed(4)),
+    };
+  })
+  .filter((r) => r.delta >= 5)
+  .sort((a, b) => b.delta - a.delta)
+  .slice(0, 30);
+await fs.writeFile(RISING_OUT, JSON.stringify(rising, null, 2) + "\n");
+console.log(
+  `[gsc-harvest] Wrote ${rising.length} rising queries to ${path.relative(ROOT, RISING_OUT)}`,
+);
+
+// 3. Low-CTR pages: page-level dimension over 28 days, impressions >= 50,
+//    CTR < 2%. Page-level CTR is too noisy at 7 days.
+console.log(
+  `[gsc-harvest] Querying low-CTR pages ${last28Start} to ${last28End}`,
+);
+const pagesRes = await webmasters.searchanalytics.query({
+  siteUrl,
+  requestBody: {
+    startDate: last28Start,
+    endDate: last28End,
+    dimensions: ["page"],
+    rowLimit: 1000,
+  },
+});
+const lowCtr = (pagesRes.data.rows || [])
+  .filter((r) => r.impressions >= 50 && r.ctr < 0.02)
+  .map((r) => ({
+    page: r.keys[0],
+    position: Number(r.position.toFixed(2)),
+    impressions: r.impressions,
+    clicks: r.clicks,
+    ctr: Number(r.ctr.toFixed(4)),
+  }))
+  .sort((a, b) => b.impressions - a.impressions)
+  .slice(0, 30);
+await fs.writeFile(LOW_CTR_OUT, JSON.stringify(lowCtr, null, 2) + "\n");
+console.log(
+  `[gsc-harvest] Wrote ${lowCtr.length} low-CTR pages to ${path.relative(ROOT, LOW_CTR_OUT)}`,
 );

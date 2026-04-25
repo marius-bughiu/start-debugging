@@ -1,6 +1,6 @@
 ---
-title: ".NET 8 – JSON serialize property names using snake case and kebab case"
-description: "Learn how to use the new snake_case and kebab-case JSON naming policies introduced in .NET 8 with System.Text.Json."
+title: ".NET 8 JsonNamingPolicy: SnakeCaseLower and KebabCaseLower (System.Text.Json)"
+description: "Use the new .NET 8 `JsonNamingPolicy.SnakeCaseLower` (and SnakeCaseUpper, KebabCaseLower, KebabCaseUpper) to serialize snake_case / kebab-case JSON via System.Text.Json — no custom converter needed."
 pubDate: 2023-08-06
 updatedDate: 2023-11-05
 tags:

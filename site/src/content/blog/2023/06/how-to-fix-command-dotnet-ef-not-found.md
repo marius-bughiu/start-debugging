@@ -1,6 +1,6 @@
 ---
-title: "How to fix: Command dotnet ef not found"
-description: "Fix the 'command dotnet-ef not found' error by installing the Entity Framework Core CLI tool globally or locally."
+title: "How to fix: dotnet ef not found (dotnet-ef does not exist)"
+description: "Fix the 'dotnet-ef does not exist' / 'dotnet ef command not found' error by installing the EF Core CLI as a global or local .NET tool."
 pubDate: 2023-06-11
 updatedDate: 2023-11-05
 tags:

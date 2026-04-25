@@ -1,6 +1,6 @@
 ---
 title: "How to fix: MissingPluginException – No implementation found for method getAll"
-description: "Fix the MissingPluginException in Flutter release builds. Covers ProGuard configuration, plugin registration, minSdkVersion, clean builds, and known package conflicts."
+description: "Fix Flutter `MissingPluginException` 'No implementation found for method getAll' on shared_preferences and similar plugins (package_info_plus, etc.) — ProGuard, plugin registration, minSdkVersion, hot restart fixes."
 pubDate: 2023-10-30
 updatedDate: 2023-11-01
 tags:

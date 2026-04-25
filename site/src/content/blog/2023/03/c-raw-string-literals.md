@@ -1,6 +1,6 @@
 ---
-title: "C# 11 – Raw string literals"
-description: "Learn how to use C# 11 raw string literals to include whitespace, new lines, and embedded quotes without escape sequences."
+title: "C# 11 raw string literals (triple-quote syntax)"
+description: "Use C# 11 raw string literals (triple-quote `\"\"\"` syntax) to embed whitespace, newlines, and quotes without escape sequences. Rules and examples."
 pubDate: 2023-03-15
 updatedDate: 2023-11-05
 tags:

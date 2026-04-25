@@ -1,6 +1,6 @@
 ---
-title: "WPF Open Folder Dialog"
-description: "Learn how to use the new OpenFolderDialog in WPF with .NET 8 to let users browse and select one or multiple folders."
+title: "WPF Open / Select Folder Dialog (.NET 8 OpenFolderDialog)"
+description: "Use the new .NET 8 `OpenFolderDialog` in WPF to let users open and select one or multiple folders. Replaces the old WinForms FolderBrowserDialog hack."
 pubDate: 2023-10-09
 updatedDate: 2023-11-05
 tags:

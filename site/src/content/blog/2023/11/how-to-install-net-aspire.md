@@ -1,6 +1,6 @@
 ---
-title: "How to install .NET Aspire"
-description: "Learn how to install the prerequisites for .NET Aspire development: .NET 8, the Aspire workload, and Docker Desktop."
+title: "How to install .NET Aspire (dotnet workload install aspire)"
+description: "Install .NET Aspire via `dotnet workload install aspire`. Step-by-step setup of .NET 8, the Aspire workload, and Docker on Windows, macOS, Linux."
 pubDate: 2023-11-15
 tags:
   - "aspire"

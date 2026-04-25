@@ -1,6 +1,6 @@
 ---
-title: "How to access private members without reflection in C#"
-description: "Learn how to access private members in C# without reflection using the UnsafeAccessor attribute introduced in .NET 8, with zero overhead."
+title: "C# UnsafeAccessor: private members without reflection (.NET 8)"
+description: "Use the `[UnsafeAccessor]` attribute in .NET 8 to read private fields and call private methods at zero overhead — no reflection, fully AOT-compatible."
 pubDate: 2023-10-31
 updatedDate: 2023-11-05
 tags:
