@@ -26,15 +26,7 @@ Run via `npm run <name>` from `site/` — scripts defined in [`site/package.json
 - `freshness-pass` — surfaces stale posts due for a refresh
 - `cwv-audit` — Core Web Vitals via Google PageSpeed Insights
 - `gsc-harvest` — Google Search Console keyword data
-- `social-post`, `cross-post`, `weekly-digest` — distribution (see below)
-
-## Distribution
-
-When a new blog post lands on `main`, [`distribute.yml`](.github/workflows/distribute.yml) fans out to **X**, **Bluesky**, and **Mastodon** in parallel. Per-channel post copy lives in [`tasks/<channel>.json`](tasks/); a successful post splices its task entry out, so the absence of an entry is the idempotency signal — re-runs are safe.
-
-Cross-posting to **dev.to** and **Hashnode** is wired up in [`cross-post.mjs`](site/scripts/cross-post.mjs) but disabled in CI (matrix entries commented out in `distribute.yml`). The **weekly digest** to Buttondown is wired in [`weekly-digest.mjs`](site/scripts/weekly-digest.mjs); the cron is parked and runs on `workflow_dispatch` only.
-
-Credentials for every platform are documented in [`site/.env.example`](site/.env.example) and supplied to CI via GitHub Actions secrets.
+- `social-post`, `cross-post`, `weekly-digest` — syndication to X / Bluesky / Mastodon / dev.to / Hashnode / Buttondown
 
 ## License
 
