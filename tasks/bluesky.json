@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11",
-    "text": "In ASP.NET Core 11, IExceptionFilter only catches controller actions. IExceptionHandler runs in middleware and covers everything."
-  }
-]
+[]

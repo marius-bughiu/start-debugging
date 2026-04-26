@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11",
-    "text": "ASP.NET Core 11: the old IExceptionFilter only catches MVC actions, so it misses minimal API endpoints, middleware exceptions, and model-binding errors. IExceptionHandler runs in UseExceptionHandler middleware and covers the whole pipeline. Plus the .NET 10 diagnostics suppression breaking change you hit on upgrade."
-  }
-]
+[]
