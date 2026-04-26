@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/04/github-copilot-vs-code-byok-anthropic-ollama-foundry-local",
-    "text": "Copilot Chat in VS Code went GA with Bring Your Own Key on April 22. Wire in Anthropic, OpenAI, Gemini, OpenRouter, or Azure, or point at a local Ollama or Foundry Local model. Requests are billed by the provider and skip the Copilot seat quota entirely. Code completions still run on GitHub-hosted models."
-  }
-]
+[]
