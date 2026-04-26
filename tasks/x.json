@@ -2,5 +2,9 @@
   {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "Stdout is for MCP traffic, not logs. The one Program.cs line that keeps a C# MCP server on .NET 11 alive."
+  },
+  {
+    "slug": "2026/04/how-to-unit-test-code-that-uses-httpclient",
+    "text": "Stop mocking HttpClient. The seam is HttpMessageHandler.SendAsync. 30 lines of stub, zero Moq, real Polly retry tests."
   }
 ]
