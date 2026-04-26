@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/04/github-copilot-vs-code-byok-anthropic-ollama-foundry-local",
+    "text": "Copilot Chat in VS Code now takes your own Anthropic, OpenAI, or Ollama key. Bills your provider, not the Copilot quota."
+  }
+]

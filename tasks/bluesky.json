@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/04/github-copilot-vs-code-byok-anthropic-ollama-foundry-local",
+    "text": "BYOK is GA in Copilot Chat for VS Code: Anthropic, OpenAI, Gemini, plus local Ollama and Foundry Local. Provider bills you, not Copilot."
+  }
+]
