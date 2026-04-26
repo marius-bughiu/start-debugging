@@ -4,6 +4,7 @@ import Giscus from "../../../components/Giscus.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import {
+  editUrlForPost,
   estimateReadingTimeMinutes,
   getAdjacentPosts,
   getRelatedPosts,
@@ -58,6 +59,7 @@ const shareX = `https://x.com/intent/post?text=${shareTitle}&url=${shareUrl}&via
 const shareHn = `https://news.ycombinator.com/submitlink?u=${shareUrl}&t=${shareTitle}`;
 const shareReddit = `https://www.reddit.com/submit?url=${shareUrl}&title=${shareTitle}`;
 const shareLinkedIn = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
+const editUrl = editUrlForPost(post);
 
 // Prev/next in chronological order. `prev` is older, `next` is newer.
 const { prev, next } = await getAdjacentPosts(post);
@@ -115,6 +117,7 @@ const related = await getRelatedPosts(post, 4);
       <a class="share-btn" href={shareHn} rel="noopener" target="_blank" data-share="hn">Hacker News</a>
       <a class="share-btn" href={shareReddit} rel="noopener" target="_blank" data-share="reddit">Reddit</a>
       <a class="share-btn" href={shareLinkedIn} rel="noopener" target="_blank" data-share="linkedin">LinkedIn</a>
+      <a class="share-btn" href={editUrl} rel="noopener" target="_blank" data-share="edit">Edit on GitHub</a>
       <button class="share-btn" type="button" data-copy-link data-copy-url={canonicalUrl}>Copy link</button>
     </div>
 

@@ -75,6 +75,14 @@ export function urlPathForPost(post: BlogPost): string {
   return lang === "en" ? `/${base}/` : `/${lang}/${base}/`;
 }
 
+const REPO_EDIT_BASE =
+  "https://github.com/marius-bughiu/start-debugging/edit/main/site/src/content/blog";
+
+/** GitHub web-editor URL for the markdown source of `post`. */
+export function editUrlForPost(post: BlogPost): string {
+  return `${REPO_EDIT_BASE}/${post.slug}.md`;
+}
+
 /** URL path for a pillar, honoring its language. */
 export function urlPathForPillar(pillar: Pillar): string {
   const lang = langOf(pillar);
