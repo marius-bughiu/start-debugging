@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11",
+    "text": "IExceptionFilter misses minimal APIs. The right ASP.NET Core 11 fix is IExceptionHandler plus ProblemDetails."
+  }
+]
