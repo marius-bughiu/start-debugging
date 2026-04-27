@@ -20,5 +20,5 @@ Also, as usual, SilverlightShow is giving away 6 eBooks:
 Good luck!
 
 Presenter: [Gill Cleer](http://www.snowball.be/)  
-Webinar registration page: [Metro and WinRT for the Silverlight/WPF Developer](https://www1.gotomeeting.com/register/180940864)
+Webinar registration page: Metro and WinRT for the Silverlight/WPF Developer (registration link no longer available)
 More details about the webinar: [SilverlightShow](http://www.silverlightshow.net/news/Free-SilverlightShow-Webinar-Metro-and-WinRT-for-the-Silverlight-WPF-Developer-.aspx "SilverlightShow")

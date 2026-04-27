@@ -177,7 +177,7 @@ var (lat, lon) = home;
 
 ## C# 14 のトリック: 所有していない型に対する extension members
 
-C# 14 は **extension members** を導入し、extension の概念を「`this` 修飾子付きの静的メソッド」から、プロパティ、演算子、そしてこの記事の文脈では受信側にネイティブと感じられる `Deconstruct` メソッドを宣言できる完全なブロックへと昇格させました。[提案](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extension-members) が構文をカバーしていますが、このトピックに対するメリットは次のように見えます:
+C# 14 は **extension members** を導入し、extension の概念を「`this` 修飾子付きの静的メソッド」から、プロパティ、演算子、そしてこの記事の文脈では受信側にネイティブと感じられる `Deconstruct` メソッドを宣言できる完全なブロックへと昇格させました。[提案](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extensions) が構文をカバーしていますが、このトピックに対するメリットは次のように見えます:
 
 ```csharp
 // .NET 11, C# 14 (LangVersion 14)
@@ -275,7 +275,7 @@ public class MultiReturnBench
 
 ## 参考資料
 
-- [C# 14 extension members 提案](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extension-members)
+- [C# 14 extension members 提案](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extensions)
 - [C# の ValueTuple とタプル型](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples)
 - [Deconstruct 宣言](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct)
 - [record 型](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record)

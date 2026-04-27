@@ -19,7 +19,7 @@ Este guia constrói esse wrapper do zero usando `@modelcontextprotocol/sdk` 1.29
 
 ## Por que "envolver a CLI" é a primeira jogada certa
 
-A maioria do tooling interno existe somente como CLI: scripts de implantação, executores de migração de banco de dados, exportadores de log de auditoria, pipelines de processamento de imagem. Eles não têm API, não têm superfície gRPC, nada que um agente possa chamar diretamente. Envolvê-los como ferramentas MCP leva 50-100 linhas de TypeScript e produz uma interface descobrível e validada por schema que qualquer cliente compatível com MCP pode usar, incluindo Claude Code, Claude Desktop, Cursor, e qualquer cliente que fale a [especificação MCP (2025-03-26)](https://spec.modelcontextprotocol.io).
+A maioria do tooling interno existe somente como CLI: scripts de implantação, executores de migração de banco de dados, exportadores de log de auditoria, pipelines de processamento de imagem. Eles não têm API, não têm superfície gRPC, nada que um agente possa chamar diretamente. Envolvê-los como ferramentas MCP leva 50-100 linhas de TypeScript e produz uma interface descobrível e validada por schema que qualquer cliente compatível com MCP pode usar, incluindo Claude Code, Claude Desktop, Cursor, e qualquer cliente que fale a [especificação MCP (2025-03-26)](https://modelcontextprotocol.io/specification/2025-03-26).
 
 A alternativa -- embutir a chamada da CLI dentro de um system prompt ou descrição de ferramenta -- é frágil. Argumentos ficam mutilados, tratamento de erros desaparece, e o agente não consegue distinguir um timeout de uma flag ruim. Um servidor MCP adequado conserta tudo isso.
 
@@ -354,6 +354,6 @@ Se sua equipe usa C# em vez de TypeScript, o mesmo padrão está disponível via
 ## Links de origem
 
 - [MCP TypeScript SDK -- modelcontextprotocol/typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk)
-- [MCP spec (2025-03-26)](https://spec.modelcontextprotocol.io)
+- [MCP spec (2025-03-26)](https://modelcontextprotocol.io/specification/2025-03-26)
 - [Official build-server guide -- modelcontextprotocol.io](https://modelcontextprotocol.io/docs/develop/build-server)
 - [MCP Inspector -- @modelcontextprotocol/inspector](https://github.com/modelcontextprotocol/inspector)

@@ -7,7 +7,7 @@ tags:
   - "csharp"
   - "windows-phone"
 ---
-To add speech recognition to our app we will be using the newly released version of the Windows Phone toolkit (release June 2013) – which adds a nice new control called SpeechTextBox (that does exactly what you think). You can get the latest build using NuGet or you can download the source from [CodePlex](https://phone.codeplex.com/SourceControl/latest) (note: CodePlex has since been archived).
+To add speech recognition to our app we will be using the newly released version of the Windows Phone toolkit (release June 2013) – which adds a nice new control called SpeechTextBox (that does exactly what you think). You can get the latest build using NuGet or you can download the source from CodePlex (note: CodePlex has since been archived).
 
 Once you've referenced the toolkit in your project, all you need to do is add the control:
 

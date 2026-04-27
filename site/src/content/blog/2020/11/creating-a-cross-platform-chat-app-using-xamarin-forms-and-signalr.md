@@ -110,4 +110,4 @@ Feel free to create the UI as you like, here’s my version of it:
 </ContentPage>
 ```
 
-If something doesn’t work, you can check out a working sample here: [Xamarin Forms – SignalR Chat](https://github.com/marius-bughiu/xamarin-forms-signalr-chat), or you can reach out in the comments below.
+If something doesn’t work, the original Xamarin Forms – SignalR Chat sample repository is no longer available on GitHub, but you can reach out in the comments below.

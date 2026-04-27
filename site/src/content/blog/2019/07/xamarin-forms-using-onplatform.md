@@ -80,4 +80,4 @@ switch (Device.RuntimePlatform)
 
 The supported platform values currently are: iOS, Android, UWP, macOS, GTK, Tizen and WPF.
 
-As usual, you can find the sample project source code on [GitHub](https://github.com/StartDebugging/xamarin-forms-on-platform).
+The sample project source code originally lived on GitHub but the repository is no longer available.

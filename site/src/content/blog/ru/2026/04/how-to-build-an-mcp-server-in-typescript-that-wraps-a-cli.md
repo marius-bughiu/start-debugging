@@ -19,7 +19,7 @@ translationDate: 2026-04-25
 
 ## Почему "обернуть CLI" -- правильный первый шаг
 
-Большинство внутренних инструментов существует только как CLI: скрипты развёртывания, исполнители миграций баз данных, экспортёры журналов аудита, конвейеры обработки изображений. У них нет API, нет gRPC-поверхности, ничего, что агент мог бы вызвать напрямую. Обёртывание их в виде MCP-инструментов занимает 50-100 строк TypeScript и даёт обнаруживаемый, валидируемый по схеме интерфейс, которым может пользоваться любой MCP-совместимый клиент, включая Claude Code, Claude Desktop, Cursor и любой клиент, говорящий на [спецификации MCP (2025-03-26)](https://spec.modelcontextprotocol.io).
+Большинство внутренних инструментов существует только как CLI: скрипты развёртывания, исполнители миграций баз данных, экспортёры журналов аудита, конвейеры обработки изображений. У них нет API, нет gRPC-поверхности, ничего, что агент мог бы вызвать напрямую. Обёртывание их в виде MCP-инструментов занимает 50-100 строк TypeScript и даёт обнаруживаемый, валидируемый по схеме интерфейс, которым может пользоваться любой MCP-совместимый клиент, включая Claude Code, Claude Desktop, Cursor и любой клиент, говорящий на [спецификации MCP (2025-03-26)](https://modelcontextprotocol.io/specification/2025-03-26).
 
 Альтернатива -- встраивать вызов CLI внутрь системного запроса или описания инструмента -- хрупка. Аргументы калечатся, обработка ошибок исчезает, и агент не может отличить таймаут от плохого флага. Правильный MCP-сервер исправляет всё это.
 
@@ -354,6 +354,6 @@ MCP-серверу всё равно, что делает CLI. Ему нужна
 ## Источники
 
 - [MCP TypeScript SDK -- modelcontextprotocol/typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk)
-- [MCP spec (2025-03-26)](https://spec.modelcontextprotocol.io)
+- [MCP spec (2025-03-26)](https://modelcontextprotocol.io/specification/2025-03-26)
 - [Official build-server guide -- modelcontextprotocol.io](https://modelcontextprotocol.io/docs/develop/build-server)
 - [MCP Inspector -- @modelcontextprotocol/inspector](https://github.com/modelcontextprotocol/inspector)

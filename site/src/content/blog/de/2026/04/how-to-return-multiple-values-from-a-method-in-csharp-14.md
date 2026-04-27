@@ -177,7 +177,7 @@ Wenn Sie den Typ besitzen, schreiben Sie die `Deconstruct`-Methode. Wenn nicht, 
 
 ## Der C# 14 Trick: Extension Members auf Typen, die Ihnen nicht gehören
 
-C# 14 hat **Extension Members** eingeführt, die das Extension-Konzept von "statische Methode mit `this`-Modifier" zu einem vollständigen Block befördern, der Properties, Operatoren und hier relevant `Deconstruct`-Methoden deklarieren kann, die sich nativ für den Empfänger anfühlen. Der [Vorschlag](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extension-members) deckt die Syntax ab, aber der Nutzen für unser Thema sieht so aus:
+C# 14 hat **Extension Members** eingeführt, die das Extension-Konzept von "statische Methode mit `this`-Modifier" zu einem vollständigen Block befördern, der Properties, Operatoren und hier relevant `Deconstruct`-Methoden deklarieren kann, die sich nativ für den Empfänger anfühlen. Der [Vorschlag](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extensions) deckt die Syntax ab, aber der Nutzen für unser Thema sieht so aus:
 
 ```csharp
 // .NET 11, C# 14 (LangVersion 14)
@@ -275,7 +275,7 @@ Für den Kontext der Sprachentwicklung zeigt der [Verlauf der C# Sprachversionen
 
 ## Quellen
 
-- [Vorschlag zu C# 14 Extension Members](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extension-members)
+- [Vorschlag zu C# 14 Extension Members](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extensions)
 - [ValueTuple und Tupel-Typen in C#](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples)
 - [Deconstruct-Deklarationen](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct)
 - [Record-Typen](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record)

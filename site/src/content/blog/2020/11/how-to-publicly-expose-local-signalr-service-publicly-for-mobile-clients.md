@@ -15,7 +15,7 @@ ngrok allows you create a secure public proxy which will route all requests to a
 
 ## Let’s get started
 
-First, go and register an account on ngrok, download their client and extract it to a preferred location then, following the [Setup & Installation guide](https://dashboard.ngrok.com/get-started/setup), run the `ngrok authtoken` command to authenticate.
+First, go and register an account on ngrok, download their client and extract it to a preferred location then, following the [Setup & Installation guide](https://ngrok.com/docs/getting-started/), run the `ngrok authtoken` command to authenticate.
 
 Next, start your web application and look at its URL. Mine is `https://localhost:44312/`, which means we’re interested in forwarding port 44312 over https. So in the same `cmd` window which you used to authenticate, run `` ngrok http `https://localhost:44312/` `` – of course replacing `https://localhost:44312/` with your application’s URL. This will start your proxy and show you the public URLs which you can use to access it.
 
@@ -33,4 +33,4 @@ Now, copy the URL from the window above and update it in your clients. Careful t
 
 ## Try it out!
 
-You can easily try this yourself by cloning this repository – [Xamarin Forms SignalR Chat](https://github.com/StartDebugging/xamarin-forms-signalr-chat), run the .Web project and exposing it through `ngrok` as explained above. Then replace the `ChatHubUrl` in `appsettings.json` with the one generated for you by `ngrok`.
+You can easily try this yourself by cloning the original Xamarin Forms SignalR Chat sample (the GitHub repository is no longer available), run the .Web project and exposing it through `ngrok` as explained above. Then replace the `ChatHubUrl` in `appsettings.json` with the one generated for you by `ngrok`.

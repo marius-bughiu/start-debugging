@@ -15,7 +15,7 @@ This guide builds that wrapper from scratch using `@modelcontextprotocol/sdk` 1.
 
 ## Why "wrap the CLI" is the right first move
 
-Most internal tooling exists only as a CLI: deployment scripts, database migration runners, audit log exporters, image processing pipelines. They have no API, no gRPC surface, nothing an agent can call directly. Wrapping them as MCP tools takes 50-100 lines of TypeScript and produces a discoverable, schema-validated interface that any MCP-compatible client can use, including Claude Code, Claude Desktop, Cursor, and any client that speaks the [MCP spec (2025-03-26)](https://spec.modelcontextprotocol.io).
+Most internal tooling exists only as a CLI: deployment scripts, database migration runners, audit log exporters, image processing pipelines. They have no API, no gRPC surface, nothing an agent can call directly. Wrapping them as MCP tools takes 50-100 lines of TypeScript and produces a discoverable, schema-validated interface that any MCP-compatible client can use, including Claude Code, Claude Desktop, Cursor, and any client that speaks the [MCP spec (2025-03-26)](https://modelcontextprotocol.io/specification/2025-03-26).
 
 The alternative -- embedding the CLI call inside a system prompt or tool description -- is fragile. Arguments get mangled, error handling disappears, and the agent cannot tell a timeout from a bad flag. A proper MCP server fixes all of that.
 
@@ -350,6 +350,6 @@ If your team uses C# instead of TypeScript, the same pattern is available via th
 ## Source links
 
 - [MCP TypeScript SDK -- modelcontextprotocol/typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk)
-- [MCP spec (2025-03-26)](https://spec.modelcontextprotocol.io)
+- [MCP spec (2025-03-26)](https://modelcontextprotocol.io/specification/2025-03-26)
 - [Official build-server guide -- modelcontextprotocol.io](https://modelcontextprotocol.io/docs/develop/build-server)
 - [MCP Inspector -- @modelcontextprotocol/inspector](https://github.com/modelcontextprotocol/inspector)

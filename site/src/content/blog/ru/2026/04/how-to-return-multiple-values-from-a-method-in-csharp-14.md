@@ -177,7 +177,7 @@ var (lat, lon) = home;
 
 ## Трюк C# 14: extension members для типов, которыми вы не владеете
 
-C# 14 ввёл **extension members**, которые поднимают концепцию расширения с "статический метод с модификатором `this`" до полноценного блока, который может объявлять свойства, операторы и, что важно здесь, методы `Deconstruct`, ощущающиеся нативно для приёмника. [Предложение](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extension-members) покрывает синтаксис, а выгода для нашей темы выглядит так:
+C# 14 ввёл **extension members**, которые поднимают концепцию расширения с "статический метод с модификатором `this`" до полноценного блока, который может объявлять свойства, операторы и, что важно здесь, методы `Deconstruct`, ощущающиеся нативно для приёмника. [Предложение](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extensions) покрывает синтаксис, а выгода для нашей темы выглядит так:
 
 ```csharp
 // .NET 11, C# 14 (LangVersion 14)
@@ -275,7 +275,7 @@ public class MultiReturnBench
 
 ## Источники
 
-- [Предложение по extension members в C# 14](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extension-members)
+- [Предложение по extension members в C# 14](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extensions)
 - [ValueTuple и кортежные типы в C#](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples)
 - [Объявления Deconstruct](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct)
 - [Типы record](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record)

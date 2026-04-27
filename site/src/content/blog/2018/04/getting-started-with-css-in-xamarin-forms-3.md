@@ -76,4 +76,4 @@ Now, everything’s nice and pretty, but keep in mind that there are some limita
 -   Not all properties are supported, and most importantly, not all supported properties work on all elements. For example: the text-align property is only supported for Entry, EntryCell, Label and SearchBar, so you can’t left-align the text of a Button. Or if you take the border-width property – this one will only work with buttons.
 -   Inheritance is not supported
 
-For a complete list of what’s supported and what not you can check out [the pull request made for this feature on GitHub](https://github.com/xamarin/Xamarin.Forms/pull/1207). Additionally, just in case something goes wrong/doesn’t work, you can find the [source code here on GitHub](https://github.com/marius-bughiu/xamarin-forms-css).
+For a complete list of what’s supported and what not you can check out [the pull request made for this feature on GitHub](https://github.com/xamarin/Xamarin.Forms/pull/1207). Additionally, just in case something goes wrong/doesn’t work, the original sample repository is no longer available on GitHub, but the snippets above are enough to get you started.

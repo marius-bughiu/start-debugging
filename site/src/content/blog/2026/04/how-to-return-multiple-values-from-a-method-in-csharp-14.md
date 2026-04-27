@@ -173,7 +173,7 @@ If you own the type, write the `Deconstruct` method. If you do not, C# 14 gives 
 
 ## The C# 14 trick: extension members on types you don't own
 
-C# 14 introduced **extension members**, which promote the extension concept from "static method with a `this` modifier" to a full block that can declare properties, operators, and, relevantly here, `Deconstruct` methods that feel native to the receiver. The [proposal](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extension-members) covers the syntax, but the payoff for our topic looks like this:
+C# 14 introduced **extension members**, which promote the extension concept from "static method with a `this` modifier" to a full block that can declare properties, operators, and, relevantly here, `Deconstruct` methods that feel native to the receiver. The [proposal](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extensions) covers the syntax, but the payoff for our topic looks like this:
 
 ```csharp
 // .NET 11, C# 14 (LangVersion 14)
@@ -271,7 +271,7 @@ For language-evolution context, the [C# language version history](/2024/12/cshar
 
 ## Sources
 
-- [C# 14 extension members proposal](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extension-members)
+- [C# 14 extension members proposal](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extensions)
 - [ValueTuple and tuple types in C#](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples)
 - [Deconstruct declarations](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct)
 - [Record types](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record)

@@ -177,7 +177,7 @@ Si eres dueño del tipo, escribe el método `Deconstruct`. Si no, C# 14 te da un
 
 ## El truco de C# 14: extension members sobre tipos que no te pertenecen
 
-C# 14 introdujo los **extension members**, que promueven el concepto de extensión de "método estático con un modificador `this`" a un bloque completo que puede declarar propiedades, operadores y, relevantemente aquí, métodos `Deconstruct` que se sienten nativos del receptor. La [propuesta](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extension-members) cubre la sintaxis, pero el beneficio para nuestro tema se ve así:
+C# 14 introdujo los **extension members**, que promueven el concepto de extensión de "método estático con un modificador `this`" a un bloque completo que puede declarar propiedades, operadores y, relevantemente aquí, métodos `Deconstruct` que se sienten nativos del receptor. La [propuesta](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extensions) cubre la sintaxis, pero el beneficio para nuestro tema se ve así:
 
 ```csharp
 // .NET 11, C# 14 (LangVersion 14)
@@ -275,7 +275,7 @@ Para contexto sobre la evolución del lenguaje, el [historial de versiones del l
 
 ## Fuentes
 
-- [Propuesta de extension members de C# 14](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extension-members)
+- [Propuesta de extension members de C# 14](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/extensions)
 - [ValueTuple y tipos tupla en C#](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples)
 - [Declaraciones Deconstruct](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct)
 - [Tipos record](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record)

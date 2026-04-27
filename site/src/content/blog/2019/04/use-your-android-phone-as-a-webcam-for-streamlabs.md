@@ -10,7 +10,7 @@ Need a webcam to use for streaming? Why not use one of the broken/outdated phone
 
 Most phones are capable of taking pictures and recording at a higher resolution and with a better quality than your typical webcam. This makes them an ideal replacement for a webcam when streaming, especially when you have one just lying around.
 
-I recently ended up with a [Google Pixel 2 XL](https://amzn.to/2XYg9bP) with a defective screen. Long story short, I cracked the screen, replaced it and 8 months later the replacement screen failed. And because of the cost and lack of warranty I decided to draw the line and not replace the screen again. So I ended up with a defect smartphone but with a perfectly functioning awesome camera.
+I recently ended up with a Google Pixel 2 XL with a defective screen. Long story short, I cracked the screen, replaced it and 8 months later the replacement screen failed. And because of the cost and lack of warranty I decided to draw the line and not replace the screen again. So I ended up with a defect smartphone but with a perfectly functioning awesome camera.
 
 So let’s get started. To use your Android phone as a webcam you will need two things:
 

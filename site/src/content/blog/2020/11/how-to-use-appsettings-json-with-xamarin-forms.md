@@ -42,4 +42,4 @@ configuration["ChatHubUrl"];
 
 Alternatively you can register it into your IoC container as an `IConfiguration` , inject that into your viewmodels and use it in the same way.
 
-For a complete example you can check out this repository on GitHub: [Xamarin Forms – SignalR Chat](https://github.com/marius-bughiu/xamarin-forms-signalr-chat).
+A complete example originally lived in the Xamarin Forms – SignalR Chat repository on GitHub, which is no longer available.

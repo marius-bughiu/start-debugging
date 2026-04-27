@@ -17,8 +17,8 @@ Just letting you know that there’s an upcoming webinar on the 4th of this mont
 -   Usage of Azure-hosted WCF Services for Windows Phone
 -   How to use Azure Toolkit for Windows Phone
 
-Date and time: January 4th at 10 AM PDT ([check your local time](http://timeanddate.com/worldclock/fixedtime.html?msg=Free+SilverlightShow+Webinar%3A+Leveraging+Windows+Azure+for+the+Windows+Phone+Developer&iso=20120104T10&p1=137&ah=1&am=10))  
-Registration link: [https://www1.gotomeeting.com/register/386800777](https://www1.gotomeeting.com/register/386800777)
+Date and time: January 4th at 10 AM PDT  
+Registration link: no longer available
 
 By tweeting about this webinar using the tag **#webinarsilverlightshow** you get the chance to win the [Windows Phone 7 Silverlight Cookbook](http://www.silverlightshow.net/items/Book-Review-Window-Phone-7-Silverlight-Cookbook.aspx) and at the end of the webinar by giving a constructive feedback you can also get for free the  [OData & Cloud Augmentation of Windows Phone Applications](http://www.silverlightshow.net/ebooks/odata_cloud.aspx) ebook.
 

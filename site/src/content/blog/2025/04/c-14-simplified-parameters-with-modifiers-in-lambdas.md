@@ -119,5 +119,5 @@ This feature in C# 14 aligns lambda syntax with the convenience of type inferenc
 ## References
 
 -   [What’s new in C# 14 | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14)
--   [Simple lambda parameters with modifiers | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/simple-lambda-parameters-with-modifiers)
+-   [Simple lambda parameters with modifiers | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/simple-lambda-parameters-with-modifiers)
 -   [What’s new in C# 14 | StartDebugging.NET](/2024/12/csharp-14/)

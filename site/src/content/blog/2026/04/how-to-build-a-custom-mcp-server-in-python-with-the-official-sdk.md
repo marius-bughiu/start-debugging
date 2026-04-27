@@ -321,5 +321,5 @@ The MCP server itself does not care whether your tool wraps a database, a REST c
 - [MCP Python SDK -- modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk)
 - [mcp 1.27.0 on PyPI](https://pypi.org/project/mcp/)
 - [Official MCP build-server guide](https://modelcontextprotocol.io/docs/develop/build-server)
-- [MCP spec (2025-03-26)](https://spec.modelcontextprotocol.io)
+- [MCP spec (2025-03-26)](https://modelcontextprotocol.io/specification/2025-03-26)
 - [MCP Inspector](https://github.com/modelcontextprotocol/inspector)

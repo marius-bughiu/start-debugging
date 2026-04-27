@@ -8,7 +8,7 @@ tags:
   - "xamarin"
   - "xamarin-forms"
 ---
-I’ve started playing with animations in Xamarin Forms only recently and created a cool background animation for one of my apps ([Charades for Dota 2](https://play.google.com/store/apps/details?id=com.outworldapps.CharadesForDota2)) which I thought I would share. So without any extra introduction, this is the final result:
+I’ve started playing with animations in Xamarin Forms only recently and created a cool background animation for one of my apps (Charades for Dota 2) which I thought I would share. So without any extra introduction, this is the final result:
 
 ![](/wp-content/uploads/2019/01/animations3.gif)
 
@@ -110,4 +110,4 @@ public partial class MainPage : ContentPage
 }
 ```
 
-That’s it. If something’s not working and you need help, leave a comment below. Also, you can find the entire code on [GitHub](https://github.com/StartDebugging/xamarin-forms-animated-backgrounds).
+That’s it. If something’s not working and you need help, leave a comment below. The full sample originally lived on GitHub but the repository is no longer available.

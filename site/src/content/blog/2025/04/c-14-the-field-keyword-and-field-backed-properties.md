@@ -145,5 +145,5 @@ public int Example
 ## References
 
 1.  [`field` – Field backed property declarations](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/field#:~:text=The%20,contextual%20keyword)​
-2.  ​[C# Feature Proposal Notes – _“`field` keyword in properties”_](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/field-keyword#:~:text=Auto%20properties%20only%20allow%20for,accessors%20from%20within%20the%20class)
+2.  ​[C# Feature Proposal Notes – _“`field` keyword in properties”_](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/field-keyword#:~:text=Auto%20properties%20only%20allow%20for,accessors%20from%20within%20the%20class)
 3.  ​[What’s new in C# 14](/2024/12/csharp-14/)
