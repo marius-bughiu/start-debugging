@@ -2,9 +2,5 @@
   {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "Building an MCP server in C# 14 on .NET 11 with the official 1.2 SDK. [McpServerTool], stdio, and the stderr logging fix."
-  },
-  {
-    "slug": "2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket",
-    "text": "claude --from-pr now accepts GitLab MR, Bitbucket PR, and GHE URLs in 2.1.119, and prUrlTemplate retires the github.com footer link."
   }
 ]
