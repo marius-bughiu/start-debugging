@@ -103,6 +103,7 @@ const langPrefix = `${baseUrl}${lang}/`;
         {post.data.tags?.slice(0, 4).map((tag) => (
           <a class="pill" href={`${langPrefix}tag/${tag}/`}>{tag}</a>
         ))}
+        <a class="post-edit-link" href={editUrl} rel="noopener" target="_blank">{t("post.editOnGitHub", lang)}</a>
       </div>
       <h1 class="h1">{post.data.title}</h1>
       {post.data.description ? <p class="muted">{post.data.description}</p> : null}
@@ -123,7 +124,6 @@ const langPrefix = `${baseUrl}${lang}/`;
       <a class="share-btn" href={shareHn} rel="noopener" target="_blank" data-share="hn">Hacker News</a>
       <a class="share-btn" href={shareReddit} rel="noopener" target="_blank" data-share="reddit">Reddit</a>
       <a class="share-btn" href={shareLinkedIn} rel="noopener" target="_blank" data-share="linkedin">LinkedIn</a>
-      <a class="share-btn" href={editUrl} rel="noopener" target="_blank" data-share="edit">{t("post.editOnGitHub", lang)}</a>
       <button class="share-btn" type="button" data-copy-link data-copy-url={canonicalUrl}>{t("post.copyLink", lang)}</button>
     </div>
   </article>

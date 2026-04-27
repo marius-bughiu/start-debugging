@@ -345,6 +345,12 @@ footer {
   opacity: 0.5;
 }
 
+/* "Edit on GitHub" link in the post header pills row, right-aligned. */
+.post-edit-link {
+  margin-left: auto;
+  font-size: 14px;
+}
+
 /* Share row under the article body */
 .share-row {
   display: flex;
