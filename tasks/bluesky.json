@@ -6,9 +6,5 @@
   {
     "slug": "2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket",
     "text": "claude --from-pr now accepts GitLab MR, Bitbucket PR, and GHE URLs in 2.1.119, and prUrlTemplate retires the github.com footer link."
-  },
-  {
-    "slug": "2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues",
-    "text": "Routines vs claude-code-action vs /loop for unattended GitHub issue triage. Cron, identity, and the daily run cap that bites first."
   }
 ]

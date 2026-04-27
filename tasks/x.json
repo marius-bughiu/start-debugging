@@ -6,9 +6,5 @@
   {
     "slug": "2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket",
     "text": "Claude Code 2.1.119: --from-pr now takes GitLab, Bitbucket, and GHE URLs. prUrlTemplate retires the github.com badge."
-  },
-  {
-    "slug": "2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues",
-    "text": "Three ways to schedule a Claude Code task that triages GitHub issues. /loop is the wrong one; Routines are right."
   }
 ]
