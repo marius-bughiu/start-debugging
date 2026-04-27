@@ -6,9 +6,5 @@
   {
     "slug": "2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket",
     "text": "Claude Code 2.1.119: --from-pr now takes GitLab, Bitbucket, and GHE URLs. prUrlTemplate retires the github.com badge."
-  },
-  {
-    "slug": "2026/04/how-to-warm-up-ef-core-model-before-the-first-query",
-    "text": "Your EF Core 11 first query is 380 ms slower than the rest. Not the database. dotnet ef dbcontext optimize fixes it."
   }
 ]

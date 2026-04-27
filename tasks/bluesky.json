@@ -6,9 +6,5 @@
   {
     "slug": "2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket",
     "text": "claude --from-pr now accepts GitLab MR, Bitbucket PR, and GHE URLs in 2.1.119, and prUrlTemplate retires the github.com footer link."
-  },
-  {
-    "slug": "2026/04/how-to-warm-up-ef-core-model-before-the-first-query",
-    "text": "First EF Core 11 query slow, every later one fast? The convention pipeline runs on demand. Two fixes that move the cost."
   }
 ]
