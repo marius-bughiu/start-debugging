@@ -2,5 +2,13 @@
   {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "Stdout is for MCP traffic, not logs. The one Program.cs line that keeps a C# MCP server on .NET 11 alive."
+  },
+  {
+    "slug": "2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket",
+    "text": "Claude Code 2.1.119: --from-pr now takes GitLab, Bitbucket, and GHE URLs. prUrlTemplate retires the github.com badge."
+  },
+  {
+    "slug": "2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues",
+    "text": "Three ways to schedule a Claude Code task that triages GitHub issues. /loop is the wrong one; Routines are right."
   }
 ]

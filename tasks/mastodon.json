@@ -2,5 +2,13 @@
   {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "The official ModelContextProtocol 1.2 C# SDK turns any method into an agent tool with [McpServerToolType] and [McpServerTool]. A working stdio server on .NET 11 in under 50 lines, exposing SQLite to Claude Code. Plus the stderr logging trick that keeps default ILogger from corrupting the JSON-RPC stream."
+  },
+  {
+    "slug": "2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket",
+    "text": "Claude Code 2.1.119 generalizes --from-pr beyond github.com. Paste a GitLab merge-request, Bitbucket pull-request, or GitHub Enterprise URL and the same flow runs. A new prUrlTemplate setting retires the hardcoded github.com footer link for everyone."
+  },
+  {
+    "slug": "2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues",
+    "text": "Three ways to schedule a recurring Claude Code task that triages GitHub issues: cloud Routines with /schedule and issues.opened, claude-code-action v1 with cron and workflow_dispatch, and the session-scoped /loop. Routines run as your GitHub identity and have a daily run cap that issues.opened can blow through before lunch."
   }
 ]
