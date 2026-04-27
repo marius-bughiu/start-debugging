@@ -6,5 +6,9 @@
   {
     "slug": "2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket",
     "text": "Claude Code 2.1.119 generalizes --from-pr beyond github.com. Paste a GitLab merge-request, Bitbucket pull-request, or GitHub Enterprise URL and the same flow runs. A new prUrlTemplate setting retires the hardcoded github.com footer link for everyone."
+  },
+  {
+    "slug": "2026/04/how-to-warm-up-ef-core-model-before-the-first-query",
+    "text": "EF Core 11 builds its model lazily on first DbContext touch, so request one runs 200 to 500 ms slower than every request after. Two fixes: an IHostedService that reads DbContext.Model at startup, and dotnet ef dbcontext optimize plus UseModel to ship a precompiled model. Plus the IModelCacheKeyFactory footgun."
   }
 ]
