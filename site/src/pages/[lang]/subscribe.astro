@@ -1,6 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { isLocale, LOCALES, type Locale } from "../../lib/blog";
+import {
+  buildLocaleUrlMap,
+  isLocale,
+  LOCALES,
+  type Locale,
+} from "../../lib/blog";
 import { t } from "../../i18n";
 
 export async function getStaticPaths() {
@@ -18,25 +23,27 @@ if (!isLocale(Astro.params.lang ?? "") || Astro.params.lang === "en") {
 
 const baseUrl = import.meta.env.BASE_URL;
 const langPrefix = `${baseUrl}${lang}/`;
-const siteUrl = Astro.site?.origin ?? "https://startdebugging.net";
+const siteOrigin = Astro.site?.origin ?? "https://startdebugging.net";
 
-const title = `${t("nav.subscribe", lang)} - Start Debugging`;
-const description =
-  "Get a weekly digest of the best .NET, C#, MAUI, and Flutter posts on Start Debugging delivered to your inbox.";
+const rssHref = `${langPrefix}rss.xml`;
+const finePrint = t("subscribe.finePrint", lang);
+const altBody = t("subscribe.alt.body", lang).replace("{rss}", rssHref);
+
+const translations = buildLocaleUrlMap(siteOrigin, (l) =>
+  l === "en" ? "/subscribe/" : `/${l}/subscribe/`,
+);
 ---
 
 <BaseLayout
-  title={title}
-  description={description}
-  canonicalUrl={`${siteUrl}/subscribe/`}
+  title={`${t("subscribe.heading", lang)} - Start Debugging`}
+  description={t("subscribe.footer.blurb", lang)}
+  canonicalUrl={Astro.url.href}
   lang={lang}
+  translations={translations}
 >
   <section class="panel card stack subscribe-hero" aria-labelledby="subscribe-heading">
-    <h1 id="subscribe-heading" class="h1">Subscribe to Start Debugging</h1>
-    <p class="lead">
-      One short email on <strong>Monday morning</strong> with the best new posts of the week.
-      Mostly .NET, C#, EF Core, MAUI, Flutter, and "how do I actually fix this" walkthroughs.
-    </p>
+    <h1 id="subscribe-heading" class="h1">{t("subscribe.heading", lang)}</h1>
+    <p class="lead" set:html={t("subscribe.lead", lang)} />
 
     <form
       class="inline-subscribe-form row"
@@ -45,57 +52,35 @@ const description =
       target="popupwindow"
       onsubmit="window.open('https://buttondown.com/startdebugging', 'popupwindow');"
     >
-      <label class="sr-only" for="subscribe-email">Email address</label>
+      <label class="sr-only" for="subscribe-email">Email</label>
       <input
         id="subscribe-email"
         class="inline-subscribe-input"
         type="email"
         name="email"
-        placeholder="you@domain.com"
+        placeholder={t("subscribe.placeholder", lang)}
         required
         autocomplete="email"
       />
       <input type="hidden" name="tag" value="subscribe-page" />
-      <button class="pill inline-subscribe-submit" type="submit">{t("subscribe.footer.submit", lang)}</button>
+      <button class="pill inline-subscribe-submit" type="submit">{t("subscribe.submit", lang)}</button>
     </form>
-    <p class="muted subscribe-fine-print">
-      Powered by <a href="https://buttondown.com/refer/startdebugging" rel="noopener">Buttondown</a>.
-      You can unsubscribe any time with one click in the email footer.
-    </p>
+    <p class="muted subscribe-fine-print" set:html={finePrint} />
   </section>
 
   <section class="stack subscribe-why" aria-labelledby="why-heading">
-    <h2 id="why-heading" class="h2">What you'll get</h2>
+    <h2 id="why-heading" class="h2">{t("subscribe.what.heading", lang)}</h2>
     <ul class="subscribe-bullets">
-      <li>
-        <strong>A curated weekly digest.</strong> 5 posts, one sentence each, explaining why they matter.
-        If it's a slow week, the email just doesn't go out. No filler.
-      </li>
-      <li>
-        <strong>Occasional longer posts.</strong> When a release (.NET, EF Core, MAUI, Flutter) genuinely
-        changes how you'd write code, I'll write a longer take and send it straight to subscribers first.
-      </li>
-      <li>
-        <strong>No sales.</strong> No course launches, no sponsor-drop slots, no "here's my affiliate link".
-        The site runs on AdSense and a tiny Buttondown bill.
-      </li>
+      <li set:html={t("subscribe.what.bullet1", lang)} />
+      <li set:html={t("subscribe.what.bullet2", lang)} />
+      <li set:html={t("subscribe.what.bullet3", lang)} />
     </ul>
 
-    <h2 class="h2">Prefer a different channel?</h2>
-    <p>
-      The same posts go out via <a href={`${langPrefix}rss.xml`}>RSS</a>,
-      and I post the highlights on
-      <a href="https://x.com/startdebugging_" rel="noopener">X</a>,
-      <a href="https://bsky.app/profile/startdebugging.bsky.social" rel="noopener">Bluesky</a>, and
-      <a href="https://mastodon.social/@startdebugging" rel="noopener">Mastodon</a>.
-    </p>
+    <h2 class="h2">{t("subscribe.alt.heading", lang)}</h2>
+    <p set:html={altBody} />
 
-    <h2 class="h2">Privacy</h2>
-    <p>
-      Your email goes straight to Buttondown. I never share the list, and there's no tracking pixel
-      in the digest itself. The only link tags are UTM parameters pointing back to posts on this site,
-      which I use to tell roughly which topics resonate.
-    </p>
+    <h2 class="h2">{t("subscribe.privacy.heading", lang)}</h2>
+    <p>{t("subscribe.privacy.body", lang)}</p>
 
     <div class="row">
       <a class="pill" href={langPrefix}>&lt; {t("nav.home", lang)}</a>

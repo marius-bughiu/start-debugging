@@ -4,6 +4,13 @@
     {
       "heading": "C# language",
       "blurb": "What actually changed in the language and how it lands in real code.",
+      "translations": {
+        "de": { "heading": "C#-Sprache", "blurb": "Was sich tatsächlich an der Sprache geändert hat und wie es im echten Code ankommt." },
+        "es": { "heading": "Lenguaje C#", "blurb": "Qué cambió realmente en el lenguaje y cómo aterriza en código real." },
+        "pt-br": { "heading": "Linguagem C#", "blurb": "O que mudou de fato na linguagem e como isso chega no código real." },
+        "ru": { "heading": "Язык C#", "blurb": "Что на самом деле изменилось в языке и как это ложится на реальный код." },
+        "ja": { "heading": "C# 言語", "blurb": "言語側で実際に何が変わったのか、そしてそれが現場のコードでどう着地するのか。" }
+      },
       "slugs": [
         "2026/02/csharp-14-extension-members",
         "2026/02/csharp-14-null-conditional-assignment",
@@ -13,6 +20,13 @@
     {
       "heading": "EF Core",
       "blurb": "Core data-access features I've dug into in EF Core 10 and 11.",
+      "translations": {
+        "de": { "heading": "EF Core", "blurb": "Zentrale Datenzugriffs-Features, die ich mir in EF Core 10 und 11 angeschaut habe." },
+        "es": { "heading": "EF Core", "blurb": "Características clave de acceso a datos que he investigado en EF Core 10 y 11." },
+        "pt-br": { "heading": "EF Core", "blurb": "Recursos centrais de acesso a dados que destrinchei no EF Core 10 e 11." },
+        "ru": { "heading": "EF Core", "blurb": "Ключевые возможности доступа к данным, которые я разобрал в EF Core 10 и 11." },
+        "ja": { "heading": "EF Core", "blurb": "EF Core 10 / 11 で深掘りしたデータアクセスのコア機能。" }
+      },
       "slugs": [
         "2026/04/efcore-11-sql-server-vector-search-diskann-indexes",
         "2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries",
@@ -22,6 +36,13 @@
     {
       "heading": "Performance and profiling",
       "blurb": "Posts that show the moving parts, not just the feature flags.",
+      "translations": {
+        "de": { "heading": "Performance und Profiling", "blurb": "Beiträge, die die beweglichen Teile zeigen, nicht nur die Feature-Flags." },
+        "es": { "heading": "Rendimiento y profiling", "blurb": "Posts que muestran las piezas en movimiento, no solo los feature flags." },
+        "pt-br": { "heading": "Performance e profiling", "blurb": "Posts que mostram as engrenagens em movimento, não só as feature flags." },
+        "ru": { "heading": "Производительность и профилирование", "blurb": "Статьи, в которых видно, как всё устроено внутри, а не только фиче-флаги." },
+        "ja": { "heading": "パフォーマンスとプロファイリング", "blurb": "フィーチャーフラグではなく、内部で動いている部品を見せる記事。" }
+      },
       "slugs": [
         "2026/01/net-10-performance-searchvalues",
         "2026/01/perfetto-dotnet-trace-a-practical-profiling-loop-for-net-9-net-10",
@@ -31,6 +52,13 @@
     {
       "heading": ".NET runtime and tooling",
       "blurb": "Things that change how day-to-day .NET work feels.",
+      "translations": {
+        "de": { "heading": ".NET-Runtime und Tooling", "blurb": "Dinge, die das tägliche Arbeiten mit .NET spürbar verändern." },
+        "es": { "heading": "Runtime de .NET y tooling", "blurb": "Cosas que cambian cómo se siente el día a día con .NET." },
+        "pt-br": { "heading": "Runtime do .NET e tooling", "blurb": "Coisas que mudam a sensação do trabalho diário com .NET." },
+        "ru": { "heading": "Рантайм .NET и инструменты", "blurb": "Вещи, которые меняют ощущения от ежедневной работы с .NET." },
+        "ja": { "heading": ".NET ランタイムとツール", "blurb": ".NET の日々の作業の手触りを変える要素。" }
+      },
       "slugs": [
         "2026/04/dotnet-11-runtime-async-cleaner-stack-traces",
         "2026/04/aspnetcore-11-native-opentelemetry-tracing"
@@ -39,6 +67,13 @@
     {
       "heading": "MAUI and Flutter",
       "blurb": "Mobile-side posts with enough detail to be actionable.",
+      "translations": {
+        "de": { "heading": "MAUI und Flutter", "blurb": "Mobile-Beiträge mit genug Tiefe, um direkt umsetzbar zu sein." },
+        "es": { "heading": "MAUI y Flutter", "blurb": "Posts del lado móvil con suficiente detalle para ser accionables." },
+        "pt-br": { "heading": "MAUI e Flutter", "blurb": "Posts do lado mobile com detalhe suficiente para serem acionáveis." },
+        "ru": { "heading": "MAUI и Flutter", "blurb": "Мобильные статьи с достаточной детализацией, чтобы по ним можно было действовать." },
+        "ja": { "heading": "MAUI と Flutter", "blurb": "そのまま手を動かせるだけの粒度を持つモバイル系の記事。" }
+      },
       "slugs": [
         "2026/04/maui-11-long-press-gesture-recognizer",
         "2026/04/dotnet-maui-11-map-pin-clustering",

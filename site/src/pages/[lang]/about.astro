@@ -1,6 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { isLocale, LOCALES, type Locale } from "../../lib/blog";
+import {
+  buildLocaleUrlMap,
+  isLocale,
+  LOCALES,
+  type Locale,
+} from "../../lib/blog";
 import { t } from "../../i18n";
 
 export async function getStaticPaths() {
@@ -18,15 +23,25 @@ if (!isLocale(Astro.params.lang ?? "") || Astro.params.lang === "en") {
 
 const baseUrl = import.meta.env.BASE_URL;
 const langPrefix = `${baseUrl}${lang}/`;
-const siteUrl = Astro.site?.origin ?? "https://startdebugging.net";
+const siteOrigin = Astro.site?.origin ?? "https://startdebugging.net";
+
+const rssHref = `${langPrefix}rss.xml`;
+const body1 = t("about.body1", lang);
+const body2 = t("about.body2", lang);
+const body3 = t("about.body3", lang).replace("{rss}", rssHref);
+
+const translations = buildLocaleUrlMap(siteOrigin, (l) =>
+  l === "en" ? "/about/" : `/${l}/about/`,
+);
 ---
 
 <BaseLayout
   title={`${t("about.heading", lang)} - Start Debugging`}
   description={t("about.tagline", lang)}
-  canonicalUrl={`${siteUrl}/about/`}
+  canonicalUrl={Astro.url.href}
   type="website"
   lang={lang}
+  translations={translations}
 >
   <article class="panel card stack prose">
     <div class="stack">
@@ -34,29 +49,9 @@ const siteUrl = Astro.site?.origin ?? "https://startdebugging.net";
       <p class="muted">{t("about.tagline", lang)}</p>
     </div>
 
-    <p>
-      Hi, I'm <strong>Marius Bughiu</strong>. I write here to keep my own notes
-      honest and searchable, and because the stuff I chase down at work usually
-      helps someone else a week later. The focus is narrow on purpose:
-      up-to-date .NET and Flutter content with real code, real version numbers,
-      and no filler.
-    </p>
-
-    <p>
-      Each post targets a specific feature, release, or pattern, usually in the
-      300 to 600 word range, occasionally much longer for deep dives and
-      migration guides. Expect opinions on what actually ships well, not vendor
-      copy.
-    </p>
-
-    <p>
-      You can follow along via <a href={`${langPrefix}rss.xml`}>RSS</a>, reach me on
-      <a href="https://x.com/mariusbughiu" rel="noopener">X</a>,
-      <a href="https://github.com/marius-bughiu" rel="noopener">GitHub</a>, or
-      <a href="https://www.linkedin.com/in/mariusbughiu/" rel="noopener">LinkedIn</a>.
-      The full source for this site lives on
-      <a href="https://github.com/marius-bughiu/start-debugging" rel="noopener">GitHub</a>.
-    </p>
+    <p set:html={body1} />
+    <p set:html={body2} />
+    <p set:html={body3} />
   </article>
 
   <div class="row" style="margin-top: 14px;">

@@ -79,6 +79,25 @@
 
   "about.heading": "О сайте Start Debugging",
   "about.tagline": "Заметки по программированию на .NET, C#, EF Core, MAUI, Blazor, Flutter и о смежном инструментарии.",
+  "about.body1": "Привет, я <strong>Мариус Бугиу</strong>. Пишу здесь, чтобы свои собственные заметки оставались честными и доступными для поиска, и потому что то, в чём я разбираюсь по работе, обычно через неделю помогает кому-то ещё. Фокус намеренно узкий: актуальные материалы по .NET и Flutter с реальным кодом, реальными номерами версий и без воды.",
+  "about.body2": "Каждая статья посвящена конкретной возможности, релизу или паттерну, обычно объёмом от 300 до 600 слов, иногда значительно больше — для глубоких разборов и руководств по миграции. Ожидайте мнения о том, что действительно хорошо работает в продакшене, а не маркетинговых текстов.",
+  "about.body3": "Подписаться можно через <a href=\"{rss}\">RSS</a>, написать мне — в <a href=\"https://x.com/mariusbughiu\" rel=\"noopener\">X</a>, <a href=\"https://github.com/marius-bughiu\" rel=\"noopener\">GitHub</a> или <a href=\"https://www.linkedin.com/in/mariusbughiu/\" rel=\"noopener\">LinkedIn</a>. Полный исходный код этого сайта лежит на <a href=\"https://github.com/marius-bughiu/start-debugging\" rel=\"noopener\">GitHub</a>.",
+
+  "subscribe.heading": "Подписаться на Start Debugging",
+  "subscribe.lead": "Одно короткое письмо <strong>в понедельник утром</strong> с лучшими новыми статьями недели. В основном .NET, C#, EF Core, MAUI, Flutter и пошаговые разборы в духе «как это вообще починить».",
+  "subscribe.placeholder": "you@domain.com",
+  "subscribe.submit": "Подписаться",
+  "subscribe.finePrint": "Работает на <a href=\"https://buttondown.com/refer/startdebugging\" rel=\"noopener\">Buttondown</a>. Отписаться можно в любой момент одним кликом в подвале письма.",
+  "subscribe.what.heading": "Что вы получите",
+  "subscribe.what.bullet1": "<strong>Кураторскую еженедельную подборку.</strong> 5 статей, по одному предложению на каждую — почему это важно. Если неделя выдалась пустой, письмо просто не уходит. Без воды.",
+  "subscribe.what.bullet2": "<strong>Изредка более длинные статьи.</strong> Когда релиз (.NET, EF Core, MAUI, Flutter) действительно меняет то, как вы пишете код, я пишу развёрнутый разбор и сначала отправляю его прямо подписчикам.",
+  "subscribe.what.bullet3": "<strong>Никаких продаж.</strong> Никаких запусков курсов, рекламных слотов и «вот моя партнёрская ссылка». Сайт держится на AdSense и крошечном счёте за Buttondown.",
+  "subscribe.alt.heading": "Предпочитаете другой канал?",
+  "subscribe.alt.body": "Те же статьи выходят через <a href=\"{rss}\">RSS</a>, а главное я пощу в <a href=\"https://x.com/startdebugging_\" rel=\"noopener\">X</a>, <a href=\"https://bsky.app/profile/startdebugging.bsky.social\" rel=\"noopener\">Bluesky</a> и <a href=\"https://mastodon.social/@startdebugging\" rel=\"noopener\">Mastodon</a>.",
+  "subscribe.privacy.heading": "Приватность",
+  "subscribe.privacy.body": "Ваш email уходит прямиком в Buttondown. Я никогда не передаю список, и в самой рассылке нет трекинговых пикселей. Единственные метки в ссылках — UTM-параметры на статьи этого сайта, по ним я примерно понимаю, какие темы заходят.",
+
+  "startHere.intro": "Впервые здесь? Это статьи, которые я бы посоветовал прочитать разработчику в первую очередь. Они длиннее, более вечнозелёные или больше учат, чем ежедневные новостные посты. Обновляется, когда я пишу что-то, что действительно стоит рекомендовать.",
 
   "site.tagline": "Ежедневные заметки о .NET, C#, EF Core, MAUI, Blazor и Flutter для разработчиков, которые выпускают код.",
   "site.brand": "Start Debugging",

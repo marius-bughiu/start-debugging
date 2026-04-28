@@ -80,6 +80,25 @@
 
   "about.heading": "About Start Debugging",
   "about.tagline": "Programming notes on .NET, C#, EF Core, MAUI, Blazor, Flutter, and the tooling around them.",
+  "about.body1": "Hi, I'm <strong>Marius Bughiu</strong>. I write here to keep my own notes honest and searchable, and because the stuff I chase down at work usually helps someone else a week later. The focus is narrow on purpose: up-to-date .NET and Flutter content with real code, real version numbers, and no filler.",
+  "about.body2": "Each post targets a specific feature, release, or pattern, usually in the 300 to 600 word range, occasionally much longer for deep dives and migration guides. Expect opinions on what actually ships well, not vendor copy.",
+  "about.body3": "You can follow along via <a href=\"{rss}\">RSS</a>, reach me on <a href=\"https://x.com/mariusbughiu\" rel=\"noopener\">X</a>, <a href=\"https://github.com/marius-bughiu\" rel=\"noopener\">GitHub</a>, or <a href=\"https://www.linkedin.com/in/mariusbughiu/\" rel=\"noopener\">LinkedIn</a>. The full source for this site lives on <a href=\"https://github.com/marius-bughiu/start-debugging\" rel=\"noopener\">GitHub</a>.",
+
+  "subscribe.heading": "Subscribe to Start Debugging",
+  "subscribe.lead": "One short email on <strong>Monday morning</strong> with the best new posts of the week. Mostly .NET, C#, EF Core, MAUI, Flutter, and \"how do I actually fix this\" walkthroughs.",
+  "subscribe.placeholder": "you@domain.com",
+  "subscribe.submit": "Subscribe",
+  "subscribe.finePrint": "Powered by <a href=\"https://buttondown.com/refer/startdebugging\" rel=\"noopener\">Buttondown</a>. You can unsubscribe any time with one click in the email footer.",
+  "subscribe.what.heading": "What you'll get",
+  "subscribe.what.bullet1": "<strong>A curated weekly digest.</strong> 5 posts, one sentence each, explaining why they matter. If it's a slow week, the email just doesn't go out. No filler.",
+  "subscribe.what.bullet2": "<strong>Occasional longer posts.</strong> When a release (.NET, EF Core, MAUI, Flutter) genuinely changes how you'd write code, I'll write a longer take and send it straight to subscribers first.",
+  "subscribe.what.bullet3": "<strong>No sales.</strong> No course launches, no sponsor-drop slots, no \"here's my affiliate link\". The site runs on AdSense and a tiny Buttondown bill.",
+  "subscribe.alt.heading": "Prefer a different channel?",
+  "subscribe.alt.body": "The same posts go out via <a href=\"{rss}\">RSS</a>, and I post the highlights on <a href=\"https://x.com/startdebugging_\" rel=\"noopener\">X</a>, <a href=\"https://bsky.app/profile/startdebugging.bsky.social\" rel=\"noopener\">Bluesky</a>, and <a href=\"https://mastodon.social/@startdebugging\" rel=\"noopener\">Mastodon</a>.",
+  "subscribe.privacy.heading": "Privacy",
+  "subscribe.privacy.body": "Your email goes straight to Buttondown. I never share the list, and there's no tracking pixel in the digest itself. The only link tags are UTM parameters pointing back to posts on this site, which I use to tell roughly which topics resonate.",
+
+  "startHere.intro": "New here? These are the posts I'd point a developer at first. They're longer, more evergreen, or do more teaching than the daily news posts. Updated whenever I write something I'd genuinely recommend.",
 
   "site.tagline": "Daily notes on .NET, C#, EF Core, MAUI, Blazor, and Flutter - for developers who ship.",
   "site.brand": "Start Debugging",

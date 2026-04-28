@@ -79,6 +79,25 @@
 
   "about.heading": "Über Start Debugging",
   "about.tagline": "Programmiernotizen zu .NET, C#, EF Core, MAUI, Blazor, Flutter und dem Tooling drumherum.",
+  "about.body1": "Hallo, ich bin <strong>Marius Bughiu</strong>. Ich schreibe hier, um meine eigenen Notizen ehrlich und durchsuchbar zu halten, und weil das, was ich bei der Arbeit recherchiere, meist eine Woche später jemand anderem hilft. Der Fokus ist bewusst eng: aktuelle .NET- und Flutter-Inhalte mit echtem Code, echten Versionsnummern und ohne Füllmaterial.",
+  "about.body2": "Jeder Beitrag behandelt ein konkretes Feature, einen Release oder ein Pattern, in der Regel zwischen 300 und 600 Wörtern, gelegentlich deutlich länger für Deep Dives und Migrationsleitfäden. Erwarten Sie Meinungen dazu, was sich tatsächlich gut ausliefern lässt, keine Marketing-Texte.",
+  "about.body3": "Sie können <a href=\"{rss}\">RSS</a> abonnieren, mich auf <a href=\"https://x.com/mariusbughiu\" rel=\"noopener\">X</a>, <a href=\"https://github.com/marius-bughiu\" rel=\"noopener\">GitHub</a> oder <a href=\"https://www.linkedin.com/in/mariusbughiu/\" rel=\"noopener\">LinkedIn</a> erreichen. Der vollständige Quellcode dieser Seite liegt auf <a href=\"https://github.com/marius-bughiu/start-debugging\" rel=\"noopener\">GitHub</a>.",
+
+  "subscribe.heading": "Start Debugging abonnieren",
+  "subscribe.lead": "Eine kurze E-Mail am <strong>Montagmorgen</strong> mit den besten neuen Beiträgen der Woche. Vor allem .NET, C#, EF Core, MAUI, Flutter und „Wie löse ich das jetzt wirklich?\"-Walkthroughs.",
+  "subscribe.placeholder": "du@domain.com",
+  "subscribe.submit": "Abonnieren",
+  "subscribe.finePrint": "Bereitgestellt von <a href=\"https://buttondown.com/refer/startdebugging\" rel=\"noopener\">Buttondown</a>. Sie können sich jederzeit mit einem Klick im Footer der E-Mail abmelden.",
+  "subscribe.what.heading": "Was Sie bekommen",
+  "subscribe.what.bullet1": "<strong>Eine kuratierte wöchentliche Zusammenfassung.</strong> 5 Beiträge, je ein Satz, der erklärt, warum sie wichtig sind. In einer ruhigen Woche geht die E-Mail einfach nicht raus. Kein Füllmaterial.",
+  "subscribe.what.bullet2": "<strong>Gelegentlich längere Beiträge.</strong> Wenn ein Release (.NET, EF Core, MAUI, Flutter) wirklich verändert, wie man Code schreibt, schreibe ich einen längeren Take und schicke ihn zuerst direkt an die Abonnenten.",
+  "subscribe.what.bullet3": "<strong>Keine Verkaufsmasche.</strong> Keine Kurslaunches, keine Sponsor-Slots, keine „Hier ist mein Affiliate-Link\". Die Seite finanziert sich über AdSense und eine winzige Buttondown-Rechnung.",
+  "subscribe.alt.heading": "Lieber einen anderen Kanal?",
+  "subscribe.alt.body": "Dieselben Beiträge gibt es per <a href=\"{rss}\">RSS</a>, und ich poste die Highlights auf <a href=\"https://x.com/startdebugging_\" rel=\"noopener\">X</a>, <a href=\"https://bsky.app/profile/startdebugging.bsky.social\" rel=\"noopener\">Bluesky</a> und <a href=\"https://mastodon.social/@startdebugging\" rel=\"noopener\">Mastodon</a>.",
+  "subscribe.privacy.heading": "Datenschutz",
+  "subscribe.privacy.body": "Ihre E-Mail-Adresse geht direkt an Buttondown. Ich teile die Liste niemals, und im Digest selbst steckt kein Tracking-Pixel. Die einzigen Link-Tags sind UTM-Parameter, die auf Beiträge dieser Seite zurückzeigen und mir grob anzeigen, welche Themen ankommen.",
+
+  "startHere.intro": "Neu hier? Das sind die Beiträge, die ich einer Entwicklerin oder einem Entwickler zuerst empfehlen würde. Sie sind länger, beständiger oder lehrreicher als die täglichen News-Beiträge. Wird aktualisiert, sobald ich etwas schreibe, das ich wirklich empfehlen würde.",
 
   "site.tagline": "Tägliche Notizen zu .NET, C#, EF Core, MAUI, Blazor und Flutter, für Entwicklerinnen und Entwickler, die liefern.",
   "site.brand": "Start Debugging",

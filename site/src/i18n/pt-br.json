@@ -79,6 +79,25 @@
 
   "about.heading": "Sobre o Start Debugging",
   "about.tagline": "Notas de programação sobre .NET, C#, EF Core, MAUI, Blazor, Flutter e as ferramentas ao redor.",
+  "about.body1": "Oi, eu sou o <strong>Marius Bughiu</strong>. Escrevo aqui para manter minhas próprias anotações honestas e pesquisáveis, e porque o que persigo no trabalho normalmente ajuda outra pessoa uma semana depois. O foco é estreito de propósito: conteúdo atualizado de .NET e Flutter com código real, números de versão reais e sem encheção.",
+  "about.body2": "Cada post mira uma feature, release ou padrão específico, geralmente entre 300 e 600 palavras, ocasionalmente bem mais longo para deep dives e guias de migração. Espere opiniões sobre o que realmente entrega bem, não copy de fornecedor.",
+  "about.body3": "Você pode acompanhar via <a href=\"{rss}\">RSS</a>, falar comigo no <a href=\"https://x.com/mariusbughiu\" rel=\"noopener\">X</a>, <a href=\"https://github.com/marius-bughiu\" rel=\"noopener\">GitHub</a> ou <a href=\"https://www.linkedin.com/in/mariusbughiu/\" rel=\"noopener\">LinkedIn</a>. O código-fonte completo do site fica no <a href=\"https://github.com/marius-bughiu/start-debugging\" rel=\"noopener\">GitHub</a>.",
+
+  "subscribe.heading": "Assine o Start Debugging",
+  "subscribe.lead": "Um e-mail curto na <strong>manhã de segunda-feira</strong> com os melhores posts novos da semana. Principalmente .NET, C#, EF Core, MAUI, Flutter e walkthroughs do tipo \"como eu resolvo isso de verdade\".",
+  "subscribe.placeholder": "voce@dominio.com",
+  "subscribe.submit": "Assinar",
+  "subscribe.finePrint": "Powered by <a href=\"https://buttondown.com/refer/startdebugging\" rel=\"noopener\">Buttondown</a>. Você pode cancelar a assinatura a qualquer momento com um clique no rodapé do e-mail.",
+  "subscribe.what.heading": "O que você vai receber",
+  "subscribe.what.bullet1": "<strong>Um resumo semanal curado.</strong> 5 posts, uma frase cada, explicando por que importam. Se a semana foi fraca, o e-mail simplesmente não sai. Sem encheção.",
+  "subscribe.what.bullet2": "<strong>Posts mais longos ocasionalmente.</strong> Quando um release (.NET, EF Core, MAUI, Flutter) realmente muda como você escreve código, escrevo uma análise mais longa e mando direto para os assinantes primeiro.",
+  "subscribe.what.bullet3": "<strong>Sem vendas.</strong> Sem lançamentos de curso, sem espaços para patrocinador, sem \"aqui está meu link de afiliado\". O site se mantém com AdSense e uma conta minúscula do Buttondown.",
+  "subscribe.alt.heading": "Prefere outro canal?",
+  "subscribe.alt.body": "Os mesmos posts saem via <a href=\"{rss}\">RSS</a>, e eu posto os destaques no <a href=\"https://x.com/startdebugging_\" rel=\"noopener\">X</a>, no <a href=\"https://bsky.app/profile/startdebugging.bsky.social\" rel=\"noopener\">Bluesky</a> e no <a href=\"https://mastodon.social/@startdebugging\" rel=\"noopener\">Mastodon</a>.",
+  "subscribe.privacy.heading": "Privacidade",
+  "subscribe.privacy.body": "Seu e-mail vai direto para o Buttondown. Eu nunca compartilho a lista, e não há pixel de rastreamento no resumo em si. As únicas tags de link são parâmetros UTM apontando de volta para posts deste site, que uso para entender em linhas gerais quais temas ressoam.",
+
+  "startHere.intro": "Novo por aqui? Estes são os posts que eu indicaria primeiro para uma pessoa desenvolvedora. São mais longos, mais perenes ou mais didáticos do que os posts diários de notícias. Atualizado sempre que escrevo algo que eu realmente recomendaria.",
 
   "site.tagline": "Notas diárias sobre .NET, C#, EF Core, MAUI, Blazor e Flutter, para desenvolvedores que colocam software no ar.",
   "site.brand": "Start Debugging",

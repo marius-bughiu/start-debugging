@@ -79,6 +79,25 @@
 
   "about.heading": "Start Debugging について",
   "about.tagline": ".NET、C#、EF Core、MAUI、Blazor、Flutter と、その周辺ツールに関するプログラミングノート。",
+  "about.body1": "こんにちは、<strong>Marius Bughiu</strong> です。自分のメモを正直で検索可能な状態に保つため、また仕事で追いかけている話題はたいてい一週間後に他の誰かの役にも立つため、ここに書いています。フォーカスは意図的に狭めています。実際のコード、実際のバージョン番号、そして埋め草なしの、最新の .NET と Flutter のコンテンツです。",
+  "about.body2": "各記事は特定の機能、リリース、パターンを対象にしており、通常は 300 〜 600 語の範囲、ときにはディープダイブやマイグレーション・ガイドのためにずっと長くなります。ベンダーのコピーではなく、実際にちゃんと出荷できるものについての意見を期待してください。",
+  "about.body3": "<a href=\"{rss}\">RSS</a> でフォローできます。<a href=\"https://x.com/mariusbughiu\" rel=\"noopener\">X</a>、<a href=\"https://github.com/marius-bughiu\" rel=\"noopener\">GitHub</a>、<a href=\"https://www.linkedin.com/in/mariusbughiu/\" rel=\"noopener\">LinkedIn</a> でも連絡できます。このサイトのソース全体は <a href=\"https://github.com/marius-bughiu/start-debugging\" rel=\"noopener\">GitHub</a> にあります。",
+
+  "subscribe.heading": "Start Debugging を購読する",
+  "subscribe.lead": "<strong>月曜日の朝</strong>に、その週のおすすめ記事を1通の短いメールでお届けします。中心は .NET、C#、EF Core、MAUI、Flutter、そして「これ実際どう直す?」系のウォークスルーです。",
+  "subscribe.placeholder": "you@example.com",
+  "subscribe.submit": "購読する",
+  "subscribe.finePrint": "<a href=\"https://buttondown.com/refer/startdebugging\" rel=\"noopener\">Buttondown</a> を利用しています。メールのフッターからワンクリックでいつでも配信停止できます。",
+  "subscribe.what.heading": "受け取れる内容",
+  "subscribe.what.bullet1": "<strong>キュレーションされた週次ダイジェスト。</strong> 5本の記事を、それぞれ「なぜ重要か」を1文で添えてお送りします。静かな週は単に配信しません。埋め草はありません。",
+  "subscribe.what.bullet2": "<strong>ときどき長めの記事。</strong> リリース (.NET、EF Core、MAUI、Flutter) によって書き方が本当に変わるときは、長めの考察を書いて、まず購読者に直接お送りします。",
+  "subscribe.what.bullet3": "<strong>セールスはありません。</strong> コースのローンチも、スポンサー枠も、「これが私のアフィリエイト・リンクです」もありません。サイトは AdSense と最小限の Buttondown 料金で運営しています。",
+  "subscribe.alt.heading": "別のチャネルがお好みなら",
+  "subscribe.alt.body": "同じ記事は <a href=\"{rss}\">RSS</a> でも配信していますし、ハイライトは <a href=\"https://x.com/startdebugging_\" rel=\"noopener\">X</a>、<a href=\"https://bsky.app/profile/startdebugging.bsky.social\" rel=\"noopener\">Bluesky</a>、<a href=\"https://mastodon.social/@startdebugging\" rel=\"noopener\">Mastodon</a> にも投稿しています。",
+  "subscribe.privacy.heading": "プライバシー",
+  "subscribe.privacy.body": "メールアドレスはそのまま Buttondown に送られます。リストを共有することは絶対にありません。ダイジェスト本文にトラッキング・ピクセルもありません。リンクに付くタグは、このサイトの記事へ戻る UTM パラメータだけで、どのテーマが響いているかをざっくり把握するために使っています。",
+
+  "startHere.intro": "はじめての方へ。これは私が開発者にまず読んでもらいたい記事です。日々のニュース記事よりも長く、より長く有効で、より多くを教えるものを選んでいます。本当に勧めたい記事を書いたときに更新します。",
 
   "site.tagline": ".NET、C#、EF Core、MAUI、Blazor、Flutter に関する、実際にリリースする開発者向けの日々のノート。",
   "site.brand": "Start Debugging",

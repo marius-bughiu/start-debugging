@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import {
   baseSlugOf,
+  buildLocaleUrlMap,
   isLocale,
   langOf,
   LOCALES,
@@ -28,11 +29,16 @@ if (!isLocale(Astro.params.lang ?? "") || Astro.params.lang === "en") {
 
 const baseUrl = import.meta.env.BASE_URL;
 const langPrefix = `${baseUrl}${lang}/`;
+const siteOrigin = Astro.site?.origin ?? "https://startdebugging.net";
 
-type StartHereData = {
-  intro: string;
-  sections: { heading: string; blurb?: string; slugs: string[] }[];
+type LocalizedBlock = { heading: string; blurb?: string };
+type StartHereSection = {
+  heading: string;
+  blurb?: string;
+  translations?: Partial<Record<Locale, LocalizedBlock>>;
+  slugs: string[];
 };
+type StartHereData = { intro: string; sections: StartHereSection[] };
 const data = startHereData as StartHereData;
 
 // Index every published post by base slug, then by language. For each curated
@@ -53,6 +59,9 @@ type ResolvedSection = {
 };
 
 const sections: ResolvedSection[] = data.sections.map((s) => {
+  const translated = s.translations?.[lang];
+  const heading = translated?.heading ?? s.heading;
+  const blurb = translated?.blurb ?? s.blurb;
   const posts: BlogPost[] = [];
   for (const slug of s.slugs) {
     const variants = byBase.get(slug);
@@ -60,27 +69,31 @@ const sections: ResolvedSection[] = data.sections.map((s) => {
     const post = variants.get(lang) ?? variants.get("en");
     if (post) posts.push(post);
   }
-  return { heading: s.heading, blurb: s.blurb, posts };
+  return { heading, blurb, posts };
 });
 
+const intro = t("startHere.intro", lang);
 const totalPicks = sections.reduce((n, s) => n + s.posts.length, 0);
 
 const postCountLabel = (n: number) =>
   n === 1 ? t("postCount.singular", lang) : t("postCount.plural", lang);
 
-const siteUrl = Astro.site?.origin ?? "https://startdebugging.net";
+const translations = buildLocaleUrlMap(siteOrigin, (l) =>
+  l === "en" ? "/start-here/" : `/${l}/start-here/`,
+);
 ---
 
 <BaseLayout
   title={`${t("startHere.heading", lang)} - Start Debugging`}
-  description={t("startHere.heading", lang)}
-  canonicalUrl={`${siteUrl}/start-here/`}
+  description={intro}
+  canonicalUrl={Astro.url.href}
   type="website"
   lang={lang}
+  translations={translations}
 >
   <section class="stack">
     <h1 class="h1">{t("startHere.heading", lang)}</h1>
-    <p class="muted">{data.intro}</p>
+    <p class="muted">{intro}</p>
     {totalPicks > 0 ? (
       <p class="muted">
         {totalPicks} {postCountLabel(totalPicks)} &middot; {t("startHere.groupedBy", lang)}
