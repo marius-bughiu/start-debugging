@@ -2,9 +2,5 @@
   {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "The official ModelContextProtocol 1.2 C# SDK turns any method into an agent tool with [McpServerToolType] and [McpServerTool]. A working stdio server on .NET 11 in under 50 lines, exposing SQLite to Claude Code. Plus the stderr logging trick that keeps default ILogger from corrupting the JSON-RPC stream."
-  },
-  {
-    "slug": "2026/04/api-versioning-openapi-dotnet-10",
-    "text": "ASP.NET Core 9 swapped Swashbuckle for built-in Microsoft.AspNetCore.OpenApi and left versioning behind. Asp.Versioning 10.0.0 with Asp.Versioning.OpenApi 10.0.0-rc.1 closes the gap: one OpenAPI doc per version via app.MapOpenApi().WithDocumentPerVersion(). Scalar and Swagger UI auto-discover them."
   }
 ]
