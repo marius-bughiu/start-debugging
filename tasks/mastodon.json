@@ -1,9 +1,5 @@
 [
   {
-    "slug": "2026/04/how-to-implement-refresh-tokens-in-aspnetcore-identity",
-    "text": "ASP.NET Core Identity .NET 11 ships /refresh via MapIdentityApi. Tokens are opaque Data Protection blobs and the only kill switch is bumping the security stamp, which logs every device out. For real JWTs, per-device revocation, and rotation with family-based reuse detection, the post has the full pattern."
-  },
-  {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "The official ModelContextProtocol 1.2 C# SDK turns any method into an agent tool with [McpServerToolType] and [McpServerTool]. A working stdio server on .NET 11 in under 50 lines, exposing SQLite to Claude Code. Plus the stderr logging trick that keeps default ILogger from corrupting the JSON-RPC stream."
   }
