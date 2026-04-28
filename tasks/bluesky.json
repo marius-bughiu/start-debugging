@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/04/how-to-implement-refresh-tokens-in-aspnetcore-identity",
+    "text": "Refresh tokens in ASP.NET Core Identity .NET 11: when MapIdentityApi works and the rotation+family pattern that replaces it."
+  },
+  {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "Building an MCP server in C# 14 on .NET 11 with the official 1.2 SDK. [McpServerTool], stdio, and the stderr logging fix."
   }
