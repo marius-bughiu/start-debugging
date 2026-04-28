@@ -208,11 +208,16 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
     <link rel="icon" type="image/jpeg" href={`${baseUrl}brand-logo.ico`} />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" type="application/rss+xml" title={siteName} href={rssUrl} />
+    {/* Cross-locale RSS alternates for feed-reader discovery. We deliberately
+        omit `hreflang` here: Google groups any rel=alternate[hreflang] into the
+        page's language cluster regardless of `type`, which made the per-locale
+        rss.xml URLs collide with the HTML translations in GSC ("More than one
+        page is linked for the same language"). The localized `title` is enough
+        for feed readers to label them. */}
     {LOCALES.filter((l) => l !== lang).map((l) => (
       <link
         rel="alternate"
         type="application/rss+xml"
-        hreflang={LOCALE_HREFLANG[l]}
         title={`${siteName} (${LOCALE_HREFLANG[l]})`}
         href={l === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${l}/rss.xml`}
       />
