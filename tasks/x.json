@@ -2,9 +2,5 @@
   {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "Stdout is for MCP traffic, not logs. The one Program.cs line that keeps a C# MCP server on .NET 11 alive."
-  },
-  {
-    "slug": "2026/04/how-to-upload-a-large-file-with-streaming-to-azure-blob-storage",
-    "text": "Default 8 MiB blocks fail mid-upload past 195 GiB. The block-size formula keeping .NET 11 uploads streaming."
   }
 ]
