@@ -2,5 +2,9 @@
   {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "Building an MCP server in C# 14 on .NET 11 with the official 1.2 SDK. [McpServerTool], stdio, and the stderr logging fix."
+  },
+  {
+    "slug": "2026/04/how-to-upload-a-large-file-with-streaming-to-azure-blob-storage",
+    "text": "IFormFile already buffered your upload to disk before your action ran. MultipartReader keeps .NET 11 uploads streaming."
   }
 ]
