@@ -2,5 +2,9 @@
   {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "The official ModelContextProtocol 1.2 C# SDK turns any method into an agent tool with [McpServerToolType] and [McpServerTool]. A working stdio server on .NET 11 in under 50 lines, exposing SQLite to Claude Code. Plus the stderr logging trick that keeps default ILogger from corrupting the JSON-RPC stream."
+  },
+  {
+    "slug": "2026/04/how-to-write-a-claude-md-that-actually-changes-model-behaviour",
+    "text": "CLAUDE.md is delivered as a user message after the system prompt, not as part of it. That single fact explains most 'Claude is ignoring my rules' threads. A 2026 playbook for Claude Code 2.1.x: the 200-line target, path-scoped rules in .claude/rules/, @import 5-hop limit, and when to give up and write a deterministic hook."
   }
 ]
