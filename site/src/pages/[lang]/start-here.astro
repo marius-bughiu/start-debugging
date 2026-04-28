@@ -1,0 +1,123 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import {
+  baseSlugOf,
+  isLocale,
+  langOf,
+  LOCALES,
+  urlPathForPost,
+  type Locale,
+} from "../../lib/blog";
+import type { BlogPost } from "../../lib/blog";
+import { getCollection } from "astro:content";
+import startHereData from "../../data/start-here.json";
+import { t } from "../../i18n";
+
+export async function getStaticPaths() {
+  return LOCALES.filter((l) => l !== "en").map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+
+const { lang } = Astro.props as { lang: Locale };
+
+if (!isLocale(Astro.params.lang ?? "") || Astro.params.lang === "en") {
+  return Astro.redirect("/404");
+}
+
+const baseUrl = import.meta.env.BASE_URL;
+const langPrefix = `${baseUrl}${lang}/`;
+
+type StartHereData = {
+  intro: string;
+  sections: { heading: string; blurb?: string; slugs: string[] }[];
+};
+const data = startHereData as StartHereData;
+
+// Index every published post by base slug, then by language. For each curated
+// EN slug we prefer the translation in `lang`; otherwise we fall back to the
+// English version so the link still works.
+const allPosts = (await getCollection("blog")).filter((p) => !p.data.draft);
+const byBase = new Map<string, Map<Locale, BlogPost>>();
+for (const p of allPosts) {
+  const base = baseSlugOf(p);
+  if (!byBase.has(base)) byBase.set(base, new Map());
+  byBase.get(base)!.set(langOf(p), p);
+}
+
+type ResolvedSection = {
+  heading: string;
+  blurb?: string;
+  posts: BlogPost[];
+};
+
+const sections: ResolvedSection[] = data.sections.map((s) => {
+  const posts: BlogPost[] = [];
+  for (const slug of s.slugs) {
+    const variants = byBase.get(slug);
+    if (!variants) continue;
+    const post = variants.get(lang) ?? variants.get("en");
+    if (post) posts.push(post);
+  }
+  return { heading: s.heading, blurb: s.blurb, posts };
+});
+
+const totalPicks = sections.reduce((n, s) => n + s.posts.length, 0);
+
+const postCountLabel = (n: number) =>
+  n === 1 ? t("postCount.singular", lang) : t("postCount.plural", lang);
+
+const siteUrl = Astro.site?.origin ?? "https://startdebugging.net";
+---
+
+<BaseLayout
+  title={`${t("startHere.heading", lang)} - Start Debugging`}
+  description={t("startHere.heading", lang)}
+  canonicalUrl={`${siteUrl}/start-here/`}
+  type="website"
+  lang={lang}
+>
+  <section class="stack">
+    <h1 class="h1">{t("startHere.heading", lang)}</h1>
+    <p class="muted">{data.intro}</p>
+    {totalPicks > 0 ? (
+      <p class="muted">
+        {totalPicks} {postCountLabel(totalPicks)} &middot; {t("startHere.groupedBy", lang)}
+      </p>
+    ) : null}
+  </section>
+
+  <section class="stack start-here-sections" style="margin-top: 18px;">
+    {sections.map((s) => (
+      <section class="panel card stack start-here-section">
+        <div class="stack">
+          <h2 class="h2">{s.heading}</h2>
+          {s.blurb ? <p class="muted start-here-blurb">{s.blurb}</p> : null}
+        </div>
+        {s.posts.length > 0 ? (
+          <ul class="start-here-list">
+            {s.posts.map((p) => (
+              <li class="start-here-item">
+                <a class="start-here-link" href={urlPathForPost(p)}>
+                  {p.data.title}
+                </a>
+                {p.data.description ? (
+                  <div class="muted start-here-desc">{p.data.description}</div>
+                ) : null}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="muted">{t("startHere.empty", lang)}</p>
+        )}
+      </section>
+    ))}
+  </section>
+
+  <div class="row" style="margin-top: 18px;">
+    <a class="pill" href={langPrefix}>{t("nav.home", lang)}</a>
+    <a class="pill" href={`${langPrefix}pillars/`}>{t("nav.pillars", lang)}</a>
+    <a class="pill" href={`${langPrefix}tags/`}>{t("nav.tags", lang)}</a>
+  </div>
+</BaseLayout>

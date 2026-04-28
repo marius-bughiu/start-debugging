@@ -1,0 +1,128 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import {
+  getPublishedBlogPosts,
+  isLocale,
+  LOCALES,
+  urlPathForPost,
+  type Locale,
+} from "../../../lib/blog";
+import type { BlogPost } from "../../../lib/blog";
+import { t } from "../../../i18n";
+
+export async function getStaticPaths() {
+  return LOCALES.filter((l) => l !== "en").map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+
+const { lang } = Astro.props as { lang: Locale };
+
+if (!isLocale(Astro.params.lang ?? "") || Astro.params.lang === "en") {
+  return Astro.redirect("/404");
+}
+
+const baseUrl = import.meta.env.BASE_URL;
+const langPrefix = `${baseUrl}${lang}/`;
+
+const allPosts = await getPublishedBlogPosts(lang);
+
+type MonthBucket = { month: string; posts: BlogPost[] };
+type YearBucket = { year: string; months: MonthBucket[]; total: number };
+
+const byYear = new Map<string, Map<string, BlogPost[]>>();
+for (const post of allPosts) {
+  // Slug shape for translations is `{lang}/YYYY/MM/slug`. Strip the language
+  // prefix so the year/month regex matches the same way as the EN archive.
+  const baseSlug = post.slug.startsWith(`${lang}/`)
+    ? post.slug.slice(lang.length + 1)
+    : post.slug;
+  const m = baseSlug.match(/^(\d{4})\/(\d{2})\//);
+  if (!m) continue;
+  const [, year, month] = m;
+  if (!byYear.has(year)) byYear.set(year, new Map());
+  const months = byYear.get(year)!;
+  if (!months.has(month)) months.set(month, []);
+  months.get(month)!.push(post);
+}
+
+const years: YearBucket[] = Array.from(byYear.entries())
+  .map(([year, monthMap]) => {
+    const months: MonthBucket[] = Array.from(monthMap.entries())
+      .map(([month, posts]) => ({ month, posts }))
+      .sort((a, b) => b.month.localeCompare(a.month));
+    const total = months.reduce((n, mb) => n + mb.posts.length, 0);
+    return { year, months, total };
+  })
+  .sort((a, b) => b.year.localeCompare(a.year));
+
+const postCountLabel = (n: number) =>
+  n === 1 ? t("postCount.singular", lang) : t("postCount.plural", lang);
+const yearCountLabel = (n: number) =>
+  n === 1 ? t("listing.year", lang) : t("listing.years", lang);
+---
+
+<BaseLayout
+  title={`${t("archive.heading", lang)} - Start Debugging`}
+  description={`${allPosts.length} ${postCountLabel(allPosts.length)}.`}
+  canonicalUrl={Astro.url.href}
+  type="website"
+  lang={lang}
+>
+  <section class="stack">
+    <h1 class="h1">{t("archive.heading", lang)}</h1>
+    <p class="muted">
+      {allPosts.length} {postCountLabel(allPosts.length)} &middot; {years.length} {yearCountLabel(years.length)}
+    </p>
+
+    <div class="row archive-year-index">
+      {years.map((y) => (
+        <a class="pill" href={`#y-${y.year}`}>
+          {y.year}
+          <span class="tag-count muted">{y.total}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="stack archive-sections" style="margin-top: 24px;">
+    {years.map((y) => (
+      <section class="panel card stack archive-year" id={`y-${y.year}`}>
+        <div class="row archive-year-head">
+          <h2 class="h2">{y.year}</h2>
+          <span class="muted">{y.total} {postCountLabel(y.total)}</span>
+        </div>
+        {y.months.map((mb) => (
+          <section class="stack archive-month" id={`y-${y.year}-m-${mb.month}`}>
+            <h3 class="archive-month-head">
+              {t(`month.${parseInt(mb.month, 10)}` as any, lang)} {y.year}
+              <span class="muted archive-month-count"> &middot; {mb.posts.length}</span>
+            </h3>
+            <ul class="archive-list">
+              {mb.posts.map((post) => (
+                <li class="archive-item">
+                  <span class="archive-date muted">
+                    {post.data.pubDate.toISOString().slice(0, 10)}
+                  </span>
+                  <a class="archive-link" href={urlPathForPost(post)}>
+                    {post.data.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </section>
+    ))}
+
+    {years.length === 0 ? (
+      <div class="panel card muted">{t("listing.noPostsYet", lang)}</div>
+    ) : null}
+  </section>
+
+  <div class="row" style="margin-top: 14px;">
+    <a class="pill" href={langPrefix}>{t("nav.home", lang)}</a>
+    <a class="pill" href={`${langPrefix}tags/`}>{t("nav.tags", lang)}</a>
+  </div>
+</BaseLayout>

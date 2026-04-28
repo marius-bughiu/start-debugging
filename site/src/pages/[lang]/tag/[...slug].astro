@@ -1,0 +1,114 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import {
+  getPublishedBlogPosts,
+  isLocale,
+  LOCALES,
+  urlPathForPost,
+  type Locale,
+} from "../../../lib/blog";
+import type { BlogPost } from "../../../lib/blog";
+import { t } from "../../../i18n";
+
+export async function getStaticPaths() {
+  const PAGE_SIZE = 10;
+  const paths: {
+    params: { lang: string; slug: string };
+    props: {
+      lang: Locale;
+      tag: string;
+      posts: BlogPost[];
+      totalCount: number;
+      page: number;
+      totalPages: number;
+    };
+  }[] = [];
+
+  for (const lang of LOCALES) {
+    if (lang === "en") continue;
+    const allPosts = await getPublishedBlogPosts(lang);
+    const tagMap = new Map<string, BlogPost[]>();
+    for (const post of allPosts) {
+      for (const tag of post.data.tags ?? []) {
+        if (!tagMap.has(tag)) tagMap.set(tag, []);
+        tagMap.get(tag)!.push(post);
+      }
+    }
+
+    for (const [tag, tagPosts] of tagMap) {
+      const totalPages = Math.max(1, Math.ceil(tagPosts.length / PAGE_SIZE));
+      for (let page = 1; page <= totalPages; page++) {
+        const start = (page - 1) * PAGE_SIZE;
+        paths.push({
+          params: { lang, slug: page === 1 ? tag : `${tag}/${page}` },
+          props: {
+            lang,
+            tag,
+            posts: tagPosts.slice(start, start + PAGE_SIZE),
+            totalCount: tagPosts.length,
+            page,
+            totalPages,
+          },
+        });
+      }
+    }
+  }
+
+  return paths;
+}
+
+const { lang, tag, posts, totalCount, page, totalPages } = Astro.props;
+
+if (!isLocale(Astro.params.lang ?? "") || Astro.params.lang === "en") {
+  return Astro.redirect("/404");
+}
+
+const baseUrl = import.meta.env.BASE_URL;
+const langPrefix = `${baseUrl}${lang}/`;
+const tagBase = `${langPrefix}tag/${tag}/`;
+const prevHref = page > 1 ? (page === 2 ? tagBase : `${tagBase}${page - 1}/`) : null;
+const nextHref = page < totalPages ? `${tagBase}${page + 1}/` : null;
+
+const postCountLabel = (n: number) =>
+  n === 1 ? t("postCount.singular", lang) : t("postCount.plural", lang);
+---
+
+<BaseLayout
+  title={`${t("tagPage.prefix", lang)} ${tag}${page > 1 ? ` (${t("listing.page", lang)} ${page})` : ""} - Start Debugging`}
+  description={`${totalCount} ${postCountLabel(totalCount)}.`}
+  canonicalUrl={Astro.url.href}
+  type="website"
+  lang={lang}
+>
+  <section class="stack">
+    <h1 class="h1">{t("tagPage.prefix", lang)} {tag}</h1>
+    <p class="muted">
+      {totalCount} {postCountLabel(totalCount)}
+      {totalPages > 1 ? <> &middot; {t("listing.page", lang)} {page} {t("listing.of", lang)} {totalPages}</> : null}
+    </p>
+  </section>
+
+  <section class="stack" style="margin-top: 18px;">
+    {posts.map((post) => (
+      <article class="panel card stack post-card">
+        <div class="row">
+          <span class="pill">{post.data.pubDate.toISOString().slice(0, 10)}</span>
+          {post.data.tags?.slice(0, 3).map((pt) => (
+            <a class="pill" href={`${langPrefix}tag/${pt}/`}>{pt}</a>
+          ))}
+        </div>
+        <a class="post-card-title-link stack" href={urlPathForPost(post)}>
+          <div class="h2">{post.data.title}</div>
+          {post.data.description ? <div class="muted">{post.data.description}</div> : null}
+        </a>
+      </article>
+    ))}
+
+    {posts.length === 0 ? <div class="panel card muted">{t("listing.noPostsFound", lang)}</div> : null}
+  </section>
+
+  <div class="row" style="margin-top: 14px;">
+    {prevHref ? <a class="pill" href={prevHref}>{t("listing.prev", lang)}</a> : null}
+    {nextHref ? <a class="pill" href={nextHref}>{t("listing.next", lang)}</a> : null}
+  </div>
+</BaseLayout>

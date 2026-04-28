@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import {
+  getPublishedBlogPosts,
+  isLocale,
+  LOCALES,
+  type Locale,
+} from "../../../lib/blog";
+import { t } from "../../../i18n";
+
+export async function getStaticPaths() {
+  return LOCALES.filter((l) => l !== "en").map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+
+const { lang } = Astro.props as { lang: Locale };
+
+if (!isLocale(Astro.params.lang ?? "") || Astro.params.lang === "en") {
+  return Astro.redirect("/404");
+}
+
+const baseUrl = import.meta.env.BASE_URL;
+const langPrefix = `${baseUrl}${lang}/`;
+
+const allPosts = await getPublishedBlogPosts(lang);
+const counts = new Map<string, number>();
+for (const post of allPosts) {
+  for (const tag of post.data.tags ?? []) {
+    counts.set(tag, (counts.get(tag) ?? 0) + 1);
+  }
+}
+
+const tags = Array.from(counts.entries())
+  .map(([tag, count]) => ({ tag, count }))
+  .sort((a, b) => {
+    if (b.count !== a.count) return b.count - a.count;
+    return a.tag.localeCompare(b.tag);
+  });
+
+const totalTags = tags.length;
+const totalPosts = allPosts.length;
+
+const postCountLabel = (n: number) =>
+  n === 1 ? t("postCount.singular", lang) : t("postCount.plural", lang);
+const tagCountLabel = (n: number) =>
+  n === 1 ? t("listing.tag", lang) : t("listing.tags", lang);
+---
+
+<BaseLayout
+  title={`${t("tags.heading", lang)} - Start Debugging`}
+  description={`${totalTags} ${tagCountLabel(totalTags)} &middot; ${totalPosts} ${postCountLabel(totalPosts)}.`}
+  canonicalUrl={Astro.url.href}
+  type="website"
+  lang={lang}
+>
+  <section class="stack">
+    <h1 class="h1">{t("tags.heading", lang)}</h1>
+    <p class="muted">
+      {totalTags} {tagCountLabel(totalTags)} &middot; {totalPosts} {postCountLabel(totalPosts)}
+    </p>
+  </section>
+
+  <section class="stack" style="margin-top: 18px;">
+    <div class="row tag-cloud">
+      {tags.map(({ tag, count }) => (
+        <a class="pill" href={`${langPrefix}tag/${tag}/`}>
+          {tag}
+          <span class="tag-count muted">{count}</span>
+        </a>
+      ))}
+    </div>
+
+    {tags.length === 0 ? (
+      <div class="panel card muted">{t("listing.noPostsYet", lang)}</div>
+    ) : null}
+  </section>
+
+  <div class="row" style="margin-top: 14px;">
+    <a class="pill" href={langPrefix}>{t("nav.home", lang)}</a>
+    <a class="pill" href={`${langPrefix}archive/`}>{t("nav.archive", lang)}</a>
+  </div>
+</BaseLayout>
