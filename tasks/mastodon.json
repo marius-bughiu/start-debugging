@@ -2,9 +2,5 @@
   {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "The official ModelContextProtocol 1.2 C# SDK turns any method into an agent tool with [McpServerToolType] and [McpServerTool]. A working stdio server on .NET 11 in under 50 lines, exposing SQLite to Claude Code. Plus the stderr logging trick that keeps default ILogger from corrupting the JSON-RPC stream."
-  },
-  {
-    "slug": "2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly",
-    "text": "Validation between Blazor WASM and ASP.NET Core 11 from one Shared library. DataAnnotations on the DTO runs in both; FluentValidation 12 covers conditional and async-only rules via RuleSets. The trick: map ValidationProblemDetails into the same EditContext the client used, so 'username taken' lands on the right field."
   }
 ]
