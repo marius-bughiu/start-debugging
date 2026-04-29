@@ -2,5 +2,9 @@
   {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "The official ModelContextProtocol 1.2 C# SDK turns any method into an agent tool with [McpServerToolType] and [McpServerTool]. A working stdio server on .NET 11 in under 50 lines, exposing SQLite to Claude Code. Plus the stderr logging trick that keeps default ILogger from corrupting the JSON-RPC stream."
+  },
+  {
+    "slug": "2026/04/how-to-detect-when-a-file-finishes-being-written-to-in-dotnet",
+    "text": "FileSystemWatcher.Created fires the instant the directory entry appears, often before the writer has flushed a byte. Three reliable .NET 11 patterns: open with FileShare.None and back off on IOException 0x20, debounce on a stable FileInfo.Length plus LastWriteTimeUtc, or have the producer write to name.tmp and File.Move atomically. Plus why your handler should hand off to a Channel, not block."
   }
 ]
