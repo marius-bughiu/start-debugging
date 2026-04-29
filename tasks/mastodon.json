@@ -6,9 +6,5 @@
   {
     "slug": "2026/04/how-to-use-searchvalues-correctly-in-dotnet-11",
     "text": "SearchValues<T> in .NET 11 is the fast path for ContainsAny / IndexOfAny / IndexOfAnyExcept on ReadOnlySpan, but only when you store it in a static readonly field. Build it inside the hot method and you keep all the SIMD planning cost while losing the amortisation. Plus the StringComparison gotcha (only Ordinal / Invariant variants) and when the inversion trick with IndexOfAnyExcept beats string.TrimStart."
-  },
-  {
-    "slug": "2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf",
-    "text": "Every Claude Code session lives as a JSONL file under ~/.claude/projects/. jsonl-to-pdf converts one into a PDF you can attach to a PR, paste in Slack, or print. Sub-agents render nested inline at the right tool call. --redact strips AWS, GitHub, Anthropic, and OpenAI keys, Bearer headers, and PEM private keys before you share."
   }
 ]
