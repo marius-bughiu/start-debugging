@@ -2,9 +2,5 @@
   {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "Stdout is for MCP traffic, not logs. The one Program.cs line that keeps a C# MCP server on .NET 11 alive."
-  },
-  {
-    "slug": "2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate",
-    "text": "Cache reads cost 10% of base input. Where to put cache_control on Sonnet 4.6 and how to read the hit rate from usage."
   }
 ]
