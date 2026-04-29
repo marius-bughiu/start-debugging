@@ -2,9 +2,5 @@
   {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "The official ModelContextProtocol 1.2 C# SDK turns any method into an agent tool with [McpServerToolType] and [McpServerTool]. A working stdio server on .NET 11 in under 50 lines, exposing SQLite to Claude Code. Plus the stderr logging trick that keeps default ILogger from corrupting the JSON-RPC stream."
-  },
-  {
-    "slug": "2026/04/skiasharp-4-0-preview-1-uno-platform-comaintainer",
-    "text": "SkiaSharp 4.0 Preview 1 dropped on April 28. SKPath is now immutable: build paths through SKPathBuilder and call Detach() to get an immutable SKPath that the runtime can safely share, hash, and cache between threads. HarfBuzzSharp gets full OpenType variable-font axis control, and Uno Platform joins as official co-maintainer alongside the .NET team."
   }
 ]
