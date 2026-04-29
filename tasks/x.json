@@ -6,5 +6,9 @@
   {
     "slug": "2026/04/how-to-use-searchvalues-correctly-in-dotnet-11",
     "text": "SearchValues<T> built once is 250x faster than IndexOfAny. Built per call, it's slower. The static readonly rule, in .NET 11."
+  },
+  {
+    "slug": "2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf",
+    "text": "Every Claude Code session is a JSONL in ~/.claude/projects/. npx jsonl-to-pdf turns it into a shareable PDF."
   }
 ]

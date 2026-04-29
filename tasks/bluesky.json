@@ -6,5 +6,9 @@
   {
     "slug": "2026/04/how-to-use-searchvalues-correctly-in-dotnet-11",
     "text": "SearchValues<T> in .NET 11: precompute once into a static readonly field, then watch IndexOfAny become 5x to 250x faster across SIMD kernels."
+  },
+  {
+    "slug": "2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf",
+    "text": "jsonl-to-pdf turns Claude Code session JSONL into a PDF, sub-agents nested inline, --redact strips AWS/GitHub/Anthropic keys."
   }
 ]
