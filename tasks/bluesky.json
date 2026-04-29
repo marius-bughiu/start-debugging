@@ -2,5 +2,9 @@
   {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "Building an MCP server in C# 14 on .NET 11 with the official 1.2 SDK. [McpServerTool], stdio, and the stderr logging fix."
+  },
+  {
+    "slug": "2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate",
+    "text": "Prompt caching cuts repeated input to 0.1x base. Where to place cache_control breakpoints and how to verify the hit rate."
   }
 ]

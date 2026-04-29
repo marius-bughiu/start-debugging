@@ -2,5 +2,9 @@
   {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "The official ModelContextProtocol 1.2 C# SDK turns any method into an agent tool with [McpServerToolType] and [McpServerTool]. A working stdio server on .NET 11 in under 50 lines, exposing SQLite to Claude Code. Plus the stderr logging trick that keeps default ILogger from corrupting the JSON-RPC stream."
+  },
+  {
+    "slug": "2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate",
+    "text": "Prompt caching on Sonnet 4.6 and Opus 4.7: writes cost 1.25x base, reads cost 0.10x. Up to 4 cache_control breakpoints per request. The post covers Python and Node SDK calls, breakpoint placement in agent loops, a wrapper that computes hit rate from usage, plus five gotchas that silently keep it at zero."
   }
 ]
