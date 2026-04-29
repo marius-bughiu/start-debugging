@@ -2,5 +2,9 @@
   {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "Building an MCP server in C# 14 on .NET 11 with the official 1.2 SDK. [McpServerTool], stdio, and the stderr logging fix."
+  },
+  {
+    "slug": "2026/04/how-to-use-searchvalues-correctly-in-dotnet-11",
+    "text": "SearchValues<T> in .NET 11: precompute once into a static readonly field, then watch IndexOfAny become 5x to 250x faster across SIMD kernels."
   }
 ]

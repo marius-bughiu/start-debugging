@@ -2,5 +2,9 @@
   {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "Stdout is for MCP traffic, not logs. The one Program.cs line that keeps a C# MCP server on .NET 11 alive."
+  },
+  {
+    "slug": "2026/04/how-to-use-searchvalues-correctly-in-dotnet-11",
+    "text": "SearchValues<T> built once is 250x faster than IndexOfAny. Built per call, it's slower. The static readonly rule, in .NET 11."
   }
 ]
