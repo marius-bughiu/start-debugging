@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11",
+    "text": "ASP.NET Core 11 ships four rate-limiter algorithms in Microsoft.AspNetCore.RateLimiting: fixed window, sliding window, token bucket, concurrency. Wrong choice = either bots punch through your /login limit or real users 429 on legitimate bursts. The decision matrix, the partition-key trap behind reverse proxies, and why the default 503 status is wrong for public APIs."
+  },
+  {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "The official ModelContextProtocol 1.2 C# SDK turns any method into an agent tool with [McpServerToolType] and [McpServerTool]. A working stdio server on .NET 11 in under 50 lines, exposing SQLite to Claude Code. Plus the stderr logging trick that keeps default ILogger from corrupting the JSON-RPC stream."
   },

@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11",
+    "text": "ASP.NET Core 11 ships 4 rate-limiter algorithms. Pick wrong, and either /login leaks or /search 429s under normal bursts. The decision matrix."
+  },
+  {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "Stdout is for MCP traffic, not logs. The one Program.cs line that keeps a C# MCP server on .NET 11 alive."
   },

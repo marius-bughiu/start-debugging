@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11",
+    "text": "Per-endpoint rate limiting in ASP.NET Core 11: when fixed window vs sliding window vs token bucket vs concurrency, plus the distributed-deploy gotcha everyone hits."
+  },
+  {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "Building an MCP server in C# 14 on .NET 11 with the official 1.2 SDK. [McpServerTool], stdio, and the stderr logging fix."
   },
