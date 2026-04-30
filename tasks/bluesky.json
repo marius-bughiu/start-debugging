@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11",
+    "text": "On .NET 11: object _gate -> Lock _gate. lock body unchanged. Compiler binds to Lock.EnterScope() and the sync block goes away."
+  },
+  {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "Building an MCP server in C# 14 on .NET 11 with the official 1.2 SDK. [McpServerTool], stdio, and the stderr logging fix."
   },

@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11",
+    "text": "Swap object _gate for Lock _gate on .NET 11. Body unchanged, compiler binds to EnterScope. Mind the await trap."
+  },
+  {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "Stdout is for MCP traffic, not logs. The one Program.cs line that keeps a C# MCP server on .NET 11 alive."
   },
