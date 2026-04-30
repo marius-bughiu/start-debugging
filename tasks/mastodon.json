@@ -6,9 +6,5 @@
   {
     "slug": "2026/04/how-to-use-searchvalues-correctly-in-dotnet-11",
     "text": "SearchValues<T> in .NET 11 is the fast path for ContainsAny / IndexOfAny / IndexOfAnyExcept on ReadOnlySpan, but only when you store it in a static readonly field. Build it inside the hot method and you keep all the SIMD planning cost while losing the amortisation. Plus the StringComparison gotcha (only Ordinal / Invariant variants) and when the inversion trick with IndexOfAnyExcept beats string.TrimStart."
-  },
-  {
-    "slug": "2026/04/how-to-write-a-source-generator-for-inotifypropertychanged",
-    "text": "When CommunityToolkit.Mvvm isn't enough, hand-roll an INotifyPropertyChanged source generator in C# 14 / .NET 11. The pipeline (ForAttributeWithMetadataName, post-init attribute injection, EquatableArray for cache hits), the SetProperty pattern, and the most common mistakes: returning symbols from the transform (kills incrementality), forgetting global:: in emitted type names, and skipping the partial keyword check at the syntax stage."
   }
 ]

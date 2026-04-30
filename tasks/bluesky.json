@@ -6,9 +6,5 @@
   {
     "slug": "2026/04/how-to-use-searchvalues-correctly-in-dotnet-11",
     "text": "SearchValues<T> in .NET 11: precompute once into a static readonly field, then watch IndexOfAny become 5x to 250x faster across SIMD kernels."
-  },
-  {
-    "slug": "2026/04/how-to-write-a-source-generator-for-inotifypropertychanged",
-    "text": "Building your own INotifyPropertyChanged generator in C# 14 / .NET 11. IIncrementalGenerator pipeline, EquatableArray for cache hits, and the global:: trick that keeps emitted code from breaking."
   }
 ]
