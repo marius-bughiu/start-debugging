@@ -1,9 +1,5 @@
 [
   {
-    "slug": "2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11",
-    "text": "System.Threading.Lock is .NET 9's lock primitive that .NET 11 makes the default. Replace object _gate with Lock _gate; the compiler rewrites lock(_gate) to Lock.EnterScope() instead of Monitor.Enter. Smaller objects, no sync block inflation. Plus the await trap CS1996 catches inside lock but EnterScope quietly ignores."
-  },
-  {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "The official ModelContextProtocol 1.2 C# SDK turns any method into an agent tool with [McpServerToolType] and [McpServerTool]. A working stdio server on .NET 11 in under 50 lines, exposing SQLite to Claude Code. Plus the stderr logging trick that keeps default ILogger from corrupting the JSON-RPC stream."
   },
