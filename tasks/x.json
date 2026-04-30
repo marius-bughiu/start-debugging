@@ -6,5 +6,9 @@
   {
     "slug": "2026/04/how-to-use-searchvalues-correctly-in-dotnet-11",
     "text": "SearchValues<T> built once is 250x faster than IndexOfAny. Built per call, it's slower. The static readonly rule, in .NET 11."
+  },
+  {
+    "slug": "2026/04/how-to-write-a-source-generator-for-inotifypropertychanged",
+    "text": "Hand-roll an INotifyPropertyChanged source generator on .NET 11. ForAttributeWithMetadataName, EquatableArray, and the global:: rule that stops it breaking."
   }
 ]
