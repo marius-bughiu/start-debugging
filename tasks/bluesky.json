@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork",
+    "text": "cowork-terminal-mcp v0.4.1 bridges Claude Cowork's sandboxed VM to your host shell with a single execute_command tool. Why it pins Git Bash by absolute path on Windows (System32\\bash.exe is WSL, which can't see Windows PATH or run .exe files), and why the configurable shell parameter was removed in v0.4.0."
+  },
+  {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "Building an MCP server in C# 14 on .NET 11 with the official 1.2 SDK. [McpServerTool], stdio, and the stderr logging fix."
   },

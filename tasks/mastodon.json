@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork",
+    "text": "Claude Cowork runs in a sandboxed Linux VM and can't reach the host. cowork-terminal-mcp v0.4.1 is the bridge: one MCP tool (execute_command), stdio only, no PTY. The interesting bit is the Windows Git Bash pin -- spawn(\"bash\") on Windows resolves through PATH and lands on System32\\bash.exe, which is the WSL launcher. WSL can't see Windows PATH or run .exe files, so dotnet --version fails on a machine with the SDK clearly installed. v0.4.1 walks fixed Git Bash install paths and fails fast if none exist. Plus AbortController-based timeouts and why the shell parameter was removed in v0.4.0 (cmd.exe silently truncates multi-line strings at the first newline)."
+  },
+  {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "The official ModelContextProtocol 1.2 C# SDK turns any method into an agent tool with [McpServerToolType] and [McpServerTool]. A working stdio server on .NET 11 in under 50 lines, exposing SQLite to Claude Code. Plus the stderr logging trick that keeps default ILogger from corrupting the JSON-RPC stream."
   },

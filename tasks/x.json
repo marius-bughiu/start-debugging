@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork",
+    "text": "Claude Cowork's sandboxed VM can't reach your host shell. cowork-terminal-mcp v0.4.1 bridges it with one MCP tool, stdio only, and Git Bash hard-pinned by absolute path on Windows -- because System32\\bash.exe is WSL, and WSL can't run dotnet.exe."
+  },
+  {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "Stdout is for MCP traffic, not logs. The one Program.cs line that keeps a C# MCP server on .NET 11 alive."
   },
