@@ -1,9 +1,5 @@
 [
   {
-    "slug": "2026/04/claude-code-2-1-122-bedrock-service-tier",
-    "text": "Claude Code v2.1.122 lets you pick a Bedrock service tier from one env var. ANTHROPIC_BEDROCK_SERVICE_TIER=flex sends X-Amzn-Bedrock-Service-Tier on every InvokeModel call, 50% off Standard pricing for background agents that can absorb the latency. priority = 75% premium for snappier interactive sessions. No SDK code changes, lands in CloudTrail under ResolvedServiceTier."
-  },
-  {
     "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
     "text": "The official ModelContextProtocol 1.2 C# SDK turns any method into an agent tool with [McpServerToolType] and [McpServerTool]. A working stdio server on .NET 11 in under 50 lines, exposing SQLite to Claude Code. Plus the stderr logging trick that keeps default ILogger from corrupting the JSON-RPC stream."
   },
