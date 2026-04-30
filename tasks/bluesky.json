@@ -6,5 +6,9 @@
   {
     "slug": "2026/04/how-to-use-searchvalues-correctly-in-dotnet-11",
     "text": "SearchValues<T> in .NET 11: precompute once into a static readonly field, then watch IndexOfAny become 5x to 250x faster across SIMD kernels."
+  },
+  {
+    "slug": "2026/04/how-to-call-the-claude-api-from-a-net-11-minimal-api-with-streaming",
+    "text": "Stream Claude Sonnet 4.6 from an ASP.NET Core 11 minimal API. TypedResults.ServerSentEvents, SseItem, and the cancellation trap."
   }
 ]
