@@ -1,18 +1,2 @@
 [
-  {
-    "slug": "2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4",
-    "text": "VSTest cuts Newtonsoft.Json in .NET 11 Preview 4. Tests that quietly used the transitive copy break with FileNotFoundException."
-  },
-  {
-    "slug": "2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11",
-    "text": "Per-endpoint rate limiting in ASP.NET Core 11: when fixed window vs sliding window vs token bucket vs concurrency, plus the distributed-deploy gotcha everyone hits."
-  },
-  {
-    "slug": "2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11",
-    "text": "Building an MCP server in C# 14 on .NET 11 with the official 1.2 SDK. [McpServerTool], stdio, and the stderr logging fix."
-  },
-  {
-    "slug": "2026/04/how-to-use-searchvalues-correctly-in-dotnet-11",
-    "text": "SearchValues<T> in .NET 11: precompute once into a static readonly field, then watch IndexOfAny become 5x to 250x faster across SIMD kernels."
-  }
 ]
