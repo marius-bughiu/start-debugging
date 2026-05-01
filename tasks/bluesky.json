@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-set-up-structured-logging-with-serilog-and-seq-in-dotnet-11",
-    "text": "Serilog 4.3 + Seq 2025.2 on .NET 11. AddSerilog, two-stage bootstrap, JSON pipeline, and the buffer flag that prevents lost logs."
-  }
-]
+[]
