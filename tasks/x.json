@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-use-opentelemetry-with-dotnet-11-and-a-free-backend",
+    "text": "Free OpenTelemetry on .NET 11: OTLP 1.15.3 + standalone Aspire Dashboard. Traces, metrics, logs in one UI, no SaaS bill."
+  }
+]
