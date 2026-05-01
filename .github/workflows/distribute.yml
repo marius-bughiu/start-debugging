@@ -6,7 +6,7 @@ name: Distribute new post
 # successful posts splice their entry out of `tasks/<channel>.json`, so
 # re-runs on rebuilds / doc edits are safe.
 #
-# All task writes are serialised in the final `commit-logs` aggregator
+# All task writes are serialised in the final `update-tasks` aggregator
 # job, which downloads each channel's tasks artifact and pushes a single
 # commit. That avoids the parallel-push race you'd get if every matrix
 # job tried to `git push` on its own.
@@ -57,7 +57,7 @@ jobs:
         # Enabled: X, Bluesky, Mastodon.
         # To enable another channel, uncomment its include block AND add
         # the matching `tasks/<channel>.json` entry to the `git add` line
-        # in the `commit-logs` job below.
+        # in the `update-tasks` job below.
         # -----------------------------------------------------------------
         include:
           - channel: x
@@ -129,7 +129,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
-  commit-logs:
+  update-tasks:
     # Single-writer aggregator. Runs regardless of whether individual
     # channel jobs succeeded or failed - we still want to capture task
     # mutations for whichever channels *did* succeed.
@@ -175,7 +175,24 @@ jobs:
           git add tasks/mastodon.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No task changes to commit."
-          else
-            git commit -m "chore(distribute): record post IDs [skip ci]"
-            git push
+            exit 0
           fi
+          git commit -m "chore(distribute): record post IDs [skip ci]"
+          # Retry against concurrent pushes to main (translation backfills,
+          # content edits, etc.). The `distribute` concurrency group only
+          # serialises this workflow with itself.
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "push attempt $attempt failed, rebasing on origin/main..."
+            git fetch origin main
+            if ! git rebase origin/main; then
+              git rebase --abort || true
+              echo "rebase failed - aborting"
+              exit 1
+            fi
+            sleep $((attempt * 2))
+          done
+          echo "push failed after 5 attempts"
+          exit 1
