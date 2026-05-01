@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-use-opentelemetry-with-dotnet-11-and-a-free-backend",
-    "text": "Full OpenTelemetry pipeline on .NET 11 against a free backend: OpenTelemetry.Exporter.OpenTelemetryProtocol 1.15.3, WithTracing/WithMetrics/WithLogging plus UseOtlpExporter, and the standalone Aspire Dashboard for traces, metrics, and structured logs in one UI. Plus the gRPC vs HTTP default trap that bites Framework bridges."
-  }
-]
+[]
