@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-run-claude-code-in-a-github-action-for-autonomous-pr-review",
-    "text": "Autonomous PR review with claude-code-action@v1: pull_request trigger, no @claude gate, allowlist the inline-comment MCP."
-  }
-]
+[]

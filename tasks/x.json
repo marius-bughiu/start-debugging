@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-run-claude-code-in-a-github-action-for-autonomous-pr-review",
-    "text": "Wire claude-code-action@v1 onto pull_request and skip the @claude trigger. Inline comments land via the MCP allowlist."
-  }
-]
+[]
