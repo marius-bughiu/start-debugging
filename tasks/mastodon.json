@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-run-claude-code-in-a-github-action-for-autonomous-pr-review",
+    "text": "Autonomous PR review with claude-code-action@v1: trigger on pull_request, skip the @claude mention gate, and allowlist mcp__github_inline_comment so findings land on the right diff lines. Plus the v1 vs beta migration table and why pull_request_target is the wrong fix for fork PRs."
+  }
+]
