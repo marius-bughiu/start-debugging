@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers",
+    "text": "Stop running EF Core integration tests against the in-memory provider. A complete walkthrough for .NET 11: Testcontainers 4.11 MsSql, IClassFixture, the RemoveAll<DbContextOptions> step everyone forgets, Respawn vs truncate vs transaction-rollback for state reset, and what Ryuk actually saves you from in CI."
+  }
+]

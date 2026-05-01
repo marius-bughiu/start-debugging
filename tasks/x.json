@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers",
+    "text": "EF Core in-memory hides the bugs that bite in prod. Real SQL Server in a container, one method call, 10s cold start."
+  }
+]

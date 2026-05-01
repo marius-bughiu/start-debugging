@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers",
+    "text": "Testcontainers 4.11 + EF Core 11 for real SQL Server integration tests in .NET 11, with the DbContext swap most posts forget."
+  }
+]
