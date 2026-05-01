@@ -1,2 +1,6 @@
 [
+  {
+    "slug": "2026/05/how-to-set-up-structured-logging-with-serilog-and-seq-in-dotnet-11",
+    "text": "Structured logging on .NET 11 with Serilog 4.3 and Seq 2025.2. Covers AddSerilog (the obsolete UseSerilog is gone), the two-stage bootstrap that catches startup crashes, JSON pipeline config, request log enrichment with TraceId, and the bufferBaseFilename flag that stops you losing events during a Seq outage."
+  }
 ]
