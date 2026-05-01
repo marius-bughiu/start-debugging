@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4",
+    "text": "VSTest drops Newtonsoft.Json in .NET 11 Preview 4. Tests on the transitive copy break at runtime. One-line fix."
+  },
+  {
     "slug": "2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11",
     "text": "ASP.NET Core 11 ships 4 rate-limiter algorithms. Pick wrong, and either /login leaks or /search 429s under normal bursts. The decision matrix."
   },
