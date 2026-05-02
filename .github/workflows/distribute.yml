@@ -178,9 +178,9 @@ jobs:
             exit 0
           fi
           git commit -m "chore(distribute): record post IDs [skip ci]"
-          # Retry against concurrent pushes to main (translation backfills,
-          # content edits, etc.). The `distribute` concurrency group only
-          # serialises this workflow with itself.
+          # Retry against concurrent pushes to main (content edits, etc.).
+          # The `distribute` concurrency group only serialises this workflow
+          # with itself.
           for attempt in 1 2 3 4 5; do
             if git push; then
               exit 0
