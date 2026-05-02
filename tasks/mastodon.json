@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-write-a-maui-app-that-runs-on-windows-and-macos-only",
+    "text": "Desktop-only .NET MAUI 11: drop Android and iOS from TargetFrameworks, delete Platforms/Android and Platforms/iOS, uninstall maui-android and maui-ios workloads, and your Single Project and XAML hot reload still work. Plus the Visual Studio gotcha that re-adds mobile items behind your back."
+  }
+]
