@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths",
+    "text": "EF.CompileAsyncQuery cuts 20-40% off EF Core 11 query overhead, if you put it in a static field and add AsNoTracking."
+  }
+]
