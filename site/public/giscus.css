@@ -2,15 +2,14 @@
  * Custom Giscus theme for startdebugging.net.
  *
  * Mirrors site palette tokens from `site/src/styles/global.css` so the
- * comments iframe blends into the page in both light and dark modes.
+ * comments iframe blends into the page.
  *
  * Loaded by the Giscus iframe via the `data-theme` attribute pointing to
  * https://startdebugging.net/giscus.css. Configured in
  * `.github/workflows/deploy-pages.yml` (PUBLIC_GISCUS_THEME).
  *
- * Targets `main` per Giscus theme convention. The default block is the
- * dark theme (matches the site default); the `prefers-color-scheme: light`
- * block flips to the light variant. Both follow the same site tokens.
+ * Targets `main` per Giscus theme convention. Site is dark-only — there
+ * is no light variant.
  */
 
 main {
@@ -120,105 +119,6 @@ main {
   --color-prettylights-syntax-brackethighlighter-angle: #768390;
   --color-prettylights-syntax-sublimelinter-gutter-mark: #545d68;
   --color-prettylights-syntax-constant-other-reference-link: #96d0ff;
-}
-
-@media (prefers-color-scheme: light) {
-  main {
-    /* --- canvases --- */
-    --color-canvas-default: #f7f7fb;            /* --bg */
-    --color-canvas-overlay: #ffffff;
-    --color-canvas-inset: rgba(0, 0, 0, 0.04);
-    --color-canvas-subtle: rgba(0, 0, 0, 0.025);
-
-    /* --- borders --- */
-    --color-border-default: rgba(0, 0, 0, 0.12); /* --border */
-    --color-border-muted: rgba(0, 0, 0, 0.08);
-
-    /* --- foreground --- */
-    --color-fg-default: rgba(0, 0, 0, 0.88);     /* --text */
-    --color-fg-muted: rgba(0, 0, 0, 0.64);       /* --muted */
-    --color-fg-subtle: rgba(0, 0, 0, 0.5);
-    --color-fg-on-emphasis: #ffffff;
-
-    /* --- accent --- */
-    --color-accent-fg: #0b65c2;                  /* --link */
-    --color-accent-emphasis: #0b65c2;
-    --color-accent-muted: rgba(11, 101, 194, 0.4);
-    --color-accent-subtle: rgba(11, 101, 194, 0.12);
-
-    /* --- neutral --- */
-    --color-neutral-muted: rgba(0, 0, 0, 0.04);  /* --panel */
-    --color-neutral-subtle: rgba(0, 0, 0, 0.02);
-    --color-neutral-emphasis-plus: rgba(0, 0, 0, 0.18);
-
-    /* --- status --- */
-    --color-success-fg: #1a7f37;
-    --color-success-emphasis: #2da44e;
-    --color-attention-fg: #9a6700;
-    --color-attention-emphasis: #bf8700;
-    --color-attention-muted: rgba(212, 167, 44, 0.4);
-    --color-attention-subtle: rgba(255, 245, 222, 1);
-    --color-danger-fg: #cf222e;
-    --color-danger-emphasis: #cf222e;
-
-    /* --- buttons --- */
-    --color-btn-text: rgba(0, 0, 0, 0.88);
-    --color-btn-bg: #ffffff;
-    --color-btn-border: rgba(0, 0, 0, 0.15);
-    --color-btn-hover-bg: #f3f4f6;
-    --color-btn-hover-border: rgba(0, 0, 0, 0.2);
-    --color-btn-active-bg: #ebecf0;
-    --color-btn-active-border: rgba(0, 0, 0, 0.2);
-    --color-btn-selected-bg: #ebecf0;
-
-    --color-btn-primary-text: #ffffff;
-    --color-btn-primary-bg: #0b65c2;
-    --color-btn-primary-border: rgba(0, 0, 0, 0.1);
-    --color-btn-primary-hover-bg: #0a5aaf;
-    --color-btn-primary-hover-border: rgba(0, 0, 0, 0.1);
-    --color-btn-primary-selected-bg: #094e96;
-    --color-btn-primary-disabled-text: rgba(255, 255, 255, 0.6);
-    --color-btn-primary-disabled-bg: rgba(11, 101, 194, 0.6);
-
-    /* --- action list --- */
-    --color-action-list-item-default-hover-bg: rgba(0, 0, 0, 0.06);
-
-    /* --- shadows --- */
-    --color-shadow-medium: 0 3px 6px rgba(0, 0, 0, 0.12);
-    --color-shadow-large: 0 8px 24px rgba(0, 0, 0, 0.16);
-
-    --color-primer-shadow-focus: 0 0 0 3px rgba(11, 101, 194, 0.3);
-
-    /* --- syntax highlighting (GitHub light) --- */
-    --color-prettylights-syntax-comment: #57606a;
-    --color-prettylights-syntax-constant: #0550ae;
-    --color-prettylights-syntax-entity: #6639ba;
-    --color-prettylights-syntax-storage-modifier-import: #24292f;
-    --color-prettylights-syntax-entity-tag: #116329;
-    --color-prettylights-syntax-keyword: #cf222e;
-    --color-prettylights-syntax-string: #0a3069;
-    --color-prettylights-syntax-variable: #953800;
-    --color-prettylights-syntax-brackethighlighter-unmatched: #82071e;
-    --color-prettylights-syntax-invalid-illegal-text: #f6f8fa;
-    --color-prettylights-syntax-invalid-illegal-bg: #82071e;
-    --color-prettylights-syntax-carriage-return-text: #f6f8fa;
-    --color-prettylights-syntax-carriage-return-bg: #cf222e;
-    --color-prettylights-syntax-string-regexp: #116329;
-    --color-prettylights-syntax-markup-list: #3b2300;
-    --color-prettylights-syntax-markup-heading: #0550ae;
-    --color-prettylights-syntax-markup-italic: #24292f;
-    --color-prettylights-syntax-markup-bold: #24292f;
-    --color-prettylights-syntax-markup-deleted-text: #82071e;
-    --color-prettylights-syntax-markup-deleted-bg: #ffebe9;
-    --color-prettylights-syntax-markup-inserted-text: #116329;
-    --color-prettylights-syntax-markup-inserted-bg: #dafbe1;
-    --color-prettylights-syntax-markup-changed-text: #953800;
-    --color-prettylights-syntax-markup-changed-bg: #ffd8b5;
-    --color-prettylights-syntax-meta-diff-range: #8250df;
-    --color-prettylights-syntax-brackethighlighter-angle: #57606a;
-    --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f;
-    --color-prettylights-syntax-constant-other-reference-link: #0a3069;
-  }
 }
 
 /*

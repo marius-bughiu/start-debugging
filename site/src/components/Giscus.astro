@@ -30,7 +30,7 @@ const repo = import.meta.env.PUBLIC_GISCUS_REPO ?? "";
 const repoId = import.meta.env.PUBLIC_GISCUS_REPO_ID ?? "";
 const category = import.meta.env.PUBLIC_GISCUS_CATEGORY ?? "Blog comments";
 const categoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID ?? "";
-const theme = import.meta.env.PUBLIC_GISCUS_THEME ?? "preferred_color_scheme";
+const theme = import.meta.env.PUBLIC_GISCUS_THEME ?? "dark";
 
 const configured = !!(repo && repoId && categoryId);
 const showWidget = enabledByPolicy && configured;

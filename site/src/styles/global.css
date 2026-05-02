@@ -1,5 +1,5 @@
 :root {
-  color-scheme: light dark;
+  color-scheme: dark;
   --bg: #0b1020;
   --panel: rgba(255, 255, 255, 0.06);
   --text: rgba(255, 255, 255, 0.92);
@@ -9,19 +9,10 @@
   --shadow: rgba(0, 0, 0, 0.35);
   --max: 980px;
   --code-bg: rgba(36, 41, 46, 0.78);
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg: #f7f7fb;
-    --panel: rgba(0, 0, 0, 0.04);
-    --text: rgba(0, 0, 0, 0.88);
-    --muted: rgba(0, 0, 0, 0.64);
-    --link: #0b65c2;
-    --border: rgba(0, 0, 0, 0.12);
-    --shadow: rgba(0, 0, 0, 0.12);
-    --code-bg: rgba(246, 248, 250, 0.92);
-  }
+  /* Brand accent — sampled from public/brand-logo.jpg. Used for focus
+     outlines and text selection so the brand colour shows up in subtle
+     interaction states without overriding the cyan link palette. */
+  --accent: #f16652;
 }
 
 * {
@@ -77,6 +68,11 @@ a:hover {
   text-decoration: underline;
 }
 
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
 /* Post list cards: keep whole card clickable */
 a.panel.card:hover,
 a.panel.card:focus-visible {
@@ -108,16 +104,6 @@ a.panel.card:focus-visible {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s ease;
-}
-
-@media (prefers-color-scheme: light) {
-  .post-card::after {
-    background: radial-gradient(
-      800px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px),
-      rgba(0, 0, 0, 0.04),
-      transparent 40%
-    );
-  }
 }
 
 .post-card:hover::after {
