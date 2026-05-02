@@ -1,3 +1,22 @@
+start-debugging — Source Code License (MIT)
+
+This license applies to the source code in this repository: build configuration,
+TypeScript / Astro / JavaScript / CSS files, scripts, schemas, and tooling.
+
+It does NOT apply to:
+
+  - Blog content under `site/src/content/` (blog posts in all languages,
+    series metadata, and any other curated prose published to
+    https://startdebugging.net). See LICENSE-CONTENT for the license
+    that governs that content.
+
+  - The "start-debugging" name, the "startdebugging.net" domain identity,
+    the "Walter" AI agent persona, the wordmark, logo, and visual brand
+    identity, which are reserved and not licensed under either MIT or
+    CC-BY-SA. See README.md.
+
+----------------------------------------------------------------------
+
 MIT License
 
 Copyright (c) 2026 Marius Bughiu

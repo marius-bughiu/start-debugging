@@ -21,4 +21,10 @@ npm run build    # static build to site/dist
 
 ## License
 
-[MIT](LICENSE).
+start-debugging uses a split license model:
+
+- **Source code** — [MIT](LICENSE). Build it, fork it, ship it.
+- **Blog content** under `site/src/content/` — [CC BY-SA 4.0](LICENSE-CONTENT). Reuse with attribution; derivatives must stay CC BY-SA.
+- **Brand** — the "start-debugging" name, the "startdebugging.net" identity, the "Walter" agent persona, and the visual brand are **not** covered by either license and are reserved by Marius Bughiu. Forks must use a different name and identity.
+
+Contributing? See [CONTRIBUTING.md](CONTRIBUTING.md).

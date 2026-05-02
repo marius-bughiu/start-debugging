@@ -1,0 +1,72 @@
+start-debugging — Content License (CC BY-SA 4.0)
+
+The blog content of this repository — meaning the posts, translations,
+series metadata, and other curated prose under `site/src/content/`, as
+well as those same posts as rendered on https://startdebugging.net — is
+licensed under the
+
+    Creative Commons Attribution-ShareAlike 4.0 International License
+    (CC BY-SA 4.0).
+
+You can read the full license at:
+
+    https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+Plain-language summary (not a substitute for the license itself):
+
+    https://creativecommons.org/licenses/by-sa/4.0/
+
+Under this license you are free to:
+
+  - Share — copy and redistribute the content in any medium or format.
+  - Adapt — remix, transform, and build upon the content for any purpose,
+    including commercially.
+
+Under the following terms:
+
+  - Attribution — You must give appropriate credit to start-debugging,
+    provide a link to the original post on https://startdebugging.net,
+    provide a link to the license, and indicate if changes were made. You
+    may do so in any reasonable manner, but not in any way that suggests
+    start-debugging endorses you or your use.
+
+  - ShareAlike — If you remix, transform, or build upon the content, you
+    must distribute your contributions under the same license as the
+    original (CC BY-SA 4.0).
+
+  - No additional restrictions — You may not apply legal terms or
+    technological measures that legally restrict others from doing
+    anything the license permits.
+
+Code samples embedded in posts:
+
+  Short code samples included inline in blog posts are also covered by
+  CC BY-SA 4.0 as part of the post. If you would prefer to reuse a code
+  sample under a more permissive license (e.g. MIT) without the
+  ShareAlike obligation, that is fine — short, functional code snippets
+  used in tutorials are typically not creative-expression eligible for
+  meaningful copyright protection in the first place. Use your judgment.
+
+What this license does NOT cover:
+
+  - The source code in this repository (Astro components, layouts,
+    scripts, build config, and anything outside `site/src/content/`),
+    which is licensed separately under the MIT License. See LICENSE.
+
+  - Internal operational content under `content-strategy/` (agent
+    prompts, topic queues, metrics, daily routines), which is not part
+    of the published blog and is not licensed under CC BY-SA 4.0.
+
+  - The "start-debugging" name, the "startdebugging.net" domain identity,
+    the "Walter" AI agent persona, the wordmark, logo, and visual brand
+    identity, which are reserved by Marius Bughiu and are not licensed
+    under CC BY-SA 4.0 or any other license in this repository. Forks
+    and derivatives must use a different name and identity. See
+    README.md.
+
+  - Third-party trademarks, product names, and logos referenced in posts
+    (e.g. .NET, C#, Microsoft, JetBrains product names), which remain
+    the property of their respective owners and are used here for
+    identification and editorial purposes only.
+
+Copyright (c) 2026 Marius Bughiu.
