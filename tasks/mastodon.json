@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths",
-    "text": "Compiled queries in EF Core 11 are a scalpel, not a sledgehammer. Store the EF.CompileAsyncQuery delegate in a static readonly field, hand it a fresh DbContext from a pooled factory, pair with AsNoTracking. Win is 20-40% on hot read paths. The trap: compile inside the method and you re-translate every call, which is strictly worse than not compiling at all."
-  }
-]
+[]
