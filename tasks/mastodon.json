@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11",
+    "text": "Three layers for catching N+1 in EF Core 11: turn on LogTo for command logging in dev, ship a DbCommandInterceptor that counts commands per request and warns over a threshold in prod, then write a Testcontainers integration test that asserts the endpoint never executes more than 2 commands."
+  }
+]

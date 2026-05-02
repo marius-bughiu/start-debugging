@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11",
+    "text": "Catch N+1 queries in EF Core 11: count commands per request and fail a unit test when an endpoint blows past its budget."
+  }
+]

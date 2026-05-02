@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11",
+    "text": "EF Core 11 won't warn on N+1. Fix: a DbCommandInterceptor that counts queries per request and a test asserting an upper bound."
+  }
+]
