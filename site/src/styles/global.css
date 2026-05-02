@@ -1087,3 +1087,26 @@ footer {
   gap: 10px;
 }
 
+/* Manual AdSense placements: top-of-post and in-article. The reserved
+   min-height keeps CLS predictable when AdSense fills (or no-fills) the
+   <ins> after the deferred bundle loads. */
+.adslot {
+  display: block;
+  margin: 24px 0;
+  min-height: 280px;
+  text-align: center;
+}
+
+.adslot-label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.adslot ins.adsbygoogle {
+  display: block;
+  margin: 0 auto;
+}
+

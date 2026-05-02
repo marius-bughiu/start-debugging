@@ -1,0 +1,40 @@
+---
+import {
+  ADSENSE_CLIENT,
+  ADSENSE_SLOT_TOP,
+  ADSENSE_SLOT_IN_ARTICLE,
+} from "../lib/adsense.mjs";
+
+interface Props {
+  variant: "top" | "in-article";
+}
+
+const { variant } = Astro.props;
+const slot = variant === "top" ? ADSENSE_SLOT_TOP : ADSENSE_SLOT_IN_ARTICLE;
+const isInArticle = variant === "in-article";
+---
+
+{slot ? (
+  <aside class={`adslot adslot-${variant}`} aria-label="Advertisement">
+    <span class="adslot-label muted">Advertisement</span>
+    {isInArticle ? (
+      <ins
+        class="adsbygoogle"
+        style="display:block; text-align:center;"
+        data-ad-client={ADSENSE_CLIENT}
+        data-ad-slot={slot}
+        data-ad-format="fluid"
+        data-ad-layout="in-article"
+      />
+    ) : (
+      <ins
+        class="adsbygoogle"
+        style="display:block; text-align:center;"
+        data-ad-client={ADSENSE_CLIENT}
+        data-ad-slot={slot}
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
+    )}
+  </aside>
+) : null}

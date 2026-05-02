@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Giscus from "../../../components/Giscus.astro";
+import AdSlot from "../../../components/AdSlot.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import {
@@ -109,6 +110,8 @@ const related = await getRelatedPosts(post, 4);
         <time datetime={post.data.pubDate.toISOString()}>{pubDateIso}</time>
       </div>
     </div>
+
+    <AdSlot variant="top" />
 
     <Content />
 

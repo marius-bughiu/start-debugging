@@ -4,6 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import url from "node:url";
 import matter from "gray-matter";
+import { rehypeInjectAd } from "./src/lib/rehype-inject-ad.mjs";
 
 /** Rehype plugin: adds loading="lazy" to all <img> elements */
 function rehypeLazyImages() {
@@ -133,7 +134,7 @@ export default defineConfig({
     }),
   ],
   markdown: {
-    rehypePlugins: [rehypeLazyImages],
+    rehypePlugins: [rehypeLazyImages, rehypeInjectAd],
   },
   ...(process.env.VITE_CACHE_DIR
     ? { vite: { cacheDir: process.env.VITE_CACHE_DIR } }
