@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/migrate-a-semantic-kernel-plugin-to-an-mcp-server",
+    "text": "Two ways to lift a Semantic Kernel plugin into MCP: a 12-line WithTools(kernel) bridge or swap [KernelFunction] for [McpServerTool]."
+  }
+]

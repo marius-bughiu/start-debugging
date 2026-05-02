@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/migrate-a-semantic-kernel-plugin-to-an-mcp-server",
+    "text": "Migrating a Semantic Kernel plugin to an MCP server is shorter than it looks. WithTools(kernel) walks Plugins, calls AsAIFunction, registers each as an McpServerTool. The trap: IFunctionInvocationFilter does not cross. Validation, redaction and audit have to move into the tool itself or sit in a gateway in front of the server."
+  }
+]

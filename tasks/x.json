@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/migrate-a-semantic-kernel-plugin-to-an-mcp-server",
+    "text": "SK plugins are SK-only. Move them behind MCP and Claude Code, Cursor and Agent Framework can all call them."
+  }
+]
