@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-write-a-maui-app-that-runs-on-windows-and-macos-only",
-    "text": "Want a desktop-only .NET MAUI 11 app? The csproj edits, workload changes, and gotchas that bite when you remove the mobile heads."
-  }
-]
+[]

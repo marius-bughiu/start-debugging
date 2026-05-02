@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-write-a-maui-app-that-runs-on-windows-and-macos-only",
-    "text": "Strip Android and iOS from .NET MAUI 11 so it ships only Windows and Mac Catalyst, plus the csproj edits."
-  }
-]
+[]
