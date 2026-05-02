@@ -384,9 +384,37 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
     {includeAdsense ? (
       <>
         <!-- Google AdSense (deferred). Loading the AdSense bundle eagerly tanks LCP/INP on
-             mobile — defer until the page is idle or the user interacts. -->
+             mobile — defer until the page is idle or the user interacts.
+
+             Also registers manual <ins.adsbygoogle> slots (top-of-post from
+             AdSlot.astro, in-article from rehype-inject-ad.mjs) by pushing
+             once per slot to window.adsbygoogle. Pushes are queue-safe — they
+             buffer on the global array if the AdSense JS hasn't loaded yet,
+             and get processed in DOM order once the lazy loader pulls in the
+             script. Without these pushes, manual slots stay empty forever. -->
         <script is:inline>
           (function () {
+            // Page-level slot registration. Idempotent via a marker attribute
+            // so re-running (e.g. on Astro view-transition pageswap) only ever
+            // pushes once per <ins>.
+            function registerSlots() {
+              var slots = document.querySelectorAll('ins.adsbygoogle:not([data-adsbygoogle-registered])');
+              for (var i = 0; i < slots.length; i++) {
+                slots[i].setAttribute('data-adsbygoogle-registered', '1');
+                (window.adsbygoogle = window.adsbygoogle || []).push({});
+              }
+            }
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', registerSlots);
+            } else {
+              registerSlots();
+            }
+
+            // Lazy-load the AdSense bundle on first user interaction or, failing
+            // that, when the browser is idle. Cap at 8s after `load` so
+            // headless / no-interaction sessions still bring it in (ad fill
+            // matters; abandonment matters less than CWV impact during the
+            // initial paint).
             var loaded = false;
             function loadAdsense() {
               if (loaded) return;
@@ -397,10 +425,6 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
               s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1537458730659685';
               document.head.appendChild(s);
             }
-            // Load on first user interaction or, failing that, when the browser
-            // is idle. Cap at 8s after `load` so headless / no-interaction
-            // sessions still bring it in (ad fill matters; abandonment matters
-            // less than CWV impact during the initial paint).
             var events = ['scroll', 'pointerdown', 'keydown', 'touchstart'];
             function once() {
               events.forEach(function (e) { window.removeEventListener(e, once, { passive: true }); });

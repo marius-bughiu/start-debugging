@@ -38,3 +38,10 @@ const isInArticle = variant === "in-article";
     )}
   </aside>
 ) : null}
+
+{/* Slot registration — one push() per <ins class="adsbygoogle"> on the page —
+    is centralized in BaseLayout's adsbygoogle bootstrap so it covers both
+    these top/bottom AdSlot blocks AND the in-article slot injected by
+    rehype-inject-ad.mjs. Astro's markdown pipeline strips inline <script>
+    tags from rehype-injected nodes, so per-slot scripts don't survive there;
+    a single page-level scanner is the only path that works for both. */}

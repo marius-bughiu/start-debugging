@@ -61,6 +61,10 @@ function makeAdNode() {
         },
         children: [],
       },
+      // Per-slot push() registration is NOT injected here — Astro's markdown
+      // pipeline strips inline <script> tags from rehype output. Registration
+      // is done page-level by the adsbygoogle bootstrap in BaseLayout.astro,
+      // which scans all <ins.adsbygoogle> on the page after DOM ready.
     ],
   };
 }
