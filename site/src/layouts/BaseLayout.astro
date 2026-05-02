@@ -449,7 +449,12 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
               <ul class="header-lang-menu" role="menu">
                 {translationEntries.map(([l, href]) => (
                   <li role="menuitem">
-                    <a href={href} hreflang={LOCALE_HREFLANG[l]} lang={LOCALE_HREFLANG[l]}>
+                    <a
+                      href={href}
+                      hreflang={LOCALE_HREFLANG[l]}
+                      lang={LOCALE_HREFLANG[l]}
+                      aria-label={LOCALE_NATIVE_NAME[l]}
+                    >
                       <span class="header-lang-menu-code">{LOCALE_SHORT_CODE[l]}</span>
                       <span>{LOCALE_NATIVE_NAME[l]}</span>
                     </a>
