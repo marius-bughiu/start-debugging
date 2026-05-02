@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/agent-governance-toolkit-mcp-policy-control-dotnet",
+    "text": "Microsoft just dropped Microsoft.AgentGovernance on NuGet: a policy kernel, a tool-definition security scanner, and a response sanitizer for MCP tool calls in .NET. YAML policies, deny-overrides by default, audit-friendly EvaluationResult on every call. Targets net8.0, MIT-licensed."
+  }
+]

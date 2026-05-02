@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/agent-governance-toolkit-mcp-policy-control-dotnet",
+    "text": "Microsoft.AgentGovernance ships: a YAML policy kernel that gates every MCP tool call from .NET before it runs."
+  }
+]
