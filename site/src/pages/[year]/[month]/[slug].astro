@@ -108,7 +108,7 @@ const related = await getRelatedPosts(post, 4);
       <h1 class="h1">{post.data.title}</h1>
       {post.data.description ? <p class="muted">{post.data.description}</p> : null}
       <div class="byline">
-        <span>By <span class="byline-author">Marius Bughiu</span></span>
+        <span>By <span class="byline-author">Marius Bughiu</span>, <a class="byline-author" href="https://github.com/marius-bughiu/walter" rel="noopener">Walter Ice</a></span>
         <span class="byline-sep">&middot;</span>
         <span>{readingMinutes} min read</span>
         <span class="byline-sep">&middot;</span>

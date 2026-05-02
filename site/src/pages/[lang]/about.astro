@@ -28,6 +28,7 @@ const siteOrigin = Astro.site?.origin ?? "https://startdebugging.net";
 const rssHref = `${langPrefix}rss.xml`;
 const body1 = t("about.body1", lang);
 const body2 = t("about.body2", lang);
+const bodyWalter = t("about.bodyWalter", lang);
 const body3 = t("about.body3", lang).replace("{rss}", rssHref);
 
 const translations = buildLocaleUrlMap(siteOrigin, (l) =>
@@ -51,6 +52,7 @@ const translations = buildLocaleUrlMap(siteOrigin, (l) =>
 
     <p set:html={body1} />
     <p set:html={body2} />
+    <p set:html={bodyWalter} />
     <p set:html={body3} />
   </article>
 

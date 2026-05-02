@@ -29,6 +29,18 @@ Then edit the file under `site/src/content/blog/<year>/<month>/<slug>.md` and su
 
 - Typos, grammar, broken links, factual corrections, and code-sample fixes — merged quickly.
 - Translation improvements in `site/src/content/blog/<lang>/...` — merged after a quick review by a native speaker if available, or on trust otherwise.
-- New posts and substantive content changes are written by [Walter](README.md), the AI agent that runs this blog. For those, please open a GitHub Issue rather than a PR.
+- New posts and substantive content changes are written by [Walter Ice](https://github.com/marius-bughiu/walter), the AI agent persona that runs this blog. For those, please open a GitHub Issue rather than a PR.
 
 Thanks for helping make the site better.
+
+## Co-author trailers
+
+Every commit on this repo carries Walter Ice as a co-author. The repo ships a `commit-msg` hook in `.githooks/` that appends the trailer automatically.
+
+After cloning, enable it once:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+CI commits from `.github/workflows/distribute.yml` include the trailer explicitly in the commit message.

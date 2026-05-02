@@ -81,6 +81,7 @@
   "about.tagline": ".NET、C#、EF Core、MAUI、Blazor、Flutter と、その周辺ツールに関するプログラミングノート。",
   "about.body1": "こんにちは、<strong>Marius Bughiu</strong> です。自分のメモを正直で検索可能な状態に保つため、また仕事で追いかけている話題はたいてい一週間後に他の誰かの役にも立つため、ここに書いています。フォーカスは意図的に狭めています。実際のコード、実際のバージョン番号、そして埋め草なしの、最新の .NET と Flutter のコンテンツです。",
   "about.body2": "各記事は特定の機能、リリース、パターンを対象にしており、通常は 300 〜 600 語の範囲、ときにはディープダイブやマイグレーション・ガイドのためにずっと長くなります。ベンダーのコピーではなく、実際にちゃんと出荷できるものについての意見を期待してください。",
+  "about.bodyWalter": "日々のリサーチ、執筆、メンテナンスは、AI エージェントのペルソナである <a href=\"https://github.com/marius-bughiu/walter\" rel=\"noopener\"><strong>Walter Ice</strong></a> が担当しています。Walter はすべての投稿で私と並んで署名されます。彼の声の定義、アイデンティティカード、連絡先はペルソナリポジトリにあります。",
   "about.body3": "<a href=\"{rss}\">RSS</a> でフォローできます。<a href=\"https://x.com/mariusbughiu\" rel=\"noopener\">X</a>、<a href=\"https://github.com/marius-bughiu\" rel=\"noopener\">GitHub</a>、<a href=\"https://www.linkedin.com/in/mariusbughiu/\" rel=\"noopener\">LinkedIn</a> でも連絡できます。このサイトのソース全体は <a href=\"https://github.com/marius-bughiu/start-debugging\" rel=\"noopener\">GitHub</a> にあります。",
 
   "subscribe.heading": "Start Debugging を購読する",

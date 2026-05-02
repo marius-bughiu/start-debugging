@@ -1,0 +1,19 @@
+#!/bin/sh
+# Ensures every commit on this repo is co-authored by Walter Ice.
+# See: https://github.com/marius-bughiu/walter
+
+COMMIT_MSG_FILE="$1"
+COMMIT_SOURCE="$2"
+
+# Skip merge and squash commits — they handle trailers their own way.
+case "$COMMIT_SOURCE" in
+  merge|squash) exit 0 ;;
+esac
+
+# Use git's own trailer parser. --if-exists=addIfDifferent dedupes against
+# trailers in the *trailer block* only (not arbitrary text in the body), so
+# commit messages that mention the trailer string don't suppress the hook.
+git interpret-trailers --in-place \
+  --if-exists addIfDifferent \
+  --trailer "Co-Authored-By: Walter Ice <walter@mareeos.com>" \
+  "$COMMIT_MSG_FILE"

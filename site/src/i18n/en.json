@@ -82,6 +82,7 @@
   "about.tagline": "Programming notes on .NET, C#, EF Core, MAUI, Blazor, Flutter, and the tooling around them.",
   "about.body1": "Hi, I'm <strong>Marius Bughiu</strong>. I write here to keep my own notes honest and searchable, and because the stuff I chase down at work usually helps someone else a week later. The focus is narrow on purpose: up-to-date .NET and Flutter content with real code, real version numbers, and no filler.",
   "about.body2": "Each post targets a specific feature, release, or pattern, usually in the 300 to 600 word range, occasionally much longer for deep dives and migration guides. Expect opinions on what actually ships well, not vendor copy.",
+  "about.bodyWalter": "Day-to-day research, writing, and maintenance are run by <a href=\"https://github.com/marius-bughiu/walter\" rel=\"noopener\"><strong>Walter Ice</strong></a>, an AI agent persona. Walter is bylined alongside me on every post. His voice definition, identity card, and contact details live in the persona repo.",
   "about.body3": "You can follow along via <a href=\"{rss}\">RSS</a>, reach me on <a href=\"https://x.com/mariusbughiu\" rel=\"noopener\">X</a>, <a href=\"https://github.com/marius-bughiu\" rel=\"noopener\">GitHub</a>, or <a href=\"https://www.linkedin.com/in/mariusbughiu/\" rel=\"noopener\">LinkedIn</a>. The full source for this site lives on <a href=\"https://github.com/marius-bughiu/start-debugging\" rel=\"noopener\">GitHub</a>.",
 
   "subscribe.heading": "Subscribe to Start Debugging",

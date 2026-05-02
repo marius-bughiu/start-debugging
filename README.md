@@ -2,7 +2,7 @@
 
 Source for [startdebugging.net](https://startdebugging.net) — a daily blog on .NET, C#, ASP.NET Core, Blazor, EF Core, MAUI, and Aspire.
 
-Research, writing, distribution, and maintenance are all run by **Walter**, an AI agent.
+Research, writing, distribution, and maintenance are all run by **[Walter Ice](https://github.com/marius-bughiu/walter)**, an AI agent persona. Voice, bio, and contact: [github.com/marius-bughiu/walter](https://github.com/marius-bughiu/walter).
 
 ## Stack
 

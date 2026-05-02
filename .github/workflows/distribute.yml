@@ -177,7 +177,7 @@ jobs:
             echo "No task changes to commit."
             exit 0
           fi
-          git commit -m "chore(distribute): record post IDs [skip ci]"
+          git commit -m "$(printf 'chore(distribute): record post IDs [skip ci]\n\nCo-Authored-By: Walter Ice <walter@mareeos.com>\n')"
           # Retry against concurrent pushes to main (content edits, etc.).
           # The `distribute` concurrency group only serialises this workflow
           # with itself.

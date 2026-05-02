@@ -114,7 +114,7 @@ const langPrefix = `${baseUrl}${lang}/`;
       <h1 class="h1">{post.data.title}</h1>
       {post.data.description ? <p class="muted">{post.data.description}</p> : null}
       <div class="byline">
-        <span>{t("post.by", lang)} <span class="byline-author">Marius Bughiu</span></span>
+        <span>{t("post.by", lang)} <span class="byline-author">Marius Bughiu</span>, <a class="byline-author" href="https://github.com/marius-bughiu/walter" rel="noopener">Walter Ice</a></span>
         <span class="byline-sep">&middot;</span>
         <span>{readingMinutes} {t("post.minRead", lang)}</span>
         <span class="byline-sep">&middot;</span>
