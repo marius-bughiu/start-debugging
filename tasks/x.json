@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-add-tool-calling-to-a-microsoft-extensions-ai-chat-client",
-    "text": "Microsoft.Extensions.AI 10.5 runs the OpenAI tool-call loop for you: register a delegate, get a tool. No boilerplate."
-  }
-]
+[]

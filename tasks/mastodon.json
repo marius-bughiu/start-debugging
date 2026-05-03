@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-add-tool-calling-to-a-microsoft-extensions-ai-chat-client",
-    "text": "Microsoft.Extensions.AI 10.5 turns OpenAI tool calling into three lines: AIFunctionFactory.Create on a delegate, ChatOptions.Tools, UseFunctionInvocation. The library runs the call/response loop and respects CancellationToken. Set MaximumIterationsPerRequest or a misbehaving model will burn tokens."
-  }
-]
+[]
