@@ -3,7 +3,7 @@ title: "EF Core 11 cheat sheet"
 description: "Quick reference for EF Core 11: new query features, vector search, performance wins, and migration notes from EF Core 8/9/10."
 tagline: "The parts of EF Core 11 worth remembering."
 pubDate: 2026-04-18
-updatedDate: 2026-04-26
+updatedDate: 2026-05-03
 indexTags:
   - "ef-core"
   - "ef-core-11"

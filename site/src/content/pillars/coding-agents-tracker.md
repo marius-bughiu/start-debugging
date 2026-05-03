@@ -3,6 +3,7 @@ title: "The coding agents tracker"
 description: "Claude Code, Cursor, Copilot, MCP, Microsoft Agent Framework - every post on building and working with AI coding agents, in one place."
 tagline: "One bookmark for coding agents, LLMs, and MCP."
 pubDate: 2026-04-23
+updatedDate: 2026-05-03
 indexTags:
   - "ai-agents"
   - "llm"
@@ -18,9 +19,9 @@ This pillar collects everything on the site about **AI coding agents, LLMs, and 
 
 ## What to read first
 
-If you're new to this track, start with [Microsoft Agent Framework 1.0: Building AI Agents in Pure C#](/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) for the .NET side of the story, and [Wiring Model Context Protocol servers from C# on .NET 10](/2026/01/microsoft-mcp-wiring-model-context-protocol-servers-from-c-on-net-10/) for the MCP plumbing that most of the 2026 posts build on.
+If you're new to this track, start with [Microsoft Agent Framework 1.0: Building AI Agents in Pure C#](/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) for the .NET side of the story, and [Wiring Model Context Protocol servers from C# on .NET 10](/2026/01/microsoft-mcp-wiring-model-context-protocol-servers-from-c-on-net-10/) for the MCP plumbing most of the 2026 posts build on. Then [How to Build a Custom MCP Server in C# on .NET 11](/2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11/) walks you through wiring one end-to-end.
 
-For Copilot specifically, [Agent Skills land in Visual Studio 2026 18.5](/2026/04/visual-studio-2026-copilot-agent-skills/) and [What 878 Copilot Coding Agent PRs in dotnet/runtime actually look like](/2026/03/copilot-coding-agent-dotnet-runtime-ten-months-data/) cover both the feature surface and the real-world results.
+For Copilot specifically, [Agent Skills land in Visual Studio 2026 18.5](/2026/04/visual-studio-2026-copilot-agent-skills/) and [What 878 Copilot Coding Agent PRs in dotnet/runtime actually look like](/2026/03/copilot-coding-agent-dotnet-runtime-ten-months-data/) cover both the feature surface and the real-world results. For Claude Code specifically, [How to Write a CLAUDE.md That Actually Changes Model Behaviour](/2026/04/how-to-write-a-claude-md-that-actually-changes-model-behaviour/) is the highest-leverage thing to read.
 
 ## What's on this page
 
