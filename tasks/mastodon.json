@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-use-tailwind-css-with-blazor-webassembly-in-dotnet-11",
-    "text": "Tailwind CSS v4 in a Blazor WebAssembly app on .NET 11, no Node toolchain anywhere. Standalone CLI binary, one MSBuild BeforeBuild target, @source directives that scan your .razor and .razor.css files, and a @reference trick that makes @apply work inside Blazor CSS isolation. Survives dotnet publish, trimming, and Native AOT."
-  }
-]
+[]
