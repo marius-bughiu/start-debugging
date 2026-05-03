@@ -24,10 +24,15 @@ const DIST = path.join(SITE_DIR, "dist");
 const SITE_ORIGIN = "https://startdebugging.net";
 
 const LOC_RE = /<loc>([^<]+)<\/loc>/g;
-const ROBOTS_RE = /<meta\s+name=["']robots["']\s+content=["']([^"']+)["']/i;
-const CANONICAL_RE = /<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i;
+// Attribute-value regexes use a backreference (\1) on the surrounding quote
+// so the captured content can include the *other* quote character literally.
+// Without this, a perfectly valid description like
+//   content="'Foo' is not a valid option"
+// would fail to match because the [^"'] character class rejects both quotes.
+const ROBOTS_RE = /<meta\s+name=["']robots["']\s+content=(["'])([\s\S]*?)\1/i;
+const CANONICAL_RE = /<link\s+rel=["']canonical["']\s+href=(["'])([\s\S]*?)\1/i;
 const H1_RE = /<h1\b[^>]*>([\s\S]*?)<\/h1>/i;
-const DESCRIPTION_RE = /<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i;
+const DESCRIPTION_RE = /<meta\s+name=["']description["']\s+content=(["'])([\s\S]*?)\1/i;
 
 function extractLocs(xml) {
   const out = [];
@@ -81,13 +86,13 @@ await Promise.all(
     }
 
     const robotsMatch = ROBOTS_RE.exec(html);
-    if (robotsMatch && /\bnoindex\b/i.test(robotsMatch[1])) {
-      failures.push({ url: u, robots: robotsMatch[1] });
+    if (robotsMatch && /\bnoindex\b/i.test(robotsMatch[2])) {
+      failures.push({ url: u, robots: robotsMatch[2] });
     }
 
     const canonicalMatch = CANONICAL_RE.exec(html);
-    if (canonicalMatch && canonicalMatch[1] !== u) {
-      canonicalWarnings.push({ url: u, canonical: canonicalMatch[1] });
+    if (canonicalMatch && canonicalMatch[2] !== u) {
+      canonicalWarnings.push({ url: u, canonical: canonicalMatch[2] });
     }
 
     const h1Match = H1_RE.exec(html);
@@ -96,7 +101,7 @@ await Promise.all(
     }
 
     const descriptionMatch = DESCRIPTION_RE.exec(html);
-    if (!descriptionMatch || descriptionMatch[1].trim() === "") {
+    if (!descriptionMatch || descriptionMatch[2].trim() === "") {
       descriptionWarnings.push(u);
     }
   }),
