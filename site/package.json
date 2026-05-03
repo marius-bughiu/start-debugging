@@ -25,6 +25,7 @@
     "cwv-audit": "node scripts/cwv-audit.mjs",
     "cwv-audit:baseline": "node scripts/cwv-audit.mjs --baseline --label=baseline",
     "link-rot-check": "node scripts/link-rot-check.mjs",
+    "indexnow-ping": "node scripts/indexnow-ping.mjs",
     "wp:migrate": "node scripts/wp-migrate.mjs"
   },
   "dependencies": {
