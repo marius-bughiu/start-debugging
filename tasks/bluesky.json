@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-support-dark-mode-correctly-in-a-maui-app",
+    "text": "Dark mode in .NET MAUI 11, the parts that bite: AppThemeBinding, UserAppTheme persistence via Preferences, and the Android UiMode flag that breaks RequestedThemeChanged."
+  }
+]

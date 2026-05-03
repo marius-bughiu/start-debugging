@@ -2,5 +2,9 @@
   {
     "slug": "2026/05/how-to-implement-drag-and-drop-in-maui-11",
     "text": "MAUI 11 drag-and-drop in one line: DataPackage.Properties is process-local. Set e.Data.Text too if the drop crosses apps."
+  },
+  {
+    "slug": "2026/05/how-to-support-dark-mode-correctly-in-a-maui-app",
+    "text": "MAUI dark mode that actually flips: AppThemeBinding plus ConfigChanges.UiMode on MainActivity. Without the flag, Android only switches once."
   }
 ]

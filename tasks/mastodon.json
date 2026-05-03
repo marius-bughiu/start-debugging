@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-support-dark-mode-correctly-in-a-maui-app",
+    "text": "Dark mode in .NET MAUI 11, end to end: AppThemeBinding plus a StaticResource palette in App.xaml, Application.UserAppTheme as the runtime override (persist with Preferences), and the platform bits that bite: ConfigChanges.UiMode on MainActivity, UIUserInterfaceStyle in Info.plist, plus why RequestedThemeChanged sometimes fires only once."
+  }
+]
