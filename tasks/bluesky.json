@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-use-tailwind-css-with-blazor-webassembly-in-dotnet-11",
+    "text": "Tailwind CSS v4 in Blazor WebAssembly on .NET 11: standalone CLI, MSBuild BeforeBuild target, @source globs for your .razor files. No Node."
+  }
+]
