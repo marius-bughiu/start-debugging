@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/claude-code-2-1-126-project-purge",
+    "text": "Claude Code 2.1.126 adds claude project purge: wipes transcripts, tasks, file history, config for a repo in one shot."
+  }
+]

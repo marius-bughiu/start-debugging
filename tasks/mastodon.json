@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/claude-code-2-1-126-project-purge",
+    "text": "Claude Code v2.1.126 (May 1) added a tiny CLI command with a big cleanup story: claude project purge. It walks the same internal map the rest of the CLI uses and removes every transcript, task, file history snapshot, and config block tied to a project path. Flags: --dry-run, --yes, --interactive, --all."
+  }
+]
