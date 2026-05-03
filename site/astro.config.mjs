@@ -52,6 +52,10 @@ export default defineConfig({
           ja: "ja-JP",
         },
       },
+      // /page/1/ is a 301 to /. Astro still emits the redirect HTML in the
+      // static build, but it ships with noindex — including it in the sitemap
+      // would advertise an unindexable URL.
+      filter: (page) => !/\/page\/1\/?$/.test(new URL(page).pathname),
       serialize(item) {
         try {
           const pathname = new URL(item.url).pathname;
