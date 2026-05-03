@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-implement-drag-and-drop-in-maui-11",
+    "text": "MAUI 11 drag-and-drop, full tour: DragGestureRecognizer, DataPackage, AcceptedOperation, plus the PlatformArgs trap that breaks Move on Android."
+  }
+]
