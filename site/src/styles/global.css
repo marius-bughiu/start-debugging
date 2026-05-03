@@ -593,6 +593,7 @@ footer {
 .home-tagline {
   margin: 0;
   font-size: clamp(16px, 1.6vw, 18px);
+  font-weight: 400;
   color: var(--text);
   line-height: 1.5;
 }
