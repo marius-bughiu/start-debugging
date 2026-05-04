@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-package-a-maui-app-for-the-microsoft-store",
+    "text": "Shipping .NET MAUI 11 to the Microsoft Store: identity from Partner Center, dotnet publish per RID, MakeAppx bundle, .msixupload."
+  }
+]

@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-package-a-maui-app-for-the-microsoft-store",
+    "text": "VS's MAUI publish wizard still won't produce a Store-ready .msixupload in 2026. The supported path: reserve the name in Partner Center, paste Identity and Publisher into Package.appxmanifest, dotnet publish per architecture with WindowsPackageType=MSIX, then MakeAppx bundle the .msix files and zip as .msixupload."
+  }
+]

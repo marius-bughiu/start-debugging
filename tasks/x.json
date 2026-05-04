@@ -10,5 +10,9 @@
   {
     "slug": "2026/05/cursor-typescript-sdk-programmatic-coding-agents",
     "text": "Cursor just shipped a TypeScript SDK. Same Composer agent as the editor, runs against your cwd or a sandboxed cloud VM."
+  },
+  {
+    "slug": "2026/05/how-to-package-a-maui-app-for-the-microsoft-store",
+    "text": "MAUI to the Microsoft Store: dotnet publish per arch, MakeAppx bundle, zip as .msixupload. The VS wizard still won't."
   }
 ]
