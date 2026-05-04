@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-target-multiple-flutter-versions-from-one-ci-pipeline",
+    "text": "Running one Flutter app against several SDK versions in GitHub Actions: pin .fvmrc as the local truth, then a matrix job with subosito/flutter-action v2 covers stable-1, stable, and beta. fail-fast:false so a flaky beta does not hide real regressions, and skip caching for *-pre tags so a stale binary never ships."
+  }
+]

@@ -18,5 +18,9 @@
   {
     "slug": "2026/05/how-to-convert-array-to-readonlymemory-in-csharp",
     "text": "byte[] to ReadOnlyMemory<byte> in .NET 11: implicit cast for the full array, AsMemory(start, length) for a slice."
+  },
+  {
+    "slug": "2026/05/how-to-target-multiple-flutter-versions-from-one-ci-pipeline",
+    "text": "One Flutter repo, many SDK versions in CI: .fvmrc as truth, a fail-fast:false matrix on subosito/flutter-action v2."
   }
 ]

@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-target-multiple-flutter-versions-from-one-ci-pipeline",
+    "text": "Targeting many Flutter SDKs from one CI: .fvmrc plus a fail-fast:false matrix. Primary required, betas informational only."
+  }
+]
