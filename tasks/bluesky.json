@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-convert-array-to-readonlymemory-in-csharp",
-    "text": "In .NET 11, T[] to ReadOnlyMemory<T> has three paths: implicit cast, explicit ctor, AsMemory(). All zero-alloc, all read the same."
-  }
-]
+[]

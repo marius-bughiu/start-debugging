@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-convert-array-to-readonlymemory-in-csharp",
-    "text": "In .NET 11, T[] to ReadOnlyMemory<T> has three paths: the implicit conversion (whole array), the explicit constructor (with optional start/length), or AsMemory() (also accepts a Range). All allocation-free. AsMemory(headerLength..) is usually the right call when you need a slice."
-  }
-]
+[]
