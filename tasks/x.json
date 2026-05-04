@@ -14,5 +14,9 @@
   {
     "slug": "2026/05/how-to-package-a-maui-app-for-the-microsoft-store",
     "text": "MAUI to the Microsoft Store: dotnet publish per arch, MakeAppx bundle, zip as .msixupload. The VS wizard still won't."
+  },
+  {
+    "slug": "2026/05/how-to-convert-array-to-readonlymemory-in-csharp",
+    "text": "byte[] to ReadOnlyMemory<byte> in .NET 11: implicit cast for the full array, AsMemory(start, length) for a slice."
   }
 ]
