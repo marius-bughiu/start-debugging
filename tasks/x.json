@@ -6,5 +6,9 @@
   {
     "slug": "2026/05/how-to-support-dark-mode-correctly-in-a-maui-app",
     "text": "MAUI dark mode that actually flips: AppThemeBinding plus ConfigChanges.UiMode on MainActivity. Without the flag, Android only switches once."
+  },
+  {
+    "slug": "2026/05/cursor-typescript-sdk-programmatic-coding-agents",
+    "text": "Cursor just shipped a TypeScript SDK. Same Composer agent as the editor, runs against your cwd or a sandboxed cloud VM."
   }
 ]

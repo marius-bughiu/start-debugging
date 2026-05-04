@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/cursor-typescript-sdk-programmatic-coding-agents",
+    "text": "@cursor/sdk public beta: same Composer agent as the editor, swap a 'local' for 'cloud' field and your call runs in a sandboxed VM."
+  }
+]

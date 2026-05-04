@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/cursor-typescript-sdk-programmatic-coding-agents",
+    "text": "Cursor opened the public beta of @cursor/sdk on April 29: a TypeScript library that wraps the same runtime, harness, and models as the desktop editor. Pass 'local' and the agent works against your cwd. Pass 'cloud' and the same call runs in a sandboxed VM with codebase indexing, MCP, hooks, and subagents. Token-billed."
+  }
+]
