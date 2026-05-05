@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/claude-code-2-1-128-plugin-zip-worktree-fix",
-    "text": "Claude Code 2.1.128 quietly fixes EnterWorktree dropping unpushed commits and stops leaking OTEL_* env vars into Bash subprocesses."
-  }
-]
+[]
