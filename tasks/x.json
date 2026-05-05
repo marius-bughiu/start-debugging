@@ -30,5 +30,9 @@
   {
     "slug": "2026/05/fix-no-connection-string-named-defaultconnection",
     "text": "GetConnectionString returns null in .NET 11? Usually appsettings.json key missing or not copied to bin, not your code."
+  },
+  {
+    "slug": "2026/05/how-to-expose-an-ef-core-database-to-an-ai-agent-via-mcp",
+    "text": "Expose EF Core to a coding agent via MCP, not a RunQuery(sql) tool. IDbContextFactory, AsNoTracking, gated writes."
   }
 ]
