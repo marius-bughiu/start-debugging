@@ -34,5 +34,9 @@
   {
     "slug": "2026/05/how-to-expose-an-ef-core-database-to-an-ai-agent-via-mcp",
     "text": "Expose EF Core to a coding agent via MCP, not a RunQuery(sql) tool. IDbContextFactory, AsNoTracking, gated writes."
+  },
+  {
+    "slug": "2026/05/how-to-add-platform-specific-code-in-flutter-without-plugins",
+    "text": "Skip the federated plugin scaffold. A MethodChannel plus 20 lines in MainActivity / AppDelegate is the whole bridge."
   }
 ]

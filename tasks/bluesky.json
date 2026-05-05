@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-add-platform-specific-code-in-flutter-without-plugins",
+    "text": "Call Kotlin or Swift from Flutter without writing a plugin: MethodChannel and EventChannel, registered once in configureFlutterEngine."
+  }
+]
