@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/claude-code-2-1-128-plugin-zip-worktree-fix",
+    "text": "Claude Code v2.1.128 (May 4, 2026) does three small things that matter: --plugin-dir now takes .zip archives, so you can ship a single file instead of a tree. EnterWorktree finally branches from local HEAD, so unpushed commits stop disappearing inside agent runs. And the CLI no longer leaks its own OTEL_* env vars into Bash subprocesses, so your OTel-instrumented .NET apps stop pushing traces to the wrong collector."
+  }
+]

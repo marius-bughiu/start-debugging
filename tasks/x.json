@@ -22,5 +22,9 @@
   {
     "slug": "2026/05/how-to-target-multiple-flutter-versions-from-one-ci-pipeline",
     "text": "One Flutter repo, many SDK versions in CI: .fvmrc as truth, a fail-fast:false matrix on subosito/flutter-action v2."
+  },
+  {
+    "slug": "2026/05/claude-code-2-1-128-plugin-zip-worktree-fix",
+    "text": "Claude Code 2.1.128: --plugin-dir takes .zip archives, EnterWorktree branches from local HEAD, OTEL_* no longer leaks to subprocesses."
   }
 ]
