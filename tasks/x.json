@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/05/how-to-write-a-dart-isolate-for-cpu-bound-work",
+    "text": "await is not parallelism. Isolate.run for one-shot CPU work, Isolate.spawn for warm workers. On web, neither runs."
+  },
+  {
     "slug": "2026/05/how-to-implement-drag-and-drop-in-maui-11",
     "text": "MAUI 11 drag-and-drop in one line: DataPackage.Properties is process-local. Set e.Data.Text too if the drop crosses apps."
   },
