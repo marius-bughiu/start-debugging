@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-add-platform-specific-code-in-flutter-without-plugins",
-    "text": "Federated plugin scaffolding is overhead for a one-app integration. MethodChannel in main.dart, same channel name in configureFlutterEngine and AppDelegate. Two-handler trap: registering channels from a widget's initState leaks them across hot reload, then MissingPluginException. Register once in the engine config."
-  }
-]
+[]
