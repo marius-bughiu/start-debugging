@@ -26,5 +26,9 @@
   {
     "slug": "2026/05/claude-code-2-1-128-plugin-zip-worktree-fix",
     "text": "Claude Code 2.1.128: --plugin-dir takes .zip archives, EnterWorktree branches from local HEAD, OTEL_* no longer leaks to subprocesses."
+  },
+  {
+    "slug": "2026/05/fix-no-connection-string-named-defaultconnection",
+    "text": "GetConnectionString returns null in .NET 11? Usually appsettings.json key missing or not copied to bin, not your code."
   }
 ]

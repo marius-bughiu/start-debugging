@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-no-connection-string-named-defaultconnection",
+    "text": "EF Core's 'No connection string named DefaultConnection' is rarely an EF bug. Six causes: missing key in appsettings.json, file not copied to bin, wrong ASPNETCORE_ENVIRONMENT, dotnet ef run from the wrong folder, missing UserSecretsId, single underscore instead of double in container env vars. Walk them in order."
+  }
+]

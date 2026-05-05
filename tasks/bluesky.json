@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-no-connection-string-named-defaultconnection",
+    "text": "EF Core 'No connection string named DefaultConnection'? Usually appsettings.json not in bin, or wrong ASPNETCORE_ENVIRONMENT."
+  }
+]
