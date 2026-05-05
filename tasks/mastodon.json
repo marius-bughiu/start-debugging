@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-write-a-dart-isolate-for-cpu-bound-work",
-    "text": "Async in Dart is not parallelism. If your awaited chain freezes the UI, there is sync CPU work in it. Isolate.run for one off-thread call, Isolate.spawn plus SendPort/ReceivePort for a warm worker. Closures capture this. Spawning costs ~2 ms. On web both fall back to the event loop, dart2js has no real isolates."
-  }
-]
+[]
