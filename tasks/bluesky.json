@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-expose-an-ef-core-database-to-an-ai-agent-via-mcp",
-    "text": "Letting Claude Code query your EF Core DB? Skip RunQuery(sql). Use IDbContextFactory, DTO projections, tenant-scoped tools."
-  }
-]
+[]

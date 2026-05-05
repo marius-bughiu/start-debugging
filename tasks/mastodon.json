@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-expose-an-ef-core-database-to-an-ai-agent-via-mcp",
-    "text": "Giving a coding agent RunQuery(string sql) over your EF Core DB is how you get UPDATE Orders SET ShippedAt = NULL at 2am. Shape that holds up: IDbContextFactory per call, AsNoTracking DTO projections, tenant scoped from the server not the prompt, ExecuteUpdateAsync behind a gated tool. ModelContextProtocol 1.2.0, EF Core 10."
-  }
-]
+[]
