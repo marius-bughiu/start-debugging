@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme",
+    "text": "Material 3 dropped accentColor. ColorScheme.fromSeed: one seed, full palette. Wrong variant and your brand desaturates."
+  }
+]

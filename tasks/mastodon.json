@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme",
+    "text": "Flutter Material 3 has no accentColor. The closest single knob is ColorScheme.fromSeed: one seed, full M3 palette derived. tonalSpot is the default, but it desaturates exact brand colors. Pick fidelity when marketing approved a specific hex. And pass Brightness.dark to the dark theme too, or your contrast fails WCAG AA."
+  }
+]

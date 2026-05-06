@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme",
+    "text": "Flutter M3 has no accentColor. ColorScheme.fromSeed is the one knob. Pick fidelity if your brand must render literally."
+  },
+  {
     "slug": "2026/05/how-to-write-a-dart-isolate-for-cpu-bound-work",
     "text": "await is not parallelism. Isolate.run for one-shot CPU work, Isolate.spawn for warm workers. On web, neither runs."
   },
