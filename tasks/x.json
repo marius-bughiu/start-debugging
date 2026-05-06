@@ -46,5 +46,9 @@
   {
     "slug": "2026/05/agent-framework-human-in-the-loop-tool-approval-csharp",
     "text": "Agent Framework 1.0: wrap an AIFunction in ApprovalRequiredAIFunction and the agent pauses for a human first."
+  },
+  {
+    "slug": "2026/05/how-to-migrate-a-flutter-app-from-getx-to-riverpod",
+    "text": "Migrating Flutter from GetX to Riverpod 3.x: GetxController to Notifier, .obs to providers, Get.find to ref.watch."
   }
 ]

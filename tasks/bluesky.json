@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-migrate-a-flutter-app-from-getx-to-riverpod",
+    "text": "GetX to Riverpod in Flutter: install both, wrap in ProviderScope, migrate one screen at a time, then drop Get.to for go_router."
+  }
+]
