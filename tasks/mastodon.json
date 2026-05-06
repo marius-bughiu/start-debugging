@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-migrate-a-flutter-app-from-getx-to-riverpod",
-    "text": "GetX to Riverpod in Flutter: install both, wrap in ProviderScope, migrate screen by screen. GetxController becomes a Notifier, .obs becomes notifier state or a derived Provider, Get.find becomes ref.watch. Routing goes to go_router so you stop reaching for Get.context. Snackbars and themes return to plain Flutter."
-  }
-]
+[]
