@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-profile-jank-in-a-flutter-app-with-devtools",
+    "text": "Profiling Flutter jank in DevTools 2.40: profile mode on a real device, then Frame Analysis tells you UI vs raster in one click."
+  }
+]

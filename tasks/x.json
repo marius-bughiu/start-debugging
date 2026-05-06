@@ -54,5 +54,9 @@
   {
     "slug": "2026/05/how-to-run-a-semantic-kernel-plugin-from-a-backgroundservice",
     "text": "Semantic Kernel 1.75 in a BackgroundService: scope per tick, or your scoped DbContext disposes mid-loop."
+  },
+  {
+    "slug": "2026/05/how-to-profile-jank-in-a-flutter-app-with-devtools",
+    "text": "Flutter jank: profile mode, real device, Frame Analysis. Red on UI = your Dart code. Red on raster = shaders or saveLayer."
   }
 ]
