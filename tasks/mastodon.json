@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/agent-framework-human-in-the-loop-tool-approval-csharp",
-    "text": "Microsoft Agent Framework 1.0 ships a real human-in-the-loop primitive. Wrap an AIFunction in ApprovalRequiredAIFunction and the agent stops mid-run with a FunctionApprovalRequestContent. Inspect the call, then send back CreateResponse(true) on the same session. The model never fires delete_account(id: 42) on its own."
-  }
-]
+[]
