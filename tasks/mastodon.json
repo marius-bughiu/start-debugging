@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-run-a-semantic-kernel-plugin-from-a-backgroundservice",
-    "text": "Hosting Semantic Kernel 1.75 inside a BackgroundService on .NET 11: PeriodicTimer for drift-free cadence, a fresh DI scope per tick to keep your scoped DbContext alive, and a CancellationToken forwarded from the host through kernel.InvokeAsync into the [KernelFunction] method into EF Core. Inject IServiceProvider, never the plugin directly. The lifetime mismatch is the single biggest reason hosted SK loops blow up after the first tick."
-  }
-]
+[]

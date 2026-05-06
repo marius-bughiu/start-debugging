@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-run-a-semantic-kernel-plugin-from-a-backgroundservice",
-    "text": "Recurring SK agent loops belong in a BackgroundService. PeriodicTimer for cadence, fresh DI scope per tick for the plugin."
-  }
-]
+[]
