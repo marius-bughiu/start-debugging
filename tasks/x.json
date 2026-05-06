@@ -50,5 +50,9 @@
   {
     "slug": "2026/05/how-to-migrate-a-flutter-app-from-getx-to-riverpod",
     "text": "Migrating Flutter from GetX to Riverpod 3.x: GetxController to Notifier, .obs to providers, Get.find to ref.watch."
+  },
+  {
+    "slug": "2026/05/how-to-run-a-semantic-kernel-plugin-from-a-backgroundservice",
+    "text": "Semantic Kernel 1.75 in a BackgroundService: scope per tick, or your scoped DbContext disposes mid-loop."
   }
 ]
