@@ -42,5 +42,9 @@
   {
     "slug": "2026/05/how-to-add-platform-specific-code-in-flutter-without-plugins",
     "text": "Skip the federated plugin scaffold. A MethodChannel plus 20 lines in MainActivity / AppDelegate is the whole bridge."
+  },
+  {
+    "slug": "2026/05/agent-framework-human-in-the-loop-tool-approval-csharp",
+    "text": "Agent Framework 1.0: wrap an AIFunction in ApprovalRequiredAIFunction and the agent pauses for a human first."
   }
 ]
