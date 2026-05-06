@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-profile-jank-in-a-flutter-app-with-devtools",
-    "text": "Profiling Flutter 3.27 jank with DevTools 2.40: build with --profile on a real device (never debug, never simulator), open Performance, click the worst red frame, read Frame Analysis. UI thread red means your Dart code is the problem (parse off the isolate, shrink the rebuild). Raster thread red means shaders, saveLayer, or oversized images. Impeller killed shader compilation jank on iOS and most Android in 3.27, so first-frame stutter there is image decode, not shaders."
-  }
-]
+[]
