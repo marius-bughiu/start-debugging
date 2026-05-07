@@ -62,5 +62,9 @@
   {
     "slug": "2026/05/how-to-profile-jank-in-a-flutter-app-with-devtools",
     "text": "Flutter jank: profile mode, real device, Frame Analysis. Red on UI = your Dart code. Red on raster = shaders or saveLayer."
+  },
+  {
+    "slug": "2026/05/agent-framework-durable-workflows-checkpoint-restart",
+    "text": "Agent Framework workflows now checkpoint per executor. Microsoft.Agents.AI.DurableTask + Azure Functions = restart-safe runs."
   }
 ]
