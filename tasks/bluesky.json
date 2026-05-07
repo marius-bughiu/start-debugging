@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-give-a-copilot-agent-skill-access-to-your-repo-conventions",
+    "text": "Capture repo conventions in a SKILL.md so Copilot loads them only when relevant. Frontmatter, descriptions that fire, verification."
+  }
+]

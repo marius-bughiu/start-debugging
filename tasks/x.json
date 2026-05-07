@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/05/how-to-give-a-copilot-agent-skill-access-to-your-repo-conventions",
+    "text": "Stop pasting team conventions into Copilot Chat. A SKILL.md in .github/skills loads only when the prompt matches."
+  },
+  {
     "slug": "2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme",
     "text": "Flutter M3 has no accentColor. ColorScheme.fromSeed is the one knob. Pick fidelity if your brand must render literally."
   },
