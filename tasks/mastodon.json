@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/agent-framework-durable-workflows-checkpoint-restart",
-    "text": "The new prerelease Microsoft.Agents.AI.DurableTask plugs Agent Framework workflows into the Durable Task stack. Each Executor<TInput,TOutput> step gets checkpointed, so a multi-step agent run can crash, redeploy, or scale across processes and resume where it stopped. Combine with Microsoft.Agents.AI.Hosting.AzureFunctions and exposeMcpToolTrigger:true to expose the workflow as an MCP tool callable by Claude or Copilot agents."
-  }
-]
+[]
