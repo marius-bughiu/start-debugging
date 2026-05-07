@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-give-a-copilot-agent-skill-access-to-your-repo-conventions",
-    "text": "Agent Skills let Copilot pull repo conventions into context only when the prompt is relevant. Walkthrough of a real .github/skills folder: writing a description that actually routes (not a tagline), pushing detail into references/ so the SKILL.md body stays small, and the activation probe."
-  }
-]
+[]
