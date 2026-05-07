@@ -74,5 +74,9 @@
   {
     "slug": "2026/05/how-to-migrate-a-xamarin-forms-listview-to-maui-collectionview",
     "text": "ListView to CollectionView in MAUI 11: no CachingStrategy, RefreshView wraps it, SwipeView replaces ContextActions."
+  },
+  {
+    "slug": "2026/05/fix-instance-of-entity-type-cannot-be-tracked-same-key-value",
+    "text": "EF Core's 'another instance with the same key value is already being tracked' usually means your DbContext is Singleton."
   }
 ]
