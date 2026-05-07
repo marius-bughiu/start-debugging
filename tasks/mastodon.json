@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/fix-second-operation-was-started-on-this-context-instance",
-    "text": "EF Core's 'A second operation was started on this context instance before a previous operation completed' means two awaits raced on one DbContext. Rarely needs a lock. Await sequentially, or use IDbContextFactory<T> per concurrent task. Polly retries and Task.Run captures are usual culprits."
-  }
-]
+[]
