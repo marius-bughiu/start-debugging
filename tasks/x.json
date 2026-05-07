@@ -78,5 +78,9 @@
   {
     "slug": "2026/05/fix-instance-of-entity-type-cannot-be-tracked-same-key-value",
     "text": "EF Core's 'another instance with the same key value is already being tracked' usually means your DbContext is Singleton."
+  },
+  {
+    "slug": "2026/05/fix-second-operation-was-started-on-this-context-instance",
+    "text": "EF Core 'second operation was started on this context' means two awaits raced one DbContext. Fix: IDbContextFactory."
   }
 ]
