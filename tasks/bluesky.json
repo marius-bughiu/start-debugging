@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-migrate-a-xamarin-forms-listview-to-maui-collectionview",
-    "text": "ListView to CollectionView in MAUI 11: recycling is the only mode. ContextActions become SwipeView, ItemTapped is SelectionChanged."
-  }
-]
+[]

@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-migrate-a-xamarin-forms-listview-to-maui-collectionview",
-    "text": "Migrating a high-perf Xamarin.Forms ListView to MAUI 11 CollectionView. Cell recycling is the only mode now (no CachingStrategy property). Wrap in RefreshView for pull-to-refresh. ContextActions become SwipeView. ItemTapped becomes SelectionChanged. Full table of breaking changes plus the gotchas that bite real apps."
-  }
-]
+[]
