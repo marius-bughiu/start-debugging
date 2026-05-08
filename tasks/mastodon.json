@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-write-a-claude-code-subagent-that-runs-browser-tests",
+    "text": "Running Playwright through Claude Code? At the top level, the MCP server dumps 25 browser_* tools into every turn of your main session. Fix: a subagent file under .claude/agents/ with an inline mcpServers block, an explicit tool allowlist, and isolation: worktree. Sonnet 4.6 beats Haiku on selectors."
+  }
+]

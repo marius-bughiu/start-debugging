@@ -86,5 +86,9 @@
   {
     "slug": "2026/05/copilot-studio-net-10-wasm-performance",
     "text": "Copilot Studio's WASM engine moved to .NET 10: ~20% faster cold path, ~5% warm, +15% package. Why the tradeoff is worth it."
+  },
+  {
+    "slug": "2026/05/how-to-write-a-claude-code-subagent-that-runs-browser-tests",
+    "text": "Keep Playwright's 25 browser_* tools out of your main Claude Code session. One subagent owns them, parent stays lean."
   }
 ]
