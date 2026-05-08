@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-write-a-claude-code-subagent-that-runs-browser-tests",
-    "text": "A .claude/agents/browser-tester.md plus inline Playwright MCP keeps 25 browser_* tools out of your main Claude Code session."
-  }
-]
+[]
