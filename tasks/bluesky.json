@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/copilot-studio-net-10-wasm-performance",
+    "text": "Copilot Studio shipped its .NET 10 WASM engine. Cold path 20% faster, warm 5%, package 15% bigger. WasmStripILAfterAOT explains the size bump."
+  }
+]

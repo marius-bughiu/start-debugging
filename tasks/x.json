@@ -82,5 +82,9 @@
   {
     "slug": "2026/05/fix-second-operation-was-started-on-this-context-instance",
     "text": "EF Core 'second operation was started on this context' means two awaits raced one DbContext. Fix: IDbContextFactory."
+  },
+  {
+    "slug": "2026/05/copilot-studio-net-10-wasm-performance",
+    "text": "Copilot Studio's WASM engine moved to .NET 10: ~20% faster cold path, ~5% warm, +15% package. Why the tradeoff is worth it."
   }
 ]

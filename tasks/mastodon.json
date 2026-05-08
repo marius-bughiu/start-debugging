@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/copilot-studio-net-10-wasm-performance",
+    "text": "Copilot Studio's WebAssembly runtime is now running .NET 10 in production: cold path execution ~20% faster, warm path ~5%, full package ~15% larger. The size growth comes from WasmStripILAfterAOT being on by default, which trims AOT but reduces what JIT and AOT can share. Migration was almost just a TargetFramework bump."
+  }
+]
