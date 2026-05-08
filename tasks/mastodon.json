@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-the-json-value-could-not-be-converted-to-system-datetime",
+    "text": "System.Text.Json deserializes DateTime only from extended ISO 8601 strings like 2026-05-08T14:00:00Z. Send 05/08/2026, an empty string, a Unix timestamp number, or Newtonsoft's /Date(...) and you get JsonException. Fix: change the wire format, or register a JsonConverter<DateTime> that branches on TokenType for numbers."
+  }
+]

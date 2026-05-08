@@ -90,5 +90,9 @@
   {
     "slug": "2026/05/how-to-write-a-claude-code-subagent-that-runs-browser-tests",
     "text": "Keep Playwright's 25 browser_* tools out of your main Claude Code session. One subagent owns them, parent stays lean."
+  },
+  {
+    "slug": "2026/05/fix-the-json-value-could-not-be-converted-to-system-datetime",
+    "text": "System.Text.Json only takes ISO 8601 for DateTime. Send 2026-05-08T14:00:00Z or register a JsonConverter."
   }
 ]
