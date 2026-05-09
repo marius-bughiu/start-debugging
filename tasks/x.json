@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/05/fix-taskcanceledexception-a-task-was-canceled-httpclient",
+    "text": "HttpClient throws TaskCanceledException for three different reasons. Check ex.InnerException is TimeoutException before you raise any timeout."
+  },
+  {
     "slug": "2026/05/how-to-give-a-copilot-agent-skill-access-to-your-repo-conventions",
     "text": "Stop pasting team conventions into Copilot Chat. A SKILL.md in .github/skills loads only when the prompt matches."
   },

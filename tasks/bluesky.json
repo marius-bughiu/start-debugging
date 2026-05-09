@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-taskcanceledexception-a-task-was-canceled-httpclient",
+    "text": "TaskCanceledException from HttpClient hides three causes: timeout, caller cancel, transport abort. InnerException tells you which one fired."
+  }
+]
