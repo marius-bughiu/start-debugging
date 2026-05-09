@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/fix-taskcanceledexception-a-task-was-canceled-httpclient",
-    "text": "HttpClient throws TaskCanceledException for three completely different reasons: HttpClient.Timeout elapsed (default 100s), the caller's CancellationToken was cancelled, or a connection-level abort during DNS/TCP/TLS. Disambiguate with ex.InnerException is TimeoutException and ex.CancellationToken.IsCancellationRequested before you change a single timeout value, otherwise you fix the wrong thing."
-  }
-]
+[]
