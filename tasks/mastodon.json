@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/copilot-deprecates-claude-sonnet-4-may-2026",
+    "text": "Copilot removed claude-sonnet-4 on May 6 across Chat, inline edits, ask, agent mode, and completions. Recommended migration is claude-sonnet-4-6. The changelog does not say whether pinned ids auto-route, so grep .vscode, .github/copilot, and your workflow files for the bare id and update before the next quiet break."
+  }
+]

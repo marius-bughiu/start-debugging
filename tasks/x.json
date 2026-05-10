@@ -98,5 +98,9 @@
   {
     "slug": "2026/05/fix-the-json-value-could-not-be-converted-to-system-datetime",
     "text": "System.Text.Json only takes ISO 8601 for DateTime. Send 2026-05-08T14:00:00Z or register a JsonConverter."
+  },
+  {
+    "slug": "2026/05/copilot-deprecates-claude-sonnet-4-may-2026",
+    "text": "Copilot dropped claude-sonnet-4 May 6 across all surfaces. Move pinned configs to claude-sonnet-4-6."
   }
 ]
