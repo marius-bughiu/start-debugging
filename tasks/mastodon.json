@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-cannot-consume-scoped-service-from-singleton",
+    "text": "Scope validation in ASP.NET Core caught a captive dependency: a singleton like a BackgroundService was about to grab a scoped service (often DbContext) for the whole process. Fix it by making the consumer scoped, injecting IServiceScopeFactory and opening a scope per work unit, or using IDbContextFactory<T> for EF Core."
+  }
+]

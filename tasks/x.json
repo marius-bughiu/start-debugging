@@ -110,5 +110,9 @@
   {
     "slug": "2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate",
     "text": "Unable to resolve service for type 'X' in ASP.NET Core: read X first, Y second. Three fixes cover almost every case."
+  },
+  {
+    "slug": "2026/05/fix-cannot-consume-scoped-service-from-singleton",
+    "text": "Scope validation caught a captive: a singleton just grabbed your scoped DbContext. IServiceScopeFactory fixes it."
   }
 ]

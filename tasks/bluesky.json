@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-cannot-consume-scoped-service-from-singleton",
+    "text": "Cannot consume scoped service from singleton: BackgroundService captured your DbContext. Open a scope per tick, not per process."
+  }
+]
