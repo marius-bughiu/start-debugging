@@ -3,7 +3,7 @@ title: "ASP.NET Core 11 cheat sheet"
 description: "ASP.NET Core 11 in one place: minimal APIs, OpenAPI, authentication, rate limiting, OpenTelemetry, Native AOT, and the Kestrel/HTTP-3 wins."
 tagline: "The ASP.NET Core 11 bits worth bookmarking."
 pubDate: 2026-05-03
-updatedDate: 2026-05-03
+updatedDate: 2026-05-10
 indexTags:
   - "aspnetcore"
   - "aspnet-core"
