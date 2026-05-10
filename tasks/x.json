@@ -102,5 +102,9 @@
   {
     "slug": "2026/05/copilot-deprecates-claude-sonnet-4-may-2026",
     "text": "Copilot dropped claude-sonnet-4 May 6 across all surfaces. Move pinned configs to claude-sonnet-4-6."
+  },
+  {
+    "slug": "2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate",
+    "text": "Unable to resolve service for type 'X' in ASP.NET Core: read X first, Y second. Three fixes cover almost every case."
   }
 ]

@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate",
+    "text": "ASP.NET Core's 'Unable to resolve service for type X while attempting to activate Y' has three usual causes: nothing registered, registered as the concrete type but the consumer asks for the interface, or registered after builder.Build() so the host snapshotted the empty collection. ValidateOnBuild = true catches it before the first request."
+  }
+]
