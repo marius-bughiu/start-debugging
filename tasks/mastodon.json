@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-pipe-cursors-context-to-an-aider-session-for-multi-agent-refactors",
-    "text": "Cursor is great at planning refactors, Aider is great at landing them from the terminal with atomic commits. Export the chat with cursor-history, trim it to a real plan, pass it to Aider with --read. Architect Opus 4.7 plans, editor Sonnet 4.6 writes the diffs, prompt caching keeps the bill small."
-  }
-]
+[]
