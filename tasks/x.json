@@ -114,5 +114,9 @@
   {
     "slug": "2026/05/fix-cannot-consume-scoped-service-from-singleton",
     "text": "Scope validation caught a captive: a singleton just grabbed your scoped DbContext. IServiceScopeFactory fixes it."
+  },
+  {
+    "slug": "2026/05/fix-platformnotsupportedexception-in-native-aot",
+    "text": "Native AOT has no JIT, so Reflection.Emit and Expression.Compile throw at runtime. IL3050 names the call to swap."
   }
 ]

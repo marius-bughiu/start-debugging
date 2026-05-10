@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-platformnotsupportedexception-in-native-aot",
+    "text": "Native AOT has no JIT and no interpreter, so Reflection.Emit, Expression.Compile, and MakeGenericType over types the compiler never saw all throw PlatformNotSupportedException. The IL3050 warning at publish names the culprit. Swap to a source generator or guard with RuntimeFeature.IsDynamicCodeSupported."
+  }
+]
