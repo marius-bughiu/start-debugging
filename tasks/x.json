@@ -134,5 +134,9 @@
   {
     "slug": "2026/05/fix-msbuild-msb3027-could-not-copy-exceeded-retry-count",
     "text": "MSB3027 means MSBuild gave up after 10 copy retries. Something held bin/MyApp.dll open. Use handle.exe to find it."
+  },
+  {
+    "slug": "2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext",
+    "text": "'Unable to create an object of type DbContext'? EF Core's host probe needs app.Run() to be the last statement in Program.cs."
   }
 ]

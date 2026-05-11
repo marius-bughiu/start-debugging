@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext",
+    "text": "EF Core's design-time tools fail for three reasons: Program.cs returns before app.Run() so HostFactoryResolver can't reach the IHost; --startup-project points at the data project, not the host; or the DbContext constructor needs services no parameterless ctor can supply. Four fixes, ranked by cost, with a one-command smoke test."
+  }
+]

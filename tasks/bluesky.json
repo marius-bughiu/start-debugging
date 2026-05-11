@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext",
+    "text": "EF Core's 'Unable to create DbContext' usually means a wrong --startup-project, or an early return in Program.cs that hides the host."
+  }
+]
