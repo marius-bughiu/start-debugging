@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/cursor-3-3-build-in-parallel-split-prs",
-    "text": "Cursor 3.3 (May 7) is a multi-agent release. Build in Parallel turns a plan into async subagents working independent steps at once. Split PRs takes one long chat and breaks it into multiple PRs by logical concern. The PR review surface in the editor now bundles Reviews, Commits, and Changes into one workflow."
-  }
-]
+[]
