@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/05/fix-the-type-or-namespace-name-could-not-be-found-after-project-reference",
+    "text": "CS0246 right after a new ProjectReference? Look at NU1201 above it. TargetFramework mismatch is the bug; the C# error is the symptom."
+  },
+  {
     "slug": "2026/05/how-to-pipe-cursors-context-to-an-aider-session-for-multi-agent-refactors",
     "text": "Cursor for the plan, Aider for the diffs. Export the chat to markdown and pass it to Aider as --read."
   },
