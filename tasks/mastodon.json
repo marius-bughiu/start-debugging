@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/fix-msbuild-msb3027-could-not-copy-exceeded-retry-count",
-    "text": "MSB3027 means MSBuild's Copy task gave up after 10 retries. The locker is almost always the previous run of your own app, IIS Express, a dotnet watch child, or real-time antivirus scanning the fresh DLL. The fix is handle.exe plus taskkill, not raising CopyRetryCount. Linux and container variants covered too."
-  }
-]
+[]
