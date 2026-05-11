@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-set-up-an-llm-as-judge-eval-harness-for-a-coding-agent",
+    "text": "Building an LLM-as-judge eval harness for a coding agent, end to end in Python: deterministic checks first (tests, diff size), then a rubric scored 1-5 across correctness-beyond-tests, minimal-diff, code-quality, and communication. Why Sonnet 4.6 is the right judge (not Opus), why you must cache the rubric, and the calibration step everyone skips: label 30 traces by hand, target 75-90% agreement before you trust the numbers. Plus a CI gate that fails the build when any dimension regresses by 0.3."
+  }
+]

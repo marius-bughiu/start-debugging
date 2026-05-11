@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-set-up-an-llm-as-judge-eval-harness-for-a-coding-agent",
+    "text": "LLM-as-judge eval harness for a coding agent: golden tasks, rubric on Sonnet 4.6, CI gate that fails on regression."
+  }
+]

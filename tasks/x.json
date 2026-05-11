@@ -126,5 +126,9 @@
   {
     "slug": "2026/05/cursor-3-3-build-in-parallel-split-prs",
     "text": "Cursor 3.3: async subagents run independent plan steps in parallel. Split PRs slices one chat into many."
+  },
+  {
+    "slug": "2026/05/how-to-set-up-an-llm-as-judge-eval-harness-for-a-coding-agent",
+    "text": "Tests prove the code runs, not that the agent passed by deleting the assertion. Rubric + Sonnet 4.6 judge, in Python."
   }
 ]
