@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/fix-the-type-or-namespace-name-could-not-be-found-after-project-reference",
-    "text": "CS0246 after a fresh ProjectReference is almost never a using problem. Five fixes in order of likelihood, with the real bug at the top."
-  }
-]
+[]

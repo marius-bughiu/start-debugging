@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/fix-the-type-or-namespace-name-could-not-be-found-after-project-reference",
-    "text": "CS0246 right after a fresh ProjectReference? The C# error is downstream. Scroll up in the build log: NU1201 from NuGet is the real bug, telling you the consumer's TargetFramework can't see the referenced project. Five fixes ranked by likelihood, with the obj/ cache nuke and the using-directive check where they actually belong: not first."
-  }
-]
+[]
