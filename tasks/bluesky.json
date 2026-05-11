@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/cursor-3-3-build-in-parallel-split-prs",
+    "text": "Cursor 3.3 lands Build in Parallel (async subagents on independent plan steps), Split PRs, and a unified PR review."
+  }
+]

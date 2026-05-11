@@ -118,5 +118,9 @@
   {
     "slug": "2026/05/fix-platformnotsupportedexception-in-native-aot",
     "text": "Native AOT has no JIT, so Reflection.Emit and Expression.Compile throw at runtime. IL3050 names the call to swap."
+  },
+  {
+    "slug": "2026/05/cursor-3-3-build-in-parallel-split-prs",
+    "text": "Cursor 3.3: async subagents run independent plan steps in parallel. Split PRs slices one chat into many."
   }
 ]
