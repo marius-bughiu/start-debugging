@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-msbuild-msb3027-could-not-copy-exceeded-retry-count",
+    "text": "MSB3027 fires after 10 failed copy retries. Usually it's the previous run of your own app, IIS Express, or AV scanning bin/."
+  }
+]

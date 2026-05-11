@@ -130,5 +130,9 @@
   {
     "slug": "2026/05/how-to-set-up-an-llm-as-judge-eval-harness-for-a-coding-agent",
     "text": "Tests prove the code runs, not that the agent passed by deleting the assertion. Rubric + Sonnet 4.6 judge, in Python."
+  },
+  {
+    "slug": "2026/05/fix-msbuild-msb3027-could-not-copy-exceeded-retry-count",
+    "text": "MSB3027 means MSBuild gave up after 10 copy retries. Something held bin/MyApp.dll open. Use handle.exe to find it."
   }
 ]
