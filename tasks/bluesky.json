@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/cursor-bugbot-effort-levels-pr-review",
-    "text": "Cursor shipped effort levels for Bugbot. Default = 0.7 bugs/PR, High = 0.95 (+36%). Custom picks per PR via a plain-English rule."
-  }
-]
+[]
