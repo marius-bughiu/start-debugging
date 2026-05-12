@@ -60,9 +60,10 @@ jobs:
         # in the `update-tasks` job below.
         # -----------------------------------------------------------------
         include:
-          - channel: x
-            script: scripts/social-post.mjs
-            flags: --platforms=x
+          # Disabled
+          # - channel: x
+          #   script: scripts/social-post.mjs
+          #   flags: --platforms=x
           - channel: bluesky
             script: scripts/social-post.mjs
             flags: --platforms=bluesky
