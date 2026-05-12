@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-invalidoperationexception-synchronous-operations-are-disallowed",
+    "text": "ASP.NET Core 3.0+ blocks sync I/O on request/response bodies. JsonSerializer.Deserialize(stream)? Use DeserializeAsync. Three fixes, ranked."
+  }
+]

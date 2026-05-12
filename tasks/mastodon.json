@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-invalidoperationexception-synchronous-operations-are-disallowed",
+    "text": "Synchronous operations are disallowed in ASP.NET Core since 3.0: Kestrel, IIS and HTTP.sys all block Stream.Read on request bodies. Switch StreamReader.ReadToEnd and Newtonsoft Deserialize(stream) to their async siblings. AllowSynchronousIO=true is an escape hatch that brings thread-pool starvation back."
+  }
+]

@@ -150,5 +150,9 @@
   {
     "slug": "2026/05/how-to-cache-multi-turn-claude-conversations-across-api-calls",
     "text": "cache_control on the system prompt is the easy part. Rolling breakpoints so a 50-turn agent loop pays the prefix once."
+  },
+  {
+    "slug": "2026/05/fix-invalidoperationexception-synchronous-operations-are-disallowed",
+    "text": "Kestrel throws on Stream.Read of the request body. await ReadAsync fixes it. AllowSynchronousIO=true is the trapdoor."
   }
 ]
