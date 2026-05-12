@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-could-not-load-file-or-assembly-in-published-app",
+    "text": "FileNotFoundException after dotnet publish is a packaging bug, not a runtime one. Four causes: Private=false, PrivateAssets, trimming, wrong RID."
+  }
+]

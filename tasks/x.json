@@ -154,5 +154,9 @@
   {
     "slug": "2026/05/fix-invalidoperationexception-synchronous-operations-are-disallowed",
     "text": "Kestrel throws on Stream.Read of the request body. await ReadAsync fixes it. AllowSynchronousIO=true is the trapdoor."
+  },
+  {
+    "slug": "2026/05/fix-could-not-load-file-or-assembly-in-published-app",
+    "text": "Runs with dotnet run, fails after publish? The DLL is missing from publish/, not from the runtime. Private=false is the usual culprit."
   }
 ]
