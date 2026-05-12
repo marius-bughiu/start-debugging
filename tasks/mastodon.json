@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/fix-could-not-load-file-or-assembly-in-published-app",
-    "text": "FileNotFoundException: Could not load file or assembly after dotnet publish is almost always a packaging bug, not a runtime one. Four causes cover 90% of reports: ProjectReference Private=false, PackageReference PrivateAssets=all, trimming dropping a reflection-loaded assembly, and a framework-dependent publish landing on a machine with no shared framework. COREHOST_TRACE=1 prints the probe paths."
-  }
-]
+[]
