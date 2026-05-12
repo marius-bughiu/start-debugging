@@ -142,5 +142,9 @@
   {
     "slug": "2026/05/cursor-bugbot-effort-levels-pr-review",
     "text": "Cursor Bugbot adds effort levels. Default = 0.7 bugs/PR, High = 0.95. Custom routes via a plain-English rule."
+  },
+  {
+    "slug": "2026/05/fix-rz10012-found-markup-element-with-unexpected-name-blazor",
+    "text": "RZ10012 in Blazor: build passes, but the tag renders as raw HTML. Add @using to _Imports.razor."
   }
 ]

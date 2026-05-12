@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-rz10012-found-markup-element-with-unexpected-name-blazor",
+    "text": "Blazor's RZ10012 warning is the compiler diagnostic people ignore because the build still passes. But at runtime the tag renders as raw HTML, click handlers never wire up, parameters disappear. Four ranked fixes (most common: @using in _Imports.razor, or @namespace on an RCL component), plus how to make RZ10012 fail the build."
+  }
+]

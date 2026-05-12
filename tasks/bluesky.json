@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-rz10012-found-markup-element-with-unexpected-name-blazor",
+    "text": "Blazor's RZ10012 still ships the build, but the tag renders as raw HTML and click handlers never wire up. Four ranked fixes."
+  }
+]
