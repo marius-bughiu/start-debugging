@@ -85,9 +85,19 @@ export function buildLastmodMap(contentDir) {
   for (const file of [...walkMarkdown(blogDir), ...walkMarkdown(pillarDir)]) {
     const entry = entryFromFile(file, blogDir, pillarDir);
     if (!entry || entry.draft) continue;
-    const iso = toIso(
-      entry.data.updatedDate ?? entry.data.translationDate ?? entry.data.pubDate,
-    );
+    // For translated entries (lang !== "en"), clamp lastmod to never be older
+    // than the translationDate — the date the URL came into existence on this
+    // domain. The English `updatedDate` is copied through the translation
+    // backfill and can be older than translationDate, which would advertise a
+    // sitemap lastmod that predates the URL itself.
+    const isTranslation = entry.lang !== "en" && entry.data.translationDate;
+    const candidate = isTranslation
+      ? entry.data.updatedDate &&
+        new Date(entry.data.updatedDate) > new Date(entry.data.translationDate)
+        ? entry.data.updatedDate
+        : entry.data.translationDate
+      : entry.data.updatedDate ?? entry.data.translationDate ?? entry.data.pubDate;
+    const iso = toIso(candidate);
     if (!iso) continue;
     map.set(entry.urlPath, iso);
   }

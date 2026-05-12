@@ -52,7 +52,18 @@ if (!isLocale(Astro.params.lang ?? "") || Astro.params.lang !== lang) {
 }
 
 const readingMinutes = estimateReadingTimeMinutes(post.body, lang);
-const pubDateIso = post.data.pubDate.toISOString().slice(0, 10);
+
+// On translated URLs, schema.org datePublished and meta article:published_time
+// must reflect when the URL came into existence on this domain
+// (translationDate), not the original English pubDate. Otherwise Google sees
+// a URL claiming to be older than its first-discovery date — a known
+// scaled-content signal.
+const effectivePubDate = post.data.translationDate ?? post.data.pubDate;
+const effectiveUpdatedDate =
+  post.data.updatedDate && post.data.updatedDate > effectivePubDate
+    ? post.data.updatedDate
+    : undefined;
+const pubDateIso = effectivePubDate.toISOString().slice(0, 10);
 
 const shareTitle = encodeURIComponent(post.data.title);
 const shareUrl = encodeURIComponent(canonicalUrl);
@@ -80,8 +91,8 @@ const langPrefix = `${baseUrl}${lang}/`;
   description={post.data.description}
   includeAdsense={true}
   canonicalUrl={canonicalUrl}
-  publishedDate={post.data.pubDate}
-  updatedDate={post.data.updatedDate}
+  publishedDate={effectivePubDate}
+  updatedDate={effectiveUpdatedDate}
   tags={post.data.tags}
   type="article"
   ogImage={ogImage}
@@ -98,8 +109,8 @@ const langPrefix = `${baseUrl}${lang}/`;
     <div class="stack">
       <div class="row">
         <span class="pill">{pubDateIso}</span>
-        {post.data.updatedDate ? (
-          <span class="pill">{t("post.updated", lang)} {post.data.updatedDate.toISOString().slice(0, 10)}</span>
+        {effectiveUpdatedDate ? (
+          <span class="pill">{t("post.updated", lang)} {effectiveUpdatedDate.toISOString().slice(0, 10)}</span>
         ) : null}
         {post.data.tags?.slice(0, 4).map((tag) => (
           <a class="pill" href={`${langPrefix}tag/${tag}/`}>{tag}</a>
@@ -118,7 +129,7 @@ const langPrefix = `${baseUrl}${lang}/`;
         <span class="byline-sep">&middot;</span>
         <span>{readingMinutes} {t("post.minRead", lang)}</span>
         <span class="byline-sep">&middot;</span>
-        <time datetime={post.data.pubDate.toISOString()}>{pubDateIso}</time>
+        <time datetime={effectivePubDate.toISOString()}>{pubDateIso}</time>
       </div>
     </div>
 
