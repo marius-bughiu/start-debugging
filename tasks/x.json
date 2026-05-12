@@ -138,5 +138,9 @@
   {
     "slug": "2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext",
     "text": "'Unable to create an object of type DbContext'? EF Core's host probe needs app.Run() to be the last statement in Program.cs."
+  },
+  {
+    "slug": "2026/05/cursor-bugbot-effort-levels-pr-review",
+    "text": "Cursor Bugbot adds effort levels. Default = 0.7 bugs/PR, High = 0.95. Custom routes via a plain-English rule."
   }
 ]

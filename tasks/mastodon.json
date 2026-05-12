@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/cursor-bugbot-effort-levels-pr-review",
+    "text": "Cursor Bugbot now ships Default, High, and Custom effort levels. Default averages 0.7 bugs per PR, High 0.95 (+36% bugs, ~36% more tokens), and Custom routes between them using a plain-English rule pasted in the dashboard. Repo-level only, no bugbot.yaml. Honest read: High is a spend-more button, not a smarter button."
+  }
+]
