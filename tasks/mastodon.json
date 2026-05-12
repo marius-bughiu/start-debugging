@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/how-to-cache-multi-turn-claude-conversations-across-api-calls",
+    "text": "A single cache_control on the system prompt is the easy 80% of Anthropic prompt caching. The hard part is the message history: rolling breakpoints, the 4-breakpoint limit, and the 20-block lookback that quietly invalidates the cached prefix around turn 7. With TTL refresh math and verified SDK code."
+  }
+]

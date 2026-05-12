@@ -146,5 +146,9 @@
   {
     "slug": "2026/05/fix-rz10012-found-markup-element-with-unexpected-name-blazor",
     "text": "RZ10012 in Blazor: build passes, but the tag renders as raw HTML. Add @using to _Imports.razor."
+  },
+  {
+    "slug": "2026/05/how-to-cache-multi-turn-claude-conversations-across-api-calls",
+    "text": "cache_control on the system prompt is the easy part. Rolling breakpoints so a 50-turn agent loop pays the prefix once."
   }
 ]
