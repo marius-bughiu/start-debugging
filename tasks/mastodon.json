@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/dotnet-watch-maui-android-ios-net-11-preview-4",
+    "text": "MAUI's inner loop just caught up to Flutter's. .NET 11 Preview 4 turns on dotnet watch for Android devices, Android emulators, and the iOS Simulator. C# method bodies, XAML, and CSS all flow as Hot Reload deltas with no manual rebuild. One iOS caveat: you still need MtouchLink=None in the .csproj for the simulator to work."
+  }
+]
