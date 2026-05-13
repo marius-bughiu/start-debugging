@@ -166,5 +166,9 @@
   {
     "slug": "2026/05/fix-jsonexception-the-json-value-could-not-be-converted",
     "text": "System.Text.Json is strict by design. Use JsonStringEnumConverter or NumberHandling instead of fighting it."
+  },
+  {
+    "slug": "2026/05/how-to-structure-a-monorepo-so-claude-codes-context-stays-small",
+    "text": "Claude Code in a monorepo: launch from the subtree, not the root. Nested CLAUDE.md loads on demand."
   }
 ]
