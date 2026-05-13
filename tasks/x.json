@@ -170,5 +170,9 @@
   {
     "slug": "2026/05/how-to-structure-a-monorepo-so-claude-codes-context-stays-small",
     "text": "Claude Code in a monorepo: launch from the subtree, not the root. Nested CLAUDE.md loads on demand."
+  },
+  {
+    "slug": "2026/05/fix-the-command-dotnet-could-not-be-found-on-ci",
+    "text": "'dotnet: command not found' on CI is a PATH problem, not a runner bug. setup-dotnet plus a matching global.json fixes it."
   }
 ]

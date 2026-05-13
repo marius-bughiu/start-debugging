@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-the-command-dotnet-could-not-be-found-on-ci",
+    "text": "'dotnet: command not found' on CI shows up four ways. The fix is actions/setup-dotnet plus a global.json that matches the SDK you ask for. On bare containers, also export DOTNET_ROOT and $HOME/.dotnet/tools on PATH. The trap: export PATH inside one run: block does not leak to the next step. Use GITHUB_PATH."
+  }
+]
