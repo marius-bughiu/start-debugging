@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-structure-a-monorepo-so-claude-codes-context-stays-small",
-    "text": "In a 30-package monorepo, Claude Code burns 15k tokens at startup before reading any of your files. Three settings tame it."
-  }
-]
+[]

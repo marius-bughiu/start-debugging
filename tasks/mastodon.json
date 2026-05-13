@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-structure-a-monorepo-so-claude-codes-context-stays-small",
-    "text": "Claude Code 2.1.x has a 200k context, but in a monorepo startup can eat 20 percent before you type. The fix is not a shorter root CLAUDE.md, it is launching from the subtree you are editing so nested files stay dormant. Plus claudeMdExcludes for other teams' files and path-scoped rules in .claude/rules/."
-  }
-]
+[]
