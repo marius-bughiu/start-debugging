@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-jsonexception-the-json-value-could-not-be-converted",
+    "text": "Path: $.status is the line you read first. The full map: enums, numbers-as-strings, loose bools, empty strings, bad Guids."
+  }
+]

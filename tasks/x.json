@@ -162,5 +162,9 @@
   {
     "slug": "2026/05/dotnet-watch-maui-android-ios-net-11-preview-4",
     "text": "dotnet watch finally hot-reloads MAUI on Android devices, emulators, and the iOS Simulator. .NET 11 Preview 4 just landed."
+  },
+  {
+    "slug": "2026/05/fix-jsonexception-the-json-value-could-not-be-converted",
+    "text": "System.Text.Json is strict by design. Use JsonStringEnumConverter or NumberHandling instead of fighting it."
   }
 ]
