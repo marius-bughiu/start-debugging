@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/fix-the-command-dotnet-could-not-be-found-on-ci",
-    "text": "'dotnet: command not found' on CI has four root causes: no SDK, wrong PATH, mismatched global.json, missing DOTNET_ROOT. Fix each."
-  }
-]
+[]
