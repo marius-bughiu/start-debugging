@@ -174,5 +174,9 @@
   {
     "slug": "2026/05/fix-the-command-dotnet-could-not-be-found-on-ci",
     "text": "'dotnet: command not found' on CI is a PATH problem, not a runner bug. setup-dotnet plus a matching global.json fixes it."
+  },
+  {
+    "slug": "2026/05/fix-keyset-does-not-exist-when-calling-win32-api-from-dotnet",
+    "text": "'Keyset does not exist' on GetRSAPrivateKey()? The key file's ACL blocks your process. 3 fixes inside, ranked by deployment shape."
   }
 ]
