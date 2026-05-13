@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/fix-keyset-does-not-exist-when-calling-win32-api-from-dotnet",
-    "text": "X509Certificate2.GetRSAPrivateKey() throws 'Keyset does not exist'? That is NTE_BAD_KEYSET from Win32. The cert has a public part; the private key file lives in Crypto\\Keys and your process identity cannot read it. Three fixes: grant ACL on the key file, load PFX with MachineKeySet plus PersistKeySet, or use EphemeralKeySet."
-  }
-]
+[]
