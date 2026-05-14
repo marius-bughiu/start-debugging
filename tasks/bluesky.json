@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/maui-coreclr-default-android-ios-dotnet-11-preview-4",
+    "text": "Biggest MAUI shift since the Xamarin merge: CoreCLR is the default runtime on Android, iOS, Mac Catalyst in .NET 11 Preview 4."
+  }
+]

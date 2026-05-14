@@ -170,5 +170,9 @@
   {
     "slug": "2026/05/fix-the-command-dotnet-could-not-be-found-on-ci",
     "text": "'dotnet: command not found' on CI is a PATH problem, not a runner bug. setup-dotnet plus a matching global.json fixes it."
+  },
+  {
+    "slug": "2026/05/maui-coreclr-default-android-ios-dotnet-11-preview-4",
+    "text": ".NET 11 Preview 4 makes CoreCLR the default MAUI runtime on Android, iOS, Mac Catalyst. Mono is one MSBuild flag away."
   }
 ]
