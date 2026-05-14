@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/fix-possible-object-cycle-was-detected-system-text-json",
-    "text": "A possible object cycle was detected: System.Text.Json refuses to serialize an EF Core entity whose Parent and Children point at each other. Set ReferenceHandler.IgnoreCycles for a one-liner, but the real fix is a DTO. Preserve emits $id/$ref and breaks every non-.NET consumer of your API."
-  }
-]
+[]

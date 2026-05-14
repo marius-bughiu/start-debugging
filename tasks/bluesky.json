@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/fix-possible-object-cycle-was-detected-system-text-json",
-    "text": "'A possible object cycle was detected' from System.Text.Json on an EF Core entity? IgnoreCycles is one line. The DTO is the real fix."
-  }
-]
+[]
