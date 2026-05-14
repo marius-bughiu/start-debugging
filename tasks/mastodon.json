@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/maui-coreclr-default-android-ios-dotnet-11-preview-4",
-    "text": ".NET 11 Preview 4 quietly flipped MAUI's default runtime to CoreCLR on Android, iOS, Mac Catalyst, and tvOS. Same JIT and GC as ASP.NET Core, NativeAOT on Android unlocked, but Android x86, API 23, and embedding APIs are gone. UseMonoRuntime is the escape hatch while you file regressions."
-  }
-]
+[]
