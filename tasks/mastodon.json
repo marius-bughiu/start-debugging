@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations",
-    "text": "Migrations time out where runtime queries do not because dotnet ef builds a fresh design-time DbContext with the provider's default 30s CommandTimeout. Your AddDbContext override does not reach it. Three fixes ranked by maintainability: provider-level o.CommandTimeout(600), Command Timeout=600 in the connection string, or Database.SetCommandTimeout before MigrateAsync. Error Number:-2 is the canonical client-side signal; 1222 is a different problem (lock wait)."
-  }
-]
+[]
