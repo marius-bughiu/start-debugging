@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations",
+    "text": "SqlException: Timeout expired during EF Core migrations? You are hitting the 30s default on the design-time DbContext, not your runtime CommandTimeout. dotnet ef has no flag for it."
+  }
+]

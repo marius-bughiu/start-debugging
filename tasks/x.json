@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations",
+    "text": "dotnet ef has no --command-timeout flag in EF Core 11. The 30s default lives on the design-time DbContext. Set CommandTimeout on UseSqlServer or put it in the connection string."
+  },
+  {
     "slug": "2026/05/fix-the-type-or-namespace-name-could-not-be-found-after-project-reference",
     "text": "CS0246 right after a new ProjectReference? Look at NU1201 above it. TargetFramework mismatch is the bug; the C# error is the symptom."
   },
