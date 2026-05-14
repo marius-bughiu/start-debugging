@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-add-retrieval-augmented-generation-to-a-claude-code-session",
-    "text": "Adding RAG to Claude Code in 2026 is a layering problem, not a vector-store problem. A hybrid BM25 + dense MCP server gets you most of the way; contextual embeddings push Pass@10 from 87% to 92% and prompt caching makes indexing survivable. Wrap the search call in a skill so it fires on semantic queries only."
-  }
-]
+[]

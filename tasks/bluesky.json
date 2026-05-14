@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/how-to-add-retrieval-augmented-generation-to-a-claude-code-session",
-    "text": "When agentic grep stops scaling in Claude Code, the next step is a hybrid BM25 + dense MCP server wired into a retrieval skill."
-  }
-]
+[]
