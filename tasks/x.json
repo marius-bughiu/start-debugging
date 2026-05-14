@@ -158,5 +158,9 @@
   {
     "slug": "2026/05/fix-possible-object-cycle-was-detected-system-text-json",
     "text": "'Possible object cycle' on an EF Core entity? IgnoreCycles is one line. The DTO is the real fix."
+  },
+  {
+    "slug": "2026/05/how-to-add-retrieval-augmented-generation-to-a-claude-code-session",
+    "text": "Claude Code grep stops scaling around 200k LOC. Attach a hybrid BM25 + dense MCP server and recall jumps."
   }
 ]
