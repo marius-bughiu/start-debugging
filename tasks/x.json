@@ -174,5 +174,9 @@
   {
     "slug": "2026/05/dotnet-11-process-api-deadlock-free-capture",
     "text": "Process.RunAndCaptureTextAsync in .NET 11: stdout and stderr in one call. Bye OutputDataReceived."
+  },
+  {
+    "slug": "2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code",
+    "text": "MCP server stuck on 'connecting' in Claude Code is almost always stdout pollution. One console.log breaks JSON-RPC."
   }
 ]
