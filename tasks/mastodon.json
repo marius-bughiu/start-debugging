@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/fix-gradle-build-failed-to-produce-an-apk-file-in-maui-android",
-    "text": "MSBuild error XA1029 in a MAUI Android build is the wrapper, not the cause. The real failure is in obj/Debug/net11.0-android/.../build.log. Nine times out of ten it is one of three things: JAVA_HOME pointed at JDK 11 instead of JDK 17 for AGP 8.x, the maui-android workload was not restored after a .NET SDK bump, or a Windows long-path violation broke the R8 output."
-  }
-]
+[]
