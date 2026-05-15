@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/dotnet-11-process-api-deadlock-free-capture",
+    "text": "Process.RunAndCaptureTextAsync lands in .NET 11 Preview 4 and the ReadToEnd deadlock disappears. Stdout and stderr drain together, ProcessTextOutput hands you both streams plus exit code and PID, and KillOnParentExit ties child workers to the parent's lifetime."
+  }
+]

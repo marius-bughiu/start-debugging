@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/dotnet-11-process-api-deadlock-free-capture",
+    "text": "Process.RunAndCaptureTextAsync in .NET 11 Preview 4 drains stdout and stderr together. The ReadToEnd deadlock pattern is finally gone."
+  }
+]
