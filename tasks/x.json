@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/05/fix-gradle-build-failed-to-produce-an-apk-file-in-maui-android",
+    "text": "XA1029 in MAUI Android is a wrapper. Scroll up: the real Gradle error is JDK 11 vs 17, missing maui-android workload, or Windows long paths."
+  },
+  {
     "slug": "2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations",
     "text": "dotnet ef has no --command-timeout flag in EF Core 11. The 30s default lives on the design-time DbContext. Set CommandTimeout on UseSqlServer or put it in the connection string."
   },
