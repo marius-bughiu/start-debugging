@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code",
-    "text": "MCP server hangs on launch from Claude Code? 9 times out of 10 it's stdout pollution. Logs to stderr, add -y to npx, bump MCP_TIMEOUT."
-  }
-]
+[]

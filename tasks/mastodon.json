@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code",
-    "text": "Why your MCP server hangs the moment Claude Code launches it: the stdio transport reserves stdout for JSON-RPC, and one stray console.log corrupts the framing. Fix order: redirect every log to stderr, add -y to npx so the install prompt never blocks, and bump MCP_TIMEOUT if the server warms a cache before initialize."
-  }
-]
+[]
