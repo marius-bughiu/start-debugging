@@ -186,5 +186,9 @@
   {
     "slug": "2026/05/flutter-3-44-material-cupertino-packages-swiftpm-default",
     "text": "Flutter 3.44 freezes Material and Cupertino in the SDK. material_ui and cupertino_ui take over on pub.dev. SwiftPM is the new default."
+  },
+  {
+    "slug": "2026/05/fix-provisioning-profile-doesnt-include-currently-selected-device-maui-ios",
+    "text": "'Provisioning profile doesn't include the currently selected device' in MAUI iOS = the UDID isn't in the profile yet."
   }
 ]

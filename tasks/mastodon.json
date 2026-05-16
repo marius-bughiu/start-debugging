@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-provisioning-profile-doesnt-include-currently-selected-device-maui-ios",
+    "text": "'The provisioning profile doesn't include the currently selected device' in MAUI iOS rarely means what it says. The profile was generated before this iPhone's UDID was registered, or it's bound to a different team or App ID. Add the UDID, regenerate the dev profile, click Download All Profiles, redeploy."
+  }
+]
