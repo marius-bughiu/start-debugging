@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/05/fix-renderflex-overflowed-in-flutter",
+    "text": "RenderFlex overflowed in Flutter? Wrap the greedy child in Expanded. The stripe is an unbounded-child bug, not paint."
+  },
+  {
     "slug": "2026/05/fix-tool-call-arguments-did-not-match-schema-in-anthropic-tool-use",
     "text": "Claude tool schema mismatch is two different bugs. Top-level anyOf gets a 400. Runtime input drift needs a retry loop."
   },
