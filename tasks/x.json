@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/05/fix-tool-call-arguments-did-not-match-schema-in-anthropic-tool-use",
+    "text": "Claude tool schema mismatch is two different bugs. Top-level anyOf gets a 400. Runtime input drift needs a retry loop."
+  },
+  {
     "slug": "2026/05/fix-gradle-build-failed-to-produce-an-apk-file-in-maui-android",
     "text": "XA1029 in MAUI Android is a wrapper. Scroll up: the real Gradle error is JDK 11 vs 17, missing maui-android workload, or Windows long paths."
   },

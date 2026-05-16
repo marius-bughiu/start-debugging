@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-tool-call-arguments-did-not-match-schema-in-anthropic-tool-use",
+    "text": "Claude tool schema mismatch is two bugs sharing one error. Request-time 400s come from top-level anyOf, stray $schema keys, or missing additionalProperties: false. Runtime drift comes from non-strict mode. Fix one with a flatter schema plus strict: true. Fix the other with a tool_result is_error retry."
+  }
+]

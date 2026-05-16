@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-tool-call-arguments-did-not-match-schema-in-anthropic-tool-use",
+    "text": "Anthropic tool schema mismatch is two bugs in one error. 400 on input_schema wants a flatter schema. Runtime drift wants a retry loop."
+  }
+]
