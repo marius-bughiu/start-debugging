@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/flutter-3-44-material-cupertino-packages-swiftpm-default",
+    "text": "Flutter 3.44 stable just freezes Material and Cupertino inside the SDK. The new canonical home is material_ui and cupertino_ui on pub.dev, decoupled from the 3-month SDK cadence. SwiftPM also lands as the default for iOS and macOS, which means flutter create no longer writes a Podfile and you can drop Ruby from the toolchain."
+  }
+]

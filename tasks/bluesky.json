@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/flutter-3-44-material-cupertino-packages-swiftpm-default",
+    "text": "Flutter 3.44 splits Material and Cupertino out of the SDK into material_ui and cupertino_ui on pub.dev. SwiftPM is now the iOS default."
+  }
+]

@@ -182,5 +182,9 @@
   {
     "slug": "2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code",
     "text": "MCP server stuck on 'connecting' in Claude Code is almost always stdout pollution. One console.log breaks JSON-RPC."
+  },
+  {
+    "slug": "2026/05/flutter-3-44-material-cupertino-packages-swiftpm-default",
+    "text": "Flutter 3.44 freezes Material and Cupertino in the SDK. material_ui and cupertino_ui take over on pub.dev. SwiftPM is the new default."
   }
 ]
