@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build",
+    "text": "Xcode 15 unbundled iOS Simulator runtimes. Xcode 26 stopped migrating the old ones. MAUI fails this build until you install one."
+  }
+]

@@ -190,5 +190,9 @@
   {
     "slug": "2026/05/fix-provisioning-profile-doesnt-include-currently-selected-device-maui-ios",
     "text": "'Provisioning profile doesn't include the currently selected device' in MAUI iOS = the UDID isn't in the profile yet."
+  },
+  {
+    "slug": "2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build",
+    "text": "MAUI iOS build dies on 'no valid iOS Simulator runtime'? Xcode 15+ unbundled them. xcodebuild -downloadPlatform iOS."
   }
 ]
