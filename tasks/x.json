@@ -202,5 +202,9 @@
   {
     "slug": "2026/05/dotnet-11-preview-4-mcpserver-template-bundled",
     "text": "dotnet new mcpserver no longer needs Microsoft.McpServer.ProjectTemplates. .NET 11 Preview 4 bundles it in the SDK."
+  },
+  {
+    "slug": "2026/05/fix-formatexception-unexpected-character-when-parsing-json-in-dart",
+    "text": "FormatException at character 1 in Dart? It's a 404 HTML page, a UTF-8 BOM, or latin-1 decode. Not your JSON."
   }
 ]

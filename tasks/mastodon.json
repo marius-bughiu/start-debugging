@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-formatexception-unexpected-character-when-parsing-json-in-dart",
+    "text": "FormatException: Unexpected character in Dart is misdiagnosed almost every time. The offset tells you which of four real bugs you have: an HTML error page from a 404, a UTF-8 BOM the server prepends, package:http silently falling back to latin-1 because Content-Type lacked a charset, or a server that double-encoded the JSON. Print bodyBytes.take(8) before you touch jsonDecode."
+  }
+]
