@@ -214,5 +214,9 @@
   {
     "slug": "2026/05/fix-context-window-exceeded-during-an-aider-refactor",
     "text": "Aider died mid-refactor on a token limit? It's almost never the model. /clear, /drop, cap --map-tokens 1024."
+  },
+  {
+    "slug": "2026/05/fix-failed-to-build-ios-app-with-xcode-16-and-flutter-3-x",
+    "text": "Flutter Failed to build iOS app on Xcode 16? Bump Flutter to 3.24.4+, raise Podfile to iOS 13, wipe Pods plus DerivedData."
   }
 ]
