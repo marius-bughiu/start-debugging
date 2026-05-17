@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-version-solving-failed-in-pubspec-yaml",
+    "text": "pub's Version solving failed is the explanation of a proof. Read the 'because' chain bottom-up, widen the one impossible constraint, or override transitively."
+  }
+]
