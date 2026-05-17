@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/dotnet-11-preview-4-mcpserver-template-bundled",
+    "text": "mcpserver is now a built-in dotnet new template in the .NET 11 Preview 4 SDK. stdio or HTTP, optional Native AOT, zero setup."
+  }
+]

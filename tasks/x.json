@@ -198,5 +198,9 @@
   {
     "slug": "2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build",
     "text": "MAUI iOS build dies on 'no valid iOS Simulator runtime'? Xcode 15+ unbundled them. xcodebuild -downloadPlatform iOS."
+  },
+  {
+    "slug": "2026/05/dotnet-11-preview-4-mcpserver-template-bundled",
+    "text": "dotnet new mcpserver no longer needs Microsoft.McpServer.ProjectTemplates. .NET 11 Preview 4 bundles it in the SDK."
   }
 ]
