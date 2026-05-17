@@ -1,6 +1,1 @@
-[
-  {
-    "slug": "2026/05/dotnet-11-preview-4-mcpserver-template-bundled",
-    "text": "Preview 4 quietly killed a setup step for MCP authors on .NET. dotnet new mcpserver no longer needs the separate Microsoft.McpServer.ProjectTemplates install. The template now ships in the SDK with stdio/HTTP transport and a Native AOT switch baked in."
-  }
-]
+[]
