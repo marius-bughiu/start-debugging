@@ -206,5 +206,9 @@
   {
     "slug": "2026/05/fix-formatexception-unexpected-character-when-parsing-json-in-dart",
     "text": "FormatException at character 1 in Dart? It's a 404 HTML page, a UTF-8 BOM, or latin-1 decode. Not your JSON."
+  },
+  {
+    "slug": "2026/05/fix-context-window-exceeded-during-an-aider-refactor",
+    "text": "Aider died mid-refactor on a token limit? It's almost never the model. /clear, /drop, cap --map-tokens 1024."
   }
 ]

@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-context-window-exceeded-during-an-aider-refactor",
+    "text": "Aider 0.86 dies on turn three of a refactor with 'Model has hit a token limit'. The reflex is to switch to a bigger model. Wrong reflex. The real cause is chat history piling up plus too many /add'd files plus an expanded repo map. Fix order: /clear, /drop *, --map-tokens 1024, architect mode."
+  }
+]

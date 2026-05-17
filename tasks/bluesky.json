@@ -1,1 +1,6 @@
-[]
+[
+  {
+    "slug": "2026/05/fix-context-window-exceeded-during-an-aider-refactor",
+    "text": "Aider hit the token limit mid-refactor. Bigger model rarely fixes it. The real cure: /clear, /drop, --map-tokens 1024, architect mode."
+  }
+]
