@@ -2,5 +2,9 @@
   {
     "slug": "2026/05/fix-failed-to-build-ios-app-with-xcode-16-and-flutter-3-x",
     "text": "Flutter 'Failed to build iOS app' under Xcode 16 is an umbrella for six different bugs. The umbrella message only tells you xcodebuild exited non-zero. Run with --verbose, grep for the first lowercase 'error:', and fix that. The four most common root causes: Flutter older than 3.24.4, Podfile still pinning iOS 11, a stale Pods plus DerivedData ModuleCache from the previous Xcode, or a plugin that hasn't shipped a Swift 6 release yet. Stop reaching for flutter clean first; it does not touch the iOS caches that are actually broken."
+  },
+  {
+    "slug": "2026/05/fix-framework-version-6-0-0-when-launching-dotnet-6-binary",
+    "text": "That .NET 6 binary printing framework_version=6.0.0 isn't broken; the runtime is gone. .NET 6 hit EOL Nov 2024 and base images uninstall it. Four ranked fixes: retarget to net10.0, rollForward=Major, install the EOL runtime, or self-contained. MissingMethodException after roll-forward is the same bug delayed."
   }
 ]
