@@ -1,9 +1,5 @@
 [
   {
-    "slug": "2026/05/fix-flutter-background-fetch-requires-minsdkversion-21",
-    "text": "Manifest merger refusing your build for background_fetch? The plugin wraps Android JobScheduler, added in API 21. Raise minSdkVersion."
-  },
-  {
     "slug": "2026/05/fix-failed-to-build-ios-app-with-xcode-16-and-flutter-3-x",
     "text": "Failed to build iOS app on Xcode 16 is rarely your Dart code. Upgrade Flutter, raise Podfile to iOS 13, wipe Pods and ~/Library DerivedData, then pod install."
   }
