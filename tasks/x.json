@@ -222,5 +222,9 @@
   {
     "slug": "2026/05/copilot-business-gpt-5-3-codex-base-model",
     "text": "GPT-5.3-Codex is now the default Copilot model on Business and Enterprise. GPT-4.1 stays free until June 1."
+  },
+  {
+    "slug": "2026/05/fix-androidx-conflict-during-flutter-android-build",
+    "text": "AndroidX conflict in Flutter Android? Flip useAndroidX and enableJetifier in gradle.properties, then audit deps."
   }
 ]
