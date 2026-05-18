@@ -2,9 +2,5 @@
   {
     "slug": "2026/05/fix-failed-to-build-ios-app-with-xcode-16-and-flutter-3-x",
     "text": "Failed to build iOS app on Xcode 16 is rarely your Dart code. Upgrade Flutter, raise Podfile to iOS 13, wipe Pods and ~/Library DerivedData, then pod install."
-  },
-  {
-    "slug": "2026/05/fix-rate-limit-error-on-claude-sonnet-4-6-in-a-long-agent-loop",
-    "text": "Your agent loop's 429 on claude-sonnet-4-6 is the ITPM bucket, not RPM. cache_control on system + tools and reads stop counting."
   }
 ]
