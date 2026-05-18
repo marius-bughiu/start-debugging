@@ -2,9 +2,5 @@
   {
     "slug": "2026/05/fix-failed-to-build-ios-app-with-xcode-16-and-flutter-3-x",
     "text": "Failed to build iOS app on Xcode 16 is rarely your Dart code. Upgrade Flutter, raise Podfile to iOS 13, wipe Pods and ~/Library DerivedData, then pod install."
-  },
-  {
-    "slug": "2026/05/fix-framework-version-6-0-0-when-launching-dotnet-6-binary",
-    "text": "A .NET 6 binary asking framework_version=6.0.0 = the runtime is gone after EOL. Retarget, roll forward, or self-contained."
   }
 ]
