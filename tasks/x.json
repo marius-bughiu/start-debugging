@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/05/fix-flutter-background-fetch-requires-minsdkversion-21",
+    "text": "background_fetch needs minSdkVersion 21 because its backbone, Android JobScheduler, only exists from API 21."
+  },
+  {
     "slug": "2026/05/fix-version-solving-failed-in-pubspec-yaml",
     "text": "Version solving failed in pubspec.yaml is a proof, not a bug. Read the 'because' chain bottom-up to find the one impossible constraint."
   },
