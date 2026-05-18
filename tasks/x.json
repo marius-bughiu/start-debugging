@@ -226,5 +226,9 @@
   {
     "slug": "2026/05/fix-androidx-conflict-during-flutter-android-build",
     "text": "AndroidX conflict in Flutter Android? Flip useAndroidX and enableJetifier in gradle.properties, then audit deps."
+  },
+  {
+    "slug": "2026/05/fix-rate-limit-error-on-claude-sonnet-4-6-in-a-long-agent-loop",
+    "text": "429 rate_limit_error on claude-sonnet-4-6 in a long loop is almost always ITPM, not RPM. Cache the system prompt."
   }
 ]
