@@ -218,5 +218,9 @@
   {
     "slug": "2026/05/fix-failed-to-build-ios-app-with-xcode-16-and-flutter-3-x",
     "text": "Flutter Failed to build iOS app on Xcode 16? Bump Flutter to 3.24.4+, raise Podfile to iOS 13, wipe Pods plus DerivedData."
+  },
+  {
+    "slug": "2026/05/copilot-business-gpt-5-3-codex-base-model",
+    "text": "GPT-5.3-Codex is now the default Copilot model on Business and Enterprise. GPT-4.1 stays free until June 1."
   }
 ]
