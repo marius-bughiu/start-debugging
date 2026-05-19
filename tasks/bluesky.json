@@ -2,9 +2,5 @@
   {
     "slug": "2026/05/fix-failed-to-build-ios-app-with-xcode-16-and-flutter-3-x",
     "text": "Failed to build iOS app on Xcode 16 is rarely your Dart code. Upgrade Flutter, raise Podfile to iOS 13, wipe Pods and ~/Library DerivedData, then pod install."
-  },
-  {
-    "slug": "2026/05/dart-cloud-functions-firebase-experimental",
-    "text": "Cloud Functions for Firebase now compiles Dart with dart compile exe and ships the AOT binary to Cloud Run. ~10ms cold start."
   }
 ]
