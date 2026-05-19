@@ -246,5 +246,9 @@
   {
     "slug": "2026/05/fix-csharp-14-overload-resolution-breaking-change-with-spans",
     "text": "C# 14 lets T[] convert to Span<T>. array.Contains in Expression trees now throws at runtime. Cast to IEnumerable<int> to fix."
+  },
+  {
+    "slug": "2026/05/fix-claude-code-reports-mcp-server-disconnected-inside-wsl",
+    "text": "'MCP server disconnected' under WSL is almost never the server. It's npx.cmd, NAT loopback, or VMMem reaping."
   }
 ]
