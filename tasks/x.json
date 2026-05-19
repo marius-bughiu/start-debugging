@@ -242,5 +242,9 @@
   {
     "slug": "2026/05/dart-cloud-functions-firebase-experimental",
     "text": "Firebase shipped experimental Dart for Cloud Functions. AOT to Cloud Run, ~10ms cold start, HTTPS and callable only."
+  },
+  {
+    "slug": "2026/05/fix-csharp-14-overload-resolution-breaking-change-with-spans",
+    "text": "C# 14 lets T[] convert to Span<T>. array.Contains in Expression trees now throws at runtime. Cast to IEnumerable<int> to fix."
   }
 ]
