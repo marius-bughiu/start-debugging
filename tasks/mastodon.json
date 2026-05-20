@@ -6,9 +6,5 @@
   {
     "slug": "2026/05/nuget-package-pruning-default-net-10",
     "text": ".NET 10's SDK flips two defaults at once: RestoreEnablePackagePruning=true and NuGetAuditMode=all. The runtime ships System.Text.Json, System.Formats.Asn1 and friends already, so listing them in the transitive graph just generated phantom CVEs in dotnet list package --vulnerable. New NU1510 warning fires when a direct PackageReference is fully redundant."
-  },
-  {
-    "slug": "2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct",
-    "text": "async void vs async Task in C# 14 / .NET 10. async void only exists for CLR event handlers. Everywhere else, async Task: exceptions land on the returned Task instead of the SynchronizationContext, the call site can await, Task.WhenAll and cancellation work. The 'async void is cheaper' microbenchmark saves 16 bytes."
   }
 ]
