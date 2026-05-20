@@ -250,5 +250,9 @@
   {
     "slug": "2026/05/fix-claude-code-reports-mcp-server-disconnected-inside-wsl",
     "text": "'MCP server disconnected' under WSL is almost never the server. It's npx.cmd, NAT loopback, or VMMem reaping."
+  },
+  {
+    "slug": "2026/05/nuget-package-pruning-default-net-10",
+    "text": "net10.0 SDK turns on NuGet package pruning by default. 70% fewer phantom transitive CVEs. NU1510 flags redundant direct refs."
   }
 ]
