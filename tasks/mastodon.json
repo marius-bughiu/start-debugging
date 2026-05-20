@@ -2,5 +2,13 @@
   {
     "slug": "2026/05/fix-failed-to-build-ios-app-with-xcode-16-and-flutter-3-x",
     "text": "Flutter 'Failed to build iOS app' under Xcode 16 is an umbrella for six different bugs. The umbrella message only tells you xcodebuild exited non-zero. Run with --verbose, grep for the first lowercase 'error:', and fix that. The four most common root causes: Flutter older than 3.24.4, Podfile still pinning iOS 11, a stale Pods plus DerivedData ModuleCache from the previous Xcode, or a plugin that hasn't shipped a Swift 6 release yet. Stop reaching for flutter clean first; it does not touch the iOS caches that are actually broken."
+  },
+  {
+    "slug": "2026/05/nuget-package-pruning-default-net-10",
+    "text": ".NET 10's SDK flips two defaults at once: RestoreEnablePackagePruning=true and NuGetAuditMode=all. The runtime ships System.Text.Json, System.Formats.Asn1 and friends already, so listing them in the transitive graph just generated phantom CVEs in dotnet list package --vulnerable. New NU1510 warning fires when a direct PackageReference is fully redundant."
+  },
+  {
+    "slug": "2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct",
+    "text": "async void vs async Task in C# 14 / .NET 10. async void only exists for CLR event handlers. Everywhere else, async Task: exceptions land on the returned Task instead of the SynchronizationContext, the call site can await, Task.WhenAll and cancellation work. The 'async void is cheaper' microbenchmark saves 16 bytes."
   }
 ]
