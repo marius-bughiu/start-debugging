@@ -6,9 +6,5 @@
   {
     "slug": "2026/05/nuget-package-pruning-default-net-10",
     "text": ".NET 10's SDK flips two defaults at once: RestoreEnablePackagePruning=true and NuGetAuditMode=all. The runtime ships System.Text.Json, System.Formats.Asn1 and friends already, so listing them in the transitive graph just generated phantom CVEs in dotnet list package --vulnerable. New NU1510 warning fires when a direct PackageReference is fully redundant."
-  },
-  {
-    "slug": "2026/05/record-vs-class-vs-struct-in-csharp-a-decision-matrix",
-    "text": "Choosing between class, record, and struct in C# 14? Default to class. Use record (record class) for immutable data with value equality. readonly record struct is the modern small-value shape, perfect for strongly-typed IDs. Plain struct is for interop. Decision matrix and a copy-cost benchmark in the post."
   }
 ]
