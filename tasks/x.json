@@ -258,5 +258,9 @@
   {
     "slug": "2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct",
     "text": "async void is for event handlers. async Task is for everything else. The keyword swap that turns a crash into a catch."
+  },
+  {
+    "slug": "2026/05/fix-cursor-apply-button-does-nothing-on-large-diff",
+    "text": "Cursor Apply does nothing on a big file? Fast Apply is a separate model with its own ceiling, not your chat model."
   }
 ]

@@ -6,5 +6,9 @@
   {
     "slug": "2026/05/nuget-package-pruning-default-net-10",
     "text": ".NET 10's SDK flips two defaults at once: RestoreEnablePackagePruning=true and NuGetAuditMode=all. The runtime ships System.Text.Json, System.Formats.Asn1 and friends already, so listing them in the transitive graph just generated phantom CVEs in dotnet list package --vulnerable. New NU1510 warning fires when a direct PackageReference is fully redundant."
+  },
+  {
+    "slug": "2026/05/fix-cursor-apply-button-does-nothing-on-large-diff",
+    "text": "Cursor's Apply button silently cancels on large files because Fast Apply is a separate 70b model with its own context ceiling, distinct from your chat model. The chat panel says 'Done' even when zero bytes were written. Six ranked fixes for Cursor 3.3: shrink the apply scope to one function, clean the git state so Myers diff anchors are unambiguous, ask for a unified diff and apply with git apply, reload the window, disable formatOnSave during the apply, and rename duplicate anchors in structurally hostile files."
   }
 ]
