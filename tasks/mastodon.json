@@ -6,5 +6,9 @@
   {
     "slug": "2026/05/nuget-package-pruning-default-net-10",
     "text": ".NET 10's SDK flips two defaults at once: RestoreEnablePackagePruning=true and NuGetAuditMode=all. The runtime ships System.Text.Json, System.Formats.Asn1 and friends already, so listing them in the transitive graph just generated phantom CVEs in dotnet list package --vulnerable. New NU1510 warning fires when a direct PackageReference is fully redundant."
+  },
+  {
+    "slug": "2026/05/ef-core-11-vs-dapper-for-bulk-inserts-real-benchmark",
+    "text": "EF Core 11 vs Dapper for bulk inserts, real numbers: at 1M rows EF AddRange takes 21.6 s, Dapper ExecuteAsync 109 s, SqlBulkCopy 7.3 s. Use AddRange under 1,000 rows, SqlBulkCopy (or EFCore.BulkExtensions) above 10,000. Dapper is a full order of magnitude slower than EF for bulk because it has no row batching."
   }
 ]

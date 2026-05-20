@@ -266,5 +266,9 @@
   {
     "slug": "2026/05/record-vs-class-vs-struct-in-csharp-a-decision-matrix",
     "text": "Default to class. record for value-equal data. readonly record struct for small immutable values in hot loops."
+  },
+  {
+    "slug": "2026/05/ef-core-11-vs-dapper-for-bulk-inserts-real-benchmark",
+    "text": "Bulk inserts in .NET 11: SqlBulkCopy is 3x faster than EF Core and 15x faster than Dapper at 1M rows. Code inside."
   }
 ]
