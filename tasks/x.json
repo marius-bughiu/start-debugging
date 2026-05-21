@@ -270,5 +270,9 @@
   {
     "slug": "2026/05/ef-core-11-vs-dapper-for-bulk-inserts-real-benchmark",
     "text": "Bulk inserts in .NET 11: SqlBulkCopy is 3x faster than EF Core and 15x faster than Dapper at 1M rows. Code inside."
+  },
+  {
+    "slug": "2026/05/cursor-3-4-multi-repo-cloud-agent-environments",
+    "text": "Cursor 3.4 cloud agents span multiple repos per environment, plus Docker build secrets and 70% faster rebuilds."
   }
 ]
