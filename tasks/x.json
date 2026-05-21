@@ -274,5 +274,9 @@
   {
     "slug": "2026/05/cursor-3-4-multi-repo-cloud-agent-environments",
     "text": "Cursor 3.4 cloud agents span multiple repos per environment, plus Docker build secrets and 70% faster rebuilds."
+  },
+  {
+    "slug": "2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp",
+    "text": "Returning IQueryable from a service makes every caller a SQL author. Materialize at the boundary."
   }
 ]
