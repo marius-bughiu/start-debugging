@@ -286,5 +286,9 @@
   {
     "slug": "2026/05/configureawait-false-vs-default-in-dotnet-11",
     "text": "ConfigureAwait(false) is a no-op in .NET 11 ASP.NET Core. In any library that ships to UI apps, it's still mandatory."
+  },
+  {
+    "slug": "2026/05/minimal-apis-vs-controllers-in-aspnetcore-11",
+    "text": "Minimal APIs in .NET 11 closed the gap with controllers. Pick controllers only for Razor views or big MVC codebases."
   }
 ]
