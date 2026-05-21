@@ -278,5 +278,9 @@
   {
     "slug": "2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp",
     "text": "Returning IQueryable from a service makes every caller a SQL author. Materialize at the boundary."
+  },
+  {
+    "slug": "2026/05/fix-github-copilot-ignores-repository-custom-instructions-in-vs-code",
+    "text": "Copilot ignoring copilot-instructions.md? Put a sentinel at top, ask Chat for it. Rules out half the reported bugs."
   }
 ]
