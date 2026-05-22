@@ -302,5 +302,9 @@
   {
     "slug": "2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready",
     "text": "ECONNREFUSED ::1 from an MCP client? localhost resolved to IPv6, server bound IPv4. Bind :: or use 127.0.0.1."
+  },
+  {
+    "slug": "2026/05/system-text-json-vs-newtonsoft-json-in-2026",
+    "text": "On .NET 11, System.Text.Json is in-box, ~2x faster, and the only JSON library that runs under Native AOT."
   }
 ]
