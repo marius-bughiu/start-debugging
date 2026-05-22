@@ -6,9 +6,5 @@
   {
     "slug": "2026/05/nuget-package-pruning-default-net-10",
     "text": ".NET 10 SDK now prunes runtime-shipped NuGet packages out of the restore graph by default. 70% fewer ghost CVEs, restore up to 50% faster."
-  },
-  {
-    "slug": "2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready",
-    "text": "ECONNREFUSED from a local MCP server means nothing was listening yet: a startup race, localhost picking ::1, or the wrong port/path."
   }
 ]
