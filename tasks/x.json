@@ -294,5 +294,9 @@
   {
     "slug": "2026/05/csharp-16-unsafe-keyword-caller-contract",
     "text": "C# 16 turns unsafe into a caller contract: callers must wrap your API in unsafe { }, inner blocks now mandatory."
+  },
+  {
+    "slug": "2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11",
+    "text": "Native AOT starts 3x faster but has no Dynamic PGO. JIT wins steady-state throughput; R2R splits the difference."
   }
 ]
