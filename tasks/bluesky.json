@@ -6,9 +6,5 @@
   {
     "slug": "2026/05/nuget-package-pruning-default-net-10",
     "text": ".NET 10 SDK now prunes runtime-shipped NuGet packages out of the restore graph by default. 70% fewer ghost CVEs, restore up to 50% faster."
-  },
-  {
-    "slug": "2026/05/system-text-json-vs-newtonsoft-json-in-2026",
-    "text": "System.Text.Json vs Newtonsoft.Json in 2026: in-box, ~2x faster, AOT-only. Keep Newtonsoft for JSONPath or TypeNameHandling."
   }
 ]

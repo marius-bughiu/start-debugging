@@ -14,9 +14,5 @@
   {
     "slug": "2026/05/configureawait-false-vs-default-in-dotnet-11",
     "text": "ConfigureAwait(false) in .NET 11: a no-op in ASP.NET Core, console apps, generic-host workers, and async Task xUnit tests, because none of them install a SynchronizationContext. Library code that ships as NuGet or multi-targets netstandard2.0 still needs it on every await, or a caller on WinForms or MAUI will deadlock on .Result."
-  },
-  {
-    "slug": "2026/05/system-text-json-vs-newtonsoft-json-in-2026",
-    "text": "For new .NET 11 code, default to System.Text.Json: in-box, about 2x faster, and the only option under Native AOT. The gotcha that flips it: if you need JSONPath queries or TypeNameHandling type embedding, Newtonsoft.Json is still the answer. Full feature matrix and benchmark numbers inside."
   }
 ]
