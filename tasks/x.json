@@ -298,5 +298,9 @@
   {
     "slug": "2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11",
     "text": "Native AOT starts 3x faster but has no Dynamic PGO. JIT wins steady-state throughput; R2R splits the difference."
+  },
+  {
+    "slug": "2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready",
+    "text": "ECONNREFUSED ::1 from an MCP client? localhost resolved to IPv6, server bound IPv4. Bind :: or use 127.0.0.1."
   }
 ]
