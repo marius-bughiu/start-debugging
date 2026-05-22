@@ -6,9 +6,5 @@
   {
     "slug": "2026/05/nuget-package-pruning-default-net-10",
     "text": ".NET 10 SDK now prunes runtime-shipped NuGet packages out of the restore graph by default. 70% fewer ghost CVEs, restore up to 50% faster."
-  },
-  {
-    "slug": "2026/05/csharp-16-unsafe-keyword-caller-contract",
-    "text": "C# 16 redesigns unsafe: marking a method unsafe now forces callers to wrap the call in unsafe { }. Preview in .NET 11, prod in .NET 12."
   }
 ]
