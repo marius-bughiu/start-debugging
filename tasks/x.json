@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/05/httpclient-vs-httpclientfactory-vs-refit",
+    "text": "Not three rivals, three layers: IHttpClientFactory by default, Refit for typed clients, never new HttpClient() per request."
+  },
+  {
     "slug": "2026/05/fix-flutter-background-fetch-requires-minsdkversion-21",
     "text": "background_fetch needs minSdkVersion 21 because its backbone, Android JobScheduler, only exists from API 21."
   },
