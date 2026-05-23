@@ -14,9 +14,5 @@
   {
     "slug": "2026/05/configureawait-false-vs-default-in-dotnet-11",
     "text": "ConfigureAwait(false) in .NET 11: a no-op in ASP.NET Core, console apps, generic-host workers, and async Task xUnit tests, because none of them install a SynchronizationContext. Library code that ships as NuGet or multi-targets netstandard2.0 still needs it on every await, or a caller on WinForms or MAUI will deadlock on .Result."
-  },
-  {
-    "slug": "2026/05/mediatr-vs-plain-service-classes-in-2026",
-    "text": "MediatR went commercial in July 2025, but that's not the reason to drop it. Under $5M revenue you still get v13+ free under Community. The real test: grep for IPipelineBehavior. Zero behaviors means MediatR is just indirection over method calls, and plain service classes win on go-to-definition and fail-fast DI wiring."
   }
 ]
