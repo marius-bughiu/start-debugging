@@ -318,5 +318,9 @@
   {
     "slug": "2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument",
     "text": "\"Extra inputs are not permitted\" on an agent tool call? The model added a key your schema forbids. The strict-mode fix."
+  },
+  {
+    "slug": "2026/05/mediatr-vs-plain-service-classes-in-2026",
+    "text": "Most new .NET code doesn't need MediatR. The license change only forces a switch above $5M or under RPL-1.5."
   }
 ]
