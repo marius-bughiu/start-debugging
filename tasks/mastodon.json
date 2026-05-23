@@ -14,5 +14,9 @@
   {
     "slug": "2026/05/configureawait-false-vs-default-in-dotnet-11",
     "text": "ConfigureAwait(false) in .NET 11: a no-op in ASP.NET Core, console apps, generic-host workers, and async Task xUnit tests, because none of them install a SynchronizationContext. Library code that ships as NuGet or multi-targets netstandard2.0 still needs it on every await, or a caller on WinForms or MAUI will deadlock on .Result."
+  },
+  {
+    "slug": "2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument",
+    "text": "Pydantic's \"Extra inputs are not permitted\" on an agent tool call means the model added a field your structured argument forbids. BaseModel ignores extras by default, so something set extra=forbid. Fix: strict tool use so the grammar blocks the key, relax to extra=ignore, or return the error and retry."
   }
 ]

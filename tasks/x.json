@@ -314,5 +314,9 @@
   {
     "slug": "2026/05/dotnet-11-span-based-deflate-gzip-compression",
     "text": "GZipEncoder.TryCompress in .NET 11: compress a byte[] into a pooled Span. No MemoryStream, no GC churn."
+  },
+  {
+    "slug": "2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument",
+    "text": "\"Extra inputs are not permitted\" on an agent tool call? The model added a key your schema forbids. The strict-mode fix."
   }
 ]
