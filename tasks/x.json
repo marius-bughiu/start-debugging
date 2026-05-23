@@ -322,5 +322,9 @@
   {
     "slug": "2026/05/mediatr-vs-plain-service-classes-in-2026",
     "text": "Most new .NET code doesn't need MediatR. The license change only forces a switch above $5M or under RPL-1.5."
+  },
+  {
+    "slug": "2026/05/ef-core-compiled-queries-vs-raw-sql-vs-dapper",
+    "text": "EF Core with AsNoTracking is within ~5% of Dapper on list reads. Compiled queries only for hot single-row paths."
   }
 ]
