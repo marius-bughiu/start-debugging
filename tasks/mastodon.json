@@ -14,9 +14,5 @@
   {
     "slug": "2026/05/configureawait-false-vs-default-in-dotnet-11",
     "text": "ConfigureAwait(false) in .NET 11: a no-op in ASP.NET Core, console apps, generic-host workers, and async Task xUnit tests, because none of them install a SynchronizationContext. Library code that ships as NuGet or multi-targets netstandard2.0 still needs it on every await, or a caller on WinForms or MAUI will deadlock on .Result."
-  },
-  {
-    "slug": "2026/05/ef-core-compiled-queries-vs-raw-sql-vs-dapper",
-    "text": "Three read paths in .NET 11: EF Core compiled queries, raw SQL via FromSql, and Dapper. The honest default is plain EF Core LINQ with AsNoTracking, within ~5% of Dapper on list reads and allocating less. The biggest single win is not switching ORMs, it is swapping SingleAsync (TOP 2) for FirstAsync."
   }
 ]
