@@ -1,0 +1,742 @@
+[
+  {
+    "url": "https://api.flutter.dev/flutter/material/ThemeData/colorSchemeSeed.html",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme.md",
+      "site/src/content/blog/de/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme.md",
+      "site/src/content/blog/es/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme.md",
+      "site/src/content/blog/ja/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme.md",
+      "site/src/content/blog/pt-br/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme.md",
+      "site/src/content/blog/ru/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme.md"
+    ]
+  },
+  {
+    "url": "https://devblogs.microsoft.com/dotnet/announcing-dotnet-11-preview-1/",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
+      "site/src/content/blog/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/05/configureawait-false-vs-default-in-dotnet-11.md"
+    ]
+  },
+  {
+    "url": "https://docs.flutter.dev/release/release-notes/release-notes-3.44.0",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/05/flutter-3-44-material-cupertino-packages-swiftpm-default.md",
+      "site/src/content/blog/de/2026/05/flutter-3-44-material-cupertino-packages-swiftpm-default.md",
+      "site/src/content/blog/es/2026/05/flutter-3-44-material-cupertino-packages-swiftpm-default.md",
+      "site/src/content/blog/ja/2026/05/flutter-3-44-material-cupertino-packages-swiftpm-default.md",
+      "site/src/content/blog/pt-br/2026/05/flutter-3-44-material-cupertino-packages-swiftpm-default.md",
+      "site/src/content/blog/ru/2026/05/flutter-3-44-material-cupertino-packages-swiftpm-default.md"
+    ]
+  },
+  {
+    "url": "https://dotnetfiddle.net/",
+    "status": 418,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/de/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/es/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/ja/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/pt-br/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/ru/2023/06/how-to-start-programming-with-c.md"
+    ]
+  },
+  {
+    "url": "https://endjin.com/blog/2024/01/dotnet-8-searchvalues-string-search-performance-boost",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-use-searchvalues-correctly-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/04/how-to-use-searchvalues-correctly-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/04/how-to-use-searchvalues-correctly-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/04/how-to-use-searchvalues-correctly-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-use-searchvalues-correctly-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/04/how-to-use-searchvalues-correctly-in-dotnet-11.md"
+    ]
+  },
+  {
+    "url": "https://github.com/dart-lang/pub/issues/3755",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/05/fix-version-solving-failed-in-pubspec-yaml.md",
+      "site/src/content/blog/de/2026/05/fix-version-solving-failed-in-pubspec-yaml.md",
+      "site/src/content/blog/es/2026/05/fix-version-solving-failed-in-pubspec-yaml.md",
+      "site/src/content/blog/ja/2026/05/fix-version-solving-failed-in-pubspec-yaml.md",
+      "site/src/content/blog/pt-br/2026/05/fix-version-solving-failed-in-pubspec-yaml.md",
+      "site/src/content/blog/ru/2026/05/fix-version-solving-failed-in-pubspec-yaml.md"
+    ]
+  },
+  {
+    "url": "https://github.com/dotnet/efcore/blob/main/src/EFCore/Internal/ConcurrencyDetector.cs",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/fix-second-operation-was-started-on-this-context-instance.md",
+      "site/src/content/blog/de/2026/05/fix-second-operation-was-started-on-this-context-instance.md",
+      "site/src/content/blog/es/2026/05/fix-second-operation-was-started-on-this-context-instance.md",
+      "site/src/content/blog/ja/2026/05/fix-second-operation-was-started-on-this-context-instance.md",
+      "site/src/content/blog/pt-br/2026/05/fix-second-operation-was-started-on-this-context-instance.md",
+      "site/src/content/blog/ru/2026/05/fix-second-operation-was-started-on-this-context-instance.md"
+    ]
+  },
+  {
+    "url": "https://github.com/dotnet/runtime/blob/main/docs/design/coreclr/botr/sync-block-table.md",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md"
+    ]
+  },
+  {
+    "url": "https://github.com/dotnet/runtime/blob/main/src/libraries/Microsoft.Extensions.Hosting/src/Internal/HostFactoryResolver.cs",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext.md",
+      "site/src/content/blog/de/2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext.md",
+      "site/src/content/blog/es/2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext.md",
+      "site/src/content/blog/ja/2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext.md",
+      "site/src/content/blog/pt-br/2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext.md",
+      "site/src/content/blog/ru/2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext.md"
+    ]
+  },
+  {
+    "url": "https://github.com/jlowin/fastmcp/issues/932",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument.md",
+      "site/src/content/blog/2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument.md"
+    ]
+  },
+  {
+    "url": "https://github.com/Tewr/BlazorWorker",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
+      "site/src/content/blog/de/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
+      "site/src/content/blog/es/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
+      "site/src/content/blog/ja/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
+      "site/src/content/blog/pt-br/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
+      "site/src/content/blog/ru/2026/04/dotnet-11-preview-2-blazor-webworker-template.md"
+    ]
+  },
+  {
+    "url": "https://learn.microsoft.com/dotnet/csharp/misc/cs1996",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md"
+    ]
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.codeanalysis.csharpgeneratorextensions.forattributewithmetadataname",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-write-a-source-generator-for-inotifypropertychanged.md",
+      "site/src/content/blog/de/2026/04/how-to-write-a-source-generator-for-inotifypropertychanged.md",
+      "site/src/content/blog/es/2026/04/how-to-write-a-source-generator-for-inotifypropertychanged.md",
+      "site/src/content/blog/ja/2026/04/how-to-write-a-source-generator-for-inotifypropertychanged.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-write-a-source-generator-for-inotifypropertychanged.md",
+      "site/src/content/blog/ru/2026/04/how-to-write-a-source-generator-for-inotifypropertychanged.md"
+    ]
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.infrastructure.sqlserverdbcontextoptionsbuilder.commandtimeout",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
+      "site/src/content/blog/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
+      "site/src/content/blog/de/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
+      "site/src/content/blog/de/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
+      "site/src/content/blog/es/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
+      "site/src/content/blog/es/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
+      "site/src/content/blog/ja/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
+      "site/src/content/blog/ja/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
+      "site/src/content/blog/pt-br/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
+      "site/src/content/blog/pt-br/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
+      "site/src/content/blog/ru/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
+      "site/src/content/blog/ru/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md"
+    ]
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/dotnet/csharp/misc/cs0234",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/fix-the-type-or-namespace-name-could-not-be-found-after-project-reference.md",
+      "site/src/content/blog/de/2026/05/fix-the-type-or-namespace-name-could-not-be-found-after-project-reference.md",
+      "site/src/content/blog/es/2026/05/fix-the-type-or-namespace-name-could-not-be-found-after-project-reference.md",
+      "site/src/content/blog/ja/2026/05/fix-the-type-or-namespace-name-could-not-be-found-after-project-reference.md",
+      "site/src/content/blog/pt-br/2026/05/fix-the-type-or-namespace-name-could-not-be-found-after-project-reference.md",
+      "site/src/content/blog/ru/2026/05/fix-the-type-or-namespace-name-could-not-be-found-after-project-reference.md"
+    ]
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/dotnet/csharp/misc/cs0246",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/fix-the-type-or-namespace-name-could-not-be-found-after-project-reference.md",
+      "site/src/content/blog/de/2026/05/fix-the-type-or-namespace-name-could-not-be-found-after-project-reference.md",
+      "site/src/content/blog/es/2026/05/fix-the-type-or-namespace-name-could-not-be-found-after-project-reference.md",
+      "site/src/content/blog/ja/2026/05/fix-the-type-or-namespace-name-could-not-be-found-after-project-reference.md",
+      "site/src/content/blog/pt-br/2026/05/fix-the-type-or-namespace-name-could-not-be-found-after-project-reference.md",
+      "site/src/content/blog/ru/2026/05/fix-the-type-or-namespace-name-could-not-be-found-after-project-reference.md"
+    ]
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/dotnet/ios/cli",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md",
+      "site/src/content/blog/de/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md",
+      "site/src/content/blog/es/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md",
+      "site/src/content/blog/ja/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md",
+      "site/src/content/blog/pt-br/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md",
+      "site/src/content/blog/ru/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md"
+    ]
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/dotnet/standard/memory-and-span/",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-convert-array-to-readonlymemory-in-csharp.md",
+      "site/src/content/blog/de/2026/05/how-to-convert-array-to-readonlymemory-in-csharp.md",
+      "site/src/content/blog/es/2026/05/how-to-convert-array-to-readonlymemory-in-csharp.md",
+      "site/src/content/blog/ja/2026/05/how-to-convert-array-to-readonlymemory-in-csharp.md",
+      "site/src/content/blog/pt-br/2026/05/how-to-convert-array-to-readonlymemory-in-csharp.md",
+      "site/src/content/blog/ru/2026/05/how-to-convert-array-to-readonlymemory-in-csharp.md"
+    ]
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/lifecycle/announcements/dotnet-6-end-of-support",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/fix-framework-version-6-0-0-when-launching-dotnet-6-binary.md",
+      "site/src/content/blog/de/2026/05/fix-framework-version-6-0-0-when-launching-dotnet-6-binary.md",
+      "site/src/content/blog/es/2026/05/fix-framework-version-6-0-0-when-launching-dotnet-6-binary.md",
+      "site/src/content/blog/ja/2026/05/fix-framework-version-6-0-0-when-launching-dotnet-6-binary.md",
+      "site/src/content/blog/pt-br/2026/05/fix-framework-version-6-0-0-when-launching-dotnet-6-binary.md",
+      "site/src/content/blog/ru/2026/05/fix-framework-version-6-0-0-when-launching-dotnet-6-binary.md"
+    ]
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/scalability-targets-for-the-azure-blob-storage-service",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-upload-a-large-file-with-streaming-to-azure-blob-storage.md",
+      "site/src/content/blog/de/2026/04/how-to-upload-a-large-file-with-streaming-to-azure-blob-storage.md",
+      "site/src/content/blog/es/2026/04/how-to-upload-a-large-file-with-streaming-to-azure-blob-storage.md",
+      "site/src/content/blog/ja/2026/04/how-to-upload-a-large-file-with-streaming-to-azure-blob-storage.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-upload-a-large-file-with-streaming-to-azure-blob-storage.md",
+      "site/src/content/blog/ru/2026/04/how-to-upload-a-large-file-with-streaming-to-azure-blob-storage.md"
+    ]
+  },
+  {
+    "url": "https://leetcode.com/",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/de/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/es/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/ja/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/pt-br/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/ru/2023/06/how-to-start-programming-with-c.md"
+    ]
+  },
+  {
+    "url": "https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-use-tailwind-css-with-blazor-webassembly-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/05/how-to-use-tailwind-css-with-blazor-webassembly-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/05/how-to-use-tailwind-css-with-blazor-webassembly-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/05/how-to-use-tailwind-css-with-blazor-webassembly-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/05/how-to-use-tailwind-css-with-blazor-webassembly-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/05/how-to-use-tailwind-css-with-blazor-webassembly-in-dotnet-11.md"
+    ]
+  },
+  {
+    "url": "https://medium.com/@adnanmasood/rubric-based-evals-llm-as-a-judge-methodologies-and-empirical-validation-in-domain-context-71936b989e80",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-set-up-an-llm-as-judge-eval-harness-for-a-coding-agent.md"
+    ]
+  },
+  {
+    "url": "https://medium.com/write-a-catalyst/partial-events-constructors-in-net-10-preview-2-8002f0d714b2#:~:text=1",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2025/04/csharp-14-partial-constructors-and-events.md",
+      "site/src/content/blog/de/2025/04/csharp-14-partial-constructors-and-events.md",
+      "site/src/content/blog/es/2025/04/csharp-14-partial-constructors-and-events.md",
+      "site/src/content/blog/ja/2025/04/csharp-14-partial-constructors-and-events.md",
+      "site/src/content/blog/pt-br/2025/04/csharp-14-partial-constructors-and-events.md",
+      "site/src/content/blog/ru/2025/04/csharp-14-partial-constructors-and-events.md"
+    ]
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-03-26",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/fix-claude-code-reports-mcp-server-disconnected-inside-wsl.md",
+      "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md",
+      "site/src/content/blog/2026/05/how-to-write-a-claude-code-subagent-that-runs-browser-tests.md"
+    ]
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-03-26/basic/lifecycle",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md"
+    ]
+  },
+  {
+    "url": "https://modelcontextprotocol.io/specification/2026-03-26/basic/transports",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/fix-claude-code-reports-mcp-server-disconnected-inside-wsl.md",
+      "site/src/content/blog/2026/05/fix-claude-code-reports-mcp-server-disconnected-inside-wsl.md",
+      "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
+      "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
+      "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
+      "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md",
+      "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md"
+    ]
+  },
+  {
+    "url": "https://news.ycombinator.com/item?id=46976911",
+    "status": 429,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
+      "site/src/content/blog/de/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
+      "site/src/content/blog/es/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
+      "site/src/content/blog/ja/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
+      "site/src/content/blog/pt-br/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
+      "site/src/content/blog/ru/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md"
+    ]
+  },
+  {
+    "url": "https://partner.microsoft.com/dashboard/apps-and-games/overview",
+    "status": null,
+    "ok": false,
+    "error": "fetch failed",
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md",
+      "site/src/content/blog/de/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md",
+      "site/src/content/blog/es/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md",
+      "site/src/content/blog/ja/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md",
+      "site/src/content/blog/pt-br/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md",
+      "site/src/content/blog/ru/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md"
+    ]
+  },
+  {
+    "url": "https://riverpod.dev/docs/essentials/testing",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-migrate-a-flutter-app-from-getx-to-riverpod.md",
+      "site/src/content/blog/de/2026/05/how-to-migrate-a-flutter-app-from-getx-to-riverpod.md",
+      "site/src/content/blog/es/2026/05/how-to-migrate-a-flutter-app-from-getx-to-riverpod.md",
+      "site/src/content/blog/ja/2026/05/how-to-migrate-a-flutter-app-from-getx-to-riverpod.md",
+      "site/src/content/blog/pt-br/2026/05/how-to-migrate-a-flutter-app-from-getx-to-riverpod.md",
+      "site/src/content/blog/ru/2026/05/how-to-migrate-a-flutter-app-from-getx-to-riverpod.md"
+    ]
+  },
+  {
+    "url": "https://snack.expo.dev/GCz9-diFD",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2023/11/2-column-react-native.md",
+      "site/src/content/blog/de/2023/11/2-column-react-native.md",
+      "site/src/content/blog/es/2023/11/2-column-react-native.md",
+      "site/src/content/blog/ja/2023/11/2-column-react-native.md",
+      "site/src/content/blog/pt-br/2023/11/2-column-react-native.md",
+      "site/src/content/blog/ru/2023/11/2-column-react-native.md"
+    ]
+  },
+  {
+    "url": "https://www.anthropic.com/claude-cowork",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/de/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/es/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/ja/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/pt-br/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/ru/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md"
+    ]
+  },
+  {
+    "url": "https://www.npmjs.com/package/@anthropic-ai/sdk",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
+      "site/src/content/blog/2026/05/how-to-cache-multi-turn-claude-conversations-across-api-calls.md",
+      "site/src/content/blog/de/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
+      "site/src/content/blog/es/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
+      "site/src/content/blog/ja/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
+      "site/src/content/blog/ru/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md"
+    ]
+  },
+  {
+    "url": "https://www.npmjs.com/package/cowork-terminal-mcp",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/de/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/de/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/es/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/es/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/ja/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/ja/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/pt-br/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/pt-br/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/ru/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/ru/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md"
+    ]
+  },
+  {
+    "url": "https://www.npmjs.com/package/jsonl-to-pdf",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md",
+      "site/src/content/blog/de/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md",
+      "site/src/content/blog/es/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md",
+      "site/src/content/blog/ja/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md",
+      "site/src/content/blog/pt-br/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md",
+      "site/src/content/blog/ru/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md"
+    ]
+  },
+  {
+    "url": "https://www.npmjs.com/package/mcp-remote",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
+      "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Anthropic/",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-call-the-claude-api-from-a-net-11-minimal-api-with-streaming.md",
+      "site/src/content/blog/de/2026/04/how-to-call-the-claude-api-from-a-net-11-minimal-api-with-streaming.md",
+      "site/src/content/blog/es/2026/04/how-to-call-the-claude-api-from-a-net-11-minimal-api-with-streaming.md",
+      "site/src/content/blog/ja/2026/04/how-to-call-the-claude-api-from-a-net-11-minimal-api-with-streaming.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-call-the-claude-api-from-a-net-11-minimal-api-with-streaming.md",
+      "site/src/content/blog/ru/2026/04/how-to-call-the-claude-api-from-a-net-11-minimal-api-with-streaming.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/CommunityToolkit.Mvvm",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2025/04/whats-new-in-net-maui-10.md",
+      "site/src/content/blog/de/2025/04/whats-new-in-net-maui-10.md",
+      "site/src/content/blog/es/2025/04/whats-new-in-net-maui-10.md",
+      "site/src/content/blog/ja/2025/04/whats-new-in-net-maui-10.md",
+      "site/src/content/blog/pt-br/2025/04/whats-new-in-net-maui-10.md",
+      "site/src/content/blog/ru/2025/04/whats-new-in-net-maui-10.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.Agents.AI.Workflows",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/agent-framework-durable-workflows-checkpoint-restart.md",
+      "site/src/content/blog/de/2026/05/agent-framework-durable-workflows-checkpoint-restart.md",
+      "site/src/content/blog/es/2026/05/agent-framework-durable-workflows-checkpoint-restart.md",
+      "site/src/content/blog/ja/2026/05/agent-framework-durable-workflows-checkpoint-restart.md",
+      "site/src/content/blog/pt-br/2026/05/agent-framework-durable-workflows-checkpoint-restart.md",
+      "site/src/content/blog/ru/2026/05/agent-framework-durable-workflows-checkpoint-restart.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output.md",
+      "site/src/content/blog/de/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output.md",
+      "site/src/content/blog/es/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output.md",
+      "site/src/content/blog/ja/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output.md",
+      "site/src/content/blog/ru/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.Extensions.AI/",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-add-tool-calling-to-a-microsoft-extensions-ai-chat-client.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.SemanticKernel",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/migrate-a-semantic-kernel-plugin-to-an-mcp-server.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.SemanticKernel/1.75.0",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-run-a-semantic-kernel-plugin-from-a-backgroundservice.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.TestPlatform/1.0.0-alpha-stj-26213-07",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4.md",
+      "site/src/content/blog/de/2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4.md",
+      "site/src/content/blog/es/2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4.md",
+      "site/src/content/blog/ja/2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4.md",
+      "site/src/content/blog/pt-br/2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4.md",
+      "site/src/content/blog/ru/2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/ModelContextProtocol.AspNetCore",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/migrate-a-semantic-kernel-plugin-to-an-mcp-server.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/ModelContextProtocol/",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11.md",
+      "site/src/content/blog/2026/05/migrate-a-semantic-kernel-plugin-to-an-mcp-server.md",
+      "site/src/content/blog/de/2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11.md",
+      "site/src/content/blog/es/2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11.md",
+      "site/src/content/blog/ja/2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11.md",
+      "site/src/content/blog/ru/2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/ModelContextProtocol/1.2.0",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-expose-an-ef-core-database-to-an-ai-agent-via-mcp.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/OpenTelemetry.Exporter.OpenTelemetryProtocol",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-use-opentelemetry-with-dotnet-11-and-a-free-backend.md",
+      "site/src/content/blog/de/2026/05/how-to-use-opentelemetry-with-dotnet-11-and-a-free-backend.md",
+      "site/src/content/blog/es/2026/05/how-to-use-opentelemetry-with-dotnet-11-and-a-free-backend.md",
+      "site/src/content/blog/ja/2026/05/how-to-use-opentelemetry-with-dotnet-11-and-a-free-backend.md",
+      "site/src/content/blog/pt-br/2026/05/how-to-use-opentelemetry-with-dotnet-11-and-a-free-backend.md",
+      "site/src/content/blog/ru/2026/05/how-to-use-opentelemetry-with-dotnet-11-and-a-free-backend.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/OpenTelemetry.Instrumentation.EntityFrameworkCore",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11.md",
+      "site/src/content/blog/de/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11.md",
+      "site/src/content/blog/es/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11.md",
+      "site/src/content/blog/ja/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11.md",
+      "site/src/content/blog/pt-br/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11.md",
+      "site/src/content/blog/ru/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/refit.httpclientfactory",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/httpclient-vs-httpclientfactory-vs-refit.md",
+      "site/src/content/blog/de/2026/05/httpclient-vs-httpclientfactory-vs-refit.md",
+      "site/src/content/blog/es/2026/05/httpclient-vs-httpclientfactory-vs-refit.md",
+      "site/src/content/blog/ja/2026/05/httpclient-vs-httpclientfactory-vs-refit.md",
+      "site/src/content/blog/pt-br/2026/05/httpclient-vs-httpclientfactory-vs-refit.md",
+      "site/src/content/blog/ru/2026/05/httpclient-vs-httpclientfactory-vs-refit.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Respawn",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
+      "site/src/content/blog/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
+      "site/src/content/blog/de/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
+      "site/src/content/blog/de/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
+      "site/src/content/blog/es/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
+      "site/src/content/blog/es/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
+      "site/src/content/blog/ja/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
+      "site/src/content/blog/ja/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
+      "site/src/content/blog/pt-br/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
+      "site/src/content/blog/pt-br/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
+      "site/src/content/blog/ru/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
+      "site/src/content/blog/ru/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Serilog.Sinks.Seq/",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-set-up-structured-logging-with-serilog-and-seq-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/05/how-to-set-up-structured-logging-with-serilog-and-seq-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/05/how-to-set-up-structured-logging-with-serilog-and-seq-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/05/how-to-set-up-structured-logging-with-serilog-and-seq-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/05/how-to-set-up-structured-logging-with-serilog-and-seq-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/05/how-to-set-up-structured-logging-with-serilog-and-seq-in-dotnet-11.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/System.Linq.Async",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp.md",
+      "site/src/content/blog/de/2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp.md",
+      "site/src/content/blog/es/2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp.md",
+      "site/src/content/blog/ja/2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp.md",
+      "site/src/content/blog/pt-br/2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp.md",
+      "site/src/content/blog/ru/2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/System.Threading.Channels",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp.md",
+      "site/src/content/blog/de/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp.md",
+      "site/src/content/blog/es/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp.md",
+      "site/src/content/blog/ja/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp.md",
+      "site/src/content/blog/ru/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Testcontainers.MsSql",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
+      "site/src/content/blog/de/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
+      "site/src/content/blog/es/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
+      "site/src/content/blog/ja/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
+      "site/src/content/blog/pt-br/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
+      "site/src/content/blog/ru/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md"
+    ]
+  },
+  {
+    "url": "https://www.rfc-editor.org/rfc/rfc6585#section-4",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11.md"
+    ]
+  },
+  {
+    "url": "https://www.rfc-editor.org/rfc/rfc9114#name-settings",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
+      "site/src/content/blog/de/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
+      "site/src/content/blog/es/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
+      "site/src/content/blog/ja/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
+      "site/src/content/blog/pt-br/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
+      "site/src/content/blog/ru/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md"
+    ]
+  },
+  {
+    "url": "https://www.udemy.com/topic/c-sharp/",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/de/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/es/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/ja/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/pt-br/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/ru/2023/06/how-to-start-programming-with-c.md"
+    ]
+  }
+]
