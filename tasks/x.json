@@ -306,5 +306,9 @@
   {
     "slug": "2026/05/system-text-json-vs-newtonsoft-json-in-2026",
     "text": "On .NET 11, System.Text.Json is in-box, ~2x faster, and the only JSON library that runs under Native AOT."
+  },
+  {
+    "slug": "2026/05/dotnet-11-span-based-deflate-gzip-compression",
+    "text": "GZipEncoder.TryCompress in .NET 11: compress a byte[] into a pooled Span. No MemoryStream, no GC churn."
   }
 ]
