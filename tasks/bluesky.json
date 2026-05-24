@@ -6,5 +6,9 @@
   {
     "slug": "2026/05/nuget-package-pruning-default-net-10",
     "text": ".NET 10 SDK now prunes runtime-shipped NuGet packages out of the restore graph by default. 70% fewer ghost CVEs, restore up to 50% faster."
+  },
+  {
+    "slug": "2026/05/polly-vs-resilience-handlers-in-dotnet-11",
+    "text": "The 'Polly vs resilience handlers' choice is false: the handler IS Polly, HTTP-tuned with telemetry. Raw Polly is for non-HTTP."
   }
 ]

@@ -330,5 +330,9 @@
   {
     "slug": "2026/05/aspnetcore-11-http-query-method-openapi",
     "text": "QUERY is GET with a body: safe, idempotent, cacheable. .NET 11 Preview 4 emits it as a real OpenAPI 3.2 operation."
+  },
+  {
+    "slug": "2026/05/polly-vs-resilience-handlers-in-dotnet-11",
+    "text": "The resilience handler IS Polly with HTTP-aware defaults in one line. Drop to raw Polly only for non-HTTP work."
   }
 ]
