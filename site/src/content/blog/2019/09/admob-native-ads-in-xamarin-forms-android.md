@@ -7,7 +7,7 @@ tags:
   - "xamarin"
   - "xamarin-forms"
 ---
-Until recently NativeAds were in a closed beta and only certain developers had access to the ad format, but now, it’s available to everyone. Here’s how you can go about adding one to your Android Xamarin Forms app using a custom renderer.
+Until recently NativeAds were in a closed beta and only certain developers had access to the ad format, but now, it’s available to everyone. Here’s how you can go about adding one to your Android [Xamarin Forms](/2019/07/xamarin-forms-using-onplatform/) app using a custom renderer.
 
 ## Step 1: Create a view to act as a placeholder for the ad
 

@@ -10,7 +10,7 @@ tags:
 ---
 In less than 5 minutes.
 
-First step is to create your Xamarin Forms projects – start with a blank shell app – and add an additional blank ASP.NET Core project to the solution – we will use it to host our SignalR backend.
+First step is to create your [Xamarin Forms](/2019/07/xamarin-forms-using-onplatform/) projects – start with a blank shell app – and add an additional blank ASP.NET Core project to the solution – we will use it to host our SignalR backend.
 
 Once the projects are set up, we begin by implementing the `ChatHub` which in our case is really basic.
 

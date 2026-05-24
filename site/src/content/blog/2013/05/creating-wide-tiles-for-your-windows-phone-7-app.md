@@ -7,7 +7,7 @@ tags:
   - "csharp"
   - "windows-phone"
 ---
-I’ve recently come across an article in the Nokia Developer Wiki about creating live tiles (including wide tile) for both Windows Phone 7 and Windows Phone 8 by writing a single piece of code that works in both versions of the OS.
+I’ve recently come across an article in the Nokia Developer Wiki about creating live tiles (including wide tile) for both [Windows Phone 7](/2012/01/windows-phone-7-getting-the-current-gps-location-from-the-device/) and Windows Phone 8 by writing a single piece of code that works in both versions of the OS.
 
 To do this you will need to use the MangoPollo library which you can easily get from NuGet. The library uses reflection to create your live tiles depending on the OS version the app is running in. Creating your tiles is easy:
 

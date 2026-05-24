@@ -11,7 +11,7 @@ translationOf: "2013/05/creating-wide-tiles-for-your-windows-phone-7-app"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-Недавно мне попалась статья в Nokia Developer Wiki про создание live tiles (в том числе wide tile) сразу для Windows Phone 7 и Windows Phone 8 с помощью одного фрагмента кода, работающего на обеих версиях ОС.
+Недавно мне попалась статья в Nokia Developer Wiki про создание live tiles (в том числе wide tile) сразу для [Windows Phone 7](/ru/2012/01/windows-phone-7-getting-the-current-gps-location-from-the-device/) и Windows Phone 8 с помощью одного фрагмента кода, работающего на обеих версиях ОС.
 
 Для этого вам понадобится библиотека MangoPollo, которую легко поставить через NuGet. Библиотека использует reflection, чтобы создавать live tiles в зависимости от версии ОС, на которой запущено приложение. Создать tiles просто:
 

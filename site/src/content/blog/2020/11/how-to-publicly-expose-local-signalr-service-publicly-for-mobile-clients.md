@@ -33,4 +33,4 @@ Now, copy the URL from the window above and update it in your clients. Careful t
 
 ## Try it out!
 
-You can easily try this yourself by cloning the original Xamarin Forms SignalR Chat sample (the GitHub repository is no longer available), run the .Web project and exposing it through `ngrok` as explained above. Then replace the `ChatHubUrl` in `appsettings.json` with the one generated for you by `ngrok`.
+You can easily try this yourself by cloning the original [Xamarin Forms](/2019/07/xamarin-forms-using-onplatform/) SignalR Chat sample (the GitHub repository is no longer available), run the .Web project and exposing it through `ngrok` as explained above. Then replace the `ChatHubUrl` in `appsettings.json` with the one generated for you by `ngrok`.
