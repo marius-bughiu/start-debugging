@@ -3,7 +3,7 @@ title: "The .NET 11 tracker"
 description: "Every preview, every feature, every breaking change - one place to bookmark for the .NET 11 release cycle."
 tagline: "One bookmark for the whole .NET 11 cycle."
 pubDate: 2026-04-18
-updatedDate: 2026-05-17
+updatedDate: 2026-05-24
 indexTags:
   - ".net 11"
   - "dotnet 11"
@@ -17,7 +17,7 @@ This pillar collects everything I've written about **.NET 11**: previews, runtim
 
 ## What to read first
 
-If you're new to the .NET 11 story, start with the posts tagged **".net 11 preview"** near the top of the list. Each one covers a single preview's highlights. The older posts stay useful because .NET 11's feature set is cumulative. The Preview 4 wave is the one to skim first right now: [MAUI switches to CoreCLR by default on Android, iOS, and Mac Catalyst](/2026/05/maui-coreclr-default-android-ios-dotnet-11-preview-4/), [dotnet watch finally reaches MAUI on Android and iOS](/2026/05/dotnet-watch-maui-android-ios-net-11-preview-4/), and [.NET 11 Adds Deadlock-Free Process Output Capture](/2026/05/dotnet-11-process-api-deadlock-free-capture/) are the headline behavioural changes.
+If you're new to the .NET 11 story, start with the posts tagged **".net 11 preview"** near the top of the list. Each one covers a single preview's highlights. The older posts stay useful because .NET 11's feature set is cumulative. The Preview 4 wave is the one to skim first right now: [MAUI switches to CoreCLR by default on Android, iOS, and Mac Catalyst](/2026/05/maui-coreclr-default-android-ios-dotnet-11-preview-4/), [dotnet watch finally reaches MAUI on Android and iOS](/2026/05/dotnet-watch-maui-android-ios-net-11-preview-4/), and [.NET 11 Adds Deadlock-Free Process Output Capture](/2026/05/dotnet-11-process-api-deadlock-free-capture/) are the headline behavioural changes. The newest runtime win to skim is [.NET 11 Adds Allocation-Free Deflate and GZip Compression](/2026/05/dotnet-11-span-based-deflate-gzip-compression/).
 
 ## What's on this page
 

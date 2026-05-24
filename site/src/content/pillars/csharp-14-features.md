@@ -3,7 +3,7 @@ title: "C# 14 features"
 description: "All C# 14 language features with runnable examples: union types, partial members, extensions, and the smaller ergonomic wins."
 tagline: "What actually shipped in C# 14, with code."
 pubDate: 2026-04-18
-updatedDate: 2026-05-17
+updatedDate: 2026-05-24
 indexTags:
   - "c# 14"
   - "csharp 14"
@@ -17,7 +17,7 @@ This pillar indexes everything I've written about **C# 14** language features: e
 
 ## What to read first
 
-For the headline 14.0 features, [C# 14 Extension Members](/2026/02/csharp-14-extension-members/) and [Partial constructors and events in C# 14](/2025/04/csharp-14-partial-constructors-and-events/) are the biggest behavioural changes if you're coming from C# 12. After that, [C# 14 user-defined compound assignment operators](/2026/04/csharp-14-user-defined-compound-assignment-operators/) and [the field keyword](/2025/04/c-14-the-field-keyword-and-field-backed-properties/) cover the perf-sensitive bits.
+For the headline 14.0 features, [C# 14 Extension Members](/2026/02/csharp-14-extension-members/) and [Partial constructors and events in C# 14](/2025/04/csharp-14-partial-constructors-and-events/) are the biggest behavioural changes if you're coming from C# 12. After that, [C# 14 user-defined compound assignment operators](/2026/04/csharp-14-user-defined-compound-assignment-operators/) and [the field keyword](/2025/04/c-14-the-field-keyword-and-field-backed-properties/) cover the perf-sensitive bits. The one breaking change to know about before you upgrade is [the C# 14 overload resolution change with Span and ReadOnlySpan](/2026/05/fix-csharp-14-overload-resolution-breaking-change-with-spans/), which can silently bind a different overload.
 
 ## What's on this page
 
