@@ -14,9 +14,5 @@
   {
     "slug": "2026/05/configureawait-false-vs-default-in-dotnet-11",
     "text": "ConfigureAwait(false) in .NET 11: a no-op in ASP.NET Core, console apps, generic-host workers, and async Task xUnit tests, because none of them install a SynchronizationContext. Library code that ships as NuGet or multi-targets netstandard2.0 still needs it on every await, or a caller on WinForms or MAUI will deadlock on .Result."
-  },
-  {
-    "slug": "2026/05/polly-vs-resilience-handlers-in-dotnet-11",
-    "text": "Only one resilience engine exists in .NET. AddStandardResilienceHandler is a Polly pipeline with HTTP-aware defaults and telemetry, wired into IHttpClientFactory. Use it for HttpClient; drop to Polly's ResiliencePipeline directly for DB, queues, gRPC, or any code. A retried POST can double-insert: it retries every verb."
   }
 ]
