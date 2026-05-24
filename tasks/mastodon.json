@@ -14,5 +14,9 @@
   {
     "slug": "2026/05/configureawait-false-vs-default-in-dotnet-11",
     "text": "ConfigureAwait(false) in .NET 11: a no-op in ASP.NET Core, console apps, generic-host workers, and async Task xUnit tests, because none of them install a SynchronizationContext. Library code that ships as NuGet or multi-targets netstandard2.0 still needs it on every await, or a caller on WinForms or MAUI will deadlock on .Result."
+  },
+  {
+    "slug": "2026/05/aspnetcore-11-http-query-method-openapi",
+    "text": "QUERY is the honest version of POST /search: GET semantics (safe, idempotent, cacheable) plus a request body big filters actually need. .NET 11 Preview 4 makes ASP.NET Core OpenAPI emit it as a first-class OpenAPI 3.2 operation, with a fallback for 3.0 and 3.1. Map it with MapMethods."
   }
 ]

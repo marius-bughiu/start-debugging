@@ -326,5 +326,9 @@
   {
     "slug": "2026/05/ef-core-compiled-queries-vs-raw-sql-vs-dapper",
     "text": "EF Core with AsNoTracking is within ~5% of Dapper on list reads. Compiled queries only for hot single-row paths."
+  },
+  {
+    "slug": "2026/05/aspnetcore-11-http-query-method-openapi",
+    "text": "QUERY is GET with a body: safe, idempotent, cacheable. .NET 11 Preview 4 emits it as a real OpenAPI 3.2 operation."
   }
 ]
