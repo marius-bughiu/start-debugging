@@ -342,5 +342,9 @@
   {
     "slug": "2026/05/lock-vs-monitor-vs-semaphoreslim-vs-system-threading-lock-in-csharp",
     "text": "On .NET 9+? System.Threading.Lock for sync code, SemaphoreSlim across await, Monitor only for Wait/Pulse."
+  },
+  {
+    "slug": "2026/05/task-run-vs-task-factory-startnew-vs-threadpool-queueuserworkitem",
+    "text": "Task.Run for almost all of it. QueueUserWorkItem<TState> for zero-alloc fire-and-forget. StartNew only for LongRunning."
   }
 ]
