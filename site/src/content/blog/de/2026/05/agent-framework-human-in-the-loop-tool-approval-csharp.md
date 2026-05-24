@@ -14,7 +14,7 @@ translatedBy: "claude"
 translationDate: 2026-05-06
 ---
 
-Jeremy Likness hat [Building Blocks for AI Part 3](https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/) am 4. Mai 2026 im .NET Blog veröffentlicht, und der Teil, den jeder beachten sollte, der Agenten in Produktion bringt, ist der Human-in-the-Loop-Genehmigungsfluss für Tool-Aufrufe. Microsoft Agent Framework 1.0 (`Microsoft.Agents.AI` auf NuGet) behandelt dies als erstklassigen Laufzustand: Wenn ein sensibles Tool aufgerufen wird, ruft der Agent es nicht auf. Er pausiert, legt den Aufruf offen und wartet darauf, dass Ihre Anwendung ihn genehmigt oder ablehnt, bevor der nächste Lauf fortgesetzt wird.
+Jeremy Likness hat [Building Blocks for AI Part 3](https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/) am 4. Mai 2026 im .NET Blog veröffentlicht, und der Teil, den jeder beachten sollte, der Agenten in Produktion bringt, ist der Human-in-the-Loop-Genehmigungsfluss für Tool-Aufrufe. [Microsoft Agent Framework 1.0](/de/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) (`Microsoft.Agents.AI` auf NuGet) behandelt dies als erstklassigen Laufzustand: Wenn ein sensibles Tool aufgerufen wird, ruft der Agent es nicht auf. Er pausiert, legt den Aufruf offen und wartet darauf, dass Ihre Anwendung ihn genehmigt oder ablehnt, bevor der nächste Lauf fortgesetzt wird.
 
 ## Eine Funktion als genehmigungspflichtig markieren
 

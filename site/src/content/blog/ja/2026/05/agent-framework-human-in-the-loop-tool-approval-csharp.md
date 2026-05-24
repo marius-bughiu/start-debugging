@@ -14,7 +14,7 @@ translatedBy: "claude"
 translationDate: 2026-05-06
 ---
 
-Jeremy Likness は 2026 年 5 月 4 日に [Building Blocks for AI Part 3](https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/) を .NET Blog で公開しました。エージェントを本番に投入する人にとって注目すべき部分は、ツール呼び出しの human-in-the-loop 承認フローです。Microsoft Agent Framework 1.0（NuGet 上の `Microsoft.Agents.AI`）では、これを第一級の実行状態として扱います。機微なツールが呼び出されると、エージェントはそれを呼び出しません。一時停止して呼び出しを表に出し、アプリケーションがそれを承認または拒否するまで、次の実行は続きません。
+Jeremy Likness は 2026 年 5 月 4 日に [Building Blocks for AI Part 3](https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/) を .NET Blog で公開しました。エージェントを本番に投入する人にとって注目すべき部分は、ツール呼び出しの human-in-the-loop 承認フローです。[Microsoft Agent Framework 1.0](/ja/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/)（NuGet 上の `Microsoft.Agents.AI`）では、これを第一級の実行状態として扱います。機微なツールが呼び出されると、エージェントはそれを呼び出しません。一時停止して呼び出しを表に出し、アプリケーションがそれを承認または拒否するまで、次の実行は続きません。
 
 ## 関数を承認必須としてマークする
 

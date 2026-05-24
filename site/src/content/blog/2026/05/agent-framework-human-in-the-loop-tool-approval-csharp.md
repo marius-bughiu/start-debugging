@@ -10,7 +10,7 @@ tags:
   - "human-in-the-loop"
 ---
 
-Jeremy Likness published [Building Blocks for AI Part 3](https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/) on the .NET Blog on May 4, 2026, and the part worth flagging for anyone shipping agents to production is the human-in-the-loop tool approval flow. Microsoft Agent Framework 1.0 (`Microsoft.Agents.AI` on NuGet) treats this as a first-class run state: when a sensitive tool is invoked, the agent does not call it. It pauses, surfaces the call, and waits for your application to approve or reject it before the next run continues.
+Jeremy Likness published [Building Blocks for AI Part 3](https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/) on the .NET Blog on May 4, 2026, and the part worth flagging for anyone shipping agents to production is the human-in-the-loop tool approval flow. [Microsoft Agent Framework 1.0](/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) (`Microsoft.Agents.AI` on NuGet) treats this as a first-class run state: when a sensitive tool is invoked, the agent does not call it. It pauses, surfaces the call, and waits for your application to approve or reject it before the next run continues.
 
 ## Mark a function as approval-required
 

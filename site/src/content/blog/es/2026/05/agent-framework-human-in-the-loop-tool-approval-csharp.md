@@ -14,7 +14,7 @@ translatedBy: "claude"
 translationDate: 2026-05-06
 ---
 
-Jeremy Likness publicó [Building Blocks for AI Part 3](https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/) en el .NET Blog el 4 de mayo de 2026, y la pieza que vale la pena destacar para quien lleva agentes a producción es el flujo de aprobación humana en el ciclo de llamadas a herramientas. Microsoft Agent Framework 1.0 (`Microsoft.Agents.AI` en NuGet) lo trata como un estado de ejecución de primera clase: cuando se invoca una herramienta sensible, el agente no la llama. Se pausa, expone la llamada, y espera a que tu aplicación la apruebe o rechace antes de que la siguiente ejecución continúe.
+Jeremy Likness publicó [Building Blocks for AI Part 3](https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/) en el .NET Blog el 4 de mayo de 2026, y la pieza que vale la pena destacar para quien lleva agentes a producción es el flujo de aprobación humana en el ciclo de llamadas a herramientas. [Microsoft Agent Framework 1.0](/es/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) (`Microsoft.Agents.AI` en NuGet) lo trata como un estado de ejecución de primera clase: cuando se invoca una herramienta sensible, el agente no la llama. Se pausa, expone la llamada, y espera a que tu aplicación la apruebe o rechace antes de que la siguiente ejecución continúe.
 
 ## Marca una función como que requiere aprobación
 
