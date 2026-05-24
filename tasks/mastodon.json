@@ -14,5 +14,9 @@
   {
     "slug": "2026/05/configureawait-false-vs-default-in-dotnet-11",
     "text": "ConfigureAwait(false) in .NET 11: a no-op in ASP.NET Core, console apps, generic-host workers, and async Task xUnit tests, because none of them install a SynchronizationContext. Library code that ships as NuGet or multi-targets netstandard2.0 still needs it on every await, or a caller on WinForms or MAUI will deadlock on .Result."
+  },
+  {
+    "slug": "2026/05/microsoft-agent-framework-function-tools-inline-method-class",
+    "text": "Coming to the Microsoft Agent Framework from Semantic Kernel? There is no Skill or plugin abstraction. Every function tool is AIFunctionFactory.Create in C#: an inline lambda, a named method with [Description], or a class sharing a DI dependency. Gotcha: the YAML file defines the agent, not your tool body."
   }
 ]
