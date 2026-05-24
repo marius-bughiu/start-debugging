@@ -6,9 +6,5 @@
   {
     "slug": "2026/05/nuget-package-pruning-default-net-10",
     "text": ".NET 10 SDK now prunes runtime-shipped NuGet packages out of the restore graph by default. 70% fewer ghost CVEs, restore up to 50% faster."
-  },
-  {
-    "slug": "2026/05/lock-vs-monitor-vs-semaphoreslim-vs-system-threading-lock-in-csharp",
-    "text": "Four C# lock primitives, one rule: sync+short = Lock, anything with await = SemaphoreSlim, signaling = Monitor."
   }
 ]
