@@ -338,5 +338,9 @@
   {
     "slug": "2026/05/microsoft-agent-framework-function-tools-inline-method-class",
     "text": "Looking for 'skills' in the Microsoft Agent Framework? There are none. A tool is just AIFunctionFactory.Create."
+  },
+  {
+    "slug": "2026/05/lock-vs-monitor-vs-semaphoreslim-vs-system-threading-lock-in-csharp",
+    "text": "On .NET 9+? System.Threading.Lock for sync code, SemaphoreSlim across await, Monitor only for Wait/Pulse."
   }
 ]
