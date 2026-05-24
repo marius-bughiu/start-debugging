@@ -63,6 +63,14 @@ function tokenize(text) {
     .filter((t) => t.length > 1 && !STOP.has(t));
 }
 
+// Language of a post, derived from its slug. Non-English posts live under a
+// locale prefix (de/, es/, ja/, pt-br/, ru/); English posts live directly under
+// the year directory (2026/...). So a leading 4-digit segment means English.
+function langOf(slug) {
+  const first = slug.split("/")[0];
+  return /^\d{4}$/.test(first) ? "en" : first;
+}
+
 function firstParagraph(body) {
   const stripped = body.replace(/```[\s\S]*?```/g, " ").trim();
   const para = stripped.split(/\n\s*\n/)[0] ?? "";
@@ -139,6 +147,7 @@ async function loadPosts() {
     posts.push({
       file,
       slug,
+      lang: langOf(slug),
       title: data.title ?? "",
       tags: data.tags ?? [],
       pubDate: data.pubDate ? new Date(data.pubDate) : null,
@@ -224,6 +233,9 @@ async function main() {
     const scored = [];
     for (const other of posts) {
       if (other.file === target.file) continue;
+      // Only link within the same language; cross-language targets would send a
+      // reader to a page they can't read.
+      if (other.lang !== target.lang) continue;
       const otherPub = other.pubDate?.valueOf() ?? 0;
       if (otherPub >= targetPub) continue;
       const sim = cosine(targetVec, vectors.get(other.file));
@@ -300,9 +312,15 @@ async function main() {
 
   if (APPLY) {
     for (const proposal of proposals) {
+      // Preserve the original frontmatter byte-for-byte; only swap the body.
+      // (matter.stringify would re-serialize YAML and churn every header line.)
       const raw = await fs.readFile(proposal.target.file, "utf8");
-      const parsed = matter(raw);
-      const rebuilt = matter.stringify(proposal.newBody, parsed.data);
+      const idx = raw.indexOf(proposal.oldBody);
+      if (idx === -1) {
+        console.error(`[link-pass] body not found in ${proposal.target.file}, skipping`);
+        continue;
+      }
+      const rebuilt = raw.slice(0, idx) + proposal.newBody + raw.slice(idx + proposal.oldBody.length);
       await fs.writeFile(proposal.target.file, rebuilt, "utf8");
     }
     process.stdout.write(`\nApplied ${proposals.length} file(s).\n`);
