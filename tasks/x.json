@@ -346,5 +346,9 @@
   {
     "slug": "2026/05/task-run-vs-task-factory-startnew-vs-threadpool-queueuserworkitem",
     "text": "Task.Run for almost all of it. QueueUserWorkItem<TState> for zero-alloc fire-and-forget. StartNew only for LongRunning."
+  },
+  {
+    "slug": "2026/05/dart-3-12-private-named-parameters-initializing-formals",
+    "text": "Dart 3.12 kills the initializer list: this._field as a named param, public name auto-exposed to callers."
   }
 ]
