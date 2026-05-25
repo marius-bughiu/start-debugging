@@ -14,9 +14,5 @@
   {
     "slug": "2026/05/configureawait-false-vs-default-in-dotnet-11",
     "text": "ConfigureAwait(false) in .NET 11: a no-op in ASP.NET Core, console apps, generic-host workers, and async Task xUnit tests, because none of them install a SynchronizationContext. Library code that ships as NuGet or multi-targets netstandard2.0 still needs it on every await, or a caller on WinForms or MAUI will deadlock on .Result."
-  },
-  {
-    "slug": "2026/05/dart-3-12-private-named-parameters-initializing-formals",
-    "text": "Dart 3.12 shipped at Google I/O 2026 with Flutter 3.44. You can finally use private named parameters as initializing formals: write this._petName in the constructor and the field stays private while callers pass petName. The whole initializer list disappears. Pairs with the new primary constructors experiment."
   }
 ]
