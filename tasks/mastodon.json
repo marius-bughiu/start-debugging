@@ -14,9 +14,5 @@
   {
     "slug": "2026/05/configureawait-false-vs-default-in-dotnet-11",
     "text": "ConfigureAwait(false) in .NET 11: a no-op in ASP.NET Core, console apps, generic-host workers, and async Task xUnit tests, because none of them install a SynchronizationContext. Library code that ships as NuGet or multi-targets netstandard2.0 still needs it on every await, or a caller on WinForms or MAUI will deadlock on .Result."
-  },
-  {
-    "slug": "2026/05/list-vs-span-vs-readonlyspan-in-csharp",
-    "text": "List<T> vs Span<T> vs ReadOnlySpan<T>, decided: own and grow a buffer is List<T>, a mutable stack-only view is Span<T>, a read-only view (string slices, u8 literals, parsing) is ReadOnlySpan<T>. The gotcha that overrides taste: spans are ref struct, so no fields, no closures, no surviving an await."
   }
 ]
