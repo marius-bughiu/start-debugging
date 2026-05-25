@@ -350,5 +350,9 @@
   {
     "slug": "2026/05/dart-3-12-private-named-parameters-initializing-formals",
     "text": "Dart 3.12 kills the initializer list: this._field as a named param, public name auto-exposed to callers."
+  },
+  {
+    "slug": "2026/05/list-vs-span-vs-readonlyspan-in-csharp",
+    "text": "List<T> grows and survives await; Span<T> is a stack-only view that can't. The rule that decides it in C# 14."
   }
 ]
