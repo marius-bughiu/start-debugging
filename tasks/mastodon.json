@@ -14,9 +14,5 @@
   {
     "slug": "2026/05/configureawait-false-vs-default-in-dotnet-11",
     "text": "ConfigureAwait(false) in .NET 11: a no-op in ASP.NET Core, console apps, generic-host workers, and async Task xUnit tests, because none of them install a SynchronizationContext. Library code that ships as NuGet or multi-targets netstandard2.0 still needs it on every await, or a caller on WinForms or MAUI will deadlock on .Result."
-  },
-  {
-    "slug": "2026/05/parallel-foreach-vs-parallel-foreachasync-vs-task-whenall",
-    "text": "Parallel.ForEach, Parallel.ForEachAsync, and Task.WhenAll aren't interchangeable. ForEach for CPU-bound work over in-memory data. ForEachAsync for async I/O with a concurrency cap. WhenAll for a small fixed set of awaits you need results from. The trap: WhenAll over 10,000 items opens 10,000 connections at once."
   }
 ]
