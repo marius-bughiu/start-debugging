@@ -362,5 +362,9 @@
   {
     "slug": "2026/05/stringbuilder-vs-string-interpolation-in-dotnet-11",
     "text": "One composition? Interpolation. A loop? StringBuilder. The dividing line is the loop, not the value count."
+  },
+  {
+    "slug": "2026/05/parallel-foreach-vs-parallel-foreachasync-vs-task-whenall",
+    "text": "Parallel.ForEach = CPU work. ForEachAsync = throttled async I/O. WhenAll = small fan-out. Never block inside ForEach."
   }
 ]
