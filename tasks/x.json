@@ -354,5 +354,9 @@
   {
     "slug": "2026/05/list-vs-span-vs-readonlyspan-in-csharp",
     "text": "List<T> grows and survives await; Span<T> is a stack-only view that can't. The rule that decides it in C# 14."
+  },
+  {
+    "slug": "2026/05/how-to-reduce-the-number-of-mcp-tools-claude-loads",
+    "text": "Five MCP servers burn ~55k tokens before Claude works. Defer them: ENABLE_TOOL_SEARCH and defer_loading."
   }
 ]

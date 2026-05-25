@@ -14,5 +14,9 @@
   {
     "slug": "2026/05/configureawait-false-vs-default-in-dotnet-11",
     "text": "ConfigureAwait(false) in .NET 11: a no-op in ASP.NET Core, console apps, generic-host workers, and async Task xUnit tests, because none of them install a SynchronizationContext. Library code that ships as NuGet or multi-targets netstandard2.0 still needs it on every await, or a caller on WinForms or MAUI will deadlock on .Result."
+  },
+  {
+    "slug": "2026/05/how-to-reduce-the-number-of-mcp-tools-claude-loads",
+    "text": "Five MCP servers can spend ~55k tokens on tool definitions before work, and accuracy drops past 30-50 tools. Fix: defer the definitions and load on demand. Claude Code 2.1.x does it by default via ENABLE_TOOL_SEARCH; the API uses the tool search tool with defer_loading; the MCP connector uses mcp_toolset to allowlist and defer."
   }
 ]
