@@ -358,5 +358,9 @@
   {
     "slug": "2026/05/how-to-reduce-the-number-of-mcp-tools-claude-loads",
     "text": "Five MCP servers burn ~55k tokens before Claude works. Defer them: ENABLE_TOOL_SEARCH and defer_loading."
+  },
+  {
+    "slug": "2026/05/stringbuilder-vs-string-interpolation-in-dotnet-11",
+    "text": "One composition? Interpolation. A loop? StringBuilder. The dividing line is the loop, not the value count."
   }
 ]
