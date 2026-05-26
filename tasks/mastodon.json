@@ -14,5 +14,9 @@
   {
     "slug": "2026/05/configureawait-false-vs-default-in-dotnet-11",
     "text": "ConfigureAwait(false) in .NET 11: a no-op in ASP.NET Core, console apps, generic-host workers, and async Task xUnit tests, because none of them install a SynchronizationContext. Library code that ships as NuGet or multi-targets netstandard2.0 still needs it on every await, or a caller on WinForms or MAUI will deadlock on .Result."
+  },
+  {
+    "slug": "2026/05/how-to-let-aider-edit-files-outside-the-git-repository",
+    "text": "Aider treats your git repo as the universe and /add /etc/nginx.conf returns 'not in the git repository'. Five working patterns for editing or reading external files: pass paths at launch (the CLI is more permissive than /add), /read-only for reference docs (cache-friendly), --no-git for unversioned dirs, a symlink for one stray file, or running aider from a shared parent directory."
   }
 ]

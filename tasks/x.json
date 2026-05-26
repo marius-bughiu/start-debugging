@@ -370,5 +370,9 @@
   {
     "slug": "2026/05/ef-core-11-temporal-tables-clr-period-properties",
     "text": "EF Core 11 Preview 4: SQL Server temporal table PeriodStart and PeriodEnd can be real CLR properties, not shadow ones."
+  },
+  {
+    "slug": "2026/05/how-to-let-aider-edit-files-outside-the-git-repository",
+    "text": "Aider's /add rejects files outside the repo. The CLI accepts them. Five working patterns for cross-boundary edits."
   }
 ]
