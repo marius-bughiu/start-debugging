@@ -6,9 +6,5 @@
   {
     "slug": "2026/05/nuget-package-pruning-default-net-10",
     "text": ".NET 10 SDK now prunes runtime-shipped NuGet packages out of the restore graph by default. 70% fewer ghost CVEs, restore up to 50% faster."
-  },
-  {
-    "slug": "2026/05/how-to-let-aider-edit-files-outside-the-git-repository",
-    "text": "Aider's /add refuses files outside the repo, but the CLI does not. Five patterns: CLI args, /read, --no-git, symlinks, parent dir."
   }
 ]
