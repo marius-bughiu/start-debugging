@@ -374,5 +374,9 @@
   {
     "slug": "2026/05/how-to-let-aider-edit-files-outside-the-git-repository",
     "text": "Aider's /add rejects files outside the repo. The CLI accepts them. Five working patterns for cross-boundary edits."
+  },
+  {
+    "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
+    "text": "Native AOT isolated worker now beats in-process on Azure Functions cold start. In-process retires Nov 10, 2026."
   }
 ]

@@ -6,5 +6,9 @@
   {
     "slug": "2026/05/nuget-package-pruning-default-net-10",
     "text": ".NET 10 SDK now prunes runtime-shipped NuGet packages out of the restore graph by default. 70% fewer ghost CVEs, restore up to 50% faster."
+  },
+  {
+    "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
+    "text": "Azure Functions on .NET 11: pick isolated worker. In-process retires Nov 10, 2026 with .NET 8 LTS. Native AOT now beats it on cold start."
   }
 ]
