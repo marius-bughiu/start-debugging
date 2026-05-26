@@ -366,5 +366,9 @@
   {
     "slug": "2026/05/parallel-foreach-vs-parallel-foreachasync-vs-task-whenall",
     "text": "Parallel.ForEach = CPU work. ForEachAsync = throttled async I/O. WhenAll = small fan-out. Never block inside ForEach."
+  },
+  {
+    "slug": "2026/05/ef-core-11-temporal-tables-clr-period-properties",
+    "text": "EF Core 11 Preview 4: SQL Server temporal table PeriodStart and PeriodEnd can be real CLR properties, not shadow ones."
   }
 ]
