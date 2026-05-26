@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11",
+    "text": "On .NET 11, scaffold Blazor Web App and set @rendermode per page. Server-only and WASM-only are now niche calls."
+  },
+  {
     "slug": "2026/05/httpclient-vs-httpclientfactory-vs-refit",
     "text": "Not three rivals, three layers: IHttpClientFactory by default, Refit for typed clients, never new HttpClient() per request."
   },
