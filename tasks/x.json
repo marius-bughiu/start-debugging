@@ -394,5 +394,9 @@
   {
     "slug": "2026/05/how-to-assign-a-jira-ticket-to-a-cursor-cloud-agent-and-get-a-pr-back",
     "text": "Cursor in Jira shipped May 19. Assign a ticket to @Cursor, the cloud agent opens a PR linked back to the issue."
+  },
+  {
+    "slug": "2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026",
+    "text": "Flutter vs React Native vs MAUI in 2026: Flutter for pixel-identical UI, RN for TS teams, MAUI for .NET shops."
   }
 ]
