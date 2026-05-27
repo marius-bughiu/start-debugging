@@ -18,9 +18,5 @@
   {
     "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
     "text": "Azure Functions in-process retires Nov 10, 2026 with .NET 8 LTS. After that date, Azure won't host in-process functions. New apps go isolated worker on .NET 11. The 'in-process is faster on cold start' argument died too: Native AOT isolated now beats in-process p50 (181 ms vs 312 ms on Linux Consumption)."
-  },
-  {
-    "slug": "2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026",
-    "text": "Flutter 3.44 vs React Native 0.82 vs .NET MAUI 11 for a new mobile app in 2026. Cold start: Flutter wins. FPS: tie. The decision is language and ecosystem: TypeScript team picks RN, C# shop picks MAUI, design-driven product picks Flutter. Web in the roadmap? RN-Web is production, Flutter Web is preview, MAUI has none."
   }
 ]
