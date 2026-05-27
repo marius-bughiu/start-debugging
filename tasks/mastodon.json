@@ -18,9 +18,5 @@
   {
     "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
     "text": "Azure Functions in-process retires Nov 10, 2026 with .NET 8 LTS. After that date, Azure won't host in-process functions. New apps go isolated worker on .NET 11. The 'in-process is faster on cold start' argument died too: Native AOT isolated now beats in-process p50 (181 ms vs 312 ms on Linux Consumption)."
-  },
-  {
-    "slug": "2026/05/maui-vs-avalonia-vs-uno-in-2026",
-    "text": "MAUI vs Avalonia vs Uno Platform on .NET 11 in 2026: Avalonia 11.3 if you need pixel-identical UI across Windows, macOS, Linux, iOS, Android. Uno 6 when browser or tvOS matter, or you want to reuse WinUI 3 XAML. MAUI 11 when iOS+Android is the whole product and Microsoft first-party support is required."
   }
 ]
