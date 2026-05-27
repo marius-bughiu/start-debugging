@@ -386,5 +386,9 @@
   {
     "slug": "2026/05/maui-10-material-3-android-usematerial3-flag",
     "text": "MAUI 10 SR6: one MSBuild flag (UseMaterial3=true) themes Button, Entry, Slider, Switch, Shell on Android. No styles.xml."
+  },
+  {
+    "slug": "2026/05/maui-vs-avalonia-vs-uno-in-2026",
+    "text": "New .NET cross-plat UI in 2026: Avalonia by default, Uno when the browser ships, MAUI for fully native iOS+Android."
   }
 ]

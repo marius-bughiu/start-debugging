@@ -10,5 +10,9 @@
   {
     "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
     "text": "Azure Functions on .NET 11: pick isolated worker. In-process retires Nov 10, 2026 with .NET 8 LTS. Native AOT now beats it on cold start."
+  },
+  {
+    "slug": "2026/05/maui-vs-avalonia-vs-uno-in-2026",
+    "text": "MAUI vs Avalonia vs Uno on .NET 11 in 2026: Avalonia by default for desktop, Uno when browser ships, MAUI for fully native mobile."
   }
 ]
