@@ -18,9 +18,5 @@
   {
     "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
     "text": "Azure Functions in-process retires Nov 10, 2026 with .NET 8 LTS. After that date, Azure won't host in-process functions. New apps go isolated worker on .NET 11. The 'in-process is faster on cold start' argument died too: Native AOT isolated now beats in-process p50 (181 ms vs 312 ms on Linux Consumption)."
-  },
-  {
-    "slug": "2026/05/dart-records-vs-freezed-classes",
-    "text": "Dart 3.12 records vs Freezed 3.x in 2026: records for ephemeral, anonymous, local shapes with no copyWith and no JSON. Freezed for named domain models, state, API DTOs, sealed unions. JSON over a network or state.copyWith both force Freezed. Multiple returns or switch-on-shape forces a record."
   }
 ]
