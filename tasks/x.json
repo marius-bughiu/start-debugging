@@ -398,5 +398,9 @@
   {
     "slug": "2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026",
     "text": "Flutter vs React Native vs MAUI in 2026: Flutter for pixel-identical UI, RN for TS teams, MAUI for .NET shops."
+  },
+  {
+    "slug": "2026/05/dart-records-vs-freezed-classes",
+    "text": "Dart records or Freezed? Record for ephemeral tuples and pattern matches. Freezed for any class with copyWith or JSON."
   }
 ]
