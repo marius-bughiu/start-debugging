@@ -382,5 +382,9 @@
   {
     "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
     "text": "Native AOT isolated worker now beats in-process on Azure Functions cold start. In-process retires Nov 10, 2026."
+  },
+  {
+    "slug": "2026/05/maui-10-material-3-android-usematerial3-flag",
+    "text": "MAUI 10 SR6: one MSBuild flag (UseMaterial3=true) themes Button, Entry, Slider, Switch, Shell on Android. No styles.xml."
   }
 ]

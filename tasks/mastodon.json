@@ -18,5 +18,9 @@
   {
     "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
     "text": "Azure Functions in-process retires Nov 10, 2026 with .NET 8 LTS. After that date, Azure won't host in-process functions. New apps go isolated worker on .NET 11. The 'in-process is faster on cold start' argument died too: Native AOT isolated now beats in-process p50 (181 ms vs 312 ms on Linux Consumption)."
+  },
+  {
+    "slug": "2026/05/maui-10-material-3-android-usematerial3-flag",
+    "text": "MAUI 10 SR6 (10.0.60) wraps up Material 3 on Android. The opt-in is one MSBuild property: <UseMaterial3>true</UseMaterial3>. Button, Entry, SearchBar, DatePicker, Slider, ProgressBar, ImageButton, Switch, Shell. No custom renderers, no styles.xml. Explicit XAML colors still win, so design-system overrides keep working."
   }
 ]
