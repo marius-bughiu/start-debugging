@@ -33,8 +33,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to add retrieval-augmented generation to a Claude Code session → slug: 2026/05/how-to-add-retrieval-augmented-generation-to-a-claude-code-session
 - How to author a Microsoft Agent Framework skill in .NET (file vs inline C# vs class) → slug: 2026/05/microsoft-agent-framework-function-tools-inline-method-class
 - How to reduce the number of MCP tools Claude loads to avoid the tool-use limit → slug: 2026/05/how-to-reduce-the-number-of-mcp-tools-claude-loads
-- How to let Aider edit files outside the git repository
-- How to assign a Jira ticket to a Cursor cloud agent and get a PR back
+- How to let Aider edit files outside the git repository → slug: 2026/05/how-to-let-aider-edit-files-outside-the-git-repository
+- How to assign a Jira ticket to a Cursor cloud agent and get a PR back → slug: 2026/05/how-to-assign-a-jira-ticket-to-a-cursor-cloud-agent-and-get-a-pr-back
 
 ## Fix / error
 

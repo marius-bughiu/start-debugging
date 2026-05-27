@@ -390,5 +390,9 @@
   {
     "slug": "2026/05/maui-vs-avalonia-vs-uno-in-2026",
     "text": "New .NET cross-plat UI in 2026: Avalonia by default, Uno when the browser ships, MAUI for fully native iOS+Android."
+  },
+  {
+    "slug": "2026/05/how-to-assign-a-jira-ticket-to-a-cursor-cloud-agent-and-get-a-pr-back",
+    "text": "Cursor in Jira shipped May 19. Assign a ticket to @Cursor, the cloud agent opens a PR linked back to the issue."
   }
 ]

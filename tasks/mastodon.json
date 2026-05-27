@@ -18,5 +18,9 @@
   {
     "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
     "text": "Azure Functions in-process retires Nov 10, 2026 with .NET 8 LTS. After that date, Azure won't host in-process functions. New apps go isolated worker on .NET 11. The 'in-process is faster on cold start' argument died too: Native AOT isolated now beats in-process p50 (181 ms vs 312 ms on Linux Consumption)."
+  },
+  {
+    "slug": "2026/05/how-to-assign-a-jira-ticket-to-a-cursor-cloud-agent-and-get-a-pr-back",
+    "text": "Cursor in Jira (May 19, 2026) removes the webhook-wiring step: install the Marketplace app, assign a ticket to @Cursor, and a cloud agent opens a PR linked back to the issue. The gotcha most teams hit first: the Jira-side install does not grant Cursor any repository access, you still need the Cursor GitHub App on the target repo."
   }
 ]
