@@ -410,5 +410,9 @@
   {
     "slug": "2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist",
     "text": "Skipping two LTS hops is the cheapest .NET upgrade this decade. .NET 8 to .NET 11, version-pinned checklist."
+  },
+  {
+    "slug": "2026/05/fix-http-mcp-server-url-wont-connect-in-claude-desktop",
+    "text": "claude_desktop_config.json is stdio-only. Use a Custom Connector for remote URLs, npx mcp-remote for local HTTP servers."
   }
 ]

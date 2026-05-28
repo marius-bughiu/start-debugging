@@ -18,5 +18,9 @@
   {
     "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
     "text": "Azure Functions in-process retires Nov 10, 2026 with .NET 8 LTS. After that date, Azure won't host in-process functions. New apps go isolated worker on .NET 11. The 'in-process is faster on cold start' argument died too: Native AOT isolated now beats in-process p50 (181 ms vs 312 ms on Linux Consumption)."
+  },
+  {
+    "slug": "2026/05/fix-http-mcp-server-url-wont-connect-in-claude-desktop",
+    "text": "claude_desktop_config.json validates stdio servers only. Drop in a url field and recent Claude Desktop builds crash on startup or silently drop your whole mcpServers map. Two fixes: register the URL as a Custom Connector, or wrap a local server with npx -y mcp-remote so it appears as stdio."
   }
 ]
