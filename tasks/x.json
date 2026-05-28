@@ -402,5 +402,9 @@
   {
     "slug": "2026/05/dart-records-vs-freezed-classes",
     "text": "Dart records or Freezed? Record for ephemeral tuples and pattern matches. Freezed for any class with copyWith or JSON."
+  },
+  {
+    "slug": "2026/05/dart-flutter-mcp-server-claude-code-cursor",
+    "text": "One command wires dart mcp-server into Claude Code. Agent gets hot reload and pub.dev search, no DTD URI dance."
   }
 ]

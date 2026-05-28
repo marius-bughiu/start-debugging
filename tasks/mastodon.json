@@ -18,5 +18,9 @@
   {
     "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
     "text": "Azure Functions in-process retires Nov 10, 2026 with .NET 8 LTS. After that date, Azure won't host in-process functions. New apps go isolated worker on .NET 11. The 'in-process is faster on cold start' argument died too: Native AOT isolated now beats in-process p50 (181 ms vs 312 ms on Linux Consumption)."
+  },
+  {
+    "slug": "2026/05/dart-flutter-mcp-server-claude-code-cursor",
+    "text": "Dart 3.12 ships dart mcp-server in the SDK. One claude mcp add line in any Flutter project and your coding agent gets hot reload, pub.dev search, live widget introspection, and analysis-server diagnostics, no DTD URI copy-paste. Cursor, Codex CLI, and VS Code Copilot get the same binary."
   }
 ]
