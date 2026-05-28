@@ -18,5 +18,9 @@
   {
     "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
     "text": "Azure Functions in-process retires Nov 10, 2026 with .NET 8 LTS. After that date, Azure won't host in-process functions. New apps go isolated worker on .NET 11. The 'in-process is faster on cold start' argument died too: Native AOT isolated now beats in-process p50 (181 ms vs 312 ms on Linux Consumption)."
+  },
+  {
+    "slug": "2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist",
+    "text": ".NET 8 LTS support ends Nov 10, 2026. Migrate straight to .NET 11 LTS in one go: BinaryFormatter is gone, IWebHostBuilder removed, EF Core's primitive-collection translator changed, and C# 14 prefers Span overloads over array. Ten ordered steps with per-step verification, pre-flight checklist, and rollback notes for the writes you can't undo."
   }
 ]

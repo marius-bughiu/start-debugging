@@ -406,5 +406,9 @@
   {
     "slug": "2026/05/dart-flutter-mcp-server-claude-code-cursor",
     "text": "One command wires dart mcp-server into Claude Code. Agent gets hot reload and pub.dev search, no DTD URI dance."
+  },
+  {
+    "slug": "2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist",
+    "text": "Skipping two LTS hops is the cheapest .NET upgrade this decade. .NET 8 to .NET 11, version-pinned checklist."
   }
 ]
