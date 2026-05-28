@@ -414,5 +414,9 @@
   {
     "slug": "2026/05/fix-http-mcp-server-url-wont-connect-in-claude-desktop",
     "text": "claude_desktop_config.json is stdio-only. Use a Custom Connector for remote URLs, npx mcp-remote for local HTTP servers."
+  },
+  {
+    "slug": "2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026",
+    "text": ".NET Framework 4.8 to .NET 11 is a re-platform, not a bump. Checklist for csproj, WCF, EF6, AppDomain inside."
   }
 ]
