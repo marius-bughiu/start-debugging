@@ -418,5 +418,9 @@
   {
     "slug": "2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026",
     "text": ".NET Framework 4.8 to .NET 11 is a re-platform, not a bump. Checklist for csproj, WCF, EF6, AppDomain inside."
+  },
+  {
+    "slug": "2026/05/migrate-from-xamarin-forms-to-maui-11",
+    "text": "Xamarin.Forms to MAUI 11 is mostly mechanical. The time sinks: custom renderers to handlers, DependencyService to DI, MessagingCenter out."
   }
 ]

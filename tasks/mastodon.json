@@ -18,5 +18,9 @@
   {
     "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
     "text": "Azure Functions in-process retires Nov 10, 2026 with .NET 8 LTS. After that date, Azure won't host in-process functions. New apps go isolated worker on .NET 11. The 'in-process is faster on cold start' argument died too: Native AOT isolated now beats in-process p50 (181 ms vs 312 ms on Linux Consumption)."
+  },
+  {
+    "slug": "2026/05/migrate-from-xamarin-forms-to-maui-11",
+    "text": "Xamarin.Forms 5.0 to .NET MAUI 11 GA is a one-way trip but mostly mechanical for a medium app: one to three weeks of work. The time sinks are custom renderers becoming handlers with a Mapper dictionary, DependencyService registrations moving to IServiceCollection, and MessagingCenter being retired for CommunityToolkit.Mvvm WeakReferenceMessenger. The win is CoreCLR by default on Android and iOS, generational GC, and cold start under one second on midrange hardware."
   }
 ]
