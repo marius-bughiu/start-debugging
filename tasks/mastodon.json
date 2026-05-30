@@ -22,5 +22,9 @@
   {
     "slug": "2026/05/migrate-from-xamarin-forms-to-maui-11",
     "text": "Xamarin.Forms 5.0 to .NET MAUI 11 GA is a one-way trip but mostly mechanical for a medium app: one to three weeks of work. The time sinks are custom renderers becoming handlers with a Mapper dictionary, DependencyService registrations moving to IServiceCollection, and MessagingCenter being retired for CommunityToolkit.Mvvm WeakReferenceMessenger. The win is CoreCLR by default on Android and iOS, generational GC, and cold start under one second on midrange hardware."
+  },
+  {
+    "slug": "2026/05/fix-claude-reached-its-tool-use-limit-for-this-turn",
+    "text": "Agent stopped mid-task with \"Claude reached its tool-use limit for this turn\"? It's a pause, not a quota: the pause_turn stop reason, fired when the server-tool loop hits its 10-iteration cap. Click Continue, or in code append the paused response and re-request. Not a 429, not a max_tokens cutoff."
   }
 ]

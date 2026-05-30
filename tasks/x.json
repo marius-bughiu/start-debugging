@@ -426,5 +426,9 @@
   {
     "slug": "2026/05/migrate-from-newtonsoft-json-to-system-text-json-in-a-large-codebase",
     "text": "System.Text.Json rejects what Newtonsoft accepted. A naive swap ships a silent contract change. The mapping."
+  },
+  {
+    "slug": "2026/05/fix-claude-reached-its-tool-use-limit-for-this-turn",
+    "text": "That tool-use limit banner is a pause, not a quota. It's pause_turn at 10 server-tool iterations. Click Continue."
   }
 ]
