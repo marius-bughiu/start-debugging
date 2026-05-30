@@ -430,5 +430,9 @@
   {
     "slug": "2026/05/fix-claude-reached-its-tool-use-limit-for-this-turn",
     "text": "That tool-use limit banner is a pause, not a quota. It's pause_turn at 10 server-tool iterations. Click Continue."
+  },
+  {
+    "slug": "2026/05/migrate-from-mediatr-to-plain-dependency-injection",
+    "text": "Removing MediatR is mechanical: handlers to service methods, ISender.Send to a direct call, behaviors to decorators."
   }
 ]
