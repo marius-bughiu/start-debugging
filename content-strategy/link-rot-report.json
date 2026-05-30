@@ -32,17 +32,54 @@
     ]
   },
   {
-    "url": "https://docs.flutter.dev/release/release-notes/release-notes-3.44.0",
+    "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-preview-2/",
     "status": null,
     "ok": false,
     "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/05/flutter-3-44-material-cupertino-packages-swiftpm-default.md",
-      "site/src/content/blog/de/2026/05/flutter-3-44-material-cupertino-packages-swiftpm-default.md",
-      "site/src/content/blog/es/2026/05/flutter-3-44-material-cupertino-packages-swiftpm-default.md",
-      "site/src/content/blog/ja/2026/05/flutter-3-44-material-cupertino-packages-swiftpm-default.md",
-      "site/src/content/blog/pt-br/2026/05/flutter-3-44-material-cupertino-packages-swiftpm-default.md",
-      "site/src/content/blog/ru/2026/05/flutter-3-44-material-cupertino-packages-swiftpm-default.md"
+      "site/src/content/blog/2026/04/aspnetcore-11-native-opentelemetry-tracing.md",
+      "site/src/content/blog/2026/04/blazor-ssr-tempdata-dotnet-11.md",
+      "site/src/content/blog/2026/04/csharp-15-collection-expression-arguments.md",
+      "site/src/content/blog/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
+      "site/src/content/blog/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
+      "site/src/content/blog/de/2026/04/aspnetcore-11-native-opentelemetry-tracing.md",
+      "site/src/content/blog/de/2026/04/blazor-ssr-tempdata-dotnet-11.md",
+      "site/src/content/blog/de/2026/04/csharp-15-collection-expression-arguments.md",
+      "site/src/content/blog/de/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
+      "site/src/content/blog/de/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
+      "site/src/content/blog/es/2026/04/aspnetcore-11-native-opentelemetry-tracing.md",
+      "site/src/content/blog/es/2026/04/blazor-ssr-tempdata-dotnet-11.md",
+      "site/src/content/blog/es/2026/04/csharp-15-collection-expression-arguments.md",
+      "site/src/content/blog/es/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
+      "site/src/content/blog/es/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
+      "site/src/content/blog/ja/2026/04/aspnetcore-11-native-opentelemetry-tracing.md",
+      "site/src/content/blog/ja/2026/04/blazor-ssr-tempdata-dotnet-11.md",
+      "site/src/content/blog/ja/2026/04/csharp-15-collection-expression-arguments.md",
+      "site/src/content/blog/ja/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
+      "site/src/content/blog/ja/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
+      "site/src/content/blog/pt-br/2026/04/aspnetcore-11-native-opentelemetry-tracing.md",
+      "site/src/content/blog/pt-br/2026/04/blazor-ssr-tempdata-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/04/csharp-15-collection-expression-arguments.md",
+      "site/src/content/blog/pt-br/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
+      "site/src/content/blog/pt-br/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
+      "site/src/content/blog/ru/2026/04/aspnetcore-11-native-opentelemetry-tracing.md",
+      "site/src/content/blog/ru/2026/04/blazor-ssr-tempdata-dotnet-11.md",
+      "site/src/content/blog/ru/2026/04/csharp-15-collection-expression-arguments.md",
+      "site/src/content/blog/ru/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
+      "site/src/content/blog/ru/2026/04/dotnet-11-preview-2-blazor-webworker-template.md"
+    ]
+  },
+  {
+    "url": "https://docs.avaloniaui.net/docs/next/guides/platforms/web/",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/maui-vs-avalonia-vs-uno-in-2026.md",
+      "site/src/content/blog/de/2026/05/maui-vs-avalonia-vs-uno-in-2026.md",
+      "site/src/content/blog/es/2026/05/maui-vs-avalonia-vs-uno-in-2026.md",
+      "site/src/content/blog/ja/2026/05/maui-vs-avalonia-vs-uno-in-2026.md",
+      "site/src/content/blog/pt-br/2026/05/maui-vs-avalonia-vs-uno-in-2026.md",
+      "site/src/content/blog/ru/2026/05/maui-vs-avalonia-vs-uno-in-2026.md"
     ]
   },
   {
@@ -72,17 +109,29 @@
     ]
   },
   {
-    "url": "https://github.com/dart-lang/pub/issues/3755",
-    "status": null,
+    "url": "https://github.com/dotnet/aspire/releases/tag/v13.2.4",
+    "status": 502,
     "ok": false,
-    "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/05/fix-version-solving-failed-in-pubspec-yaml.md",
-      "site/src/content/blog/de/2026/05/fix-version-solving-failed-in-pubspec-yaml.md",
-      "site/src/content/blog/es/2026/05/fix-version-solving-failed-in-pubspec-yaml.md",
-      "site/src/content/blog/ja/2026/05/fix-version-solving-failed-in-pubspec-yaml.md",
-      "site/src/content/blog/pt-br/2026/05/fix-version-solving-failed-in-pubspec-yaml.md",
-      "site/src/content/blog/ru/2026/05/fix-version-solving-failed-in-pubspec-yaml.md"
+      "site/src/content/blog/2026/04/aspire-13-2-4-opentelemetry-cve-2026-40894-baggage-dos.md",
+      "site/src/content/blog/de/2026/04/aspire-13-2-4-opentelemetry-cve-2026-40894-baggage-dos.md",
+      "site/src/content/blog/es/2026/04/aspire-13-2-4-opentelemetry-cve-2026-40894-baggage-dos.md",
+      "site/src/content/blog/ja/2026/04/aspire-13-2-4-opentelemetry-cve-2026-40894-baggage-dos.md",
+      "site/src/content/blog/pt-br/2026/04/aspire-13-2-4-opentelemetry-cve-2026-40894-baggage-dos.md",
+      "site/src/content/blog/ru/2026/04/aspire-13-2-4-opentelemetry-cve-2026-40894-baggage-dos.md"
+    ]
+  },
+  {
+    "url": "https://github.com/dotnet/aspnetcore/discussions/51020",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md"
     ]
   },
   {
@@ -134,17 +183,16 @@
     ]
   },
   {
-    "url": "https://github.com/Tewr/BlazorWorker",
-    "status": null,
+    "url": "https://learn.microsoft.com/aspnet/core/release-notes/aspnetcore-11.0",
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
-      "site/src/content/blog/de/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
-      "site/src/content/blog/es/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
-      "site/src/content/blog/ja/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
-      "site/src/content/blog/pt-br/2026/04/dotnet-11-preview-2-blazor-webworker-template.md",
-      "site/src/content/blog/ru/2026/04/dotnet-11-preview-2-blazor-webworker-template.md"
+      "site/src/content/blog/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md"
     ]
   },
   {
@@ -153,11 +201,17 @@
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md",
+      "site/src/content/blog/2026/05/lock-vs-monitor-vs-semaphoreslim-vs-system-threading-lock-in-csharp.md",
       "site/src/content/blog/de/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/05/lock-vs-monitor-vs-semaphoreslim-vs-system-threading-lock-in-csharp.md",
       "site/src/content/blog/es/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/05/lock-vs-monitor-vs-semaphoreslim-vs-system-threading-lock-in-csharp.md",
       "site/src/content/blog/ja/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/05/lock-vs-monitor-vs-semaphoreslim-vs-system-threading-lock-in-csharp.md",
       "site/src/content/blog/pt-br/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md",
-      "site/src/content/blog/ru/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md"
+      "site/src/content/blog/pt-br/2026/05/lock-vs-monitor-vs-semaphoreslim-vs-system-threading-lock-in-csharp.md",
+      "site/src/content/blog/ru/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/05/lock-vs-monitor-vs-semaphoreslim-vs-system-threading-lock-in-csharp.md"
     ]
   },
   {
@@ -190,6 +244,37 @@
       "site/src/content/blog/pt-br/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
       "site/src/content/blog/ru/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
       "site/src/content/blog/ru/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md"
+    ]
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/dotnet/core/compatibility/11.0",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist.md",
+      "site/src/content/blog/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist.md",
+      "site/src/content/blog/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026.md",
+      "site/src/content/blog/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026.md",
+      "site/src/content/blog/de/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist.md",
+      "site/src/content/blog/de/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist.md",
+      "site/src/content/blog/de/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026.md",
+      "site/src/content/blog/de/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026.md",
+      "site/src/content/blog/es/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist.md",
+      "site/src/content/blog/es/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist.md",
+      "site/src/content/blog/es/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026.md",
+      "site/src/content/blog/es/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026.md",
+      "site/src/content/blog/ja/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist.md",
+      "site/src/content/blog/ja/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist.md",
+      "site/src/content/blog/ja/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026.md",
+      "site/src/content/blog/ja/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026.md",
+      "site/src/content/blog/pt-br/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist.md",
+      "site/src/content/blog/pt-br/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist.md",
+      "site/src/content/blog/pt-br/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026.md",
+      "site/src/content/blog/pt-br/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026.md",
+      "site/src/content/blog/ru/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist.md",
+      "site/src/content/blog/ru/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist.md",
+      "site/src/content/blog/ru/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026.md",
+      "site/src/content/blog/ru/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026.md"
     ]
   },
   {
@@ -305,6 +390,19 @@
     ]
   },
   {
+    "url": "https://medium.com/dartlang/announcing-dart-3-0-79bff52e1bb6",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/dart-records-vs-freezed-classes.md",
+      "site/src/content/blog/de/2026/05/dart-records-vs-freezed-classes.md",
+      "site/src/content/blog/es/2026/05/dart-records-vs-freezed-classes.md",
+      "site/src/content/blog/ja/2026/05/dart-records-vs-freezed-classes.md",
+      "site/src/content/blog/pt-br/2026/05/dart-records-vs-freezed-classes.md",
+      "site/src/content/blog/ru/2026/05/dart-records-vs-freezed-classes.md"
+    ]
+  },
+  {
     "url": "https://medium.com/write-a-catalyst/partial-events-constructors-in-net-10-preview-2-8002f0d714b2#:~:text=1",
     "status": 403,
     "ok": false,
@@ -350,16 +448,16 @@
     ]
   },
   {
-    "url": "https://news.ycombinator.com/item?id=46976911",
+    "url": "https://news.ycombinator.com/item?id=47720060",
     "status": 429,
     "ok": false,
     "sources": [
-      "site/src/content/blog/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/de/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/es/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/ja/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/pt-br/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/ru/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md"
+      "site/src/content/blog/2026/04/building-a-microsecond-database-engine-in-csharp.md",
+      "site/src/content/blog/de/2026/04/building-a-microsecond-database-engine-in-csharp.md",
+      "site/src/content/blog/es/2026/04/building-a-microsecond-database-engine-in-csharp.md",
+      "site/src/content/blog/ja/2026/04/building-a-microsecond-database-engine-in-csharp.md",
+      "site/src/content/blog/pt-br/2026/04/building-a-microsecond-database-engine-in-csharp.md",
+      "site/src/content/blog/ru/2026/04/building-a-microsecond-database-engine-in-csharp.md"
     ]
   },
   {
@@ -374,6 +472,19 @@
       "site/src/content/blog/ja/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md",
       "site/src/content/blog/pt-br/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md",
       "site/src/content/blog/ru/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md"
+    ]
+  },
+  {
+    "url": "https://platform.uno/docs/articles/winui-doc-links-overview.html",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/maui-vs-avalonia-vs-uno-in-2026.md",
+      "site/src/content/blog/de/2026/05/maui-vs-avalonia-vs-uno-in-2026.md",
+      "site/src/content/blog/es/2026/05/maui-vs-avalonia-vs-uno-in-2026.md",
+      "site/src/content/blog/ja/2026/05/maui-vs-avalonia-vs-uno-in-2026.md",
+      "site/src/content/blog/pt-br/2026/05/maui-vs-avalonia-vs-uno-in-2026.md",
+      "site/src/content/blog/ru/2026/05/maui-vs-avalonia-vs-uno-in-2026.md"
     ]
   },
   {
@@ -400,6 +511,19 @@
       "site/src/content/blog/ja/2023/11/2-column-react-native.md",
       "site/src/content/blog/pt-br/2023/11/2-column-react-native.md",
       "site/src/content/blog/ru/2023/11/2-column-react-native.md"
+    ]
+  },
+  {
+    "url": "https://techcommunity.microsoft.com/blog/appsonazureblog/net-on-azure-functions-roadmap-update/4178714",
+    "status": 400,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11.md"
     ]
   },
   {
@@ -467,7 +591,9 @@
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
-      "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md"
+      "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
+      "site/src/content/blog/2026/05/fix-http-mcp-server-url-wont-connect-in-claude-desktop.md",
+      "site/src/content/blog/2026/05/fix-http-mcp-server-url-wont-connect-in-claude-desktop.md"
     ]
   },
   {
@@ -497,6 +623,31 @@
     ]
   },
   {
+    "url": "https://www.nuget.org/packages/M.Super.Activities",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/build-a-uipath-activity-package-for-modern-studio-with-viewmodels.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/M.Super.AppInsights.Activities",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/add-project-settings-to-a-uipath-package-design-time-and-runtime.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/M.Super.Extensions",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/run-code-before-and-after-every-uipath-activity-with-a-tracking-participant.md",
+      "site/src/content/blog/2026/05/write-a-uipath-workflow-analyzer-rule-with-entry-point-detection.md"
+    ]
+  },
+  {
     "url": "https://www.nuget.org/packages/Microsoft.Agents.AI.Workflows",
     "status": 404,
     "ok": false,
@@ -507,6 +658,19 @@
       "site/src/content/blog/ja/2026/05/agent-framework-durable-workflows-checkpoint-restart.md",
       "site/src/content/blog/pt-br/2026/05/agent-framework-durable-workflows-checkpoint-restart.md",
       "site/src/content/blog/ru/2026/05/agent-framework-durable-workflows-checkpoint-restart.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.Azure.Functions.Worker",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11.md"
     ]
   },
   {
@@ -531,6 +695,19 @@
     ]
   },
   {
+    "url": "https://www.nuget.org/packages/Microsoft.Extensions.Http.Resilience",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md"
+    ]
+  },
+  {
     "url": "https://www.nuget.org/packages/Microsoft.SemanticKernel",
     "status": 404,
     "ok": false,
@@ -540,8 +717,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.SemanticKernel/1.75.0",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/how-to-run-a-semantic-kernel-plugin-from-a-backgroundservice.md"
     ]
@@ -590,10 +768,23 @@
     ]
   },
   {
-    "url": "https://www.nuget.org/packages/OpenTelemetry.Exporter.OpenTelemetryProtocol",
+    "url": "https://www.nuget.org/packages/newtonsoft.json/",
     "status": null,
     "ok": false,
     "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/05/migrate-from-newtonsoft-json-to-system-text-json-in-a-large-codebase.md",
+      "site/src/content/blog/de/2026/05/migrate-from-newtonsoft-json-to-system-text-json-in-a-large-codebase.md",
+      "site/src/content/blog/es/2026/05/migrate-from-newtonsoft-json-to-system-text-json-in-a-large-codebase.md",
+      "site/src/content/blog/ja/2026/05/migrate-from-newtonsoft-json-to-system-text-json-in-a-large-codebase.md",
+      "site/src/content/blog/pt-br/2026/05/migrate-from-newtonsoft-json-to-system-text-json-in-a-large-codebase.md",
+      "site/src/content/blog/ru/2026/05/migrate-from-newtonsoft-json-to-system-text-json-in-a-large-codebase.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/OpenTelemetry.Exporter.OpenTelemetryProtocol",
+    "status": 404,
+    "ok": false,
     "sources": [
       "site/src/content/blog/2026/05/how-to-use-opentelemetry-with-dotnet-11-and-a-free-backend.md",
       "site/src/content/blog/de/2026/05/how-to-use-opentelemetry-with-dotnet-11-and-a-free-backend.md",
@@ -649,6 +840,19 @@
     ]
   },
   {
+    "url": "https://www.nuget.org/packages/Riok.Mapperly",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
+      "site/src/content/blog/de/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
+      "site/src/content/blog/es/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
+      "site/src/content/blog/ja/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
+      "site/src/content/blog/pt-br/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
+      "site/src/content/blog/ru/2026/05/migrate-from-automapper-to-source-generated-mapping.md"
+    ]
+  },
+  {
     "url": "https://www.nuget.org/packages/Serilog.Sinks.Seq/",
     "status": 404,
     "ok": false,
@@ -698,6 +902,19 @@
       "site/src/content/blog/ja/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
       "site/src/content/blog/pt-br/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
       "site/src/content/blog/ru/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md"
+    ]
+  },
+  {
+    "url": "https://www.pollydocs.org/advanced/dependency-injection/",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md"
     ]
   },
   {
