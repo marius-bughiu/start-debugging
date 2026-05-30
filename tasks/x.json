@@ -434,5 +434,9 @@
   {
     "slug": "2026/05/migrate-from-mediatr-to-plain-dependency-injection",
     "text": "Removing MediatR is mechanical: handlers to service methods, ISender.Send to a direct call, behaviors to decorators."
+  },
+  {
+    "slug": "2026/05/migrate-from-automapper-to-source-generated-mapping",
+    "text": "AutoMapper is paid above $5M now. Mapperly maps at compile time, no reflection, and a missing field fails the build."
   }
 ]
