@@ -10,9 +10,5 @@
   {
     "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
     "text": "Azure Functions on .NET 11: pick isolated worker. In-process retires Nov 10, 2026 with .NET 8 LTS. Native AOT now beats it on cold start."
-  },
-  {
-    "slug": "2026/05/claude-code-dynamic-workflows-opus-4-8",
-    "text": "Opus 4.8's Dynamic Workflows: Claude Code writes a JS orchestration script that fans one prompt out to up to 1,000 subagents."
   }
 ]
