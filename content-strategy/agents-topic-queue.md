@@ -48,8 +48,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: `ECONNREFUSED` when a local MCP server starts before the client is ready → slug: 2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready
 - Fix: `Extra inputs are not permitted` on a tool call with a structured argument → slug: 2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument
 - Fix: an HTTP MCP server URL won't connect in Claude Desktop (stdio vs HTTP transport) → slug: 2026/05/fix-http-mcp-server-url-wont-connect-in-claude-desktop
-- Fix: `Claude reached its tool-use limit for this turn` mid-task
-- Fix: GitHub MCP server tool calls fail silently when the PAT isn't passed
+- Fix: `Claude reached its tool-use limit for this turn` mid-task → slug: 2026/05/fix-claude-reached-its-tool-use-limit-for-this-turn
+- Fix: GitHub MCP server tool calls fail silently when the PAT isn't passed → slug: 2026/05/fix-github-mcp-server-tool-calls-fail-silently-without-pat
 - Fix: MCP servers stop working after a Claude Desktop update on Windows (config path moved)
 
 ## Vs / comparison
