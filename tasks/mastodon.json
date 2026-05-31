@@ -22,5 +22,9 @@
   {
     "slug": "2026/05/migrate-from-xamarin-forms-to-maui-11",
     "text": "Xamarin.Forms 5.0 to .NET MAUI 11 GA is a one-way trip but mostly mechanical for a medium app: one to three weeks of work. The time sinks are custom renderers becoming handlers with a Mapper dictionary, DependencyService registrations moving to IServiceCollection, and MessagingCenter being retired for CommunityToolkit.Mvvm WeakReferenceMessenger. The win is CoreCLR by default on Android and iOS, generational GC, and cold start under one second on midrange hardware."
+  },
+  {
+    "slug": "2026/05/how-to-run-fire-and-forget-work-safely-in-aspnetcore-with-backgroundservice",
+    "text": "_ = Task.Run() in a controller is a trap: work dies on the next deploy, exceptions vanish, and you touch a disposed DbContext. The fix is a bounded Channel<T> queue drained by one BackgroundService that opens a fresh DI scope per work item and finishes in-flight work on StopAsync. Capture the id, not the scoped service."
   }
 ]

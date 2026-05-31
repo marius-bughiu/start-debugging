@@ -450,5 +450,9 @@
   {
     "slug": "2026/05/fix-github-mcp-server-tool-calls-fail-silently-without-pat",
     "text": "GitHub MCP tools return empty on every call? The PAT is unset at runtime. Put it in the env block, not your shell."
+  },
+  {
+    "slug": "2026/05/how-to-run-fire-and-forget-work-safely-in-aspnetcore-with-backgroundservice",
+    "text": "Task.Run in a controller drops work on deploy and hides exceptions. Fix: a bounded Channel + BackgroundService."
   }
 ]
