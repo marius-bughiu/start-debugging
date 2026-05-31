@@ -3,7 +3,7 @@ title: "The Flutter & Dart tracker"
 description: "Flutter and Dart in one place: jank profiling, isolates, state management, CI matrices, platform channels, and the 3.x release cycle."
 tagline: "One bookmark for everything Flutter and Dart on this site."
 pubDate: 2026-05-10
-updatedDate: 2026-05-24
+updatedDate: 2026-05-31
 indexTags:
   - "flutter"
   - "dart"
