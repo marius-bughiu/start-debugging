@@ -446,5 +446,9 @@
   {
     "slug": "2026/05/how-to-use-scoped-services-inside-a-backgroundservice-in-aspnetcore-11",
     "text": "A BackgroundService is a singleton, so it can't inject a scoped DbContext. Open one CreateAsyncScope per work item."
+  },
+  {
+    "slug": "2026/05/fix-github-mcp-server-tool-calls-fail-silently-without-pat",
+    "text": "GitHub MCP tools return empty on every call? The PAT is unset at runtime. Put it in the env block, not your shell."
   }
 ]
