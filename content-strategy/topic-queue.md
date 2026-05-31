@@ -53,7 +53,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to convert `T[]` to `ReadOnlyMemory<T>` (implicit operator and explicit constructor) → slug: 2026/05/how-to-convert-array-to-readonlymemory-in-csharp
 - How to set the accent color in a Flutter app with Material 3 `ColorScheme` → slug: 2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme
 - How to migrate a high-performance Xamarin.Forms `ListView` to MAUI `CollectionView` → slug: 2026/05/how-to-migrate-a-xamarin-forms-listview-to-maui-collectionview
-- How to use scoped services inside a `BackgroundService` in ASP.NET Core 11
+- How to use scoped services inside a `BackgroundService` in ASP.NET Core 11 → slug: 2026/05/how-to-use-scoped-services-inside-a-backgroundservice-in-aspnetcore-11
 - How to run fire-and-forget work safely in ASP.NET Core with `BackgroundService`
 - How to use `ExecuteUpdate` and `ExecuteDelete` for bulk writes in EF Core 11
 - How to use query splitting to avoid a cartesian explosion in EF Core 11

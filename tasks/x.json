@@ -442,5 +442,9 @@
   {
     "slug": "2026/05/claude-code-dynamic-workflows-opus-4-8",
     "text": "Opus 4.8 ships Dynamic Workflows: one Claude Code prompt fans out to up to 1,000 parallel subagents."
+  },
+  {
+    "slug": "2026/05/how-to-use-scoped-services-inside-a-backgroundservice-in-aspnetcore-11",
+    "text": "A BackgroundService is a singleton, so it can't inject a scoped DbContext. Open one CreateAsyncScope per work item."
   }
 ]
