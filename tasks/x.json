@@ -454,5 +454,9 @@
   {
     "slug": "2026/05/how-to-run-fire-and-forget-work-safely-in-aspnetcore-with-backgroundservice",
     "text": "Task.Run in a controller drops work on deploy and hides exceptions. Fix: a bounded Channel + BackgroundService."
+  },
+  {
+    "slug": "2026/05/how-to-use-executeupdate-and-executedelete-for-bulk-writes-in-ef-core-11",
+    "text": "ExecuteDelete collapses a 50k-row SaveChanges loop into one SQL DELETE. The catch: it never syncs tracked entities."
   }
 ]

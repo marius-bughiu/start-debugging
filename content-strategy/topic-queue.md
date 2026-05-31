@@ -55,7 +55,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to migrate a high-performance Xamarin.Forms `ListView` to MAUI `CollectionView` → slug: 2026/05/how-to-migrate-a-xamarin-forms-listview-to-maui-collectionview
 - How to use scoped services inside a `BackgroundService` in ASP.NET Core 11 → slug: 2026/05/how-to-use-scoped-services-inside-a-backgroundservice-in-aspnetcore-11
 - How to run fire-and-forget work safely in ASP.NET Core with `BackgroundService` → slug: 2026/05/how-to-run-fire-and-forget-work-safely-in-aspnetcore-with-backgroundservice
-- How to use `ExecuteUpdate` and `ExecuteDelete` for bulk writes in EF Core 11
+- How to use `ExecuteUpdate` and `ExecuteDelete` for bulk writes in EF Core 11 → slug: 2026/05/how-to-use-executeupdate-and-executedelete-for-bulk-writes-in-ef-core-11
 - How to use query splitting to avoid a cartesian explosion in EF Core 11
 - How to dispose controllers in Flutter to avoid memory leaks (`AnimationController`, `TextEditingController`, `ScrollController`)
 - How to handle network errors gracefully in a Flutter app

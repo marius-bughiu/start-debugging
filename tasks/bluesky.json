@@ -10,5 +10,9 @@
   {
     "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
     "text": "Azure Functions on .NET 11: pick isolated worker. In-process retires Nov 10, 2026 with .NET 8 LTS. Native AOT now beats it on cold start."
+  },
+  {
+    "slug": "2026/05/how-to-use-executeupdate-and-executedelete-for-bulk-writes-in-ef-core-11",
+    "text": "Bulk update in EF Core 11: one ExecuteUpdate emits a single UPDATE, no entities loaded. But a later SaveChanges can overwrite it."
   }
 ]

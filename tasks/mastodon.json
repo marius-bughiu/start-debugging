@@ -22,5 +22,9 @@
   {
     "slug": "2026/05/migrate-from-xamarin-forms-to-maui-11",
     "text": "Xamarin.Forms 5.0 to .NET MAUI 11 GA is a one-way trip but mostly mechanical for a medium app: one to three weeks of work. The time sinks are custom renderers becoming handlers with a Mapper dictionary, DependencyService registrations moving to IServiceCollection, and MessagingCenter being retired for CommunityToolkit.Mvvm WeakReferenceMessenger. The win is CoreCLR by default on Android and iOS, generational GC, and cold start under one second on midrange hardware."
+  },
+  {
+    "slug": "2026/05/how-to-use-executeupdate-and-executedelete-for-bulk-writes-in-ef-core-11",
+    "text": "ExecuteUpdate and ExecuteDelete in EF Core 11 run one set-based UPDATE or DELETE straight at the database, no entities loaded, no change tracker. They return the affected-row count, so you can roll your own optimistic concurrency. The trap: they never touch the tracker, so a later SaveChanges overwrites your bulk write."
   }
 ]
