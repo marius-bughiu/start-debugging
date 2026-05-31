@@ -438,5 +438,9 @@
   {
     "slug": "2026/05/migrate-from-automapper-to-source-generated-mapping",
     "text": "AutoMapper is paid above $5M now. Mapperly maps at compile time, no reflection, and a missing field fails the build."
+  },
+  {
+    "slug": "2026/05/claude-code-dynamic-workflows-opus-4-8",
+    "text": "Opus 4.8 ships Dynamic Workflows: one Claude Code prompt fans out to up to 1,000 parallel subagents."
   }
 ]
