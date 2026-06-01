@@ -462,5 +462,9 @@
   {
     "slug": "2026/06/efcore-11-dotnet-ef-json-config-file",
     "text": "EF Core 11 Preview 4: drop a .config/dotnet-ef.json at the repo root and stop typing --project and --startup-project every time."
+  },
+  {
+    "slug": "2026/06/how-to-use-query-splitting-to-avoid-a-cartesian-explosion-in-ef-core-11",
+    "text": "Two .Include collections in EF Core = cross product: 50 posts x 20 authors = 1000 rows. AsSplitQuery cuts it to 70."
   }
 ]
