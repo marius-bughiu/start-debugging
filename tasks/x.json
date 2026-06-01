@@ -458,5 +458,9 @@
   {
     "slug": "2026/05/how-to-use-executeupdate-and-executedelete-for-bulk-writes-in-ef-core-11",
     "text": "ExecuteDelete collapses a 50k-row SaveChanges loop into one SQL DELETE. The catch: it never syncs tracked entities."
+  },
+  {
+    "slug": "2026/06/efcore-11-dotnet-ef-json-config-file",
+    "text": "EF Core 11 Preview 4: drop a .config/dotnet-ef.json at the repo root and stop typing --project and --startup-project every time."
   }
 ]

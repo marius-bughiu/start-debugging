@@ -22,5 +22,9 @@
   {
     "slug": "2026/05/migrate-from-xamarin-forms-to-maui-11",
     "text": "Xamarin.Forms 5.0 to .NET MAUI 11 GA is a one-way trip but mostly mechanical for a medium app: one to three weeks of work. The time sinks are custom renderers becoming handlers with a Mapper dictionary, DependencyService registrations moving to IServiceCollection, and MessagingCenter being retired for CommunityToolkit.Mvvm WeakReferenceMessenger. The win is CoreCLR by default on Android and iOS, generational GC, and cold start under one second on midrange hardware."
+  },
+  {
+    "slug": "2026/06/efcore-11-dotnet-ef-json-config-file",
+    "text": "EF Core 11 Preview 4 lets dotnet ef read defaults from a .config/dotnet-ef.json file, discovered by walking up the tree like global.json. Set project, startupProject and context once, commit it, and CI plus every dev share the same defaults. Explicit flags still override."
   }
 ]
