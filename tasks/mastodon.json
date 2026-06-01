@@ -22,9 +22,5 @@
   {
     "slug": "2026/05/migrate-from-xamarin-forms-to-maui-11",
     "text": "Xamarin.Forms 5.0 to .NET MAUI 11 GA is a one-way trip but mostly mechanical for a medium app: one to three weeks of work. The time sinks are custom renderers becoming handlers with a Mapper dictionary, DependencyService registrations moving to IServiceCollection, and MessagingCenter being retired for CommunityToolkit.Mvvm WeakReferenceMessenger. The win is CoreCLR by default on Android and iOS, generational GC, and cold start under one second on midrange hardware."
-  },
-  {
-    "slug": "2026/06/how-to-use-query-splitting-to-avoid-a-cartesian-explosion-in-ef-core-11",
-    "text": "Include two sibling collections in one EF Core 11 query and the database returns their cross product: 50 posts x 20 contributors is 1000 rows, not 70. AsSplitQuery issues one query per collection. The gotchas: no transactional consistency across splits, and paging needs a fully unique OrderBy or rows go missing."
   }
 ]
