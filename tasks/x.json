@@ -466,5 +466,9 @@
   {
     "slug": "2026/06/how-to-use-query-splitting-to-avoid-a-cartesian-explosion-in-ef-core-11",
     "text": "Two .Include collections in EF Core = cross product: 50 posts x 20 authors = 1000 rows. AsSplitQuery cuts it to 70."
+  },
+  {
+    "slug": "2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows",
+    "text": "Lost MCP servers after a Claude Desktop update on Windows? Edit Config opens the wrong file."
   }
 ]

@@ -22,5 +22,9 @@
   {
     "slug": "2026/05/migrate-from-xamarin-forms-to-maui-11",
     "text": "Xamarin.Forms 5.0 to .NET MAUI 11 GA is a one-way trip but mostly mechanical for a medium app: one to three weeks of work. The time sinks are custom renderers becoming handlers with a Mapper dictionary, DependencyService registrations moving to IServiceCollection, and MessagingCenter being retired for CommunityToolkit.Mvvm WeakReferenceMessenger. The win is CoreCLR by default on Android and iOS, generational GC, and cold start under one second on midrange hardware."
+  },
+  {
+    "slug": "2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows",
+    "text": "MCP servers stopped loading after a Claude Desktop update on Windows? The file didn't break, the app moved. The MSIX build reads config from a virtualized Packages path while Edit Config still opens the old %APPDATA% copy. Edit the virtualized file and fully restart. Symlinking the two paths gives a blank window."
   }
 ]
