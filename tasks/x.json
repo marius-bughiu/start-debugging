@@ -470,5 +470,9 @@
   {
     "slug": "2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows",
     "text": "Lost MCP servers after a Claude Desktop update on Windows? Edit Config opens the wrong file."
+  },
+  {
+    "slug": "2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks",
+    "text": "A forgotten dispose() leaves an AnimationController Ticker firing every frame after the widget is gone. The fix."
   }
 ]
