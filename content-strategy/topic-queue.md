@@ -59,7 +59,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to use query splitting to avoid a cartesian explosion in EF Core 11 → slug: 2026/06/how-to-use-query-splitting-to-avoid-a-cartesian-explosion-in-ef-core-11
 - How to dispose controllers in Flutter to avoid memory leaks (`AnimationController`, `TextEditingController`, `ScrollController`) → slug: 2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks
 - How to handle network errors gracefully in a Flutter app → slug: 2026/06/how-to-handle-network-errors-gracefully-in-a-flutter-app
-- How to show loading and error states with `AsyncValue` and `StateNotifier` in Flutter Riverpod
+- How to show loading and error states with `AsyncValue` and `StateNotifier` in Flutter Riverpod → slug: 2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod
 
 ## Fix / error
 
