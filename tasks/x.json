@@ -474,5 +474,9 @@
   {
     "slug": "2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks",
     "text": "A forgotten dispose() leaves an AnimationController Ticker firing every frame after the widget is gone. The fix."
+  },
+  {
+    "slug": "2026/06/dotnet-11-floating-point-hex-format-numberstyles-hexfloat",
+    "text": "double.ToString(\"X\") used to throw. In .NET 11 it returns IEEE-754 hex you can round-trip bit for bit."
   }
 ]
