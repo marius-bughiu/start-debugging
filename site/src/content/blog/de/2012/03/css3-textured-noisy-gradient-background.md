@@ -25,4 +25,24 @@ background-image: url('../images/noise.png'), linear-gradient(top, #87e0fd 0%,#5
 
 Ja, das geht. Nutzen Sie einfach die background-image-Eigenschaft wie gewohnt, fügen Sie ein Komma hinzu und dann einen Gradient. Verwenden Sie den Noise-Generator, um das Bild zu erzeugen, und den Gradient-Generator, um Ihren gewünschten Gradient zu erstellen.
 
-Eine Demo finden Sie hier: [Textured / Noisy Gradient Background Demo](http://startdebugging.net/demos/noisybackground.html "Textured / Noisy Gradient Background Demo")
+Hier ist eine vollständige, eigenständige Variante, die Sie in eine HTML-Datei einfügen können -- sie nutzt Inline-SVG-Rauschen als Daten-URL, sodass keine externen Bildabhängigkeiten bestehen:
+
+```html
+<!doctype html>
+<html>
+<head>
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.35'/></svg>"),
+        linear-gradient(to bottom, #87e0fd 0%, #53cbf1 40%, #05abe0 100%);
+    }
+  </style>
+</head>
+<body></body>
+</html>
+```
+
+Der gleiche Trick funktioniert mit jedem Gradient -- führen Sie das Rauschen (oder ein beliebiges Texturbild) als erstes im kommagetrennten `background-image`-Wert auf, um es über dem Gradient zu stapeln.

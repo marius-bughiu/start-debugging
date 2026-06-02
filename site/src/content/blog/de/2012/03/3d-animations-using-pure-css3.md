@@ -112,4 +112,48 @@ Hier der vollständige CSS-Code, den ich am Ende verwendet habe:
 }
 ```
 
-Eine Demo finden Sie hier: [3D CSS Animation](http://startdebugging.net/demos/3dcssanimation.html "3D CSS Animation")
+Hier die moderne, präfixfreie Version als eigenständige HTML-Datei. Öffnen Sie sie in einem aktuellen Browser und fahren Sie mit der Maus über die Kästchen, um die Perspektivänderung zu sehen.
+
+```html
+<!doctype html>
+<html>
+<head>
+  <style>
+    #movieposters {
+      list-style: none;
+      padding: 0;
+    }
+    #movieposters li {
+      display: inline-block;
+      perspective: 500px;
+      transform-style: preserve-3d;
+      transition: perspective 0.5s;
+    }
+    #movieposters li:hover {
+      perspective: 5000px;
+    }
+    #movieposters li .poster {
+      width: 210px;
+      height: 280px;
+      background: linear-gradient(135deg, #87e0fd, #05abe0);
+      border: 10px solid #fcfafa;
+      box-shadow: 0 3px 10px #888;
+      transform: rotateY(30deg);
+      transition: transform 0.5s;
+    }
+    #movieposters li:hover .poster {
+      transform: rotateY(0deg);
+    }
+  </style>
+</head>
+<body>
+  <ul id="movieposters">
+    <li><div class="poster"></div></li>
+    <li><div class="poster"></div></li>
+    <li><div class="poster"></div></li>
+  </ul>
+</body>
+</html>
+```
+
+Die `-webkit-`- und `-moz-`-Präfixe aus den ursprünglichen Snippets werden nicht mehr benötigt -- jeder seit 2013 ausgelieferte Browser unterstützt die präfixfreien Eigenschaften.

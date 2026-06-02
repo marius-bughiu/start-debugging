@@ -25,4 +25,24 @@ background-image: url('../images/noise.png'), linear-gradient(top, #87e0fd 0%,#5
 
 Sim, dá para fazer. Use a propriedade background-image como de costume, adicione uma vírgula e em seguida um gradiente. Use o gerador de ruído para gerar a imagem e o gerador de gradientes para criar o gradiente desejado.
 
-Você também pode ver uma demo aqui: [Demo de fundo com gradiente e textura/ruído](http://startdebugging.net/demos/noisybackground.html "Textured / Noisy Gradient Background Demo")
+Aqui está uma versão completa e autocontida que você pode colar em um arquivo HTML: usa ruído SVG inline como data URL, então não há dependências de imagens externas:
+
+```html
+<!doctype html>
+<html>
+<head>
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.35'/></svg>"),
+        linear-gradient(to bottom, #87e0fd 0%, #53cbf1 40%, #05abe0 100%);
+    }
+  </style>
+</head>
+<body></body>
+</html>
+```
+
+O mesmo truque funciona com qualquer gradiente: coloque o ruído (ou qualquer imagem de textura) primeiro no valor `background-image` separado por vírgulas para empilhá-lo por cima do gradiente.

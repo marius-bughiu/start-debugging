@@ -31,4 +31,26 @@ Now to apply the custom font to your text you can use the font-family property:
 ```
 
 A great source for custom fonts would be [dafont.com](http://www.dafont.com/ "dafont.com")  
-Check out a demo here: [Custom Fonts Demo](http://startdebugging.net/demos/customfonts.html "Custom Fonts Demo")
+Here's a complete, self-contained example using a Google-hosted font you can paste into an HTML file and open in any browser:
+
+```html
+<!doctype html>
+<html>
+<head>
+  <style>
+    @font-face {
+      font-family: "Press Start 2P";
+      src: url("https://fonts.gstatic.com/s/pressstart2p/v17/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2") format("woff2");
+    }
+
+    h1 {
+      font-family: "Press Start 2P", monospace;
+      font-size: 32px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Start Debugging</h1>
+</body>
+</html>
+```

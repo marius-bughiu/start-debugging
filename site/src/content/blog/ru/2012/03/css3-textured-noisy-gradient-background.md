@@ -25,4 +25,24 @@ background-image: url('../images/noise.png'), linear-gradient(top, #87e0fd 0%,#5
 
 Да, так можно. Используйте свойство background-image как обычно, добавьте запятую и затем градиент. Сгенерируйте изображение генератором шума, а нужный градиент - генератором градиентов.
 
-Демо смотрите здесь: [Textured / Noisy Gradient Background Demo](http://startdebugging.net/demos/noisybackground.html "Textured / Noisy Gradient Background Demo")
+Вот законченная самодостаточная версия, которую можно вставить в HTML-файл — она использует встроенный SVG-шум как data URL, поэтому внешних изображений не требуется.
+
+```html
+<!doctype html>
+<html>
+<head>
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.35'/></svg>"),
+        linear-gradient(to bottom, #87e0fd 0%, #53cbf1 40%, #05abe0 100%);
+    }
+  </style>
+</head>
+<body></body>
+</html>
+```
+
+Тот же приём работает с любым градиентом — поставьте шум (или любую текстуру) первым в значении `background-image`, разделённом запятыми, чтобы наложить его поверх градиента.

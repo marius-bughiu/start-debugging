@@ -112,4 +112,48 @@ translationDate: 2026-05-01
 }
 ```
 
-А посмотреть демо можно здесь: [3D CSS Animation](http://startdebugging.net/demos/3dcssanimation.html "3D CSS Animation")
+Вот современная версия без вендорных префиксов в виде самодостаточного HTML-файла. Откройте в любом актуальном браузере и наведите курсор на блоки — увидите смену перспективы.
+
+```html
+<!doctype html>
+<html>
+<head>
+  <style>
+    #movieposters {
+      list-style: none;
+      padding: 0;
+    }
+    #movieposters li {
+      display: inline-block;
+      perspective: 500px;
+      transform-style: preserve-3d;
+      transition: perspective 0.5s;
+    }
+    #movieposters li:hover {
+      perspective: 5000px;
+    }
+    #movieposters li .poster {
+      width: 210px;
+      height: 280px;
+      background: linear-gradient(135deg, #87e0fd, #05abe0);
+      border: 10px solid #fcfafa;
+      box-shadow: 0 3px 10px #888;
+      transform: rotateY(30deg);
+      transition: transform 0.5s;
+    }
+    #movieposters li:hover .poster {
+      transform: rotateY(0deg);
+    }
+  </style>
+</head>
+<body>
+  <ul id="movieposters">
+    <li><div class="poster"></div></li>
+    <li><div class="poster"></div></li>
+    <li><div class="poster"></div></li>
+  </ul>
+</body>
+</html>
+```
+
+Префиксы `-webkit-` и `-moz-` из исходных сниппетов больше не нужны — все браузеры, выпущенные с 2013 года, поддерживают свойства без префиксов.

@@ -21,4 +21,24 @@ background-image: url('../images/noise.png'), linear-gradient(top, #87e0fd 0%,#5
 
 Yes, it's possible. Just use the background-image property as usual, add a comma and then a gradient. Use the noise generator to generate the image and the gradient generator for creating your desired gradient.
 
-You can also check out a demo here: [Textured / Noisy Gradient Background Demo](http://startdebugging.net/demos/noisybackground.html "Textured / Noisy Gradient Background Demo")
+Here's a complete, self-contained version you can paste into an HTML file — it uses inline SVG noise as a data URL so there are no external image dependencies:
+
+```html
+<!doctype html>
+<html>
+<head>
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.35'/></svg>"),
+        linear-gradient(to bottom, #87e0fd 0%, #53cbf1 40%, #05abe0 100%);
+    }
+  </style>
+</head>
+<body></body>
+</html>
+```
+
+The same trick works with any gradient — list the noise (or any texture image) first in the comma-separated `background-image` value to stack it on top of the gradient.

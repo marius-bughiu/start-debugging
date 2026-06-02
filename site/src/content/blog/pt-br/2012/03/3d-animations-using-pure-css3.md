@@ -112,4 +112,48 @@ Eis então o código CSS completo que acabei usando:
 }
 ```
 
-Também dá para conferir uma demo aqui: [3D CSS Animation](http://startdebugging.net/demos/3dcssanimation.html "3D CSS Animation")
+Aqui está a versão moderna, sem prefixos de fornecedor, como arquivo HTML autocontido. Abra em qualquer navegador atual e passe o mouse sobre as caixas para ver a mudança de perspectiva.
+
+```html
+<!doctype html>
+<html>
+<head>
+  <style>
+    #movieposters {
+      list-style: none;
+      padding: 0;
+    }
+    #movieposters li {
+      display: inline-block;
+      perspective: 500px;
+      transform-style: preserve-3d;
+      transition: perspective 0.5s;
+    }
+    #movieposters li:hover {
+      perspective: 5000px;
+    }
+    #movieposters li .poster {
+      width: 210px;
+      height: 280px;
+      background: linear-gradient(135deg, #87e0fd, #05abe0);
+      border: 10px solid #fcfafa;
+      box-shadow: 0 3px 10px #888;
+      transform: rotateY(30deg);
+      transition: transform 0.5s;
+    }
+    #movieposters li:hover .poster {
+      transform: rotateY(0deg);
+    }
+  </style>
+</head>
+<body>
+  <ul id="movieposters">
+    <li><div class="poster"></div></li>
+    <li><div class="poster"></div></li>
+    <li><div class="poster"></div></li>
+  </ul>
+</body>
+</html>
+```
+
+Os prefixos `-webkit-` e `-moz-` dos snippets originais não são mais necessários -- todo navegador lançado a partir de 2013 suporta as propriedades sem prefixo.

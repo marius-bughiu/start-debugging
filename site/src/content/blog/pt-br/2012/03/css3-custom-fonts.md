@@ -35,4 +35,26 @@ Para aplicar a fonte personalizada ao seu texto, use a propriedade font-family:
 ```
 
 Uma ótima fonte para tipografias personalizadas é o [dafont.com](http://www.dafont.com/ "dafont.com")
-Veja uma demo aqui: [Custom Fonts Demo](http://startdebugging.net/demos/customfonts.html "Custom Fonts Demo")
+Aqui está um exemplo completo e autocontido usando uma fonte hospedada pelo Google que você pode colar em um arquivo HTML e abrir em qualquer navegador:
+
+```html
+<!doctype html>
+<html>
+<head>
+  <style>
+    @font-face {
+      font-family: "Press Start 2P";
+      src: url("https://fonts.gstatic.com/s/pressstart2p/v17/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2") format("woff2");
+    }
+
+    h1 {
+      font-family: "Press Start 2P", monospace;
+      font-size: 32px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Start Debugging</h1>
+</body>
+</html>
+```

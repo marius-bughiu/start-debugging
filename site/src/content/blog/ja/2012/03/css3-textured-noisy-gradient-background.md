@@ -25,4 +25,24 @@ background-image: url('../images/noise.png'), linear-gradient(top, #87e0fd 0%,#5
 
 そう、これは可能です。background-image プロパティを通常どおり使い、カンマを入れて、続けて gradient を書きます。ノイズ画像はノイズ生成ツールで作成し、gradient は gradient 生成ツールで好みのものを作ってください。
 
-デモはこちらでも確認できます: [Textured / Noisy Gradient Background Demo](http://startdebugging.net/demos/noisybackground.html "Textured / Noisy Gradient Background Demo")
+完結した自己完結版です。HTML ファイルに貼り付けるだけで動きます。インライン SVG をデータ URL として使うので、外部画像の依存はありません。
+
+```html
+<!doctype html>
+<html>
+<head>
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.35'/></svg>"),
+        linear-gradient(to bottom, #87e0fd 0%, #53cbf1 40%, #05abe0 100%);
+    }
+  </style>
+</head>
+<body></body>
+</html>
+```
+
+同じやり方はどんなグラデーションでも動きます。`background-image` のカンマ区切り値の先頭にノイズ (または任意のテクスチャ画像) を置けば、グラデーションの上に重ねられます。

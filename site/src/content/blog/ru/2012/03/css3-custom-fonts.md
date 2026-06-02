@@ -35,4 +35,26 @@ CSS3 позволяет использовать кастомные шрифты
 ```
 
 Отличный источник кастомных шрифтов - [dafont.com](http://www.dafont.com/ "dafont.com")
-Демо здесь: [Custom Fonts Demo](http://startdebugging.net/demos/customfonts.html "Custom Fonts Demo")
+Вот законченный самодостаточный пример с шрифтом, размещённым Google: вставьте в HTML-файл и откройте в любом браузере.
+
+```html
+<!doctype html>
+<html>
+<head>
+  <style>
+    @font-face {
+      font-family: "Press Start 2P";
+      src: url("https://fonts.gstatic.com/s/pressstart2p/v17/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2") format("woff2");
+    }
+
+    h1 {
+      font-family: "Press Start 2P", monospace;
+      font-size: 32px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Start Debugging</h1>
+</body>
+</html>
+```
