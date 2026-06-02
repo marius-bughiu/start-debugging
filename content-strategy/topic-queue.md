@@ -95,7 +95,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `MissingMethodException` / `framework_version=6.0.0` when launching a .NET 6 binary → slug: 2026/05/fix-framework-version-6-0-0-when-launching-dotnet-6-binary
 - Fix: C# 14 "the resolution for this invocation has changed... breaking change in overload resolution with spans" → slug: 2026/05/fix-csharp-14-overload-resolution-breaking-change-with-spans
 - Fix: `setState() or markNeedsBuild() called during build` in Flutter → slug: 2026/06/fix-setstate-or-markneedsbuild-called-during-build-in-flutter
-- Fix: `ObjectDisposedException: Cannot access a disposed context instance` in a fire-and-forget task
+- Fix: `ObjectDisposedException: Cannot access a disposed context instance` in a fire-and-forget task → slug: 2026/06/fix-objectdisposedexception-cannot-access-a-disposed-context-instance
 - Fix: `A TextEditingController was used after being disposed` in Flutter
 - Fix: `RenderBox was not laid out` in Flutter
 

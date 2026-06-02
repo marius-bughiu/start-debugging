@@ -490,5 +490,9 @@
   {
     "slug": "2026/06/fix-setstate-or-markneedsbuild-called-during-build-in-flutter",
     "text": "setState() called during build? You mutated state mid-build. Move it to initState, or defer with addPostFrameCallback."
+  },
+  {
+    "slug": "2026/06/fix-objectdisposedexception-cannot-access-a-disposed-context-instance",
+    "text": "DbContext ObjectDisposedException? Your fire-and-forget task outlived the DI scope. Resolve a fresh context inside it."
   }
 ]
