@@ -22,9 +22,5 @@
   {
     "slug": "2026/05/migrate-from-xamarin-forms-to-maui-11",
     "text": "Xamarin.Forms 5.0 to .NET MAUI 11 GA is a one-way trip but mostly mechanical for a medium app: one to three weeks of work. The time sinks are custom renderers becoming handlers with a Mapper dictionary, DependencyService registrations moving to IServiceCollection, and MessagingCenter being retired for CommunityToolkit.Mvvm WeakReferenceMessenger. The win is CoreCLR by default on Android and iOS, generational GC, and cold start under one second on midrange hardware."
-  },
-  {
-    "slug": "2026/06/dotnet-11-floating-point-hex-format-numberstyles-hexfloat",
-    "text": "In .NET 11, ToString(\"X\") on a double, float, or Half emits IEEE-754 hexadecimal, the same text C prints with %a. Parse it back with NumberStyles.HexFloat for an exact, bit-for-bit round-trip. Great for golden-file tests and C/C++ interop where decimal text is too opaque to trust."
   }
 ]
