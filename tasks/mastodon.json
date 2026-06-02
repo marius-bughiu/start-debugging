@@ -22,9 +22,5 @@
   {
     "slug": "2026/05/migrate-from-xamarin-forms-to-maui-11",
     "text": "Xamarin.Forms 5.0 to .NET MAUI 11 GA is a one-way trip but mostly mechanical for a medium app: one to three weeks of work. The time sinks are custom renderers becoming handlers with a Mapper dictionary, DependencyService registrations moving to IServiceCollection, and MessagingCenter being retired for CommunityToolkit.Mvvm WeakReferenceMessenger. The win is CoreCLR by default on Android and iOS, generational GC, and cold start under one second on midrange hardware."
-  },
-  {
-    "slug": "2026/06/claude-code-vs-cursor-vs-aider-for-a-dotnet-11-repo",
-    "text": "Choosing an AI coding agent for a large .NET 11 / C# 14 solution? Claude Code 2.1 has the strongest agent and no indexing wait, Cursor 3.6 gives tab completion and a GUI, Aider 0.86 is free and model-agnostic. The catch that may decide it: Microsoft's C# Dev Kit is license-locked, so it won't load in Cursor."
   }
 ]
