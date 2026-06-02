@@ -17,7 +17,7 @@ There are several new features and improvements in C# 14:
 -   [implicit span conversions](/2025/04/implicit-span-conversions-in-c-14-first-class-support-for-span-and-readonlyspan/)
 -   [`nameof` support for unbound generic types](/2025/04/c-14-nameof-support-for-unbound-generic-types/)
 -   [simplified parameters with modifiers in lambdas](/2025/04/c-14-simplified-parameters-with-modifiers-in-lambdas/)
--   [partial constructors and events](/2025/04/partial-constructors-and-events-in-c-14/)
+-   [partial constructors and events](/2025/04/csharp-14-partial-constructors-and-events/)
 -   [extension members](/2026/02/csharp-14-extension-members/)
 -   [null-conditional assignment](/2026/02/csharp-14-null-conditional-assignment/)
 

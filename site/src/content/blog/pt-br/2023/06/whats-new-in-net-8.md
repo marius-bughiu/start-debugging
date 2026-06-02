@@ -34,7 +34,7 @@ Vamos mergulhar na lista de mudanças e novos recursos do .NET 8:
     -   [Desativar a serialização padrão baseada em reflexão](/pt-br/2023/10/system-text-json-disable-reflection-based-serialization/)
     -   [Adicionar/Remover TypeInfoResolver em uma instância existente de JsonSerializerOptions](/pt-br/2023/10/add-remove-typeinforesolver-to-existing-jsonserializeroptions/)
 -   Bibliotecas principais do .NET
-    -   [FrozenDictionary -- comparação de desempenho](/pt-br/2023/08/net-8-performance-dictionary-vs-frozendictionary/)
+    -   [FrozenDictionary -- comparação de desempenho](/pt-br/2024/04/net-8-performance-dictionary-vs-frozendictionary/)
     -   Métodos para trabalhar com aleatoriedade -- [GetItems<T>()](/pt-br/2023/11/c-randomly-choose-items-from-a-list/) e [Shuffle<T>()](/pt-br/2023/10/c-how-to-shuffle-an-array/)
 -   Bibliotecas de extensão
 -   Coleta de lixo

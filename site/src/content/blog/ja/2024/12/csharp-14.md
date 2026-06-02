@@ -21,7 +21,7 @@ C# 14 にはいくつかの新機能と改善があります。
 -   [暗黙的な span 変換](/ja/2025/04/implicit-span-conversions-in-c-14-first-class-support-for-span-and-readonlyspan/)
 -   [非バインドジェネリック型に対する `nameof` サポート](/ja/2025/04/c-14-nameof-support-for-unbound-generic-types/)
 -   [ラムダにおける修飾子付きパラメーターの簡素化](/ja/2025/04/c-14-simplified-parameters-with-modifiers-in-lambdas/)
--   [partial コンストラクターおよびイベント](/2025/04/partial-constructors-and-events-in-c-14/)
+-   [partial コンストラクターおよびイベント](/ja/2025/04/csharp-14-partial-constructors-and-events/)
 -   [拡張メンバー](/ja/2026/02/csharp-14-extension-members/)
 -   [null 条件付き代入](/ja/2026/02/csharp-14-null-conditional-assignment/)
 

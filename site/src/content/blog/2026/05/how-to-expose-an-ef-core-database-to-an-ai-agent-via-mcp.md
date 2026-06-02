@@ -331,7 +331,7 @@ The pattern generalises beyond inventory. Any time an internal `DbContext` alrea
 - [How to Build a Custom MCP Server in C# on .NET 11](/2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11/)
 - [How to Migrate a Semantic Kernel Plugin to an MCP Server](/2026/05/migrate-a-semantic-kernel-plugin-to-an-mcp-server/)
 - [How to Add Tool Calling to a Microsoft.Extensions.AI Chat Client](/2026/05/how-to-add-tool-calling-to-a-microsoft-extensions-ai-chat-client/)
-- [How to Detect N+1 Queries in EF Core 11](/2026/04/how-to-detect-n-plus-1-queries-in-ef-core-11/)
+- [How to Detect N+1 Queries in EF Core 11](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)
 - [Agent Governance Toolkit: MCP Policy Control on .NET](/2026/05/agent-governance-toolkit-mcp-policy-control-dotnet/)
 
 ## Source links

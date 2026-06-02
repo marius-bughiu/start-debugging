@@ -13,7 +13,7 @@ El megabyte es una unidad de información digital, denotada por el símbolo MB. 
 
 Sin embargo, en los campos de la informática y la tecnología de la información se han usado definiciones alternativas por conveniencia histórica. Un uso habitual designa un megabyte como 1.048.576 bytes (2^20 B), que encaja con la arquitectura binaria de la memoria de las computadoras digitales. Los organismos de estandarización han desaprobado esta definición en favor de un nuevo conjunto de prefijos binarios. La unidad 'mebibyte' (MiB) se usa ahora para representar esa cantidad concreta de 1.048.576 bytes.
 
-Si quieres una explicación más detallada sobre la diferencia entre un mebibyte y un megabyte, mira este artículo: [What is the difference between MB and MiB?](/2020/08/what-is-the-difference-between-a-megabyte-mb-and-a-mebibyte-mib/)
+Si quieres una explicación más detallada sobre la diferencia entre un mebibyte y un megabyte, mira este artículo: [What is the difference between MB and MiB?](/es/2020/08/mib-vs-mb/)
 
 ## Definiciones
 

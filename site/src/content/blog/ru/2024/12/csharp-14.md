@@ -21,7 +21,7 @@ C# 14.0 будет выпущен позже в этом году, в ноябр
 -   [неявные преобразования span](/ru/2025/04/implicit-span-conversions-in-c-14-first-class-support-for-span-and-readonlyspan/)
 -   [поддержка `nameof` для несвязанных универсальных типов](/ru/2025/04/c-14-nameof-support-for-unbound-generic-types/)
 -   [упрощённые параметры с модификаторами в лямбдах](/ru/2025/04/c-14-simplified-parameters-with-modifiers-in-lambdas/)
--   [частичные конструкторы и события](/2025/04/partial-constructors-and-events-in-c-14/)
+-   [частичные конструкторы и события](/ru/2025/04/csharp-14-partial-constructors-and-events/)
 -   [члены расширения](/ru/2026/02/csharp-14-extension-members/)
 -   [null-условное присваивание](/ru/2026/02/csharp-14-null-conditional-assignment/)
 

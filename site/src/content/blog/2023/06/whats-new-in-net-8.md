@@ -30,7 +30,7 @@ Let’s dive into the list of changes and new features in .NET 8:
     -   [Disable default reflection-based serialization](/2023/10/system-text-json-disable-reflection-based-serialization/)
     -   [Add/Remove TypeInfoResolver to existing JsonSerializerOptions instance](/2023/10/add-remove-typeinforesolver-to-existing-jsonserializeroptions/)
 -   Core .NET libraries
-    -   [FrozenDictionary – performance comparison](/2023/08/net-8-performance-dictionary-vs-frozendictionary/)
+    -   [FrozenDictionary – performance comparison](/2024/04/net-8-performance-dictionary-vs-frozendictionary/)
     -   Methods for working with randomness – [GetItems<T>()](/2023/11/c-randomly-choose-items-from-a-list/) and [Shuffle<T>()](/2023/10/c-how-to-shuffle-an-array/)
 -   Extension libraries
 -   Garbage collection
