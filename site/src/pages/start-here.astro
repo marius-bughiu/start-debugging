@@ -1,10 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getPublishedBlogPosts } from "../lib/blog";
+import { buildLocaleUrlMap, getPublishedBlogPosts } from "../lib/blog";
 import type { BlogPost } from "../lib/blog";
 import startHereData from "../data/start-here.json";
 
 const baseUrl = import.meta.env.BASE_URL;
+
+const siteOrigin = Astro.site?.origin ?? "https://startdebugging.net";
+const translations = buildLocaleUrlMap(siteOrigin, (l) =>
+  l === "en" ? "/start-here/" : `/${l}/start-here/`,
+);
 
 type StartHereData = {
   intro: string;
@@ -54,6 +59,7 @@ const totalPicks = sections.reduce((n, s) => n + s.posts.length, 0);
   description="A curated entry point to Start Debugging: the evergreen posts worth reading first, grouped by topic."
   canonicalUrl={Astro.url.href}
   type="website"
+  translations={translations}
 >
   <section class="stack">
     <h1 class="h1">Start here</h1>

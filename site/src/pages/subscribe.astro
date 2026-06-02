@@ -1,13 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { buildLocaleUrlMap } from "../lib/blog";
 
 const baseUrl = import.meta.env.BASE_URL;
 const title = "Subscribe - Start Debugging";
 const description =
   "Get a weekly digest of the best .NET, C#, MAUI, and Flutter posts on Start Debugging delivered to your inbox.";
+
+const siteOrigin = Astro.site?.origin ?? "https://startdebugging.net";
+const translations = buildLocaleUrlMap(siteOrigin, (l) =>
+  l === "en" ? "/subscribe/" : `/${l}/subscribe/`,
+);
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={Astro.url.href}
+  translations={translations}
+>
   <section class="panel card stack subscribe-hero" aria-labelledby="subscribe-heading">
     <h1 id="subscribe-heading" class="h1">Subscribe to Start Debugging</h1>
     <p class="lead">

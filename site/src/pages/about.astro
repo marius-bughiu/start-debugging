@@ -1,7 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { buildLocaleUrlMap } from "../lib/blog";
 
 const baseUrl = import.meta.env.BASE_URL;
+
+const siteOrigin = Astro.site?.origin ?? "https://startdebugging.net";
+const translations = buildLocaleUrlMap(siteOrigin, (l) =>
+  l === "en" ? "/about/" : `/${l}/about/`,
+);
 ---
 
 <BaseLayout
@@ -9,6 +15,7 @@ const baseUrl = import.meta.env.BASE_URL;
   description="Start Debugging is Marius Bughiu's notes on .NET, C#, EF Core, MAUI, Blazor, and Flutter - written for developers who ship."
   canonicalUrl={Astro.url.href}
   type="website"
+  translations={translations}
 >
   <article class="panel card stack prose">
     <div class="stack">

@@ -245,9 +245,6 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
     <meta property="og:type" content={type === "article" ? "article" : "website"} />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:locale" content={ogLocale} />
-    {translationEntries.map(([l]) => (
-      <meta property="og:locale:alternate" content={LOCALE_OG[l]} />
-    ))}
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
