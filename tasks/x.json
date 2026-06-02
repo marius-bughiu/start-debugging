@@ -482,5 +482,9 @@
   {
     "slug": "2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod",
     "text": "AsyncValue holds loading, data, or error in one sealed type. Render all three with .when() and ditch the isLoading flags."
+  },
+  {
+    "slug": "2026/06/claude-code-vs-cursor-vs-aider-for-a-dotnet-11-repo",
+    "text": "Claude Code, Cursor, or Aider for a .NET 11 solution? The C# Dev Kit license quietly rules Cursor out for some teams."
   }
 ]
