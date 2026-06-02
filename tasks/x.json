@@ -486,5 +486,9 @@
   {
     "slug": "2026/06/claude-code-vs-cursor-vs-aider-for-a-dotnet-11-repo",
     "text": "Claude Code, Cursor, or Aider for a .NET 11 solution? The C# Dev Kit license quietly rules Cursor out for some teams."
+  },
+  {
+    "slug": "2026/06/fix-setstate-or-markneedsbuild-called-during-build-in-flutter",
+    "text": "setState() called during build? You mutated state mid-build. Move it to initState, or defer with addPostFrameCallback."
   }
 ]
