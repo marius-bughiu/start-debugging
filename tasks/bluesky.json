@@ -10,9 +10,5 @@
   {
     "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
     "text": "Azure Functions on .NET 11: pick isolated worker. In-process retires Nov 10, 2026 with .NET 8 LTS. Native AOT now beats it on cold start."
-  },
-  {
-    "slug": "2026/06/claude-code-vs-cursor-vs-copilot-agent-mode-where-each-wins",
-    "text": "Claude Code for flat pricing, Cursor for the editor, Copilot when work starts on GitHub. June's token-billing shift breaks the tie."
   }
 ]

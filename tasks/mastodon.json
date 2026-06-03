@@ -22,9 +22,5 @@
   {
     "slug": "2026/05/migrate-from-xamarin-forms-to-maui-11",
     "text": "Xamarin.Forms 5.0 to .NET MAUI 11 GA is a one-way trip but mostly mechanical for a medium app: one to three weeks of work. The time sinks are custom renderers becoming handlers with a Mapper dictionary, DependencyService registrations moving to IServiceCollection, and MessagingCenter being retired for CommunityToolkit.Mvvm WeakReferenceMessenger. The win is CoreCLR by default on Android and iOS, generational GC, and cold start under one second on midrange hardware."
-  },
-  {
-    "slug": "2026/06/claude-code-vs-cursor-vs-copilot-agent-mode-where-each-wins",
-    "text": "By mid-2026 all three coding agents plan, edit, and run your tests well. What differs: where the agent runs, who owns the model, and how you get billed. Claude Code wins on flat pricing, Cursor as the editor with per-task model choice, Copilot when work starts on GitHub. June 1's token-billing shift is the cost tiebreaker."
   }
 ]
