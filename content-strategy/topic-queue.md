@@ -97,7 +97,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `setState() or markNeedsBuild() called during build` in Flutter → slug: 2026/06/fix-setstate-or-markneedsbuild-called-during-build-in-flutter
 - Fix: `ObjectDisposedException: Cannot access a disposed context instance` in a fire-and-forget task → slug: 2026/06/fix-objectdisposedexception-cannot-access-a-disposed-context-instance
 - Fix: `A TextEditingController was used after being disposed` in Flutter → slug: 2026/06/fix-texteditingcontroller-was-used-after-being-disposed-in-flutter
-- Fix: `RenderBox was not laid out` in Flutter
+- Fix: `RenderBox was not laid out` in Flutter → slug: 2026/06/fix-renderbox-was-not-laid-out-in-flutter
 
 ## Vs / comparison
 

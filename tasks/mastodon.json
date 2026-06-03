@@ -22,5 +22,9 @@
   {
     "slug": "2026/05/migrate-from-xamarin-forms-to-maui-11",
     "text": "Xamarin.Forms 5.0 to .NET MAUI 11 GA is a one-way trip but mostly mechanical for a medium app: one to three weeks of work. The time sinks are custom renderers becoming handlers with a Mapper dictionary, DependencyService registrations moving to IServiceCollection, and MessagingCenter being retired for CommunityToolkit.Mvvm WeakReferenceMessenger. The win is CoreCLR by default on Android and iOS, generational GC, and cold start under one second on midrange hardware."
+  },
+  {
+    "slug": "2026/06/fix-renderbox-was-not-laid-out-in-flutter",
+    "text": "RenderBox was not laid out is never the real bug, it's the wreckage of an earlier layout failure. The usual culprit: a ListView or other scrollable inside a Column, given unbounded height. Scroll up to the first console error, then bound the scrollable with Expanded, a fixed height, or shrinkWrap. Flutter 3.44."
   }
 ]

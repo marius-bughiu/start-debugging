@@ -506,5 +506,9 @@
   {
     "slug": "2026/06/claude-code-vs-cursor-vs-copilot-agent-mode-where-each-wins",
     "text": "Claude Code, Cursor, or Copilot agent mode? The June 2026 token-billing shift is the real tiebreaker."
+  },
+  {
+    "slug": "2026/06/fix-renderbox-was-not-laid-out-in-flutter",
+    "text": "RenderBox was not laid out is a follow-on error. The real bug is above it: a scrollable with no bounded height."
   }
 ]
