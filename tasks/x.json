@@ -498,5 +498,9 @@
   {
     "slug": "2026/06/dotnet-11-minimum-cpu-baseline-x86-64-v2",
     "text": "Upgrading to .NET 11? It drops pre-2013 x86 chips. The runtime now needs x86-64-v2 or it refuses to start."
+  },
+  {
+    "slug": "2026/06/fix-texteditingcontroller-was-used-after-being-disposed-in-flutter",
+    "text": "TextEditingController used after being disposed? Async callback fired after dispose(). Guard with a mounted check."
   }
 ]
