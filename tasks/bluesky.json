@@ -10,9 +10,5 @@
   {
     "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
     "text": "Azure Functions on .NET 11: pick isolated worker. In-process retires Nov 10, 2026 with .NET 8 LTS. Native AOT now beats it on cold start."
-  },
-  {
-    "slug": "2026/06/backgroundservice-vs-ihostedservice-vs-hangfire-for-background-jobs-in-dotnet-11",
-    "text": "BackgroundService and IHostedService are the same primitive. Hangfire is a database you pay for. The .NET 11 decision matrix."
   }
 ]
