@@ -510,5 +510,9 @@
   {
     "slug": "2026/06/fix-renderbox-was-not-laid-out-in-flutter",
     "text": "RenderBox was not laid out is a follow-on error. The real bug is above it: a scrollable with no bounded height."
+  },
+  {
+    "slug": "2026/06/backgroundservice-vs-ihostedservice-vs-hangfire-for-background-jobs-in-dotnet-11",
+    "text": "BackgroundService for in-process loops. Reach for Hangfire only when a job must survive a restart."
   }
 ]

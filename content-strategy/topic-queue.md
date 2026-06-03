@@ -123,7 +123,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - MAUI vs Avalonia vs Uno in 2026 → slug: 2026/05/maui-vs-avalonia-vs-uno-in-2026
 - Flutter vs React Native vs MAUI for a new mobile project in 2026 → slug: 2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026
 - Dart records vs Freezed classes → slug: 2026/05/dart-records-vs-freezed-classes
-- `BackgroundService` vs `IHostedService` vs Hangfire for background jobs in .NET 11
+- `BackgroundService` vs `IHostedService` vs Hangfire for background jobs in .NET 11 → slug: 2026/06/backgroundservice-vs-ihostedservice-vs-hangfire-for-background-jobs-in-dotnet-11
 - EF Core `ExecuteUpdate` vs loading entities and `SaveChanges`
 - Provider vs Riverpod vs Bloc for Flutter state management in 2026
 
