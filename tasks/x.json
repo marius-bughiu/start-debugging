@@ -494,5 +494,9 @@
   {
     "slug": "2026/06/fix-objectdisposedexception-cannot-access-a-disposed-context-instance",
     "text": "DbContext ObjectDisposedException? Your fire-and-forget task outlived the DI scope. Resolve a fresh context inside it."
+  },
+  {
+    "slug": "2026/06/dotnet-11-minimum-cpu-baseline-x86-64-v2",
+    "text": "Upgrading to .NET 11? It drops pre-2013 x86 chips. The runtime now needs x86-64-v2 or it refuses to start."
   }
 ]

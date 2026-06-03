@@ -22,5 +22,9 @@
   {
     "slug": "2026/05/migrate-from-xamarin-forms-to-maui-11",
     "text": "Xamarin.Forms 5.0 to .NET MAUI 11 GA is a one-way trip but mostly mechanical for a medium app: one to three weeks of work. The time sinks are custom renderers becoming handlers with a Mapper dictionary, DependencyService registrations moving to IServiceCollection, and MessagingCenter being retired for CommunityToolkit.Mvvm WeakReferenceMessenger. The win is CoreCLR by default on Android and iOS, generational GC, and cold start under one second on midrange hardware."
+  },
+  {
+    "slug": "2026/06/dotnet-11-minimum-cpu-baseline-x86-64-v2",
+    "text": ".NET 11 Preview 4 raises the minimum x86/x64 instruction set from x86-64-v1 to x86-64-v2, dropping chips that lost support around 2013. A host below the baseline prints 'missing one or more of the baseline instruction sets' and refuses to start. No switch lowers the floor, so audit your CI runners and base images now."
   }
 ]

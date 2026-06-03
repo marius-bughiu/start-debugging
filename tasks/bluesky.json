@@ -10,5 +10,9 @@
   {
     "slug": "2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11",
     "text": "Azure Functions on .NET 11: pick isolated worker. In-process retires Nov 10, 2026 with .NET 8 LTS. Native AOT now beats it on cold start."
+  },
+  {
+    "slug": "2026/06/dotnet-11-minimum-cpu-baseline-x86-64-v2",
+    "text": ".NET 11 bumps the x86 baseline to x86-64-v2. Old CI runners and budget VPS hosts can fail with 'missing baseline instruction sets'."
   }
 ]
