@@ -135,7 +135,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate from Newtonsoft.Json to System.Text.Json in a large codebase → slug: 2026/05/migrate-from-newtonsoft-json-to-system-text-json-in-a-large-codebase
 - Migrate from MediatR to plain dependency injection → slug: 2026/05/migrate-from-mediatr-to-plain-dependency-injection
 - Migrate from AutoMapper to source-generated mapping → slug: 2026/05/migrate-from-automapper-to-source-generated-mapping
-- Migrate EF Core 6 to EF Core 11: breaking changes that actually bite
+- Migrate EF Core 6 to EF Core 11: breaking changes that actually bite → slug: 2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes
 - Migrate from Serilog to OpenTelemetry logging in .NET 11
 - Migrate from in-process Azure Functions to isolated worker
 - Migrate a Blazor Server app to Blazor United in .NET 11

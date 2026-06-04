@@ -530,5 +530,9 @@
   {
     "slug": "2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026",
     "text": "New Flutter app in 2026? Default to Riverpod. Bloc for big teams needing event traceability, Provider for legacy."
+  },
+  {
+    "slug": "2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes",
+    "text": "EF Core 6 to 11 in one jump: Encrypt=True and the migration throw stop your app on day one. Five changes that bite."
   }
 ]
