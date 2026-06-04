@@ -56,7 +56,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 
 - Claude Code vs Cursor vs Aider for a .NET 11 repo in 2026 → slug: 2026/06/claude-code-vs-cursor-vs-aider-for-a-dotnet-11-repo
 - Claude Code vs Cursor vs Copilot agent mode: where each wins → slug: 2026/06/claude-code-vs-cursor-vs-copilot-agent-mode-where-each-wins
-- MCP vs OpenAPI plugins vs custom tool calling for AI agents
+- MCP vs OpenAPI plugins vs custom tool calling for AI agents → slug: 2026/06/mcp-vs-openapi-plugins-vs-custom-tool-calling-for-ai-agents
 - Microsoft Agent Framework vs LangChain vs LlamaIndex in 2026
 - Microsoft Agent Framework vs Semantic Kernel for a greenfield .NET agent
 - Anthropic SDK vs Microsoft.Extensions.AI for calling Claude from .NET

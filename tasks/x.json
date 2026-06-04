@@ -522,5 +522,9 @@
   {
     "slug": "2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges",
     "text": "Changing rows by a predicate? ExecuteUpdate is one UPDATE, nothing loaded, ~100x faster than the SaveChanges loop."
+  },
+  {
+    "slug": "2026/06/mcp-vs-openapi-plugins-vs-custom-tool-calling-for-ai-agents",
+    "text": "Custom tool calling for one app you own, MCP for anything reused across IDEs. OpenAPI plugins are legacy now."
   }
 ]
