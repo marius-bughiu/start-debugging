@@ -125,7 +125,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Dart records vs Freezed classes → slug: 2026/05/dart-records-vs-freezed-classes
 - `BackgroundService` vs `IHostedService` vs Hangfire for background jobs in .NET 11 → slug: 2026/06/backgroundservice-vs-ihostedservice-vs-hangfire-for-background-jobs-in-dotnet-11
 - EF Core `ExecuteUpdate` vs loading entities and `SaveChanges` → slug: 2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges
-- Provider vs Riverpod vs Bloc for Flutter state management in 2026
+- Provider vs Riverpod vs Bloc for Flutter state management in 2026 → slug: 2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026
 
 ## Migration / upgrade
 

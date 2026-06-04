@@ -22,5 +22,9 @@
   {
     "slug": "2026/05/migrate-from-xamarin-forms-to-maui-11",
     "text": "Xamarin.Forms 5.0 to .NET MAUI 11 GA is a one-way trip but mostly mechanical for a medium app: one to three weeks of work. The time sinks are custom renderers becoming handlers with a Mapper dictionary, DependencyService registrations moving to IServiceCollection, and MessagingCenter being retired for CommunityToolkit.Mvvm WeakReferenceMessenger. The win is CoreCLR by default on Android and iOS, generational GC, and cold start under one second on midrange hardware."
+  },
+  {
+    "slug": "2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026",
+    "text": "Provider, Riverpod, or Bloc for a new Flutter app in 2026? Riverpod is the default: compile-time safe, testable without a BuildContext, and 3.0 adds auto-retry and offline persistence. Choose Bloc when a big team wants a traceable Event -> Bloc -> State history. Keep Provider for legacy and teaching."
   }
 ]
