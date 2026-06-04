@@ -518,5 +518,9 @@
   {
     "slug": "2026/06/dart-3-12-experimental-primary-constructors",
     "text": "Dart 3.12 collapses a 4-line data class to one: class Point(final int x, final int y); Experimental for now."
+  },
+  {
+    "slug": "2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges",
+    "text": "Changing rows by a predicate? ExecuteUpdate is one UPDATE, nothing loaded, ~100x faster than the SaveChanges loop."
   }
 ]
