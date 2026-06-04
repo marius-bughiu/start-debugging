@@ -22,5 +22,9 @@
   {
     "slug": "2026/05/migrate-from-xamarin-forms-to-maui-11",
     "text": "Xamarin.Forms 5.0 to .NET MAUI 11 GA is a one-way trip but mostly mechanical for a medium app: one to three weeks of work. The time sinks are custom renderers becoming handlers with a Mapper dictionary, DependencyService registrations moving to IServiceCollection, and MessagingCenter being retired for CommunityToolkit.Mvvm WeakReferenceMessenger. The win is CoreCLR by default on Android and iOS, generational GC, and cold start under one second on midrange hardware."
+  },
+  {
+    "slug": "2026/06/dart-3-12-experimental-primary-constructors",
+    "text": "Dart 3.12 adds experimental primary constructors. A whole data class becomes one line: class Point(final int x, final int y); A final or var modifier on a header parameter turns it into a field; drop it and it stays a plain argument. Enable with --enable-experiment=primary-constructors. Experimental, so keep it on a branch."
   }
 ]

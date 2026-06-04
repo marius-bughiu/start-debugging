@@ -514,5 +514,9 @@
   {
     "slug": "2026/06/backgroundservice-vs-ihostedservice-vs-hangfire-for-background-jobs-in-dotnet-11",
     "text": "BackgroundService for in-process loops. Reach for Hangfire only when a job must survive a restart."
+  },
+  {
+    "slug": "2026/06/dart-3-12-experimental-primary-constructors",
+    "text": "Dart 3.12 collapses a 4-line data class to one: class Point(final int x, final int y); Experimental for now."
   }
 ]
