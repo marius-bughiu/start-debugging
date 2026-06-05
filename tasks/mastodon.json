@@ -22,5 +22,9 @@
   {
     "slug": "2026/05/migrate-from-xamarin-forms-to-maui-11",
     "text": "Xamarin.Forms 5.0 to .NET MAUI 11 GA is a one-way trip but mostly mechanical for a medium app: one to three weeks of work. The time sinks are custom renderers becoming handlers with a Mapper dictionary, DependencyService registrations moving to IServiceCollection, and MessagingCenter being retired for CommunityToolkit.Mvvm WeakReferenceMessenger. The win is CoreCLR by default on Android and iOS, generational GC, and cold start under one second on midrange hardware."
+  },
+  {
+    "slug": "2026/06/migrate-from-in-process-azure-functions-to-isolated-worker",
+    "text": "Azure Functions in-process retires Nov 10, 2026. Migrating to the isolated worker is about a day: swap the SDK reference, delete Startup.cs for a Program.cs, rename [FunctionName] to [Function], and replace every WebJobs.Extensions package. Roll it out through a staging slot to dodge the broken interim state."
   }
 ]

@@ -542,5 +542,9 @@
   {
     "slug": "2026/06/microsoft-agent-framework-vs-langchain-vs-llamaindex-in-2026",
     "text": "Three agent frameworks, all at 1.0. Pick by language and host, not features. C#/Azure decides it before you start."
+  },
+  {
+    "slug": "2026/06/migrate-from-in-process-azure-functions-to-isolated-worker",
+    "text": "Azure Functions in-process retires Nov 10, 2026. The migrate-to-isolated checklist, every step verified."
   }
 ]
