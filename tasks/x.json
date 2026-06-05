@@ -534,5 +534,9 @@
   {
     "slug": "2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes",
     "text": "EF Core 6 to 11 in one jump: Encrypt=True and the migration throw stop your app on day one. Five changes that bite."
+  },
+  {
+    "slug": "2026/06/migrate-from-serilog-to-opentelemetry-logging-in-dotnet-11",
+    "text": "Move .NET 11 logging off Serilog to OpenTelemetry: a one-commit sink bridge keeps every message template."
   }
 ]
