@@ -538,5 +538,9 @@
   {
     "slug": "2026/06/migrate-from-serilog-to-opentelemetry-logging-in-dotnet-11",
     "text": "Move .NET 11 logging off Serilog to OpenTelemetry: a one-commit sink bridge keeps every message template."
+  },
+  {
+    "slug": "2026/06/microsoft-agent-framework-vs-langchain-vs-llamaindex-in-2026",
+    "text": "Three agent frameworks, all at 1.0. Pick by language and host, not features. C#/Azure decides it before you start."
   }
 ]
