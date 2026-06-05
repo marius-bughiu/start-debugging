@@ -22,9 +22,5 @@
   {
     "slug": "2026/05/migrate-from-xamarin-forms-to-maui-11",
     "text": "Xamarin.Forms 5.0 to .NET MAUI 11 GA is a one-way trip but mostly mechanical for a medium app: one to three weeks of work. The time sinks are custom renderers becoming handlers with a Mapper dictionary, DependencyService registrations moving to IServiceCollection, and MessagingCenter being retired for CommunityToolkit.Mvvm WeakReferenceMessenger. The win is CoreCLR by default on Android and iOS, generational GC, and cold start under one second on midrange hardware."
-  },
-  {
-    "slug": "2026/06/microsoft-agent-framework-vs-langchain-vs-llamaindex-in-2026",
-    "text": "Agent Framework, LangChain/LangGraph, and LlamaIndex Workflows all hit 1.0 and now claim the same features. The real call: there is no C# LangChain or LlamaIndex, so .NET shops are decided already. For Python it comes down to orchestration complexity (LangGraph) vs retrieval-grounded agents (LlamaIndex). Minimal agent in each."
   }
 ]
