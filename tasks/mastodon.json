@@ -26,9 +26,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
-  },
-  {
-    "slug": "2026/06/migrate-from-system-web-httpcontext-to-aspnetcore-httpcontext",
-    "text": "HttpContext.Current has no equivalent in ASP.NET Core. You inject IHttpContextAccessor instead, and the context cannot outlive the request or it throws ObjectDisposedException. Full System.Web property map for .NET 11, plus when to reach for the System.Web adapters on a large incremental migration."
   }
 ]
