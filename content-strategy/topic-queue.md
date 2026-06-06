@@ -60,6 +60,13 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to dispose controllers in Flutter to avoid memory leaks (`AnimationController`, `TextEditingController`, `ScrollController`) → slug: 2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks
 - How to handle network errors gracefully in a Flutter app → slug: 2026/06/how-to-handle-network-errors-gracefully-in-a-flutter-app
 - How to show loading and error states with `AsyncValue` and `StateNotifier` in Flutter Riverpod → slug: 2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod
+- How to use HybridCache in ASP.NET Core 11 with Redis as the L2 cache
+- How to organize minimal API endpoints with `MapGroup` in ASP.NET Core 11
+- How to validate request bodies in minimal APIs without controllers in ASP.NET Core 11
+- How to expose OpenAPI without Swashbuckle in ASP.NET Core 11
+- How to use EF Core 11 interceptors for auditing
+- How to persist state across the Blazor static-to-interactive render boundary in .NET 11
+- How to initialize a `Future` so `FutureBuilder` doesn't recreate it on every rebuild in Flutter
 
 ## Fix / error
 
@@ -98,6 +105,13 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `ObjectDisposedException: Cannot access a disposed context instance` in a fire-and-forget task → slug: 2026/06/fix-objectdisposedexception-cannot-access-a-disposed-context-instance
 - Fix: `A TextEditingController was used after being disposed` in Flutter → slug: 2026/06/fix-texteditingcontroller-was-used-after-being-disposed-in-flutter
 - Fix: `RenderBox was not laid out` in Flutter → slug: 2026/06/fix-renderbox-was-not-laid-out-in-flutter
+- Fix: `InvalidOperationException: A render mode is not supported by the parent component's render mode` in Blazor
+- Fix: `The configured execution strategy 'SqlServerRetryingExecutionStrategy' does not support user-initiated transactions` in EF Core
+- Fix: `The entity type 'X' requires a primary key to be defined` in EF Core 11
+- Fix: `The antiforgery token could not be decrypted` in ASP.NET Core
+- Fix: `HttpRequestException: The SSL connection could not be established` with HttpClient
+- Fix: `Bad state: Cannot use "ref" after the widget was disposed` in Flutter Riverpod
+- Fix: `Looking up a deactivated widget's ancestor is unsafe` in Flutter
 
 ## Vs / comparison
 
@@ -126,6 +140,10 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `BackgroundService` vs `IHostedService` vs Hangfire for background jobs in .NET 11 → slug: 2026/06/backgroundservice-vs-ihostedservice-vs-hangfire-for-background-jobs-in-dotnet-11
 - EF Core `ExecuteUpdate` vs loading entities and `SaveChanges` → slug: 2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges
 - Provider vs Riverpod vs Bloc for Flutter state management in 2026 → slug: 2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026
+- HybridCache vs `IMemoryCache` vs `IDistributedCache` in .NET 11
+- `FutureBuilder`/`StreamBuilder` vs Riverpod `AsyncValue` in Flutter
+- `AsNoTracking` vs `AsNoTrackingWithIdentityResolution` in EF Core 11
+- Minimal API validation vs FluentValidation in ASP.NET Core 11
 
 ## Migration / upgrade
 
@@ -145,6 +163,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a Flutter 2 app to Flutter 3.x: null safety checklist
 - Migrate from GetX to Riverpod in Flutter
 - Migrate from `provider` to `riverpod` in Flutter
+- Migrate from Swashbuckle to the built-in OpenAPI document generation in .NET 11
+- Migrate from `FutureBuilder` to a Riverpod `AsyncNotifier` in Flutter
 
 ## What is / concept
 
@@ -164,6 +184,10 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is the difference between a Dart isolate and a thread?
 - What is a Flutter `Key` and when does omitting it cause bugs?
 - What is the difference between `IHostedService` and `BackgroundService`?
+- What is a cache stampede and how does HybridCache prevent it?
+- What is an EF Core interceptor and when do I need one?
+- What is a Blazor render mode and which one runs my component?
+- What is the difference between `ref.watch` and `ref.read` in Riverpod?
 
 ---
 
