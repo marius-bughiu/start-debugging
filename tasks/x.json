@@ -554,5 +554,9 @@
   {
     "slug": "2026/06/dotnet-11-memorycache-opentelemetry-metrics",
     "text": "MemoryCache in .NET 11 emits OpenTelemetry metrics natively. Hit ratio and evictions, no background poller."
+  },
+  {
+    "slug": "2026/06/migrate-from-valuetask-back-to-task-when-and-why",
+    "text": "Adopted ValueTask<T> without a profiler? Task<T> is the safer default: swap it back and your CA2012 bugs vanish."
   }
 ]

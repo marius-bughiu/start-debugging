@@ -138,8 +138,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate EF Core 6 to EF Core 11: breaking changes that actually bite → slug: 2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes
 - Migrate from Serilog to OpenTelemetry logging in .NET 11 → slug: 2026/06/migrate-from-serilog-to-opentelemetry-logging-in-dotnet-11
 - Migrate from in-process Azure Functions to isolated worker → slug: 2026/06/migrate-from-in-process-azure-functions-to-isolated-worker
-- Migrate a Blazor Server app to Blazor United in .NET 11
-- Migrate from `ValueTask<T>` back to `Task<T>`: when and why
+- Migrate a Blazor Server app to Blazor United in .NET 11 → slug: 2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11
+- Migrate from `ValueTask<T>` back to `Task<T>`: when and why → slug: 2026/06/migrate-from-valuetask-back-to-task-when-and-why
 - Migrate from `IWebHostBuilder` to `WebApplication.CreateBuilder`
 - Migrate from `System.Web.HttpContext` to `Microsoft.AspNetCore.Http.HttpContext`
 - Migrate a Flutter 2 app to Flutter 3.x: null safety checklist
