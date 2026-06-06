@@ -546,5 +546,13 @@
   {
     "slug": "2026/06/migrate-from-in-process-azure-functions-to-isolated-worker",
     "text": "Azure Functions in-process retires Nov 10, 2026. The migrate-to-isolated checklist, every step verified."
+  },
+  {
+    "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
+    "text": "Blazor Server to Blazor Web App on .NET 11: _Host.cshtml goes, routing moves to Routes, prerender runs init twice."
+  },
+  {
+    "slug": "2026/06/dotnet-11-memorycache-opentelemetry-metrics",
+    "text": "MemoryCache in .NET 11 emits OpenTelemetry metrics natively. Hit ratio and evictions, no background poller."
   }
 ]
