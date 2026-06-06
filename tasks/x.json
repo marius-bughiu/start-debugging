@@ -562,5 +562,9 @@
   {
     "slug": "2026/06/migrate-from-iwebhostbuilder-to-webapplication-createbuilder",
     "text": "WebHost is obsolete in .NET 11 (ASPDEPR008). Move Startup.cs to WebApplication.CreateBuilder, middleware order intact."
+  },
+  {
+    "slug": "2026/06/migrate-from-system-web-httpcontext-to-aspnetcore-httpcontext",
+    "text": "HttpContext.Current is gone in ASP.NET Core. The full property map from System.Web, plus the adapters shim."
   }
 ]

@@ -141,7 +141,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a Blazor Server app to Blazor United in .NET 11 → slug: 2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11
 - Migrate from `ValueTask<T>` back to `Task<T>`: when and why → slug: 2026/06/migrate-from-valuetask-back-to-task-when-and-why
 - Migrate from `IWebHostBuilder` to `WebApplication.CreateBuilder` → slug: 2026/06/migrate-from-iwebhostbuilder-to-webapplication-createbuilder
-- Migrate from `System.Web.HttpContext` to `Microsoft.AspNetCore.Http.HttpContext`
+- Migrate from `System.Web.HttpContext` to `Microsoft.AspNetCore.Http.HttpContext` → slug: 2026/06/migrate-from-system-web-httpcontext-to-aspnetcore-httpcontext
 - Migrate a Flutter 2 app to Flutter 3.x: null safety checklist
 - Migrate from GetX to Riverpod in Flutter
 - Migrate from `provider` to `riverpod` in Flutter
