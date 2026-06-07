@@ -578,5 +578,9 @@
   {
     "slug": "2026/06/microsoft-agent-framework-vs-semantic-kernel-for-a-greenfield-net-agent",
     "text": "Greenfield .NET agent in 2026? Start on Microsoft Agent Framework 1.0. Semantic Kernel is maintenance-only now."
+  },
+  {
+    "slug": "2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11",
+    "text": "MapGroup gives each resource one extension method: shared prefix, filters, and auth. The cure for a bloated Program.cs."
   }
 ]

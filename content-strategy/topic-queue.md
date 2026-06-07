@@ -61,7 +61,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to handle network errors gracefully in a Flutter app → slug: 2026/06/how-to-handle-network-errors-gracefully-in-a-flutter-app
 - How to show loading and error states with `AsyncValue` and `StateNotifier` in Flutter Riverpod → slug: 2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod
 - How to use HybridCache in ASP.NET Core 11 with Redis as the L2 cache → slug: 2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache
-- How to organize minimal API endpoints with `MapGroup` in ASP.NET Core 11
+- How to organize minimal API endpoints with `MapGroup` in ASP.NET Core 11 → slug: 2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11
 - How to validate request bodies in minimal APIs without controllers in ASP.NET Core 11
 - How to expose OpenAPI without Swashbuckle in ASP.NET Core 11
 - How to use EF Core 11 interceptors for auditing
