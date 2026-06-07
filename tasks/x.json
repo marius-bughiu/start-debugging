@@ -582,5 +582,9 @@
   {
     "slug": "2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11",
     "text": "MapGroup gives each resource one extension method: shared prefix, filters, and auth. The cure for a bloated Program.cs."
+  },
+  {
+    "slug": "2026/06/how-to-validate-request-bodies-in-minimal-apis-without-controllers-in-aspnetcore-11",
+    "text": "Minimal APIs validate request bodies in .NET 11: AddValidation + [Required] = a 400 before your handler ever runs."
   }
 ]
