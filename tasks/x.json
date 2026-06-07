@@ -574,5 +574,9 @@
   {
     "slug": "2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache",
     "text": "HybridCache: a two-tier L1+Redis cache behind one GetOrCreateAsync call, with cache-stampede protection built in."
+  },
+  {
+    "slug": "2026/06/microsoft-agent-framework-vs-semantic-kernel-for-a-greenfield-net-agent",
+    "text": "Greenfield .NET agent in 2026? Start on Microsoft Agent Framework 1.0. Semantic Kernel is maintenance-only now."
   }
 ]
