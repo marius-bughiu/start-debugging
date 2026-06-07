@@ -570,5 +570,9 @@
   {
     "slug": "2026/06/github-copilot-sdk-ga-embed-copilot-agent-runtime-csharp",
     "text": "GitHub Copilot SDK hit GA with a .NET package. Drive Copilot's agent runtime, custom tools and BYOK straight from C#."
+  },
+  {
+    "slug": "2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache",
+    "text": "HybridCache: a two-tier L1+Redis cache behind one GetOrCreateAsync call, with cache-stampede protection built in."
   }
 ]
