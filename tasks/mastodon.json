@@ -26,5 +26,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
+  },
+  {
+    "slug": "2026/06/github-copilot-sdk-ga-embed-copilot-agent-runtime-csharp",
+    "text": "GitHub shipped Copilot SDK 1.0 GA at Build 2026 with a first-class .NET package. The same agent runtime behind Copilot in the editor (planning, tool calls, file edits, streaming, multi-turn sessions) is now a NuGet dependency. Tools are plain C# methods, MCP is built in, and BYOK points it at OpenAI, Anthropic or Foundry."
   }
 ]

@@ -566,5 +566,9 @@
   {
     "slug": "2026/06/migrate-from-system-web-httpcontext-to-aspnetcore-httpcontext",
     "text": "HttpContext.Current is gone in ASP.NET Core. The full property map from System.Web, plus the adapters shim."
+  },
+  {
+    "slug": "2026/06/github-copilot-sdk-ga-embed-copilot-agent-runtime-csharp",
+    "text": "GitHub Copilot SDK hit GA with a .NET package. Drive Copilot's agent runtime, custom tools and BYOK straight from C#."
   }
 ]
