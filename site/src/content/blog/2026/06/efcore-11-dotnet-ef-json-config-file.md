@@ -10,7 +10,7 @@ tags:
   - "dotnet"
 ---
 
-Anyone who runs EF Core migrations in a layered solution knows the ritual: the `DbContext` lives in an infrastructure project, the connection string and DI wiring live in the API project, and so every `dotnet ef` command turns into a paragraph. `dotnet ef migrations add AddOrders --project src/App.Infrastructure --startup-project src/App.Api --context AppDbContext`. You either memorize it, alias it, or paste it from a notes file. EF Core 11 Preview 4, shipped May 12, 2026 as part of [.NET 11 Preview 4](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-4/), finally lets you write those defaults down once.
+Anyone who runs EF Core migrations in a layered solution knows the ritual: the `DbContext` lives in an infrastructure project, the connection string and DI wiring live in the API project, and so every `dotnet ef` command turns into a paragraph. `dotnet ef migrations add AddOrders --project src/App.Infrastructure --startup-project src/App.Api --context AppDbContext`. You either memorize it, alias it, or paste it from a notes file. [EF Core 11 Preview 4](/2026/05/ef-core-11-temporal-tables-clr-period-properties/), shipped May 12, 2026 as part of [.NET 11 Preview 4](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-4/), finally lets you write those defaults down once.
 
 ## A config file the tool walks up to find
 

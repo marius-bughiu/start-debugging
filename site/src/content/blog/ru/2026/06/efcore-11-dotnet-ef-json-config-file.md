@@ -14,7 +14,7 @@ translatedBy: "claude"
 translationDate: 2026-06-01
 ---
 
-Любому, кто запускает миграции EF Core в многослойном решении, знаком этот ритуал: `DbContext` находится в проекте инфраструктуры, строка подключения и настройка DI находятся в проекте API, и поэтому каждая команда `dotnet ef` превращается в абзац. `dotnet ef migrations add AddOrders --project src/App.Infrastructure --startup-project src/App.Api --context AppDbContext`. Вы либо заучиваете её, либо делаете для неё псевдоним, либо вставляете из файла с заметками. EF Core 11 Preview 4, выпущенный 12 мая 2026 года в составе [.NET 11 Preview 4](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-4/), наконец позволяет записать эти значения по умолчанию один раз.
+Любому, кто запускает миграции EF Core в многослойном решении, знаком этот ритуал: `DbContext` находится в проекте инфраструктуры, строка подключения и настройка DI находятся в проекте API, и поэтому каждая команда `dotnet ef` превращается в абзац. `dotnet ef migrations add AddOrders --project src/App.Infrastructure --startup-project src/App.Api --context AppDbContext`. Вы либо заучиваете её, либо делаете для неё псевдоним, либо вставляете из файла с заметками. [EF Core 11 Preview 4](/ru/2026/05/ef-core-11-temporal-tables-clr-period-properties/), выпущенный 12 мая 2026 года в составе [.NET 11 Preview 4](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-4/), наконец позволяет записать эти значения по умолчанию один раз.
 
 ## Файл конфигурации, который инструмент находит, поднимаясь по дереву
 

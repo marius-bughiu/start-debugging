@@ -19,7 +19,7 @@ The trap with these comparisons is that every framework now claims the same feat
 
 ## The feature matrix that actually decides it
 
-| Dimension | Microsoft Agent Framework 1.0 | LangChain 1.0 / LangGraph 1.0 | LlamaIndex Workflows 1.0 |
+| Dimension | [Microsoft Agent Framework 1.0](/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) | LangChain 1.0 / LangGraph 1.0 | LlamaIndex Workflows 1.0 |
 | --- | --- | --- | --- |
 | First release | April 3, 2026 | October 22, 2025 | June 30, 2025 |
 | Primary languages | C# (.NET 10), Python, Java | Python, JavaScript/TypeScript | Python, TypeScript |

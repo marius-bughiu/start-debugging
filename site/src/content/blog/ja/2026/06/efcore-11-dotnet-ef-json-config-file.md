@@ -14,7 +14,7 @@ translatedBy: "claude"
 translationDate: 2026-06-01
 ---
 
-レイヤー化されたソリューションで EF Core のマイグレーションを実行する人なら、この儀式をご存じでしょう。`DbContext` はインフラストラクチャプロジェクトにあり、接続文字列と DI の配線は API プロジェクトにあるため、`dotnet ef` コマンドはどれも一段落になってしまいます。`dotnet ef migrations add AddOrders --project src/App.Infrastructure --startup-project src/App.Api --context AppDbContext`。暗記するか、エイリアスにするか、メモファイルから貼り付けるかのいずれかです。2026 年 5 月 12 日に [.NET 11 Preview 4](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-4/) の一部としてリリースされた EF Core 11 Preview 4 では、ついにそれらの既定値を一度だけ書き留められるようになりました。
+レイヤー化されたソリューションで EF Core のマイグレーションを実行する人なら、この儀式をご存じでしょう。`DbContext` はインフラストラクチャプロジェクトにあり、接続文字列と DI の配線は API プロジェクトにあるため、`dotnet ef` コマンドはどれも一段落になってしまいます。`dotnet ef migrations add AddOrders --project src/App.Infrastructure --startup-project src/App.Api --context AppDbContext`。暗記するか、エイリアスにするか、メモファイルから貼り付けるかのいずれかです。2026 年 5 月 12 日に [.NET 11 Preview 4](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-4/) の一部としてリリースされた [EF Core 11 Preview 4](/ja/2026/05/ef-core-11-temporal-tables-clr-period-properties/) では、ついにそれらの既定値を一度だけ書き留められるようになりました。
 
 ## ツールがツリーをさかのぼって見つける構成ファイル
 

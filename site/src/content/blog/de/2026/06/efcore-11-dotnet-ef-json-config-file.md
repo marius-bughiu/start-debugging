@@ -14,7 +14,7 @@ translatedBy: "claude"
 translationDate: 2026-06-01
 ---
 
-Wer EF-Core-Migrationen in einer geschichteten Solution ausführt, kennt das Ritual: Der `DbContext` liegt in einem Infrastrukturprojekt, die Verbindungszeichenfolge und die DI-Verdrahtung liegen im API-Projekt, und deshalb wird jeder `dotnet ef`-Befehl zu einem Absatz. `dotnet ef migrations add AddOrders --project src/App.Infrastructure --startup-project src/App.Api --context AppDbContext`. Sie merken ihn sich auswendig, legen ein Alias an oder fügen ihn aus einer Notizdatei ein. EF Core 11 Preview 4, am 12. Mai 2026 als Teil von [.NET 11 Preview 4](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-4/) veröffentlicht, erlaubt es Ihnen endlich, diese Standardwerte einmal festzuhalten.
+Wer EF-Core-Migrationen in einer geschichteten Solution ausführt, kennt das Ritual: Der `DbContext` liegt in einem Infrastrukturprojekt, die Verbindungszeichenfolge und die DI-Verdrahtung liegen im API-Projekt, und deshalb wird jeder `dotnet ef`-Befehl zu einem Absatz. `dotnet ef migrations add AddOrders --project src/App.Infrastructure --startup-project src/App.Api --context AppDbContext`. Sie merken ihn sich auswendig, legen ein Alias an oder fügen ihn aus einer Notizdatei ein. [EF Core 11 Preview 4](/de/2026/05/ef-core-11-temporal-tables-clr-period-properties/), am 12. Mai 2026 als Teil von [.NET 11 Preview 4](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-4/) veröffentlicht, erlaubt es Ihnen endlich, diese Standardwerte einmal festzuhalten.
 
 ## Eine Konfigurationsdatei, die das Tool durch Hochlaufen im Baum findet
 
