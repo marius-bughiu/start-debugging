@@ -14,9 +14,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating Blazor Server to Blazor Web App on .NET 11: keep every page on InteractiveServer and behaviour stays identical."
-  },
-  {
-    "slug": "2026/06/github-copilot-sdk-ga-embed-copilot-agent-runtime-csharp",
-    "text": "GitHub Copilot SDK is GA: dotnet add the package and drive Copilot's planning, tool-calling and multi-turn agent runtime from C#."
   }
 ]
