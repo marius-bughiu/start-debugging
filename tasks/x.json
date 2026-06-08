@@ -598,5 +598,9 @@
   {
     "slug": "2026/06/anthropic-sdk-vs-microsoft-extensions-ai-for-calling-claude-from-dotnet",
     "text": "Calling Claude from .NET: Microsoft.Extensions.AI wraps the Anthropic SDK. Pick the front door per call, not per app."
+  },
+  {
+    "slug": "2026/06/how-to-use-ef-core-11-interceptors-for-auditing",
+    "text": "EF Core 11 auditing from one ISaveChangesInterceptor. The trap: ExecuteUpdate and ExecuteDelete skip the ChangeTracker."
   }
 ]

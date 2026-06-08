@@ -14,5 +14,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating Blazor Server to Blazor Web App on .NET 11: keep every page on InteractiveServer and behaviour stays identical."
+  },
+  {
+    "slug": "2026/06/how-to-use-ef-core-11-interceptors-for-auditing",
+    "text": "Audit every EF Core 11 write from one ISaveChangesInterceptor. Use SavedChangesAsync for real keys, and know ExecuteUpdate skips it."
   }
 ]
