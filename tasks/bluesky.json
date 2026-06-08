@@ -14,9 +14,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating Blazor Server to Blazor Web App on .NET 11: keep every page on InteractiveServer and behaviour stays identical."
-  },
-  {
-    "slug": "2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11",
-    "text": "Swashbuckle is gone. Generate OpenAPI with the built-in AddOpenApi/MapOpenApi in .NET 11, then add Scalar or Swagger UI."
   }
 ]

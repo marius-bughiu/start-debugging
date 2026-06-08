@@ -26,9 +26,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
-  },
-  {
-    "slug": "2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11",
-    "text": "Swashbuckle left the ASP.NET Core templates in .NET 9. In .NET 11 you generate the OpenAPI document with the built-in Microsoft.AspNetCore.OpenApi: AddOpenApi plus MapOpenApi at /openapi/v1.json. No UI ships, so add Scalar or Swagger UI. Transformers replace Swashbuckle filters, and you can emit the doc at build time too."
   }
 ]
