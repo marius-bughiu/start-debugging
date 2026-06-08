@@ -590,5 +590,9 @@
   {
     "slug": "2026/06/claude-code-security-guidance-plugin-reviews-its-own-diffs",
     "text": "Claude Code's free security-guidance plugin scans its own edits for vulns. 3 layers, only one costs tokens."
+  },
+  {
+    "slug": "2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11",
+    "text": "Swashbuckle left the .NET templates. AddOpenApi + MapOpenApi generate the doc at /openapi/v1.json; bring your own UI."
   }
 ]

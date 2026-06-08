@@ -63,7 +63,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to use HybridCache in ASP.NET Core 11 with Redis as the L2 cache → slug: 2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache
 - How to organize minimal API endpoints with `MapGroup` in ASP.NET Core 11 → slug: 2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11
 - How to validate request bodies in minimal APIs without controllers in ASP.NET Core 11 → slug: 2026/06/how-to-validate-request-bodies-in-minimal-apis-without-controllers-in-aspnetcore-11
-- How to expose OpenAPI without Swashbuckle in ASP.NET Core 11
+- How to expose OpenAPI without Swashbuckle in ASP.NET Core 11 → slug: 2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11
 - How to use EF Core 11 interceptors for auditing
 - How to persist state across the Blazor static-to-interactive render boundary in .NET 11
 - How to initialize a `Future` so `FutureBuilder` doesn't recreate it on every rebuild in Flutter
