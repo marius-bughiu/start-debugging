@@ -26,9 +26,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
-  },
-  {
-    "slug": "2026/06/anthropic-sdk-vs-microsoft-extensions-ai-for-calling-claude-from-dotnet",
-    "text": "Calling Claude from .NET is not either/or: the Anthropic SDK exposes AsIChatClient(), so Microsoft.Extensions.AI rides on top of the same package. IChatClient gives you UseFunctionInvocation and MCP tools for free, but prompt caching and extended thinking live only on AnthropicClient. Bind the app to one; native calls the other."
   }
 ]
