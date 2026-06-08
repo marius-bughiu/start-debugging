@@ -586,5 +586,9 @@
   {
     "slug": "2026/06/how-to-validate-request-bodies-in-minimal-apis-without-controllers-in-aspnetcore-11",
     "text": "Minimal APIs validate request bodies in .NET 11: AddValidation + [Required] = a 400 before your handler ever runs."
+  },
+  {
+    "slug": "2026/06/claude-code-security-guidance-plugin-reviews-its-own-diffs",
+    "text": "Claude Code's free security-guidance plugin scans its own edits for vulns. 3 layers, only one costs tokens."
   }
 ]

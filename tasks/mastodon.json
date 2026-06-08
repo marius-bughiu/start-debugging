@@ -26,5 +26,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
+  },
+  {
+    "slug": "2026/06/claude-code-security-guidance-plugin-reviews-its-own-diffs",
+    "text": "Anthropic shipped a free security-guidance plugin for Claude Code. It reviews the agent's own diffs in three layers: a no-cost pattern match per edit, a background model review at end of turn, and a deeper agentic review on commit that reads callers first. Opus 4.7 reviews. Needs Claude Code 2.1.144+."
   }
 ]
