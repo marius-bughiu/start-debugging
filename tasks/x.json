@@ -594,5 +594,9 @@
   {
     "slug": "2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11",
     "text": "Swashbuckle left the .NET templates. AddOpenApi + MapOpenApi generate the doc at /openapi/v1.json; bring your own UI."
+  },
+  {
+    "slug": "2026/06/anthropic-sdk-vs-microsoft-extensions-ai-for-calling-claude-from-dotnet",
+    "text": "Calling Claude from .NET: Microsoft.Extensions.AI wraps the Anthropic SDK. Pick the front door per call, not per app."
   }
 ]
