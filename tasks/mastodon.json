@@ -26,9 +26,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
-  },
-  {
-    "slug": "2026/06/how-to-persist-state-across-the-blazor-static-to-interactive-render-boundary-in-dotnet-11",
-    "text": "A Blazor Web App component runs OnInitialized twice, so it refetches and the UI flickers. In .NET 11, mark a public property [PersistentState] and the interactive pass reuses the value. Gotcha: on WebAssembly or Auto it ships to the browser in cleartext, so never persist secrets."
   }
 ]
