@@ -14,9 +14,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating Blazor Server to Blazor Web App on .NET 11: keep every page on InteractiveServer and behaviour stays identical."
-  },
-  {
-    "slug": "2026/06/fix-render-mode-is-not-supported-by-the-parent-components-render-mode-blazor",
-    "text": "Blazor child can't use a different render mode than its parent's island. The fix is to delete the child's @rendermode."
   }
 ]
