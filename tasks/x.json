@@ -606,5 +606,9 @@
   {
     "slug": "2026/06/claude-code-2-1-169-safe-mode-and-cd",
     "text": "Claude Code 2.1.169: --safe-mode for clean debugging, and /cd switches dirs without nuking the prompt cache."
+  },
+  {
+    "slug": "2026/06/how-to-persist-state-across-the-blazor-static-to-interactive-render-boundary-in-dotnet-11",
+    "text": "Prerendered Blazor inits twice and refetches. [PersistentState] in .NET 11 reuses the prerender data."
   }
 ]
