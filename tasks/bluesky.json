@@ -14,9 +14,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating Blazor Server to Blazor Web App on .NET 11: keep every page on InteractiveServer and behaviour stays identical."
-  },
-  {
-    "slug": "2026/06/prompt-caching-on-claude-sonnet-4-6-vs-claude-opus-4-7-when-it-pays-off",
-    "text": "Same cache multipliers on Sonnet 4.6 and Opus 4.7, so break-even matches. The gaps: a 4x prefix minimum and a fatter Opus tokenizer."
   }
 ]
