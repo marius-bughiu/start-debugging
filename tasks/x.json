@@ -618,5 +618,9 @@
   {
     "slug": "2026/06/how-to-initialize-a-future-so-futurebuilder-doesnt-recreate-it-on-every-rebuild-in-flutter",
     "text": "FutureBuilder re-fetches on every rebuild? You created the Future in build(). Move it to initState, create it once."
+  },
+  {
+    "slug": "2026/06/fix-render-mode-is-not-supported-by-the-parent-components-render-mode-blazor",
+    "text": "Blazor render mode not supported by the parent? A subtree gets one render mode. Drop the child's @rendermode."
   }
 ]
