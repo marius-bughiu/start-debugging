@@ -66,7 +66,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to expose OpenAPI without Swashbuckle in ASP.NET Core 11 → slug: 2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11
 - How to use EF Core 11 interceptors for auditing → slug: 2026/06/how-to-use-ef-core-11-interceptors-for-auditing
 - How to persist state across the Blazor static-to-interactive render boundary in .NET 11 → slug: 2026/06/how-to-persist-state-across-the-blazor-static-to-interactive-render-boundary-in-dotnet-11
-- How to initialize a `Future` so `FutureBuilder` doesn't recreate it on every rebuild in Flutter
+- How to initialize a `Future` so `FutureBuilder` doesn't recreate it on every rebuild in Flutter → slug: 2026/06/how-to-initialize-a-future-so-futurebuilder-doesnt-recreate-it-on-every-rebuild-in-flutter
 
 ## Fix / error
 

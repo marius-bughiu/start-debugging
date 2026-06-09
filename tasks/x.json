@@ -614,5 +614,9 @@
   {
     "slug": "2026/06/prompt-caching-on-claude-sonnet-4-6-vs-claude-opus-4-7-when-it-pays-off",
     "text": "Cache break-even is identical on Sonnet 4.6 and Opus 4.7. What differs: the 1,024 vs 4,096 token minimum."
+  },
+  {
+    "slug": "2026/06/how-to-initialize-a-future-so-futurebuilder-doesnt-recreate-it-on-every-rebuild-in-flutter",
+    "text": "FutureBuilder re-fetches on every rebuild? You created the Future in build(). Move it to initState, create it once."
   }
 ]

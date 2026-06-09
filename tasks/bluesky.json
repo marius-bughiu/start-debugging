@@ -14,5 +14,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating Blazor Server to Blazor Web App on .NET 11: keep every page on InteractiveServer and behaviour stays identical."
+  },
+  {
+    "slug": "2026/06/how-to-initialize-a-future-so-futurebuilder-doesnt-recreate-it-on-every-rebuild-in-flutter",
+    "text": "FutureBuilder spinner keeps flashing? build() makes a new Future every rebuild. Create it once in initState, pass the stored field."
   }
 ]
