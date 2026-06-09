@@ -14,9 +14,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating Blazor Server to Blazor Web App on .NET 11: keep every page on InteractiveServer and behaviour stays identical."
-  },
-  {
-    "slug": "2026/06/claude-code-2-1-169-safe-mode-and-cd",
-    "text": "Claude Code 2.1.169: --safe-mode disables every customization to isolate a bug; /cd changes dirs without resetting the cache."
   }
 ]
