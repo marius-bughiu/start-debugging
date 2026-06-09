@@ -26,5 +26,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
+  },
+  {
+    "slug": "2026/06/prompt-caching-on-claude-sonnet-4-6-vs-claude-opus-4-7-when-it-pays-off",
+    "text": "Comparing prompt caching on Claude Sonnet 4.6 vs Opus 4.7? The multipliers are identical, so break-even is the same: the 5-minute cache pays off on the second use. The real difference is the minimum cacheable prefix, 1,024 tokens on Sonnet but 4,096 on Opus. A 3k-token prompt caches on Sonnet and silently no-ops on Opus."
   }
 ]

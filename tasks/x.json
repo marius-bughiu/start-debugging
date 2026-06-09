@@ -610,5 +610,9 @@
   {
     "slug": "2026/06/how-to-persist-state-across-the-blazor-static-to-interactive-render-boundary-in-dotnet-11",
     "text": "Prerendered Blazor inits twice and refetches. [PersistentState] in .NET 11 reuses the prerender data."
+  },
+  {
+    "slug": "2026/06/prompt-caching-on-claude-sonnet-4-6-vs-claude-opus-4-7-when-it-pays-off",
+    "text": "Cache break-even is identical on Sonnet 4.6 and Opus 4.7. What differs: the 1,024 vs 4,096 token minimum."
   }
 ]

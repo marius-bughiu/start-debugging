@@ -60,7 +60,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Microsoft Agent Framework vs LangChain vs LlamaIndex in 2026 → slug: 2026/06/microsoft-agent-framework-vs-langchain-vs-llamaindex-in-2026
 - Microsoft Agent Framework vs Semantic Kernel for a greenfield .NET agent → slug: 2026/06/microsoft-agent-framework-vs-semantic-kernel-for-a-greenfield-net-agent
 - Anthropic SDK vs Microsoft.Extensions.AI for calling Claude from .NET → slug: 2026/06/anthropic-sdk-vs-microsoft-extensions-ai-for-calling-claude-from-dotnet
-- Prompt caching on Claude Sonnet 4.6 vs Claude Opus 4.7: when it pays off
+- Prompt caching on Claude Sonnet 4.6 vs Claude Opus 4.7: when it pays off → slug: 2026/06/prompt-caching-on-claude-sonnet-4-6-vs-claude-opus-4-7-when-it-pays-off
 - Claude subagents vs OpenAI Assistants for parallelisable work
 - LLM-as-judge vs rule-based evals for a coding agent
 - Hangfire vs Quartz.NET vs IHostedService for scheduled LLM jobs
