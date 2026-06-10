@@ -630,5 +630,9 @@
   {
     "slug": "2026/06/fix-execution-strategy-does-not-support-user-initiated-transactions",
     "text": "EnableRetryOnFailure + BeginTransaction throws in EF Core. Wrap the transaction in CreateExecutionStrategy().ExecuteAsync."
+  },
+  {
+    "slug": "2026/06/claude-subagents-vs-openai-assistants-for-parallel-work",
+    "text": "OpenAI Assistants dies Aug 26 2026. Claude subagents vs the Responses API: which one owns the fan-out?"
   }
 ]

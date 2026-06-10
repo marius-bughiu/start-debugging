@@ -26,5 +26,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
+  },
+  {
+    "slug": "2026/06/claude-subagents-vs-openai-assistants-for-parallel-work",
+    "text": "OpenAI Assistants shuts down for good on Aug 26 2026. Claude subagents are an orchestration primitive: one agent spawns isolated sub-contexts that run concurrently and report back. OpenAI's Responses API gives request-level parallelism instead, where you own the fan-out and synthesis."
   }
 ]
