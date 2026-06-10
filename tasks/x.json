@@ -626,5 +626,9 @@
   {
     "slug": "2026/06/system-text-json-json-lines-serialization-dotnet-11-preview-5",
     "text": "System.Text.Json writes JSON Lines in .NET 11 Preview 5. SerializeAsyncEnumerable, topLevelValues: true, one call."
+  },
+  {
+    "slug": "2026/06/fix-execution-strategy-does-not-support-user-initiated-transactions",
+    "text": "EnableRetryOnFailure + BeginTransaction throws in EF Core. Wrap the transaction in CreateExecutionStrategy().ExecuteAsync."
   }
 ]
