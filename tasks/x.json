@@ -622,5 +622,9 @@
   {
     "slug": "2026/06/fix-render-mode-is-not-supported-by-the-parent-components-render-mode-blazor",
     "text": "Blazor render mode not supported by the parent? A subtree gets one render mode. Drop the child's @rendermode."
+  },
+  {
+    "slug": "2026/06/system-text-json-json-lines-serialization-dotnet-11-preview-5",
+    "text": "System.Text.Json writes JSON Lines in .NET 11 Preview 5. SerializeAsyncEnumerable, topLevelValues: true, one call."
   }
 ]
