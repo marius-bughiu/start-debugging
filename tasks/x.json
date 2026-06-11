@@ -634,5 +634,9 @@
   {
     "slug": "2026/06/claude-subagents-vs-openai-assistants-for-parallel-work",
     "text": "OpenAI Assistants dies Aug 26 2026. Claude subagents vs the Responses API: which one owns the fan-out?"
+  },
+  {
+    "slug": "2026/06/blazor-static-ssr-client-side-validation-dotnet-11-preview-5",
+    "text": "Blazor static SSR forms now validate in the browser, no circuit needed. .NET 11 Preview 5."
   }
 ]
