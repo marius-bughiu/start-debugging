@@ -14,9 +14,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating Blazor Server to Blazor Web App on .NET 11: keep every page on InteractiveServer and behaviour stays identical."
-  },
-  {
-    "slug": "2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore",
-    "text": "Antiforgery token won't decrypt across instances? Data Protection keys aren't shared. Persist to a DB, blob, or Redis."
   }
 ]
