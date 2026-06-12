@@ -26,5 +26,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
+  },
+  {
+    "slug": "2026/06/linq-fulljoin-tuple-returning-joins-dotnet-11-preview-5",
+    "text": "LINQ never had a full outer join. .NET 11 Preview 5 adds FullJoin across Enumerable, Queryable and AsyncEnumerable, plus tuple-returning overloads for Join, LeftJoin, RightJoin and GroupJoin that infer the pair and let you delete the result-selector lambda entirely."
   }
 ]

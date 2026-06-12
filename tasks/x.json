@@ -638,5 +638,9 @@
   {
     "slug": "2026/06/blazor-static-ssr-client-side-validation-dotnet-11-preview-5",
     "text": "Blazor static SSR forms now validate in the browser, no circuit needed. .NET 11 Preview 5."
+  },
+  {
+    "slug": "2026/06/linq-fulljoin-tuple-returning-joins-dotnet-11-preview-5",
+    "text": "LINQ gets FullJoin in .NET 11 Preview 5, plus tuple-returning joins that drop the result selector."
   }
 ]
