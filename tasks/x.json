@@ -642,5 +642,9 @@
   {
     "slug": "2026/06/linq-fulljoin-tuple-returning-joins-dotnet-11-preview-5",
     "text": "LINQ gets FullJoin in .NET 11 Preview 5, plus tuple-returning joins that drop the result selector."
+  },
+  {
+    "slug": "2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined",
+    "text": "EF Core 'requires a primary key to be defined'? Give the type an Id, mark it [Keyless], or stop mapping it."
   }
 ]

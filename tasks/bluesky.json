@@ -14,5 +14,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating Blazor Server to Blazor Web App on .NET 11: keep every page on InteractiveServer and behaviour stays identical."
+  },
+  {
+    "slug": "2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined",
+    "text": "EF Core 'requires a primary key to be defined' means it found a type it can't key. Fix: add an Id, HasNoKey for views, or Ignore<T>."
   }
 ]

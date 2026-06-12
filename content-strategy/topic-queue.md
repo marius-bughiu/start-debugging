@@ -107,7 +107,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `RenderBox was not laid out` in Flutter → slug: 2026/06/fix-renderbox-was-not-laid-out-in-flutter
 - Fix: `InvalidOperationException: A render mode is not supported by the parent component's render mode` in Blazor → slug: 2026/06/fix-render-mode-is-not-supported-by-the-parent-components-render-mode-blazor
 - Fix: `The configured execution strategy 'SqlServerRetryingExecutionStrategy' does not support user-initiated transactions` in EF Core → slug: 2026/06/fix-execution-strategy-does-not-support-user-initiated-transactions
-- Fix: `The entity type 'X' requires a primary key to be defined` in EF Core 11
+- Fix: `The entity type 'X' requires a primary key to be defined` in EF Core 11 → slug: 2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined
 - Fix: `The antiforgery token could not be decrypted` in ASP.NET Core
 - Fix: `HttpRequestException: The SSL connection could not be established` with HttpClient
 - Fix: `Bad state: Cannot use "ref" after the widget was disposed` in Flutter Riverpod
