@@ -62,7 +62,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Anthropic SDK vs Microsoft.Extensions.AI for calling Claude from .NET → slug: 2026/06/anthropic-sdk-vs-microsoft-extensions-ai-for-calling-claude-from-dotnet
 - Prompt caching on Claude Sonnet 4.6 vs Claude Opus 4.7: when it pays off → slug: 2026/06/prompt-caching-on-claude-sonnet-4-6-vs-claude-opus-4-7-when-it-pays-off
 - Claude subagents vs OpenAI Assistants for parallelisable work → slug: 2026/06/claude-subagents-vs-openai-assistants-for-parallel-work
-- LLM-as-judge vs rule-based evals for a coding agent
+- LLM-as-judge vs rule-based evals for a coding agent → slug: 2026/06/llm-as-judge-vs-rule-based-evals-for-a-coding-agent
 - Hangfire vs Quartz.NET vs IHostedService for scheduled LLM jobs
 - MCP stdio vs HTTP vs SSE transport: which to choose
 - A2A protocol vs MCP: agent-to-agent vs agent-to-tool

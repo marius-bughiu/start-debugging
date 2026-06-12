@@ -646,5 +646,9 @@
   {
     "slug": "2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined",
     "text": "EF Core 'requires a primary key to be defined'? Give the type an Id, mark it [Keyless], or stop mapping it."
+  },
+  {
+    "slug": "2026/06/llm-as-judge-vs-rule-based-evals-for-a-coding-agent",
+    "text": "Rule-based evals are your floor; LLM-as-judge is the ceiling. Gate on tests first, judge only what passes."
   }
 ]
