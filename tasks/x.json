@@ -650,5 +650,9 @@
   {
     "slug": "2026/06/llm-as-judge-vs-rule-based-evals-for-a-coding-agent",
     "text": "Rule-based evals are your floor; LLM-as-judge is the ceiling. Gate on tests first, judge only what passes."
+  },
+  {
+    "slug": "2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore",
+    "text": "Antiforgery token won't decrypt? Your Data Protection keys aren't shared. Persist them, set SetApplicationName."
   }
 ]
