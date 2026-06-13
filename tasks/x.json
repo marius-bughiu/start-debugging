@@ -658,5 +658,9 @@
   {
     "slug": "2026/06/dotnet-11-x25519-key-agreement-preview-5",
     "text": "X25519 key agreement is now in-box in .NET 11 Preview 5. Curve25519 key exchange, no BouncyCastle."
+  },
+  {
+    "slug": "2026/06/fix-the-ssl-connection-could-not-be-established-with-httpclient",
+    "text": "'SSL connection could not be established' is never the real error. The inner AuthenticationException names the cause."
   }
 ]
