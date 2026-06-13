@@ -1,0 +1,16 @@
+[
+  {
+    "query": "mebibite",
+    "position": 12,
+    "impressions": 1,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "system.invalidoperationexception: reflection-based serialization has been disabled for this application. either use the source generator apis or explicitly configure the 'jsonserializeroptions.typeinforesolver' property.",
+    "position": 16,
+    "impressions": 1,
+    "clicks": 0,
+    "ctr": 0
+  }
+]

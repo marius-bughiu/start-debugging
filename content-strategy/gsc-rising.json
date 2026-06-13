@@ -1,0 +1,26 @@
+[
+  {
+    "query": "\"mapster.sourcegenerator\" nuget",
+    "currentPosition": 4.46,
+    "currentImpressions": 97,
+    "priorImpressions": 56,
+    "delta": 41,
+    "ctr": 0
+  },
+  {
+    "query": "\"mapster.sourcegenerator\" mapster",
+    "currentPosition": 9.43,
+    "currentImpressions": 14,
+    "priorImpressions": 4,
+    "delta": 10,
+    "ctr": 0
+  },
+  {
+    "query": "\"mapster.sourcegenerator\" package",
+    "currentPosition": 9.2,
+    "currentImpressions": 5,
+    "priorImpressions": 0,
+    "delta": 5,
+    "ctr": 0
+  }
+]
