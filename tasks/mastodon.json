@@ -26,9 +26,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
-  },
-  {
-    "slug": "2026/06/dotnet-11-x25519-key-agreement-preview-5",
-    "text": "X25519 key agreement ships in-box in .NET 11 Preview 5. The new X25519DiffieHellman type does Curve25519 key exchange with no BouncyCastle or NSec, and pairs with .NET 10's ML-KEM for the hybrid post-quantum handshakes TLS is moving toward."
   }
 ]
