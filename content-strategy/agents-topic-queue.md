@@ -35,6 +35,16 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to reduce the number of MCP tools Claude loads to avoid the tool-use limit → slug: 2026/05/how-to-reduce-the-number-of-mcp-tools-claude-loads
 - How to let Aider edit files outside the git repository → slug: 2026/05/how-to-let-aider-edit-files-outside-the-git-repository
 - How to assign a Jira ticket to a Cursor cloud agent and get a PR back → slug: 2026/05/how-to-assign-a-jira-ticket-to-a-cursor-cloud-agent-and-get-a-pr-back
+- How to expose your own functions to a Cursor SDK agent with `local.customTools` instead of a separate MCP server
+- How to persist Cursor SDK agent state across restarts with a custom `LocalAgentStore` (SQLite vs JSONL)
+- How to gate which Cursor SDK tool calls run automatically with auto-review and `permissions.json`
+- How to nest subagents in the Cursor SDK so a reviewer can delegate to a test-writer
+- How to automate a repository task with GitHub Agentic Workflows without a personal access token
+- How to trigger a GitHub Copilot coding agent task from the Agent Tasks REST API
+- How to auto-fix a failing GitHub Action with "Fix with Copilot"
+- How to deploy a Microsoft Agent Framework agent to Foundry Hosted Agents
+- How to add policy enforcement and audit logging to a Microsoft Agent Framework agent with the Governance Toolkit
+- How to run a pre-push code review locally with Cursor Bugbot's `/review`
 
 ## Fix / error
 
@@ -51,6 +61,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: `Claude reached its tool-use limit for this turn` mid-task → slug: 2026/05/fix-claude-reached-its-tool-use-limit-for-this-turn
 - Fix: GitHub MCP server tool calls fail silently when the PAT isn't passed → slug: 2026/05/fix-github-mcp-server-tool-calls-fail-silently-without-pat
 - Fix: MCP servers stop working after a Claude Desktop update on Windows (config path moved) → slug: 2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows
+- Fix: `MCP error -32000: Client Closed` in Claude Code when a server dies on launch
+- Fix: Claude Code drops MCP tools after auto-compaction (reconnect with `/mcp`)
+- Fix: Claude Code high memory usage and context overflow (`/heapdump` and `/compact`)
 
 ## Vs / comparison
 
@@ -63,10 +76,12 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Prompt caching on Claude Sonnet 4.6 vs Claude Opus 4.7: when it pays off → slug: 2026/06/prompt-caching-on-claude-sonnet-4-6-vs-claude-opus-4-7-when-it-pays-off
 - Claude subagents vs OpenAI Assistants for parallelisable work → slug: 2026/06/claude-subagents-vs-openai-assistants-for-parallel-work
 - LLM-as-judge vs rule-based evals for a coding agent → slug: 2026/06/llm-as-judge-vs-rule-based-evals-for-a-coding-agent
-- Hangfire vs Quartz.NET vs IHostedService for scheduled LLM jobs
+- Hangfire vs Quartz.NET vs IHostedService for scheduled LLM jobs → slug: 2026/06/hangfire-vs-quartz-net-vs-ihostedservice-for-scheduled-llm-jobs
 - MCP stdio vs HTTP vs SSE transport: which to choose
 - A2A protocol vs MCP: agent-to-agent vs agent-to-tool
 - CodeAct vs a traditional tool-calling loop for agents
+- Claude Code skills vs subagents vs MCP servers: when to build each
+- Cursor subagents vs Claude Code subagents for multi-agent workflows
 
 ## Migration / upgrade
 
@@ -77,6 +92,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Migrate from Copilot chat prompts to a Copilot Agent Skill in your repo
 - Migrate an MCP server from SSE to streamable HTTP transport
 - Migrate a custom multi-agent orchestrator to handoff orchestration in Agent Framework
+- Migrate a custom TypeScript agent loop to the Cursor SDK
 
 ## Patterns
 
@@ -89,6 +105,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Patterns: safe file-write tools for an agent (preview, confirm, apply)
 - Patterns: information-flow control to block prompt injection in agents
 - Patterns: storing agent chat history - cost, privacy, and portability tradeoffs
+- Patterns: nested subagent hierarchies - when delegation depth helps and when it just burns tokens
+- Patterns: human-in-the-loop tool gating for autonomous coding agents (auto-review and permission gates)
 
 ## What is / concept
 
@@ -100,6 +118,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - What is tool calling and why JSON schemas matter more than prompts
 - What is a context window and how do agents stretch it in 2026
 - What is CodeAct and how does it cut an agent's model turns
+- What is the Agent Harness in Microsoft Agent Framework
+- What is GitHub Agentic Workflows and how does it differ from GitHub Actions
+- What is the GitHub Copilot SDK and what can you build with it
 
 ---
 
