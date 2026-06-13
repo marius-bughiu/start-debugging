@@ -14,5 +14,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating Blazor Server to Blazor Web App on .NET 11: keep every page on InteractiveServer and behaviour stays identical."
+  },
+  {
+    "slug": "2026/06/dotnet-11-x25519-key-agreement-preview-5",
+    "text": "No more BouncyCastle for Curve25519. .NET 11 Preview 5 adds an in-box X25519DiffieHellman type, ready to pair with ML-KEM hybrids."
   }
 ]

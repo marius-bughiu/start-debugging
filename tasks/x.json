@@ -654,5 +654,9 @@
   {
     "slug": "2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore",
     "text": "Antiforgery token won't decrypt? Your Data Protection keys aren't shared. Persist them, set SetApplicationName."
+  },
+  {
+    "slug": "2026/06/dotnet-11-x25519-key-agreement-preview-5",
+    "text": "X25519 key agreement is now in-box in .NET 11 Preview 5. Curve25519 key exchange, no BouncyCastle."
   }
 ]
