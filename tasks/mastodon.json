@@ -26,5 +26,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
+  },
+  {
+    "slug": "2026/06/hangfire-vs-quartz-net-vs-ihostedservice-for-scheduled-llm-jobs",
+    "text": "Running a Claude or GPT call on a cron from .NET 11? The scheduler choice is about money, not throughput. Quartz.NET's [DisallowConcurrentExecution] blocks a slow run from overlapping the next fire (and double-billing you). Hangfire writes the job to storage so a deploy mid-call doesn't lose it, and retries 429s for free. The gotcha that bites: Quartz cron starts with seconds, Hangfire's starts with minutes. Same string, wrong hour, found on the bill."
   }
 ]

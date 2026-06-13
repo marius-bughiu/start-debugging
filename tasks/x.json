@@ -662,5 +662,9 @@
   {
     "slug": "2026/06/fix-the-ssl-connection-could-not-be-established-with-httpclient",
     "text": "'SSL connection could not be established' is never the real error. The inner AuthenticationException names the cause."
+  },
+  {
+    "slug": "2026/06/hangfire-vs-quartz-net-vs-ihostedservice-for-scheduled-llm-jobs",
+    "text": "Scheduling a daily LLM call in .NET? Quartz stops it overlapping, Hangfire survives the deploy. The cron dialects differ."
   }
 ]
