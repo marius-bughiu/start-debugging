@@ -32,40 +32,11 @@
     ]
   },
   {
-    "url": "https://api.flutter.dev/flutter/scheduler/SchedulerBinding/addPostFrameCallback.html",
-    "status": null,
+    "url": "https://claude.ai/mcp",
+    "status": 403,
     "ok": false,
-    "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/06/fix-setstate-or-markneedsbuild-called-during-build-in-flutter.md",
-      "site/src/content/blog/de/2026/06/fix-setstate-or-markneedsbuild-called-during-build-in-flutter.md",
-      "site/src/content/blog/es/2026/06/fix-setstate-or-markneedsbuild-called-during-build-in-flutter.md",
-      "site/src/content/blog/ja/2026/06/fix-setstate-or-markneedsbuild-called-during-build-in-flutter.md",
-      "site/src/content/blog/pt-br/2026/06/fix-setstate-or-markneedsbuild-called-during-build-in-flutter.md",
-      "site/src/content/blog/ru/2026/06/fix-setstate-or-markneedsbuild-called-during-build-in-flutter.md"
-    ]
-  },
-  {
-    "url": "https://code.visualstudio.com/docs/copilot/customization/custom-instructions",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/fix-github-copilot-ignores-repository-custom-instructions-in-vs-code.md"
-    ]
-  },
-  {
-    "url": "https://devblogs.microsoft.com/aspire/aspire-isolated-mode-parallel-development/",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md",
-      "site/src/content/blog/de/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md",
-      "site/src/content/blog/es/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md",
-      "site/src/content/blog/ja/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md",
-      "site/src/content/blog/pt-br/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md",
-      "site/src/content/blog/ru/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md"
+      "site/src/content/blog/2026/05/how-to-add-retrieval-augmented-generation-to-a-claude-code-session.md"
     ]
   },
   {
@@ -85,68 +56,6 @@
       "site/src/content/blog/pt-br/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
       "site/src/content/blog/ru/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
       "site/src/content/blog/ru/2026/05/configureawait-false-vs-default-in-dotnet-11.md"
-    ]
-  },
-  {
-    "url": "https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
-      "site/src/content/blog/de/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
-      "site/src/content/blog/es/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
-      "site/src/content/blog/ja/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
-      "site/src/content/blog/pt-br/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
-      "site/src/content/blog/ru/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md"
-    ]
-  },
-  {
-    "url": "https://devblogs.microsoft.com/dotnet/task-run-vs-task-factory-startnew/",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/task-run-vs-task-factory-startnew-vs-threadpool-queueuserworkitem.md",
-      "site/src/content/blog/2026/05/task-run-vs-task-factory-startnew-vs-threadpool-queueuserworkitem.md",
-      "site/src/content/blog/de/2026/05/task-run-vs-task-factory-startnew-vs-threadpool-queueuserworkitem.md",
-      "site/src/content/blog/de/2026/05/task-run-vs-task-factory-startnew-vs-threadpool-queueuserworkitem.md",
-      "site/src/content/blog/es/2026/05/task-run-vs-task-factory-startnew-vs-threadpool-queueuserworkitem.md",
-      "site/src/content/blog/es/2026/05/task-run-vs-task-factory-startnew-vs-threadpool-queueuserworkitem.md",
-      "site/src/content/blog/ja/2026/05/task-run-vs-task-factory-startnew-vs-threadpool-queueuserworkitem.md",
-      "site/src/content/blog/ja/2026/05/task-run-vs-task-factory-startnew-vs-threadpool-queueuserworkitem.md",
-      "site/src/content/blog/pt-br/2026/05/task-run-vs-task-factory-startnew-vs-threadpool-queueuserworkitem.md",
-      "site/src/content/blog/pt-br/2026/05/task-run-vs-task-factory-startnew-vs-threadpool-queueuserworkitem.md",
-      "site/src/content/blog/ru/2026/05/task-run-vs-task-factory-startnew-vs-threadpool-queueuserworkitem.md",
-      "site/src/content/blog/ru/2026/05/task-run-vs-task-factory-startnew-vs-threadpool-queueuserworkitem.md"
-    ]
-  },
-  {
-    "url": "https://devblogs.microsoft.com/dotnet/whats-new-for-dotnet-in-ubuntu-2604/",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/04/dotnet-10-ubuntu-2604-resolute-container-tags.md",
-      "site/src/content/blog/de/2026/04/dotnet-10-ubuntu-2604-resolute-container-tags.md",
-      "site/src/content/blog/es/2026/04/dotnet-10-ubuntu-2604-resolute-container-tags.md",
-      "site/src/content/blog/ja/2026/04/dotnet-10-ubuntu-2604-resolute-container-tags.md",
-      "site/src/content/blog/pt-br/2026/04/dotnet-10-ubuntu-2604-resolute-container-tags.md",
-      "site/src/content/blog/ru/2026/04/dotnet-10-ubuntu-2604-resolute-container-tags.md"
-    ]
-  },
-  {
-    "url": "https://devblogs.microsoft.com/visualstudio/visual-studio-2026-debugging-with-copilot/",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/04/visual-studio-18-5-debugger-agent-workflow.md",
-      "site/src/content/blog/de/2026/04/visual-studio-18-5-debugger-agent-workflow.md",
-      "site/src/content/blog/es/2026/04/visual-studio-18-5-debugger-agent-workflow.md",
-      "site/src/content/blog/ja/2026/04/visual-studio-18-5-debugger-agent-workflow.md",
-      "site/src/content/blog/pt-br/2026/04/visual-studio-18-5-debugger-agent-workflow.md",
-      "site/src/content/blog/ru/2026/04/visual-studio-18-5-debugger-agent-workflow.md"
     ]
   },
   {
@@ -189,22 +98,16 @@
     ]
   },
   {
-    "url": "https://github.com/apps/claude",
+    "url": "https://github.com/anthropics/claude-code-action/tree/main/examples",
     "status": null,
     "ok": false,
     "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues.md",
       "site/src/content/blog/2026/05/how-to-run-claude-code-in-a-github-action-for-autonomous-pr-review.md",
-      "site/src/content/blog/de/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues.md",
       "site/src/content/blog/de/2026/05/how-to-run-claude-code-in-a-github-action-for-autonomous-pr-review.md",
-      "site/src/content/blog/es/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues.md",
       "site/src/content/blog/es/2026/05/how-to-run-claude-code-in-a-github-action-for-autonomous-pr-review.md",
-      "site/src/content/blog/ja/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues.md",
       "site/src/content/blog/ja/2026/05/how-to-run-claude-code-in-a-github-action-for-autonomous-pr-review.md",
-      "site/src/content/blog/pt-br/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues.md",
       "site/src/content/blog/pt-br/2026/05/how-to-run-claude-code-in-a-github-action-for-autonomous-pr-review.md",
-      "site/src/content/blog/ru/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues.md",
       "site/src/content/blog/ru/2026/05/how-to-run-claude-code-in-a-github-action-for-autonomous-pr-review.md"
     ]
   },
@@ -222,6 +125,20 @@
     ]
   },
   {
+    "url": "https://github.com/dotnet/core/blob/main/release-notes/11.0/preview/preview2/runtime.md",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/04/dotnet-11-runtime-async-cleaner-stack-traces.md",
+      "site/src/content/blog/de/2026/04/dotnet-11-runtime-async-cleaner-stack-traces.md",
+      "site/src/content/blog/es/2026/04/dotnet-11-runtime-async-cleaner-stack-traces.md",
+      "site/src/content/blog/ja/2026/04/dotnet-11-runtime-async-cleaner-stack-traces.md",
+      "site/src/content/blog/pt-br/2026/04/dotnet-11-runtime-async-cleaner-stack-traces.md",
+      "site/src/content/blog/ru/2026/04/dotnet-11-runtime-async-cleaner-stack-traces.md"
+    ]
+  },
+  {
     "url": "https://github.com/dotnet/efcore/blob/main/src/EFCore/Internal/ConcurrencyDetector.cs",
     "status": 404,
     "ok": false,
@@ -232,20 +149,6 @@
       "site/src/content/blog/ja/2026/05/fix-second-operation-was-started-on-this-context-instance.md",
       "site/src/content/blog/pt-br/2026/05/fix-second-operation-was-started-on-this-context-instance.md",
       "site/src/content/blog/ru/2026/05/fix-second-operation-was-started-on-this-context-instance.md"
-    ]
-  },
-  {
-    "url": "https://github.com/dotnet/efcore/issues/26463",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/ef-core-11-temporal-tables-clr-period-properties.md",
-      "site/src/content/blog/de/2026/05/ef-core-11-temporal-tables-clr-period-properties.md",
-      "site/src/content/blog/es/2026/05/ef-core-11-temporal-tables-clr-period-properties.md",
-      "site/src/content/blog/ja/2026/05/ef-core-11-temporal-tables-clr-period-properties.md",
-      "site/src/content/blog/pt-br/2026/05/ef-core-11-temporal-tables-clr-period-properties.md",
-      "site/src/content/blog/ru/2026/05/ef-core-11-temporal-tables-clr-period-properties.md"
     ]
   },
   {
@@ -313,6 +216,19 @@
       "site/src/content/blog/pt-br/2026/05/lock-vs-monitor-vs-semaphoreslim-vs-system-threading-lock-in-csharp.md",
       "site/src/content/blog/ru/2026/04/how-to-use-the-new-system-threading-lock-type-in-dotnet-11.md",
       "site/src/content/blog/ru/2026/05/lock-vs-monitor-vs-semaphoreslim-vs-system-threading-lock-in-csharp.md"
+    ]
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/organizing-apis?view=aspnetcore-10.0",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11.md",
+      "site/src/content/blog/pt-br/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11.md"
     ]
   },
   {
@@ -483,6 +399,14 @@
     ]
   },
   {
+    "url": "https://medium.com/@adnanmasood/rubric-based-evals-llm-as-a-judge-methodologies-and-empirical-validation-in-domain-context-71936b989e80",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-set-up-an-llm-as-judge-eval-harness-for-a-coding-agent.md"
+    ]
+  },
+  {
     "url": "https://medium.com/write-a-catalyst/partial-events-constructors-in-net-10-preview-2-8002f0d714b2#:~:text=1",
     "status": 403,
     "ok": false,
@@ -525,19 +449,6 @@
       "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
       "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md",
       "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md"
-    ]
-  },
-  {
-    "url": "https://news.ycombinator.com/item?id=46976911",
-    "status": 429,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/de/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/es/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/ja/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/pt-br/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/ru/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md"
     ]
   },
   {
@@ -679,6 +590,25 @@
     ]
   },
   {
+    "url": "https://www.npmjs.com/package/mcp-remote",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
+      "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
+      "site/src/content/blog/2026/05/fix-http-mcp-server-url-wont-connect-in-claude-desktop.md",
+      "site/src/content/blog/2026/05/fix-http-mcp-server-url-wont-connect-in-claude-desktop.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Anthropic",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/06/anthropic-sdk-vs-microsoft-extensions-ai-for-calling-claude-from-dotnet.md"
+    ]
+  },
+  {
     "url": "https://www.nuget.org/packages/Anthropic/",
     "status": 404,
     "ok": false,
@@ -689,6 +619,33 @@
       "site/src/content/blog/ja/2026/04/how-to-call-the-claude-api-from-a-net-11-minimal-api-with-streaming.md",
       "site/src/content/blog/pt-br/2026/04/how-to-call-the-claude-api-from-a-net-11-minimal-api-with-streaming.md",
       "site/src/content/blog/ru/2026/04/how-to-call-the-claude-api-from-a-net-11-minimal-api-with-streaming.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Azure.Extensions.AspNetCore.DataProtection.Blobs",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
+      "site/src/content/blog/de/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
+      "site/src/content/blog/es/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
+      "site/src/content/blog/ja/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
+      "site/src/content/blog/pt-br/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
+      "site/src/content/blog/ru/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Azure.Extensions.AspNetCore.DataProtection.Keys",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
+      "site/src/content/blog/de/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
+      "site/src/content/blog/es/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
+      "site/src/content/blog/ja/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
+      "site/src/content/blog/pt-br/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
+      "site/src/content/blog/ru/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md"
     ]
   },
   {
@@ -706,9 +663,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/M.Super.Activities",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/build-a-uipath-activity-package-for-modern-studio-with-viewmodels.md"
     ]
@@ -752,9 +708,36 @@
     ]
   },
   {
-    "url": "https://www.nuget.org/packages/Microsoft.Azure.Functions.Worker",
+    "url": "https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.EntityFrameworkCore/",
     "status": 404,
     "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
+      "site/src/content/blog/de/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
+      "site/src/content/blog/es/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
+      "site/src/content/blog/ja/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
+      "site/src/content/blog/pt-br/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
+      "site/src/content/blog/ru/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.AspNetCore.OpenApi/",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/pt-br/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.Azure.Functions.Worker",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11.md",
       "site/src/content/blog/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
@@ -793,9 +776,24 @@
     ]
   },
   {
-    "url": "https://www.nuget.org/packages/Microsoft.Extensions.Http.Resilience",
-    "status": 404,
+    "url": "https://www.nuget.org/packages/Microsoft.Extensions.ApiDescription.Server",
+    "status": null,
     "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/pt-br/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.Extensions.Http.Resilience",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
       "site/src/content/blog/de/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
@@ -807,17 +805,17 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.SemanticKernel",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/migrate-a-semantic-kernel-plugin-to-an-mcp-server.md"
     ]
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.SemanticKernel/",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/microsoft-agent-framework-vs-semantic-kernel-for-a-greenfield-net-agent.md"
     ]
@@ -832,9 +830,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.TestPlatform/1.0.0-alpha-stj-26213-07",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4.md",
       "site/src/content/blog/de/2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4.md",
@@ -868,9 +865,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/ModelContextProtocol/1.2.0",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/how-to-expose-an-ef-core-database-to-an-ai-agent-via-mcp.md"
     ]
@@ -890,9 +886,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/OpenTelemetry.Exporter.OpenTelemetryProtocol",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/how-to-use-opentelemetry-with-dotnet-11-and-a-free-backend.md",
       "site/src/content/blog/2026/06/migrate-from-serilog-to-opentelemetry-logging-in-dotnet-11.md",
@@ -910,8 +905,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/OpenTelemetry.Instrumentation.EntityFrameworkCore",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11.md",
       "site/src/content/blog/de/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11.md",
@@ -922,9 +918,19 @@
     ]
   },
   {
-    "url": "https://www.nuget.org/packages/refit.httpclientfactory",
-    "status": 404,
+    "url": "https://www.nuget.org/packages/Quartz.Extensions.Hosting/",
+    "status": null,
     "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/06/hangfire-vs-quartz-net-vs-ihostedservice-for-scheduled-llm-jobs.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/refit.httpclientfactory",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/httpclient-vs-httpclientfactory-vs-refit.md",
       "site/src/content/blog/de/2026/05/httpclient-vs-httpclientfactory-vs-refit.md",
