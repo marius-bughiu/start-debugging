@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/06/expose-functions-to-cursor-sdk-agent-with-local-customtools",
+    "text": "As of @cursor/sdk 1.0.16 you can expose your own functions to a local Cursor SDK agent through local.customTools, registered behind the built-in custom-user-tools MCP server. No second process, no transport bugs. inputSchema is JSON Schema, not Zod. The catch: local agents only, cloud agents throw ConfigurationError."
+  },
+  {
     "slug": "2026/05/fix-failed-to-build-ios-app-with-xcode-16-and-flutter-3-x",
     "text": "Flutter 'Failed to build iOS app' under Xcode 16 is an umbrella for six different bugs. The umbrella message only tells you xcodebuild exited non-zero. Run with --verbose, grep for the first lowercase 'error:', and fix that. The four most common root causes: Flutter older than 3.24.4, Podfile still pinning iOS 11, a stale Pods plus DerivedData ModuleCache from the previous Xcode, or a plugin that hasn't shipped a Swift 6 release yet. Stop reaching for flutter clean first; it does not touch the iOS caches that are actually broken."
   },

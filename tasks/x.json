@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/06/expose-functions-to-cursor-sdk-agent-with-local-customtools",
+    "text": "Hand a Cursor SDK agent your own functions via local.customTools. No separate MCP server, no stdio handshake."
+  },
+  {
     "slug": "2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11",
     "text": "On .NET 11, scaffold Blazor Web App and set @rendermode per page. Server-only and WASM-only are now niche calls."
   },
