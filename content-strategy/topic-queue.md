@@ -140,7 +140,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `BackgroundService` vs `IHostedService` vs Hangfire for background jobs in .NET 11 → slug: 2026/06/backgroundservice-vs-ihostedservice-vs-hangfire-for-background-jobs-in-dotnet-11
 - EF Core `ExecuteUpdate` vs loading entities and `SaveChanges` → slug: 2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges
 - Provider vs Riverpod vs Bloc for Flutter state management in 2026 → slug: 2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026
-- HybridCache vs `IMemoryCache` vs `IDistributedCache` in .NET 11
+- HybridCache vs `IMemoryCache` vs `IDistributedCache` in .NET 11 → slug: 2026/06/hybridcache-vs-imemorycache-vs-idistributedcache-in-dotnet-11
 - `FutureBuilder`/`StreamBuilder` vs Riverpod `AsyncValue` in Flutter
 - `AsNoTracking` vs `AsNoTrackingWithIdentityResolution` in EF Core 11
 - Minimal API validation vs FluentValidation in ASP.NET Core 11

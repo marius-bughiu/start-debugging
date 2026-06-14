@@ -682,5 +682,9 @@
   {
     "slug": "2026/06/fix-looking-up-a-deactivated-widgets-ancestor-is-unsafe-in-flutter",
     "text": "Flutter 'deactivated widget's ancestor is unsafe'? Capture context.of() before the await, then guard with mounted."
+  },
+  {
+    "slug": "2026/06/hybridcache-vs-imemorycache-vs-idistributedcache-in-dotnet-11",
+    "text": "In .NET 11, default to HybridCache: L1 speed plus L2 reach plus stampede protection that raw IMemoryCache never had."
   }
 ]
