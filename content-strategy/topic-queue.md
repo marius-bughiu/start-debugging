@@ -110,7 +110,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `The entity type 'X' requires a primary key to be defined` in EF Core 11 → slug: 2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined
 - Fix: `The antiforgery token could not be decrypted` in ASP.NET Core → slug: 2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore
 - Fix: `HttpRequestException: The SSL connection could not be established` with HttpClient → slug: 2026/06/fix-the-ssl-connection-could-not-be-established-with-httpclient
-- Fix: `Bad state: Cannot use "ref" after the widget was disposed` in Flutter Riverpod
+- Fix: `Bad state: Cannot use "ref" after the widget was disposed` in Flutter Riverpod → slug: 2026/06/fix-cannot-use-ref-after-the-widget-was-disposed-in-flutter-riverpod
 - Fix: `Looking up a deactivated widget's ancestor is unsafe` in Flutter
 
 ## Vs / comparison

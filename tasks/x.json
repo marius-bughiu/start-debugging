@@ -670,5 +670,9 @@
   {
     "slug": "2026/06/ef-core-11-ef1004-analyzer-toasyncenumerable-vs-asasyncenumerable",
     "text": "EF Core 11 ships EF1004: it flags ToAsyncEnumerable() on a query so your await foreach does not silently run sync."
+  },
+  {
+    "slug": "2026/06/fix-cannot-use-ref-after-the-widget-was-disposed-in-flutter-riverpod",
+    "text": "Riverpod 'ref after the widget was disposed' is an async bug: read ref before the await, guard with mounted."
   }
 ]
