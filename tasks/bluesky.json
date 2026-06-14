@@ -14,9 +14,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating Blazor Server to Blazor Web App on .NET 11: keep every page on InteractiveServer and behaviour stays identical."
-  },
-  {
-    "slug": "2026/06/hybridcache-vs-imemorycache-vs-idistributedcache-in-dotnet-11",
-    "text": "In .NET 11, HybridCache beats raw IMemoryCache and IDistributedCache for new code. The matrix, the benchmark, when to go raw."
   }
 ]
