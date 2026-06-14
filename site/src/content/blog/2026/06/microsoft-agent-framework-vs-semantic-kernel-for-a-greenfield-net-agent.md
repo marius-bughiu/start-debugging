@@ -23,7 +23,7 @@ So the real question is not "which is better" in the abstract. For a greenfield 
 
 ## The matrix that decides it
 
-| Dimension | Microsoft Agent Framework 1.0 | Semantic Kernel 1.77 |
+| Dimension | [Microsoft Agent Framework 1.0](/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) | Semantic Kernel 1.77 |
 | --- | --- | --- |
 | NuGet package | `Microsoft.Agents.AI` (1.7.0) | `Microsoft.SemanticKernel` (1.77.0) |
 | Status (June 2026) | active, all new features | maintenance: critical bugs + security only |

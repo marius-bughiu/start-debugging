@@ -11,7 +11,7 @@ tags:
   - "dotnet-11"
 ---
 
-If you are starting new code on .NET 11 in 2026, use **System.Text.Json**. It ships in-box with the runtime, serializes roughly twice as fast with a fraction of the allocations, and is the only one of the two that runs under Native AOT. Reach for **Newtonsoft.Json** only when you depend on a feature System.Text.Json still does not have: JSONPath queries, `TypeNameHandling`-style type embedding, or parsing genuinely malformed JSON (single quotes, unquoted keys). Both libraries are alive in 2026, but they are no longer equals for greenfield work.
+If you are starting new code on .NET 11 in 2026, use **[System.Text.Json](/2023/10/system-text-json-disable-reflection-based-serialization/)**. It ships in-box with the runtime, serializes roughly twice as fast with a fraction of the allocations, and is the only one of the two that runs under Native AOT. Reach for **Newtonsoft.Json** only when you depend on a feature System.Text.Json still does not have: JSONPath queries, `TypeNameHandling`-style type embedding, or parsing genuinely malformed JSON (single quotes, unquoted keys). Both libraries are alive in 2026, but they are no longer equals for greenfield work.
 
 Every example here targets `<TargetFramework>net11.0</TargetFramework>` with the .NET 11 SDK and C# 14. System.Text.Json is the in-box version that ships with .NET 11. Newtonsoft.Json refers to version 13.0.4, released 2025-12-30, the current stable on NuGet.
 
