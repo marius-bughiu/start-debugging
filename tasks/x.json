@@ -678,5 +678,9 @@
   {
     "slug": "2026/06/fix-cannot-use-ref-after-the-widget-was-disposed-in-flutter-riverpod",
     "text": "Riverpod 'ref after the widget was disposed' is an async bug: read ref before the await, guard with mounted."
+  },
+  {
+    "slug": "2026/06/fix-looking-up-a-deactivated-widgets-ancestor-is-unsafe-in-flutter",
+    "text": "Flutter 'deactivated widget's ancestor is unsafe'? Capture context.of() before the await, then guard with mounted."
   }
 ]

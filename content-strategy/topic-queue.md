@@ -111,7 +111,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `The antiforgery token could not be decrypted` in ASP.NET Core → slug: 2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore
 - Fix: `HttpRequestException: The SSL connection could not be established` with HttpClient → slug: 2026/06/fix-the-ssl-connection-could-not-be-established-with-httpclient
 - Fix: `Bad state: Cannot use "ref" after the widget was disposed` in Flutter Riverpod → slug: 2026/06/fix-cannot-use-ref-after-the-widget-was-disposed-in-flutter-riverpod
-- Fix: `Looking up a deactivated widget's ancestor is unsafe` in Flutter
+- Fix: `Looking up a deactivated widget's ancestor is unsafe` in Flutter → slug: 2026/06/fix-looking-up-a-deactivated-widgets-ancestor-is-unsafe-in-flutter
 
 ## Vs / comparison
 
