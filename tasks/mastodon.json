@@ -26,5 +26,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
+  },
+  {
+    "slug": "2026/06/ef-core-11-ef1004-analyzer-toasyncenumerable-vs-asasyncenumerable",
+    "text": "Since System.Linq.AsyncEnumerable joined the BCL, ToAsyncEnumerable() compiles fine on an EF Core IQueryable but enumerates it synchronously inside await foreach. .NET 11 Preview 5 adds the EF1004 analyzer to flag it at build time and point you to AsAsyncEnumerable(), the call that actually streams."
   }
 ]

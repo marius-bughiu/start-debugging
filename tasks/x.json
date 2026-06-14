@@ -666,5 +666,9 @@
   {
     "slug": "2026/06/hangfire-vs-quartz-net-vs-ihostedservice-for-scheduled-llm-jobs",
     "text": "Scheduling a daily LLM call in .NET? Quartz stops it overlapping, Hangfire survives the deploy. The cron dialects differ."
+  },
+  {
+    "slug": "2026/06/ef-core-11-ef1004-analyzer-toasyncenumerable-vs-asasyncenumerable",
+    "text": "EF Core 11 ships EF1004: it flags ToAsyncEnumerable() on a query so your await foreach does not silently run sync."
   }
 ]
