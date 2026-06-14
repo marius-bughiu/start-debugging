@@ -26,9 +26,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
-  },
-  {
-    "slug": "2026/06/fix-cannot-use-ref-after-the-widget-was-disposed-in-flutter-riverpod",
-    "text": "In Riverpod 3.0, 'Cannot use ref after the widget was disposed' means a WidgetRef was used after its widget left the tree, usually in an async callback. Read from ref before the await, then guard with a mounted check. The Notifier twin says 'after the provider was disposed' and wants ref.mounted."
   }
 ]
