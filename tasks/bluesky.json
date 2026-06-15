@@ -14,9 +14,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating Blazor Server to Blazor Web App on .NET 11: keep every page on InteractiveServer and behaviour stays identical."
-  },
-  {
-    "slug": "2026/06/persist-cursor-sdk-agent-state-across-restarts-sqlite-vs-jsonl",
-    "text": "Cursor SDK checkpoints local agents to disk, so Agent.resume() survives a crash. SQLite by default; JSONL if you want to git-diff it."
   }
 ]
