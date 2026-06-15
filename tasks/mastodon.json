@@ -26,9 +26,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
-  },
-  {
-    "slug": "2026/06/claude-code-enforce-available-models-allowlist",
-    "text": "For months Claude Code's availableModels allowlist governed /model, --model, and ANTHROPIC_MODEL but never the Default option, so users could pick Default and bypass it. Version 2.1.175 adds enforceAvailableModels: set it true and Default resolves to the first allowed model, not the tier default."
   }
 ]
