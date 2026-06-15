@@ -686,5 +686,9 @@
   {
     "slug": "2026/06/hybridcache-vs-imemorycache-vs-idistributedcache-in-dotnet-11",
     "text": "In .NET 11, default to HybridCache: L1 speed plus L2 reach plus stampede protection that raw IMemoryCache never had."
+  },
+  {
+    "slug": "2026/06/claude-code-enforce-available-models-allowlist",
+    "text": "Your Claude Code availableModels allowlist never covered Default. 2.1.175 adds enforceAvailableModels to close it."
   }
 ]
