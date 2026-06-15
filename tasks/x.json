@@ -702,5 +702,9 @@
   {
     "slug": "2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11",
     "text": "AsNoTracking by default. AsNoTrackingWithIdentityResolution only when an Include repeats a parent across children."
+  },
+  {
+    "slug": "2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11",
+    "text": "Built-in validation by default in .NET 11. Reach for FluentValidation only when you need async or cross-field rules."
   }
 ]
