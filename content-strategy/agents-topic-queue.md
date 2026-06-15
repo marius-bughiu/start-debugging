@@ -36,7 +36,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to let Aider edit files outside the git repository → slug: 2026/05/how-to-let-aider-edit-files-outside-the-git-repository
 - How to assign a Jira ticket to a Cursor cloud agent and get a PR back → slug: 2026/05/how-to-assign-a-jira-ticket-to-a-cursor-cloud-agent-and-get-a-pr-back
 - How to expose your own functions to a Cursor SDK agent with `local.customTools` instead of a separate MCP server → slug: 2026/06/expose-functions-to-cursor-sdk-agent-with-local-customtools
-- How to persist Cursor SDK agent state across restarts with a custom `LocalAgentStore` (SQLite vs JSONL)
+- How to persist Cursor SDK agent state across restarts with a custom `LocalAgentStore` (SQLite vs JSONL) → slug: 2026/06/persist-cursor-sdk-agent-state-across-restarts-sqlite-vs-jsonl
 - How to gate which Cursor SDK tool calls run automatically with auto-review and `permissions.json`
 - How to nest subagents in the Cursor SDK so a reviewer can delegate to a test-writer
 - How to automate a repository task with GitHub Agentic Workflows without a personal access token

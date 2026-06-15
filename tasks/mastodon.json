@@ -26,5 +26,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
+  },
+  {
+    "slug": "2026/06/persist-cursor-sdk-agent-state-across-restarts-sqlite-vs-jsonl",
+    "text": "Build anything real on the Cursor SDK and the first hard question is what happens when the agent's process dies. As of 1.0.16, local agents checkpoint to disk and Agent.resume(id) reattaches. SqliteLocalAgentStore is the default; JsonlLocalAgentStore writes git-diffable .ndjson. Gotcha: inline mcpServers do NOT survive resume."
   }
 ]

@@ -694,5 +694,9 @@
   {
     "slug": "2026/06/futurebuilder-streambuilder-vs-riverpod-asyncvalue-in-flutter",
     "text": "FutureBuilder for a widget's own throwaway fetch. Riverpod AsyncValue the moment the result is shared or cached."
+  },
+  {
+    "slug": "2026/06/persist-cursor-sdk-agent-state-across-restarts-sqlite-vs-jsonl",
+    "text": "Cursor SDK agents survive a crash: Agent.resume(id) reattaches. SQLite by default, or JSONL to git-commit it."
   }
 ]
