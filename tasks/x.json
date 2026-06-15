@@ -690,5 +690,9 @@
   {
     "slug": "2026/06/claude-code-enforce-available-models-allowlist",
     "text": "Your Claude Code availableModels allowlist never covered Default. 2.1.175 adds enforceAvailableModels to close it."
+  },
+  {
+    "slug": "2026/06/futurebuilder-streambuilder-vs-riverpod-asyncvalue-in-flutter",
+    "text": "FutureBuilder for a widget's own throwaway fetch. Riverpod AsyncValue the moment the result is shared or cached."
   }
 ]
