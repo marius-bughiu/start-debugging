@@ -698,5 +698,9 @@
   {
     "slug": "2026/06/persist-cursor-sdk-agent-state-across-restarts-sqlite-vs-jsonl",
     "text": "Cursor SDK agents survive a crash: Agent.resume(id) reattaches. SQLite by default, or JSONL to git-commit it."
+  },
+  {
+    "slug": "2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11",
+    "text": "AsNoTracking by default. AsNoTrackingWithIdentityResolution only when an Include repeats a parent across children."
   }
 ]

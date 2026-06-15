@@ -142,7 +142,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Provider vs Riverpod vs Bloc for Flutter state management in 2026 → slug: 2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026
 - HybridCache vs `IMemoryCache` vs `IDistributedCache` in .NET 11 → slug: 2026/06/hybridcache-vs-imemorycache-vs-idistributedcache-in-dotnet-11
 - `FutureBuilder`/`StreamBuilder` vs Riverpod `AsyncValue` in Flutter → slug: 2026/06/futurebuilder-streambuilder-vs-riverpod-asyncvalue-in-flutter
-- `AsNoTracking` vs `AsNoTrackingWithIdentityResolution` in EF Core 11
+- `AsNoTracking` vs `AsNoTrackingWithIdentityResolution` in EF Core 11 → slug: 2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11
 - Minimal API validation vs FluentValidation in ASP.NET Core 11
 
 ## Migration / upgrade
