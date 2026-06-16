@@ -161,8 +161,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate from `IWebHostBuilder` to `WebApplication.CreateBuilder` → slug: 2026/06/migrate-from-iwebhostbuilder-to-webapplication-createbuilder
 - Migrate from `System.Web.HttpContext` to `Microsoft.AspNetCore.Http.HttpContext` → slug: 2026/06/migrate-from-system-web-httpcontext-to-aspnetcore-httpcontext
 - Migrate a Flutter 2 app to Flutter 3.x: null safety checklist → slug: 2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist
-- Migrate from GetX to Riverpod in Flutter
-- Migrate from `provider` to `riverpod` in Flutter
+- Migrate from GetX to Riverpod in Flutter → slug: 2026/05/how-to-migrate-a-flutter-app-from-getx-to-riverpod (duplicate of existing post)
+- Migrate from `provider` to `riverpod` in Flutter → slug: 2026/06/migrate-from-provider-to-riverpod-in-flutter
 - Migrate from Swashbuckle to the built-in OpenAPI document generation in .NET 11
 - Migrate from `FutureBuilder` to a Riverpod `AsyncNotifier` in Flutter
 

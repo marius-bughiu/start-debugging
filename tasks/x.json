@@ -718,5 +718,9 @@
   {
     "slug": "2026/06/gate-cursor-sdk-tool-calls-with-auto-review-and-permissions-json",
     "text": "A Cursor SDK agent runs every tool call with no approval. Flip local.autoReview to gate it."
+  },
+  {
+    "slug": "2026/06/migrate-from-provider-to-riverpod-in-flutter",
+    "text": "Flutter provider to Riverpod: ChangeNotifier to Notifier, MultiProvider to one ProviderScope. Leaf-first path."
   }
 ]
