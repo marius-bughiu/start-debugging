@@ -14,9 +14,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating Blazor Server to Blazor Web App on .NET 11: keep every page on InteractiveServer and behaviour stays identical."
-  },
-  {
-    "slug": "2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist",
-    "text": "Flutter 2 to modern Flutter 3.x is two hops: Dart 3 removed dart migrate, so make the app null-safe on Dart 2.19 before upgrading."
   }
 ]
