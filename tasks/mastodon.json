@@ -26,9 +26,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
-  },
-  {
-    "slug": "2026/06/blazor-supplyparameterfromsession-static-ssr-dotnet-11-preview-5",
-    "text": "Reading session state in static server-rendered Blazor used to mean cascading HttpContext and serializing by hand. .NET 11 Preview 5 adds [SupplyParameterFromSession], so a component property binds to a session key directly, two-way, via System.Text.Json. Same shape as SupplyParameterFromQuery and SupplyParameterFromForm."
   }
 ]
