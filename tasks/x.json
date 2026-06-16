@@ -710,5 +710,9 @@
   {
     "slug": "2026/06/blazor-supplyparameterfromsession-static-ssr-dotnet-11-preview-5",
     "text": "Static SSR Blazor drops the HttpContext.Session ceremony in .NET 11 Preview 5: one attribute binds a property to a session key."
+  },
+  {
+    "slug": "2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist",
+    "text": "A Flutter 2 app can't jump to current Flutter 3.x: Dart 3 deleted dart migrate, so go null-safe on Dart 2.19 first."
   }
 ]

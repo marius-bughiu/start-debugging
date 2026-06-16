@@ -26,5 +26,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
+  },
+  {
+    "slug": "2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist",
+    "text": "Stuck moving a Flutter 2 app to current Flutter 3.x? Dart 3 made sound null safety mandatory and deleted dart migrate, so it's two hops: go null-safe on Dart 2.19 (Flutter 3.7.x) first, then bump to the latest 3.x. Covers the version-solving error, the dart fix sweep, and the accentColor gotcha."
   }
 ]
