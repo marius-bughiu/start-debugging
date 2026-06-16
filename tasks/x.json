@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11",
+    "text": "Swashbuckle filters become transformers, AddSwaggerGen becomes two lines. The full .NET 11 migration."
+  },
+  {
     "slug": "2026/06/expose-functions-to-cursor-sdk-agent-with-local-customtools",
     "text": "Hand a Cursor SDK agent your own functions via local.customTools. No separate MCP server, no stdio handshake."
   },
