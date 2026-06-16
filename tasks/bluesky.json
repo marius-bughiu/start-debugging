@@ -14,5 +14,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating Blazor Server to Blazor Web App on .NET 11: keep every page on InteractiveServer and behaviour stays identical."
+  },
+  {
+    "slug": "2026/06/blazor-supplyparameterfromsession-static-ssr-dotnet-11-preview-5",
+    "text": "No more manual HttpContext.Session in static SSR Blazor: .NET 11 Preview 5 binds a property to a session key with one attribute."
   }
 ]

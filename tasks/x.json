@@ -706,5 +706,9 @@
   {
     "slug": "2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11",
     "text": "Built-in validation by default in .NET 11. Reach for FluentValidation only when you need async or cross-field rules."
+  },
+  {
+    "slug": "2026/06/blazor-supplyparameterfromsession-static-ssr-dotnet-11-preview-5",
+    "text": "Static SSR Blazor drops the HttpContext.Session ceremony in .NET 11 Preview 5: one attribute binds a property to a session key."
   }
 ]
