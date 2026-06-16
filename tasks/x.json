@@ -714,5 +714,9 @@
   {
     "slug": "2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist",
     "text": "A Flutter 2 app can't jump to current Flutter 3.x: Dart 3 deleted dart migrate, so go null-safe on Dart 2.19 first."
+  },
+  {
+    "slug": "2026/06/gate-cursor-sdk-tool-calls-with-auto-review-and-permissions-json",
+    "text": "A Cursor SDK agent runs every tool call with no approval. Flip local.autoReview to gate it."
   }
 ]
