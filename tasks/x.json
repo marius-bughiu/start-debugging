@@ -726,5 +726,9 @@
   {
     "slug": "2026/06/migrate-from-provider-to-riverpod-in-flutter",
     "text": "Flutter provider to Riverpod: ChangeNotifier to Notifier, MultiProvider to one ProviderScope. Leaf-first path."
+  },
+  {
+    "slug": "2026/06/migrate-from-futurebuilder-to-a-riverpod-asyncnotifier-in-flutter",
+    "text": "FutureBuilder reruns async work every rebuild. Move it to a Riverpod AsyncNotifier: cached, shareable, retryable."
   }
 ]
