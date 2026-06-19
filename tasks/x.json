@@ -734,5 +734,9 @@
   {
     "slug": "2026/06/claude-code-2-1-183-auto-mode-blocks-destructive-commands",
     "text": "Claude Code 2.1.183 won't run git reset --hard or terraform destroy on its own in auto mode anymore."
+  },
+  {
+    "slug": "2026/06/what-is-iasyncenumerable-and-when-should-i-use-it",
+    "text": "IAsyncEnumerable<T> is IEnumerable<T> where every step can await. Wrong tool for a List<T> already in memory."
   }
 ]

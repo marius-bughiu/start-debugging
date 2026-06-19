@@ -168,7 +168,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 
 ## What is / concept
 
-- What is `IAsyncEnumerable<T>` and when should I use it?
+- What is `IAsyncEnumerable<T>` and when should I use it? → slug: 2026/06/what-is-iasyncenumerable-and-when-should-i-use-it
 - What is a source generator and when do I need one?
 - What is Native AOT and what does it cost me?
 - What is `ValueTask<T>` and when is it worth it?
