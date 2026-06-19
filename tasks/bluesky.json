@@ -14,9 +14,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating Blazor Server to Blazor Web App on .NET 11: keep every page on InteractiveServer and behaviour stays identical."
-  },
-  {
-    "slug": "2026/06/nest-subagents-in-the-cursor-sdk-reviewer-delegates-to-test-writer",
-    "text": "Wire a code-reviewer to delegate to a test-writer in the Cursor SDK via the agents field. The catch: nesting caps at two levels deep."
   }
 ]
