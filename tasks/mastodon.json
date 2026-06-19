@@ -26,5 +26,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
+  },
+  {
+    "slug": "2026/06/what-is-native-aot-and-what-does-it-cost-you",
+    "text": "Native AOT compiles your .NET app to one native binary, no JIT: ~3x faster startup, half the memory, runs where a JIT is banned. The bill: a C toolchain, per-RID builds, no reflection or Reflection.Emit, trimming required, no Dynamic PGO. Treat a zero IL2026/IL3050 dotnet publish as your go/no-go signal."
   }
 ]

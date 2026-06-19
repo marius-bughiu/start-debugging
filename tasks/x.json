@@ -746,5 +746,9 @@
   {
     "slug": "2026/06/what-is-a-source-generator-and-when-do-i-need-one",
     "text": "A source generator emits C# at compile time, no runtime reflection. Most teams consume them, not write them."
+  },
+  {
+    "slug": "2026/06/what-is-native-aot-and-what-does-it-cost-you",
+    "text": "Native AOT buys ~3x startup and half the memory. The bill: no reflection, no Reflection.Emit, a C toolchain, no PGO."
   }
 ]
