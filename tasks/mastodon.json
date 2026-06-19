@@ -26,9 +26,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
-  },
-  {
-    "slug": "2026/06/what-is-a-source-generator-and-when-do-i-need-one",
-    "text": "A source generator is code the C# compiler runs at build time to emit more C#: strongly typed, debuggable, AOT-safe, no runtime reflection. Reach for one for serialization, object mapping, or INotifyPropertyChanged. First gotcha: never put ISymbol or Compilation in the pipeline model, it kills incrementality."
   }
 ]

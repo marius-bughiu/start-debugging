@@ -14,9 +14,5 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating Blazor Server to Blazor Web App on .NET 11: keep every page on InteractiveServer and behaviour stays identical."
-  },
-  {
-    "slug": "2026/06/what-is-a-source-generator-and-when-do-i-need-one",
-    "text": "A source generator emits C# at compile time, zero reflection. When it beats reflection and T4, and when not to write one."
   }
 ]
