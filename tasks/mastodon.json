@@ -26,5 +26,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
+  },
+  {
+    "slug": "2026/06/claude-code-2-1-183-auto-mode-blocks-destructive-commands",
+    "text": "Claude Code 2.1.183 closes a real agentic footgun: in auto mode it now refuses to run git reset --hard, git clean -fd, git stash drop, or terraform/pulumi/cdk destroy unless your prompt named that action. git commit --amend is blocked for commits the agent didn't make this session. Intent-based, not a blanket ban."
   }
 ]

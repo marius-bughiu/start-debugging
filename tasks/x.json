@@ -730,5 +730,9 @@
   {
     "slug": "2026/06/migrate-from-futurebuilder-to-a-riverpod-asyncnotifier-in-flutter",
     "text": "FutureBuilder reruns async work every rebuild. Move it to a Riverpod AsyncNotifier: cached, shareable, retryable."
+  },
+  {
+    "slug": "2026/06/claude-code-2-1-183-auto-mode-blocks-destructive-commands",
+    "text": "Claude Code 2.1.183 won't run git reset --hard or terraform destroy on its own in auto mode anymore."
   }
 ]
