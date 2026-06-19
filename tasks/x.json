@@ -738,5 +738,9 @@
   {
     "slug": "2026/06/what-is-iasyncenumerable-and-when-should-i-use-it",
     "text": "IAsyncEnumerable<T> is IEnumerable<T> where every step can await. Wrong tool for a List<T> already in memory."
+  },
+  {
+    "slug": "2026/06/nest-subagents-in-the-cursor-sdk-reviewer-delegates-to-test-writer",
+    "text": "Cursor SDK subagents nest, but only two deep. A subagent spawned by a subagent can't spawn more, despite the changelog."
   }
 ]

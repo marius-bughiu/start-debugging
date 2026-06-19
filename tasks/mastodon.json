@@ -26,5 +26,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating a Blazor Server app to the Blazor Web App template on .NET 11: _Host.cshtml goes, the router moves to Routes.razor, Program.cs swaps MapBlazorHub for MapRazorComponents. Keep pages on InteractiveServer and behaviour is identical. Gotcha: prerendering runs OnInitializedAsync twice; fix with [PersistentState]."
+  },
+  {
+    "slug": "2026/06/nest-subagents-in-the-cursor-sdk-reviewer-delegates-to-test-writer",
+    "text": "The June 2026 Cursor SDK (@cursor/sdk@1.0.16) lets subagents nest: define them on the agents field and a code-reviewer can delegate test authoring to a test-writer through the built-in Agent tool. The gotcha the changelog talks around: nesting caps at two levels. The main agent and its direct subagents can delegate, but a subagent spawned by another subagent cannot spawn further ones. Keep your level-2 subagents as leaves."
   }
 ]
