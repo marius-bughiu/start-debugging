@@ -742,5 +742,9 @@
   {
     "slug": "2026/06/nest-subagents-in-the-cursor-sdk-reviewer-delegates-to-test-writer",
     "text": "Cursor SDK subagents nest, but only two deep. A subagent spawned by a subagent can't spawn more, despite the changelog."
+  },
+  {
+    "slug": "2026/06/what-is-a-source-generator-and-when-do-i-need-one",
+    "text": "A source generator emits C# at compile time, no runtime reflection. Most teams consume them, not write them."
   }
 ]
