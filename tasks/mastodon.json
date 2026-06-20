@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/06/github-agentic-workflows-without-a-personal-access-token",
-    "text": "June 11 2026: GitHub Agentic Workflows no longer need a personal access token. Add copilot-requests: write, let safe-outputs apply repo writes from a privileged step, then delete the PAT secret. You still need a custom token only for cross-repo writes or triggering downstream CI."
   }
 ]
