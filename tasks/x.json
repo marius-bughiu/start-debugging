@@ -762,5 +762,9 @@
   {
     "slug": "2026/06/github-agentic-workflows-without-a-personal-access-token",
     "text": "GitHub Agentic Workflows no longer need a PAT. Add copilot-requests: write and run on the built-in GITHUB_TOKEN."
+  },
+  {
+    "slug": "2026/06/what-is-span-and-when-does-it-make-my-code-faster",
+    "text": "Span<T> helps in 3 cases: stackalloc, no-copy slicing, bounds-check elision. Anywhere else it changes nothing."
   }
 ]
