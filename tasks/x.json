@@ -766,5 +766,9 @@
   {
     "slug": "2026/06/what-is-span-and-when-does-it-make-my-code-faster",
     "text": "Span<T> helps in 3 cases: stackalloc, no-copy slicing, bounds-check elision. Anywhere else it changes nothing."
+  },
+  {
+    "slug": "2026/06/what-is-the-dynamicallyaccessedmembers-attribute",
+    "text": "DynamicallyAccessedMembers turns a trimmed-app MissingMethodException into a build-time IL2070 you can fix."
   }
 ]
