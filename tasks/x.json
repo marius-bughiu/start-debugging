@@ -754,5 +754,9 @@
   {
     "slug": "2026/06/dotnet-binlog-mcp-server-ai-investigates-msbuild-builds",
     "text": "Microsoft's new Binlog MCP server lets Claude or Copilot read your .binlog and answer \"why did my build fail?\""
+  },
+  {
+    "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
+    "text": "ValueTask<T> skips the Task allocation when a method finishes synchronously. The catch: await it exactly once."
   }
 ]

@@ -18,5 +18,9 @@
   {
     "slug": "2026/06/dotnet-binlog-mcp-server-ai-investigates-msbuild-builds",
     "text": "Microsoft's new Binlog MCP server gives an AI 15 tools to read your MSBuild .binlog: find failures, slow targets, diff two builds."
+  },
+  {
+    "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
+    "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
   }
 ]

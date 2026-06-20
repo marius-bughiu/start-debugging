@@ -171,7 +171,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is `IAsyncEnumerable<T>` and when should I use it? → slug: 2026/06/what-is-iasyncenumerable-and-when-should-i-use-it
 - What is a source generator and when do I need one? → slug: 2026/06/what-is-a-source-generator-and-when-do-i-need-one
 - What is Native AOT and what does it cost me? → slug: 2026/06/what-is-native-aot-and-what-does-it-cost-you
-- What is `ValueTask<T>` and when is it worth it?
+- What is `ValueTask<T>` and when is it worth it? → slug: 2026/06/what-is-valuetask-and-when-is-it-worth-it
 - What is `Span<T>` and when does it make my code faster?
 - What is the `DynamicallyAccessedMembers` attribute?
 - What is trim-safe code and how do I write it?
