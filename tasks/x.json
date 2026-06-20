@@ -750,5 +750,9 @@
   {
     "slug": "2026/06/what-is-native-aot-and-what-does-it-cost-you",
     "text": "Native AOT buys ~3x startup and half the memory. The bill: no reflection, no Reflection.Emit, a C toolchain, no PGO."
+  },
+  {
+    "slug": "2026/06/dotnet-binlog-mcp-server-ai-investigates-msbuild-builds",
+    "text": "Microsoft's new Binlog MCP server lets Claude or Copilot read your .binlog and answer \"why did my build fail?\""
   }
 ]

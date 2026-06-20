@@ -14,5 +14,9 @@
   {
     "slug": "2026/06/migrate-a-blazor-server-app-to-blazor-united-in-dotnet-11",
     "text": "Migrating Blazor Server to Blazor Web App on .NET 11: keep every page on InteractiveServer and behaviour stays identical."
+  },
+  {
+    "slug": "2026/06/dotnet-binlog-mcp-server-ai-investigates-msbuild-builds",
+    "text": "Microsoft's new Binlog MCP server gives an AI 15 tools to read your MSBuild .binlog: find failures, slow targets, diff two builds."
   }
 ]
