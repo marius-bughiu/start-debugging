@@ -67,6 +67,16 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to use EF Core 11 interceptors for auditing → slug: 2026/06/how-to-use-ef-core-11-interceptors-for-auditing
 - How to persist state across the Blazor static-to-interactive render boundary in .NET 11 → slug: 2026/06/how-to-persist-state-across-the-blazor-static-to-interactive-render-boundary-in-dotnet-11
 - How to initialize a `Future` so `FutureBuilder` doesn't recreate it on every rebuild in Flutter → slug: 2026/06/how-to-initialize-a-future-so-futurebuilder-doesnt-recreate-it-on-every-rebuild-in-flutter
+- How to seed data with `UseSeeding` and `UseAsyncSeeding` in EF Core 11
+- How to seed a many-to-many relationship in EF Core 11
+- How to configure CORS for a JWT-protected API in ASP.NET Core 11
+- How to validate a JWT's issuer, audience, and lifetime in ASP.NET Core 11
+- How to use `BuildContext` safely after an `await` in Flutter
+- How to set up nested routes and deep links with `go_router` in Flutter
+- How to register and resolve keyed services in .NET 11 dependency injection
+- How to do keyset (cursor) pagination in EF Core 11
+- How to map and query JSON columns in EF Core 11
+- How to declare extension properties in C# 14
 
 ## Fix / error
 
@@ -112,6 +122,14 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `HttpRequestException: The SSL connection could not be established` with HttpClient → slug: 2026/06/fix-the-ssl-connection-could-not-be-established-with-httpclient
 - Fix: `Bad state: Cannot use "ref" after the widget was disposed` in Flutter Riverpod → slug: 2026/06/fix-cannot-use-ref-after-the-widget-was-disposed-in-flutter-riverpod
 - Fix: `Looking up a deactivated widget's ancestor is unsafe` in Flutter → slug: 2026/06/fix-looking-up-a-deactivated-widgets-ancestor-is-unsafe-in-flutter
+- Fix: `Do not use BuildContexts across async gaps` in Flutter
+- Fix: `LateInitializationError: Field has not been initialized` in Flutter
+- Fix: `Null check operator used on a null value` in Flutter
+- Fix: ASP.NET Core JWT returns 401 even with a valid token
+- Fix: `405 Method Not Allowed` instead of 401 with JWT bearer in ASP.NET Core
+- Fix: `The seed entity for entity type 'X' cannot be added because a non-zero value is required for property 'Id'` in EF Core
+- Fix: `FOREIGN KEY constraint failed` when deleting an entity in EF Core 11
+- Fix: `No service for type 'Microsoft.EntityFrameworkCore.DbContextOptions' has been registered`
 
 ## Vs / comparison
 
@@ -144,6 +162,10 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `FutureBuilder`/`StreamBuilder` vs Riverpod `AsyncValue` in Flutter → slug: 2026/06/futurebuilder-streambuilder-vs-riverpod-asyncvalue-in-flutter
 - `AsNoTracking` vs `AsNoTrackingWithIdentityResolution` in EF Core 11 → slug: 2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11
 - Minimal API validation vs FluentValidation in ASP.NET Core 11 → slug: 2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11
+- JWT vs cookie authentication in ASP.NET Core 11
+- `HasData` vs `UseSeeding` for seeding data in EF Core 11
+- Keyset pagination vs `OFFSET`/`FETCH` paging in EF Core 11
+- `go_router` vs `auto_route` vs Navigator 2.0 in Flutter
 
 ## Migration / upgrade
 
@@ -165,6 +187,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate from `provider` to `riverpod` in Flutter → slug: 2026/06/migrate-from-provider-to-riverpod-in-flutter
 - Migrate from Swashbuckle to the built-in OpenAPI document generation in .NET 11 → slug: 2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11
 - Migrate from `FutureBuilder` to a Riverpod `AsyncNotifier` in Flutter → slug: 2026/06/migrate-from-futurebuilder-to-a-riverpod-asyncnotifier-in-flutter
+- Migrate from `HasData` seeding to `UseAsyncSeeding` in EF Core 11
+- Migrate from Riverpod 2.x to Riverpod 3.0 in Flutter
 
 ## What is / concept
 
@@ -188,6 +212,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is an EF Core interceptor and when do I need one?
 - What is a Blazor render mode and which one runs my component?
 - What is the difference between `ref.watch` and `ref.read` in Riverpod?
+- What is the `use_build_context_synchronously` lint in Flutter?
+- What is a keyed service in .NET dependency injection?
 
 ---
 
