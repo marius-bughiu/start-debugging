@@ -32,14 +32,6 @@
     ]
   },
   {
-    "url": "https://claude.ai/mcp",
-    "status": 403,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/05/how-to-add-retrieval-augmented-generation-to-a-claude-code-session.md"
-    ]
-  },
-  {
     "url": "https://devblogs.microsoft.com/dotnet/announcing-dotnet-11-preview-1/",
     "status": 404,
     "ok": false,
@@ -98,17 +90,17 @@
     ]
   },
   {
-    "url": "https://github.com/anthropics/claude-code-action/tree/main/examples",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.128",
     "status": null,
     "ok": false,
     "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/05/how-to-run-claude-code-in-a-github-action-for-autonomous-pr-review.md",
-      "site/src/content/blog/de/2026/05/how-to-run-claude-code-in-a-github-action-for-autonomous-pr-review.md",
-      "site/src/content/blog/es/2026/05/how-to-run-claude-code-in-a-github-action-for-autonomous-pr-review.md",
-      "site/src/content/blog/ja/2026/05/how-to-run-claude-code-in-a-github-action-for-autonomous-pr-review.md",
-      "site/src/content/blog/pt-br/2026/05/how-to-run-claude-code-in-a-github-action-for-autonomous-pr-review.md",
-      "site/src/content/blog/ru/2026/05/how-to-run-claude-code-in-a-github-action-for-autonomous-pr-review.md"
+      "site/src/content/blog/2026/05/claude-code-2-1-128-plugin-zip-worktree-fix.md",
+      "site/src/content/blog/de/2026/05/claude-code-2-1-128-plugin-zip-worktree-fix.md",
+      "site/src/content/blog/es/2026/05/claude-code-2-1-128-plugin-zip-worktree-fix.md",
+      "site/src/content/blog/ja/2026/05/claude-code-2-1-128-plugin-zip-worktree-fix.md",
+      "site/src/content/blog/pt-br/2026/05/claude-code-2-1-128-plugin-zip-worktree-fix.md",
+      "site/src/content/blog/ru/2026/05/claude-code-2-1-128-plugin-zip-worktree-fix.md"
     ]
   },
   {
@@ -122,20 +114,6 @@
       "site/src/content/blog/ja/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
       "site/src/content/blog/pt-br/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
       "site/src/content/blog/ru/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md"
-    ]
-  },
-  {
-    "url": "https://github.com/dotnet/core/blob/main/release-notes/11.0/preview/preview2/runtime.md",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/04/dotnet-11-runtime-async-cleaner-stack-traces.md",
-      "site/src/content/blog/de/2026/04/dotnet-11-runtime-async-cleaner-stack-traces.md",
-      "site/src/content/blog/es/2026/04/dotnet-11-runtime-async-cleaner-stack-traces.md",
-      "site/src/content/blog/ja/2026/04/dotnet-11-runtime-async-cleaner-stack-traces.md",
-      "site/src/content/blog/pt-br/2026/04/dotnet-11-runtime-async-cleaner-stack-traces.md",
-      "site/src/content/blog/ru/2026/04/dotnet-11-runtime-async-cleaner-stack-traces.md"
     ]
   },
   {
@@ -399,24 +377,16 @@
     ]
   },
   {
-    "url": "https://medium.com/@adnanmasood/rubric-based-evals-llm-as-a-judge-methodologies-and-empirical-validation-in-domain-context-71936b989e80",
+    "url": "https://medium.com/dartlang/announcing-dart-3-0-79bff52e1bb6",
     "status": 403,
     "ok": false,
     "sources": [
-      "site/src/content/blog/2026/05/how-to-set-up-an-llm-as-judge-eval-harness-for-a-coding-agent.md"
-    ]
-  },
-  {
-    "url": "https://medium.com/write-a-catalyst/partial-events-constructors-in-net-10-preview-2-8002f0d714b2#:~:text=1",
-    "status": 403,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2025/04/csharp-14-partial-constructors-and-events.md",
-      "site/src/content/blog/de/2025/04/csharp-14-partial-constructors-and-events.md",
-      "site/src/content/blog/es/2025/04/csharp-14-partial-constructors-and-events.md",
-      "site/src/content/blog/ja/2025/04/csharp-14-partial-constructors-and-events.md",
-      "site/src/content/blog/pt-br/2025/04/csharp-14-partial-constructors-and-events.md",
-      "site/src/content/blog/ru/2025/04/csharp-14-partial-constructors-and-events.md"
+      "site/src/content/blog/2026/05/dart-records-vs-freezed-classes.md",
+      "site/src/content/blog/de/2026/05/dart-records-vs-freezed-classes.md",
+      "site/src/content/blog/es/2026/05/dart-records-vs-freezed-classes.md",
+      "site/src/content/blog/ja/2026/05/dart-records-vs-freezed-classes.md",
+      "site/src/content/blog/pt-br/2026/05/dart-records-vs-freezed-classes.md",
+      "site/src/content/blog/ru/2026/05/dart-records-vs-freezed-classes.md"
     ]
   },
   {
@@ -449,6 +419,19 @@
       "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
       "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md",
       "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md"
+    ]
+  },
+  {
+    "url": "https://news.ycombinator.com/item?id=46976911",
+    "status": 429,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
+      "site/src/content/blog/de/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
+      "site/src/content/blog/es/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
+      "site/src/content/blog/ja/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
+      "site/src/content/blog/pt-br/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
+      "site/src/content/blog/ru/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md"
     ]
   },
   {
@@ -505,6 +488,19 @@
     ]
   },
   {
+    "url": "https://riverpod.dev/docs/providers/notifier_provider",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/06/migrate-from-futurebuilder-to-a-riverpod-asyncnotifier-in-flutter.md",
+      "site/src/content/blog/de/2026/06/migrate-from-futurebuilder-to-a-riverpod-asyncnotifier-in-flutter.md",
+      "site/src/content/blog/es/2026/06/migrate-from-futurebuilder-to-a-riverpod-asyncnotifier-in-flutter.md",
+      "site/src/content/blog/ja/2026/06/migrate-from-futurebuilder-to-a-riverpod-asyncnotifier-in-flutter.md",
+      "site/src/content/blog/pt-br/2026/06/migrate-from-futurebuilder-to-a-riverpod-asyncnotifier-in-flutter.md",
+      "site/src/content/blog/ru/2026/06/migrate-from-futurebuilder-to-a-riverpod-asyncnotifier-in-flutter.md"
+    ]
+  },
+  {
     "url": "https://snack.expo.dev/GCz9-diFD",
     "status": 404,
     "ok": false,
@@ -541,6 +537,19 @@
       "site/src/content/blog/ja/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
       "site/src/content/blog/pt-br/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
       "site/src/content/blog/ru/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md"
+    ]
+  },
+  {
+    "url": "https://www.devclass.com/development/2025/01/16/another-open-source-project-shifts-to-restrictive-license-fluent-assertions-following-xceed-partnership/",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11.md",
+      "site/src/content/blog/pt-br/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11.md"
     ]
   },
   {
@@ -602,8 +611,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Anthropic",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/anthropic-sdk-vs-microsoft-extensions-ai-for-calling-claude-from-dotnet.md"
     ]
@@ -623,8 +633,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Azure.Extensions.AspNetCore.DataProtection.Blobs",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
       "site/src/content/blog/de/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
@@ -659,6 +670,19 @@
       "site/src/content/blog/ja/2025/04/whats-new-in-net-maui-10.md",
       "site/src/content/blog/pt-br/2025/04/whats-new-in-net-maui-10.md",
       "site/src/content/blog/ru/2025/04/whats-new-in-net-maui-10.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/fluentvalidation/",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11.md",
+      "site/src/content/blog/pt-br/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11.md"
     ]
   },
   {
@@ -701,8 +725,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Agents.AI/",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/microsoft-agent-framework-vs-semantic-kernel-for-a-greenfield-net-agent.md"
     ]
@@ -726,18 +751,23 @@
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
       "site/src/content/blog/de/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
       "site/src/content/blog/es/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
       "site/src/content/blog/ja/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
       "site/src/content/blog/pt-br/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
-      "site/src/content/blog/ru/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md"
+      "site/src/content/blog/pt-br/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md"
     ]
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Azure.Functions.Worker",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11.md",
       "site/src/content/blog/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
@@ -777,16 +807,21 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Extensions.ApiDescription.Server",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
       "site/src/content/blog/de/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
       "site/src/content/blog/es/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
       "site/src/content/blog/ja/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
       "site/src/content/blog/pt-br/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
-      "site/src/content/blog/ru/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md"
+      "site/src/content/blog/pt-br/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md"
     ]
   },
   {
@@ -805,17 +840,17 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.SemanticKernel",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/migrate-a-semantic-kernel-plugin-to-an-mcp-server.md"
     ]
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.SemanticKernel/",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/microsoft-agent-framework-vs-semantic-kernel-for-a-greenfield-net-agent.md"
     ]
@@ -886,8 +921,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/OpenTelemetry.Exporter.OpenTelemetryProtocol",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/how-to-use-opentelemetry-with-dotnet-11-and-a-free-backend.md",
       "site/src/content/blog/2026/06/migrate-from-serilog-to-opentelemetry-logging-in-dotnet-11.md",
@@ -905,9 +941,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/OpenTelemetry.Instrumentation.EntityFrameworkCore",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11.md",
       "site/src/content/blog/de/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11.md",
@@ -919,18 +954,16 @@
   },
   {
     "url": "https://www.nuget.org/packages/Quartz.Extensions.Hosting/",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/hangfire-vs-quartz-net-vs-ihostedservice-for-scheduled-llm-jobs.md"
     ]
   },
   {
     "url": "https://www.nuget.org/packages/refit.httpclientfactory",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/httpclient-vs-httpclientfactory-vs-refit.md",
       "site/src/content/blog/de/2026/05/httpclient-vs-httpclientfactory-vs-refit.md",
