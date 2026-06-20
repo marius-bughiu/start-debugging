@@ -18,5 +18,13 @@
   {
     "slug": "2026/06/dotnet-binlog-mcp-server-ai-investigates-msbuild-builds",
     "text": "Microsoft's new Binlog MCP server gives an AI 15 tools to read your MSBuild .binlog: find failures, slow targets, diff two builds."
+  },
+  {
+    "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
+    "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/06/github-agentic-workflows-without-a-personal-access-token",
+    "text": "Agentic Workflows now run on the built-in GITHUB_TOKEN. The agent stays read-only; safe-outputs apply the writes from a privileged step."
   }
 ]

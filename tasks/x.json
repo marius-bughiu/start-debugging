@@ -758,5 +758,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> skips the Task allocation when a method finishes synchronously. The catch: await it exactly once."
+  },
+  {
+    "slug": "2026/06/github-agentic-workflows-without-a-personal-access-token",
+    "text": "GitHub Agentic Workflows no longer need a PAT. Add copilot-requests: write and run on the built-in GITHUB_TOKEN."
   }
 ]
