@@ -1,23 +1,135 @@
 [
   {
-    "query": "\"mapster.sourcegenerator\" nuget",
-    "currentPosition": 4.46,
-    "currentImpressions": 97,
-    "priorImpressions": 56,
-    "delta": 41,
+    "query": "\"autorun\" \"allow_instructions\" \"block_instructions\" permissions.json schema",
+    "currentPosition": 7.75,
+    "currentImpressions": 32,
+    "priorImpressions": 0,
+    "delta": 32,
     "ctr": 0
   },
   {
-    "query": "\"mapster.sourcegenerator\" mapster",
-    "currentPosition": 9.43,
+    "query": "\"permissions.json\" \"autorun\" \"allow_instructions\" \"block_instructions\" schema",
+    "currentPosition": 9.13,
+    "currentImpressions": 31,
+    "priorImpressions": 0,
+    "delta": 31,
+    "ctr": 0
+  },
+  {
+    "query": "\"autorun\" \"allow_instructions\" \"block_instructions\" permissions.json syntax",
+    "currentPosition": 5.62,
+    "currentImpressions": 26,
+    "priorImpressions": 0,
+    "delta": 26,
+    "ctr": 0
+  },
+  {
+    "query": "\"permissions.json\" \"autorun\" \"mcpallowlist\" \"terminalallowlist\"",
+    "currentPosition": 2.62,
+    "currentImpressions": 21,
+    "priorImpressions": 0,
+    "delta": 21,
+    "ctr": 0
+  },
+  {
+    "query": "\"permissions.json\" \"mcpallowlist\" \"terminalallowlist\" \"autorun\" schema",
+    "currentPosition": 2.59,
+    "currentImpressions": 17,
+    "priorImpressions": 0,
+    "delta": 17,
+    "ctr": 0
+  },
+  {
+    "query": "\"permissions.json\" \"autorun\" \"mcpallowlist\" \"terminalallowlist\" syntax",
+    "currentPosition": 1.38,
+    "currentImpressions": 16,
+    "priorImpressions": 0,
+    "delta": 16,
+    "ctr": 0
+  },
+  {
+    "query": "\"permissions.json\" \"mcpallowlist\" \"terminalallowlist\" \"autorun\" configuration schema",
+    "currentPosition": 2.36,
     "currentImpressions": 14,
-    "priorImpressions": 4,
-    "delta": 10,
+    "priorImpressions": 0,
+    "delta": 14,
     "ctr": 0
   },
   {
-    "query": "\"mapster.sourcegenerator\" package",
-    "currentPosition": 9.2,
+    "query": "\"permissions.json\" \"terminalallowlist\" \"autorun\" \"allow_instructions\"",
+    "currentPosition": 3.64,
+    "currentImpressions": 14,
+    "priorImpressions": 0,
+    "delta": 14,
+    "ctr": 0
+  },
+  {
+    "query": "\"permissions.json\" autorun allow_instructions block_instructions schema",
+    "currentPosition": 8.92,
+    "currentImpressions": 12,
+    "priorImpressions": 0,
+    "delta": 12,
+    "ctr": 0
+  },
+  {
+    "query": "\".cursor/permissions.json\" \"allow_instructions\" \"block_instructions\"",
+    "currentPosition": 8.38,
+    "currentImpressions": 8,
+    "priorImpressions": 0,
+    "delta": 8,
+    "ctr": 0
+  },
+  {
+    "query": "\"auto-review\" \".cursor/permissions.json\" \"allow_instructions\" \"block_instructions\"",
+    "currentPosition": 8.38,
+    "currentImpressions": 8,
+    "priorImpressions": 0,
+    "delta": 8,
+    "ctr": 0
+  },
+  {
+    "query": "\"permissions.json\" \"autorun\" \"allow_instructions\" schema",
+    "currentPosition": 9.43,
+    "currentImpressions": 7,
+    "priorImpressions": 0,
+    "delta": 7,
+    "ctr": 0
+  },
+  {
+    "query": "\"permissions.json\" \"autorun\" \"mcpallowlist\" \"terminalallowlist\" schema",
+    "currentPosition": 2.71,
+    "currentImpressions": 7,
+    "priorImpressions": 0,
+    "delta": 7,
+    "ctr": 0
+  },
+  {
+    "query": "\"permissions.json\" \"mcpallowlist\" \"terminalallowlist\" \"autorun\" configuration",
+    "currentPosition": 2.43,
+    "currentImpressions": 7,
+    "priorImpressions": 0,
+    "delta": 7,
+    "ctr": 0
+  },
+  {
+    "query": "\"permissions.json\" autorun allow_instructions block_instructions syntax",
+    "currentPosition": 10.33,
+    "currentImpressions": 6,
+    "priorImpressions": 0,
+    "delta": 6,
+    "ctr": 0
+  },
+  {
+    "query": "\"permissions.json\" \"allow_instructions\" \"block_instructions\" cursor ide",
+    "currentPosition": 10.2,
+    "currentImpressions": 5,
+    "priorImpressions": 0,
+    "delta": 5,
+    "ctr": 0
+  },
+  {
+    "query": "\"permissions.json\" \"terminalallowlist\" \"autorun\" cursor settings",
+    "currentPosition": 4.4,
     "currentImpressions": 5,
     "priorImpressions": 0,
     "delta": 5,
