@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/06/csharp-15-closed-class-hierarchies-dotnet-11-preview-5",
-    "text": "C# 15 in .NET 11 Preview 5 adds the closed modifier: mark a base class closed and the compiler verifies your switch handles every subtype, no default arm needed. It pairs with type unions for full compile-time exhaustiveness. One catch: the runtime doesn't ship ClosedAttribute yet, so you declare it yourself."
   }
 ]

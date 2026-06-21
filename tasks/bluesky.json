@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/06/csharp-15-closed-class-hierarchies-dotnet-11-preview-5",
-    "text": "C# 15's closed keyword makes class hierarchies exhaustive in .NET 11 Preview 5. Gotcha: you still declare ClosedAttribute yourself."
   }
 ]
