@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/06/how-to-configure-cors-for-a-jwt-protected-api-in-aspnetcore-11",
+    "text": "JWT API CORS errors: run UseCors before auth, and skip AllowCredentials since a header bearer token is not a CORS credential."
   }
 ]

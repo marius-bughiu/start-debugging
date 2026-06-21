@@ -786,5 +786,9 @@
   {
     "slug": "2026/06/how-to-seed-a-many-to-many-relationship-in-ef-core-11",
     "text": "HasData cannot seed a many-to-many. Seed the join table: UsingEntity(...).HasData(new { PostsId=1, TagsId=1 })."
+  },
+  {
+    "slug": "2026/06/how-to-configure-cors-for-a-jwt-protected-api-in-aspnetcore-11",
+    "text": "A bearer token in the Authorization header is not a CORS credential, so AllowCredentials is the wrong fix."
   }
 ]
