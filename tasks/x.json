@@ -774,5 +774,9 @@
   {
     "slug": "2026/06/csharp-15-closed-class-hierarchies-dotnet-11-preview-5",
     "text": "C# 15's closed modifier lands in .NET 11 Preview 5: switch over the hierarchy is exhaustive, no default arm needed."
+  },
+  {
+    "slug": "2026/06/how-to-seed-data-with-useseeding-and-useasyncseeding-in-ef-core-11",
+    "text": "In EF Core 11, UseSeeding runs on every Migrate, not just once. The existence check is what stops duplicate rows."
   }
 ]
