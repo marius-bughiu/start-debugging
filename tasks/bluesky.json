@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/06/trigger-github-copilot-coding-agent-task-from-rest-api",
-    "text": "Trigger Copilot's cloud agent over REST: POST a prompt, poll the 8 task states, get a PR. App installation tokens are rejected."
   }
 ]

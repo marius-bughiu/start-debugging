@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/06/trigger-github-copilot-coding-agent-task-from-rest-api",
-    "text": "GitHub's Agent Tasks REST API lets you POST a prompt to /agents/repos/{owner}/{repo}/tasks and Copilot's cloud agent writes code and opens a PR. The trap that breaks bots: it only accepts user-to-server tokens, so a GitHub App installation token is rejected. Plus a poller over the 8 task states."
   }
 ]
