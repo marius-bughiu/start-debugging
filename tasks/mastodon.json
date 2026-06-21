@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/06/how-to-configure-cors-for-a-jwt-protected-api-in-aspnetcore-11",
-    "text": "Most CORS failures on a JWT-protected ASP.NET Core API are not auth bugs. Put UseCors before UseAuthentication so 401s and preflights carry CORS headers. And a bearer token you set in the Authorization header is not a CORS credential, so AllowCredentials is unnecessary and forces you to drop AllowAnyOrigin for nothing."
   }
 ]
