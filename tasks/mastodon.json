@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/06/how-to-seed-a-many-to-many-relationship-in-ef-core-11",
-    "text": "You cannot seed a skip navigation in EF Core 11: HasData has no entity to attach to. Seed the join table with UsingEntity(...).HasData(...). The catch: shadow keys are PostsId/TagsId for the implicit join but PostId/TagId for an explicit join class. Runtime alternative: UseSeeding, where post.Tags.Add(tag) just works."
   }
 ]
