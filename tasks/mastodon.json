@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/06/how-to-seed-data-with-useseeding-and-useasyncseeding-in-ef-core-11",
-    "text": "UseSeeding and UseAsyncSeeding are the recommended way to seed in EF Core 11, but they run on every EnsureCreated, Migrate, and dotnet ef database update, even when nothing changed. So your callback must start with an existence check, and you must implement both overloads: the tooling only calls the synchronous one."
   }
 ]
