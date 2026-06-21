@@ -770,5 +770,9 @@
   {
     "slug": "2026/06/what-is-the-dynamicallyaccessedmembers-attribute",
     "text": "DynamicallyAccessedMembers turns a trimmed-app MissingMethodException into a build-time IL2070 you can fix."
+  },
+  {
+    "slug": "2026/06/csharp-15-closed-class-hierarchies-dotnet-11-preview-5",
+    "text": "C# 15's closed modifier lands in .NET 11 Preview 5: switch over the hierarchy is exhaustive, no default arm needed."
   }
 ]
