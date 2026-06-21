@@ -782,5 +782,9 @@
   {
     "slug": "2026/06/trigger-github-copilot-coding-agent-task-from-rest-api",
     "text": "POST a prompt to /agents/repos/.../tasks and Copilot's cloud agent opens a PR. Gotcha: user-to-server tokens only."
+  },
+  {
+    "slug": "2026/06/how-to-seed-a-many-to-many-relationship-in-ef-core-11",
+    "text": "HasData cannot seed a many-to-many. Seed the join table: UsingEntity(...).HasData(new { PostsId=1, TagsId=1 })."
   }
 ]

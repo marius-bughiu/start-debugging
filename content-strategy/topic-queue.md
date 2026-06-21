@@ -68,7 +68,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to persist state across the Blazor static-to-interactive render boundary in .NET 11 → slug: 2026/06/how-to-persist-state-across-the-blazor-static-to-interactive-render-boundary-in-dotnet-11
 - How to initialize a `Future` so `FutureBuilder` doesn't recreate it on every rebuild in Flutter → slug: 2026/06/how-to-initialize-a-future-so-futurebuilder-doesnt-recreate-it-on-every-rebuild-in-flutter
 - How to seed data with `UseSeeding` and `UseAsyncSeeding` in EF Core 11 → slug: 2026/06/how-to-seed-data-with-useseeding-and-useasyncseeding-in-ef-core-11
-- How to seed a many-to-many relationship in EF Core 11
+- How to seed a many-to-many relationship in EF Core 11 → slug: 2026/06/how-to-seed-a-many-to-many-relationship-in-ef-core-11
 - How to configure CORS for a JWT-protected API in ASP.NET Core 11
 - How to validate a JWT's issuer, audience, and lifetime in ASP.NET Core 11
 - How to use `BuildContext` safely after an `await` in Flutter

@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/06/how-to-seed-a-many-to-many-relationship-in-ef-core-11",
+    "text": "Seeding a many-to-many in EF Core 11 trips on shadow keys. Implicit join wants PostsId/TagsId; a join class wants PostId/TagId."
   }
 ]
