@@ -39,8 +39,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to persist Cursor SDK agent state across restarts with a custom `LocalAgentStore` (SQLite vs JSONL) → slug: 2026/06/persist-cursor-sdk-agent-state-across-restarts-sqlite-vs-jsonl
 - How to gate which Cursor SDK tool calls run automatically with auto-review and `permissions.json` → slug: 2026/06/gate-cursor-sdk-tool-calls-with-auto-review-and-permissions-json
 - How to nest subagents in the Cursor SDK so a reviewer can delegate to a test-writer → slug: 2026/06/nest-subagents-in-the-cursor-sdk-reviewer-delegates-to-test-writer
-- How to automate a repository task with GitHub Agentic Workflows without a personal access token
-- How to trigger a GitHub Copilot coding agent task from the Agent Tasks REST API
+- How to automate a repository task with GitHub Agentic Workflows without a personal access token → slug: 2026/06/github-agentic-workflows-without-a-personal-access-token
+- How to trigger a GitHub Copilot coding agent task from the Agent Tasks REST API → slug: 2026/06/trigger-github-copilot-coding-agent-task-from-rest-api
 - How to auto-fix a failing GitHub Action with "Fix with Copilot"
 - How to deploy a Microsoft Agent Framework agent to Foundry Hosted Agents
 - How to add policy enforcement and audit logging to a Microsoft Agent Framework agent with the Governance Toolkit
