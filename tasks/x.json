@@ -790,5 +790,9 @@
   {
     "slug": "2026/06/how-to-configure-cors-for-a-jwt-protected-api-in-aspnetcore-11",
     "text": "A bearer token in the Authorization header is not a CORS credential, so AllowCredentials is the wrong fix."
+  },
+  {
+    "slug": "2026/06/dotnetup-official-dotnet-sdk-version-manager",
+    "text": ".NET is getting dotnetup: a rustup-style version manager that reads global.json and installs SDKs with no admin prompt."
   }
 ]
