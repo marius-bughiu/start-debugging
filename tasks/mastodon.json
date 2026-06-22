@@ -1,9 +1,5 @@
 [
   {
-    "slug": "2026/06/how-to-auto-fix-a-failing-github-action-with-fix-with-copilot",
-    "text": "When a GitHub Actions job goes red, the Fix with Copilot button delegates the failure to the cloud agent: it reads the logs, pushes a fix to your branch, and requests review. The catch: Actions don't re-run on the agent's commits, so click Approve and run workflows before CI can confirm the fix."
-  },
-  {
     "slug": "2026/05/fix-failed-to-build-ios-app-with-xcode-16-and-flutter-3-x",
     "text": "Flutter 'Failed to build iOS app' under Xcode 16 is an umbrella for six different bugs. The umbrella message only tells you xcodebuild exited non-zero. Run with --verbose, grep for the first lowercase 'error:', and fix that. The four most common root causes: Flutter older than 3.24.4, Podfile still pinning iOS 11, a stale Pods plus DerivedData ModuleCache from the previous Xcode, or a plugin that hasn't shipped a Swift 6 release yet. Stop reaching for flutter clean first; it does not touch the iOS caches that are actually broken."
   },
