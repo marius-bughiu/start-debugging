@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/06/how-to-set-up-nested-routes-and-deep-links-with-go-router-in-flutter",
+    "text": "go_router gives deep links almost for free: the path rebuilds the full back stack. Plus the absolute sub-path trap."
+  },
+  {
     "slug": "2026/06/how-to-auto-fix-a-failing-github-action-with-fix-with-copilot",
     "text": "Fix with Copilot turns a red Actions job into a one-click cloud-agent fix. Plus the re-run gotcha that stalls it."
   },

@@ -72,7 +72,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to configure CORS for a JWT-protected API in ASP.NET Core 11 → slug: 2026/06/how-to-configure-cors-for-a-jwt-protected-api-in-aspnetcore-11
 - How to validate a JWT's issuer, audience, and lifetime in ASP.NET Core 11 → slug: 2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11
 - How to use `BuildContext` safely after an `await` in Flutter → slug: 2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter
-- How to set up nested routes and deep links with `go_router` in Flutter
+- How to set up nested routes and deep links with `go_router` in Flutter → slug: 2026/06/how-to-set-up-nested-routes-and-deep-links-with-go-router-in-flutter
 - How to register and resolve keyed services in .NET 11 dependency injection
 - How to do keyset (cursor) pagination in EF Core 11
 - How to map and query JSON columns in EF Core 11
