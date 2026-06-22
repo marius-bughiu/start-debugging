@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/06/dotnetup-official-dotnet-sdk-version-manager",
-    "text": "Managing .NET SDKs has meant three tools: standalone installers, dotnet-install scripts, and dotnet-core-uninstall. Microsoft is building dotnetup to replace all three: one cross-platform version manager that installs per-user with no elevation, reads global.json to grab a repo's pinned SDK, and tracks everything in a manifest. The dotnet/sdk main branch already builds with it. The rustup moment for .NET."
   }
 ]
