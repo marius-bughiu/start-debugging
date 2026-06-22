@@ -70,7 +70,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to seed data with `UseSeeding` and `UseAsyncSeeding` in EF Core 11 → slug: 2026/06/how-to-seed-data-with-useseeding-and-useasyncseeding-in-ef-core-11
 - How to seed a many-to-many relationship in EF Core 11 → slug: 2026/06/how-to-seed-a-many-to-many-relationship-in-ef-core-11
 - How to configure CORS for a JWT-protected API in ASP.NET Core 11 → slug: 2026/06/how-to-configure-cors-for-a-jwt-protected-api-in-aspnetcore-11
-- How to validate a JWT's issuer, audience, and lifetime in ASP.NET Core 11
+- How to validate a JWT's issuer, audience, and lifetime in ASP.NET Core 11 → slug: 2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11
 - How to use `BuildContext` safely after an `await` in Flutter
 - How to set up nested routes and deep links with `go_router` in Flutter
 - How to register and resolve keyed services in .NET 11 dependency injection

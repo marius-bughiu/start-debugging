@@ -794,5 +794,9 @@
   {
     "slug": "2026/06/dotnetup-official-dotnet-sdk-version-manager",
     "text": ".NET is getting dotnetup: a rustup-style version manager that reads global.json and installs SDKs with no admin prompt."
+  },
+  {
+    "slug": "2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11",
+    "text": "ValidateLifetime won't reject your JWT the second it expires: ClockSkew defaults to 5 minutes. Tighten it deliberately."
   }
 ]
