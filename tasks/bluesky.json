@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/06/how-to-auto-fix-a-failing-github-action-with-fix-with-copilot",
+    "text": "GitHub Actions job failed? Fix with Copilot hands it to the cloud agent, which reads the logs, pushes a fix, and tags you for review."
+  },
+  {
     "slug": "2026/05/fix-failed-to-build-ios-app-with-xcode-16-and-flutter-3-x",
     "text": "Failed to build iOS app on Xcode 16 is rarely your Dart code. Upgrade Flutter, raise Podfile to iOS 13, wipe Pods and ~/Library DerivedData, then pod install."
   },

@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/06/how-to-auto-fix-a-failing-github-action-with-fix-with-copilot",
+    "text": "Fix with Copilot turns a red Actions job into a one-click cloud-agent fix. Plus the re-run gotcha that stalls it."
+  },
+  {
     "slug": "2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11",
     "text": "Swashbuckle filters become transformers, AddSwaggerGen becomes two lines. The full .NET 11 migration."
   },
