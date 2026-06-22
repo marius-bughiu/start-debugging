@@ -1,9 +1,5 @@
 [
   {
-    "slug": "2026/06/how-to-set-up-nested-routes-and-deep-links-with-go-router-in-flutter",
-    "text": "Nest routes with ShellRoute, give each tab its own stack with StatefulShellRoute, and deep links just work. Full Android + iOS config."
-  },
-  {
     "slug": "2026/05/fix-failed-to-build-ios-app-with-xcode-16-and-flutter-3-x",
     "text": "Failed to build iOS app on Xcode 16 is rarely your Dart code. Upgrade Flutter, raise Podfile to iOS 13, wipe Pods and ~/Library DerivedData, then pod install."
   },
