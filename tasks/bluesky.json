@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter",
+    "text": "A BuildContext is only valid until the next await. Capture the navigator first, then guard with if (context.mounted) return."
   }
 ]

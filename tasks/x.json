@@ -802,5 +802,9 @@
   {
     "slug": "2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11",
     "text": "ValidateLifetime won't reject your JWT the second it expires: ClockSkew defaults to 5 minutes. Tighten it deliberately."
+  },
+  {
+    "slug": "2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter",
+    "text": "BuildContext dies at the await. Capture what you need before it, then guard the resume with if (context.mounted) return."
   }
 ]
