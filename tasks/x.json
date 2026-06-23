@@ -826,5 +826,9 @@
   {
     "slug": "2026/06/how-to-do-keyset-cursor-pagination-in-ef-core-11",
     "text": "Skip/Take makes page 10,000 crawl. Keyset pagination turns every EF Core 11 page into a constant-cost index seek."
+  },
+  {
+    "slug": "2026/06/how-to-map-and-query-json-columns-in-ef-core-11",
+    "text": "One JSON column from a nested type: ComplexProperty().ToJson() in EF Core 11, then query inside it with plain LINQ."
   }
 ]

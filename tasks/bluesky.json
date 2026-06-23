@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/06/how-to-map-and-query-json-columns-in-ef-core-11",
+    "text": "EF Core 11 maps a complex type to one SQL Server 2025 json column, and your LINQ filters become JSON_VALUE and JSON_CONTAINS."
   }
 ]
