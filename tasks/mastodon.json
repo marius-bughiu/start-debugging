@@ -30,5 +30,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
+  },
+  {
+    "slug": "2026/06/dotnet-11-preview-5-file-based-apps-ref-directive",
+    "text": "file-based apps got real boundaries in .NET 11 Preview 5. The new #:ref directive references another dotnet run script as a library, not a merged include, and transitive references resolve through. #:include, #:exclude and #:project also lost their feature flag. Start with one file, grow to a project, one directive at a time."
   }
 ]

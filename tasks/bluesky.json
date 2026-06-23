@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/06/dotnet-11-preview-5-file-based-apps-ref-directive",
+    "text": "file-based apps reference each other in .NET 11 Preview 5: #:ref links one dotnet run script to another as a library. No project file."
   }
 ]

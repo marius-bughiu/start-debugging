@@ -810,5 +810,9 @@
   {
     "slug": "2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter",
     "text": "BuildContext dies at the await. Capture what you need before it, then guard the resume with if (context.mounted) return."
+  },
+  {
+    "slug": "2026/06/dotnet-11-preview-5-file-based-apps-ref-directive",
+    "text": ".NET 11 Preview 5 adds #:ref: one dotnet run script can reference another file-based app as a library. No project file."
   }
 ]
