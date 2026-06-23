@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/06/how-to-map-and-query-json-columns-in-ef-core-11",
-    "text": "Stop deserializing JSON blobs in memory. In EF Core 11, mark a nested type [ComplexType], call ToJson(), and on SQL Server 2025 it lands in the native json type. Then query inside with plain LINQ: Viewers > 3 becomes JSON_VALUE, Tags.Contains becomes JSON_CONTAINS, ExecuteUpdate writes back with .modify()."
   }
 ]
