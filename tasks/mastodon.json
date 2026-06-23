@@ -30,5 +30,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
+  },
+  {
+    "slug": "2026/06/deploy-a-microsoft-agent-framework-agent-to-foundry-hosted-agents",
+    "text": "Take a Microsoft Agent Framework agent to production: wrap your AIAgent with AddFoundryResponses, run azd deploy, and you get a per-agent Entra identity, per-session sandboxes, scale-to-zero, and traces in App Insights. The cost trap: sandbox size is per session, so oversizing multiplies your bill by concurrency."
   }
 ]

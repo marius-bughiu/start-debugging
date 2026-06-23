@@ -818,5 +818,9 @@
   {
     "slug": "2026/06/how-to-register-and-resolve-keyed-services-in-dotnet-11-dependency-injection",
     "text": "Registered a keyed service but GetService<T>() returns null? Keyed and non-keyed DI live in separate tables."
+  },
+  {
+    "slug": "2026/06/deploy-a-microsoft-agent-framework-agent-to-foundry-hosted-agents",
+    "text": "Wrap your AIAgent, run azd deploy, get a managed endpoint with its own identity and scale-to-zero."
   }
 ]
