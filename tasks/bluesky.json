@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/06/how-to-do-keyset-cursor-pagination-in-ef-core-11",
-    "text": "Offset paging rescans skipped rows and drifts under writes. EF Core 11 keyset pagination fixes both with one WHERE clause."
   }
 ]

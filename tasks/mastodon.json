@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/06/how-to-do-keyset-cursor-pagination-in-ef-core-11",
-    "text": "Skip/Take pagination gets slower the deeper you scroll and skips rows under concurrent writes. Keyset (cursor) pagination in EF Core 11 swaps OFFSET for a WHERE that seeks past your last row: constant cost per page. The catch is ordering by a fully unique key (sort column + primary key) and indexing it in the same direction."
   }
 ]
