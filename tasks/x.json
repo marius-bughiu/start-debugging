@@ -814,5 +814,9 @@
   {
     "slug": "2026/06/dotnet-11-preview-5-file-based-apps-ref-directive",
     "text": ".NET 11 Preview 5 adds #:ref: one dotnet run script can reference another file-based app as a library. No project file."
+  },
+  {
+    "slug": "2026/06/how-to-register-and-resolve-keyed-services-in-dotnet-11-dependency-injection",
+    "text": "Registered a keyed service but GetService<T>() returns null? Keyed and non-keyed DI live in separate tables."
   }
 ]
