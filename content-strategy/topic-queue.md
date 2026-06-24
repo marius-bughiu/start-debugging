@@ -76,7 +76,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to register and resolve keyed services in .NET 11 dependency injection → slug: 2026/06/how-to-register-and-resolve-keyed-services-in-dotnet-11-dependency-injection
 - How to do keyset (cursor) pagination in EF Core 11 → slug: 2026/06/how-to-do-keyset-cursor-pagination-in-ef-core-11
 - How to map and query JSON columns in EF Core 11 → slug: 2026/06/how-to-map-and-query-json-columns-in-ef-core-11
-- How to declare extension properties in C# 14
+- How to declare extension properties in C# 14 → slug: 2026/06/how-to-declare-extension-properties-in-csharp-14
 
 ## Fix / error
 

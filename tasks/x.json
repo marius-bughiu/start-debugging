@@ -834,5 +834,9 @@
   {
     "slug": "2026/06/cursor-3-9-plugins-bundle-skills-rules-mcps-hooks",
     "text": "Cursor 3.9 turns your skills, rules, MCP servers, and hooks into one versioned plugin you install with a click."
+  },
+  {
+    "slug": "2026/06/how-to-declare-extension-properties-in-csharp-14",
+    "text": "C# 14: write string.WordCount with no parentheses. The catch: no backing field, so auto-props won't compile."
   }
 ]
