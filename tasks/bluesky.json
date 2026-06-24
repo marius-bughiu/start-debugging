@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/06/how-to-run-bugbot-review-locally-before-pushing-in-cursor",
-    "text": "Cursor 3.7+ runs /review-bugbot on your branch before you push. The PR run shares a patch ID, so the same diff is never billed twice."
   }
 ]

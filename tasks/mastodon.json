@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/06/how-to-run-bugbot-review-locally-before-pushing-in-cursor",
-    "text": "Cursor's June 2026 Bugbot update adds /review and /review-bugbot so you can review a branch locally before pushing, covering committed and uncommitted changes. The catch: the local run shares a patch ID with the PR run, so an identical diff is skipped and not billed twice. No CLI yet, so it is a manual gate, not a git hook."
   }
 ]
