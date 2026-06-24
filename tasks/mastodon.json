@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/06/how-to-declare-extension-properties-in-csharp-14",
-    "text": "C# 14 adds extension properties through the new extension block. Name the receiver for an instance property, omit it for a static one, add a set accessor to make it writable. The rule that trips everyone: there are no extension fields, so an auto-property like { get; set; } won't compile."
   }
 ]
