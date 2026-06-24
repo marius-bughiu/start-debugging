@@ -846,5 +846,9 @@
   {
     "slug": "2026/06/fix-lateinitializationerror-field-has-not-been-initialized-in-flutter",
     "text": "LateInitializationError = you read a late field before anything set it. Async value? Drop late, use a nullable Type? and a loading state."
+  },
+  {
+    "slug": "2026/06/fix-null-check-operator-used-on-a-null-value-in-flutter",
+    "text": "Null check operator used on a null value means ! hit a null. Reach for ?. and ?? before you reach for another bang."
   }
 ]

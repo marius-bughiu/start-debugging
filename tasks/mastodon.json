@@ -30,5 +30,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
+  },
+  {
+    "slug": "2026/06/fix-null-check-operator-used-on-a-null-value-in-flutter",
+    "text": "Null check operator used on a null value is a broken promise: ! casts T? to T and throws when the value is actually null. The fix depends on whether null is legit (loading data, optional field) or a bug. Reach for ?? defaults, if (x != null) guards, or FutureBuilder. Save ! for real invariant violations."
   }
 ]
