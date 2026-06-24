@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/06/fix-lateinitializationerror-field-has-not-been-initialized-in-flutter",
-    "text": "Flutter LateInitializationError isn't flaky: the first build reads your late field before the async assign in initState lands. Two fixes."
   }
 ]

@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/06/fix-lateinitializationerror-field-has-not-been-initialized-in-flutter",
-    "text": "LateInitializationError: Field has not been initialized means a late field was read before anything assigned it. Usual cause: you assign it from an async fetch but the first build runs first. Fix: if the value is async, drop late, make it Type? and render a loading state. Reserve late for values ready in initState."
   }
 ]
