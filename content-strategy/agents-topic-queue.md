@@ -44,7 +44,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to auto-fix a failing GitHub Action with "Fix with Copilot" → slug: 2026/06/how-to-auto-fix-a-failing-github-action-with-fix-with-copilot
 - How to deploy a Microsoft Agent Framework agent to Foundry Hosted Agents → slug: 2026/06/deploy-a-microsoft-agent-framework-agent-to-foundry-hosted-agents
 - How to add policy enforcement and audit logging to a Microsoft Agent Framework agent with the Governance Toolkit
-- How to run a pre-push code review locally with Cursor Bugbot's `/review`
+- How to run a pre-push code review locally with Cursor Bugbot's `/review` → slug: 2026/06/how-to-run-bugbot-review-locally-before-pushing-in-cursor
 
 ## Fix / error
 

@@ -838,5 +838,9 @@
   {
     "slug": "2026/06/how-to-declare-extension-properties-in-csharp-14",
     "text": "C# 14: write string.WordCount with no parentheses. The catch: no backing field, so auto-props won't compile."
+  },
+  {
+    "slug": "2026/06/how-to-run-bugbot-review-locally-before-pushing-in-cursor",
+    "text": "Run Cursor Bugbot before you push with /review-bugbot. Same patch ID as the PR, so you are not billed twice."
   }
 ]
