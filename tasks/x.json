@@ -842,5 +842,9 @@
   {
     "slug": "2026/06/how-to-run-bugbot-review-locally-before-pushing-in-cursor",
     "text": "Run Cursor Bugbot before you push with /review-bugbot. Same patch ID as the PR, so you are not billed twice."
+  },
+  {
+    "slug": "2026/06/fix-lateinitializationerror-field-has-not-been-initialized-in-flutter",
+    "text": "LateInitializationError = you read a late field before anything set it. Async value? Drop late, use a nullable Type? and a loading state."
   }
 ]
