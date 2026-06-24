@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/06/fix-null-check-operator-used-on-a-null-value-in-flutter",
-    "text": "The ! operator is a checked cast that throws the moment the value is null. Use ?. and ?? for a default, or an if (x != null) guard."
   }
 ]
