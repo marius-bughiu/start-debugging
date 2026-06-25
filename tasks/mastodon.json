@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/06/fix-the-seed-entity-cannot-be-added-non-zero-value-is-required-for-property",
-    "text": "HasData builds its insert script at migration time, so it cannot ask the database for keys. Leave Id at 0 and you get 'a non-zero value is required for property Id'. Fix: give each seed row a stable explicit key (negative dodges IDENTITY collisions), or switch to UseSeeding for database-generated keys."
   }
 ]
