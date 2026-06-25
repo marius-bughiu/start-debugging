@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/06/fix-405-method-not-allowed-instead-of-401-with-jwt-bearer-in-aspnetcore",
-    "text": "405 instead of 401 on a protected endpoint usually means the wrong HTTP verb. Routing answers before auth runs."
   }
 ]
