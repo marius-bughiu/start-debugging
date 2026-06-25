@@ -862,5 +862,9 @@
   {
     "slug": "2026/06/fix-aspnetcore-jwt-returns-401-even-with-valid-token",
     "text": "Valid JWT but ASP.NET Core still 401s? The token is fine; it is UseAuthentication order or a scheme-name mismatch."
+  },
+  {
+    "slug": "2026/06/fix-405-method-not-allowed-instead-of-401-with-jwt-bearer-in-aspnetcore",
+    "text": "405 instead of 401 on a JWT endpoint? Routing killed the wrong verb before auth ran. Read the Allow header."
   }
 ]

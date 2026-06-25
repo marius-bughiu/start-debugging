@@ -126,7 +126,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `LateInitializationError: Field has not been initialized` in Flutter → slug: 2026/06/fix-lateinitializationerror-field-has-not-been-initialized-in-flutter
 - Fix: `Null check operator used on a null value` in Flutter → slug: 2026/06/fix-null-check-operator-used-on-a-null-value-in-flutter
 - Fix: ASP.NET Core JWT returns 401 even with a valid token → slug: 2026/06/fix-aspnetcore-jwt-returns-401-even-with-valid-token
-- Fix: `405 Method Not Allowed` instead of 401 with JWT bearer in ASP.NET Core
+- Fix: `405 Method Not Allowed` instead of 401 with JWT bearer in ASP.NET Core → slug: 2026/06/fix-405-method-not-allowed-instead-of-401-with-jwt-bearer-in-aspnetcore
 - Fix: `The seed entity for entity type 'X' cannot be added because a non-zero value is required for property 'Id'` in EF Core
 - Fix: `FOREIGN KEY constraint failed` when deleting an entity in EF Core 11
 - Fix: `No service for type 'Microsoft.EntityFrameworkCore.DbContextOptions' has been registered`

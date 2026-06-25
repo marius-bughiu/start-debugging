@@ -30,5 +30,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
+  },
+  {
+    "slug": "2026/06/fix-405-method-not-allowed-instead-of-401-with-jwt-bearer-in-aspnetcore",
+    "text": "Added [Authorize] expecting 401, got 405 Method Not Allowed? In ASP.NET Core, 405 is decided by routing, before authentication runs. You sent a verb the endpoint does not map, so the protected route was never selected. The Allow header lists what works. CORS preflight and a default cookie scheme are the other two causes."
   }
 ]
