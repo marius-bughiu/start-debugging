@@ -1,5 +1,9 @@
 [
   {
+    "slug": "2026/06/policy-enforcement-and-audit-logging-for-a-microsoft-agent-framework-agent",
+    "text": "Your agent's system prompt won't stop a DELETE. Gate every tool call with a YAML policy and a signed audit log."
+  },
+  {
     "slug": "2026/06/how-to-set-up-nested-routes-and-deep-links-with-go-router-in-flutter",
     "text": "go_router gives deep links almost for free: the path rebuilds the full back stack. Plus the absolute sub-path trap."
   },
