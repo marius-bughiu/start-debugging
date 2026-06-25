@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/06/fix-aspnetcore-jwt-returns-401-even-with-valid-token",
+    "text": "A provably valid JWT that still 401s means the handler never ran or ran under the wrong scheme. Four wiring causes, ranked."
   }
 ]

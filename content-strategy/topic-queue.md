@@ -122,10 +122,10 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `HttpRequestException: The SSL connection could not be established` with HttpClient → slug: 2026/06/fix-the-ssl-connection-could-not-be-established-with-httpclient
 - Fix: `Bad state: Cannot use "ref" after the widget was disposed` in Flutter Riverpod → slug: 2026/06/fix-cannot-use-ref-after-the-widget-was-disposed-in-flutter-riverpod
 - Fix: `Looking up a deactivated widget's ancestor is unsafe` in Flutter → slug: 2026/06/fix-looking-up-a-deactivated-widgets-ancestor-is-unsafe-in-flutter
-- Fix: `Do not use BuildContexts across async gaps` in Flutter
+- Fix: `Do not use BuildContexts across async gaps` in Flutter → slug: 2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter (duplicate of existing post)
 - Fix: `LateInitializationError: Field has not been initialized` in Flutter → slug: 2026/06/fix-lateinitializationerror-field-has-not-been-initialized-in-flutter
 - Fix: `Null check operator used on a null value` in Flutter → slug: 2026/06/fix-null-check-operator-used-on-a-null-value-in-flutter
-- Fix: ASP.NET Core JWT returns 401 even with a valid token
+- Fix: ASP.NET Core JWT returns 401 even with a valid token → slug: 2026/06/fix-aspnetcore-jwt-returns-401-even-with-valid-token
 - Fix: `405 Method Not Allowed` instead of 401 with JWT bearer in ASP.NET Core
 - Fix: `The seed entity for entity type 'X' cannot be added because a non-zero value is required for property 'Id'` in EF Core
 - Fix: `FOREIGN KEY constraint failed` when deleting an entity in EF Core 11

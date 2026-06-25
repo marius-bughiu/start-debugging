@@ -30,5 +30,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
+  },
+  {
+    "slug": "2026/06/fix-aspnetcore-jwt-returns-401-even-with-valid-token",
+    "text": "You decoded the JWT, the signature and claims check out, and ASP.NET Core still answers 401. When the token is provably valid the bug is wiring: UseAuthentication missing or misordered, no default scheme, a scheme-name mismatch, or a stripped header. Plus how to make the handler tell you which."
   }
 ]

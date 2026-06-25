@@ -854,5 +854,9 @@
   {
     "slug": "2026/06/claude-code-sandbox-credentials-block-secrets-from-bash",
     "text": "Claude Code v2.1.187 adds sandbox.credentials: deny sandbox reads of ~/.aws and ~/.ssh, unset token env vars."
+  },
+  {
+    "slug": "2026/06/fix-aspnetcore-jwt-returns-401-even-with-valid-token",
+    "text": "Valid JWT but ASP.NET Core still 401s? The token is fine; it is UseAuthentication order or a scheme-name mismatch."
   }
 ]
