@@ -866,5 +866,9 @@
   {
     "slug": "2026/06/fix-405-method-not-allowed-instead-of-401-with-jwt-bearer-in-aspnetcore",
     "text": "405 instead of 401 on a JWT endpoint? Routing killed the wrong verb before auth ran. Read the Allow header."
+  },
+  {
+    "slug": "2026/06/fix-the-seed-entity-cannot-be-added-non-zero-value-is-required-for-property",
+    "text": "HasData throws 'non-zero value required for Id'? Give every seed row an explicit key, or use UseSeeding instead."
   }
 ]

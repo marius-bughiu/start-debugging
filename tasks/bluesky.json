@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/06/fix-the-seed-entity-cannot-be-added-non-zero-value-is-required-for-property",
+    "text": "EF Core's 'non-zero value required for property Id' means HasData has no explicit key. Set one per row, or move to UseSeeding."
   }
 ]
