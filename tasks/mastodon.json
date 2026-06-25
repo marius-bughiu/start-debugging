@@ -30,5 +30,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
+  },
+  {
+    "slug": "2026/06/claude-code-sandbox-credentials-block-secrets-from-bash",
+    "text": "Claude Code's Bash sandbox locks writes hard but its default read policy still exposes ~/.aws/credentials, ~/.ssh, and any token in your shell env. v2.1.187 adds sandbox.credentials: deny those file reads and unset secret env vars before each sandboxed command. Merges across scopes, so an MDM can enforce it."
   }
 ]

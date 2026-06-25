@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/06/claude-code-sandbox-credentials-block-secrets-from-bash",
+    "text": "Claude Code's Bash sandbox reads ~/.aws and ~/.ssh by default. v2.1.187's sandbox.credentials denies them and unsets token env vars."
   }
 ]

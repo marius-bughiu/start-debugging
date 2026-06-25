@@ -850,5 +850,9 @@
   {
     "slug": "2026/06/fix-null-check-operator-used-on-a-null-value-in-flutter",
     "text": "Null check operator used on a null value means ! hit a null. Reach for ?. and ?? before you reach for another bang."
+  },
+  {
+    "slug": "2026/06/claude-code-sandbox-credentials-block-secrets-from-bash",
+    "text": "Claude Code v2.1.187 adds sandbox.credentials: deny sandbox reads of ~/.aws and ~/.ssh, unset token env vars."
   }
 ]
