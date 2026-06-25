@@ -1,9 +1,5 @@
 [
   {
-    "slug": "2026/06/policy-enforcement-and-audit-logging-for-a-microsoft-agent-framework-agent",
-    "text": "A system prompt is a suggestion, not enforcement. Gate every Agent Framework tool call with a YAML policy and a tamper-evident log."
-  },
-  {
     "slug": "2026/05/fix-failed-to-build-ios-app-with-xcode-16-and-flutter-3-x",
     "text": "Failed to build iOS app on Xcode 16 is rarely your Dart code. Upgrade Flutter, raise Podfile to iOS 13, wipe Pods and ~/Library DerivedData, then pod install."
   },

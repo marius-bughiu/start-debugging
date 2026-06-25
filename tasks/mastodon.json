@@ -1,9 +1,5 @@
 [
   {
-    "slug": "2026/06/policy-enforcement-and-audit-logging-for-a-microsoft-agent-framework-agent",
-    "text": "The model picks the tool and its arguments; nothing stops database_query('DROP TABLE') unless you gate it below the model. Wire the Governance Toolkit's GovernanceKernel into Agent Framework 1.0 function-calling middleware: deny by YAML policy, return the refusal as the tool result, and write a hash-chained audit entry per call."
-  },
-  {
     "slug": "2026/05/fix-failed-to-build-ios-app-with-xcode-16-and-flutter-3-x",
     "text": "Flutter 'Failed to build iOS app' under Xcode 16 is an umbrella for six different bugs. The umbrella message only tells you xcodebuild exited non-zero. Run with --verbose, grep for the first lowercase 'error:', and fix that. The four most common root causes: Flutter older than 3.24.4, Podfile still pinning iOS 11, a stale Pods plus DerivedData ModuleCache from the previous Xcode, or a plugin that hasn't shipped a Swift 6 release yet. Stop reaching for flutter clean first; it does not touch the iOS caches that are actually broken."
   },
