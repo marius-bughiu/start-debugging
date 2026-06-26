@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/06/fix-foreign-key-constraint-failed-when-deleting-an-entity-in-ef-core-11",
-    "text": "Deleting a parent throws FOREIGN KEY constraint failed: it still has children. Fix: load and cascade, nullable FK, or DB cascade."
   }
 ]

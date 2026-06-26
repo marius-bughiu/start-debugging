@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/06/fix-foreign-key-constraint-failed-when-deleting-an-entity-in-ef-core-11",
-    "text": "FOREIGN KEY constraint failed when you delete a parent in EF Core 11: the database won't orphan the children. Fix it by loading the dependents so EF Core cascades, making the FK nullable so it nulls out, or configuring OnDelete(Cascade). The trap: Cascade in OnModelCreating does nothing until you migrate the live schema."
   }
 ]
