@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/06/fix-no-service-for-type-dbcontextoptions-has-been-registered",
+    "text": "No service for type DbContextOptions? AddDbContext never ran, ran after Build, or your ctor takes the non-generic options. Three fixes."
   }
 ]

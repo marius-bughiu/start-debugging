@@ -882,5 +882,9 @@
   {
     "slug": "2026/06/fix-mcp-error-32000-connection-closed-in-claude-code",
     "text": "MCP error -32000 isn't a timeout: the server process died on launch. Run the command by hand, absolute paths, wrap npx in cmd /c."
+  },
+  {
+    "slug": "2026/06/fix-no-service-for-type-dbcontextoptions-has-been-registered",
+    "text": "AddDbContext registers DbContextOptions<T>, not the bare DbContextOptions. Give your context the generic constructor."
   }
 ]

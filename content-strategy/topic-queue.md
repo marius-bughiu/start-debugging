@@ -129,7 +129,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `405 Method Not Allowed` instead of 401 with JWT bearer in ASP.NET Core → slug: 2026/06/fix-405-method-not-allowed-instead-of-401-with-jwt-bearer-in-aspnetcore
 - Fix: `The seed entity for entity type 'X' cannot be added because a non-zero value is required for property 'Id'` in EF Core → slug: 2026/06/fix-the-seed-entity-cannot-be-added-non-zero-value-is-required-for-property
 - Fix: `FOREIGN KEY constraint failed` when deleting an entity in EF Core 11 → slug: 2026/06/fix-foreign-key-constraint-failed-when-deleting-an-entity-in-ef-core-11
-- Fix: `No service for type 'Microsoft.EntityFrameworkCore.DbContextOptions' has been registered`
+- Fix: `No service for type 'Microsoft.EntityFrameworkCore.DbContextOptions' has been registered` → slug: 2026/06/fix-no-service-for-type-dbcontextoptions-has-been-registered
 
 ## Vs / comparison
 
