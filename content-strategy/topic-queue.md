@@ -162,7 +162,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `FutureBuilder`/`StreamBuilder` vs Riverpod `AsyncValue` in Flutter → slug: 2026/06/futurebuilder-streambuilder-vs-riverpod-asyncvalue-in-flutter
 - `AsNoTracking` vs `AsNoTrackingWithIdentityResolution` in EF Core 11 → slug: 2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11
 - Minimal API validation vs FluentValidation in ASP.NET Core 11 → slug: 2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11
-- JWT vs cookie authentication in ASP.NET Core 11
+- JWT vs cookie authentication in ASP.NET Core 11 → slug: 2026/06/jwt-vs-cookie-authentication-in-aspnetcore-11
 - `HasData` vs `UseSeeding` for seeding data in EF Core 11
 - Keyset pagination vs `OFFSET`/`FETCH` paging in EF Core 11
 - `go_router` vs `auto_route` vs Navigator 2.0 in Flutter

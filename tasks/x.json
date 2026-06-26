@@ -886,5 +886,9 @@
   {
     "slug": "2026/06/fix-no-service-for-type-dbcontextoptions-has-been-registered",
     "text": "AddDbContext registers DbContextOptions<T>, not the bare DbContextOptions. Give your context the generic constructor."
+  },
+  {
+    "slug": "2026/06/jwt-vs-cookie-authentication-in-aspnetcore-11",
+    "text": "Using a JWT in localStorage for a same-origin SPA? That is an XSS liability. Reach for an HttpOnly cookie instead."
   }
 ]

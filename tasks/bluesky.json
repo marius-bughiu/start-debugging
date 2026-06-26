@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/06/jwt-vs-cookie-authentication-in-aspnetcore-11",
+    "text": "Cookie vs JWT in ASP.NET Core 11: the deciding axis is the client. Browser-only? A cookie. Mobile or service? A bearer token."
   }
 ]

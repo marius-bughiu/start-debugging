@@ -30,5 +30,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
+  },
+  {
+    "slug": "2026/06/jwt-vs-cookie-authentication-in-aspnetcore-11",
+    "text": "Cookie vs JWT in ASP.NET Core 11. The forcing question: when access must be cut off, how fast? Cookies revoke on the next request; a valid JWT lives until it expires unless you add a denylist. Browser-only apps want HttpOnly cookies, not tokens in localStorage. Full matrix, both wired up in .NET 11."
   }
 ]
