@@ -30,5 +30,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
+  },
+  {
+    "slug": "2026/06/fix-mcp-error-32000-connection-closed-in-claude-code",
+    "text": "MCP error -32000: Connection closed is not a timeout (that's -32001) and not a refused socket. It means the server process you spawned exited before the handshake. Triage: run the command by hand to see the crash, use absolute paths, and on Windows wrap npx/uvx in cmd /c because they're .cmd shims spawn can't exec."
   }
 ]

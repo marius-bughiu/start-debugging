@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/06/fix-mcp-error-32000-connection-closed-in-claude-code",
+    "text": "MCP error -32000 isn't a timeout: the server process exited on launch. Fixes: absolute paths, cmd /c on Windows, fix the boot crash."
   }
 ]

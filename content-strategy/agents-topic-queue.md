@@ -61,7 +61,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: `Claude reached its tool-use limit for this turn` mid-task → slug: 2026/05/fix-claude-reached-its-tool-use-limit-for-this-turn
 - Fix: GitHub MCP server tool calls fail silently when the PAT isn't passed → slug: 2026/05/fix-github-mcp-server-tool-calls-fail-silently-without-pat
 - Fix: MCP servers stop working after a Claude Desktop update on Windows (config path moved) → slug: 2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows
-- Fix: `MCP error -32000: Client Closed` in Claude Code when a server dies on launch
+- Fix: `MCP error -32000: Client Closed` in Claude Code when a server dies on launch → slug: 2026/06/fix-mcp-error-32000-connection-closed-in-claude-code
 - Fix: Claude Code drops MCP tools after auto-compaction (reconnect with `/mcp`)
 - Fix: Claude Code high memory usage and context overflow (`/heapdump` and `/compact`)
 

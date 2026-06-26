@@ -878,5 +878,9 @@
   {
     "slug": "2026/06/fix-foreign-key-constraint-failed-when-deleting-an-entity-in-ef-core-11",
     "text": "FOREIGN KEY constraint failed on delete in EF Core? The parent still has children. Load them, null the FK, or cascade."
+  },
+  {
+    "slug": "2026/06/fix-mcp-error-32000-connection-closed-in-claude-code",
+    "text": "MCP error -32000 isn't a timeout: the server process died on launch. Run the command by hand, absolute paths, wrap npx in cmd /c."
   }
 ]
