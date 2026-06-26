@@ -870,5 +870,9 @@
   {
     "slug": "2026/06/fix-the-seed-entity-cannot-be-added-non-zero-value-is-required-for-property",
     "text": "HasData throws 'non-zero value required for Id'? Give every seed row an explicit key, or use UseSeeding instead."
+  },
+  {
+    "slug": "2026/06/claude-code-2-1-191-rewind-past-clear",
+    "text": "Claude Code 2.1.191: /rewind now reaches back past a /clear, so the context you wiped is one rewind away, not gone."
   }
 ]
