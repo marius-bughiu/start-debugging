@@ -77,6 +77,15 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to do keyset (cursor) pagination in EF Core 11 → slug: 2026/06/how-to-do-keyset-cursor-pagination-in-ef-core-11
 - How to map and query JSON columns in EF Core 11 → slug: 2026/06/how-to-map-and-query-json-columns-in-ef-core-11
 - How to declare extension properties in C# 14 → slug: 2026/06/how-to-declare-extension-properties-in-csharp-14
+- How to propagate a `CancellationToken` through async methods in .NET 11
+- How to time out an async operation with `CancellationTokenSource.CancelAfter` in C#
+- How to implement and consume `IAsyncDisposable` with `await using` in C#
+- How to nest a `ListView` inside a `Column` in Flutter without an unbounded-height error
+- How to mix a `ListView` and a `GridView` in one scroll view with slivers in Flutter
+- How to set up JWT bearer authentication in a minimal API in ASP.NET Core 11
+- How to customize minimal API validation error responses with `IProblemDetailsService` in ASP.NET Core 11
+- How to use named query filters for soft delete and multi-tenancy in EF Core 11
+- How to check `Ref.mounted` before using `ref` after an async gap in Flutter Riverpod 3.0
 
 ## Fix / error
 
@@ -130,6 +139,15 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `The seed entity for entity type 'X' cannot be added because a non-zero value is required for property 'Id'` in EF Core → slug: 2026/06/fix-the-seed-entity-cannot-be-added-non-zero-value-is-required-for-property
 - Fix: `FOREIGN KEY constraint failed` when deleting an entity in EF Core 11 → slug: 2026/06/fix-foreign-key-constraint-failed-when-deleting-an-entity-in-ef-core-11
 - Fix: `No service for type 'Microsoft.EntityFrameworkCore.DbContextOptions' has been registered` → slug: 2026/06/fix-no-service-for-type-dbcontextoptions-has-been-registered
+- Fix: `The LINQ expression could not be translated` in EF Core 11
+- Fix: `The required column 'X' was not present in the results of a 'FromSql' operation` in EF Core 11
+- Fix: `Vertical viewport was given unbounded height` in Flutter
+- Fix: `RenderViewport expected a RenderSliver` in a Flutter `CustomScrollView`
+- Fix: `Incorrect use of ParentDataWidget. Expanded widgets must be placed inside Flex widgets` in Flutter
+- Fix: `Cannot provide both a color and a decoration` in a Flutter `Container`
+- Fix: `415 Unsupported Media Type` from a minimal API endpoint in ASP.NET Core 11
+- Fix: `CS9035: Required member 'X' must be set in the object initializer` in C#
+- Fix: Riverpod 3.0 throws `ProviderException` instead of the original error
 
 ## Vs / comparison
 
@@ -166,6 +184,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `HasData` vs `UseSeeding` for seeding data in EF Core 11
 - Keyset pagination vs `OFFSET`/`FETCH` paging in EF Core 11
 - `go_router` vs `auto_route` vs Navigator 2.0 in Flutter
+- Named query filters vs a single global query filter in EF Core 11
+- `shrinkWrap` vs `Expanded` vs slivers for long lists in Flutter
 
 ## Migration / upgrade
 
@@ -189,6 +209,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate from `FutureBuilder` to a Riverpod `AsyncNotifier` in Flutter → slug: 2026/06/migrate-from-futurebuilder-to-a-riverpod-asyncnotifier-in-flutter
 - Migrate from `HasData` seeding to `UseAsyncSeeding` in EF Core 11
 - Migrate from Riverpod 2.x to Riverpod 3.0 in Flutter
+- Migrate a minimal API from manual validation checks to built-in validation in ASP.NET Core 11
 
 ## What is / concept
 
@@ -214,6 +235,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is the difference between `ref.watch` and `ref.read` in Riverpod?
 - What is the `use_build_context_synchronously` lint in Flutter?
 - What is a keyed service in .NET dependency injection?
+- What is a sliver in Flutter and when do I need a `CustomScrollView`?
+- What is `IProblemDetailsService` and how does it shape error responses in ASP.NET Core 11?
 
 ---
 
