@@ -1,99 +1,127 @@
 [
   {
     "page": "https://startdebugging.net/2026/06/gate-cursor-sdk-tool-calls-with-auto-review-and-permissions-json/",
-    "position": 4.48,
-    "impressions": 1107,
+    "position": 4.71,
+    "impressions": 4824,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/05/how-to-assign-a-jira-ticket-to-a-cursor-cloud-agent-and-get-a-pr-back/",
-    "position": 4.22,
-    "impressions": 430,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2026/05/fix-platformnotsupportedexception-in-native-aot/",
-    "position": 5.6,
-    "impressions": 370,
+    "position": 4.02,
+    "impressions": 419,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/05/how-to-pipe-cursors-context-to-an-aider-session-for-multi-agent-refactors/",
-    "position": 7,
-    "impressions": 214,
+    "position": 7.07,
+    "impressions": 309,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/2026/05/fix-formatexception-unexpected-character-when-parsing-json-in-dart/",
-    "position": 7.18,
-    "impressions": 115,
+    "page": "https://startdebugging.net/2026/06/nest-subagents-in-the-cursor-sdk-reviewer-delegates-to-test-writer/",
+    "position": 4.83,
+    "impressions": 284,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/05/fix-platformnotsupportedexception-in-native-aot/",
+    "position": 5.67,
+    "impressions": 275,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/06/expose-functions-to-cursor-sdk-agent-with-local-customtools/",
-    "position": 5.19,
-    "impressions": 108,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2026/05/how-to-reduce-the-number-of-mcp-tools-claude-loads/",
-    "position": 5.83,
-    "impressions": 94,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2026/05/fix-rate-limit-error-on-claude-sonnet-4-6-in-a-long-agent-loop/",
-    "position": 5.99,
-    "impressions": 88,
+    "position": 4.03,
+    "impressions": 226,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/06/claude-code-vs-cursor-vs-copilot-agent-mode-where-each-wins/",
-    "position": 6.39,
-    "impressions": 87,
+    "position": 6.12,
+    "impressions": 118,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/archive/",
-    "position": 7.95,
-    "impressions": 86,
+    "page": "https://startdebugging.net/2026/05/how-to-reduce-the-number-of-mcp-tools-claude-loads/",
+    "position": 6.63,
+    "impressions": 107,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready/",
+    "position": 4.66,
+    "impressions": 96,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows/",
-    "position": 8.72,
-    "impressions": 76,
+    "position": 8.28,
+    "impressions": 93,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/05/fix-http-mcp-server-url-wont-connect-in-claude-desktop/",
-    "position": 6.84,
-    "impressions": 70,
+    "position": 7.29,
+    "impressions": 87,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/2023/03/c-11-interpolated-raw-string-literal/",
-    "position": 30.98,
+    "page": "https://startdebugging.net/2026/06/fix-looking-up-a-deactivated-widgets-ancestor-is-unsafe-in-flutter/",
+    "position": 5.7,
+    "impressions": 74,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/archive/",
+    "position": 8.29,
+    "impressions": 72,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/05/fix-rate-limit-error-on-claude-sonnet-4-6-in-a-long-agent-loop/",
+    "position": 4.52,
+    "impressions": 64,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11/",
+    "position": 7.26,
+    "impressions": 62,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/05/fix-tool-call-arguments-did-not-match-schema-in-anthropic-tool-use/",
+    "position": 6.42,
     "impressions": 60,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/ja/2026/05/fix-version-solving-failed-in-pubspec-yaml/",
-    "position": 5.72,
+    "page": "https://startdebugging.net/2026/05/how-to-cache-multi-turn-claude-conversations-across-api-calls/",
+    "position": 4.63,
     "impressions": 60,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/05/how-to-add-tool-calling-to-a-microsoft-extensions-ai-chat-client/",
+    "position": 5.83,
+    "impressions": 54,
     "clicks": 0,
     "ctr": 0
   },
@@ -101,6 +129,13 @@
     "page": "https://startdebugging.net/2026/06/claude-code-vs-cursor-vs-aider-for-a-dotnet-11-repo/",
     "position": 6.94,
     "impressions": 54,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/05/fix-claude-reached-its-tool-use-limit-for-this-turn/",
+    "position": 8.19,
+    "impressions": 53,
     "clicks": 0,
     "ctr": 0
   }

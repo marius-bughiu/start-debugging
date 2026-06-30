@@ -1,135 +1,151 @@
 [
   {
-    "query": "\"autorun\" \"allow_instructions\" \"block_instructions\" permissions.json schema",
-    "currentPosition": 7.75,
-    "currentImpressions": 32,
-    "priorImpressions": 0,
-    "delta": 32,
-    "ctr": 0
-  },
-  {
-    "query": "\"permissions.json\" \"autorun\" \"allow_instructions\" \"block_instructions\" schema",
-    "currentPosition": 9.13,
-    "currentImpressions": 31,
-    "priorImpressions": 0,
+    "query": "\"permissions.json\" \"terminalallowlist\" \"autorun\" \"allow_instructions\"",
+    "currentPosition": 3.59,
+    "currentImpressions": 54,
+    "priorImpressions": 23,
     "delta": 31,
     "ctr": 0
   },
   {
-    "query": "\"autorun\" \"allow_instructions\" \"block_instructions\" permissions.json syntax",
-    "currentPosition": 5.62,
+    "query": "\"permissions.json\" \"terminalallowlist\" \"mcpallowlist\" \"autorun\" configuration",
+    "currentPosition": 3.47,
+    "currentImpressions": 19,
+    "priorImpressions": 0,
+    "delta": 19,
+    "ctr": 0
+  },
+  {
+    "query": "\"permissions.json\" terminalallowlist \"autorun\" configuration schema",
+    "currentPosition": 2.35,
     "currentImpressions": 26,
-    "priorImpressions": 0,
-    "delta": 26,
+    "priorImpressions": 8,
+    "delta": 18,
     "ctr": 0
   },
   {
-    "query": "\"permissions.json\" \"autorun\" \"mcpallowlist\" \"terminalallowlist\"",
-    "currentPosition": 2.62,
-    "currentImpressions": 21,
-    "priorImpressions": 0,
-    "delta": 21,
-    "ctr": 0
-  },
-  {
-    "query": "\"permissions.json\" \"mcpallowlist\" \"terminalallowlist\" \"autorun\" schema",
-    "currentPosition": 2.59,
-    "currentImpressions": 17,
-    "priorImpressions": 0,
-    "delta": 17,
-    "ctr": 0
-  },
-  {
-    "query": "\"permissions.json\" \"autorun\" \"mcpallowlist\" \"terminalallowlist\" syntax",
-    "currentPosition": 1.38,
+    "query": "\".cursor/permissions.json\" syntax \"allow_instructions\" \"block_instructions\"",
+    "currentPosition": 7,
     "currentImpressions": 16,
     "priorImpressions": 0,
     "delta": 16,
     "ctr": 0
   },
   {
-    "query": "\"permissions.json\" \"mcpallowlist\" \"terminalallowlist\" \"autorun\" configuration schema",
-    "currentPosition": 2.36,
-    "currentImpressions": 14,
-    "priorImpressions": 0,
-    "delta": 14,
-    "ctr": 0
-  },
-  {
-    "query": "\"permissions.json\" \"terminalallowlist\" \"autorun\" \"allow_instructions\"",
-    "currentPosition": 3.64,
-    "currentImpressions": 14,
-    "priorImpressions": 0,
-    "delta": 14,
-    "ctr": 0
-  },
-  {
-    "query": "\"permissions.json\" autorun allow_instructions block_instructions schema",
-    "currentPosition": 8.92,
-    "currentImpressions": 12,
-    "priorImpressions": 0,
+    "query": "\"auto-review\" \".cursor/permissions.json\" \"allow_instructions\" \"block_instructions\"",
+    "currentPosition": 8.17,
+    "currentImpressions": 29,
+    "priorImpressions": 17,
     "delta": 12,
     "ctr": 0
   },
   {
-    "query": "\".cursor/permissions.json\" \"allow_instructions\" \"block_instructions\"",
-    "currentPosition": 8.38,
+    "query": "\"permissions.json\" autorun allow_instructions block_instructions terminalallowlist",
+    "currentPosition": 4.18,
+    "currentImpressions": 17,
+    "priorImpressions": 6,
+    "delta": 11,
+    "ctr": 0
+  },
+  {
+    "query": "\"permissions.json\" \"autorun\" \"terminalallowlist\" \"mcpallowlist\"",
+    "currentPosition": 3.29,
+    "currentImpressions": 14,
+    "priorImpressions": 4,
+    "delta": 10,
+    "ctr": 0
+  },
+  {
+    "query": "\".cursor/permissions.json\" autorun allow_instructions block_instructions",
+    "currentPosition": 8.89,
+    "currentImpressions": 9,
+    "priorImpressions": 0,
+    "delta": 9,
+    "ctr": 0
+  },
+  {
+    "query": "\"permissions.json\" autorun allow_instructions block_instructions schema",
+    "currentPosition": 9.32,
+    "currentImpressions": 25,
+    "priorImpressions": 16,
+    "delta": 9,
+    "ctr": 0
+  },
+  {
+    "query": "\"permissions.json\" \"autorun\" \"terminalallowlist\" \"mcpallowlist\" schema",
+    "currentPosition": 2.5,
     "currentImpressions": 8,
     "priorImpressions": 0,
     "delta": 8,
-    "ctr": 0
-  },
-  {
-    "query": "\"auto-review\" \".cursor/permissions.json\" \"allow_instructions\" \"block_instructions\"",
-    "currentPosition": 8.38,
-    "currentImpressions": 8,
-    "priorImpressions": 0,
-    "delta": 8,
-    "ctr": 0
-  },
-  {
-    "query": "\"permissions.json\" \"autorun\" \"allow_instructions\" schema",
-    "currentPosition": 9.43,
-    "currentImpressions": 7,
-    "priorImpressions": 0,
-    "delta": 7,
-    "ctr": 0
-  },
-  {
-    "query": "\"permissions.json\" \"autorun\" \"mcpallowlist\" \"terminalallowlist\" schema",
-    "currentPosition": 2.71,
-    "currentImpressions": 7,
-    "priorImpressions": 0,
-    "delta": 7,
     "ctr": 0
   },
   {
     "query": "\"permissions.json\" \"mcpallowlist\" \"terminalallowlist\" \"autorun\" configuration",
-    "currentPosition": 2.43,
+    "currentPosition": 3.5,
+    "currentImpressions": 36,
+    "priorImpressions": 28,
+    "delta": 8,
+    "ctr": 0
+  },
+  {
+    "query": "\"mcpallowlist\" \"permissions.json\" \"auto-review\" \"cursor\"",
+    "currentPosition": 3.14,
     "currentImpressions": 7,
     "priorImpressions": 0,
     "delta": 7,
     "ctr": 0
   },
   {
-    "query": "\"permissions.json\" autorun allow_instructions block_instructions syntax",
-    "currentPosition": 10.33,
+    "query": "\"terminalallowlist\" \"permissions.json\" cursor agent configuration syntax",
+    "currentPosition": 3,
+    "currentImpressions": 7,
+    "priorImpressions": 0,
+    "delta": 7,
+    "ctr": 0
+  },
+  {
+    "query": "\"autorun\" \"allow_instructions\" \"block_instructions\" schema definition",
+    "currentPosition": 8.67,
     "currentImpressions": 6,
     "priorImpressions": 0,
     "delta": 6,
     "ctr": 0
   },
   {
-    "query": "\"permissions.json\" \"allow_instructions\" \"block_instructions\" cursor ide",
-    "currentPosition": 10.2,
-    "currentImpressions": 5,
+    "query": "\"permissions.json\" \"autorun\" \"allow_instructions\" \"block_instructions\" configuration",
+    "currentPosition": 7.33,
+    "currentImpressions": 6,
     "priorImpressions": 0,
+    "delta": 6,
+    "ctr": 0
+  },
+  {
+    "query": "\"permissions.json\" \"terminalallowlist\" \"autorun\" \"cursor\"",
+    "currentPosition": 5.3,
+    "currentImpressions": 20,
+    "priorImpressions": 14,
+    "delta": 6,
+    "ctr": 0
+  },
+  {
+    "query": "\".cursor/permissions.json\" allow_instructions block_instructions syntax",
+    "currentPosition": 6.57,
+    "currentImpressions": 14,
+    "priorImpressions": 9,
     "delta": 5,
     "ctr": 0
   },
   {
-    "query": "\"permissions.json\" \"terminalallowlist\" \"autorun\" cursor settings",
-    "currentPosition": 4.4,
+    "query": "\"permissions.json\" \"mcpallowlist\" \"autorun\" \"allow_instructions\"",
+    "currentPosition": 2.25,
+    "currentImpressions": 8,
+    "priorImpressions": 3,
+    "delta": 5,
+    "ctr": 0
+  },
+  {
+    "query": "\"workspacestorage\" state.vscdb manual migration guide",
+    "currentPosition": 10.8,
     "currentImpressions": 5,
     "priorImpressions": 0,
     "delta": 5,

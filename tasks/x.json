@@ -890,5 +890,9 @@
   {
     "slug": "2026/06/jwt-vs-cookie-authentication-in-aspnetcore-11",
     "text": "Using a JWT in localStorage for a same-origin SPA? That is an XSS liability. Reach for an HttpOnly cookie instead."
+  },
+  {
+    "slug": "2026/06/hasdata-vs-useseeding-for-seeding-data-in-ef-core-11",
+    "text": "A Guid or DateTime.UtcNow in HasData re-diffs the model every build in EF Core 11. UseSeeding for non-static data."
   }
 ]

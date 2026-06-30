@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/06/hasdata-vs-useseeding-for-seeding-data-in-ef-core-11",
+    "text": "HasData vs UseSeeding in EF Core 11: HasData for fixed lookup rows; UseSeeding for generated keys, timestamps, conditional logic."
   }
 ]
