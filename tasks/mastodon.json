@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/06/hasdata-vs-useseeding-for-seeding-data-in-ef-core-11",
-    "text": "Picking between HasData and UseSeeding in EF Core 11? HasData belongs to the model and the migration diff, so keep it for small, fixed, deterministic lookup tables. The moment your seed has a database-generated key, a hashed password, a timestamp, or an if, it needs UseSeeding, or HasData turns every build into a phantom migration."
   }
 ]
