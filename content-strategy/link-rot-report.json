@@ -1,5 +1,16 @@
 [
   {
+    "url": "https://aider.chat/docs/usage/conventions.html",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-let-aider-edit-files-outside-the-git-repository.md",
+      "site/src/content/blog/2026/05/how-to-pipe-cursors-context-to-an-aider-session-for-multi-agent-refactors.md",
+      "site/src/content/blog/2026/05/how-to-pipe-cursors-context-to-an-aider-session-for-multi-agent-refactors.md"
+    ]
+  },
+  {
     "url": "https://aka.ms/azure-functions-retirements/in-process-model",
     "status": 404,
     "ok": false,
@@ -19,6 +30,19 @@
     ]
   },
   {
+    "url": "https://api.dart.dev/stable/dart-core/LateInitializationError-class.html",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/06/fix-lateinitializationerror-field-has-not-been-initialized-in-flutter.md",
+      "site/src/content/blog/de/2026/06/fix-lateinitializationerror-field-has-not-been-initialized-in-flutter.md",
+      "site/src/content/blog/es/2026/06/fix-lateinitializationerror-field-has-not-been-initialized-in-flutter.md",
+      "site/src/content/blog/ja/2026/06/fix-lateinitializationerror-field-has-not-been-initialized-in-flutter.md",
+      "site/src/content/blog/pt-br/2026/06/fix-lateinitializationerror-field-has-not-been-initialized-in-flutter.md",
+      "site/src/content/blog/ru/2026/06/fix-lateinitializationerror-field-has-not-been-initialized-in-flutter.md"
+    ]
+  },
+  {
     "url": "https://api.flutter.dev/flutter/material/ThemeData/colorSchemeSeed.html",
     "status": 404,
     "ok": false,
@@ -29,6 +53,32 @@
       "site/src/content/blog/ja/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme.md",
       "site/src/content/blog/pt-br/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme.md",
       "site/src/content/blog/ru/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme.md"
+    ]
+  },
+  {
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.html",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-implement-refresh-tokens-in-aspnetcore-identity.md",
+      "site/src/content/blog/de/2026/04/how-to-implement-refresh-tokens-in-aspnetcore-identity.md",
+      "site/src/content/blog/es/2026/04/how-to-implement-refresh-tokens-in-aspnetcore-identity.md",
+      "site/src/content/blog/ja/2026/04/how-to-implement-refresh-tokens-in-aspnetcore-identity.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-implement-refresh-tokens-in-aspnetcore-identity.md",
+      "site/src/content/blog/ru/2026/04/how-to-implement-refresh-tokens-in-aspnetcore-identity.md"
+    ]
+  },
+  {
+    "url": "https://dart.dev/tools/linter-rules/unnecessary_non_null_assertion",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/06/fix-null-check-operator-used-on-a-null-value-in-flutter.md",
+      "site/src/content/blog/de/2026/06/fix-null-check-operator-used-on-a-null-value-in-flutter.md",
+      "site/src/content/blog/es/2026/06/fix-null-check-operator-used-on-a-null-value-in-flutter.md",
+      "site/src/content/blog/ja/2026/06/fix-null-check-operator-used-on-a-null-value-in-flutter.md",
+      "site/src/content/blog/pt-br/2026/06/fix-null-check-operator-used-on-a-null-value-in-flutter.md",
+      "site/src/content/blog/ru/2026/06/fix-null-check-operator-used-on-a-null-value-in-flutter.md"
     ]
   },
   {
@@ -48,6 +98,15 @@
       "site/src/content/blog/pt-br/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
       "site/src/content/blog/ru/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
       "site/src/content/blog/ru/2026/05/configureawait-false-vs-default-in-dotnet-11.md"
+    ]
+  },
+  {
+    "url": "https://devblogs.microsoft.com/semantic-kernel/using-semantic-kernel-with-dependency-injection/",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-run-a-semantic-kernel-plugin-from-a-backgroundservice.md"
     ]
   },
   {
@@ -90,30 +149,31 @@
     ]
   },
   {
-    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.128",
+    "url": "https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/master/src/Swashbuckle.AspNetCore.SwaggerUI",
     "status": null,
     "ok": false,
     "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/05/claude-code-2-1-128-plugin-zip-worktree-fix.md",
-      "site/src/content/blog/de/2026/05/claude-code-2-1-128-plugin-zip-worktree-fix.md",
-      "site/src/content/blog/es/2026/05/claude-code-2-1-128-plugin-zip-worktree-fix.md",
-      "site/src/content/blog/ja/2026/05/claude-code-2-1-128-plugin-zip-worktree-fix.md",
-      "site/src/content/blog/pt-br/2026/05/claude-code-2-1-128-plugin-zip-worktree-fix.md",
-      "site/src/content/blog/ru/2026/05/claude-code-2-1-128-plugin-zip-worktree-fix.md"
+      "site/src/content/blog/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11.md",
+      "site/src/content/blog/de/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11.md",
+      "site/src/content/blog/es/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11.md",
+      "site/src/content/blog/ja/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11.md",
+      "site/src/content/blog/ru/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11.md"
     ]
   },
   {
-    "url": "https://github.com/dotnet/aspnetcore/discussions/51020",
-    "status": 404,
+    "url": "https://github.com/dotnet/aspnetcore/pull/52281",
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
-      "site/src/content/blog/de/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
-      "site/src/content/blog/es/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
-      "site/src/content/blog/ja/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
-      "site/src/content/blog/pt-br/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
-      "site/src/content/blog/ru/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md"
+      "site/src/content/blog/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
+      "site/src/content/blog/de/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
+      "site/src/content/blog/es/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
+      "site/src/content/blog/ja/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
+      "site/src/content/blog/ru/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md"
     ]
   },
   {
@@ -162,6 +222,24 @@
     "sources": [
       "site/src/content/blog/2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument.md",
       "site/src/content/blog/2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument.md"
+    ]
+  },
+  {
+    "url": "https://github.com/marius-bughiu/super-activities",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/05/add-project-settings-to-a-uipath-package-design-time-and-runtime.md",
+      "site/src/content/blog/2026/05/add-project-settings-to-a-uipath-package-design-time-and-runtime.md",
+      "site/src/content/blog/2026/05/build-a-uipath-activity-package-for-modern-studio-with-viewmodels.md",
+      "site/src/content/blog/2026/05/build-a-uipath-activity-package-for-modern-studio-with-viewmodels.md",
+      "site/src/content/blog/2026/05/independently-release-multiple-nuget-packages-with-minver-and-trusted-publishing.md",
+      "site/src/content/blog/2026/05/independently-release-multiple-nuget-packages-with-minver-and-trusted-publishing.md",
+      "site/src/content/blog/2026/05/run-code-before-and-after-every-uipath-activity-with-a-tracking-participant.md",
+      "site/src/content/blog/2026/05/run-code-before-and-after-every-uipath-activity-with-a-tracking-participant.md",
+      "site/src/content/blog/2026/05/write-a-uipath-workflow-analyzer-rule-with-entry-point-detection.md",
+      "site/src/content/blog/2026/05/write-a-uipath-workflow-analyzer-rule-with-entry-point-detection.md"
     ]
   },
   {
@@ -312,6 +390,19 @@
     ]
   },
   {
+    "url": "https://learn.microsoft.com/en-us/dotnet/standard/data/sqlite/foreign-keys",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/06/fix-foreign-key-constraint-failed-when-deleting-an-entity-in-ef-core-11.md",
+      "site/src/content/blog/de/2026/06/fix-foreign-key-constraint-failed-when-deleting-an-entity-in-ef-core-11.md",
+      "site/src/content/blog/es/2026/06/fix-foreign-key-constraint-failed-when-deleting-an-entity-in-ef-core-11.md",
+      "site/src/content/blog/ja/2026/06/fix-foreign-key-constraint-failed-when-deleting-an-entity-in-ef-core-11.md",
+      "site/src/content/blog/pt-br/2026/06/fix-foreign-key-constraint-failed-when-deleting-an-entity-in-ef-core-11.md",
+      "site/src/content/blog/ru/2026/06/fix-foreign-key-constraint-failed-when-deleting-an-entity-in-ef-core-11.md"
+    ]
+  },
+  {
     "url": "https://learn.microsoft.com/en-us/dotnet/standard/memory-and-span/",
     "status": 404,
     "ok": false,
@@ -351,19 +442,6 @@
     ]
   },
   {
-    "url": "https://leetcode.com/",
-    "status": 403,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/de/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/es/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/ja/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/pt-br/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/ru/2023/06/how-to-start-programming-with-c.md"
-    ]
-  },
-  {
     "url": "https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss",
     "status": 404,
     "ok": false,
@@ -377,26 +455,14 @@
     ]
   },
   {
-    "url": "https://medium.com/dartlang/announcing-dart-3-0-79bff52e1bb6",
-    "status": 403,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/05/dart-records-vs-freezed-classes.md",
-      "site/src/content/blog/de/2026/05/dart-records-vs-freezed-classes.md",
-      "site/src/content/blog/es/2026/05/dart-records-vs-freezed-classes.md",
-      "site/src/content/blog/ja/2026/05/dart-records-vs-freezed-classes.md",
-      "site/src/content/blog/pt-br/2026/05/dart-records-vs-freezed-classes.md",
-      "site/src/content/blog/ru/2026/05/dart-records-vs-freezed-classes.md"
-    ]
-  },
-  {
     "url": "https://modelcontextprotocol.io/specification/2026-03-26",
     "status": 404,
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/05/fix-claude-code-reports-mcp-server-disconnected-inside-wsl.md",
       "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md",
-      "site/src/content/blog/2026/05/how-to-write-a-claude-code-subagent-that-runs-browser-tests.md"
+      "site/src/content/blog/2026/05/how-to-write-a-claude-code-subagent-that-runs-browser-tests.md",
+      "site/src/content/blog/2026/06/fix-mcp-error-32000-connection-closed-in-claude-code.md"
     ]
   },
   {
@@ -418,7 +484,8 @@
       "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
       "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
       "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md",
-      "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md"
+      "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md",
+      "site/src/content/blog/2026/06/fix-mcp-error-32000-connection-closed-in-claude-code.md"
     ]
   },
   {
@@ -553,55 +620,10 @@
     ]
   },
   {
-    "url": "https://www.npmjs.com/package/@anthropic-ai/sdk",
-    "status": 403,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
-      "site/src/content/blog/2026/05/how-to-cache-multi-turn-claude-conversations-across-api-calls.md",
-      "site/src/content/blog/de/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
-      "site/src/content/blog/es/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
-      "site/src/content/blog/ja/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
-      "site/src/content/blog/pt-br/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
-      "site/src/content/blog/ru/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md"
-    ]
-  },
-  {
-    "url": "https://www.npmjs.com/package/cowork-terminal-mcp",
-    "status": 403,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
-      "site/src/content/blog/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
-      "site/src/content/blog/de/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
-      "site/src/content/blog/de/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
-      "site/src/content/blog/es/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
-      "site/src/content/blog/es/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
-      "site/src/content/blog/ja/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
-      "site/src/content/blog/ja/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
-      "site/src/content/blog/pt-br/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
-      "site/src/content/blog/pt-br/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
-      "site/src/content/blog/ru/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
-      "site/src/content/blog/ru/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md"
-    ]
-  },
-  {
-    "url": "https://www.npmjs.com/package/jsonl-to-pdf",
-    "status": 403,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md",
-      "site/src/content/blog/de/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md",
-      "site/src/content/blog/es/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md",
-      "site/src/content/blog/ja/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md",
-      "site/src/content/blog/pt-br/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md",
-      "site/src/content/blog/ru/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md"
-    ]
-  },
-  {
     "url": "https://www.npmjs.com/package/mcp-remote",
-    "status": 403,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
       "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
@@ -611,9 +633,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Anthropic",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/anthropic-sdk-vs-microsoft-extensions-ai-for-calling-claude-from-dotnet.md"
     ]
@@ -647,9 +668,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Azure.Extensions.AspNetCore.DataProtection.Keys",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
       "site/src/content/blog/de/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
@@ -687,8 +707,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/M.Super.Activities",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/build-a-uipath-activity-package-for-modern-studio-with-viewmodels.md"
     ]
@@ -733,9 +754,23 @@
     ]
   },
   {
-    "url": "https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.EntityFrameworkCore/",
+    "url": "https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer",
     "status": 404,
     "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11.md",
+      "site/src/content/blog/pt-br/2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.EntityFrameworkCore/",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
       "site/src/content/blog/de/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
@@ -747,8 +782,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.AspNetCore.OpenApi/",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
       "site/src/content/blog/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
@@ -826,9 +862,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Extensions.Http.Resilience",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
       "site/src/content/blog/de/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
@@ -848,9 +883,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.SemanticKernel/",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/microsoft-agent-framework-vs-semantic-kernel-for-a-greenfield-net-agent.md"
     ]
@@ -921,9 +955,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/OpenTelemetry.Exporter.OpenTelemetryProtocol",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/how-to-use-opentelemetry-with-dotnet-11-and-a-free-backend.md",
       "site/src/content/blog/2026/06/migrate-from-serilog-to-opentelemetry-logging-in-dotnet-11.md",
@@ -1094,19 +1127,6 @@
       "site/src/content/blog/ja/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
       "site/src/content/blog/pt-br/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
       "site/src/content/blog/ru/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md"
-    ]
-  },
-  {
-    "url": "https://www.udemy.com/topic/c-sharp/",
-    "status": 403,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/de/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/es/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/ja/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/pt-br/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/ru/2023/06/how-to-start-programming-with-c.md"
     ]
   }
 ]
