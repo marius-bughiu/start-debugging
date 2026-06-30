@@ -894,5 +894,9 @@
   {
     "slug": "2026/06/hasdata-vs-useseeding-for-seeding-data-in-ef-core-11",
     "text": "A Guid or DateTime.UtcNow in HasData re-diffs the model every build in EF Core 11. UseSeeding for non-static data."
+  },
+  {
+    "slug": "2026/06/fix-claude-code-drops-mcp-tools-after-auto-compaction",
+    "text": "Auto-compaction killed your MCP tools but /mcp still shows connected? Reconnect, then /clear if tools stay gone."
   }
 ]
