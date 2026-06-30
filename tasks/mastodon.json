@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/06/fix-claude-code-drops-mcp-tools-after-auto-compaction",
-    "text": "Long Claude Code session, context fills, auto-compaction runs, and every MCP tool call fails. The fix: run /mcp and reconnect the server. The gotcha: if /mcp shows connected but tools are still missing, you hit the re-registration bug and only /clear or a fresh session brings them back."
   }
 ]
