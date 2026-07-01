@@ -902,5 +902,9 @@
   {
     "slug": "2026/07/skiasharp-4-0-stable-release-faster-gpu-rendering",
     "text": "SkiaSharp 4.148.0 is the first stable v4: GPU UIs up to 24% faster, CPU shaders ~6x, legacy API retired."
+  },
+  {
+    "slug": "2026/07/how-to-propagate-a-cancellationtoken-through-async-methods-in-dotnet-11",
+    "text": "A CancellationToken you never pass down is dead weight. Forward it at every await; CA2016 flags the ones you drop."
   }
 ]

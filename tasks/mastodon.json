@@ -30,5 +30,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
+  },
+  {
+    "slug": "2026/07/how-to-propagate-a-cancellationtoken-through-async-methods-in-dotnet-11",
+    "text": "A CancellationToken that stops at the top of your call chain does nothing: the blocking call never sees it. Make it the last parameter, forward it at every await, link it with CreateLinkedTokenSource when you add a timeout, and turn CA2016 into a build error so a dropped token fails CI. Full .NET 11 guide."
   }
 ]
