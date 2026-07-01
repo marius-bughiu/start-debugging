@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/07/skiasharp-4-0-stable-release-faster-gpu-rendering",
-    "text": "SkiaSharp 4.148.0 is the first stable v4 release. GPU-heavy UIs render up to 24% faster (a shadowed dashboard went 65->80 FPS) and CPU Perlin shaders run ~6x faster. Variable fonts, color palettes, and animated WebP land in the managed API. The catch: the legacy 3.x surface is retired, so upgrade on a branch first."
   }
 ]
