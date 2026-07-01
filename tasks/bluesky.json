@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/how-to-propagate-a-cancellationtoken-through-async-methods-in-dotnet-11",
-    "text": "In .NET 11, cancellation works only if the token reaches the blocking call. Last-param rule, linked tokens, and the CA2016 analyzer."
   }
 ]
