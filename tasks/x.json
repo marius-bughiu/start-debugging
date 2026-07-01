@@ -906,5 +906,9 @@
   {
     "slug": "2026/07/how-to-propagate-a-cancellationtoken-through-async-methods-in-dotnet-11",
     "text": "A CancellationToken you never pass down is dead weight. Forward it at every await; CA2016 flags the ones you drop."
+  },
+  {
+    "slug": "2026/07/fix-claude-code-high-memory-usage-and-context-overflow",
+    "text": "Claude Code eating 7GB? That is the Node heap, not the context window. Raise --max-old-space-size; /compact is the wrong fix."
   }
 ]

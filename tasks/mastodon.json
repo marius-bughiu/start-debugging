@@ -30,5 +30,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
+  },
+  {
+    "slug": "2026/07/fix-claude-code-high-memory-usage-and-context-overflow",
+    "text": "That High memory usage (7GB) warning in Claude Code is the Node process running out of RAM, not the model context filling up. Raise the V8 heap with NODE_OPTIONS=--max-old-space-size, capture a /heapdump to find a leak, and roll back a bad 2.1.x build. Context overflow is a separate fix: /context then /compact."
   }
 ]

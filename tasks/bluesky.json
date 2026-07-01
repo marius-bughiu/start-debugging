@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/fix-claude-code-high-memory-usage-and-context-overflow",
+    "text": "Claude Code high memory usage and context overflow are two different meters. RAM gets --max-old-space-size and /heapdump; the window gets /context and /compact."
   }
 ]

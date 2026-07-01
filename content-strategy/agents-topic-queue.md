@@ -63,7 +63,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: MCP servers stop working after a Claude Desktop update on Windows (config path moved) → slug: 2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows
 - Fix: `MCP error -32000: Client Closed` in Claude Code when a server dies on launch → slug: 2026/06/fix-mcp-error-32000-connection-closed-in-claude-code
 - Fix: Claude Code drops MCP tools after auto-compaction (reconnect with `/mcp`) → slug: 2026/06/fix-claude-code-drops-mcp-tools-after-auto-compaction
-- Fix: Claude Code high memory usage and context overflow (`/heapdump` and `/compact`)
+- Fix: Claude Code high memory usage and context overflow (`/heapdump` and `/compact`) → slug: 2026/07/fix-claude-code-high-memory-usage-and-context-overflow
 
 ## Vs / comparison
 
