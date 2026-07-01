@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/skiasharp-4-0-stable-release-faster-gpu-rendering",
+    "text": "SkiaSharp 4.0 shipped stable (4.148.0). Shadowed cards 65->80 FPS, Perlin shaders ~6x faster, and the legacy 3.x API is gone."
   }
 ]
