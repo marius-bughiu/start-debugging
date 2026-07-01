@@ -914,5 +914,9 @@
   {
     "slug": "2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp",
     "text": "Any async deadline: cts.CancelAfter(5s), pass the Token, catch OperationCanceledException. TryReset reuses the CTS."
+  },
+  {
+    "slug": "2026/07/how-to-implement-and-consume-iasyncdisposable-with-await-using-in-csharp",
+    "text": "IDisposable can deadlock when cleanup needs to await. The await using + DisposeAsync pattern, done right in C#."
   }
 ]
