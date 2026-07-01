@@ -910,5 +910,9 @@
   {
     "slug": "2026/07/fix-claude-code-high-memory-usage-and-context-overflow",
     "text": "Claude Code eating 7GB? That is the Node heap, not the context window. Raise --max-old-space-size; /compact is the wrong fix."
+  },
+  {
+    "slug": "2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp",
+    "text": "Any async deadline: cts.CancelAfter(5s), pass the Token, catch OperationCanceledException. TryReset reuses the CTS."
   }
 ]

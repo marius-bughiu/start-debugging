@@ -78,7 +78,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to map and query JSON columns in EF Core 11 → slug: 2026/06/how-to-map-and-query-json-columns-in-ef-core-11
 - How to declare extension properties in C# 14 → slug: 2026/06/how-to-declare-extension-properties-in-csharp-14
 - How to propagate a `CancellationToken` through async methods in .NET 11 → slug: 2026/07/how-to-propagate-a-cancellationtoken-through-async-methods-in-dotnet-11
-- How to time out an async operation with `CancellationTokenSource.CancelAfter` in C#
+- How to time out an async operation with `CancellationTokenSource.CancelAfter` in C# → slug: 2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp
 - How to implement and consume `IAsyncDisposable` with `await using` in C#
 - How to nest a `ListView` inside a `Column` in Flutter without an unbounded-height error
 - How to mix a `ListView` and a `GridView` in one scroll view with slivers in Flutter
