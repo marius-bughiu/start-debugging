@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/07/how-to-implement-and-consume-iasyncdisposable-with-await-using-in-csharp",
-    "text": "IDisposable.Dispose() is void, so async cleanup means blocking on a Task and risking a deadlock. IAsyncDisposable + await using fix that. The full guide covers the DisposeAsyncCore split for non-sealed types, supporting both interfaces, and the two gotchas (stacked await using and ConfigureAwait) that silently leak resources."
   }
 ]
