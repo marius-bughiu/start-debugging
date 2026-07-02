@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/07/run-the-binlog-mcp-server-in-ci-to-auto-triage-build-failures",
-    "text": "Microsoft moved the binlog MCP server from the editor into the pipeline. Wire it into a GitHub Agentic Workflow, and when a CI build fails an agent reads the .binlog, groups the errors with binlog_diagnose, and comments the likely root cause on the PR. In Microsoft's eval: better diagnoses, about 44% faster."
   }
 ]
