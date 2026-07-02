@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/run-the-binlog-mcp-server-in-ci-to-auto-triage-build-failures",
+    "text": "Run the binlog MCP server unattended in CI: a build fails, an agent reads the .binlog and comments the root cause on the PR."
   }
 ]
