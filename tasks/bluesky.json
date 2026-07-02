@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/how-to-nest-a-listview-inside-a-column-in-flutter-without-an-unbounded-height-error",
-    "text": "A Column hands a ListView infinite height, so it crashes with 'unbounded height'. Fix with Expanded or slivers, not just shrinkWrap."
   }
 ]

@@ -30,9 +30,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> is a struct that skips the Task<T> heap allocation when an async method completes synchronously, like a cache hit. The price: await it once, never block on .Result, never stash it in a field. A profiler-driven optimization, not a better Task. Turn on CA2012 first, then measure."
-  },
-  {
-    "slug": "2026/07/how-to-nest-a-listview-inside-a-column-in-flutter-without-an-unbounded-height-error",
-    "text": "Drop a ListView into a Column and Flutter throws 'Vertical viewport was given unbounded height'. A Column offers unbounded vertical space and a scrollable viewport will not render into infinity. Four fixes: Expanded for leftover space, SizedBox for a fixed height, shrinkWrap for short lists only, or slivers."
   }
 ]
