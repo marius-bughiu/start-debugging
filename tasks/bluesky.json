@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/mcp-stdio-vs-http-vs-sse-transport-which-to-choose",
-    "text": "MCP transports are not 3 peers: stdio for a local subprocess, Streamable HTTP for anything remote, HTTP+SSE is deprecated."
   }
 ]
