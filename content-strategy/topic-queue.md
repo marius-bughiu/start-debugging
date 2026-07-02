@@ -80,7 +80,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to propagate a `CancellationToken` through async methods in .NET 11 → slug: 2026/07/how-to-propagate-a-cancellationtoken-through-async-methods-in-dotnet-11
 - How to time out an async operation with `CancellationTokenSource.CancelAfter` in C# → slug: 2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp
 - How to implement and consume `IAsyncDisposable` with `await using` in C# → slug: 2026/07/how-to-implement-and-consume-iasyncdisposable-with-await-using-in-csharp
-- How to nest a `ListView` inside a `Column` in Flutter without an unbounded-height error
+- How to nest a `ListView` inside a `Column` in Flutter without an unbounded-height error → slug: 2026/07/how-to-nest-a-listview-inside-a-column-in-flutter-without-an-unbounded-height-error
 - How to mix a `ListView` and a `GridView` in one scroll view with slivers in Flutter
 - How to set up JWT bearer authentication in a minimal API in ASP.NET Core 11
 - How to customize minimal API validation error responses with `IProblemDetailsService` in ASP.NET Core 11
