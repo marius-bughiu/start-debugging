@@ -77,7 +77,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Claude subagents vs OpenAI Assistants for parallelisable work → slug: 2026/06/claude-subagents-vs-openai-assistants-for-parallel-work
 - LLM-as-judge vs rule-based evals for a coding agent → slug: 2026/06/llm-as-judge-vs-rule-based-evals-for-a-coding-agent
 - Hangfire vs Quartz.NET vs IHostedService for scheduled LLM jobs → slug: 2026/06/hangfire-vs-quartz-net-vs-ihostedservice-for-scheduled-llm-jobs
-- MCP stdio vs HTTP vs SSE transport: which to choose
+- MCP stdio vs HTTP vs SSE transport: which to choose → slug: 2026/07/mcp-stdio-vs-http-vs-sse-transport-which-to-choose
 - A2A protocol vs MCP: agent-to-agent vs agent-to-tool
 - CodeAct vs a traditional tool-calling loop for agents
 - Claude Code skills vs subagents vs MCP servers: when to build each

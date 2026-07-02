@@ -922,5 +922,9 @@
   {
     "slug": "2026/07/run-the-binlog-mcp-server-in-ci-to-auto-triage-build-failures",
     "text": "binlog MCP server, now in CI: a build fails, an agent reads the .binlog, root cause posted to the PR."
+  },
+  {
+    "slug": "2026/07/mcp-stdio-vs-http-vs-sse-transport-which-to-choose",
+    "text": "Picking an MCP transport? Local subprocess -> stdio. Anything networked -> Streamable HTTP. SSE is deprecated."
   }
 ]
