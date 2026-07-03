@@ -34,9 +34,5 @@
   {
     "slug": "2026/07/how-to-mix-a-listview-and-a-gridview-in-one-scroll-view-with-slivers-in-flutter",
     "text": "A Flutter list that flows into a grid in one scroll: stacking two scrollables with shrinkWrap builds every item on the first frame and gives you fighting scroll positions. The fix is one CustomScrollView of slivers: SliverList, SliverGrid, SliverToBoxAdapter. Plus the childAspectRatio trap that distorts tiles."
-  },
-  {
-    "slug": "2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11",
-    "text": "Protecting a minimal API in ASP.NET Core 11 with JWT is a handful of lines: AddAuthentication().AddJwtBearer() plus RequireAuthorization() on the endpoints, and WebApplication wires the middleware for you. The gotcha: a bare AddAuthentication() sets no default scheme, so a valid token still 401s. Test it with dotnet user-jwts."
   }
 ]
