@@ -34,9 +34,5 @@
   {
     "slug": "2026/07/how-to-mix-a-listview-and-a-gridview-in-one-scroll-view-with-slivers-in-flutter",
     "text": "A Flutter list that flows into a grid in one scroll: stacking two scrollables with shrinkWrap builds every item on the first frame and gives you fighting scroll positions. The fix is one CustomScrollView of slivers: SliverList, SliverGrid, SliverToBoxAdapter. Plus the childAspectRatio trap that distorts tiles."
-  },
-  {
-    "slug": "2026/07/a2a-protocol-vs-mcp-agent-to-agent-vs-agent-to-tool",
-    "text": "A2A vs MCP is the wrong framing: MCP wires one agent to its tools, A2A wires independent agents to each other, and real systems stack both. The gotcha: an A2A peer is an untrusted, opaque agent, so its task text is data, not instructions. Never pipe it straight into an MCP tool call. Build MCP first."
   }
 ]
