@@ -934,5 +934,9 @@
   {
     "slug": "2026/07/how-to-mix-a-listview-and-a-gridview-in-one-scroll-view-with-slivers-in-flutter",
     "text": "Stacking a ListView and GridView with shrinkWrap builds every item up front. One CustomScrollView of slivers stays lazy."
+  },
+  {
+    "slug": "2026/07/cursor-duneslide-prompt-injection-sandbox-escape-rce",
+    "text": "Prompt injection to RCE in Cursor: a poisoned MCP reply steers run_terminal_cmd to overwrite ~/.zshrc. Fixed in 3.0."
   }
 ]

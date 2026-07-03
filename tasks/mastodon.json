@@ -34,5 +34,9 @@
   {
     "slug": "2026/07/how-to-mix-a-listview-and-a-gridview-in-one-scroll-view-with-slivers-in-flutter",
     "text": "A Flutter list that flows into a grid in one scroll: stacking two scrollables with shrinkWrap builds every item on the first frame and gives you fighting scroll positions. The fix is one CustomScrollView of slivers: SliverList, SliverGrid, SliverToBoxAdapter. Plus the childAspectRatio trap that distorts tiles."
+  },
+  {
+    "slug": "2026/07/cursor-duneslide-prompt-injection-sandbox-escape-rce",
+    "text": "DuneSlide is a pair of critical Cursor flaws, CVE-2026-50548 and CVE-2026-50549, both CVSS 9.8. A single prompt injected via an MCP response or a web search result can steer the run_terminal_cmd tool into writing outside your project, overwriting files like ~/.zshrc for zero-click RCE. Every version before Cursor 3.0 is affected."
   }
 ]

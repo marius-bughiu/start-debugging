@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/cursor-duneslide-prompt-injection-sandbox-escape-rce",
+    "text": "DuneSlide: two Cursor bugs (CVSS 9.8) let a poisoned MCP or web result escape the sandbox and run code, no click. Fixed in 3.0."
   }
 ]
