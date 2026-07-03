@@ -84,7 +84,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to mix a `ListView` and a `GridView` in one scroll view with slivers in Flutter → slug: 2026/07/how-to-mix-a-listview-and-a-gridview-in-one-scroll-view-with-slivers-in-flutter
 - How to set up JWT bearer authentication in a minimal API in ASP.NET Core 11 → slug: 2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11
 - How to customize minimal API validation error responses with `IProblemDetailsService` in ASP.NET Core 11 → slug: 2026/07/how-to-customize-minimal-api-validation-error-responses-with-iproblemdetailsservice-in-aspnetcore-11
-- How to use named query filters for soft delete and multi-tenancy in EF Core 11
+- How to use named query filters for soft delete and multi-tenancy in EF Core 11 → slug: 2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11
 - How to check `Ref.mounted` before using `ref` after an async gap in Flutter Riverpod 3.0
 
 ## Fix / error
