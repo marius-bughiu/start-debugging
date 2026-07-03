@@ -938,5 +938,9 @@
   {
     "slug": "2026/07/cursor-duneslide-prompt-injection-sandbox-escape-rce",
     "text": "Prompt injection to RCE in Cursor: a poisoned MCP reply steers run_terminal_cmd to overwrite ~/.zshrc. Fixed in 3.0."
+  },
+  {
+    "slug": "2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11",
+    "text": "JWT auth in a minimal API: AddJwtBearer(), a default scheme, RequireAuthorization(). Test it with dotnet user-jwts."
   }
 ]
