@@ -34,9 +34,5 @@
   {
     "slug": "2026/07/how-to-mix-a-listview-and-a-gridview-in-one-scroll-view-with-slivers-in-flutter",
     "text": "A Flutter list that flows into a grid in one scroll: stacking two scrollables with shrinkWrap builds every item on the first frame and gives you fighting scroll positions. The fix is one CustomScrollView of slivers: SliverList, SliverGrid, SliverToBoxAdapter. Plus the childAspectRatio trap that distorts tiles."
-  },
-  {
-    "slug": "2026/07/how-to-customize-minimal-api-validation-error-responses-with-iproblemdetailsservice-in-aspnetcore-11",
-    "text": "The 400 that built-in minimal API validation returns in ASP.NET Core 11 now routes through IProblemDetailsService, so a single CustomizeProblemDetails callback can add a traceId, rewrite the title, or promote it to 422 for every error at once. The gotcha: TypedResults.Problem written in a handler bypasses the callback."
   }
 ]
