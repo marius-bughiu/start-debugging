@@ -942,5 +942,9 @@
   {
     "slug": "2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11",
     "text": "JWT auth in a minimal API: AddJwtBearer(), a default scheme, RequireAuthorization(). Test it with dotnet user-jwts."
+  },
+  {
+    "slug": "2026/07/a2a-protocol-vs-mcp-agent-to-agent-vs-agent-to-tool",
+    "text": "MCP wires one agent to its tools. A2A wires agents to each other. They stack, not compete. Build MCP first."
   }
 ]
