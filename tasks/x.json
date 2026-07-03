@@ -946,5 +946,9 @@
   {
     "slug": "2026/07/a2a-protocol-vs-mcp-agent-to-agent-vs-agent-to-tool",
     "text": "MCP wires one agent to its tools. A2A wires agents to each other. They stack, not compete. Build MCP first."
+  },
+  {
+    "slug": "2026/07/how-to-customize-minimal-api-validation-error-responses-with-iproblemdetailsservice-in-aspnetcore-11",
+    "text": "Reshape the 400 from minimal API validation: one CustomizeProblemDetails callback adds a traceId to every error."
   }
 ]
