@@ -966,5 +966,9 @@
   {
     "slug": "2026/07/codeact-vs-tool-calling-loop-for-agents",
     "text": "CodeAct cut a data-heavy agent run from 150K tokens to 2K. When code actions beat a JSON tool loop, and when they don't."
+  },
+  {
+    "slug": "2026/07/fix-the-linq-expression-could-not-be-translated-in-ef-core-11",
+    "text": "EF Core 11 'could not be translated'? Usually a StringComparison or ToString in your Where. Drop it and use == instead."
   }
 ]
