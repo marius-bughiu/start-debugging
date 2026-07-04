@@ -55,10 +55,24 @@ jobs:
     needs: build
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
     steps:
+      # Pages deployments intermittently fail on GitHub's side ("Deployment
+      # failed, try again later." during syncing_files, deployment_queued
+      # timeouts). Publishing is unattended, so tolerate one transient failure
+      # and retry once; if the retry also fails, the job fails as before.
       - name: Deploy to GitHub Pages
         id: deployment
+        uses: actions/deploy-pages@v5
+        continue-on-error: true
+
+      - name: Wait before retry
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 30
+
+      - name: Deploy to GitHub Pages (retry)
+        id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@v5
 
   indexnow:
