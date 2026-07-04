@@ -2,140 +2,140 @@
   {
     "page": "https://startdebugging.net/2026/06/gate-cursor-sdk-tool-calls-with-auto-review-and-permissions-json/",
     "position": 4.71,
-    "impressions": 4824,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2026/05/how-to-assign-a-jira-ticket-to-a-cursor-cloud-agent-and-get-a-pr-back/",
-    "position": 4.02,
-    "impressions": 419,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2026/05/how-to-pipe-cursors-context-to-an-aider-session-for-multi-agent-refactors/",
-    "position": 7.07,
-    "impressions": 309,
+    "impressions": 6196,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/06/nest-subagents-in-the-cursor-sdk-reviewer-delegates-to-test-writer/",
-    "position": 4.83,
-    "impressions": 284,
+    "position": 4.19,
+    "impressions": 396,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/2026/05/fix-platformnotsupportedexception-in-native-aot/",
-    "position": 5.67,
-    "impressions": 275,
+    "page": "https://startdebugging.net/2026/05/how-to-assign-a-jira-ticket-to-a-cursor-cloud-agent-and-get-a-pr-back/",
+    "position": 4.03,
+    "impressions": 375,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/05/how-to-pipe-cursors-context-to-an-aider-session-for-multi-agent-refactors/",
+    "position": 7,
+    "impressions": 319,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/06/expose-functions-to-cursor-sdk-agent-with-local-customtools/",
-    "position": 4.03,
-    "impressions": 226,
+    "position": 3.88,
+    "impressions": 262,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/05/fix-platformnotsupportedexception-in-native-aot/",
+    "position": 5.54,
+    "impressions": 247,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/06/claude-code-vs-cursor-vs-copilot-agent-mode-where-each-wins/",
-    "position": 6.12,
-    "impressions": 118,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2026/05/how-to-reduce-the-number-of-mcp-tools-claude-loads/",
-    "position": 6.63,
-    "impressions": 107,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready/",
-    "position": 4.66,
-    "impressions": 96,
+    "position": 6.4,
+    "impressions": 123,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows/",
-    "position": 8.28,
-    "impressions": 93,
+    "position": 8.12,
+    "impressions": 94,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/2026/05/fix-http-mcp-server-url-wont-connect-in-claude-desktop/",
-    "position": 7.29,
-    "impressions": 87,
+    "page": "https://startdebugging.net/2026/05/how-to-reduce-the-number-of-mcp-tools-claude-loads/",
+    "position": 6.28,
+    "impressions": 92,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/2026/06/fix-looking-up-a-deactivated-widgets-ancestor-is-unsafe-in-flutter/",
-    "position": 5.7,
-    "impressions": 74,
+    "page": "https://startdebugging.net/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready/",
+    "position": 4.89,
+    "impressions": 90,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/archive/",
-    "position": 8.29,
-    "impressions": 72,
+    "position": 7.24,
+    "impressions": 86,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/2026/05/fix-rate-limit-error-on-claude-sonnet-4-6-in-a-long-agent-loop/",
-    "position": 4.52,
-    "impressions": 64,
+    "page": "https://startdebugging.net/2026/06/fix-looking-up-a-deactivated-widgets-ancestor-is-unsafe-in-flutter/",
+    "position": 5.94,
+    "impressions": 85,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11/",
-    "position": 7.26,
-    "impressions": 62,
+    "position": 6.59,
+    "impressions": 82,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/2026/05/fix-tool-call-arguments-did-not-match-schema-in-anthropic-tool-use/",
-    "position": 6.42,
-    "impressions": 60,
+    "page": "https://startdebugging.net/2026/05/fix-http-mcp-server-url-wont-connect-in-claude-desktop/",
+    "position": 7,
+    "impressions": 71,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/05/fix-rate-limit-error-on-claude-sonnet-4-6-in-a-long-agent-loop/",
+    "position": 4.69,
+    "impressions": 67,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/05/how-to-cache-multi-turn-claude-conversations-across-api-calls/",
-    "position": 4.63,
-    "impressions": 60,
+    "position": 4.59,
+    "impressions": 64,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/05/fix-tool-call-arguments-did-not-match-schema-in-anthropic-tool-use/",
+    "position": 5.98,
+    "impressions": 63,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/05/how-to-add-tool-calling-to-a-microsoft-extensions-ai-chat-client/",
-    "position": 5.83,
-    "impressions": 54,
+    "position": 5.73,
+    "impressions": 55,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/2026/06/claude-code-vs-cursor-vs-aider-for-a-dotnet-11-repo/",
-    "position": 6.94,
-    "impressions": 54,
-    "clicks": 0,
-    "ctr": 0
+    "page": "https://startdebugging.net/pillars/dotnet-11-tracker/",
+    "position": 6.96,
+    "impressions": 51,
+    "clicks": 1,
+    "ctr": 0.0196
   },
   {
-    "page": "https://startdebugging.net/2026/05/fix-claude-reached-its-tool-use-limit-for-this-turn/",
-    "position": 8.19,
-    "impressions": 53,
+    "page": "https://startdebugging.net/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/",
+    "position": 7.84,
+    "impressions": 50,
     "clicks": 0,
     "ctr": 0
   }

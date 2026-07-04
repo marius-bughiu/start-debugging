@@ -1,28 +1,7 @@
 [
   {
-    "query": "\"permissions.json\" \"allow_instructions\" \"block_instructions\" cursor ide",
+    "query": "\".cursor/permissions.json\" \"allow_instructions\" \"block_instructions\"",
     "position": 11,
-    "impressions": 3,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "query": "\"autorun\" \"allow_instructions\" \"block_instructions\" cursor ide settings",
-    "position": 11,
-    "impressions": 2,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "query": "\"mapster.sourcegenerator\" mapster",
-    "position": 11,
-    "impressions": 1,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "query": "unhandled exception. system.invalidoperationexception: reflection-based serialization has been disabled for this application. either use the source generator apis or explicitly configure the 'jsonserializeroptions.typeinforesolver' property.",
-    "position": 14,
     "impressions": 1,
     "clicks": 0,
     "ctr": 0
