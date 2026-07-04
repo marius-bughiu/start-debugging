@@ -970,5 +970,9 @@
   {
     "slug": "2026/07/fix-the-linq-expression-could-not-be-translated-in-ef-core-11",
     "text": "EF Core 11 'could not be translated'? Usually a StringComparison or ToString in your Where. Drop it and use == instead."
+  },
+  {
+    "slug": "2026/07/fix-the-required-column-was-not-present-in-the-results-of-a-fromsql-operation-in-ef-core-11",
+    "text": "FromSql 'required column X was not present'? Your SELECT skips a mapped column. SELECT * or SqlQuery<T> for a subset."
   }
 ]
