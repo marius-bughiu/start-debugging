@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3",
-    "text": "In a Riverpod 3 Notifier, an await can dispose the provider before you resume, and writing state then throws UnmountedRefException. Fix: read deps before the await, then guard the write with if (!ref.mounted) return. It's the provider-side BuildContext.mounted, new in 3.0, so the old onDispose mixin can go."
   }
 ]
