@@ -962,5 +962,9 @@
   {
     "slug": "2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3",
     "text": "A Riverpod 3 Notifier can be disposed mid-await. Guard the state write with if (!ref.mounted) return."
+  },
+  {
+    "slug": "2026/07/codeact-vs-tool-calling-loop-for-agents",
+    "text": "CodeAct cut a data-heavy agent run from 150K tokens to 2K. When code actions beat a JSON tool loop, and when they don't."
   }
 ]

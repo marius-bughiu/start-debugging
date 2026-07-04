@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/codeact-vs-tool-calling-loop-for-agents",
+    "text": "Code actions vs JSON tool calls: CodeAct gets ~20 pts more success and 30% fewer turns on multi-step tasks, if you have a sandbox."
   }
 ]
