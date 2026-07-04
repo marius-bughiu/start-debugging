@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/fix-the-linq-expression-could-not-be-translated-in-ef-core-11",
-    "text": "EF Core 11's 'could not be translated'? Your Where has no SQL equivalent. Fix with ==, EF.Functions.Collate, or explicit client eval."
   }
 ]

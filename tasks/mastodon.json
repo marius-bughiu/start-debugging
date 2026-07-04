@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/fix-the-linq-expression-could-not-be-translated-in-ef-core-11",
-    "text": "EF Core 11 throws 'The LINQ expression could not be translated' when a Where calls a method it can't turn into SQL, often a StringComparison Equals. Fix: drop the overload, use EF.Functions.Collate, or opt into client eval with AsAsyncEnumerable. Gotcha: the in-memory test provider never throws, so it only breaks in prod."
   }
 ]
