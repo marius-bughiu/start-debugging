@@ -1,16 +1,5 @@
 [
   {
-    "url": "https://aider.chat/docs/usage/conventions.html",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/how-to-let-aider-edit-files-outside-the-git-repository.md",
-      "site/src/content/blog/2026/05/how-to-pipe-cursors-context-to-an-aider-session-for-multi-agent-refactors.md",
-      "site/src/content/blog/2026/05/how-to-pipe-cursors-context-to-an-aider-session-for-multi-agent-refactors.md"
-    ]
-  },
-  {
     "url": "https://aka.ms/azure-functions-retirements/in-process-model",
     "status": 404,
     "ok": false,
@@ -69,6 +58,14 @@
     ]
   },
   {
+    "url": "https://code.claude.com/docs/en/release-notes",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/07/fix-claude-code-high-memory-usage-and-context-overflow.md"
+    ]
+  },
+  {
     "url": "https://dart.dev/tools/linter-rules/unnecessary_non_null_assertion",
     "status": 404,
     "ok": false,
@@ -98,15 +95,6 @@
       "site/src/content/blog/pt-br/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
       "site/src/content/blog/ru/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
       "site/src/content/blog/ru/2026/05/configureawait-false-vs-default-in-dotnet-11.md"
-    ]
-  },
-  {
-    "url": "https://devblogs.microsoft.com/semantic-kernel/using-semantic-kernel-with-dependency-injection/",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/how-to-run-a-semantic-kernel-plugin-from-a-backgroundservice.md"
     ]
   },
   {
@@ -149,31 +137,27 @@
     ]
   },
   {
-    "url": "https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/master/src/Swashbuckle.AspNetCore.SwaggerUI",
+    "url": "https://github.com/anthropics/claude-code/issues/27041",
     "status": null,
     "ok": false,
     "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11.md",
-      "site/src/content/blog/de/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11.md",
-      "site/src/content/blog/es/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11.md",
-      "site/src/content/blog/ja/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11.md",
-      "site/src/content/blog/pt-br/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11.md",
-      "site/src/content/blog/ru/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11.md"
+      "site/src/content/blog/2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows.md",
+      "site/src/content/blog/2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows.md",
+      "site/src/content/blog/2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows.md"
     ]
   },
   {
-    "url": "https://github.com/dotnet/aspnetcore/pull/52281",
-    "status": null,
+    "url": "https://github.com/dotnet/aspnetcore/discussions/51020",
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
-      "site/src/content/blog/de/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
-      "site/src/content/blog/es/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
-      "site/src/content/blog/ja/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
-      "site/src/content/blog/pt-br/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
-      "site/src/content/blog/ru/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md"
+      "site/src/content/blog/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md"
     ]
   },
   {
@@ -216,30 +200,32 @@
     ]
   },
   {
+    "url": "https://github.com/dotnet/runtime/pull/124646",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
+      "site/src/content/blog/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
+      "site/src/content/blog/de/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
+      "site/src/content/blog/de/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
+      "site/src/content/blog/es/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
+      "site/src/content/blog/es/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
+      "site/src/content/blog/ja/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
+      "site/src/content/blog/ja/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
+      "site/src/content/blog/pt-br/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
+      "site/src/content/blog/pt-br/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
+      "site/src/content/blog/ru/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
+      "site/src/content/blog/ru/2026/04/system-text-json-11-pascalcase-per-member-naming.md"
+    ]
+  },
+  {
     "url": "https://github.com/jlowin/fastmcp/issues/932",
     "status": 404,
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument.md",
       "site/src/content/blog/2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument.md"
-    ]
-  },
-  {
-    "url": "https://github.com/marius-bughiu/super-activities",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/add-project-settings-to-a-uipath-package-design-time-and-runtime.md",
-      "site/src/content/blog/2026/05/add-project-settings-to-a-uipath-package-design-time-and-runtime.md",
-      "site/src/content/blog/2026/05/build-a-uipath-activity-package-for-modern-studio-with-viewmodels.md",
-      "site/src/content/blog/2026/05/build-a-uipath-activity-package-for-modern-studio-with-viewmodels.md",
-      "site/src/content/blog/2026/05/independently-release-multiple-nuget-packages-with-minver-and-trusted-publishing.md",
-      "site/src/content/blog/2026/05/independently-release-multiple-nuget-packages-with-minver-and-trusted-publishing.md",
-      "site/src/content/blog/2026/05/run-code-before-and-after-every-uipath-activity-with-a-tracking-participant.md",
-      "site/src/content/blog/2026/05/run-code-before-and-after-every-uipath-activity-with-a-tracking-participant.md",
-      "site/src/content/blog/2026/05/write-a-uipath-workflow-analyzer-rule-with-entry-point-detection.md",
-      "site/src/content/blog/2026/05/write-a-uipath-workflow-analyzer-rule-with-entry-point-detection.md"
     ]
   },
   {
@@ -317,6 +303,19 @@
       "site/src/content/blog/pt-br/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
       "site/src/content/blog/ru/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
       "site/src/content/blog/ru/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md"
+    ]
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/dotnet/api/system.timeprovider.createcancellationtokensource",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md",
+      "site/src/content/blog/de/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md",
+      "site/src/content/blog/es/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md",
+      "site/src/content/blog/ja/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md",
+      "site/src/content/blog/pt-br/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md",
+      "site/src/content/blog/ru/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md"
     ]
   },
   {
@@ -442,6 +441,19 @@
     ]
   },
   {
+    "url": "https://leetcode.com/",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/de/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/es/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/ja/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/pt-br/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/ru/2023/06/how-to-start-programming-with-c.md"
+    ]
+  },
+  {
     "url": "https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss",
     "status": 404,
     "ok": false,
@@ -462,6 +474,8 @@
       "site/src/content/blog/2026/05/fix-claude-code-reports-mcp-server-disconnected-inside-wsl.md",
       "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md",
       "site/src/content/blog/2026/05/how-to-write-a-claude-code-subagent-that-runs-browser-tests.md",
+      "site/src/content/blog/2026/06/fix-claude-code-drops-mcp-tools-after-auto-compaction.md",
+      "site/src/content/blog/2026/06/fix-claude-code-drops-mcp-tools-after-auto-compaction.md",
       "site/src/content/blog/2026/06/fix-mcp-error-32000-connection-closed-in-claude-code.md"
     ]
   },
@@ -499,19 +513,6 @@
       "site/src/content/blog/ja/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
       "site/src/content/blog/pt-br/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
       "site/src/content/blog/ru/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md"
-    ]
-  },
-  {
-    "url": "https://news.ycombinator.com/item?id=47720060",
-    "status": 429,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/de/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/es/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/ja/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/pt-br/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/ru/2026/04/building-a-microsecond-database-engine-in-csharp.md"
     ]
   },
   {
@@ -620,10 +621,55 @@
     ]
   },
   {
-    "url": "https://www.npmjs.com/package/mcp-remote",
-    "status": null,
+    "url": "https://www.npmjs.com/package/@anthropic-ai/sdk",
+    "status": 403,
     "ok": false,
-    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
+      "site/src/content/blog/2026/05/how-to-cache-multi-turn-claude-conversations-across-api-calls.md",
+      "site/src/content/blog/de/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
+      "site/src/content/blog/es/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
+      "site/src/content/blog/ja/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
+      "site/src/content/blog/ru/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md"
+    ]
+  },
+  {
+    "url": "https://www.npmjs.com/package/cowork-terminal-mcp",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/de/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/de/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/es/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/es/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/ja/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/ja/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/pt-br/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/pt-br/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/ru/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md",
+      "site/src/content/blog/ru/2026/04/cowork-terminal-mcp-host-terminal-access-for-claude-cowork.md"
+    ]
+  },
+  {
+    "url": "https://www.npmjs.com/package/jsonl-to-pdf",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md",
+      "site/src/content/blog/de/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md",
+      "site/src/content/blog/es/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md",
+      "site/src/content/blog/ja/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md",
+      "site/src/content/blog/pt-br/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md",
+      "site/src/content/blog/ru/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md"
+    ]
+  },
+  {
+    "url": "https://www.npmjs.com/package/mcp-remote",
+    "status": 403,
+    "ok": false,
     "sources": [
       "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
       "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
@@ -654,9 +700,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Azure.Extensions.AspNetCore.DataProtection.Blobs",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
       "site/src/content/blog/de/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
@@ -668,8 +713,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Azure.Extensions.AspNetCore.DataProtection.Keys",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
       "site/src/content/blog/de/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
@@ -707,9 +753,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/M.Super.Activities",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/build-a-uipath-activity-package-for-modern-studio-with-viewmodels.md"
     ]
@@ -724,8 +769,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/M.Super.Extensions",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/run-code-before-and-after-every-uipath-activity-with-a-tracking-participant.md",
       "site/src/content/blog/2026/05/write-a-uipath-workflow-analyzer-rule-with-entry-point-detection.md"
@@ -746,9 +792,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Agents.AI/",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/microsoft-agent-framework-vs-semantic-kernel-for-a-greenfield-net-agent.md"
     ]
@@ -759,18 +804,23 @@
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11.md",
+      "site/src/content/blog/2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11.md",
       "site/src/content/blog/de/2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11.md",
       "site/src/content/blog/es/2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11.md",
       "site/src/content/blog/ja/2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11.md",
       "site/src/content/blog/pt-br/2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11.md",
-      "site/src/content/blog/ru/2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11.md"
+      "site/src/content/blog/pt-br/2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11.md"
     ]
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.EntityFrameworkCore/",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
       "site/src/content/blog/de/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
@@ -782,9 +832,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.AspNetCore.OpenApi/",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
       "site/src/content/blog/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
@@ -843,8 +892,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Extensions.ApiDescription.Server",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
       "site/src/content/blog/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
@@ -871,6 +921,19 @@
       "site/src/content/blog/ja/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
       "site/src/content/blog/pt-br/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
       "site/src/content/blog/ru/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.Extensions.TimeProvider.Testing",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md",
+      "site/src/content/blog/de/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md",
+      "site/src/content/blog/es/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md",
+      "site/src/content/blog/ja/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md",
+      "site/src/content/blog/pt-br/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md",
+      "site/src/content/blog/ru/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md"
     ]
   },
   {
@@ -1027,8 +1090,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Riok.Mapperly",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
       "site/src/content/blog/de/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
@@ -1127,6 +1191,19 @@
       "site/src/content/blog/ja/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
       "site/src/content/blog/pt-br/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
       "site/src/content/blog/ru/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md"
+    ]
+  },
+  {
+    "url": "https://www.udemy.com/topic/c-sharp/",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/de/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/es/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/ja/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/pt-br/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/ru/2023/06/how-to-start-programming-with-c.md"
     ]
   }
 ]
