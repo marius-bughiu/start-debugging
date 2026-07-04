@@ -958,5 +958,9 @@
   {
     "slug": "2026/07/claude-code-2-1-200-renames-default-permission-mode-to-manual",
     "text": "Claude Code 2.1.200 renames the 'default' permission mode to Manual. Your config value stays 'default' though."
+  },
+  {
+    "slug": "2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3",
+    "text": "A Riverpod 3 Notifier can be disposed mid-await. Guard the state write with if (!ref.mounted) return."
   }
 ]
