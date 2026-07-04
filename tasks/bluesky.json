@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/claude-code-2-1-200-renames-default-permission-mode-to-manual",
-    "text": "Claude Code 2.1.200 renames the 'default' permission mode to Manual and stops AskUserQuestion dialogs from auto-continuing."
   }
 ]
