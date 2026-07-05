@@ -986,5 +986,9 @@
   {
     "slug": "2026/07/claude-code-skills-vs-subagents-vs-mcp-servers-when-to-build-each",
     "text": "Skill changes behavior, subagent protects context, MCP server adds a connection. Pick by which you need."
+  },
+  {
+    "slug": "2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter",
+    "text": "Expanded must be a DIRECT child of Row/Column/Flex. A Container or Padding in between throws. Here's the ranked fix."
   }
 ]

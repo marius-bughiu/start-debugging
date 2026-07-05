@@ -143,7 +143,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `The required column 'X' was not present in the results of a 'FromSql' operation` in EF Core 11 → slug: 2026/07/fix-the-required-column-was-not-present-in-the-results-of-a-fromsql-operation-in-ef-core-11
 - Fix: `Vertical viewport was given unbounded height` in Flutter → slug: 2026/07/how-to-nest-a-listview-inside-a-column-in-flutter-without-an-unbounded-height-error (same intent as existing post)
 - Fix: `RenderViewport expected a RenderSliver` in a Flutter `CustomScrollView` → slug: 2026/07/fix-renderviewport-expected-a-rendersliver-in-a-flutter-customscrollview
-- Fix: `Incorrect use of ParentDataWidget. Expanded widgets must be placed inside Flex widgets` in Flutter
+- Fix: `Incorrect use of ParentDataWidget. Expanded widgets must be placed inside Flex widgets` in Flutter → slug: 2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter
 - Fix: `Cannot provide both a color and a decoration` in a Flutter `Container`
 - Fix: `415 Unsupported Media Type` from a minimal API endpoint in ASP.NET Core 11
 - Fix: `CS9035: Required member 'X' must be set in the object initializer` in C#
