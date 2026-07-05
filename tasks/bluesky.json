@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/dart-dot-shorthands-drop-the-type-name-in-flutter",
+    "text": "Dot shorthands are stable in Dart 3.12.2: drop the type name and let context infer .new, .parse, and enum values. Flutter 3.44 has it."
   }
 ]

@@ -974,5 +974,9 @@
   {
     "slug": "2026/07/fix-the-required-column-was-not-present-in-the-results-of-a-fromsql-operation-in-ef-core-11",
     "text": "FromSql 'required column X was not present'? Your SELECT skips a mapped column. SELECT * or SqlQuery<T> for a subset."
+  },
+  {
+    "slug": "2026/07/dart-dot-shorthands-drop-the-type-name-in-flutter",
+    "text": "Dart 3.12 lets you write .center instead of MainAxisAlignment.center. Dot shorthands are stable now."
   }
 ]
