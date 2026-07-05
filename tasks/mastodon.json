@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/claude-code-skills-vs-subagents-vs-mcp-servers-when-to-build-each",
+    "text": "A Claude Code skill changes how Claude works, a subagent isolates a noisy task in its own context window, an MCP server adds a capability Claude can't otherwise reach. The common miss: writing a server for what should be a SKILL.md. Decision table plus config for each."
   }
 ]

@@ -982,5 +982,9 @@
   {
     "slug": "2026/07/fix-renderviewport-expected-a-rendersliver-in-a-flutter-customscrollview",
     "text": "'Expected a RenderSliver'? Only slivers go in CustomScrollView.slivers. Wrap box widgets in SliverToBoxAdapter."
+  },
+  {
+    "slug": "2026/07/claude-code-skills-vs-subagents-vs-mcp-servers-when-to-build-each",
+    "text": "Skill changes behavior, subagent protects context, MCP server adds a connection. Pick by which you need."
   }
 ]
