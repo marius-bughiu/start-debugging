@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter",
-    "text": "Expanded is a ParentDataWidget: it writes FlexParentData that only a Row, Column, or Flex knows how to read. Put it under a Container, SizedBox, or Padding and Flutter throws at build time. The fix: make Expanded a direct child of the flex, or drop it if there is no flex parent. Note that flex: 0 still throws."
   }
 ]
