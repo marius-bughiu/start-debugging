@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/fix-renderviewport-expected-a-rendersliver-in-a-flutter-customscrollview",
+    "text": "'Expected a RenderSliver'? You dropped a Text or ListView into CustomScrollView.slivers. Use SliverToBoxAdapter or SliverList.builder."
   }
 ]

@@ -978,5 +978,9 @@
   {
     "slug": "2026/07/dart-dot-shorthands-drop-the-type-name-in-flutter",
     "text": "Dart 3.12 lets you write .center instead of MainAxisAlignment.center. Dot shorthands are stable now."
+  },
+  {
+    "slug": "2026/07/fix-renderviewport-expected-a-rendersliver-in-a-flutter-customscrollview",
+    "text": "'Expected a RenderSliver'? Only slivers go in CustomScrollView.slivers. Wrap box widgets in SliverToBoxAdapter."
   }
 ]
