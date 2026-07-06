@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/fix-cs9035-required-member-must-be-set-in-the-object-initializer",
-    "text": "CS9035 in C#: every required member must be set at construction. Fill the initializer, or put [SetsRequiredMembers] on the ctor."
   }
 ]
