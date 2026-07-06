@@ -1006,5 +1006,9 @@
   {
     "slug": "2026/07/cursor-subagents-vs-claude-code-subagents",
     "text": "Claude Code nests subagents 5 levels deep; Cursor stops at 2 but reads .claude/agents/. Pick by where they run."
+  },
+  {
+    "slug": "2026/07/fix-cs9035-required-member-must-be-set-in-the-object-initializer",
+    "text": "CS9035? A required member is unset. Set it in the object initializer, or add [SetsRequiredMembers] to the ctor."
   }
 ]
