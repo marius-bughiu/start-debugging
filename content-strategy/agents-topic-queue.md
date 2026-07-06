@@ -81,7 +81,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - A2A protocol vs MCP: agent-to-agent vs agent-to-tool → slug: 2026/07/a2a-protocol-vs-mcp-agent-to-agent-vs-agent-to-tool
 - CodeAct vs a traditional tool-calling loop for agents → slug: 2026/07/codeact-vs-tool-calling-loop-for-agents
 - Claude Code skills vs subagents vs MCP servers: when to build each → slug: 2026/07/claude-code-skills-vs-subagents-vs-mcp-servers-when-to-build-each
-- Cursor subagents vs Claude Code subagents for multi-agent workflows
+- Cursor subagents vs Claude Code subagents for multi-agent workflows → slug: 2026/07/cursor-subagents-vs-claude-code-subagents
 
 ## Migration / upgrade
 

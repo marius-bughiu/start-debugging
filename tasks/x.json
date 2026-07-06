@@ -1002,5 +1002,9 @@
   {
     "slug": "2026/07/fix-415-unsupported-media-type-from-a-minimal-api-endpoint-in-aspnetcore-11",
     "text": "Minimal API 415 is a Content-Type mismatch, not bad JSON. application/json for a body param, [FromForm] for forms."
+  },
+  {
+    "slug": "2026/07/cursor-subagents-vs-claude-code-subagents",
+    "text": "Claude Code nests subagents 5 levels deep; Cursor stops at 2 but reads .claude/agents/. Pick by where they run."
   }
 ]
