@@ -994,5 +994,9 @@
   {
     "slug": "2026/07/fix-cannot-provide-both-a-color-and-a-decoration-in-a-flutter-container",
     "text": "Flutter's Container throws if you set both color and decoration. Put the color inside BoxDecoration instead."
+  },
+  {
+    "slug": "2026/07/claude-code-2-1-198-subagents-run-in-the-background-by-default",
+    "text": "Claude Code 2.1.198: subagents run in the background by default. No more waiting behind a delegated task."
   }
 ]
