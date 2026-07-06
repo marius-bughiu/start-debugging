@@ -147,7 +147,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Cannot provide both a color and a decoration` in a Flutter `Container` → slug: 2026/07/fix-cannot-provide-both-a-color-and-a-decoration-in-a-flutter-container
 - Fix: `415 Unsupported Media Type` from a minimal API endpoint in ASP.NET Core 11 → slug: 2026/07/fix-415-unsupported-media-type-from-a-minimal-api-endpoint-in-aspnetcore-11
 - Fix: `CS9035: Required member 'X' must be set in the object initializer` in C# → slug: 2026/07/fix-cs9035-required-member-must-be-set-in-the-object-initializer
-- Fix: Riverpod 3.0 throws `ProviderException` instead of the original error
+- Fix: Riverpod 3.0 throws `ProviderException` instead of the original error → slug: 2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error
 
 ## Vs / comparison
 

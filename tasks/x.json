@@ -1010,5 +1010,9 @@
   {
     "slug": "2026/07/fix-cs9035-required-member-must-be-set-in-the-object-initializer",
     "text": "CS9035? A required member is unset. Set it in the object initializer, or add [SetsRequiredMembers] to the ctor."
+  },
+  {
+    "slug": "2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error",
+    "text": "Riverpod 3.0 boxes provider errors in ProviderException, so your typed catch misses. Read e.exception for the real one."
   }
 ]
