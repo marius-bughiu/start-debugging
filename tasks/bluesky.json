@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error",
-    "text": "Riverpod 3.0 wraps read errors in ProviderException, so your typed catch goes silent. Read e.exception, or use AsyncValue (unwrapped)."
   }
 ]
