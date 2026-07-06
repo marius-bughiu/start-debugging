@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/claude-code-2-1-198-subagents-run-in-the-background-by-default",
-    "text": "Claude Code 2.1.198 runs subagents in the background by default. Code agents also commit, push, and open a draft PR themselves."
   }
 ]
