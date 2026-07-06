@@ -998,5 +998,9 @@
   {
     "slug": "2026/07/claude-code-2-1-198-subagents-run-in-the-background-by-default",
     "text": "Claude Code 2.1.198: subagents run in the background by default. No more waiting behind a delegated task."
+  },
+  {
+    "slug": "2026/07/fix-415-unsupported-media-type-from-a-minimal-api-endpoint-in-aspnetcore-11",
+    "text": "Minimal API 415 is a Content-Type mismatch, not bad JSON. application/json for a body param, [FromForm] for forms."
   }
 ]

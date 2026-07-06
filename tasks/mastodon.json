@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/fix-415-unsupported-media-type-from-a-minimal-api-endpoint-in-aspnetcore-11",
+    "text": "A minimal API returns 415 Unsupported Media Type when the request Content-Type doesn't match what the handler binds. A complex body param needs application/json; form posts and file uploads need [FromForm]. Note: 415 isn't 400 (bad JSON) or 406 (Accept header), three different failures people mix up."
   }
 ]
