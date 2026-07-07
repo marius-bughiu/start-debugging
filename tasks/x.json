@@ -1030,5 +1030,9 @@
   {
     "slug": "2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11",
     "text": "Named vs single query filters in EF Core 11 emit identical SQL. The difference: can IgnoreQueryFilters drop half of it?"
+  },
+  {
+    "slug": "2026/07/shrinkwrap-vs-expanded-vs-slivers-for-long-lists-in-flutter",
+    "text": "For a long Flutter list, never shrinkWrap. Expanded when it is the only scroller, slivers when it shares one."
   }
 ]
