@@ -184,7 +184,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `HasData` vs `UseSeeding` for seeding data in EF Core 11 → slug: 2026/06/hasdata-vs-useseeding-for-seeding-data-in-ef-core-11
 - Keyset pagination vs `OFFSET`/`FETCH` paging in EF Core 11 → slug: 2026/06/how-to-do-keyset-cursor-pagination-in-ef-core-11 (same intent as existing post)
 - `go_router` vs `auto_route` vs Navigator 2.0 in Flutter → slug: 2026/07/go-router-vs-auto-route-vs-navigator-2-0-in-flutter
-- Named query filters vs a single global query filter in EF Core 11
+- Named query filters vs a single global query filter in EF Core 11 → slug: 2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11
 - `shrinkWrap` vs `Expanded` vs slivers for long lists in Flutter
 
 ## Migration / upgrade

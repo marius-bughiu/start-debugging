@@ -1026,5 +1026,9 @@
   {
     "slug": "2026/07/migrate-a-semantic-kernel-app-to-microsoft-agent-framework-1-0",
     "text": "Still on Semantic Kernel? The exact Kernel-to-AIAgent, plugin-to-tool, thread-to-session map for the migration."
+  },
+  {
+    "slug": "2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11",
+    "text": "Named vs single query filters in EF Core 11 emit identical SQL. The difference: can IgnoreQueryFilters drop half of it?"
   }
 ]
