@@ -85,7 +85,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 
 ## Migration / upgrade
 
-- Migrate a Semantic Kernel app to Microsoft Agent Framework 1.0
+- Migrate a Semantic Kernel app to Microsoft Agent Framework 1.0 → slug: 2026/07/migrate-a-semantic-kernel-app-to-microsoft-agent-framework-1-0
 - Migrate from OpenAI SDK to Microsoft.Extensions.AI in a .NET app
 - Migrate a LangChain agent to the MCP tool-calling pattern
 - Migrate a custom tool-calling loop to an MCP server

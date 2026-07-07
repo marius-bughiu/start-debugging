@@ -1022,5 +1022,9 @@
   {
     "slug": "2026/07/go-router-vs-auto-route-vs-navigator-2-0-in-flutter",
     "text": "go_router and auto_route both sit on Navigator 2.0. The real choice: string routes, typed codegen, or raw control."
+  },
+  {
+    "slug": "2026/07/migrate-a-semantic-kernel-app-to-microsoft-agent-framework-1-0",
+    "text": "Still on Semantic Kernel? The exact Kernel-to-AIAgent, plugin-to-tool, thread-to-session map for the migration."
   }
 ]
