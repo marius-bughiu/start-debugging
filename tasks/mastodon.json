@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/flutter-3-44-read-the-screen-corner-radius-from-mediaquery",
-    "text": "Flutter 3.44 exposes the device's physical screen corner radius. MediaQuery.displayCornerRadiiOf(context) returns a nullable BorderRadius in logical pixels on Android API 31+, so you can clip a ClipRRect to the exact hardware curve instead of hardcoding a guessed number. Falls back to null everywhere else."
   }
 ]
