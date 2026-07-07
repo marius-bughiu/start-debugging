@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/flutter-3-44-read-the-screen-corner-radius-from-mediaquery",
+    "text": "Flutter 3.44 exposes the phone's real corner radius via MediaQuery.displayCornerRadiiOf. Clip UI to the hardware curve, not a guess."
   }
 ]
