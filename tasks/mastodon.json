@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/go-router-vs-auto-route-vs-navigator-2-0-in-flutter",
+    "text": "Flutter routing is framed as go_router vs auto_route vs Navigator 2.0, but both packages ARE Navigator 2.0 with the boilerplate written for you. go_router: URL-first, official, string routes. auto_route: compiler-checked typed navigation via codegen. Raw Navigator 2.0: only when your model won't fit a route table."
   }
 ]

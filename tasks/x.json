@@ -1018,5 +1018,9 @@
   {
     "slug": "2026/07/flutter-3-44-read-the-screen-corner-radius-from-mediaquery",
     "text": "Flutter 3.44 reads the phone's real corner radius: MediaQuery.displayCornerRadiiOf. Stop guessing BorderRadius."
+  },
+  {
+    "slug": "2026/07/go-router-vs-auto-route-vs-navigator-2-0-in-flutter",
+    "text": "go_router and auto_route both sit on Navigator 2.0. The real choice: string routes, typed codegen, or raw control."
   }
 ]
