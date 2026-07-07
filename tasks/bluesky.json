@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/shrinkwrap-vs-expanded-vs-slivers-for-long-lists-in-flutter",
-    "text": "shrinkWrap on a long Flutter list builds every row on frame one. Expanded if it is the only scroller, slivers if it shares one."
   }
 ]
