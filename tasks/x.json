@@ -1038,5 +1038,9 @@
   {
     "slug": "2026/07/claude-sonnet-5-claude-code-default-new-tokenizer-token-budgets",
     "text": "Sonnet 5 is now the Claude Code default. Its new tokenizer emits ~30% more tokens, so recount your budgets."
+  },
+  {
+    "slug": "2026/07/migrate-from-hasdata-seeding-to-useasyncseeding-in-ef-core-11",
+    "text": "Removing a HasData call emits a DeleteData that wipes those rows. The safe order to move to UseSeeding in EF Core 11."
   }
 ]

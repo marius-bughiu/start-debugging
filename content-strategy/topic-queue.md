@@ -207,7 +207,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate from `provider` to `riverpod` in Flutter → slug: 2026/06/migrate-from-provider-to-riverpod-in-flutter
 - Migrate from Swashbuckle to the built-in OpenAPI document generation in .NET 11 → slug: 2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11
 - Migrate from `FutureBuilder` to a Riverpod `AsyncNotifier` in Flutter → slug: 2026/06/migrate-from-futurebuilder-to-a-riverpod-asyncnotifier-in-flutter
-- Migrate from `HasData` seeding to `UseAsyncSeeding` in EF Core 11
+- Migrate from `HasData` seeding to `UseAsyncSeeding` in EF Core 11 → slug: 2026/07/migrate-from-hasdata-seeding-to-useasyncseeding-in-ef-core-11
 - Migrate from Riverpod 2.x to Riverpod 3.0 in Flutter
 - Migrate a minimal API from manual validation checks to built-in validation in ASP.NET Core 11
 
