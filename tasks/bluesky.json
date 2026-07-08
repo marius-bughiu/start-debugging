@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/claude-sonnet-5-claude-code-default-new-tokenizer-token-budgets",
+    "text": "Sonnet 5 now backs the 'sonnet' alias in Claude Code. New tokenizer, ~30% more tokens, so your cost and max_tokens math is off."
   }
 ]

@@ -1034,5 +1034,9 @@
   {
     "slug": "2026/07/shrinkwrap-vs-expanded-vs-slivers-for-long-lists-in-flutter",
     "text": "For a long Flutter list, never shrinkWrap. Expanded when it is the only scroller, slivers when it shares one."
+  },
+  {
+    "slug": "2026/07/claude-sonnet-5-claude-code-default-new-tokenizer-token-budgets",
+    "text": "Sonnet 5 is now the Claude Code default. Its new tokenizer emits ~30% more tokens, so recount your budgets."
   }
 ]
