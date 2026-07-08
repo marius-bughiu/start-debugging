@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/migrate-from-hasdata-seeding-to-useasyncseeding-in-ef-core-11",
-    "text": "Migrating EF Core 11 seed data from HasData to UseSeeding/UseAsyncSeeding has one real trap: deleting a HasData call makes the next dotnet ef migrations add emit a DeleteData that removes those exact rows from every database. Write the new callbacks first, then hand-edit the DeleteData out. Full ordered checklist plus rollback."
   }
 ]
