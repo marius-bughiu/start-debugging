@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/claude-sonnet-5-claude-code-default-new-tokenizer-token-budgets",
-    "text": "Claude Sonnet 5 is now the Claude Code default for Pro and Team Standard seats, and the 'sonnet' alias resolves to it on the API. It ships a new tokenizer that emits about 30% more tokens for the same text, so cost estimates and max_tokens limits tuned for Sonnet 4.6 can truncate. Recount with the count_tokens endpoint."
   }
 ]
