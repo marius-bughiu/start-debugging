@@ -1058,5 +1058,9 @@
   {
     "slug": "2026/07/migrate-a-minimal-api-from-manual-validation-to-built-in-validation-in-aspnetcore-11",
     "text": "Move the validation if-blocks out of every minimal API handler into [Required] attributes and one AddValidation() call."
+  },
+  {
+    "slug": "2026/07/what-is-trim-safe-code-and-how-do-i-write-it",
+    "text": "Trimmed .NET app crashes in prod but works in dotnet run? Make it trim-safe: drive every IL2xxx warning to zero."
   }
 ]
