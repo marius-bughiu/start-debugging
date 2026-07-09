@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/migrate-from-openai-sdk-to-microsoft-extensions-ai",
-    "text": "Migrating a .NET app off the raw OpenAI 2.12 SDK onto Microsoft.Extensions.AI 10.7 is mostly mechanical: the ChatClient you already build gets one .AsIChatClient() call, CompleteChatAsync becomes GetResponseAsync, Content[0].Text becomes response.Text. Real payoff: UseFunctionInvocation deletes the whole tool-call loop."
   }
 ]

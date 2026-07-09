@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/migrate-from-openai-sdk-to-microsoft-extensions-ai",
-    "text": "OpenAI SDK to Microsoft.Extensions.AI in .NET: wrap with .AsIChatClient(), swap to GetResponseAsync, and the tool loop disappears."
   }
 ]
