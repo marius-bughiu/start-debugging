@@ -1050,5 +1050,9 @@
   {
     "slug": "2026/07/migrate-from-riverpod-2-x-to-riverpod-3-0-in-flutter",
     "text": "Riverpod 2 to 3 in Flutter: the == notification filter silently drops StreamProvider events. Full checklist."
+  },
+  {
+    "slug": "2026/07/migrate-from-openai-sdk-to-microsoft-extensions-ai",
+    "text": "Migrate .NET off the raw OpenAI SDK: one .AsIChatClient() call and the whole tool-call loop deletes itself."
   }
 ]
