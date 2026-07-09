@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/migrate-from-riverpod-2-x-to-riverpod-3-0-in-flutter",
-    "text": "Riverpod 2 to 3 is mostly find-and-replace. Two runtime traps: ProviderException wrapping, and == filtering that drops stream events."
   }
 ]
