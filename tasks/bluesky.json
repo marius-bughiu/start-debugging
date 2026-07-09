@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/what-is-trim-safe-code-and-how-do-i-write-it",
-    "text": "Trim-safe code is code the .NET trimmer can prove is reachable. Turn on the analyzer, drive every IL2xxx warning to zero."
   }
 ]
