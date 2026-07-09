@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/vscode-1-128-multi-chat-claude-agent-host-sessions",
-    "text": "VS Code 1.128 turns the Claude agent-host into a workbench: one session now holds several related chats at once, each with its own history, title, and model. Branch from an earlier turn to compare a cheap model against a strong one on the same task, side by side. Flip chat.agentHost.enabled to try it."
   }
 ]
