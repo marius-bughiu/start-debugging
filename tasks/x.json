@@ -1046,5 +1046,9 @@
   {
     "slug": "2026/07/vscode-1-128-multi-chat-claude-agent-host-sessions",
     "text": "VS Code 1.128: one Claude agent-host session now runs several parallel chats, each with its own model."
+  },
+  {
+    "slug": "2026/07/migrate-from-riverpod-2-x-to-riverpod-3-0-in-flutter",
+    "text": "Riverpod 2 to 3 in Flutter: the == notification filter silently drops StreamProvider events. Full checklist."
   }
 ]
