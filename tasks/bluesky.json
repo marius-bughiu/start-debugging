@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/migrate-a-minimal-api-from-manual-validation-to-built-in-validation-in-aspnetcore-11",
+    "text": "Your .NET 11 minimal API handlers each open with hand-rolled if-checks. Move the rules to DataAnnotations and AddValidation()."
   }
 ]

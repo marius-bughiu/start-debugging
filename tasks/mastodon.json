@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/migrate-a-minimal-api-from-manual-validation-to-built-in-validation-in-aspnetcore-11",
+    "text": "Every ASP.NET Core 11 minimal API handler that opens with if (string.IsNullOrWhiteSpace(...)) return BadRequest(...) can drop those checks: put the rules on the request record as [Required] and [Range], then call AddValidation(). The gotcha that decides it: the record must be public or validation silently never fires."
   }
 ]

@@ -1054,5 +1054,9 @@
   {
     "slug": "2026/07/migrate-from-openai-sdk-to-microsoft-extensions-ai",
     "text": "Migrate .NET off the raw OpenAI SDK: one .AsIChatClient() call and the whole tool-call loop deletes itself."
+  },
+  {
+    "slug": "2026/07/migrate-a-minimal-api-from-manual-validation-to-built-in-validation-in-aspnetcore-11",
+    "text": "Move the validation if-blocks out of every minimal API handler into [Required] attributes and one AddValidation() call."
   }
 ]
