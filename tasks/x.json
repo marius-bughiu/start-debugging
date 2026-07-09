@@ -1042,5 +1042,9 @@
   {
     "slug": "2026/07/migrate-from-hasdata-seeding-to-useasyncseeding-in-ef-core-11",
     "text": "Removing a HasData call emits a DeleteData that wipes those rows. The safe order to move to UseSeeding in EF Core 11."
+  },
+  {
+    "slug": "2026/07/vscode-1-128-multi-chat-claude-agent-host-sessions",
+    "text": "VS Code 1.128: one Claude agent-host session now runs several parallel chats, each with its own model."
   }
 ]
