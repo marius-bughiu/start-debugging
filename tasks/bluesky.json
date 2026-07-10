@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/what-is-the-difference-between-dotnet-watch-and-dotnet-run",
+    "text": "dotnet watch calls dotnet run under the hood, then adds file watching and hot reload. What each one sets, and when to use which."
   }
 ]

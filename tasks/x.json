@@ -1074,5 +1074,9 @@
   {
     "slug": "2026/07/migrate-a-langchain-agent-to-the-mcp-tool-calling-pattern",
     "text": "Your LangChain @tool functions only work in LangChain. Move them to an MCP server so any client can call them."
+  },
+  {
+    "slug": "2026/07/what-is-the-difference-between-dotnet-watch-and-dotnet-run",
+    "text": "dotnet watch is dotnet run wrapped in a file watcher with hot reload. Here's exactly what each one does."
   }
 ]
