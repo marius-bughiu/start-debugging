@@ -220,7 +220,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is `Span<T>` and when does it make my code faster? → slug: 2026/06/what-is-span-and-when-does-it-make-my-code-faster
 - What is the `DynamicallyAccessedMembers` attribute? → slug: 2026/06/what-is-the-dynamicallyaccessedmembers-attribute
 - What is trim-safe code and how do I write it? → slug: 2026/07/what-is-trim-safe-code-and-how-do-i-write-it
-- What is the difference between `dotnet build` and `dotnet publish`?
+- What is the difference between `dotnet build` and `dotnet publish`? → slug: 2026/07/what-is-the-difference-between-dotnet-build-and-dotnet-publish
 - What is the difference between `dotnet watch` and `dotnet run`?
 - What is the `IHostedService` contract and when do I use it?
 - What is a tiered compilation and how do I reason about it?

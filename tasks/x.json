@@ -1066,5 +1066,9 @@
   {
     "slug": "2026/07/modernize-dotnet-anywhere-github-copilot-cli-plugin",
     "text": "Copilot's .NET modernize agent left Visual Studio. It now runs as a plugin in the Copilot CLI, VS Code, and GitHub."
+  },
+  {
+    "slug": "2026/07/what-is-the-difference-between-dotnet-build-and-dotnet-publish",
+    "text": "dotnet build = Debug. dotnet publish = Release. That one default flip is how unoptimized binaries end up in production."
   }
 ]
