@@ -1062,5 +1062,9 @@
   {
     "slug": "2026/07/what-is-trim-safe-code-and-how-do-i-write-it",
     "text": "Trimmed .NET app crashes in prod but works in dotnet run? Make it trim-safe: drive every IL2xxx warning to zero."
+  },
+  {
+    "slug": "2026/07/modernize-dotnet-anywhere-github-copilot-cli-plugin",
+    "text": "Copilot's .NET modernize agent left Visual Studio. It now runs as a plugin in the Copilot CLI, VS Code, and GitHub."
   }
 ]
