@@ -1078,5 +1078,9 @@
   {
     "slug": "2026/07/what-is-the-difference-between-dotnet-watch-and-dotnet-run",
     "text": "dotnet watch is dotnet run wrapped in a file watcher with hot reload. Here's exactly what each one does."
+  },
+  {
+    "slug": "2026/07/what-is-the-ihostedservice-contract-and-when-do-i-use-it",
+    "text": "IHostedService is two methods: StartAsync and StopAsync. When to implement it directly instead of BackgroundService."
   }
 ]
