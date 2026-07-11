@@ -86,6 +86,15 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to customize minimal API validation error responses with `IProblemDetailsService` in ASP.NET Core 11 → slug: 2026/07/how-to-customize-minimal-api-validation-error-responses-with-iproblemdetailsservice-in-aspnetcore-11
 - How to use named query filters for soft delete and multi-tenancy in EF Core 11 → slug: 2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11
 - How to check `Ref.mounted` before using `ref` after an async gap in Flutter Riverpod 3.0 → slug: 2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3
+- How to customize the OpenAPI document with `AddOperationTransformer` and `AddSchemaTransformer` in ASP.NET Core 11
+- How to add output caching to a minimal API in ASP.NET Core 11
+- How to map a complex type instead of an owned entity in EF Core 11
+- How to configure table-per-hierarchy (TPH) inheritance mapping in EF Core 11
+- How to guard `setState` with the `mounted` check after an async gap in Flutter
+- How to cancel a `StreamSubscription` in `dispose` to avoid a setState-after-dispose crash in Flutter
+- How to add a `Hero` animation between two screens in Flutter
+- How to return a typed `Results<T1, T2>` union from a minimal API endpoint in ASP.NET Core 11
+- How to add response compression to an ASP.NET Core 11 API
 
 ## Fix / error
 
@@ -148,6 +157,15 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `415 Unsupported Media Type` from a minimal API endpoint in ASP.NET Core 11 → slug: 2026/07/fix-415-unsupported-media-type-from-a-minimal-api-endpoint-in-aspnetcore-11
 - Fix: `CS9035: Required member 'X' must be set in the object initializer` in C# → slug: 2026/07/fix-cs9035-required-member-must-be-set-in-the-object-initializer
 - Fix: Riverpod 3.0 throws `ProviderException` instead of the original error → slug: 2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error
+- Fix: `The property 'X' could not be mapped, because it is of type 'Y' which is not a supported primitive type or a valid entity type` in EF Core
+- Fix: `setState() called after dispose()` in Flutter
+- Fix: `Bad state: Cannot get a field on a disposed resource` in Flutter
+- Fix: `System.InvalidOperationException: Headers are read-only, response has already started` in ASP.NET Core
+- Fix: `413 Request Entity Too Large` when uploading a file to an ASP.NET Core endpoint
+- Fix: `ScaffoldMessenger.of() was called with a context that does not contain a Scaffold` in Flutter
+- Fix: `type 'Null' is not a subtype of type 'X'` in Dart
+- Fix: `MissingPluginException: No implementation found for method` in Flutter
+- Fix: `CS8618: Non-nullable property 'X' must contain a non-null value when exiting constructor` in C#
 
 ## Vs / comparison
 
@@ -186,6 +204,11 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `go_router` vs `auto_route` vs Navigator 2.0 in Flutter → slug: 2026/07/go-router-vs-auto-route-vs-navigator-2-0-in-flutter
 - Named query filters vs a single global query filter in EF Core 11 → slug: 2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11
 - `shrinkWrap` vs `Expanded` vs slivers for long lists in Flutter → slug: 2026/07/shrinkwrap-vs-expanded-vs-slivers-for-long-lists-in-flutter
+- Complex types vs owned entities in EF Core 11
+- Output caching vs response caching in ASP.NET Core 11
+- TPH vs TPT vs TPC inheritance mapping in EF Core 11
+- Typed results (`Results<>`) vs `IResult` vs `IActionResult` in ASP.NET Core 11
+- `riverpod` vs `flutter_riverpod` vs `hooks_riverpod`: which package do I actually need?
 
 ## Migration / upgrade
 
@@ -210,6 +233,9 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate from `HasData` seeding to `UseAsyncSeeding` in EF Core 11 → slug: 2026/07/migrate-from-hasdata-seeding-to-useasyncseeding-in-ef-core-11
 - Migrate from Riverpod 2.x to Riverpod 3.0 in Flutter → slug: 2026/07/migrate-from-riverpod-2-x-to-riverpod-3-0-in-flutter
 - Migrate a minimal API from manual validation checks to built-in validation in ASP.NET Core 11 → slug: 2026/07/migrate-a-minimal-api-from-manual-validation-to-built-in-validation-in-aspnetcore-11
+- Migrate Swashbuckle `IOperationFilter` and `ISchemaFilter` to OpenAPI transformers in .NET 11
+- Migrate from owned entities to complex types in EF Core 11
+- Migrate a `setState` `StatefulWidget` to a Riverpod `Notifier` in Flutter
 
 ## What is / concept
 
@@ -237,6 +263,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is a keyed service in .NET dependency injection?
 - What is a sliver in Flutter and when do I need a `CustomScrollView`?
 - What is `IProblemDetailsService` and how does it shape error responses in ASP.NET Core 11?
+- What is a complex type in EF Core 11 and how is it different from an owned entity?
+- What is an OpenAPI transformer in ASP.NET Core and when do I need one?
 
 ---
 
