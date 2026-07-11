@@ -1,8 +1,15 @@
 [
   {
-    "query": "\".cursor/permissions.json\" \"allow_instructions\" \"block_instructions\"",
+    "query": "\".cursor/permissions.json\" autorun allow_instructions block_instructions",
     "position": 11,
-    "impressions": 1,
+    "impressions": 3,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "cursor \"permissions.json\" autorun allow_instructions block_instructions syntax",
+    "position": 11,
+    "impressions": 2,
     "clicks": 0,
     "ctr": 0
   }
