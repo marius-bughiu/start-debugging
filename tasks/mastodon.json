@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/migrate-a-custom-tool-calling-loop-to-an-mcp-server",
-    "text": "You built an agent as a raw while-loop over the Anthropic API, dispatching tool_use blocks to local functions. Moving those tools onto an MCP server (TypeScript, spec 2025-11-25) is a half-day job and the bodies barely change. The catch: never console.log in a stdio server, because stdout IS the JSON-RPC channel."
   }
 ]

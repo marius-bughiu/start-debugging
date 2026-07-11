@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/migrate-a-custom-tool-calling-loop-to-an-mcp-server",
-    "text": "Hand-rolled Anthropic tool loop? The tool bodies move to an MCP server nearly verbatim. What breaks: closures and error handling."
   }
 ]
