@@ -137,17 +137,6 @@
     ]
   },
   {
-    "url": "https://github.com/anthropics/claude-code/issues/27041",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows.md",
-      "site/src/content/blog/2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows.md",
-      "site/src/content/blog/2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows.md"
-    ]
-  },
-  {
     "url": "https://github.com/dotnet/aspnetcore/discussions/51020",
     "status": 404,
     "ok": false,
@@ -174,6 +163,26 @@
     ]
   },
   {
+    "url": "https://github.com/dotnet/efcore/issues/35575",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
+      "site/src/content/blog/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
+      "site/src/content/blog/de/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
+      "site/src/content/blog/de/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
+      "site/src/content/blog/es/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
+      "site/src/content/blog/es/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
+      "site/src/content/blog/ja/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
+      "site/src/content/blog/ja/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
+      "site/src/content/blog/pt-br/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
+      "site/src/content/blog/pt-br/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
+      "site/src/content/blog/ru/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
+      "site/src/content/blog/ru/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md"
+    ]
+  },
+  {
     "url": "https://github.com/dotnet/runtime/blob/main/docs/design/coreclr/botr/sync-block-table.md",
     "status": 404,
     "ok": false,
@@ -197,26 +206,6 @@
       "site/src/content/blog/ja/2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext.md",
       "site/src/content/blog/pt-br/2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext.md",
       "site/src/content/blog/ru/2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext.md"
-    ]
-  },
-  {
-    "url": "https://github.com/dotnet/runtime/pull/124646",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
-      "site/src/content/blog/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
-      "site/src/content/blog/de/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
-      "site/src/content/blog/de/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
-      "site/src/content/blog/es/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
-      "site/src/content/blog/es/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
-      "site/src/content/blog/ja/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
-      "site/src/content/blog/ja/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
-      "site/src/content/blog/pt-br/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
-      "site/src/content/blog/pt-br/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
-      "site/src/content/blog/ru/2026/04/system-text-json-11-pascalcase-per-member-naming.md",
-      "site/src/content/blog/ru/2026/04/system-text-json-11-pascalcase-per-member-naming.md"
     ]
   },
   {
@@ -303,6 +292,26 @@
       "site/src/content/blog/pt-br/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
       "site/src/content/blog/ru/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
       "site/src/content/blog/ru/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md"
+    ]
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/dotnet/api/system.threading.synchronizationcontext.operationstarted",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
+      "site/src/content/blog/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
+      "site/src/content/blog/de/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
+      "site/src/content/blog/de/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
+      "site/src/content/blog/es/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
+      "site/src/content/blog/es/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
+      "site/src/content/blog/ja/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
+      "site/src/content/blog/ja/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
+      "site/src/content/blog/pt-br/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
+      "site/src/content/blog/pt-br/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
+      "site/src/content/blog/ru/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
+      "site/src/content/blog/ru/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md"
     ]
   },
   {
@@ -467,6 +476,14 @@
     ]
   },
   {
+    "url": "https://medium.com/@adnanmasood/rubric-based-evals-llm-as-a-judge-methodologies-and-empirical-validation-in-domain-context-71936b989e80",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-set-up-an-llm-as-judge-eval-harness-for-a-coding-agent.md"
+    ]
+  },
+  {
     "url": "https://modelcontextprotocol.io/specification/2026-03-26",
     "status": 404,
     "ok": false,
@@ -503,19 +520,6 @@
     ]
   },
   {
-    "url": "https://news.ycombinator.com/item?id=46976911",
-    "status": 429,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/de/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/es/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/ja/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/pt-br/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/ru/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md"
-    ]
-  },
-  {
     "url": "https://partner.microsoft.com/dashboard/apps-and-games/overview",
     "status": null,
     "ok": false,
@@ -527,6 +531,15 @@
       "site/src/content/blog/ja/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md",
       "site/src/content/blog/pt-br/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md",
       "site/src/content/blog/ru/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md"
+    ]
+  },
+  {
+    "url": "https://platform.claude.com/docs/en/agents-and-tools/mcp-connector",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-reduce-the-number-of-mcp-tools-claude-loads.md"
     ]
   },
   {
@@ -667,17 +680,6 @@
     ]
   },
   {
-    "url": "https://www.npmjs.com/package/mcp-remote",
-    "status": 403,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
-      "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
-      "site/src/content/blog/2026/05/fix-http-mcp-server-url-wont-connect-in-claude-desktop.md",
-      "site/src/content/blog/2026/05/fix-http-mcp-server-url-wont-connect-in-claude-desktop.md"
-    ]
-  },
-  {
     "url": "https://www.nuget.org/packages/Anthropic",
     "status": 404,
     "ok": false,
@@ -713,9 +715,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Azure.Extensions.AspNetCore.DataProtection.Keys",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
       "site/src/content/blog/de/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
@@ -769,9 +770,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/M.Super.Extensions",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/run-code-before-and-after-every-uipath-activity-with-a-tracking-participant.md",
       "site/src/content/blog/2026/05/write-a-uipath-workflow-analyzer-rule-with-entry-point-detection.md"
@@ -795,7 +795,8 @@
     "status": 404,
     "ok": false,
     "sources": [
-      "site/src/content/blog/2026/06/microsoft-agent-framework-vs-semantic-kernel-for-a-greenfield-net-agent.md"
+      "site/src/content/blog/2026/06/microsoft-agent-framework-vs-semantic-kernel-for-a-greenfield-net-agent.md",
+      "site/src/content/blog/2026/07/migrate-a-semantic-kernel-app-to-microsoft-agent-framework-1-0.md"
     ]
   },
   {
@@ -819,8 +820,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.EntityFrameworkCore/",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
       "site/src/content/blog/de/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
@@ -832,8 +834,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.AspNetCore.OpenApi/",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
       "site/src/content/blog/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
@@ -887,14 +890,14 @@
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/05/how-to-add-tool-calling-to-a-microsoft-extensions-ai-chat-client.md",
+      "site/src/content/blog/2026/07/migrate-from-openai-sdk-to-microsoft-extensions-ai.md",
       "site/src/content/blog/ja/2026/05/how-to-add-tool-calling-to-a-microsoft-extensions-ai-chat-client.md"
     ]
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Extensions.ApiDescription.Server",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
       "site/src/content/blog/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
@@ -949,7 +952,8 @@
     "status": 404,
     "ok": false,
     "sources": [
-      "site/src/content/blog/2026/06/microsoft-agent-framework-vs-semantic-kernel-for-a-greenfield-net-agent.md"
+      "site/src/content/blog/2026/06/microsoft-agent-framework-vs-semantic-kernel-for-a-greenfield-net-agent.md",
+      "site/src/content/blog/2026/07/migrate-a-semantic-kernel-app-to-microsoft-agent-framework-1-0.md"
     ]
   },
   {
@@ -1090,9 +1094,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Riok.Mapperly",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
       "site/src/content/blog/de/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
@@ -1191,19 +1194,6 @@
       "site/src/content/blog/ja/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
       "site/src/content/blog/pt-br/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
       "site/src/content/blog/ru/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md"
-    ]
-  },
-  {
-    "url": "https://www.udemy.com/topic/c-sharp/",
-    "status": 403,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/de/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/es/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/ja/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/pt-br/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/ru/2023/06/how-to-start-programming-with-c.md"
     ]
   }
 ]
