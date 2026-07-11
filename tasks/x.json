@@ -1090,5 +1090,9 @@
   {
     "slug": "2026/07/what-is-tiered-compilation-and-how-do-i-reason-about-it",
     "text": ".NET compiles every method twice: fast tier 0 to start, optimized tier 1 once it's hot. Why your Stopwatch benchmark lies."
+  },
+  {
+    "slug": "2026/07/migrate-a-custom-tool-calling-loop-to-an-mcp-server",
+    "text": "Your agent loop keeps its tools to itself. Move them to an MCP server so Claude Code, Cursor, any client can call them."
   }
 ]

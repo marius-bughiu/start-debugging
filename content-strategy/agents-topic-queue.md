@@ -88,7 +88,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Migrate a Semantic Kernel app to Microsoft Agent Framework 1.0 → slug: 2026/07/migrate-a-semantic-kernel-app-to-microsoft-agent-framework-1-0
 - Migrate from OpenAI SDK to Microsoft.Extensions.AI in a .NET app → slug: 2026/07/migrate-from-openai-sdk-to-microsoft-extensions-ai
 - Migrate a LangChain agent to the MCP tool-calling pattern → slug: 2026/07/migrate-a-langchain-agent-to-the-mcp-tool-calling-pattern
-- Migrate a custom tool-calling loop to an MCP server
+- Migrate a custom tool-calling loop to an MCP server → slug: 2026/07/migrate-a-custom-tool-calling-loop-to-an-mcp-server
 - Migrate from Copilot chat prompts to a Copilot Agent Skill in your repo
 - Migrate an MCP server from SSE to streamable HTTP transport
 - Migrate a custom multi-agent orchestrator to handoff orchestration in Agent Framework
