@@ -45,6 +45,12 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to deploy a Microsoft Agent Framework agent to Foundry Hosted Agents → slug: 2026/06/deploy-a-microsoft-agent-framework-agent-to-foundry-hosted-agents
 - How to add policy enforcement and audit logging to a Microsoft Agent Framework agent with the Governance Toolkit → slug: 2026/06/policy-enforcement-and-audit-logging-for-a-microsoft-agent-framework-agent
 - How to run a pre-push code review locally with Cursor Bugbot's `/review` → slug: 2026/06/how-to-run-bugbot-review-locally-before-pushing-in-cursor
+- How to run parallel conversations in Cursor with Side Chats without interrupting the agent
+- How to observe an agent's prompts, thinking, and subagents with Cursor cloud agent hooks
+- How to build a Cursor automation with the `/automate` skill and GitHub triggers
+- How to distribute a team MCP server config across Cursor cloud agents and the IDE
+- How to set per-session AI credit spend limits in the Copilot CLI and SDK
+- How to package reusable domain expertise as an Agent Skill in .NET with Microsoft Agent Framework
 
 ## Fix / error
 
@@ -64,6 +70,10 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: `MCP error -32000: Client Closed` in Claude Code when a server dies on launch → slug: 2026/06/fix-mcp-error-32000-connection-closed-in-claude-code
 - Fix: Claude Code drops MCP tools after auto-compaction (reconnect with `/mcp`) → slug: 2026/06/fix-claude-code-drops-mcp-tools-after-auto-compaction
 - Fix: Claude Code high memory usage and context overflow (`/heapdump` and `/compact`) → slug: 2026/07/fix-claude-code-high-memory-usage-and-context-overflow
+- Fix: all MCP servers fail to load after one malformed-JSON syntax error in the config
+- Fix: Claude Code misreads an MCP server's stderr startup message as an error
+- Fix: "Autocompact thrashing" when a large file or tool output immediately refills the context window
+- Fix: MCP server protocol incompatibility on Node.js versions below 18
 
 ## Vs / comparison
 
@@ -82,6 +92,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - CodeAct vs a traditional tool-calling loop for agents → slug: 2026/07/codeact-vs-tool-calling-loop-for-agents
 - Claude Code skills vs subagents vs MCP servers: when to build each → slug: 2026/07/claude-code-skills-vs-subagents-vs-mcp-servers-when-to-build-each
 - Cursor subagents vs Claude Code subagents for multi-agent workflows → slug: 2026/07/cursor-subagents-vs-claude-code-subagents
+- Agent Framework orchestration: sequential vs concurrent vs group chat vs handoff vs magentic
+- Cursor cloud agents vs GitHub Copilot coding agent for background PRs
 
 ## Migration / upgrade
 
@@ -93,6 +105,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Migrate an MCP server from SSE to streamable HTTP transport
 - Migrate a custom multi-agent orchestrator to handoff orchestration in Agent Framework
 - Migrate a custom TypeScript agent loop to the Cursor SDK
+- Migrate a Cursor rules file to the new plugins, skills, and subagents model
 
 ## Patterns
 
@@ -107,6 +120,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Patterns: storing agent chat history - cost, privacy, and portability tradeoffs
 - Patterns: nested subagent hierarchies - when delegation depth helps and when it just burns tokens
 - Patterns: human-in-the-loop tool gating for autonomous coding agents (auto-review and permission gates)
+- Patterns: parallel side-chats vs subagents - when to branch a conversation and when to delegate
+- Patterns: hooks as observability for cloud coding agents (prompts, thinking, subagents, compaction)
+- Patterns: cost control for autonomous agents with per-session credit and spend limits
 
 ## What is / concept
 
@@ -121,6 +137,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - What is the Agent Harness in Microsoft Agent Framework
 - What is GitHub Agentic Workflows and how does it differ from GitHub Actions
 - What is the GitHub Copilot SDK and what can you build with it
+- What is magentic orchestration in Microsoft Agent Framework
+- What is Claude Tag and how does it bring Claude into Slack
 
 ---
 
