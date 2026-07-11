@@ -1082,5 +1082,9 @@
   {
     "slug": "2026/07/what-is-the-ihostedservice-contract-and-when-do-i-use-it",
     "text": "IHostedService is two methods: StartAsync and StopAsync. When to implement it directly instead of BackgroundService."
+  },
+  {
+    "slug": "2026/07/dotnet-11-runtime-async-no-longer-needs-enablepreviewfeatures",
+    "text": "Runtime Async in .NET 11 dropped EnablePreviewFeatures. One MSBuild flag now, and the BCL ships on it."
   }
 ]
