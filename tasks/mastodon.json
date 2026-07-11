@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/what-is-tiered-compilation-and-how-do-i-reason-about-it",
+    "text": "The .NET JIT compiles each method twice: fast unoptimized tier 0 to get your app running, then optimized tier 1 in the background once a method proves hot (30 calls, or a long loop caught by on-stack replacement). Since .NET 8 the tier 0 pass also profiles, so Dynamic PGO can beat static optimization. The gotcha: a hand-rolled Stopwatch benchmark measures tier 0 by accident. Warm up first."
   }
 ]

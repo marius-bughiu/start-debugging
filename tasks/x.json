@@ -1086,5 +1086,9 @@
   {
     "slug": "2026/07/dotnet-11-runtime-async-no-longer-needs-enablepreviewfeatures",
     "text": "Runtime Async in .NET 11 dropped EnablePreviewFeatures. One MSBuild flag now, and the BCL ships on it."
+  },
+  {
+    "slug": "2026/07/what-is-tiered-compilation-and-how-do-i-reason-about-it",
+    "text": ".NET compiles every method twice: fast tier 0 to start, optimized tier 1 once it's hot. Why your Stopwatch benchmark lies."
   }
 ]
