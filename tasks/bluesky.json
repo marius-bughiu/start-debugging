@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/what-is-pgo-in-dotnet-and-do-i-need-to-opt-in",
+    "text": "PGO tunes hot .NET code to the types you hit at runtime. Default-on since .NET 8, no opt-in. When to turn it off inside."
   }
 ]

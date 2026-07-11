@@ -224,7 +224,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is the difference between `dotnet watch` and `dotnet run`? → slug: 2026/07/what-is-the-difference-between-dotnet-watch-and-dotnet-run
 - What is the `IHostedService` contract and when do I use it? → slug: 2026/07/what-is-the-ihostedservice-contract-and-when-do-i-use-it
 - What is a tiered compilation and how do I reason about it? → slug: 2026/07/what-is-tiered-compilation-and-how-do-i-reason-about-it
-- What is PGO in .NET and do I need to opt in?
+- What is PGO in .NET and do I need to opt in? → slug: 2026/07/what-is-pgo-in-dotnet-and-do-i-need-to-opt-in
 - What is the `W^X` flag and why does Native AOT need it?
 - What is the difference between a Dart isolate and a thread?
 - What is a Flutter `Key` and when does omitting it cause bugs?
