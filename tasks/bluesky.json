@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/dotnet-11-runtime-async-no-longer-needs-enablepreviewfeatures",
-    "text": "Runtime Async graduated in the .NET 11 previews: net11.0 no longer needs EnablePreviewFeatures, and the BCL ships on it."
   }
 ]
