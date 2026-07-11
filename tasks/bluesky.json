@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/what-is-tiered-compilation-and-how-do-i-reason-about-it",
-    "text": "The .NET JIT compiles each method twice: quick tier 0 for startup, optimized tier 1 once it's hot. Plus OSR and Dynamic PGO, explained."
   }
 ]
