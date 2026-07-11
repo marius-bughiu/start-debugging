@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/what-is-pgo-in-dotnet-and-do-i-need-to-opt-in",
-    "text": "Dynamic PGO lets the .NET JIT specialize hot methods for the types and branches your workload actually hits, mainly via guarded devirtualization. On by default since .NET 8, so you don't opt in. The one honest exception: ultra-short-lived processes that exit before tier 1, where the profiling is pure cost."
   }
 ]
