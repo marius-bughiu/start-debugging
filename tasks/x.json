@@ -1114,5 +1114,9 @@
   {
     "slug": "2026/07/how-to-add-output-caching-to-a-minimal-api-in-aspnetcore-11",
     "text": "Cache a whole ASP.NET Core 11 endpoint with .CacheOutput(), then purge it the moment data changes via EvictByTagAsync."
+  },
+  {
+    "slug": "2026/07/how-to-map-a-complex-type-instead-of-an-owned-entity-in-ef-core-11",
+    "text": "Owned entities fight value objects with a hidden key. Map them as complex types in EF Core 11 instead."
   }
 ]

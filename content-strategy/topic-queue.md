@@ -88,7 +88,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to check `Ref.mounted` before using `ref` after an async gap in Flutter Riverpod 3.0 → slug: 2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3
 - How to customize the OpenAPI document with `AddOperationTransformer` and `AddSchemaTransformer` in ASP.NET Core 11 → slug: 2026/07/how-to-customize-openapi-with-operation-and-schema-transformers-in-aspnetcore-11
 - How to add output caching to a minimal API in ASP.NET Core 11 → slug: 2026/07/how-to-add-output-caching-to-a-minimal-api-in-aspnetcore-11
-- How to map a complex type instead of an owned entity in EF Core 11
+- How to map a complex type instead of an owned entity in EF Core 11 → slug: 2026/07/how-to-map-a-complex-type-instead-of-an-owned-entity-in-ef-core-11
 - How to configure table-per-hierarchy (TPH) inheritance mapping in EF Core 11
 - How to guard `setState` with the `mounted` check after an async gap in Flutter
 - How to cancel a `StreamSubscription` in `dispose` to avoid a setState-after-dispose crash in Flutter
