@@ -3,7 +3,7 @@ title: "The .NET 11 tracker"
 description: "Every preview, every feature, every breaking change - one place to bookmark for the .NET 11 release cycle."
 tagline: "One bookmark for the whole .NET 11 cycle."
 pubDate: 2026-04-18
-updatedDate: 2026-07-05
+updatedDate: 2026-07-12
 indexTags:
   - ".net 11"
   - "dotnet 11"
