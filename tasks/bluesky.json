@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/cursor-3-11-side-chats-parallel-agent-threads",
-    "text": "Cursor 3.11 ships side chats: parallel agent threads. Branch off with /side or /btw, then @-mention to graft the answer back in."
   }
 ]
