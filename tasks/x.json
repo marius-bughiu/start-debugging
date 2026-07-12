@@ -1098,5 +1098,9 @@
   {
     "slug": "2026/07/what-is-pgo-in-dotnet-and-do-i-need-to-opt-in",
     "text": "Dynamic PGO is on by default since .NET 8. You don't opt in, you just benefit. Here's what it does to hot code."
+  },
+  {
+    "slug": "2026/07/cursor-3-11-side-chats-parallel-agent-threads",
+    "text": "Cursor 3.11 side chats: ask a tangent with /side, then @-mention it to pull the answer back into your main agent."
   }
 ]
