@@ -1102,5 +1102,9 @@
   {
     "slug": "2026/07/cursor-3-11-side-chats-parallel-agent-threads",
     "text": "Cursor 3.11 side chats: ask a tangent with /side, then @-mention it to pull the answer back into your main agent."
+  },
+  {
+    "slug": "2026/07/how-to-customize-openapi-with-operation-and-schema-transformers-in-aspnetcore-11",
+    "text": "Add a header to every ASP.NET Core 11 endpoint with one AddOperationTransformer. Schema transformers shape the types."
   }
 ]
