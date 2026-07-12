@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/how-to-map-a-complex-type-instead-of-an-owned-entity-in-ef-core-11",
-    "text": "Owned entities were never the right shape for a value object: they are entity types with a shadow key and reference identity, so you cannot share an instance, LINQ equality breaks, and ExecuteUpdate is blocked. EF Core 11 complex types fix all three with value semantics, plus optional mapping and JSON columns."
   }
 ]

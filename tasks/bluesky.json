@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/how-to-map-a-complex-type-instead-of-an-owned-entity-in-ef-core-11",
-    "text": "Owned entities carry a hidden key and reference identity. In EF Core 11, map value objects as complex types instead."
   }
 ]
