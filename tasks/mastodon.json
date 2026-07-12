@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/observe-cursor-cloud-agent-prompts-thinking-subagents-with-hooks",
+    "text": "Cursor 3.11 (July 10, 2026) adds conversation-level hooks to cloud agents: afterAgentThought, subagentStart, stop. Commit a .cursor/hooks.json and you get a JSONL feed of every prompt, thought, and delegated task, plus the power to deny risky subagents. Gotcha: hooks fail open by default, so set failClosed on any gate."
   }
 ]

@@ -46,7 +46,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to add policy enforcement and audit logging to a Microsoft Agent Framework agent with the Governance Toolkit → slug: 2026/06/policy-enforcement-and-audit-logging-for-a-microsoft-agent-framework-agent
 - How to run a pre-push code review locally with Cursor Bugbot's `/review` → slug: 2026/06/how-to-run-bugbot-review-locally-before-pushing-in-cursor
 - How to run parallel conversations in Cursor with Side Chats without interrupting the agent
-- How to observe an agent's prompts, thinking, and subagents with Cursor cloud agent hooks
+- How to observe an agent's prompts, thinking, and subagents with Cursor cloud agent hooks → slug: 2026/07/observe-cursor-cloud-agent-prompts-thinking-subagents-with-hooks
 - How to build a Cursor automation with the `/automate` skill and GitHub triggers
 - How to distribute a team MCP server config across Cursor cloud agents and the IDE
 - How to set per-session AI credit spend limits in the Copilot CLI and SDK

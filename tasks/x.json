@@ -1106,5 +1106,9 @@
   {
     "slug": "2026/07/how-to-customize-openapi-with-operation-and-schema-transformers-in-aspnetcore-11",
     "text": "Add a header to every ASP.NET Core 11 endpoint with one AddOperationTransformer. Schema transformers shape the types."
+  },
+  {
+    "slug": "2026/07/observe-cursor-cloud-agent-prompts-thinking-subagents-with-hooks",
+    "text": "Cursor 3.11 cloud agents can run hooks that log every agent thought and subagent spawn, then deny the risky ones."
   }
 ]
