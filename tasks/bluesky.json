@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/how-to-add-output-caching-to-a-minimal-api-in-aspnetcore-11",
+    "text": "ASP.NET Core 11 output caching: .CacheOutput() caches a response, Tag + EvictByTagAsync invalidates on write instead of on a timer."
   }
 ]
