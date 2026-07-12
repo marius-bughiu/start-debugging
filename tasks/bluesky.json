@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/observe-cursor-cloud-agent-prompts-thinking-subagents-with-hooks",
-    "text": "Cursor 3.11 cloud agents now run hooks that see the conversation: log every thought and subagent, and deny the ones you don't want."
   }
 ]
