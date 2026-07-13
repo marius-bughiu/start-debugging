@@ -1122,5 +1122,9 @@
   {
     "slug": "2026/07/claude-code-auto-mode-guards-empty-variable-rm-rf",
     "text": "Claude Code auto mode now stops an rm -rf whose path came from an empty variable. The rm -rf / footgun, caught."
+  },
+  {
+    "slug": "2026/07/how-to-configure-table-per-hierarchy-tph-inheritance-mapping-in-ef-core-11",
+    "text": "EF Core defaults to TPH: one table, one Discriminator column. Pin HasValue strings, not class names, in your schema."
   }
 ]
