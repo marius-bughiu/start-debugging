@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/how-to-cancel-a-streamsubscription-in-dispose-in-flutter",
-    "text": "stream.listen() inside a State makes you the owner: if you never cancel in dispose(), the next event calls setState on a disposed widget and Flutter throws. Store the subscription, cancel before super.dispose(). cancel() returns a Future you cannot await in dispose, but delivery stops immediately, so that is fine."
   }
 ]

@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/how-to-cancel-a-streamsubscription-in-dispose-in-flutter",
-    "text": "A stream outlives your widget and fires setState on a dead State. Cancel the StreamSubscription in dispose; mounted only masks it."
   }
 ]
