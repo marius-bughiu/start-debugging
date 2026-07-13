@@ -1118,5 +1118,9 @@
   {
     "slug": "2026/07/how-to-map-a-complex-type-instead-of-an-owned-entity-in-ef-core-11",
     "text": "Owned entities fight value objects with a hidden key. Map them as complex types in EF Core 11 instead."
+  },
+  {
+    "slug": "2026/07/claude-code-auto-mode-guards-empty-variable-rm-rf",
+    "text": "Claude Code auto mode now stops an rm -rf whose path came from an empty variable. The rm -rf / footgun, caught."
   }
 ]

@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/claude-code-auto-mode-guards-empty-variable-rm-rf",
+    "text": "The classic footgun: rm -rf \"$BUILD_DIR/bin\" when $BUILD_DIR was never set expands to rm -rf /bin. Claude Code week 28 releases teach auto mode to check the resolved path, not the surface string, and pause before an rm -rf that traces back to an empty variable."
   }
 ]

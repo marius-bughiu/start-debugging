@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/claude-code-auto-mode-guards-empty-variable-rm-rf",
+    "text": "An empty $BUILD_DIR turns rm -rf \"$BUILD_DIR/bin\" into rm -rf /bin. Claude Code auto mode now stops and asks first."
   }
 ]
