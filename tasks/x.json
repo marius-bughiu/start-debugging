@@ -1134,5 +1134,9 @@
   {
     "slug": "2026/07/how-to-guard-setstate-with-the-mounted-check-after-an-async-gap-in-flutter",
     "text": "setState after an await can throw 'called after dispose()'. Guard the resume with if (!mounted) return;."
+  },
+  {
+    "slug": "2026/07/how-to-cancel-a-streamsubscription-in-dispose-in-flutter",
+    "text": "Store the StreamSubscription, cancel it in dispose before super.dispose, and the setState-after-dispose crash becomes impossible."
   }
 ]
