@@ -1126,5 +1126,9 @@
   {
     "slug": "2026/07/how-to-configure-table-per-hierarchy-tph-inheritance-mapping-in-ef-core-11",
     "text": "EF Core defaults to TPH: one table, one Discriminator column. Pin HasValue strings, not class names, in your schema."
+  },
+  {
+    "slug": "2026/07/build-a-cursor-automation-with-automate-skill-and-github-triggers",
+    "text": "Cursor's /automate skill wires a cloud agent to a GitHub trigger in plain English. New in 3.8: fire on a failed CI run."
   }
 ]

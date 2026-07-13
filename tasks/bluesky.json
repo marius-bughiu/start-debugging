@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/build-a-cursor-automation-with-automate-skill-and-github-triggers",
+    "text": "Cursor 3.8 added a Workflow run completed trigger, so a cloud agent can triage a failed CI run and comment the fix on the PR."
   }
 ]
