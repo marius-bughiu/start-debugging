@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/how-to-guard-setstate-with-the-mounted-check-after-an-async-gap-in-flutter",
+    "text": "An await can dispose the widget before setState runs. Guard with if (!mounted) return; after the gap; cancel the source in dispose."
   }
 ]

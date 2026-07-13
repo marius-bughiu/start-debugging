@@ -1130,5 +1130,9 @@
   {
     "slug": "2026/07/build-a-cursor-automation-with-automate-skill-and-github-triggers",
     "text": "Cursor's /automate skill wires a cloud agent to a GitHub trigger in plain English. New in 3.8: fire on a failed CI run."
+  },
+  {
+    "slug": "2026/07/how-to-guard-setstate-with-the-mounted-check-after-an-async-gap-in-flutter",
+    "text": "setState after an await can throw 'called after dispose()'. Guard the resume with if (!mounted) return;."
   }
 ]
