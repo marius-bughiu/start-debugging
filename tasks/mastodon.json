@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/distribute-team-mcp-config-across-cursor-cloud-agents-and-ide",
-    "text": "A committed .cursor/mcp.json gives every teammate your MCP servers in the editor, but cloud agents at cursor.com/agents never read that file. They pull from Dashboard > Integrations & MCP instead. How to author both surfaces once and use ${env:...} so no API key ever lands in git. For Cursor 3.11."
   }
 ]
