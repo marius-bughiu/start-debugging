@@ -1154,5 +1154,9 @@
   {
     "slug": "2026/07/how-to-return-a-typed-results-union-from-a-minimal-api-endpoint-in-aspnetcore-11",
     "text": "IResult drops your 404 from OpenAPI. Return Results<Ok<T>, NotFound> and the spec self-documents, compiler-checked."
+  },
+  {
+    "slug": "2026/07/how-to-add-response-compression-to-an-aspnetcore-11-api",
+    "text": "ASP.NET Core 11 defaults response compression to Zstandard, not Brotli. Two lines to turn it on."
   }
 ]

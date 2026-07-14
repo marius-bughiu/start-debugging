@@ -94,7 +94,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to cancel a `StreamSubscription` in `dispose` to avoid a setState-after-dispose crash in Flutter → slug: 2026/07/how-to-cancel-a-streamsubscription-in-dispose-in-flutter
 - How to add a `Hero` animation between two screens in Flutter → slug: 2026/07/how-to-add-a-hero-animation-between-two-screens-in-flutter
 - How to return a typed `Results<T1, T2>` union from a minimal API endpoint in ASP.NET Core 11 → slug: 2026/07/how-to-return-a-typed-results-union-from-a-minimal-api-endpoint-in-aspnetcore-11
-- How to add response compression to an ASP.NET Core 11 API
+- How to add response compression to an ASP.NET Core 11 API → slug: 2026/07/how-to-add-response-compression-to-an-aspnetcore-11-api
 
 ## Fix / error
 

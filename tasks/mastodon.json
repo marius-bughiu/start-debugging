@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/how-to-add-response-compression-to-an-aspnetcore-11-api",
+    "text": "Zstandard is now a built-in response compression provider in ASP.NET Core 11, and the middleware prefers it over Brotli and Gzip. This guide covers the two-line setup, per-provider compression levels, custom MIME types, and why EnableForHttps stays off by default."
   }
 ]
