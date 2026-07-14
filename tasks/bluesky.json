@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/how-to-return-a-typed-results-union-from-a-minimal-api-endpoint-in-aspnetcore-11",
+    "text": "Stop hand-writing .Produces. Results<Ok<T>, NotFound> self-describes to OpenAPI and fails the build on any undeclared return."
   }
 ]
