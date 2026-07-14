@@ -1146,5 +1146,9 @@
   {
     "slug": "2026/07/how-to-add-a-hero-animation-between-two-screens-in-flutter",
     "text": "Two Hero widgets with the same tag fly a shared element between screens. Plus the collision that silently kills it."
+  },
+  {
+    "slug": "2026/07/distribute-team-mcp-config-across-cursor-cloud-agents-and-ide",
+    "text": "A committed .cursor/mcp.json reaches teammates' IDEs, not your cloud agents. The two-surface fix for Cursor 3.11."
   }
 ]

@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/distribute-team-mcp-config-across-cursor-cloud-agents-and-ide",
+    "text": "The IDE and cloud agents read MCP config from two different places in Cursor 3.11. How to sync both surfaces and keep keys out of git."
   }
 ]

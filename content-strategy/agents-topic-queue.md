@@ -48,7 +48,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to run parallel conversations in Cursor with Side Chats without interrupting the agent
 - How to observe an agent's prompts, thinking, and subagents with Cursor cloud agent hooks → slug: 2026/07/observe-cursor-cloud-agent-prompts-thinking-subagents-with-hooks
 - How to build a Cursor automation with the `/automate` skill and GitHub triggers → slug: 2026/07/build-a-cursor-automation-with-automate-skill-and-github-triggers
-- How to distribute a team MCP server config across Cursor cloud agents and the IDE
+- How to distribute a team MCP server config across Cursor cloud agents and the IDE → slug: 2026/07/distribute-team-mcp-config-across-cursor-cloud-agents-and-ide
 - How to set per-session AI credit spend limits in the Copilot CLI and SDK
 - How to package reusable domain expertise as an Agent Skill in .NET with Microsoft Agent Framework
 
