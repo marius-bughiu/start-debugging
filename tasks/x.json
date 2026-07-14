@@ -1138,5 +1138,9 @@
   {
     "slug": "2026/07/how-to-cancel-a-streamsubscription-in-dispose-in-flutter",
     "text": "Store the StreamSubscription, cancel it in dispose before super.dispose, and the setState-after-dispose crash becomes impossible."
+  },
+  {
+    "slug": "2026/07/claude-code-2-1-208-vim-insert-mode-remaps-jj-to-escape",
+    "text": "Claude Code 2.1.208 lets vim users remap jj to Escape in the prompt editor via vimInsertModeRemaps."
   }
 ]
