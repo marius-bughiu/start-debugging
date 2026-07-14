@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/how-to-add-a-hero-animation-between-two-screens-in-flutter",
-    "text": "A Hero animation is two widgets with one tag plus Navigator.push. Then flightShuttleBuilder, arcs, and the tag error that breaks it."
   }
 ]

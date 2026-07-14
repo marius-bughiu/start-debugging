@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/how-to-add-a-hero-animation-between-two-screens-in-flutter",
-    "text": "In Flutter, wrap the same widget on both routes in a Hero with an identical tag and Navigator animates its position and size for you, no AnimationController. Covers flightShuttleBuilder for cross-theme flicker, MaterialRectArcTween for curved flight, and the 'multiple heroes share the same tag' error in a ListView."
   }
 ]
