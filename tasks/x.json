@@ -1142,5 +1142,9 @@
   {
     "slug": "2026/07/claude-code-2-1-208-vim-insert-mode-remaps-jj-to-escape",
     "text": "Claude Code 2.1.208 lets vim users remap jj to Escape in the prompt editor via vimInsertModeRemaps."
+  },
+  {
+    "slug": "2026/07/how-to-add-a-hero-animation-between-two-screens-in-flutter",
+    "text": "Two Hero widgets with the same tag fly a shared element between screens. Plus the collision that silently kills it."
   }
 ]
