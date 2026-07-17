@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/fix-all-mcp-servers-fail-to-load-after-malformed-json-in-config",
+    "text": "JSON has no partial-parse mode, so one syntax error in your MCP config takes down every server, not just the one you added. The usual suspects: a trailing comma, an unescaped backslash in a Windows path (use forward slashes), or a // comment. Claude Desktop shows no error at all. Validate with python -m json.tool first."
   }
 ]

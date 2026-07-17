@@ -1170,5 +1170,9 @@
   {
     "slug": "2026/07/set-ai-credit-session-limits-in-github-copilot-cli-and-sdk",
     "text": "Stop a runaway Copilot agent from eating your budget: cap one run with --max-ai-credits (CLI) or sessionLimits (SDK)."
+  },
+  {
+    "slug": "2026/07/fix-all-mcp-servers-fail-to-load-after-malformed-json-in-config",
+    "text": "One trailing comma and every MCP server disappears, not just the new one. Validate the JSON before you restart."
   }
 ]
