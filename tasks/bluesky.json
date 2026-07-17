@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/aspnetcore-11-automatic-csrf-protection-fetch-metadata-preview-6",
-    "text": "ASP.NET Core 11 Preview 6 adds automatic CSRF protection: cross-origin browser POSTs get rejected via Sec-Fetch-Site."
   }
 ]
