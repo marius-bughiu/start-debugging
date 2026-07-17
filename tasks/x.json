@@ -1166,5 +1166,9 @@
   {
     "slug": "2026/07/fix-property-could-not-be-mapped-not-a-supported-primitive-type-in-ef-core-11",
     "text": "EF Core won't map that property? Four fixes ranked: complex type, HasConversion, a key, or [NotMapped]."
+  },
+  {
+    "slug": "2026/07/set-ai-credit-session-limits-in-github-copilot-cli-and-sdk",
+    "text": "Stop a runaway Copilot agent from eating your budget: cap one run with --max-ai-credits (CLI) or sessionLimits (SDK)."
   }
 ]

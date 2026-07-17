@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/set-ai-credit-session-limits-in-github-copilot-cli-and-sdk",
+    "text": "Copilot bills per AI credit now. Cap a single agent run before it loops: --max-ai-credits in the CLI, SessionLimitsConfig in the SDK."
   }
 ]

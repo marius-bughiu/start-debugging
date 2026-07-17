@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/set-ai-credit-session-limits-in-github-copilot-cli-and-sdk",
+    "text": "Since June 2026 Copilot bills per AI credit, and one runaway agent run can burn real money. Copilot CLI 1.0.66 and SDK 1.0.5 add per-session limits: --max-ai-credits in the CLI, sessionLimits/SessionLimitsConfig in the SDK. The catch: it is a soft cap, so an in-flight response can overshoot. Set it above 30."
   }
 ]
