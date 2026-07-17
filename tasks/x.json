@@ -1162,5 +1162,9 @@
   {
     "slug": "2026/07/aspnetcore-11-automatic-csrf-protection-fetch-metadata-preview-6",
     "text": "ASP.NET Core 11 Preview 6 blocks cross-origin CSRF by default via Sec-Fetch-Site, no antiforgery token needed."
+  },
+  {
+    "slug": "2026/07/fix-property-could-not-be-mapped-not-a-supported-primitive-type-in-ef-core-11",
+    "text": "EF Core won't map that property? Four fixes ranked: complex type, HasConversion, a key, or [NotMapped]."
   }
 ]
