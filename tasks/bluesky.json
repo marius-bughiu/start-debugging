@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/fix-all-mcp-servers-fail-to-load-after-malformed-json-in-config",
-    "text": "MCP servers all vanish at once? The config is invalid JSON, not the new server: a trailing comma, a Windows backslash, or a comment."
   }
 ]
