@@ -1158,5 +1158,9 @@
   {
     "slug": "2026/07/how-to-add-response-compression-to-an-aspnetcore-11-api",
     "text": "ASP.NET Core 11 defaults response compression to Zstandard, not Brotli. Two lines to turn it on."
+  },
+  {
+    "slug": "2026/07/aspnetcore-11-automatic-csrf-protection-fetch-metadata-preview-6",
+    "text": "ASP.NET Core 11 Preview 6 blocks cross-origin CSRF by default via Sec-Fetch-Site, no antiforgery token needed."
   }
 ]
