@@ -158,9 +158,9 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `CS9035: Required member 'X' must be set in the object initializer` in C# → slug: 2026/07/fix-cs9035-required-member-must-be-set-in-the-object-initializer
 - Fix: Riverpod 3.0 throws `ProviderException` instead of the original error → slug: 2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error
 - Fix: `The property 'X' could not be mapped, because it is of type 'Y' which is not a supported primitive type or a valid entity type` in EF Core → slug: 2026/07/fix-property-could-not-be-mapped-not-a-supported-primitive-type-in-ef-core-11
-- Fix: `setState() called after dispose()` in Flutter
-- Fix: `Bad state: Cannot get a field on a disposed resource` in Flutter
-- Fix: `System.InvalidOperationException: Headers are read-only, response has already started` in ASP.NET Core
+- Fix: `setState() called after dispose()` in Flutter → slug: 2026/07/how-to-guard-setstate-with-the-mounted-check-after-an-async-gap-in-flutter (same intent as existing post)
+- Fix: `Bad state: Cannot get a field on a disposed resource` in Flutter → slug: 2026/07/how-to-guard-setstate-with-the-mounted-check-after-an-async-gap-in-flutter (same disposed-widget intent, covered by existing cluster)
+- Fix: `System.InvalidOperationException: Headers are read-only, response has already started` in ASP.NET Core → slug: 2026/07/fix-headers-are-read-only-response-has-already-started-in-aspnetcore
 - Fix: `413 Request Entity Too Large` when uploading a file to an ASP.NET Core endpoint
 - Fix: `ScaffoldMessenger.of() was called with a context that does not contain a Scaffold` in Flutter
 - Fix: `type 'Null' is not a subtype of type 'X'` in Dart

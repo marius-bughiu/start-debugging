@@ -1174,5 +1174,9 @@
   {
     "slug": "2026/07/fix-all-mcp-servers-fail-to-load-after-malformed-json-in-config",
     "text": "One trailing comma and every MCP server disappears, not just the new one. Validate the JSON before you restart."
+  },
+  {
+    "slug": "2026/07/fix-headers-are-read-only-response-has-already-started-in-aspnetcore",
+    "text": "That InvalidOperationException means the body already flushed. Set headers and status before the first WriteAsync."
   }
 ]
