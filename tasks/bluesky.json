@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/fix-scaffoldmessenger-of-context-does-not-contain-a-scaffold-in-flutter",
+    "text": "ScaffoldMessenger.of() cant find a Scaffold? Your context is above it. Fix with a Builder, a child widget, or a GlobalKey."
   }
 ]

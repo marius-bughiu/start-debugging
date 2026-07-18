@@ -161,8 +161,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `setState() called after dispose()` in Flutter → slug: 2026/07/how-to-guard-setstate-with-the-mounted-check-after-an-async-gap-in-flutter (same intent as existing post)
 - Fix: `Bad state: Cannot get a field on a disposed resource` in Flutter → slug: 2026/07/how-to-guard-setstate-with-the-mounted-check-after-an-async-gap-in-flutter (same disposed-widget intent, covered by existing cluster)
 - Fix: `System.InvalidOperationException: Headers are read-only, response has already started` in ASP.NET Core → slug: 2026/07/fix-headers-are-read-only-response-has-already-started-in-aspnetcore
-- Fix: `413 Request Entity Too Large` when uploading a file to an ASP.NET Core endpoint
-- Fix: `ScaffoldMessenger.of() was called with a context that does not contain a Scaffold` in Flutter
+- Fix: `413 Request Entity Too Large` when uploading a file to an ASP.NET Core endpoint → slug: 2026/07/fix-413-request-entity-too-large-uploading-a-file-in-aspnetcore-11
+- Fix: `ScaffoldMessenger.of() was called with a context that does not contain a Scaffold` in Flutter → slug: 2026/07/fix-scaffoldmessenger-of-context-does-not-contain-a-scaffold-in-flutter
 - Fix: `type 'Null' is not a subtype of type 'X'` in Dart
 - Fix: `MissingPluginException: No implementation found for method` in Flutter
 - Fix: `CS8618: Non-nullable property 'X' must contain a non-null value when exiting constructor` in C#

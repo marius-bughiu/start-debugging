@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/fix-scaffoldmessenger-of-context-does-not-contain-a-scaffold-in-flutter",
+    "text": "ScaffoldMessenger.of() (or the old Scaffold.of()) fails when the context you passed sits above the Scaffold it looks for, not below. It happens when you call it from the same build method that returns the Scaffold. Fix: wrap the caller in a Builder, extract it into its own widget, or use a GlobalKey<ScaffoldMessengerState>."
   }
 ]
