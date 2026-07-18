@@ -1,15 +1,15 @@
 [
   {
-    "query": "\".cursor/permissions.json\" autorun allow_instructions block_instructions",
-    "position": 11,
-    "impressions": 3,
+    "query": "dotnet new aspire-apphost",
+    "position": 14,
+    "impressions": 1,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "query": "cursor \"permissions.json\" autorun allow_instructions block_instructions syntax",
-    "position": 11,
-    "impressions": 2,
+    "query": "kebab case",
+    "position": 19,
+    "impressions": 1,
     "clicks": 0,
     "ctr": 0
   }
