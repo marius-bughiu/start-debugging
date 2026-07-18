@@ -50,7 +50,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to build a Cursor automation with the `/automate` skill and GitHub triggers → slug: 2026/07/build-a-cursor-automation-with-automate-skill-and-github-triggers
 - How to distribute a team MCP server config across Cursor cloud agents and the IDE → slug: 2026/07/distribute-team-mcp-config-across-cursor-cloud-agents-and-ide
 - How to set per-session AI credit spend limits in the Copilot CLI and SDK → slug: 2026/07/set-ai-credit-session-limits-in-github-copilot-cli-and-sdk
-- How to package reusable domain expertise as an Agent Skill in .NET with Microsoft Agent Framework
+- How to package reusable domain expertise as an Agent Skill in .NET with Microsoft Agent Framework → slug: 2026/07/package-domain-expertise-as-an-agent-skill-microsoft-agent-framework
 
 ## Fix / error
 

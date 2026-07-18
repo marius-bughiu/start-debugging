@@ -1186,5 +1186,9 @@
   {
     "slug": "2026/07/fix-scaffoldmessenger-of-context-does-not-contain-a-scaffold-in-flutter",
     "text": "ScaffoldMessenger.of() error? Your context sits above the Scaffold. Fix it with a Builder or a GlobalKey."
+  },
+  {
+    "slug": "2026/07/package-domain-expertise-as-an-agent-skill-microsoft-agent-framework",
+    "text": "No Skill type in the Microsoft Agent Framework? Package expertise as an agent, then expose it as an A2A AgentSkill."
   }
 ]

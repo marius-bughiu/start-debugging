@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/package-domain-expertise-as-an-agent-skill-microsoft-agent-framework",
+    "text": "Reuse one expert agent in-process with .AsAIFunction(), then expose it to other frameworks as an A2A AgentSkill. .NET walkthrough."
   }
 ]
