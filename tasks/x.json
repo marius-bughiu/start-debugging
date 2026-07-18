@@ -1194,5 +1194,9 @@
   {
     "slug": "2026/07/fix-413-request-entity-too-large-uploading-a-file-in-aspnetcore-11",
     "text": "A 413 on a file upload is Kestrel's 30,000,000-byte body cap. Raise MaxRequestBodySize, not the multipart limit."
+  },
+  {
+    "slug": "2026/07/fix-type-null-is-not-a-subtype-of-type-in-dart",
+    "text": "Dart's type 'Null' is not a subtype of type 'String' is a missing JSON key. Cast to String?, not String."
   }
 ]

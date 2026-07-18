@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/fix-type-null-is-not-a-subtype-of-type-in-dart",
+    "text": "Dart's type 'Null' is not a subtype error is a null JSON value hitting a non-nullable cast. Cast to String?, then default with ??."
   }
 ]
