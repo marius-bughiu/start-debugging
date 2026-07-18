@@ -95,6 +95,10 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to add a `Hero` animation between two screens in Flutter → slug: 2026/07/how-to-add-a-hero-animation-between-two-screens-in-flutter
 - How to return a typed `Results<T1, T2>` union from a minimal API endpoint in ASP.NET Core 11 → slug: 2026/07/how-to-return-a-typed-results-union-from-a-minimal-api-endpoint-in-aspnetcore-11
 - How to add response compression to an ASP.NET Core 11 API → slug: 2026/07/how-to-add-response-compression-to-an-aspnetcore-11-api
+- How to add an endpoint filter to a minimal API in ASP.NET Core 11
+- How to log the SQL that EF Core 11 generates
+- How to add a health check endpoint to a minimal API in ASP.NET Core 11
+- How to disable Riverpod 3.0's automatic provider retry
 
 ## Fix / error
 
@@ -166,6 +170,10 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `type 'Null' is not a subtype of type 'X'` in Dart → slug: 2026/07/fix-type-null-is-not-a-subtype-of-type-in-dart
 - Fix: `MissingPluginException: No implementation found for method` in Flutter
 - Fix: `CS8618: Non-nullable property 'X' must contain a non-null value when exiting constructor` in C#
+- Fix: deadlock when calling `.Result` or `.Wait()` on an async method in C#
+- Fix: `CS4014: Because this call is not awaited, execution of the current method continues` in C#
+- Fix: `InvalidOperationException: Sequence contains no elements` from `.First()` or `.Single()` in LINQ
+- Fix: Riverpod 3.0 `StreamProvider` stops emitting because updates are now filtered by `==`
 
 ## Vs / comparison
 
@@ -209,6 +217,9 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - TPH vs TPT vs TPC inheritance mapping in EF Core 11
 - Typed results (`Results<>`) vs `IResult` vs `IActionResult` in ASP.NET Core 11
 - `riverpod` vs `flutter_riverpod` vs `hooks_riverpod`: which package do I actually need?
+- `WebApplication.CreateBuilder` vs `CreateSlimBuilder` vs `CreateEmptyBuilder` in ASP.NET Core 11
+- Endpoint filters vs middleware in ASP.NET Core 11
+- `.Result`/`.Wait()` vs `GetAwaiter().GetResult()` vs `await` in C#
 
 ## Migration / upgrade
 
@@ -236,6 +247,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate Swashbuckle `IOperationFilter` and `ISchemaFilter` to OpenAPI transformers in .NET 11
 - Migrate from owned entities to complex types in EF Core 11
 - Migrate a `setState` `StatefulWidget` to a Riverpod `Notifier` in Flutter
+- Migrate from `ILogger` string interpolation to structured logging message templates in .NET 11
+- Migrate from blocking `.Result`/`.Wait()` calls to async all the way up in a legacy C# codebase
 
 ## What is / concept
 
@@ -265,6 +278,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is `IProblemDetailsService` and how does it shape error responses in ASP.NET Core 11?
 - What is a complex type in EF Core 11 and how is it different from an owned entity?
 - What is an OpenAPI transformer in ASP.NET Core and when do I need one?
+- What is a `SynchronizationContext` and why does it cause async deadlocks in C#?
+- What is client-side evaluation in EF Core 11 and how do I avoid it?
 
 ---
 
