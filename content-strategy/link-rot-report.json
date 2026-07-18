@@ -59,10 +59,20 @@
   },
   {
     "url": "https://code.claude.com/docs/en/release-notes",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/07/fix-claude-code-high-memory-usage-and-context-overflow.md"
+    ]
+  },
+  {
+    "url": "https://code.visualstudio.com/docs/copilot/customization/custom-instructions",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/05/fix-github-copilot-ignores-repository-custom-instructions-in-vs-code.md"
     ]
   },
   {
@@ -137,6 +147,30 @@
     ]
   },
   {
+    "url": "https://github.com/anthropics/claude-code/issues/51179",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/07/fix-claude-code-high-memory-usage-and-context-overflow.md",
+      "site/src/content/blog/2026/07/fix-claude-code-high-memory-usage-and-context-overflow.md"
+    ]
+  },
+  {
+    "url": "https://github.com/Blazored/FluentValidation",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
+      "site/src/content/blog/de/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
+      "site/src/content/blog/es/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
+      "site/src/content/blog/ja/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
+      "site/src/content/blog/ru/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md"
+    ]
+  },
+  {
     "url": "https://github.com/dotnet/aspnetcore/discussions/51020",
     "status": 404,
     "ok": false,
@@ -163,23 +197,17 @@
     ]
   },
   {
-    "url": "https://github.com/dotnet/efcore/issues/35575",
+    "url": "https://github.com/dotnet/maui/issues/23352",
     "status": null,
     "ok": false,
     "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
-      "site/src/content/blog/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
-      "site/src/content/blog/de/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
-      "site/src/content/blog/de/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
-      "site/src/content/blog/es/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
-      "site/src/content/blog/es/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
-      "site/src/content/blog/ja/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
-      "site/src/content/blog/ja/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
-      "site/src/content/blog/pt-br/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
-      "site/src/content/blog/pt-br/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
-      "site/src/content/blog/ru/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md",
-      "site/src/content/blog/ru/2026/06/fix-the-entity-type-requires-a-primary-key-to-be-defined.md"
+      "site/src/content/blog/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md",
+      "site/src/content/blog/de/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md",
+      "site/src/content/blog/es/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md",
+      "site/src/content/blog/ja/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md",
+      "site/src/content/blog/pt-br/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md",
+      "site/src/content/blog/ru/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md"
     ]
   },
   {
@@ -292,26 +320,6 @@
       "site/src/content/blog/pt-br/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
       "site/src/content/blog/ru/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md",
       "site/src/content/blog/ru/2026/05/fix-sqlexception-timeout-expired-during-ef-core-migrations.md"
-    ]
-  },
-  {
-    "url": "https://learn.microsoft.com/en-us/dotnet/api/system.threading.synchronizationcontext.operationstarted",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
-      "site/src/content/blog/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
-      "site/src/content/blog/de/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
-      "site/src/content/blog/de/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
-      "site/src/content/blog/es/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
-      "site/src/content/blog/es/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
-      "site/src/content/blog/ja/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
-      "site/src/content/blog/ja/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
-      "site/src/content/blog/pt-br/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
-      "site/src/content/blog/pt-br/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
-      "site/src/content/blog/ru/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md",
-      "site/src/content/blog/ru/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct.md"
     ]
   },
   {
@@ -476,11 +484,29 @@
     ]
   },
   {
-    "url": "https://medium.com/@adnanmasood/rubric-based-evals-llm-as-a-judge-methodologies-and-empirical-validation-in-domain-context-71936b989e80",
+    "url": "https://medium.com/dartlang/announcing-dart-3-0-79bff52e1bb6",
     "status": 403,
     "ok": false,
     "sources": [
-      "site/src/content/blog/2026/05/how-to-set-up-an-llm-as-judge-eval-harness-for-a-coding-agent.md"
+      "site/src/content/blog/2026/05/dart-records-vs-freezed-classes.md",
+      "site/src/content/blog/de/2026/05/dart-records-vs-freezed-classes.md",
+      "site/src/content/blog/es/2026/05/dart-records-vs-freezed-classes.md",
+      "site/src/content/blog/ja/2026/05/dart-records-vs-freezed-classes.md",
+      "site/src/content/blog/pt-br/2026/05/dart-records-vs-freezed-classes.md",
+      "site/src/content/blog/ru/2026/05/dart-records-vs-freezed-classes.md"
+    ]
+  },
+  {
+    "url": "https://medium.com/write-a-catalyst/partial-events-constructors-in-net-10-preview-2-8002f0d714b2#:~:text=1",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2025/04/csharp-14-partial-constructors-and-events.md",
+      "site/src/content/blog/de/2025/04/csharp-14-partial-constructors-and-events.md",
+      "site/src/content/blog/es/2025/04/csharp-14-partial-constructors-and-events.md",
+      "site/src/content/blog/ja/2025/04/csharp-14-partial-constructors-and-events.md",
+      "site/src/content/blog/pt-br/2025/04/csharp-14-partial-constructors-and-events.md",
+      "site/src/content/blog/ru/2025/04/csharp-14-partial-constructors-and-events.md"
     ]
   },
   {
@@ -493,7 +519,8 @@
       "site/src/content/blog/2026/05/how-to-write-a-claude-code-subagent-that-runs-browser-tests.md",
       "site/src/content/blog/2026/06/fix-claude-code-drops-mcp-tools-after-auto-compaction.md",
       "site/src/content/blog/2026/06/fix-claude-code-drops-mcp-tools-after-auto-compaction.md",
-      "site/src/content/blog/2026/06/fix-mcp-error-32000-connection-closed-in-claude-code.md"
+      "site/src/content/blog/2026/06/fix-mcp-error-32000-connection-closed-in-claude-code.md",
+      "site/src/content/blog/2026/07/fix-all-mcp-servers-fail-to-load-after-malformed-json-in-config.md"
     ]
   },
   {
@@ -517,6 +544,32 @@
       "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md",
       "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md",
       "site/src/content/blog/2026/06/fix-mcp-error-32000-connection-closed-in-claude-code.md"
+    ]
+  },
+  {
+    "url": "https://news.ycombinator.com/item?id=46976911",
+    "status": 429,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
+      "site/src/content/blog/de/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
+      "site/src/content/blog/es/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
+      "site/src/content/blog/ja/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
+      "site/src/content/blog/pt-br/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
+      "site/src/content/blog/ru/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md"
+    ]
+  },
+  {
+    "url": "https://news.ycombinator.com/item?id=47720060",
+    "status": 429,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/building-a-microsecond-database-engine-in-csharp.md",
+      "site/src/content/blog/de/2026/04/building-a-microsecond-database-engine-in-csharp.md",
+      "site/src/content/blog/es/2026/04/building-a-microsecond-database-engine-in-csharp.md",
+      "site/src/content/blog/ja/2026/04/building-a-microsecond-database-engine-in-csharp.md",
+      "site/src/content/blog/pt-br/2026/04/building-a-microsecond-database-engine-in-csharp.md",
+      "site/src/content/blog/ru/2026/04/building-a-microsecond-database-engine-in-csharp.md"
     ]
   },
   {
@@ -582,6 +635,15 @@
     ]
   },
   {
+    "url": "https://shinzo.ai/blog/how-to-set-up-the-jira-mcp-server-on-cursor",
+    "status": null,
+    "ok": false,
+    "error": "fetch failed",
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-assign-a-jira-ticket-to-a-cursor-cloud-agent-and-get-a-pr-back.md"
+    ]
+  },
+  {
     "url": "https://snack.expo.dev/GCz9-diFD",
     "status": 404,
     "ok": false,
@@ -592,6 +654,15 @@
       "site/src/content/blog/ja/2023/11/2-column-react-native.md",
       "site/src/content/blog/pt-br/2023/11/2-column-react-native.md",
       "site/src/content/blog/ru/2023/11/2-column-react-native.md"
+    ]
+  },
+  {
+    "url": "https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-add-retrieval-augmented-generation-to-a-claude-code-session.md"
     ]
   },
   {
@@ -680,6 +751,17 @@
     ]
   },
   {
+    "url": "https://www.npmjs.com/package/mcp-remote",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
+      "site/src/content/blog/2026/05/fix-econnrefused-when-a-local-mcp-server-starts-before-the-client-is-ready.md",
+      "site/src/content/blog/2026/05/fix-http-mcp-server-url-wont-connect-in-claude-desktop.md",
+      "site/src/content/blog/2026/05/fix-http-mcp-server-url-wont-connect-in-claude-desktop.md"
+    ]
+  },
+  {
     "url": "https://www.nuget.org/packages/Anthropic",
     "status": 404,
     "ok": false,
@@ -702,8 +784,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Azure.Extensions.AspNetCore.DataProtection.Blobs",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
       "site/src/content/blog/de/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
@@ -801,8 +884,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11.md",
       "site/src/content/blog/2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11.md",
@@ -820,9 +904,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.EntityFrameworkCore/",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
       "site/src/content/blog/de/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
@@ -834,9 +917,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.AspNetCore.OpenApi/",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
       "site/src/content/blog/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
@@ -915,8 +997,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Extensions.Http.Resilience",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
       "site/src/content/blog/de/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
@@ -928,8 +1011,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Extensions.TimeProvider.Testing",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md",
       "site/src/content/blog/de/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md",
@@ -1184,6 +1268,14 @@
     ]
   },
   {
+    "url": "https://www.rfc-editor.org/rfc/rfc8259",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/07/fix-all-mcp-servers-fail-to-load-after-malformed-json-in-config.md"
+    ]
+  },
+  {
     "url": "https://www.rfc-editor.org/rfc/rfc9114#name-settings",
     "status": 404,
     "ok": false,
@@ -1194,6 +1286,19 @@
       "site/src/content/blog/ja/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
       "site/src/content/blog/pt-br/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
       "site/src/content/blog/ru/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md"
+    ]
+  },
+  {
+    "url": "https://www.udemy.com/topic/c-sharp/",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/de/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/es/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/ja/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/pt-br/2023/06/how-to-start-programming-with-c.md",
+      "site/src/content/blog/ru/2023/06/how-to-start-programming-with-c.md"
     ]
   }
 ]
