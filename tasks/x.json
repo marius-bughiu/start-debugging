@@ -1178,5 +1178,9 @@
   {
     "slug": "2026/07/fix-headers-are-read-only-response-has-already-started-in-aspnetcore",
     "text": "That InvalidOperationException means the body already flushed. Set headers and status before the first WriteAsync."
+  },
+  {
+    "slug": "2026/07/csharp-15-extension-indexers-dotnet-11-preview-6",
+    "text": "C# 15 adds extension indexers in .NET 11 Preview 6: bolt this[...] onto a type you don't own, no wrapper."
   }
 ]
