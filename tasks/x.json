@@ -1190,5 +1190,9 @@
   {
     "slug": "2026/07/package-domain-expertise-as-an-agent-skill-microsoft-agent-framework",
     "text": "No Skill type in the Microsoft Agent Framework? Package expertise as an agent, then expose it as an A2A AgentSkill."
+  },
+  {
+    "slug": "2026/07/fix-413-request-entity-too-large-uploading-a-file-in-aspnetcore-11",
+    "text": "A 413 on a file upload is Kestrel's 30,000,000-byte body cap. Raise MaxRequestBodySize, not the multipart limit."
   }
 ]
