@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/csharp-15-extension-indexers-dotnet-11-preview-6",
-    "text": "C# 15 in .NET 11 Preview 6 rounds out extension members with extension indexers. Declare this[Index index] inside an extension block and callers get real square-bracket syntax on a type you don't own, list patterns included. Multiple parameters plus get and set accessors are supported too."
   }
 ]
