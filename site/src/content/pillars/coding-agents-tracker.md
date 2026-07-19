@@ -3,7 +3,7 @@ title: "The coding agents tracker"
 description: "Claude Code, Cursor, Copilot, MCP, Microsoft Agent Framework - every post on building and working with AI coding agents, in one place."
 tagline: "One bookmark for coding agents, LLMs, and MCP."
 pubDate: 2026-04-23
-updatedDate: 2026-07-12
+updatedDate: 2026-07-19
 indexTags:
   - "ai-agents"
   - "llm"

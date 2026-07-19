@@ -3,7 +3,7 @@ title: "C# 14 features"
 description: "All C# 14 language features with runnable examples: union types, partial members, extensions, and the smaller ergonomic wins."
 tagline: "What actually shipped in C# 14, with code."
 pubDate: 2026-04-18
-updatedDate: 2026-07-12
+updatedDate: 2026-07-19
 indexTags:
   - "c# 14"
   - "csharp 14"
