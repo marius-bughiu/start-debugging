@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/how-to-add-a-health-check-endpoint-to-a-minimal-api-in-aspnetcore-11",
-    "text": "Two lines get you /healthz. The real win: tag checks so readiness probes the DB while liveness stays dependency-free."
   }
 ]
