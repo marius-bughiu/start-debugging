@@ -1214,5 +1214,9 @@
   {
     "slug": "2026/07/how-to-log-the-sql-that-ef-core-11-generates",
     "text": "See the SQL EF Core 11 runs: LogTo prints every command, ToQueryString renders one query without executing it."
+  },
+  {
+    "slug": "2026/07/how-to-add-a-health-check-endpoint-to-a-minimal-api-in-aspnetcore-11",
+    "text": "Two lines give you /healthz. Then split liveness from readiness with tags so a flaky DB never restarts a healthy pod."
   }
 ]
