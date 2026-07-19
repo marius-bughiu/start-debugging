@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/maui-coreclr-only-runtime-in-dotnet-11-preview-6",
+    "text": "In .NET 11 Preview 6, CoreCLR becomes the only runtime for MAUI mobile apps. The UseMonoRuntime escape hatch that Preview 4 gave you is gone: no supported Mono path for Android, iOS, or Mac Catalyst. Microsoft reports Android now within ~10% of Mono on startup and size. Test before the November GA."
   }
 ]
