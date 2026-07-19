@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/how-to-add-an-endpoint-filter-to-a-minimal-api-in-aspnetcore-11",
-    "text": "AddEndpointFilter wraps a handler or a whole MapGroup. Stacked filters nest FIFO in, FILO out. The filter type is never a DI service."
   }
 ]
