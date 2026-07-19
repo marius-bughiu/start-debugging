@@ -14,7 +14,7 @@ translatedBy: "claude"
 translationDate: 2026-07-14
 ---
 
-短い答え：最初の画面でアニメーションさせたいウィジェットを `Hero` でラップし、遷移先のウィジェットを**同じ `tag`** を持つ 2 つ目の `Hero` でラップして、通常の `Navigator` で遷移先ルートをプッシュします。Flutter の `HeroController`（`MaterialApp` と `CupertinoApp` にデフォルトでインストールされます）が、ルート遷移中に一致する tag を持つ 2 つの hero を見つけ、元の hero を overlay に持ち上げ、遷移先に着地するまでその位置とサイズを補間します。基本的なケースでは `AnimationController` も `Tween` も明示的な duration も書きません。Flutter 3.44、Dart 3.12 で検証済みです。
+短い答え：最初の画面でアニメーションさせたいウィジェットを `Hero` でラップし、遷移先のウィジェットを**同じ `tag`** を持つ 2 つ目の `Hero` でラップして、通常の `Navigator` で遷移先ルートをプッシュします。Flutter の `HeroController`（`MaterialApp` と `CupertinoApp` にデフォルトでインストールされます）が、ルート遷移中に一致する tag を持つ 2 つの hero を見つけ、元の hero を overlay に持ち上げ、遷移先に着地するまでその位置とサイズを補間します。基本的なケースでは `AnimationController` も `Tween` も明示的な duration も書きません。[Flutter 3.44](/ja/2026/07/flutter-3-44-read-the-screen-corner-radius-from-mediaquery/)、Dart 3.12 で検証済みです。
 
 これがトリックのすべてであり、本当に 2 つの `Hero` ウィジェットと 1 つの `Navigator.push` です。このガイドの残りは、人がつまずく部分です。tag のルール、画面間で形が変わる画像や `Icon` のアニメーション、テーマ間でちらつかないように飛行ウィジェットをカスタマイズすること、飛行の軌道を曲げること、そして滑らかな遷移を耳障りなジャンプに変える一握りのエラーです。
 
