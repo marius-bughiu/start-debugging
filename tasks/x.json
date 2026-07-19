@@ -1202,5 +1202,9 @@
   {
     "slug": "2026/07/maui-coreclr-only-runtime-in-dotnet-11-preview-6",
     "text": "MAUI mobile is CoreCLR only in .NET 11 Preview 6. The UseMonoRuntime opt-out for Android and iOS is gone."
+  },
+  {
+    "slug": "2026/07/how-to-add-an-endpoint-filter-to-a-minimal-api-in-aspnetcore-11",
+    "text": "Endpoint filters run after model binding: GetArgument<T> gives typed args, return Results.Problem to reject early."
   }
 ]
