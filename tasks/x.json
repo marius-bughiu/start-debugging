@@ -1206,5 +1206,9 @@
   {
     "slug": "2026/07/how-to-add-an-endpoint-filter-to-a-minimal-api-in-aspnetcore-11",
     "text": "Endpoint filters run after model binding: GetArgument<T> gives typed args, return Results.Problem to reject early."
+  },
+  {
+    "slug": "2026/07/fix-claude-code-misreads-mcp-server-stderr-as-error",
+    "text": "Claude Code marks a working MCP server as failed? It tags every stderr line [ERROR]. Confirm it is only cosmetic."
   }
 ]
