@@ -1210,5 +1210,9 @@
   {
     "slug": "2026/07/fix-claude-code-misreads-mcp-server-stderr-as-error",
     "text": "Claude Code marks a working MCP server as failed? It tags every stderr line [ERROR]. Confirm it is only cosmetic."
+  },
+  {
+    "slug": "2026/07/how-to-log-the-sql-that-ef-core-11-generates",
+    "text": "See the SQL EF Core 11 runs: LogTo prints every command, ToQueryString renders one query without executing it."
   }
 ]
