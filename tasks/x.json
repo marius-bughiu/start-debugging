@@ -1218,5 +1218,9 @@
   {
     "slug": "2026/07/how-to-add-a-health-check-endpoint-to-a-minimal-api-in-aspnetcore-11",
     "text": "Two lines give you /healthz. Then split liveness from readiness with tags so a flaky DB never restarts a healthy pod."
+  },
+  {
+    "slug": "2026/07/aspnetcore-11-async-validation-minimal-apis-preview-6",
+    "text": "ASP.NET Core 11 Preview 6: DataAnnotations can finally validate against the DB async. No more blocking a thread."
   }
 ]
