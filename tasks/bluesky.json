@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/fix-cs8618-non-nullable-property-must-contain-a-non-null-value-when-exiting-constructor",
-    "text": "CS8618 means a non-nullable field left the constructor unset. Fixes: constructor, default, required, or string?. How to pick."
   }
 ]
