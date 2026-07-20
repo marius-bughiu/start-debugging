@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/fix-mcp-server-fetch-is-not-defined-on-node-below-18",
-    "text": "An MCP server on Node 16 installs with only an EBADENGINE warning, so it looks healthy, then dies with 'fetch is not defined' on the first tool call. The SDK assumes web globals old Node lacks: fetch and ReadableStream land in Node 18, globalThis.crypto in Node 19. Upgrade to Node 20, or polyfill undici's fetch as a stopgap."
   }
 ]

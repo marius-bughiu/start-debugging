@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/fix-mcp-server-fetch-is-not-defined-on-node-below-18",
-    "text": "An MCP server on Node 16 warns EBADENGINE at install, then throws 'fetch is not defined' on the first tool call. The fix is Node 18+."
   }
 ]
