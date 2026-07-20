@@ -1226,5 +1226,9 @@
   {
     "slug": "2026/07/how-to-disable-riverpod-3-0-automatic-provider-retry",
     "text": "Riverpod 3.0 retries a failed provider 10 times by default. One retry callback that returns null turns it off."
+  },
+  {
+    "slug": "2026/07/fix-mcp-server-fetch-is-not-defined-on-node-below-18",
+    "text": "MCP server dying with 'fetch is not defined'? Node is below 18. The SDK needs 18+ (20+ for 2.x). Upgrade or polyfill."
   }
 ]
