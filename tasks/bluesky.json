@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/how-to-disable-riverpod-3-0-automatic-provider-retry",
-    "text": "Riverpod 3.0 silently retries a failed provider 10x with backoff. Disable it on ProviderScope, per provider, or in test containers."
   }
 ]

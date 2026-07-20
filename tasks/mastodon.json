@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/how-to-disable-riverpod-3-0-automatic-provider-retry",
-    "text": "Riverpod 3.0 added automatic retry: a failed provider rebuilds up to 10 times over ~13 seconds before it surfaces an error. Great for flaky network reads, bad for deterministic failures and tests. Pass retry: (count, error) => null on ProviderScope, ProviderContainer, or a single provider to disable or bound it."
   }
 ]
