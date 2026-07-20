@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/fix-deadlock-when-calling-result-or-wait-on-an-async-method-in-csharp",
+    "text": "Blocking on .Result over an await that captured a UI or ASP.NET context deadlocks the one thread it needs. Fix: async all the way up."
   }
 ]

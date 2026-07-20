@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/fix-deadlock-when-calling-result-or-wait-on-an-async-method-in-csharp",
+    "text": "A .Result or .Wait() that hangs forever is a sync-over-async deadlock: the awaited continuation needs the single-threaded SynchronizationContext your blocking call holds. Async all the way up is the real fix. ConfigureAwait(false) only patches library code; GetAwaiter().GetResult() changes nothing."
   }
 ]

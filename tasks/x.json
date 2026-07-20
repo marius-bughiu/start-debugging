@@ -1234,5 +1234,9 @@
   {
     "slug": "2026/07/fix-cs8618-non-nullable-property-must-contain-a-non-null-value-when-exiting-constructor",
     "text": "CS8618 in C#: assign it in the constructor, default it, mark it required, or make it nullable."
+  },
+  {
+    "slug": "2026/07/fix-deadlock-when-calling-result-or-wait-on-an-async-method-in-csharp",
+    "text": "A .Result that hangs forever is a SynchronizationContext deadlocking on itself. The fix is async all the way up."
   }
 ]

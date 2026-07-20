@@ -170,7 +170,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `type 'Null' is not a subtype of type 'X'` in Dart → slug: 2026/07/fix-type-null-is-not-a-subtype-of-type-in-dart
 - Fix: `MissingPluginException: No implementation found for method` in Flutter → slug: 2023/10/how-to-fix-missingpluginexception-no-implementation-found-for-method-getall (same intent as existing post)
 - Fix: `CS8618: Non-nullable property 'X' must contain a non-null value when exiting constructor` in C# → slug: 2026/07/fix-cs8618-non-nullable-property-must-contain-a-non-null-value-when-exiting-constructor
-- Fix: deadlock when calling `.Result` or `.Wait()` on an async method in C#
+- Fix: deadlock when calling `.Result` or `.Wait()` on an async method in C# → slug: 2026/07/fix-deadlock-when-calling-result-or-wait-on-an-async-method-in-csharp
 - Fix: `CS4014: Because this call is not awaited, execution of the current method continues` in C#
 - Fix: `InvalidOperationException: Sequence contains no elements` from `.First()` or `.Single()` in LINQ
 - Fix: Riverpod 3.0 `StreamProvider` stops emitting because updates are now filtered by `==`
