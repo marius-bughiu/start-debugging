@@ -1230,5 +1230,9 @@
   {
     "slug": "2026/07/fix-mcp-server-fetch-is-not-defined-on-node-below-18",
     "text": "MCP server dying with 'fetch is not defined'? Node is below 18. The SDK needs 18+ (20+ for 2.x). Upgrade or polyfill."
+  },
+  {
+    "slug": "2026/07/fix-cs8618-non-nullable-property-must-contain-a-non-null-value-when-exiting-constructor",
+    "text": "CS8618 in C#: assign it in the constructor, default it, mark it required, or make it nullable."
   }
 ]

@@ -168,8 +168,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `413 Request Entity Too Large` when uploading a file to an ASP.NET Core endpoint → slug: 2026/07/fix-413-request-entity-too-large-uploading-a-file-in-aspnetcore-11
 - Fix: `ScaffoldMessenger.of() was called with a context that does not contain a Scaffold` in Flutter → slug: 2026/07/fix-scaffoldmessenger-of-context-does-not-contain-a-scaffold-in-flutter
 - Fix: `type 'Null' is not a subtype of type 'X'` in Dart → slug: 2026/07/fix-type-null-is-not-a-subtype-of-type-in-dart
-- Fix: `MissingPluginException: No implementation found for method` in Flutter
-- Fix: `CS8618: Non-nullable property 'X' must contain a non-null value when exiting constructor` in C#
+- Fix: `MissingPluginException: No implementation found for method` in Flutter → slug: 2023/10/how-to-fix-missingpluginexception-no-implementation-found-for-method-getall (same intent as existing post)
+- Fix: `CS8618: Non-nullable property 'X' must contain a non-null value when exiting constructor` in C# → slug: 2026/07/fix-cs8618-non-nullable-property-must-contain-a-non-null-value-when-exiting-constructor
 - Fix: deadlock when calling `.Result` or `.Wait()` on an async method in C#
 - Fix: `CS4014: Because this call is not awaited, execution of the current method continues` in C#
 - Fix: `InvalidOperationException: Sequence contains no elements` from `.First()` or `.Single()` in LINQ

@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/fix-cs8618-non-nullable-property-must-contain-a-non-null-value-when-exiting-constructor",
+    "text": "CS8618 fires when a non-nullable field or property is not guaranteed non-null when the constructor exits. Four fixes: assign it in the constructor, give it a field default, mark it required so the caller must set it, or make it string? if null is valid. Plus why a null check on the parameter does not count."
   }
 ]
