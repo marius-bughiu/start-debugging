@@ -98,7 +98,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to add an endpoint filter to a minimal API in ASP.NET Core 11 → slug: 2026/07/how-to-add-an-endpoint-filter-to-a-minimal-api-in-aspnetcore-11
 - How to log the SQL that EF Core 11 generates → slug: 2026/07/how-to-log-the-sql-that-ef-core-11-generates
 - How to add a health check endpoint to a minimal API in ASP.NET Core 11 → slug: 2026/07/how-to-add-a-health-check-endpoint-to-a-minimal-api-in-aspnetcore-11
-- How to disable Riverpod 3.0's automatic provider retry
+- How to disable Riverpod 3.0's automatic provider retry → slug: 2026/07/how-to-disable-riverpod-3-0-automatic-provider-retry
 
 ## Fix / error
 
