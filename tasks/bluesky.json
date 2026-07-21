@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/fix-invalidoperationexception-sequence-contains-no-elements",
+    "text": ".First() throws 'Sequence contains no elements' when the sequence is empty. Use FirstOrDefault and null-check, or fix why it's empty."
   }
 ]

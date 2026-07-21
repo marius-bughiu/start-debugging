@@ -172,7 +172,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `CS8618: Non-nullable property 'X' must contain a non-null value when exiting constructor` in C# → slug: 2026/07/fix-cs8618-non-nullable-property-must-contain-a-non-null-value-when-exiting-constructor
 - Fix: deadlock when calling `.Result` or `.Wait()` on an async method in C# → slug: 2026/07/fix-deadlock-when-calling-result-or-wait-on-an-async-method-in-csharp
 - Fix: `CS4014: Because this call is not awaited, execution of the current method continues` in C# → slug: 2026/07/fix-cs4014-because-this-call-is-not-awaited-execution-continues-in-csharp
-- Fix: `InvalidOperationException: Sequence contains no elements` from `.First()` or `.Single()` in LINQ
+- Fix: `InvalidOperationException: Sequence contains no elements` from `.First()` or `.Single()` in LINQ → slug: 2026/07/fix-invalidoperationexception-sequence-contains-no-elements
 - Fix: Riverpod 3.0 `StreamProvider` stops emitting because updates are now filtered by `==`
 
 ## Vs / comparison

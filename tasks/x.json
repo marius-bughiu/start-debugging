@@ -1250,5 +1250,9 @@
   {
     "slug": "2026/07/agent-framework-orchestration-patterns-compared",
     "text": "Agent Framework has 5 orchestration patterns from one builder. When to use each, with the C# for all five."
+  },
+  {
+    "slug": "2026/07/fix-invalidoperationexception-sequence-contains-no-elements",
+    "text": "'Sequence contains no elements' means .First() hit an empty sequence. Use FirstOrDefault and null-check it."
   }
 ]
