@@ -1246,5 +1246,9 @@
   {
     "slug": "2026/07/fix-cs4014-because-this-call-is-not-awaited-execution-continues-in-csharp",
     "text": "That unawaited async call is CS4014: it races ahead and swallows its exceptions. Fix it with await."
+  },
+  {
+    "slug": "2026/07/agent-framework-orchestration-patterns-compared",
+    "text": "Agent Framework has 5 orchestration patterns from one builder. When to use each, with the C# for all five."
   }
 ]
