@@ -1254,5 +1254,9 @@
   {
     "slug": "2026/07/fix-invalidoperationexception-sequence-contains-no-elements",
     "text": "'Sequence contains no elements' means .First() hit an empty sequence. Use FirstOrDefault and null-check it."
+  },
+  {
+    "slug": "2026/07/fix-riverpod-3-0-streamprovider-stops-emitting-filtered-by-equality",
+    "text": "Riverpod 3.0 StreamProvider fires once then freezes? It now filters by ==, so a reused mutable list looks unchanged."
   }
 ]

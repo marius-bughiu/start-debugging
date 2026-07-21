@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/fix-riverpod-3-0-streamprovider-stops-emitting-filtered-by-equality",
+    "text": "Upgraded to Riverpod 3.0 and a StreamProvider went quiet after the first frame? In 3.0 every provider filters notifications by == instead of identity. Re-emit the same mutable list and previous == next is true, so the rebuild is dropped. Emit an immutable snapshot, give the value real equality, or override updateShouldNotify."
   }
 ]

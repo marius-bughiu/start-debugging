@@ -173,7 +173,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: deadlock when calling `.Result` or `.Wait()` on an async method in C# → slug: 2026/07/fix-deadlock-when-calling-result-or-wait-on-an-async-method-in-csharp
 - Fix: `CS4014: Because this call is not awaited, execution of the current method continues` in C# → slug: 2026/07/fix-cs4014-because-this-call-is-not-awaited-execution-continues-in-csharp
 - Fix: `InvalidOperationException: Sequence contains no elements` from `.First()` or `.Single()` in LINQ → slug: 2026/07/fix-invalidoperationexception-sequence-contains-no-elements
-- Fix: Riverpod 3.0 `StreamProvider` stops emitting because updates are now filtered by `==`
+- Fix: Riverpod 3.0 `StreamProvider` stops emitting because updates are now filtered by `==` → slug: 2026/07/fix-riverpod-3-0-streamprovider-stops-emitting-filtered-by-equality
 
 ## Vs / comparison
 

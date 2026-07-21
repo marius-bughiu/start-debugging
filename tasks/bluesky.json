@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/fix-riverpod-3-0-streamprovider-stops-emitting-filtered-by-equality",
+    "text": "Riverpod 3.0 filters updates by ==. A StreamProvider re-emitting the same mutable list rebuilds once, then never again. Three fixes."
   }
 ]
