@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/serialize-csharp-union-types-with-system-text-json-dotnet-11-preview-6",
-    "text": "In .NET 11 Preview 6, System.Text.Json finally serializes C# union types. It writes the value of whichever case is active, so an int/string union round-trips cleanly. For object-shaped cases that would collide, JsonUnionAttribute and the new type-classifier APIs let you attach a discriminator."
   }
 ]
