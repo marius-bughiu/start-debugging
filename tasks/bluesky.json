@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/serialize-csharp-union-types-with-system-text-json-dotnet-11-preview-6",
+    "text": "In .NET 11 Preview 6, System.Text.Json serializes C# unions by writing the active case, plus new APIs to disambiguate cases."
   }
 ]
