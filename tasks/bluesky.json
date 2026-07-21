@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/fix-cs4014-because-this-call-is-not-awaited-execution-continues-in-csharp",
-    "text": "CS4014: a Task-returning call ran unawaited, so it races ahead and its exceptions vanish. The fix is await."
   }
 ]
