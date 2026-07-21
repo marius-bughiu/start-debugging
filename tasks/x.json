@@ -1242,5 +1242,9 @@
   {
     "slug": "2026/07/serialize-csharp-union-types-with-system-text-json-dotnet-11-preview-6",
     "text": "System.Text.Json serializes C# union types in .NET 11 Preview 6. It writes the active case, no custom JsonConverter."
+  },
+  {
+    "slug": "2026/07/fix-cs4014-because-this-call-is-not-awaited-execution-continues-in-csharp",
+    "text": "That unawaited async call is CS4014: it races ahead and swallows its exceptions. Fix it with await."
   }
 ]
