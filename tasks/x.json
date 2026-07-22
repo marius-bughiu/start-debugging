@@ -1266,5 +1266,9 @@
   {
     "slug": "2026/07/complex-types-vs-owned-entities-in-ef-core-11",
     "text": "On EF Core 11, default to complex types for value objects. Owned entities only for a separate table or child rows."
+  },
+  {
+    "slug": "2026/07/fix-claude-code-autocompact-thrashing-on-large-file-or-tool-output",
+    "text": "Claude Code compacting every turn and never progressing? One oversized file read is the culprit. How to evict it."
   }
 ]

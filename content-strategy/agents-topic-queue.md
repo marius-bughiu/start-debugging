@@ -72,7 +72,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: Claude Code high memory usage and context overflow (`/heapdump` and `/compact`) → slug: 2026/07/fix-claude-code-high-memory-usage-and-context-overflow
 - Fix: all MCP servers fail to load after one malformed-JSON syntax error in the config → slug: 2026/07/fix-all-mcp-servers-fail-to-load-after-malformed-json-in-config
 - Fix: Claude Code misreads an MCP server's stderr startup message as an error → slug: 2026/07/fix-claude-code-misreads-mcp-server-stderr-as-error
-- Fix: "Autocompact thrashing" when a large file or tool output immediately refills the context window
+- Fix: "Autocompact thrashing" when a large file or tool output immediately refills the context window → slug: 2026/07/fix-claude-code-autocompact-thrashing-on-large-file-or-tool-output
 - Fix: MCP server protocol incompatibility on Node.js versions below 18 → slug: 2026/07/fix-mcp-server-fetch-is-not-defined-on-node-below-18
 
 ## Vs / comparison

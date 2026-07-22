@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/fix-claude-code-autocompact-thrashing-on-large-file-or-tool-output",
+    "text": "Claude Code compacting every turn and never progressing is not a RAM problem. A single oversized item, a whole-file read, a verbose test log, or an MCP payload, refills the window right after each compaction. Evict it: /clear, read files by line range, spill big output to disk. /context shows the culprit."
   }
 ]
