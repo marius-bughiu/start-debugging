@@ -1258,5 +1258,9 @@
   {
     "slug": "2026/07/fix-riverpod-3-0-streamprovider-stops-emitting-filtered-by-equality",
     "text": "Riverpod 3.0 StreamProvider fires once then freezes? It now filters by ==, so a reused mutable list looks unchanged."
+  },
+  {
+    "slug": "2026/07/claude-code-2-1-213-caps-runaway-subagent-fleets",
+    "text": "Claude Code 2.1.213 caps subagents at 20 concurrent and blocks nested spawns by default. New env vars to tune it."
   }
 ]
