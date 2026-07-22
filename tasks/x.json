@@ -1262,5 +1262,9 @@
   {
     "slug": "2026/07/claude-code-2-1-213-caps-runaway-subagent-fleets",
     "text": "Claude Code 2.1.213 caps subagents at 20 concurrent and blocks nested spawns by default. New env vars to tune it."
+  },
+  {
+    "slug": "2026/07/complex-types-vs-owned-entities-in-ef-core-11",
+    "text": "On EF Core 11, default to complex types for value objects. Owned entities only for a separate table or child rows."
   }
 ]

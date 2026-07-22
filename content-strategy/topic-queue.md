@@ -212,7 +212,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `go_router` vs `auto_route` vs Navigator 2.0 in Flutter → slug: 2026/07/go-router-vs-auto-route-vs-navigator-2-0-in-flutter
 - Named query filters vs a single global query filter in EF Core 11 → slug: 2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11
 - `shrinkWrap` vs `Expanded` vs slivers for long lists in Flutter → slug: 2026/07/shrinkwrap-vs-expanded-vs-slivers-for-long-lists-in-flutter
-- Complex types vs owned entities in EF Core 11
+- Complex types vs owned entities in EF Core 11 → slug: 2026/07/complex-types-vs-owned-entities-in-ef-core-11
 - Output caching vs response caching in ASP.NET Core 11
 - TPH vs TPT vs TPC inheritance mapping in EF Core 11
 - Typed results (`Results<>`) vs `IResult` vs `IActionResult` in ASP.NET Core 11
