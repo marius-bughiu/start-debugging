@@ -1274,5 +1274,9 @@
   {
     "slug": "2026/07/output-caching-vs-response-caching-in-aspnetcore-11",
     "text": "A client sending no-cache busts response caching but not output caching in ASP.NET Core 11. Default to output caching."
+  },
+  {
+    "slug": "2026/07/tph-vs-tpt-vs-tpc-inheritance-mapping-in-ef-core-11",
+    "text": "TPT joins every table for ~2x the cost of TPH. Default to TPH; use TPC only for single-leaf queries you benchmark."
   }
 ]
