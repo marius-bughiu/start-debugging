@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/fix-claude-code-autocompact-thrashing-on-large-file-or-tool-output",
-    "text": "Auto-compact loop in Claude Code? One oversized file read refills the window each turn. Fix: /clear, read slices, spill output to disk."
   }
 ]
