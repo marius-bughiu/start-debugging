@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/output-caching-vs-response-caching-in-aspnetcore-11",
+    "text": "ASP.NET Core 11: response caching honors the client's Cache-Control, so a request with no-cache regenerates every time. Output caching is server-controlled, cannot be busted that way, and adds tag-based invalidation plus stampede protection. Default to output; use response caching only to steer browsers and CDNs."
   }
 ]

@@ -213,7 +213,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Named query filters vs a single global query filter in EF Core 11 → slug: 2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11
 - `shrinkWrap` vs `Expanded` vs slivers for long lists in Flutter → slug: 2026/07/shrinkwrap-vs-expanded-vs-slivers-for-long-lists-in-flutter
 - Complex types vs owned entities in EF Core 11 → slug: 2026/07/complex-types-vs-owned-entities-in-ef-core-11
-- Output caching vs response caching in ASP.NET Core 11
+- Output caching vs response caching in ASP.NET Core 11 → slug: 2026/07/output-caching-vs-response-caching-in-aspnetcore-11
 - TPH vs TPT vs TPC inheritance mapping in EF Core 11
 - Typed results (`Results<>`) vs `IResult` vs `IActionResult` in ASP.NET Core 11
 - `riverpod` vs `flutter_riverpod` vs `hooks_riverpod`: which package do I actually need?
