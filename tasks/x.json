@@ -1294,5 +1294,9 @@
   {
     "slug": "2026/07/riverpod-vs-flutter-riverpod-vs-hooks-riverpod-which-package-do-i-need",
     "text": "Three Riverpod packages, one default: flutter_riverpod. riverpod is Dart-only; hooks_riverpod needs flutter_hooks."
+  },
+  {
+    "slug": "2026/07/webapplication-createbuilder-vs-createslimbuilder-vs-createemptybuilder-in-aspnetcore-11",
+    "text": "Use CreateBuilder for normal apps. CreateSlimBuilder only for trimmed or AOT builds behind a TLS proxy."
   }
 ]

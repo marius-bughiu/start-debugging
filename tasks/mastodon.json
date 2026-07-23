@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/webapplication-createbuilder-vs-createslimbuilder-vs-createemptybuilder-in-aspnetcore-11",
+    "text": "Three WebApplication builders in ASP.NET Core 11. CreateBuilder is the default and right for almost everything. Use CreateSlimBuilder only for trimmed or Native AOT builds behind a TLS proxy: it drops HTTPS, HTTP/3, IIS, and static web assets. The trap: slim is smaller when trimmed, not faster at runtime."
   }
 ]

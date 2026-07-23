@@ -217,7 +217,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - TPH vs TPT vs TPC inheritance mapping in EF Core 11 → slug: 2026/07/tph-vs-tpt-vs-tpc-inheritance-mapping-in-ef-core-11
 - Typed results (`Results<>`) vs `IResult` vs `IActionResult` in ASP.NET Core 11 → slug: 2026/07/typed-results-vs-iresult-vs-iactionresult-in-aspnetcore-11
 - `riverpod` vs `flutter_riverpod` vs `hooks_riverpod`: which package do I actually need? → slug: 2026/07/riverpod-vs-flutter-riverpod-vs-hooks-riverpod-which-package-do-i-need
-- `WebApplication.CreateBuilder` vs `CreateSlimBuilder` vs `CreateEmptyBuilder` in ASP.NET Core 11
+- `WebApplication.CreateBuilder` vs `CreateSlimBuilder` vs `CreateEmptyBuilder` in ASP.NET Core 11 → slug: 2026/07/webapplication-createbuilder-vs-createslimbuilder-vs-createemptybuilder-in-aspnetcore-11
 - Endpoint filters vs middleware in ASP.NET Core 11
 - `.Result`/`.Wait()` vs `GetAwaiter().GetResult()` vs `await` in C#
 
