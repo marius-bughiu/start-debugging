@@ -1282,5 +1282,9 @@
   {
     "slug": "2026/07/claude-code-2-1-218-code-review-runs-as-a-background-subagent",
     "text": "Claude Code 2.1.218 runs /code-review as a background subagent, so review findings stop burying your conversation."
+  },
+  {
+    "slug": "2026/07/typed-results-vs-iresult-vs-iactionresult-in-aspnetcore-11",
+    "text": "Bare IResult and IActionResult document nothing to OpenAPI. Return Results<> or ActionResult<T> instead."
   }
 ]

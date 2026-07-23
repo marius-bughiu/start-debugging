@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/typed-results-vs-iresult-vs-iactionresult-in-aspnetcore-11",
+    "text": "Results<T1,TN> for minimal APIs, ActionResult<T> for controllers: both self-describe to OpenAPI and get compile-time checks. Bare IResult and IActionResult document nothing and need hand-written ProducesResponseType. The gotcha: HttpResults can't do content negotiation, so an XML API stays on ActionResult<T>."
   }
 ]

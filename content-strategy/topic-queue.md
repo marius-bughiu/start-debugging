@@ -215,7 +215,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Complex types vs owned entities in EF Core 11 → slug: 2026/07/complex-types-vs-owned-entities-in-ef-core-11
 - Output caching vs response caching in ASP.NET Core 11 → slug: 2026/07/output-caching-vs-response-caching-in-aspnetcore-11
 - TPH vs TPT vs TPC inheritance mapping in EF Core 11 → slug: 2026/07/tph-vs-tpt-vs-tpc-inheritance-mapping-in-ef-core-11
-- Typed results (`Results<>`) vs `IResult` vs `IActionResult` in ASP.NET Core 11
+- Typed results (`Results<>`) vs `IResult` vs `IActionResult` in ASP.NET Core 11 → slug: 2026/07/typed-results-vs-iresult-vs-iactionresult-in-aspnetcore-11
 - `riverpod` vs `flutter_riverpod` vs `hooks_riverpod`: which package do I actually need?
 - `WebApplication.CreateBuilder` vs `CreateSlimBuilder` vs `CreateEmptyBuilder` in ASP.NET Core 11
 - Endpoint filters vs middleware in ASP.NET Core 11

@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/typed-results-vs-iresult-vs-iactionresult-in-aspnetcore-11",
+    "text": "Results<> self-describes to OpenAPI and the compiler checks it. Bare IResult and IActionResult document nothing."
   }
 ]
