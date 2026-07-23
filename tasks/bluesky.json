@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/cursor-cloud-agents-vs-github-copilot-coding-agent-for-background-prs",
-    "text": "Cursor cloud agent vs Copilot coding agent: Copilot is GitHub-native issue-to-PR, Cursor gives you a live VM and multi-repo tasks."
   }
 ]

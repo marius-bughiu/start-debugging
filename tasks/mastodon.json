@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/cursor-cloud-agents-vs-github-copilot-coding-agent-for-background-prs",
-    "text": "Both ship a PR while you're away, but they are opposite primitives. Copilot coding agent is born from a GitHub issue, runs in Actions with a 59-minute cap, one repo per task, and lands under your branch protection. Cursor cloud agents run in a VM you can attach to and steer, and one task can span multiple repos."
   }
 ]
