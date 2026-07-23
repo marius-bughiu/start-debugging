@@ -1286,5 +1286,9 @@
   {
     "slug": "2026/07/typed-results-vs-iresult-vs-iactionresult-in-aspnetcore-11",
     "text": "Bare IResult and IActionResult document nothing to OpenAPI. Return Results<> or ActionResult<T> instead."
+  },
+  {
+    "slug": "2026/07/cursor-cloud-agents-vs-github-copilot-coding-agent-for-background-prs",
+    "text": "Both open PRs while you're away. Copilot when the task is a GitHub issue, Cursor when you want a live VM to take over."
   }
 ]

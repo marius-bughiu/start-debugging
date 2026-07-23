@@ -93,7 +93,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Claude Code skills vs subagents vs MCP servers: when to build each → slug: 2026/07/claude-code-skills-vs-subagents-vs-mcp-servers-when-to-build-each
 - Cursor subagents vs Claude Code subagents for multi-agent workflows → slug: 2026/07/cursor-subagents-vs-claude-code-subagents
 - Agent Framework orchestration: sequential vs concurrent vs group chat vs handoff vs magentic → slug: 2026/07/agent-framework-orchestration-patterns-compared
-- Cursor cloud agents vs GitHub Copilot coding agent for background PRs
+- Cursor cloud agents vs GitHub Copilot coding agent for background PRs → slug: 2026/07/cursor-cloud-agents-vs-github-copilot-coding-agent-for-background-prs
 
 ## Migration / upgrade
 
