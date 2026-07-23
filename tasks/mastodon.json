@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/riverpod-vs-flutter-riverpod-vs-hooks-riverpod-which-package-do-i-need",
-    "text": "Flutter's three Riverpod packages on pub.dev are layers, not rivals. Install flutter_riverpod for almost every app; plain riverpod only for pure Dart; hooks_riverpod only if you already use flutter_hooks. The 3.x trap: codegen packages (riverpod_annotation, riverpod_generator) are on 4.x, not 3.x. Do not pin them to match."
   }
 ]

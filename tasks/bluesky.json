@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/riverpod-vs-flutter-riverpod-vs-hooks-riverpod-which-package-do-i-need",
-    "text": "Three Riverpod packages on pub.dev. flutter_riverpod for apps, riverpod for pure Dart, hooks_riverpod only with flutter_hooks."
   }
 ]
