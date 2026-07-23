@@ -1290,5 +1290,9 @@
   {
     "slug": "2026/07/cursor-cloud-agents-vs-github-copilot-coding-agent-for-background-prs",
     "text": "Both open PRs while you're away. Copilot when the task is a GitHub issue, Cursor when you want a live VM to take over."
+  },
+  {
+    "slug": "2026/07/riverpod-vs-flutter-riverpod-vs-hooks-riverpod-which-package-do-i-need",
+    "text": "Three Riverpod packages, one default: flutter_riverpod. riverpod is Dart-only; hooks_riverpod needs flutter_hooks."
   }
 ]
