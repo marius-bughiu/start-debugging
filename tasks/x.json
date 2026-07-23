@@ -1278,5 +1278,9 @@
   {
     "slug": "2026/07/tph-vs-tpt-vs-tpc-inheritance-mapping-in-ef-core-11",
     "text": "TPT joins every table for ~2x the cost of TPH. Default to TPH; use TPC only for single-leaf queries you benchmark."
+  },
+  {
+    "slug": "2026/07/claude-code-2-1-218-code-review-runs-as-a-background-subagent",
+    "text": "Claude Code 2.1.218 runs /code-review as a background subagent, so review findings stop burying your conversation."
   }
 ]
