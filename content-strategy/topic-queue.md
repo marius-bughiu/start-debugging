@@ -219,7 +219,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `riverpod` vs `flutter_riverpod` vs `hooks_riverpod`: which package do I actually need? → slug: 2026/07/riverpod-vs-flutter-riverpod-vs-hooks-riverpod-which-package-do-i-need
 - `WebApplication.CreateBuilder` vs `CreateSlimBuilder` vs `CreateEmptyBuilder` in ASP.NET Core 11 → slug: 2026/07/webapplication-createbuilder-vs-createslimbuilder-vs-createemptybuilder-in-aspnetcore-11
 - Endpoint filters vs middleware in ASP.NET Core 11 → slug: 2026/07/endpoint-filters-vs-middleware-in-aspnetcore-11
-- `.Result`/`.Wait()` vs `GetAwaiter().GetResult()` vs `await` in C#
+- `.Result`/`.Wait()` vs `GetAwaiter().GetResult()` vs `await` in C# → slug: 2026/07/result-wait-vs-getawaiter-getresult-vs-await-in-csharp
 
 ## Migration / upgrade
 

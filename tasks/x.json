@@ -1310,5 +1310,9 @@
   {
     "slug": "2026/07/migrate-copilot-prompt-files-to-agent-skills",
     "text": "Your .github/prompts files only fire when someone types the slash command. Convert them to skills Copilot fires itself."
+  },
+  {
+    "slug": "2026/07/result-wait-vs-getawaiter-getresult-vs-await-in-csharp",
+    "text": "await if you can; GetAwaiter().GetResult() if you must block. .Result only wraps your exception in AggregateException."
   }
 ]
