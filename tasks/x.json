@@ -1302,5 +1302,9 @@
   {
     "slug": "2026/07/signalr-client-cancel-hub-method-dotnet-11-preview-6",
     "text": "Cancel the token you pass to SignalR InvokeAsync and the server hub method now cancels too. .NET 11 Preview 6"
+  },
+  {
+    "slug": "2026/07/endpoint-filters-vs-middleware-in-aspnetcore-11",
+    "text": "Need the bound model? Endpoint filter. Run before routing or on every 404? Middleware. The ASP.NET Core 11 rule."
   }
 ]
