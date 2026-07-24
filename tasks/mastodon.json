@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/migrate-copilot-prompt-files-to-agent-skills",
-    "text": "Migrating Copilot prompt files to Agent Skills is not a rename: skills are model-invoked folders, prompt files are manual and IDE-only. The gotcha that bites everyone is variables. Skills have no ${selection} or ${input}, so a prompt that templates the highlighted code cannot become a skill. Full checklist inside."
   }
 ]
