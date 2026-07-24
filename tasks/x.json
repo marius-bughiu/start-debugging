@@ -1298,5 +1298,9 @@
   {
     "slug": "2026/07/webapplication-createbuilder-vs-createslimbuilder-vs-createemptybuilder-in-aspnetcore-11",
     "text": "Use CreateBuilder for normal apps. CreateSlimBuilder only for trimmed or AOT builds behind a TLS proxy."
+  },
+  {
+    "slug": "2026/07/signalr-client-cancel-hub-method-dotnet-11-preview-6",
+    "text": "Cancel the token you pass to SignalR InvokeAsync and the server hub method now cancels too. .NET 11 Preview 6"
   }
 ]
