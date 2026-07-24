@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/migrate-copilot-prompt-files-to-agent-skills",
+    "text": "Prompt files are manual and IDE-only. Agent Skills auto-fire and reach the cloud agent too. Full conversion checklist inside."
   }
 ]

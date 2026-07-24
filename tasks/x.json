@@ -1306,5 +1306,9 @@
   {
     "slug": "2026/07/endpoint-filters-vs-middleware-in-aspnetcore-11",
     "text": "Need the bound model? Endpoint filter. Run before routing or on every 404? Middleware. The ASP.NET Core 11 rule."
+  },
+  {
+    "slug": "2026/07/migrate-copilot-prompt-files-to-agent-skills",
+    "text": "Your .github/prompts files only fire when someone types the slash command. Convert them to skills Copilot fires itself."
   }
 ]
