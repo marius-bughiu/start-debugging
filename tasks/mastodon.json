@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/migrate-swashbuckle-ioperationfilter-and-ischemafilter-to-transformers-in-dotnet-11",
+    "text": "Swapping AddSwaggerGen for AddOpenApi in .NET 11 silently kills your custom filters: the built-in generator has no filters, only transformers. The filter-by-filter port of IOperationFilter and ISchemaFilter, with the context mapping and why schema transformers run more than once."
   }
 ]

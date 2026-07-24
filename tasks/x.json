@@ -1314,5 +1314,9 @@
   {
     "slug": "2026/07/result-wait-vs-getawaiter-getresult-vs-await-in-csharp",
     "text": "await if you can; GetAwaiter().GetResult() if you must block. .Result only wraps your exception in AggregateException."
+  },
+  {
+    "slug": "2026/07/migrate-swashbuckle-ioperationfilter-and-ischemafilter-to-transformers-in-dotnet-11",
+    "text": "Swashbuckle filters go silent under .NET 11's built-in OpenAPI. The exact IOperationFilter and ISchemaFilter port."
   }
 ]
