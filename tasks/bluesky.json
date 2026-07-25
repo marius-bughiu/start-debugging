@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/agent-framework-declarative-workflows-1-0-yaml-orchestration",
+    "text": "Agent Framework Declarative Workflows 1.0: DeclarativeWorkflowBuilder.Build compiles YAML into the same Workflow you would hand-build."
   }
 ]

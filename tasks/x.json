@@ -1318,5 +1318,9 @@
   {
     "slug": "2026/07/migrate-swashbuckle-ioperationfilter-and-ischemafilter-to-transformers-in-dotnet-11",
     "text": "Swashbuckle filters go silent under .NET 11's built-in OpenAPI. The exact IOperationFilter and ISchemaFilter port."
+  },
+  {
+    "slug": "2026/07/agent-framework-declarative-workflows-1-0-yaml-orchestration",
+    "text": "Multi-agent routing as a YAML file, not a builder chain. Agent Framework Declarative Workflows just hit 1.0."
   }
 ]
