@@ -1334,5 +1334,9 @@
   {
     "slug": "2026/07/migrate-from-ilogger-string-interpolation-to-message-templates-in-dotnet-11",
     "text": "Interpolated ILogger calls destroy your log structure. The CA2254 sweep to message templates, in full."
+  },
+  {
+    "slug": "2026/07/migrate-from-blocking-result-and-wait-calls-to-async-all-the-way-up-in-csharp",
+    "text": "One .Result on a request path parks a pool thread. A staged playbook for going async all the way in legacy C#."
   }
 ]

@@ -248,7 +248,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate from owned entities to complex types in EF Core 11 → slug: 2026/07/how-to-map-a-complex-type-instead-of-an-owned-entity-in-ef-core-11 (same intent as existing post: it already contains the full OwnsOne to ComplexProperty migration procedure)
 - Migrate a `setState` `StatefulWidget` to a Riverpod `Notifier` in Flutter → slug: 2026/07/migrate-a-setstate-statefulwidget-to-a-riverpod-notifier-in-flutter
 - Migrate from `ILogger` string interpolation to structured logging message templates in .NET 11 → slug: 2026/07/migrate-from-ilogger-string-interpolation-to-message-templates-in-dotnet-11
-- Migrate from blocking `.Result`/`.Wait()` calls to async all the way up in a legacy C# codebase
+- Migrate from blocking `.Result`/`.Wait()` calls to async all the way up in a legacy C# codebase → slug: 2026/07/migrate-from-blocking-result-and-wait-calls-to-async-all-the-way-up-in-csharp
 
 ## What is / concept
 

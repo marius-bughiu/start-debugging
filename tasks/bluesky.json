@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/migrate-from-blocking-result-and-wait-calls-to-async-all-the-way-up-in-csharp",
+    "text": "Removing sync-over-async is not a find-and-replace. Inventory with VSTHRD002, then trace what the analyzers cannot see."
   }
 ]
