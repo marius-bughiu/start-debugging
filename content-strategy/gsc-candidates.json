@@ -1,14 +1,70 @@
 [
   {
-    "query": "dotnet new aspire-apphost",
-    "position": 14,
+    "query": "blazing fast autocomplete in xamarin",
+    "position": 20,
     "impressions": 1,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "query": "kebab case",
+    "query": "c# shuffle array",
+    "position": 17,
+    "impressions": 1,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "c# throw if null",
+    "position": 16,
+    "impressions": 1,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "dotnet ef not found",
+    "position": 16,
+    "impressions": 1,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "google lighthouse audit",
     "position": 19,
+    "impressions": 1,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "lighthouse accessibility audit",
+    "position": 18,
+    "impressions": 1,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "ref readonly",
+    "position": 17,
+    "impressions": 1,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "reflection-based serialization has been disabled for this application. either use the source generator apis or explicitly configure the 'jsonserializeroptions.typeinforesolver' property",
+    "position": 12,
+    "impressions": 1,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "swashbuckle",
+    "position": 20,
+    "impressions": 1,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "the following entries in claude_desktop_config.json are not valid mcp server configurations and were skipped",
+    "position": 11,
     "impressions": 1,
     "clicks": 0,
     "ctr": 0
