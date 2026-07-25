@@ -1326,5 +1326,9 @@
   {
     "slug": "2026/07/migrate-a-setstate-statefulwidget-to-a-riverpod-notifier-in-flutter",
     "text": "setState to a Riverpod Notifier: what moves, what stays, and the == filter that silently freezes your UI."
+  },
+  {
+    "slug": "2026/07/migrate-an-mcp-server-from-sse-to-streamable-http",
+    "text": "Your MCP server still answers on /sse? Two endpoints collapse into one. The Streamable HTTP migration, step by step."
   }
 ]
