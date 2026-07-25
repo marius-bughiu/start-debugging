@@ -51,6 +51,11 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to distribute a team MCP server config across Cursor cloud agents and the IDE → slug: 2026/07/distribute-team-mcp-config-across-cursor-cloud-agents-and-ide
 - How to set per-session AI credit spend limits in the Copilot CLI and SDK → slug: 2026/07/set-ai-credit-session-limits-in-github-copilot-cli-and-sdk
 - How to package reusable domain expertise as an Agent Skill in .NET with Microsoft Agent Framework → slug: 2026/07/package-domain-expertise-as-an-agent-skill-microsoft-agent-framework
+- How to lock down a coding agent's network egress with a strict host allowlist
+- How to stream nested subagent output from a headless Claude Code run with `--forward-subagent-text`
+- How to run a background coding agent that auto-commits and opens a draft PR when it finishes
+- How to define an agent orchestration in YAML with Microsoft Agent Framework Declarative Workflows 1.0
+- How to route models per request with Cursor Router and enforce Intelligence/Balance/Cost across a team
 
 ## Fix / error
 
@@ -74,6 +79,10 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: Claude Code misreads an MCP server's stderr startup message as an error → slug: 2026/07/fix-claude-code-misreads-mcp-server-stderr-as-error
 - Fix: "Autocompact thrashing" when a large file or tool output immediately refills the context window → slug: 2026/07/fix-claude-code-autocompact-thrashing-on-large-file-or-tool-output
 - Fix: MCP server protocol incompatibility on Node.js versions below 18 → slug: 2026/07/fix-mcp-server-fetch-is-not-defined-on-node-below-18
+- Fix: Windows paths with `\u` segments mangled into CJK characters in an agent config file
+- Fix: `.mcp.json` servers never start because the workspace is marked untrusted
+- Fix: a long MCP tool call gets auto-backgrounded after two minutes mid-task
+- Fix: a `Write(src)` permission rule never matches - directory rules need `src/**`
 
 ## Vs / comparison
 
@@ -94,6 +103,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Cursor subagents vs Claude Code subagents for multi-agent workflows → slug: 2026/07/cursor-subagents-vs-claude-code-subagents
 - Agent Framework orchestration: sequential vs concurrent vs group chat vs handoff vs magentic → slug: 2026/07/agent-framework-orchestration-patterns-compared
 - Cursor cloud agents vs GitHub Copilot coding agent for background PRs → slug: 2026/07/cursor-cloud-agents-vs-github-copilot-coding-agent-for-background-prs
+- Auto permission mode vs manual approval in a coding agent: what each actually allows through
+- Declarative YAML workflows vs code-first orchestration in Microsoft Agent Framework
+- Subtask vs fork vs background agent in Claude Code: which delegation to reach for
 
 ## Migration / upgrade
 
@@ -106,6 +118,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Migrate a custom multi-agent orchestrator to handoff orchestration in Agent Framework
 - Migrate a custom TypeScript agent loop to the Cursor SDK
 - Migrate a Cursor rules file to the new plugins, skills, and subagents model
+- Migrate off the archived MCP reference servers (GitHub, Postgres, Slack) to their maintained replacements
+- Migrate an agent from chunking-and-RAG to a 1M-token context window
+- Migrate a Claude Code setup to the "Manual" default permission mode without breaking headless runs
 
 ## Patterns
 
@@ -123,6 +138,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Patterns: parallel side-chats vs subagents - when to branch a conversation and when to delegate
 - Patterns: hooks as observability for cloud coding agents (prompts, thinking, subagents, compaction)
 - Patterns: cost control for autonomous agents with per-session credit and spend limits
+- Patterns: keeping API keys out of agent context with a credential gateway
+- Patterns: running coding agents in disposable VMs and containers instead of on your laptop
+- Patterns: measuring an agent's fixed token overhead - system prompt and tool schemas before the first user token
 
 ## What is / concept
 
@@ -139,6 +157,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - What is the GitHub Copilot SDK and what can you build with it
 - What is magentic orchestration in Microsoft Agent Framework
 - What is Claude Tag and how does it bring Claude into Slack
+- What are declarative agent workflows and when is YAML better than code
 
 ---
 
