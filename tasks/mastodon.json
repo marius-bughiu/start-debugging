@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/migrate-from-ilogger-string-interpolation-to-message-templates-in-dotnet-11",
-    "text": "Interpolated ILogger calls look harmless and quietly wreck your logs: the rendered sentence becomes the template, so nothing is queryable. A CA2254-driven sweep of a .NET 11 codebase, plus the gotcha nobody warns you about: argument binding is positional, not by name."
   }
 ]
