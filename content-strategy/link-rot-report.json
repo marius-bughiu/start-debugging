@@ -45,6 +45,20 @@
     ]
   },
   {
+    "url": "https://api.flutter.dev/flutter/services/BackgroundIsolateBinaryMessenger-class.html",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-add-platform-specific-code-in-flutter-without-plugins.md",
+      "site/src/content/blog/de/2026/05/how-to-add-platform-specific-code-in-flutter-without-plugins.md",
+      "site/src/content/blog/es/2026/05/how-to-add-platform-specific-code-in-flutter-without-plugins.md",
+      "site/src/content/blog/ja/2026/05/how-to-add-platform-specific-code-in-flutter-without-plugins.md",
+      "site/src/content/blog/pt-br/2026/05/how-to-add-platform-specific-code-in-flutter-without-plugins.md",
+      "site/src/content/blog/ru/2026/05/how-to-add-platform-specific-code-in-flutter-without-plugins.md"
+    ]
+  },
+  {
     "url": "https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.html",
     "status": 404,
     "ok": false,
@@ -58,21 +72,19 @@
     ]
   },
   {
-    "url": "https://code.claude.com/docs/en/release-notes",
-    "status": null,
+    "url": "https://claude.ai/mcp",
+    "status": 403,
     "ok": false,
-    "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/07/fix-claude-code-high-memory-usage-and-context-overflow.md"
+      "site/src/content/blog/2026/05/how-to-add-retrieval-augmented-generation-to-a-claude-code-session.md"
     ]
   },
   {
-    "url": "https://code.visualstudio.com/docs/copilot/customization/custom-instructions",
-    "status": null,
+    "url": "https://code.claude.com/docs/en/release-notes",
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/05/fix-github-copilot-ignores-repository-custom-instructions-in-vs-code.md"
+      "site/src/content/blog/2026/07/fix-claude-code-high-memory-usage-and-context-overflow.md"
     ]
   },
   {
@@ -105,6 +117,20 @@
       "site/src/content/blog/pt-br/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
       "site/src/content/blog/ru/2026/05/configureawait-false-vs-default-in-dotnet-11.md",
       "site/src/content/blog/ru/2026/05/configureawait-false-vs-default-in-dotnet-11.md"
+    ]
+  },
+  {
+    "url": "https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
+      "site/src/content/blog/de/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
+      "site/src/content/blog/es/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
+      "site/src/content/blog/ja/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
+      "site/src/content/blog/pt-br/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
+      "site/src/content/blog/ru/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md"
     ]
   },
   {
@@ -147,43 +173,6 @@
     ]
   },
   {
-    "url": "https://github.com/anthropics/claude-code/issues/51179",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/07/fix-claude-code-high-memory-usage-and-context-overflow.md",
-      "site/src/content/blog/2026/07/fix-claude-code-high-memory-usage-and-context-overflow.md"
-    ]
-  },
-  {
-    "url": "https://github.com/Blazored/FluentValidation",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
-      "site/src/content/blog/de/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
-      "site/src/content/blog/es/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
-      "site/src/content/blog/ja/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
-      "site/src/content/blog/pt-br/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md",
-      "site/src/content/blog/ru/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly.md"
-    ]
-  },
-  {
-    "url": "https://github.com/dotnet/aspnetcore/discussions/51020",
-    "status": 404,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
-      "site/src/content/blog/de/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
-      "site/src/content/blog/es/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
-      "site/src/content/blog/ja/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
-      "site/src/content/blog/pt-br/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
-      "site/src/content/blog/ru/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md"
-    ]
-  },
-  {
     "url": "https://github.com/dotnet/efcore/blob/main/src/EFCore/Internal/ConcurrencyDetector.cs",
     "status": 404,
     "ok": false,
@@ -194,20 +183,6 @@
       "site/src/content/blog/ja/2026/05/fix-second-operation-was-started-on-this-context-instance.md",
       "site/src/content/blog/pt-br/2026/05/fix-second-operation-was-started-on-this-context-instance.md",
       "site/src/content/blog/ru/2026/05/fix-second-operation-was-started-on-this-context-instance.md"
-    ]
-  },
-  {
-    "url": "https://github.com/dotnet/maui/issues/23352",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md",
-      "site/src/content/blog/de/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md",
-      "site/src/content/blog/es/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md",
-      "site/src/content/blog/ja/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md",
-      "site/src/content/blog/pt-br/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md",
-      "site/src/content/blog/ru/2026/05/fix-unable-to-find-a-valid-ios-simulator-runtime-during-maui-build.md"
     ]
   },
   {
@@ -243,6 +218,19 @@
     "sources": [
       "site/src/content/blog/2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument.md",
       "site/src/content/blog/2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument.md"
+    ]
+  },
+  {
+    "url": "https://github.com/mihnea-radulescu/cvshortlist",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/01/cv-shortlist-an-ai-powered-net-10-saas-went-open-source-and-the-stack-is-worth-studying.md",
+      "site/src/content/blog/de/2026/01/cv-shortlist-an-ai-powered-net-10-saas-went-open-source-and-the-stack-is-worth-studying.md",
+      "site/src/content/blog/es/2026/01/cv-shortlist-an-ai-powered-net-10-saas-went-open-source-and-the-stack-is-worth-studying.md",
+      "site/src/content/blog/ja/2026/01/cv-shortlist-an-ai-powered-net-10-saas-went-open-source-and-the-stack-is-worth-studying.md",
+      "site/src/content/blog/pt-br/2026/01/cv-shortlist-an-ai-powered-net-10-saas-went-open-source-and-the-stack-is-worth-studying.md",
+      "site/src/content/blog/ru/2026/01/cv-shortlist-an-ai-powered-net-10-saas-went-open-source-and-the-stack-is-worth-studying.md"
     ]
   },
   {
@@ -484,16 +472,11 @@
     ]
   },
   {
-    "url": "https://medium.com/dartlang/announcing-dart-3-0-79bff52e1bb6",
+    "url": "https://medium.com/@adnanmasood/rubric-based-evals-llm-as-a-judge-methodologies-and-empirical-validation-in-domain-context-71936b989e80",
     "status": 403,
     "ok": false,
     "sources": [
-      "site/src/content/blog/2026/05/dart-records-vs-freezed-classes.md",
-      "site/src/content/blog/de/2026/05/dart-records-vs-freezed-classes.md",
-      "site/src/content/blog/es/2026/05/dart-records-vs-freezed-classes.md",
-      "site/src/content/blog/ja/2026/05/dart-records-vs-freezed-classes.md",
-      "site/src/content/blog/pt-br/2026/05/dart-records-vs-freezed-classes.md",
-      "site/src/content/blog/ru/2026/05/dart-records-vs-freezed-classes.md"
+      "site/src/content/blog/2026/05/how-to-set-up-an-llm-as-judge-eval-harness-for-a-coding-agent.md"
     ]
   },
   {
@@ -547,19 +530,6 @@
     ]
   },
   {
-    "url": "https://news.ycombinator.com/item?id=46976911",
-    "status": 429,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/de/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/es/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/ja/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/pt-br/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md",
-      "site/src/content/blog/ru/2026/04/fluorite-toyota-console-grade-game-engine-flutter-dart.md"
-    ]
-  },
-  {
     "url": "https://news.ycombinator.com/item?id=47720060",
     "status": 429,
     "ok": false,
@@ -584,15 +554,6 @@
       "site/src/content/blog/ja/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md",
       "site/src/content/blog/pt-br/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md",
       "site/src/content/blog/ru/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md"
-    ]
-  },
-  {
-    "url": "https://platform.claude.com/docs/en/agents-and-tools/mcp-connector",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/how-to-reduce-the-number-of-mcp-tools-claude-loads.md"
     ]
   },
   {
@@ -657,15 +618,6 @@
     ]
   },
   {
-    "url": "https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/how-to-add-retrieval-augmented-generation-to-a-claude-code-session.md"
-    ]
-  },
-  {
     "url": "https://techcommunity.microsoft.com/blog/appsonazureblog/net-on-azure-functions-roadmap-update/4178714",
     "status": 400,
     "ok": false,
@@ -705,6 +657,26 @@
     ]
   },
   {
+    "url": "https://www.milanjovanovic.tech/blog/named-query-filters-in-ef-10-multiple-query-filters-per-entity/",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11.md",
+      "site/src/content/blog/2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11.md",
+      "site/src/content/blog/de/2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11.md",
+      "site/src/content/blog/de/2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11.md",
+      "site/src/content/blog/es/2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11.md",
+      "site/src/content/blog/es/2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11.md",
+      "site/src/content/blog/ja/2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11.md",
+      "site/src/content/blog/ja/2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11.md",
+      "site/src/content/blog/pt-br/2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11.md",
+      "site/src/content/blog/pt-br/2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11.md",
+      "site/src/content/blog/ru/2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11.md",
+      "site/src/content/blog/ru/2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11.md"
+    ]
+  },
+  {
     "url": "https://www.npmjs.com/package/@anthropic-ai/sdk",
     "status": 403,
     "ok": false,
@@ -716,6 +688,14 @@
       "site/src/content/blog/ja/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
       "site/src/content/blog/pt-br/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
       "site/src/content/blog/ru/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md"
+    ]
+  },
+  {
+    "url": "https://www.npmjs.com/package/@modelcontextprotocol/sdk",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/07/fix-mcp-server-fetch-is-not-defined-on-node-below-18.md"
     ]
   },
   {
@@ -784,9 +764,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Azure.Extensions.AspNetCore.DataProtection.Blobs",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
       "site/src/content/blog/de/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
@@ -798,8 +777,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Azure.Extensions.AspNetCore.DataProtection.Keys",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
       "site/src/content/blog/de/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
@@ -837,24 +817,27 @@
   },
   {
     "url": "https://www.nuget.org/packages/M.Super.Activities",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/build-a-uipath-activity-package-for-modern-studio-with-viewmodels.md"
     ]
   },
   {
     "url": "https://www.nuget.org/packages/M.Super.AppInsights.Activities",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/add-project-settings-to-a-uipath-package-design-time-and-runtime.md"
     ]
   },
   {
     "url": "https://www.nuget.org/packages/M.Super.Extensions",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/run-code-before-and-after-every-uipath-activity-with-a-tracking-participant.md",
       "site/src/content/blog/2026/05/write-a-uipath-workflow-analyzer-rule-with-entry-point-detection.md"
@@ -866,6 +849,7 @@
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/05/agent-framework-durable-workflows-checkpoint-restart.md",
+      "site/src/content/blog/2026/07/agent-framework-orchestration-patterns-compared.md",
       "site/src/content/blog/de/2026/05/agent-framework-durable-workflows-checkpoint-restart.md",
       "site/src/content/blog/es/2026/05/agent-framework-durable-workflows-checkpoint-restart.md",
       "site/src/content/blog/ja/2026/05/agent-framework-durable-workflows-checkpoint-restart.md",
@@ -978,8 +962,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Extensions.ApiDescription.Server",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
       "site/src/content/blog/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
@@ -997,9 +982,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Extensions.Http.Resilience",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
       "site/src/content/blog/de/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
@@ -1011,9 +995,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Extensions.TimeProvider.Testing",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md",
       "site/src/content/blog/de/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md",
@@ -1025,8 +1008,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.SemanticKernel",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/migrate-a-semantic-kernel-plugin-to-an-mcp-server.md"
     ]
@@ -1178,8 +1162,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Riok.Mapperly",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
       "site/src/content/blog/de/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
@@ -1230,8 +1215,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Testcontainers.MsSql",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
       "site/src/content/blog/de/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
@@ -1273,6 +1259,19 @@
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/07/fix-all-mcp-servers-fail-to-load-after-malformed-json-in-config.md"
+    ]
+  },
+  {
+    "url": "https://www.rfc-editor.org/rfc/rfc9111",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
+      "site/src/content/blog/pt-br/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md"
     ]
   },
   {
