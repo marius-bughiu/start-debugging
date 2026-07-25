@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/migrate-from-ilogger-string-interpolation-to-message-templates-in-dotnet-11",
+    "text": "$-interpolated log calls make every line a unique template. Here is the CA2254-driven sweep to message templates."
   }
 ]

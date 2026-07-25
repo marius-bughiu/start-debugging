@@ -1330,5 +1330,9 @@
   {
     "slug": "2026/07/migrate-an-mcp-server-from-sse-to-streamable-http",
     "text": "Your MCP server still answers on /sse? Two endpoints collapse into one. The Streamable HTTP migration, step by step."
+  },
+  {
+    "slug": "2026/07/migrate-from-ilogger-string-interpolation-to-message-templates-in-dotnet-11",
+    "text": "Interpolated ILogger calls destroy your log structure. The CA2254 sweep to message templates, in full."
   }
 ]
