@@ -1322,5 +1322,9 @@
   {
     "slug": "2026/07/agent-framework-declarative-workflows-1-0-yaml-orchestration",
     "text": "Multi-agent routing as a YAML file, not a builder chain. Agent Framework Declarative Workflows just hit 1.0."
+  },
+  {
+    "slug": "2026/07/migrate-a-setstate-statefulwidget-to-a-riverpod-notifier-in-flutter",
+    "text": "setState to a Riverpod Notifier: what moves, what stays, and the == filter that silently freezes your UI."
   }
 ]

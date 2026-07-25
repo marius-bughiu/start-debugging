@@ -245,8 +245,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate from Riverpod 2.x to Riverpod 3.0 in Flutter → slug: 2026/07/migrate-from-riverpod-2-x-to-riverpod-3-0-in-flutter
 - Migrate a minimal API from manual validation checks to built-in validation in ASP.NET Core 11 → slug: 2026/07/migrate-a-minimal-api-from-manual-validation-to-built-in-validation-in-aspnetcore-11
 - Migrate Swashbuckle `IOperationFilter` and `ISchemaFilter` to OpenAPI transformers in .NET 11 → slug: 2026/07/migrate-swashbuckle-ioperationfilter-and-ischemafilter-to-transformers-in-dotnet-11
-- Migrate from owned entities to complex types in EF Core 11
-- Migrate a `setState` `StatefulWidget` to a Riverpod `Notifier` in Flutter
+- Migrate from owned entities to complex types in EF Core 11 → slug: 2026/07/how-to-map-a-complex-type-instead-of-an-owned-entity-in-ef-core-11 (same intent as existing post: it already contains the full OwnsOne to ComplexProperty migration procedure)
+- Migrate a `setState` `StatefulWidget` to a Riverpod `Notifier` in Flutter → slug: 2026/07/migrate-a-setstate-statefulwidget-to-a-riverpod-notifier-in-flutter
 - Migrate from `ILogger` string interpolation to structured logging message templates in .NET 11
 - Migrate from blocking `.Result`/`.Wait()` calls to async all the way up in a legacy C# codebase
 

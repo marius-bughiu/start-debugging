@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/migrate-a-setstate-statefulwidget-to-a-riverpod-notifier-in-flutter",
+    "text": "Moving a screen off setState to a Riverpod 3.3.2 Notifier takes about an hour. Most of it is deciding what should not move."
   }
 ]
