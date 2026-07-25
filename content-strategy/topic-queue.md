@@ -99,6 +99,17 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to log the SQL that EF Core 11 generates → slug: 2026/07/how-to-log-the-sql-that-ef-core-11-generates
 - How to add a health check endpoint to a minimal API in ASP.NET Core 11 → slug: 2026/07/how-to-add-a-health-check-endpoint-to-a-minimal-api-in-aspnetcore-11
 - How to disable Riverpod 3.0's automatic provider retry → slug: 2026/07/how-to-disable-riverpod-3-0-automatic-provider-retry
+- How to test time-dependent code with `TimeProvider` and `FakeTimeProvider` in .NET 11
+- How to add .NET Aspire to an existing ASP.NET Core solution without restructuring it
+- How to write integration tests with `WebApplicationFactory<T>` in ASP.NET Core 11
+- How to publish a .NET 11 app as a container image with `dotnet publish /t:PublishContainer`
+- How to serialize a polymorphic type hierarchy with `[JsonDerivedType]` in System.Text.Json
+- How to diagnose a managed memory leak with `dotnet-gcdump` and `dotnet-dump`
+- How to use the `field` keyword in a C# 14 property accessor
+- How to use null-conditional assignment (`?.` on the left of `=`) in C# 14
+- How to apply EF Core 11 migrations in production with `dotnet ef migrations bundle`
+- How to build a Flutter web app with WebAssembly using `flutter build web --wasm`
+- How to use `Shell` route parameters and query properties for navigation in .NET MAUI 11
 
 ## Fix / error
 
@@ -174,6 +185,15 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `CS4014: Because this call is not awaited, execution of the current method continues` in C# → slug: 2026/07/fix-cs4014-because-this-call-is-not-awaited-execution-continues-in-csharp
 - Fix: `InvalidOperationException: Sequence contains no elements` from `.First()` or `.Single()` in LINQ → slug: 2026/07/fix-invalidoperationexception-sequence-contains-no-elements
 - Fix: Riverpod 3.0 `StreamProvider` stops emitting because updates are now filtered by `==` → slug: 2026/07/fix-riverpod-3-0-streamprovider-stops-emitting-filtered-by-equality
+- Fix: `Reflection-based serialization has been disabled for this application` in a trimmed or Native AOT app
+- Fix: `Couldn't find a valid ICU package installed on the system` in a .NET container
+- Fix: `PendingModelChangesWarning: The model for context 'X' has pending changes` in EF Core 11
+- Fix: `Your startup project doesn't reference Microsoft.EntityFrameworkCore.Design` when running `dotnet ef`
+- Fix: `InvalidOperationException: JavaScript interop calls cannot be issued at this time` during Blazor prerendering
+- Fix: `Gradle task assembleDebug failed with exit code 1` in a Flutter Android build
+- Fix: `Unable to load asset` in Flutter after adding an image to `pubspec.yaml`
+- Fix: `CocoaPods could not find compatible versions for pod` during a Flutter iOS build
+- Fix: `A RenderFlex overflowed by N pixels on the bottom` when the keyboard opens in Flutter
 
 ## Vs / comparison
 
@@ -220,6 +240,11 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `WebApplication.CreateBuilder` vs `CreateSlimBuilder` vs `CreateEmptyBuilder` in ASP.NET Core 11 → slug: 2026/07/webapplication-createbuilder-vs-createslimbuilder-vs-createemptybuilder-in-aspnetcore-11
 - Endpoint filters vs middleware in ASP.NET Core 11 → slug: 2026/07/endpoint-filters-vs-middleware-in-aspnetcore-11
 - `.Result`/`.Wait()` vs `GetAwaiter().GetResult()` vs `await` in C# → slug: 2026/07/result-wait-vs-getawaiter-getresult-vs-await-in-csharp
+- `IOptions<T>` vs `IOptionsSnapshot<T>` vs `IOptionsMonitor<T>` in .NET 11
+- gRPC vs REST vs SignalR for service-to-service calls in .NET 11
+- xUnit v3 vs NUnit vs MSTest in 2026
+- `WebApplicationFactory` vs Testcontainers for ASP.NET Core integration tests
+- .NET Aspire vs Docker Compose for local multi-service development
 
 ## Migration / upgrade
 
@@ -249,6 +274,10 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a `setState` `StatefulWidget` to a Riverpod `Notifier` in Flutter → slug: 2026/07/migrate-a-setstate-statefulwidget-to-a-riverpod-notifier-in-flutter
 - Migrate from `ILogger` string interpolation to structured logging message templates in .NET 11 → slug: 2026/07/migrate-from-ilogger-string-interpolation-to-message-templates-in-dotnet-11
 - Migrate from blocking `.Result`/`.Wait()` calls to async all the way up in a legacy C# codebase → slug: 2026/07/migrate-from-blocking-result-and-wait-calls-to-async-all-the-way-up-in-csharp
+- Migrate a test project from xUnit v2 to xUnit v3
+- Migrate from VSTest to Microsoft.Testing.Platform in .NET 11
+- Migrate off `BinaryFormatter` after its removal in modern .NET
+- Migrate a Flutter web app from `dart:html` to `package:web` and `dart:js_interop`
 
 ## What is / concept
 
