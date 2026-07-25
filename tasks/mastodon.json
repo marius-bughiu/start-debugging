@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/migrate-an-mcp-server-from-sse-to-streamable-http",
-    "text": "Still serving GET /sse plus POST /messages?sessionId= from your MCP server? That transport was deprecated in the 2025-03-26 spec. Tool handlers do not change at all; the endpoint shape, the session header, and every client config do. Plus the proxy buffering trap that makes the new endpoint look hung."
   }
 ]
