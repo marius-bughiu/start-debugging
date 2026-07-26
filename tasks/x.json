@@ -1354,5 +1354,9 @@
   {
     "slug": "2026/07/how-to-add-aspire-to-an-existing-aspnetcore-solution-without-restructuring-it",
     "text": "Aspire in a brownfield ASP.NET Core solution: two new projects, three lines per service, zero files moved."
+  },
+  {
+    "slug": "2026/07/how-to-write-integration-tests-with-webapplicationfactory-in-aspnetcore-11",
+    "text": "WebApplicationFactory runs your real Program.cs with no socket. The traps: internal Program, EF Core 9+ registration."
   }
 ]

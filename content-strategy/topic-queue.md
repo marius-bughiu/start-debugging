@@ -101,7 +101,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to disable Riverpod 3.0's automatic provider retry → slug: 2026/07/how-to-disable-riverpod-3-0-automatic-provider-retry
 - How to test time-dependent code with `TimeProvider` and `FakeTimeProvider` in .NET 11 → slug: 2026/07/how-to-test-time-dependent-code-with-timeprovider-and-faketimeprovider-in-dotnet-11
 - How to add .NET Aspire to an existing ASP.NET Core solution without restructuring it → slug: 2026/07/how-to-add-aspire-to-an-existing-aspnetcore-solution-without-restructuring-it
-- How to write integration tests with `WebApplicationFactory<T>` in ASP.NET Core 11
+- How to write integration tests with `WebApplicationFactory<T>` in ASP.NET Core 11 → slug: 2026/07/how-to-write-integration-tests-with-webapplicationfactory-in-aspnetcore-11
 - How to publish a .NET 11 app as a container image with `dotnet publish /t:PublishContainer`
 - How to serialize a polymorphic type hierarchy with `[JsonDerivedType]` in System.Text.Json
 - How to diagnose a managed memory leak with `dotnet-gcdump` and `dotnet-dump`
