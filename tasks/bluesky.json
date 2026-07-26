@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/how-to-add-aspire-to-an-existing-aspnetcore-solution-without-restructuring-it",
-    "text": "Adding Aspire to an existing solution is not a restructure: the AppHost reads your existing launchSettings.json as-is."
   }
 ]
