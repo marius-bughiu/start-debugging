@@ -1350,5 +1350,9 @@
   {
     "slug": "2026/07/how-to-lock-down-a-coding-agents-network-egress-with-a-strict-host-allowlist",
     "text": "Your agent can read ~/.ssh and open a socket. The egress allowlist that stops it, in three agents."
+  },
+  {
+    "slug": "2026/07/how-to-add-aspire-to-an-existing-aspnetcore-solution-without-restructuring-it",
+    "text": "Aspire in a brownfield ASP.NET Core solution: two new projects, three lines per service, zero files moved."
   }
 ]
