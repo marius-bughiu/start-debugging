@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/how-to-test-time-dependent-code-with-timeprovider-and-faketimeprovider-in-dotnet-11",
-    "text": "Take a TimeProvider in the constructor, register TimeProvider.System in DI, pass a FakeTimeProvider in tests. Task.Delay, CancellationTokenSource and PeriodicTimer all have TimeProvider overloads, so timeouts and polling workers become assertable. One gotcha: Advance fires a periodic timer once per elapsed period, not once."
   }
 ]
