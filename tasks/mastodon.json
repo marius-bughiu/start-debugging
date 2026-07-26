@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/how-to-write-integration-tests-with-webapplicationfactory-in-aspnetcore-11",
-    "text": "WebApplicationFactory boots your production host with two things changed: the server implementation and whatever you override in ConfigureTestServices. Covers the internal Program entry point, why removing DbContextOptions no longer swaps the EF Core provider, and UseKestrel for browser tests."
   }
 ]
