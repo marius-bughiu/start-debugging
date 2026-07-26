@@ -162,7 +162,7 @@ Hero(
 );
 ```
 
-`createRectTween` は飛行の遷移先である hero で実行されます。push と pop の両方で弧が欲しい場合は、両方のルートの hero に設定します。デフォルトは素の `RectTween`（線形）です。`MaterialRectArcTween` は左上と右下の角を弧に沿って曲げるので、拡大するカードは対角線に射出されるのではなく、所定の位置へ「スイープする」ように見えます。Flutter 3.44 以降、ルート経由で遷移にカーブを直接渡すこともできますが、`createRectTween` はタイミングではなく幾何学的な軌道を形作る方法であり続けます。
+`createRectTween` は飛行の遷移先である hero で実行されます。push と pop の両方で弧が欲しい場合は、両方のルートの hero に設定します。デフォルトは素の `RectTween`（線形）です。`MaterialRectArcTween` は左上と右下の角を弧に沿って曲げるので、拡大するカードは対角線に射出されるのではなく、所定の位置へ「スイープする」ように見えます。[Flutter 3.44](/ja/2026/07/flutter-3-44-read-the-screen-corner-radius-from-mediaquery/) 以降、ルート経由で遷移にカーブを直接渡すこともできますが、`createRectTween` はタイミングではなく幾何学的な軌道を形作る方法であり続けます。
 
 ## iOS の戻るスワイプで hero をアニメーションさせる
 
