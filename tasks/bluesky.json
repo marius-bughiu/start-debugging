@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/claude-code-2-1-219-nested-subagents-three-layers-deep",
+    "text": "Claude Code 2.1.219 reverses 2.1.213: subagents nest three deep by default again, with a workflow size guideline as the brake."
   }
 ]

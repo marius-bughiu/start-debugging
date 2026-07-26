@@ -1338,5 +1338,9 @@
   {
     "slug": "2026/07/migrate-from-blocking-result-and-wait-calls-to-async-all-the-way-up-in-csharp",
     "text": "One .Result on a request path parks a pool thread. A staged playbook for going async all the way in legacy C#."
+  },
+  {
+    "slug": "2026/07/claude-code-2-1-219-nested-subagents-three-layers-deep",
+    "text": "Subagent nesting is back on in Claude Code 2.1.219: depth 3 by default, up from 1. One env var opts out."
   }
 ]
