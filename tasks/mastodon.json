@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/claude-code-2-1-219-nested-subagents-three-layers-deep",
-    "text": "Claude Code 2.1.219 raises the default subagent spawn depth from 1 to 3, so a reviewer can fan out verifiers again. The brake is a new workflowSizeGuideline key aiming for fewer than 15 agents, plus sandbox.network.strictAllowlist for fail-closed network policy on unattended runs."
   }
 ]
