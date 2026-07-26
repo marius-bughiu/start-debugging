@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/how-to-test-time-dependent-code-with-timeprovider-and-faketimeprovider-in-dotnet-11",
+    "text": "Testing a 14-day trial expiry without waiting 14 days: inject TimeProvider, drive FakeTimeProvider.Advance, assert the boundary."
   }
 ]
