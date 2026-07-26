@@ -1,0 +1,56 @@
+# Evergreen resurface queue
+
+Human-approval queue for re-sharing older evergreen posts to X, Bluesky, and Mastodon. The `start-debugging-evergreen-resurface` scheduled task drafts entries here weekly (Sunday 20:00). You approve, copy to the appropriate channel, and remove from this file.
+
+## Why this exists
+
+Evergreen posts keep earning search impressions for months or years, but the initial social push is one-shot. A selective re-share of high-performing older evergreen posts (90+ days since publish, 90+ days since last resurface) captures continued value without looking spammy.
+
+## Rules
+
+- Never re-share a post less than 90 days old.
+- Never re-share the same slug within 90 days of a prior resurface (check Drafts and Approved sections).
+- Target: 1 resurface per week, not 3. A quiet cadence builds trust.
+- Write FRESH hooks - do not reuse the original social copy. A year later, you have learned something new about the topic, so lead with that angle.
+- X ≤ 240 chars, Bluesky ≤ 260 chars, Mastodon ≤ 460 chars (before URL append).
+- Same style rules as articles: no em dashes, simple quotes.
+
+## Queue entry format
+
+```
+### <YYYY-MM-DD drafted> - <slug>
+
+**Original:** <pubDate> - <post title>
+
+**X:** <hook>
+**Bluesky:** <hook>
+**Mastodon:** <hook>
+
+**Notes:** <why this one, what fresh angle>
+```
+
+Move approved entries under `## Approved`, remove after posting.
+
+---
+
+## Drafts
+
+<!-- The scheduled task appends new entries here. Stale drafts (>14 days) are culled on the next run. -->
+
+### 2026-07-26 drafted - how-to-use-records-with-ef-core-11-correctly
+
+**Original:** 2026-04-21 - How to use records with EF Core 11 correctly
+
+**X:** The C# docs say records are not appropriate as EF Core entity types. That is a blunt summary, not a ban. The rule that holds on EF Core 11: class with init setters for anything with identity, record for anything defined by its data.
+
+**Bluesky:** post with { Title = "New" } then Update() throws: another instance with the same key value is already being tracked. Identity resolution is doing its job. You handed it two CLR references to one row. Keep records out of the tracked-entity seat.
+
+**Mastodon:** Records and EF Core 11 fight for one reason: records are value-equal, the change tracker is reference-identity. Three seats, three answers. Complex types: positional record, ideal fit. Projections and DTOs: positional record, always safe. Tracked entities: skip positional, use a record class or plain class with init-only props and a binding ctor. The with expression on a tracked entity clones the primary key and blows up on SaveChanges.
+
+**Notes:** Longest eligible evergreen (2701 words, 6 internal links) and the only one covering a decision people re-litigate on every new EF Core release. GSC data had nothing relevant, so this was picked on depth. Fresh angle: the original push led with the how-to framing, so these lead with the conflict instead. X reframes the "records aren't appropriate for entities" doc warning as a seat-assignment rule rather than a prohibition. Bluesky opens on the concrete InvalidOperationException from a `with` expression, which is the error people actually search for. Mastodon uses the three-seats structure as the payoff.
+
+---
+
+## Approved
+
+<!-- Move drafts here after you review. Remove entries after posting. -->
