@@ -1358,5 +1358,9 @@
   {
     "slug": "2026/07/how-to-write-integration-tests-with-webapplicationfactory-in-aspnetcore-11",
     "text": "WebApplicationFactory runs your real Program.cs with no socket. The traps: internal Program, EF Core 9+ registration."
+  },
+  {
+    "slug": "2026/07/cursor-router-makes-auto-a-per-request-model-decision",
+    "text": "Cursor Auto now picks a model per request. Only Cost keeps bundled pricing, the other two modes bill per request."
   }
 ]

@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/cursor-router-makes-auto-a-per-request-model-decision",
+    "text": "Cursor Router classifies every request and routes it to a model. The routed model is hidden by default, so quality shifts quietly."
   }
 ]
