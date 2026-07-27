@@ -103,7 +103,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to add .NET Aspire to an existing ASP.NET Core solution without restructuring it → slug: 2026/07/how-to-add-aspire-to-an-existing-aspnetcore-solution-without-restructuring-it
 - How to write integration tests with `WebApplicationFactory<T>` in ASP.NET Core 11 → slug: 2026/07/how-to-write-integration-tests-with-webapplicationfactory-in-aspnetcore-11
 - How to publish a .NET 11 app as a container image with `dotnet publish /t:PublishContainer` → slug: 2026/07/how-to-publish-a-dotnet-11-app-as-a-container-image-with-publishcontainer
-- How to serialize a polymorphic type hierarchy with `[JsonDerivedType]` in System.Text.Json
+- How to serialize a polymorphic type hierarchy with `[JsonDerivedType]` in System.Text.Json → slug: 2026/07/how-to-serialize-a-polymorphic-type-hierarchy-with-jsonderivedtype-in-system-text-json
 - How to diagnose a managed memory leak with `dotnet-gcdump` and `dotnet-dump`
 - How to use the `field` keyword in a C# 14 property accessor
 - How to use null-conditional assignment (`?.` on the left of `=`) in C# 14

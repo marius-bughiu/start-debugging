@@ -1370,5 +1370,9 @@
   {
     "slug": "2026/07/stream-nested-subagent-output-from-a-headless-claude-code-run",
     "text": "Headless claude -p drops your subagents' reasoning. One flag puts the text and thinking back in the stream."
+  },
+  {
+    "slug": "2026/07/how-to-serialize-a-polymorphic-type-hierarchy-with-jsonderivedtype-in-system-text-json",
+    "text": "System.Text.Json drops derived properties unless the declared type is the polymorphic base. $type is the fix."
   }
 ]
