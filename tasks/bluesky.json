@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/stream-nested-subagent-output-from-a-headless-claude-code-run",
-    "text": "Your CI log shows subagent tool calls but none of the reasoning. --forward-subagent-text puts the text back in the stream."
   }
 ]
