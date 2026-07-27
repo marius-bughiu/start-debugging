@@ -1374,5 +1374,9 @@
   {
     "slug": "2026/07/how-to-serialize-a-polymorphic-type-hierarchy-with-jsonderivedtype-in-system-text-json",
     "text": "System.Text.Json drops derived properties unless the declared type is the polymorphic base. $type is the fix."
+  },
+  {
+    "slug": "2026/07/how-to-diagnose-a-managed-memory-leak-with-dotnet-gcdump-and-dotnet-dump",
+    "text": "gen2 heap climbing? gcdump names the type that is growing, then dotnet-dump gcroot names what still holds it."
   }
 ]

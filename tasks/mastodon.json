@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/how-to-diagnose-a-managed-memory-leak-with-dotnet-gcdump-and-dotnet-dump",
+    "text": "The full workflow for a managed .NET memory leak: confirm gen2 growth with dotnet-counters, diff two gcdumps to find the growing type, then use dumpheap -live and gcroot in dotnet-dump analyze to name the field holding the reference. Includes the gotcha where gcdump silently truncates on a large heap."
   }
 ]
