@@ -1362,5 +1362,9 @@
   {
     "slug": "2026/07/cursor-router-makes-auto-a-per-request-model-decision",
     "text": "Cursor Auto now picks a model per request. Only Cost keeps bundled pricing, the other two modes bill per request."
+  },
+  {
+    "slug": "2026/07/how-to-publish-a-dotnet-11-app-as-a-container-image-with-publishcontainer",
+    "text": "No Dockerfile needed: dotnet publish /t:PublishContainer builds and pushes the image itself."
   }
 ]

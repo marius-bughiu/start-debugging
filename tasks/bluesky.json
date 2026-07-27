@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/how-to-publish-a-dotnet-11-app-as-a-container-image-with-publishcontainer",
+    "text": "The .NET SDK builds container images without Docker: it talks to the registry API directly. No Dockerfile, no RUN step."
   }
 ]

@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/how-to-publish-a-dotnet-11-app-as-a-container-image-with-publishcontainer",
+    "text": "dotnet publish /t:PublishContainer turns a .NET 11 app into a container image with no Dockerfile and no Docker daemon: the SDK talks to the registry HTTP API directly. Covers tags, base image selection, registry auth resolution, multi-arch OCI image indexes, and why .NET 11 now rejects a malformed bearer-token realm."
   }
 ]
