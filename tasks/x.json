@@ -1366,5 +1366,9 @@
   {
     "slug": "2026/07/how-to-publish-a-dotnet-11-app-as-a-container-image-with-publishcontainer",
     "text": "No Dockerfile needed: dotnet publish /t:PublishContainer builds and pushes the image itself."
+  },
+  {
+    "slug": "2026/07/stream-nested-subagent-output-from-a-headless-claude-code-run",
+    "text": "Headless claude -p drops your subagents' reasoning. One flag puts the text and thinking back in the stream."
   }
 ]

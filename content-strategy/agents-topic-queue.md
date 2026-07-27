@@ -52,7 +52,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to set per-session AI credit spend limits in the Copilot CLI and SDK → slug: 2026/07/set-ai-credit-session-limits-in-github-copilot-cli-and-sdk
 - How to package reusable domain expertise as an Agent Skill in .NET with Microsoft Agent Framework → slug: 2026/07/package-domain-expertise-as-an-agent-skill-microsoft-agent-framework
 - How to lock down a coding agent's network egress with a strict host allowlist → slug: 2026/07/how-to-lock-down-a-coding-agents-network-egress-with-a-strict-host-allowlist
-- How to stream nested subagent output from a headless Claude Code run with `--forward-subagent-text`
+- How to stream nested subagent output from a headless Claude Code run with `--forward-subagent-text` → slug: 2026/07/stream-nested-subagent-output-from-a-headless-claude-code-run
 - How to run a background coding agent that auto-commits and opens a draft PR when it finishes
 - How to define an agent orchestration in YAML with Microsoft Agent Framework Declarative Workflows 1.0
 - How to route models per request with Cursor Router and enforce Intelligence/Balance/Cost across a team
