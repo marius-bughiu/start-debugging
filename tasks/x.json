@@ -1390,5 +1390,9 @@
   {
     "slug": "2026/07/run-a-background-coding-agent-that-auto-commits-and-opens-a-draft-pr",
     "text": "Claude Code background sessions now commit, push, and open a draft PR themselves. Plus the portable 40-line version."
+  },
+  {
+    "slug": "2026/07/how-to-build-a-flutter-web-app-with-webassembly-using-flutter-build-web-wasm",
+    "text": "flutter build web --wasm emits two builds. Firefox and Safari still get the JS one: the loader allowlists Blink."
   }
 ]
