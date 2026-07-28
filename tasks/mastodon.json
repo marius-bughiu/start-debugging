@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/how-to-use-shell-route-parameters-and-query-properties-in-dotnet-maui-11",
-    "text": "Passing data through .NET MAUI 11 Shell navigation: global routes, string query parameters, QueryPropertyAttribute vs IQueryAttributable, and returning results with ..?key=value. The trap: values from QueryPropertyAttribute are URL-decoded for you, values from IQueryAttributable are not."
   }
 ]
