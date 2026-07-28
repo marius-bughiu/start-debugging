@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/how-to-build-a-flutter-web-app-with-webassembly-using-flutter-build-web-wasm",
-    "text": "flutter build web --wasm does not switch your app to WebAssembly. It emits a dart2wasm/skwasm build plus the usual dart2js/canvaskit one, and flutter_bootstrap.js picks at load time. Two things decide what users get: no dart:html in your deps, and COOP/COEP headers. Miss the headers and skwasm silently runs single-threaded."
   }
 ]

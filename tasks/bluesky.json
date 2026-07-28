@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/how-to-build-a-flutter-web-app-with-webassembly-using-flutter-build-web-wasm",
-    "text": "--wasm does not replace your JS build, it adds one. What users actually get comes down to an allowlist and two response headers."
   }
 ]
