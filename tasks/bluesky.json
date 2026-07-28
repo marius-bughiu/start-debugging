@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/github-mcp-server-goes-stateless-redis-session-store",
+    "text": "No initialize handshake, no Mcp-Session-Id. GitHub shipped stateless MCP early, and the Redis session store went with it."
   }
 ]

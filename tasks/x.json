@@ -1378,5 +1378,9 @@
   {
     "slug": "2026/07/how-to-diagnose-a-managed-memory-leak-with-dotnet-gcdump-and-dotnet-dump",
     "text": "gen2 heap climbing? gcdump names the type that is growing, then dotnet-dump gcroot names what still holds it."
+  },
+  {
+    "slug": "2026/07/github-mcp-server-goes-stateless-redis-session-store",
+    "text": "GitHub's MCP server deleted its Redis session store. The 2026-07-28 spec kills initialize and Mcp-Session-Id."
   }
 ]
