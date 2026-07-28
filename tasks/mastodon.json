@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/how-to-apply-ef-core-11-migrations-in-production-with-migrations-bundle",
-    "text": "Build the migration bundle in CI, run it as its own deploy step: ./efbundle --connection ... No .NET SDK on the target, no source checkout, and your app never needs db_ddladmin. The gotcha nobody documents: a named connection string still requires an appsettings.json next to the bundle, even when you pass --connection."
   }
 ]
