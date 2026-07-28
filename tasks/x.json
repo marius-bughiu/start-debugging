@@ -1382,5 +1382,9 @@
   {
     "slug": "2026/07/github-mcp-server-goes-stateless-redis-session-store",
     "text": "GitHub's MCP server deleted its Redis session store. The 2026-07-28 spec kills initialize and Mcp-Session-Id."
+  },
+  {
+    "slug": "2026/07/how-to-apply-ef-core-11-migrations-in-production-with-migrations-bundle",
+    "text": "Stop calling Database.Migrate() at startup. dotnet ef migrations bundle ships one exe your deploy step runs."
   }
 ]

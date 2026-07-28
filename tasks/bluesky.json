@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/how-to-apply-ef-core-11-migrations-in-production-with-migrations-bundle",
+    "text": "efbundle carries your migrations plus the EF Core runtime in one file. No SDK, no source, no schema rights on the app."
   }
 ]

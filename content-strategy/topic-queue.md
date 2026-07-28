@@ -105,9 +105,9 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to publish a .NET 11 app as a container image with `dotnet publish /t:PublishContainer` → slug: 2026/07/how-to-publish-a-dotnet-11-app-as-a-container-image-with-publishcontainer
 - How to serialize a polymorphic type hierarchy with `[JsonDerivedType]` in System.Text.Json → slug: 2026/07/how-to-serialize-a-polymorphic-type-hierarchy-with-jsonderivedtype-in-system-text-json
 - How to diagnose a managed memory leak with `dotnet-gcdump` and `dotnet-dump` → slug: 2026/07/how-to-diagnose-a-managed-memory-leak-with-dotnet-gcdump-and-dotnet-dump
-- How to use the `field` keyword in a C# 14 property accessor
-- How to use null-conditional assignment (`?.` on the left of `=`) in C# 14
-- How to apply EF Core 11 migrations in production with `dotnet ef migrations bundle`
+- How to use the `field` keyword in a C# 14 property accessor → slug: 2025/04/c-14-the-field-keyword-and-field-backed-properties (same intent as existing post)
+- How to use null-conditional assignment (`?.` on the left of `=`) in C# 14 → slug: 2026/02/csharp-14-null-conditional-assignment (same intent as existing post)
+- How to apply EF Core 11 migrations in production with `dotnet ef migrations bundle` → slug: 2026/07/how-to-apply-ef-core-11-migrations-in-production-with-migrations-bundle
 - How to build a Flutter web app with WebAssembly using `flutter build web --wasm`
 - How to use `Shell` route parameters and query properties for navigation in .NET MAUI 11
 
