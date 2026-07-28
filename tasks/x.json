@@ -1386,5 +1386,9 @@
   {
     "slug": "2026/07/how-to-apply-ef-core-11-migrations-in-production-with-migrations-bundle",
     "text": "Stop calling Database.Migrate() at startup. dotnet ef migrations bundle ships one exe your deploy step runs."
+  },
+  {
+    "slug": "2026/07/run-a-background-coding-agent-that-auto-commits-and-opens-a-draft-pr",
+    "text": "Claude Code background sessions now commit, push, and open a draft PR themselves. Plus the portable 40-line version."
   }
 ]

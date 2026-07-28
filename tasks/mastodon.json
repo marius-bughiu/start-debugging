@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/run-a-background-coding-agent-that-auto-commits-and-opens-a-draft-pr",
+    "text": "A coding agent that stops at uncommitted edits is half an automation. Claude Code 2.1.198+ background sessions commit, push, and open a draft PR from their own worktree: never main, never force-push, never merge. The portable route is a git worktree plus gh pr create --draft, and the GITHUB_TOKEN trap that skips CI."
   }
 ]
