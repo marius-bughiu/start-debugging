@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/how-to-use-shell-route-parameters-and-query-properties-in-dotnet-maui-11",
+    "text": "MAUI Shell: GoToAsync with a Dictionary keeps your object alive for the whole page lifetime. ShellNavigationQueryParameters does not."
   }
 ]

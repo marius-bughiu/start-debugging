@@ -1394,5 +1394,9 @@
   {
     "slug": "2026/07/how-to-build-a-flutter-web-app-with-webassembly-using-flutter-build-web-wasm",
     "text": "flutter build web --wasm emits two builds. Firefox and Safari still get the JS one: the loader allowlists Blink."
+  },
+  {
+    "slug": "2026/07/how-to-use-shell-route-parameters-and-query-properties-in-dotnet-maui-11",
+    "text": "MAUI Shell: QueryPropertyAttribute auto URL-decodes, IQueryAttributable does not. Same URI, different string."
   }
 ]

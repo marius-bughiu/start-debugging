@@ -109,7 +109,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to use null-conditional assignment (`?.` on the left of `=`) in C# 14 → slug: 2026/02/csharp-14-null-conditional-assignment (same intent as existing post)
 - How to apply EF Core 11 migrations in production with `dotnet ef migrations bundle` → slug: 2026/07/how-to-apply-ef-core-11-migrations-in-production-with-migrations-bundle
 - How to build a Flutter web app with WebAssembly using `flutter build web --wasm` → slug: 2026/07/how-to-build-a-flutter-web-app-with-webassembly-using-flutter-build-web-wasm
-- How to use `Shell` route parameters and query properties for navigation in .NET MAUI 11
+- How to use `Shell` route parameters and query properties for navigation in .NET MAUI 11 → slug: 2026/07/how-to-use-shell-route-parameters-and-query-properties-in-dotnet-maui-11
 
 ## Fix / error
 
