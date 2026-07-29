@@ -54,8 +54,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to lock down a coding agent's network egress with a strict host allowlist → slug: 2026/07/how-to-lock-down-a-coding-agents-network-egress-with-a-strict-host-allowlist
 - How to stream nested subagent output from a headless Claude Code run with `--forward-subagent-text` → slug: 2026/07/stream-nested-subagent-output-from-a-headless-claude-code-run
 - How to run a background coding agent that auto-commits and opens a draft PR when it finishes → slug: 2026/07/run-a-background-coding-agent-that-auto-commits-and-opens-a-draft-pr
-- How to define an agent orchestration in YAML with Microsoft Agent Framework Declarative Workflows 1.0
-- How to route models per request with Cursor Router and enforce Intelligence/Balance/Cost across a team
+- How to define an agent orchestration in YAML with Microsoft Agent Framework Declarative Workflows 1.0 → slug: 2026/07/agent-framework-declarative-workflows-1-0-yaml-orchestration
+- How to route models per request with Cursor Router and enforce Intelligence/Balance/Cost across a team → slug: 2026/07/cursor-router-makes-auto-a-per-request-model-decision
 
 ## Fix / error
 
@@ -79,7 +79,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: Claude Code misreads an MCP server's stderr startup message as an error → slug: 2026/07/fix-claude-code-misreads-mcp-server-stderr-as-error
 - Fix: "Autocompact thrashing" when a large file or tool output immediately refills the context window → slug: 2026/07/fix-claude-code-autocompact-thrashing-on-large-file-or-tool-output
 - Fix: MCP server protocol incompatibility on Node.js versions below 18 → slug: 2026/07/fix-mcp-server-fetch-is-not-defined-on-node-below-18
-- Fix: Windows paths with `\u` segments mangled into CJK characters in an agent config file
+- Fix: Windows paths with `\u` segments mangled into CJK characters in an agent config file → slug: 2026/07/fix-windows-path-in-mcp-json-turns-into-tab-newline-or-cjk-character
 - Fix: `.mcp.json` servers never start because the workspace is marked untrusted
 - Fix: a long MCP tool call gets auto-backgrounded after two minutes mid-task
 - Fix: a `Write(src)` permission rule never matches - directory rules need `src/**`

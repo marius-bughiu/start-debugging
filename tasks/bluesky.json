@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/fix-windows-path-in-mcp-json-turns-into-tab-newline-or-cjk-character",
+    "text": "A Windows path in .mcp.json can parse cleanly and still resolve wrong: \\tools, \\bin, \\repos and \\uface are legal JSON escapes."
   }
 ]

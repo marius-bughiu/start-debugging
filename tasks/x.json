@@ -1406,5 +1406,9 @@
   {
     "slug": "2026/07/fix-reflection-based-serialization-has-been-disabled-for-this-application",
     "text": "PublishTrimmed silently disables System.Text.Json reflection. That is why Serialize throws only in Release."
+  },
+  {
+    "slug": "2026/07/fix-windows-path-in-mcp-json-turns-into-tab-newline-or-cjk-character",
+    "text": "C:\\srv\\tools in a JSON config is C:\\srv plus a TAB. It parses fine and the path is wrong."
   }
 ]
