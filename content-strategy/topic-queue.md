@@ -186,7 +186,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `InvalidOperationException: Sequence contains no elements` from `.First()` or `.Single()` in LINQ → slug: 2026/07/fix-invalidoperationexception-sequence-contains-no-elements
 - Fix: Riverpod 3.0 `StreamProvider` stops emitting because updates are now filtered by `==` → slug: 2026/07/fix-riverpod-3-0-streamprovider-stops-emitting-filtered-by-equality
 - Fix: `Reflection-based serialization has been disabled for this application` in a trimmed or Native AOT app → slug: 2026/07/fix-reflection-based-serialization-has-been-disabled-for-this-application
-- Fix: `Couldn't find a valid ICU package installed on the system` in a .NET container
+- Fix: `Couldn't find a valid ICU package installed on the system` in a .NET container → slug: 2026/07/fix-couldnt-find-a-valid-icu-package-installed-on-the-system
 - Fix: `PendingModelChangesWarning: The model for context 'X' has pending changes` in EF Core 11
 - Fix: `Your startup project doesn't reference Microsoft.EntityFrameworkCore.Design` when running `dotnet ef`
 - Fix: `InvalidOperationException: JavaScript interop calls cannot be issued at this time` during Blazor prerendering

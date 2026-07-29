@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/07/fix-couldnt-find-a-valid-icu-package-installed-on-the-system",
+    "text": "Alpine and chiseled ship no ICU, so .NET aborts before Main runs. Fix: icu-libs + icu-data-full, an -extra image, or invariant mode."
   }
 ]

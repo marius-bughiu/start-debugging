@@ -1410,5 +1410,9 @@
   {
     "slug": "2026/07/fix-windows-path-in-mcp-json-turns-into-tab-newline-or-cjk-character",
     "text": "C:\\srv\\tools in a JSON config is C:\\srv plus a TAB. It parses fine and the path is wrong."
+  },
+  {
+    "slug": "2026/07/fix-couldnt-find-a-valid-icu-package-installed-on-the-system",
+    "text": "Missing ICU in a .NET container is a FailFast, not an exception. No try/catch saves you. Three real fixes."
   }
 ]
