@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/fix-the-model-for-context-has-pending-changes-in-ef-core-11",
-    "text": "PendingModelChangesWarning has six causes, and only one is a forgotten migration. Empty new migration? It is a false positive."
   }
 ]
