@@ -1414,5 +1414,9 @@
   {
     "slug": "2026/07/fix-couldnt-find-a-valid-icu-package-installed-on-the-system",
     "text": "Missing ICU in a .NET container is a FailFast, not an exception. No try/catch saves you. Three real fixes."
+  },
+  {
+    "slug": "2026/07/fix-the-model-for-context-has-pending-changes-in-ef-core-11",
+    "text": "EF Core diffs your model against the last migration snapshot, not the database. A fresh DB still throws."
   }
 ]
