@@ -1398,5 +1398,9 @@
   {
     "slug": "2026/07/how-to-use-shell-route-parameters-and-query-properties-in-dotnet-maui-11",
     "text": "MAUI Shell: QueryPropertyAttribute auto URL-decodes, IQueryAttributable does not. Same URI, different string."
+  },
+  {
+    "slug": "2026/07/mcp-csharp-sdk-2-0-stateless-by-default-and-mcp9005",
+    "text": "MCP C# SDK 2.0 flips HttpServerTransportOptions.Stateless to true. Your ElicitAsync calls now warn MCP9005."
   }
 ]
