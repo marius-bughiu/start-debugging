@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/fix-windows-path-in-mcp-json-turns-into-tab-newline-or-cjk-character",
-    "text": "Windows paths in agent configs have a quiet failure mode. C:\\Users throws a parse error you can find. C:\\tools, C:\\bin, C:\\node_modules and C:\\uface do not: they are legal JSON escapes, so the file validates and the path silently loses a character. Includes the case trap and three scans that catch it."
   }
 ]
