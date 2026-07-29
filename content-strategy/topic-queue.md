@@ -185,7 +185,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `CS4014: Because this call is not awaited, execution of the current method continues` in C# → slug: 2026/07/fix-cs4014-because-this-call-is-not-awaited-execution-continues-in-csharp
 - Fix: `InvalidOperationException: Sequence contains no elements` from `.First()` or `.Single()` in LINQ → slug: 2026/07/fix-invalidoperationexception-sequence-contains-no-elements
 - Fix: Riverpod 3.0 `StreamProvider` stops emitting because updates are now filtered by `==` → slug: 2026/07/fix-riverpod-3-0-streamprovider-stops-emitting-filtered-by-equality
-- Fix: `Reflection-based serialization has been disabled for this application` in a trimmed or Native AOT app
+- Fix: `Reflection-based serialization has been disabled for this application` in a trimmed or Native AOT app → slug: 2026/07/fix-reflection-based-serialization-has-been-disabled-for-this-application
 - Fix: `Couldn't find a valid ICU package installed on the system` in a .NET container
 - Fix: `PendingModelChangesWarning: The model for context 'X' has pending changes` in EF Core 11
 - Fix: `Your startup project doesn't reference Microsoft.EntityFrameworkCore.Design` when running `dotnet ef`

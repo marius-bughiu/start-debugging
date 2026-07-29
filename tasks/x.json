@@ -1402,5 +1402,9 @@
   {
     "slug": "2026/07/mcp-csharp-sdk-2-0-stateless-by-default-and-mcp9005",
     "text": "MCP C# SDK 2.0 flips HttpServerTransportOptions.Stateless to true. Your ElicitAsync calls now warn MCP9005."
+  },
+  {
+    "slug": "2026/07/fix-reflection-based-serialization-has-been-disabled-for-this-application",
+    "text": "PublishTrimmed silently disables System.Text.Json reflection. That is why Serialize throws only in Release."
   }
 ]
