@@ -1426,5 +1426,9 @@
   {
     "slug": "2026/07/fix-mcp-json-servers-never-start-because-the-workspace-is-untrusted",
     "text": "Your .mcp.json servers stuck at Pending approval are not broken. The folder is untrusted."
+  },
+  {
+    "slug": "2026/07/fix-startup-project-doesnt-reference-microsoft-entityframeworkcore-design",
+    "text": "That error is not a csproj scan. dotnet ef failed to load Design.dll from your startup project's build output."
   }
 ]
