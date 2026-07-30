@@ -1418,5 +1418,9 @@
   {
     "slug": "2026/07/fix-the-model-for-context-has-pending-changes-in-ef-core-11",
     "text": "EF Core diffs your model against the last migration snapshot, not the database. A fresh DB still throws."
+  },
+  {
+    "slug": "2026/07/visual-studio-18-9-thinking-effort-control-per-model",
+    "text": "Visual Studio 18.9 Insiders 2 gives every model its own thinking effort dial: Low through Max, set in Manage models."
   }
 ]
