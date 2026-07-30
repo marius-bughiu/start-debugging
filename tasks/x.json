@@ -1422,5 +1422,9 @@
   {
     "slug": "2026/07/visual-studio-18-9-thinking-effort-control-per-model",
     "text": "Visual Studio 18.9 Insiders 2 gives every model its own thinking effort dial: Low through Max, set in Manage models."
+  },
+  {
+    "slug": "2026/07/fix-mcp-json-servers-never-start-because-the-workspace-is-untrusted",
+    "text": "Your .mcp.json servers stuck at Pending approval are not broken. The folder is untrusted."
   }
 ]
