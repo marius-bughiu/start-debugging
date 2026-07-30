@@ -1430,5 +1430,9 @@
   {
     "slug": "2026/07/fix-startup-project-doesnt-reference-microsoft-entityframeworkcore-design",
     "text": "That error is not a csproj scan. dotnet ef failed to load Design.dll from your startup project's build output."
+  },
+  {
+    "slug": "2026/07/fix-javascript-interop-calls-cannot-be-issued-at-this-time-blazor-prerendering",
+    "text": "Blazor JS interop throws during prerendering because there is no browser yet. Move the call into OnAfterRenderAsync."
   }
 ]
