@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/visual-studio-18-9-thinking-effort-control-per-model",
-    "text": "Model choice and reasoning depth are two separate dials in VS 18.9. Low to Max per model, and it maps 1:1 to the API effort param."
   }
 ]
