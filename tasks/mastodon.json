@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/fix-javascript-interop-calls-cannot-be-issued-at-this-time-blazor-prerendering",
-    "text": "Two Blazor errors share the same opening words, and one is not about prerendering at all. The usual fix is OnAfterRenderAsync with an if (firstRender) guard plus StateHasChanged. The trap: on a page with no render mode, OnAfterRenderAsync never runs, so your interop silently disappears instead of throwing."
   }
 ]
