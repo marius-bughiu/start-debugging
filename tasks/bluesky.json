@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/fix-long-mcp-tool-call-auto-backgrounded-after-two-minutes",
-    "text": "Claude Code 2.1.212+ backgrounds any main-conversation MCP call past 2 minutes. Four separate timers, only one is the two-minute one."
   }
 ]
