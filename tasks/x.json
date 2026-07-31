@@ -1442,5 +1442,9 @@
   {
     "slug": "2026/07/fix-gradle-task-assembledebug-failed-with-exit-code-1-in-flutter",
     "text": "assembleDebug failed with exit code 1 is not the error. Run ./gradlew assembleDebug --stacktrace to read the real one."
+  },
+  {
+    "slug": "2026/07/fix-long-mcp-tool-call-auto-backgrounded-after-two-minutes",
+    "text": "An MCP call still running at 2 minutes moves to a background task. Turn it off: CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS=0."
   }
 ]

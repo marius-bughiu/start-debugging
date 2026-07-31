@@ -81,7 +81,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: MCP server protocol incompatibility on Node.js versions below 18 → slug: 2026/07/fix-mcp-server-fetch-is-not-defined-on-node-below-18
 - Fix: Windows paths with `\u` segments mangled into CJK characters in an agent config file → slug: 2026/07/fix-windows-path-in-mcp-json-turns-into-tab-newline-or-cjk-character
 - Fix: `.mcp.json` servers never start because the workspace is marked untrusted → slug: 2026/07/fix-mcp-json-servers-never-start-because-the-workspace-is-untrusted
-- Fix: a long MCP tool call gets auto-backgrounded after two minutes mid-task
+- Fix: a long MCP tool call gets auto-backgrounded after two minutes mid-task → slug: 2026/07/fix-long-mcp-tool-call-auto-backgrounded-after-two-minutes
 - Fix: a `Write(src)` permission rule never matches - directory rules need `src/**`
 
 ## Vs / comparison

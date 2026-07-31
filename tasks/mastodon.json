@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/07/fix-long-mcp-tool-call-auto-backgrounded-after-two-minutes",
+    "text": "A long MCP tool call that stops blocking at the two-minute mark was not aborted. Claude Code 2.1.212+ moves it to a background task and delivers the result later as a notification. CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS=0 restores blocking. The gotcha: HTTP and SSE servers also have a 60-second first-byte timer nobody expects."
   }
 ]
