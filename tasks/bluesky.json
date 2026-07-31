@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/copilot-code-review-agent-skills-and-mcp-ga",
-    "text": "Agent skills and MCP in Copilot code review went GA. Skills load from the head branch, and every MCP tool call is read-only."
   }
 ]
