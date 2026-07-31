@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/07/fix-unable-to-load-asset-in-flutter-after-adding-an-image-to-pubspec-yaml",
-    "text": "Flutter says Unable to load asset but the PNG is right there. What is missing is the bundle key. Five ranked causes."
   }
 ]
