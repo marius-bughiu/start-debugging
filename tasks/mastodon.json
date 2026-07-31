@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/07/fix-gradle-task-assembledebug-failed-with-exit-code-1-in-flutter",
-    "text": "Gradle task assembleDebug failed with exit code 1 is a wrapper, not an error. The real failure is above it and almost always truncated. Six ranked causes for 2026, led by the one most people misdiagnose: AGP 9's built-in Kotlin colliding with the legacy kotlin-android plugin."
   }
 ]
