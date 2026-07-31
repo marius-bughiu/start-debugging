@@ -1438,5 +1438,9 @@
   {
     "slug": "2026/07/copilot-code-review-agent-skills-and-mcp-ga",
     "text": "Copilot code review now loads .github/skills from the head branch: test a review rule in the PR that adds it."
+  },
+  {
+    "slug": "2026/07/fix-gradle-task-assembledebug-failed-with-exit-code-1-in-flutter",
+    "text": "assembleDebug failed with exit code 1 is not the error. Run ./gradlew assembleDebug --stacktrace to read the real one."
   }
 ]

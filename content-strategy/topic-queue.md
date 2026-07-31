@@ -190,7 +190,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `PendingModelChangesWarning: The model for context 'X' has pending changes` in EF Core 11 → slug: 2026/07/fix-the-model-for-context-has-pending-changes-in-ef-core-11
 - Fix: `Your startup project doesn't reference Microsoft.EntityFrameworkCore.Design` when running `dotnet ef` → slug: 2026/07/fix-startup-project-doesnt-reference-microsoft-entityframeworkcore-design
 - Fix: `InvalidOperationException: JavaScript interop calls cannot be issued at this time` during Blazor prerendering → slug: 2026/07/fix-javascript-interop-calls-cannot-be-issued-at-this-time-blazor-prerendering
-- Fix: `Gradle task assembleDebug failed with exit code 1` in a Flutter Android build
+- Fix: `Gradle task assembleDebug failed with exit code 1` in a Flutter Android build → slug: 2026/07/fix-gradle-task-assembledebug-failed-with-exit-code-1-in-flutter
 - Fix: `Unable to load asset` in Flutter after adding an image to `pubspec.yaml`
 - Fix: `CocoaPods could not find compatible versions for pod` during a Flutter iOS build
 - Fix: `A RenderFlex overflowed by N pixels on the bottom` when the keyboard opens in Flutter
