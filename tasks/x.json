@@ -1434,5 +1434,9 @@
   {
     "slug": "2026/07/fix-javascript-interop-calls-cannot-be-issued-at-this-time-blazor-prerendering",
     "text": "Blazor JS interop throws during prerendering because there is no browser yet. Move the call into OnAfterRenderAsync."
+  },
+  {
+    "slug": "2026/07/copilot-code-review-agent-skills-and-mcp-ga",
+    "text": "Copilot code review now loads .github/skills from the head branch: test a review rule in the PR that adds it."
   }
 ]
