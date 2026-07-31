@@ -1446,5 +1446,9 @@
   {
     "slug": "2026/07/fix-long-mcp-tool-call-auto-backgrounded-after-two-minutes",
     "text": "An MCP call still running at 2 minutes moves to a background task. Turn it off: CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS=0."
+  },
+  {
+    "slug": "2026/07/fix-unable-to-load-asset-in-flutter-after-adding-an-image-to-pubspec-yaml",
+    "text": "Unable to load asset? The key is missing from the compiled bundle, not your disk. Print listAssets() and compare."
   }
 ]
