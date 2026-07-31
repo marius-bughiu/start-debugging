@@ -1450,5 +1450,9 @@
   {
     "slug": "2026/07/fix-unable-to-load-asset-in-flutter-after-adding-an-image-to-pubspec-yaml",
     "text": "Unable to load asset? The key is missing from the compiled bundle, not your disk. Print listAssets() and compare."
+  },
+  {
+    "slug": "2026/07/fix-cocoapods-could-not-find-compatible-versions-for-pod-in-a-flutter-ios-build",
+    "text": "CocoaPods could not find compatible versions for pod? The fix is in line two, not line one. Four causes, ranked."
   }
 ]
