@@ -110,6 +110,15 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to apply EF Core 11 migrations in production with `dotnet ef migrations bundle` → slug: 2026/07/how-to-apply-ef-core-11-migrations-in-production-with-migrations-bundle
 - How to build a Flutter web app with WebAssembly using `flutter build web --wasm` → slug: 2026/07/how-to-build-a-flutter-web-app-with-webassembly-using-flutter-build-web-wasm
 - How to use `Shell` route parameters and query properties for navigation in .NET MAUI 11 → slug: 2026/07/how-to-use-shell-route-parameters-and-query-properties-in-dotnet-maui-11
+- How to show a folder picker dialog in WPF with `OpenFolderDialog` on .NET 11
+- How to configure Kestrel to serve HTTP/3 in ASP.NET Core 11
+- How to run CPU-bound work in a Blazor WebAssembly app with Web Workers in .NET 11
+- How to replace `new Regex(...)` with the `[GeneratedRegex]` source generator in .NET
+- How to validate options at startup with `IValidateOptions<T>` in .NET 11
+- How to store an enum as a string in EF Core 11 with a value converter
+- How to implement optimistic concurrency with a `rowversion` token in EF Core 11
+- How to build an infinite-scrolling paginated list in Flutter with `ScrollController`
+- How to enable multi-window support in a Flutter desktop app
 
 ## Fix / error
 
@@ -194,6 +203,12 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Unable to load asset` in Flutter after adding an image to `pubspec.yaml` → slug: 2026/07/fix-unable-to-load-asset-in-flutter-after-adding-an-image-to-pubspec-yaml
 - Fix: `CocoaPods could not find compatible versions for pod` during a Flutter iOS build → slug: 2026/07/fix-cocoapods-could-not-find-compatible-versions-for-pod-in-a-flutter-ios-build
 - Fix: `A RenderFlex overflowed by N pixels on the bottom` when the keyboard opens in Flutter → slug: 2026/08/fix-renderflex-overflowed-on-the-bottom-when-the-keyboard-opens-in-flutter
+- Fix: `No Material widget found` in Flutter
+- Fix: `HTTP Error 500.30 - ASP.NET Core app failed to start` after deploying to IIS
+- Fix: `CS1998: This async method lacks 'await' operators and will run synchronously` in C#
+- Fix: `AggregateException: One or more errors occurred` when awaiting `Task.WhenAll` in C#
+- Fix: `Attempting to reconnect to the server` after a Blazor Server circuit disconnects
+- Fix: `flutter doctor` reports `cmdline-tools component is missing`
 
 ## Vs / comparison
 
@@ -245,6 +260,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - xUnit v3 vs NUnit vs MSTest in 2026
 - `WebApplicationFactory` vs Testcontainers for ASP.NET Core integration tests
 - .NET Aspire vs Docker Compose for local multi-service development
+- Zstandard vs Brotli vs Gzip response compression in .NET 11
+- `record` vs `record struct` vs `readonly struct` in C#
 
 ## Migration / upgrade
 
@@ -278,6 +295,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate from VSTest to Microsoft.Testing.Platform in .NET 11
 - Migrate off `BinaryFormatter` after its removal in modern .NET
 - Migrate a Flutter web app from `dart:html` to `package:web` and `dart:js_interop`
+- Migrate a .NET MAUI Android app from Mono to CoreCLR in .NET 11
+- Migrate Flutter `material` and `cupertino` imports to the standalone packages in Flutter 3.44
 
 ## What is / concept
 
