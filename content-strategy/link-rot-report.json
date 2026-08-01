@@ -45,20 +45,6 @@
     ]
   },
   {
-    "url": "https://api.flutter.dev/flutter/services/BackgroundIsolateBinaryMessenger-class.html",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/how-to-add-platform-specific-code-in-flutter-without-plugins.md",
-      "site/src/content/blog/de/2026/05/how-to-add-platform-specific-code-in-flutter-without-plugins.md",
-      "site/src/content/blog/es/2026/05/how-to-add-platform-specific-code-in-flutter-without-plugins.md",
-      "site/src/content/blog/ja/2026/05/how-to-add-platform-specific-code-in-flutter-without-plugins.md",
-      "site/src/content/blog/pt-br/2026/05/how-to-add-platform-specific-code-in-flutter-without-plugins.md",
-      "site/src/content/blog/ru/2026/05/how-to-add-platform-specific-code-in-flutter-without-plugins.md"
-    ]
-  },
-  {
     "url": "https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.html",
     "status": 404,
     "ok": false,
@@ -72,19 +58,21 @@
     ]
   },
   {
-    "url": "https://claude.ai/mcp",
-    "status": 403,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/05/how-to-add-retrieval-augmented-generation-to-a-claude-code-session.md"
-    ]
-  },
-  {
     "url": "https://code.claude.com/docs/en/release-notes",
     "status": 404,
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/07/fix-claude-code-high-memory-usage-and-context-overflow.md"
+    ]
+  },
+  {
+    "url": "https://code.visualstudio.com/docs/copilot/customization/prompt-files",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/07/migrate-copilot-prompt-files-to-agent-skills.md",
+      "site/src/content/blog/2026/07/migrate-copilot-prompt-files-to-agent-skills.md"
     ]
   },
   {
@@ -98,6 +86,20 @@
       "site/src/content/blog/ja/2026/06/fix-null-check-operator-used-on-a-null-value-in-flutter.md",
       "site/src/content/blog/pt-br/2026/06/fix-null-check-operator-used-on-a-null-value-in-flutter.md",
       "site/src/content/blog/ru/2026/06/fix-null-check-operator-used-on-a-null-value-in-flutter.md"
+    ]
+  },
+  {
+    "url": "https://devblogs.microsoft.com/aspire/aspire-isolated-mode-parallel-development/",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md",
+      "site/src/content/blog/de/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md",
+      "site/src/content/blog/es/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md",
+      "site/src/content/blog/ja/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md",
+      "site/src/content/blog/pt-br/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md",
+      "site/src/content/blog/ru/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md"
     ]
   },
   {
@@ -120,17 +122,82 @@
     ]
   },
   {
-    "url": "https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/",
+    "url": "https://devblogs.microsoft.com/dotnet/dotnet-10-0-7-oob-security-update/",
     "status": null,
     "ok": false,
     "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
-      "site/src/content/blog/de/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
-      "site/src/content/blog/es/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
-      "site/src/content/blog/ja/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
-      "site/src/content/blog/pt-br/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
-      "site/src/content/blog/ru/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md"
+      "site/src/content/blog/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
+      "site/src/content/blog/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
+      "site/src/content/blog/de/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
+      "site/src/content/blog/de/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
+      "site/src/content/blog/es/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
+      "site/src/content/blog/es/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
+      "site/src/content/blog/ja/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
+      "site/src/content/blog/ja/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
+      "site/src/content/blog/pt-br/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
+      "site/src/content/blog/pt-br/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
+      "site/src/content/blog/ru/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
+      "site/src/content/blog/ru/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md"
+    ]
+  },
+  {
+    "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-preview-5/",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/06/blazor-static-ssr-client-side-validation-dotnet-11-preview-5.md",
+      "site/src/content/blog/2026/06/blazor-supplyparameterfromsession-static-ssr-dotnet-11-preview-5.md",
+      "site/src/content/blog/2026/06/csharp-15-closed-class-hierarchies-dotnet-11-preview-5.md",
+      "site/src/content/blog/2026/06/dotnet-11-preview-5-file-based-apps-ref-directive.md",
+      "site/src/content/blog/2026/06/dotnet-11-x25519-key-agreement-preview-5.md",
+      "site/src/content/blog/2026/06/ef-core-11-ef1004-analyzer-toasyncenumerable-vs-asasyncenumerable.md",
+      "site/src/content/blog/2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/06/blazor-static-ssr-client-side-validation-dotnet-11-preview-5.md",
+      "site/src/content/blog/de/2026/06/blazor-supplyparameterfromsession-static-ssr-dotnet-11-preview-5.md",
+      "site/src/content/blog/de/2026/06/csharp-15-closed-class-hierarchies-dotnet-11-preview-5.md",
+      "site/src/content/blog/de/2026/06/dotnet-11-preview-5-file-based-apps-ref-directive.md",
+      "site/src/content/blog/de/2026/06/dotnet-11-x25519-key-agreement-preview-5.md",
+      "site/src/content/blog/de/2026/06/ef-core-11-ef1004-analyzer-toasyncenumerable-vs-asasyncenumerable.md",
+      "site/src/content/blog/de/2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/06/blazor-static-ssr-client-side-validation-dotnet-11-preview-5.md",
+      "site/src/content/blog/es/2026/06/blazor-supplyparameterfromsession-static-ssr-dotnet-11-preview-5.md",
+      "site/src/content/blog/es/2026/06/csharp-15-closed-class-hierarchies-dotnet-11-preview-5.md",
+      "site/src/content/blog/es/2026/06/dotnet-11-preview-5-file-based-apps-ref-directive.md",
+      "site/src/content/blog/es/2026/06/dotnet-11-x25519-key-agreement-preview-5.md",
+      "site/src/content/blog/es/2026/06/ef-core-11-ef1004-analyzer-toasyncenumerable-vs-asasyncenumerable.md",
+      "site/src/content/blog/es/2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/06/blazor-static-ssr-client-side-validation-dotnet-11-preview-5.md",
+      "site/src/content/blog/ja/2026/06/blazor-supplyparameterfromsession-static-ssr-dotnet-11-preview-5.md",
+      "site/src/content/blog/ja/2026/06/csharp-15-closed-class-hierarchies-dotnet-11-preview-5.md",
+      "site/src/content/blog/ja/2026/06/dotnet-11-preview-5-file-based-apps-ref-directive.md",
+      "site/src/content/blog/ja/2026/06/dotnet-11-x25519-key-agreement-preview-5.md",
+      "site/src/content/blog/ja/2026/06/ef-core-11-ef1004-analyzer-toasyncenumerable-vs-asasyncenumerable.md",
+      "site/src/content/blog/ja/2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11.md",
+      "site/src/content/blog/pt-br/2026/06/blazor-static-ssr-client-side-validation-dotnet-11-preview-5.md",
+      "site/src/content/blog/pt-br/2026/06/blazor-supplyparameterfromsession-static-ssr-dotnet-11-preview-5.md",
+      "site/src/content/blog/pt-br/2026/06/csharp-15-closed-class-hierarchies-dotnet-11-preview-5.md",
+      "site/src/content/blog/pt-br/2026/06/dotnet-11-preview-5-file-based-apps-ref-directive.md",
+      "site/src/content/blog/pt-br/2026/06/dotnet-11-x25519-key-agreement-preview-5.md",
+      "site/src/content/blog/pt-br/2026/06/ef-core-11-ef1004-analyzer-toasyncenumerable-vs-asasyncenumerable.md",
+      "site/src/content/blog/pt-br/2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/06/blazor-static-ssr-client-side-validation-dotnet-11-preview-5.md",
+      "site/src/content/blog/ru/2026/06/blazor-supplyparameterfromsession-static-ssr-dotnet-11-preview-5.md",
+      "site/src/content/blog/ru/2026/06/csharp-15-closed-class-hierarchies-dotnet-11-preview-5.md",
+      "site/src/content/blog/ru/2026/06/dotnet-11-preview-5-file-based-apps-ref-directive.md",
+      "site/src/content/blog/ru/2026/06/dotnet-11-x25519-key-agreement-preview-5.md",
+      "site/src/content/blog/ru/2026/06/ef-core-11-ef1004-analyzer-toasyncenumerable-vs-asasyncenumerable.md",
+      "site/src/content/blog/ru/2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11.md"
+    ]
+  },
+  {
+    "url": "https://devblogs.microsoft.com/semantic-kernel/using-semantic-kernel-with-dependency-injection/",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-run-a-semantic-kernel-plugin-from-a-backgroundservice.md"
     ]
   },
   {
@@ -144,6 +211,20 @@
       "site/src/content/blog/ja/2026/05/maui-vs-avalonia-vs-uno-in-2026.md",
       "site/src/content/blog/pt-br/2026/05/maui-vs-avalonia-vs-uno-in-2026.md",
       "site/src/content/blog/ru/2026/05/maui-vs-avalonia-vs-uno-in-2026.md"
+    ]
+  },
+  {
+    "url": "https://docs.flutter.dev/deployment/web",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/07/how-to-build-a-flutter-web-app-with-webassembly-using-flutter-build-web-wasm.md",
+      "site/src/content/blog/de/2026/07/how-to-build-a-flutter-web-app-with-webassembly-using-flutter-build-web-wasm.md",
+      "site/src/content/blog/es/2026/07/how-to-build-a-flutter-web-app-with-webassembly-using-flutter-build-web-wasm.md",
+      "site/src/content/blog/ja/2026/07/how-to-build-a-flutter-web-app-with-webassembly-using-flutter-build-web-wasm.md",
+      "site/src/content/blog/pt-br/2026/07/how-to-build-a-flutter-web-app-with-webassembly-using-flutter-build-web-wasm.md",
+      "site/src/content/blog/ru/2026/07/how-to-build-a-flutter-web-app-with-webassembly-using-flutter-build-web-wasm.md"
     ]
   },
   {
@@ -170,6 +251,62 @@
       "site/src/content/blog/ja/2026/04/how-to-use-searchvalues-correctly-in-dotnet-11.md",
       "site/src/content/blog/pt-br/2026/04/how-to-use-searchvalues-correctly-in-dotnet-11.md",
       "site/src/content/blog/ru/2026/04/how-to-use-searchvalues-correctly-in-dotnet-11.md"
+    ]
+  },
+  {
+    "url": "https://github.com/a2aproject/a2a-dotnet",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/07/package-domain-expertise-as-an-agent-skill-microsoft-agent-framework.md"
+    ]
+  },
+  {
+    "url": "https://github.com/DapperLib/Dapper",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/05/ef-core-11-vs-dapper-for-bulk-inserts-real-benchmark.md",
+      "site/src/content/blog/2026/05/ef-core-compiled-queries-vs-raw-sql-vs-dapper.md",
+      "site/src/content/blog/de/2026/05/ef-core-11-vs-dapper-for-bulk-inserts-real-benchmark.md",
+      "site/src/content/blog/de/2026/05/ef-core-compiled-queries-vs-raw-sql-vs-dapper.md",
+      "site/src/content/blog/es/2026/05/ef-core-11-vs-dapper-for-bulk-inserts-real-benchmark.md",
+      "site/src/content/blog/es/2026/05/ef-core-compiled-queries-vs-raw-sql-vs-dapper.md",
+      "site/src/content/blog/ja/2026/05/ef-core-11-vs-dapper-for-bulk-inserts-real-benchmark.md",
+      "site/src/content/blog/ja/2026/05/ef-core-compiled-queries-vs-raw-sql-vs-dapper.md",
+      "site/src/content/blog/pt-br/2026/05/ef-core-11-vs-dapper-for-bulk-inserts-real-benchmark.md",
+      "site/src/content/blog/pt-br/2026/05/ef-core-compiled-queries-vs-raw-sql-vs-dapper.md",
+      "site/src/content/blog/ru/2026/05/ef-core-11-vs-dapper-for-bulk-inserts-real-benchmark.md",
+      "site/src/content/blog/ru/2026/05/ef-core-compiled-queries-vs-raw-sql-vs-dapper.md"
+    ]
+  },
+  {
+    "url": "https://github.com/dotnet/aspnetcore/discussions/51020",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11.md"
+    ]
+  },
+  {
+    "url": "https://github.com/dotnet/efcore/blob/main/src/EFCore/Extensions/EntityFrameworkServiceCollectionExtensions.cs",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/06/fix-no-service-for-type-dbcontextoptions-has-been-registered.md",
+      "site/src/content/blog/de/2026/06/fix-no-service-for-type-dbcontextoptions-has-been-registered.md",
+      "site/src/content/blog/es/2026/06/fix-no-service-for-type-dbcontextoptions-has-been-registered.md",
+      "site/src/content/blog/ja/2026/06/fix-no-service-for-type-dbcontextoptions-has-been-registered.md",
+      "site/src/content/blog/pt-br/2026/06/fix-no-service-for-type-dbcontextoptions-has-been-registered.md",
+      "site/src/content/blog/ru/2026/06/fix-no-service-for-type-dbcontextoptions-has-been-registered.md"
     ]
   },
   {
@@ -212,15 +349,6 @@
     ]
   },
   {
-    "url": "https://github.com/jlowin/fastmcp/issues/932",
-    "status": 404,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument.md",
-      "site/src/content/blog/2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument.md"
-    ]
-  },
-  {
     "url": "https://github.com/mihnea-radulescu/cvshortlist",
     "status": 404,
     "ok": false,
@@ -231,6 +359,42 @@
       "site/src/content/blog/ja/2026/01/cv-shortlist-an-ai-powered-net-10-saas-went-open-source-and-the-stack-is-worth-studying.md",
       "site/src/content/blog/pt-br/2026/01/cv-shortlist-an-ai-powered-net-10-saas-went-open-source-and-the-stack-is-worth-studying.md",
       "site/src/content/blog/ru/2026/01/cv-shortlist-an-ai-powered-net-10-saas-went-open-source-and-the-stack-is-worth-studying.md"
+    ]
+  },
+  {
+    "url": "https://github.com/modelcontextprotocol/servers/issues/556",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/07/fix-mcp-server-fetch-is-not-defined-on-node-below-18.md",
+      "site/src/content/blog/2026/07/fix-mcp-server-fetch-is-not-defined-on-node-below-18.md"
+    ]
+  },
+  {
+    "url": "https://github.com/modelcontextprotocol/typescript-sdk",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-build-an-mcp-server-in-typescript-that-wraps-a-cli.md",
+      "site/src/content/blog/2026/07/fix-mcp-server-fetch-is-not-defined-on-node-below-18.md",
+      "site/src/content/blog/2026/07/mcp-stdio-vs-http-vs-sse-transport-which-to-choose.md",
+      "site/src/content/blog/2026/07/migrate-a-custom-tool-calling-loop-to-an-mcp-server.md",
+      "site/src/content/blog/de/2026/04/how-to-build-an-mcp-server-in-typescript-that-wraps-a-cli.md",
+      "site/src/content/blog/es/2026/04/how-to-build-an-mcp-server-in-typescript-that-wraps-a-cli.md",
+      "site/src/content/blog/ja/2026/04/how-to-build-an-mcp-server-in-typescript-that-wraps-a-cli.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-build-an-mcp-server-in-typescript-that-wraps-a-cli.md",
+      "site/src/content/blog/ru/2026/04/how-to-build-an-mcp-server-in-typescript-that-wraps-a-cli.md"
+    ]
+  },
+  {
+    "url": "https://github.com/openai/openai-dotnet",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/07/migrate-from-openai-sdk-to-microsoft-extensions-ai.md"
     ]
   },
   {
@@ -472,14 +636,6 @@
     ]
   },
   {
-    "url": "https://medium.com/@adnanmasood/rubric-based-evals-llm-as-a-judge-methodologies-and-empirical-validation-in-domain-context-71936b989e80",
-    "status": 403,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/05/how-to-set-up-an-llm-as-judge-eval-harness-for-a-coding-agent.md"
-    ]
-  },
-  {
     "url": "https://medium.com/write-a-catalyst/partial-events-constructors-in-net-10-preview-2-8002f0d714b2#:~:text=1",
     "status": 403,
     "ok": false,
@@ -527,19 +683,6 @@
       "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md",
       "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md",
       "site/src/content/blog/2026/06/fix-mcp-error-32000-connection-closed-in-claude-code.md"
-    ]
-  },
-  {
-    "url": "https://news.ycombinator.com/item?id=47720060",
-    "status": 429,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/de/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/es/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/ja/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/pt-br/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/ru/2026/04/building-a-microsecond-database-engine-in-csharp.md"
     ]
   },
   {
@@ -654,26 +797,6 @@
       "site/src/content/blog/ja/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11.md",
       "site/src/content/blog/pt-br/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11.md",
       "site/src/content/blog/ru/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11.md"
-    ]
-  },
-  {
-    "url": "https://www.milanjovanovic.tech/blog/named-query-filters-in-ef-10-multiple-query-filters-per-entity/",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11.md",
-      "site/src/content/blog/2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11.md",
-      "site/src/content/blog/de/2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11.md",
-      "site/src/content/blog/de/2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11.md",
-      "site/src/content/blog/es/2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11.md",
-      "site/src/content/blog/es/2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11.md",
-      "site/src/content/blog/ja/2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11.md",
-      "site/src/content/blog/ja/2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11.md",
-      "site/src/content/blog/pt-br/2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11.md",
-      "site/src/content/blog/pt-br/2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11.md",
-      "site/src/content/blog/ru/2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11.md",
-      "site/src/content/blog/ru/2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11.md"
     ]
   },
   {
@@ -817,27 +940,24 @@
   },
   {
     "url": "https://www.nuget.org/packages/M.Super.Activities",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/build-a-uipath-activity-package-for-modern-studio-with-viewmodels.md"
     ]
   },
   {
     "url": "https://www.nuget.org/packages/M.Super.AppInsights.Activities",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/add-project-settings-to-a-uipath-package-design-time-and-runtime.md"
     ]
   },
   {
     "url": "https://www.nuget.org/packages/M.Super.Extensions",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/run-code-before-and-after-every-uipath-activity-with-a-tracking-participant.md",
       "site/src/content/blog/2026/05/write-a-uipath-workflow-analyzer-rule-with-entry-point-detection.md"
@@ -868,9 +988,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11.md",
       "site/src/content/blog/2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11.md",
@@ -1008,9 +1127,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.SemanticKernel",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/migrate-a-semantic-kernel-plugin-to-an-mcp-server.md"
     ]
@@ -1034,8 +1152,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.TestPlatform/1.0.0-alpha-stj-26213-07",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4.md",
       "site/src/content/blog/de/2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4.md",
@@ -1215,9 +1334,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Testcontainers.MsSql",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
       "site/src/content/blog/de/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers.md",
@@ -1238,66 +1356,6 @@
       "site/src/content/blog/ja/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
       "site/src/content/blog/pt-br/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
       "site/src/content/blog/ru/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md"
-    ]
-  },
-  {
-    "url": "https://www.rfc-editor.org/rfc/rfc6585#section-4",
-    "status": 404,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11.md",
-      "site/src/content/blog/de/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11.md",
-      "site/src/content/blog/es/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11.md",
-      "site/src/content/blog/ja/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11.md",
-      "site/src/content/blog/pt-br/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11.md",
-      "site/src/content/blog/ru/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11.md"
-    ]
-  },
-  {
-    "url": "https://www.rfc-editor.org/rfc/rfc8259",
-    "status": 404,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/07/fix-all-mcp-servers-fail-to-load-after-malformed-json-in-config.md"
-    ]
-  },
-  {
-    "url": "https://www.rfc-editor.org/rfc/rfc9111",
-    "status": 404,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
-      "site/src/content/blog/de/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
-      "site/src/content/blog/es/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
-      "site/src/content/blog/ja/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
-      "site/src/content/blog/pt-br/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
-      "site/src/content/blog/ru/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md"
-    ]
-  },
-  {
-    "url": "https://www.rfc-editor.org/rfc/rfc9114#name-settings",
-    "status": 404,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
-      "site/src/content/blog/de/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
-      "site/src/content/blog/es/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
-      "site/src/content/blog/ja/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
-      "site/src/content/blog/pt-br/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md",
-      "site/src/content/blog/ru/2026/04/aspnetcore-11-kestrel-http3-early-request-processing.md"
-    ]
-  },
-  {
-    "url": "https://www.udemy.com/topic/c-sharp/",
-    "status": 403,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/de/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/es/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/ja/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/pt-br/2023/06/how-to-start-programming-with-c.md",
-      "site/src/content/blog/ru/2023/06/how-to-start-programming-with-c.md"
     ]
   }
 ]
