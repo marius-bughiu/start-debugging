@@ -193,7 +193,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Gradle task assembleDebug failed with exit code 1` in a Flutter Android build → slug: 2026/07/fix-gradle-task-assembledebug-failed-with-exit-code-1-in-flutter
 - Fix: `Unable to load asset` in Flutter after adding an image to `pubspec.yaml` → slug: 2026/07/fix-unable-to-load-asset-in-flutter-after-adding-an-image-to-pubspec-yaml
 - Fix: `CocoaPods could not find compatible versions for pod` during a Flutter iOS build → slug: 2026/07/fix-cocoapods-could-not-find-compatible-versions-for-pod-in-a-flutter-ios-build
-- Fix: `A RenderFlex overflowed by N pixels on the bottom` when the keyboard opens in Flutter
+- Fix: `A RenderFlex overflowed by N pixels on the bottom` when the keyboard opens in Flutter → slug: 2026/08/fix-renderflex-overflowed-on-the-bottom-when-the-keyboard-opens-in-flutter
 
 ## Vs / comparison
 
