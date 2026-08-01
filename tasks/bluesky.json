@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/ioptions-vs-ioptionssnapshot-vs-ioptionsmonitor-in-dotnet-11",
-    "text": "Default to IOptions<T>. IOptionsMonitor<T> only when a singleton must see reloads. IOptionsSnapshot<T> costs a rebind per request."
   }
 ]
