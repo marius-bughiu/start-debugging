@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/dotnet-skills-polyglot-unit-test-agent-assertion-gate",
+    "text": "The dotnet-test plugin ships an agent that audits its own generated tests: pseudo-mutation, assertion depth, scenario mapping."
   }
 ]
