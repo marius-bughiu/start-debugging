@@ -240,7 +240,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `WebApplication.CreateBuilder` vs `CreateSlimBuilder` vs `CreateEmptyBuilder` in ASP.NET Core 11 → slug: 2026/07/webapplication-createbuilder-vs-createslimbuilder-vs-createemptybuilder-in-aspnetcore-11
 - Endpoint filters vs middleware in ASP.NET Core 11 → slug: 2026/07/endpoint-filters-vs-middleware-in-aspnetcore-11
 - `.Result`/`.Wait()` vs `GetAwaiter().GetResult()` vs `await` in C# → slug: 2026/07/result-wait-vs-getawaiter-getresult-vs-await-in-csharp
-- `IOptions<T>` vs `IOptionsSnapshot<T>` vs `IOptionsMonitor<T>` in .NET 11
+- `IOptions<T>` vs `IOptionsSnapshot<T>` vs `IOptionsMonitor<T>` in .NET 11 → slug: 2026/08/ioptions-vs-ioptionssnapshot-vs-ioptionsmonitor-in-dotnet-11
 - gRPC vs REST vs SignalR for service-to-service calls in .NET 11
 - xUnit v3 vs NUnit vs MSTest in 2026
 - `WebApplicationFactory` vs Testcontainers for ASP.NET Core integration tests

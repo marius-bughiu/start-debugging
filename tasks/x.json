@@ -1462,5 +1462,9 @@
   {
     "slug": "2026/08/fix-renderflex-overflowed-on-the-bottom-when-the-keyboard-opens-in-flutter",
     "text": "The keyboard does not cover your Flutter layout, it shrinks it. Scaffold subtracts viewInsets.bottom from the body."
+  },
+  {
+    "slug": "2026/08/ioptions-vs-ioptionssnapshot-vs-ioptionsmonitor-in-dotnet-11",
+    "text": "IOptionsSnapshot<T> rebinds and revalidates on every request. IOptions<T> binds once. When each is right:"
   }
 ]

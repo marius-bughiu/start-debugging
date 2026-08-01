@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/08/ioptions-vs-ioptionssnapshot-vs-ioptionsmonitor-in-dotnet-11",
+    "text": "The three options accessors differ in exactly one thing: how hard they cache. IOptions<T> binds once per process, IOptionsSnapshot<T> once per scope, IOptionsMonitor<T> once per change. Two gotchas that decide it for you: OnChange fires for config sections you never touched, and it fires more than once per file save."
   }
 ]
