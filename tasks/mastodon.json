@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/08/how-to-run-cpu-bound-work-in-a-blazor-webassembly-app-with-web-workers-in-dotnet-11",
+    "text": "Blazor WebAssembly runs on one browser thread, so Task.Run moves CPU-bound work nowhere, and WasmEnableThreads is still unsupported. The .NET 11 blazorwebworker template is the real answer, plus the part nobody mentions: every worker boots a second full .NET runtime, so create the client once or you made things slower."
   }
 ]

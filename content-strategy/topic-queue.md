@@ -112,7 +112,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to use `Shell` route parameters and query properties for navigation in .NET MAUI 11 → slug: 2026/07/how-to-use-shell-route-parameters-and-query-properties-in-dotnet-maui-11
 - How to show a folder picker dialog in WPF with `OpenFolderDialog` on .NET 11 → slug: 2023/10/wpf-open-folder-dialog (same intent as existing post)
 - How to configure Kestrel to serve HTTP/3 in ASP.NET Core 11 → slug: 2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11
-- How to run CPU-bound work in a Blazor WebAssembly app with Web Workers in .NET 11
+- How to run CPU-bound work in a Blazor WebAssembly app with Web Workers in .NET 11 → slug: 2026/08/how-to-run-cpu-bound-work-in-a-blazor-webassembly-app-with-web-workers-in-dotnet-11
 - How to replace `new Regex(...)` with the `[GeneratedRegex]` source generator in .NET
 - How to validate options at startup with `IValidateOptions<T>` in .NET 11
 - How to store an enum as a string in EF Core 11 with a value converter

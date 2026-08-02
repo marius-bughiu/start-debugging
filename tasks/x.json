@@ -1474,5 +1474,9 @@
   {
     "slug": "2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11",
     "text": "Kestrel serves HTTP/3 with one enum value. Everything after that is MsQuic, UDP ports, and alt-svc discovery."
+  },
+  {
+    "slug": "2026/08/how-to-run-cpu-bound-work-in-a-blazor-webassembly-app-with-web-workers-in-dotnet-11",
+    "text": "Task.Run cannot unfreeze a Blazor WASM UI. There is no second thread. dotnet new blazorwebworker is the actual fix."
   }
 ]
