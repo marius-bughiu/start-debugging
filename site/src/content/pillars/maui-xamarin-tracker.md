@@ -3,7 +3,7 @@ title: "The MAUI & Xamarin tracker"
 description: ".NET MAUI and Xamarin in one place: the MAUI 11 release cycle, CoreCLR-on-mobile, gesture and map work, the Xamarin.Forms migration story, and the long tail of build errors."
 tagline: "One bookmark for .NET MAUI and the Xamarin posts that still pay rent."
 pubDate: 2026-05-17
-updatedDate: 2026-07-26
+updatedDate: 2026-08-02
 indexTags:
   - "maui"
   - "dotnet-maui"
