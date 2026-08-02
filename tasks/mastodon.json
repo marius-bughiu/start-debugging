@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11",
+    "text": "Enabling HTTP/3 in ASP.NET Core 11 is one enum value on an HTTPS endpoint. The hard part: Kestrel never throws when it cannot. No MsQuic on the host, UDP blocked on the port, a proxy terminating QUIC, and it just keeps serving HTTP/2. Also why your first request is always HTTP/2, and why a browser is the wrong way to test."
   }
 ]

@@ -1470,5 +1470,9 @@
   {
     "slug": "2026/08/visual-studio-18-8-built-in-dotnet-agent-skills-off-by-default",
     "text": "Visual Studio 18.8 ships .NET agent skills built in, all off by default. The default is the right call."
+  },
+  {
+    "slug": "2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11",
+    "text": "Kestrel serves HTTP/3 with one enum value. Everything after that is MsQuic, UDP ports, and alt-svc discovery."
   }
 ]

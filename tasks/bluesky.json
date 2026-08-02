@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11",
+    "text": "HTTP/3 on Kestrel is one line: Http1AndHttp2AndHttp3. It then silently falls back if MsQuic is missing. The full checklist."
   }
 ]
