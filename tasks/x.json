@@ -1478,5 +1478,9 @@
   {
     "slug": "2026/08/how-to-run-cpu-bound-work-in-a-blazor-webassembly-app-with-web-workers-in-dotnet-11",
     "text": "Task.Run cannot unfreeze a Blazor WASM UI. There is no second thread. dotnet new blazorwebworker is the actual fix."
+  },
+  {
+    "slug": "2026/08/how-to-replace-new-regex-with-the-generatedregex-source-generator-in-dotnet-11",
+    "text": "Measured: [GeneratedRegex] runs at 35 ns vs 37 ns for RegexOptions.Compiled, and starts up twice as fast."
   }
 ]

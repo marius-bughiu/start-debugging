@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/how-to-replace-new-regex-with-the-generatedregex-source-generator-in-dotnet-11",
+    "text": "Two constructs make the [GeneratedRegex] source generator silently fall back to a plain cached Regex. Here is how to spot both."
   }
 ]
