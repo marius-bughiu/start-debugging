@@ -1466,5 +1466,9 @@
   {
     "slug": "2026/08/ioptions-vs-ioptionssnapshot-vs-ioptionsmonitor-in-dotnet-11",
     "text": "IOptionsSnapshot<T> rebinds and revalidates on every request. IOptions<T> binds once. When each is right:"
+  },
+  {
+    "slug": "2026/08/visual-studio-18-8-built-in-dotnet-agent-skills-off-by-default",
+    "text": "Visual Studio 18.8 ships .NET agent skills built in, all off by default. The default is the right call."
   }
 ]
