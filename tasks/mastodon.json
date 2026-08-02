@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/08/visual-studio-18-8-built-in-dotnet-agent-skills-off-by-default",
-    "text": "Visual Studio 2026 18.8 puts expert-authored .NET and Azure agent skills in the tool picker, every one of them off by default. That is a context-budget call, not timidity: each enabled skill competes with your actual code for the same window. The same plugins live in dotnet/skills for Copilot CLI and Claude Code."
   }
 ]
