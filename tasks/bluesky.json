@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/how-to-implement-optimistic-concurrency-with-a-rowversion-token-in-ef-core-11",
-    "text": "EF Core 11 optimistic concurrency: the [Timestamp] setup, the SQL it emits, and five ways to silently disable the token."
   }
 ]
