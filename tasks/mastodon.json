@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/08/how-to-implement-optimistic-concurrency-with-a-rowversion-token-in-ef-core-11",
+    "text": "Optimistic concurrency in EF Core 11 is a byte[] marked [Timestamp] plus a catch block. The hard part is the five ways to turn it off without an error: forgetting to carry the original token, ExecuteUpdate bypassing the check, and SQLite quietly degrading the WHERE clause to RowVersion IS NULL, which matches every time."
   }
 ]
