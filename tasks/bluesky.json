@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/fix-write-rule-is-not-matched-by-file-permission-checks",
+    "text": "A deny rule of Write(protected/**) in Claude Code has never blocked anything. Only Edit() path rules are consulted."
   }
 ]

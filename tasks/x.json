@@ -1490,5 +1490,9 @@
   {
     "slug": "2026/08/how-to-validate-options-at-startup-with-ivalidateoptions-in-dotnet-11",
     "text": "Bad appsettings.json should kill the process at boot, not 500 a customer. IValidateOptions plus ValidateOnStart."
+  },
+  {
+    "slug": "2026/08/fix-write-rule-is-not-matched-by-file-permission-checks",
+    "text": "Your Claude Code Write(src/**) rule does nothing. Only Edit() and Read() path rules are ever checked."
   }
 ]
