@@ -115,7 +115,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to run CPU-bound work in a Blazor WebAssembly app with Web Workers in .NET 11 → slug: 2026/08/how-to-run-cpu-bound-work-in-a-blazor-webassembly-app-with-web-workers-in-dotnet-11
 - How to replace `new Regex(...)` with the `[GeneratedRegex]` source generator in .NET → slug: 2026/08/how-to-replace-new-regex-with-the-generatedregex-source-generator-in-dotnet-11
 - How to validate options at startup with `IValidateOptions<T>` in .NET 11 → slug: 2026/08/how-to-validate-options-at-startup-with-ivalidateoptions-in-dotnet-11
-- How to store an enum as a string in EF Core 11 with a value converter
+- How to store an enum as a string in EF Core 11 with a value converter → slug: 2026/08/how-to-store-an-enum-as-a-string-in-ef-core-11-with-a-value-converter
 - How to implement optimistic concurrency with a `rowversion` token in EF Core 11
 - How to build an infinite-scrolling paginated list in Flutter with `ScrollController`
 - How to enable multi-window support in a Flutter desktop app
