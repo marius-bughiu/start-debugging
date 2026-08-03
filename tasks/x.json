@@ -1486,5 +1486,9 @@
   {
     "slug": "2026/08/agent-framework-github-copilot-provider-copilot-cli-as-aiagent",
     "text": "The Copilot CLI is now a plain AIAgent: CopilotClient.AsAIAgent() in Agent Framework, shell and MCP included."
+  },
+  {
+    "slug": "2026/08/how-to-validate-options-at-startup-with-ivalidateoptions-in-dotnet-11",
+    "text": "Bad appsettings.json should kill the process at boot, not 500 a customer. IValidateOptions plus ValidateOnStart."
   }
 ]

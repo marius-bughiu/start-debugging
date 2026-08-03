@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/how-to-validate-options-at-startup-with-ivalidateoptions-in-dotnet-11",
+    "text": "ValidateOnStart forces every options type to bind and validate before the first hosted service starts. Plus 3 silent no-op cases."
   }
 ]
