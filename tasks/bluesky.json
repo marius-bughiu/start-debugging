@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/agent-framework-github-copilot-provider-copilot-cli-as-aiagent",
+    "text": "Microsoft.Agents.AI.GitHub.Copilot 1.16.0 wraps the Copilot CLI runtime as a standard AIAgent. Permissions deny-by-default."
   }
 ]

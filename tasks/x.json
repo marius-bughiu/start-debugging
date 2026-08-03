@@ -1482,5 +1482,9 @@
   {
     "slug": "2026/08/how-to-replace-new-regex-with-the-generatedregex-source-generator-in-dotnet-11",
     "text": "Measured: [GeneratedRegex] runs at 35 ns vs 37 ns for RegexOptions.Compiled, and starts up twice as fast."
+  },
+  {
+    "slug": "2026/08/agent-framework-github-copilot-provider-copilot-cli-as-aiagent",
+    "text": "The Copilot CLI is now a plain AIAgent: CopilotClient.AsAIAgent() in Agent Framework, shell and MCP included."
   }
 ]
