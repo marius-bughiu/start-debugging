@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/08/how-to-store-an-enum-as-a-string-in-ef-core-11-with-a-value-converter",
-    "text": "Storing enums as strings in EF Core 11 buys a legible column and costs two things nobody warns about: HasConversion<string>() with no HasMaxLength gives nvarchar(max), and any > or OrderBy on the enum silently goes alphabetical. Measured SQL, the migration recipe, and the FromSql parameter that fails with no exception."
   }
 ]

@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/how-to-store-an-enum-as-a-string-in-ef-core-11-with-a-value-converter",
-    "text": "Enums as strings in EF Core 11: equality and IN translate fine, but > and OrderBy silently go alphabetical. Real SQL inside."
   }
 ]
