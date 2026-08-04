@@ -1514,5 +1514,9 @@
   {
     "slug": "2026/08/auto-mode-vs-manual-approval-what-each-permission-mode-allows",
     "text": "acceptEdits is not just file edits. Its auto-approved bash set includes rm, mv, and sed."
+  },
+  {
+    "slug": "2026/08/how-to-enable-multi-window-support-in-a-flutter-desktop-app",
+    "text": "Flutter's multi-window API is done and hidden: @internal, main channel only, one feature flag away. How to turn it on."
   }
 ]

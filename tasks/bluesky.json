@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/how-to-enable-multi-window-support-in-a-flutter-desktop-app",
+    "text": "Flutter 3.44.8 stable exposes no multi-window API. The framework has one: flutter config --enable-windowing, main channel only."
   }
 ]
