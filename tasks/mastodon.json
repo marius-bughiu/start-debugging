@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/08/fix-no-material-widget-found-in-flutter",
+    "text": "TextField, InkWell, ListTile, Chip, Switch and Slider assert on a missing Material ancestor. ElevatedButton and Card do not, because they build their own. MaterialApp provides none at all: only Scaffold, Card, Dialog and Drawer do. And the check is debug-only, so a release build that works proves nothing."
   }
 ]

@@ -203,7 +203,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Unable to load asset` in Flutter after adding an image to `pubspec.yaml` → slug: 2026/07/fix-unable-to-load-asset-in-flutter-after-adding-an-image-to-pubspec-yaml
 - Fix: `CocoaPods could not find compatible versions for pod` during a Flutter iOS build → slug: 2026/07/fix-cocoapods-could-not-find-compatible-versions-for-pod-in-a-flutter-ios-build
 - Fix: `A RenderFlex overflowed by N pixels on the bottom` when the keyboard opens in Flutter → slug: 2026/08/fix-renderflex-overflowed-on-the-bottom-when-the-keyboard-opens-in-flutter
-- Fix: `No Material widget found` in Flutter
+- Fix: `No Material widget found` in Flutter → slug: 2026/08/fix-no-material-widget-found-in-flutter
 - Fix: `HTTP Error 500.30 - ASP.NET Core app failed to start` after deploying to IIS
 - Fix: `CS1998: This async method lacks 'await' operators and will run synchronously` in C#
 - Fix: `AggregateException: One or more errors occurred` when awaiting `Task.WhenAll` in C#

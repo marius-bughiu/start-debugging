@@ -1518,5 +1518,9 @@
   {
     "slug": "2026/08/how-to-enable-multi-window-support-in-a-flutter-desktop-app",
     "text": "Flutter's multi-window API is done and hidden: @internal, main channel only, one feature flag away. How to turn it on."
+  },
+  {
+    "slug": "2026/08/fix-no-material-widget-found-in-flutter",
+    "text": "MaterialApp gives you no Material widget. Scaffold does. That one fact explains most No Material widget found crashes."
   }
 ]
