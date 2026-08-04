@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/fix-no-material-widget-found-in-flutter",
-    "text": "No Material widget found? Material(type: MaterialType.transparency) fixes it with zero visual change. Plus which widgets really assert."
   }
 ]
