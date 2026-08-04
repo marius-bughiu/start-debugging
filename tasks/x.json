@@ -1510,5 +1510,9 @@
   {
     "slug": "2026/08/how-to-build-an-infinite-scrolling-paginated-list-in-flutter-with-scrollcontroller",
     "text": "Do not paginate on maxScrollExtent. Trigger on extentAfter and guard the fetch, or one fling fires 36 requests."
+  },
+  {
+    "slug": "2026/08/auto-mode-vs-manual-approval-what-each-permission-mode-allows",
+    "text": "acceptEdits is not just file edits. Its auto-approved bash set includes rm, mv, and sed."
   }
 ]

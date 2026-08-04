@@ -103,7 +103,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Cursor subagents vs Claude Code subagents for multi-agent workflows → slug: 2026/07/cursor-subagents-vs-claude-code-subagents
 - Agent Framework orchestration: sequential vs concurrent vs group chat vs handoff vs magentic → slug: 2026/07/agent-framework-orchestration-patterns-compared
 - Cursor cloud agents vs GitHub Copilot coding agent for background PRs → slug: 2026/07/cursor-cloud-agents-vs-github-copilot-coding-agent-for-background-prs
-- Auto permission mode vs manual approval in a coding agent: what each actually allows through
+- Auto permission mode vs manual approval in a coding agent: what each actually allows through → slug: 2026/08/auto-mode-vs-manual-approval-what-each-permission-mode-allows
 - Declarative YAML workflows vs code-first orchestration in Microsoft Agent Framework
 - Subtask vs fork vs background agent in Claude Code: which delegation to reach for
 
