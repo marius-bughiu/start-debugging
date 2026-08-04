@@ -1502,5 +1502,9 @@
   {
     "slug": "2026/08/how-to-implement-optimistic-concurrency-with-a-rowversion-token-in-ef-core-11",
     "text": "rowversion is six lines of config. The trap: on SQLite it degrades to WHERE RowVersion IS NULL and protects nothing."
+  },
+  {
+    "slug": "2026/08/nuget-api-keys-capped-at-30-days-from-august-17",
+    "text": "NuGet caps new API keys at 30 days on Aug 17, and every key made before that expires Nov 1."
   }
 ]
