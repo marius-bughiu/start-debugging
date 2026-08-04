@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/how-to-build-an-infinite-scrolling-paginated-list-in-flutter-with-scrollcontroller",
+    "text": "Flutter infinite scroll: fire the next page on position.extentAfter, not maxScrollExtent, and keep the listener idempotent."
   }
 ]
