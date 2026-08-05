@@ -1526,5 +1526,9 @@
   {
     "slug": "2026/08/foundry-local-live-speech-to-text-in-csharp",
     "text": "Live mic transcription in C# with no cloud call: Foundry Local streams PCM into a 0.67 GB Nemotron model."
+  },
+  {
+    "slug": "2026/08/fix-http-error-500-30-aspnet-core-app-failed-to-start-on-iis",
+    "text": "IIS 500.30 tells you nothing. The real stack trace is already in the Windows Application event log."
   }
 ]

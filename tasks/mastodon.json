@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/08/fix-http-error-500-30-aspnet-core-app-failed-to-start-on-iis",
+    "text": "HTTP Error 500.30 is not a cause, it is in-process hosting collapsing every startup failure into one status code. When stdoutLogEnabled is false, ANCM writes up to 30 KB of the startup exception straight to the Windows Application event log, stack trace included. Most people never look. Full triage order inside."
   }
 ]

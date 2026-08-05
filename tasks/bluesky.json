@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/fix-http-error-500-30-aspnet-core-app-failed-to-start-on-iis",
+    "text": "500.30 means your app threw inside w3wp.exe. Read the ANCM event log first, then rank: shared framework, bitness, permissions."
   }
 ]

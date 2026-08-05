@@ -204,7 +204,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `CocoaPods could not find compatible versions for pod` during a Flutter iOS build → slug: 2026/07/fix-cocoapods-could-not-find-compatible-versions-for-pod-in-a-flutter-ios-build
 - Fix: `A RenderFlex overflowed by N pixels on the bottom` when the keyboard opens in Flutter → slug: 2026/08/fix-renderflex-overflowed-on-the-bottom-when-the-keyboard-opens-in-flutter
 - Fix: `No Material widget found` in Flutter → slug: 2026/08/fix-no-material-widget-found-in-flutter
-- Fix: `HTTP Error 500.30 - ASP.NET Core app failed to start` after deploying to IIS
+- Fix: `HTTP Error 500.30 - ASP.NET Core app failed to start` after deploying to IIS → slug: 2026/08/fix-http-error-500-30-aspnet-core-app-failed-to-start-on-iis
 - Fix: `CS1998: This async method lacks 'await' operators and will run synchronously` in C#
 - Fix: `AggregateException: One or more errors occurred` when awaiting `Task.WhenAll` in C#
 - Fix: `Attempting to reconnect to the server` after a Blazor Server circuit disconnects
