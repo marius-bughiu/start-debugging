@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/agent-framework-declarative-yaml-vs-code-first-orchestration",
-    "text": "Declarative YAML vs code-first in Agent Framework: the real line is whether your code is a node in the graph or a leaf it calls."
   }
 ]

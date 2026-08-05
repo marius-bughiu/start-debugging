@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/08/agent-framework-declarative-yaml-vs-code-first-orchestration",
-    "text": "Microsoft Agent Framework gives you two ways to author the same graph. Pick YAML when routing is sequential over Foundry-registered agents and someone outside the codebase edits it. Pick code-first for parallelism, stateful executors, Go, or Python 3.14 -- the declarative package tops out at 3.13 because of PowerFx."
   }
 ]
