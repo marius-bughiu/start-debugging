@@ -205,7 +205,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `A RenderFlex overflowed by N pixels on the bottom` when the keyboard opens in Flutter → slug: 2026/08/fix-renderflex-overflowed-on-the-bottom-when-the-keyboard-opens-in-flutter
 - Fix: `No Material widget found` in Flutter → slug: 2026/08/fix-no-material-widget-found-in-flutter
 - Fix: `HTTP Error 500.30 - ASP.NET Core app failed to start` after deploying to IIS → slug: 2026/08/fix-http-error-500-30-aspnet-core-app-failed-to-start-on-iis
-- Fix: `CS1998: This async method lacks 'await' operators and will run synchronously` in C#
+- Fix: `CS1998: This async method lacks 'await' operators and will run synchronously` in C# → slug: 2026/08/fix-cs1998-this-async-method-lacks-await-operators-and-will-run-synchronously
 - Fix: `AggregateException: One or more errors occurred` when awaiting `Task.WhenAll` in C#
 - Fix: `Attempting to reconnect to the server` after a Blazor Server circuit disconnects
 - Fix: `flutter doctor` reports `cmdline-tools component is missing`

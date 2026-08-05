@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/fix-cs1998-this-async-method-lacks-await-operators-and-will-run-synchronously",
+    "text": "An async method with no await costs about 10ns and zero extra allocations on .NET 10.0.5. And CS1998 no longer fires at all."
   }
 ]
