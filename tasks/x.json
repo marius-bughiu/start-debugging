@@ -1530,5 +1530,9 @@
   {
     "slug": "2026/08/fix-http-error-500-30-aspnet-core-app-failed-to-start-on-iis",
     "text": "IIS 500.30 tells you nothing. The real stack trace is already in the Windows Application event log."
+  },
+  {
+    "slug": "2026/08/agent-framework-declarative-yaml-vs-code-first-orchestration",
+    "text": "Agent Framework YAML workflows have no parallel action kind. Two agents cannot run at once from a declarative graph."
   }
 ]
