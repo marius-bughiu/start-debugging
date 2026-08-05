@@ -1522,5 +1522,9 @@
   {
     "slug": "2026/08/fix-no-material-widget-found-in-flutter",
     "text": "MaterialApp gives you no Material widget. Scaffold does. That one fact explains most No Material widget found crashes."
+  },
+  {
+    "slug": "2026/08/foundry-local-live-speech-to-text-in-csharp",
+    "text": "Live mic transcription in C# with no cloud call: Foundry Local streams PCM into a 0.67 GB Nemotron model."
   }
 ]
