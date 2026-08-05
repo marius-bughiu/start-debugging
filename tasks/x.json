@@ -1538,5 +1538,9 @@
   {
     "slug": "2026/08/fix-cs1998-this-async-method-lacks-await-operators-and-will-run-synchronously",
     "text": "CS1998 vanished from the .NET 10 compiler. What to do with an async method that has no await."
+  },
+  {
+    "slug": "2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall",
+    "text": "Three tasks fail, await Task.WhenAll rethrows one. The other two vanish unless you name the returned task."
   }
 ]

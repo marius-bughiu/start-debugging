@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall",
+    "text": "await unwraps the AggregateException from Task.WhenAll down to a single exception. Keep the task in a local and read InnerExceptions."
   }
 ]
