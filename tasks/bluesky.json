@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/fix-flutter-doctor-cmdline-tools-component-is-missing",
-    "text": "cmdline-tools component is missing is a directory existence test, not a version check. Here is the lookup order flutter uses."
   }
 ]
