@@ -1558,5 +1558,9 @@
   {
     "slug": "2026/08/fix-flutter-doctor-cmdline-tools-component-is-missing",
     "text": "flutter doctor's cmdline-tools check is one line: does <sdk>/cmdline-tools exist. Two ways to fail, four fixes."
+  },
+  {
+    "slug": "2026/08/grpc-vs-rest-vs-signalr-for-service-to-service-calls-in-dotnet-11",
+    "text": "Protobuf is 51.7% of the JSON payload. That is the weakest reason to pick gRPC over REST between .NET services."
   }
 ]
