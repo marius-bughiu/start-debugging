@@ -1542,5 +1542,9 @@
   {
     "slug": "2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall",
     "text": "Three tasks fail, await Task.WhenAll rethrows one. The other two vanish unless you name the returned task."
+  },
+  {
+    "slug": "2026/08/copilot-automations-now-trigger-on-issue-and-pr-comments",
+    "text": "Copilot automations now fire on issue and PR comments. Deletes a whole issue_comment workflow, a PAT, and a REST call."
   }
 ]
