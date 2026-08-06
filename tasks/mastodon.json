@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/08/grpc-vs-rest-vs-signalr-for-service-to-service-calls-in-dotnet-11",
-    "text": "Picking a transport for internal .NET 11 service calls? Fan-out decides first: one producer notifying many long-lived consumers is SignalR, and nothing else replaces groups plus a backplane. The rest is point-to-point, where contract ownership picks gRPC or REST."
   }
 ]

@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/grpc-vs-rest-vs-signalr-for-service-to-service-calls-in-dotnet-11",
-    "text": "gRPC vs REST vs SignalR between .NET 11 services: decide on fan-out first, contract ownership second. Measured payload sizes inside."
   }
 ]
