@@ -1546,5 +1546,9 @@
   {
     "slug": "2026/08/copilot-automations-now-trigger-on-issue-and-pr-comments",
     "text": "Copilot automations now fire on issue and PR comments. Deletes a whole issue_comment workflow, a PAT, and a REST call."
+  },
+  {
+    "slug": "2026/08/fix-attempting-to-reconnect-to-the-server-after-a-blazor-circuit-disconnects",
+    "text": "Blazor's reconnect modal is not the bug. failed means the transport died, rejected means the circuit is gone."
   }
 ]

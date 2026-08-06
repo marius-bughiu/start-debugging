@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/fix-attempting-to-reconnect-to-the-server-after-a-blazor-circuit-disconnects",
+    "text": "Blazor reconnect: .NET 9+ clients retry for ~350s, but the server disposes the circuit at 180s. Align them, or persist state."
   }
 ]
