@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/08/subtask-vs-fork-vs-background-agent-in-claude-code",
-    "text": "Claude Code has three ways to delegate, and two shared a name until v2.1.212. A named subagent starts cold with a filtered tool set. A fork inherits your full conversation and reads the parent's prompt cache. A background session outlives your terminal and burns its own quota. Plus the /fork rename that breaks muscle memory."
   }
 ]

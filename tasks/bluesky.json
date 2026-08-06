@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/subtask-vs-fork-vs-background-agent-in-claude-code",
-    "text": "A named subagent starts cold. A fork inherits your context and reads your prompt cache. A background agent is a second session."
   }
 ]
