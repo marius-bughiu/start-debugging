@@ -1550,5 +1550,9 @@
   {
     "slug": "2026/08/fix-attempting-to-reconnect-to-the-server-after-a-blazor-circuit-disconnects",
     "text": "Blazor's reconnect modal is not the bug. failed means the transport died, rejected means the circuit is gone."
+  },
+  {
+    "slug": "2026/08/subtask-vs-fork-vs-background-agent-in-claude-code",
+    "text": "/fork is no longer the in-session fork. /subtask is. Which of the three delegations to reach for, and why."
   }
 ]
