@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/08/fix-flutter-doctor-cmdline-tools-component-is-missing",
+    "text": "flutter doctor reporting cmdline-tools component is missing runs nothing. It appends cmdline-tools to the SDK root it resolved and calls existsSync(). So either the folder is gone, or a stale flutter config --android-sdk beat your ANDROID_HOME. Full resolution order plus four ranked fixes."
   }
 ]

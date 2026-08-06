@@ -1554,5 +1554,9 @@
   {
     "slug": "2026/08/subtask-vs-fork-vs-background-agent-in-claude-code",
     "text": "/fork is no longer the in-session fork. /subtask is. Which of the three delegations to reach for, and why."
+  },
+  {
+    "slug": "2026/08/fix-flutter-doctor-cmdline-tools-component-is-missing",
+    "text": "flutter doctor's cmdline-tools check is one line: does <sdk>/cmdline-tools exist. Two ways to fail, four fixes."
   }
 ]

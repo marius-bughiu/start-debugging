@@ -208,7 +208,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `CS1998: This async method lacks 'await' operators and will run synchronously` in C# → slug: 2026/08/fix-cs1998-this-async-method-lacks-await-operators-and-will-run-synchronously
 - Fix: `AggregateException: One or more errors occurred` when awaiting `Task.WhenAll` in C# → slug: 2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall
 - Fix: `Attempting to reconnect to the server` after a Blazor Server circuit disconnects → slug: 2026/08/fix-attempting-to-reconnect-to-the-server-after-a-blazor-circuit-disconnects
-- Fix: `flutter doctor` reports `cmdline-tools component is missing`
+- Fix: `flutter doctor` reports `cmdline-tools component is missing` → slug: 2026/08/fix-flutter-doctor-cmdline-tools-component-is-missing
 
 ## Vs / comparison
 
