@@ -1570,5 +1570,9 @@
   {
     "slug": "2026/08/migrate-a-custom-multi-agent-orchestrator-to-handoff-orchestration",
     "text": "A classifier call plus a switch is not routing. Six steps to move it onto handoff orchestration in C#."
+  },
+  {
+    "slug": "2026/08/xunit-v3-vs-nunit-vs-mstest-in-2026",
+    "text": "xUnit runs 3.6x faster than NUnit out of the box. One assembly attribute erases almost all of it."
   }
 ]

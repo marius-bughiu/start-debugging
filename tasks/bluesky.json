@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/xunit-v3-vs-nunit-vs-mstest-in-2026",
+    "text": "MSTest does build a new instance per test. NUnit is the one that shares. Measured on .NET SDK 10.0.201, plus the MTP pin."
   }
 ]
