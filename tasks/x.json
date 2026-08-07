@@ -1562,5 +1562,9 @@
   {
     "slug": "2026/08/grpc-vs-rest-vs-signalr-for-service-to-service-calls-in-dotnet-11",
     "text": "Protobuf is 51.7% of the JSON payload. That is the weakest reason to pick gRPC over REST between .NET services."
+  },
+  {
+    "slug": "2026/08/microsoft-testing-platform-2-3-github-actions-annotations",
+    "text": "MTP 2.3 adds --report-gh: test failures show up as annotations on the PR diff, not buried in the job log."
   }
 ]
