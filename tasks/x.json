@@ -1574,5 +1574,9 @@
   {
     "slug": "2026/08/xunit-v3-vs-nunit-vs-mstest-in-2026",
     "text": "xUnit runs 3.6x faster than NUnit out of the box. One assembly attribute erases almost all of it."
+  },
+  {
+    "slug": "2026/08/webapplicationfactory-vs-testcontainers-for-aspnetcore-integration-tests",
+    "text": "SQLite silently stored 21 chars in a HasMaxLength(16) column. Postgres rejected it with 22001. That is the argument."
   }
 ]
