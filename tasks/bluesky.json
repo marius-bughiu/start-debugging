@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/webapplicationfactory-vs-testcontainers-for-aspnetcore-integration-tests",
-    "text": "Measured: WebApplicationFactory boots in 4ms whichever database is behind it. The 1.7s you are paying per fixture is the container."
   }
 ]
