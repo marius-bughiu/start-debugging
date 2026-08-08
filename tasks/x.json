@@ -1578,5 +1578,9 @@
   {
     "slug": "2026/08/webapplicationfactory-vs-testcontainers-for-aspnetcore-integration-tests",
     "text": "SQLite silently stored 21 chars in a HasMaxLength(16) column. Postgres rejected it with 22001. That is the argument."
+  },
+  {
+    "slug": "2026/08/aspire-vs-docker-compose-for-local-multi-service-development",
+    "text": "Compose beat Aspire on every timing I took. Aspire still wins the .NET inner loop, and not because of seconds."
   }
 ]

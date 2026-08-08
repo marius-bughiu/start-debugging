@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/aspire-vs-docker-compose-for-local-multi-service-development",
+    "text": "Measured both: Compose rebuilds in 5.4s, Aspire in 13.9s. Aspire still wins, because your service is a process you can debug."
   }
 ]

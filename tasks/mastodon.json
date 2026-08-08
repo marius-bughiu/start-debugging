@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/08/aspire-vs-docker-compose-for-local-multi-service-development",
+    "text": "Aspire 13.4.6 vs Docker Compose v5.1.4 on the same two-service stack. Compose was faster everywhere: 5.4s from a one-line C# edit to serving it, against 13.9s. Aspire still wins the .NET inner loop, because your project runs as a host process you can debug. Plus the stray dcp proxy that silently shadows your containers."
   }
 ]
