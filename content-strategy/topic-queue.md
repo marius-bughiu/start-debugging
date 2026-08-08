@@ -119,6 +119,14 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to implement optimistic concurrency with a `rowversion` token in EF Core 11 → slug: 2026/08/how-to-implement-optimistic-concurrency-with-a-rowversion-token-in-ef-core-11
 - How to build an infinite-scrolling paginated list in Flutter with `ScrollController` → slug: 2026/08/how-to-build-an-infinite-scrolling-paginated-list-in-flutter-with-scrollcontroller
 - How to enable multi-window support in a Flutter desktop app → slug: 2026/08/how-to-enable-multi-window-support-in-a-flutter-desktop-app
+- How to run a file-based C# app with `dotnet run app.cs` in .NET 11
+- How to serve OpenAPI documentation with Scalar instead of Swagger UI in ASP.NET Core 11
+- How to rename a table in an EF Core 11 migration without losing data
+- How to call a stored procedure and map its results in EF Core 11
+- How to customize source-generated `System.Text.Json` serialization with a type-info resolver modifier
+- How to override the default resilience handler that .NET Aspire registers
+- How to replace Flutter's deprecated `Radio` `groupValue` and `onChanged` with `RadioGroup`
+- How to show a modal window in .NET MAUI 11
 
 ## Fix / error
 
@@ -209,6 +217,15 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `AggregateException: One or more errors occurred` when awaiting `Task.WhenAll` in C# → slug: 2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall
 - Fix: `Attempting to reconnect to the server` after a Blazor Server circuit disconnects → slug: 2026/08/fix-attempting-to-reconnect-to-the-server-after-a-blazor-circuit-disconnects
 - Fix: `flutter doctor` reports `cmdline-tools component is missing` → slug: 2026/08/fix-flutter-doctor-cmdline-tools-component-is-missing
+- Fix: `The type or namespace name 'OpenApiReference' could not be found` after upgrading to .NET 11
+- Fix: `The 'interceptors' feature is not enabled in this namespace` with `Microsoft.AspNetCore.OpenApi`
+- Fix: `dotnet tool install --global dotnet-ef` throws an error
+- Fix: `404 Not Found` for `blazor.server.js` after installing a new .NET SDK
+- Fix: Visual Studio Test Explorer hangs on a .NET 11 xUnit project while `dotnet test` passes
+- Fix: `MSB4057: The target "ResolvePackageAssets" does not exist in the project` in .NET MAUI
+- Fix: Google Play rejects a Flutter or .NET MAUI app for missing 16 KB memory page size support
+- Fix: `mprotect failed: Permission denied` crash on a Flutter iOS build
+- Fix: `An error occurred while preparing SDK package NDK (Side by side): Not in GZIP format` in a Flutter Android build
 
 ## Vs / comparison
 
@@ -262,6 +279,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - .NET Aspire vs Docker Compose for local multi-service development → slug: 2026/08/aspire-vs-docker-compose-for-local-multi-service-development
 - Zstandard vs Brotli vs Gzip response compression in .NET 11
 - `record` vs `record struct` vs `readonly struct` in C#
+- Scalar vs Swagger UI for OpenAPI documentation in ASP.NET Core 11
+- Riverpod `Notifier` vs `AsyncNotifier` vs `StreamNotifier` in Flutter
 
 ## Migration / upgrade
 
