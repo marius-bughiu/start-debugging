@@ -1,162 +1,120 @@
 [
   {
     "page": "https://startdebugging.net/2026/06/gate-cursor-sdk-tool-calls-with-auto-review-and-permissions-json/",
-    "position": 5.06,
-    "impressions": 2412,
+    "position": 5.28,
+    "impressions": 369,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2023/10/how-to-fix-missingpluginexception-no-implementation-found-for-method-getall/",
-    "position": 21.45,
-    "impressions": 365,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2026/06/nest-subagents-in-the-cursor-sdk-reviewer-delegates-to-test-writer/",
-    "position": 2.67,
-    "impressions": 195,
+    "position": 21.75,
+    "impressions": 332,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/05/fix-renderflex-overflowed-in-flutter/",
-    "position": 37.16,
-    "impressions": 167,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2026/06/fix-renderbox-was-not-laid-out-in-flutter/",
-    "position": 34.15,
-    "impressions": 133,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2026/05/how-to-assign-a-jira-ticket-to-a-cursor-cloud-agent-and-get-a-pr-back/",
-    "position": 6.07,
-    "impressions": 131,
+    "position": 37.48,
+    "impressions": 172,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/01/debugging-flutter-ios-from-windows-a-real-device-workflow-flutter-3-x/",
-    "position": 41.11,
-    "impressions": 106,
+    "position": 42.13,
+    "impressions": 140,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/2023/10/wpf-open-folder-dialog/",
-    "position": 41.92,
-    "impressions": 97,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2020/12/azure-the-specified-version-of-microsoft-netcore-app-or-microsoft-aspnetcore-app-was-not-found/",
-    "position": 33.59,
-    "impressions": 91,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2023/11/2-column-react-native/",
-    "position": 35.19,
-    "impressions": 86,
+    "page": "https://startdebugging.net/2026/06/fix-renderbox-was-not-laid-out-in-flutter/",
+    "position": 33.91,
+    "impressions": 113,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/archive/",
-    "position": 8.62,
-    "impressions": 85,
+    "position": 7.94,
+    "impressions": 88,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows/",
-    "position": 15.27,
+    "page": "https://startdebugging.net/2026/05/how-to-assign-a-jira-ticket-to-a-cursor-cloud-agent-and-get-a-pr-back/",
+    "position": 7.34,
+    "impressions": 86,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2020/12/azure-the-specified-version-of-microsoft-netcore-app-or-microsoft-aspnetcore-app-was-not-found/",
+    "position": 33.1,
     "impressions": 83,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/2023/08/c-how-to-wait-for-a-process-to-end/",
-    "position": 35.85,
-    "impressions": 82,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2026/06/expose-functions-to-cursor-sdk-agent-with-local-customtools/",
-    "position": 2.31,
-    "impressions": 81,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/",
-    "position": 38.43,
-    "impressions": 77,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks/",
-    "position": 33.72,
-    "impressions": 72,
+    "page": "https://startdebugging.net/2023/11/2-column-react-native/",
+    "position": 37.28,
+    "impressions": 83,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/06/fix-cannot-use-ref-after-the-widget-was-disposed-in-flutter-riverpod/",
-    "position": 28.07,
-    "impressions": 71,
+    "position": 28.98,
+    "impressions": 82,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2023/10/wpf-open-folder-dialog/",
+    "position": 40.28,
+    "impressions": 79,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2023/06/how-to-fix-command-dotnet-ef-not-found/",
-    "position": 37.79,
-    "impressions": 70,
+    "position": 38.36,
+    "impressions": 73,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/2023/08/flutter-fix-the-getter-accentcolor-isnt-defined-for-the-class-themedata/",
-    "position": 26.14,
-    "impressions": 56,
+    "page": "https://startdebugging.net/2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows/",
+    "position": 14.99,
+    "impressions": 73,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/2023/09/net-8-include-non-public-members-in-json-serialization/",
-    "position": 33.04,
-    "impressions": 53,
+    "page": "https://startdebugging.net/2023/08/c-how-to-wait-for-a-process-to-end/",
+    "position": 36.83,
+    "impressions": 71,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/ja/",
-    "position": 39.33,
-    "impressions": 51,
+    "page": "https://startdebugging.net/2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks/",
+    "position": 34.82,
+    "impressions": 62,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/ru/2026/06/fix-the-ssl-connection-could-not-be-established-with-httpclient/",
-    "position": 21.76,
-    "impressions": 51,
-    "clicks": 0,
-    "ctr": 0
+    "position": 21.36,
+    "impressions": 55,
+    "clicks": 1,
+    "ctr": 0.0182
   },
   {
-    "page": "https://startdebugging.net/2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod/",
-    "position": 38.54,
-    "impressions": 50,
+    "page": "https://startdebugging.net/2023/08/flutter-fix-the-getter-accentcolor-isnt-defined-for-the-class-themedata/",
+    "position": 28.29,
+    "impressions": 52,
     "clicks": 0,
     "ctr": 0
   }

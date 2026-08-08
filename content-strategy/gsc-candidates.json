@@ -1,21 +1,14 @@
 [
   {
-    "query": "kebab-case",
+    "query": "reflection-based serialization has been disabled for this application.",
     "position": 20,
-    "impressions": 1,
+    "impressions": 2,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "query": "mib bytes meaning",
-    "position": 18,
-    "impressions": 1,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "query": "wpf select folder dialog",
-    "position": 14,
+    "query": "reflection-based serialization has been disabled for this application",
+    "position": 20,
     "impressions": 1,
     "clicks": 0,
     "ctr": 0
