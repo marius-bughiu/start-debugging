@@ -1598,5 +1598,9 @@
   {
     "slug": "2026/08/how-to-serve-openapi-docs-with-scalar-instead-of-swagger-ui-in-aspnetcore-11",
     "text": "Swagger UI is middleware. Scalar is an endpoint. That one difference is why RequireAuthorization() works on your docs."
+  },
+  {
+    "slug": "2026/08/how-to-rename-a-table-in-an-ef-core-11-migration-without-losing-data",
+    "text": "Rename the EF Core entity class and you get DropTable + CreateTable. Rename only the table and you get RenameTable."
   }
 ]
