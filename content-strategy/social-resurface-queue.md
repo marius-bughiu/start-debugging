@@ -61,6 +61,18 @@ Move approved entries under `## Approved`, remove after posting.
 
 **Notes:** Longest eligible evergreen (2489 words, 4 internal links) and the only one that spans two runtimes, so it stays useful to both Blazor and API readers. GSC candidates were three single-impression queries with no overlap, so this was picked on depth again. Fresh angle: the original push led with the Shared-project layout, which is the least surprising part. These three lead with the failure modes instead. X takes the trim gotcha, where Release silently ships validation that does nothing. Bluesky takes the camelCase vs FieldIdentifier mismatch, which is the specific reason inline errors do not render. Mastodon takes the RuleSet("Server") plus nullable-interface trick for rules that can only run server-side.
 
+### 2026-08-09 drafted - fix-second-operation-was-started-on-this-context-instance
+
+**Original:** 2026-05-07 - Fix: A second operation was started on this context instance before a previous operation completed
+
+**X:** Task.WhenAll over two queries on one DbContext is not a perf win you lost to a bug. Even when it works, the connection serialises commands anyway. Awaiting them one after the other costs nothing and the ConcurrencyDetector goes quiet.
+
+**Bluesky:** The subtle one is AddAsync with no await. Someone wrote _ = to silence the compiler warning and silenced the bug report with it. The change tracker is mid-mutation when SaveChangesAsync arrives, and the detector says so.
+
+**Mastodon:** Three fixes, in order. 1. Await sequentially. You almost never need two EF Core queries in flight at once inside one request handler. 2. IDbContextFactory for real concurrency: background services, batch jobs, fan-out. Each gets its own context, connection and change tracker. 3. CreateAsyncScope per iteration when the loop body needs other scoped services too, the right shape for Parallel.ForEachAsync. Never new up a DbContext to dodge the lifetime.
+
+**Notes:** Most internally linked eligible evergreen (10 outbound links to other posts, 1970 words) and a perennial error people hit on every new EF Core version, so it earns the slot on link equity rather than raw length. It also breaks the run of two how-to picks with a fix- post. GSC had one relevant rising query, the reflection-based serialization AOT error, but that maps to a July post that is not yet 90 days old, so depth and link count decided it again. Fresh angle: the original X copy was the textbook summary, two awaits raced one DbContext, use IDbContextFactory. These lead elsewhere. X argues the parallelism was never buying anything, since the connection serialises commands regardless, which reframes fix 1 as the default rather than a compromise. Bluesky takes the missing-await repro where `_ =` silenced the warning and the bug together. Mastodon carries the ranked three fixes with the factory vs CreateAsyncScope distinction, which is the part people get wrong after they stop sharing the context.
+
 ---
 
 ## Approved
