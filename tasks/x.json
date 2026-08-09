@@ -1582,5 +1582,9 @@
   {
     "slug": "2026/08/aspire-vs-docker-compose-for-local-multi-service-development",
     "text": "Compose beat Aspire on every timing I took. Aspire still wins the .NET inner loop, and not because of seconds."
+  },
+  {
+    "slug": "2026/08/copilot-mcp-allowlists-enterprise-managed-settings",
+    "text": "GitHub Copilot can now block MCP servers enterprise-wide: two JSON keys, argv matching, deny always wins."
   }
 ]

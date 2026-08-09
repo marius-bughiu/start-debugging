@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/copilot-mcp-allowlists-enterprise-managed-settings",
+    "text": "allowedMcpServers and deniedMcpServers just went GA for Copilot. Unset allows all, [] denies all, and deny beats allow."
   }
 ]
