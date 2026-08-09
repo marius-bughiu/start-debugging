@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/08/how-to-run-a-file-based-csharp-app-with-dotnet-run-in-dotnet-11",
-    "text": "dotnet run app.cs: no .csproj, no Main. Config lives in #: directives at the top of the file. Full guide covers #:package, #:sdk, #:property and #:include, the temp-folder build cache, native AOT publishing on by default, and the silent gotcha where a .csproj in your cwd runs instead of your script."
   }
 ]
