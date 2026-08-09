@@ -116,7 +116,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Migrate from Copilot chat prompts to a Copilot Agent Skill in your repo → slug: 2026/07/migrate-copilot-prompt-files-to-agent-skills
 - Migrate an MCP server from SSE to streamable HTTP transport → slug: 2026/07/migrate-an-mcp-server-from-sse-to-streamable-http
 - Migrate a custom multi-agent orchestrator to handoff orchestration in Agent Framework → slug: 2026/08/migrate-a-custom-multi-agent-orchestrator-to-handoff-orchestration
-- Migrate a custom TypeScript agent loop to the Cursor SDK
+- Migrate a custom TypeScript agent loop to the Cursor SDK → slug: 2026/08/migrate-a-custom-typescript-agent-loop-to-the-cursor-sdk
 - Migrate a Cursor rules file to the new plugins, skills, and subagents model
 - Migrate off the archived MCP reference servers (GitHub, Postgres, Slack) to their maintained replacements
 - Migrate an agent from chunking-and-RAG to a 1M-token context window

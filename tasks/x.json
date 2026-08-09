@@ -1590,5 +1590,9 @@
   {
     "slug": "2026/08/how-to-run-a-file-based-csharp-app-with-dotnet-run-in-dotnet-11",
     "text": "dotnet run app.cs needs no project file. The trap: a .csproj in your working directory silently hijacks it."
+  },
+  {
+    "slug": "2026/08/migrate-a-custom-typescript-agent-loop-to-the-cursor-sdk",
+    "text": "Retiring a hand-rolled agent loop for the Cursor SDK: the tool bodies port, the system prompt does not."
   }
 ]
