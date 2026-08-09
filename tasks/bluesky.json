@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/migrate-a-custom-typescript-agent-loop-to-the-cursor-sdk",
-    "text": "Cursor SDK 1.0.26 has no system prompt field, no tool allowlist, no per-turn hook. The migration checklist."
   }
 ]
