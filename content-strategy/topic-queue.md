@@ -119,7 +119,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to implement optimistic concurrency with a `rowversion` token in EF Core 11 → slug: 2026/08/how-to-implement-optimistic-concurrency-with-a-rowversion-token-in-ef-core-11
 - How to build an infinite-scrolling paginated list in Flutter with `ScrollController` → slug: 2026/08/how-to-build-an-infinite-scrolling-paginated-list-in-flutter-with-scrollcontroller
 - How to enable multi-window support in a Flutter desktop app → slug: 2026/08/how-to-enable-multi-window-support-in-a-flutter-desktop-app
-- How to run a file-based C# app with `dotnet run app.cs` in .NET 11
+- How to run a file-based C# app with `dotnet run app.cs` in .NET 11 → slug: 2026/08/how-to-run-a-file-based-csharp-app-with-dotnet-run-in-dotnet-11
 - How to serve OpenAPI documentation with Scalar instead of Swagger UI in ASP.NET Core 11
 - How to rename a table in an EF Core 11 migration without losing data
 - How to call a stored procedure and map its results in EF Core 11

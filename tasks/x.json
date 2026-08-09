@@ -1586,5 +1586,9 @@
   {
     "slug": "2026/08/copilot-mcp-allowlists-enterprise-managed-settings",
     "text": "GitHub Copilot can now block MCP servers enterprise-wide: two JSON keys, argv matching, deny always wins."
+  },
+  {
+    "slug": "2026/08/how-to-run-a-file-based-csharp-app-with-dotnet-run-in-dotnet-11",
+    "text": "dotnet run app.cs needs no project file. The trap: a .csproj in your working directory silently hijacks it."
   }
 ]
