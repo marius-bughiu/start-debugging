@@ -1618,5 +1618,9 @@
   {
     "slug": "2026/08/how-to-customize-source-generated-system-text-json-serialization-with-a-modifier",
     "text": "JsonTypeInfo modifiers do work with source generation. new MyContext(options) is what silently throws yours away."
+  },
+  {
+    "slug": "2026/08/how-to-override-the-default-resilience-handler-that-aspire-registers",
+    "text": "Adding AddStandardResilienceHandler again on an Aspire client stacks a second one. One call becomes 16 requests."
   }
 ]
