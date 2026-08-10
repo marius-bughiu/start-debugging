@@ -1606,5 +1606,9 @@
   {
     "slug": "2026/08/claude-code-2-1-224-sessions-message-each-other",
     "text": "Claude Code 2.1.224: one session can now message another. Plain text only, no history, no files, no permissions."
+  },
+  {
+    "slug": "2026/08/how-to-call-a-stored-procedure-and-map-its-results-in-ef-core-11",
+    "text": "FromSql for entity rows, SqlQuery<T> for projections, ExecuteSql for nothing. Picking wrong causes most of the pain."
   }
 ]

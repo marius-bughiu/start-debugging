@@ -122,7 +122,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to run a file-based C# app with `dotnet run app.cs` in .NET 11 → slug: 2026/08/how-to-run-a-file-based-csharp-app-with-dotnet-run-in-dotnet-11
 - How to serve OpenAPI documentation with Scalar instead of Swagger UI in ASP.NET Core 11 → slug: 2026/08/how-to-serve-openapi-docs-with-scalar-instead-of-swagger-ui-in-aspnetcore-11
 - How to rename a table in an EF Core 11 migration without losing data → slug: 2026/08/how-to-rename-a-table-in-an-ef-core-11-migration-without-losing-data
-- How to call a stored procedure and map its results in EF Core 11
+- How to call a stored procedure and map its results in EF Core 11 → slug: 2026/08/how-to-call-a-stored-procedure-and-map-its-results-in-ef-core-11
 - How to customize source-generated `System.Text.Json` serialization with a type-info resolver modifier
 - How to override the default resilience handler that .NET Aspire registers
 - How to replace Flutter's deprecated `Radio` `groupValue` and `onChanged` with `RadioGroup`
