@@ -1614,5 +1614,9 @@
   {
     "slug": "2026/08/migrate-cursor-rules-to-skills-subagents-and-plugins",
     "text": "Cursor did not deprecate rules. /migrate-to-skills only converts dynamic rules and slash commands."
+  },
+  {
+    "slug": "2026/08/how-to-customize-source-generated-system-text-json-serialization-with-a-modifier",
+    "text": "JsonTypeInfo modifiers do work with source generation. new MyContext(options) is what silently throws yours away."
   }
 ]
