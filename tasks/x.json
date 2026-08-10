@@ -1610,5 +1610,9 @@
   {
     "slug": "2026/08/how-to-call-a-stored-procedure-and-map-its-results-in-ef-core-11",
     "text": "FromSql for entity rows, SqlQuery<T> for projections, ExecuteSql for nothing. Picking wrong causes most of the pain."
+  },
+  {
+    "slug": "2026/08/migrate-cursor-rules-to-skills-subagents-and-plugins",
+    "text": "Cursor did not deprecate rules. /migrate-to-skills only converts dynamic rules and slash commands."
   }
 ]
