@@ -1602,5 +1602,9 @@
   {
     "slug": "2026/08/how-to-rename-a-table-in-an-ef-core-11-migration-without-losing-data",
     "text": "Rename the EF Core entity class and you get DropTable + CreateTable. Rename only the table and you get RenameTable."
+  },
+  {
+    "slug": "2026/08/claude-code-2-1-224-sessions-message-each-other",
+    "text": "Claude Code 2.1.224: one session can now message another. Plain text only, no history, no files, no permissions."
   }
 ]
