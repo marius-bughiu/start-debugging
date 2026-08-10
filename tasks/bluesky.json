@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/claude-code-2-1-224-sessions-message-each-other",
-    "text": "Cross-session messaging in Claude Code 2.1.224 runs over a per-session Unix socket. crossSessionInbound decides what arrives."
   }
 ]
