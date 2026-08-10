@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/migrate-cursor-rules-to-skills-subagents-and-plugins",
-    "text": "Your .cursorrules file has four destinations now: AGENTS.md, a surviving rule, a skill, or a subagent. How to sort them."
   }
 ]
