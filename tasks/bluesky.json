@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/how-to-customize-source-generated-system-text-json-serialization-with-a-modifier",
-    "text": "Contract modifiers and System.Text.Json source generation are compatible. Decorate the resolver, never construct the context yourself."
   }
 ]
