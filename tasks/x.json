@@ -1634,5 +1634,9 @@
   {
     "slug": "2026/08/migrate-off-archived-mcp-reference-servers",
     "text": "@modelcontextprotocol/server-postgres was last released Dec 2024 and is deprecated. Audit script plus replacements:"
+  },
+  {
+    "slug": "2026/08/how-to-show-a-modal-window-in-dotnet-maui-11",
+    "text": "MAUI has no modal window API. On Windows you set a Win32 owner HWND, then OverlappedPresenter.IsModal. Full code."
   }
 ]

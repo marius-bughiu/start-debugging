@@ -126,7 +126,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to customize source-generated `System.Text.Json` serialization with a type-info resolver modifier → slug: 2026/08/how-to-customize-source-generated-system-text-json-serialization-with-a-modifier
 - How to override the default resilience handler that .NET Aspire registers → slug: 2026/08/how-to-override-the-default-resilience-handler-that-aspire-registers
 - How to replace Flutter's deprecated `Radio` `groupValue` and `onChanged` with `RadioGroup` → slug: 2026/08/how-to-replace-flutter-deprecated-radio-groupvalue-and-onchanged-with-radiogroup
-- How to show a modal window in .NET MAUI 11
+- How to show a modal window in .NET MAUI 11 → slug: 2026/08/how-to-show-a-modal-window-in-dotnet-maui-11
 
 ## Fix / error
 

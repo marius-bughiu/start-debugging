@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/how-to-show-a-modal-window-in-dotnet-maui-11",
+    "text": "PushModalAsync gives a modal page. A real OS window that disables its owner needs WinUI interop: MAUI 11 still ships no API."
   }
 ]
