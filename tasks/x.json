@@ -1622,5 +1622,9 @@
   {
     "slug": "2026/08/how-to-override-the-default-resilience-handler-that-aspire-registers",
     "text": "Adding AddStandardResilienceHandler again on an Aspire client stacks a second one. One call becomes 16 requests."
+  },
+  {
+    "slug": "2026/08/claude-code-self-hosted-runner-cloud-sessions-on-your-own-hosts",
+    "text": "Claude Code 2.1.224 runs cloud sessions on hosts you provision. A runner locks to one user account."
   }
 ]

@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/08/claude-code-self-hosted-runner-cloud-sessions-on-your-own-hosts",
+    "text": "Claude Code 2.1.224 adds self-hosted environments: a runner process on your Linux or macOS host claims cloud sessions off a queue and runs them inside your network. Repository checkouts and build artifacts stay put, but prompts and tool results still go to api.anthropic.com, and Zero Data Retention orgs are excluded."
   }
 ]

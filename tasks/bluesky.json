@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/claude-code-self-hosted-runner-cloud-sessions-on-your-own-hosts",
+    "text": "claude self-hosted-runner landed in 2.1.224. Cloud sessions execute inside your network, checkouts stay local, inference still leaves."
   }
 ]
