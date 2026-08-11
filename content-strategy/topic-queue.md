@@ -217,7 +217,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `AggregateException: One or more errors occurred` when awaiting `Task.WhenAll` in C# → slug: 2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall
 - Fix: `Attempting to reconnect to the server` after a Blazor Server circuit disconnects → slug: 2026/08/fix-attempting-to-reconnect-to-the-server-after-a-blazor-circuit-disconnects
 - Fix: `flutter doctor` reports `cmdline-tools component is missing` → slug: 2026/08/fix-flutter-doctor-cmdline-tools-component-is-missing
-- Fix: `The type or namespace name 'OpenApiReference' could not be found` after upgrading to .NET 11
+- Fix: `The type or namespace name 'OpenApiReference' could not be found` after upgrading to .NET 11 → slug: 2026/08/fix-the-type-or-namespace-name-openapireference-could-not-be-found
 - Fix: `The 'interceptors' feature is not enabled in this namespace` with `Microsoft.AspNetCore.OpenApi`
 - Fix: `dotnet tool install --global dotnet-ef` throws an error
 - Fix: `404 Not Found` for `blazor.server.js` after installing a new .NET SDK

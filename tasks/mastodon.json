@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/08/fix-the-type-or-namespace-name-openapireference-could-not-be-found",
+    "text": "Upgrading to .NET 10 or 11 pulls in Microsoft.OpenApi 2.0, which consolidated the namespaces and deleted OpenApiReference. Fixing the using directive only gets you halfway: there is now one typed reference class per component. Bonus gotcha: do not fix it by jumping to 3.x, that breaks the XML comment source generator."
   }
 ]

@@ -1638,5 +1638,9 @@
   {
     "slug": "2026/08/how-to-show-a-modal-window-in-dotnet-maui-11",
     "text": "MAUI has no modal window API. On Windows you set a Win32 owner HWND, then OverlappedPresenter.IsModal. Full code."
+  },
+  {
+    "slug": "2026/08/fix-the-type-or-namespace-name-openapireference-could-not-be-found",
+    "text": "OpenApiReference wasn't moved in Microsoft.OpenApi 2.0, it was deleted. Use the typed reference classes instead."
   }
 ]
