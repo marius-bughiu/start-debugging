@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/migrate-off-archived-mcp-reference-servers",
-    "text": "The archived MCP servers pin SDK 1.0.1, so they cap at protocol 2024-11-05: no structured output, no elicitation. The checklist:"
   }
 ]
