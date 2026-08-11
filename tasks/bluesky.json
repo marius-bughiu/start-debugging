@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/fix-the-type-or-namespace-name-openapireference-could-not-be-found",
-    "text": "Changing the using to Microsoft.OpenApi won't fix CS0246 on OpenApiReference: the type is gone. Full 2.x mapping table inside."
   }
 ]
