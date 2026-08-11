@@ -1630,5 +1630,9 @@
   {
     "slug": "2026/08/how-to-replace-flutter-deprecated-radio-groupvalue-and-onchanged-with-radiogroup",
     "text": "Migrated a Flutter Radio to RadioGroup and it went grey? The group is matched by exact generic type."
+  },
+  {
+    "slug": "2026/08/migrate-off-archived-mcp-reference-servers",
+    "text": "@modelcontextprotocol/server-postgres was last released Dec 2024 and is deprecated. Audit script plus replacements:"
   }
 ]
