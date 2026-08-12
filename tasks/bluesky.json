@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/csharp-15-labeled-break-and-continue-dotnet-11-preview-7",
+    "text": ".NET 11 Preview 7 lands labeled break/continue in C# 15. IDE0410 flags your old goto and bool-flag nested loop tricks."
   }
 ]
