@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/08/csharp-15-labeled-break-and-continue-dotnet-11-preview-7",
-    "text": ".NET 11 Preview 7 shipped on 2026-08-11 with labeled break and continue in C# 15. Label the loop, then write break outer; or continue outer;. The IDE0410 analyzer is on by default and points at the goto and bool-flag workarounds you already have. Two gotchas: nested labels are rejected, and continue cannot target a switch."
   }
 ]
