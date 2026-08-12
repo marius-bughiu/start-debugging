@@ -119,7 +119,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Migrate a custom TypeScript agent loop to the Cursor SDK → slug: 2026/08/migrate-a-custom-typescript-agent-loop-to-the-cursor-sdk
 - Migrate a Cursor rules file to the new plugins, skills, and subagents model → slug: 2026/08/migrate-cursor-rules-to-skills-subagents-and-plugins
 - Migrate off the archived MCP reference servers (GitHub, Postgres, Slack) to their maintained replacements → slug: 2026/08/migrate-off-archived-mcp-reference-servers
-- Migrate an agent from chunking-and-RAG to a 1M-token context window
+- Migrate an agent from chunking-and-RAG to a 1M-token context window → slug: 2026/08/migrate-from-rag-chunking-to-a-1m-token-context-window
 - Migrate a Claude Code setup to the "Manual" default permission mode without breaking headless runs
 
 ## Patterns

@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/08/migrate-from-rag-chunking-to-a-1m-token-context-window",
+    "text": "1M context is the default on Claude Opus 5, Opus 4.6+, and Sonnet 4.6+: no beta header, standard pricing. Whether you can drop the vector store is one number. Cache reads bill at 0.1x base, so a cached corpus under 10x your retrieved tokens costs the same per request. The trap: the 4.7+ tokenizer emits ~30% more tokens."
   }
 ]
