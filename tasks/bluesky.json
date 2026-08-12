@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/migrate-from-rag-chunking-to-a-1m-token-context-window",
-    "text": "1M context is the default on Opus 5 and Sonnet 5 now: no beta header, no premium. The 10x cache-read rule tells you if RAG can go."
   }
 ]
