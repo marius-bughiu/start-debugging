@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/fix-dotnet-tool-install-global-dotnet-ef-throws-an-error",
+    "text": "dotnet-ef install failing? \"already installed\" exits 0 and is not your bug. The other six each need a different flag."
   }
 ]

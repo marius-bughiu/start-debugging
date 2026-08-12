@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/08/fix-dotnet-tool-install-global-dotnet-ef-throws-an-error",
+    "text": "Every way dotnet tool install --global dotnet-ef fails on the .NET 10 SDK, with the exact message and exit code for each. \"already installed\" exits 0 and is not an error, and \"is not found in NuGet feeds\" is about the version, not the package. Worst case: the install reports success and the tool still will not start."
   }
 ]

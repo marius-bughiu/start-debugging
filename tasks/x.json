@@ -1654,5 +1654,9 @@
   {
     "slug": "2026/08/fix-the-interceptors-feature-is-not-enabled-in-this-namespace-microsoft-aspnetcore-openapi",
     "text": "CS9137 on an OpenAPI build: InterceptorsNamespaces goes in the project the compiler names, not the one with the package."
+  },
+  {
+    "slug": "2026/08/fix-dotnet-tool-install-global-dotnet-ef-throws-an-error",
+    "text": "Six ways dotnet tool install --global dotnet-ef fails, six different one-line messages. Only one of them exits 0."
   }
 ]
