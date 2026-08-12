@@ -1650,5 +1650,9 @@
   {
     "slug": "2026/08/migrate-from-rag-chunking-to-a-1m-token-context-window",
     "text": "Cache reads bill at 0.1x, so a corpus under 10x your top-k retrieval costs the same as RAG."
+  },
+  {
+    "slug": "2026/08/fix-the-interceptors-feature-is-not-enabled-in-this-namespace-microsoft-aspnetcore-openapi",
+    "text": "CS9137 on an OpenAPI build: InterceptorsNamespaces goes in the project the compiler names, not the one with the package."
   }
 ]
