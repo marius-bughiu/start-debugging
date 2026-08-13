@@ -1658,5 +1658,9 @@
   {
     "slug": "2026/08/fix-dotnet-tool-install-global-dotnet-ef-throws-an-error",
     "text": "Six ways dotnet tool install --global dotnet-ef fails, six different one-line messages. Only one of them exits 0."
+  },
+  {
+    "slug": "2026/08/blazor-auto-pause-idle-circuits-dotnet-11-preview-7",
+    "text": "Blazor Server circuits now pause themselves when the tab hides. One package, one HiddenDelay knob, .NET 11 Preview 7."
   }
 ]
