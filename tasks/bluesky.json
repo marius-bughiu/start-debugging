@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/fix-msb4057-the-target-resolvepackageassets-does-not-exist-in-the-project",
-    "text": "Deleting bin and obj will not fix MSB4057. A multi-targeted MAUI app has no ResolvePackageAssets in its outer build."
   }
 ]
