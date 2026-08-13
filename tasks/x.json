@@ -1674,5 +1674,9 @@
   {
     "slug": "2026/08/fix-visual-studio-test-explorer-hangs-on-xunit-v3-while-dotnet-test-passes",
     "text": "xUnit v3's generated Main branches on --server. Test Explorer takes the MTP path, dotnet test never does."
+  },
+  {
+    "slug": "2026/08/fix-msb4057-the-target-resolvepackageassets-does-not-exist-in-the-project",
+    "text": "MSB4057 ResolvePackageAssets does not exist is not a broken restore. Your target hit the outer cross-targeting build."
   }
 ]
