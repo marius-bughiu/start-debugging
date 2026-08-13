@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/fix-404-not-found-for-blazor-server-js-after-installing-a-new-dotnet-sdk",
-    "text": "Installed the .NET 10 SDK and blazor.server.js started 404ing? The script now ships in a NuGet package the SDK skips."
   }
 ]
