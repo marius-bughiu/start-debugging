@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/08/blazor-auto-pause-idle-circuits-dotnet-11-preview-7",
-    "text": "Blazor Server keeps a circuit alive as long as its SignalR connection, so a tab abandoned at lunch still costs memory and concurrency. .NET 11 Preview 7 adds an opt-in AutoPause package that pauses once the tab has been hidden for HiddenDelay, and defers when a text field has focus or media is playing."
   }
 ]
