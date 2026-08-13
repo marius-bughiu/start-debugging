@@ -1670,5 +1670,9 @@
   {
     "slug": "2026/08/migrate-to-manual-permission-mode-without-breaking-headless-runs",
     "text": "Manual mode in a headless run denies every write and still exits reporting success. The CI guard that catches it."
+  },
+  {
+    "slug": "2026/08/fix-visual-studio-test-explorer-hangs-on-xunit-v3-while-dotnet-test-passes",
+    "text": "xUnit v3's generated Main branches on --server. Test Explorer takes the MTP path, dotnet test never does."
   }
 ]

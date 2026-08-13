@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/fix-visual-studio-test-explorer-hangs-on-xunit-v3-while-dotnet-test-passes",
+    "text": "Test Explorer hangs but dotnet test is green? They run different code. The xUnit v3 entry point branches on --server."
   }
 ]
