@@ -1666,5 +1666,9 @@
   {
     "slug": "2026/08/fix-404-not-found-for-blazor-server-js-after-installing-a-new-dotnet-sdk",
     "text": "blazor.server.js 404s on .NET 10 because the script left the assembly. Your host project needs a .razor file."
+  },
+  {
+    "slug": "2026/08/migrate-to-manual-permission-mode-without-breaking-headless-runs",
+    "text": "Manual mode in a headless run denies every write and still exits reporting success. The CI guard that catches it."
   }
 ]
