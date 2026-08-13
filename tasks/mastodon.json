@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/08/migrate-to-manual-permission-mode-without-breaking-headless-runs",
-    "text": "Switching Claude Code to Manual is one settings line interactively and a silent CI outage headless: every ask becomes a deny and the run still reports success. Worse, an untrusted workspace drops permissions.allow from .claude/settings.json while still applying defaultMode from the same file. Measured on 2.1.224."
   }
 ]

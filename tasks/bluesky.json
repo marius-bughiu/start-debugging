@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/migrate-to-manual-permission-mode-without-breaking-headless-runs",
-    "text": "Tightening Claude Code to Manual? A fresh CI checkout is an untrusted workspace, so your permissions.allow is silently dropped."
   }
 ]
