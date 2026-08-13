@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/08/fix-visual-studio-test-explorer-hangs-on-xunit-v3-while-dotnet-test-passes",
-    "text": "Visual Studio Test Explorer hanging on an xUnit v3 project while dotnet test passes is not flakiness. The generated entry point branches on --server: the IDE gets Microsoft.Testing.Platform over a JSON-RPC socket, the CLI gets xUnit's console runner. Worse, dotnet test can exit 0 having run zero tests."
   }
 ]
