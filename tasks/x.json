@@ -1662,5 +1662,9 @@
   {
     "slug": "2026/08/blazor-auto-pause-idle-circuits-dotnet-11-preview-7",
     "text": "Blazor Server circuits now pause themselves when the tab hides. One package, one HiddenDelay knob, .NET 11 Preview 7."
+  },
+  {
+    "slug": "2026/08/fix-404-not-found-for-blazor-server-js-after-installing-a-new-dotnet-sdk",
+    "text": "blazor.server.js 404s on .NET 10 because the script left the assembly. Your host project needs a .razor file."
   }
 ]

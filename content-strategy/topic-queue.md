@@ -220,7 +220,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `The type or namespace name 'OpenApiReference' could not be found` after upgrading to .NET 11 → slug: 2026/08/fix-the-type-or-namespace-name-openapireference-could-not-be-found
 - Fix: `The 'interceptors' feature is not enabled in this namespace` with `Microsoft.AspNetCore.OpenApi` → slug: 2026/08/fix-the-interceptors-feature-is-not-enabled-in-this-namespace-microsoft-aspnetcore-openapi
 - Fix: `dotnet tool install --global dotnet-ef` throws an error → slug: 2026/08/fix-dotnet-tool-install-global-dotnet-ef-throws-an-error
-- Fix: `404 Not Found` for `blazor.server.js` after installing a new .NET SDK
+- Fix: `404 Not Found` for `blazor.server.js` after installing a new .NET SDK → slug: 2026/08/fix-404-not-found-for-blazor-server-js-after-installing-a-new-dotnet-sdk
 - Fix: Visual Studio Test Explorer hangs on a .NET 11 xUnit project while `dotnet test` passes
 - Fix: `MSB4057: The target "ResolvePackageAssets" does not exist in the project` in .NET MAUI
 - Fix: Google Play rejects a Flutter or .NET MAUI app for missing 16 KB memory page size support
