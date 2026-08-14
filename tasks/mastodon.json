@@ -38,9 +38,5 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
-  },
-  {
-    "slug": "2026/08/microsoft-extensions-ai-10-9-routing-and-failover-chat-clients",
-    "text": "Microsoft.Extensions.AI 10.9.0 adds RoutingChatClient, OrderedFailoverChatClient and SemanticRoutingChatClient, so multi-provider fallback is no longer a hand-rolled try/catch. I ran them against the real package: streaming only fails over before the first update ships, and MEAI001 is a compile error, not a warning."
   }
 ]
