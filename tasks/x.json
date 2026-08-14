@@ -1694,5 +1694,9 @@
   {
     "slug": "2026/08/fix-mprotect-failed-permission-denied-in-a-flutter-ios-debug-build",
     "text": "mprotect failed: 13 on iOS 26 is not your Dart code, it is JIT. Flutter 3.35.0 is the first stable that survives it."
+  },
+  {
+    "slug": "2026/08/fix-an-error-occurred-while-preparing-sdk-package-ndk-not-in-gzip-format",
+    "text": "Not in GZIP format on every NDK retry? The SDK Manager cached the corrupt zip. Delete .downloadIntermediates."
   }
 ]
