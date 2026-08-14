@@ -38,5 +38,9 @@
   {
     "slug": "2026/07/how-to-use-named-query-filters-for-soft-delete-and-multi-tenancy-in-ef-core-11",
     "text": "EF Core 11 makes named query filters the default way to stack them. Put a soft-delete filter and a tenant filter on the same entity, then call IgnoreQueryFilters([\"SoftDeletionFilter\"]) to show deleted rows in an admin view without dropping tenant isolation. Plus the required-navigation INNER JOIN trap that silently drops rows."
+  },
+  {
+    "slug": "2026/08/fix-google-play-rejects-flutter-or-maui-app-for-16-kb-page-size",
+    "text": "Google Play blocks the release because one 64-bit .so still has 4 KB ELF segments. Neither Flutter nor .NET is the culprit: both ship 16 KB aligned binaries. Find the plugin that does not, plus why an alignment scan flags libc.so and every 32-bit library as a false positive."
   }
 ]

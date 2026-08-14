@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/fix-google-play-rejects-flutter-or-maui-app-for-16-kb-page-size",
+    "text": "Flutter's engine and .NET's Android runtime are already 16 KB aligned. The 4 KB .so blocking your Play release came from a plugin."
   }
 ]

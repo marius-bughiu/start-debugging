@@ -223,7 +223,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `404 Not Found` for `blazor.server.js` after installing a new .NET SDK → slug: 2026/08/fix-404-not-found-for-blazor-server-js-after-installing-a-new-dotnet-sdk
 - Fix: Visual Studio Test Explorer hangs on a .NET 11 xUnit project while `dotnet test` passes → slug: 2026/08/fix-visual-studio-test-explorer-hangs-on-xunit-v3-while-dotnet-test-passes
 - Fix: `MSB4057: The target "ResolvePackageAssets" does not exist in the project` in .NET MAUI → slug: 2026/08/fix-msb4057-the-target-resolvepackageassets-does-not-exist-in-the-project
-- Fix: Google Play rejects a Flutter or .NET MAUI app for missing 16 KB memory page size support
+- Fix: Google Play rejects a Flutter or .NET MAUI app for missing 16 KB memory page size support → slug: 2026/08/fix-google-play-rejects-flutter-or-maui-app-for-16-kb-page-size
 - Fix: `mprotect failed: Permission denied` crash on a Flutter iOS build
 - Fix: `An error occurred while preparing SDK package NDK (Side by side): Not in GZIP format` in a Flutter Android build
 

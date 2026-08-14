@@ -1682,5 +1682,9 @@
   {
     "slug": "2026/08/microsoft-extensions-ai-10-9-routing-and-failover-chat-clients",
     "text": "Microsoft.Extensions.AI 10.9.0 ships OrderedFailoverChatClient. But streaming failover stops the moment a token ships."
+  },
+  {
+    "slug": "2026/08/fix-google-play-rejects-flutter-or-maui-app-for-16-kb-page-size",
+    "text": "Google Play blocks your release over a 4 KB .so you never wrote. How to find the dependency that owns it."
   }
 ]
