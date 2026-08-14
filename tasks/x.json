@@ -1678,5 +1678,9 @@
   {
     "slug": "2026/08/fix-msb4057-the-target-resolvepackageassets-does-not-exist-in-the-project",
     "text": "MSB4057 ResolvePackageAssets does not exist is not a broken restore. Your target hit the outer cross-targeting build."
+  },
+  {
+    "slug": "2026/08/microsoft-extensions-ai-10-9-routing-and-failover-chat-clients",
+    "text": "Microsoft.Extensions.AI 10.9.0 ships OrderedFailoverChatClient. But streaming failover stops the moment a token ships."
   }
 ]

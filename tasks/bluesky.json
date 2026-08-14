@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/microsoft-extensions-ai-10-9-routing-and-failover-chat-clients",
+    "text": "Extensions.AI 10.9.0 adds routing + failover IChatClients. Verified: once OutputCommitted is true, no mid-stream recovery."
   }
 ]
