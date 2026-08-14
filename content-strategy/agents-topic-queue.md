@@ -124,10 +124,10 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 
 ## Patterns
 
-- Patterns: scheduling Claude Code via cron for autonomous daily workflows
-- Patterns: sub-agent orchestration in Claude Code, when to spawn and when not to
-- Patterns: writing an eval harness for a coding agent
-- Patterns: MCP server design for a large internal API surface
+- Patterns: scheduling Claude Code via cron for autonomous daily workflows (skipped: same intent as 2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues, which already compares Routines vs GitHub Actions cron vs /loop)
+- Patterns: sub-agent orchestration in Claude Code, when to spawn and when not to (skipped: answered by 2026/08/subtask-vs-fork-vs-background-agent-in-claude-code and 2026/07/claude-code-skills-vs-subagents-vs-mcp-servers-when-to-build-each)
+- Patterns: writing an eval harness for a coding agent (skipped: answered by 2026/05/how-to-set-up-an-llm-as-judge-eval-harness-for-a-coding-agent and 2026/06/llm-as-judge-vs-rule-based-evals-for-a-coding-agent)
+- Patterns: MCP server design for a large internal API surface → slug: 2026/08/mcp-server-design-for-a-large-internal-api-surface
 - Patterns: keeping a CLAUDE.md readable as the repo grows
 - Patterns: prompt-cache-first API design for multi-turn agents
 - Patterns: safe file-write tools for an agent (preview, confirm, apply)

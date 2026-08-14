@@ -1686,5 +1686,9 @@
   {
     "slug": "2026/08/fix-google-play-rejects-flutter-or-maui-app-for-16-kb-page-size",
     "text": "Google Play blocks your release over a 4 KB .so you never wrote. How to find the dependency that owns it."
+  },
+  {
+    "slug": "2026/08/mcp-server-design-for-a-large-internal-api-surface",
+    "text": "229 generated MCP tools = 213 KB of JSON on every tools/list. And per-session tool registration is now illegal."
   }
 ]
