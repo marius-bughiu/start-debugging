@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/fix-mprotect-failed-permission-denied-in-a-flutter-ios-debug-build",
+    "text": "Debug builds die inside Dart_Initialize on iOS 26 because the kernel refuses mprotect. Dual mapping landed in Dart 3.9.0."
   }
 ]

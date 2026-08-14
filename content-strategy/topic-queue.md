@@ -224,7 +224,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: Visual Studio Test Explorer hangs on a .NET 11 xUnit project while `dotnet test` passes → slug: 2026/08/fix-visual-studio-test-explorer-hangs-on-xunit-v3-while-dotnet-test-passes
 - Fix: `MSB4057: The target "ResolvePackageAssets" does not exist in the project` in .NET MAUI → slug: 2026/08/fix-msb4057-the-target-resolvepackageassets-does-not-exist-in-the-project
 - Fix: Google Play rejects a Flutter or .NET MAUI app for missing 16 KB memory page size support → slug: 2026/08/fix-google-play-rejects-flutter-or-maui-app-for-16-kb-page-size
-- Fix: `mprotect failed: Permission denied` crash on a Flutter iOS build
+- Fix: `mprotect failed: Permission denied` crash on a Flutter iOS build → slug: 2026/08/fix-mprotect-failed-permission-denied-in-a-flutter-ios-debug-build
 - Fix: `An error occurred while preparing SDK package NDK (Side by side): Not in GZIP format` in a Flutter Android build
 
 ## Vs / comparison
