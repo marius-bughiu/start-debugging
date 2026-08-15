@@ -45,54 +45,6 @@
     ]
   },
   {
-    "url": "https://api.flutter.dev/flutter/widgets/Flexible-class.html",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/fix-renderflex-overflowed-in-flutter.md",
-      "site/src/content/blog/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter.md",
-      "site/src/content/blog/de/2026/05/fix-renderflex-overflowed-in-flutter.md",
-      "site/src/content/blog/de/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter.md",
-      "site/src/content/blog/es/2026/05/fix-renderflex-overflowed-in-flutter.md",
-      "site/src/content/blog/es/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter.md",
-      "site/src/content/blog/ja/2026/05/fix-renderflex-overflowed-in-flutter.md",
-      "site/src/content/blog/ja/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter.md",
-      "site/src/content/blog/pt-br/2026/05/fix-renderflex-overflowed-in-flutter.md",
-      "site/src/content/blog/pt-br/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter.md",
-      "site/src/content/blog/ru/2026/05/fix-renderflex-overflowed-in-flutter.md",
-      "site/src/content/blog/ru/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter.md"
-    ]
-  },
-  {
-    "url": "https://aspire.dev/app-host/migrate-from-docker-compose/",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md",
-      "site/src/content/blog/de/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md",
-      "site/src/content/blog/es/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md",
-      "site/src/content/blog/ja/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md",
-      "site/src/content/blog/pt-br/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md",
-      "site/src/content/blog/ru/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md"
-    ]
-  },
-  {
-    "url": "https://aspire.dev/integrations/compute/docker/",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md",
-      "site/src/content/blog/de/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md",
-      "site/src/content/blog/es/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md",
-      "site/src/content/blog/ja/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md",
-      "site/src/content/blog/pt-br/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md",
-      "site/src/content/blog/ru/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md"
-    ]
-  },
-  {
     "url": "https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.html",
     "status": 404,
     "ok": false,
@@ -106,34 +58,6 @@
     ]
   },
   {
-    "url": "https://claude.ai/mcp",
-    "status": 403,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/05/how-to-add-retrieval-augmented-generation-to-a-claude-code-session.md"
-    ]
-  },
-  {
-    "url": "https://code.claude.com/docs/en/hooks#instructionsloaded",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/04/how-to-write-a-claude-md-that-actually-changes-model-behaviour.md",
-      "site/src/content/blog/2026/04/how-to-write-a-claude-md-that-actually-changes-model-behaviour.md",
-      "site/src/content/blog/de/2026/04/how-to-write-a-claude-md-that-actually-changes-model-behaviour.md",
-      "site/src/content/blog/de/2026/04/how-to-write-a-claude-md-that-actually-changes-model-behaviour.md",
-      "site/src/content/blog/es/2026/04/how-to-write-a-claude-md-that-actually-changes-model-behaviour.md",
-      "site/src/content/blog/es/2026/04/how-to-write-a-claude-md-that-actually-changes-model-behaviour.md",
-      "site/src/content/blog/ja/2026/04/how-to-write-a-claude-md-that-actually-changes-model-behaviour.md",
-      "site/src/content/blog/ja/2026/04/how-to-write-a-claude-md-that-actually-changes-model-behaviour.md",
-      "site/src/content/blog/pt-br/2026/04/how-to-write-a-claude-md-that-actually-changes-model-behaviour.md",
-      "site/src/content/blog/pt-br/2026/04/how-to-write-a-claude-md-that-actually-changes-model-behaviour.md",
-      "site/src/content/blog/ru/2026/04/how-to-write-a-claude-md-that-actually-changes-model-behaviour.md",
-      "site/src/content/blog/ru/2026/04/how-to-write-a-claude-md-that-actually-changes-model-behaviour.md"
-    ]
-  },
-  {
     "url": "https://code.claude.com/docs/en/release-notes",
     "status": 404,
     "ok": false,
@@ -142,15 +66,13 @@
     ]
   },
   {
-    "url": "https://code.claude.com/docs/en/troubleshooting",
+    "url": "https://code.visualstudio.com/docs/copilot/customization/prompt-files",
     "status": null,
     "ok": false,
     "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/05/fix-claude-code-reports-mcp-server-disconnected-inside-wsl.md",
-      "site/src/content/blog/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code.md",
-      "site/src/content/blog/2026/06/fix-claude-code-drops-mcp-tools-after-auto-compaction.md",
-      "site/src/content/blog/2026/06/fix-claude-code-drops-mcp-tools-after-auto-compaction.md"
+      "site/src/content/blog/2026/07/migrate-copilot-prompt-files-to-agent-skills.md",
+      "site/src/content/blog/2026/07/migrate-copilot-prompt-files-to-agent-skills.md"
     ]
   },
   {
@@ -167,17 +89,17 @@
     ]
   },
   {
-    "url": "https://devblogs.microsoft.com/agent-framework/",
+    "url": "https://devblogs.microsoft.com/aspire/aspire-isolated-mode-parallel-development/",
     "status": null,
     "ok": false,
     "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/05/agent-framework-durable-workflows-checkpoint-restart.md",
-      "site/src/content/blog/de/2026/05/agent-framework-durable-workflows-checkpoint-restart.md",
-      "site/src/content/blog/es/2026/05/agent-framework-durable-workflows-checkpoint-restart.md",
-      "site/src/content/blog/ja/2026/05/agent-framework-durable-workflows-checkpoint-restart.md",
-      "site/src/content/blog/pt-br/2026/05/agent-framework-durable-workflows-checkpoint-restart.md",
-      "site/src/content/blog/ru/2026/05/agent-framework-durable-workflows-checkpoint-restart.md"
+      "site/src/content/blog/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md",
+      "site/src/content/blog/de/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md",
+      "site/src/content/blog/es/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md",
+      "site/src/content/blog/ja/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md",
+      "site/src/content/blog/pt-br/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md",
+      "site/src/content/blog/ru/2026/04/aspire-13-2-isolated-mode-parallel-apphost-instances.md"
     ]
   },
   {
@@ -200,45 +122,12 @@
     ]
   },
   {
-    "url": "https://devblogs.microsoft.com/dotnet/msbuild-binlog-mcp-server/",
+    "url": "https://devblogs.microsoft.com/semantic-kernel/using-semantic-kernel-with-dependency-injection/",
     "status": null,
     "ok": false,
     "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/06/dotnet-binlog-mcp-server-ai-investigates-msbuild-builds.md",
-      "site/src/content/blog/de/2026/06/dotnet-binlog-mcp-server-ai-investigates-msbuild-builds.md",
-      "site/src/content/blog/es/2026/06/dotnet-binlog-mcp-server-ai-investigates-msbuild-builds.md",
-      "site/src/content/blog/ja/2026/06/dotnet-binlog-mcp-server-ai-investigates-msbuild-builds.md",
-      "site/src/content/blog/pt-br/2026/06/dotnet-binlog-mcp-server-ai-investigates-msbuild-builds.md",
-      "site/src/content/blog/ru/2026/06/dotnet-binlog-mcp-server-ai-investigates-msbuild-builds.md"
-    ]
-  },
-  {
-    "url": "https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/07/what-is-pgo-in-dotnet-and-do-i-need-to-opt-in.md",
-      "site/src/content/blog/de/2026/07/what-is-pgo-in-dotnet-and-do-i-need-to-opt-in.md",
-      "site/src/content/blog/es/2026/07/what-is-pgo-in-dotnet-and-do-i-need-to-opt-in.md",
-      "site/src/content/blog/ja/2026/07/what-is-pgo-in-dotnet-and-do-i-need-to-opt-in.md",
-      "site/src/content/blog/pt-br/2026/07/what-is-pgo-in-dotnet-and-do-i-need-to-opt-in.md",
-      "site/src/content/blog/ru/2026/07/what-is-pgo-in-dotnet-and-do-i-need-to-opt-in.md"
-    ]
-  },
-  {
-    "url": "https://devblogs.microsoft.com/dotnet/pin-clustering-in-dotnet-maui-maps/",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/04/dotnet-maui-11-map-pin-clustering.md",
-      "site/src/content/blog/de/2026/04/dotnet-maui-11-map-pin-clustering.md",
-      "site/src/content/blog/es/2026/04/dotnet-maui-11-map-pin-clustering.md",
-      "site/src/content/blog/ja/2026/04/dotnet-maui-11-map-pin-clustering.md",
-      "site/src/content/blog/pt-br/2026/04/dotnet-maui-11-map-pin-clustering.md",
-      "site/src/content/blog/ru/2026/04/dotnet-maui-11-map-pin-clustering.md"
+      "site/src/content/blog/2026/05/how-to-run-a-semantic-kernel-plugin-from-a-backgroundservice.md"
     ]
   },
   {
@@ -255,6 +144,50 @@
     ]
   },
   {
+    "url": "https://dotnet.microsoft.com/download/dotnet/11.0",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/04/blazor-ssr-tempdata-dotnet-11.md",
+      "site/src/content/blog/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3.md",
+      "site/src/content/blog/2026/04/csharp-15-union-types-dotnet-11-preview-2.md",
+      "site/src/content/blog/2026/04/dotnet-11-zstandard-compression-system-io.md",
+      "site/src/content/blog/2026/04/dotnet-maui-11-map-pin-clustering.md",
+      "site/src/content/blog/2026/05/dotnet-watch-maui-android-ios-net-11-preview-4.md",
+      "site/src/content/blog/de/2026/04/blazor-ssr-tempdata-dotnet-11.md",
+      "site/src/content/blog/de/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3.md",
+      "site/src/content/blog/de/2026/04/csharp-15-union-types-dotnet-11-preview-2.md",
+      "site/src/content/blog/de/2026/04/dotnet-11-zstandard-compression-system-io.md",
+      "site/src/content/blog/de/2026/04/dotnet-maui-11-map-pin-clustering.md",
+      "site/src/content/blog/de/2026/05/dotnet-watch-maui-android-ios-net-11-preview-4.md",
+      "site/src/content/blog/es/2026/04/blazor-ssr-tempdata-dotnet-11.md",
+      "site/src/content/blog/es/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3.md",
+      "site/src/content/blog/es/2026/04/csharp-15-union-types-dotnet-11-preview-2.md",
+      "site/src/content/blog/es/2026/04/dotnet-11-zstandard-compression-system-io.md",
+      "site/src/content/blog/es/2026/04/dotnet-maui-11-map-pin-clustering.md",
+      "site/src/content/blog/es/2026/05/dotnet-watch-maui-android-ios-net-11-preview-4.md",
+      "site/src/content/blog/ja/2026/04/blazor-ssr-tempdata-dotnet-11.md",
+      "site/src/content/blog/ja/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3.md",
+      "site/src/content/blog/ja/2026/04/csharp-15-union-types-dotnet-11-preview-2.md",
+      "site/src/content/blog/ja/2026/04/dotnet-11-zstandard-compression-system-io.md",
+      "site/src/content/blog/ja/2026/04/dotnet-maui-11-map-pin-clustering.md",
+      "site/src/content/blog/ja/2026/05/dotnet-watch-maui-android-ios-net-11-preview-4.md",
+      "site/src/content/blog/pt-br/2026/04/blazor-ssr-tempdata-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3.md",
+      "site/src/content/blog/pt-br/2026/04/csharp-15-union-types-dotnet-11-preview-2.md",
+      "site/src/content/blog/pt-br/2026/04/dotnet-11-zstandard-compression-system-io.md",
+      "site/src/content/blog/pt-br/2026/04/dotnet-maui-11-map-pin-clustering.md",
+      "site/src/content/blog/pt-br/2026/05/dotnet-watch-maui-android-ios-net-11-preview-4.md",
+      "site/src/content/blog/ru/2026/04/blazor-ssr-tempdata-dotnet-11.md",
+      "site/src/content/blog/ru/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3.md",
+      "site/src/content/blog/ru/2026/04/csharp-15-union-types-dotnet-11-preview-2.md",
+      "site/src/content/blog/ru/2026/04/dotnet-11-zstandard-compression-system-io.md",
+      "site/src/content/blog/ru/2026/04/dotnet-maui-11-map-pin-clustering.md",
+      "site/src/content/blog/ru/2026/05/dotnet-watch-maui-android-ios-net-11-preview-4.md"
+    ]
+  },
+  {
     "url": "https://dotnetfiddle.net/",
     "status": 418,
     "ok": false,
@@ -265,6 +198,44 @@
       "site/src/content/blog/ja/2023/06/how-to-start-programming-with-c.md",
       "site/src/content/blog/pt-br/2023/06/how-to-start-programming-with-c.md",
       "site/src/content/blog/ru/2023/06/how-to-start-programming-with-c.md"
+    ]
+  },
+  {
+    "url": "https://github.com/BaldGhost-git/typemonkey",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/01/typemonkey-is-a-good-reminder-flutter-desktop-apps-need-architecture-first-polish-later.md",
+      "site/src/content/blog/de/2026/01/typemonkey-is-a-good-reminder-flutter-desktop-apps-need-architecture-first-polish-later.md",
+      "site/src/content/blog/es/2026/01/typemonkey-is-a-good-reminder-flutter-desktop-apps-need-architecture-first-polish-later.md",
+      "site/src/content/blog/ja/2026/01/typemonkey-is-a-good-reminder-flutter-desktop-apps-need-architecture-first-polish-later.md",
+      "site/src/content/blog/pt-br/2026/01/typemonkey-is-a-good-reminder-flutter-desktop-apps-need-architecture-first-polish-later.md",
+      "site/src/content/blog/ru/2026/01/typemonkey-is-a-good-reminder-flutter-desktop-apps-need-architecture-first-polish-later.md"
+    ]
+  },
+  {
+    "url": "https://github.com/BAM-DevCrew/Claude-Code-MCP-Server-WSL",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/05/fix-claude-code-reports-mcp-server-disconnected-inside-wsl.md",
+      "site/src/content/blog/2026/05/fix-claude-code-reports-mcp-server-disconnected-inside-wsl.md"
+    ]
+  },
+  {
+    "url": "https://github.com/dotnet/aspnetcore/blob/main/src/OpenApi/src/Microsoft.AspNetCore.OpenApi.csproj",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/08/fix-the-interceptors-feature-is-not-enabled-in-this-namespace-microsoft-aspnetcore-openapi.md",
+      "site/src/content/blog/de/2026/08/fix-the-interceptors-feature-is-not-enabled-in-this-namespace-microsoft-aspnetcore-openapi.md",
+      "site/src/content/blog/es/2026/08/fix-the-interceptors-feature-is-not-enabled-in-this-namespace-microsoft-aspnetcore-openapi.md",
+      "site/src/content/blog/ja/2026/08/fix-the-interceptors-feature-is-not-enabled-in-this-namespace-microsoft-aspnetcore-openapi.md",
+      "site/src/content/blog/pt-br/2026/08/fix-the-interceptors-feature-is-not-enabled-in-this-namespace-microsoft-aspnetcore-openapi.md",
+      "site/src/content/blog/ru/2026/08/fix-the-interceptors-feature-is-not-enabled-in-this-namespace-microsoft-aspnetcore-openapi.md"
     ]
   },
   {
@@ -281,6 +252,32 @@
     ]
   },
   {
+    "url": "https://github.com/dotnet/csharplang/blob/main/proposals/collection-expression-arguments.md",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/csharp-15-collection-expression-arguments.md",
+      "site/src/content/blog/de/2026/04/csharp-15-collection-expression-arguments.md",
+      "site/src/content/blog/es/2026/04/csharp-15-collection-expression-arguments.md",
+      "site/src/content/blog/ja/2026/04/csharp-15-collection-expression-arguments.md",
+      "site/src/content/blog/pt-br/2026/04/csharp-15-collection-expression-arguments.md",
+      "site/src/content/blog/ru/2026/04/csharp-15-collection-expression-arguments.md"
+    ]
+  },
+  {
+    "url": "https://github.com/dotnet/dotnet/blob/main/src/runtime/src/libraries/System.IO.Compression.Zstandard/src/System/IO/Compression/ZstandardCompressionOptions.cs",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md"
+    ]
+  },
+  {
     "url": "https://github.com/dotnet/efcore/blob/main/src/EFCore/Internal/ConcurrencyDetector.cs",
     "status": 404,
     "ok": false,
@@ -291,20 +288,6 @@
       "site/src/content/blog/ja/2026/05/fix-second-operation-was-started-on-this-context-instance.md",
       "site/src/content/blog/pt-br/2026/05/fix-second-operation-was-started-on-this-context-instance.md",
       "site/src/content/blog/ru/2026/05/fix-second-operation-was-started-on-this-context-instance.md"
-    ]
-  },
-  {
-    "url": "https://github.com/dotnet/efcore/pull/38110",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/ef-core-11-temporal-tables-clr-period-properties.md",
-      "site/src/content/blog/de/2026/05/ef-core-11-temporal-tables-clr-period-properties.md",
-      "site/src/content/blog/es/2026/05/ef-core-11-temporal-tables-clr-period-properties.md",
-      "site/src/content/blog/ja/2026/05/ef-core-11-temporal-tables-clr-period-properties.md",
-      "site/src/content/blog/pt-br/2026/05/ef-core-11-temporal-tables-clr-period-properties.md",
-      "site/src/content/blog/ru/2026/05/ef-core-11-temporal-tables-clr-period-properties.md"
     ]
   },
   {
@@ -321,6 +304,20 @@
     ]
   },
   {
+    "url": "https://github.com/dotnet/runtime/blob/main/docs/design/features/globalization-invariant-mode.md",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/07/fix-couldnt-find-a-valid-icu-package-installed-on-the-system.md",
+      "site/src/content/blog/de/2026/07/fix-couldnt-find-a-valid-icu-package-installed-on-the-system.md",
+      "site/src/content/blog/es/2026/07/fix-couldnt-find-a-valid-icu-package-installed-on-the-system.md",
+      "site/src/content/blog/ja/2026/07/fix-couldnt-find-a-valid-icu-package-installed-on-the-system.md",
+      "site/src/content/blog/pt-br/2026/07/fix-couldnt-find-a-valid-icu-package-installed-on-the-system.md",
+      "site/src/content/blog/ru/2026/07/fix-couldnt-find-a-valid-icu-package-installed-on-the-system.md"
+    ]
+  },
+  {
     "url": "https://github.com/dotnet/runtime/blob/main/src/libraries/Microsoft.Extensions.Hosting/src/Internal/HostFactoryResolver.cs",
     "status": 404,
     "ok": false,
@@ -334,17 +331,23 @@
     ]
   },
   {
-    "url": "https://github.com/flutter-actions/setup-flutter",
+    "url": "https://github.com/dotnet/runtime/issues/47605",
     "status": null,
     "ok": false,
     "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/05/how-to-target-multiple-flutter-versions-from-one-ci-pipeline.md",
-      "site/src/content/blog/de/2026/05/how-to-target-multiple-flutter-versions-from-one-ci-pipeline.md",
-      "site/src/content/blog/es/2026/05/how-to-target-multiple-flutter-versions-from-one-ci-pipeline.md",
-      "site/src/content/blog/ja/2026/05/how-to-target-multiple-flutter-versions-from-one-ci-pipeline.md",
-      "site/src/content/blog/pt-br/2026/05/how-to-target-multiple-flutter-versions-from-one-ci-pipeline.md",
-      "site/src/content/blog/ru/2026/05/how-to-target-multiple-flutter-versions-from-one-ci-pipeline.md"
+      "site/src/content/blog/2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall.md",
+      "site/src/content/blog/2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall.md",
+      "site/src/content/blog/de/2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall.md",
+      "site/src/content/blog/de/2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall.md",
+      "site/src/content/blog/es/2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall.md",
+      "site/src/content/blog/es/2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall.md",
+      "site/src/content/blog/ja/2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall.md",
+      "site/src/content/blog/ja/2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall.md",
+      "site/src/content/blog/pt-br/2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall.md",
+      "site/src/content/blog/pt-br/2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall.md",
+      "site/src/content/blog/ru/2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall.md",
+      "site/src/content/blog/ru/2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall.md"
     ]
   },
   {
@@ -447,26 +450,6 @@
     ]
   },
   {
-    "url": "https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.overloadresolutionpriorityattribute",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/fix-csharp-14-overload-resolution-breaking-change-with-spans.md",
-      "site/src/content/blog/2026/05/fix-csharp-14-overload-resolution-breaking-change-with-spans.md",
-      "site/src/content/blog/de/2026/05/fix-csharp-14-overload-resolution-breaking-change-with-spans.md",
-      "site/src/content/blog/de/2026/05/fix-csharp-14-overload-resolution-breaking-change-with-spans.md",
-      "site/src/content/blog/es/2026/05/fix-csharp-14-overload-resolution-breaking-change-with-spans.md",
-      "site/src/content/blog/es/2026/05/fix-csharp-14-overload-resolution-breaking-change-with-spans.md",
-      "site/src/content/blog/ja/2026/05/fix-csharp-14-overload-resolution-breaking-change-with-spans.md",
-      "site/src/content/blog/ja/2026/05/fix-csharp-14-overload-resolution-breaking-change-with-spans.md",
-      "site/src/content/blog/pt-br/2026/05/fix-csharp-14-overload-resolution-breaking-change-with-spans.md",
-      "site/src/content/blog/pt-br/2026/05/fix-csharp-14-overload-resolution-breaking-change-with-spans.md",
-      "site/src/content/blog/ru/2026/05/fix-csharp-14-overload-resolution-breaking-change-with-spans.md",
-      "site/src/content/blog/ru/2026/05/fix-csharp-14-overload-resolution-breaking-change-with-spans.md"
-    ]
-  },
-  {
     "url": "https://learn.microsoft.com/en-us/dotnet/api/system.timeprovider.createcancellationtokensource",
     "status": 404,
     "ok": false,
@@ -508,6 +491,19 @@
       "site/src/content/blog/ru/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist.md",
       "site/src/content/blog/ru/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026.md",
       "site/src/content/blog/ru/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026.md"
+    ]
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/labeled-break-continue",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/08/csharp-15-labeled-break-and-continue-dotnet-11-preview-7.md",
+      "site/src/content/blog/de/2026/08/csharp-15-labeled-break-and-continue-dotnet-11-preview-7.md",
+      "site/src/content/blog/es/2026/08/csharp-15-labeled-break-and-continue-dotnet-11-preview-7.md",
+      "site/src/content/blog/ja/2026/08/csharp-15-labeled-break-and-continue-dotnet-11-preview-7.md",
+      "site/src/content/blog/pt-br/2026/08/csharp-15-labeled-break-and-continue-dotnet-11-preview-7.md",
+      "site/src/content/blog/ru/2026/08/csharp-15-labeled-break-and-continue-dotnet-11-preview-7.md"
     ]
   },
   {
@@ -712,6 +708,20 @@
     ]
   },
   {
+    "url": "https://ngrok.com/docs/getting-started/",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2020/11/how-to-publicly-expose-local-signalr-service-publicly-for-mobile-clients.md",
+      "site/src/content/blog/de/2020/11/how-to-publicly-expose-local-signalr-service-publicly-for-mobile-clients.md",
+      "site/src/content/blog/es/2020/11/how-to-publicly-expose-local-signalr-service-publicly-for-mobile-clients.md",
+      "site/src/content/blog/ja/2020/11/how-to-publicly-expose-local-signalr-service-publicly-for-mobile-clients.md",
+      "site/src/content/blog/pt-br/2020/11/how-to-publicly-expose-local-signalr-service-publicly-for-mobile-clients.md",
+      "site/src/content/blog/ru/2020/11/how-to-publicly-expose-local-signalr-service-publicly-for-mobile-clients.md"
+    ]
+  },
+  {
     "url": "https://partner.microsoft.com/dashboard/apps-and-games/overview",
     "status": null,
     "ok": false,
@@ -787,6 +797,20 @@
     ]
   },
   {
+    "url": "https://support.microsoft.com/en-us/topic/private-key-lifetime-on-windows-and-the-january-2021-net-framework-security-and-quality-rollup-3f097a10-f798-4ffd-8511-4757ebaf2c70",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/05/fix-keyset-does-not-exist-when-calling-win32-api-from-dotnet.md",
+      "site/src/content/blog/de/2026/05/fix-keyset-does-not-exist-when-calling-win32-api-from-dotnet.md",
+      "site/src/content/blog/es/2026/05/fix-keyset-does-not-exist-when-calling-win32-api-from-dotnet.md",
+      "site/src/content/blog/ja/2026/05/fix-keyset-does-not-exist-when-calling-win32-api-from-dotnet.md",
+      "site/src/content/blog/pt-br/2026/05/fix-keyset-does-not-exist-when-calling-win32-api-from-dotnet.md",
+      "site/src/content/blog/ru/2026/05/fix-keyset-does-not-exist-when-calling-win32-api-from-dotnet.md"
+    ]
+  },
+  {
     "url": "https://techcommunity.microsoft.com/blog/appsonazureblog/net-on-azure-functions-roadmap-update/4178714",
     "status": 400,
     "ok": false,
@@ -826,12 +850,26 @@
     ]
   },
   {
+    "url": "https://www.ietf.org/rfc/rfc1952.txt",
+    "status": 429,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md"
+    ]
+  },
+  {
     "url": "https://www.npmjs.com/package/@anthropic-ai/sdk",
     "status": 403,
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
       "site/src/content/blog/2026/05/how-to-cache-multi-turn-claude-conversations-across-api-calls.md",
+      "site/src/content/blog/2026/08/migrate-a-custom-typescript-agent-loop-to-the-cursor-sdk.md",
       "site/src/content/blog/de/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
       "site/src/content/blog/es/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
       "site/src/content/blog/ja/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
@@ -840,11 +878,27 @@
     ]
   },
   {
+    "url": "https://www.npmjs.com/package/@cursor/sdk",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/08/migrate-a-custom-typescript-agent-loop-to-the-cursor-sdk.md"
+    ]
+  },
+  {
     "url": "https://www.npmjs.com/package/@modelcontextprotocol/sdk",
     "status": 403,
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/07/fix-mcp-server-fetch-is-not-defined-on-node-below-18.md"
+    ]
+  },
+  {
+    "url": "https://www.npmjs.com/package/@modelcontextprotocol/server",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/08/safe-file-write-tools-for-an-agent-preview-confirm-apply.md"
     ]
   },
   {
@@ -868,8 +922,9 @@
   },
   {
     "url": "https://www.npmjs.com/package/jsonl-to-pdf",
-    "status": 403,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md",
       "site/src/content/blog/de/2026/04/export-claude-code-conversations-to-pdf-with-jsonl-to-pdf.md",
@@ -979,16 +1034,18 @@
   },
   {
     "url": "https://www.nuget.org/packages/M.Super.Activities",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/build-a-uipath-activity-package-for-modern-studio-with-viewmodels.md"
     ]
   },
   {
     "url": "https://www.nuget.org/packages/M.Super.AppInsights.Activities",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/add-project-settings-to-a-uipath-package-design-time-and-runtime.md"
     ]
@@ -1100,9 +1157,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Azure.Functions.Worker",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/azure-functions-isolated-worker-vs-in-process-in-dotnet-11.md",
       "site/src/content/blog/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
@@ -1143,9 +1199,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Extensions.ApiDescription.Server",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
       "site/src/content/blog/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
@@ -1214,9 +1269,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.TestPlatform/1.0.0-alpha-stj-26213-07",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4.md",
       "site/src/content/blog/de/2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4.md",
@@ -1228,9 +1282,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/ModelContextProtocol.AspNetCore",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/migrate-a-semantic-kernel-plugin-to-an-mcp-server.md"
     ]
@@ -1370,9 +1423,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Riok.Mapperly",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
       "site/src/content/blog/de/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
@@ -1380,6 +1432,32 @@
       "site/src/content/blog/ja/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
       "site/src/content/blog/pt-br/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
       "site/src/content/blog/ru/2026/05/migrate-from-automapper-to-source-generated-mapping.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Scalar.AspNetCore",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/08/how-to-serve-openapi-docs-with-scalar-instead-of-swagger-ui-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/08/how-to-serve-openapi-docs-with-scalar-instead-of-swagger-ui-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/08/how-to-serve-openapi-docs-with-scalar-instead-of-swagger-ui-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/08/how-to-serve-openapi-docs-with-scalar-instead-of-swagger-ui-in-aspnetcore-11.md",
+      "site/src/content/blog/pt-br/2026/08/how-to-serve-openapi-docs-with-scalar-instead-of-swagger-ui-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/08/how-to-serve-openapi-docs-with-scalar-instead-of-swagger-ui-in-aspnetcore-11.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Scalar.AspNetCore/2.16.20",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11.md",
+      "site/src/content/blog/pt-br/2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11.md"
     ]
   },
   {
@@ -1393,6 +1471,19 @@
       "site/src/content/blog/ja/2026/05/how-to-set-up-structured-logging-with-serilog-and-seq-in-dotnet-11.md",
       "site/src/content/blog/pt-br/2026/05/how-to-set-up-structured-logging-with-serilog-and-seq-in-dotnet-11.md",
       "site/src/content/blog/ru/2026/05/how-to-set-up-structured-logging-with-serilog-and-seq-in-dotnet-11.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Swashbuckle.AspNetCore.SwaggerUI/10.2.3",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11.md",
+      "site/src/content/blog/pt-br/2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11.md"
     ]
   },
   {
@@ -1458,6 +1549,19 @@
       "site/src/content/blog/ja/2026/08/xunit-v3-vs-nunit-vs-mstest-in-2026.md",
       "site/src/content/blog/pt-br/2026/08/xunit-v3-vs-nunit-vs-mstest-in-2026.md",
       "site/src/content/blog/ru/2026/08/xunit-v3-vs-nunit-vs-mstest-in-2026.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/ZstdSharp.Port",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11.md"
     ]
   },
   {
