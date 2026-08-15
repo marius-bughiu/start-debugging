@@ -42,5 +42,9 @@
   {
     "slug": "2026/08/mcp-server-design-for-a-large-internal-api-surface",
     "text": "200 internal endpoints mapped to 200 MCP tools costs about 933 bytes of JSON per tool, measured on the MCP TypeScript server SDK 2.0.0. Spec 2026-07-28 removed sessions, so registering tools per session is no longer legal. What works: curate, scope the list by credentials, set cache hints. The SDK default is ttlMs 0."
+  },
+  {
+    "slug": "2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11",
+    "text": "Scalar or Swagger UI for an ASP.NET Core 11 API? Scalar wins on the request builder and 20+ code sample clients, and costs 1.02 MiB of gzipped JavaScript against Swagger UI's 514 KiB. The deciding detail: .NET 11 now emits OpenAPI 3.2 by default, and Scalar's 3.2 support is still an open issue."
   }
 ]

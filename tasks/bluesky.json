@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11",
+    "text": ".NET 11 emits OpenAPI 3.2 by default. Swagger UI 5.32 renders it, Scalar's 3.2 issue is still open. Plus measured payloads."
   }
 ]

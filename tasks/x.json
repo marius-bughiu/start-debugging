@@ -1710,5 +1710,9 @@
   {
     "slug": "2026/08/safe-file-write-tools-for-an-agent-preview-confirm-apply",
     "text": "Approve one diff, apply another. The argument swap that beats a naive MCP confirm, and the check that stops it."
+  },
+  {
+    "slug": "2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11",
+    "text": "Scalar ships 1.02 MiB of gzipped JS to the browser. Swagger UI ships 514 KiB. Measured from the packages."
   }
 ]
