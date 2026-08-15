@@ -56,6 +56,13 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to run a background coding agent that auto-commits and opens a draft PR when it finishes → slug: 2026/07/run-a-background-coding-agent-that-auto-commits-and-opens-a-draft-pr
 - How to define an agent orchestration in YAML with Microsoft Agent Framework Declarative Workflows 1.0 → slug: 2026/07/agent-framework-declarative-workflows-1-0-yaml-orchestration
 - How to route models per request with Cursor Router and enforce Intelligence/Balance/Cost across a team → slug: 2026/07/cursor-router-makes-auto-a-per-request-model-decision
+- How to route MCP traffic through a gateway using the `Mcp-Method` and `Mcp-Name` headers
+- How to package skills and an MCP server together as one Agent Plugin (`plugin.json`, `skills/`, `mcp.json`)
+- How to centrally control which MCP servers a team can run with `allowedMcpServers` and `deniedMcpServers`
+- How to set the reasoning level for a GitHub Copilot cloud agent per task
+- How to serve agent skills from an MCP server in .NET with `UseMcpSkills` instead of shipping them in the app
+- How to run a Microsoft Agent Framework agent on the GitHub Copilot harness as its execution engine
+- How to cut Cursor cloud agent startup time with prebuilt Builds
 
 ## Fix / error
 
@@ -83,6 +90,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: `.mcp.json` servers never start because the workspace is marked untrusted → slug: 2026/07/fix-mcp-json-servers-never-start-because-the-workspace-is-untrusted
 - Fix: a long MCP tool call gets auto-backgrounded after two minutes mid-task → slug: 2026/07/fix-long-mcp-tool-call-auto-backgrounded-after-two-minutes
 - Fix: a `Write(src)` permission rule never matches - directory rules need `src/**` → slug: 2026/08/fix-write-rule-is-not-matched-by-file-permission-checks
+- Fix: MCP client and server negotiate different protocol versions (2025-11-25 vs 2026-07-28)
+- Fix: `MCP9004`/`MCP9005`/`MCP9006` deprecation warnings after upgrading the MCP C# SDK to v2.0
+- Fix: an MCP server never starts because an enterprise allowlist blocks its command or URL
 
 ## Vs / comparison
 
@@ -106,6 +116,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Auto permission mode vs manual approval in a coding agent: what each actually allows through → slug: 2026/08/auto-mode-vs-manual-approval-what-each-permission-mode-allows
 - Declarative YAML workflows vs code-first orchestration in Microsoft Agent Framework → slug: 2026/08/agent-framework-declarative-yaml-vs-code-first-orchestration
 - Subtask vs fork vs background agent in Claude Code: which delegation to reach for → slug: 2026/08/subtask-vs-fork-vs-background-agent-in-claude-code
+- Stateful vs stateless MCP servers: what actually breaks when the session goes away
+- Agent Plugins 1.0 vs vendor-specific plugin formats: what the shared standard covers and what it doesn't
+- Copilot memory vs repository custom instructions vs `AGENTS.md`: which one the model actually reads
 
 ## Migration / upgrade
 
@@ -121,6 +134,10 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Migrate off the archived MCP reference servers (GitHub, Postgres, Slack) to their maintained replacements → slug: 2026/08/migrate-off-archived-mcp-reference-servers
 - Migrate an agent from chunking-and-RAG to a 1M-token context window → slug: 2026/08/migrate-from-rag-chunking-to-a-1m-token-context-window
 - Migrate a Claude Code setup to the "Manual" default permission mode without breaking headless runs → slug: 2026/08/migrate-to-manual-permission-mode-without-breaking-headless-runs
+- Migrate an MCP server from session-based transport to the stateless 2026-07-28 spec
+- Migrate off deprecated MCP sampling and elicitation to `InputRequiredResult` multi round-trip requests
+- Migrate an MCP C# SDK 1.x server to v2.0 without breaking v1 clients
+- Migrate a vendor-specific agent plugin to the cross-vendor Agent Plugins 1.0 layout
 
 ## Patterns
 
@@ -141,6 +158,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Patterns: keeping API keys out of agent context with a credential gateway
 - Patterns: running coding agents in disposable VMs and containers instead of on your laptop
 - Patterns: measuring an agent's fixed token overhead - system prompt and tool schemas before the first user token
+- Patterns: stateless tool design - passing state handles as tool arguments instead of relying on the transport
+- Patterns: self-healing end-to-end tests when a coding agent renames selectors
 
 ## What is / concept
 
@@ -158,6 +177,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - What is magentic orchestration in Microsoft Agent Framework
 - What is Claude Tag and how does it bring Claude into Slack
 - What are declarative agent workflows and when is YAML better than code
+- What is a Multi Round-Trip Request in MCP and why it replaced server-initiated sampling
+- What is the MCP Tasks extension and when do you need poll-based long-running tools
+- What is Agent Plugins 1.0 and which agents can install the same plugin
 
 ---
 
