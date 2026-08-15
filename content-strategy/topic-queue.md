@@ -127,6 +127,11 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to override the default resilience handler that .NET Aspire registers → slug: 2026/08/how-to-override-the-default-resilience-handler-that-aspire-registers
 - How to replace Flutter's deprecated `Radio` `groupValue` and `onChanged` with `RadioGroup` → slug: 2026/08/how-to-replace-flutter-deprecated-radio-groupvalue-and-onchanged-with-radiogroup
 - How to show a modal window in .NET MAUI 11 → slug: 2026/08/how-to-show-a-modal-window-in-dotnet-maui-11
+- How to make System.Text.Json ignore a property that has the `required` modifier
+- How to download a file from a Blazor component without JavaScript interop
+- How to use `IDbContextFactory<T>` from a singleton service in Blazor
+- How to generate a primary key from a database sequence on insert in EF Core 11
+- How to redact sensitive values from logs with `[LogProperties]` and data redaction in .NET 11
 
 ## Fix / error
 
@@ -226,6 +231,20 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: Google Play rejects a Flutter or .NET MAUI app for missing 16 KB memory page size support → slug: 2026/08/fix-google-play-rejects-flutter-or-maui-app-for-16-kb-page-size
 - Fix: `mprotect failed: Permission denied` crash on a Flutter iOS build → slug: 2026/08/fix-mprotect-failed-permission-denied-in-a-flutter-ios-debug-build
 - Fix: `An error occurred while preparing SDK package NDK (Side by side): Not in GZIP format` in a Flutter Android build → slug: 2026/08/fix-an-error-occurred-while-preparing-sdk-package-ndk-not-in-gzip-format
+- Fix: `MapperConfiguration does not contain a constructor that takes 1 arguments` after upgrading to AutoMapper 15
+- Fix: `CA1873: Evaluation of this argument may be expensive and unnecessary if logging is disabled`
+- Fix: `The call is ambiguous between the following methods or properties` after moving to C# 14 extension members
+- Fix: cannot target OpenAPI 3.0 after upgrading Swashbuckle.AspNetCore to v9
+- Fix: Scalar stops rendering after upgrading to .NET 11 when the app uses OpenAPI document transformers
+- Fix: `An exception was thrown while attempting to evaluate the LINQ query parameter expression` in EF Core 11
+- Fix: `Dictionary<string, string>` is always null in a minimal API when posted alongside `IFormFile` as multipart/form-data
+- Fix: `Unable to find a destination matching the provided destination specifier` in a Flutter iOS build after the iOS 26 update
+- Fix: `The class 'GoogleSignIn' doesn't have an unnamed constructor` after upgrading `google_sign_in` to 7.x
+- Fix: `[firebase_messaging/apns-token-not-set] APNS token has not been set` on Flutter iOS
+- Fix: `Toolchain installation does not provide the required capabilities` in a Flutter Android Gradle build
+- Fix: Flutter UI overlaps the Android system navigation bar after targeting SDK 35 edge-to-edge
+- Fix: `Restricted method called: java.lang.System::load` warning in a Flutter Gradle build on JDK 22+
+- Fix: `Doesn't support required ABI` when installing a .NET MAUI Android app
 
 ## Vs / comparison
 
@@ -281,6 +300,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `record` vs `record struct` vs `readonly struct` in C# → slug: 2026/05/record-vs-class-vs-struct-in-csharp-a-decision-matrix (same intent as existing post: it already compares all four shapes including `readonly record struct`)
 - Scalar vs Swagger UI for OpenAPI documentation in ASP.NET Core 11 → slug: 2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11
 - Riverpod `Notifier` vs `AsyncNotifier` vs `StreamNotifier` in Flutter → slug: 2026/08/riverpod-notifier-vs-asyncnotifier-vs-streamnotifier-in-flutter
+- AutoMapper 15 vs Mapperly vs hand-written mapping in 2026
 
 ## Migration / upgrade
 
@@ -316,6 +336,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a Flutter web app from `dart:html` to `package:web` and `dart:js_interop`
 - Migrate a .NET MAUI Android app from Mono to CoreCLR in .NET 11
 - Migrate Flutter `material` and `cupertino` imports to the standalone packages in Flutter 3.44
+- Migrate a .NET MAUI Android app to target Android API level 36
 
 ## What is / concept
 
@@ -347,6 +368,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is an OpenAPI transformer in ASP.NET Core and when do I need one?
 - What is a `SynchronizationContext` and why does it cause async deadlocks in C#?
 - What is client-side evaluation in EF Core 11 and how do I avoid it?
+- What is Impeller and when does Flutter still fall back to Skia?
 
 ---
 
