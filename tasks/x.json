@@ -1698,5 +1698,9 @@
   {
     "slug": "2026/08/fix-an-error-occurred-while-preparing-sdk-package-ndk-not-in-gzip-format",
     "text": "Not in GZIP format on every NDK retry? The SDK Manager cached the corrupt zip. Delete .downloadIntermediates."
+  },
+  {
+    "slug": "2026/08/dotnet-11-preview-7-password-protected-zip-archives",
+    "text": "System.IO.Compression can finally write AES-256 encrypted ZIPs in .NET 11 Preview 7. No more DotNetZip."
   }
 ]

@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/dotnet-11-preview-7-password-protected-zip-archives",
+    "text": "Ten years after the request, .NET 11 Preview 7 adds password-protected ZIP entries. Mind the empty-file bug."
   }
 ]
