@@ -128,9 +128,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Patterns: sub-agent orchestration in Claude Code, when to spawn and when not to (skipped: answered by 2026/08/subtask-vs-fork-vs-background-agent-in-claude-code and 2026/07/claude-code-skills-vs-subagents-vs-mcp-servers-when-to-build-each)
 - Patterns: writing an eval harness for a coding agent (skipped: answered by 2026/05/how-to-set-up-an-llm-as-judge-eval-harness-for-a-coding-agent and 2026/06/llm-as-judge-vs-rule-based-evals-for-a-coding-agent)
 - Patterns: MCP server design for a large internal API surface → slug: 2026/08/mcp-server-design-for-a-large-internal-api-surface
-- Patterns: keeping a CLAUDE.md readable as the repo grows
-- Patterns: prompt-cache-first API design for multi-turn agents
-- Patterns: safe file-write tools for an agent (preview, confirm, apply)
+- Patterns: keeping a CLAUDE.md readable as the repo grows (skipped: same intent as 2026/04/how-to-write-a-claude-md-that-actually-changes-model-behaviour, which covers the 200-line ceiling and `.claude/rules/`, plus 2026/05/how-to-structure-a-monorepo-so-claude-codes-context-stays-small on splitting the file as the repo grows)
+- Patterns: prompt-cache-first API design for multi-turn agents (skipped: answered by 2026/05/how-to-cache-multi-turn-claude-conversations-across-api-calls, which covers breakpoint placement, TTL refresh and prefix invalidation across turns)
+- Patterns: safe file-write tools for an agent (preview, confirm, apply) → slug: 2026/08/safe-file-write-tools-for-an-agent-preview-confirm-apply
 - Patterns: information-flow control to block prompt injection in agents
 - Patterns: storing agent chat history - cost, privacy, and portability tradeoffs
 - Patterns: nested subagent hierarchies - when delegation depth helps and when it just burns tokens

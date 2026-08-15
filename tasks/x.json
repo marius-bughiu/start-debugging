@@ -1706,5 +1706,9 @@
   {
     "slug": "2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11",
     "text": "ASP.NET Core 11 defaults zstd to quality 3. On real JSON, quality 1 is both smaller and 2x faster."
+  },
+  {
+    "slug": "2026/08/safe-file-write-tools-for-an-agent-preview-confirm-apply",
+    "text": "Approve one diff, apply another. The argument swap that beats a naive MCP confirm, and the check that stops it."
   }
 ]

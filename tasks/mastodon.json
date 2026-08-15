@@ -42,5 +42,9 @@
   {
     "slug": "2026/08/mcp-server-design-for-a-large-internal-api-surface",
     "text": "200 internal endpoints mapped to 200 MCP tools costs about 933 bytes of JSON per tool, measured on the MCP TypeScript server SDK 2.0.0. Spec 2026-07-28 removed sessions, so registering tools per session is no longer legal. What works: curate, scope the list by credentials, set cache hints. The SDK default is ttlMs 0."
+  },
+  {
+    "slug": "2026/08/safe-file-write-tools-for-an-agent-preview-confirm-apply",
+    "text": "Exposing a file write to an agent over MCP takes two rounds: preview with an elicitation form, then apply. Verified on @modelcontextprotocol/server 2.0.0: a client can echo the same requestState with different arguments and get an unreviewed write applied. Bind the approval to a hash of the diff and a hash of the file on disk."
   }
 ]
