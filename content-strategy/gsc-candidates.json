@@ -1,14 +1,7 @@
 [
   {
-    "query": "reflection-based serialization has been disabled for this application.",
-    "position": 20,
-    "impressions": 2,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "query": "reflection-based serialization has been disabled for this application",
-    "position": 20,
+    "query": "\"io.flutter.plugins.inapppurchase.methodcallhandlerimpl\" \"missing class\"",
+    "position": 11,
     "impressions": 1,
     "clicks": 0,
     "ctr": 0
