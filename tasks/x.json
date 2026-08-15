@@ -1702,5 +1702,9 @@
   {
     "slug": "2026/08/dotnet-11-preview-7-password-protected-zip-archives",
     "text": "System.IO.Compression can finally write AES-256 encrypted ZIPs in .NET 11 Preview 7. No more DotNetZip."
+  },
+  {
+    "slug": "2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11",
+    "text": "ASP.NET Core 11 defaults zstd to quality 3. On real JSON, quality 1 is both smaller and 2x faster."
   }
 ]

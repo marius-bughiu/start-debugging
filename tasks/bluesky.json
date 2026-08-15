@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11",
+    "text": "The .NET 11 Zstandard provider ships at quality 3, and quality 1 beat it on ratio AND throughput. Benchmarks inside."
   }
 ]

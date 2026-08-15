@@ -277,7 +277,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - xUnit v3 vs NUnit vs MSTest in 2026 → slug: 2026/08/xunit-v3-vs-nunit-vs-mstest-in-2026
 - `WebApplicationFactory` vs Testcontainers for ASP.NET Core integration tests → slug: 2026/08/webapplicationfactory-vs-testcontainers-for-aspnetcore-integration-tests
 - .NET Aspire vs Docker Compose for local multi-service development → slug: 2026/08/aspire-vs-docker-compose-for-local-multi-service-development
-- Zstandard vs Brotli vs Gzip response compression in .NET 11
+- Zstandard vs Brotli vs Gzip response compression in .NET 11 → slug: 2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11
 - `record` vs `record struct` vs `readonly struct` in C#
 - Scalar vs Swagger UI for OpenAPI documentation in ASP.NET Core 11
 - Riverpod `Notifier` vs `AsyncNotifier` vs `StreamNotifier` in Flutter
