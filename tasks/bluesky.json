@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/riverpod-notifier-vs-asyncnotifier-vs-streamnotifier-in-flutter",
-    "text": "Riverpod's three notifier base classes are picked by one thing: whether build() returns T, FutureOr<T>, or Stream<T>."
   }
 ]
