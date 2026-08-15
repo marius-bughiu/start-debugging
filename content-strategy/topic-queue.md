@@ -280,7 +280,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Zstandard vs Brotli vs Gzip response compression in .NET 11 → slug: 2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11
 - `record` vs `record struct` vs `readonly struct` in C# → slug: 2026/05/record-vs-class-vs-struct-in-csharp-a-decision-matrix (same intent as existing post: it already compares all four shapes including `readonly record struct`)
 - Scalar vs Swagger UI for OpenAPI documentation in ASP.NET Core 11 → slug: 2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11
-- Riverpod `Notifier` vs `AsyncNotifier` vs `StreamNotifier` in Flutter
+- Riverpod `Notifier` vs `AsyncNotifier` vs `StreamNotifier` in Flutter → slug: 2026/08/riverpod-notifier-vs-asyncnotifier-vs-streamnotifier-in-flutter
 
 ## Migration / upgrade
 

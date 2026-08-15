@@ -1714,5 +1714,9 @@
   {
     "slug": "2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11",
     "text": "Scalar ships 1.02 MiB of gzipped JS to the browser. Swagger UI ships 514 KiB. Measured from the packages."
+  },
+  {
+    "slug": "2026/08/riverpod-notifier-vs-asyncnotifier-vs-streamnotifier-in-flutter",
+    "text": "Notifier, AsyncNotifier, or StreamNotifier? The return type of build() decides it. Everything else is identical."
   }
 ]
