@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/how-to-make-system-text-json-ignore-a-property-with-the-required-modifier",
-    "text": "System.Text.Json refuses [JsonIgnore] on a required member: marked required but does not specify a setter. Here is why, and the fix."
   }
 ]
