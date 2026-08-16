@@ -42,9 +42,5 @@
   {
     "slug": "2026/08/mcp-server-design-for-a-large-internal-api-surface",
     "text": "200 internal endpoints mapped to 200 MCP tools costs about 933 bytes of JSON per tool, measured on the MCP TypeScript server SDK 2.0.0. Spec 2026-07-28 removed sessions, so registering tools per session is no longer legal. What works: curate, scope the list by credentials, set cache hints. The SDK default is ttlMs 0."
-  },
-  {
-    "slug": "2026/08/how-to-download-a-file-from-a-blazor-component-without-javascript-interop",
-    "text": "You do not need downloadFileFromStream to download a file from a Blazor component. Point an anchor at a minimal API returning TypedResults.File and set the download attribute, which is also what makes enhanced navigation skip the click. Leave it off and the export endpoint runs twice."
   }
 ]
