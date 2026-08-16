@@ -1726,5 +1726,9 @@
   {
     "slug": "2026/08/how-to-make-system-text-json-ignore-a-property-with-the-required-modifier",
     "text": "[JsonIgnore] on a required property throws InvalidOperationException, not JsonException. Three real fixes."
+  },
+  {
+    "slug": "2026/08/route-mcp-traffic-through-a-gateway-with-mcp-method-and-mcp-name-headers",
+    "text": "MCP 2026-07-28 mirrors the method and tool name into HTTP headers. Route and throttle without parsing the body."
   }
 ]
