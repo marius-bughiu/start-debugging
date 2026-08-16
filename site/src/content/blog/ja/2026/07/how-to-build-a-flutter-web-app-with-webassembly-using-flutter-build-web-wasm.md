@@ -16,7 +16,7 @@ translatedBy: "claude"
 translationDate: 2026-07-28
 ---
 
-Flutter Web アプリを WebAssembly でビルドするには、`--wasm` フラグを付けます。つまり `flutter build web --wasm` です。このフラグ 1 つで、ツールは `build/web` に *2 つの* ビルドを出力します。`dart2wasm` がコンパイルし `skwasm` レンダラーを使う WasmGC ビルドと、`canvaskit` をフォールバックとして使う通常の `dart2js` ビルドです。生成された `flutter_bootstrap.js` がページ読み込み時にどちらかを選びます。実際のユーザーが Wasm ビルドを受け取れるかどうかは、その後 2 つの条件で決まります。依存関係グラフのどこも `dart:html`、`dart:js`、`dart:js_util`、`package:js` をインポートしていないこと、そしてサーバーが `Cross-Origin-Opener-Policy: same-origin` と `Cross-Origin-Embedder-Policy: credentialless` を送っていることです。後者がないと `skwasm` は黙って 1 スレッドに落ちます。この記事は Flutter 3.44 stable (2026-05-18 リリース、Dart 3.10 を同梱) を対象にしており、以下の内容はすべて `flutter/flutter` の `stable` ブランチで確認しています。先に重要な注意点を述べます。3.44 の時点でローダーは Blink 系ブラウザーでしか Wasm ビルドを有効にしないため、Firefox、Safari、そして iOS 上のすべてのブラウザーは、何をコンパイルしても JavaScript ビルドを受け取ります。
+Flutter Web アプリを WebAssembly でビルドするには、`--wasm` フラグを付けます。つまり `flutter build web --wasm` です。このフラグ 1 つで、ツールは `build/web` に *2 つの* ビルドを出力します。`dart2wasm` がコンパイルし `skwasm` レンダラーを使う WasmGC ビルドと、`canvaskit` をフォールバックとして使う通常の `dart2js` ビルドです。生成された `flutter_bootstrap.js` がページ読み込み時にどちらかを選びます。実際のユーザーが Wasm ビルドを受け取れるかどうかは、その後 2 つの条件で決まります。依存関係グラフのどこも `dart:html`、`dart:js`、`dart:js_util`、`package:js` をインポートしていないこと、そしてサーバーが `Cross-Origin-Opener-Policy: same-origin` と `Cross-Origin-Embedder-Policy: credentialless` を送っていることです。後者がないと `skwasm` は黙って 1 スレッドに落ちます。この記事は [Flutter 3.44](/ja/2026/07/flutter-3-44-read-the-screen-corner-radius-from-mediaquery/) stable (2026-05-18 リリース、Dart 3.10 を同梱) を対象にしており、以下の内容はすべて `flutter/flutter` の `stable` ブランチで確認しています。先に重要な注意点を述べます。3.44 の時点でローダーは Blink 系ブラウザーでしか Wasm ビルドを有効にしないため、Firefox、Safari、そして iOS 上のすべてのブラウザーは、何をコンパイルしても JavaScript ビルドを受け取ります。
 
 ## `--wasm` が build/web に実際に置くもの
 
