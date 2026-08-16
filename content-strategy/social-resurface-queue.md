@@ -37,18 +37,6 @@ Move approved entries under `## Approved`, remove after posting.
 
 <!-- The scheduled task appends new entries here. Stale drafts (>14 days) are culled on the next run. -->
 
-### 2026-07-26 drafted - how-to-use-records-with-ef-core-11-correctly
-
-**Original:** 2026-04-21 - How to use records with EF Core 11 correctly
-
-**X:** The C# docs say records are not appropriate as EF Core entity types. That is a blunt summary, not a ban. The rule that holds on EF Core 11: class with init setters for anything with identity, record for anything defined by its data.
-
-**Bluesky:** post with { Title = "New" } then Update() throws: another instance with the same key value is already being tracked. Identity resolution is doing its job. You handed it two CLR references to one row. Keep records out of the tracked-entity seat.
-
-**Mastodon:** Records and EF Core 11 fight for one reason: records are value-equal, the change tracker is reference-identity. Three seats, three answers. Complex types: positional record, ideal fit. Projections and DTOs: positional record, always safe. Tracked entities: skip positional, use a record class or plain class with init-only props and a binding ctor. The with expression on a tracked entity clones the primary key and blows up on SaveChanges.
-
-**Notes:** Longest eligible evergreen (2701 words, 6 internal links) and the only one covering a decision people re-litigate on every new EF Core release. GSC data had nothing relevant, so this was picked on depth. Fresh angle: the original push led with the how-to framing, so these lead with the conflict instead. X reframes the "records aren't appropriate for entities" doc warning as a seat-assignment rule rather than a prohibition. Bluesky opens on the concrete InvalidOperationException from a `with` expression, which is the error people actually search for. Mastodon uses the three-seats structure as the payoff.
-
 ### 2026-08-02 drafted - how-to-share-validation-logic-between-server-and-blazor-webassembly
 
 **Original:** 2026-04-29 - How to share validation logic between server and Blazor WebAssembly
@@ -72,6 +60,18 @@ Move approved entries under `## Approved`, remove after posting.
 **Mastodon:** Three fixes, in order. 1. Await sequentially. You almost never need two EF Core queries in flight at once inside one request handler. 2. IDbContextFactory for real concurrency: background services, batch jobs, fan-out. Each gets its own context, connection and change tracker. 3. CreateAsyncScope per iteration when the loop body needs other scoped services too, the right shape for Parallel.ForEachAsync. Never new up a DbContext to dodge the lifetime.
 
 **Notes:** Most internally linked eligible evergreen (10 outbound links to other posts, 1970 words) and a perennial error people hit on every new EF Core version, so it earns the slot on link equity rather than raw length. It also breaks the run of two how-to picks with a fix- post. GSC had one relevant rising query, the reflection-based serialization AOT error, but that maps to a July post that is not yet 90 days old, so depth and link count decided it again. Fresh angle: the original X copy was the textbook summary, two awaits raced one DbContext, use IDbContextFactory. These lead elsewhere. X argues the parallelism was never buying anything, since the connection serialises commands regardless, which reframes fix 1 as the default rather than a compromise. Bluesky takes the missing-await repro where `_ =` silenced the warning and the bug together. Mastodon carries the ranked three fixes with the factory vs CreateAsyncScope distinction, which is the part people get wrong after they stop sharing the context.
+
+### 2026-08-16 drafted - fix-the-type-or-namespace-name-could-not-be-found-after-project-reference
+
+**Original:** 2026-05-11 - Fix: The type or namespace name 'X' could not be found (after adding a project reference)
+
+**X:** CS0246 but Solution Explorer shows the project referenced. Check the ProjectReference metadata. ReferenceOutputAssembly="false" and PrivateAssets="all" both keep the assembly out of the compiler reference list. The IDE still draws it.
+
+**Bluesky:** dotnet clean does not cure this one. It removes outputs and keeps obj/project.assets.json, so the stale reference list survives the reset. dotnet build --no-incremental is what you actually want after editing a csproj mid-build.
+
+**Mastodon:** CS0246 after a project reference is an MSBuild problem wearing a Roslyn error. Three commands tell you which layer is broken. dotnet build -v:n prints the resolved reference list, and if your library is not in it the compiler never saw it. dotnet build -bl writes a binlog, open it and search ResolveAssemblyReferences to see which paths were handed over and which were skipped. dotnet msbuild -t:ResolveReferences runs resolution alone, no compiler noise.
+
+**Notes:** Longest eligible evergreen (2707 words) and joint-top on internal links among the long ones (5 outbound), covering an error that every SDK bump regenerates, so it stays useful indefinitely. GSC candidates had a single Flutter in-app-purchase query with no overlap, so this was picked on depth and link equity. It also moves the run off EF Core, which took two of the last three slots. Fresh angle: the original X copy led with NU1201 and the TargetFramework mismatch, which is fix one and the obvious cause. All three of these skip it. X takes fix five, the ProjectReference metadata that keeps the assembly out of the reference list while Solution Explorer keeps showing the project, which is the slowest cause to spot. Bluesky takes the dotnet clean trap, since clean keeps the assets file and people assume it is a full reset. Mastodon takes the diagnostic section, reframing the whole error as MSBuild rather than Roslyn and handing over the three commands that prove it.
 
 ---
 
