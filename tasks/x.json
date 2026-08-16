@@ -1718,5 +1718,9 @@
   {
     "slug": "2026/08/riverpod-notifier-vs-asyncnotifier-vs-streamnotifier-in-flutter",
     "text": "Notifier, AsyncNotifier, or StreamNotifier? The return type of build() decides it. Everything else is identical."
+  },
+  {
+    "slug": "2026/08/flutter-3-47-impeller-default-renderer-on-desktop",
+    "text": "Flutter 3.47 flips Windows, Linux and macOS to Impeller by default. Your runner main.cpp does not change at all."
   }
 ]
