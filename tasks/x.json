@@ -1722,5 +1722,9 @@
   {
     "slug": "2026/08/flutter-3-47-impeller-default-renderer-on-desktop",
     "text": "Flutter 3.47 flips Windows, Linux and macOS to Impeller by default. Your runner main.cpp does not change at all."
+  },
+  {
+    "slug": "2026/08/how-to-make-system-text-json-ignore-a-property-with-the-required-modifier",
+    "text": "[JsonIgnore] on a required property throws InvalidOperationException, not JsonException. Three real fixes."
   }
 ]
