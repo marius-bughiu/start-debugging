@@ -1730,5 +1730,9 @@
   {
     "slug": "2026/08/route-mcp-traffic-through-a-gateway-with-mcp-method-and-mcp-name-headers",
     "text": "MCP 2026-07-28 mirrors the method and tool name into HTTP headers. Route and throttle without parsing the body."
+  },
+  {
+    "slug": "2026/08/how-to-download-a-file-from-a-blazor-component-without-javascript-interop",
+    "text": "Blazor file downloads need zero JS. The download attribute is what stops enhanced navigation eating the click."
   }
 ]
