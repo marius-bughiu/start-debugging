@@ -42,9 +42,5 @@
   {
     "slug": "2026/08/mcp-server-design-for-a-large-internal-api-surface",
     "text": "200 internal endpoints mapped to 200 MCP tools costs about 933 bytes of JSON per tool, measured on the MCP TypeScript server SDK 2.0.0. Spec 2026-07-28 removed sessions, so registering tools per session is no longer legal. What works: curate, scope the list by credentials, set cache hints. The SDK default is ttlMs 0."
-  },
-  {
-    "slug": "2026/08/how-to-generate-a-primary-key-from-a-database-sequence-on-insert-in-ef-core-11",
-    "text": "Moving an EF Core 11 key from IDENTITY to a SQL Server sequence with UseSequence costs no extra round trip: the column gets a NEXT VALUE FOR default and EF reads it back via OUTPUT. The trap nobody mentions: if you skip HasSequence, EF creates a bigint sequence feeding your int column."
   }
 ]
