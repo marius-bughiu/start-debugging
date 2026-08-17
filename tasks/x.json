@@ -1746,5 +1746,9 @@
   {
     "slug": "2026/08/how-to-generate-a-primary-key-from-a-database-sequence-on-insert-in-ef-core-11",
     "text": "UseSequence in EF Core 11 costs zero extra round trips: EF omits the column and reads it back with OUTPUT."
+  },
+  {
+    "slug": "2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet",
+    "text": "EnableRedaction without AddRedaction logs your card numbers in plain text. No warning. Both or neither."
   }
 ]

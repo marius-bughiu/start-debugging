@@ -131,7 +131,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to download a file from a Blazor component without JavaScript interop → slug: 2026/08/how-to-download-a-file-from-a-blazor-component-without-javascript-interop
 - How to use `IDbContextFactory<T>` from a singleton service in Blazor → slug: 2026/08/how-to-use-idbcontextfactory-from-a-singleton-service-in-blazor
 - How to generate a primary key from a database sequence on insert in EF Core 11 → slug: 2026/08/how-to-generate-a-primary-key-from-a-database-sequence-on-insert-in-ef-core-11
-- How to redact sensitive values from logs with `[LogProperties]` and data redaction in .NET 11
+- How to redact sensitive values from logs with `[LogProperties]` and data redaction in .NET 11 → slug: 2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet
 
 ## Fix / error
 

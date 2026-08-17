@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet",
+    "text": "Redaction in .NET logs needs 3 pieces. Get 2 of 3 and you either lose the data or leak it in plain text. Here is which combo bites."
   }
 ]
