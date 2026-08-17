@@ -1,0 +1,356 @@
+---
+title: "How to generate a primary key from a database sequence on insert in EF Core 11"
+description: "Move a key off IDENTITY and onto a SQL Server sequence in EF Core 11 with UseSequence: the exact SQL EF emits, why explicit key values suddenly work without IDENTITY_INSERT, the bigint sequence feeding an int column, and the gaps you have to design around."
+pubDate: 2026-08-17
+template: how-to
+tags:
+  - "ef-core"
+  - "ef-core-11"
+  - "sql-server"
+  - "primary-keys"
+  - "migrations"
+  - "dotnet-11"
+  - "how-to"
+---
+
+Short answer: call `UseSequence` on the key property. EF Core sets the property to `ValueGenerated.OnAdd`, gives the column a `DEFAULT (NEXT VALUE FOR [schema].[SequenceName])` constraint in the migration, and reads the generated value back with an `OUTPUT` clause on the insert. It costs exactly the same number of round trips as `IDENTITY`, batches the same way, and it lets you insert explicit key values without `SET IDENTITY_INSERT`. The two things that bite are the sequence type (EF creates a `bigint` sequence unless you declare it yourself) and gaps, which SQL Server documents as unavoidable.
+
+```csharp
+// .NET 11, C# 14, EF Core 11
+modelBuilder.Entity<Order>()
+    .Property(o => o.Id)
+    .UseSequence("OrderNumbers", "shared");
+```
+
+The SQL in this post was captured from EF Core's own `ICommandBatchPreparer` and `GenerateCreateScript()` using **EF Core 10.0.11 on .NET SDK 10.0.201**, since EF Core 11 requires the .NET 11 runtime and this machine does not have it. That matters less than usual: the [EF Core 11 release notes](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-11.0/whatsnew) contain no entries for sequences or key value generation at all, and `SqlServerPropertyBuilderExtensions.UseSequence` is unchanged on `main`. Every statement below is EF's real output, not something I retyped. Behaviour that needs a live server to observe (rollback gaps, cache loss) is cited to the SQL Server documentation and labelled as such.
+
+## Why you would move a key off IDENTITY
+
+`IDENTITY` is the SQL Server default and it is fine for most tables. Three situations push people off it:
+
+- **Two tables need to draw from one number space.** Orders and invoices that must never share a document number cannot both own an `IDENTITY`. A sequence is not attached to a table, so both can pull from it.
+- **You need the value before the insert.** `NEXT VALUE FOR` can be called on its own, so you can reserve a key, build a document around it, and insert later. `IDENTITY` only produces a value as a side effect of an insert.
+- **You import rows with keys already assigned.** With `IDENTITY` every such insert needs `SET IDENTITY_INSERT dbo.Orders ON` around it, which is a connection-scoped, one-table-at-a-time toggle that EF does not manage for you. With a sequence the column is an ordinary column with a default, so an explicit value just goes in.
+
+## The two-line version
+
+Declare the sequence, then point the key at it:
+
+```csharp
+// .NET 11, C# 14, EF Core 11
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.HasSequence<int>("DocumentNumbers", schema: "shared")
+        .StartsAt(1000)
+        .IncrementsBy(1);
+
+    modelBuilder.Entity<Order>()
+        .Property(o => o.Id)
+        .UseSequence("DocumentNumbers", "shared");
+
+    modelBuilder.Entity<Invoice>()
+        .Property(i => i.Id)
+        .UseSequence("DocumentNumbers", "shared");
+}
+```
+
+`UseSequence` sets three things on the property: the value generation strategy to `SqlServerValueGenerationStrategy.Sequence`, the sequence name and schema, and `ValueGenerated.OnAdd`. It also clears any hi-lo or identity seed configuration that was there before. Dumping the model confirms it:
+
+```text
+Order.Id:   ValueGenerated=OnAdd, Strategy=Sequence, DefaultValueSql=NEXT VALUE FOR [shared].[DocumentNumbers]
+Invoice.Id: ValueGenerated=OnAdd, Strategy=Sequence, DefaultValueSql=NEXT VALUE FOR [shared].[DocumentNumbers]
+```
+
+Note that EF filled in `DefaultValueSql` for you. You did not write that string, and you should not write it yourself when using `UseSequence`.
+
+## What the migration produces
+
+`dotnet ef migrations add Initial` gives you a `CreateSequence` call plus a `defaultValueSql` on the column:
+
+```csharp
+// .NET 11, EF Core 11 migration output
+migrationBuilder.EnsureSchema(name: "shared");
+
+migrationBuilder.CreateSequence<int>(
+    name: "DocumentNumbers",
+    schema: "shared",
+    startValue: 1000L);
+
+migrationBuilder.CreateTable(
+    name: "Orders",
+    columns: table => new
+    {
+        Id = table.Column<int>(type: "int", nullable: false,
+            defaultValueSql: "NEXT VALUE FOR [shared].[DocumentNumbers]"),
+        Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+    },
+    constraints: table =>
+    {
+        table.PrimaryKey("PK_Orders", x => x.Id);
+    });
+```
+
+Which lands in the database as:
+
+```sql
+-- SQL Server, generated by EF Core
+CREATE SEQUENCE [shared].[DocumentNumbers] AS int START WITH 1000 INCREMENT BY 1 NO CYCLE;
+
+CREATE TABLE [Orders] (
+    [Id] int NOT NULL DEFAULT (NEXT VALUE FOR [shared].[DocumentNumbers]),
+    [Name] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([Id])
+);
+```
+
+There is no `IDENTITY` on the column. It is a plain `int` with a default constraint.
+
+## The INSERT EF actually sends
+
+This is the part people get wrong when they reason about it from first principles. A sequence key does **not** cost an extra round trip. EF omits the column from the insert, lets the default fire, and reads the value back in the same statement:
+
+```sql
+-- one Order, EF Core 11
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+```
+
+Add three orders in one `SaveChangesAsync` and EF uses the same `MERGE ... OUTPUT` shape it uses for `IDENTITY`, so the returned keys can be correlated back to the tracked entities by position:
+
+```sql
+-- three Orders in one batch, EF Core 11
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Orders] USING (
+VALUES (@p0, 0),
+(@p1, 1),
+(@p2, 2)) AS i ([Name], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Name])
+VALUES (i.[Name])
+OUTPUT INSERTED.[Id], i._Position;
+```
+
+Byte for byte, that is what an `IDENTITY` key produces too. Switching to a sequence changes nothing about EF's batching strategy, so if you were worried about a per-row `SELECT NEXT VALUE FOR`, stop. That only happens with `UseHiLo`, which is a different strategy (more on that below). If you want to see this for your own model, [logging the SQL that EF Core generates](/2026/07/how-to-log-the-sql-that-ef-core-11-generates/) takes about four lines of configuration.
+
+## Explicit key values, the reason most teams switch
+
+Set the key yourself and EF notices the property is no longer at its CLR default, includes the column in the insert, and drops the `OUTPUT` clause:
+
+```csharp
+// .NET 11, C# 14, EF Core 11
+db.Orders.Add(new Order { Id = 5000, Name = "imported" });
+await db.SaveChangesAsync();
+```
+
+```sql
+INSERT INTO [Orders] ([Id], [Name])
+VALUES (@p0, @p1);
+```
+
+An `IDENTITY` key generates the *identical* statement, and SQL Server rejects it with `Cannot insert explicit value for identity column in table 'Orders' when IDENTITY_INSERT is set to OFF` unless you toggle `IDENTITY_INSERT` around the call yourself. Against a sequence-backed column there is nothing to toggle: the column has a default, and supplying a value simply overrides it. That is the practical difference, and it is why import and data-migration code gets much shorter after the switch.
+
+Two caveats on this:
+
+**Zero is not an explicit value.** EF decides "the user set the key" by comparing against the CLR default. `new Order { Id = 0 }` is indistinguishable from `new Order { }`, so the sequence fires:
+
+```sql
+-- Order { Id = 0, Name = "zero" }
+INSERT INTO [Orders] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+```
+
+If zero is a legitimate key in your data, make the property nullable in the model or use a value that is not the CLR default.
+
+**Mixing the two splits the batch.** Add one entity with an explicit key and one without, and EF emits two separate statements rather than one `MERGE`, generated row first:
+
+```sql
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+INSERT INTO [Orders] ([Id], [Name])
+VALUES (@p1, @p2);
+```
+
+Still one round trip, but the batching win is gone. For a bulk import, keep explicit-key inserts in their own `SaveChanges` call. If throughput is the whole point, the numbers in [EF Core 11 vs Dapper for bulk inserts](/2026/05/ef-core-11-vs-dapper-for-bulk-inserts-real-benchmark/) are worth a look before you tune this further.
+
+## The bigint sequence feeding an int column
+
+This is the sharp edge. `UseSequence` will happily name a sequence you never declared, and EF creates it for you with the SQL Server default type, which is `bigint`:
+
+```csharp
+// no HasSequence call anywhere in the model
+modelBuilder.Entity<Doc>().Property(d => d.Id).UseSequence("OrderNumbers");
+```
+
+```sql
+CREATE SEQUENCE [OrderNumbers] START WITH 1 INCREMENT BY 1 NO CYCLE;
+
+CREATE TABLE [Docs] (
+    [Id] int NOT NULL DEFAULT (NEXT VALUE FOR [OrderNumbers]),
+    ...
+);
+```
+
+No `AS int`. The [CREATE SEQUENCE documentation](https://learn.microsoft.com/en-us/sql/t-sql/statements/create-sequence-transact-sql) is explicit: "If no data type is provided, the bigint data type is used as the default." A `bigint` sequence feeding an `int` column works fine for the first 2,147,483,647 values and then starts handing the column numbers it cannot store. That is a long way off for most tables, but it is a silent misconfiguration in the meantime, and it will not show up in any test.
+
+Declare the sequence with the type you want and the mismatch goes away:
+
+```csharp
+// .NET 11, C# 14, EF Core 11
+modelBuilder.HasSequence<int>("OrderNumbers").StartsAt(1000);
+modelBuilder.Entity<Doc>().Property(d => d.Id).UseSequence("OrderNumbers");
+```
+
+```sql
+CREATE SEQUENCE [OrderNumbers] AS int START WITH 1000 INCREMENT BY 1 NO CYCLE;
+```
+
+Rule of thumb: never let `UseSequence` create the sequence implicitly. Always pair it with a `HasSequence<T>` that names the same sequence.
+
+## Naming, and one wrong line in the docs
+
+Call `UseSequence()` with no arguments and EF names the sequence for you:
+
+```csharp
+modelBuilder.Entity<Doc>().Property(d => d.Id).UseSequence();
+// -> CREATE SEQUENCE [DocSequence] ...
+```
+
+The XML documentation on the `nameSuffix` parameter says it is "the name that will suffix the table name". It is not. Rename the table and the sequence name does not move:
+
+```csharp
+modelBuilder.Entity<Doc>().ToTable("ArchivedDocuments");
+modelBuilder.Entity<Doc>().Property(d => d.Id).UseSequence();
+// -> CREATE SEQUENCE [DocSequence]
+// -> CREATE TABLE [ArchivedDocuments] ([Id] int NOT NULL DEFAULT (NEXT VALUE FOR [DocSequence]), ...)
+```
+
+The name comes from the CLR entity type's short name plus the suffix, which defaults to `"Sequence"`. Rename the class and your sequence name changes under you, which is exactly the kind of thing that produces a surprise `DropSequence` plus `CreateSequence` pair in a migration. Name your sequences explicitly.
+
+There is also a model-wide switch, which gives every key its own sequence:
+
+```csharp
+// .NET 11, C# 14, EF Core 11
+modelBuilder.UseKeySequences();
+// -> CREATE SEQUENCE [DocSequence] ...
+// -> CREATE SEQUENCE [NoteSequence] ...
+// -> [Docs].[Id]  int    DEFAULT (NEXT VALUE FOR [DocSequence])
+// -> [Notes].[Id] bigint DEFAULT (NEXT VALUE FOR [NoteSequence])
+```
+
+Same `bigint` caveat applies to every sequence it creates.
+
+## UseSequence vs HasDefaultValueSql
+
+The [EF Core sequences documentation](https://learn.microsoft.com/en-us/ef/core/modeling/sequences) shows the older approach, writing the default expression by hand:
+
+```csharp
+modelBuilder.HasSequence<int>("OrderNumbers").StartsAt(1000);
+modelBuilder.Entity<Doc>()
+    .Property(d => d.Id)
+    .HasDefaultValueSql("NEXT VALUE FOR OrderNumbers");
+```
+
+The insert SQL is byte-identical to `UseSequence`. The differences are in the model:
+
+| | `UseSequence` | `HasDefaultValueSql` |
+| --- | --- | --- |
+| `ValueGenerated` | `OnAdd` | `OnAdd` |
+| Strategy | `Sequence` | `None` |
+| Default SQL | EF generates it, delimited | yours, emitted verbatim |
+| Renaming the sequence | update one `HasSequence` call | update the string too, in every place |
+
+That "emitted verbatim" row matters. Your string lands in the DDL exactly as typed, unquoted:
+
+```sql
+[Id] int NOT NULL DEFAULT (NEXT VALUE FOR OrderNumbers)
+```
+
+Which breaks the moment the sequence lives in a schema with a name that needs delimiting, or somebody adds a space. `UseSequence` produces `NEXT VALUE FOR [shared].[DocumentNumbers]` with the brackets already in place. Prefer `UseSequence` for keys. Keep `HasDefaultValueSql` for non-key columns, which `UseSequence` does not support.
+
+## Non-key columns: order numbers and invoice numbers
+
+A common variant is an `IDENTITY` surrogate key plus a human-facing number from a sequence. `HasDefaultValueSql` is the right tool here:
+
+```csharp
+// .NET 11, C# 14, EF Core 11
+modelBuilder.HasSequence<int>("TicketNumbers").StartsAt(500).IncrementsBy(10);
+
+modelBuilder.Entity<Ticket>()
+    .Property(t => t.TicketNumber)
+    .HasDefaultValueSql("NEXT VALUE FOR TicketNumbers");
+```
+
+EF adds the column to the `OUTPUT` list when you leave it unset, and moves it into the column list when you set it:
+
+```sql
+-- new Ticket { Name = "t1" }
+INSERT INTO [Tickets] ([Name])
+OUTPUT INSERTED.[Id], INSERTED.[TicketNumber]
+VALUES (@p0);
+
+-- new Ticket { Name = "t2", TicketNumber = 42 }
+INSERT INTO [Tickets] ([Name], [TicketNumber])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1);
+```
+
+Same CLR-default rule: `TicketNumber = 0` reads as unset.
+
+## Gaps are guaranteed, so design for them
+
+If any part of your system treats the key as a gapless counter, a sequence will break it, and so would `IDENTITY`. The [CREATE SEQUENCE documentation](https://learn.microsoft.com/en-us/sql/t-sql/statements/create-sequence-transact-sql) states it plainly: "Sequence numbers are generated outside the scope of the current transaction. They're consumed whether the transaction using the sequence number is committed or rolled back."
+
+There is a second gap source. Sequences default to `CACHE`, and SQL Server preallocates a block of values in memory, persisting only the block boundary. Per the same documentation, "an unexpected shutdown (such as a power failure) might result in the loss of sequence numbers remaining in the cache." A crash can therefore burn an entire cache block.
+
+`NO CACHE` narrows the window at the cost of a system table write per value, and even then the docs note that "gaps can still occur if numbers are requested using the NEXT VALUE FOR or sp_sequence_get_range functions, but then the numbers are either not used or are used in uncommitted transactions."
+
+EF's fluent API cannot express this. `SequenceBuilder` exposes `StartsAt`, `IncrementsBy`, `HasMin`, `HasMax` and `IsCyclic`, and nothing else. Reach for raw SQL in the migration:
+
+```csharp
+// .NET 11, EF Core 11
+migrationBuilder.Sql("ALTER SEQUENCE [shared].[DocumentNumbers] NO CACHE;");
+```
+
+Do this only where a regulator is asking, not by default. If you need a genuinely gapless legal document number, generate it in a separate transactional table, not from a sequence.
+
+## UseSequence vs UseHiLo
+
+`UseHiLo` is the other sequence-backed strategy and it behaves completely differently:
+
+```csharp
+modelBuilder.Entity<HiLoOrder>().Property(h => h.Id).UseHiLo("HiLoOrderSequence");
+// -> CREATE SEQUENCE [HiLoOrderSequence] START WITH 1 INCREMENT BY 10 NO CYCLE;
+// -> [HiLoOrders].[Id] int NOT NULL   (no default constraint)
+```
+
+The column gets no default. EF calls the sequence once to reserve a block of ten, then hands out keys from that block on the client. That means keys are known before the insert (useful when you are building an object graph in memory), at the cost of a separate round trip whenever a block is exhausted, and much larger gaps whenever a `DbContext` is disposed mid-block. `UseSequence` keeps generation on the server; `UseHiLo` moves it to the client. Pick `UseSequence` unless you specifically need the key in hand before `SaveChanges`.
+
+## Retrofitting an existing IDENTITY table
+
+`ALTER TABLE ... ALTER COLUMN` cannot add or remove the `IDENTITY` property. The [documented restriction](https://learn.microsoft.com/en-us/sql/t-sql/statements/alter-table-transact-sql) only permits changing the type of an existing identity column, to another type that supports the identity property. So there is no in-place migration; the column has to be replaced. Steps:
+
+1. Read the current high-water mark with `SELECT ISNULL(MAX(Id), 0) FROM dbo.Orders`, and add a safety margin for rows inserted between the read and the cutover.
+2. Add `modelBuilder.HasSequence<int>("DocumentNumbers", "shared").StartsAt(<high-water mark + margin>)` and `UseSequence("DocumentNumbers", "shared")` on the key, then scaffold a migration.
+3. Replace the scaffolded body with SQL that creates the sequence, builds a new table whose `Id` has the sequence default, copies rows across with `INSERT INTO ... SELECT`, drops the old table, and renames the new one. Foreign keys pointing at the table have to be dropped and recreated around the swap.
+4. Run the migration inside a transaction, and verify afterwards that `SELECT current_value FROM sys.sequences WHERE name = 'DocumentNumbers'` sits above the largest existing key.
+
+Two details worth knowing. `HasData` seeding does not fit this model, because EF requires literal key values in seed data and will not let a store-generated key be seeded implicitly, which is the source of [the seed entity cannot be added because a non-zero value is required](/2026/06/fix-the-seed-entity-cannot-be-added-non-zero-value-is-required-for-property/); with a sequence you can simply supply the keys, since explicit values are legal. And if you are already writing hand-edited migration SQL for the table swap, the same care applies as when [renaming a table in an EF Core 11 migration without losing data](/2026/08/how-to-rename-a-table-in-an-ef-core-11-migration-without-losing-data/): scaffolded output for structural changes is a starting point, not the answer.
+
+One last thing to check after any of this: run `dotnet ef migrations add` again and confirm it produces an empty migration. A sequence whose model type does not match its database type, or an implicitly named sequence that moved when a class was renamed, shows up as a phantom `DropSequence` plus `CreateSequence` on every scaffold. `rowversion` columns produce the same class of phantom diff for the same reason, and the walkthrough in [optimistic concurrency with a rowversion token in EF Core 11](/2026/08/how-to-implement-optimistic-concurrency-with-a-rowversion-token-in-ef-core-11/) covers how to read the annotations rather than the DDL when tracking one down.
+
+## Sources
+
+- [Sequences, EF Core documentation](https://learn.microsoft.com/en-us/ef/core/modeling/sequences)
+- [SQL Server value generation, EF Core documentation](https://learn.microsoft.com/en-us/ef/core/providers/sql-server/value-generation)
+- [CREATE SEQUENCE (Transact-SQL)](https://learn.microsoft.com/en-us/sql/t-sql/statements/create-sequence-transact-sql)
+- [ALTER TABLE (Transact-SQL)](https://learn.microsoft.com/en-us/sql/t-sql/statements/alter-table-transact-sql)
+- [What's New in EF Core 11](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-11.0/whatsnew)
+- [`SqlServerPropertyBuilderExtensions.UseSequence` source](https://github.com/dotnet/efcore/blob/main/src/EFCore.SqlServer/Extensions/SqlServerPropertyBuilderExtensions.cs)
+- [`SqlServerModelBuilderExtensions.UseKeySequences` source](https://github.com/dotnet/efcore/blob/main/src/EFCore.SqlServer/Extensions/SqlServerModelBuilderExtensions.cs)

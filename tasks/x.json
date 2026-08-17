@@ -1742,5 +1742,9 @@
   {
     "slug": "2026/08/package-skills-and-an-mcp-server-as-one-agent-plugin",
     "text": "Claude Code ignores mcp.json. It wants .mcp.json. Your Agent Plugin loads the skill, drops the server, says nothing."
+  },
+  {
+    "slug": "2026/08/how-to-generate-a-primary-key-from-a-database-sequence-on-insert-in-ef-core-11",
+    "text": "UseSequence in EF Core 11 costs zero extra round trips: EF omits the column and reads it back with OUTPUT."
   }
 ]

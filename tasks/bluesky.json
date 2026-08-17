@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/how-to-generate-a-primary-key-from-a-database-sequence-on-insert-in-ef-core-11",
+    "text": "Sequence keys in EF Core 11 batch exactly like IDENTITY, and explicit key values just work, no IDENTITY_INSERT dance."
   }
 ]
