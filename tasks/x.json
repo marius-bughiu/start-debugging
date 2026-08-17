@@ -1734,5 +1734,9 @@
   {
     "slug": "2026/08/how-to-download-a-file-from-a-blazor-component-without-javascript-interop",
     "text": "Blazor file downloads need zero JS. The download attribute is what stops enhanced navigation eating the click."
+  },
+  {
+    "slug": "2026/08/how-to-use-idbcontextfactory-from-a-singleton-service-in-blazor",
+    "text": "A Blazor singleton cannot hold a DbContext. It can hold IDbContextFactory<T>, a singleton by default."
   }
 ]
