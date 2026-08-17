@@ -57,7 +57,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to define an agent orchestration in YAML with Microsoft Agent Framework Declarative Workflows 1.0 → slug: 2026/07/agent-framework-declarative-workflows-1-0-yaml-orchestration
 - How to route models per request with Cursor Router and enforce Intelligence/Balance/Cost across a team → slug: 2026/07/cursor-router-makes-auto-a-per-request-model-decision
 - How to route MCP traffic through a gateway using the `Mcp-Method` and `Mcp-Name` headers → slug: 2026/08/route-mcp-traffic-through-a-gateway-with-mcp-method-and-mcp-name-headers
-- How to package skills and an MCP server together as one Agent Plugin (`plugin.json`, `skills/`, `mcp.json`)
+- How to package skills and an MCP server together as one Agent Plugin (`plugin.json`, `skills/`, `mcp.json`) → slug: 2026/08/package-skills-and-an-mcp-server-as-one-agent-plugin
 - How to centrally control which MCP servers a team can run with `allowedMcpServers` and `deniedMcpServers`
 - How to set the reasoning level for a GitHub Copilot cloud agent per task
 - How to serve agent skills from an MCP server in .NET with `UseMcpSkills` instead of shipping them in the app

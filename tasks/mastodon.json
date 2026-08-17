@@ -42,5 +42,9 @@
   {
     "slug": "2026/08/mcp-server-design-for-a-large-internal-api-surface",
     "text": "200 internal endpoints mapped to 200 MCP tools costs about 933 bytes of JSON per tool, measured on the MCP TypeScript server SDK 2.0.0. Spec 2026-07-28 removed sessions, so registering tools per session is no longer legal. What works: curate, scope the list by credentials, set cache hints. The SDK default is ttlMs 0."
+  },
+  {
+    "slug": "2026/08/package-skills-and-an-mcp-server-as-one-agent-plugin",
+    "text": "Agent Plugins 1.0 standardises one directory for skills plus MCP servers: plugin.json, skills/, mcp.json. Claude Code 2.1.224 loads the skills and silently ignores mcp.json, because it looks for .mcp.json. And claude plugin validate happily passes a plugin whose MCP path does not exist. Here is the layout that satisfies both."
   }
 ]

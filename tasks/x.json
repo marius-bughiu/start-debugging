@@ -1738,5 +1738,9 @@
   {
     "slug": "2026/08/how-to-use-idbcontextfactory-from-a-singleton-service-in-blazor",
     "text": "A Blazor singleton cannot hold a DbContext. It can hold IDbContextFactory<T>, a singleton by default."
+  },
+  {
+    "slug": "2026/08/package-skills-and-an-mcp-server-as-one-agent-plugin",
+    "text": "Claude Code ignores mcp.json. It wants .mcp.json. Your Agent Plugin loads the skill, drops the server, says nothing."
   }
 ]
