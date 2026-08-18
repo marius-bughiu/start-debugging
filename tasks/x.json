@@ -1762,5 +1762,9 @@
   {
     "slug": "2026/08/centrally-control-which-mcp-servers-a-team-can-run",
     "text": "serverName in an MCP allowlist is a fallback, not a rule. One serverCommand entry silently disables every name entry."
+  },
+  {
+    "slug": "2026/08/fix-ca1873-evaluation-of-this-argument-may-be-expensive-and-unnecessary-if-logging-is-disabled",
+    "text": "CA1873 flags the implicit params object[] array, not your argument. Even LogDebug with a plain string trips it."
   }
 ]
