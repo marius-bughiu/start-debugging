@@ -1750,5 +1750,9 @@
   {
     "slug": "2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet",
     "text": "EnableRedaction without AddRedaction logs your card numbers in plain text. No warning. Both or neither."
+  },
+  {
+    "slug": "2026/08/msbuild-server-on-by-default-dotnet-11-preview-7",
+    "text": "MSBuild server is on by default in .NET 11 Preview 7. Your second dotnet build now skips MSBuild startup."
   }
 ]

@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/msbuild-server-on-by-default-dotnet-11-preview-7",
+    "text": "Preview 7 turns MSBuild server on by default. Only DOTNET_CLI_USE_MSBUILD_SERVER=false is an opt-out that actually sticks."
   }
 ]
