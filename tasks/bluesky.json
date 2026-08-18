@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/fix-mapperconfiguration-does-not-contain-a-constructor-that-takes-1-arguments",
-    "text": "AutoMapper 15 deleted the one-arg MapperConfiguration ctor and every AddAutoMapper overload without a config action."
   }
 ]
