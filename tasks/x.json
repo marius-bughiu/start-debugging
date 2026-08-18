@@ -1766,5 +1766,9 @@
   {
     "slug": "2026/08/fix-ca1873-evaluation-of-this-argument-may-be-expensive-and-unnecessary-if-logging-is-disabled",
     "text": "CA1873 flags the implicit params object[] array, not your argument. Even LogDebug with a plain string trips it."
+  },
+  {
+    "slug": "2026/08/fix-the-call-is-ambiguous-after-moving-to-csharp-14-extension-members",
+    "text": "Moved an extension method into a C# 14 extension block and kept the old one? That is a duplicate, not a shim."
   }
 ]
