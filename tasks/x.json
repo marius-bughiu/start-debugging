@@ -1758,5 +1758,9 @@
   {
     "slug": "2026/08/fix-mapperconfiguration-does-not-contain-a-constructor-that-takes-1-arguments",
     "text": "CS1729 after moving to AutoMapper 15: the one-arg MapperConfiguration ctor is gone. Pass an ILoggerFactory second."
+  },
+  {
+    "slug": "2026/08/centrally-control-which-mcp-servers-a-team-can-run",
+    "text": "serverName in an MCP allowlist is a fallback, not a rule. One serverCommand entry silently disables every name entry."
   }
 ]

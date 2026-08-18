@@ -58,7 +58,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to route models per request with Cursor Router and enforce Intelligence/Balance/Cost across a team → slug: 2026/07/cursor-router-makes-auto-a-per-request-model-decision
 - How to route MCP traffic through a gateway using the `Mcp-Method` and `Mcp-Name` headers → slug: 2026/08/route-mcp-traffic-through-a-gateway-with-mcp-method-and-mcp-name-headers
 - How to package skills and an MCP server together as one Agent Plugin (`plugin.json`, `skills/`, `mcp.json`) → slug: 2026/08/package-skills-and-an-mcp-server-as-one-agent-plugin
-- How to centrally control which MCP servers a team can run with `allowedMcpServers` and `deniedMcpServers`
+- How to centrally control which MCP servers a team can run with `allowedMcpServers` and `deniedMcpServers` → slug: 2026/08/centrally-control-which-mcp-servers-a-team-can-run
 - How to set the reasoning level for a GitHub Copilot cloud agent per task
 - How to serve agent skills from an MCP server in .NET with `UseMcpSkills` instead of shipping them in the app
 - How to run a Microsoft Agent Framework agent on the GitHub Copilot harness as its execution engine

@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/centrally-control-which-mcp-servers-a-team-can-run",
+    "text": "Claude Code and Copilot share allowedMcpServers/deniedMcpServers. Deny is a union. Allow is not, and mixing matchers blocks servers."
   }
 ]
