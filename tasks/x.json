@@ -1754,5 +1754,9 @@
   {
     "slug": "2026/08/msbuild-server-on-by-default-dotnet-11-preview-7",
     "text": "MSBuild server is on by default in .NET 11 Preview 7. Your second dotnet build now skips MSBuild startup."
+  },
+  {
+    "slug": "2026/08/fix-mapperconfiguration-does-not-contain-a-constructor-that-takes-1-arguments",
+    "text": "CS1729 after moving to AutoMapper 15: the one-arg MapperConfiguration ctor is gone. Pass an ILoggerFactory second."
   }
 ]

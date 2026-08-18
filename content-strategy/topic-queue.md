@@ -231,7 +231,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: Google Play rejects a Flutter or .NET MAUI app for missing 16 KB memory page size support → slug: 2026/08/fix-google-play-rejects-flutter-or-maui-app-for-16-kb-page-size
 - Fix: `mprotect failed: Permission denied` crash on a Flutter iOS build → slug: 2026/08/fix-mprotect-failed-permission-denied-in-a-flutter-ios-debug-build
 - Fix: `An error occurred while preparing SDK package NDK (Side by side): Not in GZIP format` in a Flutter Android build → slug: 2026/08/fix-an-error-occurred-while-preparing-sdk-package-ndk-not-in-gzip-format
-- Fix: `MapperConfiguration does not contain a constructor that takes 1 arguments` after upgrading to AutoMapper 15
+- Fix: `MapperConfiguration does not contain a constructor that takes 1 arguments` after upgrading to AutoMapper 15 → slug: 2026/08/fix-mapperconfiguration-does-not-contain-a-constructor-that-takes-1-arguments
 - Fix: `CA1873: Evaluation of this argument may be expensive and unnecessary if logging is disabled`
 - Fix: `The call is ambiguous between the following methods or properties` after moving to C# 14 extension members
 - Fix: cannot target OpenAPI 3.0 after upgrading Swashbuckle.AspNetCore to v9
