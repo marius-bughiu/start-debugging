@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/how-to-set-the-reasoning-level-for-a-github-copilot-cloud-agent-per-task",
-    "text": "Reasoning level for a Copilot cloud agent task is a UI-only control. Scripted dispatch gets the model default instead."
   }
 ]
