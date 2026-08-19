@@ -234,7 +234,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `MapperConfiguration does not contain a constructor that takes 1 arguments` after upgrading to AutoMapper 15 → slug: 2026/08/fix-mapperconfiguration-does-not-contain-a-constructor-that-takes-1-arguments
 - Fix: `CA1873: Evaluation of this argument may be expensive and unnecessary if logging is disabled` → slug: 2026/08/fix-ca1873-evaluation-of-this-argument-may-be-expensive-and-unnecessary-if-logging-is-disabled
 - Fix: `The call is ambiguous between the following methods or properties` after moving to C# 14 extension members → slug: 2026/08/fix-the-call-is-ambiguous-after-moving-to-csharp-14-extension-members
-- Fix: cannot target OpenAPI 3.0 after upgrading Swashbuckle.AspNetCore to v9
+- Fix: cannot target OpenAPI 3.0 after upgrading Swashbuckle.AspNetCore to v9 → slug: 2026/08/fix-cannot-target-openapi-3-0-after-upgrading-swashbuckle-aspnetcore
 - Fix: Scalar stops rendering after upgrading to .NET 11 when the app uses OpenAPI document transformers
 - Fix: `An exception was thrown while attempting to evaluate the LINQ query parameter expression` in EF Core 11
 - Fix: `Dictionary<string, string>` is always null in a minimal API when posted alongside `IFormFile` as multipart/form-data

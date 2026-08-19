@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/fix-cannot-target-openapi-3-0-after-upgrading-swashbuckle-aspnetcore",
+    "text": "Your OpenAPI doc says 3.0.4, the vendor wants 3.0.1. That string is hard-coded in Microsoft.OpenApi 1.6.23+, not a Swashbuckle knob."
   }
 ]

@@ -1774,5 +1774,9 @@
   {
     "slug": "2026/08/semantic-kernel-1-80-openapi-plugins-stop-following-redirects",
     "text": "Semantic Kernel 1.80.0 stops OpenAPI plugins from following redirects. A 302 to 169.254.169.254 no longer lands."
+  },
+  {
+    "slug": "2026/08/fix-cannot-target-openapi-3-0-after-upgrading-swashbuckle-aspnetcore",
+    "text": "Swashbuckle 8+ emits openapi 3.0.4, not 3.0.1, and no OpenApiSpecVersion encodes a patch number. Four ways to pin it."
   }
 ]
