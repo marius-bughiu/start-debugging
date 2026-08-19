@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/fix-swagger-ui-unable-to-render-this-definition-after-upgrading-to-dotnet-11",
+    "text": "Unable to render this definition on .NET 11: AddOpenApi emits openapi 3.2.0 now. SwaggerUI 10.1.5 is the first build that renders it."
   }
 ]

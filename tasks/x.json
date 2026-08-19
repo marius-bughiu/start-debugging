@@ -1782,5 +1782,9 @@
   {
     "slug": "2026/08/how-to-set-the-reasoning-level-for-a-github-copilot-cloud-agent-per-task",
     "text": "Copilot cloud agent now takes a reasoning level per task. The Agent Tasks REST API has no such parameter."
+  },
+  {
+    "slug": "2026/08/fix-swagger-ui-unable-to-render-this-definition-after-upgrading-to-dotnet-11",
+    "text": "Swagger UI went blank after .NET 11? AddOpenApi now emits openapi 3.2.0 and older swagger-ui refuses it."
   }
 ]

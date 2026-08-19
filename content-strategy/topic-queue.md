@@ -235,7 +235,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `CA1873: Evaluation of this argument may be expensive and unnecessary if logging is disabled` → slug: 2026/08/fix-ca1873-evaluation-of-this-argument-may-be-expensive-and-unnecessary-if-logging-is-disabled
 - Fix: `The call is ambiguous between the following methods or properties` after moving to C# 14 extension members → slug: 2026/08/fix-the-call-is-ambiguous-after-moving-to-csharp-14-extension-members
 - Fix: cannot target OpenAPI 3.0 after upgrading Swashbuckle.AspNetCore to v9 → slug: 2026/08/fix-cannot-target-openapi-3-0-after-upgrading-swashbuckle-aspnetcore
-- Fix: Scalar stops rendering after upgrading to .NET 11 when the app uses OpenAPI document transformers
+- Fix: Scalar stops rendering after upgrading to .NET 11 when the app uses OpenAPI document transformers → slug: 2026/08/fix-swagger-ui-unable-to-render-this-definition-after-upgrading-to-dotnet-11 (Scalar premise did not reproduce: Scalar 2.14.14 and 2.16.20 both render .NET 11 documents; the real break is Swagger UI vs openapi 3.2.0)
 - Fix: `An exception was thrown while attempting to evaluate the LINQ query parameter expression` in EF Core 11
 - Fix: `Dictionary<string, string>` is always null in a minimal API when posted alongside `IFormFile` as multipart/form-data
 - Fix: `Unable to find a destination matching the provided destination specifier` in a Flutter iOS build after the iOS 26 update
