@@ -1778,5 +1778,9 @@
   {
     "slug": "2026/08/fix-cannot-target-openapi-3-0-after-upgrading-swashbuckle-aspnetcore",
     "text": "Swashbuckle 8+ emits openapi 3.0.4, not 3.0.1, and no OpenApiSpecVersion encodes a patch number. Four ways to pin it."
+  },
+  {
+    "slug": "2026/08/how-to-set-the-reasoning-level-for-a-github-copilot-cloud-agent-per-task",
+    "text": "Copilot cloud agent now takes a reasoning level per task. The Agent Tasks REST API has no such parameter."
   }
 ]
