@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/semantic-kernel-1-80-openapi-plugins-stop-following-redirects",
+    "text": "SK 1.80.0 flips the OpenAPI plugin default HttpClient to non-redirecting, closing an SSRF bypass. Your own client does not."
   }
 ]

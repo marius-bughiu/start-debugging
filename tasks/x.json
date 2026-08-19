@@ -1770,5 +1770,9 @@
   {
     "slug": "2026/08/fix-the-call-is-ambiguous-after-moving-to-csharp-14-extension-members",
     "text": "Moved an extension method into a C# 14 extension block and kept the old one? That is a duplicate, not a shim."
+  },
+  {
+    "slug": "2026/08/semantic-kernel-1-80-openapi-plugins-stop-following-redirects",
+    "text": "Semantic Kernel 1.80.0 stops OpenAPI plugins from following redirects. A 302 to 169.254.169.254 no longer lands."
   }
 ]
