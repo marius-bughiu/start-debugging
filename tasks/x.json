@@ -1786,5 +1786,9 @@
   {
     "slug": "2026/08/fix-swagger-ui-unable-to-render-this-definition-after-upgrading-to-dotnet-11",
     "text": "Swagger UI went blank after .NET 11? AddOpenApi now emits openapi 3.2.0 and older swagger-ui refuses it."
+  },
+  {
+    "slug": "2026/08/fix-an-exception-was-thrown-while-attempting-to-evaluate-a-linq-query-parameter-expression",
+    "text": "EF Core's \"LINQ query parameter expression\" error is not a translation failure. Your captured object is null."
   }
 ]
