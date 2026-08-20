@@ -1790,5 +1790,9 @@
   {
     "slug": "2026/08/fix-an-exception-was-thrown-while-attempting-to-evaluate-a-linq-query-parameter-expression",
     "text": "EF Core's \"LINQ query parameter expression\" error is not a translation failure. Your captured object is null."
+  },
+  {
+    "slug": "2026/08/aspnetcore-exception-handler-preserves-badhttprequestexception-status-codes",
+    "text": "UseExceptionHandler reports Kestrel's 413 as a 500. Merged Aug 19: the middleware now honours the real status code."
   }
 ]
