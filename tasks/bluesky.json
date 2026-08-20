@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/serve-agent-skills-from-an-mcp-server-in-dotnet-with-usemcpskills",
-    "text": "UseMcpSkills pulls agent skills from an MCP server in .NET. Advertising costs exactly one resources/read of skill://index.json."
   }
 ]
