@@ -42,9 +42,5 @@
   {
     "slug": "2026/08/mcp-server-design-for-a-large-internal-api-surface",
     "text": "200 internal endpoints mapped to 200 MCP tools costs about 933 bytes of JSON per tool, measured on the MCP TypeScript server SDK 2.0.0. Spec 2026-07-28 removed sessions, so registering tools per session is no longer legal. What works: curate, scope the list by credentials, set cache hints. The SDK default is ttlMs 0."
-  },
-  {
-    "slug": "2026/08/fix-an-exception-was-thrown-while-attempting-to-evaluate-a-linq-query-parameter-expression",
-    "text": "EF Core throws \"An exception was thrown while attempting to evaluate a LINQ query parameter expression\" when a client-evaluated part of your query throws. Read InnerException, and enable EnableSensitiveDataLogging to see which expression. And a null list in Contains does not throw at all, it compiles to an always-false WHERE."
   }
 ]
