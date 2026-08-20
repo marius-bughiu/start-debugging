@@ -1798,5 +1798,9 @@
   {
     "slug": "2026/08/fix-fromform-dictionary-is-always-null-in-a-minimal-api",
     "text": "[FromForm] Dictionary is null because the form mapper ignores the parameter name. It wants [key], not metadata[key]."
+  },
+  {
+    "slug": "2026/08/serve-agent-skills-from-an-mcp-server-in-dotnet-with-usemcpskills",
+    "text": "Serve SKILL.md from an MCP server, not from your app folder. UseMcpSkills reads one index and fetches bodies on demand."
   }
 ]
