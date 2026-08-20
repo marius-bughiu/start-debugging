@@ -1802,5 +1802,9 @@
   {
     "slug": "2026/08/serve-agent-skills-from-an-mcp-server-in-dotnet-with-usemcpskills",
     "text": "Serve SKILL.md from an MCP server, not from your app folder. UseMcpSkills reads one index and fetches bodies on demand."
+  },
+  {
+    "slug": "2026/08/fix-unable-to-find-a-destination-matching-the-provided-destination-specifier-in-a-flutter-ios-build",
+    "text": "iOS 26 simulator runtimes are arm64-only, so an old EXCLUDED_ARCHS arm64 line builds a Runner nothing can run."
   }
 ]

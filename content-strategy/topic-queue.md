@@ -238,7 +238,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: Scalar stops rendering after upgrading to .NET 11 when the app uses OpenAPI document transformers → slug: 2026/08/fix-swagger-ui-unable-to-render-this-definition-after-upgrading-to-dotnet-11 (Scalar premise did not reproduce: Scalar 2.14.14 and 2.16.20 both render .NET 11 documents; the real break is Swagger UI vs openapi 3.2.0)
 - Fix: `An exception was thrown while attempting to evaluate the LINQ query parameter expression` in EF Core 11 → slug: 2026/08/fix-an-exception-was-thrown-while-attempting-to-evaluate-a-linq-query-parameter-expression
 - Fix: `Dictionary<string, string>` is always null in a minimal API when posted alongside `IFormFile` as multipart/form-data → slug: 2026/08/fix-fromform-dictionary-is-always-null-in-a-minimal-api
-- Fix: `Unable to find a destination matching the provided destination specifier` in a Flutter iOS build after the iOS 26 update
+- Fix: `Unable to find a destination matching the provided destination specifier` in a Flutter iOS build after the iOS 26 update → slug: 2026/08/fix-unable-to-find-a-destination-matching-the-provided-destination-specifier-in-a-flutter-ios-build
 - Fix: `The class 'GoogleSignIn' doesn't have an unnamed constructor` after upgrading `google_sign_in` to 7.x
 - Fix: `[firebase_messaging/apns-token-not-set] APNS token has not been set` on Flutter iOS
 - Fix: `Toolchain installation does not provide the required capabilities` in a Flutter Android Gradle build

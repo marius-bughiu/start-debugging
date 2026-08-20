@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/fix-unable-to-find-a-destination-matching-the-provided-destination-specifier-in-a-flutter-ios-build",
+    "text": "xcodebuild says the destination is missing. Xcode says Runner is Intel-only. Xcode is right: iOS 26 simulators dropped x86_64."
   }
 ]
