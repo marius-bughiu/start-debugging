@@ -42,9 +42,5 @@
   {
     "slug": "2026/08/mcp-server-design-for-a-large-internal-api-surface",
     "text": "200 internal endpoints mapped to 200 MCP tools costs about 933 bytes of JSON per tool, measured on the MCP TypeScript server SDK 2.0.0. Spec 2026-07-28 removed sessions, so registering tools per session is no longer legal. What works: curate, scope the list by credentials, set cache hints. The SDK default is ttlMs 0."
-  },
-  {
-    "slug": "2026/08/fix-firebase-messaging-apns-token-not-set-on-flutter-ios",
-    "text": "The firebase_messaging apns-token-not-set error is usually a race: getToken() ran before APNs delivered the device token. Poll getAPNSToken() until non-null. Only four methods enforce the check. And if auto-init is disabled, the plugin fetches the token and throws it away."
   }
 ]
