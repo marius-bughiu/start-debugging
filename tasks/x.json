@@ -1822,5 +1822,9 @@
   {
     "slug": "2026/08/how-to-cut-cursor-cloud-agent-startup-time-with-builds",
     "text": "Move prisma generate and pnpm build out of start and into install. Cursor Builds snapshots it, agents boot into it."
+  },
+  {
+    "slug": "2026/08/fix-toolchain-installation-does-not-provide-the-required-capabilities-in-flutter",
+    "text": "Gradle is not searching for a JDK. With no toolchain set it uses the JVM it launched on. Check flutter config --jdk-dir."
   }
 ]
