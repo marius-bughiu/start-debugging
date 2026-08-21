@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/how-to-cut-cursor-cloud-agent-startup-time-with-builds",
-    "text": "Cursor Builds forks a live prepared machine instead of booting one. The install vs start split in environment.json is the trick."
   }
 ]
