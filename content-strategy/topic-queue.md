@@ -242,7 +242,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `The class 'GoogleSignIn' doesn't have an unnamed constructor` after upgrading `google_sign_in` to 7.x → slug: 2026/08/fix-the-class-googlesignin-doesnt-have-an-unnamed-constructor-in-flutter
 - Fix: `[firebase_messaging/apns-token-not-set] APNS token has not been set` on Flutter iOS → slug: 2026/08/fix-firebase-messaging-apns-token-not-set-on-flutter-ios
 - Fix: `Toolchain installation does not provide the required capabilities` in a Flutter Android Gradle build → slug: 2026/08/fix-toolchain-installation-does-not-provide-the-required-capabilities-in-flutter
-- Fix: Flutter UI overlaps the Android system navigation bar after targeting SDK 35 edge-to-edge
+- Fix: Flutter UI overlaps the Android system navigation bar after targeting SDK 35 edge-to-edge → slug: 2026/08/fix-flutter-ui-overlaps-the-android-navigation-bar-after-targeting-sdk-35
 - Fix: `Restricted method called: java.lang.System::load` warning in a Flutter Gradle build on JDK 22+
 - Fix: `Doesn't support required ABI` when installing a .NET MAUI Android app
 

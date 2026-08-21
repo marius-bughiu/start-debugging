@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/fix-flutter-ui-overlaps-the-android-navigation-bar-after-targeting-sdk-35",
+    "text": "NavigationBar absorbs the 48dp nav bar inset. A raw SizedBox in the same slot does not. Both measured, plus the keyboard trap."
   }
 ]

@@ -1826,5 +1826,9 @@
   {
     "slug": "2026/08/fix-toolchain-installation-does-not-provide-the-required-capabilities-in-flutter",
     "text": "Gradle is not searching for a JDK. With no toolchain set it uses the JVM it launched on. Check flutter config --jdk-dir."
+  },
+  {
+    "slug": "2026/08/fix-flutter-ui-overlaps-the-android-navigation-bar-after-targeting-sdk-35",
+    "text": "Flutter defaults to Android targetSdk 36, so your Scaffold body draws under the nav bar. The opt-out is already dead."
   }
 ]
