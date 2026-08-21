@@ -1814,5 +1814,9 @@
   {
     "slug": "2026/08/flutter-3-47-1-blocks-plugin-registrant-code-injection",
     "text": "Flutter 3.47.1 rejects plugin classes that are not plain identifiers. A transitive dep could inject native code."
+  },
+  {
+    "slug": "2026/08/fix-firebase-messaging-apns-token-not-set-on-flutter-ios",
+    "text": "getToken() throwing apns-token-not-set on iOS means you asked before APNs answered. Poll getAPNSToken() first."
   }
 ]

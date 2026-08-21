@@ -240,7 +240,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Dictionary<string, string>` is always null in a minimal API when posted alongside `IFormFile` as multipart/form-data → slug: 2026/08/fix-fromform-dictionary-is-always-null-in-a-minimal-api
 - Fix: `Unable to find a destination matching the provided destination specifier` in a Flutter iOS build after the iOS 26 update → slug: 2026/08/fix-unable-to-find-a-destination-matching-the-provided-destination-specifier-in-a-flutter-ios-build
 - Fix: `The class 'GoogleSignIn' doesn't have an unnamed constructor` after upgrading `google_sign_in` to 7.x → slug: 2026/08/fix-the-class-googlesignin-doesnt-have-an-unnamed-constructor-in-flutter
-- Fix: `[firebase_messaging/apns-token-not-set] APNS token has not been set` on Flutter iOS
+- Fix: `[firebase_messaging/apns-token-not-set] APNS token has not been set` on Flutter iOS → slug: 2026/08/fix-firebase-messaging-apns-token-not-set-on-flutter-ios
 - Fix: `Toolchain installation does not provide the required capabilities` in a Flutter Android Gradle build
 - Fix: Flutter UI overlaps the Android system navigation bar after targeting SDK 35 edge-to-edge
 - Fix: `Restricted method called: java.lang.System::load` warning in a Flutter Gradle build on JDK 22+
