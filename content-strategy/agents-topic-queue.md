@@ -61,8 +61,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to centrally control which MCP servers a team can run with `allowedMcpServers` and `deniedMcpServers` → slug: 2026/08/centrally-control-which-mcp-servers-a-team-can-run
 - How to set the reasoning level for a GitHub Copilot cloud agent per task → slug: 2026/08/how-to-set-the-reasoning-level-for-a-github-copilot-cloud-agent-per-task
 - How to serve agent skills from an MCP server in .NET with `UseMcpSkills` instead of shipping them in the app → slug: 2026/08/serve-agent-skills-from-an-mcp-server-in-dotnet-with-usemcpskills
-- How to run a Microsoft Agent Framework agent on the GitHub Copilot harness as its execution engine
-- How to cut Cursor cloud agent startup time with prebuilt Builds
+- How to run a Microsoft Agent Framework agent on the GitHub Copilot harness as its execution engine (skipped: same intent as 2026/08/agent-framework-github-copilot-provider-copilot-cli-as-aiagent, which covers CopilotClient.AsAIAgent, the deny-by-default permission handler, SessionConfig.McpServers and Squad)
+- How to cut Cursor cloud agent startup time with prebuilt Builds → slug: 2026/08/how-to-cut-cursor-cloud-agent-startup-time-with-builds
 
 ## Fix / error
 

@@ -1818,5 +1818,9 @@
   {
     "slug": "2026/08/fix-firebase-messaging-apns-token-not-set-on-flutter-ios",
     "text": "getToken() throwing apns-token-not-set on iOS means you asked before APNs answered. Poll getAPNSToken() first."
+  },
+  {
+    "slug": "2026/08/how-to-cut-cursor-cloud-agent-startup-time-with-builds",
+    "text": "Move prisma generate and pnpm build out of start and into install. Cursor Builds snapshots it, agents boot into it."
   }
 ]
