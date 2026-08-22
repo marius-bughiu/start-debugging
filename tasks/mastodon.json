@@ -42,9 +42,5 @@
   {
     "slug": "2026/08/mcp-server-design-for-a-large-internal-api-surface",
     "text": "200 internal endpoints mapped to 200 MCP tools costs about 933 bytes of JSON per tool, measured on the MCP TypeScript server SDK 2.0.0. Spec 2026-07-28 removed sessions, so registering tools per session is no longer legal. What works: curate, scope the list by credentials, set cache hints. The SDK default is ttlMs 0."
-  },
-  {
-    "slug": "2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build",
-    "text": "\"A restricted method in java.lang.System has been called\" in a Flutter Gradle build is harmless and prints once per calling module. Gradle has passed --enable-native-access since 8.14, so seeing it means your JDK outran your Gradle. Do not paste --illegal-native-access into gradle.properties: JDK 21 rejects it at startup."
   }
 ]
