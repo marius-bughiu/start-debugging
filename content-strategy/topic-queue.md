@@ -132,6 +132,11 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to use `IDbContextFactory<T>` from a singleton service in Blazor → slug: 2026/08/how-to-use-idbcontextfactory-from-a-singleton-service-in-blazor
 - How to generate a primary key from a database sequence on insert in EF Core 11 → slug: 2026/08/how-to-generate-a-primary-key-from-a-database-sequence-on-insert-in-ef-core-11
 - How to redact sensitive values from logs with `[LogProperties]` and data redaction in .NET 11 → slug: 2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet
+- How to write a static extension member that applies to every enum type in C# 14
+- How to tell whether an `IEnumerable<T>` has already been materialized in C#
+- How to write reusable LINQ predicates that EF Core can translate in `Where`, `Select`, and `OrderBy`
+- How to test a Flutter widget at a fixed point in time without a `withClock` closure
+- How to render a heading whose level (h1-h6) is chosen at runtime in a Blazor component
 
 ## Fix / error
 
@@ -245,6 +250,15 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: Flutter UI overlaps the Android system navigation bar after targeting SDK 35 edge-to-edge → slug: 2026/08/fix-flutter-ui-overlaps-the-android-navigation-bar-after-targeting-sdk-35
 - Fix: `Restricted method called: java.lang.System::load` warning in a Flutter Gradle build on JDK 22+ → slug: 2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build (JDK 22+ premise corrected: the System::load variant is JEP 472 in JDK 24+; JDK 22/23 warn only for the FFM API)
 - Fix: `Doesn't support required ABI` when installing a .NET MAUI Android app
+- Fix: `CA1070: Do not declare event fields as virtual` in C#
+- Fix: `Reverse()` on an array binds to `MemoryExtensions` instead of LINQ after upgrading to .NET 11
+- Fix: `Failed to resolve source metadata for mcr.microsoft.com/dotnet/aspnet` when building a .NET Docker image
+- Fix: `[JsonIgnore]` has no effect on a `required` property in System.Text.Json
+- Fix: `CREATE DATABASE permission denied in database 'master'` when running `dotnet ef database update`
+- Fix: Postgres `23505: duplicate key value violates unique constraint` on a concurrent EF Core insert
+- Fix: `Model building is not supported when publishing with NativeAOT` in a .NET MAUI iOS Release build
+- Fix: `The method 'getInvocation' isn't defined for the type 'DartObjectImpl'` when running `build_runner`
+- Fix: Firebase Auth sign-in does not persist in a Flutter Android release build but works in debug
 
 ## Vs / comparison
 
@@ -301,6 +315,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Scalar vs Swagger UI for OpenAPI documentation in ASP.NET Core 11 → slug: 2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11
 - Riverpod `Notifier` vs `AsyncNotifier` vs `StreamNotifier` in Flutter → slug: 2026/08/riverpod-notifier-vs-asyncnotifier-vs-streamnotifier-in-flutter
 - AutoMapper 15 vs Mapperly vs hand-written mapping in 2026
+- Returning a `Task` directly vs `async`/`await` passthrough in a C# repository method
+- Framework-dependent vs self-contained vs Native AOT publish for a .NET 11 container image
 
 ## Migration / upgrade
 
@@ -337,6 +353,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a .NET MAUI Android app from Mono to CoreCLR in .NET 11
 - Migrate Flutter `material` and `cupertino` imports to the standalone packages in Flutter 3.44
 - Migrate a .NET MAUI Android app to target Android API level 36
+- Migrate a .NET solution to Central Package Management with `Directory.Packages.props`
 
 ## What is / concept
 
@@ -369,6 +386,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is a `SynchronizationContext` and why does it cause async deadlocks in C#?
 - What is client-side evaluation in EF Core 11 and how do I avoid it?
 - What is Impeller and when does Flutter still fall back to Skia?
+- What is a shadow property in EF Core 11 and why did one show up in my migration?
 
 ---
 
