@@ -243,7 +243,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `[firebase_messaging/apns-token-not-set] APNS token has not been set` on Flutter iOS → slug: 2026/08/fix-firebase-messaging-apns-token-not-set-on-flutter-ios
 - Fix: `Toolchain installation does not provide the required capabilities` in a Flutter Android Gradle build → slug: 2026/08/fix-toolchain-installation-does-not-provide-the-required-capabilities-in-flutter
 - Fix: Flutter UI overlaps the Android system navigation bar after targeting SDK 35 edge-to-edge → slug: 2026/08/fix-flutter-ui-overlaps-the-android-navigation-bar-after-targeting-sdk-35
-- Fix: `Restricted method called: java.lang.System::load` warning in a Flutter Gradle build on JDK 22+
+- Fix: `Restricted method called: java.lang.System::load` warning in a Flutter Gradle build on JDK 22+ → slug: 2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build (JDK 22+ premise corrected: the System::load variant is JEP 472 in JDK 24+; JDK 22/23 warn only for the FFM API)
 - Fix: `Doesn't support required ABI` when installing a .NET MAUI Android app
 
 ## Vs / comparison

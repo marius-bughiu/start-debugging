@@ -1830,5 +1830,9 @@
   {
     "slug": "2026/08/fix-flutter-ui-overlaps-the-android-navigation-bar-after-targeting-sdk-35",
     "text": "Flutter defaults to Android targetSdk 36, so your Scaffold body draws under the nav bar. The opt-out is already dead."
+  },
+  {
+    "slug": "2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build",
+    "text": "That java.lang.System::load warning in a Flutter build is harmless. It means your JDK outran your Gradle."
   }
 ]
