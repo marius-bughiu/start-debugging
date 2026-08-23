@@ -1842,5 +1842,9 @@
   {
     "slug": "2026/08/how-to-write-a-static-extension-member-for-every-enum-type-in-csharp-14",
     "text": "One C# 14 extension block gives every enum in your solution Status.Values and Status.Count."
+  },
+  {
+    "slug": "2026/08/fix-mcp-unsupported-protocol-version-2025-11-25-vs-2026-07-28",
+    "text": "MCP -32022 Unsupported protocol version: your client opened at 2025-11-25, the server only serves 2026-07-28."
   }
 ]
