@@ -1838,5 +1838,9 @@
   {
     "slug": "2026/08/claude-code-2-1-238-marketplaces-mint-their-own-auth-headers",
     "text": "Claude Code 2.1.238: a plugin marketplace can now mint its own auth headers from a local command."
+  },
+  {
+    "slug": "2026/08/how-to-write-a-static-extension-member-for-every-enum-type-in-csharp-14",
+    "text": "One C# 14 extension block gives every enum in your solution Status.Values and Status.Count."
   }
 ]

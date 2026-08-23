@@ -132,7 +132,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to use `IDbContextFactory<T>` from a singleton service in Blazor → slug: 2026/08/how-to-use-idbcontextfactory-from-a-singleton-service-in-blazor
 - How to generate a primary key from a database sequence on insert in EF Core 11 → slug: 2026/08/how-to-generate-a-primary-key-from-a-database-sequence-on-insert-in-ef-core-11
 - How to redact sensitive values from logs with `[LogProperties]` and data redaction in .NET 11 → slug: 2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet
-- How to write a static extension member that applies to every enum type in C# 14
+- How to write a static extension member that applies to every enum type in C# 14 → slug: 2026/08/how-to-write-a-static-extension-member-for-every-enum-type-in-csharp-14
 - How to tell whether an `IEnumerable<T>` has already been materialized in C#
 - How to write reusable LINQ predicates that EF Core can translate in `Where`, `Select`, and `OrderBy`
 - How to test a Flutter widget at a fixed point in time without a `withClock` closure
