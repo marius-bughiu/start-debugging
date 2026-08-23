@@ -1846,5 +1846,9 @@
   {
     "slug": "2026/08/fix-mcp-unsupported-protocol-version-2025-11-25-vs-2026-07-28",
     "text": "MCP -32022 Unsupported protocol version: your client opened at 2025-11-25, the server only serves 2026-07-28."
+  },
+  {
+    "slug": "2026/08/how-to-tell-whether-an-ienumerable-has-already-been-materialized-in-csharp",
+    "text": "IEnumerable<T> has no HasBeenEnumerated flag, and Enumerable.Range(0, 1_000_000_000) passes an ICollection<T> check."
   }
 ]
