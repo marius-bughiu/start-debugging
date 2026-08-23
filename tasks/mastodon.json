@@ -42,9 +42,5 @@
   {
     "slug": "2026/08/mcp-server-design-for-a-large-internal-api-surface",
     "text": "200 internal endpoints mapped to 200 MCP tools costs about 933 bytes of JSON per tool, measured on the MCP TypeScript server SDK 2.0.0. Spec 2026-07-28 removed sessions, so registering tools per session is no longer legal. What works: curate, scope the list by credentials, set cache hints. The SDK default is ttlMs 0."
-  },
-  {
-    "slug": "2026/08/how-to-write-reusable-linq-predicates-ef-core-can-translate",
-    "text": "Reusable LINQ predicates in EF Core 11: a bool helper throws \"could not be translated\", an Expression<Func<T,bool>> does not. Expression.Invoke has translated since 3.1, so no LINQKit needed. The trap: Expression.Constant in a hand-built tree emits a SQL literal, not a parameter, flooding your plan cache."
   }
 ]

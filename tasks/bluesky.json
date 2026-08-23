@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/how-to-write-reusable-linq-predicates-ef-core-can-translate",
-    "text": "EF Core 11 translates Expression.Invoke, so you can compose reusable LINQ predicates with no LINQKit. Real SQL for every case."
   }
 ]
