@@ -42,9 +42,5 @@
   {
     "slug": "2026/08/mcp-server-design-for-a-large-internal-api-surface",
     "text": "200 internal endpoints mapped to 200 MCP tools costs about 933 bytes of JSON per tool, measured on the MCP TypeScript server SDK 2.0.0. Spec 2026-07-28 removed sessions, so registering tools per session is no longer legal. What works: curate, scope the list by credentials, set cache hints. The SDK default is ttlMs 0."
-  },
-  {
-    "slug": "2026/08/how-to-tell-whether-an-ienumerable-has-already-been-materialized-in-csharp",
-    "text": "Measured on .NET 10.0.201: a blind defensive ToList() on an already-materialized 1M-element List<int> costs 4,000,056 bytes per call. An IReadOnlyCollection<T> check costs 0. Full type-test table for 24 sequence shapes, why Queue<T> is not an ICollection<T>, and the CA1851 setting that finds the call sites for you."
   }
 ]
