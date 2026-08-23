@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/claude-code-2-1-238-marketplaces-mint-their-own-auth-headers",
-    "text": "headersHelper landed on url marketplaces and catalog entries. Serve internal plugins from S3 with a short-lived token."
   }
 ]
