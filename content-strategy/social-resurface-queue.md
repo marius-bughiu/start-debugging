@@ -37,18 +37,6 @@ Move approved entries under `## Approved`, remove after posting.
 
 <!-- The scheduled task appends new entries here. Stale drafts (>14 days) are culled on the next run. -->
 
-### 2026-08-02 drafted - how-to-share-validation-logic-between-server-and-blazor-webassembly
-
-**Original:** 2026-04-29 - How to share validation logic between server and Blazor WebAssembly
-
-**X:** Blazor WASM validation that passes in dotnet run and does nothing in Release. The trimmer removed the rules it could not prove were used. Mark the shared contracts project IsTrimmable so the warning lands where you can fix it.
-
-**Bluesky:** ValidationProblemDetails comes back keyed by email. FieldIdentifier is case-sensitive and wants Email. That mismatch is why server 400s show up as a generic alert instead of inline under the field. EditContext predates ProblemDetails.
-
-**Mastodon:** The rule you cannot share: username already taken. It needs a database call, so it cannot live in the shared contracts project alongside the DTO. FluentValidation 12 has a clean answer. Put the interface in Contracts with no implementation, take it as a nullable constructor parameter, and wrap the async rules in RuleSet("Server"). The client registers nothing, so the parameter is null and the ruleset is empty. The server opts in with IncludeRuleSets.
-
-**Notes:** Longest eligible evergreen (2489 words, 4 internal links) and the only one that spans two runtimes, so it stays useful to both Blazor and API readers. GSC candidates were three single-impression queries with no overlap, so this was picked on depth again. Fresh angle: the original push led with the Shared-project layout, which is the least surprising part. These three lead with the failure modes instead. X takes the trim gotcha, where Release silently ships validation that does nothing. Bluesky takes the camelCase vs FieldIdentifier mismatch, which is the specific reason inline errors do not render. Mastodon takes the RuleSet("Server") plus nullable-interface trick for rules that can only run server-side.
-
 ### 2026-08-09 drafted - fix-second-operation-was-started-on-this-context-instance
 
 **Original:** 2026-05-07 - Fix: A second operation was started on this context instance before a previous operation completed
@@ -72,6 +60,18 @@ Move approved entries under `## Approved`, remove after posting.
 **Mastodon:** CS0246 after a project reference is an MSBuild problem wearing a Roslyn error. Three commands tell you which layer is broken. dotnet build -v:n prints the resolved reference list, and if your library is not in it the compiler never saw it. dotnet build -bl writes a binlog, open it and search ResolveAssemblyReferences to see which paths were handed over and which were skipped. dotnet msbuild -t:ResolveReferences runs resolution alone, no compiler noise.
 
 **Notes:** Longest eligible evergreen (2707 words) and joint-top on internal links among the long ones (5 outbound), covering an error that every SDK bump regenerates, so it stays useful indefinitely. GSC candidates had a single Flutter in-app-purchase query with no overlap, so this was picked on depth and link equity. It also moves the run off EF Core, which took two of the last three slots. Fresh angle: the original X copy led with NU1201 and the TargetFramework mismatch, which is fix one and the obvious cause. All three of these skip it. X takes fix five, the ProjectReference metadata that keeps the assembly out of the reference list while Solution Explorer keeps showing the project, which is the slowest cause to spot. Bluesky takes the dotnet clean trap, since clean keeps the assets file and people assume it is a full reset. Mastodon takes the diagnostic section, reframing the whole error as MSBuild rather than Roslyn and handing over the three commands that prove it.
+
+### 2026-08-23 drafted - record-vs-class-vs-struct-in-csharp-a-decision-matrix
+
+**Original:** 2026-05-20 - record vs class vs struct in C#: a decision matrix
+
+**X:** Structs are faster is folklore. A 24 byte readonly record struct passed by value ran 0.31 ns against 0.34 ns for the same payload as a sealed record accessed by reference. The struct wins on allocation pressure, not access speed.
+
+**Bluesky:** customer = customer with { Email = next } emits no UPDATE. The with expression builds a new instance the EF Core change tracker has never seen, and it still holds the old reference. Records make good DTOs and bad tracked entities.
+
+**Mastodon:** Three questions, stop at the first yes. 1. Does the type have identity, or own changing state over time? class. 2. Is it immutable, value-equal, and 16 bytes or less? readonly record struct. 3. Still immutable data with value equality? record. Two traps it does not cover. A record holding a List<int> compares unequal, because value equality falls back to reference equality there. And default(Money) is a valid instance, since a struct is never null.
+
+**Notes:** Highest word count among eligible evergreens (2728 words, 6 internal links) once the 2026-08-16 pick is excluded, and it anchors a five-post C# fundamentals cluster, so the outbound links keep working. Both GSC files (gsc-candidates.json, gsc-rising.json) are empty arrays this week, so there was no traction signal to weigh and depth decided it. It also moves the run off framework-specific errors: the last three slots were Blazor validation, EF Core concurrency, and an MSBuild reference failure. Fresh angle: the original X copy was the three-line summary of the recommendation, default to class, record for value-equal data, readonly record struct for hot loops. None of these repeat it. X leads with the benchmark that undercuts the folklore, since struct beats class by 0.03 ns on access and the real win is allocation pressure. Bluesky takes the EF Core trap where a with expression silently produces no UPDATE, which is the most expensive mistake in the post. Mastodon carries the three-question matrix plus the two gotchas that pick for you, the List<int> equality fallback and default(struct) being a valid value.
 
 ---
 
