@@ -134,7 +134,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to redact sensitive values from logs with `[LogProperties]` and data redaction in .NET 11 → slug: 2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet
 - How to write a static extension member that applies to every enum type in C# 14 → slug: 2026/08/how-to-write-a-static-extension-member-for-every-enum-type-in-csharp-14
 - How to tell whether an `IEnumerable<T>` has already been materialized in C# → slug: 2026/08/how-to-tell-whether-an-ienumerable-has-already-been-materialized-in-csharp
-- How to write reusable LINQ predicates that EF Core can translate in `Where`, `Select`, and `OrderBy`
+- How to write reusable LINQ predicates that EF Core can translate in `Where`, `Select`, and `OrderBy` → slug: 2026/08/how-to-write-reusable-linq-predicates-ef-core-can-translate
 - How to test a Flutter widget at a fixed point in time without a `withClock` closure
 - How to render a heading whose level (h1-h6) is chosen at runtime in a Blazor component
 
