@@ -1854,5 +1854,9 @@
   {
     "slug": "2026/08/how-to-write-reusable-linq-predicates-ef-core-can-translate",
     "text": "A bool helper in Where throws. The same logic as Expression<Func<T,bool>> translates, composes, and rebinds."
+  },
+  {
+    "slug": "2026/08/maui-10-0-100-useplatformhandler-custom-blazorwebview-backends",
+    "text": "MAUI 10.0.100 adds UsePlatformHandler: swap BlazorWebViewHandler without reimplementing AddMauiBlazorWebView()."
   }
 ]

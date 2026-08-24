@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/maui-10-0-100-useplatformhandler-custom-blazorwebview-backends",
+    "text": "A custom BlazorWebView backend can finally replace the default handler in .NET MAUI 10.0.100. Call order decides who wins."
   }
 ]
