@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/how-to-test-a-flutter-widget-at-a-fixed-point-in-time",
+    "text": "withClock in flutter_test_config.dart does nothing: the zone wraps test declaration, not execution. Override runTest instead."
   }
 ]

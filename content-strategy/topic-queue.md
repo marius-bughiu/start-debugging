@@ -135,7 +135,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to write a static extension member that applies to every enum type in C# 14 → slug: 2026/08/how-to-write-a-static-extension-member-for-every-enum-type-in-csharp-14
 - How to tell whether an `IEnumerable<T>` has already been materialized in C# → slug: 2026/08/how-to-tell-whether-an-ienumerable-has-already-been-materialized-in-csharp
 - How to write reusable LINQ predicates that EF Core can translate in `Where`, `Select`, and `OrderBy` → slug: 2026/08/how-to-write-reusable-linq-predicates-ef-core-can-translate
-- How to test a Flutter widget at a fixed point in time without a `withClock` closure
+- How to test a Flutter widget at a fixed point in time without a `withClock` closure → slug: 2026/08/how-to-test-a-flutter-widget-at-a-fixed-point-in-time
 - How to render a heading whose level (h1-h6) is chosen at runtime in a Blazor component
 
 ## Fix / error

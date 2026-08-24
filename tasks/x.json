@@ -1858,5 +1858,9 @@
   {
     "slug": "2026/08/maui-10-0-100-useplatformhandler-custom-blazorwebview-backends",
     "text": "MAUI 10.0.100 adds UsePlatformHandler: swap BlazorWebViewHandler without reimplementing AddMauiBlazorWebView()."
+  },
+  {
+    "slug": "2026/08/how-to-test-a-flutter-widget-at-a-fixed-point-in-time",
+    "text": "testWidgets already hands you a fake clock. It just starts at wall time. One runTest override pins the whole suite."
   }
 ]
