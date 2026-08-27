@@ -136,7 +136,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to tell whether an `IEnumerable<T>` has already been materialized in C# → slug: 2026/08/how-to-tell-whether-an-ienumerable-has-already-been-materialized-in-csharp
 - How to write reusable LINQ predicates that EF Core can translate in `Where`, `Select`, and `OrderBy` → slug: 2026/08/how-to-write-reusable-linq-predicates-ef-core-can-translate
 - How to test a Flutter widget at a fixed point in time without a `withClock` closure → slug: 2026/08/how-to-test-a-flutter-widget-at-a-fixed-point-in-time
-- How to render a heading whose level (h1-h6) is chosen at runtime in a Blazor component
+- How to render a heading whose level (h1-h6) is chosen at runtime in a Blazor component → slug: 2026/08/how-to-render-a-heading-with-a-runtime-chosen-level-in-blazor
 
 ## Fix / error
 

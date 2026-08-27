@@ -1862,5 +1862,9 @@
   {
     "slug": "2026/08/how-to-test-a-flutter-widget-at-a-fixed-point-in-time",
     "text": "testWidgets already hands you a fake clock. It just starts at wall time. One runTest override pins the whole suite."
+  },
+  {
+    "slug": "2026/08/how-to-render-a-heading-with-a-runtime-chosen-level-in-blazor",
+    "text": "Blazor has no <h@Level> syntax, and DynamicComponent only takes component types. OpenElement does take a string."
   }
 ]

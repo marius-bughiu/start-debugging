@@ -42,5 +42,9 @@
   {
     "slug": "2026/08/mcp-server-design-for-a-large-internal-api-surface",
     "text": "200 internal endpoints mapped to 200 MCP tools costs about 933 bytes of JSON per tool, measured on the MCP TypeScript server SDK 2.0.0. Spec 2026-07-28 removed sessions, so registering tools per session is no longer legal. What works: curate, scope the list by credentials, set cache hints. The SDK default is ttlMs 0."
+  },
+  {
+    "slug": "2026/08/how-to-render-a-heading-with-a-runtime-chosen-level-in-blazor",
+    "text": "Rendering h1-h6 at runtime in Blazor means overriding BuildRenderTree and calling builder.OpenElement(0, $\"h{level}\"). Two things samples skip: OpenElement writes the tag name out unescaped, so an unvalidated level is an injection vector, and changing the level removes and re-inserts the element. @key does not stop that."
   }
 ]
