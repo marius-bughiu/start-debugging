@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/how-to-render-a-heading-with-a-runtime-chosen-level-in-blazor",
-    "text": "Splitting the tag across two MarkupStrings looks correct in static SSR and quietly breaks the moment it goes interactive."
   }
 ]
