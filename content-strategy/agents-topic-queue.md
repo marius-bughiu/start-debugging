@@ -91,7 +91,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: a long MCP tool call gets auto-backgrounded after two minutes mid-task → slug: 2026/07/fix-long-mcp-tool-call-auto-backgrounded-after-two-minutes
 - Fix: a `Write(src)` permission rule never matches - directory rules need `src/**` → slug: 2026/08/fix-write-rule-is-not-matched-by-file-permission-checks
 - Fix: MCP client and server negotiate different protocol versions (2025-11-25 vs 2026-07-28) → slug: 2026/08/fix-mcp-unsupported-protocol-version-2025-11-25-vs-2026-07-28
-- Fix: `MCP9004`/`MCP9005`/`MCP9006` deprecation warnings after upgrading the MCP C# SDK to v2.0
+- Fix: `MCP9004`/`MCP9005`/`MCP9006` deprecation warnings after upgrading the MCP C# SDK to v2.0 → slug: 2026/08/fix-mcp9004-mcp9005-mcp9006-warnings-after-mcp-csharp-sdk-2-0
 - Fix: an MCP server never starts because an enterprise allowlist blocks its command or URL
 
 ## Vs / comparison

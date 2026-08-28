@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/fix-mcp9004-mcp9005-mcp9006-warnings-after-mcp-csharp-sdk-2-0",
+    "text": "MCP9004, MCP9005 and MCP9006 after the MCP C# SDK 2.x bump: only one of the three is safe to suppress and ignore."
   }
 ]

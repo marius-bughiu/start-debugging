@@ -1870,5 +1870,9 @@
   {
     "slug": "2026/08/aspire-13-5-withterminal-interactive-shells-in-the-dashboard",
     "text": "Aspire 13.5 ships WithTerminal(): a live PTY for a resource, right in the dashboard. Experimental, one call per resource, and it quietly detaches the debugger."
+  },
+  {
+    "slug": "2026/08/fix-mcp9004-mcp9005-mcp9006-warnings-after-mcp-csharp-sdk-2-0",
+    "text": "Upgraded the MCP C# SDK to 2.x? MCP9005 is advisory. MCP9004 will crash your server at startup."
   }
 ]
