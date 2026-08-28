@@ -42,9 +42,5 @@
   {
     "slug": "2026/08/mcp-server-design-for-a-large-internal-api-surface",
     "text": "200 internal endpoints mapped to 200 MCP tools costs about 933 bytes of JSON per tool, measured on the MCP TypeScript server SDK 2.0.0. Spec 2026-07-28 removed sessions, so registering tools per session is no longer legal. What works: curate, scope the list by credentials, set cache hints. The SDK default is ttlMs 0."
-  },
-  {
-    "slug": "2026/08/aspire-13-5-withterminal-interactive-shells-in-the-dashboard",
-    "text": "Aspire 13.5 (Aug 18) adds WithTerminal(), giving a resource a real pseudo-terminal in the dashboard instead of a read-only log stream. It is experimental (ASPIRETERMINAL001), each replica gets an independent session behind a hidden terminal-host resource, and `aspire config set features.terminalCommandsEnabled true` unlocks `aspire terminal attach` from your own shell. Two traps: Aspire runs the resource as a plain process and does not attach the debugger, and the old TerminalOptions.Shell option is gone because it was never wired to the PTY."
   }
 ]
