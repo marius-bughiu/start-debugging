@@ -1866,5 +1866,9 @@
   {
     "slug": "2026/08/how-to-render-a-heading-with-a-runtime-chosen-level-in-blazor",
     "text": "Blazor has no <h@Level> syntax, and DynamicComponent only takes component types. OpenElement does take a string."
+  },
+  {
+    "slug": "2026/08/aspire-13-5-withterminal-interactive-shells-in-the-dashboard",
+    "text": "Aspire 13.5 ships WithTerminal(): a live PTY for a resource, right in the dashboard. Experimental, one call per resource, and it quietly detaches the debugger."
   }
 ]

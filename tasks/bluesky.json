@@ -22,5 +22,9 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
+  },
+  {
+    "slug": "2026/08/aspire-13-5-withterminal-interactive-shells-in-the-dashboard",
+    "text": "Aspire 13.5's WithTerminal() turns a resource's Console Logs page into something you can type into. Each replica gets its own session, and `aspire terminal attach` joins from your shell."
   }
 ]
