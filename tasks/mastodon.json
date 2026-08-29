@@ -50,9 +50,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
-  },
-  {
-    "slug": "2026/08/fix-failed-to-resolve-source-metadata-for-mcr-microsoft-com-dotnet-aspnet",
-    "text": "\"failed to resolve source metadata for mcr.microsoft.com/dotnet/aspnet\" is BuildKit failing a HEAD on the manifest, before any Dockerfile step runs. Read the clause after the last colon: not found means a bad tag, and .NET 11 previews only publish 11.0-preview. And --build-arg HTTP_PROXY does nothing here."
   }
 ]
