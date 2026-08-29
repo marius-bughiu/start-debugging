@@ -45,34 +45,6 @@
     ]
   },
   {
-    "url": "https://apps.microsoft.com/store/detail/9PGB6SQSK601?cid=DevShareMWAPCS",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/01/a-winui-3-local-only-notes-app-is-the-right-kind-of-boring-offline-first-sqlite-keyboard-first.md",
-      "site/src/content/blog/de/2026/01/a-winui-3-local-only-notes-app-is-the-right-kind-of-boring-offline-first-sqlite-keyboard-first.md",
-      "site/src/content/blog/es/2026/01/a-winui-3-local-only-notes-app-is-the-right-kind-of-boring-offline-first-sqlite-keyboard-first.md",
-      "site/src/content/blog/ja/2026/01/a-winui-3-local-only-notes-app-is-the-right-kind-of-boring-offline-first-sqlite-keyboard-first.md",
-      "site/src/content/blog/pt-br/2026/01/a-winui-3-local-only-notes-app-is-the-right-kind-of-boring-offline-first-sqlite-keyboard-first.md",
-      "site/src/content/blog/ru/2026/01/a-winui-3-local-only-notes-app-is-the-right-kind-of-boring-offline-first-sqlite-keyboard-first.md"
-    ]
-  },
-  {
-    "url": "https://aspire.dev/deployment/docker-compose/",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md",
-      "site/src/content/blog/de/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md",
-      "site/src/content/blog/es/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md",
-      "site/src/content/blog/ja/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md",
-      "site/src/content/blog/pt-br/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md",
-      "site/src/content/blog/ru/2026/08/aspire-vs-docker-compose-for-local-multi-service-development.md"
-    ]
-  },
-  {
     "url": "https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.html",
     "status": 404,
     "ok": false,
@@ -86,21 +58,32 @@
     ]
   },
   {
+    "url": "https://claude.ai/code/routines",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues.md",
+      "site/src/content/blog/de/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues.md",
+      "site/src/content/blog/es/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues.md",
+      "site/src/content/blog/ja/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues.md",
+      "site/src/content/blog/ru/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues.md"
+    ]
+  },
+  {
+    "url": "https://claude.ai/mcp",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-add-retrieval-augmented-generation-to-a-claude-code-session.md"
+    ]
+  },
+  {
     "url": "https://code.claude.com/docs/en/release-notes",
     "status": 404,
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/07/fix-claude-code-high-memory-usage-and-context-overflow.md"
-    ]
-  },
-  {
-    "url": "https://code.visualstudio.com/docs/copilot/customization/prompt-files",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/07/migrate-copilot-prompt-files-to-agent-skills.md",
-      "site/src/content/blog/2026/07/migrate-copilot-prompt-files-to-agent-skills.md"
     ]
   },
   {
@@ -136,65 +119,16 @@
     ]
   },
   {
-    "url": "https://devblogs.microsoft.com/dotnet/dotnet-10-0-7-oob-security-update/",
-    "status": null,
+    "url": "https://developer.android.com/google-play/64-bit",
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
-      "site/src/content/blog/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
-      "site/src/content/blog/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
-      "site/src/content/blog/de/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
-      "site/src/content/blog/de/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
-      "site/src/content/blog/es/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
-      "site/src/content/blog/es/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
-      "site/src/content/blog/ja/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
-      "site/src/content/blog/ja/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
-      "site/src/content/blog/pt-br/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
-      "site/src/content/blog/pt-br/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
-      "site/src/content/blog/ru/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md",
-      "site/src/content/blog/ru/2026/04/dotnet-10-0-7-oob-cve-2026-40372-dataprotection.md"
-    ]
-  },
-  {
-    "url": "https://devblogs.microsoft.com/dotnet/microsoft-agent-framework-building-blocks-for-ai-part-3/",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
-      "site/src/content/blog/de/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
-      "site/src/content/blog/es/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
-      "site/src/content/blog/ja/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
-      "site/src/content/blog/pt-br/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md",
-      "site/src/content/blog/ru/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp.md"
-    ]
-  },
-  {
-    "url": "https://devblogs.microsoft.com/dotnet/nuget-package-pruning-in-dotnet-10/",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/nuget-package-pruning-default-net-10.md",
-      "site/src/content/blog/de/2026/05/nuget-package-pruning-default-net-10.md",
-      "site/src/content/blog/es/2026/05/nuget-package-pruning-default-net-10.md",
-      "site/src/content/blog/ja/2026/05/nuget-package-pruning-default-net-10.md",
-      "site/src/content/blog/pt-br/2026/05/nuget-package-pruning-default-net-10.md",
-      "site/src/content/blog/ru/2026/05/nuget-package-pruning-default-net-10.md"
-    ]
-  },
-  {
-    "url": "https://devblogs.microsoft.com/visualstudio/visual-studio-2026-debugging-with-copilot/",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/04/visual-studio-18-5-debugger-agent-workflow.md",
-      "site/src/content/blog/de/2026/04/visual-studio-18-5-debugger-agent-workflow.md",
-      "site/src/content/blog/es/2026/04/visual-studio-18-5-debugger-agent-workflow.md",
-      "site/src/content/blog/ja/2026/04/visual-studio-18-5-debugger-agent-workflow.md",
-      "site/src/content/blog/pt-br/2026/04/visual-studio-18-5-debugger-agent-workflow.md",
-      "site/src/content/blog/ru/2026/04/visual-studio-18-5-debugger-agent-workflow.md"
+      "site/src/content/blog/2026/08/fix-doesnt-support-required-abi-when-installing-a-dotnet-maui-android-app.md",
+      "site/src/content/blog/de/2026/08/fix-doesnt-support-required-abi-when-installing-a-dotnet-maui-android-app.md",
+      "site/src/content/blog/es/2026/08/fix-doesnt-support-required-abi-when-installing-a-dotnet-maui-android-app.md",
+      "site/src/content/blog/ja/2026/08/fix-doesnt-support-required-abi-when-installing-a-dotnet-maui-android-app.md",
+      "site/src/content/blog/pt-br/2026/08/fix-doesnt-support-required-abi-when-installing-a-dotnet-maui-android-app.md",
+      "site/src/content/blog/ru/2026/08/fix-doesnt-support-required-abi-when-installing-a-dotnet-maui-android-app.md"
     ]
   },
   {
@@ -211,59 +145,6 @@
     ]
   },
   {
-    "url": "https://docs.github.com/en/copilot/customizing-copilot/using-model-context-protocol/using-the-github-mcp-server",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/fix-github-mcp-server-tool-calls-fail-silently-without-pat.md"
-    ]
-  },
-  {
-    "url": "https://dotnet.microsoft.com/download/dotnet/11.0",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/04/blazor-ssr-tempdata-dotnet-11.md",
-      "site/src/content/blog/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3.md",
-      "site/src/content/blog/2026/04/csharp-15-union-types-dotnet-11-preview-2.md",
-      "site/src/content/blog/2026/04/dotnet-11-zstandard-compression-system-io.md",
-      "site/src/content/blog/2026/04/dotnet-maui-11-map-pin-clustering.md",
-      "site/src/content/blog/2026/05/dotnet-watch-maui-android-ios-net-11-preview-4.md",
-      "site/src/content/blog/de/2026/04/blazor-ssr-tempdata-dotnet-11.md",
-      "site/src/content/blog/de/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3.md",
-      "site/src/content/blog/de/2026/04/csharp-15-union-types-dotnet-11-preview-2.md",
-      "site/src/content/blog/de/2026/04/dotnet-11-zstandard-compression-system-io.md",
-      "site/src/content/blog/de/2026/04/dotnet-maui-11-map-pin-clustering.md",
-      "site/src/content/blog/de/2026/05/dotnet-watch-maui-android-ios-net-11-preview-4.md",
-      "site/src/content/blog/es/2026/04/blazor-ssr-tempdata-dotnet-11.md",
-      "site/src/content/blog/es/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3.md",
-      "site/src/content/blog/es/2026/04/csharp-15-union-types-dotnet-11-preview-2.md",
-      "site/src/content/blog/es/2026/04/dotnet-11-zstandard-compression-system-io.md",
-      "site/src/content/blog/es/2026/04/dotnet-maui-11-map-pin-clustering.md",
-      "site/src/content/blog/es/2026/05/dotnet-watch-maui-android-ios-net-11-preview-4.md",
-      "site/src/content/blog/ja/2026/04/blazor-ssr-tempdata-dotnet-11.md",
-      "site/src/content/blog/ja/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3.md",
-      "site/src/content/blog/ja/2026/04/csharp-15-union-types-dotnet-11-preview-2.md",
-      "site/src/content/blog/ja/2026/04/dotnet-11-zstandard-compression-system-io.md",
-      "site/src/content/blog/ja/2026/04/dotnet-maui-11-map-pin-clustering.md",
-      "site/src/content/blog/ja/2026/05/dotnet-watch-maui-android-ios-net-11-preview-4.md",
-      "site/src/content/blog/pt-br/2026/04/blazor-ssr-tempdata-dotnet-11.md",
-      "site/src/content/blog/pt-br/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3.md",
-      "site/src/content/blog/pt-br/2026/04/csharp-15-union-types-dotnet-11-preview-2.md",
-      "site/src/content/blog/pt-br/2026/04/dotnet-11-zstandard-compression-system-io.md",
-      "site/src/content/blog/pt-br/2026/04/dotnet-maui-11-map-pin-clustering.md",
-      "site/src/content/blog/pt-br/2026/05/dotnet-watch-maui-android-ios-net-11-preview-4.md",
-      "site/src/content/blog/ru/2026/04/blazor-ssr-tempdata-dotnet-11.md",
-      "site/src/content/blog/ru/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3.md",
-      "site/src/content/blog/ru/2026/04/csharp-15-union-types-dotnet-11-preview-2.md",
-      "site/src/content/blog/ru/2026/04/dotnet-11-zstandard-compression-system-io.md",
-      "site/src/content/blog/ru/2026/04/dotnet-maui-11-map-pin-clustering.md",
-      "site/src/content/blog/ru/2026/05/dotnet-watch-maui-android-ios-net-11-preview-4.md"
-    ]
-  },
-  {
     "url": "https://dotnetfiddle.net/",
     "status": 418,
     "ok": false,
@@ -274,15 +155,6 @@
       "site/src/content/blog/ja/2023/06/how-to-start-programming-with-c.md",
       "site/src/content/blog/pt-br/2023/06/how-to-start-programming-with-c.md",
       "site/src/content/blog/ru/2023/06/how-to-start-programming-with-c.md"
-    ]
-  },
-  {
-    "url": "https://github.com/crystaldba/postgres-mcp",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/08/migrate-off-archived-mcp-reference-servers.md"
     ]
   },
   {
@@ -338,40 +210,6 @@
     ]
   },
   {
-    "url": "https://github.com/dotnet/extensions/issues/5163",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet.md",
-      "site/src/content/blog/2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet.md",
-      "site/src/content/blog/de/2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet.md",
-      "site/src/content/blog/de/2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet.md",
-      "site/src/content/blog/es/2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet.md",
-      "site/src/content/blog/es/2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet.md",
-      "site/src/content/blog/ja/2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet.md",
-      "site/src/content/blog/ja/2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet.md",
-      "site/src/content/blog/pt-br/2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet.md",
-      "site/src/content/blog/pt-br/2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet.md",
-      "site/src/content/blog/ru/2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet.md",
-      "site/src/content/blog/ru/2026/08/how-to-redact-sensitive-values-from-logs-with-logproperties-in-dotnet.md"
-    ]
-  },
-  {
-    "url": "https://github.com/dotnet/maui/pull/33432",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/04/maui-11-long-press-gesture-recognizer.md",
-      "site/src/content/blog/de/2026/04/maui-11-long-press-gesture-recognizer.md",
-      "site/src/content/blog/es/2026/04/maui-11-long-press-gesture-recognizer.md",
-      "site/src/content/blog/ja/2026/04/maui-11-long-press-gesture-recognizer.md",
-      "site/src/content/blog/pt-br/2026/04/maui-11-long-press-gesture-recognizer.md",
-      "site/src/content/blog/ru/2026/04/maui-11-long-press-gesture-recognizer.md"
-    ]
-  },
-  {
     "url": "https://github.com/dotnet/runtime/blob/main/docs/design/coreclr/botr/sync-block-table.md",
     "status": 404,
     "ok": false,
@@ -407,15 +245,6 @@
     ]
   },
   {
-    "url": "https://github.com/marcojak/MTAdmob",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/07/migrate-admob-from-xamarin-forms-to-net-maui.md"
-    ]
-  },
-  {
     "url": "https://github.com/mihnea-radulescu/cvshortlist",
     "status": 404,
     "ok": false,
@@ -426,20 +255,6 @@
       "site/src/content/blog/ja/2026/01/cv-shortlist-an-ai-powered-net-10-saas-went-open-source-and-the-stack-is-worth-studying.md",
       "site/src/content/blog/pt-br/2026/01/cv-shortlist-an-ai-powered-net-10-saas-went-open-source-and-the-stack-is-worth-studying.md",
       "site/src/content/blog/ru/2026/01/cv-shortlist-an-ai-powered-net-10-saas-went-open-source-and-the-stack-is-worth-studying.md"
-    ]
-  },
-  {
-    "url": "https://github.com/necolas/react-native-web",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026.md",
-      "site/src/content/blog/de/2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026.md",
-      "site/src/content/blog/es/2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026.md",
-      "site/src/content/blog/ja/2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026.md",
-      "site/src/content/blog/pt-br/2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026.md",
-      "site/src/content/blog/ru/2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026.md"
     ]
   },
   {
@@ -648,20 +463,6 @@
     ]
   },
   {
-    "url": "https://learn.microsoft.com/en-us/dotnet/maui/whats-new/dotnet-11",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/07/how-to-use-shell-route-parameters-and-query-properties-in-dotnet-maui-11.md",
-      "site/src/content/blog/de/2026/07/how-to-use-shell-route-parameters-and-query-properties-in-dotnet-maui-11.md",
-      "site/src/content/blog/es/2026/07/how-to-use-shell-route-parameters-and-query-properties-in-dotnet-maui-11.md",
-      "site/src/content/blog/ja/2026/07/how-to-use-shell-route-parameters-and-query-properties-in-dotnet-maui-11.md",
-      "site/src/content/blog/pt-br/2026/07/how-to-use-shell-route-parameters-and-query-properties-in-dotnet-maui-11.md",
-      "site/src/content/blog/ru/2026/07/how-to-use-shell-route-parameters-and-query-properties-in-dotnet-maui-11.md"
-    ]
-  },
-  {
     "url": "https://learn.microsoft.com/en-us/dotnet/standard/data/sqlite/foreign-keys",
     "status": 404,
     "ok": false,
@@ -740,6 +541,14 @@
     ]
   },
   {
+    "url": "https://medium.com/@adnanmasood/rubric-based-evals-llm-as-a-judge-methodologies-and-empirical-validation-in-domain-context-71936b989e80",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/05/how-to-set-up-an-llm-as-judge-eval-harness-for-a-coding-agent.md"
+    ]
+  },
+  {
     "url": "https://medium.com/dartlang/announcing-dart-3-0-79bff52e1bb6",
     "status": 403,
     "ok": false,
@@ -750,6 +559,19 @@
       "site/src/content/blog/ja/2026/05/dart-records-vs-freezed-classes.md",
       "site/src/content/blog/pt-br/2026/05/dart-records-vs-freezed-classes.md",
       "site/src/content/blog/ru/2026/05/dart-records-vs-freezed-classes.md"
+    ]
+  },
+  {
+    "url": "https://medium.com/write-a-catalyst/partial-events-constructors-in-net-10-preview-2-8002f0d714b2#:~:text=1",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2025/04/csharp-14-partial-constructors-and-events.md",
+      "site/src/content/blog/de/2025/04/csharp-14-partial-constructors-and-events.md",
+      "site/src/content/blog/es/2025/04/csharp-14-partial-constructors-and-events.md",
+      "site/src/content/blog/ja/2025/04/csharp-14-partial-constructors-and-events.md",
+      "site/src/content/blog/pt-br/2025/04/csharp-14-partial-constructors-and-events.md",
+      "site/src/content/blog/ru/2025/04/csharp-14-partial-constructors-and-events.md"
     ]
   },
   {
@@ -790,19 +612,6 @@
     ]
   },
   {
-    "url": "https://news.ycombinator.com/item?id=47720060",
-    "status": 429,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/de/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/es/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/ja/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/pt-br/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/ru/2026/04/building-a-microsecond-database-engine-in-csharp.md"
-    ]
-  },
-  {
     "url": "https://openjdk.org/jeps/472",
     "status": null,
     "ok": false,
@@ -834,16 +643,6 @@
       "site/src/content/blog/ja/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md",
       "site/src/content/blog/pt-br/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md",
       "site/src/content/blog/ru/2026/05/how-to-package-a-maui-app-for-the-microsoft-store.md"
-    ]
-  },
-  {
-    "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/strict-tool-use",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument.md",
-      "site/src/content/blog/2026/05/fix-tool-call-arguments-did-not-match-schema-in-anthropic-tool-use.md"
     ]
   },
   {
@@ -960,11 +759,42 @@
     ]
   },
   {
+    "url": "https://www.npmjs.com/package/@anthropic-ai/sdk",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
+      "site/src/content/blog/2026/05/how-to-cache-multi-turn-claude-conversations-across-api-calls.md",
+      "site/src/content/blog/2026/08/migrate-a-custom-typescript-agent-loop-to-the-cursor-sdk.md",
+      "site/src/content/blog/de/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
+      "site/src/content/blog/es/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
+      "site/src/content/blog/ja/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md",
+      "site/src/content/blog/ru/2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate.md"
+    ]
+  },
+  {
     "url": "https://www.npmjs.com/package/@cursor/sdk",
     "status": 403,
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/08/migrate-a-custom-typescript-agent-loop-to-the-cursor-sdk.md"
+    ]
+  },
+  {
+    "url": "https://www.npmjs.com/package/@modelcontextprotocol/sdk",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/07/fix-mcp-server-fetch-is-not-defined-on-node-below-18.md"
+    ]
+  },
+  {
+    "url": "https://www.npmjs.com/package/@modelcontextprotocol/server",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/08/safe-file-write-tools-for-an-agent-preview-confirm-apply.md"
     ]
   },
   {
@@ -1154,8 +984,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Agents.AI/",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/microsoft-agent-framework-vs-semantic-kernel-for-a-greenfield-net-agent.md",
       "site/src/content/blog/2026/07/migrate-a-semantic-kernel-app-to-microsoft-agent-framework-1-0.md"
@@ -1163,9 +994,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/how-to-validate-a-jwts-issuer-audience-and-lifetime-in-aspnetcore-11.md",
       "site/src/content/blog/2026/07/how-to-set-up-jwt-bearer-authentication-in-a-minimal-api-in-aspnetcore-11.md",
@@ -1315,9 +1145,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.SemanticKernel",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/migrate-a-semantic-kernel-plugin-to-an-mcp-server.md"
     ]
@@ -1354,8 +1183,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/ModelContextProtocol.AspNetCore",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/migrate-a-semantic-kernel-plugin-to-an-mcp-server.md"
     ]
