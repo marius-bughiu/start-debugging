@@ -1878,5 +1878,13 @@
   {
     "slug": "2026/08/claude-code-2-1-251-four-ways-around-the-permission-check",
     "text": "Claude Code 2.1.251 fixed file tools following a symlink swapped *after* the permission check passed. Remember what else runs in your working directory: postinstall scripts, watchers, the agent's own last Bash command."
+  },
+  {
+    "slug": "2026/08/migrate-a-dotnet-solution-to-central-package-management-with-directory-packages-props",
+    "text": "Central Package Management is not a formatting change. Consolidating two projects onto one version moves the dependency graph, so diff it."
+  },
+  {
+    "slug": "2026/08/fix-doesnt-support-required-abi-when-installing-a-dotnet-maui-android-app",
+    "text": "Your MAUI app builds clean and still will not install. Since .NET 9, Android ships 64-bit ABIs only."
   }
 ]
