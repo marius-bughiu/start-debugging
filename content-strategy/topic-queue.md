@@ -251,8 +251,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Restricted method called: java.lang.System::load` warning in a Flutter Gradle build on JDK 22+ → slug: 2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build (JDK 22+ premise corrected: the System::load variant is JEP 472 in JDK 24+; JDK 22/23 warn only for the FFM API)
 - Fix: `Doesn't support required ABI` when installing a .NET MAUI Android app → slug: 2026/08/fix-doesnt-support-required-abi-when-installing-a-dotnet-maui-android-app
 - Fix: `CA1070: Do not declare event fields as virtual` in C# → slug: 2026/08/fix-ca1070-do-not-declare-event-fields-as-virtual
-- Fix: `Reverse()` on an array binds to `MemoryExtensions` instead of LINQ after upgrading to .NET 11
-- Fix: `Failed to resolve source metadata for mcr.microsoft.com/dotnet/aspnet` when building a .NET Docker image
+- Fix: `Reverse()` on an array binds to `MemoryExtensions` instead of LINQ after upgrading to .NET 11 (rejected as duplicate: same intent already covered by 2026/05/fix-csharp-14-overload-resolution-breaking-change-with-spans)
+- Fix: `Failed to resolve source metadata for mcr.microsoft.com/dotnet/aspnet` when building a .NET Docker image → slug: 2026/08/fix-failed-to-resolve-source-metadata-for-mcr-microsoft-com-dotnet-aspnet
 - Fix: `[JsonIgnore]` has no effect on a `required` property in System.Text.Json
 - Fix: `CREATE DATABASE permission denied in database 'master'` when running `dotnet ef database update`
 - Fix: Postgres `23505: duplicate key value violates unique constraint` on a concurrent EF Core insert
