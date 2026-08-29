@@ -250,7 +250,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: Flutter UI overlaps the Android system navigation bar after targeting SDK 35 edge-to-edge → slug: 2026/08/fix-flutter-ui-overlaps-the-android-navigation-bar-after-targeting-sdk-35
 - Fix: `Restricted method called: java.lang.System::load` warning in a Flutter Gradle build on JDK 22+ → slug: 2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build (JDK 22+ premise corrected: the System::load variant is JEP 472 in JDK 24+; JDK 22/23 warn only for the FFM API)
 - Fix: `Doesn't support required ABI` when installing a .NET MAUI Android app → slug: 2026/08/fix-doesnt-support-required-abi-when-installing-a-dotnet-maui-android-app
-- Fix: `CA1070: Do not declare event fields as virtual` in C#
+- Fix: `CA1070: Do not declare event fields as virtual` in C# → slug: 2026/08/fix-ca1070-do-not-declare-event-fields-as-virtual
 - Fix: `Reverse()` on an array binds to `MemoryExtensions` instead of LINQ after upgrading to .NET 11
 - Fix: `Failed to resolve source metadata for mcr.microsoft.com/dotnet/aspnet` when building a .NET Docker image
 - Fix: `[JsonIgnore]` has no effect on a `required` property in System.Text.Json

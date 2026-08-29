@@ -50,5 +50,9 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
+  },
+  {
+    "slug": "2026/08/fix-ca1070-do-not-declare-event-fields-as-virtual",
+    "text": "CA1070 ships as a suggestion, so dotnet build never prints it. Override a virtual field-like event and base and derived get separate private backing fields: subscriptions land on the derived one, the base raises off its own null field, nothing fires. In MVVM that is a virtual PropertyChanged that silently stops updating the UI."
   }
 ]
