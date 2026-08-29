@@ -46,5 +46,9 @@
   {
     "slug": "2026/08/migrate-a-dotnet-solution-to-central-package-management-with-directory-packages-props",
     "text": "Migrating a .NET solution to Central Package Management: the script that generates Directory.Packages.props has to sort with NuGetVersion, because as strings 13.0.10 sorts below 13.0.3. Turning CPM on at the repo root also applies to file-based .cs apps, where #:package emits a versioned PackageReference and fails with NU1008 -- opt out per script with #:property. The payoff is CentralPackageTransitivePinningEnabled, which lifts a vulnerable transitive dependency across every project at once without promoting it to a direct reference."
+  },
+  {
+    "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
+    "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
   }
 ]

@@ -1886,5 +1886,9 @@
   {
     "slug": "2026/08/fix-doesnt-support-required-abi-when-installing-a-dotnet-maui-android-app",
     "text": "Your MAUI app builds clean and still will not install. Since .NET 9, Android ships 64-bit ABIs only."
+  },
+  {
+    "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
+    "text": "Two isolates, one global counter, and it prints 0. Each Dart isolate owns its heap, so there is nothing to lock."
   }
 ]
