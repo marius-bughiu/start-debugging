@@ -26,9 +26,5 @@
   {
     "slug": "2026/08/migrate-a-dotnet-solution-to-central-package-management-with-directory-packages-props",
     "text": "Moving a solution to Directory.Packages.props is mechanical until two projects disagree on a version. That list of conflicts is the actual migration; everything else is a script."
-  },
-  {
-    "slug": "2026/08/fix-doesnt-support-required-abi-when-installing-a-dotnet-maui-android-app",
-    "text": "INSTALL_FAILED_NO_MATCHING_ABIS on a .NET MAUI build is a changed default, not your code: .NET 9 dropped the 32-bit Android ABIs."
   }
 ]

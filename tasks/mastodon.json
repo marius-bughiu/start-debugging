@@ -46,9 +46,5 @@
   {
     "slug": "2026/08/migrate-a-dotnet-solution-to-central-package-management-with-directory-packages-props",
     "text": "Migrating a .NET solution to Central Package Management: the script that generates Directory.Packages.props has to sort with NuGetVersion, because as strings 13.0.10 sorts below 13.0.3. Turning CPM on at the repo root also applies to file-based .cs apps, where #:package emits a versioned PackageReference and fails with NU1008 -- opt out per script with #:property. The payoff is CentralPackageTransitivePinningEnabled, which lifts a vulnerable transitive dependency across every project at once without promoting it to a direct reference."
-  },
-  {
-    "slug": "2026/08/fix-doesnt-support-required-abi-when-installing-a-dotnet-maui-android-app",
-    "text": "ADB0020, INSTALL_FAILED_NO_MATCHING_ABIS and the Play Console's \"Doesn't support required ABI\" are one bug: since .NET 9 a MAUI Android build ships arm64-v8a and x86_64 only. Set RuntimeIdentifiers, not AndroidSupportedAbis, which is now an ignored warning. On .NET 11 the four-RID snippet fails: android-x86 is gone."
   }
 ]
