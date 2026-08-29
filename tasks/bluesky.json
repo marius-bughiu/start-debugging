@@ -22,9 +22,5 @@
   {
     "slug": "2026/06/what-is-valuetask-and-when-is-it-worth-it",
     "text": "ValueTask<T> removes a Task allocation on synchronous completion. The price: await once, never block, never store it."
-  },
-  {
-    "slug": "2026/08/claude-code-2-1-251-four-ways-around-the-permission-check",
-    "text": "Four fixes in Claude Code 2.1.251 are really one bug. A symlink swapped after the check, Read deny rules skipped through a symlinked search path, a marketplace command pointing outside its plugin, a workflow script read before approval."
   }
 ]
