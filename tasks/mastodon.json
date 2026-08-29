@@ -42,5 +42,9 @@
   {
     "slug": "2026/08/mcp-server-design-for-a-large-internal-api-surface",
     "text": "200 internal endpoints mapped to 200 MCP tools costs about 933 bytes of JSON per tool, measured on the MCP TypeScript server SDK 2.0.0. Spec 2026-07-28 removed sessions, so registering tools per session is no longer legal. What works: curate, scope the list by credentials, set cache hints. The SDK default is ttlMs 0."
+  },
+  {
+    "slug": "2026/08/claude-code-2-1-251-four-ways-around-the-permission-check",
+    "text": "Claude Code 2.1.251 (Aug 28) closes four paths around the permission check, and they are the same class of bug: file tools followed a symlink swapped inside the working directory after the check passed, Grep and Glob did not apply Read(...) deny rules through a symlinked search path, plugin commands in a marketplace entry could point outside the plugin directory, and the Workflow tool read a scriptPath before the check ran, then quoted it back in the error. The same release stops project settings from enabling raw API body logging or setting CLAUDE_CONFIG_DIR, and makes ANTHROPIC_CUSTOM_HEADERS require approval for credential and routing headers. One argument throughout: what a cloned repo hands you is input, not configuration."
   }
 ]

@@ -1874,5 +1874,9 @@
   {
     "slug": "2026/08/fix-mcp9004-mcp9005-mcp9006-warnings-after-mcp-csharp-sdk-2-0",
     "text": "Upgraded the MCP C# SDK to 2.x? MCP9005 is advisory. MCP9004 will crash your server at startup."
+  },
+  {
+    "slug": "2026/08/claude-code-2-1-251-four-ways-around-the-permission-check",
+    "text": "Claude Code 2.1.251 fixed file tools following a symlink swapped *after* the permission check passed. Remember what else runs in your working directory: postinstall scripts, watchers, the agent's own last Bash command."
   }
 ]
