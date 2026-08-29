@@ -249,7 +249,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Toolchain installation does not provide the required capabilities` in a Flutter Android Gradle build → slug: 2026/08/fix-toolchain-installation-does-not-provide-the-required-capabilities-in-flutter
 - Fix: Flutter UI overlaps the Android system navigation bar after targeting SDK 35 edge-to-edge → slug: 2026/08/fix-flutter-ui-overlaps-the-android-navigation-bar-after-targeting-sdk-35
 - Fix: `Restricted method called: java.lang.System::load` warning in a Flutter Gradle build on JDK 22+ → slug: 2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build (JDK 22+ premise corrected: the System::load variant is JEP 472 in JDK 24+; JDK 22/23 warn only for the FFM API)
-- Fix: `Doesn't support required ABI` when installing a .NET MAUI Android app
+- Fix: `Doesn't support required ABI` when installing a .NET MAUI Android app → slug: 2026/08/fix-doesnt-support-required-abi-when-installing-a-dotnet-maui-android-app
 - Fix: `CA1070: Do not declare event fields as virtual` in C#
 - Fix: `Reverse()` on an array binds to `MemoryExtensions` instead of LINQ after upgrading to .NET 11
 - Fix: `Failed to resolve source metadata for mcr.microsoft.com/dotnet/aspnet` when building a .NET Docker image
@@ -353,7 +353,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a .NET MAUI Android app from Mono to CoreCLR in .NET 11
 - Migrate Flutter `material` and `cupertino` imports to the standalone packages in Flutter 3.44
 - Migrate a .NET MAUI Android app to target Android API level 36
-- Migrate a .NET solution to Central Package Management with `Directory.Packages.props`
+- Migrate a .NET solution to Central Package Management with `Directory.Packages.props` → slug: 2026/08/migrate-a-dotnet-solution-to-central-package-management-with-directory-packages-props
 
 ## What is / concept
 
@@ -370,7 +370,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is a tiered compilation and how do I reason about it? → slug: 2026/07/what-is-tiered-compilation-and-how-do-i-reason-about-it
 - What is PGO in .NET and do I need to opt in? → slug: 2026/07/what-is-pgo-in-dotnet-and-do-i-need-to-opt-in
 - What is the `W^X` flag and why does Native AOT need it?
-- What is the difference between a Dart isolate and a thread?
+- What is the difference between a Dart isolate and a thread? → slug: 2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread
 - What is a Flutter `Key` and when does omitting it cause bugs?
 - What is the difference between `IHostedService` and `BackgroundService`?
 - What is a cache stampede and how does HybridCache prevent it?
