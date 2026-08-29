@@ -1,6 +1,6 @@
 # Evergreen resurface queue
 
-Human-approval queue for re-sharing older evergreen posts to X, Bluesky, and Mastodon. The `start-debugging-evergreen-resurface` scheduled task drafts entries here weekly (Sunday 20:00). You approve, copy to the appropriate channel, and remove from this file.
+Human-approval queue for re-sharing older evergreen posts to Bluesky and Mastodon. The `start-debugging-evergreen-resurface` scheduled task drafts entries here weekly (Sunday 20:00). You approve, copy to the appropriate channel, and remove from this file.
 
 ## Why this exists
 
@@ -12,7 +12,7 @@ Evergreen posts keep earning search impressions for months or years, but the ini
 - Never re-share the same slug within 90 days of a prior resurface (check Drafts and Approved sections).
 - Target: 1 resurface per week, not 3. A quiet cadence builds trust.
 - Write FRESH hooks - do not reuse the original social copy. A year later, you have learned something new about the topic, so lead with that angle.
-- X ≤ 240 chars, Bluesky ≤ 260 chars, Mastodon ≤ 460 chars (before URL append).
+- Bluesky ≤ 260 chars, Mastodon ≤ 460 chars (before URL append). X was dropped on 2026-08-29: the API is too expensive to post to.
 - Same style rules as articles: no em dashes, simple quotes.
 
 ## Queue entry format
@@ -22,7 +22,6 @@ Evergreen posts keep earning search impressions for months or years, but the ini
 
 **Original:** <pubDate> - <post title>
 
-**X:** <hook>
 **Bluesky:** <hook>
 **Mastodon:** <hook>
 
@@ -41,8 +40,6 @@ Move approved entries under `## Approved`, remove after posting.
 
 **Original:** 2026-05-07 - Fix: A second operation was started on this context instance before a previous operation completed
 
-**X:** Task.WhenAll over two queries on one DbContext is not a perf win you lost to a bug. Even when it works, the connection serialises commands anyway. Awaiting them one after the other costs nothing and the ConcurrencyDetector goes quiet.
-
 **Bluesky:** The subtle one is AddAsync with no await. Someone wrote _ = to silence the compiler warning and silenced the bug report with it. The change tracker is mid-mutation when SaveChangesAsync arrives, and the detector says so.
 
 **Mastodon:** Three fixes, in order. 1. Await sequentially. You almost never need two EF Core queries in flight at once inside one request handler. 2. IDbContextFactory for real concurrency: background services, batch jobs, fan-out. Each gets its own context, connection and change tracker. 3. CreateAsyncScope per iteration when the loop body needs other scoped services too, the right shape for Parallel.ForEachAsync. Never new up a DbContext to dodge the lifetime.
@@ -53,8 +50,6 @@ Move approved entries under `## Approved`, remove after posting.
 
 **Original:** 2026-05-11 - Fix: The type or namespace name 'X' could not be found (after adding a project reference)
 
-**X:** CS0246 but Solution Explorer shows the project referenced. Check the ProjectReference metadata. ReferenceOutputAssembly="false" and PrivateAssets="all" both keep the assembly out of the compiler reference list. The IDE still draws it.
-
 **Bluesky:** dotnet clean does not cure this one. It removes outputs and keeps obj/project.assets.json, so the stale reference list survives the reset. dotnet build --no-incremental is what you actually want after editing a csproj mid-build.
 
 **Mastodon:** CS0246 after a project reference is an MSBuild problem wearing a Roslyn error. Three commands tell you which layer is broken. dotnet build -v:n prints the resolved reference list, and if your library is not in it the compiler never saw it. dotnet build -bl writes a binlog, open it and search ResolveAssemblyReferences to see which paths were handed over and which were skipped. dotnet msbuild -t:ResolveReferences runs resolution alone, no compiler noise.
@@ -64,8 +59,6 @@ Move approved entries under `## Approved`, remove after posting.
 ### 2026-08-23 drafted - record-vs-class-vs-struct-in-csharp-a-decision-matrix
 
 **Original:** 2026-05-20 - record vs class vs struct in C#: a decision matrix
-
-**X:** Structs are faster is folklore. A 24 byte readonly record struct passed by value ran 0.31 ns against 0.34 ns for the same payload as a sealed record accessed by reference. The struct wins on allocation pressure, not access speed.
 
 **Bluesky:** customer = customer with { Email = next } emits no UPDATE. The with expression builds a new instance the EF Core change tracker has never seen, and it still holds the old reference. Records make good DTOs and bad tracked entities.
 

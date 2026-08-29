@@ -2,13 +2,13 @@
 /**
  * social-post.mjs
  *
- * Post a new blog entry to X (Twitter), Bluesky, and Mastodon. Reads API
+ * Post a new blog entry to Bluesky and Mastodon. Reads API
  * credentials exclusively from env vars: any platform whose env vars are
  * missing is skipped silently. Dry-run by default; add --apply to actually
  * hit the network.
  *
  * Post copy is NOT the article title. It comes from per-platform task files
- * at `tasks/x.json`, `tasks/bluesky.json`, `tasks/mastodon.json` (each an
+ * at `tasks/bluesky.json` and `tasks/mastodon.json` (each an
  * array of `{ slug, text }`). The article author (LLM or human) writes an
  * eye-catching summary into each file; this script consumes the first task
  * matching the current slug and removes it on successful post. If no task
@@ -19,13 +19,9 @@
  *   node scripts/social-post.mjs                              # latest post, dry-run
  *   node scripts/social-post.mjs --file=src/content/blog/...  # explicit post
  *   node scripts/social-post.mjs --apply                      # send for real
- *   node scripts/social-post.mjs --platforms=x,bluesky        # limit targets
+ *   node scripts/social-post.mjs --platforms=bluesky          # limit targets
  *
  * Env vars:
- *   X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_SECRET
- *     OAuth 1.0a user-context credentials generated in X's developer portal.
- *     The four-key flow is required for posting; app-only Bearer tokens
- *     cannot call POST /2/tweets.
  *   BLUESKY_HANDLE, BLUESKY_APP_PASSWORD
  *   MASTODON_INSTANCE (e.g. https://mastodon.social), MASTODON_ACCESS_TOKEN
  *
@@ -37,7 +33,6 @@
 import "dotenv/config";
 import fs from "node:fs/promises";
 import path from "node:path";
-import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { execSync } from "node:child_process";
 import matter from "gray-matter";
@@ -61,7 +56,7 @@ const flagValue = (name) => {
 
 const APPLY = has("--apply");
 const FILE_ARG = flagValue("file");
-const PLATFORM_FILTER = (flagValue("platforms") ?? "x,bluesky,mastodon")
+const PLATFORM_FILTER = (flagValue("platforms") ?? "bluesky,mastodon")
   .split(",")
   .map((s) => s.trim().toLowerCase())
   .filter(Boolean);
@@ -159,109 +154,13 @@ function buildUrl(slug, source) {
   return buildUtmUrl(slug, { source, medium: "social", campaign: "auto" });
 }
 
-// X/Bluesky have tight limits. Truncate the title so the final post still
-// fits once the URL is appended. 280 (X) - 30 (URL + utm) - 2 (spaces) = 248.
+// Bluesky has a tight limit. Truncate the title so the final post still
+// fits once the URL is appended. 300 (Bluesky) - 30 (URL + utm) - 2 = 268.
 function composeText(title, url, { maxLen = 280 } = {}) {
   const suffix = `\n${url}`;
   const budget = maxLen - suffix.length;
   const titleTrimmed = title.length > budget ? title.slice(0, budget - 1).trimEnd() + "…" : title;
   return titleTrimmed + suffix;
-}
-
-// --- OAuth 1.0a signing (for X / Twitter v2 write endpoints) --------------
-//
-// Implemented inline so we don't pull in an extra dependency. Per RFC 5849
-// section 3.4.1.3.1, a JSON request body is NOT part of the signature base
-// string - only the HTTP method, normalized URL, query params, and oauth_*
-// params are. That matches what X's v2 API expects for POST /2/tweets with
-// an application/json body.
-
-function percentEncodeStrict(str) {
-  // RFC 3986 percent-encoding. encodeURIComponent is close but leaves
-  // !*'() unencoded, which breaks the signature base string.
-  return encodeURIComponent(str).replace(
-    /[!*'()]/g,
-    (c) => "%" + c.charCodeAt(0).toString(16).toUpperCase(),
-  );
-}
-
-function oauth1Header({ method, url, consumerKey, consumerSecret, token, tokenSecret }) {
-  const oauthParams = {
-    oauth_consumer_key: consumerKey,
-    oauth_nonce: crypto.randomBytes(16).toString("hex"),
-    oauth_signature_method: "HMAC-SHA1",
-    oauth_timestamp: Math.floor(Date.now() / 1000).toString(),
-    oauth_token: token,
-    oauth_version: "1.0",
-  };
-  const paramString = Object.keys(oauthParams)
-    .sort()
-    .map((k) => `${percentEncodeStrict(k)}=${percentEncodeStrict(oauthParams[k])}`)
-    .join("&");
-  const baseString = [
-    method.toUpperCase(),
-    percentEncodeStrict(url),
-    percentEncodeStrict(paramString),
-  ].join("&");
-  const signingKey =
-    percentEncodeStrict(consumerSecret) + "&" + percentEncodeStrict(tokenSecret);
-  const signature = crypto
-    .createHmac("sha1", signingKey)
-    .update(baseString)
-    .digest("base64");
-  const signed = { ...oauthParams, oauth_signature: signature };
-  return (
-    "OAuth " +
-    Object.keys(signed)
-      .sort()
-      .map((k) => `${percentEncodeStrict(k)}="${percentEncodeStrict(signed[k])}"`)
-      .join(", ")
-  );
-}
-
-// --- Platform: X (Twitter v2, OAuth 1.0a user context) -------------------
-
-async function postToX({ summary, slug }) {
-  const consumerKey = process.env.X_API_KEY;
-  const consumerSecret = process.env.X_API_SECRET;
-  const token = process.env.X_ACCESS_TOKEN;
-  const tokenSecret = process.env.X_ACCESS_SECRET;
-  const missing = [];
-  if (!consumerKey) missing.push("X_API_KEY");
-  if (!consumerSecret) missing.push("X_API_SECRET");
-  if (!token) missing.push("X_ACCESS_TOKEN");
-  if (!tokenSecret) missing.push("X_ACCESS_SECRET");
-  if (missing.length) return { skipped: true, reason: `no ${missing.join(" / ")}` };
-
-  const url = buildUrl(slug, "x");
-  const text = composeText(summary, url, { maxLen: 280 });
-
-  if (!APPLY) return { skipped: false, dryRun: true, text };
-
-  const endpoint = "https://api.x.com/2/tweets";
-  const authHeader = oauth1Header({
-    method: "POST",
-    url: endpoint,
-    consumerKey,
-    consumerSecret,
-    token,
-    tokenSecret,
-  });
-
-  const res = await fetch(endpoint, {
-    method: "POST",
-    headers: {
-      Authorization: authHeader,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ text }),
-  });
-  if (!res.ok) {
-    const body = await res.text().catch(() => "");
-    throw new Error(`X API ${res.status}: ${body.slice(0, 300)}`);
-  }
-  const data = await res.json();
-  return { id: data?.data?.id, text };
 }
 
 // --- Platform: Bluesky (AT Protocol) --------------------------------------
@@ -378,7 +277,6 @@ async function main() {
   console.log(`[social-post] mode=${APPLY ? "APPLY" : "dry-run"}`);
 
   const platforms = [
-    ["x", postToX],
     ["bluesky", postToBluesky],
     ["mastodon", postToMastodon],
   ].filter(([name]) => PLATFORM_FILTER.includes(name));

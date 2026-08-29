@@ -2,7 +2,7 @@ name: Distribute new post
 
 # Fires when a new (or edited) blog post is pushed to main. Each channel
 # runs as an independent parallel job so a failure on (say) Mastodon does
-# not block X or Bluesky from publishing. The scripts are idempotent:
+# not block Bluesky from publishing. The scripts are idempotent:
 # successful posts splice their entry out of `tasks/<channel>.json`, so
 # re-runs on rebuilds / doc edits are safe.
 #
@@ -36,14 +36,14 @@ permissions:
 
 concurrency:
   # Queue new pushes rather than cancelling an in-flight distribution -
-  # cancelling mid-post could leave a tweet published but the task
+  # cancelling mid-post could leave a post published but the task
   # uncommitted, causing a duplicate on the next run.
   group: distribute
   cancel-in-progress: false
 
 jobs:
   distribute:
-    # Default name would be "distribute (x, scripts/social-post.mjs, ...)"
+    # Default name would be "distribute (bluesky, scripts/social-post.mjs, ...)"
     # because GitHub concatenates every matrix key. Override with just
     # the channel for a readable UI.
     name: distribute on ${{ matrix.channel }}
@@ -54,16 +54,13 @@ jobs:
       fail-fast: false
       matrix:
         # -----------------------------------------------------------------
-        # Enabled: X, Bluesky, Mastodon.
+        # Enabled: Bluesky, Mastodon.
+        # X was removed on 2026-08-29: the API is too expensive to post to.
         # To enable another channel, uncomment its include block AND add
         # the matching `tasks/<channel>.json` entry to the `git add` line
         # in the `update-tasks` job below.
         # -----------------------------------------------------------------
         include:
-          # Disabled
-          # - channel: x
-          #   script: scripts/social-post.mjs
-          #   flags: --platforms=x
           - channel: bluesky
             script: scripts/social-post.mjs
             flags: --platforms=bluesky
@@ -100,10 +97,6 @@ jobs:
           # the env vars it actually needs and silently skips if they
           # are missing. Unused secrets leaking into a job's env is not
           # a meaningful risk - workflows already have full access.
-          X_API_KEY: ${{ secrets.X_API_KEY }}
-          X_API_SECRET: ${{ secrets.X_API_SECRET }}
-          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
           BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
           MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
@@ -154,7 +147,7 @@ jobs:
           shopt -s nullglob
           # Artifacts download as _artifacts/<artifact-name>/<file>. For single-
           # file uploads, upload-artifact strips any directory prefix, so
-          # tasks/x.json ships as x.json under its artifact folder.
+          # tasks/bluesky.json ships as bluesky.json under its artifact folder.
           mkdir -p tasks
           count=0
           for f in _artifacts/tasks-*/*.json; do
@@ -171,7 +164,6 @@ jobs:
         run: |
           git config user.name "start-debugging-bot"
           git config user.email "noreply@startdebugging.net"
-          git add tasks/x.json 2>/dev/null || true
           git add tasks/bluesky.json 2>/dev/null || true
           git add tasks/mastodon.json 2>/dev/null || true
           if git diff --cached --quiet; then
