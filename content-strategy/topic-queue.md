@@ -255,7 +255,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Failed to resolve source metadata for mcr.microsoft.com/dotnet/aspnet` when building a .NET Docker image → slug: 2026/08/fix-failed-to-resolve-source-metadata-for-mcr-microsoft-com-dotnet-aspnet
 - Fix: `[JsonIgnore]` has no effect on a `required` property in System.Text.Json (rejected as duplicate: same intent already covered by 2026/08/how-to-make-system-text-json-ignore-a-property-with-the-required-modifier)
 - Fix: `CREATE DATABASE permission denied in database 'master'` when running `dotnet ef database update` → slug: 2026/08/fix-create-database-permission-denied-in-database-master-dotnet-ef-database-update
-- Fix: Postgres `23505: duplicate key value violates unique constraint` on a concurrent EF Core insert
+- Fix: Postgres `23505: duplicate key value violates unique constraint` on a concurrent EF Core insert → slug: 2026/08/fix-23505-duplicate-key-value-violates-unique-constraint-on-a-concurrent-ef-core-insert
 - Fix: `Model building is not supported when publishing with NativeAOT` in a .NET MAUI iOS Release build
 - Fix: `The method 'getInvocation' isn't defined for the type 'DartObjectImpl'` when running `build_runner`
 - Fix: Firebase Auth sign-in does not persist in a Flutter Android release build but works in debug
