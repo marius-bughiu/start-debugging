@@ -36,16 +36,6 @@ Move approved entries under `## Approved`, remove after posting.
 
 <!-- The scheduled task appends new entries here. Stale drafts (>14 days) are culled on the next run. -->
 
-### 2026-08-09 drafted - fix-second-operation-was-started-on-this-context-instance
-
-**Original:** 2026-05-07 - Fix: A second operation was started on this context instance before a previous operation completed
-
-**Bluesky:** The subtle one is AddAsync with no await. Someone wrote _ = to silence the compiler warning and silenced the bug report with it. The change tracker is mid-mutation when SaveChangesAsync arrives, and the detector says so.
-
-**Mastodon:** Three fixes, in order. 1. Await sequentially. You almost never need two EF Core queries in flight at once inside one request handler. 2. IDbContextFactory for real concurrency: background services, batch jobs, fan-out. Each gets its own context, connection and change tracker. 3. CreateAsyncScope per iteration when the loop body needs other scoped services too, the right shape for Parallel.ForEachAsync. Never new up a DbContext to dodge the lifetime.
-
-**Notes:** Most internally linked eligible evergreen (10 outbound links to other posts, 1970 words) and a perennial error people hit on every new EF Core version, so it earns the slot on link equity rather than raw length. It also breaks the run of two how-to picks with a fix- post. GSC had one relevant rising query, the reflection-based serialization AOT error, but that maps to a July post that is not yet 90 days old, so depth and link count decided it again. Fresh angle: the original social copy was the textbook summary, two awaits raced one DbContext, use IDbContextFactory. Both of these lead elsewhere. Bluesky takes the missing-await repro where `_ =` silenced the warning and the bug together. Mastodon carries the ranked three fixes with the factory vs CreateAsyncScope distinction, which is the part people get wrong after they stop sharing the context.
-
 ### 2026-08-16 drafted - fix-the-type-or-namespace-name-could-not-be-found-after-project-reference
 
 **Original:** 2026-05-11 - Fix: The type or namespace name 'X' could not be found (after adding a project reference)
@@ -65,6 +55,16 @@ Move approved entries under `## Approved`, remove after posting.
 **Mastodon:** Three questions, stop at the first yes. 1. Does the type have identity, or own changing state over time? class. 2. Is it immutable, value-equal, and 16 bytes or less? readonly record struct. 3. Still immutable data with value equality? record. Two traps it does not cover. A record holding a List<int> compares unequal, because value equality falls back to reference equality there. And default(Money) is a valid instance, since a struct is never null.
 
 **Notes:** Highest word count among eligible evergreens (2728 words, 6 internal links) once the 2026-08-16 pick is excluded, and it anchors a five-post C# fundamentals cluster, so the outbound links keep working. Both GSC files (gsc-candidates.json, gsc-rising.json) are empty arrays this week, so there was no traction signal to weigh and depth decided it. It also moves the run off framework-specific errors: the last three slots were Blazor validation, EF Core concurrency, and an MSBuild reference failure. Fresh angle: the original social copy was the three-line summary of the recommendation, default to class, record for value-equal data, readonly record struct for hot loops. Neither of these repeats it. Bluesky takes the EF Core trap where a with expression silently produces no UPDATE, which is the most expensive mistake in the post. Mastodon carries the three-question matrix plus the two gotchas that pick for you, the List<int> equality fallback and default(struct) being a valid value.
+
+### 2026-08-30 drafted - flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026
+
+**Original:** 2026-05-27 - Flutter vs React Native vs .NET MAUI: which should you pick for a new mobile project in 2026?
+
+**Bluesky:** MAUI cold start on Android went from 720 ms on Mono to 480 ms with CoreCLR by default in .NET 11. Most Flutter vs RN vs MAUI comparisons still quote the Mono number. I rebenchmarked all three on a Pixel 8 and an iPhone 15.
+
+**Mastodon:** Three things force the mobile framework decision before preference gets a vote. 1. Your team's incumbent language. TypeScript picks React Native, C# picks MAUI, and only a team with no incumbent stack freely picks Dart. 2. Web on the roadmap, even if not in v1. RN with react-native-web is the only production ready path in 2026, Flutter Web is preview for large apps, and MAUI means writing a second app. 3. Platform features decide the plugin friction.
+
+**Notes:** Longest eligible evergreen at 3020 words and joint-top on internal links with 9 outbound, anchoring the cross-platform mobile comparison cluster, so the link equity keeps working. gsc-rising.json is an empty array again and gsc-candidates.json has no query touching a framework bake-off, the closest being a Flutter background_fetch minSdkVersion cluster that maps elsewhere, so depth and link count decided it. It also breaks a four-pick run of .NET only topics: Blazor validation, EF Core concurrency, an MSBuild reference failure, and the C# type decision matrix. Fresh angle: the obvious copy for this post is the three line recommendation, Flutter for pixel identical UI, RN for TypeScript teams, MAUI for .NET shops, which every comparison post already says. Neither of these repeats it. Bluesky takes the one number that dates a comparison, the MAUI cold start figure that changed when CoreCLR became the default in .NET 11, since most write ups still quote the Mono era 720 ms. Mastodon carries the gotcha section, the three constraints that decide before anyone argues preference, with the web roadmap trap as the expensive one.
 
 ---
 
