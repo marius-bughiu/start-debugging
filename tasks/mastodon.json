@@ -50,5 +50,9 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
+  },
+  {
+    "slug": "2026/08/fix-create-database-permission-denied-in-database-master-dotnet-ef-database-update",
+    "text": "Error 262 from dotnet ef database update is not always a missing permission. EF Core's existence check treats SQL Server error 4060 as \"database does not exist\", so a login with no user mapped in an existing database sends EF off to CREATE DATABASE on master. Check DB_ID() under both logins first."
   }
 ]
