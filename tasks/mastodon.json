@@ -50,5 +50,9 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
+  },
+  {
+    "slug": "2026/08/fix-model-building-is-not-supported-when-publishing-with-nativeaot-in-maui-ios",
+    "text": "Model building is not supported when publishing with NativeAOT on a MAUI iOS build is not about PublishAot. The macios targets set DynamicCodeSupport=false unless the interpreter is on, and EF Core gates on that switch. A compiled model was enough on EF Core 8; 9 and 10 also need precompiled queries."
   }
 ]
