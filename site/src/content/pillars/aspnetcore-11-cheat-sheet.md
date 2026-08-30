@@ -3,7 +3,7 @@ title: "ASP.NET Core 11 cheat sheet"
 description: "ASP.NET Core 11 in one place: minimal APIs, OpenAPI, authentication, rate limiting, OpenTelemetry, Native AOT, and the Kestrel/HTTP-3 wins."
 tagline: "The ASP.NET Core 11 bits worth bookmarking."
 pubDate: 2026-05-03
-updatedDate: 2026-08-23
+updatedDate: 2026-08-30
 indexTags:
   - "aspnetcore"
   - "aspnet-core"
@@ -22,4 +22,4 @@ For the request pipeline, [endpoint filters vs middleware](/2026/07/endpoint-fil
 
 The list below auto-collects posts tagged with any of: `aspnetcore`, `aspnet-core`, `aspnet`. Newest first.
 
-The companion [`.NET 11 tracker`](/pillars/dotnet-11-tracker/) pillar collects the broader release; many posts overlap.
+The companion [`.NET 11 tracker`](/pillars/dotnet-11-tracker/) collects the broader release; many posts overlap.
