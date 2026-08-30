@@ -50,5 +50,9 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
+  },
+  {
+    "slug": "2026/08/claude-code-premodelswitch-hook-gates-model-changes",
+    "text": "Claude Code 2.1.251 shipped PreModelSwitch and PostModelSwitch hooks. The matcher runs on the canonical name of the model you switch to, and exit code 2 cancels the switch. A hook killed at its timeout blocks it too, so the event fails closed. PostModelSwitch also fires on switches Claude Code makes itself."
   }
 ]
