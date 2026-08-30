@@ -50,9 +50,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
-  },
-  {
-    "slug": "2026/08/fix-23505-duplicate-key-value-violates-unique-constraint-on-a-concurrent-ef-core-insert",
-    "text": "Two requests check whether an email exists, both see nothing, both insert, and Postgres rejects the loser with 23505. Fix it with one INSERT ... ON CONFLICT statement, or catch PostgresException and re-read from a fresh DbContext: a failed SaveChanges leaves the entity Added, so retrying the same context throws again."
   }
 ]
