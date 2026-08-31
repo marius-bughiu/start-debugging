@@ -117,7 +117,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Declarative YAML workflows vs code-first orchestration in Microsoft Agent Framework → slug: 2026/08/agent-framework-declarative-yaml-vs-code-first-orchestration
 - Subtask vs fork vs background agent in Claude Code: which delegation to reach for → slug: 2026/08/subtask-vs-fork-vs-background-agent-in-claude-code
 - Stateful vs stateless MCP servers: what actually breaks when the session goes away → slug: 2026/08/stateful-vs-stateless-mcp-servers-what-breaks-when-the-session-goes-away
-- Agent Plugins 1.0 vs vendor-specific plugin formats: what the shared standard covers and what it doesn't
+- Agent Plugins 1.0 vs vendor-specific plugin formats: what the shared standard covers and what it doesn't → slug: 2026/08/agent-plugins-1-0-vs-vendor-specific-plugin-formats
 - Copilot memory vs repository custom instructions vs `AGENTS.md`: which one the model actually reads
 
 ## Migration / upgrade

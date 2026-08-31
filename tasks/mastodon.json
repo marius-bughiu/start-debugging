@@ -50,5 +50,9 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
+  },
+  {
+    "slug": "2026/08/agent-plugins-1-0-vs-vendor-specific-plugin-formats",
+    "text": "Agent Plugins 1.0.0 covers skills and MCP servers. That is the whole portable surface. Slash commands, hooks, subagents, rules, LSP servers, permissions and secrets all stay vendor-specific in a reverse-domain directory. And Claude Code 2.1.197 hard-errors on a root-only plugin.json. Full matrix across four clients."
   }
 ]
