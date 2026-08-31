@@ -50,9 +50,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
-  },
-  {
-    "slug": "2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026",
-    "text": "AutoMapper vs Mapperly vs hand-written, measured on .NET 10: 105.79 ns vs 60.44 ns vs 58.48 ns per object. The 45 ns is not the reason to switch. Native AOT is: AutoMapper 16.2.0 emits IL2104 and IL3053, then dies at startup. And RMG012/RMG020 turn a mapping gap into a build error."
   }
 ]
