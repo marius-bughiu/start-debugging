@@ -50,5 +50,9 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
+  },
+  {
+    "slug": "2026/08/copilot-code-review-defaults-to-balanced-on-september-28",
+    "text": "Three GitHub changelog changes stack up in one month: the 300 file / 20,000 line review cap is gone, bot-authored PRs get reviewed automatically, and on 2026-09-28 the default effort flips from Lite to Balanced. Balanced burns more AI credits. Audit review_on_push in your rulesets before then."
   }
 ]
