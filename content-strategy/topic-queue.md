@@ -314,7 +314,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `record` vs `record struct` vs `readonly struct` in C# → slug: 2026/05/record-vs-class-vs-struct-in-csharp-a-decision-matrix (same intent as existing post: it already compares all four shapes including `readonly record struct`)
 - Scalar vs Swagger UI for OpenAPI documentation in ASP.NET Core 11 → slug: 2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11
 - Riverpod `Notifier` vs `AsyncNotifier` vs `StreamNotifier` in Flutter → slug: 2026/08/riverpod-notifier-vs-asyncnotifier-vs-streamnotifier-in-flutter
-- AutoMapper 15 vs Mapperly vs hand-written mapping in 2026
+- AutoMapper 15 vs Mapperly vs hand-written mapping in 2026 → slug: 2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026 (verified against AutoMapper 16.2.0, the current release; the license boundary is still 15.0.0)
 - Returning a `Task` directly vs `async`/`await` passthrough in a C# repository method
 - Framework-dependent vs self-contained vs Native AOT publish for a .NET 11 container image
 
