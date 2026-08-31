@@ -257,7 +257,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `CREATE DATABASE permission denied in database 'master'` when running `dotnet ef database update` → slug: 2026/08/fix-create-database-permission-denied-in-database-master-dotnet-ef-database-update
 - Fix: Postgres `23505: duplicate key value violates unique constraint` on a concurrent EF Core insert → slug: 2026/08/fix-23505-duplicate-key-value-violates-unique-constraint-on-a-concurrent-ef-core-insert
 - Fix: `Model building is not supported when publishing with NativeAOT` in a .NET MAUI iOS Release build → slug: 2026/08/fix-model-building-is-not-supported-when-publishing-with-nativeaot-in-maui-ios (Release-only premise corrected: the macios DynamicCodeSupport default has no Configuration condition; the interpreter is what decides it)
-- Fix: `The method 'getInvocation' isn't defined for the type 'DartObjectImpl'` when running `build_runner`
+- Fix: `The method 'getInvocation' isn't defined for the type 'DartObjectImpl'` when running `build_runner` → slug: 2026/08/fix-the-method-getinvocation-isnt-defined-for-the-type-dartobjectimpl
 - Fix: Firebase Auth sign-in does not persist in a Flutter Android release build but works in debug
 
 ## Vs / comparison

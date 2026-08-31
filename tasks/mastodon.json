@@ -50,5 +50,9 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
+  },
+  {
+    "slug": "2026/08/fix-the-method-getinvocation-isnt-defined-for-the-type-dartobjectimpl",
+    "text": "getInvocation isn't defined for DartObjectImpl is not your code. source_gen 3.1.0 and 4.0.0 call an analyzer internal that 8.4.0 removed, and both allow <9.0.0, so pub pairs them. One stale generator pinning source_gen ^3.1.0 drags every other generator down with it. Find that one, not the cache."
   }
 ]
