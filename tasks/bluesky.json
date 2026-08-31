@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/08/fix-firebase-auth-sign-in-does-not-persist-in-a-flutter-android-release-build",
-    "text": "Firebase Auth restores the Android session from a local file, no network. A release-only sign-out is never broken persistence."
   }
 ]

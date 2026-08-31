@@ -50,9 +50,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
-  },
-  {
-    "slug": "2026/08/fix-firebase-auth-sign-in-does-not-persist-in-a-flutter-android-release-build",
-    "text": "Firebase Auth on Android restores the signed-in user from a private SharedPreferences file with no network call, so a release-only sign-out is never broken persistence. The one that catches people: an API key allowlist with Identity Toolkit but not securetoken. Sign-in works, the refresh on next launch does not."
   }
 ]
