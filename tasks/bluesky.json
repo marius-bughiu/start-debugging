@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/vscode-1-135-rubber-duck-cross-model-review",
-    "text": "The experimental /rubber-duck in VS Code 1.135 hands the agent's work to GPT-5.4 when your session is on Claude. On purpose."
   }
 ]

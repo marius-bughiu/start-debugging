@@ -50,9 +50,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
-  },
-  {
-    "slug": "2026/09/vscode-1-135-rubber-duck-cross-model-review",
-    "text": "VS Code 1.135 added an experimental /rubber-duck command: a read-only critic that reviews the agent's plan, code and tests using a model from a different family, then splits its findings into blocking, non-blocking and suggestions. Self-review has correlated blind spots. A GPT critic on a Claude session does not."
   }
 ]
