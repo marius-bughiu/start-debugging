@@ -50,5 +50,9 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
+  },
+  {
+    "slug": "2026/09/copilot-memory-vs-repository-custom-instructions-vs-agents-md",
+    "text": "Four systems steer Copilot and only three are deterministic. The documented order puts path-specific instructions first, then copilot-instructions.md, then AGENTS.md last. Copilot Memory is nowhere in that list, expires after 28 days unused, and is read by exactly three surfaces. VS Code's memory tool is a different product with the same name."
   }
 ]
