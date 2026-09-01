@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/framework-dependent-vs-self-contained-vs-native-aot-for-a-dotnet-11-container-image",
-    "text": "Chiseled Native AOT images are 4.5x smaller than framework-dependent. Run 10 services on one node and that lead falls under 2x."
   }
 ]
