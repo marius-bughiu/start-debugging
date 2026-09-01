@@ -315,7 +315,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Scalar vs Swagger UI for OpenAPI documentation in ASP.NET Core 11 → slug: 2026/08/scalar-vs-swagger-ui-for-openapi-documentation-in-aspnetcore-11
 - Riverpod `Notifier` vs `AsyncNotifier` vs `StreamNotifier` in Flutter → slug: 2026/08/riverpod-notifier-vs-asyncnotifier-vs-streamnotifier-in-flutter
 - AutoMapper 15 vs Mapperly vs hand-written mapping in 2026 → slug: 2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026 (verified against AutoMapper 16.2.0, the current release; the license boundary is still 15.0.0)
-- Returning a `Task` directly vs `async`/`await` passthrough in a C# repository method
+- Returning a `Task` directly vs `async`/`await` passthrough in a C# repository method → slug: 2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method
 - Framework-dependent vs self-contained vs Native AOT publish for a .NET 11 container image
 
 ## Migration / upgrade
