@@ -346,7 +346,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a `setState` `StatefulWidget` to a Riverpod `Notifier` in Flutter → slug: 2026/07/migrate-a-setstate-statefulwidget-to-a-riverpod-notifier-in-flutter
 - Migrate from `ILogger` string interpolation to structured logging message templates in .NET 11 → slug: 2026/07/migrate-from-ilogger-string-interpolation-to-message-templates-in-dotnet-11
 - Migrate from blocking `.Result`/`.Wait()` calls to async all the way up in a legacy C# codebase → slug: 2026/07/migrate-from-blocking-result-and-wait-calls-to-async-all-the-way-up-in-csharp
-- Migrate a test project from xUnit v2 to xUnit v3
+- Migrate a test project from xUnit v2 to xUnit v3 → slug: 2026/09/migrate-a-test-project-from-xunit-v2-to-xunit-v3
 - Migrate from VSTest to Microsoft.Testing.Platform in .NET 11
 - Migrate off `BinaryFormatter` after its removal in modern .NET
 - Migrate a Flutter web app from `dart:html` to `package:web` and `dart:js_interop`
