@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method",
-    "text": "Dropping async/await from a repository passthrough buys 6 ns and 72 bytes, and costs you the stack frame."
   }
 ]

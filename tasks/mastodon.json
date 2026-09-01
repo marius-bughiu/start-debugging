@@ -50,9 +50,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
-  },
-  {
-    "slug": "2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method",
-    "text": "Eliding async/await in a repository passthrough is measurably faster: 2.63 ns vs 8.47 ns, 72 B vs 144 B on .NET 10.0.10. It also deletes the method from every stack trace, and if the body ever grows a using block, the resource is disposed while the task is still running. .NET 11 tail-await makes the saving free anyway."
   }
 ]
