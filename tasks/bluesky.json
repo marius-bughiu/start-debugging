@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/migrate-mcp-csharp-sdk-1-x-to-2-0-without-breaking-old-clients",
-    "text": "MCP C# SDK 2.0 flips HTTP transport to stateless by default, and that one default strands every 2025-11-25 client."
   }
 ]
