@@ -348,7 +348,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate from blocking `.Result`/`.Wait()` calls to async all the way up in a legacy C# codebase → slug: 2026/07/migrate-from-blocking-result-and-wait-calls-to-async-all-the-way-up-in-csharp
 - Migrate a test project from xUnit v2 to xUnit v3 → slug: 2026/09/migrate-a-test-project-from-xunit-v2-to-xunit-v3
 - Migrate from VSTest to Microsoft.Testing.Platform in .NET 11 → slug: 2026/09/migrate-from-vstest-to-microsoft-testing-platform-in-dotnet-11
-- Migrate off `BinaryFormatter` after its removal in modern .NET
+- Migrate off `BinaryFormatter` after its removal in modern .NET → slug: 2026/09/migrate-off-binaryformatter-after-its-removal-in-modern-dotnet
 - Migrate a Flutter web app from `dart:html` to `package:web` and `dart:js_interop`
 - Migrate a .NET MAUI Android app from Mono to CoreCLR in .NET 11
 - Migrate Flutter `material` and `cupertino` imports to the standalone packages in Flutter 3.44
