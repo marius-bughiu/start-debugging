@@ -134,9 +134,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Migrate off the archived MCP reference servers (GitHub, Postgres, Slack) to their maintained replacements → slug: 2026/08/migrate-off-archived-mcp-reference-servers
 - Migrate an agent from chunking-and-RAG to a 1M-token context window → slug: 2026/08/migrate-from-rag-chunking-to-a-1m-token-context-window
 - Migrate a Claude Code setup to the "Manual" default permission mode without breaking headless runs → slug: 2026/08/migrate-to-manual-permission-mode-without-breaking-headless-runs
-- Migrate an MCP server from session-based transport to the stateless 2026-07-28 spec
-- Migrate off deprecated MCP sampling and elicitation to `InputRequiredResult` multi round-trip requests
-- Migrate an MCP C# SDK 1.x server to v2.0 without breaking v1 clients
+- Migrate an MCP server from session-based transport to the stateless 2026-07-28 spec (skipped: same intent as 2026/08/stateful-vs-stateless-mcp-servers-what-breaks-when-the-session-goes-away, which covers the six migration buckets, the handle pattern and the feature matrix)
+- Migrate off deprecated MCP sampling and elicitation to `InputRequiredResult` multi round-trip requests (skipped: answered by 2026/08/fix-mcp9004-mcp9005-mcp9006-warnings-after-mcp-csharp-sdk-2-0 for C# and 2026/08/stateful-vs-stateless-mcp-servers-what-breaks-when-the-session-goes-away for TypeScript)
+- Migrate an MCP C# SDK 1.x server to v2.0 without breaking v1 clients → slug: 2026/09/migrate-mcp-csharp-sdk-1-x-to-2-0-without-breaking-old-clients
 - Migrate a vendor-specific agent plugin to the cross-vendor Agent Plugins 1.0 layout
 
 ## Patterns
