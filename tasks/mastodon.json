@@ -50,9 +50,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
-  },
-  {
-    "slug": "2026/09/migrate-a-flutter-web-app-from-dart-html-to-package-web",
-    "text": "dart:html, dart:js_util and package:js were deprecated in Dart 3.7 and none compile under dart2wasm. A full migration to package:web 1.1.1 and dart:js_interop: finding the offending imports with the compiler, what dart fix renames and what it skips, and why the official JSImmutableListWrapper example does not compile."
   }
 ]

@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/migrate-a-flutter-web-app-from-dart-html-to-package-web",
-    "text": "dart:html blocks dart2wasm. Skip the grep: flutter build web --wasm prints the exact import chain holding your app back."
   }
 ]
