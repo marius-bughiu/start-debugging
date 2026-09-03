@@ -30,5 +30,9 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
+  },
+  {
+    "slug": "2026/09/claude-code-2-1-259-managed-mcp-servers-without-mdm",
+    "text": "Claude Code 2.1.259 can push MCP servers to every dev without MDM. The catch: allowedMcpServers no longer covers the pushed ones."
   }
 ]

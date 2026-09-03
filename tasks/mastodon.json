@@ -50,5 +50,9 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
+  },
+  {
+    "slug": "2026/09/claude-code-2-1-259-managed-mcp-servers-without-mdm",
+    "text": "Claude Code 2.1.259 adds a managedMcpServers setting, so an org can hand every developer the same HTTP and SSE MCP servers through the normal managed settings channel instead of deploying managed-mcp.json with MDM. It also narrowed allowedMcpServers to servers users add themselves."
   }
 ]
