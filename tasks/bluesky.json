@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/information-flow-control-to-block-prompt-injection-in-agents",
-    "text": "Your system prompt is not a security control. Two labels per tool result, checked before the sink runs, and injection goes inert."
   }
 ]
