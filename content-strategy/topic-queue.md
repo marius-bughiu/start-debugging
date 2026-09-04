@@ -371,7 +371,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is PGO in .NET and do I need to opt in? → slug: 2026/07/what-is-pgo-in-dotnet-and-do-i-need-to-opt-in
 - What is the `W^X` flag and why does Native AOT need it? → slug: 2026/09/what-is-the-w-xor-x-flag-in-dotnet-and-does-native-aot-need-it (premise corrected: the flag is a CoreCLR JIT knob; Native AOT never reads it)
 - What is the difference between a Dart isolate and a thread? → slug: 2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread
-- What is a Flutter `Key` and when does omitting it cause bugs?
+- What is a Flutter `Key` and when does omitting it cause bugs? → slug: 2026/09/what-is-a-flutter-key-and-when-does-omitting-it-cause-bugs
 - What is the difference between `IHostedService` and `BackgroundService`?
 - What is a cache stampede and how does HybridCache prevent it?
 - What is an EF Core interceptor and when do I need one?
