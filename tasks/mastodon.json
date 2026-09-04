@@ -50,5 +50,9 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
+  },
+  {
+    "slug": "2026/09/mstest-4-4-native-aot-source-generation",
+    "text": "MSTest 4.4 graduates MSTest.SourceGeneration out of experimental. Native AOT test projects pick it up with no opt-in, and ReflectionFree can now skip runtime discovery for plain sync [TestMethod] and [DataRow]. The catch: discovery is compile-time, so a class inheriting [TestClass] from a base is silently skipped."
   }
 ]
