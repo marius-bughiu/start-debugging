@@ -50,5 +50,9 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
+  },
+  {
+    "slug": "2026/09/where-to-store-agent-chat-history-cost-privacy-portability",
+    "text": "Where agent chat history lives does not change what you pay: with previous_response_id you are still billed for the whole prefix. Caching moves that number, storage decides retention. The gotcha: attach a response to an OpenAI Conversation and the 30-day TTL disappears, turning a self-expiring cache into indefinite storage."
   }
 ]
