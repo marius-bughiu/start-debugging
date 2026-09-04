@@ -352,7 +352,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a Flutter web app from `dart:html` to `package:web` and `dart:js_interop` → slug: 2026/09/migrate-a-flutter-web-app-from-dart-html-to-package-web
 - Migrate a .NET MAUI Android app from Mono to CoreCLR in .NET 11 → slug: 2026/09/migrate-a-dotnet-maui-android-app-from-mono-to-coreclr-in-dotnet-11
 - Migrate Flutter `material` and `cupertino` imports to the standalone packages in Flutter 3.44 → slug: 2026/09/migrate-flutter-material-and-cupertino-imports-to-standalone-packages
-- Migrate a .NET MAUI Android app to target Android API level 36
+- Migrate a .NET MAUI Android app to target Android API level 36 → slug: 2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36
 - Migrate a .NET solution to Central Package Management with `Directory.Packages.props` → slug: 2026/08/migrate-a-dotnet-solution-to-central-package-management-with-directory-packages-props
 
 ## What is / concept
