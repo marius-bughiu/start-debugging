@@ -50,5 +50,9 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
+  },
+  {
+    "slug": "2026/09/what-is-the-w-xor-x-flag-in-dotnet-and-does-native-aot-need-it",
+    "text": "W^X means no page is writable and executable at once. In .NET that is DOTNET_EnableWriteXorExecute, default 1 since .NET 7, and it exists purely for the JIT: CoreCLR double-maps the same memory RX and RW. Native AOT has no executable allocator and ignores the knob."
   }
 ]
