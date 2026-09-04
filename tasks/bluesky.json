@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/where-to-store-agent-chat-history-cost-privacy-portability",
-    "text": "Provider-side conversation state does not cut your token bill. It only decides who holds your users' text, and for how long."
   }
 ]
