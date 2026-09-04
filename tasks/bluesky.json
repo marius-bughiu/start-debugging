@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/what-is-a-flutter-key-and-when-does-omitting-it-cause-bugs",
-    "text": "Flutter matches unkeyed children by list position. Reorder or delete from the middle and state stays in the old slot."
   }
 ]

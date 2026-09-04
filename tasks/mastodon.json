@@ -50,9 +50,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
-  },
-  {
-    "slug": "2026/09/what-is-a-flutter-key-and-when-does-omitting-it-cause-bugs",
-    "text": "Flutter decides whether to reuse an Element with one line: runtimeType == runtimeType && key == key. No key means same-type children match by position, so deleting row 0 leaves a half-typed TextEditingController sitting on the next task. Which key type to use, where it has to sit, and why ValueKey(index) fixes nothing."
   }
 ]
