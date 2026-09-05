@@ -374,7 +374,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is a Flutter `Key` and when does omitting it cause bugs? → slug: 2026/09/what-is-a-flutter-key-and-when-does-omitting-it-cause-bugs
 - What is the difference between `IHostedService` and `BackgroundService`?
 - What is a cache stampede and how does HybridCache prevent it?
-- What is an EF Core interceptor and when do I need one?
+- What is an EF Core interceptor and when do I need one? → slug: 2026/09/what-is-an-ef-core-interceptor-and-when-do-i-need-one
 - What is a Blazor render mode and which one runs my component?
 - What is the difference between `ref.watch` and `ref.read` in Riverpod?
 - What is the `use_build_context_synchronously` lint in Flutter?
