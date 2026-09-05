@@ -54,5 +54,9 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
+  },
+  {
+    "slug": "2026/09/ref-watch-vs-ref-read-in-flutter-riverpod",
+    "text": "ref.watch subscribes, ref.read does not. That is the whole rule: watch in build, read in callbacks. The trap: watch outside build never throws. In flutter_riverpod 3.4.3 it inserts a subscription into the live _dependencies map, so you get one rebuild and then silence. And read is not an optimization, .select is."
   }
 ]

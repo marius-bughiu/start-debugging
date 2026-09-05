@@ -376,7 +376,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is a cache stampede and how does HybridCache prevent it? (rejected as duplicate: same intent already covered by 2026/06/hybridcache-vs-imemorycache-vs-idistributedcache-in-dotnet-11, which includes a stampede benchmark section)
 - What is an EF Core interceptor and when do I need one? → slug: 2026/09/what-is-an-ef-core-interceptor-and-when-do-i-need-one
 - What is a Blazor render mode and which one runs my component? → slug: 2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component
-- What is the difference between `ref.watch` and `ref.read` in Riverpod?
+- What is the difference between `ref.watch` and `ref.read` in Riverpod? → slug: 2026/09/ref-watch-vs-ref-read-in-flutter-riverpod
 - What is the `use_build_context_synchronously` lint in Flutter?
 - What is a keyed service in .NET dependency injection?
 - What is a sliver in Flutter and when do I need a `CustomScrollView`?
