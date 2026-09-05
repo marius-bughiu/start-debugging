@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "query": "site:startdebugging.net/tag",
+    "position": 11.5,
+    "impressions": 20,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/ja/tag",
+    "position": 12.67,
+    "impressions": 6,
+    "clicks": 0,
+    "ctr": 0
+  }
+]

@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "query": "site:startdebugging.net",
+    "currentPosition": 25.72,
+    "currentImpressions": 125,
+    "priorImpressions": 78,
+    "delta": 47,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/tag",
+    "currentPosition": 11.5,
+    "currentImpressions": 20,
+    "priorImpressions": 0,
+    "delta": 20,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/2023/11",
+    "currentPosition": 7.25,
+    "currentImpressions": 8,
+    "priorImpressions": 0,
+    "delta": 8,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/de/tag",
+    "currentPosition": 8.5,
+    "currentImpressions": 8,
+    "priorImpressions": 0,
+    "delta": 8,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/ja/tag",
+    "currentPosition": 12.67,
+    "currentImpressions": 6,
+    "priorImpressions": 0,
+    "delta": 6,
+    "ctr": 0
+  }
+]

@@ -1,113 +1,211 @@
 [
   {
-    "page": "https://startdebugging.net/2023/10/how-to-fix-missingpluginexception-no-implementation-found-for-method-getall/",
-    "position": 21.92,
-    "impressions": 254,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
     "page": "https://startdebugging.net/2026/06/gate-cursor-sdk-tool-calls-with-auto-review-and-permissions-json/",
-    "position": 4.66,
-    "impressions": 202,
+    "position": 5.04,
+    "impressions": 288,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/01/debugging-flutter-ios-from-windows-a-real-device-workflow-flutter-3-x/",
-    "position": 51.22,
-    "impressions": 186,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2026/05/fix-renderflex-overflowed-in-flutter/",
-    "position": 43.89,
-    "impressions": 181,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2026/06/fix-renderbox-was-not-laid-out-in-flutter/",
-    "position": 34.73,
-    "impressions": 104,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/archive/",
-    "position": 8.73,
-    "impressions": 102,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2023/11/2-column-react-native/",
-    "position": 47.86,
-    "impressions": 91,
+    "position": 55.7,
+    "impressions": 209,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2023/11/getting-started-with-net-aspire/",
-    "position": 62.43,
-    "impressions": 86,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2026/05/how-to-assign-a-jira-ticket-to-a-cursor-cloud-agent-and-get-a-pr-back/",
-    "position": 6.92,
-    "impressions": 78,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2023/10/wpf-open-folder-dialog/",
-    "position": 43.07,
-    "impressions": 74,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2023/08/c-how-to-wait-for-a-process-to-end/",
-    "position": 40.32,
-    "impressions": 68,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2020/12/azure-the-specified-version-of-microsoft-netcore-app-or-microsoft-aspnetcore-app-was-not-found/",
-    "position": 38.1,
-    "impressions": 67,
+    "position": 64.28,
+    "impressions": 172,
     "clicks": 0,
     "ctr": 0
   },
   {
     "page": "https://startdebugging.net/2026/04/efcore-11-single-step-migrations-dotnet-ef-update-add/",
-    "position": 67.86,
+    "position": 70.43,
+    "impressions": 159,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/archive/",
+    "position": 11.3,
+    "impressions": 118,
+    "clicks": 1,
+    "ctr": 0.0085
+  },
+  {
+    "page": "https://startdebugging.net/2023/11/2-column-react-native/",
+    "position": 52.25,
+    "impressions": 112,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2023/10/wpf-open-folder-dialog/",
+    "position": 43.06,
+    "impressions": 107,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/05/fix-renderflex-overflowed-in-flutter/",
+    "position": 59.09,
+    "impressions": 105,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/05/how-to-assign-a-jira-ticket-to-a-cursor-cloud-agent-and-get-a-pr-back/",
+    "position": 5.87,
+    "impressions": 102,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2017/12/xamarin-listview-performance/",
+    "position": 76.11,
+    "impressions": 100,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2023/07/c-12-primary-constructors/",
+    "position": 46.44,
+    "impressions": 84,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/de/start-here/",
+    "position": 12.72,
+    "impressions": 79,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2023/10/c-12-interceptors/",
+    "position": 34.19,
+    "impressions": 68,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2023/10/how-to-fix-missingpluginexception-no-implementation-found-for-method-getall/",
+    "position": 21.96,
+    "impressions": 68,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/06/how-to-register-and-resolve-keyed-services-in-dotnet-11-dependency-injection/",
+    "position": 13.91,
+    "impressions": 68,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2023/08/how-to-install-dotnet-script/",
+    "position": 52.55,
+    "impressions": 67,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11/",
+    "position": 52.13,
+    "impressions": 67,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11/",
+    "position": 49.22,
     "impressions": 64,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/2026/06/fix-cannot-use-ref-after-the-widget-was-disposed-in-flutter-riverpod/",
-    "position": 32.67,
+    "page": "https://startdebugging.net/ja/",
+    "position": 31.48,
+    "impressions": 64,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/es/about/",
+    "position": 10.46,
     "impressions": 63,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks/",
-    "position": 35.49,
-    "impressions": 63,
+    "page": "https://startdebugging.net/2025/04/whats-new-in-net-maui-10/",
+    "position": 61.29,
+    "impressions": 62,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "page": "https://startdebugging.net/2023/06/how-to-fix-command-dotnet-ef-not-found/",
-    "position": 38.65,
-    "impressions": 57,
+    "page": "https://startdebugging.net/2023/10/unsafe-accessor/",
+    "position": 11.23,
+    "impressions": 61,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11/",
+    "position": 50,
+    "impressions": 61,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2026/06/nest-subagents-in-the-cursor-sdk-reviewer-delegates-to-test-writer/",
+    "position": 3.34,
+    "impressions": 58,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/page/2/",
+    "position": 17.05,
+    "impressions": 58,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/ja/tags/",
+    "position": 3.87,
+    "impressions": 54,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/about/",
+    "position": 3.15,
+    "impressions": 53,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/page/27/",
+    "position": 11.32,
+    "impressions": 53,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/ru/archive/",
+    "position": 10.57,
+    "impressions": 53,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "page": "https://startdebugging.net/2023/10/what-comes-after-decillion/",
+    "position": 46.54,
+    "impressions": 52,
     "clicks": 0,
     "ctr": 0
   }
