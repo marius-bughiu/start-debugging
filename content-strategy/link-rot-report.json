@@ -1,24 +1,5 @@
 [
   {
-    "url": "https://aka.ms/azure-functions-retirements/in-process-model",
-    "status": 404,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/de/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/de/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/es/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/es/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/ja/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/ja/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/pt-br/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/pt-br/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/ru/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/ru/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md"
-    ]
-  },
-  {
     "url": "https://api.dart.dev/stable/dart-core/LateInitializationError-class.html",
     "status": 404,
     "ok": false,
@@ -242,6 +223,19 @@
     "sources": [
       "site/src/content/blog/2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument.md",
       "site/src/content/blog/2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument.md"
+    ]
+  },
+  {
+    "url": "https://github.com/JosefPihrt/Roslynator/issues/429",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md",
+      "site/src/content/blog/de/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md",
+      "site/src/content/blog/es/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md",
+      "site/src/content/blog/ja/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md",
+      "site/src/content/blog/pt-br/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md",
+      "site/src/content/blog/ru/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md"
     ]
   },
   {
@@ -612,6 +606,19 @@
     ]
   },
   {
+    "url": "https://news.ycombinator.com/item?id=47720060",
+    "status": 429,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/building-a-microsecond-database-engine-in-csharp.md",
+      "site/src/content/blog/de/2026/04/building-a-microsecond-database-engine-in-csharp.md",
+      "site/src/content/blog/es/2026/04/building-a-microsecond-database-engine-in-csharp.md",
+      "site/src/content/blog/ja/2026/04/building-a-microsecond-database-engine-in-csharp.md",
+      "site/src/content/blog/pt-br/2026/04/building-a-microsecond-database-engine-in-csharp.md",
+      "site/src/content/blog/ru/2026/04/building-a-microsecond-database-engine-in-csharp.md"
+    ]
+  },
+  {
     "url": "https://openjdk.org/jeps/472",
     "status": null,
     "ok": false,
@@ -704,6 +711,25 @@
       "site/src/content/blog/ja/2023/11/2-column-react-native.md",
       "site/src/content/blog/pt-br/2023/11/2-column-react-native.md",
       "site/src/content/blog/ru/2023/11/2-column-react-native.md"
+    ]
+  },
+  {
+    "url": "https://support.google.com/googleplay/android-developer/answer/11926878",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
+      "site/src/content/blog/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
+      "site/src/content/blog/de/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
+      "site/src/content/blog/de/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
+      "site/src/content/blog/es/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
+      "site/src/content/blog/es/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
+      "site/src/content/blog/ja/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
+      "site/src/content/blog/ja/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
+      "site/src/content/blog/pt-br/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
+      "site/src/content/blog/pt-br/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
+      "site/src/content/blog/ru/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
+      "site/src/content/blog/ru/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md"
     ]
   },
   {
@@ -862,6 +888,19 @@
     ]
   },
   {
+    "url": "https://www.nuget.org/packages/AutoMapper",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026.md",
+      "site/src/content/blog/de/2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026.md",
+      "site/src/content/blog/es/2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026.md",
+      "site/src/content/blog/ja/2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026.md",
+      "site/src/content/blog/pt-br/2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026.md",
+      "site/src/content/blog/ru/2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026.md"
+    ]
+  },
+  {
     "url": "https://www.nuget.org/packages/Azure.Extensions.AspNetCore.DataProtection.Blobs",
     "status": 404,
     "ok": false,
@@ -984,9 +1023,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Agents.AI/",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/microsoft-agent-framework-vs-semantic-kernel-for-a-greenfield-net-agent.md",
       "site/src/content/blog/2026/07/migrate-a-semantic-kernel-app-to-microsoft-agent-framework-1-0.md"
@@ -1039,8 +1077,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.AspNetCore.OpenApi/",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
       "site/src/content/blog/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
@@ -1086,6 +1125,19 @@
       "site/src/content/blog/ja/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output.md",
       "site/src/content/blog/pt-br/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output.md",
       "site/src/content/blog/ru/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tasks",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/08/fix-model-building-is-not-supported-when-publishing-with-nativeaot-in-maui-ios.md",
+      "site/src/content/blog/de/2026/08/fix-model-building-is-not-supported-when-publishing-with-nativeaot-in-maui-ios.md",
+      "site/src/content/blog/es/2026/08/fix-model-building-is-not-supported-when-publishing-with-nativeaot-in-maui-ios.md",
+      "site/src/content/blog/ja/2026/08/fix-model-building-is-not-supported-when-publishing-with-nativeaot-in-maui-ios.md",
+      "site/src/content/blog/pt-br/2026/08/fix-model-building-is-not-supported-when-publishing-with-nativeaot-in-maui-ios.md",
+      "site/src/content/blog/ru/2026/08/fix-model-building-is-not-supported-when-publishing-with-nativeaot-in-maui-ios.md"
     ]
   },
   {
@@ -1170,8 +1222,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.TestPlatform/1.0.0-alpha-stj-26213-07",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4.md",
       "site/src/content/blog/de/2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4.md",
@@ -1183,9 +1236,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/ModelContextProtocol.AspNetCore",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/migrate-a-semantic-kernel-plugin-to-an-mcp-server.md"
     ]
@@ -1329,11 +1381,17 @@
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
+      "site/src/content/blog/2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026.md",
       "site/src/content/blog/de/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
+      "site/src/content/blog/de/2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026.md",
       "site/src/content/blog/es/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
+      "site/src/content/blog/es/2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026.md",
       "site/src/content/blog/ja/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
+      "site/src/content/blog/ja/2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026.md",
       "site/src/content/blog/pt-br/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
-      "site/src/content/blog/ru/2026/05/migrate-from-automapper-to-source-generated-mapping.md"
+      "site/src/content/blog/pt-br/2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026.md",
+      "site/src/content/blog/ru/2026/05/migrate-from-automapper-to-source-generated-mapping.md",
+      "site/src/content/blog/ru/2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026.md"
     ]
   },
   {
@@ -1454,6 +1512,19 @@
     ]
   },
   {
+    "url": "https://www.nuget.org/packages/xunit.v3/4.0.0",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/migrate-a-test-project-from-xunit-v2-to-xunit-v3.md",
+      "site/src/content/blog/de/2026/09/migrate-a-test-project-from-xunit-v2-to-xunit-v3.md",
+      "site/src/content/blog/es/2026/09/migrate-a-test-project-from-xunit-v2-to-xunit-v3.md",
+      "site/src/content/blog/ja/2026/09/migrate-a-test-project-from-xunit-v2-to-xunit-v3.md",
+      "site/src/content/blog/pt-br/2026/09/migrate-a-test-project-from-xunit-v2-to-xunit-v3.md",
+      "site/src/content/blog/ru/2026/09/migrate-a-test-project-from-xunit-v2-to-xunit-v3.md"
+    ]
+  },
+  {
     "url": "https://www.nuget.org/packages/ZstdSharp.Port",
     "status": 404,
     "ok": false,
@@ -1481,6 +1552,19 @@
   },
   {
     "url": "https://www.rfc-editor.org/rfc/rfc9000",
+    "status": 429,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11.md",
+      "site/src/content/blog/pt-br/2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11.md"
+    ]
+  },
+  {
+    "url": "https://www.rfc-editor.org/rfc/rfc9114",
     "status": 429,
     "ok": false,
     "sources": [
