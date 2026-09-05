@@ -137,6 +137,14 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to write reusable LINQ predicates that EF Core can translate in `Where`, `Select`, and `OrderBy` → slug: 2026/08/how-to-write-reusable-linq-predicates-ef-core-can-translate
 - How to test a Flutter widget at a fixed point in time without a `withClock` closure → slug: 2026/08/how-to-test-a-flutter-widget-at-a-fixed-point-in-time
 - How to render a heading whose level (h1-h6) is chosen at runtime in a Blazor component → slug: 2026/08/how-to-render-a-heading-with-a-runtime-chosen-level-in-blazor
+- How to use pessimistic locking with `UPDLOCK` and `SELECT ... FOR UPDATE` in EF Core 11
+- How to write an EF Core 11 value converter that maps a `null` in the database to a non-null value in code
+- How to detect a backspace press on an empty Flutter `TextField` in an OTP input
+- How to keep `appFlavor` populated after a hot restart when using `flutter attach`
+- How to consume an RFC 9457 `ProblemDetails` response from a typed `HttpClient` without referencing ASP.NET Core
+- How to find the `async void` handlers causing ANRs in a .NET MAUI Android app
+- How to stop `ImageIcon` from tinting an icon with the ambient `IconTheme` color in Flutter
+- How to run `dart fix` across a whole repo to apply Flutter breaking-change migrations
 
 ## Fix / error
 
@@ -259,6 +267,16 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Model building is not supported when publishing with NativeAOT` in a .NET MAUI iOS Release build → slug: 2026/08/fix-model-building-is-not-supported-when-publishing-with-nativeaot-in-maui-ios (Release-only premise corrected: the macios DynamicCodeSupport default has no Configuration condition; the interpreter is what decides it)
 - Fix: `The method 'getInvocation' isn't defined for the type 'DartObjectImpl'` when running `build_runner` → slug: 2026/08/fix-the-method-getinvocation-isnt-defined-for-the-type-dartobjectimpl
 - Fix: Firebase Auth sign-in does not persist in a Flutter Android release build but works in debug → slug: 2026/08/fix-firebase-auth-sign-in-does-not-persist-in-a-flutter-android-release-build
+- Fix: `System.MissingMethodException: Method not found: 'System.String Microsoft.EntityFrameworkCore.Diagnostics.AbstractionsStrings.ArgumentIsEmpty'` after upgrading EF Core Tools
+- Fix: `AS JSON option can be specified only for column of nvarchar(max)` on Azure SQL with EF Core 11
+- Fix: `Complex entry original ordinal '-1' is invalid` when saving a `ToJson()` complex collection in EF Core 11
+- Fix: `Complex type collection must be initialized to a non-null value` in EF Core 11
+- Fix: `PublishAot` combined with `EFOptimizeContext` exhausts memory during an EF Core 11 build
+- Fix: `User.Identity.IsAuthenticated` is false and `RemoteUserAccount` is null in Blazor WebAssembly after an MSAL package upgrade
+- Fix: `Could not create Dart VM instance` in a Flutter release build after `flutter upgrade`
+- Fix: `The argument type 'TextTheme' can't be assigned to the parameter type 'TextTheme?'` when passing a `google_fonts` text theme
+- Fix: Flutter `Text` renders off-screen in an Android WebView when system font scaling is enabled
+- Fix: Flutter web serves a stale cached build after reloading the browser tab
 
 ## Vs / comparison
 
@@ -317,6 +335,11 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - AutoMapper 15 vs Mapperly vs hand-written mapping in 2026 → slug: 2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026 (verified against AutoMapper 16.2.0, the current release; the license boundary is still 15.0.0)
 - Returning a `Task` directly vs `async`/`await` passthrough in a C# repository method → slug: 2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method
 - Framework-dependent vs self-contained vs Native AOT publish for a .NET 11 container image → slug: 2026/09/framework-dependent-vs-self-contained-vs-native-aot-for-a-dotnet-11-container-image
+- `Lookup<TKey, TElement>` vs `Dictionary<TKey, List<TValue>>` for duplicate keys in C#
+- Native `json` column vs `nvarchar(max)` for storing JSON in SQL Server with EF Core 11
+- SQL Server compatibility level 150 vs 160: what changes for EF Core 11 queries
+- CanvasKit vs skwasm for Flutter web in 2026
+- `Process.Run` vs `Process.Start` in .NET 11
 
 ## Migration / upgrade
 
@@ -354,6 +377,12 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate Flutter `material` and `cupertino` imports to the standalone packages in Flutter 3.44 → slug: 2026/09/migrate-flutter-material-and-cupertino-imports-to-standalone-packages
 - Migrate a .NET MAUI Android app to target Android API level 36 → slug: 2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36
 - Migrate a .NET solution to Central Package Management with `Directory.Packages.props` → slug: 2026/08/migrate-a-dotnet-solution-to-central-package-management-with-directory-packages-props
+- Migrate a Flutter Android project to AGP 9 with built-in Kotlin
+- Migrate off `describeEnum` after its removal from Flutter
+- Raise a Flutter macOS app's minimum deployment target to macOS 12 for Xcode 27
+- Migrate an EF Core Cosmos app after the generated `id` escaping change
+- Migrate a Flutter Windows or Linux desktop app now that Impeller is the default renderer
+- Migrate custom page transitions after the Flutter page transition builders reorganization
 
 ## What is / concept
 
@@ -387,6 +416,9 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is client-side evaluation in EF Core 11 and how do I avoid it?
 - What is Impeller and when does Flutter still fall back to Skia?
 - What is a shadow property in EF Core 11 and why did one show up in my migration?
+- What is transparent struct layout and why does a single-field wrapper struct change the calling convention in .NET?
+- What is a Flutter flavor and how is it different from a build mode?
+- What is a compiled model in EF Core 11 and when is `EFOptimizeContext` worth enabling?
 
 ---
 
