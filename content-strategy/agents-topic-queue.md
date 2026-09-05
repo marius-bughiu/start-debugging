@@ -63,6 +63,13 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to serve agent skills from an MCP server in .NET with `UseMcpSkills` instead of shipping them in the app → slug: 2026/08/serve-agent-skills-from-an-mcp-server-in-dotnet-with-usemcpskills
 - How to run a Microsoft Agent Framework agent on the GitHub Copilot harness as its execution engine (skipped: same intent as 2026/08/agent-framework-github-copilot-provider-copilot-cli-as-aiagent, which covers CopilotClient.AsAIAgent, the deny-by-default permission handler, SessionConfig.McpServers and Squad)
 - How to cut Cursor cloud agent startup time with prebuilt Builds → slug: 2026/08/how-to-cut-cursor-cloud-agent-startup-time-with-builds
+- How to give a Microsoft Agent Framework agent persistent memory with Azure Cosmos DB
+- How to expose one Microsoft Agent Framework agent over Telegram, A2A, and MCP client channels with per-channel behaviour
+- How to keep Cursor agent tool execution inside your own network with self-hosted machines
+- How to run shared agentic work with GitHub Copilot in Slack
+- How to trigger a GitHub Copilot automation from an issue or pull request comment
+- How to give a Cursor cloud agent a long-lived objective with `/goal`
+- How to pin skills to a Cursor Custom Mode so an agent stays on one task
 
 ## Fix / error
 
@@ -93,6 +100,13 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: MCP client and server negotiate different protocol versions (2025-11-25 vs 2026-07-28) → slug: 2026/08/fix-mcp-unsupported-protocol-version-2025-11-25-vs-2026-07-28
 - Fix: `MCP9004`/`MCP9005`/`MCP9006` deprecation warnings after upgrading the MCP C# SDK to v2.0 → slug: 2026/08/fix-mcp9004-mcp9005-mcp9006-warnings-after-mcp-csharp-sdk-2-0
 - Fix: an MCP server never starts because an enterprise allowlist blocks its command or URL → slug: 2026/08/fix-mcp-server-blocked-by-enterprise-allowlist
+- Fix: a remote MCP server returns `401 invalid_token` because the token's `aud` doesn't match the canonical server URL
+- Fix: an MCP client drops the `Authorization` header across a 308 cross-origin redirect and gets a 401
+- Fix: Cursor Agent won't initialise - "extension host didn't finish starting within 60 seconds"
+- Fix: a coding agent loops forever re-running a check it can't satisfy with the tools it has
+- Fix: a `PreToolUse` hook returns `allow` but a later deny rule still blocks the tool call
+- Fix: Copilot can't see a file because a content exclusion rule removed it from the index
+- Fix: Claude Code ignores `AGENTS.md` - import it from `CLAUDE.md` or symlink it
 
 ## Vs / comparison
 
@@ -119,6 +133,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Stateful vs stateless MCP servers: what actually breaks when the session goes away → slug: 2026/08/stateful-vs-stateless-mcp-servers-what-breaks-when-the-session-goes-away
 - Agent Plugins 1.0 vs vendor-specific plugin formats: what the shared standard covers and what it doesn't → slug: 2026/08/agent-plugins-1-0-vs-vendor-specific-plugin-formats
 - Copilot memory vs repository custom instructions vs `AGENTS.md`: which one the model actually reads → slug: 2026/09/copilot-memory-vs-repository-custom-instructions-vs-agents-md
+- Copilot code review vs Cursor Bugbot vs a Claude Code review action: which catches what
+- Cursor sandbox providers compared: AWS Lambda vs Modal vs Cloudflare vs Vercel for agent tool execution
+- Local Ollama models vs cloud models in GitHub Copilot: what you give up
 
 ## Migration / upgrade
 
@@ -138,6 +155,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Migrate off deprecated MCP sampling and elicitation to `InputRequiredResult` multi round-trip requests (skipped: answered by 2026/08/fix-mcp9004-mcp9005-mcp9006-warnings-after-mcp-csharp-sdk-2-0 for C# and 2026/08/stateful-vs-stateless-mcp-servers-what-breaks-when-the-session-goes-away for TypeScript)
 - Migrate an MCP C# SDK 1.x server to v2.0 without breaking v1 clients → slug: 2026/09/migrate-mcp-csharp-sdk-1-x-to-2-0-without-breaking-old-clients
 - Migrate a vendor-specific agent plugin to the cross-vendor Agent Plugins 1.0 layout (skipped: same intent as 2026/08/agent-plugins-1-0-vs-vendor-specific-plugin-formats, which covers the component matrix, the reverse-domain escape hatch and the recommendation to make the 1.0.0 layout the source of truth, plus 2026/08/package-skills-and-an-mcp-server-as-one-agent-plugin for the dual-layout directory and the `${PLUGIN_ROOT}` vs `${CLAUDE_PLUGIN_ROOT}` gotcha)
+- Migrate a stdio MCP server to a remote OAuth-protected HTTP server with dynamic client registration
+- Migrate duplicated per-tool rule files (`.cursorrules`, `CLAUDE.md`, `copilot-instructions.md`) to a single `AGENTS.md` source of truth
+- Migrate a Cursor cloud agent workflow off GitHub to Cursor Origin repos
 
 ## Patterns
 
