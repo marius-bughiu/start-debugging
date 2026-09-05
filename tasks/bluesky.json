@@ -30,5 +30,9 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
+  },
+  {
+    "slug": "2026/09/nested-subagent-depth-when-it-helps-and-when-it-burns-tokens",
+    "text": "Measured 117 Claude Code subagent runs: the cold start is 0.6-18% of the bill. Depth costs loops, not context windows."
   }
 ]

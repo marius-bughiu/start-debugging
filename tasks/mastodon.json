@@ -50,5 +50,9 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "Dart isolate vs thread, at the level that actually explains the bugs: an OS thread can enter only one isolate at a time, and an isolate has one mutator thread, but the mapping is not 1:1 because the VM runs them on a thread pool. Since Dart 2.15 isolates in a group share one GC heap, which is why spawn is 100x faster than it used to be and why Isolate.exit can hand back a result without copying it."
+  },
+  {
+    "slug": "2026/09/nested-subagent-depth-when-it-helps-and-when-it-burns-tokens",
+    "text": "\"Every nested subagent costs a fresh context window\" is the usual argument against delegation depth, and it is wrong. Across 117 real Claude Code subagent transcripts, startup context was 0.6% to 18% of each agent's total spend. What depth really multiplies is agentic loops, and every hop up re-bills the same finding at output rates. Includes the jq recipe to measure your own tree."
   }
 ]
