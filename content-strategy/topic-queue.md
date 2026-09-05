@@ -372,10 +372,10 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is the `W^X` flag and why does Native AOT need it? → slug: 2026/09/what-is-the-w-xor-x-flag-in-dotnet-and-does-native-aot-need-it (premise corrected: the flag is a CoreCLR JIT knob; Native AOT never reads it)
 - What is the difference between a Dart isolate and a thread? → slug: 2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread
 - What is a Flutter `Key` and when does omitting it cause bugs? → slug: 2026/09/what-is-a-flutter-key-and-when-does-omitting-it-cause-bugs
-- What is the difference between `IHostedService` and `BackgroundService`?
-- What is a cache stampede and how does HybridCache prevent it?
+- What is the difference between `IHostedService` and `BackgroundService`? (rejected as duplicate: same intent already covered by 2026/07/what-is-the-ihostedservice-contract-and-when-do-i-use-it, which answers when to implement the raw interface vs use BackgroundService)
+- What is a cache stampede and how does HybridCache prevent it? (rejected as duplicate: same intent already covered by 2026/06/hybridcache-vs-imemorycache-vs-idistributedcache-in-dotnet-11, which includes a stampede benchmark section)
 - What is an EF Core interceptor and when do I need one? → slug: 2026/09/what-is-an-ef-core-interceptor-and-when-do-i-need-one
-- What is a Blazor render mode and which one runs my component?
+- What is a Blazor render mode and which one runs my component? → slug: 2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component
 - What is the difference between `ref.watch` and `ref.read` in Riverpod?
 - What is the `use_build_context_synchronously` lint in Flutter?
 - What is a keyed service in .NET dependency injection?
