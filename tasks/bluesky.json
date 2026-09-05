@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/ref-watch-vs-ref-read-in-flutter-riverpod",
-    "text": "ref.watch inside onPressed compiles and lints clean. It also attaches a subscription the next rebuild silently drops."
   }
 ]
