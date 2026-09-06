@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/copilot-code-review-can-now-approve-pull-requests",
-    "text": "Copilot can now submit an approving review that counts toward your required-approvals rule. Off by default. Scope it with globs first."
   }
 ]
