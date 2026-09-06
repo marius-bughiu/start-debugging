@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/how-to-write-an-ef-core-11-value-converter-that-maps-null-to-a-non-null-value",
-    "text": "EF Core never passes null to a value converter, so your ?? is dead code. The internal convertsNulls flag, and its query trap."
   }
 ]

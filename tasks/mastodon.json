@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/how-to-write-an-ef-core-11-value-converter-that-maps-null-to-a-non-null-value",
-    "text": "EF Core never hands null to a value converter, so `v => v ?? \"Unknown\"` silently does nothing. The four-arg ValueConverter constructor with convertsNulls: true changes that, but only for reference types, only with IsRequired(false), and it makes Where(o => o.Notes == \"\") emit WHERE col = NULL and match zero rows."
   }
 ]
