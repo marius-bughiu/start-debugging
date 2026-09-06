@@ -54,5 +54,9 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
+  },
+  {
+    "slug": "2026/09/how-to-use-pessimistic-locking-with-updlock-and-select-for-update-in-ef-core-11",
+    "text": "EF Core 11 ships no pessimistic locking API, so you take the row lock yourself with FromSql: WITH (UPDLOCK, ROWLOCK) on SQL Server, FOR UPDATE on PostgreSQL. The trap: chain a LINQ .Where() after it and EF wraps your SQL in a subquery, so the lock now covers the whole table. No error, nothing odd in the plan."
   }
 ]

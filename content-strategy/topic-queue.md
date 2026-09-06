@@ -137,7 +137,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to write reusable LINQ predicates that EF Core can translate in `Where`, `Select`, and `OrderBy` → slug: 2026/08/how-to-write-reusable-linq-predicates-ef-core-can-translate
 - How to test a Flutter widget at a fixed point in time without a `withClock` closure → slug: 2026/08/how-to-test-a-flutter-widget-at-a-fixed-point-in-time
 - How to render a heading whose level (h1-h6) is chosen at runtime in a Blazor component → slug: 2026/08/how-to-render-a-heading-with-a-runtime-chosen-level-in-blazor
-- How to use pessimistic locking with `UPDLOCK` and `SELECT ... FOR UPDATE` in EF Core 11
+- How to use pessimistic locking with `UPDLOCK` and `SELECT ... FOR UPDATE` in EF Core 11 → slug: 2026/09/how-to-use-pessimistic-locking-with-updlock-and-select-for-update-in-ef-core-11
 - How to write an EF Core 11 value converter that maps a `null` in the database to a non-null value in code
 - How to detect a backspace press on an empty Flutter `TextField` in an OTP input
 - How to keep `appFlavor` populated after a hot restart when using `flutter attach`
