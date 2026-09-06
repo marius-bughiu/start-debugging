@@ -36,16 +36,6 @@ Move approved entries under `## Approved`, remove after posting.
 
 <!-- The scheduled task appends new entries here. Stale drafts (>14 days) are culled on the next run. -->
 
-### 2026-08-16 drafted - fix-the-type-or-namespace-name-could-not-be-found-after-project-reference
-
-**Original:** 2026-05-11 - Fix: The type or namespace name 'X' could not be found (after adding a project reference)
-
-**Bluesky:** dotnet clean does not cure this one. It removes outputs and keeps obj/project.assets.json, so the stale reference list survives the reset. dotnet build --no-incremental is what you actually want after editing a csproj mid-build.
-
-**Mastodon:** CS0246 after a project reference is an MSBuild problem wearing a Roslyn error. Three commands tell you which layer is broken. dotnet build -v:n prints the resolved reference list, and if your library is not in it the compiler never saw it. dotnet build -bl writes a binlog, open it and search ResolveAssemblyReferences to see which paths were handed over and which were skipped. dotnet msbuild -t:ResolveReferences runs resolution alone, no compiler noise.
-
-**Notes:** Longest eligible evergreen (2707 words) and joint-top on internal links among the long ones (5 outbound), covering an error that every SDK bump regenerates, so it stays useful indefinitely. GSC candidates had a single Flutter in-app-purchase query with no overlap, so this was picked on depth and link equity. It also moves the run off EF Core, which took two of the last three slots. Fresh angle: the original social copy led with NU1201 and the TargetFramework mismatch, which is fix one and the obvious cause. Both of these skip it. Bluesky takes the dotnet clean trap, since clean keeps the assets file and people assume it is a full reset. Mastodon takes the diagnostic section, reframing the whole error as MSBuild rather than Roslyn and handing over the three commands that prove it.
-
 ### 2026-08-23 drafted - record-vs-class-vs-struct-in-csharp-a-decision-matrix
 
 **Original:** 2026-05-20 - record vs class vs struct in C#: a decision matrix
@@ -65,6 +55,16 @@ Move approved entries under `## Approved`, remove after posting.
 **Mastodon:** Three things force the mobile framework decision before preference gets a vote. 1. Your team's incumbent language. TypeScript picks React Native, C# picks MAUI, and only a team with no incumbent stack freely picks Dart. 2. Web on the roadmap, even if not in v1. RN with react-native-web is the only production ready path in 2026, Flutter Web is preview for large apps, and MAUI means writing a second app. 3. Platform features decide the plugin friction.
 
 **Notes:** Longest eligible evergreen at 3020 words and joint-top on internal links with 9 outbound, anchoring the cross-platform mobile comparison cluster, so the link equity keeps working. gsc-rising.json is an empty array again and gsc-candidates.json has no query touching a framework bake-off, the closest being a Flutter background_fetch minSdkVersion cluster that maps elsewhere, so depth and link count decided it. It also breaks a four-pick run of .NET only topics: Blazor validation, EF Core concurrency, an MSBuild reference failure, and the C# type decision matrix. Fresh angle: the obvious copy for this post is the three line recommendation, Flutter for pixel identical UI, RN for TypeScript teams, MAUI for .NET shops, which every comparison post already says. Neither of these repeats it. Bluesky takes the one number that dates a comparison, the MAUI cold start figure that changed when CoreCLR became the default in .NET 11, since most write ups still quote the Mono era 720 ms. Mastodon carries the gotcha section, the three constraints that decide before anyone argues preference, with the web roadmap trap as the expensive one.
+
+### 2026-09-06 drafted - migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026
+
+**Original:** 2026-05-28 - Migrate from .NET Framework 4.8 to .NET 11 in 2026
+
+**Bluesky:** Order matters on the BinaryFormatter step. Blobs serialised with it can only be read on the old runtime, so the conversion tool has to run on .NET Framework 4.8 before you decommission it. Migrate first and those payloads are stranded.
+
+**Mastodon:** Four .NET 11 behaviour changes that compile fine and fail in production. 1. HttpClient enforces SNI strictly, so an internal cert with no matching SAN throws AuthenticationException. 2. DateTime.Parse rejects ambiguous input that 4.8 accepted, so pass InvariantCulture and an explicit format. 3. appsettings.json binding is case sensitive, maxretries does not bind to MaxRetries. 4. A transitive System.Data.SqlClient pin builds, then fails on TLS 1.3.
+
+**Notes:** Longest eligible evergreen at 3019 words and joint-top on internal links with 9 outbound, anchoring the .NET migration cluster, so the link equity keeps working. Both GSC files hold only site: queries this week (gsc-candidates.json is two tag-listing rows, gsc-rising.json is five site: rows), so there was no topical traction signal and depth plus link count decided it. It also moves the run off the last three picks, an MSBuild reference failure, the C# type decision matrix, and the mobile framework bake-off. Fresh angle: the obvious copy for a migration playbook is the breakage table, System.Web is gone and WebForms has no path, which every porting post already says. Neither of these repeats it. Bluesky takes the one step whose ordering is a one way door, since BinaryFormatter blobs are only readable on the runtime you are about to delete and nobody sequences that until it is too late. Mastodon carries the post-cutover gotchas, the four behaviour differences that build clean and surface in production.
 
 ---
 
