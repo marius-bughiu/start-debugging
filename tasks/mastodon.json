@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/how-to-detect-a-backspace-press-on-an-empty-flutter-textfield-in-an-otp-input",
-    "text": "Your OTP widget cannot detect backspace on an empty cell because no edit happens, so nothing crosses the platform channel. On iOS the engine's deleteBackward returns early; on Android it is up to the keyboard. Fixes: a zero-width sentinel, or one EditableText behind six painted cells. Flutter 3.47.2."
   }
 ]
