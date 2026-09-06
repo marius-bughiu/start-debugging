@@ -139,7 +139,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to render a heading whose level (h1-h6) is chosen at runtime in a Blazor component → slug: 2026/08/how-to-render-a-heading-with-a-runtime-chosen-level-in-blazor
 - How to use pessimistic locking with `UPDLOCK` and `SELECT ... FOR UPDATE` in EF Core 11 → slug: 2026/09/how-to-use-pessimistic-locking-with-updlock-and-select-for-update-in-ef-core-11
 - How to write an EF Core 11 value converter that maps a `null` in the database to a non-null value in code → slug: 2026/09/how-to-write-an-ef-core-11-value-converter-that-maps-null-to-a-non-null-value
-- How to detect a backspace press on an empty Flutter `TextField` in an OTP input
+- How to detect a backspace press on an empty Flutter `TextField` in an OTP input → slug: 2026/09/how-to-detect-a-backspace-press-on-an-empty-flutter-textfield-in-an-otp-input
 - How to keep `appFlavor` populated after a hot restart when using `flutter attach`
 - How to consume an RFC 9457 `ProblemDetails` response from a typed `HttpClient` without referencing ASP.NET Core
 - How to find the `async void` handlers causing ANRs in a .NET MAUI Android app
