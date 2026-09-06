@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/microsoft-agent-framework-persistent-memory-with-azure-cosmos-db",
-    "text": "Microsoft Agent Framework calls two different things \"memory\": ChatHistoryProvider is the verbatim transcript replayed every turn, AIContextProvider is semantic recall. Neither has a first-party Cosmos DB implementation in .NET. Here is the Cosmos-backed provider, the one-item-per-message design, and the 505-dimension trap."
   }
 ]

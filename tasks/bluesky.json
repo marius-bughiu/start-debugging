@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/microsoft-agent-framework-persistent-memory-with-azure-cosmos-db",
-    "text": "Agent Framework has no Cosmos DB chat history provider for .NET. Here is one in 80 lines, plus the RU math that makes it cheap."
   }
 ]
