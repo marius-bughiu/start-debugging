@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/claude-code-now-names-the-likely-cause-of-a-prompt-cache-miss",
-    "text": "Your prompt cache missed and you paid to reprocess a 300k-token conversation. Claude Code 2.1.260 finally says why: last_miss_cause in the prompt_cache status line object names tools_changed, system_prompt_changed or ttl_expired_5m, so a flapping MCP server stops being invisible."
   }
 ]
