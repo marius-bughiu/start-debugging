@@ -64,7 +64,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to run a Microsoft Agent Framework agent on the GitHub Copilot harness as its execution engine (skipped: same intent as 2026/08/agent-framework-github-copilot-provider-copilot-cli-as-aiagent, which covers CopilotClient.AsAIAgent, the deny-by-default permission handler, SessionConfig.McpServers and Squad)
 - How to cut Cursor cloud agent startup time with prebuilt Builds → slug: 2026/08/how-to-cut-cursor-cloud-agent-startup-time-with-builds
 - How to give a Microsoft Agent Framework agent persistent memory with Azure Cosmos DB → slug: 2026/09/microsoft-agent-framework-persistent-memory-with-azure-cosmos-db
-- How to expose one Microsoft Agent Framework agent over Telegram, A2A, and MCP client channels with per-channel behaviour
+- How to expose one Microsoft Agent Framework agent over Telegram, A2A, and MCP client channels with per-channel behaviour → slug: 2026/09/expose-one-agent-framework-agent-over-telegram-a2a-and-mcp-channels
 - How to keep Cursor agent tool execution inside your own network with self-hosted machines
 - How to run shared agentic work with GitHub Copilot in Slack
 - How to trigger a GitHub Copilot automation from an issue or pull request comment

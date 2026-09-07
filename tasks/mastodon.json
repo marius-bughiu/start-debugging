@@ -54,5 +54,9 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
+  },
+  {
+    "slug": "2026/09/expose-one-agent-framework-agent-over-telegram-a2a-and-mcp-channels",
+    "text": "agent-framework-hosting is not a hosting framework. It ships no bot client, no MCP Server, no A2A executor: just functions that turn a protocol into Agent.run arguments. Build the agent once, wrap it in one AgentState, and per-channel behaviour collapses to a session-ID policy. Includes the four things MCP flatly refuses to do."
   }
 ]
