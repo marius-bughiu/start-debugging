@@ -54,5 +54,9 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
+  },
+  {
+    "slug": "2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app",
+    "text": "Play says your ANR rate is over 0.47% and hands you a native stack of unnamed libcoreclr.so frames. An IPrinter on the main Looper times every message, including the synchronous prefix before the first await. A SynchronizationContext wrapper then logs MainPage+<OnSyncClicked>d__7 by name."
   }
 ]
