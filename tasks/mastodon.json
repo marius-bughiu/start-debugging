@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/how-to-keep-appflavor-populated-after-a-hot-restart-with-flutter-attach",
-    "text": "flutter attach registers no --flavor option, so the resident compiler it spawns never gets -DFLUTTER_APP_FLAVOR and the appFlavor const goes null on the first hot restart. Fastest fix: default-flavor in pubspec.yaml, which getBuildInfo() reads for every command. And --dart-define=FLUTTER_APP_FLAVOR is refused by design."
   }
 ]
