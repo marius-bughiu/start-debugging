@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/how-to-consume-an-rfc-9457-problemdetails-response-from-a-typed-httpclient",
-    "text": "A FrameworkReference to Microsoft.AspNetCore.App so a client can read ProblemDetails lands that framework in your console app's runtimeconfig.json, and it stops booting on a runtime-only image. The model is five nullable properties plus [JsonExtensionData]. And ReadFromJsonAsync has not checked content types since .NET 5."
   }
 ]
