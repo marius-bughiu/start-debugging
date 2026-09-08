@@ -65,7 +65,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to cut Cursor cloud agent startup time with prebuilt Builds → slug: 2026/08/how-to-cut-cursor-cloud-agent-startup-time-with-builds
 - How to give a Microsoft Agent Framework agent persistent memory with Azure Cosmos DB → slug: 2026/09/microsoft-agent-framework-persistent-memory-with-azure-cosmos-db
 - How to expose one Microsoft Agent Framework agent over Telegram, A2A, and MCP client channels with per-channel behaviour → slug: 2026/09/expose-one-agent-framework-agent-over-telegram-a2a-and-mcp-channels
-- How to keep Cursor agent tool execution inside your own network with self-hosted machines
+- How to keep Cursor agent tool execution inside your own network with self-hosted machines → slug: 2026/09/how-to-keep-cursor-agent-tool-execution-inside-your-own-network
 - How to run shared agentic work with GitHub Copilot in Slack
 - How to trigger a GitHub Copilot automation from an issue or pull request comment
 - How to give a Cursor cloud agent a long-lived objective with `/goal`
