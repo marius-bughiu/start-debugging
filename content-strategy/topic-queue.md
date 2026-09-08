@@ -267,7 +267,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Model building is not supported when publishing with NativeAOT` in a .NET MAUI iOS Release build → slug: 2026/08/fix-model-building-is-not-supported-when-publishing-with-nativeaot-in-maui-ios (Release-only premise corrected: the macios DynamicCodeSupport default has no Configuration condition; the interpreter is what decides it)
 - Fix: `The method 'getInvocation' isn't defined for the type 'DartObjectImpl'` when running `build_runner` → slug: 2026/08/fix-the-method-getinvocation-isnt-defined-for-the-type-dartobjectimpl
 - Fix: Firebase Auth sign-in does not persist in a Flutter Android release build but works in debug → slug: 2026/08/fix-firebase-auth-sign-in-does-not-persist-in-a-flutter-android-release-build
-- Fix: `System.MissingMethodException: Method not found: 'System.String Microsoft.EntityFrameworkCore.Diagnostics.AbstractionsStrings.ArgumentIsEmpty'` after upgrading EF Core Tools
+- Fix: `System.MissingMethodException: Method not found: 'System.String Microsoft.EntityFrameworkCore.Diagnostics.AbstractionsStrings.ArgumentIsEmpty'` after upgrading EF Core Tools  → slug: 2026/09/fix-missingmethodexception-argumentisempty-after-upgrading-ef-core-tools
 - Fix: `AS JSON option can be specified only for column of nvarchar(max)` on Azure SQL with EF Core 11
 - Fix: `Complex entry original ordinal '-1' is invalid` when saving a `ToJson()` complex collection in EF Core 11
 - Fix: `Complex type collection must be initialized to a non-null value` in EF Core 11
