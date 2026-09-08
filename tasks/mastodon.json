@@ -54,5 +54,9 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
+  },
+  {
+    "slug": "2026/09/rider-2026-3-eap-dotcover-measures-tunit-coverage",
+    "text": "TUnit is Microsoft.Testing.Platform native, so it has no VSTest host, so dotCover's IDE coverage runner had nothing to attach to and TUnit projects reported an empty report. The Rider 2026.3 EAP that opened on 2026-09-07 closes that gap. It needs JetBrains.dotCover.Framework and Microsoft.Testing.Platform 2.3.0 or later."
   }
 ]
