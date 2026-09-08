@@ -54,5 +54,9 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
+  },
+  {
+    "slug": "2026/09/how-to-run-dart-fix-across-a-whole-repo-to-apply-flutter-migrations",
+    "text": "dart fix takes one target directory and it can be your repo root: the analyzer opens a context per nested pubspec.yaml and migrates every package in one pass. Four things silently suppress fixes. The worst is deprecated_member_use: ignore, the line teams add to quiet CI, which also kills the auto-migration."
   }
 ]
