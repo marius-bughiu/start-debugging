@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/how-to-stop-imageicon-from-tinting-an-icon-with-the-icontheme-color-in-flutter",
-    "text": "Your multi-color icon renders as a black blob because ImageIcon always applies ColorFilter.mode(iconThemeColor, BlendMode.srcIn), and color: null cannot stop it: IconTheme.of must return a concrete color. Flutter 3.47 adds useOriginalColors, which also discards IconTheme.opacity."
   }
 ]
