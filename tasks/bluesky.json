@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/fix-missingmethodexception-argumentisempty-after-upgrading-ef-core-tools",
-    "text": "dotnet ef failing on MissingMethodException ArgumentIsEmpty? Tools 10.0.6-10.0.8 resolve Design 8.0.0. Pin Design yourself."
   }
 ]
