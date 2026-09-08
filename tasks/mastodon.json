@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/how-to-keep-cursor-agent-tool-execution-inside-your-own-network",
-    "text": "Cursor's Self-Hosted Machines moves Cloud Agent tool calls onto hardware you own: agent worker start opens one outbound HTTPS connection, no inbound ports. My Machines needs a personal credential, Team Pools need Enterprise and a service account key. The trap: pools are not repo-scoped, so any worker can claim any repo."
   }
 ]
