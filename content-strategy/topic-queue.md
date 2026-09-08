@@ -143,7 +143,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to keep `appFlavor` populated after a hot restart when using `flutter attach` → slug: 2026/09/how-to-keep-appflavor-populated-after-a-hot-restart-with-flutter-attach
 - How to consume an RFC 9457 `ProblemDetails` response from a typed `HttpClient` without referencing ASP.NET Core → slug: 2026/09/how-to-consume-an-rfc-9457-problemdetails-response-from-a-typed-httpclient
 - How to find the `async void` handlers causing ANRs in a .NET MAUI Android app → slug: 2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app
-- How to stop `ImageIcon` from tinting an icon with the ambient `IconTheme` color in Flutter
+- How to stop `ImageIcon` from tinting an icon with the ambient `IconTheme` color in Flutter → slug: 2026/09/how-to-stop-imageicon-from-tinting-an-icon-with-the-icontheme-color-in-flutter
 - How to run `dart fix` across a whole repo to apply Flutter breaking-change migrations
 
 ## Fix / error
