@@ -269,7 +269,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: Firebase Auth sign-in does not persist in a Flutter Android release build but works in debug → slug: 2026/08/fix-firebase-auth-sign-in-does-not-persist-in-a-flutter-android-release-build
 - Fix: `System.MissingMethodException: Method not found: 'System.String Microsoft.EntityFrameworkCore.Diagnostics.AbstractionsStrings.ArgumentIsEmpty'` after upgrading EF Core Tools  → slug: 2026/09/fix-missingmethodexception-argumentisempty-after-upgrading-ef-core-tools
 - Fix: `AS JSON option can be specified only for column of nvarchar(max)` on Azure SQL with EF Core 11 → slug: 2026/09/fix-as-json-option-can-be-specified-only-for-column-of-nvarchar-max-on-azure-sql
-- Fix: `Complex entry original ordinal '-1' is invalid` when saving a `ToJson()` complex collection in EF Core 11
+- Fix: `Complex entry original ordinal '-1' is invalid` when saving a `ToJson()` complex collection in EF Core 11 → slug: 2026/09/fix-complex-entry-original-ordinal-is-invalid-when-saving-a-tojson-complex-collection (EF Core 11 premise corrected: the bug is in the EF Core 10.0.0-10.0.9 packages, fixed in 10.0.10; the EF Core 11 codebase carries the fix)
 - Fix: `Complex type collection must be initialized to a non-null value` in EF Core 11
 - Fix: `PublishAot` combined with `EFOptimizeContext` exhausts memory during an EF Core 11 build
 - Fix: `User.Identity.IsAuthenticated` is false and `RemoteUserAccount` is null in Blazor WebAssembly after an MSAL package upgrade

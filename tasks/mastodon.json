@@ -54,5 +54,9 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
+  },
+  {
+    "slug": "2026/09/fix-complex-entry-original-ordinal-is-invalid-when-saving-a-tojson-complex-collection",
+    "text": "\"Complex entry original ordinal '-1' is invalid\" needs four things at once: two ToJson complex properties, nested objects holding collections, an element type with 2+ List<T> fields, and one of them growing before SaveChanges. EF forced Added entries through original-ordinal validation. Fixed in EF Core 10.0.10."
   }
 ]
