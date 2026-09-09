@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/fix-the-complex-type-collection-must-be-initialized-to-a-non-null-value",
-    "text": "EF Core 10.0.0 to 10.0.12: setting a nullable complex property to null, when its type holds a 2+ element collection inside a ToJson complex collection, crashes DetectChanges before any SQL is generated. That is dotnet/efcore#38632. Fixed in 11.0.0-rc.1, the 10.0.13 backport is still pending. Plus four lookalike messages."
   }
 ]
