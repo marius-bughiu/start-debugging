@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/dotnet-11-rc-1-process-signal-exit-status",
-    "text": ".NET 11 RC 1 puts Signal, WaitForExitStatus and ProcessExitStatus directly on System.Diagnostics.Process. Kill() was always SIGKILL, so graceful shutdown meant a libc P/Invoke with a hardcoded 15. Now you get a nullable PosixSignal instead of decoding 128 + n from the exit code. Windows still only accepts SIGKILL."
   }
 ]
