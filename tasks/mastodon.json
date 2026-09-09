@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/run-shared-agentic-work-with-github-copilot-in-slack",
-    "text": "Mentioning @GitHub in Slack now starts a shared Copilot cloud agent session in a dedicated Slack Code channel: plan, diffs, live preview, and anyone can redirect or stop it. The gotcha: in a shared context the PR is authored by the app identity, not you, so a repo needing one approval now needs two."
   }
 ]
