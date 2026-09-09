@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/fix-as-json-option-can-be-specified-only-for-column-of-nvarchar-max-on-azure-sql",
-    "text": "Msg 13618 on Azure SQL: EF Core wrote [partNumbers] json '$.partNumbers' AS JSON into an OPENJSON WITH clause, and only SQL Server 2025 accepts the native json type there. Fixed in EF Core 10.0.11. The trap after upgrading: the fix keys off engine type, so UseSqlServer aimed at an Azure database still emits the bad SQL."
   }
 ]
