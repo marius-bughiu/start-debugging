@@ -67,8 +67,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to expose one Microsoft Agent Framework agent over Telegram, A2A, and MCP client channels with per-channel behaviour → slug: 2026/09/expose-one-agent-framework-agent-over-telegram-a2a-and-mcp-channels
 - How to keep Cursor agent tool execution inside your own network with self-hosted machines → slug: 2026/09/how-to-keep-cursor-agent-tool-execution-inside-your-own-network
 - How to run shared agentic work with GitHub Copilot in Slack → slug: 2026/09/run-shared-agentic-work-with-github-copilot-in-slack
-- How to trigger a GitHub Copilot automation from an issue or pull request comment
-- How to give a Cursor cloud agent a long-lived objective with `/goal`
+- How to trigger a GitHub Copilot automation from an issue or pull request comment (skipped: same intent as 2026/08/copilot-automations-now-trigger-on-issue-and-pr-comments, which covers the Agents tab setup, the comment trigger, the tools list and the private/internal repo requirement)
+- How to give a Cursor cloud agent a long-lived objective with `/goal` → slug: 2026/09/how-to-give-a-cursor-cloud-agent-a-long-lived-objective-with-goal
 - How to pin skills to a Cursor Custom Mode so an agent stays on one task
 
 ## Fix / error
