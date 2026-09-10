@@ -54,5 +54,9 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
+  },
+  {
+    "slug": "2026/09/fix-isauthenticated-false-remoteuseraccount-null-blazor-webassembly-msal-upgrade",
+    "text": "Microsoft.Authentication.WebAssembly.Msal 8.0.27, 9.0.16 and 10.0.8 swapped msal.js 2.39 for 4.30. Its init now awaits before setting its guard, so two concurrent auth calls create two MSAL instances: IsAuthenticated false, ReturnUrl lost, uninitialized_public_client_application on refresh. Pin 10.0.7, or make init run once."
   }
 ]
