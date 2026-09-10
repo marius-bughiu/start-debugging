@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/fix-isauthenticated-false-remoteuseraccount-null-blazor-webassembly-msal-upgrade",
-    "text": "Blazor WASM sign-in broke after 10.0.8? msal.js 4 made init async, so two callers build two MSAL clients. Pin 10.0.7 or dedupe init."
   }
 ]
