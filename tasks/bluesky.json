@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/signalr-authentication-refresh-finalized-dotnet-11-rc-1",
-    "text": "SignalR in .NET 11 RC 1 can swap an expiring bearer token in place. No reconnect, no rebuilding group memberships."
   }
 ]
