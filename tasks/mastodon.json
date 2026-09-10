@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/fix-publishaot-and-efoptimizecontext-exhaust-memory-during-an-ef-core-build",
-    "text": "EF Core's build-time compiled model could fork bomb your machine: with PublishAot on, every VS design-time build and every command-line build spawned a nested MSBuild that triggered generation again. The fix ships in two packages, Tasks and Design 10.0.10, so bumping only one leaves dotnet build broken."
   }
 ]
