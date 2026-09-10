@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/fix-could-not-create-dart-vm-instance-in-a-flutter-release-build",
-    "text": "Flutter release build crashing at launch with \"VM snapshot invalid\" and \"Could not create Dart VM instance\" right after flutter upgrade? Run unzip -l on the APK. If lib/*/libapp.so is missing, you hit the 3.44.0 to 3.44.4 Gradle regression: upgrade to 3.44.5 or later and split the old combined subprojects block."
   }
 ]
