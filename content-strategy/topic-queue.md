@@ -273,7 +273,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Complex type collection must be initialized to a non-null value` in EF Core 11 → slug: 2026/09/fix-the-complex-type-collection-must-be-initialized-to-a-non-null-value (EF Core 11 premise corrected: the bug is dotnet/efcore#38632 in EF Core 10.0.0-10.0.12; the fix is in 11.0.0-rc.1 and the 10.0.13 backport is pending)
 - Fix: `PublishAot` combined with `EFOptimizeContext` exhausts memory during an EF Core 11 build → slug: 2026/09/fix-publishaot-and-efoptimizecontext-exhaust-memory-during-an-ef-core-build
 - Fix: `User.Identity.IsAuthenticated` is false and `RemoteUserAccount` is null in Blazor WebAssembly after an MSAL package upgrade → slug: 2026/09/fix-isauthenticated-false-remoteuseraccount-null-blazor-webassembly-msal-upgrade (premise sharpened: the upgrade is the msal.js 2.39.0 to 4.30.0 swap in Microsoft.Authentication.WebAssembly.Msal 8.0.27, 9.0.16 and 10.0.8; root cause is a concurrent AuthenticationService.init race)
-- Fix: `Could not create Dart VM instance` in a Flutter release build after `flutter upgrade`
+- Fix: `Could not create Dart VM instance` in a Flutter release build after `flutter upgrade` → slug: 2026/09/fix-could-not-create-dart-vm-instance-in-a-flutter-release-build (root cause pinned: libapp.so dropped from APK/AAB by the Flutter 3.44.0-3.44.4 Gradle regression, fixed in 3.44.5 by flutter/flutter#188119)
 - Fix: `The argument type 'TextTheme' can't be assigned to the parameter type 'TextTheme?'` when passing a `google_fonts` text theme
 - Fix: Flutter `Text` renders off-screen in an Android WebView when system font scaling is enabled
 - Fix: Flutter web serves a stale cached build after reloading the browser tab
