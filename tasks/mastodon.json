@@ -54,5 +54,9 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
+  },
+  {
+    "slug": "2026/09/signalr-authentication-refresh-finalized-dotnet-11-rc-1",
+    "text": ".NET 11 RC 1 finalizes SignalR authentication refresh: a hub accepts a new access token without closing the connection, so OnConnectedAsync does not rerun and group memberships survive. The server hook gets PreviousUser and NewUser so you can reject a token for a different user. Blazor Server circuits get it with no setup."
   }
 ]
