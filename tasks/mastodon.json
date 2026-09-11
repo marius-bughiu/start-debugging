@@ -54,5 +54,9 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
+  },
+  {
+    "slug": "2026/09/fix-flutter-text-renders-off-screen-in-an-android-webview-with-font-scaling",
+    "text": "Flutter web app in an Android WebView goes blank when the user changes font size? On 3.41 to 3.44 the engine misreads textZoom as a line-height preference (624.9x), so an 18px line lays out 12,936px tall. Icons survive because they use RichText. Upgrade to 3.47 or clear the override in MaterialApp.builder."
   }
 ]
