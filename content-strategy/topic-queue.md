@@ -276,7 +276,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Could not create Dart VM instance` in a Flutter release build after `flutter upgrade` → slug: 2026/09/fix-could-not-create-dart-vm-instance-in-a-flutter-release-build (root cause pinned: libapp.so dropped from APK/AAB by the Flutter 3.44.0-3.44.4 Gradle regression, fixed in 3.44.5 by flutter/flutter#188119)
 - Fix: `The argument type 'TextTheme' can't be assigned to the parameter type 'TextTheme?'` when passing a `google_fonts` text theme → slug: 2026/09/fix-textheme-cant-be-assigned-to-textheme-google-fonts-material-ui (root cause pinned: material_ui 1.x declares its own TextTheme while google_fonts 8.2.1 still returns the SDK one; flutter/flutter#191067)
 - Fix: Flutter `Text` renders off-screen in an Android WebView when system font scaling is enabled → slug: 2026/09/fix-flutter-text-renders-off-screen-in-an-android-webview-with-font-scaling (premise sharpened: a Flutter web app hosted in an Android WebView with textZoom != 100; the 9999px typography probe in 3.41.0-3.44.9 reports a ~625x lineHeightScaleFactorOverride, flutter/flutter#190350; zoom-tolerant detection from #186474 ships in 3.47.0)
-- Fix: Flutter web serves a stale cached build after reloading the browser tab
+- Fix: Flutter web serves a stale cached build after reloading the browser tab → slug: 2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload (premise sharpened: on Flutter 3.41+ the culprit is the HTTP cache on unhashed entry points, since PR #176834 replaced the offline-first service worker with a self-cleaning one; pre-3.41 worker handoff covered as a section)
 
 ## Vs / comparison
 

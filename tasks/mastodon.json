@@ -54,5 +54,9 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
+  },
+  {
+    "slug": "2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload",
+    "text": "Deployed a new Flutter web build and a reload still shows the old one? A reload only revalidates index.html, and Firebase Hosting's default max-age=3600 keeps main.dart.js cached for up to an hour. Serve build/web with Cache-Control: no-cache, and keep shipping flutter_service_worker.js so pre-3.41 caches clean up."
   }
 ]
