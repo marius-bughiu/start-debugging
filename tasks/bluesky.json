@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/fix-flutter-text-renders-off-screen-in-an-android-webview-with-font-scaling",
-    "text": "Flutter web in an Android WebView, user bumps font size, all Text vanishes. Engine reports a 625x line height. The fix:"
   }
 ]
