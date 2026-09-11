@@ -54,5 +54,9 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
+  },
+  {
+    "slug": "2026/09/fix-mcp-401-invalid-token-audience-does-not-match-server-url",
+    "text": "Remote MCP server: login succeeds, then every request is 401 invalid_token. The token aud is not the exact string you check. The TS SDK sends your PRM resource, not the URL you typed, and a bare origin gains a trailing slash. Give the endpoint a path and compare audiences as normalized URLs."
   }
 ]

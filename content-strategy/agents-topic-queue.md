@@ -69,7 +69,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to run shared agentic work with GitHub Copilot in Slack → slug: 2026/09/run-shared-agentic-work-with-github-copilot-in-slack
 - How to trigger a GitHub Copilot automation from an issue or pull request comment (skipped: same intent as 2026/08/copilot-automations-now-trigger-on-issue-and-pr-comments, which covers the Agents tab setup, the comment trigger, the tools list and the private/internal repo requirement)
 - How to give a Cursor cloud agent a long-lived objective with `/goal` → slug: 2026/09/how-to-give-a-cursor-cloud-agent-a-long-lived-objective-with-goal
-- How to pin skills to a Cursor Custom Mode so an agent stays on one task
+- How to pin skills to a Cursor Custom Mode so an agent stays on one task (skipped: same intent as 2026/09/how-to-give-a-cursor-cloud-agent-a-long-lived-objective-with-goal, whose "Pin a playbook with a Custom Mode" section covers writing the skill, `disable-model-invocation`, the `icon`/`color` badge and Option+Enter / "Use as Mode")
 
 ## Fix / error
 
@@ -100,7 +100,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: MCP client and server negotiate different protocol versions (2025-11-25 vs 2026-07-28) → slug: 2026/08/fix-mcp-unsupported-protocol-version-2025-11-25-vs-2026-07-28
 - Fix: `MCP9004`/`MCP9005`/`MCP9006` deprecation warnings after upgrading the MCP C# SDK to v2.0 → slug: 2026/08/fix-mcp9004-mcp9005-mcp9006-warnings-after-mcp-csharp-sdk-2-0
 - Fix: an MCP server never starts because an enterprise allowlist blocks its command or URL → slug: 2026/08/fix-mcp-server-blocked-by-enterprise-allowlist
-- Fix: a remote MCP server returns `401 invalid_token` because the token's `aud` doesn't match the canonical server URL
+- Fix: a remote MCP server returns `401 invalid_token` because the token's `aud` doesn't match the canonical server URL → slug: 2026/09/fix-mcp-401-invalid-token-audience-does-not-match-server-url
 - Fix: an MCP client drops the `Authorization` header across a 308 cross-origin redirect and gets a 401
 - Fix: Cursor Agent won't initialise - "extension host didn't finish starting within 60 seconds"
 - Fix: a coding agent loops forever re-running a check it can't satisfy with the tools it has
