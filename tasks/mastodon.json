@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/fix-textheme-cant-be-assigned-to-textheme-google-fonts-material-ui",
-    "text": "Migrated to material_ui and GoogleFonts.robotoTextTheme() fails with \"TextTheme can't be assigned to TextTheme?\"? There are now two TextTheme classes and google_fonts 8.2.1 returns the SDK one. The compatibility bridge can't fix a compile error. Apply the font per style instead: TextStyle is shared."
   }
 ]
