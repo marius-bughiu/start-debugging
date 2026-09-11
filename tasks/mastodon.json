@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/csharp-unions-in-aspnetcore-11-where-binding-works",
-    "text": "ASP.NET Core 11 accepts C# 15 union types in minimal API and MVC bodies, SignalR's JsonHubProtocol, and Blazor, and OpenAPI describes them as anyOf. Route, query, header, and form binding are still unsupported, and a \"42\" body token matches both int and string. Here is where each works and the workaround."
   }
 ]
