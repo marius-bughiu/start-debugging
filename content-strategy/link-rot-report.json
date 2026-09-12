@@ -1,5 +1,24 @@
 [
   {
+    "url": "https://aka.ms/azure-functions-retirements/in-process-model",
+    "status": 503,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
+      "site/src/content/blog/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
+      "site/src/content/blog/de/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
+      "site/src/content/blog/de/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
+      "site/src/content/blog/es/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
+      "site/src/content/blog/es/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
+      "site/src/content/blog/ja/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
+      "site/src/content/blog/ja/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
+      "site/src/content/blog/pt-br/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
+      "site/src/content/blog/pt-br/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
+      "site/src/content/blog/ru/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
+      "site/src/content/blog/ru/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md"
+    ]
+  },
+  {
     "url": "https://api.dart.dev/stable/dart-core/LateInitializationError-class.html",
     "status": 404,
     "ok": false,
@@ -110,6 +129,19 @@
       "site/src/content/blog/ja/2026/08/fix-doesnt-support-required-abi-when-installing-a-dotnet-maui-android-app.md",
       "site/src/content/blog/pt-br/2026/08/fix-doesnt-support-required-abi-when-installing-a-dotnet-maui-android-app.md",
       "site/src/content/blog/ru/2026/08/fix-doesnt-support-required-abi-when-installing-a-dotnet-maui-android-app.md"
+    ]
+  },
+  {
+    "url": "https://developer.apple.com/documentation/uikit/uikeyinput/deletebackward(",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/how-to-detect-a-backspace-press-on-an-empty-flutter-textfield-in-an-otp-input.md",
+      "site/src/content/blog/de/2026/09/how-to-detect-a-backspace-press-on-an-empty-flutter-textfield-in-an-otp-input.md",
+      "site/src/content/blog/es/2026/09/how-to-detect-a-backspace-press-on-an-empty-flutter-textfield-in-an-otp-input.md",
+      "site/src/content/blog/ja/2026/09/how-to-detect-a-backspace-press-on-an-empty-flutter-textfield-in-an-otp-input.md",
+      "site/src/content/blog/pt-br/2026/09/how-to-detect-a-backspace-press-on-an-empty-flutter-textfield-in-an-otp-input.md",
+      "site/src/content/blog/ru/2026/09/how-to-detect-a-backspace-press-on-an-empty-flutter-textfield-in-an-otp-input.md"
     ]
   },
   {
@@ -249,6 +281,71 @@
       "site/src/content/blog/ja/2026/01/cv-shortlist-an-ai-powered-net-10-saas-went-open-source-and-the-stack-is-worth-studying.md",
       "site/src/content/blog/pt-br/2026/01/cv-shortlist-an-ai-powered-net-10-saas-went-open-source-and-the-stack-is-worth-studying.md",
       "site/src/content/blog/ru/2026/01/cv-shortlist-an-ai-powered-net-10-saas-went-open-source-and-the-stack-is-worth-studying.md"
+    ]
+  },
+  {
+    "url": "https://github.com/Start-Debugging/dotnet-samples/blob/24d4273803c67824b2885b6f18cb8d535ec75657/unsafe-accessor/UnsafeAccessor/Program.cs#L74",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2023/11/c-how-to-update-a-readonly-field-using-unsafeaccessor.md",
+      "site/src/content/blog/de/2023/11/c-how-to-update-a-readonly-field-using-unsafeaccessor.md",
+      "site/src/content/blog/es/2023/11/c-how-to-update-a-readonly-field-using-unsafeaccessor.md",
+      "site/src/content/blog/ja/2023/11/c-how-to-update-a-readonly-field-using-unsafeaccessor.md",
+      "site/src/content/blog/pt-br/2023/11/c-how-to-update-a-readonly-field-using-unsafeaccessor.md",
+      "site/src/content/blog/ru/2023/11/c-how-to-update-a-readonly-field-using-unsafeaccessor.md"
+    ]
+  },
+  {
+    "url": "https://github.com/Start-Debugging/dotnet-samples/blob/main/screenshot/Screenshot/Program.cs",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2023/11/how-to-take-a-screenshot-in-net-core.md",
+      "site/src/content/blog/de/2023/11/how-to-take-a-screenshot-in-net-core.md",
+      "site/src/content/blog/es/2023/11/how-to-take-a-screenshot-in-net-core.md",
+      "site/src/content/blog/ja/2023/11/how-to-take-a-screenshot-in-net-core.md",
+      "site/src/content/blog/pt-br/2023/11/how-to-take-a-screenshot-in-net-core.md",
+      "site/src/content/blog/ru/2023/11/how-to-take-a-screenshot-in-net-core.md"
+    ]
+  },
+  {
+    "url": "https://github.com/Start-Debugging/dotnet-samples/blob/main/unsafe-accessor/UnsafeAccessor.Benchmarks/Benchmarks.cs",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2023/11/net-8-performance-unsafeaccessor-vs-reflection.md",
+      "site/src/content/blog/de/2023/11/net-8-performance-unsafeaccessor-vs-reflection.md",
+      "site/src/content/blog/es/2023/11/net-8-performance-unsafeaccessor-vs-reflection.md",
+      "site/src/content/blog/ja/2023/11/net-8-performance-unsafeaccessor-vs-reflection.md",
+      "site/src/content/blog/pt-br/2023/11/net-8-performance-unsafeaccessor-vs-reflection.md",
+      "site/src/content/blog/ru/2023/11/net-8-performance-unsafeaccessor-vs-reflection.md"
+    ]
+  },
+  {
+    "url": "https://github.com/Start-Debugging/dotnet-samples/blob/main/unsafe-accessor/UnsafeAccessor/Program.cs",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2023/10/unsafe-accessor.md",
+      "site/src/content/blog/de/2023/10/unsafe-accessor.md",
+      "site/src/content/blog/es/2023/10/unsafe-accessor.md",
+      "site/src/content/blog/ja/2023/10/unsafe-accessor.md",
+      "site/src/content/blog/pt-br/2023/10/unsafe-accessor.md",
+      "site/src/content/blog/ru/2023/10/unsafe-accessor.md"
+    ]
+  },
+  {
+    "url": "https://github.com/Start-Debugging/dotnet-samples/tree/main/reflection",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2023/11/net-8-performance-10x-faster-getgenerictypedefinition.md",
+      "site/src/content/blog/de/2023/11/net-8-performance-10x-faster-getgenerictypedefinition.md",
+      "site/src/content/blog/es/2023/11/net-8-performance-10x-faster-getgenerictypedefinition.md",
+      "site/src/content/blog/ja/2023/11/net-8-performance-10x-faster-getgenerictypedefinition.md",
+      "site/src/content/blog/pt-br/2023/11/net-8-performance-10x-faster-getgenerictypedefinition.md",
+      "site/src/content/blog/ru/2023/11/net-8-performance-10x-faster-getgenerictypedefinition.md"
     ]
   },
   {
@@ -606,39 +703,6 @@
     ]
   },
   {
-    "url": "https://news.ycombinator.com/item?id=47720060",
-    "status": 429,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/de/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/es/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/ja/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/pt-br/2026/04/building-a-microsecond-database-engine-in-csharp.md",
-      "site/src/content/blog/ru/2026/04/building-a-microsecond-database-engine-in-csharp.md"
-    ]
-  },
-  {
-    "url": "https://openjdk.org/jeps/472",
-    "status": null,
-    "ok": false,
-    "error": "timeout",
-    "sources": [
-      "site/src/content/blog/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
-      "site/src/content/blog/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
-      "site/src/content/blog/de/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
-      "site/src/content/blog/de/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
-      "site/src/content/blog/es/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
-      "site/src/content/blog/es/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
-      "site/src/content/blog/ja/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
-      "site/src/content/blog/ja/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
-      "site/src/content/blog/pt-br/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
-      "site/src/content/blog/pt-br/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
-      "site/src/content/blog/ru/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
-      "site/src/content/blog/ru/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md"
-    ]
-  },
-  {
     "url": "https://partner.microsoft.com/dashboard/apps-and-games/overview",
     "status": null,
     "ok": false,
@@ -730,6 +794,25 @@
       "site/src/content/blog/pt-br/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
       "site/src/content/blog/ru/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
       "site/src/content/blog/ru/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md"
+    ]
+  },
+  {
+    "url": "https://support.google.com/googleplay/android-developer/answer/17492799",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app.md",
+      "site/src/content/blog/2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app.md",
+      "site/src/content/blog/de/2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app.md",
+      "site/src/content/blog/de/2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app.md",
+      "site/src/content/blog/es/2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app.md",
+      "site/src/content/blog/es/2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app.md",
+      "site/src/content/blog/ja/2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app.md",
+      "site/src/content/blog/ja/2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app.md",
+      "site/src/content/blog/pt-br/2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app.md",
+      "site/src/content/blog/pt-br/2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app.md",
+      "site/src/content/blog/ru/2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app.md",
+      "site/src/content/blog/ru/2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app.md"
     ]
   },
   {
@@ -902,8 +985,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Azure.Extensions.AspNetCore.DataProtection.Blobs",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "fetch failed",
     "sources": [
       "site/src/content/blog/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
       "site/src/content/blog/de/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
@@ -937,6 +1021,14 @@
       "site/src/content/blog/ja/2025/04/whats-new-in-net-maui-10.md",
       "site/src/content/blog/pt-br/2025/04/whats-new-in-net-maui-10.md",
       "site/src/content/blog/ru/2025/04/whats-new-in-net-maui-10.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/CommunityToolkit.VectorData.AzureCosmosDB",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/microsoft-agent-framework-persistent-memory-with-azure-cosmos-db.md"
     ]
   },
   {
@@ -1015,8 +1107,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Agents.AI.Workflows.Declarative",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/08/agent-framework-declarative-yaml-vs-code-first-orchestration.md"
     ]
@@ -1077,9 +1170,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.AspNetCore.OpenApi/",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
       "site/src/content/blog/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
@@ -1093,6 +1185,19 @@
       "site/src/content/blog/pt-br/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
       "site/src/content/blog/ru/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
       "site/src/content/blog/ru/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.Authentication.WebAssembly.Msal",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/fix-isauthenticated-false-remoteuseraccount-null-blazor-webassembly-msal-upgrade.md",
+      "site/src/content/blog/de/2026/09/fix-isauthenticated-false-remoteuseraccount-null-blazor-webassembly-msal-upgrade.md",
+      "site/src/content/blog/es/2026/09/fix-isauthenticated-false-remoteuseraccount-null-blazor-webassembly-msal-upgrade.md",
+      "site/src/content/blog/ja/2026/09/fix-isauthenticated-false-remoteuseraccount-null-blazor-webassembly-msal-upgrade.md",
+      "site/src/content/blog/pt-br/2026/09/fix-isauthenticated-false-remoteuseraccount-null-blazor-webassembly-msal-upgrade.md",
+      "site/src/content/blog/ru/2026/09/fix-isauthenticated-false-remoteuseraccount-null-blazor-webassembly-msal-upgrade.md"
     ]
   },
   {
@@ -1133,11 +1238,31 @@
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/08/fix-model-building-is-not-supported-when-publishing-with-nativeaot-in-maui-ios.md",
+      "site/src/content/blog/2026/09/fix-publishaot-and-efoptimizecontext-exhaust-memory-during-an-ef-core-build.md",
       "site/src/content/blog/de/2026/08/fix-model-building-is-not-supported-when-publishing-with-nativeaot-in-maui-ios.md",
+      "site/src/content/blog/de/2026/09/fix-publishaot-and-efoptimizecontext-exhaust-memory-during-an-ef-core-build.md",
       "site/src/content/blog/es/2026/08/fix-model-building-is-not-supported-when-publishing-with-nativeaot-in-maui-ios.md",
+      "site/src/content/blog/es/2026/09/fix-publishaot-and-efoptimizecontext-exhaust-memory-during-an-ef-core-build.md",
       "site/src/content/blog/ja/2026/08/fix-model-building-is-not-supported-when-publishing-with-nativeaot-in-maui-ios.md",
+      "site/src/content/blog/ja/2026/09/fix-publishaot-and-efoptimizecontext-exhaust-memory-during-an-ef-core-build.md",
       "site/src/content/blog/pt-br/2026/08/fix-model-building-is-not-supported-when-publishing-with-nativeaot-in-maui-ios.md",
-      "site/src/content/blog/ru/2026/08/fix-model-building-is-not-supported-when-publishing-with-nativeaot-in-maui-ios.md"
+      "site/src/content/blog/pt-br/2026/09/fix-publishaot-and-efoptimizecontext-exhaust-memory-during-an-ef-core-build.md",
+      "site/src/content/blog/ru/2026/08/fix-model-building-is-not-supported-when-publishing-with-nativeaot-in-maui-ios.md",
+      "site/src/content/blog/ru/2026/09/fix-publishaot-and-efoptimizecontext-exhaust-memory-during-an-ef-core-build.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools/",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/09/fix-missingmethodexception-argumentisempty-after-upgrading-ef-core-tools.md",
+      "site/src/content/blog/de/2026/09/fix-missingmethodexception-argumentisempty-after-upgrading-ef-core-tools.md",
+      "site/src/content/blog/es/2026/09/fix-missingmethodexception-argumentisempty-after-upgrading-ef-core-tools.md",
+      "site/src/content/blog/ja/2026/09/fix-missingmethodexception-argumentisempty-after-upgrading-ef-core-tools.md",
+      "site/src/content/blog/pt-br/2026/09/fix-missingmethodexception-argumentisempty-after-upgrading-ef-core-tools.md",
+      "site/src/content/blog/ru/2026/09/fix-missingmethodexception-argumentisempty-after-upgrading-ef-core-tools.md"
     ]
   },
   {
@@ -1171,8 +1296,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Extensions.Http.Resilience",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
       "site/src/content/blog/de/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
@@ -1205,8 +1331,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.SemanticKernel/",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/microsoft-agent-framework-vs-semantic-kernel-for-a-greenfield-net-agent.md",
       "site/src/content/blog/2026/07/migrate-a-semantic-kernel-app-to-microsoft-agent-framework-1-0.md"
@@ -1222,9 +1349,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.TestPlatform/1.0.0-alpha-stj-26213-07",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4.md",
       "site/src/content/blog/de/2026/05/vstest-removes-newtonsoft-json-dotnet-11-preview-4.md",
@@ -1258,8 +1384,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/ModelContextProtocol/1.2.0",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/how-to-expose-an-ef-core-database-to-an-ai-agent-via-mcp.md"
     ]
@@ -1487,8 +1614,9 @@
   },
   {
     "url": "https://www.nuget.org/packages/Testcontainers.PostgreSql",
-    "status": 404,
+    "status": null,
     "ok": false,
+    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/08/webapplicationfactory-vs-testcontainers-for-aspnetcore-integration-tests.md",
       "site/src/content/blog/de/2026/08/webapplicationfactory-vs-testcontainers-for-aspnetcore-integration-tests.md",
@@ -1551,6 +1679,15 @@
     ]
   },
   {
+    "url": "https://www.rfc-editor.org/rfc/rfc8707.html",
+    "status": 429,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/fix-mcp-401-invalid-token-audience-does-not-match-server-url.md",
+      "site/src/content/blog/2026/09/fix-mcp-401-invalid-token-audience-does-not-match-server-url.md"
+    ]
+  },
+  {
     "url": "https://www.rfc-editor.org/rfc/rfc9000",
     "status": 429,
     "ok": false,
@@ -1561,6 +1698,38 @@
       "site/src/content/blog/ja/2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11.md",
       "site/src/content/blog/pt-br/2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11.md",
       "site/src/content/blog/ru/2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11.md"
+    ]
+  },
+  {
+    "url": "https://www.rfc-editor.org/rfc/rfc9111",
+    "status": 429,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
+      "site/src/content/blog/pt-br/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md"
+    ]
+  },
+  {
+    "url": "https://www.rfc-editor.org/rfc/rfc9111#section-4.2.2",
+    "status": 429,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
+      "site/src/content/blog/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
+      "site/src/content/blog/de/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
+      "site/src/content/blog/de/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
+      "site/src/content/blog/es/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
+      "site/src/content/blog/es/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
+      "site/src/content/blog/ja/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
+      "site/src/content/blog/ja/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
+      "site/src/content/blog/pt-br/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
+      "site/src/content/blog/pt-br/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
+      "site/src/content/blog/ru/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
+      "site/src/content/blog/ru/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md"
     ]
   },
   {
