@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/json-vs-nvarchar-max-for-storing-json-in-sql-server-with-ef-core-11",
-    "text": "Switching UseSqlServer to UseAzureSql quietly turns your JSON columns into the native json type. What EF Core 11 gains, and the catch."
   }
 ]

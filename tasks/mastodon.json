@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/json-vs-nvarchar-max-for-storing-json-in-sql-server-with-ef-core-11",
-    "text": "json vs nvarchar(max) in EF Core 11: on SQL Server 2025 and Azure SQL, pick json for JSON_CONTAINS, typed JSON_VALUE and in-place modify(). The trap: at the default compatibility level 160, HasIndex on a JSON path still emits CREATE JSON INDEX against an nvarchar(max) column. Pin HasColumnType(\"json\")."
   }
 ]
