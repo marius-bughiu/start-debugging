@@ -145,8 +145,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to find the `async void` handlers causing ANRs in a .NET MAUI Android app → slug: 2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app
 - How to stop `ImageIcon` from tinting an icon with the ambient `IconTheme` color in Flutter → slug: 2026/09/how-to-stop-imageicon-from-tinting-an-icon-with-the-icontheme-color-in-flutter
 - How to run `dart fix` across a whole repo to apply Flutter breaking-change migrations → slug: 2026/09/how-to-run-dart-fix-across-a-whole-repo-to-apply-flutter-migrations
-- How to run and debug a Flutter app on a physical iPhone from a Windows PC
-- How to escape `%` and `_` wildcards in `EF.Functions.Like` and `StartsWith` queries in EF Core 11
+- How to run and debug a Flutter app on a physical iPhone from a Windows PC (rejected as duplicate: same intent already covered by 2026/01/debugging-flutter-ios-from-windows-a-real-device-workflow-flutter-3-x)
+- How to escape `%` and `_` wildcards in `EF.Functions.Like` and `StartsWith` queries in EF Core 11 → slug: 2026/09/how-to-escape-wildcards-in-ef-functions-like-and-startswith-in-ef-core-11
 - How to bind a complex query-string object with `[AsParameters]` in a minimal API in ASP.NET Core 11
 - How to enable R8 shrinking and obfuscation for a .NET MAUI Android release build
 - How to intercept the Android back button on a .NET MAUI Shell root page
