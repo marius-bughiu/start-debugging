@@ -145,6 +145,12 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to find the `async void` handlers causing ANRs in a .NET MAUI Android app → slug: 2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app
 - How to stop `ImageIcon` from tinting an icon with the ambient `IconTheme` color in Flutter → slug: 2026/09/how-to-stop-imageicon-from-tinting-an-icon-with-the-icontheme-color-in-flutter
 - How to run `dart fix` across a whole repo to apply Flutter breaking-change migrations → slug: 2026/09/how-to-run-dart-fix-across-a-whole-repo-to-apply-flutter-migrations
+- How to run and debug a Flutter app on a physical iPhone from a Windows PC
+- How to escape `%` and `_` wildcards in `EF.Functions.Like` and `StartsWith` queries in EF Core 11
+- How to bind a complex query-string object with `[AsParameters]` in a minimal API in ASP.NET Core 11
+- How to enable R8 shrinking and obfuscation for a .NET MAUI Android release build
+- How to intercept the Android back button on a .NET MAUI Shell root page
+- How to create and extract zip files asynchronously with the `ZipArchive` async APIs in .NET 11
 
 ## Fix / error
 
@@ -277,6 +283,13 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `The argument type 'TextTheme' can't be assigned to the parameter type 'TextTheme?'` when passing a `google_fonts` text theme → slug: 2026/09/fix-textheme-cant-be-assigned-to-textheme-google-fonts-material-ui (root cause pinned: material_ui 1.x declares its own TextTheme while google_fonts 8.2.1 still returns the SDK one; flutter/flutter#191067)
 - Fix: Flutter `Text` renders off-screen in an Android WebView when system font scaling is enabled → slug: 2026/09/fix-flutter-text-renders-off-screen-in-an-android-webview-with-font-scaling (premise sharpened: a Flutter web app hosted in an Android WebView with textZoom != 100; the 9999px typography probe in 3.41.0-3.44.9 reports a ~625x lineHeightScaleFactorOverride, flutter/flutter#190350; zoom-tolerant detection from #186474 ships in 3.47.0)
 - Fix: Flutter web serves a stale cached build after reloading the browser tab → slug: 2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload (premise sharpened: on Flutter 3.41+ the culprit is the HTTP cache on unhashed entry points, since PR #176834 replaced the offline-first service worker with a self-cleaning one; pre-3.41 worker handoff covered as a section)
+- Fix: `Could not load file or assembly 'Microsoft.Data.SqlClient, Version=7.0.0.0'` after updating `Microsoft.EntityFrameworkCore.SqlServer`
+- Fix: `InvalidOperationException: Nullable object must have a value` in an EF Core 11 projection
+- Fix: `flutter doctor --android-licenses` fails with Android SDK Command-line Tools 23
+- Fix: ASP.NET Core API endpoints return 401 instead of redirecting to the login page after upgrading to .NET 10
+- Fix: `MigrateAsync` and `CanConnectAsync` keep retrying on `Login failed for user` with `EnableRetryOnFailure` in EF Core
+- Fix: `UIKitThreadAccessException` from `MediaPicker.PickPhotosAsync` when selecting multiple photos in .NET MAUI iOS
+- Fix: `Unexpected failure parsing device information from adb output` in Flutter
 
 ## Vs / comparison
 
@@ -340,6 +353,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - SQL Server compatibility level 150 vs 160: what changes for EF Core 11 queries
 - CanvasKit vs skwasm for Flutter web in 2026
 - `Process.Run` vs `Process.Start` in .NET 11
+- `Microsoft.Data.SqlClient` vs `System.Data.SqlClient` in .NET 11
 
 ## Migration / upgrade
 
@@ -383,6 +397,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate an EF Core Cosmos app after the generated `id` escaping change
 - Migrate a Flutter Windows or Linux desktop app now that Impeller is the default renderer
 - Migrate custom page transitions after the Flutter page transition builders reorganization
+- Migrate a Flutter iOS app from CocoaPods to Swift Package Manager
 
 ## What is / concept
 
