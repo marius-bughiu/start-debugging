@@ -336,7 +336,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Returning a `Task` directly vs `async`/`await` passthrough in a C# repository method → slug: 2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method
 - Framework-dependent vs self-contained vs Native AOT publish for a .NET 11 container image → slug: 2026/09/framework-dependent-vs-self-contained-vs-native-aot-for-a-dotnet-11-container-image
 - `Lookup<TKey, TElement>` vs `Dictionary<TKey, List<TValue>>` for duplicate keys in C# → slug: 2026/09/lookup-vs-dictionary-of-lists-for-duplicate-keys-in-csharp
-- Native `json` column vs `nvarchar(max)` for storing JSON in SQL Server with EF Core 11
+- Native `json` column vs `nvarchar(max)` for storing JSON in SQL Server with EF Core 11 → slug: 2026/09/json-vs-nvarchar-max-for-storing-json-in-sql-server-with-ef-core-11
 - SQL Server compatibility level 150 vs 160: what changes for EF Core 11 queries
 - CanvasKit vs skwasm for Flutter web in 2026
 - `Process.Run` vs `Process.Start` in .NET 11
