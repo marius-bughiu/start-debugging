@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/how-to-escape-wildcards-in-ef-functions-like-and-startswith-in-ef-core-11",
-    "text": "A user searches for '50%' and gets '500 widgets' back. In EF Core 11, StartsWith, EndsWith and Contains escape wildcards for you (LIKE ... ESCAPE N'\\'), but EF.Functions.Like passes your pattern untouched. The fix is a small escape helper plus the escapeCharacter overload. Skip that argument and SQL Server returns nothing."
   }
 ]
