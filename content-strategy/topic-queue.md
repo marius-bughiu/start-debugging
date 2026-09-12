@@ -335,7 +335,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - AutoMapper 15 vs Mapperly vs hand-written mapping in 2026 → slug: 2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026 (verified against AutoMapper 16.2.0, the current release; the license boundary is still 15.0.0)
 - Returning a `Task` directly vs `async`/`await` passthrough in a C# repository method → slug: 2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method
 - Framework-dependent vs self-contained vs Native AOT publish for a .NET 11 container image → slug: 2026/09/framework-dependent-vs-self-contained-vs-native-aot-for-a-dotnet-11-container-image
-- `Lookup<TKey, TElement>` vs `Dictionary<TKey, List<TValue>>` for duplicate keys in C#
+- `Lookup<TKey, TElement>` vs `Dictionary<TKey, List<TValue>>` for duplicate keys in C# → slug: 2026/09/lookup-vs-dictionary-of-lists-for-duplicate-keys-in-csharp
 - Native `json` column vs `nvarchar(max)` for storing JSON in SQL Server with EF Core 11
 - SQL Server compatibility level 150 vs 160: what changes for EF Core 11 queries
 - CanvasKit vs skwasm for Flutter web in 2026

@@ -54,5 +54,9 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
+  },
+  {
+    "slug": "2026/09/lookup-vs-dictionary-of-lists-for-duplicate-keys-in-csharp",
+    "text": "Lookup<TKey, TElement> or Dictionary<TKey, List<TValue>> for duplicate keys in C#? Group once and only read: ToLookup, which never throws on a missing key and keeps first-seen order. Groups that change or cross a JSON boundary: the dictionary, because System.Text.Json drops lookup keys. Plus the AggregateBy shared-seed trap."
   }
 ]
