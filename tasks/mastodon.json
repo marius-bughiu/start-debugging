@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/dotnet-11-rc-1-reproducible-container-images-source-date-epoch",
-    "text": "Publishing the same commit twice with dotnet publish /t:PublishContainer used to give two digests: UtcNow in every tar entry plus the pid in pax headers. .NET 11 RC 1 fixes it with SOURCE_DATE_EPOCH, and skips layer uploads when the registry already has the manifest. Verified on 11.0.100-rc.1."
   }
 ]
