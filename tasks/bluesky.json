@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/fix-mcp-client-drops-authorization-header-on-cross-origin-redirect",
-    "text": "Your MCP URL 308s to another host, the client follows it, Authorization is gone: 401. That's the Fetch spec. Register the final URL."
   }
 ]

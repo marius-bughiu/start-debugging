@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/fix-mcp-client-drops-authorization-header-on-cross-origin-redirect",
-    "text": "OAuth worked, yet every call to your remote MCP server is a 401 'Missing Authorization header'? Look for a redirect: fetch, curl and .NET HttpClient all drop Authorization when a 307/308 crosses origins, and .NET drops it even on a same-origin trailing-slash hop. Measured with the TS, Python and .NET clients."
   }
 ]
