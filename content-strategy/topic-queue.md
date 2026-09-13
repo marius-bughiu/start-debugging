@@ -149,7 +149,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to escape `%` and `_` wildcards in `EF.Functions.Like` and `StartsWith` queries in EF Core 11 → slug: 2026/09/how-to-escape-wildcards-in-ef-functions-like-and-startswith-in-ef-core-11
 - How to bind a complex query-string object with `[AsParameters]` in a minimal API in ASP.NET Core 11 → slug: 2026/09/how-to-bind-a-complex-query-string-object-with-asparameters-in-a-minimal-api
 - How to enable R8 shrinking and obfuscation for a .NET MAUI Android release build → slug: 2026/09/how-to-enable-r8-shrinking-and-obfuscation-for-a-dotnet-maui-android-release-build
-- How to intercept the Android back button on a .NET MAUI Shell root page
+- How to intercept the Android back button on a .NET MAUI Shell root page → slug: 2026/09/how-to-intercept-the-android-back-button-on-a-dotnet-maui-shell-root-page
 - How to create and extract zip files asynchronously with the `ZipArchive` async APIs in .NET 11
 
 ## Fix / error
