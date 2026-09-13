@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-09-06",
-  "totalEnglishPublishedPosts": 820,
+  "lastRun": "2026-09-13",
+  "totalEnglishPublishedPosts": 855,
   "note": "Counts mirror getPillarPosts() in site/src/lib/blog.ts: English, non-draft posts whose lowercased tags intersect the pillar's indexTags.",
   "pillars": {
     "aspnetcore-11-cheat-sheet": {
@@ -9,8 +9,9 @@
         "aspnet-core",
         "aspnet"
       ],
-      "count": 96,
-      "updatedDate": "2026-09-06",
+      "count": 99,
+      "previousCount": 96,
+      "updatedDate": "2026-09-13",
       "lastPassAction": "updated"
     },
     "async-and-concurrency-in-csharp": {
@@ -19,9 +20,10 @@
         "concurrency",
         "threading"
       ],
-      "count": 36,
-      "updatedDate": "2026-09-06",
-      "lastPassAction": "created"
+      "count": 38,
+      "previousCount": 36,
+      "updatedDate": "2026-09-13",
+      "lastPassAction": "updated"
     },
     "coding-agents-tracker": {
       "indexTags": [
@@ -34,8 +36,9 @@
         "agent-skills",
         "microsoft-agent-framework"
       ],
-      "count": 186,
-      "updatedDate": "2026-09-06",
+      "count": 195,
+      "previousCount": 186,
+      "updatedDate": "2026-09-13",
       "lastPassAction": "updated"
     },
     "csharp-14-features": {
@@ -47,8 +50,9 @@
         "csharp",
         "c# language"
       ],
-      "count": 304,
-      "updatedDate": "2026-09-06",
+      "count": 310,
+      "previousCount": 304,
+      "updatedDate": "2026-09-13",
       "lastPassAction": "updated"
     },
     "dotnet-11-tracker": {
@@ -60,8 +64,9 @@
         "dotnet",
         ".net"
       ],
-      "count": 476,
-      "updatedDate": "2026-09-06",
+      "count": 490,
+      "previousCount": 476,
+      "updatedDate": "2026-09-13",
       "lastPassAction": "updated"
     },
     "efcore-11-cheat-sheet": {
@@ -72,8 +77,9 @@
         "efcore-11",
         "entity-framework"
       ],
-      "count": 76,
-      "updatedDate": "2026-09-06",
+      "count": 85,
+      "previousCount": 76,
+      "updatedDate": "2026-09-13",
       "lastPassAction": "updated"
     },
     "flutter-tracker": {
@@ -81,8 +87,9 @@
         "flutter",
         "dart"
       ],
-      "count": 106,
-      "updatedDate": "2026-09-06",
+      "count": 114,
+      "previousCount": 106,
+      "updatedDate": "2026-09-13",
       "lastPassAction": "updated"
     },
     "maui-xamarin-tracker": {
@@ -92,8 +99,9 @@
         "xamarin",
         "xamarin-forms"
       ],
-      "count": 50,
-      "updatedDate": "2026-09-06",
+      "count": 51,
+      "previousCount": 50,
+      "updatedDate": "2026-09-13",
       "lastPassAction": "updated"
     }
   }

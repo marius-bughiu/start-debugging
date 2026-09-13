@@ -3,7 +3,7 @@ title: "The MAUI & Xamarin tracker"
 description: ".NET MAUI and Xamarin in one place: the MAUI 11 release cycle, CoreCLR-on-mobile, gesture and map work, the Xamarin.Forms migration story, and the long tail of build errors."
 tagline: "One bookmark for .NET MAUI and the Xamarin posts that still pay rent."
 pubDate: 2026-05-17
-updatedDate: 2026-09-06
+updatedDate: 2026-09-13
 indexTags:
   - "maui"
   - "dotnet-maui"
@@ -15,7 +15,7 @@ This pillar collects every post on the site about **.NET MAUI and Xamarin.Forms*
 
 ## What to read first
 
-For the current release cycle, [MAUI mobile is CoreCLR only in .NET 11 Preview 6](/2026/07/maui-coreclr-only-runtime-in-dotnet-11-preview-6/) is the change to plan for: the Mono escape hatch Preview 4's [CoreCLR-by-default switch](/2026/05/maui-coreclr-default-android-ios-dotnet-11-preview-4/) left open is gone, and [migrating an Android app from Mono to CoreCLR](/2026/09/migrate-a-dotnet-maui-android-app-from-mono-to-coreclr-in-dotnet-11/) covers the API 24 floor and the MSBuild properties that now break your build. [dotnet watch reaching MAUI on Android and iOS](/2026/05/dotnet-watch-maui-android-ios-net-11-preview-4/) is still the biggest day-to-day loop win. [What's new in .NET MAUI 10](/2025/04/whats-new-in-net-maui-10/) is the right starting point coming from MAUI 8 or 9.
+For the current release cycle, [MAUI mobile is CoreCLR only in .NET 11 Preview 6](/2026/07/maui-coreclr-only-runtime-in-dotnet-11-preview-6/) is the change to plan for: the Mono escape hatch Preview 4's [CoreCLR-by-default switch](/2026/05/maui-coreclr-default-android-ios-dotnet-11-preview-4/) left open is gone, and [migrating an Android app from Mono to CoreCLR](/2026/09/migrate-a-dotnet-maui-android-app-from-mono-to-coreclr-in-dotnet-11/) covers the API 24 floor and the MSBuild properties that now break your build. [dotnet watch reaching MAUI on Android and iOS](/2026/05/dotnet-watch-maui-android-ios-net-11-preview-4/) is still the biggest day-to-day loop win. Once shipped, [tracing Android ANRs back to async void handlers](/2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app/) turns Play Console's native stack into C#.
 
 Migrating off Xamarin.Forms? Start with [Migrate from Xamarin.Forms 5.0 to .NET MAUI 11: the full checklist](/2026/05/migrate-from-xamarin-forms-to-maui-11/), then [migrating a ListView to CollectionView](/2026/05/how-to-migrate-a-xamarin-forms-listview-to-maui-collectionview/) for the trickiest control swap; pair it with [packaging for the Microsoft Store](/2026/05/how-to-package-a-maui-app-for-the-microsoft-store/) when you're ready to ship. On Android, [targeting API level 36](/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36/) is now required for Play updates, and watch out for [the 16 KB page size rejection](/2026/08/fix-google-play-rejects-flutter-or-maui-app-for-16-kb-page-size/) and [the "doesn't support required ABI" install failure](/2026/08/fix-doesnt-support-required-abi-when-installing-a-dotnet-maui-android-app/). Greenfield? [MAUI vs Avalonia vs Uno Platform](/2026/05/maui-vs-avalonia-vs-uno-in-2026/) settles that fork.
 
