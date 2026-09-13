@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/how-to-intercept-the-android-back-button-on-a-dotnet-maui-shell-root-page",
-    "text": "Your .NET MAUI root page's OnBackButtonPressed override is never called on 10.0.70-10.0.100 or .NET 11 RC 1: MAUI disables its Android back callback when nothing can be popped. 10.0.101 fixes it. Shell.OnNavigating and BackButtonBehavior.Command still won't catch the hardware back on a root page."
   }
 ]
