@@ -54,9 +54,5 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
-  },
-  {
-    "slug": "2026/09/agent-framework-1-21-localcodeact-stops-inheriting-host-environment",
-    "text": "Microsoft Agent Framework .NET 1.21.0 fixes a LocalCodeAct default: with Environment left null, model-written Python inherited the whole host environment, and the validator allows reading os.environ. I ran the same probe on both versions: 1.20 printed a fake API key, 1.21 prints NOT_FOUND."
   }
 ]
