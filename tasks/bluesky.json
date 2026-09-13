@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/how-to-enable-r8-shrinking-and-obfuscation-for-a-dotnet-maui-android-release-build",
-    "text": "Set AndroidLinkTool=r8 in MAUI and R8 shrinks your DEX, but .NET 10 and 11 RC 1 still force -dontobfuscate. What changes next."
   }
 ]
