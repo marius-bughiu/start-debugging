@@ -54,5 +54,9 @@
   {
     "slug": "2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component",
     "text": "A Blazor render mode decides where a component runs and whether it handles events, and almost every component inherits one rather than declaring it. So a dead button is a parent problem. For ground truth read AssignedRenderMode and RendererInfo.IsInteractive: they disagree on purpose during prerendering."
+  },
+  {
+    "slug": "2026/09/how-to-bind-a-complex-query-string-object-with-asparameters-in-a-minimal-api",
+    "text": "Binding a query-string filter object in an ASP.NET Core 11 minimal API: [FromQuery] fails with ASP0020, [AsParameters] flattens the type. Measured on .NET 11 RC 1: a property initializer does not make a key optional, enums bind case-sensitively, and positional records with string? break the Native AOT generator."
   }
 ]
