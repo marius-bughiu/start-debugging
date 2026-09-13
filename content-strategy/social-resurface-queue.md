@@ -36,16 +36,6 @@ Move approved entries under `## Approved`, remove after posting.
 
 <!-- The scheduled task appends new entries here. Stale drafts (>14 days) are culled on the next run. -->
 
-### 2026-08-23 drafted - record-vs-class-vs-struct-in-csharp-a-decision-matrix
-
-**Original:** 2026-05-20 - record vs class vs struct in C#: a decision matrix
-
-**Bluesky:** customer = customer with { Email = next } emits no UPDATE. The with expression builds a new instance the EF Core change tracker has never seen, and it still holds the old reference. Records make good DTOs and bad tracked entities.
-
-**Mastodon:** Three questions, stop at the first yes. 1. Does the type have identity, or own changing state over time? class. 2. Is it immutable, value-equal, and 16 bytes or less? readonly record struct. 3. Still immutable data with value equality? record. Two traps it does not cover. A record holding a List<int> compares unequal, because value equality falls back to reference equality there. And default(Money) is a valid instance, since a struct is never null.
-
-**Notes:** Highest word count among eligible evergreens (2728 words, 6 internal links) once the 2026-08-16 pick is excluded, and it anchors a five-post C# fundamentals cluster, so the outbound links keep working. Both GSC files (gsc-candidates.json, gsc-rising.json) are empty arrays this week, so there was no traction signal to weigh and depth decided it. It also moves the run off framework-specific errors: the last three slots were Blazor validation, EF Core concurrency, and an MSBuild reference failure. Fresh angle: the original social copy was the three-line summary of the recommendation, default to class, record for value-equal data, readonly record struct for hot loops. Neither of these repeats it. Bluesky takes the EF Core trap where a with expression silently produces no UPDATE, which is the most expensive mistake in the post. Mastodon carries the three-question matrix plus the two gotchas that pick for you, the List<int> equality fallback and default(struct) being a valid value.
-
 ### 2026-08-30 drafted - flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026
 
 **Original:** 2026-05-27 - Flutter vs React Native vs .NET MAUI: which should you pick for a new mobile project in 2026?
@@ -65,6 +55,16 @@ Move approved entries under `## Approved`, remove after posting.
 **Mastodon:** Four .NET 11 behaviour changes that compile fine and fail in production. 1. HttpClient enforces SNI strictly, so an internal cert with no matching SAN throws AuthenticationException. 2. DateTime.Parse rejects ambiguous input that 4.8 accepted, so pass InvariantCulture and an explicit format. 3. appsettings.json binding is case sensitive, maxretries does not bind to MaxRetries. 4. A transitive System.Data.SqlClient pin builds, then fails on TLS 1.3.
 
 **Notes:** Longest eligible evergreen at 3019 words and joint-top on internal links with 9 outbound, anchoring the .NET migration cluster, so the link equity keeps working. Both GSC files hold only site: queries this week (gsc-candidates.json is two tag-listing rows, gsc-rising.json is five site: rows), so there was no topical traction signal and depth plus link count decided it. It also moves the run off the last three picks, an MSBuild reference failure, the C# type decision matrix, and the mobile framework bake-off. Fresh angle: the obvious copy for a migration playbook is the breakage table, System.Web is gone and WebForms has no path, which every porting post already says. Neither of these repeats it. Bluesky takes the one step whose ordering is a one way door, since BinaryFormatter blobs are only readable on the runtime you are about to delete and nobody sequences that until it is too late. Mastodon carries the post-cutover gotchas, the four behaviour differences that build clean and surface in production.
+
+### 2026-09-13 drafted - dart-records-vs-freezed-classes
+
+**Original:** 2026-05-27 - Dart records vs Freezed classes: which should you pick in 2026?
+
+**Bluesky:** typedef User = ({int id, String email}); does not create a type in Dart. It aliases a shape, so a Customer typedef with the same fields is the same type and the compiler lets you pass one for the other. That is where a record should become a Freezed class.
+
+**Mastodon:** Dart records vs Freezed is not a performance call. On a Pixel 8 with Dart 3.12 AOT, a five field record allocates in 18 ns and a Freezed 3.x class in 24 ns, with == at 11 vs 14 ns. The number you feel is build_runner: 4.1 s cold for 50 Freezed classes, 15 to 25 s at 200. So decide on shape. If the field names belong in your crash logs, or the type needs copyWith, JSON, or a sealed union, write a Freezed class. Otherwise, a record.
+
+**Notes:** Second longest eligible evergreen at 2619 words with 6 internal links, into the Flutter state management cluster (GetX to Riverpod, isolates, DevTools jank). The longest, maui-vs-avalonia-vs-uno-in-2026 (2637 words), was passed over because it is a second cross platform framework bake-off two weeks after the Flutter vs RN vs MAUI pick. This one also breaks the .NET run left by the 09-06 migration pick. gsc-rising.json is empty and gsc-candidates.json has only single impression queries, none on Dart, so depth decided it. Fresh angle: the obvious copy is the post's own summary, record for local shapes and Freezed for domain models. Neither hook repeats it. Bluesky takes the structural typing trap, where a typedef looks like a named type but gives no nominal safety. Mastodon uses the benchmark table to take performance off the table and names build_runner time as the real cost, then gives the crash log heuristic as the deciding test.
 
 ---
 
