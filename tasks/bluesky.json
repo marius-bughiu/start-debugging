@@ -30,9 +30,5 @@
   {
     "slug": "2026/08/what-is-the-difference-between-a-dart-isolate-and-a-thread",
     "text": "An isolate is not a thread: own heap, one event loop, messages only. Every send is a copy, and there are two ways out."
-  },
-  {
-    "slug": "2026/09/how-to-bind-a-complex-query-string-object-with-asparameters-in-a-minimal-api",
-    "text": "Minimal API query filters: [AsParameters] binds them flat, but int Page { get; set; } = 1 still makes page required."
   }
 ]
