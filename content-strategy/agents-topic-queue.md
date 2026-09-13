@@ -102,7 +102,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: an MCP server never starts because an enterprise allowlist blocks its command or URL → slug: 2026/08/fix-mcp-server-blocked-by-enterprise-allowlist
 - Fix: a remote MCP server returns `401 invalid_token` because the token's `aud` doesn't match the canonical server URL → slug: 2026/09/fix-mcp-401-invalid-token-audience-does-not-match-server-url
 - Fix: an MCP client drops the `Authorization` header across a 308 cross-origin redirect and gets a 401 → slug: 2026/09/fix-mcp-client-drops-authorization-header-on-cross-origin-redirect
-- Fix: Cursor Agent won't initialise - "extension host didn't finish starting within 60 seconds"
+- Fix: Cursor Agent won't initialise - "extension host didn't finish starting within 60 seconds" → slug: 2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds
 - Fix: a coding agent loops forever re-running a check it can't satisfy with the tools it has
 - Fix: a `PreToolUse` hook returns `allow` but a later deny rule still blocks the tool call
 - Fix: Copilot can't see a file because a content exclusion rule removed it from the index
