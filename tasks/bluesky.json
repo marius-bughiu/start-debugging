@@ -34,5 +34,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
+  },
+  {
+    "slug": "2026/09/dapper-2-1-86-brings-back-dateonly-and-timeonly-support",
+    "text": "Dapper 2.1.79: QuerySingle<DateOnly> returns 0001-01-01, no error. 2.1.86 fixes it and brings DateOnly/TimeOnly back."
   }
 ]
