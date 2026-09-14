@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/fix-nullable-object-must-have-a-value-in-an-ef-core-11-projection",
-    "text": "EF Core's 'Nullable object must have a value' means your Select read a SQL NULL into an int or decimal: an optional navigation, or Max/Average over an empty collection (Sum is safe). Cast to int? and add ?? 0. One case is new in EF Core 11 RC 1: a JSON complex collection plus a collection navigation in one Select."
   }
 ]
