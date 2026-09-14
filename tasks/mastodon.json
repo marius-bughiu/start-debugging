@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/how-to-create-and-extract-zip-files-asynchronously-with-ziparchive-in-dotnet-11",
+    "text": "Streaming a ZIP from ASP.NET Core with ZipArchive.CreateAsync, OpenAsync and await using works on .NET 11 RC 1. On .NET 10.0.12 the entry stream's DisposeAsync falls back to a sync Write: the client gets a 200 and a 130-byte broken archive. Measured matrix, the .NET 10 workaround, and why async zipping is not faster."
   }
 ]
