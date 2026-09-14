@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/dapper-2-1-86-brings-back-dateonly-and-timeonly-support",
-    "text": "Dapper 2.1.86 turns DateOnly/TimeOnly mapping back on after two years compiled out. Parameters, members and scalars all work now. Upgrade gotcha: an existing TypeHandler<DateOnly> is bypassed for parameters and members, so a custom date format silently stops being written."
   }
 ]
