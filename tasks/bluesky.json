@@ -34,5 +34,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
+  },
+  {
+    "slug": "2026/09/fix-nullable-object-must-have-a-value-in-an-ef-core-11-projection",
+    "text": "EF Core 'Nullable object must have a value' is a SQL NULL meeting a non-nullable int. Max over an empty set is the usual suspect."
   }
 ]
