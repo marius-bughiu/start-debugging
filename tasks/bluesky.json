@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/fix-could-not-load-file-or-assembly-microsoft-data-sqlclient-version-7-0-0-0",
-    "text": "EF Core 11 wants Microsoft.Data.SqlClient 7.0.0.0. When a 6.x pin or a stale deploy wins, you get FileNotFoundException. Find it fast."
   }
 ]

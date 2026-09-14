@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/fix-could-not-load-file-or-assembly-microsoft-data-sqlclient-version-7-0-0-0",
-    "text": "After updating to EF Core 11, 'Could not load file or assembly Microsoft.Data.SqlClient, Version=7.0.0.0' means a 6.x SqlClient won: a leftover pin with NU1605 silenced, or a deploy that dropped runtimes/. The runtime says 'cannot find the file' even when the 6.x DLL sits at the right path. Reproduced, with a fast diagnosis."
   }
 ]
