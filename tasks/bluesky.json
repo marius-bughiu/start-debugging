@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/fix-coding-agent-loops-re-running-a-check-it-cannot-satisfy",
-    "text": "Your Stop hook blocks on a test the sandbox can't run, so the agent loops until the 8-block cap. Exit code 78 plus a memory fixes it."
   }
 ]

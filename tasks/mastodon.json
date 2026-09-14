@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/fix-coding-agent-loops-re-running-a-check-it-cannot-satisfy",
-    "text": "A coding agent that keeps re-running the same failing check is usually obeying a gate it can never pass: a Stop hook demanding integration tests in a sandbox with no database. Claude Code ends it after 8 consecutive blocks (2.1.143+). Better: give 'cannot run here' its own exit code and let the hook give up on a repeat failure."
   }
 ]
