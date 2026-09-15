@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/fix-pretooluse-hook-allow-still-blocked-by-deny-rule",
-    "text": "Claude Code PreToolUse hook returns \"allow\", tool call still denied? Since 2.1.77 a hook's allow only skips the prompt: deny and ask rules are checked after every hook. Find the rule with /permissions, drop it, and let the hook own deny too. Gotcha: a hook allow approves the whole Bash string, so guard against ; && and $()."
   }
 ]

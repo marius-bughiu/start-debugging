@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/fix-pretooluse-hook-allow-still-blocked-by-deny-rule",
-    "text": "Your PreToolUse hook says allow and Claude Code still blocks the call? Deny and ask rules run after hooks. Here's the fix."
   }
 ]
