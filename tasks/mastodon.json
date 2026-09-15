@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/fix-aspnetcore-api-endpoints-return-401-instead-of-redirecting-to-login-dotnet-10",
+    "text": "Upgraded to .NET 10 and cookie auth stopped redirecting to the login page? [ApiController], JSON minimal APIs and TypedResults now get 401/403 by design. Results.Ok still redirects, TypedResults.Ok does not. Measured 9.0.20 vs 10.0.10, plus the undocumented IgnoreRedirectMetadata switch."
   }
 ]
