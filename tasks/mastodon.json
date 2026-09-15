@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/fix-flutter-doctor-android-licenses-fails-with-cmdline-tools-23",
-    "text": "cmdline-tools 23.0 deprecated sdkmanager: --licenses now prints 'no longer needed' and exits, so Flutter up to 3.47.2 reports 'Android license status unknown' whatever is on disk. Tested 3.44.8 vs 3.47.3, plus the gotcha: on 23.0 installing any package writes the license file for you."
   }
 ]
