@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/fix-migrateasync-canconnectasync-keep-retrying-on-login-failed-for-user-ef-core",
+    "text": "Wrong password, and EF Core's MigrateAsync or CanConnectAsync hangs 60 seconds before failing? SqlServerDatabaseCreator retries SQL error 18456 every 500 ms, whether or not EnableRetryOnFailure is on. Measured on EF Core 10.0.12 and 11 RC 1: 121 attempts. Open the connection first to fail fast; the real fix lands in EF Core 12."
   }
 ]
