@@ -34,5 +34,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
+  },
+  {
+    "slug": "2026/09/dotnet-11-jit-devirtualizes-generic-virtual-methods",
+    "text": ".NET 11's JIT devirtualizes generic virtual methods: 6.7 ns and 24 B becomes 1.8 ns and zero allocation."
   }
 ]

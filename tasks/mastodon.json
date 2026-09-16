@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/dotnet-11-jit-devirtualizes-generic-virtual-methods",
+    "text": "Generic virtual methods were the slowest dispatch in .NET: the JIT only saw an opaque function pointer and could not inline through it. Three RyuJIT pull requests fixed that in .NET 11. 6.678 ns and 24 B becomes 1.764 ns and zero allocation, because once the call inlines, escape analysis deletes the receiver."
   }
 ]
