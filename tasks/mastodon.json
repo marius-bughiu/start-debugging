@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/sql-server-compatibility-level-150-vs-160-what-changes-for-ef-core-11-queries",
+    "text": "EF Core 11 quietly moved UseSqlServer from compatibility level 150 to 160. On SQL Server 2022 that means cleaner SQL. On SQL Server 2019 it means runtime errors: Math.Min in projections, inline-array Max, and even Take(n).FirstOrDefault() now emit LEAST/GREATEST. The fix is one line, and I measured every shape that changes."
   }
 ]
