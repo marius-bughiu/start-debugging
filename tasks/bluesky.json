@@ -34,5 +34,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
+  },
+  {
+    "slug": "2026/09/fix-unexpected-failure-parsing-device-information-from-adb-output-in-flutter",
+    "text": "Flutter 3.47.0 hides any Android device whose adb serial is 22+ chars: all wireless ones, some USB. 3.47.1 fixes it. Here's why:"
   }
 ]
