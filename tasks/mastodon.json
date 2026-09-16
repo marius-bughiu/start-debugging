@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/fix-unexpected-failure-parsing-device-information-from-adb-output-in-flutter",
-    "text": "\"Unexpected failure parsing device information from adb output\" in Flutter 3.47.0 is a regex bug: adb pads serials to 22 chars plus one space, and 3.47.0 wanted two. Wireless and long USB serials vanish from flutter devices and your IDE. Fix: 3.47.1+. Stuck? adb connect by IP. Detached devices still fail on 3.47.4."
   }
 ]
