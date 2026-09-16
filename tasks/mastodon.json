@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/fix-copilot-cannot-see-a-file-excluded-by-content-exclusion",
-    "text": "Copilot acting like a file doesn't exist? That's a content exclusion rule, not the index. Here's how to find which pattern matched without admin access, and why src/config/x.json (no leading slash) matches nothing while secrets.json hides every copy in the repo."
   }
 ]
