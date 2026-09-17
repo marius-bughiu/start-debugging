@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/process-run-vs-process-start-in-dotnet-11",
-    "text": "Process.Run in .NET 11 kills the child on timeout and reports the signal. Not grandchildren, and RunAsync never throws on cancel."
   }
 ]
