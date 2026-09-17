@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/microsoft-data-sqlclient-vs-system-data-sqlclient-in-dotnet-11",
-    "text": "Microsoft.Data.SqlClient vs System.Data.SqlClient on .NET 11: the old package is deprecated, warns CS0618 on every type, and has no TDS 8.0, so no TLS 1.3. The migration trap is Encrypt, false by default in the old driver and true since 4.0 in the new one. Reach for HostNameInCertificate, not TrustServerCertificate=true. Measured: 7.0.3 publishes 10.2 MB smaller than 6.1.7."
   }
 ]
