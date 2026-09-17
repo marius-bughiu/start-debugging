@@ -106,7 +106,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: a coding agent loops forever re-running a check it can't satisfy with the tools it has → slug: 2026/09/fix-coding-agent-loops-re-running-a-check-it-cannot-satisfy
 - Fix: a `PreToolUse` hook returns `allow` but a later deny rule still blocks the tool call → slug: 2026/09/fix-pretooluse-hook-allow-still-blocked-by-deny-rule
 - Fix: Copilot can't see a file because a content exclusion rule removed it from the index → slug: 2026/09/fix-copilot-cannot-see-a-file-excluded-by-content-exclusion
-- Fix: Claude Code ignores `AGENTS.md` - import it from `CLAUDE.md` or symlink it
+- Fix: Claude Code ignores `AGENTS.md` - import it from `CLAUDE.md` or symlink it → slug: 2026/09/fix-claude-code-ignores-agents-md
 
 ## Vs / comparison
 
