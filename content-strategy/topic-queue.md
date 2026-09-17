@@ -351,7 +351,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `Lookup<TKey, TElement>` vs `Dictionary<TKey, List<TValue>>` for duplicate keys in C# → slug: 2026/09/lookup-vs-dictionary-of-lists-for-duplicate-keys-in-csharp
 - Native `json` column vs `nvarchar(max)` for storing JSON in SQL Server with EF Core 11 → slug: 2026/09/json-vs-nvarchar-max-for-storing-json-in-sql-server-with-ef-core-11
 - SQL Server compatibility level 150 vs 160: what changes for EF Core 11 queries → slug: 2026/09/sql-server-compatibility-level-150-vs-160-what-changes-for-ef-core-11-queries (measured on EF Core 11 RC 1 vs 10.0.12: EF 10 at 160 == EF 11 default; Take(n).FirstOrDefault becomes TOP(LEAST(@p, 1)), so SQL Server 2019 apps must pin 150; LTRIM/RTRIM with chars also needs database level 160)
-- CanvasKit vs skwasm for Flutter web in 2026
+- CanvasKit vs skwasm for Flutter web in 2026 → slug: 2026/09/canvaskit-vs-skwasm-for-flutter-web-in-2026
 - `Process.Run` vs `Process.Start` in .NET 11
 - `Microsoft.Data.SqlClient` vs `System.Data.SqlClient` in .NET 11
 
