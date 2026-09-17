@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/fix-claude-code-ignores-agents-md",
-    "text": "Claude Code still skips AGENTS.md. @AGENTS.md or a symlink fixes it, unless you launch from a subdirectory or clone on Windows."
   }
 ]
