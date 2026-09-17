@@ -353,7 +353,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - SQL Server compatibility level 150 vs 160: what changes for EF Core 11 queries → slug: 2026/09/sql-server-compatibility-level-150-vs-160-what-changes-for-ef-core-11-queries (measured on EF Core 11 RC 1 vs 10.0.12: EF 10 at 160 == EF 11 default; Take(n).FirstOrDefault becomes TOP(LEAST(@p, 1)), so SQL Server 2019 apps must pin 150; LTRIM/RTRIM with chars also needs database level 160)
 - CanvasKit vs skwasm for Flutter web in 2026 → slug: 2026/09/canvaskit-vs-skwasm-for-flutter-web-in-2026
 - `Process.Run` vs `Process.Start` in .NET 11 → slug: 2026/09/process-run-vs-process-start-in-dotnet-11 (verified on .NET 11 RC 1: Run's timeout/cancellation SIGKILLs only the direct child, grandchildren survive; RunAsync returns Canceled=true instead of throwing; spawn cost identical, ~740 us on M4)
-- `Microsoft.Data.SqlClient` vs `System.Data.SqlClient` in .NET 11
+- `Microsoft.Data.SqlClient` vs `System.Data.SqlClient` in .NET 11 → slug: 2026/09/microsoft-data-sqlclient-vs-system-data-sqlclient-in-dotnet-11 (verified against MDS 7.0.3 and SDS 4.9.1 on SDK 10.0.302: SDS emits CS0618 on every public type, Encrypt default False vs True, 10 connection-string keywords MDS-only, publish output 1.07 MB vs 7.35 MB vs 17.3 MB for MDS 6.1.7)
 
 ## Migration / upgrade
 
