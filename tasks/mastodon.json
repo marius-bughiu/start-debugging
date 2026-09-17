@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/canvaskit-vs-skwasm-for-flutter-web-in-2026",
-    "text": "Benchmarked CanvasKit vs skwasm on Flutter 3.47.4: skwasm downloads 330 KB less and presented 36% more frames on a heavy scene, and Firefox and Safari still get CanvasKit from the same --wasm build. On 3.47.x, force single-threaded skwasm: the multi-threaded text crash fix is only in 3.48 beta."
   }
 ]
