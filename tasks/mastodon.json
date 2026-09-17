@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/mstest-4-4-1-fixes-cs0121-ambiguous-assert-calls-below-csharp-14",
+    "text": "Upgraded to MSTest 4.4.0 on net8.0 and your tests stopped compiling with CS0121? The new Span<T> overloads on Assert.Contains and DoesNotContain are ambiguous below C# 14. MSTest 4.4.1 adds exact array overloads. I measured the version matrix and the two calls that still fail."
   }
 ]
