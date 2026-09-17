@@ -352,7 +352,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Native `json` column vs `nvarchar(max)` for storing JSON in SQL Server with EF Core 11 → slug: 2026/09/json-vs-nvarchar-max-for-storing-json-in-sql-server-with-ef-core-11
 - SQL Server compatibility level 150 vs 160: what changes for EF Core 11 queries → slug: 2026/09/sql-server-compatibility-level-150-vs-160-what-changes-for-ef-core-11-queries (measured on EF Core 11 RC 1 vs 10.0.12: EF 10 at 160 == EF 11 default; Take(n).FirstOrDefault becomes TOP(LEAST(@p, 1)), so SQL Server 2019 apps must pin 150; LTRIM/RTRIM with chars also needs database level 160)
 - CanvasKit vs skwasm for Flutter web in 2026 → slug: 2026/09/canvaskit-vs-skwasm-for-flutter-web-in-2026
-- `Process.Run` vs `Process.Start` in .NET 11
+- `Process.Run` vs `Process.Start` in .NET 11 → slug: 2026/09/process-run-vs-process-start-in-dotnet-11 (verified on .NET 11 RC 1: Run's timeout/cancellation SIGKILLs only the direct child, grandchildren survive; RunAsync returns Canceled=true instead of throwing; spawn cost identical, ~740 us on M4)
 - `Microsoft.Data.SqlClient` vs `System.Data.SqlClient` in .NET 11
 
 ## Migration / upgrade

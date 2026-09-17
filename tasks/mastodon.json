@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/process-run-vs-process-start-in-dotnet-11",
+    "text": "Process.Run or Process.Start in .NET 11? Run is one call, kills the child on timeout and returns a ProcessExitStatus with the signal, at the same ~740 us spawn cost. Keep Start for stdin, streaming output, UseShellExecute and tree kills: Run's timeout SIGKILLs only the direct child, so an npm or MSBuild worker keeps running."
   }
 ]
