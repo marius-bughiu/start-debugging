@@ -34,5 +34,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
+  },
+  {
+    "slug": "2026/09/copilot-code-review-vs-cursor-bugbot-vs-claude-code-review-action",
+    "text": "Copilot code review never reads your lockfiles or tsconfig.json. How it, Cursor Bugbot and a Claude Code review action really differ."
   }
 ]

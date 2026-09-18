@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/copilot-code-review-vs-cursor-bugbot-vs-claude-code-review-action",
+    "text": "Copilot code review, Cursor Bugbot, or a Claude Code review action? Only the Claude plugin re-checks every bug with a validation agent before posting. Gotcha: its first step skips PRs Claude already commented on, so a second push gets no second review. Plus a bake-off script to compare all three on your own PRs."
   }
 ]

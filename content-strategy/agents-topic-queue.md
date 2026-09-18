@@ -133,7 +133,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Stateful vs stateless MCP servers: what actually breaks when the session goes away → slug: 2026/08/stateful-vs-stateless-mcp-servers-what-breaks-when-the-session-goes-away
 - Agent Plugins 1.0 vs vendor-specific plugin formats: what the shared standard covers and what it doesn't → slug: 2026/08/agent-plugins-1-0-vs-vendor-specific-plugin-formats
 - Copilot memory vs repository custom instructions vs `AGENTS.md`: which one the model actually reads → slug: 2026/09/copilot-memory-vs-repository-custom-instructions-vs-agents-md
-- Copilot code review vs Cursor Bugbot vs a Claude Code review action: which catches what
+- Copilot code review vs Cursor Bugbot vs a Claude Code review action: which catches what → slug: 2026/09/copilot-code-review-vs-cursor-bugbot-vs-claude-code-review-action
 - Cursor sandbox providers compared: AWS Lambda vs Modal vs Cloudflare vs Vercel for agent tool execution
 - Local Ollama models vs cloud models in GitHub Copilot: what you give up
 
