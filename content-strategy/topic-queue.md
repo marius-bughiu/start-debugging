@@ -392,7 +392,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a .NET MAUI Android app to target Android API level 36 → slug: 2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36
 - Migrate a .NET solution to Central Package Management with `Directory.Packages.props` → slug: 2026/08/migrate-a-dotnet-solution-to-central-package-management-with-directory-packages-props
 - Migrate a Flutter Android project to AGP 9 with built-in Kotlin → slug: 2026/09/migrate-a-flutter-android-project-to-agp-9-with-built-in-kotlin
-- Migrate off `describeEnum` after its removal from Flutter
+- Migrate off `describeEnum` after its removal from Flutter → slug: 2026/09/migrate-off-describeenum-before-flutter-removes-it (removal PR #190076 still unmerged on 2026-09-18, post framed as pre-removal)
 - Raise a Flutter macOS app's minimum deployment target to macOS 12 for Xcode 27
 - Migrate an EF Core Cosmos app after the generated `id` escaping change
 - Migrate a Flutter Windows or Linux desktop app now that Impeller is the default renderer

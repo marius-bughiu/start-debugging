@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/migrate-off-describeenum-before-flutter-removes-it",
+    "text": "Flutter's docs list describeEnum as removed in 3.47, but 3.47.4, the 3.48 beta and master still have it. The removal PR is approved. Your own calls are a quick .name swap; the real risk is a dependency like flutter_svg 1.1.6 that breaks your build. Includes a script that scans the packages your app resolves."
   }
 ]
