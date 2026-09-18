@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/raise-a-flutter-macos-apps-minimum-deployment-target-to-macos-12-for-xcode-27",
-    "text": "Flutter 3.47 moves macOS apps from 10.15 to 12.0 for Xcode 27, and the migrator rewrites your project on the next build. It only matches exact stock values, though: a hand-edited 11.5 target or a Podfile post_install that pins pods to 10.14 survives and fails on Xcode 27. How to find and fix the leftovers."
   }
 ]

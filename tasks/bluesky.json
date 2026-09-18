@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/raise-a-flutter-macos-apps-minimum-deployment-target-to-macos-12-for-xcode-27",
-    "text": "Xcode 27 rejects macOS targets below 12. Flutter 3.47 auto-migrates stock projects but skips 11.5, 10.14.6 and Podfile overrides."
   }
 ]
