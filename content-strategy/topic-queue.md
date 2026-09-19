@@ -394,7 +394,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a Flutter Android project to AGP 9 with built-in Kotlin → slug: 2026/09/migrate-a-flutter-android-project-to-agp-9-with-built-in-kotlin
 - Migrate off `describeEnum` after its removal from Flutter → slug: 2026/09/migrate-off-describeenum-before-flutter-removes-it (removal PR #190076 still unmerged on 2026-09-18, post framed as pre-removal)
 - Raise a Flutter macOS app's minimum deployment target to macOS 12 for Xcode 27 → slug: 2026/09/raise-a-flutter-macos-apps-minimum-deployment-target-to-macos-12-for-xcode-27
-- Migrate an EF Core Cosmos app after the generated `id` escaping change
+- Migrate an EF Core Cosmos app after the generated `id` escaping change → slug: 2026/09/migrate-an-ef-core-cosmos-app-after-the-generated-id-escaping-change
 - Migrate a Flutter Windows or Linux desktop app now that Impeller is the default renderer
 - Migrate custom page transitions after the Flutter page transition builders reorganization
 - Migrate a Flutter iOS app from CocoaPods to Swift Package Manager
