@@ -1,1 +1,114 @@
-[]
+[
+  {
+    "query": "site:startdebugging.net/2026/06",
+    "currentPosition": 6.26,
+    "currentImpressions": 19,
+    "priorImpressions": 0,
+    "delta": 19,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/ru",
+    "currentPosition": 10.38,
+    "currentImpressions": 16,
+    "priorImpressions": 0,
+    "delta": 16,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/tag",
+    "currentPosition": 10.33,
+    "currentImpressions": 15,
+    "priorImpressions": 0,
+    "delta": 15,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/de",
+    "currentPosition": 12.43,
+    "currentImpressions": 14,
+    "priorImpressions": 0,
+    "delta": 14,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/ja",
+    "currentPosition": 11,
+    "currentImpressions": 14,
+    "priorImpressions": 0,
+    "delta": 14,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/es",
+    "currentPosition": 10.23,
+    "currentImpressions": 13,
+    "priorImpressions": 0,
+    "delta": 13,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/2023/10",
+    "currentPosition": 8.27,
+    "currentImpressions": 11,
+    "priorImpressions": 0,
+    "delta": 11,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/de/tag",
+    "currentPosition": 11,
+    "currentImpressions": 10,
+    "priorImpressions": 0,
+    "delta": 10,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/2023",
+    "currentPosition": 11,
+    "currentImpressions": 9,
+    "priorImpressions": 0,
+    "delta": 9,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/ja/tag",
+    "currentPosition": 11,
+    "currentImpressions": 9,
+    "priorImpressions": 0,
+    "delta": 9,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/ru/tag",
+    "currentPosition": 11,
+    "currentImpressions": 9,
+    "priorImpressions": 0,
+    "delta": 9,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/2023/09",
+    "currentPosition": 5.29,
+    "currentImpressions": 7,
+    "priorImpressions": 0,
+    "delta": 7,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/ru/2023/10",
+    "currentPosition": 11,
+    "currentImpressions": 6,
+    "priorImpressions": 0,
+    "delta": 6,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/2023/11",
+    "currentPosition": 7,
+    "currentImpressions": 5,
+    "priorImpressions": 0,
+    "delta": 5,
+    "ctr": 0
+  }
+]

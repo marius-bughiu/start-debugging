@@ -1,36 +1,57 @@
 [
   {
-    "query": "after decillion",
-    "position": 18,
-    "impressions": 1,
+    "query": "site:startdebugging.net/de",
+    "position": 12.43,
+    "impressions": 14,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "query": "c# record vs class",
+    "query": "site:startdebugging.net/ja",
     "position": 11,
-    "impressions": 1,
+    "impressions": 14,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "query": "dotnet ef",
-    "position": 13,
-    "impressions": 1,
+    "query": "site:startdebugging.net/de/tag",
+    "position": 11,
+    "impressions": 10,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "query": "google lighthouse audit",
-    "position": 20,
-    "impressions": 1,
+    "query": "site:startdebugging.net/2023",
+    "position": 11,
+    "impressions": 9,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "query": "how to run flutter app on iphone from windows",
-    "position": 20,
-    "impressions": 1,
+    "query": "site:startdebugging.net/ja/tag",
+    "position": 11,
+    "impressions": 9,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/ru/tag",
+    "position": 11,
+    "impressions": 9,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/ru/2023/10",
+    "position": 11,
+    "impressions": 6,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/es/tag",
+    "position": 11,
+    "impressions": 4,
     "clicks": 0,
     "ctr": 0
   }
