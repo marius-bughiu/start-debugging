@@ -1,24 +1,5 @@
 [
   {
-    "url": "https://aka.ms/azure-functions-retirements/in-process-model",
-    "status": 503,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/de/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/de/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/es/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/es/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/ja/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/ja/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/pt-br/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/pt-br/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/ru/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md",
-      "site/src/content/blog/ru/2026/06/migrate-from-in-process-azure-functions-to-isolated-worker.md"
-    ]
-  },
-  {
     "url": "https://api.dart.dev/stable/dart-core/LateInitializationError-class.html",
     "status": 404,
     "ok": false,
@@ -159,7 +140,7 @@
   },
   {
     "url": "https://dotnetfiddle.net/",
-    "status": 418,
+    "status": 403,
     "ok": false,
     "sources": [
       "site/src/content/blog/2023/06/how-to-start-programming-with-c.md",
@@ -985,9 +966,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Azure.Extensions.AspNetCore.DataProtection.Blobs",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "fetch failed",
     "sources": [
       "site/src/content/blog/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
       "site/src/content/blog/de/2026/06/fix-the-antiforgery-token-could-not-be-decrypted-in-aspnetcore.md",
@@ -1029,6 +1009,19 @@
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/09/microsoft-agent-framework-persistent-memory-with-azure-cosmos-db.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/EFCore.NamingConventions",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/how-to-apply-custom-naming-conventions-for-keys-foreign-keys-and-indexes-in-ef-core-11.md",
+      "site/src/content/blog/de/2026/09/how-to-apply-custom-naming-conventions-for-keys-foreign-keys-and-indexes-in-ef-core-11.md",
+      "site/src/content/blog/es/2026/09/how-to-apply-custom-naming-conventions-for-keys-foreign-keys-and-indexes-in-ef-core-11.md",
+      "site/src/content/blog/ja/2026/09/how-to-apply-custom-naming-conventions-for-keys-foreign-keys-and-indexes-in-ef-core-11.md",
+      "site/src/content/blog/pt-br/2026/09/how-to-apply-custom-naming-conventions-for-keys-foreign-keys-and-indexes-in-ef-core-11.md",
+      "site/src/content/blog/ru/2026/09/how-to-apply-custom-naming-conventions-for-keys-foreign-keys-and-indexes-in-ef-core-11.md"
     ]
   },
   {
@@ -1107,9 +1100,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Agents.AI.Workflows.Declarative",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/08/agent-framework-declarative-yaml-vs-code-first-orchestration.md"
     ]
@@ -1253,9 +1245,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools/",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/09/fix-missingmethodexception-argumentisempty-after-upgrading-ef-core-tools.md",
       "site/src/content/blog/de/2026/09/fix-missingmethodexception-argumentisempty-after-upgrading-ef-core-tools.md",
@@ -1296,9 +1287,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.Extensions.Http.Resilience",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
       "site/src/content/blog/de/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
@@ -1331,9 +1321,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Microsoft.SemanticKernel/",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/06/microsoft-agent-framework-vs-semantic-kernel-for-a-greenfield-net-agent.md",
       "site/src/content/blog/2026/07/migrate-a-semantic-kernel-app-to-microsoft-agent-framework-1-0.md"
@@ -1384,9 +1373,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/ModelContextProtocol/1.2.0",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/05/how-to-expose-an-ef-core-database-to-an-ai-agent-via-mcp.md"
     ]
@@ -1574,6 +1562,19 @@
     ]
   },
   {
+    "url": "https://www.nuget.org/packages/System.Data.SqlClient",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/microsoft-data-sqlclient-vs-system-data-sqlclient-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/09/microsoft-data-sqlclient-vs-system-data-sqlclient-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/09/microsoft-data-sqlclient-vs-system-data-sqlclient-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/09/microsoft-data-sqlclient-vs-system-data-sqlclient-in-dotnet-11.md",
+      "site/src/content/blog/pt-br/2026/09/microsoft-data-sqlclient-vs-system-data-sqlclient-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/09/microsoft-data-sqlclient-vs-system-data-sqlclient-in-dotnet-11.md"
+    ]
+  },
+  {
     "url": "https://www.nuget.org/packages/System.Linq.Async",
     "status": 404,
     "ok": false,
@@ -1614,9 +1615,8 @@
   },
   {
     "url": "https://www.nuget.org/packages/Testcontainers.PostgreSql",
-    "status": null,
+    "status": 404,
     "ok": false,
-    "error": "timeout",
     "sources": [
       "site/src/content/blog/2026/08/webapplicationfactory-vs-testcontainers-for-aspnetcore-integration-tests.md",
       "site/src/content/blog/de/2026/08/webapplicationfactory-vs-testcontainers-for-aspnetcore-integration-tests.md",
@@ -1698,19 +1698,6 @@
       "site/src/content/blog/ja/2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11.md",
       "site/src/content/blog/pt-br/2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11.md",
       "site/src/content/blog/ru/2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11.md"
-    ]
-  },
-  {
-    "url": "https://www.rfc-editor.org/rfc/rfc9111",
-    "status": 429,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
-      "site/src/content/blog/de/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
-      "site/src/content/blog/es/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
-      "site/src/content/blog/ja/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
-      "site/src/content/blog/pt-br/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
-      "site/src/content/blog/ru/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md"
     ]
   },
   {
