@@ -151,6 +151,17 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to enable R8 shrinking and obfuscation for a .NET MAUI Android release build → slug: 2026/09/how-to-enable-r8-shrinking-and-obfuscation-for-a-dotnet-maui-android-release-build
 - How to intercept the Android back button on a .NET MAUI Shell root page → slug: 2026/09/how-to-intercept-the-android-back-button-on-a-dotnet-maui-shell-root-page
 - How to create and extract zip files asynchronously with the `ZipArchive` async APIs in .NET 11 → slug: 2026/09/how-to-create-and-extract-zip-files-asynchronously-with-ziparchive-in-dotnet-11 (premise sharpened: the APIs shipped in .NET 10, but .NET 10 through 10.0.12 still does sync I/O on entry DisposeAsync and seekable Entries reads, dotnet/runtime#121624; fixed only in .NET 11 by PR #121938)
+- How to apply custom naming conventions for primary keys, foreign keys, and indexes in EF Core 11 migrations
+- How to guarantee idempotent message processing with EF Core when two app instances consume the same message
+- How to keep a database write and an Azure Blob Storage upload consistent in a single ASP.NET Core request
+- How to add custom table-name pluralization to `dotnet ef dbcontext scaffold` with `IPluralizer`
+- How to atomically append to a PostgreSQL `jsonb` array with EF Core and Npgsql
+- How to use an Oracle sequence to generate primary keys in EF Core
+- How to add the current user id to every log entry in ASP.NET Core without passing it through each method
+- How to block a Flutter `WebView` from navigating to external URLs with `NavigationDelegate`
+- How to keep a Flutter location-tracking task running in the background on Android 15
+- How to disable antiforgery validation for a single minimal API form endpoint in ASP.NET Core 11
+- How to serialize public fields such as `Vector3` and `Quaternion` with System.Text.Json
 
 ## Fix / error
 
@@ -290,6 +301,18 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `MigrateAsync` and `CanConnectAsync` keep retrying on `Login failed for user` with `EnableRetryOnFailure` in EF Core → slug: 2026/09/fix-migrateasync-canconnectasync-keep-retrying-on-login-failed-for-user-ef-core (measured on EF Core 10.0.12 and 11 RC 1: SqlServerDatabaseCreator retries 18456 for its 1-minute RetryTimeout with or without EnableRetryOnFailure, 121 attempts; fix dotnet/efcore#38927 is EF Core 12 only, not on release/10.0 or release/11.0)
 - Fix: `UIKitThreadAccessException` from `MediaPicker.PickPhotosAsync` when selecting multiple photos in .NET MAUI iOS (premise sharpened: PickPhotosAsync/PickVideosAsync only, 2+ items, regressed in MAUI 10.0.100 by #35805; fix #37879 lands in 10.0.110 / 11.0.0-rc.2) → slug: 2026/09/fix-uikitthreadaccessexception-from-mediapicker-pickphotosasync-in-maui-ios
 - Fix: `Unexpected failure parsing device information from adb output` in Flutter → slug: 2026/09/fix-unexpected-failure-parsing-device-information-from-adb-output-in-flutter (root cause pinned: Flutter 3.47.0 required two spaces before the adb state, but adb prints `%-22s %s`, so 22+ char serials (all wireless mDNS, some USB) fail; fixed in 3.47.1 by #189973 via #191296; `detached` state still fails on 3.47.4)
+- Fix: custom `DelegatingHandler` does not run again on each retry with `AddStandardResilienceHandler`
+- Fix: `IConfiguration.Bind` does not populate an array or `List<T>` property from appsettings.json
+- Fix: `Conflicting assets with the same target path` from static web asset compression in ASP.NET Core 10
+- Fix: `HttpIOException: The response ended prematurely` from `HttpClient` in .NET
+- Fix: `Unable to find the required 'IAuthenticationService'` when using `[Authorize(Policy = ...)]` in Blazor Server
+- Fix: ASP.NET Core returns 400 `The X field is required` for a non-nullable `string` property
+- Fix: `Failed to decode advisories for archive from https://pub.dev` in `flutter pub get`
+- Fix: `Daemon compilation failed: null` in a Flutter Android Gradle build
+- Fix: Flutter debugger jumps into `binding.dart` on hot reload with no error shown
+- Fix: YouTube embed shows `Video unavailable` (Error 152 / 153) in Flutter with `youtube_player_iframe`
+- Fix: `MediaPicker.CapturePhotoAsync` returns a PNG instead of a JPEG in .NET MAUI 10
+- Fix: .NET MAUI `Entry` with `Keyboard.Numeric` shows the small numpad then switches to the full keyboard on iOS 26
 
 ## Vs / comparison
 
@@ -354,6 +377,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - CanvasKit vs skwasm for Flutter web in 2026 → slug: 2026/09/canvaskit-vs-skwasm-for-flutter-web-in-2026
 - `Process.Run` vs `Process.Start` in .NET 11 → slug: 2026/09/process-run-vs-process-start-in-dotnet-11 (verified on .NET 11 RC 1: Run's timeout/cancellation SIGKILLs only the direct child, grandchildren survive; RunAsync returns Canceled=true instead of throwing; spawn cost identical, ~740 us on M4)
 - `Microsoft.Data.SqlClient` vs `System.Data.SqlClient` in .NET 11 → slug: 2026/09/microsoft-data-sqlclient-vs-system-data-sqlclient-in-dotnet-11 (verified against MDS 7.0.3 and SDS 4.9.1 on SDK 10.0.302: SDS emits CS0618 on every public type, Encrypt default False vs True, 10 connection-string keywords MDS-only, publish output 1.07 MB vs 7.35 MB vs 17.3 MB for MDS 6.1.7)
+- `Volatile.Read` vs `Volatile.ReadBarrier` in .NET 10
 
 ## Migration / upgrade
 
@@ -434,6 +458,10 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is transparent struct layout and why does a single-field wrapper struct change the calling convention in .NET?
 - What is a Flutter flavor and how is it different from a build mode?
 - What is a compiled model in EF Core 11 and when is `EFOptimizeContext` worth enabling?
+- What is ref-safe-context in C# and how does the compiler decide it for ref locals?
+- What does a C# `with` expression actually copy, and why don't computed record properties recalculate?
+- What decides whether EF Core scaffolds a SQL Server `date` column as `DateOnly` or `DateTime`?
+- What is the difference between a source-breaking and a binary-breaking change in a .NET library?
 
 ---
 
