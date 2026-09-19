@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/how-to-apply-custom-naming-conventions-for-keys-foreign-keys-and-indexes-in-ef-core-11",
+    "text": "One IModelFinalizingConvention renames every PK_, FK_, AK_ and IX_ EF Core 11 generates, and explicit HasName calls still win. The catch: on an existing database the next migration drops and re-adds every key just to rename it. Swap those for sp_rename or RENAME CONSTRAINT."
   }
 ]

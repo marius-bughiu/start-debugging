@@ -151,7 +151,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to enable R8 shrinking and obfuscation for a .NET MAUI Android release build → slug: 2026/09/how-to-enable-r8-shrinking-and-obfuscation-for-a-dotnet-maui-android-release-build
 - How to intercept the Android back button on a .NET MAUI Shell root page → slug: 2026/09/how-to-intercept-the-android-back-button-on-a-dotnet-maui-shell-root-page
 - How to create and extract zip files asynchronously with the `ZipArchive` async APIs in .NET 11 → slug: 2026/09/how-to-create-and-extract-zip-files-asynchronously-with-ziparchive-in-dotnet-11 (premise sharpened: the APIs shipped in .NET 10, but .NET 10 through 10.0.12 still does sync I/O on entry DisposeAsync and seekable Entries reads, dotnet/runtime#121624; fixed only in .NET 11 by PR #121938)
-- How to apply custom naming conventions for primary keys, foreign keys, and indexes in EF Core 11 migrations
+- How to apply custom naming conventions for primary keys, foreign keys, and indexes in EF Core 11 migrations → slug: 2026/09/how-to-apply-custom-naming-conventions-for-keys-foreign-keys-and-indexes-in-ef-core-11
 - How to guarantee idempotent message processing with EF Core when two app instances consume the same message
 - How to keep a database write and an Azure Blob Storage upload consistent in a single ASP.NET Core request
 - How to add custom table-name pluralization to `dotnet ef dbcontext scaffold` with `IPluralizer`
