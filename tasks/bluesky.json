@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/how-to-apply-custom-naming-conventions-for-keys-foreign-keys-and-indexes-in-ef-core-11",
-    "text": "Rename every PK_, FK_ and IX_ in EF Core 11 with one convention. Then stop the next migration from rebuilding your clustered keys."
   }
 ]
