@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/messagepack-3-1-9-fixes-nested-array-memory-amplification-cve-2026-92707",
+    "text": "CVE-2026-92707: nested MessagePack array headers all validated against the same trailing bytes, so Deserialize<object> allocated 120 MiB from a 32 KiB payload before hitting the depth limit. MessagePack 3.1.9 and 2.5.303 fix it, but ASP.NET Core SignalR 8 through 11 RC 1 still pulls 2.5.302. Measured before/after and the pin."
   }
 ]
