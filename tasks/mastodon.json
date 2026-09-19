@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/cursor-sandbox-providers-aws-lambda-vs-modal-vs-cloudflare-vs-vercel",
+    "text": "Running Cursor Cloud Agents on your own compute? I compared the AWS Lambda MicroVMs, Modal, Cloudflare and Vercel reference integrations. Three put the long-lived team service-account key inside the sandbox where the agent runs shell commands. Also: the CLI's 3600 s idle default can double your bill."
   }
 ]
