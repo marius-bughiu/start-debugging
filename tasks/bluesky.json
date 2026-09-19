@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/messagepack-3-1-9-fixes-nested-array-memory-amplification-cve-2026-92707",
-    "text": "A 32 KiB MessagePack payload allocated 120 MiB before the depth limit fired. 3.1.9 and 2.5.303 fix it; SignalR needs a manual pin."
   }
 ]
