@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/how-to-guarantee-idempotent-message-processing-in-ef-core-11-with-an-inbox-table",
-    "text": "Two instances consume the same message, both pass your existence check. Only a unique index on the inbox table stops the double write."
   }
 ]
