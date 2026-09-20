@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/how-to-guarantee-idempotent-message-processing-in-ef-core-11-with-an-inbox-table",
+    "text": "At-least-once delivery means two instances can process the same message at once, and the existence check at the top of your handler is no guard: both see an empty inbox. Put a unique index on (MessageId, Consumer), commit the marker in the same SaveChanges as the business write, and beware ExecuteUpdate."
   }
 ]
