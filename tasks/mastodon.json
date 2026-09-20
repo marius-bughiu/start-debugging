@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/how-to-keep-a-database-write-and-an-azure-blob-upload-consistent-in-one-request",
-    "text": "There is no transaction that spans a database and Azure Blob Storage, so pick the failure you can clean up: insert the row as Pending, upload to that name with IfNoneMatch = ETag.All, then flip it to Ready. Plus the UploadAsync overload that drops the conditional create the moment you pass options."
   }
 ]
