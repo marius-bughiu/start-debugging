@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/agent-framework-1-22-asichatclient-exposes-an-agent-as-an-ichatclient",
+    "text": "Microsoft Agent Framework .NET 1.22.0 adds AIAgent.AsIChatClient(), the missing reverse of IChatClient.AsAIAgent(). Your agent, instructions and tools intact, now plugs into evaluation judges and any ChatClientBuilder pipeline. The same release also stops tools leaking across runs."
   }
 ]
