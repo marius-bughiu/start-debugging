@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/local-ollama-models-vs-cloud-models-in-github-copilot",
+    "text": "Pointing GitHub Copilot at a local Ollama model covers chat and agent mode only. Inline completions, next edit suggestions and semantic search stay on GitHub's service, so BYOK alone is not an air gap. The quiet killer: Ollama defaults to a 4k context window under 24 GB of VRAM, while Copilot wants 128k."
   }
 ]
