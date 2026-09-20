@@ -34,5 +34,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
+  },
+  {
+    "slug": "2026/09/how-to-keep-a-database-write-and-an-azure-blob-upload-consistent-in-one-request",
+    "text": "No transaction spans your database and Blob Storage. Write the row Pending first, upload conditionally, commit last."
   }
 ]
