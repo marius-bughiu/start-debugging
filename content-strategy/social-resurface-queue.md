@@ -36,16 +36,6 @@ Move approved entries under `## Approved`, remove after posting.
 
 <!-- The scheduled task appends new entries here. Stale drafts (>14 days) are culled on the next run. -->
 
-### 2026-08-30 drafted - flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026
-
-**Original:** 2026-05-27 - Flutter vs React Native vs .NET MAUI: which should you pick for a new mobile project in 2026?
-
-**Bluesky:** MAUI cold start on Android went from 720 ms on Mono to 480 ms with CoreCLR by default in .NET 11. Most Flutter vs RN vs MAUI comparisons still quote the Mono number. I rebenchmarked all three on a Pixel 8 and an iPhone 15.
-
-**Mastodon:** Three things force the mobile framework decision before preference gets a vote. 1. Your team's incumbent language. TypeScript picks React Native, C# picks MAUI, and only a team with no incumbent stack freely picks Dart. 2. Web on the roadmap, even if not in v1. RN with react-native-web is the only production ready path in 2026, Flutter Web is preview for large apps, and MAUI means writing a second app. 3. Platform features decide the plugin friction.
-
-**Notes:** Longest eligible evergreen at 3020 words and joint-top on internal links with 9 outbound, anchoring the cross-platform mobile comparison cluster, so the link equity keeps working. gsc-rising.json is an empty array again and gsc-candidates.json has no query touching a framework bake-off, the closest being a Flutter background_fetch minSdkVersion cluster that maps elsewhere, so depth and link count decided it. It also breaks a four-pick run of .NET only topics: Blazor validation, EF Core concurrency, an MSBuild reference failure, and the C# type decision matrix. Fresh angle: the obvious copy for this post is the three line recommendation, Flutter for pixel identical UI, RN for TypeScript teams, MAUI for .NET shops, which every comparison post already says. Neither of these repeats it. Bluesky takes the one number that dates a comparison, the MAUI cold start figure that changed when CoreCLR became the default in .NET 11, since most write ups still quote the Mono era 720 ms. Mastodon carries the gotcha section, the three constraints that decide before anyone argues preference, with the web roadmap trap as the expensive one.
-
 ### 2026-09-06 drafted - migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026
 
 **Original:** 2026-05-28 - Migrate from .NET Framework 4.8 to .NET 11 in 2026
@@ -65,6 +55,16 @@ Move approved entries under `## Approved`, remove after posting.
 **Mastodon:** Dart records vs Freezed is not a performance call. On a Pixel 8 with Dart 3.12 AOT, a five field record allocates in 18 ns and a Freezed 3.x class in 24 ns, with == at 11 vs 14 ns. The number you feel is build_runner: 4.1 s cold for 50 Freezed classes, 15 to 25 s at 200. So decide on shape. If the field names belong in your crash logs, or the type needs copyWith, JSON, or a sealed union, write a Freezed class. Otherwise, a record.
 
 **Notes:** Second longest eligible evergreen at 2619 words with 6 internal links, into the Flutter state management cluster (GetX to Riverpod, isolates, DevTools jank). The longest, maui-vs-avalonia-vs-uno-in-2026 (2637 words), was passed over because it is a second cross platform framework bake-off two weeks after the Flutter vs RN vs MAUI pick. This one also breaks the .NET run left by the 09-06 migration pick. gsc-rising.json is empty and gsc-candidates.json has only single impression queries, none on Dart, so depth decided it. Fresh angle: the obvious copy is the post's own summary, record for local shapes and Freezed for domain models. Neither hook repeats it. Bluesky takes the structural typing trap, where a typedef looks like a named type but gives no nominal safety. Mastodon uses the benchmark table to take performance off the table and names build_runner time as the real cost, then gives the crash log heuristic as the deciding test.
+
+### 2026-09-20 drafted - list-vs-span-vs-readonlyspan-in-csharp
+
+**Original:** 2026-05-25 - List<T> vs Span<T> vs ReadOnlySpan<T> in C#: when to reach for which
+
+**Bluesky:** CollectionsMarshal.AsSpan(list) hands you a Span over the list's own backing array, no copy. Add one element past capacity and the list swaps in a new array, so your span now views the orphaned old one. Take the view, use it, drop it before any mutation.
+
+**Mastodon:** List vs Span is not settled by the benchmark. Summing 10,000 ints on .NET 11: List foreach 6.1 us, span foreach 2.4 us, zero allocation either way. Outside a hot loop that is 4 microseconds. Lifetime decides instead. A ref struct cannot be a field, cannot be captured in a lambda, and cannot survive an await. If the buffer outlives the stack frame you are on List or Memory, whatever the numbers say.
+
+**Notes:** Second longest eligible evergreen at 2686 words with 7 internal links, anchoring the span and memory cluster (implicit Span conversions in C# 14, ReadOnlyMemory conversion, SearchValues, large CSV parsing, params ReadOnlySpan), so the outbound links keep working. The longest, maui-vs-avalonia-vs-uno-in-2026 at 2717 words, was passed over for the second week running: it is still a cross platform UI bake-off three weeks after the Flutter vs RN vs MAUI pick, and the overlap reads as repetition to the same followers. Both GSC files carry only site: queries again this week (gsc-candidates.json is eight site: rows, gsc-rising.json the same set), so there was no topical traction signal and depth plus link count decided. It also moves the run off the last three picks, a mobile framework bake-off, a .NET Framework migration, and Dart records vs Freezed, and the last C# language pick was record-vs-class-vs-struct four weeks ago. Fresh angle: the obvious copy is the post's own three line summary, own and grow means List, view and mutate means Span, view and read means ReadOnlySpan, which every span explainer already says. Neither hook repeats it. Bluesky takes the one lifetime trap that survives review, a CollectionsMarshal.AsSpan view left pointing at the array a resize orphaned. Mastodon uses the benchmark to take performance off the table, 6.1 us vs 2.4 us on 10,000 ints, then names the ref struct constraints that decide regardless of speed.
 
 ---
 
