@@ -157,7 +157,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to add custom table-name pluralization to `dotnet ef dbcontext scaffold` with `IPluralizer` → slug: 2026/09/how-to-add-custom-pluralization-to-dotnet-ef-dbcontext-scaffold-with-ipluralizer
 - How to atomically append to a PostgreSQL `jsonb` array with EF Core and Npgsql → slug: 2026/09/how-to-atomically-append-to-a-postgresql-jsonb-array-with-ef-core-and-npgsql
 - How to use an Oracle sequence to generate primary keys in EF Core
-- How to add the current user id to every log entry in ASP.NET Core without passing it through each method
+- How to add the current user id to every log entry in ASP.NET Core without passing it through each method → slug: 2026/09/how-to-add-the-current-user-id-to-every-log-entry-in-aspnet-core
 - How to block a Flutter `WebView` from navigating to external URLs with `NavigationDelegate`
 - How to keep a Flutter location-tracking task running in the background on Android 15
 - How to disable antiforgery validation for a single minimal API form endpoint in ASP.NET Core 11

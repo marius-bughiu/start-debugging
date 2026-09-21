@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/how-to-add-the-current-user-id-to-every-log-entry-in-aspnet-core",
+    "text": "Wrapping the ASP.NET Core pipeline in ILogger.BeginScope misses the exception handler's error log and 'Request finished', the lines you search by user. An ILogEnricher reading IHttpContextAccessor tags them. Measured gotcha: EnableEnrichment() after Services.AddSerilog() writes zero logs."
   }
 ]
