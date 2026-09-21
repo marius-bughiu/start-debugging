@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/aspire-13-5-4-fixes-kafka-health-check-thread-leak",
+    "text": "Aspire 13.5.4 fixes a Kafka health check that created a fresh Confluent producer on every probe and never disposed it, leaving the AppHost full of polling threads. The root cause is a HealthCheckRegistration.Factory returning new instances DI never owns, and your own health checks can have the same bug."
   }
 ]

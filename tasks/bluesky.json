@@ -34,5 +34,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
+  },
+  {
+    "slug": "2026/09/aspire-13-5-4-fixes-kafka-health-check-thread-leak",
+    "text": "Through Aspire 13.5.3, each Kafka health check built a new producer and never disposed it. Threads piled up. 13.5.4 fixes it."
   }
 ]
