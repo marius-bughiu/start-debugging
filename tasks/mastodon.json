@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/migrate-a-stdio-mcp-server-to-remote-oauth-with-cimd-and-dcr-fallback",
-    "text": "MCP spec 2026-07-28 deprecated Dynamic Client Registration. If you are taking a stdio MCP server remote, advertise Client ID Metadata Documents on your auth server and keep DCR only as a fallback. Gotcha: a CIMD-only server plus a client without a metadata URL fails with 'does not support dynamic client registration'."
   }
 ]

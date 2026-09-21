@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/migrate-a-stdio-mcp-server-to-remote-oauth-with-cimd-and-dcr-fallback",
-    "text": "Taking a stdio MCP server remote? DCR is deprecated in MCP 2026-07-28. Lead with CIMD, keep DCR as a fallback. Measured matrix inside."
   }
 ]
