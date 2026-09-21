@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/how-to-atomically-append-to-a-postgresql-jsonb-array-with-ef-core-and-npgsql",
-    "text": "Appending to a jsonb array via EF Core's change tracker rewrites the whole document, so concurrent appends overwrite each other (20 in, 3 kept). Do the append in one UPDATE with jsonb_set and ||, map it as a DbFunction to use it inside ExecuteUpdateAsync, and add a @> guard to make it idempotent."
   }
 ]
