@@ -155,7 +155,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Migrate off deprecated MCP sampling and elicitation to `InputRequiredResult` multi round-trip requests (skipped: answered by 2026/08/fix-mcp9004-mcp9005-mcp9006-warnings-after-mcp-csharp-sdk-2-0 for C# and 2026/08/stateful-vs-stateless-mcp-servers-what-breaks-when-the-session-goes-away for TypeScript)
 - Migrate an MCP C# SDK 1.x server to v2.0 without breaking v1 clients → slug: 2026/09/migrate-mcp-csharp-sdk-1-x-to-2-0-without-breaking-old-clients
 - Migrate a vendor-specific agent plugin to the cross-vendor Agent Plugins 1.0 layout (skipped: same intent as 2026/08/agent-plugins-1-0-vs-vendor-specific-plugin-formats, which covers the component matrix, the reverse-domain escape hatch and the recommendation to make the 1.0.0 layout the source of truth, plus 2026/08/package-skills-and-an-mcp-server-as-one-agent-plugin for the dual-layout directory and the `${PLUGIN_ROOT}` vs `${CLAUDE_PLUGIN_ROOT}` gotcha)
-- Migrate a stdio MCP server to a remote OAuth-protected HTTP server with dynamic client registration
+- Migrate a stdio MCP server to a remote OAuth-protected HTTP server with dynamic client registration → slug: 2026/09/migrate-a-stdio-mcp-server-to-remote-oauth-with-cimd-and-dcr-fallback
 - Migrate duplicated per-tool rule files (`.cursorrules`, `CLAUDE.md`, `copilot-instructions.md`) to a single `AGENTS.md` source of truth
 - Migrate a Cursor cloud agent workflow off GitHub to Cursor Origin repos
 
