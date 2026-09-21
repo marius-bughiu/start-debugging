@@ -155,7 +155,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to guarantee idempotent message processing with EF Core when two app instances consume the same message → slug: 2026/09/how-to-guarantee-idempotent-message-processing-in-ef-core-11-with-an-inbox-table
 - How to keep a database write and an Azure Blob Storage upload consistent in a single ASP.NET Core request → slug: 2026/09/how-to-keep-a-database-write-and-an-azure-blob-upload-consistent-in-one-request
 - How to add custom table-name pluralization to `dotnet ef dbcontext scaffold` with `IPluralizer` → slug: 2026/09/how-to-add-custom-pluralization-to-dotnet-ef-dbcontext-scaffold-with-ipluralizer
-- How to atomically append to a PostgreSQL `jsonb` array with EF Core and Npgsql
+- How to atomically append to a PostgreSQL `jsonb` array with EF Core and Npgsql → slug: 2026/09/how-to-atomically-append-to-a-postgresql-jsonb-array-with-ef-core-and-npgsql
 - How to use an Oracle sequence to generate primary keys in EF Core
 - How to add the current user id to every log entry in ASP.NET Core without passing it through each method
 - How to block a Flutter `WebView` from navigating to external URLs with `NavigationDelegate`
