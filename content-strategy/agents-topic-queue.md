@@ -171,8 +171,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Patterns: information-flow control to block prompt injection in agents → slug: 2026/09/information-flow-control-to-block-prompt-injection-in-agents
 - Patterns: storing agent chat history - cost, privacy, and portability tradeoffs → slug: 2026/09/where-to-store-agent-chat-history-cost-privacy-portability
 - Patterns: nested subagent hierarchies - when delegation depth helps and when it just burns tokens → slug: 2026/09/nested-subagent-depth-when-it-helps-and-when-it-burns-tokens
-- Patterns: human-in-the-loop tool gating for autonomous coding agents (auto-review and permission gates)
-- Patterns: parallel side-chats vs subagents - when to branch a conversation and when to delegate
+- Patterns: human-in-the-loop tool gating for autonomous coding agents (auto-review and permission gates) (skipped: same intent as 2026/06/gate-cursor-sdk-tool-calls-with-auto-review-and-permissions-json, 2026/08/auto-mode-vs-manual-approval-what-each-permission-mode-allows and 2026/05/agent-framework-human-in-the-loop-tool-approval-csharp)
+- Patterns: parallel side-chats vs subagents - when to branch a conversation and when to delegate → slug: 2026/09/side-chats-vs-subagents-when-to-branch-and-when-to-delegate
 - Patterns: hooks as observability for cloud coding agents (prompts, thinking, subagents, compaction)
 - Patterns: cost control for autonomous agents with per-session credit and spend limits
 - Patterns: keeping API keys out of agent context with a credential gateway
