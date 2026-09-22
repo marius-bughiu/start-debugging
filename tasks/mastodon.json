@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/how-to-disable-antiforgery-validation-for-a-single-minimal-api-endpoint-in-aspnetcore-11",
-    "text": "Your webhook form endpoint gets a 400 on ASP.NET Core 11? .DisableAntiforgery() now opts out of both the token middleware and the new Sec-Fetch-Site CSRF check. Measured on RC 1, including two traps: a MapGroup opt-out silently beats an endpoint opt-in, and an endpoint filter that verifies an HMAC signature hashes 0 bytes."
   }
 ]
