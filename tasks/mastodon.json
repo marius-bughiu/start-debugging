@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/how-to-block-a-flutter-webview-from-navigating-to-external-urls",
-    "text": "Keeping a Flutter WebView on your own domain: parse with Uri.tryParse, allowlist uri.host (not a string prefix), send mailto: and tel: to url_launcher. The catch: on Android, onNavigationRequest never sees iframe navigations or POST form submissions, while iOS asks about both, plus your own loadRequest."
   }
 ]
