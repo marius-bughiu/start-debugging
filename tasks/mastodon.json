@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/opentelemetry-dotnet-1-19-1-fixes-wildcard-notsupportedexception-on-net-8",
+    "text": "One wildcard in AddSource plus a long source list was enough to make OpenTelemetry .NET 1.19.0 throw NotSupportedException on net8.0, thanks to RegexOptions.NonBacktracking's automaton size limit. 1.19.1 goes back to a compiled regex with a 1 second match timeout. Upgrade before you add more sources."
   }
 ]
