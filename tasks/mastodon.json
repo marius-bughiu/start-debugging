@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/fix-delegatinghandler-not-running-on-each-retry-with-addstandardresiliencehandler",
+    "text": "A DelegatingHandler registered before AddStandardResilienceHandler sits outside the retry loop and runs once per call. Move it after, and watch for the next trap: the standard retry re-sends the same HttpRequestMessage, so Headers.Add stacks values and a non-seekable StreamContent throws on attempt two."
   }
 ]
