@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/how-to-serialize-vector3-and-quaternion-with-system-text-json",
-    "text": "System.Text.Json serializes Vector3 as {} and Quaternion as {\"IsIdentity\":false}, because System.Numerics stores components in fields. IncludeFields plus IgnoreReadOnlyProperties fixes most of it. The gotcha: on .NET 10, Matrix4x4 writes every value twice and key order decides which one wins."
   }
 ]
