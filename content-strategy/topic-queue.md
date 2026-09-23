@@ -161,7 +161,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to block a Flutter `WebView` from navigating to external URLs with `NavigationDelegate` → slug: 2026/09/how-to-block-a-flutter-webview-from-navigating-to-external-urls
 - How to keep a Flutter location-tracking task running in the background on Android 15 → slug: 2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15
 - How to disable antiforgery validation for a single minimal API form endpoint in ASP.NET Core 11 → slug: 2026/09/how-to-disable-antiforgery-validation-for-a-single-minimal-api-endpoint-in-aspnetcore-11
-- How to serialize public fields such as `Vector3` and `Quaternion` with System.Text.Json
+- How to serialize public fields such as `Vector3` and `Quaternion` with System.Text.Json → slug: 2026/09/how-to-serialize-vector3-and-quaternion-with-system-text-json
 
 ## Fix / error
 
