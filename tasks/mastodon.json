@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/migrate-cursorrules-claude-md-copilot-instructions-to-one-agents-md",
-    "text": "Claude Code 2.1.277 finally reads AGENTS.md, so Cursor, Claude and most Copilot surfaces can share one rules file. The catch: github.com Chat, Visual Studio, JetBrains and IDE code review read only copilot-instructions.md. Generate it from AGENTS.md and fail CI on drift. And a stray CLAUDE.local.md switches AGENTS.md off."
   }
 ]
