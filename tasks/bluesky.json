@@ -34,5 +34,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
+  },
+  {
+    "slug": "2026/09/fix-iconfiguration-bind-does-not-populate-an-array-or-list-property",
+    "text": "Your options array is empty? The .NET config binder skips it silently. The setter, init and AOT rules, measured on .NET 10 and 11."
   }
 ]

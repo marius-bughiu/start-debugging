@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/fix-iconfiguration-bind-does-not-populate-an-array-or-list-property",
+    "text": "IConfiguration.Bind leaving your string[] or List<T> empty is almost always silent: no setter, a field, or init under the AOT source generator. And if it binds, it appends to your defaults instead of replacing them, while appsettings.Development.json merges arrays by index. Measured matrix and fixes inside."
   }
 ]
