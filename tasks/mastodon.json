@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/stackexchange-redis-3-3-smart-client-handoffs",
+    "text": "Timeouts every time your managed Redis does maintenance? StackExchange.Redis 3.3 listens for Redis Enterprise and Redis Cloud maintenance notifications: it relaxes timeouts during migrations and moves to the replacement endpoint before the old one closes. Opt-in for now, and the typed API trips error SER010."
   }
 ]
