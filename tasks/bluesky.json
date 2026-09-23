@@ -34,5 +34,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
+  },
+  {
+    "slug": "2026/09/migrate-cursorrules-claude-md-copilot-instructions-to-one-agents-md",
+    "text": "Claude Code 2.1.277 reads AGENTS.md. Merge .cursorrules, CLAUDE.md and Copilot rules into one file, minus one file you still need."
   }
 ]
