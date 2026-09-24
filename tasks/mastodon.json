@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/fix-conflicting-assets-with-the-same-target-path-in-aspnetcore-10",
-    "text": "The .NET 10 SDK sets StaticWebAssetBasePath=/ on every web project, so a web app that references another web app now fails with 'Conflicting assets with the same target path', even on net8.0. Disabling compression or deleting bin/obj changes nothing. The fix, plus why $(PackageId) silently breaks it:"
   }
 ]
