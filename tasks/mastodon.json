@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/fix-unable-to-find-the-required-iauthenticationservice-blazor-authorize-policy",
-    "text": "\"Unable to find the required 'IAuthenticationService' service\" on a Blazor page with [Authorize(Policy = ...)]: the page is an HTTP endpoint, so the authorization middleware checks it and calls ChallengeAsync. It even fails for users your custom AuthenticationStateProvider says are admins. Repro and fixes for .NET 10 and 11."
   }
 ]
