@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/microsoft-nuget-author-signing-certificate-rotation-nu3034",
-    "text": "Microsoft started author-signing NuGet packages with a new certificate on September 23, 2026, and the old one expires October 18. If your nuget.config trusts Microsoft by fingerprint, you need the new one or restores fail with NU3034. Heads-up: the trust command in the announcement doesn't run on SDK 10.0.302."
   }
 ]

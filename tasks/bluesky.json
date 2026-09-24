@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/microsoft-nuget-author-signing-certificate-rotation-nu3034",
-    "text": "Microsoft's NuGet signing cert changed Sep 23. Pin Microsoft in trustedSigners? Add 9A1B131B... or restores fail with NU3034."
   }
 ]
