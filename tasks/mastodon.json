@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/migrate-a-cursor-cloud-agent-workflow-off-github-to-cursor-origin",
-    "text": "Moving Cursor cloud agents from GitHub to Origin works best in two stages: sync a mirror and rewire automations, Bugbot and CI while GitHub is still the source of truth, then cut over. Detach from GitHub is one-way; the inbound_to_outbound transition can be rolled back. GitHub-only triggers like CI completed have no Origin twin."
   }
 ]

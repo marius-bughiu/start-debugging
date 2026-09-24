@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/migrate-a-cursor-cloud-agent-workflow-off-github-to-cursor-origin",
-    "text": "Moving Cursor cloud agents from GitHub to Origin: mirror, rewire agents and CI, then cut over. Only one cutover path is reversible."
   }
 ]
