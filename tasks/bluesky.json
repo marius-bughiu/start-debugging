@@ -34,5 +34,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
+  },
+  {
+    "slug": "2026/09/fix-httpioexception-the-response-ended-prematurely-httpclient",
+    "text": "HttpClient's 'response ended prematurely' is usually a keep-alive race. Measured: 3 in 150 POSTs fail by default, 0 with one setting."
   }
 ]

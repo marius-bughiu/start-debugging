@@ -304,7 +304,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: custom `DelegatingHandler` does not run again on each retry with `AddStandardResilienceHandler` → slug: 2026/09/fix-delegatinghandler-not-running-on-each-retry-with-addstandardresiliencehandler
 - Fix: `IConfiguration.Bind` does not populate an array or `List<T>` property from appsettings.json → slug: 2026/09/fix-iconfiguration-bind-does-not-populate-an-array-or-list-property (measured on Binder 10.0.12 and 11 RC 1, identical; real split is reflection vs source generator: init-only skipped, ImmutableArray NRE, element-error handling inverted; append-to-defaults tracked in dotnet/runtime#62112/#118204, still open)
 - Fix: `Conflicting assets with the same target path` from static web asset compression in ASP.NET Core 10 → slug: 2026/09/fix-conflicting-assets-with-the-same-target-path-in-aspnetcore-10
-- Fix: `HttpIOException: The response ended prematurely` from `HttpClient` in .NET
+- Fix: `HttpIOException: The response ended prematurely` from `HttpClient` in .NET → slug: 2026/09/fix-httpioexception-the-response-ended-prematurely-httpclient
 - Fix: `Unable to find the required 'IAuthenticationService'` when using `[Authorize(Policy = ...)]` in Blazor Server
 - Fix: ASP.NET Core returns 400 `The X field is required` for a non-nullable `string` property
 - Fix: `Failed to decode advisories for archive from https://pub.dev` in `flutter pub get`
