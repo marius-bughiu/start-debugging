@@ -305,7 +305,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `IConfiguration.Bind` does not populate an array or `List<T>` property from appsettings.json → slug: 2026/09/fix-iconfiguration-bind-does-not-populate-an-array-or-list-property (measured on Binder 10.0.12 and 11 RC 1, identical; real split is reflection vs source generator: init-only skipped, ImmutableArray NRE, element-error handling inverted; append-to-defaults tracked in dotnet/runtime#62112/#118204, still open)
 - Fix: `Conflicting assets with the same target path` from static web asset compression in ASP.NET Core 10 → slug: 2026/09/fix-conflicting-assets-with-the-same-target-path-in-aspnetcore-10
 - Fix: `HttpIOException: The response ended prematurely` from `HttpClient` in .NET → slug: 2026/09/fix-httpioexception-the-response-ended-prematurely-httpclient
-- Fix: `Unable to find the required 'IAuthenticationService'` when using `[Authorize(Policy = ...)]` in Blazor Server
+- Fix: `Unable to find the required 'IAuthenticationService'` when using `[Authorize(Policy = ...)]` in Blazor Server → slug: 2026/09/fix-unable-to-find-the-required-iauthenticationservice-blazor-authorize-policy
 - Fix: ASP.NET Core returns 400 `The X field is required` for a non-nullable `string` property
 - Fix: `Failed to decode advisories for archive from https://pub.dev` in `flutter pub get`
 - Fix: `Daemon compilation failed: null` in a Flutter Android Gradle build
