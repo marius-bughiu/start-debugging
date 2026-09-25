@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/fix-failed-to-decode-advisories-for-archive-from-pub-dev",
-    "text": "Seeing 'Failed to decode advisories for archive from https://pub.dev' in flutter pub get? pub still exits 0 and your lock file is fine. pub.dev fixed the null advisoriesUpdated bug in May 2026, so today the culprit is a mirror or proxy, or a CI step that fails on stderr. Repro, fixes, and the Flutter 3.47 change inside."
   }
 ]
