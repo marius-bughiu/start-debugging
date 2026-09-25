@@ -306,7 +306,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Conflicting assets with the same target path` from static web asset compression in ASP.NET Core 10 → slug: 2026/09/fix-conflicting-assets-with-the-same-target-path-in-aspnetcore-10
 - Fix: `HttpIOException: The response ended prematurely` from `HttpClient` in .NET → slug: 2026/09/fix-httpioexception-the-response-ended-prematurely-httpclient
 - Fix: `Unable to find the required 'IAuthenticationService'` when using `[Authorize(Policy = ...)]` in Blazor Server → slug: 2026/09/fix-unable-to-find-the-required-iauthenticationservice-blazor-authorize-policy
-- Fix: ASP.NET Core returns 400 `The X field is required` for a non-nullable `string` property
+- Fix: ASP.NET Core returns 400 `The X field is required` for a non-nullable `string` property → slug: 2026/09/fix-aspnetcore-400-the-field-is-required-non-nullable-string
 - Fix: `Failed to decode advisories for archive from https://pub.dev` in `flutter pub get`
 - Fix: `Daemon compilation failed: null` in a Flutter Android Gradle build
 - Fix: Flutter debugger jumps into `binding.dart` on hot reload with no error shown
