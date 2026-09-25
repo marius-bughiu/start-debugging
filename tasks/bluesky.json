@@ -34,5 +34,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
+  },
+  {
+    "slug": "2026/09/fix-failed-to-decode-advisories-for-archive-from-pub-dev",
+    "text": "'Failed to decode advisories' in flutter pub get? Your packages are fine: pub exits 0. Here is where the bad response comes from."
   }
 ]

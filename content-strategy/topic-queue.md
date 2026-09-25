@@ -307,7 +307,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `HttpIOException: The response ended prematurely` from `HttpClient` in .NET → slug: 2026/09/fix-httpioexception-the-response-ended-prematurely-httpclient
 - Fix: `Unable to find the required 'IAuthenticationService'` when using `[Authorize(Policy = ...)]` in Blazor Server → slug: 2026/09/fix-unable-to-find-the-required-iauthenticationservice-blazor-authorize-policy
 - Fix: ASP.NET Core returns 400 `The X field is required` for a non-nullable `string` property → slug: 2026/09/fix-aspnetcore-400-the-field-is-required-non-nullable-string
-- Fix: `Failed to decode advisories for archive from https://pub.dev` in `flutter pub get`
+- Fix: `Failed to decode advisories for archive from https://pub.dev` in `flutter pub get` → slug: 2026/09/fix-failed-to-decode-advisories-for-archive-from-pub-dev (reproduced on Dart 3.12.2 vs 3.13.4 with a local spec-v2 server: exit 0, stderr only, bad response never cached; pub.dev server bug 2026-05-02..04 fixed by pub-dev#9368; one-line warning via pub#4817 first in Dart 3.13.0 / Flutter 3.47.0)
 - Fix: `Daemon compilation failed: null` in a Flutter Android Gradle build
 - Fix: Flutter debugger jumps into `binding.dart` on hot reload with no error shown
 - Fix: YouTube embed shows `Video unavailable` (Error 152 / 153) in Flutter with `youtube_player_iframe`
