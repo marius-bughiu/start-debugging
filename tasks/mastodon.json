@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/fix-aspnetcore-400-the-field-is-required-non-nullable-string",
-    "text": "ASP.NET Core returning 400 'The X field is required' for a property with no [Required]? With <Nullable>enable</Nullable>, MVC treats every non-nullable reference type as [Required(AllowEmptyStrings = true)]. Fixes, plus why minimal APIs don't do this and why EF navigation properties trip it."
   }
 ]

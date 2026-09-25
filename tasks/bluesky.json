@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/fix-aspnetcore-400-the-field-is-required-non-nullable-string",
-    "text": "Never marked it [Required] but ASP.NET Core says 'The Name field is required'? Nullable enable made every string required in MVC."
   }
 ]
