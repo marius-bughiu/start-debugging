@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/refit-16-1-generates-the-paging-loop-with-pagedenumerable",
-    "text": "Refit 16.1.0 can generate your paging loop. Mark the continuation with [Paged] and [PageToken], return PagedEnumerable<TPage, TItem>, and await foreach sends one request per page. Cursors, offsets, headers and Link next links all work, and a misspelled page member is build error RF013."
   }
 ]
