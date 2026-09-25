@@ -173,9 +173,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Patterns: nested subagent hierarchies - when delegation depth helps and when it just burns tokens → slug: 2026/09/nested-subagent-depth-when-it-helps-and-when-it-burns-tokens
 - Patterns: human-in-the-loop tool gating for autonomous coding agents (auto-review and permission gates) (skipped: same intent as 2026/06/gate-cursor-sdk-tool-calls-with-auto-review-and-permissions-json, 2026/08/auto-mode-vs-manual-approval-what-each-permission-mode-allows and 2026/05/agent-framework-human-in-the-loop-tool-approval-csharp)
 - Patterns: parallel side-chats vs subagents - when to branch a conversation and when to delegate → slug: 2026/09/side-chats-vs-subagents-when-to-branch-and-when-to-delegate
-- Patterns: hooks as observability for cloud coding agents (prompts, thinking, subagents, compaction)
-- Patterns: cost control for autonomous agents with per-session credit and spend limits
-- Patterns: keeping API keys out of agent context with a credential gateway
+- Patterns: hooks as observability for cloud coding agents (prompts, thinking, subagents, compaction) (skipped: same intent as 2026/07/observe-cursor-cloud-agent-prompts-thinking-subagents-with-hooks, which wires beforeSubmitPrompt, afterAgentThought, afterAgentResponse and subagentStart hooks on cloud agents)
+- Patterns: cost control for autonomous agents with per-session credit and spend limits (skipped: same intent as 2026/07/set-ai-credit-session-limits-in-github-copilot-cli-and-sdk, which covers per-session AI credit limits and the soft-cap overshoot)
+- Patterns: keeping API keys out of agent context with a credential gateway → slug: 2026/09/keep-api-keys-out-of-agent-context-with-a-credential-gateway
 - Patterns: running coding agents in disposable VMs and containers instead of on your laptop
 - Patterns: measuring an agent's fixed token overhead - system prompt and tool schemas before the first user token
 - Patterns: stateless tool design - passing state handles as tool arguments instead of relying on the transport
