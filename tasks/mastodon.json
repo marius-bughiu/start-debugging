@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe",
+    "text": "youtube_player_iframe 5.x loads its player page with the origin https://www.youtube.com, so YouTube answers with Error 152; a WebView page with no base URL gets Error 153. I measured every combination on iOS 26.5. Fix: upgrade to 6.0.2 and set origin to https://<your app id>. On 5.x use youtube-nocookie, never your app ID."
   }
 ]
