@@ -162,6 +162,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to keep a Flutter location-tracking task running in the background on Android 15 → slug: 2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15
 - How to disable antiforgery validation for a single minimal API form endpoint in ASP.NET Core 11 → slug: 2026/09/how-to-disable-antiforgery-validation-for-a-single-minimal-api-endpoint-in-aspnetcore-11
 - How to serialize public fields such as `Vector3` and `Quaternion` with System.Text.Json → slug: 2026/09/how-to-serialize-vector3-and-quaternion-with-system-text-json
+- How to speed up a slow Dart analysis server in VS Code for a large Flutter monorepo
+- How to add a unique index on a JSON-mapped property in EF Core 11 on SQL Server and SQLite
 
 ## Fix / error
 
@@ -313,6 +315,16 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: YouTube embed shows `Video unavailable` (Error 152 / 153) in Flutter with `youtube_player_iframe` → slug: 2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe (measured on iOS 26.5 sim with webview_flutter 4.14.1: page origin youtube.com -> 152, no baseUrl -> 153, nocookie or https://<app id> origin plays; 5.2.2 reuses origin as iframe host so app id breaks it there; fixed by 6.0.0 origin/host split; 6.0.2 maps 153 to YoutubeError.unknown; Android not measured)
 - Fix: `MediaPicker.CapturePhotoAsync` returns a PNG instead of a JPEG in .NET MAUI 10
 - Fix: .NET MAUI `Entry` with `Keyboard.Numeric` shows the small numpad then switches to the full keyboard on iOS 26
+- Fix: .NET MAUI Resizetizer `MissingMethodException` (MAUIR0001) on an SVG app icon that uses `<filter>` or `<text>`
+- Fix: Android status bar icons become unreadable after enabling `UseMaterial3` in .NET MAUI 10
+- Fix: EF Core `Contains` on a constant collection declared as `IList<T>` or `ISet<T>` fails to translate
+- Fix: `dotnet watch` Blazor hot reload WebSocket fails when the app runs on a custom local domain
+- Fix: `launchSettings.json` environment variables are ignored for a `commandName: Executable` profile
+- Fix: `CERTIFICATE_VERIFY_FAILED` when running Dart 3.13 in the official `dart:stable` Docker image
+- Fix: Dart 3.13 rejects `final` on parameters of normal functions and methods
+- Fix: `dotnet test` exits with code 5 and "Zero tests ran" on Microsoft.Testing.Platform
+- Fix: CS8509 or CS0161 on a `switch` that is exhaustive over a C# 15 union type
+- Fix: `Undefined name 'awaitNotRequired'` from `material_ui` or `cupertino_ui` on Flutter 3.44
 
 ## Vs / comparison
 
@@ -378,6 +390,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `Process.Run` vs `Process.Start` in .NET 11 → slug: 2026/09/process-run-vs-process-start-in-dotnet-11 (verified on .NET 11 RC 1: Run's timeout/cancellation SIGKILLs only the direct child, grandchildren survive; RunAsync returns Canceled=true instead of throwing; spawn cost identical, ~740 us on M4)
 - `Microsoft.Data.SqlClient` vs `System.Data.SqlClient` in .NET 11 → slug: 2026/09/microsoft-data-sqlclient-vs-system-data-sqlclient-in-dotnet-11 (verified against MDS 7.0.3 and SDS 4.9.1 on SDK 10.0.302: SDS emits CS0618 on every public type, Encrypt default False vs True, 10 connection-string keywords MDS-only, publish output 1.07 MB vs 7.35 MB vs 17.3 MB for MDS 6.1.7)
 - `Volatile.Read` vs `Volatile.ReadBarrier` in .NET 10
+- `EF.Parameter` vs `EF.Constant` in EF Core 11 queries
 
 ## Migration / upgrade
 
@@ -462,6 +475,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What does a C# `with` expression actually copy, and why don't computed record properties recalculate?
 - What decides whether EF Core scaffolds a SQL Server `date` column as `DateOnly` or `DateTime`?
 - What is the difference between a source-breaking and a binary-breaking change in a .NET library?
+- What is the `depend_on_referenced_packages` lint in Dart and why does it fire on transitive imports?
 
 ---
 
