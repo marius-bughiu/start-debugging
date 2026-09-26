@@ -1,57 +1,57 @@
 [
   {
+    "query": "site:startdebugging.net/ru",
+    "position": 11.29,
+    "impressions": 35,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/es",
+    "position": 11.29,
+    "impressions": 34,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
     "query": "site:startdebugging.net/de",
-    "position": 12.43,
-    "impressions": 14,
+    "position": 11,
+    "impressions": 33,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "query": "site:startdebugging.net/ja",
+    "query": "site:startdebugging.net/2023/10",
     "position": 11,
-    "impressions": 14,
+    "impressions": 31,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "query": "site:startdebugging.net/de/tag",
+    "query": "site:startdebugging.net/ru/2023",
     "position": 11,
-    "impressions": 10,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "query": "site:startdebugging.net/2023",
-    "position": 11,
-    "impressions": 9,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "query": "site:startdebugging.net/ja/tag",
-    "position": 11,
-    "impressions": 9,
+    "impressions": 30,
     "clicks": 0,
     "ctr": 0
   },
   {
     "query": "site:startdebugging.net/ru/tag",
     "position": 11,
-    "impressions": 9,
+    "impressions": 30,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "query": "site:startdebugging.net/ru/2023/10",
+    "query": "site:startdebugging.net/2026",
     "position": 11,
-    "impressions": 6,
+    "impressions": 26,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "query": "site:startdebugging.net/es/tag",
-    "position": 11,
-    "impressions": 4,
+    "query": "c# using declaration",
+    "position": 14,
+    "impressions": 1,
     "clicks": 0,
     "ctr": 0
   }

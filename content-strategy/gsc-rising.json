@@ -1,114 +1,242 @@
 [
   {
-    "query": "site:startdebugging.net/2026/06",
-    "currentPosition": 6.26,
-    "currentImpressions": 19,
-    "priorImpressions": 0,
-    "delta": 19,
-    "ctr": 0
-  },
-  {
-    "query": "site:startdebugging.net/ru",
-    "currentPosition": 10.38,
-    "currentImpressions": 16,
-    "priorImpressions": 0,
-    "delta": 16,
-    "ctr": 0
-  },
-  {
-    "query": "site:startdebugging.net/tag",
-    "currentPosition": 10.33,
-    "currentImpressions": 15,
-    "priorImpressions": 0,
-    "delta": 15,
-    "ctr": 0
-  },
-  {
-    "query": "site:startdebugging.net/de",
-    "currentPosition": 12.43,
-    "currentImpressions": 14,
-    "priorImpressions": 0,
-    "delta": 14,
-    "ctr": 0
-  },
-  {
-    "query": "site:startdebugging.net/ja",
+    "query": "site:startdebugging.net/ru/2023",
     "currentPosition": 11,
-    "currentImpressions": 14,
+    "currentImpressions": 30,
     "priorImpressions": 0,
-    "delta": 14,
+    "delta": 30,
     "ctr": 0
   },
   {
-    "query": "site:startdebugging.net/es",
-    "currentPosition": 10.23,
-    "currentImpressions": 13,
-    "priorImpressions": 0,
-    "delta": 13,
+    "query": "site:startdebugging.net/es/tag",
+    "currentPosition": 10.7,
+    "currentImpressions": 33,
+    "priorImpressions": 4,
+    "delta": 29,
     "ctr": 0
   },
   {
-    "query": "site:startdebugging.net/2023/10",
-    "currentPosition": 8.27,
-    "currentImpressions": 11,
+    "query": "site:startdebugging.net/2026",
+    "currentPosition": 11,
+    "currentImpressions": 26,
     "priorImpressions": 0,
-    "delta": 11,
+    "delta": 26,
     "ctr": 0
   },
   {
     "query": "site:startdebugging.net/de/tag",
-    "currentPosition": 11,
-    "currentImpressions": 10,
-    "priorImpressions": 0,
-    "delta": 10,
+    "currentPosition": 10.68,
+    "currentImpressions": 31,
+    "priorImpressions": 10,
+    "delta": 21,
     "ctr": 0
   },
   {
-    "query": "site:startdebugging.net/2023",
-    "currentPosition": 11,
-    "currentImpressions": 9,
-    "priorImpressions": 0,
-    "delta": 9,
-    "ctr": 0
-  },
-  {
-    "query": "site:startdebugging.net/ja/tag",
-    "currentPosition": 11,
-    "currentImpressions": 9,
-    "priorImpressions": 0,
-    "delta": 9,
+    "query": "site:startdebugging.net/es",
+    "currentPosition": 11.29,
+    "currentImpressions": 34,
+    "priorImpressions": 13,
+    "delta": 21,
     "ctr": 0
   },
   {
     "query": "site:startdebugging.net/ru/tag",
     "currentPosition": 11,
-    "currentImpressions": 9,
+    "currentImpressions": 30,
+    "priorImpressions": 9,
+    "delta": 21,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/2023",
+    "currentPosition": 10.66,
+    "currentImpressions": 29,
+    "priorImpressions": 9,
+    "delta": 20,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/2023/10",
+    "currentPosition": 11,
+    "currentImpressions": 31,
+    "priorImpressions": 11,
+    "delta": 20,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/tag",
+    "currentPosition": 10.71,
+    "currentImpressions": 35,
+    "priorImpressions": 15,
+    "delta": 20,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/de",
+    "currentPosition": 11,
+    "currentImpressions": 33,
+    "priorImpressions": 14,
+    "delta": 19,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/ru",
+    "currentPosition": 11.29,
+    "currentImpressions": 35,
+    "priorImpressions": 16,
+    "delta": 19,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/2026/05",
+    "currentPosition": 5.44,
+    "currentImpressions": 18,
     "priorImpressions": 0,
-    "delta": 9,
+    "delta": 18,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/ja/tag",
+    "currentPosition": 9.89,
+    "currentImpressions": 27,
+    "priorImpressions": 9,
+    "delta": 18,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net -site:startdebugging.net/tags -site:startdebugging.net/about -site:startdebugging.net/tag -site:startdebugging.net/es -site:startdebugging.net/ja -site:startdebugging.net/de",
+    "currentPosition": 10.41,
+    "currentImpressions": 17,
+    "priorImpressions": 0,
+    "delta": 17,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/ja/2023",
+    "currentPosition": 5.5,
+    "currentImpressions": 20,
+    "priorImpressions": 3,
+    "delta": 17,
     "ctr": 0
   },
   {
     "query": "site:startdebugging.net/2023/09",
-    "currentPosition": 5.29,
-    "currentImpressions": 7,
-    "priorImpressions": 0,
-    "delta": 7,
-    "ctr": 0
-  },
-  {
-    "query": "site:startdebugging.net/ru/2023/10",
-    "currentPosition": 11,
-    "currentImpressions": 6,
-    "priorImpressions": 0,
-    "delta": 6,
+    "currentPosition": 5.78,
+    "currentImpressions": 23,
+    "priorImpressions": 7,
+    "delta": 16,
     "ctr": 0
   },
   {
     "query": "site:startdebugging.net/2023/11",
-    "currentPosition": 7,
-    "currentImpressions": 5,
+    "currentPosition": 5.29,
+    "currentImpressions": 21,
+    "priorImpressions": 5,
+    "delta": 16,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/ja",
+    "currentPosition": 10.67,
+    "currentImpressions": 30,
+    "priorImpressions": 14,
+    "delta": 16,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/about",
+    "currentPosition": 1,
+    "currentImpressions": 12,
     "priorImpressions": 0,
-    "delta": 5,
+    "delta": 12,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/de/about",
+    "currentPosition": 1,
+    "currentImpressions": 12,
+    "priorImpressions": 0,
+    "delta": 12,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/es/about",
+    "currentPosition": 1,
+    "currentImpressions": 12,
+    "priorImpressions": 0,
+    "delta": 12,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/page/2",
+    "currentPosition": 1,
+    "currentImpressions": 12,
+    "priorImpressions": 0,
+    "delta": 12,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/page/37",
+    "currentPosition": 1,
+    "currentImpressions": 12,
+    "priorImpressions": 0,
+    "delta": 12,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/ru/2023/09",
+    "currentPosition": 6,
+    "currentImpressions": 12,
+    "priorImpressions": 0,
+    "delta": 12,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/ru/2023/11",
+    "currentPosition": 6,
+    "currentImpressions": 12,
+    "priorImpressions": 0,
+    "delta": 12,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/tag/compression",
+    "currentPosition": 1,
+    "currentImpressions": 12,
+    "priorImpressions": 0,
+    "delta": 12,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/tag/grpc",
+    "currentPosition": 1,
+    "currentImpressions": 12,
+    "priorImpressions": 0,
+    "delta": 12,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/tag/jwt",
+    "currentPosition": 1,
+    "currentImpressions": 12,
+    "priorImpressions": 0,
+    "delta": 12,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/de/archive",
+    "currentPosition": 1,
+    "currentImpressions": 12,
+    "priorImpressions": 1,
+    "delta": 11,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/de/tags",
+    "currentPosition": 1,
+    "currentImpressions": 12,
+    "priorImpressions": 1,
+    "delta": 11,
     "ctr": 0
   }
 ]
