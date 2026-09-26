@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/microsoft-extensions-ai-10-10-1-fixes-openai-2-14-typeloadexception",
-    "text": "Tool calls through Microsoft.Extensions.AI.OpenAI 10.10.0 crash with TypeLoadException on OpenAI 2.14. 10.10.1 fixes it:"
   }
 ]
