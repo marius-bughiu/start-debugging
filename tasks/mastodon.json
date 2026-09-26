@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/fix-flutter-debugger-jumps-into-binding-dart-on-hot-reload",
-    "text": "If every hot reload of a Flutter 3.35 web app throws you into binding.dart with nothing in the call stack, it is not your code: dwds reported its internal breakpoint re-registration pause as a real one. Flutter 3.38+ fixes it. Stuck on 3.35? Switch VS Code back to 'Debug my code' so package frames stop stealing focus."
   }
 ]

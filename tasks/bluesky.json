@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/fix-flutter-debugger-jumps-into-binding-dart-on-hot-reload",
-    "text": "Every Flutter web hot reload opens binding.dart line 845 with no error? A dwds bug faked a debugger pause. Fixed in 3.38."
   }
 ]
