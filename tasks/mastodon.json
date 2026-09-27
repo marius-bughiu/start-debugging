@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/how-to-speed-up-a-slow-dart-analysis-server-in-vs-code-for-a-large-flutter-monorepo",
-    "text": "Dart analyzer eating 1 GB+ in your Flutter monorepo? Without a pub workspace it builds one analysis context per package and resolves package:flutter in each. Converting cut peak memory 2.3x and cold analysis about in half in my benchmark. Gotcha: without a workspace, packages ignore the root analysis_options exclude."
   }
 ]
