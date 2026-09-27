@@ -126,6 +126,38 @@
     ]
   },
   {
+    "url": "https://developer.apple.com/documentation/webkit/wknavigationdelegate/webview(_:decidepolicyfor:decisionhandler:",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/how-to-block-a-flutter-webview-from-navigating-to-external-urls.md",
+      "site/src/content/blog/de/2026/09/how-to-block-a-flutter-webview-from-navigating-to-external-urls.md",
+      "site/src/content/blog/es/2026/09/how-to-block-a-flutter-webview-from-navigating-to-external-urls.md",
+      "site/src/content/blog/ja/2026/09/how-to-block-a-flutter-webview-from-navigating-to-external-urls.md",
+      "site/src/content/blog/pt-br/2026/09/how-to-block-a-flutter-webview-from-navigating-to-external-urls.md",
+      "site/src/content/blog/ru/2026/09/how-to-block-a-flutter-webview-from-navigating-to-external-urls.md"
+    ]
+  },
+  {
+    "url": "https://developers.google.com/youtube/iframe_api_reference",
+    "status": 500,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
+      "site/src/content/blog/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
+      "site/src/content/blog/de/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
+      "site/src/content/blog/de/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
+      "site/src/content/blog/es/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
+      "site/src/content/blog/es/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
+      "site/src/content/blog/ja/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
+      "site/src/content/blog/ja/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
+      "site/src/content/blog/pt-br/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
+      "site/src/content/blog/pt-br/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
+      "site/src/content/blog/ru/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
+      "site/src/content/blog/ru/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md"
+    ]
+  },
+  {
     "url": "https://docs.avaloniaui.net/docs/next/guides/platforms/web/",
     "status": 404,
     "ok": false,
@@ -236,19 +268,6 @@
     "sources": [
       "site/src/content/blog/2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument.md",
       "site/src/content/blog/2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument.md"
-    ]
-  },
-  {
-    "url": "https://github.com/JosefPihrt/Roslynator/issues/429",
-    "status": 404,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md",
-      "site/src/content/blog/de/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md",
-      "site/src/content/blog/es/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md",
-      "site/src/content/blog/ja/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md",
-      "site/src/content/blog/pt-br/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md",
-      "site/src/content/blog/ru/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md"
     ]
   },
   {
@@ -574,6 +593,25 @@
     ]
   },
   {
+    "url": "https://learn.microsoft.com/en-us/previous-versions/SQL/SQL-server-2008/ms151779(v=sql.100",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/how-to-guarantee-idempotent-message-processing-in-ef-core-11-with-an-inbox-table.md",
+      "site/src/content/blog/2026/09/how-to-guarantee-idempotent-message-processing-in-ef-core-11-with-an-inbox-table.md",
+      "site/src/content/blog/de/2026/09/how-to-guarantee-idempotent-message-processing-in-ef-core-11-with-an-inbox-table.md",
+      "site/src/content/blog/de/2026/09/how-to-guarantee-idempotent-message-processing-in-ef-core-11-with-an-inbox-table.md",
+      "site/src/content/blog/es/2026/09/how-to-guarantee-idempotent-message-processing-in-ef-core-11-with-an-inbox-table.md",
+      "site/src/content/blog/es/2026/09/how-to-guarantee-idempotent-message-processing-in-ef-core-11-with-an-inbox-table.md",
+      "site/src/content/blog/ja/2026/09/how-to-guarantee-idempotent-message-processing-in-ef-core-11-with-an-inbox-table.md",
+      "site/src/content/blog/ja/2026/09/how-to-guarantee-idempotent-message-processing-in-ef-core-11-with-an-inbox-table.md",
+      "site/src/content/blog/pt-br/2026/09/how-to-guarantee-idempotent-message-processing-in-ef-core-11-with-an-inbox-table.md",
+      "site/src/content/blog/pt-br/2026/09/how-to-guarantee-idempotent-message-processing-in-ef-core-11-with-an-inbox-table.md",
+      "site/src/content/blog/ru/2026/09/how-to-guarantee-idempotent-message-processing-in-ef-core-11-with-an-inbox-table.md",
+      "site/src/content/blog/ru/2026/09/how-to-guarantee-idempotent-message-processing-in-ef-core-11-with-an-inbox-table.md"
+    ]
+  },
+  {
     "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/scalability-targets-for-the-azure-blob-storage-service",
     "status": 404,
     "ok": false,
@@ -763,18 +801,37 @@
     "status": 404,
     "ok": false,
     "sources": [
+      "site/src/content/blog/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
       "site/src/content/blog/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
       "site/src/content/blog/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
+      "site/src/content/blog/de/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
       "site/src/content/blog/de/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
       "site/src/content/blog/de/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
+      "site/src/content/blog/es/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
       "site/src/content/blog/es/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
       "site/src/content/blog/es/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
+      "site/src/content/blog/ja/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
       "site/src/content/blog/ja/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
       "site/src/content/blog/ja/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
+      "site/src/content/blog/pt-br/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
       "site/src/content/blog/pt-br/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
       "site/src/content/blog/pt-br/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
+      "site/src/content/blog/ru/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
       "site/src/content/blog/ru/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md",
       "site/src/content/blog/ru/2026/09/migrate-a-dotnet-maui-android-app-to-target-android-api-level-36.md"
+    ]
+  },
+  {
+    "url": "https://support.google.com/googleplay/android-developer/answer/13392821",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
+      "site/src/content/blog/de/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
+      "site/src/content/blog/es/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
+      "site/src/content/blog/ja/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
+      "site/src/content/blog/pt-br/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
+      "site/src/content/blog/ru/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md"
     ]
   },
   {
@@ -794,6 +851,19 @@
       "site/src/content/blog/pt-br/2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app.md",
       "site/src/content/blog/ru/2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app.md",
       "site/src/content/blog/ru/2026/09/how-to-find-the-async-void-handlers-causing-anrs-in-a-dotnet-maui-android-app.md"
+    ]
+  },
+  {
+    "url": "https://support.google.com/googleplay/android-developer/answer/9799150",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
+      "site/src/content/blog/de/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
+      "site/src/content/blog/es/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
+      "site/src/content/blog/ja/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
+      "site/src/content/blog/pt-br/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
+      "site/src/content/blog/ru/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md"
     ]
   },
   {
@@ -1286,16 +1356,35 @@
     ]
   },
   {
+    "url": "https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/fix-iconfiguration-bind-does-not-populate-an-array-or-list-property.md",
+      "site/src/content/blog/de/2026/09/fix-iconfiguration-bind-does-not-populate-an-array-or-list-property.md",
+      "site/src/content/blog/es/2026/09/fix-iconfiguration-bind-does-not-populate-an-array-or-list-property.md",
+      "site/src/content/blog/ja/2026/09/fix-iconfiguration-bind-does-not-populate-an-array-or-list-property.md",
+      "site/src/content/blog/pt-br/2026/09/fix-iconfiguration-bind-does-not-populate-an-array-or-list-property.md",
+      "site/src/content/blog/ru/2026/09/fix-iconfiguration-bind-does-not-populate-an-array-or-list-property.md"
+    ]
+  },
+  {
     "url": "https://www.nuget.org/packages/Microsoft.Extensions.Http.Resilience",
     "status": 404,
     "ok": false,
     "sources": [
       "site/src/content/blog/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
+      "site/src/content/blog/2026/09/fix-delegatinghandler-not-running-on-each-retry-with-addstandardresiliencehandler.md",
       "site/src/content/blog/de/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
+      "site/src/content/blog/de/2026/09/fix-delegatinghandler-not-running-on-each-retry-with-addstandardresiliencehandler.md",
       "site/src/content/blog/es/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
+      "site/src/content/blog/es/2026/09/fix-delegatinghandler-not-running-on-each-retry-with-addstandardresiliencehandler.md",
       "site/src/content/blog/ja/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
+      "site/src/content/blog/ja/2026/09/fix-delegatinghandler-not-running-on-each-retry-with-addstandardresiliencehandler.md",
       "site/src/content/blog/pt-br/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
-      "site/src/content/blog/ru/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md"
+      "site/src/content/blog/pt-br/2026/09/fix-delegatinghandler-not-running-on-each-retry-with-addstandardresiliencehandler.md",
+      "site/src/content/blog/ru/2026/05/polly-vs-resilience-handlers-in-dotnet-11.md",
+      "site/src/content/blog/ru/2026/09/fix-delegatinghandler-not-running-on-each-retry-with-addstandardresiliencehandler.md"
     ]
   },
   {
@@ -1448,6 +1537,19 @@
       "site/src/content/blog/ja/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11.md",
       "site/src/content/blog/pt-br/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11.md",
       "site/src/content/blog/ru/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Oracle.EntityFrameworkCore/10.23.26301",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/how-to-use-an-oracle-sequence-to-generate-primary-keys-in-ef-core.md",
+      "site/src/content/blog/de/2026/09/how-to-use-an-oracle-sequence-to-generate-primary-keys-in-ef-core.md",
+      "site/src/content/blog/es/2026/09/how-to-use-an-oracle-sequence-to-generate-primary-keys-in-ef-core.md",
+      "site/src/content/blog/ja/2026/09/how-to-use-an-oracle-sequence-to-generate-primary-keys-in-ef-core.md",
+      "site/src/content/blog/pt-br/2026/09/how-to-use-an-oracle-sequence-to-generate-primary-keys-in-ef-core.md",
+      "site/src/content/blog/ru/2026/09/how-to-use-an-oracle-sequence-to-generate-primary-keys-in-ef-core.md"
     ]
   },
   {
@@ -1679,12 +1781,13 @@
     ]
   },
   {
-    "url": "https://www.rfc-editor.org/rfc/rfc8707.html",
+    "url": "https://www.rfc-editor.org/rfc/rfc8259",
     "status": 429,
     "ok": false,
     "sources": [
-      "site/src/content/blog/2026/09/fix-mcp-401-invalid-token-audience-does-not-match-server-url.md",
-      "site/src/content/blog/2026/09/fix-mcp-401-invalid-token-audience-does-not-match-server-url.md"
+      "site/src/content/blog/2026/07/fix-all-mcp-servers-fail-to-load-after-malformed-json-in-config.md",
+      "site/src/content/blog/2026/07/fix-windows-path-in-mcp-json-turns-into-tab-newline-or-cjk-character.md",
+      "site/src/content/blog/2026/07/fix-windows-path-in-mcp-json-turns-into-tab-newline-or-cjk-character.md"
     ]
   },
   {
@@ -1701,22 +1804,16 @@
     ]
   },
   {
-    "url": "https://www.rfc-editor.org/rfc/rfc9111#section-4.2.2",
+    "url": "https://www.rfc-editor.org/rfc/rfc9111",
     "status": 429,
     "ok": false,
     "sources": [
-      "site/src/content/blog/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
-      "site/src/content/blog/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
-      "site/src/content/blog/de/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
-      "site/src/content/blog/de/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
-      "site/src/content/blog/es/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
-      "site/src/content/blog/es/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
-      "site/src/content/blog/ja/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
-      "site/src/content/blog/ja/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
-      "site/src/content/blog/pt-br/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
-      "site/src/content/blog/pt-br/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
-      "site/src/content/blog/ru/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md",
-      "site/src/content/blog/ru/2026/09/fix-flutter-web-serves-a-stale-cached-build-after-reload.md"
+      "site/src/content/blog/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
+      "site/src/content/blog/de/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
+      "site/src/content/blog/es/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
+      "site/src/content/blog/ja/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
+      "site/src/content/blog/pt-br/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md",
+      "site/src/content/blog/ru/2026/07/output-caching-vs-response-caching-in-aspnetcore-11.md"
     ]
   },
   {
