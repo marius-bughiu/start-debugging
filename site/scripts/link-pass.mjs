@@ -14,6 +14,7 @@
  *   node scripts/link-pass.mjs --limit=10      # only process the first N candidate posts
  *   node scripts/link-pass.mjs --max-links=2   # change per-post link cap (default 3)
  *   node scripts/link-pass.mjs --verbose
+ *   node scripts/link-pass.mjs --self-test     # run built-in checks and exit
  *
  * Guardrails (roadmap task 2.1):
  *   - Max 3 new links per post per run.
@@ -21,7 +22,11 @@
  *   - Never links a post to itself.
  *   - Skips anchor-text matches inside fenced code blocks, inline code, and
  *     existing markdown links.
- *   - Anchor text must appear verbatim in the target body (case-insensitive).
+ *   - Anchor text must appear verbatim in the target body (case-insensitive)
+ *     and must not be part of a longer token (e.g. "Flutter 3.44" never
+ *     matches inside "Flutter 3.44.8").
+ *   - Skips a candidate whose URL is already linked from the post, in any
+ *     form (relative, absolute, or locale-prefixed).
  *
  * This script is intentionally conservative. The first real-world run should
  * be reviewed as a diff before enabling the scheduled task
@@ -45,6 +50,7 @@ const flagValue = (name) => {
   return hit ? hit.split("=")[1] : undefined;
 };
 const APPLY = args.has("--apply");
+const SELF_TEST = args.has("--self-test");
 const BACKFILL = args.has("--backfill");
 const VERBOSE = args.has("--verbose");
 const MAX_LINKS = Number(flagValue("max-links") ?? 3);
@@ -171,6 +177,10 @@ function anchorPhraseForPost(post) {
   t = t.replace(/[:\u2014\u2013].*$/, ""); // strip after ":" or em/en dash
   t = t.replace(/\s+/g, " ").trim();
   if (t.length < 10) return null;
+  // A lone plain word ("Troubleshooting", Russian "Исправление" = "Fix") is a
+  // generic title prefix, not a topic. Keep single tokens only when they carry
+  // structure, e.g. "System.Text.Json".
+  if (/^\p{L}+$/u.test(t)) return null;
   return t;
 }
 
@@ -190,15 +200,138 @@ function maskUnsafeSpans(body) {
   return mask;
 }
 
+// Characters that make a match part of a longer token. `\b` is not enough:
+// it is ASCII-only (so it misbehaves around Cyrillic/CJK anchors) and it
+// matches between a digit and a ".", which let "Flutter 3.44" match inside
+// "Flutter 3.44.8" and produced "[Flutter 3.44](...).8".
+// CJK scripts don't separate words with spaces, so a CJK neighbour is a valid
+// boundary ("Flutter 3.44で" is fine); any other letter/digit is not.
+const WORD = "(?:(?![\\p{sc=Han}\\p{sc=Hiragana}\\p{sc=Katakana}])[\\p{L}\\p{N}_])";
+// Leading: not glued to a preceding word char or a "." / "-" / "/" / "@"
+// (e.g. "3.44" inside "2.3.44", "Text.Json" inside "System.Text.Json").
+const LEAD_GUARD = `(?<!${WORD}|[.\\-/@])`;
+// Trailing: not followed by a word char, nor by "." / "-" + word char
+// (e.g. "2.3" inside "2.3.3", "Json" inside "Json.Serialization").
+const TRAIL_GUARD = `(?!${WORD}|[.\\-]${WORD})`;
+
+function anchorRegex(phrase) {
+  return new RegExp(`${LEAD_GUARD}${escapeRegex(phrase)}${TRAIL_GUARD}`, "giu");
+}
+
 // Find the first safe (case-insensitive) occurrence of phrase in body that
-// isn't inside code/existing-link spans. Returns the match index, or -1.
+// isn't inside code/existing-link spans and isn't a prefix/suffix of a longer
+// token such as a version number. Returns { start, end } or null.
 function findSafeOccurrence(body, mask, phrase) {
-  const re = new RegExp(`\\b${escapeRegex(phrase)}\\b`, "gi");
+  const re = anchorRegex(phrase);
   let m;
   while ((m = re.exec(body))) {
-    if (!mask[m.index]) return { start: m.index, end: m.index + m[0].length };
+    const start = m.index;
+    const end = start + m[0].length;
+    let safe = true;
+    for (let i = start; i < end; i++) {
+      if (mask[i]) {
+        safe = false;
+        break;
+      }
+    }
+    if (safe) return { start, end };
   }
   return null;
+}
+
+// --- Existing-link detection ---------------------------------------------
+
+const LOCALE_PREFIX = /^\/(?:de|es|ja|pt-br|ru)(?=\/)/i;
+const SITE_HOST = /^(?:https?:)?\/\/(?:www\.)?startdebugging\.net(?=\/|$)/i;
+
+// Normalize an internal URL to a locale-less canonical path like
+// "/2026/08/some-slug/". Returns null for external URLs and non-paths.
+function canonicalPostPath(url) {
+  let u = url.trim().replace(/^<|>$/g, "");
+  u = u.replace(SITE_HOST, "");
+  if (!u.startsWith("/")) return null;
+  u = u.split(/[?#\s]/)[0];
+  u = u.replace(LOCALE_PREFIX, "");
+  if (!u.endsWith("/")) u += "/";
+  return u.toLowerCase();
+}
+
+// Every internal post path already linked from body, in any form: relative
+// ("/2026/..."), absolute ("https://startdebugging.net/2026/..."), or
+// locale-prefixed ("/ru/2026/..."). Covers inline links, reference-style
+// definitions, HTML href attributes, and bare/autolinked URLs.
+function existingLinkedPaths(body) {
+  const found = new Set();
+  const patterns = [
+    /\]\(\s*<?([^)\s>]+)/g, // [text](url "title")
+    /^\s*\[[^\]]+\]:\s*<?(\S+?)>?(?:\s|$)/gm, // [ref]: url
+    /href\s*=\s*["']([^"']+)["']/gi, // <a href="url">
+    /(?:https?:)?\/\/(?:www\.)?startdebugging\.net\/[^\s)\]>"'`]*/gi, // bare
+  ];
+  for (const re of patterns) {
+    let m;
+    while ((m = re.exec(body))) {
+      const p = canonicalPostPath(m[1] ?? m[0]);
+      if (p) found.add(p);
+    }
+  }
+  return found;
+}
+
+function isAlreadyLinked(linkedPaths, slug) {
+  return linkedPaths.has(canonicalPostPath(`/${slug}/`));
+}
+
+// --- Self-test --------------------------------------------------------------
+
+function selfTest() {
+  const assert = (cond, msg) => {
+    if (!cond) throw new Error(`self-test failed: ${msg}`);
+  };
+  const hit = (body, phrase) =>
+    findSafeOccurrence(body, maskUnsafeSpans(body), phrase);
+
+  // Version-number boundaries.
+  assert(!hit("Работает на Flutter 3.44.8 и выше.", "Flutter 3.44"), "trailing .8 split");
+  assert(!hit("Uses Microsoft.Testing.Platform 2.3.3 today.", "Microsoft.Testing.Platform 2.3"), "trailing .3 split");
+  assert(!hit("Flutter 3.445 is out", "Flutter 3.44"), "trailing digit");
+  assert(!hit("Uses Flutter 3.44-beta", "Flutter 3.44"), "trailing hyphen suffix");
+  assert(!hit("see System.Text.Json.Serialization", "System.Text.Json"), "trailing .word");
+  assert(!hit("MyFlutter 3.44 thing", "Flutter 3.44"), "leading word char");
+  assert(!hit("v2.3.44 build", "3.44 build"), "leading digit-dot");
+  assert(hit("Upgrade to Flutter 3.44.", "Flutter 3.44"), "sentence-final period ok");
+  assert(hit("Upgrade to Flutter 3.44, then", "Flutter 3.44"), "comma ok");
+  assert(hit("(Flutter 3.44) is", "Flutter 3.44"), "parens ok");
+  assert(hit("В Flutter 3.44 появилось", "Flutter 3.44"), "Cyrillic context ok");
+  assert(hit("новый Возврат значения здесь", "Возврат значения"), "Cyrillic phrase ok");
+  assert(hit("これはFlutter 3.44で追加されました", "Flutter 3.44"), "CJK neighbours ok");
+  assert(!hit("Flutter 3.44.8で修正", "Flutter 3.44"), "CJK context still blocks version split");
+  assert(!hit("`Flutter 3.44` in code", "Flutter 3.44"), "inline code masked");
+  assert(!hit("[Flutter 3.44](/x/) linked", "Flutter 3.44"), "existing link masked");
+  const b = "Flutter 3.44.8 first, then Flutter 3.44 later.";
+  const h = hit(b, "Flutter 3.44");
+  assert(h && b.slice(h.start, h.end) === "Flutter 3.44" && h.start > 10, "skips bad match, finds later good one");
+
+  assert(anchorPhraseForPost({ title: "Исправление: ошибка сборки" }) === null, "generic single-word anchor dropped");
+  assert(anchorPhraseForPost({ title: "System.Text.Json: tips" }) === "System.Text.Json", "structured single token kept");
+  assert(anchorPhraseForPost({ title: "Flutter 3.44: corner radius" }) === "Flutter 3.44", "title cut at colon");
+
+  // Existing-link detection.
+  const slug = "ru/2026/08/microsoft-testing-platform-2-3-github-actions-annotations";
+  const forms = [
+    "[a](/ru/2026/08/microsoft-testing-platform-2-3-github-actions-annotations/)",
+    "[a](/ru/2026/08/microsoft-testing-platform-2-3-github-actions-annotations)",
+    "[a](/2026/08/microsoft-testing-platform-2-3-github-actions-annotations/)",
+    "[a](https://startdebugging.net/ru/2026/08/microsoft-testing-platform-2-3-github-actions-annotations/#x)",
+    "[a](https://www.startdebugging.net/2026/08/microsoft-testing-platform-2-3-github-actions-annotations/ \"t\")",
+    "[a][r]\n\n[r]: /ru/2026/08/microsoft-testing-platform-2-3-github-actions-annotations/",
+    '<a href="/ru/2026/08/microsoft-testing-platform-2-3-github-actions-annotations/">a</a>',
+    "see https://startdebugging.net/2026/08/microsoft-testing-platform-2-3-github-actions-annotations/ for more",
+  ];
+  for (const f of forms) assert(isAlreadyLinked(existingLinkedPaths(f), slug), `already-linked: ${f}`);
+  assert(!isAlreadyLinked(existingLinkedPaths("[a](/ru/2026/08/other-post/) [b](https://example.com/2026/08/microsoft-testing-platform-2-3-github-actions-annotations/)"), slug), "unrelated links");
+
+  process.stdout.write("link-pass self-test: OK\n");
 }
 
 // --- Main -----------------------------------------------------------------
@@ -249,9 +382,14 @@ async function main() {
     // Greedily propose up to MAX_LINKS from the top similar posts.
     let body = target.body;
     const mask = maskUnsafeSpans(body);
+    const linked = existingLinkedPaths(body);
     const patches = [];
     for (const { post: candidate, sim } of top) {
       if (patches.length >= MAX_LINKS) break;
+      if (isAlreadyLinked(linked, candidate.slug)) {
+        if (VERBOSE) console.error(`[link-pass] ${target.slug}: already links /${candidate.slug}/, skipping`);
+        continue;
+      }
       const phrase = anchorPhraseForPost(candidate);
       if (!phrase) continue;
       const hit = findSafeOccurrence(body, mask, phrase);
@@ -271,6 +409,7 @@ async function main() {
         targetSlug: candidate.slug,
       });
       for (let i = hit.start; i < hit.end; i++) mask[i] = 1;
+      linked.add(canonicalPostPath(href));
     }
 
     if (patches.length === 0) continue;
@@ -331,7 +470,14 @@ async function main() {
   }
 }
 
-main().catch((err) => {
+if (SELF_TEST) {
+  try {
+    selfTest();
+  } catch (err) {
+    console.error(`[link-pass] ${err.message}`);
+    process.exit(1);
+  }
+} else main().catch((err) => {
   console.error("[link-pass] failed:", err);
   process.exit(1);
 });
