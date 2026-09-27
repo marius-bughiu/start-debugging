@@ -162,7 +162,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to keep a Flutter location-tracking task running in the background on Android 15 → slug: 2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15
 - How to disable antiforgery validation for a single minimal API form endpoint in ASP.NET Core 11 → slug: 2026/09/how-to-disable-antiforgery-validation-for-a-single-minimal-api-endpoint-in-aspnetcore-11
 - How to serialize public fields such as `Vector3` and `Quaternion` with System.Text.Json → slug: 2026/09/how-to-serialize-vector3-and-quaternion-with-system-text-json
-- How to speed up a slow Dart analysis server in VS Code for a large Flutter monorepo
+- How to speed up a slow Dart analysis server in VS Code for a large Flutter monorepo → slug: 2026/09/how-to-speed-up-a-slow-dart-analysis-server-in-vs-code-for-a-large-flutter-monorepo
 - How to add a unique index on a JSON-mapped property in EF Core 11 on SQL Server and SQLite
 
 ## Fix / error
