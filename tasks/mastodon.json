@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/run-coding-agents-in-disposable-vms-and-containers",
+    "text": "Running Claude Code unattended? Move the whole agent, not just its shell, into something you can delete: a firewalled dev container, a Docker Sandboxes microVM with a credential proxy, or a Lima VM that makes you review every change. The catch: a writable workspace still lets the agent plant .git/hooks that run on your host."
   }
 ]
