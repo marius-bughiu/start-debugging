@@ -36,16 +36,6 @@ Move approved entries under `## Approved`, remove after posting.
 
 <!-- The scheduled task appends new entries here. Stale drafts (>14 days) are culled on the next run. -->
 
-### 2026-09-06 drafted - migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026
-
-**Original:** 2026-05-28 - Migrate from .NET Framework 4.8 to .NET 11 in 2026
-
-**Bluesky:** Order matters on the BinaryFormatter step. Blobs serialised with it can only be read on the old runtime, so the conversion tool has to run on .NET Framework 4.8 before you decommission it. Migrate first and those payloads are stranded.
-
-**Mastodon:** Four .NET 11 behaviour changes that compile fine and fail in production. 1. HttpClient enforces SNI strictly, so an internal cert with no matching SAN throws AuthenticationException. 2. DateTime.Parse rejects ambiguous input that 4.8 accepted, so pass InvariantCulture and an explicit format. 3. appsettings.json binding is case sensitive, maxretries does not bind to MaxRetries. 4. A transitive System.Data.SqlClient pin builds, then fails on TLS 1.3.
-
-**Notes:** Longest eligible evergreen at 3019 words and joint-top on internal links with 9 outbound, anchoring the .NET migration cluster, so the link equity keeps working. Both GSC files hold only site: queries this week (gsc-candidates.json is two tag-listing rows, gsc-rising.json is five site: rows), so there was no topical traction signal and depth plus link count decided it. It also moves the run off the last three picks, an MSBuild reference failure, the C# type decision matrix, and the mobile framework bake-off. Fresh angle: the obvious copy for a migration playbook is the breakage table, System.Web is gone and WebForms has no path, which every porting post already says. Neither of these repeats it. Bluesky takes the one step whose ordering is a one way door, since BinaryFormatter blobs are only readable on the runtime you are about to delete and nobody sequences that until it is too late. Mastodon carries the post-cutover gotchas, the four behaviour differences that build clean and surface in production.
-
 ### 2026-09-13 drafted - dart-records-vs-freezed-classes
 
 **Original:** 2026-05-27 - Dart records vs Freezed classes: which should you pick in 2026?
@@ -65,6 +55,16 @@ Move approved entries under `## Approved`, remove after posting.
 **Mastodon:** List vs Span is not settled by the benchmark. Summing 10,000 ints on .NET 11: List foreach 6.1 us, span foreach 2.4 us, zero allocation either way. Outside a hot loop that is 4 microseconds. Lifetime decides instead. A ref struct cannot be a field, cannot be captured in a lambda, and cannot survive an await. If the buffer outlives the stack frame you are on List or Memory, whatever the numbers say.
 
 **Notes:** Second longest eligible evergreen at 2686 words with 7 internal links, anchoring the span and memory cluster (implicit Span conversions in C# 14, ReadOnlyMemory conversion, SearchValues, large CSV parsing, params ReadOnlySpan), so the outbound links keep working. The longest, maui-vs-avalonia-vs-uno-in-2026 at 2717 words, was passed over for the second week running: it is still a cross platform UI bake-off three weeks after the Flutter vs RN vs MAUI pick, and the overlap reads as repetition to the same followers. Both GSC files carry only site: queries again this week (gsc-candidates.json is eight site: rows, gsc-rising.json the same set), so there was no topical traction signal and depth plus link count decided. It also moves the run off the last three picks, a mobile framework bake-off, a .NET Framework migration, and Dart records vs Freezed, and the last C# language pick was record-vs-class-vs-struct four weeks ago. Fresh angle: the obvious copy is the post's own three line summary, own and grow means List, view and mutate means Span, view and read means ReadOnlySpan, which every span explainer already says. Neither hook repeats it. Bluesky takes the one lifetime trap that survives review, a CollectionsMarshal.AsSpan view left pointing at the array a resize orphaned. Mastodon uses the benchmark to take performance off the table, 6.1 us vs 2.4 us on 10,000 ints, then names the ref struct constraints that decide regardless of speed.
+
+### 2026-09-27 drafted - maui-vs-avalonia-vs-uno-in-2026
+
+**Original:** 2026-05-27 - MAUI vs Avalonia vs Uno Platform: which should you pick in 2026?
+
+**Bluesky:** Porting a desktop app to .NET cross platform? The XAML dialect you already own decides more than the renderer. WPF XAML is closest to Avalonia, WinUI 3 XAML pastes into Uno nearly untouched, and MAUI XAML pastes nowhere. That choice compounds for years.
+
+**Mastodon:** MAUI vs Avalonia vs Uno in 2026 is mostly settled by two targets you may not ship yet. Linux in the matrix? MAUI is out, and Microsoft has no roadmap for it. Browser in production today? Avalonia's WebAssembly target is still preview, which leaves Uno. Only once both are off the table does native controls vs Skia matter. Cold start on a Pixel 8 hello world: Avalonia 410 ms, MAUI 11 480 ms on CoreCLR, Uno 520 ms.
+
+**Notes:** Longest remaining eligible evergreen at 2717 words with 9 internal links into the MAUI cluster (CoreCLR default, Xamarin.Forms migration, Store packaging, desktop-only MAUI). Passed over the last two weeks for overlap with the 08-30 Flutter vs RN vs MAUI pick, but that gap is now four weeks, and the last three picks (.NET Framework migration, Dart records vs Freezed, List vs Span) left the UI framework space alone. gsc-candidates.json holds only site: queries again, so no traction signal; depth and link count decided. Fresh angle: the obvious copy is the post's three-way summary (Avalonia for desktop, Uno for browser, MAUI for mobile). Neither hook repeats it. Bluesky leads with the XAML dialect lock-in, the decision people underweight when porting. Mastodon frames the pick as elimination by Linux and browser targets, then uses the cold start numbers to show performance is not the tiebreaker it looks like.
 
 ---
 
