@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/how-to-add-a-unique-index-on-a-json-mapped-property-in-ef-core-11",
-    "text": "In EF Core 11 RC 1, HasIndex(\"Contact.Email\").IsUnique() on a JSON column lets duplicates in. SQL Server emits CREATE JSON INDEX with no UNIQUE, SQLite puts the unique index on the entire document. Fix: a computed column over JSON_VALUE / json_extract, and on SQL Server you must also remove EF's default IS NOT NULL filter."
   }
 ]
