@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/ag-ui-dotnet-sdk-1-0-moves-agui-out-of-agent-framework",
+    "text": "The AG-UI protocol got a standalone .NET SDK: AGUI.Server 1.0.0 maps any Microsoft.Extensions.AI IChatClient to correctly ordered AG-UI events over SSE, and AGUIChatClient consumes a remote agent as an IChatClient, even on .NET Framework 4.7.2. Agent Framework users: MapAGUI is now MapAGUIServer."
   }
 ]
