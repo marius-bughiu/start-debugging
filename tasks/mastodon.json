@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/fix-maui-resizetizer-mauir0001-missingmethodexception-svg-filter-text",
+    "text": "Upgraded to .NET MAUI 10.0.110 and your icon or splash SVG now fails with MAUIR0001 MissingMethodException? The bundled SkiaSharp and Svg.Skia bind different System.Memory versions, so every <filter> or <text> breaks. Pin Microsoft.Maui.Resizetizer 10.0.100 with NoWarn NU1605. Gotcha: incremental builds hide it until CI."
   }
 ]
