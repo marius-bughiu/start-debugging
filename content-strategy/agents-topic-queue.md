@@ -177,7 +177,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Patterns: cost control for autonomous agents with per-session credit and spend limits (skipped: same intent as 2026/07/set-ai-credit-session-limits-in-github-copilot-cli-and-sdk, which covers per-session AI credit limits and the soft-cap overshoot)
 - Patterns: keeping API keys out of agent context with a credential gateway → slug: 2026/09/keep-api-keys-out-of-agent-context-with-a-credential-gateway
 - Patterns: running coding agents in disposable VMs and containers instead of on your laptop → slug: 2026/09/run-coding-agents-in-disposable-vms-and-containers
-- Patterns: measuring an agent's fixed token overhead - system prompt and tool schemas before the first user token
+- Patterns: measuring an agent's fixed token overhead - system prompt and tool schemas before the first user token → slug: 2026/09/measure-an-agents-fixed-token-overhead-before-the-first-user-token
 - Patterns: stateless tool design - passing state handles as tool arguments instead of relying on the transport
 - Patterns: self-healing end-to-end tests when a coding agent renames selectors
 

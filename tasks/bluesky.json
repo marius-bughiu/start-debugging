@@ -34,5 +34,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
+  },
+  {
+    "slug": "2026/09/measure-an-agents-fixed-token-overhead-before-the-first-user-token",
+    "text": "Your agent pays for its system prompt, a hidden tool preamble, and every tool schema before you type. Measure it with count_tokens."
   }
 ]
