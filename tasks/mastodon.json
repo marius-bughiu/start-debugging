@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/fix-android-status-bar-icons-unreadable-after-enabling-usematerial3-in-maui-10",
-    "text": "MAUI 10.0.100 picks Android status bar icon colors from colorPrimary luminance. Material 3 puts colorSurface behind the bar, and primary and surface have opposite brightness, so icons vanish in both themes. 10.0.101 fixes it; on 10.0.100, reset AppearanceLightStatusBars after base.OnCreate. .NET 11 RC 1 modals still break."
   }
 ]
