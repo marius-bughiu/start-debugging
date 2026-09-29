@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/self-healing-e2e-tests-when-a-coding-agent-renames-selectors",
-    "text": "Let an AI healer fix broken Playwright locators, but fail CI the moment it edits an assertion. Hook + guard script, tested on 1.63."
   }
 ]
