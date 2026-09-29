@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/fix-dotnet-watch-blazor-hot-reload-websocket-fails-on-custom-local-domain",
+    "text": "Blazor hot reload broke on your custom local domain? SDK 10.0.401 and friends fixed CVE-2026-58649 by rejecting browser-refresh WebSockets from unknown origins. Set DOTNET_WATCH_AUTO_RELOAD_WS_ORIGINS to the bare host name. Gotcha: launchSettings.json won't work, and wildcards or ports never match."
   }
 ]
