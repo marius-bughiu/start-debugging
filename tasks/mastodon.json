@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/fix-ef-core-contains-on-a-static-readonly-ilist-or-iset-fails-to-translate",
-    "text": "Make a static IList<string> field readonly and a working EF Core query stops translating. EF inlines it as a constant cast to IList, and 8, 9 and 10 only unwrap casts to IEnumerable<T>. Measured across ISet, IReadOnlySet and FrozenSet too. EF Core 11 fixes it, and one call works until then: Enumerable.Contains(field, x)."
   }
 ]

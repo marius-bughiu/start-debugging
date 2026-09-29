@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/fix-ef-core-contains-on-a-static-readonly-ilist-or-iset-fails-to-translate",
-    "text": "EF Core 8-10 can't translate Contains on a static readonly IList or ISet. Enumerable.Contains(field, x) fixes it, same SQL."
   }
 ]
