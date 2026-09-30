@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/09/fix-certificate-verify-failed-in-dart-3-13-docker-image",
-    "text": "HandshakeException CERTIFICATE_VERIFY_FAILED after bumping to dart:stable? Dart 3.13 no longer bakes fallback root certificates into the VM, so a runtime image without /etc/ssl/certs trusts nothing. Keep COPY /runtime/, install ca-certificates, or pass --root-certs-file via DART_VM_OPTIONS. SSL_CERT_FILE does nothing."
   }
 ]
