@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/09/fix-launchsettings-environment-variables-ignored-for-executable-profile",
+    "text": "Your launchSettings.json Executable profile runs dotnet watch with Development set, yet the app boots in Production. The inner dotnet run silently applies the first profile and overwrites your variables. One flag fixes it: --no-launch-profile. Also: put an Executable profile first and plain dotnet run forks forever."
   }
 ]
