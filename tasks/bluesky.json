@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/09/aspire-13-6-dashboard-keeps-your-last-ten-runs",
-    "text": "Aspire 13.6 dashboard stops forgetting on Ctrl+C: telemetry goes to SQLite and your last 10 AppHost runs stay browsable."
   }
 ]
