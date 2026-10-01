@@ -34,5 +34,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
+  },
+  {
+    "slug": "2026/10/fix-dotnet-test-exit-code-5-zero-tests-ran-microsoft-testing-platform",
+    "text": "\"Zero tests ran\" with exit code 5 on dotnet test? Your tests are fine. MTP rejected an argument and dotnet test hid the error."
   }
 ]

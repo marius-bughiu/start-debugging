@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/10/fix-dotnet-test-exit-code-5-zero-tests-ran-microsoft-testing-platform",
+    "text": "dotnet test says \"Zero tests ran\", exit code 5. Nothing is wrong with your tests: Microsoft.Testing.Platform rejected an argument (often a leftover --logger trx, or --report-trx in a solution where only the MSTest project has the TRX extension) and dotnet test swallows the message. Run the test exe directly to see it."
   }
 ]
