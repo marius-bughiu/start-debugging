@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/10/fix-cs8509-cs0161-switch-exhaustive-over-csharp-15-union-type",
+    "text": "Matched every C# 15 union case and still got CS8509 or CS0161? Switch on the union, not .Value, and remember switch statements need a case null arm because default(U).Value is null. Measured on .NET 11 RC1, including why 'T v' arms on a generic union hit CS8780 under every constraint."
   }
 ]
