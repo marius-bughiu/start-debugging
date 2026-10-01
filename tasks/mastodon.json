@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/10/maui-10-0-110-fixes-six-leaks-found-by-an-agentic-leak-hunter",
+    "text": "Six [leak-fix] entries in .NET MAUI 10.0.110, five opened by an agentic Memory Leak Fixer workflow. BackButtonBehavior, SwipeItemView and ListView.RefreshCommand held strong CanExecuteChanged subscriptions, so a CommunityToolkit RelayCommand on a singleton kept every page alive. What changed and how the bots proved it."
   }
 ]
