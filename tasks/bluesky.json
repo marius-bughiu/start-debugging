@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/10/fix-cs8509-cs0161-switch-exhaustive-over-csharp-15-union-type",
-    "text": "C# 15 union switch still says CS8509 or CS0161? You matched .Value, or used a switch statement without case null."
   }
 ]
