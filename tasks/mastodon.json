@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/10/volatile-read-vs-volatile-readbarrier-in-dotnet-10",
-    "text": "Volatile.Read vs the new Volatile.ReadBarrier in .NET 10: one is an acquire load of a single field, the other a fence over all prior reads. I stress-tested a seqlock on an M4: drop either half of the reader ordering and torn snapshots pass validation (99 in 164M). Drop WriteBarrier and it's 54M."
   }
 ]
