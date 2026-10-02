@@ -34,5 +34,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
+  },
+  {
+    "slug": "2026/10/agent-framework-1-23-function-middleware-can-now-swap-the-tool",
+    "text": "Agent Framework .NET 1.23: setting context.Function in middleware now reroutes the tool call. Before, it was silently ignored."
   }
 ]
