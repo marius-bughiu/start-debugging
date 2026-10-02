@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/10/agent-framework-1-23-function-middleware-can-now-swap-the-tool",
-    "text": "Until Agent Framework .NET 1.22, setting FunctionInvocationContext.Function in middleware did nothing. 1.23.0 honors it, so you can route a risky tool call to a guarded implementation, and WrapWithPendingMiddleware keeps later middleware in the loop. Approval still sees the original tool."
   }
 ]
