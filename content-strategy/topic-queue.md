@@ -390,7 +390,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `Process.Run` vs `Process.Start` in .NET 11 → slug: 2026/09/process-run-vs-process-start-in-dotnet-11 (verified on .NET 11 RC 1: Run's timeout/cancellation SIGKILLs only the direct child, grandchildren survive; RunAsync returns Canceled=true instead of throwing; spawn cost identical, ~740 us on M4)
 - `Microsoft.Data.SqlClient` vs `System.Data.SqlClient` in .NET 11 → slug: 2026/09/microsoft-data-sqlclient-vs-system-data-sqlclient-in-dotnet-11 (verified against MDS 7.0.3 and SDS 4.9.1 on SDK 10.0.302: SDS emits CS0618 on every public type, Encrypt default False vs True, 10 connection-string keywords MDS-only, publish output 1.07 MB vs 7.35 MB vs 17.3 MB for MDS 6.1.7)
 - `Volatile.Read` vs `Volatile.ReadBarrier` in .NET 10 → slug: 2026/10/volatile-read-vs-volatile-readbarrier-in-dotnet-10
-- `EF.Parameter` vs `EF.Constant` in EF Core 11 queries
+- `EF.Parameter` vs `EF.Constant` in EF Core 11 queries → slug: 2026/10/ef-parameter-vs-ef-constant-in-ef-core-11-queries (measured on EF Core 11 RC 1: raw Expression.Constant = 1 EF compile per value, EF.Parameter/EF.Constant = 0; ParameterTranslationMode is not in the query cache key, same on 10.0.12)
 
 ## Migration / upgrade
 
