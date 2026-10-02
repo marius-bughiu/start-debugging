@@ -34,5 +34,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
+  },
+  {
+    "slug": "2026/10/what-is-an-agent-skill-and-how-is-it-different-from-a-system-prompt",
+    "text": "A skill is not a smaller system prompt. Only ~100 tokens of it load per turn; the body arrives when a task matches, scripts never do."
   }
 ]

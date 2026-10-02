@@ -184,7 +184,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 ## What is / concept
 
 - What is the Model Context Protocol and why every IDE is shipping it → slug: 2026/09/what-is-the-model-context-protocol-and-why-every-ide-is-shipping-it
-- What is an "agent skill" and how is it different from a system prompt
+- What is an "agent skill" and how is it different from a system prompt → slug: 2026/10/what-is-an-agent-skill-and-how-is-it-different-from-a-system-prompt
 - What is prompt caching and when does it save real money
 - What is a coding agent "subagent" and when does it beat one big prompt
 - What is the difference between an AI agent and an AI workflow

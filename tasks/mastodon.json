@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/10/what-is-an-agent-skill-and-how-is-it-different-from-a-system-prompt",
+    "text": "Agent skills vs system prompts: the system prompt is paid for on every turn, a skill costs ~100 tokens of description until a task matches it. The catch: in Claude Code the skill listing is capped at 1% of the context window, and on overflow the least-used skills lose their descriptions and stop auto-triggering."
   }
 ]
