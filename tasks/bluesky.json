@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/10/ef-parameter-vs-ef-constant-in-ef-core-11-queries",
-    "text": "EF.Constant no longer recompiles your EF Core query. A raw Expression.Constant in a built tree does, 500 times for 500 values."
   }
 ]
