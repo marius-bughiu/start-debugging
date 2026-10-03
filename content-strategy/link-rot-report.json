@@ -68,6 +68,16 @@
     ]
   },
   {
+    "url": "https://code.visualstudio.com/docs/enterprise/ai-settings",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/08/centrally-control-which-mcp-servers-a-team-can-run.md",
+      "site/src/content/blog/2026/08/fix-mcp-server-blocked-by-enterprise-allowlist.md"
+    ]
+  },
+  {
     "url": "https://dart.dev/tools/linter-rules/unnecessary_non_null_assertion",
     "status": 404,
     "ok": false,
@@ -136,25 +146,6 @@
       "site/src/content/blog/ja/2026/09/how-to-block-a-flutter-webview-from-navigating-to-external-urls.md",
       "site/src/content/blog/pt-br/2026/09/how-to-block-a-flutter-webview-from-navigating-to-external-urls.md",
       "site/src/content/blog/ru/2026/09/how-to-block-a-flutter-webview-from-navigating-to-external-urls.md"
-    ]
-  },
-  {
-    "url": "https://developers.google.com/youtube/iframe_api_reference",
-    "status": 500,
-    "ok": false,
-    "sources": [
-      "site/src/content/blog/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
-      "site/src/content/blog/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
-      "site/src/content/blog/de/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
-      "site/src/content/blog/de/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
-      "site/src/content/blog/es/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
-      "site/src/content/blog/es/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
-      "site/src/content/blog/ja/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
-      "site/src/content/blog/ja/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
-      "site/src/content/blog/pt-br/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
-      "site/src/content/blog/pt-br/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
-      "site/src/content/blog/ru/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md",
-      "site/src/content/blog/ru/2026/09/fix-youtube-embed-video-unavailable-error-152-153-in-flutter-youtube-player-iframe.md"
     ]
   },
   {
@@ -268,6 +259,19 @@
     "sources": [
       "site/src/content/blog/2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument.md",
       "site/src/content/blog/2026/05/fix-extra-inputs-are-not-permitted-on-a-tool-call-with-a-structured-argument.md"
+    ]
+  },
+  {
+    "url": "https://github.com/JosefPihrt/Roslynator/issues/429",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md",
+      "site/src/content/blog/de/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md",
+      "site/src/content/blog/es/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md",
+      "site/src/content/blog/ja/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md",
+      "site/src/content/blog/pt-br/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md",
+      "site/src/content/blog/ru/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method.md"
     ]
   },
   {
@@ -958,6 +962,14 @@
     ]
   },
   {
+    "url": "https://www.npmjs.com/package/@playwright/test",
+    "status": 403,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/self-healing-e2e-tests-when-a-coding-agent-renames-selectors.md"
+    ]
+  },
+  {
     "url": "https://www.npmjs.com/package/cowork-terminal-mcp",
     "status": 403,
     "ok": false,
@@ -1398,6 +1410,32 @@
       "site/src/content/blog/ja/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md",
       "site/src/content/blog/pt-br/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md",
       "site/src/content/blog/ru/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.Maui.Controls",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/fix-android-status-bar-icons-unreadable-after-enabling-usematerial3-in-maui-10.md",
+      "site/src/content/blog/de/2026/09/fix-android-status-bar-icons-unreadable-after-enabling-usematerial3-in-maui-10.md",
+      "site/src/content/blog/es/2026/09/fix-android-status-bar-icons-unreadable-after-enabling-usematerial3-in-maui-10.md",
+      "site/src/content/blog/ja/2026/09/fix-android-status-bar-icons-unreadable-after-enabling-usematerial3-in-maui-10.md",
+      "site/src/content/blog/pt-br/2026/09/fix-android-status-bar-icons-unreadable-after-enabling-usematerial3-in-maui-10.md",
+      "site/src/content/blog/ru/2026/09/fix-android-status-bar-icons-unreadable-after-enabling-usematerial3-in-maui-10.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.Maui.Resizetizer",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/09/fix-maui-resizetizer-mauir0001-missingmethodexception-svg-filter-text.md",
+      "site/src/content/blog/de/2026/09/fix-maui-resizetizer-mauir0001-missingmethodexception-svg-filter-text.md",
+      "site/src/content/blog/es/2026/09/fix-maui-resizetizer-mauir0001-missingmethodexception-svg-filter-text.md",
+      "site/src/content/blog/ja/2026/09/fix-maui-resizetizer-mauir0001-missingmethodexception-svg-filter-text.md",
+      "site/src/content/blog/pt-br/2026/09/fix-maui-resizetizer-mauir0001-missingmethodexception-svg-filter-text.md",
+      "site/src/content/blog/ru/2026/09/fix-maui-resizetizer-mauir0001-missingmethodexception-svg-filter-text.md"
     ]
   },
   {
