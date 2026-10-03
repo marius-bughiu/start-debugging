@@ -164,6 +164,12 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to serialize public fields such as `Vector3` and `Quaternion` with System.Text.Json → slug: 2026/09/how-to-serialize-vector3-and-quaternion-with-system-text-json
 - How to speed up a slow Dart analysis server in VS Code for a large Flutter monorepo → slug: 2026/09/how-to-speed-up-a-slow-dart-analysis-server-in-vs-code-for-a-large-flutter-monorepo
 - How to add a unique index on a JSON-mapped property in EF Core 11 on SQL Server and SQLite → slug: 2026/09/how-to-add-a-unique-index-on-a-json-mapped-property-in-ef-core-11
+- How to wait for a `ValueTask` synchronously in a non-async method without allocating
+- How to share one log message across call sites with `[LoggerMessage]` and stop CA2254 warnings
+- How to set PostgreSQL session parameters such as `search_path` or `statement_timeout` on every EF Core connection with Npgsql
+- How to add a strong-named assembly's full public key to `InternalsVisibleTo` in an SDK-style project
+- How to detect Windows session lock, unlock, logon and logoff events in a C# app
+- How to reserve space for an adaptive AdMob banner in Flutter to avoid layout shift
 
 ## Fix / error
 
@@ -325,6 +331,13 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `dotnet test` exits with code 5 and "Zero tests ran" on Microsoft.Testing.Platform → slug: 2026/10/fix-dotnet-test-exit-code-5-zero-tests-ran-microsoft-testing-platform (measured on SDK 10.0.302 + 11 RC1, MSTest.Sdk 4.4.1/MTP 2.4.1 vs 4.3.3, xunit.v3.mtp-v2 4.0.1: exit 5 = unknown/invalid arg, dotnet test hides the message (11 RC1 adds "Handshake failures"), exe run shows it; mixed-sln --report-trx/--coverage fail the xUnit project; per-project TestingPlatformCommandLineArguments fixes; one empty module = 8 on 10.0.302, 0 on 11 RC1 whole-run verdict)
 - Fix: CS8509 or CS0161 on a `switch` that is exhaustive over a C# 15 union type → slug: 2026/10/fix-cs8509-cs0161-switch-exhaustive-over-csharp-15-union-type (measured on 11.0.100-rc.1: .Value/object/IUnion-constrained T lose union matching (CS8509/CS8121); switch statements need case null for reachability (CS0161/CS0165, same for closed classes, bool OK, #nullable disable irrelevant); T v case designation = CS8780 under every constraint, TV => / var work; default(U) with non-null cases: no warning, SwitchExpressionException)
 - Fix: `Undefined name 'awaitNotRequired'` from `material_ui` or `cupertino_ui` on Flutter 3.44 → slug: 2026/10/fix-undefined-name-awaitnotrequired-material-ui-cupertino-ui-flutter-3-44 (measured on 3.44.8 vs 3.47.6: foundation.dart re-exports awaitNotRequired only from 3.47.0 (flutter#181513); material_ui 1.3.0/cupertino_ui 1.1.0 kept flutter >=3.44.0, now retracted; locked retracted version survives pub get AND pub upgrade on 3.44 (_getAllowedRetracted returns lockfile version), downgrade+upgrade lands 1.2.0/1.0.2; capping only material_ui leaves cupertino_ui 1.1.0; 3.47.6 upgrade -> 1.5.0/1.1.1)
+- Fix: Gradle `Timeout waiting to lock journal cache` in a Flutter Android build
+- Fix: `ClassNotFoundException` for `MainActivity` when a Flutter Android app launches
+- Fix: `Invalid column name 'Value'` when using `SqlQueryRaw<T>` for a scalar result in EF Core
+- Fix: `There is already an object named 'X' in the database` after resetting EF Core migrations
+- Fix: `BoxConstraints forces an infinite height` in a Flutter `Row` or scroll view
+- Fix: Flutter Android build fails with `No suitable NDK found for target architecture`
+- Fix: `dotnet test` falls back to VSTest in a Linux CI pipeline even though the project uses Microsoft.Testing.Platform
 
 ## Vs / comparison
 
@@ -391,6 +404,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `Microsoft.Data.SqlClient` vs `System.Data.SqlClient` in .NET 11 → slug: 2026/09/microsoft-data-sqlclient-vs-system-data-sqlclient-in-dotnet-11 (verified against MDS 7.0.3 and SDS 4.9.1 on SDK 10.0.302: SDS emits CS0618 on every public type, Encrypt default False vs True, 10 connection-string keywords MDS-only, publish output 1.07 MB vs 7.35 MB vs 17.3 MB for MDS 6.1.7)
 - `Volatile.Read` vs `Volatile.ReadBarrier` in .NET 10 → slug: 2026/10/volatile-read-vs-volatile-readbarrier-in-dotnet-10
 - `EF.Parameter` vs `EF.Constant` in EF Core 11 queries → slug: 2026/10/ef-parameter-vs-ef-constant-in-ef-core-11-queries (measured on EF Core 11 RC 1: raw Expression.Constant = 1 EF compile per value, EF.Parameter/EF.Constant = 0; ParameterTranslationMode is not in the query cache key, same on 10.0.12)
+- Redis key prefix vs separate database vs separate instance for multi-tenant caching in ASP.NET Core
+- `AddDbContextPool` vs `AddDbContextFactory` for running EF Core queries in parallel
 
 ## Migration / upgrade
 
@@ -476,6 +491,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What decides whether EF Core scaffolds a SQL Server `date` column as `DateOnly` or `DateTime`?
 - What is the difference between a source-breaking and a binary-breaking change in a .NET library?
 - What is the `depend_on_referenced_packages` lint in Dart and why does it fire on transitive imports?
+- What happens to an expired `MemoryCache` entry, and when is it actually removed from memory?
+- What does EF Core write back into an entity after `SaveChangesAsync` (generated keys, concurrency tokens, relationship fix-up)?
 
 ---
 
