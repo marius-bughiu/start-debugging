@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/10/how-to-wait-for-a-valuetask-synchronously-without-allocating",
-    "text": "Need a ValueTask's result in a synchronous method? An IsCompleted check plus one GetResult() costs 0 bytes, while AsTask() allocates 72 B even for a finished value. Calling GetResult() on a pending IValueTaskSource-backed ValueTask throws InvalidOperationException. Measured on .NET 10 and .NET 11 RC1."
   }
 ]

@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/10/how-to-wait-for-a-valuetask-synchronously-without-allocating",
-    "text": "Blocking on a pending ValueTask is undefined. Check IsCompleted first (0 B); if you must wait, skip AsTask() and save 80-208 B a call."
   }
 ]
