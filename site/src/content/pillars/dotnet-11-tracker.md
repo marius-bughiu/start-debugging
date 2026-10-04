@@ -3,7 +3,7 @@ title: "The .NET 11 tracker"
 description: "Every preview, every feature, every breaking change - one place to bookmark for the .NET 11 release cycle."
 tagline: "One bookmark for the whole .NET 11 cycle."
 pubDate: 2026-04-18
-updatedDate: 2026-09-27
+updatedDate: 2026-10-04
 indexTags:
   - ".net 11"
   - "dotnet 11"
@@ -17,9 +17,9 @@ This pillar collects everything I've written about **.NET 11**: previews, runtim
 
 ## What to read first
 
-Start at the top: each post covers one change, and older ones stay useful. RC 1 is newest: [reproducible container images](/2026/09/dotnet-11-rc-1-reproducible-container-images-source-date-epoch/), so a commit always yields the same digest, [Process can SIGTERM a child without P/Invoke](/2026/09/dotnet-11-rc-1-process-signal-exit-status/), and [SignalR swaps an expiring token without dropping the connection](/2026/09/signalr-authentication-refresh-finalized-dotnet-11-rc-1/). In the runtime, [the JIT devirtualizes generic virtual methods](/2026/09/dotnet-11-jit-devirtualizes-generic-virtual-methods/) and takes the allocation with it. If you pin `trustedSigners`, [Microsoft's NuGet signing-certificate rotation](/2026/09/microsoft-nuget-author-signing-certificate-rotation-nu3034/) fails restore with NU3034. The breaking change to know first is [the minimum CPU baseline rising to x86-64-v2](/2026/06/dotnet-11-minimum-cpu-baseline-x86-64-v2/), which won't start on older hardware.
+Start at the top: each post covers one change, and older ones stay useful. RC 1 is newest: [reproducible container images](/2026/09/dotnet-11-rc-1-reproducible-container-images-source-date-epoch/), so a commit always yields the same digest, [Process can SIGTERM a child without P/Invoke](/2026/09/dotnet-11-rc-1-process-signal-exit-status/), and [SignalR swaps an expiring token without dropping the connection](/2026/09/signalr-authentication-refresh-finalized-dotnet-11-rc-1/). In the runtime, [the JIT devirtualizes generic virtual methods](/2026/09/dotnet-11-jit-devirtualizes-generic-virtual-methods/) and takes the allocation with it. The breaking change to know first is [the minimum CPU baseline rising to x86-64-v2](/2026/06/dotnet-11-minimum-cpu-baseline-x86-64-v2/), which won't start on older hardware.
 
-Upgrading? Start from the checklists: [Migrate from .NET 8 to .NET 11: the full checklist](/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist/) for an LTS-to-LTS jump, or [.NET Framework 4.8 to .NET 11](/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026/) for the old framework. With versions scattered across csproj files, [move to Central Package Management](/2026/08/migrate-a-dotnet-solution-to-central-package-management-with-directory-packages-props/) first. On the test side, the SDK's default runner changed: [migrate from VSTest to Microsoft.Testing.Platform](/2026/09/migrate-from-vstest-to-microsoft-testing-platform-in-dotnet-11/) covers the opt-in and the exit codes that turn a green CI job red.
+Upgrading? Start from the checklists: [Migrate from .NET 8 to .NET 11: the full checklist](/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist/) for an LTS-to-LTS jump, or [.NET Framework 4.8 to .NET 11](/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026/) for the old framework. With versions scattered across csproj files, [move to Central Package Management](/2026/08/migrate-a-dotnet-solution-to-central-package-management-with-directory-packages-props/) first. On the test side, the SDK's default runner changed: [migrate from VSTest to Microsoft.Testing.Platform](/2026/09/migrate-from-vstest-to-microsoft-testing-platform-in-dotnet-11/) covers the opt-in and the exit codes that turn a green CI job red; [exit code 5, "Zero tests ran"](/2026/10/fix-dotnet-test-exit-code-5-zero-tests-ran-microsoft-testing-platform/) is usually a rejected option.
 
 ## What's on this page
 
