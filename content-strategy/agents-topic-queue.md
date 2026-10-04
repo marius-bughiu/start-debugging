@@ -185,9 +185,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 
 - What is the Model Context Protocol and why every IDE is shipping it → slug: 2026/09/what-is-the-model-context-protocol-and-why-every-ide-is-shipping-it
 - What is an "agent skill" and how is it different from a system prompt → slug: 2026/10/what-is-an-agent-skill-and-how-is-it-different-from-a-system-prompt
-- What is prompt caching and when does it save real money
-- What is a coding agent "subagent" and when does it beat one big prompt
-- What is the difference between an AI agent and an AI workflow
+- What is prompt caching and when does it save real money (skipped: same intent as 2026/06/prompt-caching-on-claude-sonnet-4-6-vs-claude-opus-4-7-when-it-pays-off and 2026/04/how-to-add-prompt-caching-to-an-anthropic-sdk-app-and-measure-the-hit-rate, which cover break-even math and hit-rate measurement)
+- What is a coding agent "subagent" and when does it beat one big prompt (skipped: same intent as 2026/09/nested-subagent-depth-when-it-helps-and-when-it-burns-tokens and 2026/07/claude-code-skills-vs-subagents-vs-mcp-servers-when-to-build-each, which cover when a subagent earns its context and token cost)
+- What is the difference between an AI agent and an AI workflow → slug: 2026/10/what-is-the-difference-between-an-ai-agent-and-an-ai-workflow
 - What is tool calling and why JSON schemas matter more than prompts
 - What is a context window and how do agents stretch it in 2026
 - What is CodeAct and how does it cut an agent's model turns
