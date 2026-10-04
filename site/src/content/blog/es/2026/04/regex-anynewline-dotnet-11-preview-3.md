@@ -13,7 +13,7 @@ translatedBy: "claude"
 translationDate: 2026-04-24
 ---
 
-Si alguna vez escribiste un regex multilínea en .NET y recurriste a `\r?$` para estar seguro en archivos Windows y Unix, el workaround finalmente se va. .NET 11 Preview 3 introduce `RegexOptions.AnyNewLine`, que enseña al engine sobre el conjunto completo de terminadores de línea Unicode sin forzarte a deletrear cada uno a mano.
+Si alguna vez escribiste un regex multilínea en .NET y recurriste a `\r?$` para estar seguro en archivos Windows y Unix, el workaround finalmente se va. [.NET 11 Preview 3](/es/2026/04/dotnet-11-preview-3-dotnet-run-environment-variables/) introduce `RegexOptions.AnyNewLine`, que enseña al engine sobre el conjunto completo de terminadores de línea Unicode sin forzarte a deletrear cada uno a mano.
 
 La opción fue pedida en el issue dotnet/runtime [25598](https://github.com/dotnet/runtime/issues/25598) y salió con el drop de Preview 3 el 14 de abril de 2026. Los detalles están en el [anuncio de .NET 11 Preview 3](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-3/).
 

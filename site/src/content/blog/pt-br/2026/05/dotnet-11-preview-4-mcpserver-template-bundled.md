@@ -18,7 +18,7 @@ As [notas de release do .NET 11 Preview 4](https://devblogs.microsoft.com/dotnet
 
 ## O que muda em um SDK Preview 4
 
-Até o .NET 11 Preview 3 a receita para um servidor MCP novo era em duas etapas:
+Até o [.NET 11 Preview 3](/pt-br/2026/04/dotnet-11-preview-3-dotnet-run-environment-variables/) a receita para um servidor MCP novo era em duas etapas:
 
 ```bash
 # Preview 3 and earlier
