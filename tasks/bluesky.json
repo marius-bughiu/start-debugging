@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/10/how-to-detect-windows-session-lock-unlock-logon-and-logoff-events-in-csharp",
-    "text": "Your C# app never sees its own SessionLogon. Lock/unlock detection via SystemEvents, a Windows service, and raw WM_WTSSESSION_CHANGE."
   }
 ]
