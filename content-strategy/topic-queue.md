@@ -165,8 +165,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to speed up a slow Dart analysis server in VS Code for a large Flutter monorepo → slug: 2026/09/how-to-speed-up-a-slow-dart-analysis-server-in-vs-code-for-a-large-flutter-monorepo
 - How to add a unique index on a JSON-mapped property in EF Core 11 on SQL Server and SQLite → slug: 2026/09/how-to-add-a-unique-index-on-a-json-mapped-property-in-ef-core-11
 - How to wait for a `ValueTask` synchronously in a non-async method without allocating → slug: 2026/10/how-to-wait-for-a-valuetask-synchronously-without-allocating
-- How to share one log message across call sites with `[LoggerMessage]` and stop CA2254 warnings
-- How to set PostgreSQL session parameters such as `search_path` or `statement_timeout` on every EF Core connection with Npgsql
+- How to share one log message across call sites with `[LoggerMessage]` and stop CA2254 warnings (skipped: same intent largely covered by 2026/07/migrate-from-ilogger-string-interpolation-to-message-templates-in-dotnet-11, which covers CA2254 and [LoggerMessage] methods)
+- How to set PostgreSQL session parameters such as `search_path` or `statement_timeout` on every EF Core connection with Npgsql → slug: 2026/10/how-to-set-postgresql-session-parameters-on-every-ef-core-connection-with-npgsql
 - How to add a strong-named assembly's full public key to `InternalsVisibleTo` in an SDK-style project
 - How to detect Windows session lock, unlock, logon and logoff events in a C# app
 - How to reserve space for an adaptive AdMob banner in Flutter to avoid layout shift
