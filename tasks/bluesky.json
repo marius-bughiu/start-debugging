@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/10/how-to-set-postgresql-session-parameters-on-every-ef-core-connection-with-npgsql",
-    "text": "A SET statement_timeout in Npgsql dies on the next pool reuse (DISCARD ALL). Put it in the startup packet with Options=-c instead."
   }
 ]
