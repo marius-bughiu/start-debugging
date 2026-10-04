@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/10/nunit-5-assert-throwsasync-must-be-awaited",
-    "text": "Upgrading to NUnit 5.0.0? Assert.ThrowsAsync, CatchAsync and DoesNotThrowAsync now return a Task. In a plain void test, an unawaited call compiles and the test passes even when nothing throws. NUnit.Analyzers 4.14+ turns that into build error NUnit2059, so bump it in the same commit."
   }
 ]
