@@ -58,5 +58,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
+  },
+  {
+    "slug": "2026/10/how-to-detect-windows-session-lock-unlock-logon-and-logoff-events-in-csharp",
+    "text": "Detecting Win+L in C#: SystemEvents.SessionSwitch works in a plain console app on .NET 6+ (it pumps its own hidden window), but only for your session. For logon/logoff across users you need a service overriding OnSessionChange, and those callbacks run on the thread pool, so they can arrive out of order."
   }
 ]

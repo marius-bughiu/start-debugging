@@ -168,7 +168,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to share one log message across call sites with `[LoggerMessage]` and stop CA2254 warnings (skipped: same intent largely covered by 2026/07/migrate-from-ilogger-string-interpolation-to-message-templates-in-dotnet-11, which covers CA2254 and [LoggerMessage] methods)
 - How to set PostgreSQL session parameters such as `search_path` or `statement_timeout` on every EF Core connection with Npgsql → slug: 2026/10/how-to-set-postgresql-session-parameters-on-every-ef-core-connection-with-npgsql
 - How to add a strong-named assembly's full public key to `InternalsVisibleTo` in an SDK-style project → slug: 2026/10/how-to-add-a-strong-named-assemblys-full-public-key-to-internalsvisibleto
-- How to detect Windows session lock, unlock, logon and logoff events in a C# app
+- How to detect Windows session lock, unlock, logon and logoff events in a C# app → slug: 2026/10/how-to-detect-windows-session-lock-unlock-logon-and-logoff-events-in-csharp
 - How to reserve space for an adaptive AdMob banner in Flutter to avoid layout shift
 
 ## Fix / error
