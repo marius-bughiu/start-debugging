@@ -34,9 +34,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
-  },
-  {
-    "slug": "2026/10/orleans-10-4-stream-subscriptions-can-start-from-earliest-available",
-    "text": "Orleans 10.4 stream subscribers can start at EarliestAvailable and replay what the queue cache holds. Mind the RPC wire ID change."
   }
 ]
