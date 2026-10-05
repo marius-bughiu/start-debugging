@@ -58,9 +58,5 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor's 'Agent Execution Timed Out' and 'Timeout waiting for EverythingProvider' are one bug: the extension host missed its 60 s startup budget. Reinstalling rarely helps. Read exthost.log first: no start line points at endpoint security or a TUN-mode VPN capturing 127.0.0.1, not at your proxy."
-  },
-  {
-    "slug": "2026/10/what-is-tool-calling-and-why-json-schemas-matter-more-than-prompts",
-    "text": "Tool calling is a four-message protocol: the model emits a JSON request, your code runs it, the result goes back. The schema is rendered into the prompt and, with strict mode, compiled into a grammar. Gotcha: forced tool_choice now 400s on Opus 5.5 and Sonnet 5.5, so auto plus strict is the replacement."
   }
 ]
