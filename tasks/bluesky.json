@@ -34,5 +34,9 @@
   {
     "slug": "2026/09/fix-cursor-agent-extension-host-did-not-finish-starting-within-60-seconds",
     "text": "Cursor Agent Execution Timed Out? The extension host missed its 60 s startup budget. exthost.log tells you why in under a minute."
+  },
+  {
+    "slug": "2026/10/fix-timeout-waiting-to-lock-journal-cache-in-a-flutter-android-build",
+    "text": "Flutter build stuck on 'Timeout waiting to lock journal cache'? Kill the Owner PID. Deleting .lock files just moves the error."
   }
 ]
