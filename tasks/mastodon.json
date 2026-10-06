@@ -62,9 +62,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
-  },
-  {
-    "slug": "2026/10/fix-there-is-already-an-object-named-in-the-database-after-resetting-ef-core-migrations",
-    "text": "Deleted the Migrations folder, scaffolded a fresh InitialCreate, and now EF Core throws 'There is already an object named X in the database'? EF Core only compares migration IDs with __EFMigrationsHistory and silently ignores the old rows. Record the new baseline without running it, behind a guard that is safe to run anywhere."
   }
 ]
