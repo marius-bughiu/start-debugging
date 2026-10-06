@@ -38,9 +38,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
-  },
-  {
-    "slug": "2026/10/what-is-a-context-window-and-how-do-agents-stretch-it-in-2026",
-    "text": "A 1M context window does not make your agent smarter. Six ways agents stretch it: deferred tools, clearing, compaction, memory, more."
   }
 ]
