@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/fix-boxconstraints-forces-an-infinite-height-in-flutter",
+    "text": "'BoxConstraints forces an infinite height' in Flutter: a SizedBox or Container asked for double.infinity inside a parent with no height limit (Column, ListView, scroll view). Expanded, LimitedBox, SliverFillRemaining or IntrinsicHeight fix it. double.maxFinite only hides it: the box lays out 1.8e308 px tall."
   }
 ]
