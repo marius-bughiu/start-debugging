@@ -189,7 +189,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - What is a coding agent "subagent" and when does it beat one big prompt (skipped: same intent as 2026/09/nested-subagent-depth-when-it-helps-and-when-it-burns-tokens and 2026/07/claude-code-skills-vs-subagents-vs-mcp-servers-when-to-build-each, which cover when a subagent earns its context and token cost)
 - What is the difference between an AI agent and an AI workflow → slug: 2026/10/what-is-the-difference-between-an-ai-agent-and-an-ai-workflow
 - What is tool calling and why JSON schemas matter more than prompts → slug: 2026/10/what-is-tool-calling-and-why-json-schemas-matter-more-than-prompts
-- What is a context window and how do agents stretch it in 2026
+- What is a context window and how do agents stretch it in 2026 → slug: 2026/10/what-is-a-context-window-and-how-do-agents-stretch-it-in-2026
 - What is CodeAct and how does it cut an agent's model turns
 - What is the Agent Harness in Microsoft Agent Framework
 - What is GitHub Agentic Workflows and how does it differ from GitHub Actions

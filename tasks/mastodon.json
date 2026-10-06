@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/what-is-a-context-window-and-how-do-agents-stretch-it-in-2026",
+    "text": "What counts toward an LLM's context window? System prompt, every tool definition, tool results, earlier thinking blocks and the reply. Cached tokens count too. Here is what happens at the limit on Opus 5.5 and Sonnet 5.5, and how agents keep working: tool search, context editing, server-side compaction, memory and subagents."
   }
 ]
