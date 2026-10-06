@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/fix-invalid-column-name-value-when-using-sqlqueryraw-for-a-scalar-in-ef-core",
+    "text": "EF Core's SqlQuery<int> fails with \"Invalid column name 'Value'\" the moment you add First, Single, Where or Max: EF wraps your SQL and selects a hard-coded Value column. Alias it AS Value, and on PostgreSQL quote it as \"Value\" or you get 42703 anyway. Measured on EF Core 10 and 11 RC1."
   }
 ]
