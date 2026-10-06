@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/fix-there-is-already-an-object-named-in-the-database-after-resetting-ef-core-migrations",
+    "text": "Reset EF Core migrations and now get 'There is already an object named'? Your new InitialCreate ID isn't in the history table."
   }
 ]
