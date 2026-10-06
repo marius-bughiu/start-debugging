@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/mstest-4-5-uitestmethod-uwp-winui-3-without-vstest",
+    "text": "No more vstest.console or UwpTestHostRuntimeProvider for Windows XAML tests: MSTest.Sdk 4.5 hosts Microsoft.Testing.Platform inside your UWP or WinUI 3 app. Unpackaged WinUI finally works, and packaged or AppContainer apps are activated by AUMID through a sidecar controller."
   }
 ]
