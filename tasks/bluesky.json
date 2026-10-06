@@ -38,9 +38,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
-  },
-  {
-    "slug": "2026/10/mstest-4-5-uitestmethod-uwp-winui-3-without-vstest",
-    "text": "MSTest 4.5 makes your WinUI 3 or UWP app the test host. [UITestMethod] runs setup, test, and cleanup on the real dispatcher."
   }
 ]
