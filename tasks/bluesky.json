@@ -38,9 +38,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
-  },
-  {
-    "slug": "2026/10/what-is-the-agent-harness-in-microsoft-agent-framework",
-    "text": "Agent Framework's Harness quietly adds 15 tools and ~11k chars of prompt to every model call. What's in it and how to trim it."
   }
 ]
