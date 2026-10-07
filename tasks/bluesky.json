@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/csharp-dev-kit-11-native-aot-opens-solutions-in-a-second",
+    "text": "C# Dev Kit 11.0 merges six processes into one Native AOT binary. A 407-project solution: 84s to 3s, 2 GB to 316 MB."
   }
 ]

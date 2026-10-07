@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/csharp-dev-kit-11-native-aot-opens-solutions-in-a-second",
+    "text": "C# Dev Kit jumped from 3.3 to 11.0 and rebuilt its loading path: one Native AOT CSDevKit process plus a persistent project cache. The Aspire repo (407 projects) is ready in 3.0s instead of 84.1s, and the cache can be committed so new git worktrees load fast too."
   }
 ]
