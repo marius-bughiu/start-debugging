@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/redis-key-prefix-vs-separate-database-vs-separate-instance-for-multi-tenant-caching-in-aspnetcore",
+    "text": "Multi-tenant Redis in ASP.NET Core: prefix keys per tenant, not SELECT. Azure Managed Redis and Redis Cluster only have database 0."
   }
 ]

@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/redis-key-prefix-vs-separate-database-vs-separate-instance-for-multi-tenant-caching-in-aspnetcore",
+    "text": "Key prefix, numbered database or a Redis per tenant? For ASP.NET Core apps the prefix wins: it works on every topology and HybridCache's shared in-process L1 needs the tenant in the key anyway, even if L2 is a dedicated instance. Numbered databases vanish on Redis Cluster, Azure Managed Redis and Redis Cloud."
   }
 ]
