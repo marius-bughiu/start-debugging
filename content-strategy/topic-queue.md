@@ -336,7 +336,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Invalid column name 'Value'` when using `SqlQueryRaw<T>` for a scalar result in EF Core → slug: 2026/10/fix-invalid-column-name-value-when-using-sqlqueryraw-for-a-scalar-in-ef-core (measured on EF 10.0.12 + 11 RC1, SQLite + PostgreSQL 18.4, SQL Server SQL captured via interceptor: First/Single/Where/Max/Min wrap as SELECT [s].[Value] FROM (sql) AS [s]; ToList/AsEnumerable/Count/Any work unaliased; PG needs AS "Value" quoted; hard-coded SqlQuerySingleColumnAlias; EF10 adds ORDER BY CAST, EF11 not)
 - Fix: `There is already an object named 'X' in the database` after resetting EF Core migrations → slug: 2026/10/fix-there-is-already-an-object-named-in-the-database-after-resetting-ef-core-migrations (measured on EF 10.0.12 SQLite: new InitialCreate ID not in history -> CREATE TABLE fails, orphan history rows silently ignored; EnsureCreated DB same; baseline row swap verified, GetAppliedMigrations returns orphan IDs, startup guard tested on old/rerun/fresh DBs; SQL Server 2714 text not run locally)
 - Fix: `BoxConstraints forces an infinite height` in a Flutter `Row` or scroll view → slug: 2026/10/fix-boxconstraints-forces-an-infinite-height-in-flutter
-- Fix: Flutter Android build fails with `No suitable NDK found for target architecture`
+- Fix: Flutter Android build fails with `No suitable NDK found for target architecture` → slug: 2026/10/fix-no-suitable-ndk-found-for-target-architecture-in-flutter
 - Fix: `dotnet test` falls back to VSTest in a Linux CI pipeline even though the project uses Microsoft.Testing.Platform
 
 ## Vs / comparison

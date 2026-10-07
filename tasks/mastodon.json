@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/fix-no-suitable-ndk-found-for-target-architecture-in-flutter",
+    "text": "'Bad state: No suitable NDK found for target architecture arm64' comes from a Dart build hook, not Gradle. Old android_libcpp_shared skips local.properties, and NDK r28c/r29 stop at API 35, so minSdk 36 needs r30. Plus a trap: the libcpp_shared_path override ships an arm64 .so into every ABI folder."
   }
 ]
