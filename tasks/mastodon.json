@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/what-is-the-agent-harness-in-microsoft-agent-framework",
+    "text": "I pointed Microsoft Agent Framework's AsHarnessAgent at a fake chat client to see what it really sends: todo, plan/execute mode and file-memory prompts plus 15 tools on every call. Gotcha: it starts in plan mode and asks clarifying questions, which stalls headless jobs. DefaultMode fixes it."
   }
 ]

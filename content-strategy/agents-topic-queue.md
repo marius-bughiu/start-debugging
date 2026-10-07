@@ -190,8 +190,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - What is the difference between an AI agent and an AI workflow → slug: 2026/10/what-is-the-difference-between-an-ai-agent-and-an-ai-workflow
 - What is tool calling and why JSON schemas matter more than prompts → slug: 2026/10/what-is-tool-calling-and-why-json-schemas-matter-more-than-prompts
 - What is a context window and how do agents stretch it in 2026 → slug: 2026/10/what-is-a-context-window-and-how-do-agents-stretch-it-in-2026
-- What is CodeAct and how does it cut an agent's model turns
-- What is the Agent Harness in Microsoft Agent Framework
+- What is CodeAct and how does it cut an agent's model turns (skipped: same intent as 2026/07/codeact-vs-tool-calling-loop-for-agents, which explains CodeAct and the turn reduction vs a tool-calling loop)
+- What is the Agent Harness in Microsoft Agent Framework → slug: 2026/10/what-is-the-agent-harness-in-microsoft-agent-framework
 - What is GitHub Agentic Workflows and how does it differ from GitHub Actions
 - What is the GitHub Copilot SDK and what can you build with it
 - What is magentic orchestration in Microsoft Agent Framework
