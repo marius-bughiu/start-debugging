@@ -62,9 +62,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
-  },
-  {
-    "slug": "2026/10/fix-dotnet-test-falls-back-to-vstest-in-linux-ci-microsoft-testing-platform",
-    "text": "dotnet test picks VSTest or Microsoft.Testing.Platform before it builds anything, from a global.json found by walking up from the working directory. On Linux CI that breaks on Global.json, a mis-cased \"Test\" key, a .NET 9 image, or a job outside the repo. The worst case stays green and writes no TRX at all."
   }
 ]
