@@ -62,9 +62,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
-  },
-  {
-    "slug": "2026/10/what-is-github-agentic-workflows-and-how-does-it-differ-from-github-actions",
-    "text": "GitHub Agentic Workflows compiles a Markdown file into a normal Actions .lock.yml: the agent (Copilot, Claude Code, Codex) runs read-only behind an egress firewall, and writes go through capped safe-outputs in a separate job. Gotcha: threat detection only warns by default until you set continue-on-error: false."
   }
 ]
