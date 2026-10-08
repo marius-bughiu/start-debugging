@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/migrate-custom-page-transitions-after-the-flutter-page-transition-builders-reorganization",
+    "text": "Flutter 3.44+ broke your PageTransitionsTheme? CupertinoPageTransitionsBuilder moved to cupertino.dart, and in a const map the compiler only says 'Not a constant expression'. One import fixes it, but on material_ui projects dart fix adds the wrong one. Custom builders no longer need Material."
   }
 ]

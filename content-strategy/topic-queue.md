@@ -448,7 +448,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Raise a Flutter macOS app's minimum deployment target to macOS 12 for Xcode 27 → slug: 2026/09/raise-a-flutter-macos-apps-minimum-deployment-target-to-macos-12-for-xcode-27
 - Migrate an EF Core Cosmos app after the generated `id` escaping change → slug: 2026/09/migrate-an-ef-core-cosmos-app-after-the-generated-id-escaping-change
 - Migrate a Flutter Windows or Linux desktop app now that Impeller is the default renderer → slug: 2026/10/migrate-a-flutter-windows-or-linux-desktop-app-to-impeller
-- Migrate custom page transitions after the Flutter page transition builders reorganization
+- Migrate custom page transitions after the Flutter page transition builders reorganization → slug: 2026/10/migrate-custom-page-transitions-after-the-flutter-page-transition-builders-reorganization
 - Migrate a Flutter iOS app from CocoaPods to Swift Package Manager
 
 ## What is / concept
