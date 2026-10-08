@@ -62,9 +62,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
-  },
-  {
-    "slug": "2026/10/migrate-a-flutter-windows-or-linux-desktop-app-to-impeller",
-    "text": "Flutter 3.47 made Impeller the default on Windows and Linux, and your runner code did not change. A migration checklist: confirm the backend from the engine log, A/B a built binary against Skia with FLUTTER_ENGINE_SWITCHES, and why your flutter test goldens never see Impeller at all."
   }
 ]
