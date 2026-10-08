@@ -62,9 +62,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
-  },
-  {
-    "slug": "2026/10/adddbcontextpool-vs-adddbcontextfactory-for-running-ef-core-queries-in-parallel",
-    "text": "Want parallel EF Core queries? AddDbContextPool gives one scoped DbContext per request, so Task.WhenAll throws. AddPooledDbContextFactory gives a context per call from the same pool: 342 ns and 40 B vs 17 us and 44 KB unpooled on EF Core 11. Catch: a scoped ctor dependency silently comes from the root provider in production."
   }
 ]
