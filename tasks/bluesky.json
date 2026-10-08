@@ -38,9 +38,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
-  },
-  {
-    "slug": "2026/10/migrate-custom-page-transitions-after-the-flutter-page-transition-builders-reorganization",
-    "text": "Flutter 3.44 moved CupertinoPageTransitionsBuilder out of Material. In a const theme the error is just 'Not a constant expression'."
   }
 ]
