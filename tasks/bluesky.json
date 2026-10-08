@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/migrate-a-flutter-windows-or-linux-desktop-app-to-impeller",
+    "text": "Flutter 3.47 flipped Windows and Linux to Impeller. It is still OpenGL ES underneath, not Vulkan. How to A/B it against Skia safely."
   }
 ]
