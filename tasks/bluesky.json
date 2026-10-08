@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/agent-framework-1-24-anthropic-agent-package-goes-stable",
+    "text": "Microsoft.Agents.AI.Anthropic is stable in Agent Framework 1.24. The catch: client.Beta calls skip the new experimental warning."
   }
 ]

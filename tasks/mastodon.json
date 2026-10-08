@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/agent-framework-1-24-anthropic-agent-package-goes-stable",
+    "text": "Agent Framework 1.24.0 ships Microsoft.Agents.AI.Anthropic as a stable package on Anthropic SDK 12.53.0. The client.Beta extensions are marked experimental under MAAIANTHROPIC001, but I compile-checked it: extension-method calls never trigger the diagnostic, so a clean build does not prove you are off the beta surface."
   }
 ]
