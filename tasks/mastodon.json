@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/what-is-a-flutter-flavor-and-how-is-it-different-from-a-build-mode",
+    "text": "Flutter flavors vs build modes: --release decides JIT vs AOT, --flavor decides app ID, name and Firebase project. Two flavors times three modes is six variants. Gotchas: AGP 9 disables resValue by default, a plain flutter build apk fails once flavors exist, and a typo in an iOS config name silently falls back to Debug."
   }
 ]

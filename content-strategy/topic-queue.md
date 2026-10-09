@@ -475,16 +475,16 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is the difference between `ref.watch` and `ref.read` in Riverpod? → slug: 2026/09/ref-watch-vs-ref-read-in-flutter-riverpod
 - What is the `use_build_context_synchronously` lint in Flutter? (rejected as duplicate: same intent already covered by 2026/*/how-to-use-buildcontext-safely-after-an-await-in-flutter, which has a full section on the lint)
 - What is a keyed service in .NET dependency injection? (rejected as duplicate: same intent already covered by how-to-register-and-resolve-keyed-services-in-dotnet-11-dependency-injection)
-- What is a sliver in Flutter and when do I need a `CustomScrollView`?
-- What is `IProblemDetailsService` and how does it shape error responses in ASP.NET Core 11?
-- What is a complex type in EF Core 11 and how is it different from an owned entity?
-- What is an OpenAPI transformer in ASP.NET Core and when do I need one?
-- What is a `SynchronizationContext` and why does it cause async deadlocks in C#?
-- What is client-side evaluation in EF Core 11 and how do I avoid it?
-- What is Impeller and when does Flutter still fall back to Skia?
+- What is a sliver in Flutter and when do I need a `CustomScrollView`? (skipped: same intent as 2026/07/shrinkwrap-vs-expanded-vs-slivers-for-long-lists-in-flutter and 2026/07/how-to-mix-a-listview-and-a-gridview-in-one-scroll-view-with-slivers-in-flutter)
+- What is `IProblemDetailsService` and how does it shape error responses in ASP.NET Core 11? (skipped: same intent as 2026/07/how-to-customize-minimal-api-validation-error-responses-with-iproblemdetailsservice-in-aspnetcore-11)
+- What is a complex type in EF Core 11 and how is it different from an owned entity? (skipped: same intent as 2026/07/complex-types-vs-owned-entities-in-ef-core-11)
+- What is an OpenAPI transformer in ASP.NET Core and when do I need one? (skipped: same intent as 2026/07/how-to-customize-openapi-with-operation-and-schema-transformers-in-aspnetcore-11)
+- What is a `SynchronizationContext` and why does it cause async deadlocks in C#? (skipped: same intent as 2026/07/fix-deadlock-when-calling-result-or-wait-on-an-async-method-in-csharp)
+- What is client-side evaluation in EF Core 11 and how do I avoid it? (skipped: same intent as 2026/07/fix-the-linq-expression-could-not-be-translated-in-ef-core-11)
+- What is Impeller and when does Flutter still fall back to Skia? (skipped: covered by 2026/08/flutter-3-47-impeller-default-renderer-on-desktop and 2026/10/migrate-a-flutter-windows-or-linux-desktop-app-to-impeller)
 - What is a shadow property in EF Core 11 and why did one show up in my migration? → slug: 2026/10/what-is-a-shadow-property-in-ef-core-11-and-why-did-one-show-up-in-my-migration
 - What is transparent struct layout and why does a single-field wrapper struct change the calling convention in .NET?
-- What is a Flutter flavor and how is it different from a build mode?
+- What is a Flutter flavor and how is it different from a build mode? → slug: 2026/10/what-is-a-flutter-flavor-and-how-is-it-different-from-a-build-mode
 - What is a compiled model in EF Core 11 and when is `EFOptimizeContext` worth enabling?
 - What is ref-safe-context in C# and how does the compiler decide it for ref locals?
 - What does a C# `with` expression actually copy, and why don't computed record properties recalculate?
