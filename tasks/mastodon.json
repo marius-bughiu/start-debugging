@@ -62,9 +62,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
-  },
-  {
-    "slug": "2026/10/migrate-a-flutter-ios-app-from-cocoapods-to-swift-package-manager",
-    "text": "Flutter 3.44+ migrates your Xcode project to Swift Package Manager on the first build, but the Podfile, Pods and xcconfig includes stay until you remove them. A tested checklist, a script that lists pods-only plugins, and why permission_handler silently drops your Podfile macros under SwiftPM."
   }
 ]
