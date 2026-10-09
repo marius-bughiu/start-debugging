@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/what-is-the-github-copilot-sdk-and-what-can-you-build-with-it",
+    "text": "What is the GitHub Copilot SDK? A client for the Copilot CLI runtime: agent loop, file/shell tools, MCP, sub-agents and hooks, driven from TypeScript, Python, .NET, Go, Java or Rust. Four real use cases with verified 1.0.18 code, and why a shared backend must use mode: \"empty\" instead of the default."
   }
 ]
