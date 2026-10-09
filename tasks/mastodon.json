@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/what-is-a-shadow-property-in-ef-core-11-and-why-did-one-show-up-in-my-migration",
+    "text": "Where does that extra BlogId1 or OwnerId column in an EF Core migration come from? It is a shadow foreign key: EF Core 11 could not use your FK property (wrong name, wrong type, NotMapped, or WithOne() without the navigation). One of those causes logs no warning at all. Here is how to catch every case."
   }
 ]

@@ -473,8 +473,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is an EF Core interceptor and when do I need one? → slug: 2026/09/what-is-an-ef-core-interceptor-and-when-do-i-need-one
 - What is a Blazor render mode and which one runs my component? → slug: 2026/09/what-is-a-blazor-render-mode-and-which-one-runs-my-component
 - What is the difference between `ref.watch` and `ref.read` in Riverpod? → slug: 2026/09/ref-watch-vs-ref-read-in-flutter-riverpod
-- What is the `use_build_context_synchronously` lint in Flutter?
-- What is a keyed service in .NET dependency injection?
+- What is the `use_build_context_synchronously` lint in Flutter? (rejected as duplicate: same intent already covered by 2026/*/how-to-use-buildcontext-safely-after-an-await-in-flutter, which has a full section on the lint)
+- What is a keyed service in .NET dependency injection? (rejected as duplicate: same intent already covered by how-to-register-and-resolve-keyed-services-in-dotnet-11-dependency-injection)
 - What is a sliver in Flutter and when do I need a `CustomScrollView`?
 - What is `IProblemDetailsService` and how does it shape error responses in ASP.NET Core 11?
 - What is a complex type in EF Core 11 and how is it different from an owned entity?
@@ -482,7 +482,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is a `SynchronizationContext` and why does it cause async deadlocks in C#?
 - What is client-side evaluation in EF Core 11 and how do I avoid it?
 - What is Impeller and when does Flutter still fall back to Skia?
-- What is a shadow property in EF Core 11 and why did one show up in my migration?
+- What is a shadow property in EF Core 11 and why did one show up in my migration? → slug: 2026/10/what-is-a-shadow-property-in-ef-core-11-and-why-did-one-show-up-in-my-migration
 - What is transparent struct layout and why does a single-field wrapper struct change the calling convention in .NET?
 - What is a Flutter flavor and how is it different from a build mode?
 - What is a compiled model in EF Core 11 and when is `EFOptimizeContext` worth enabling?
