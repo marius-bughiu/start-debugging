@@ -62,9 +62,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
-  },
-  {
-    "slug": "2026/10/semantic-kernel-1-81-fileioplugin-no-longer-leaks-paths-outside-allowedfolders",
-    "text": "Up to Semantic Kernel 1.80.1, FileIOPlugin.WriteAsync checked read-only before AllowedFolders and put the full path in the exception, which auto function calling hands straight back to the model. 1.81.0 makes every denial identical. Measured before and after."
   }
 ]
