@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/what-is-a-compiled-model-in-ef-core-11-and-when-is-it-worth-enabling",
+    "text": "EF Core 11 compiled models, measured: 714 ms to 215 ms model load at 500 entities. But a stale one silently emits old SQL."
   }
 ]
