@@ -194,7 +194,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - What is the Agent Harness in Microsoft Agent Framework → slug: 2026/10/what-is-the-agent-harness-in-microsoft-agent-framework
 - What is GitHub Agentic Workflows and how does it differ from GitHub Actions → slug: 2026/10/what-is-github-agentic-workflows-and-how-does-it-differ-from-github-actions
 - What is the GitHub Copilot SDK and what can you build with it → slug: 2026/10/what-is-the-github-copilot-sdk-and-what-can-you-build-with-it
-- What is magentic orchestration in Microsoft Agent Framework
+- What is magentic orchestration in Microsoft Agent Framework → slug: 2026/10/what-is-magentic-orchestration-in-microsoft-agent-framework
 - What is Claude Tag and how does it bring Claude into Slack
 - What are declarative agent workflows and when is YAML better than code
 - What is a Multi Round-Trip Request in MCP and why it replaced server-initiated sampling

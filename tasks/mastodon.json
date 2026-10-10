@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/what-is-magentic-orchestration-in-microsoft-agent-framework",
+    "text": "How magentic orchestration in Microsoft Agent Framework really works: a task ledger (facts + plan), a five-field JSON progress ledger per round, and destructive resets on stalls. Verified offline: max_reset_count=2 pays for a second replan it never runs, and hitting a limit returns a fixed sentence, not an answer."
   }
 ]
