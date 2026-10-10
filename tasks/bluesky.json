@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/genkit-dart-1-0-genkitrouter-replaces-startflowserver",
+    "text": "Genkit Dart 1.0 drops startFlowServer for GenkitRouter, and changes the streamed error frame. Old Flutter clients need one flag."
   }
 ]
