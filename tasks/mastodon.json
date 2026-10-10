@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/what-is-transparent-struct-layout-and-why-does-a-single-field-wrapper-struct-change-the-calling-convention-in-dotnet",
+    "text": "Single-field wrapper structs are free in memory, not at call boundaries. On Windows x64 the .NET 11 JIT passes a struct { double } in RCX and returns it in RAX, so a P/Invoke that swaps double for Meters works on your ARM64 Mac and returns garbage on Windows. Two floats in a Vec2 break even on Linux x64."
   }
 ]

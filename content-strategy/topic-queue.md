@@ -483,7 +483,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is client-side evaluation in EF Core 11 and how do I avoid it? (skipped: same intent as 2026/07/fix-the-linq-expression-could-not-be-translated-in-ef-core-11)
 - What is Impeller and when does Flutter still fall back to Skia? (skipped: covered by 2026/08/flutter-3-47-impeller-default-renderer-on-desktop and 2026/10/migrate-a-flutter-windows-or-linux-desktop-app-to-impeller)
 - What is a shadow property in EF Core 11 and why did one show up in my migration? → slug: 2026/10/what-is-a-shadow-property-in-ef-core-11-and-why-did-one-show-up-in-my-migration
-- What is transparent struct layout and why does a single-field wrapper struct change the calling convention in .NET?
+- What is transparent struct layout and why does a single-field wrapper struct change the calling convention in .NET? → slug: 2026/10/what-is-transparent-struct-layout-and-why-does-a-single-field-wrapper-struct-change-the-calling-convention-in-dotnet
 - What is a Flutter flavor and how is it different from a build mode? → slug: 2026/10/what-is-a-flutter-flavor-and-how-is-it-different-from-a-build-mode
 - What is a compiled model in EF Core 11 and when is `EFOptimizeContext` worth enabling?
 - What is ref-safe-context in C# and how does the compiler decide it for ref locals?
