@@ -170,6 +170,11 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to add a strong-named assembly's full public key to `InternalsVisibleTo` in an SDK-style project → slug: 2026/10/how-to-add-a-strong-named-assemblys-full-public-key-to-internalsvisibleto
 - How to detect Windows session lock, unlock, logon and logoff events in a C# app → slug: 2026/10/how-to-detect-windows-session-lock-unlock-logon-and-logoff-events-in-csharp
 - How to reserve space for an adaptive AdMob banner in Flutter to avoid layout shift → slug: 2026/10/how-to-reserve-space-for-an-adaptive-admob-banner-in-flutter-to-avoid-layout-shift
+- How to match nested parentheses and balanced tags with balancing groups `(?<-name>)` in .NET regex
+- How to keep the `NavigationBar` selected tab in sync with the current route using `StatefulShellRoute` in go_router
+- How to tail a log file in C# while another process is still writing to it (`FileShare.ReadWrite`)
+- How to check whether an entity is already tracked by the DbContext before attaching it in EF Core
+- How to discard buffered keypresses before `Console.ReadKey` in a C# console game loop
 
 ## Fix / error
 
@@ -338,6 +343,11 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `BoxConstraints forces an infinite height` in a Flutter `Row` or scroll view → slug: 2026/10/fix-boxconstraints-forces-an-infinite-height-in-flutter
 - Fix: Flutter Android build fails with `No suitable NDK found for target architecture` → slug: 2026/10/fix-no-suitable-ndk-found-for-target-architecture-in-flutter
 - Fix: `dotnet test` falls back to VSTest in a Linux CI pipeline even though the project uses Microsoft.Testing.Platform → slug: 2026/10/fix-dotnet-test-falls-back-to-vstest-in-linux-ci-microsoft-testing-platform (measured on SDK 10.0.302, 11 RC1, 9.0.318; MSTest.Sdk 4.4.1/MTP 2.4.1, xunit.v3 3.2.2 MTP v1: global.json found from cwd not project; Global.json fails only on case-sensitive FS (case-sensitive APFS image); "Test"/"Runner" keys silently ignored, value case-insensitive; nested in sdk ignored; 'MTP' value and trailing comma crash CLI; SDK 9 ignores test section; DOTNET_TEST_RUNNER=VSTest beats global.json on 11 RC1; MTP v1 + VSTest adapter stays green and -- --report-trx writes no TRX; --solution in VSTest mode = MSB1001)
+- Fix: `Settings file 'DotnetToolSettings.xml' was not found in the package` when installing dotnet-ef
+- Fix: Flutter iOS archive fails with `does not support provisioning profiles` after migrating from CocoaPods to Swift Package Manager
+- Fix: `FileInfo.Length` returns a stale size for a file that is still being written on Windows
+- Fix: `pubspec.lock` shows as modified after `flutter upgrade` or switching Flutter versions
+- Fix: `NU1608` / `NU1107` version conflict between Pomelo.EntityFrameworkCore.MySql and EF Core 10
 
 ## Vs / comparison
 
@@ -406,6 +416,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `EF.Parameter` vs `EF.Constant` in EF Core 11 queries → slug: 2026/10/ef-parameter-vs-ef-constant-in-ef-core-11-queries (measured on EF Core 11 RC 1: raw Expression.Constant = 1 EF compile per value, EF.Parameter/EF.Constant = 0; ParameterTranslationMode is not in the query cache key, same on 10.0.12)
 - Redis key prefix vs separate database vs separate instance for multi-tenant caching in ASP.NET Core → slug: 2026/10/redis-key-prefix-vs-separate-database-vs-separate-instance-for-multi-tenant-caching-in-aspnetcore (compile-checked on SDK 10.0.302 with MECSR 10.0.12, Hybrid 10.10.0, SE.Redis 3.3.1; HybridCache L1 is shared so the tenant must be in the key even with dedicated instances)
 - `AddDbContextPool` vs `AddDbContextFactory` for running EF Core queries in parallel → slug: 2026/10/adddbcontextpool-vs-adddbcontextfactory-for-running-ef-core-queries-in-parallel (measured on EF Core 11 RC 1 and 10.0.12: pooled factory 342 ns/40 B vs 17 us/44 KB per context; pooled ctx with scoped ctor dep resolves from root provider, throws only with ValidateScopes)
+- `Thread.Sleep` vs `Task.Delay` vs `SpinWait` for waiting in C#
+- `FileSystemWatcher` vs polling for detecting file changes on a network share in .NET
 
 ## Migration / upgrade
 
@@ -450,6 +462,9 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a Flutter Windows or Linux desktop app now that Impeller is the default renderer → slug: 2026/10/migrate-a-flutter-windows-or-linux-desktop-app-to-impeller
 - Migrate custom page transitions after the Flutter page transition builders reorganization → slug: 2026/10/migrate-custom-page-transitions-after-the-flutter-page-transition-builders-reorganization
 - Migrate a Flutter iOS app from CocoaPods to Swift Package Manager → slug: 2026/10/migrate-a-flutter-ios-app-from-cocoapods-to-swift-package-manager
+- Migrate a Blazor app that loads routable components from another assembly from .NET 8 to .NET 10
+- Migrate a Flutter app from `WillPopScope` to `PopScope` and `onPopInvokedWithResult`
+- Migrate a Flutter app's local storage from Hive to Drift
 
 ## What is / concept
 
@@ -493,6 +508,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is the `depend_on_referenced_packages` lint in Dart and why does it fire on transitive imports?
 - What happens to an expired `MemoryCache` entry, and when is it actually removed from memory?
 - What does EF Core write back into an entity after `SaveChangesAsync` (generated keys, concurrency tokens, relationship fix-up)?
+- What does `FileShare` actually control when opening a file in .NET, and how does it interact with another handle's `FileAccess`?
+- What is `pubspec_overrides.yaml` and when should I use it in a Flutter monorepo?
 
 ---
 
