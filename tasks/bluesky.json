@@ -38,9 +38,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
-  },
-  {
-    "slug": "2026/10/how-to-match-nested-parentheses-with-balancing-groups-in-dotnet-regex",
-    "text": "One .NET regex can match arbitrarily nested parentheses: (?<d>) pushes, (?<-d>) pops, (?(d)(?!)) rejects leftovers."
   }
 ]
