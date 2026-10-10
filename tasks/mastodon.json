@@ -62,9 +62,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
-  },
-  {
-    "slug": "2026/10/what-is-a-compiled-model-in-ef-core-11-and-when-is-it-worth-enabling",
-    "text": "A compiled model skips OnModelCreating on cold start. Measured on EF Core 11 RC1: 185 to 65 ms at 10 entities, 714 to 215 ms at 500. The catch: EFOptimizeContext is gone, the MSBuild route emits a slower AOT-flavoured model, and a stale model generates SQL for renamed columns without any error."
   }
 ]
