@@ -70,6 +70,16 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to trigger a GitHub Copilot automation from an issue or pull request comment (skipped: same intent as 2026/08/copilot-automations-now-trigger-on-issue-and-pr-comments, which covers the Agents tab setup, the comment trigger, the tools list and the private/internal repo requirement)
 - How to give a Cursor cloud agent a long-lived objective with `/goal` → slug: 2026/09/how-to-give-a-cursor-cloud-agent-a-long-lived-objective-with-goal
 - How to pin skills to a Cursor Custom Mode so an agent stays on one task (skipped: same intent as 2026/09/how-to-give-a-cursor-cloud-agent-a-long-lived-objective-with-goal, whose "Pin a playbook with a Custom Mode" section covers writing the skill, `disable-model-invocation`, the `icon`/`color` badge and Option+Enter / "Use as Mode")
+- How to define a GitHub Copilot CLI dynamic workflow and run it from CI with `copilot workflow run`
+- How to turn on Copilot local sandboxing and restrict which directories, hosts, and credentials an agent's commands can touch
+- How to export GitHub Copilot app agent sessions to an OpenTelemetry backend
+- How to request a Copilot code review from the REST API and set its effort level
+- How to split a long-running task across agents with a Cursor Projects coordinator and shared context files
+- How to monitor agent-authored PRs after deploy with Cursor Rollouts and Datadog
+- How to give each Claude Code subagent its own compaction threshold with `autoCompactWindow`
+- How to make a Claude Code hook fail closed with `onFailure: "block"`
+- How to isolate users and sessions in a Foundry hosted Microsoft Agent Framework agent
+- How to let GitHub Copilot drive a desktop app with computer use
 
 ## Fix / error
 
@@ -107,6 +117,10 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: a `PreToolUse` hook returns `allow` but a later deny rule still blocks the tool call → slug: 2026/09/fix-pretooluse-hook-allow-still-blocked-by-deny-rule
 - Fix: Copilot can't see a file because a content exclusion rule removed it from the index → slug: 2026/09/fix-copilot-cannot-see-a-file-excluded-by-content-exclusion
 - Fix: Claude Code ignores `AGENTS.md` - import it from `CLAUDE.md` or symlink it → slug: 2026/09/fix-claude-code-ignores-agents-md
+- Fix: Claude Code stuck on "Request rejected as unprocessable by the model" in a long image-heavy session
+- Fix: `529 overloaded_error` ends a long headless Claude Code run (tune the overloaded-retry backoff env vars)
+- Fix: a Copilot agent command fails with permission or network denied after local sandboxing is enabled
+- Fix: Claude Code hooks fail with "Plugin directory does not exist"
 
 ## Vs / comparison
 
@@ -136,6 +150,10 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Copilot code review vs Cursor Bugbot vs a Claude Code review action: which catches what → slug: 2026/09/copilot-code-review-vs-cursor-bugbot-vs-claude-code-review-action
 - Cursor sandbox providers compared: AWS Lambda vs Modal vs Cloudflare vs Vercel for agent tool execution → slug: 2026/09/cursor-sandbox-providers-aws-lambda-vs-modal-vs-cloudflare-vs-vercel
 - Local Ollama models vs cloud models in GitHub Copilot: what you give up → slug: 2026/09/local-ollama-models-vs-cloud-models-in-github-copilot
+- Copilot dynamic workflows vs `/fleet` vs GitHub Agentic Workflows: which multi-agent option to reach for
+- Copilot local sandbox vs cloud sandbox vs a dev container: how much isolation each gives an agent
+- Claude Haiku 5.5 vs Sonnet 5.5 vs Opus 5.5 for coding-agent subagents: picking a model per role
+- Specialist A2A agents vs distributed skills over MCP: when to collapse agents into skills
 
 ## Migration / upgrade
 
@@ -158,6 +176,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Migrate a stdio MCP server to a remote OAuth-protected HTTP server with dynamic client registration → slug: 2026/09/migrate-a-stdio-mcp-server-to-remote-oauth-with-cimd-and-dcr-fallback
 - Migrate duplicated per-tool rule files (`.cursorrules`, `CLAUDE.md`, `copilot-instructions.md`) to a single `AGENTS.md` source of truth → slug: 2026/09/migrate-cursorrules-claude-md-copilot-instructions-to-one-agents-md
 - Migrate a Cursor cloud agent workflow off GitHub to Cursor Origin repos → slug: 2026/09/migrate-a-cursor-cloud-agent-workflow-off-github-to-cursor-origin
+- Migrate a coding agent from Claude Sonnet 4.6 / Opus 4.7 to the 5.5 model family (model IDs, effort, cost)
+- Migrate a `/fleet` prompt to a reusable Copilot dynamic workflow
+- Migrate specialist A2A agents in Microsoft Agent Framework to skills served over MCP
 
 ## Patterns
 
@@ -180,6 +201,10 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Patterns: measuring an agent's fixed token overhead - system prompt and tool schemas before the first user token → slug: 2026/09/measure-an-agents-fixed-token-overhead-before-the-first-user-token
 - Patterns: stateless tool design - passing state handles as tool arguments instead of relying on the transport (skipped: same intent as 2026/08/stateful-vs-stateless-mcp-servers-what-breaks-when-the-session-goes-away, whose "The handle pattern, verified" section covers server-minted handles as tool arguments and the SEP-2567 design rules)
 - Patterns: self-healing end-to-end tests when a coding agent renames selectors → slug: 2026/09/self-healing-e2e-tests-when-a-coding-agent-renames-selectors
+- Patterns: fail-closed vs fail-open hooks for agent guardrails
+- Patterns: post-merge verification for agent-authored PRs (monitoring plans and per-environment verdicts)
+- Patterns: retry and backoff for long agent loops under overloaded and rate-limit errors
+- Patterns: a coordinator agent plus worker agents for multi-day projects
 
 ## What is / concept
 
@@ -200,6 +225,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - What is a Multi Round-Trip Request in MCP and why it replaced server-initiated sampling
 - What is the MCP Tasks extension and when do you need poll-based long-running tools
 - What is Agent Plugins 1.0 and which agents can install the same plugin
+- What is a Copilot dynamic workflow and how is it different from a prompt
+- What is Microsoft eXecution Container (MXC) and how Copilot sandboxes tool execution
 
 ---
 
