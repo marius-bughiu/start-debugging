@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/how-to-match-nested-parentheses-with-balancing-groups-in-dotnet-regex",
+    "text": "Balancing groups turn a .NET regex capture group into a stack, so one pattern matches nested parens or <div> tags. The catch: drop the atomic group and a 29-char input times out after 2 s (measured on .NET 11 RC1), NonBacktracking refuses the pattern outright, and separate stacks let {[(])} pass as balanced."
   }
 ]
