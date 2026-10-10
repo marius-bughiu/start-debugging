@@ -1,56 +1,105 @@
 [
   {
-    "query": "site:startdebugging.net/ru",
-    "position": 11.29,
-    "impressions": 35,
+    "query": "site:startdebugging.net/ru/tag",
+    "position": 11,
+    "impressions": 6,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "query": "site:startdebugging.net/es",
-    "position": 11.29,
-    "impressions": 34,
+    "query": "what's after quadrillion",
+    "position": 16.33,
+    "impressions": 6,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "+\"(?<-n>)\" regex .net",
+    "position": 19.8,
+    "impressions": 5,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "\"(?<-n>)\" regex .net",
+    "position": 17.67,
+    "impressions": 3,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/2023",
+    "position": 11,
+    "impressions": 3,
     "clicks": 0,
     "ctr": 0
   },
   {
     "query": "site:startdebugging.net/de",
     "position": 11,
-    "impressions": 33,
+    "impressions": 3,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "query": "site:startdebugging.net/2023/10",
+    "query": "site:startdebugging.net/de/tag",
     "position": 11,
-    "impressions": 31,
+    "impressions": 3,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/es",
+    "position": 11,
+    "impressions": 3,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/ja",
+    "position": 11,
+    "impressions": 3,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "site:startdebugging.net/ru",
+    "position": 11,
+    "impressions": 3,
     "clicks": 0,
     "ctr": 0
   },
   {
     "query": "site:startdebugging.net/ru/2023",
     "position": 11,
-    "impressions": 30,
+    "impressions": 3,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "query": "site:startdebugging.net/ru/tag",
+    "query": "c# wait command",
     "position": 11,
-    "impressions": 30,
+    "impressions": 1,
     "clicks": 0,
     "ctr": 0
   },
   {
-    "query": "site:startdebugging.net/2026",
-    "position": 11,
-    "impressions": 26,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "query": "c# using declaration",
+    "query": "dotnet tool install dotnet-ef",
     "position": 14,
+    "impressions": 1,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "dotnet-ef install",
+    "position": 15,
+    "impressions": 1,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "what is after decillion",
+    "position": 13,
     "impressions": 1,
     "clicks": 0,
     "ctr": 0
