@@ -170,7 +170,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to add a strong-named assembly's full public key to `InternalsVisibleTo` in an SDK-style project → slug: 2026/10/how-to-add-a-strong-named-assemblys-full-public-key-to-internalsvisibleto
 - How to detect Windows session lock, unlock, logon and logoff events in a C# app → slug: 2026/10/how-to-detect-windows-session-lock-unlock-logon-and-logoff-events-in-csharp
 - How to reserve space for an adaptive AdMob banner in Flutter to avoid layout shift → slug: 2026/10/how-to-reserve-space-for-an-adaptive-admob-banner-in-flutter-to-avoid-layout-shift
-- How to match nested parentheses and balanced tags with balancing groups `(?<-name>)` in .NET regex
+- How to match nested parentheses and balanced tags with balancing groups `(?<-name>)` in .NET regex → slug: 2026/10/how-to-match-nested-parentheses-with-balancing-groups-in-dotnet-regex
 - How to keep the `NavigationBar` selected tab in sync with the current route using `StatefulShellRoute` in go_router
 - How to tail a log file in C# while another process is still writing to it (`FileShare.ReadWrite`)
 - How to check whether an entity is already tracked by the DbContext before attaching it in EF Core
