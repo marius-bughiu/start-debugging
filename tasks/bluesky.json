@@ -38,9 +38,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
-  },
-  {
-    "slug": "2026/10/what-is-transparent-struct-layout-and-why-does-a-single-field-wrapper-struct-change-the-calling-convention-in-dotnet",
-    "text": "A C# struct wrapping one double rides in XMM0 on ARM64 and Linux, but in RCX on Windows x64. JIT disassembly from .NET 11 RC1."
   }
 ]
