@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-10-04",
-  "totalEnglishPublishedPosts": 950,
+  "lastRun": "2026-10-11",
+  "totalEnglishPublishedPosts": 985,
   "note": "Counts mirror getPillarPosts() in site/src/lib/blog.ts: English, non-draft posts whose lowercased tags intersect the pillar's indexTags.",
   "pillars": {
     "aspnetcore-11-cheat-sheet": {
@@ -9,9 +9,9 @@
         "aspnet-core",
         "aspnet"
       ],
-      "count": 111,
-      "previousCount": 110,
-      "updatedDate": "2026-10-04",
+      "count": 112,
+      "previousCount": 111,
+      "updatedDate": "2026-10-11",
       "lastPassAction": "updated"
     },
     "async-and-concurrency-in-csharp": {
@@ -21,9 +21,9 @@
         "threading"
       ],
       "count": 44,
-      "previousCount": 42,
+      "previousCount": 44,
       "updatedDate": "2026-10-04",
-      "lastPassAction": "updated"
+      "lastPassAction": "skipped (count unchanged, updatedDate within 14 days)"
     },
     "coding-agents-tracker": {
       "indexTags": [
@@ -36,9 +36,9 @@
         "agent-skills",
         "microsoft-agent-framework"
       ],
-      "count": 218,
-      "previousCount": 210,
-      "updatedDate": "2026-10-04",
+      "count": 228,
+      "previousCount": 218,
+      "updatedDate": "2026-10-11",
       "lastPassAction": "updated"
     },
     "csharp-14-features": {
@@ -50,9 +50,9 @@
         "csharp",
         "c# language"
       ],
-      "count": 333,
-      "previousCount": 325,
-      "updatedDate": "2026-10-04",
+      "count": 340,
+      "previousCount": 333,
+      "updatedDate": "2026-10-11",
       "lastPassAction": "updated"
     },
     "dotnet-11-tracker": {
@@ -64,9 +64,9 @@
         "dotnet",
         ".net"
       ],
-      "count": 542,
-      "previousCount": 523,
-      "updatedDate": "2026-10-04",
+      "count": 561,
+      "previousCount": 542,
+      "updatedDate": "2026-10-11",
       "lastPassAction": "updated"
     },
     "efcore-11-cheat-sheet": {
@@ -77,9 +77,9 @@
         "efcore-11",
         "entity-framework"
       ],
-      "count": 99,
-      "previousCount": 96,
-      "updatedDate": "2026-10-04",
+      "count": 105,
+      "previousCount": 99,
+      "updatedDate": "2026-10-11",
       "lastPassAction": "updated"
     },
     "flutter-tracker": {
@@ -87,9 +87,9 @@
         "flutter",
         "dart"
       ],
-      "count": 130,
-      "previousCount": 126,
-      "updatedDate": "2026-10-04",
+      "count": 140,
+      "previousCount": 130,
+      "updatedDate": "2026-10-11",
       "lastPassAction": "updated"
     },
     "maui-xamarin-tracker": {
@@ -100,18 +100,18 @@
         "xamarin-forms"
       ],
       "count": 59,
-      "previousCount": 54,
+      "previousCount": 59,
       "updatedDate": "2026-10-04",
-      "lastPassAction": "updated"
+      "lastPassAction": "skipped (count unchanged, updatedDate within 14 days)"
     },
     "performance-and-native-aot": {
       "indexTags": [
         "performance",
         "native-aot"
       ],
-      "count": 85,
-      "previousCount": 81,
-      "updatedDate": "2026-10-04",
+      "count": 89,
+      "previousCount": 85,
+      "updatedDate": "2026-10-11",
       "lastPassAction": "updated"
     },
     "security-tracker": {
@@ -122,9 +122,9 @@
         "authentication",
         "cryptography"
       ],
-      "count": 47,
-      "previousCount": 46,
-      "updatedDate": "2026-10-04",
+      "count": 48,
+      "previousCount": 47,
+      "updatedDate": "2026-10-11",
       "lastPassAction": "updated"
     }
   }
