@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/how-to-keep-the-navigationbar-selected-tab-in-sync-with-the-current-route-in-go-router",
+    "text": "Your Flutter NavigationBar says Orders while the screen shows Settings? A setState index only updates on taps, so deep links and context.go leave it stale. Bind selectedIndex to StatefulNavigationShell.currentIndex. Also: why deriving the tab from the URL lies after a cross-branch push (tested on go_router 18.0.2)."
   }
 ]
