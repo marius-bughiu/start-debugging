@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/how-to-define-a-github-copilot-cli-dynamic-workflow-and-run-it-from-ci",
+    "text": "How to write a GitHub Copilot dynamic workflow (defineWorkflow + joinSession in .github/extensions) and run it headless in GitHub Actions with copilot workflow run. Gotchas verified on CLI 1.0.95: fresh runners need --experimental, --allow-tool must come before the subcommand, and exit 1 vs 2 mean different things."
   }
 ]

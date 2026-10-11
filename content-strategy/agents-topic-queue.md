@@ -70,7 +70,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to trigger a GitHub Copilot automation from an issue or pull request comment (skipped: same intent as 2026/08/copilot-automations-now-trigger-on-issue-and-pr-comments, which covers the Agents tab setup, the comment trigger, the tools list and the private/internal repo requirement)
 - How to give a Cursor cloud agent a long-lived objective with `/goal` → slug: 2026/09/how-to-give-a-cursor-cloud-agent-a-long-lived-objective-with-goal
 - How to pin skills to a Cursor Custom Mode so an agent stays on one task (skipped: same intent as 2026/09/how-to-give-a-cursor-cloud-agent-a-long-lived-objective-with-goal, whose "Pin a playbook with a Custom Mode" section covers writing the skill, `disable-model-invocation`, the `icon`/`color` badge and Option+Enter / "Use as Mode")
-- How to define a GitHub Copilot CLI dynamic workflow and run it from CI with `copilot workflow run`
+- How to define a GitHub Copilot CLI dynamic workflow and run it from CI with `copilot workflow run` → slug: 2026/10/how-to-define-a-github-copilot-cli-dynamic-workflow-and-run-it-from-ci
 - How to turn on Copilot local sandboxing and restrict which directories, hosts, and credentials an agent's commands can touch
 - How to export GitHub Copilot app agent sessions to an OpenTelemetry backend
 - How to request a Copilot code review from the REST API and set its effort level
