@@ -62,9 +62,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
-  },
-  {
-    "slug": "2026/10/how-to-check-whether-an-entity-is-already-tracked-by-the-dbcontext-in-ef-core",
-    "text": "Checking db.Entry(incoming).State before Attach passes and then throws anyway: it only knows about that object, not the key. DbSet.Local.FindEntry(id) asks the identity map directly. Tested on EF Core 10, plus the composite-key overload trap, Deleted entries, and why Find is not a tracking check."
   }
 ]

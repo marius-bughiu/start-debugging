@@ -38,9 +38,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
-  },
-  {
-    "slug": "2026/10/how-to-check-whether-an-entity-is-already-tracked-by-the-dbcontext-in-ef-core",
-    "text": "EF Core: Entry(x).State == Detached does not mean the key is free. Local.FindEntry(id) asks the identity map, no query, no scan."
   }
 ]
