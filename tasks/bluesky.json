@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/how-to-tail-a-log-file-in-csharp-while-another-process-is-writing-to-it",
+    "text": "Tailing a live log in C#? FileShare.ReadWrite fixes the IOException, but StreamReader still mangles UTF-8 split across writes."
   }
 ]

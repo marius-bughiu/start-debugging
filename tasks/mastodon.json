@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/how-to-tail-a-log-file-in-csharp-while-another-process-is-writing-to-it",
+    "text": "How to tail -F a log file from C# while another process writes it: open with FileShare.ReadWrite | FileShare.Delete (so you don't break log rotation), poll, and decode bytes with your own Decoder. StreamReader flushes its decoder at EOF and turns half-written UTF-8 characters into U+FFFD. Tested on .NET 10 and 11 RC1."
   }
 ]
