@@ -173,7 +173,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to match nested parentheses and balanced tags with balancing groups `(?<-name>)` in .NET regex → slug: 2026/10/how-to-match-nested-parentheses-with-balancing-groups-in-dotnet-regex
 - How to keep the `NavigationBar` selected tab in sync with the current route using `StatefulShellRoute` in go_router → slug: 2026/10/how-to-keep-the-navigationbar-selected-tab-in-sync-with-the-current-route-in-go-router
 - How to tail a log file in C# while another process is still writing to it (`FileShare.ReadWrite`) → slug: 2026/10/how-to-tail-a-log-file-in-csharp-while-another-process-is-writing-to-it
-- How to check whether an entity is already tracked by the DbContext before attaching it in EF Core
+- How to check whether an entity is already tracked by the DbContext before attaching it in EF Core → slug: 2026/10/how-to-check-whether-an-entity-is-already-tracked-by-the-dbcontext-in-ef-core
 - How to discard buffered keypresses before `Console.ReadKey` in a C# console game loop
 
 ## Fix / error
