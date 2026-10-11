@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/quartz-net-4-4-job-outcomes-and-per-job-health-checks",
+    "text": "Quartz.NET 4.4 gives jobs a real outcome: context.Result = JobRunReport.Skipped(...) or Succeeded(...) with metrics, kept per job in the history. The part worth enabling today: a per-job health check that goes Degraded when your nightly job has not succeeded in 26 hours."
   }
 ]

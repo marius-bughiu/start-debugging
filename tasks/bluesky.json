@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/quartz-net-4-4-job-outcomes-and-per-job-health-checks",
+    "text": "Quartz.NET 4.4: a job can now report Skipped instead of a fake success, and RequireSuccessWithin turns that into a health check."
   }
 ]
