@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/fix-settings-file-dotnettoolsettings-xml-was-not-found-in-the-package",
+    "text": "'Settings file DotnetToolSettings.xml was not found in the package' almost never means a broken package. The SDK only looks in tools/<its own runtime TFM>, so dotnet-ef 10.0.1 fails on SDK 9 even with the .NET 10 runtime installed. Reproduced on SDK 8, 9 and 10, plus the --framework escape hatch."
   }
 ]
