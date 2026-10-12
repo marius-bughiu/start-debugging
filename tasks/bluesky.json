@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/how-to-turn-on-copilot-local-sandboxing-and-restrict-what-an-agent-can-touch",
+    "text": "Copilot local sandboxing is GA. How to fence agent commands to one repo, an allowlist of hosts, and fake git/gh tokens."
   }
 ]

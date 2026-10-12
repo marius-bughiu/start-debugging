@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/how-to-turn-on-copilot-local-sandboxing-and-restrict-what-an-agent-can-touch",
+    "text": "GitHub Copilot's local sandbox went GA on Oct 7. Walkthrough of the settings.json keys for paths, host allowlists and masked env vars, plus the gotcha that bites first: denying a missing .env makes Copilot create an empty .env directory. Also why allowBypass: false belongs in every headless run."
   }
 ]
