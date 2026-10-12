@@ -62,9 +62,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
-  },
-  {
-    "slug": "2026/10/fluentvalidation-12-2-isinenum-on-flags-enums-works-under-native-aot",
-    "text": "FluentValidation 12.1.x: IsInEnum() on a [Flags] enum passes every test, then throws \"'Access[]' is missing native code\" in a PublishAot binary. 12.2.0 swaps Enum.GetValues for GetValuesAsUnderlyingType. Reproduced both versions on .NET 10, plus why the IL3053 warning hid it."
   }
 ]

@@ -38,9 +38,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
-  },
-  {
-    "slug": "2026/10/fluentvalidation-12-2-isinenum-on-flags-enums-works-under-native-aot",
-    "text": "IsInEnum() on a [Flags] enum crashed native AOT apps with NotSupportedException. FluentValidation 12.2.0 fixes it in one line."
   }
 ]
