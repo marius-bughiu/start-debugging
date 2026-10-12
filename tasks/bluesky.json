@@ -38,9 +38,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
-  },
-  {
-    "slug": "2026/10/fix-does-not-support-provisioning-profiles-flutter-ios-archive-swift-package-manager",
-    "text": "Flutter iOS archive broke after the SwiftPM migration? Your CI passes the provisioning profile on the xcodebuild command line."
   }
 ]
