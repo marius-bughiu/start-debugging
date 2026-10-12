@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/how-to-discard-buffered-keypresses-before-console-readkey-in-csharp",
+    "text": "C# console games: read one key per frame and a held arrow key keeps moving the player for 1.5 s after release (measured on .NET 10). Drain with while (Console.KeyAvailable) ReadKey(true) every frame instead. Plus why type-ahead echoes on macOS/Linux until your first KeyAvailable call."
   }
 ]
