@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/fix-does-not-support-provisioning-profiles-flutter-ios-archive-swift-package-manager",
+    "text": "\"does not support provisioning profiles\" after moving a Flutter app to Swift Package Manager? A profile passed to xcodebuild as NAME=value hits every SwiftPM resource bundle. CocoaPods only hid it via a post_install CODE_SIGNING_ALLOWED=NO hook. Put manual signing on the Runner target and use flutter build ipa."
   }
 ]
