@@ -38,9 +38,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
-  },
-  {
-    "slug": "2026/10/fix-settings-file-dotnettoolsettings-xml-was-not-found-in-the-package",
-    "text": "'DotnetToolSettings.xml was not found' means your SDK is older than the tool. Clearing the NuGet cache won't fix it."
   }
 ]
