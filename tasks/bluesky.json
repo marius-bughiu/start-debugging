@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/fix-fileinfo-length-returns-stale-size-for-a-file-still-being-written-on-windows",
+    "text": "FileInfo.Length stuck at 0 while a log grows? Three caches stack up. Read the size from a shared handle with RandomAccess.GetLength."
   }
 ]
