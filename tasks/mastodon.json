@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/how-to-export-github-copilot-app-agent-sessions-to-an-opentelemetry-backend",
+    "text": "The GitHub Copilot app exports agent sessions as OpenTelemetry traces, token metrics and events, configured only through the telemetry block in enterprise managed settings. Gotcha: MDM, server-managed and file settings are not merged, the highest channel wins outright, so your telemetry key can be silently shadowed."
   }
 ]

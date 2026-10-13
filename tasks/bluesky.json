@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/how-to-export-github-copilot-app-agent-sessions-to-an-opentelemetry-backend",
+    "text": "Copilot app agent traces in your own OTel backend with one telemetry block, and why that block may never get read."
   }
 ]
