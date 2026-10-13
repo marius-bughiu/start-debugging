@@ -62,9 +62,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
-  },
-  {
-    "slug": "2026/10/fix-fileinfo-length-returns-stale-size-for-a-file-still-being-written-on-windows",
-    "text": "Why FileInfo.Length lags behind a file that is still being written: FileInfo caches on first access, Windows enumeration reads NTFS's lazily updated directory entry, and the writer's StreamWriter/FileStream buffers may not have reached the OS. Measured on .NET 10 and 11, plus the handle-based fix."
   }
 ]
