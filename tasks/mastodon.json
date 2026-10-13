@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/fix-nu1608-nu1107-version-conflict-pomelo-entityframeworkcore-mysql-ef-core-10",
+    "text": "Pomelo.EntityFrameworkCore.MySql is still on 9.0.0 with Relational capped at 9.0.999, and there is no EF 10 build even on the nightly feed. Two real fixes: pin all EF Core packages to 9.0.x on .NET 10, or move to the Microting 10.0.x fork. One trap: EF Core 10 + Relational 9 restores with zero warnings and still crashes."
   }
 ]

@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/fix-nu1608-nu1107-version-conflict-pomelo-entityframeworkcore-mysql-ef-core-10",
+    "text": "NU1608 with Pomelo and EF Core 10? The warning is the good news: the build passes, then UseMySql throws MissingMethodException."
   }
 ]
