@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/azure-mcp-server-3-0-rejects-unknown-parameters-and-goes-secure-by-default",
+    "text": "Azure MCP Server 3.0 now rejects tool calls with unknown parameters. Saved prompts passing --subscription will start failing."
   }
 ]

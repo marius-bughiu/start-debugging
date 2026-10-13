@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/azure-mcp-server-3-0-rejects-unknown-parameters-and-goes-secure-by-default",
+    "text": "Azure MCP Server 3.0 is out. Tools dropped options like subscription and tenant and now reject calls that still pass them, Storage accounts it creates disable Shared Key auth, and the Postgres/MySQL query tools are marked destructive. Here is what to check in your scripts and agent prompts before upgrading."
   }
 ]
