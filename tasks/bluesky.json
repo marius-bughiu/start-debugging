@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/fix-pubspec-lock-modified-after-flutter-upgrade-or-switching-flutter-versions",
+    "text": "pubspec.lock dirty after a Flutter upgrade? The SDK pins test_api and matcher, and flutter upgrade runs pub upgrade on your app."
   }
 ]

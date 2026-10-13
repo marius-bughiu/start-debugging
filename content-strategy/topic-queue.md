@@ -346,7 +346,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Settings file 'DotnetToolSettings.xml' was not found in the package` when installing dotnet-ef → slug: 2026/10/fix-settings-file-dotnettoolsettings-xml-was-not-found-in-the-package
 - Fix: Flutter iOS archive fails with `does not support provisioning profiles` after migrating from CocoaPods to Swift Package Manager → slug: 2026/10/fix-does-not-support-provisioning-profiles-flutter-ios-archive-swift-package-manager
 - Fix: `FileInfo.Length` returns a stale size for a file that is still being written on Windows → slug: 2026/10/fix-fileinfo-length-returns-stale-size-for-a-file-still-being-written-on-windows (measured on .NET 10.0.10 + 11 RC1 macOS: FileInfo lazy snapshot, StreamWriter/FileStream buffering 0/4096/6000, enumeration snapshot; Windows dir-entry lag + SafeFileHandle _lengthCanBeCached from runtime source, not run on Windows)
-- Fix: `pubspec.lock` shows as modified after `flutter upgrade` or switching Flutter versions
+- Fix: `pubspec.lock` shows as modified after `flutter upgrade` or switching Flutter versions → slug: 2026/10/fix-pubspec-lock-modified-after-flutter-upgrade-or-switching-flutter-versions (measured on Flutter 3.44.8 vs 3.47.7: SDK pins flip meta/vector_math/test_api/matcher both ways; 3.47 unpinned most (#185268) except test_api/matcher/material_color_utilities; flutter upgrade runs pub upgrade on cwd project (upgrade.dart updatePackages); implicit pub get via .dart_tool/version; --enforce-lockfile exit 65; 3.47 AnalysisOptionsMigration edits analysis_options.yaml)
 - Fix: `NU1608` / `NU1107` version conflict between Pomelo.EntityFrameworkCore.MySql and EF Core 10
 
 ## Vs / comparison

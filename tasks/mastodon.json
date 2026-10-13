@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/fix-pubspec-lock-modified-after-flutter-upgrade-or-switching-flutter-versions",
+    "text": "Why does pubspec.lock change every time someone switches Flutter versions? flutter and flutter_test pin exact package versions, so each SDK re-resolves your lockfile, and flutter upgrade quietly runs pub upgrade on the project in your cwd. Measured on 3.44.8 vs 3.47.7, with the CI fix: --enforce-lockfile."
   }
 ]
