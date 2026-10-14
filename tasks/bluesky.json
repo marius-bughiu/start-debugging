@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/thread-sleep-vs-task-delay-vs-spinwait-for-waiting-in-csharp",
+    "text": "200 one-second Thread.Sleep calls on the .NET thread pool took 18 s and stalled unrelated work for 17 s. Task.Delay: 1 s. Measured."
   }
 ]

@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/thread-sleep-vs-task-delay-vs-spinwait-for-waiting-in-csharp",
+    "text": "Thread.Sleep, Task.Delay or SpinWait? Measured on .NET 10: Thread.Sleep on pool threads serialized 200 waits into 18 s and left a new work item queued for 17 s. And SpinWait.SpinUntil is secretly a Sleep(1) loop after 20 spins: if you wait for an event, a ManualResetEventSlim wakes you ~50x sooner."
   }
 ]

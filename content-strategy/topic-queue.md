@@ -416,7 +416,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `EF.Parameter` vs `EF.Constant` in EF Core 11 queries → slug: 2026/10/ef-parameter-vs-ef-constant-in-ef-core-11-queries (measured on EF Core 11 RC 1: raw Expression.Constant = 1 EF compile per value, EF.Parameter/EF.Constant = 0; ParameterTranslationMode is not in the query cache key, same on 10.0.12)
 - Redis key prefix vs separate database vs separate instance for multi-tenant caching in ASP.NET Core → slug: 2026/10/redis-key-prefix-vs-separate-database-vs-separate-instance-for-multi-tenant-caching-in-aspnetcore (compile-checked on SDK 10.0.302 with MECSR 10.0.12, Hybrid 10.10.0, SE.Redis 3.3.1; HybridCache L1 is shared so the tenant must be in the key even with dedicated instances)
 - `AddDbContextPool` vs `AddDbContextFactory` for running EF Core queries in parallel → slug: 2026/10/adddbcontextpool-vs-adddbcontextfactory-for-running-ef-core-queries-in-parallel (measured on EF Core 11 RC 1 and 10.0.12: pooled factory 342 ns/40 B vs 17 us/44 KB per context; pooled ctx with scoped ctor dep resolves from root provider, throws only with ValidateScopes)
-- `Thread.Sleep` vs `Task.Delay` vs `SpinWait` for waiting in C#
+- `Thread.Sleep` vs `Task.Delay` vs `SpinWait` for waiting in C# → slug: 2026/10/thread-sleep-vs-task-delay-vs-spinwait-for-waiting-in-csharp (measured on .NET 10.0.10, M4/macOS: 200 x 1s Thread.Sleep on the pool took 18 s and stalled a new work item 17 s vs 1 s for Task.Delay; SpinUntil degrades to Sleep(1) after 20 spins, MRES wakes ~50x faster than polling)
 - `FileSystemWatcher` vs polling for detecting file changes on a network share in .NET
 
 ## Migration / upgrade
