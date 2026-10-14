@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/how-to-request-a-copilot-code-review-from-the-rest-api-and-set-its-effort-level",
+    "text": "GitHub says Copilot code review can be requested from the REST and GraphQL APIs with a per-request effort level. The effort field isn't in either published schema yet, so the requestor's personal setting decides. Plus: a PR's first review locks its effort for every re-request."
   }
 ]
