@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/filesystemwatcher-vs-polling-for-detecting-file-changes-on-a-network-share-in-dotnet",
+    "text": "On a network share, FileSystemWatcher is a hint, not a source of truth. On Linux it never sees writes from other machines, and on Windows one dropped SMB connection sets EnableRaisingEvents to false for good. A snapshot diff with the watcher only waking the poller early is the design that survives."
   }
 ]
