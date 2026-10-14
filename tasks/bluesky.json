@@ -38,9 +38,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
-  },
-  {
-    "slug": "2026/10/how-to-request-a-copilot-code-review-from-the-rest-api-and-set-its-effort-level",
-    "text": "Copilot code review via REST: the bot login, the union:true trap, and why your token's owner decides Lite vs Balanced today."
   }
 ]
