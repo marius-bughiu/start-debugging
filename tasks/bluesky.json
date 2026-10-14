@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/dotnet-11-rc-2-cborreader-reads-cbor-incrementally",
+    "text": "CborReader in .NET 11 RC 2 can finally decode CBOR off a stream: isFinalBlock, NeedsMoreData, SlideData. One catch: Lax mode only."
   }
 ]
