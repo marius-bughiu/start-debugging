@@ -70,9 +70,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
-  },
-  {
-    "slug": "2026/10/what-is-ref-safe-context-in-csharp-and-how-does-the-compiler-decide-it-for-ref-locals",
-    "text": "Why does C# reject `return ref r` after you pointed r at an array element? A ref local copies the ref-safe-context of its initializer and keeps it forever. Initialize with the narrowest referent, then reassign to wider ones. Walkthrough of CS8157, CS8374 and CS9079, plus where scoped and [UnscopedRef] help."
   }
 ]
