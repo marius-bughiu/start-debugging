@@ -70,9 +70,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
-  },
-  {
-    "slug": "2026/10/migrate-a-flutter-app-from-hive-to-drift",
-    "text": "Migrating a Flutter app from Hive to drift is a data migration on every user's phone. One transaction with a completion flag, box files deleted only after commit. Watch out: drift's default DateTime storage drops milliseconds and UTC, so 09:30:12.345Z came back as 12:30:12.000 local. Tested on hive_ce 2.22 and drift 2.35."
   }
 ]
