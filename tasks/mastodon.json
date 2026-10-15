@@ -62,9 +62,5 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
-  },
-  {
-    "slug": "2026/10/dotnetup-public-preview-installs-the-sdk-your-global-json-pins",
-    "text": "dotnetup, the rustup-style toolchain manager for .NET, is now in public preview. The part I like most: dotnetup sdk install reads your global.json, turns rollForward into an update channel (latestPatch becomes 10.0.1xx), and --update-global-json writes newer patch versions back into the file."
   }
 ]
