@@ -74,7 +74,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to turn on Copilot local sandboxing and restrict which directories, hosts, and credentials an agent's commands can touch → slug: 2026/10/how-to-turn-on-copilot-local-sandboxing-and-restrict-what-an-agent-can-touch
 - How to export GitHub Copilot app agent sessions to an OpenTelemetry backend → slug: 2026/10/how-to-export-github-copilot-app-agent-sessions-to-an-opentelemetry-backend
 - How to request a Copilot code review from the REST API and set its effort level → slug: 2026/10/how-to-request-a-copilot-code-review-from-the-rest-api-and-set-its-effort-level
-- How to split a long-running task across agents with a Cursor Projects coordinator and shared context files
+- How to split a long-running task across agents with a Cursor Projects coordinator and shared context files → slug: 2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator
 - How to monitor agent-authored PRs after deploy with Cursor Rollouts and Datadog
 - How to give each Claude Code subagent its own compaction threshold with `autoCompactWindow`
 - How to make a Claude Code hook fail closed with `onFailure: "block"`
