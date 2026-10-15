@@ -462,7 +462,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a Flutter Windows or Linux desktop app now that Impeller is the default renderer → slug: 2026/10/migrate-a-flutter-windows-or-linux-desktop-app-to-impeller
 - Migrate custom page transitions after the Flutter page transition builders reorganization → slug: 2026/10/migrate-custom-page-transitions-after-the-flutter-page-transition-builders-reorganization
 - Migrate a Flutter iOS app from CocoaPods to Swift Package Manager → slug: 2026/10/migrate-a-flutter-ios-app-from-cocoapods-to-swift-package-manager
-- Migrate a Blazor app that loads routable components from another assembly from .NET 8 to .NET 10
+- Migrate a Blazor app that loads routable components from another assembly from .NET 8 to .NET 10 → slug: 2026/10/migrate-blazor-routable-components-from-another-assembly-dotnet-8-to-dotnet-10
 - Migrate a Flutter app from `WillPopScope` to `PopScope` and `onPopInvokedWithResult`
 - Migrate a Flutter app's local storage from Hive to Drift
 

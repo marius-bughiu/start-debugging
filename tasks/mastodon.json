@@ -62,5 +62,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter Android app crashes on launch with ClassNotFoundException: MainActivity. The manifest's .MainActivity resolves against the Gradle namespace, not applicationId. I reproduced 8 rename and flavor variants on an emulator: changing applicationId alone is safe, the folder doesn't matter, and R8 is not the culprit."
+  },
+  {
+    "slug": "2026/10/migrate-blazor-routable-components-from-another-assembly-dotnet-8-to-dotnet-10",
+    "text": "Upgrading a Blazor Web App whose pages live in a Razor class library from .NET 8 to .NET 10? Routing still needs both AdditionalAssemblies registrations (same matrix on 8.0.32 and 10.0.10). What breaks: thin hosts lose blazor.web.js, and a NotFoundPage from the library renders an empty 404."
   }
 ]

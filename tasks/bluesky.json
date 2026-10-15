@@ -38,5 +38,9 @@
   {
     "slug": "2026/10/fix-classnotfoundexception-for-mainactivity-when-a-flutter-android-app-launches",
     "text": "Flutter app dies on launch with ClassNotFoundException for MainActivity? Your Gradle namespace and Kotlin package line disagree."
+  },
+  {
+    "slug": "2026/10/migrate-blazor-routable-components-from-another-assembly-dotnet-8-to-dotnet-10",
+    "text": "Moving Blazor RCL pages to .NET 10? A host with no .razor files stops serving blazor.web.js. One MSBuild property fixes it."
   }
 ]
