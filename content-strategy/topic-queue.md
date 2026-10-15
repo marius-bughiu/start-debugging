@@ -464,7 +464,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a Flutter iOS app from CocoaPods to Swift Package Manager → slug: 2026/10/migrate-a-flutter-ios-app-from-cocoapods-to-swift-package-manager
 - Migrate a Blazor app that loads routable components from another assembly from .NET 8 to .NET 10 → slug: 2026/10/migrate-blazor-routable-components-from-another-assembly-dotnet-8-to-dotnet-10
 - Migrate a Flutter app from `WillPopScope` to `PopScope` and `onPopInvokedWithResult`
-- Migrate a Flutter app's local storage from Hive to Drift
+- Migrate a Flutter app's local storage from Hive to Drift → slug: 2026/10/migrate-a-flutter-app-from-hive-to-drift
 
 ## What is / concept
 
