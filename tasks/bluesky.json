@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/10/what-decides-whether-ef-core-scaffolds-a-sql-server-date-as-dateonly-or-datetime",
-    "text": "EF Core 8+ scaffolds SQL Server date as DateOnly. The docs' T4 revert to DateTime silently remaps the column to datetime2."
   }
 ]
