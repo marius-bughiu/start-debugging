@@ -70,9 +70,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
-  },
-  {
-    "slug": "2026/10/dotnet-extensions-10-11-log-buffering-keeps-scopes-with-includescopes",
-    "text": "Buffered logs in .NET used to come out of Flush() without any BeginScope data, so the OrderId you needed to debug the failure was gone. Microsoft.Extensions.Telemetry 10.11.0 adds an experimental IncludeScopes option. Before/after repro inside: scopes now land as record attributes, not as scopes."
   }
 ]
