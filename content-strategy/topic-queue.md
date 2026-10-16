@@ -503,7 +503,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is a compiled model in EF Core 11 and when is `EFOptimizeContext` worth enabling? → slug: 2026/10/what-is-a-compiled-model-in-ef-core-11-and-when-is-it-worth-enabling
 - What is ref-safe-context in C# and how does the compiler decide it for ref locals? → slug: 2026/10/what-is-ref-safe-context-in-csharp-and-how-does-the-compiler-decide-it-for-ref-locals
 - What does a C# `with` expression actually copy, and why don't computed record properties recalculate? → slug: 2026/10/what-does-a-csharp-with-expression-actually-copy
-- What decides whether EF Core scaffolds a SQL Server `date` column as `DateOnly` or `DateTime`?
+- What decides whether EF Core scaffolds a SQL Server `date` column as `DateOnly` or `DateTime`? → slug: 2026/10/what-decides-whether-ef-core-scaffolds-a-sql-server-date-as-dateonly-or-datetime
 - What is the difference between a source-breaking and a binary-breaking change in a .NET library?
 - What is the `depend_on_referenced_packages` lint in Dart and why does it fire on transitive imports?
 - What happens to an expired `MemoryCache` entry, and when is it actually removed from memory?
