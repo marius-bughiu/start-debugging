@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/how-to-monitor-agent-authored-prs-after-deploy-with-cursor-rollouts-and-datadog",
+    "text": "Cursor Rollouts writes a monitoring plan on every PR, then checks the deployed commit against Datadog at deploy, 20 minutes, 1 hour, 1 day and 3 days. The wiring is two CI calls to its DeploymentsService plus a Datadog MCP data source. Gotcha: with squash merges, report the main SHA, not the PR head, or deploys never match."
   }
 ]

@@ -75,7 +75,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to export GitHub Copilot app agent sessions to an OpenTelemetry backend → slug: 2026/10/how-to-export-github-copilot-app-agent-sessions-to-an-opentelemetry-backend
 - How to request a Copilot code review from the REST API and set its effort level → slug: 2026/10/how-to-request-a-copilot-code-review-from-the-rest-api-and-set-its-effort-level
 - How to split a long-running task across agents with a Cursor Projects coordinator and shared context files → slug: 2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator
-- How to monitor agent-authored PRs after deploy with Cursor Rollouts and Datadog
+- How to monitor agent-authored PRs after deploy with Cursor Rollouts and Datadog → slug: 2026/10/how-to-monitor-agent-authored-prs-after-deploy-with-cursor-rollouts-and-datadog
 - How to give each Claude Code subagent its own compaction threshold with `autoCompactWindow`
 - How to make a Claude Code hook fail closed with `onFailure: "block"`
 - How to isolate users and sessions in a Foundry hosted Microsoft Agent Framework agent
