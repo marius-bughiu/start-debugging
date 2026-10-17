@@ -175,6 +175,14 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to tail a log file in C# while another process is still writing to it (`FileShare.ReadWrite`) → slug: 2026/10/how-to-tail-a-log-file-in-csharp-while-another-process-is-writing-to-it
 - How to check whether an entity is already tracked by the DbContext before attaching it in EF Core → slug: 2026/10/how-to-check-whether-an-entity-is-already-tracked-by-the-dbcontext-in-ef-core
 - How to discard buffered keypresses before `Console.ReadKey` in a C# console game loop → slug: 2026/10/how-to-discard-buffered-keypresses-before-console-readkey-in-csharp
+- How to remove or hide individual endpoints that `MapIdentityApi` maps in ASP.NET Core
+- How to format numbers with custom digit grouping (Indian lakh/crore style) using `NumberFormatInfo.NumberGroupSizes` in .NET
+- How to catch uncaught async errors in a Flutter app with `runZonedGuarded` and `PlatformDispatcher.instance.onError`
+- How to replay the latest value to late subscribers of a Dart `Stream` without rxdart's `BehaviorSubject`
+- How to make `AnimatedSwitcher` animate when the child widget type does not change in Flutter
+- How to define custom design tokens with `ThemeExtension` and animate them between light and dark themes in Flutter
+- How to restore UI state after Android process death in Flutter with `RestorationMixin`
+- How to mark a controller action's response as nullable in ASP.NET Core's built-in OpenAPI document
 
 ## Fix / error
 
@@ -348,6 +356,10 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `FileInfo.Length` returns a stale size for a file that is still being written on Windows → slug: 2026/10/fix-fileinfo-length-returns-stale-size-for-a-file-still-being-written-on-windows (measured on .NET 10.0.10 + 11 RC1 macOS: FileInfo lazy snapshot, StreamWriter/FileStream buffering 0/4096/6000, enumeration snapshot; Windows dir-entry lag + SafeFileHandle _lengthCanBeCached from runtime source, not run on Windows)
 - Fix: `pubspec.lock` shows as modified after `flutter upgrade` or switching Flutter versions → slug: 2026/10/fix-pubspec-lock-modified-after-flutter-upgrade-or-switching-flutter-versions (measured on Flutter 3.44.8 vs 3.47.7: SDK pins flip meta/vector_math/test_api/matcher both ways; 3.47 unpinned most (#185268) except test_api/matcher/material_color_utilities; flutter upgrade runs pub upgrade on cwd project (upgrade.dart updatePackages); implicit pub get via .dart_tool/version; --enforce-lockfile exit 65; 3.47 AnalysisOptionsMigration edits analysis_options.yaml)
 - Fix: `NU1608` / `NU1107` version conflict between Pomelo.EntityFrameworkCore.MySql and EF Core 10 → slug: 2026/10/fix-nu1608-nu1107-version-conflict-pomelo-entityframeworkcore-mysql-ef-core-10 (measured on SDK 10.0.302: Design/Identity 10 -> NU1107; direct Relational 10 -> NU1608; bare EFCore 10 -> silent Relational 9.0.0 mix; all mixes MissingMethodException AbstractionsStrings.ArgumentIsEmpty in UseMySql; Pomelo nightly feed has no 10.x; EF 9.0.21 on net10 + Identity 9.0.21 works; Microting 10.0.12 compiles unchanged, same SQL; Oracle MySql.EntityFrameworkCore 10.0.9 UseMySQL differs in StartsWith SQL; no live MySQL server run)
+- Fix: `Bad state: Stream has already been listened to` in Flutter
+- Fix: `PlatformException(sign_in_failed, com.google.android.gms.common.api.ApiException: 10)` with Google Sign-In in Flutter
+- Fix: `Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is X, expected version is Y` in a Flutter Android build
+- Fix: `HttpProtocolException: The HTTP/2 server reset the stream. HTTP/2 error code 'PROTOCOL_ERROR'` from .NET `HttpClient` under load
 
 ## Vs / comparison
 
@@ -418,6 +430,9 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `AddDbContextPool` vs `AddDbContextFactory` for running EF Core queries in parallel → slug: 2026/10/adddbcontextpool-vs-adddbcontextfactory-for-running-ef-core-queries-in-parallel (measured on EF Core 11 RC 1 and 10.0.12: pooled factory 342 ns/40 B vs 17 us/44 KB per context; pooled ctx with scoped ctor dep resolves from root provider, throws only with ValidateScopes)
 - `Thread.Sleep` vs `Task.Delay` vs `SpinWait` for waiting in C# → slug: 2026/10/thread-sleep-vs-task-delay-vs-spinwait-for-waiting-in-csharp (measured on .NET 10.0.10, M4/macOS: 200 x 1s Thread.Sleep on the pool took 18 s and stalled a new work item 17 s vs 1 s for Task.Delay; SpinUntil degrades to Sleep(1) after 20 spins, MRES wakes ~50x faster than polling)
 - `FileSystemWatcher` vs polling for detecting file changes on a network share in .NET → slug: 2026/10/filesystemwatcher-vs-polling-for-detecting-file-changes-on-a-network-share-in-dotnet (sourced from runtime main: Windows FSW sets EnableRaisingEvents=false on any non-abort error and never restarts; 64 KB network buffer cap; hybrid snapshot-diff tested on .NET 10.0.10, scan 20.5 ms/10k files local APFS M4)
+- `Expanded` vs `Flexible` (`FlexFit.tight` vs `FlexFit.loose`) in Flutter
+- `unawaited_futures` vs `discarded_futures` lint in Dart: which one catches which un-awaited call
+- `Lazy<T>` vs `LazyInitializer.EnsureInitialized` vs double-checked locking in C#
 
 ## Migration / upgrade
 
@@ -465,6 +480,9 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a Blazor app that loads routable components from another assembly from .NET 8 to .NET 10 → slug: 2026/10/migrate-blazor-routable-components-from-another-assembly-dotnet-8-to-dotnet-10
 - Migrate a Flutter app from `WillPopScope` to `PopScope` and `onPopInvokedWithResult`
 - Migrate a Flutter app's local storage from Hive to Drift → slug: 2026/10/migrate-a-flutter-app-from-hive-to-drift
+- Migrate a Flutter app from `WidgetsBindingObserver.didChangeAppLifecycleState` to `AppLifecycleListener`
+- Migrate a Flutter app from `Color.withOpacity` to `Color.withValues`
+- Migrate a Flutter app from `MaterialStateProperty` to `WidgetStateProperty`
 
 ## What is / concept
 
@@ -512,6 +530,9 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is `pubspec_overrides.yaml` and when should I use it in a Flutter monorepo?
 
 ---
+- What is `[ModuleInitializer]` in C# and when should a library use it?
+- What does `[CallerArgumentExpression]` capture, and how do I use it in my own guard methods?
+- What is `AsyncLocal<T>` and why doesn't a value set inside an awaited method flow back to the caller?
 
 ## Consumed
 
