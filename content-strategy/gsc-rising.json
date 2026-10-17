@@ -1,18 +1,1 @@
-[
-  {
-    "query": "site:startdebugging.net/ru/tag",
-    "currentPosition": 11,
-    "currentImpressions": 6,
-    "priorImpressions": 0,
-    "delta": 6,
-    "ctr": 0
-  },
-  {
-    "query": "+\"(?<-n>)\" regex .net",
-    "currentPosition": 19.8,
-    "currentImpressions": 5,
-    "priorImpressions": 0,
-    "delta": 5,
-    "ctr": 0
-  }
-]
+[]
