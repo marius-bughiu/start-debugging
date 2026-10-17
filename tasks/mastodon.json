@@ -70,9 +70,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
-  },
-  {
-    "slug": "2026/10/how-to-remove-or-hide-individual-endpoints-that-mapidentityapi-maps-in-aspnetcore",
-    "text": "ASP.NET Core's MapIdentityApi maps ten endpoints and you can't opt out of one. I measured four workarounds on .NET 11: OpenAPI-only hiding, a 404 delegate swap, shadowing with WithOrder(-1), and a filtering EndpointDataSource. Gotcha: remove /confirmEmail and /register starts returning 500."
   }
 ]
