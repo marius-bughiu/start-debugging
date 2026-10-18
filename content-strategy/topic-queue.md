@@ -176,7 +176,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to check whether an entity is already tracked by the DbContext before attaching it in EF Core → slug: 2026/10/how-to-check-whether-an-entity-is-already-tracked-by-the-dbcontext-in-ef-core
 - How to discard buffered keypresses before `Console.ReadKey` in a C# console game loop → slug: 2026/10/how-to-discard-buffered-keypresses-before-console-readkey-in-csharp
 - How to remove or hide individual endpoints that `MapIdentityApi` maps in ASP.NET Core → slug: 2026/10/how-to-remove-or-hide-individual-endpoints-that-mapidentityapi-maps-in-aspnetcore
-- How to format numbers with custom digit grouping (Indian lakh/crore style) using `NumberFormatInfo.NumberGroupSizes` in .NET
+- How to format numbers with custom digit grouping (Indian lakh/crore style) using `NumberFormatInfo.NumberGroupSizes` in .NET → slug: 2026/10/how-to-format-numbers-with-indian-lakh-crore-digit-grouping-in-dotnet
 - How to catch uncaught async errors in a Flutter app with `runZonedGuarded` and `PlatformDispatcher.instance.onError`
 - How to replay the latest value to late subscribers of a Dart `Stream` without rxdart's `BehaviorSubject`
 - How to make `AnimatedSwitcher` animate when the child widget type does not change in Flutter
