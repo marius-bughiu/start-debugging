@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/how-to-catch-uncaught-async-errors-in-flutter-with-runzonedguarded-and-platformdispatcher",
+    "text": "Your Flutter crash reporter probably misses half your errors. FlutterError.onError only sees framework callbacks; unawaited futures, timers, streams and code after an await go to PlatformDispatcher.instance.onError. The gotcha: Flutter web never calls that callback, so you still need runZonedGuarded there."
   }
 ]
