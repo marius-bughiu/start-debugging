@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/10/how-to-give-each-claude-code-subagent-its-own-compaction-threshold-with-autocompactwindow",
-    "text": "Your log-reader subagent doesn't need a 967k window. Claude Code 2.1.296 lets each subagent compact at its own threshold."
   }
 ]
