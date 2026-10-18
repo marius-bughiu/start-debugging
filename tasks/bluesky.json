@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/10/refit-16-4-httpretryhandler-honors-retry-after-and-rate-limit-headers",
+    "text": "Refit 16.4 adds HttpRetryHandler: no Polly needed, and it waits exactly as long as Retry-After or GitHub's x-ratelimit-reset says."
   }
 ]
