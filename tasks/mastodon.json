@@ -70,9 +70,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
-  },
-  {
-    "slug": "2026/10/refit-16-4-httpretryhandler-honors-retry-after-and-rate-limit-headers",
-    "text": "Refit 16.4.0 ships HttpRetryHandler in the core package. It retries idempotent requests on 408/429/5xx, reads Retry-After plus Azure, AWS, GitHub and Jira rate-limit headers, and only falls back to jittered backoff when the server gives no hint. Here is how to wire it in and where its safety rails are."
   }
 ]
