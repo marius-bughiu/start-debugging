@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/how-to-give-each-claude-code-subagent-its-own-compaction-threshold-with-autocompactwindow",
+    "text": "Claude Code 2.1.296 added autoCompactWindow to subagent frontmatter, so a noisy log reader can compact at 200k while the main conversation keeps ~967k. The trap: write 200000, not 200k. In frontmatter 200k parses as 200, gets rejected, and the subagent silently runs on the inherited window. Plus why CI env vars disable it."
   }
 ]
