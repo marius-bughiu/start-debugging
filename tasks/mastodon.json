@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/how-to-replay-the-latest-value-to-late-subscribers-of-a-dart-stream-without-rxdart",
+    "text": "Late subscribers to a Dart broadcast stream get nothing until the next event. Stream.multi gives each listener its own controller, so you can replay the cached value and drop rxdart's BehaviorSubject. Plus: why the tempting async* version (yield current; yield* updates) silently loses events."
   }
 ]
