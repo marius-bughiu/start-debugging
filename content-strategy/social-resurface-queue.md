@@ -36,16 +36,6 @@ Move approved entries under `## Approved`, remove after posting.
 
 <!-- The scheduled task appends new entries here. Stale drafts (>14 days) are culled on the next run. -->
 
-### 2026-09-27 drafted - maui-vs-avalonia-vs-uno-in-2026
-
-**Original:** 2026-05-27 - MAUI vs Avalonia vs Uno Platform: which should you pick in 2026?
-
-**Bluesky:** Porting a desktop app to .NET cross platform? The XAML dialect you already own decides more than the renderer. WPF XAML is closest to Avalonia, WinUI 3 XAML pastes into Uno nearly untouched, and MAUI XAML pastes nowhere. That choice compounds for years.
-
-**Mastodon:** MAUI vs Avalonia vs Uno in 2026 is mostly settled by two targets you may not ship yet. Linux in the matrix? MAUI is out, and Microsoft has no roadmap for it. Browser in production today? Avalonia's WebAssembly target is still preview, which leaves Uno. Only once both are off the table does native controls vs Skia matter. Cold start on a Pixel 8 hello world: Avalonia 410 ms, MAUI 11 480 ms on CoreCLR, Uno 520 ms.
-
-**Notes:** Longest remaining eligible evergreen at 2717 words with 9 internal links into the MAUI cluster (CoreCLR default, Xamarin.Forms migration, Store packaging, desktop-only MAUI). Passed over the last two weeks for overlap with the 08-30 Flutter vs RN vs MAUI pick, but that gap is now four weeks, and the last three picks (.NET Framework migration, Dart records vs Freezed, List vs Span) left the UI framework space alone. gsc-candidates.json holds only site: queries again, so no traction signal; depth and link count decided. Fresh angle: the obvious copy is the post's three-way summary (Avalonia for desktop, Uno for browser, MAUI for mobile). Neither hook repeats it. Bluesky leads with the XAML dialect lock-in, the decision people underweight when porting. Mastodon frames the pick as elimination by Linux and browser targets, then uses the cold start numbers to show performance is not the tiebreaker it looks like.
-
 ### 2026-10-04 drafted - ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp
 
 **Original:** 2026-05-21 - IEnumerable vs IAsyncEnumerable vs IQueryable in C#: which one should the method return?
@@ -65,6 +55,16 @@ Move approved entries under `## Approved`, remove after posting.
 **Mastodon:** Swapping hand-rolled if-checks for built-in minimal API validation in ASP.NET Core 11 changes more than the code. Nested records now validate recursively, so you can get 400s on Billing.PostalCode that your old checks never looked at. Query and route params get validated too. And every 400 becomes an RFC 9457 ProblemDetails body. Snapshot your current 400s first, migrate one endpoint at a time, and keep DisableValidation() as the per-route escape hatch.
 
 **Notes:** Longest remaining eligible evergreen (2655 words, 9 internal links into the minimal API validation cluster: request body validation, validation vs FluentValidation, IProblemDetailsService error shaping, MapGroup, Native AOT). pubDate 2026-07-09 is 94 days back, so it just cleared the 90 day floor. Every longer evergreen was resurfaced within the past 90 days per queue history. stringbuilder-vs-string-interpolation and task-run-vs-task-factory-startnew were the runners up but shorter with fewer links. It also moves off three straight C#/data/UI picks into ASP.NET Core. gsc-candidates.json is still mostly site: queries plus a couple of off-topic rows (regex balancing groups, number names), so no traction signal; depth and link count decided. Fresh angle: the obvious copy is the post's own mechanical recipe (attributes, IValidatableObject, custom ValidationAttribute). Bluesky leads with the async rule that does not port, the step most migrations get wrong. Mastodon frames the migration as a behavior change (recursive nested validation, query/route params, ProblemDetails contract) with the snapshot-first and DisableValidation() rollback advice. Hooks avoid the post's headline gotcha that a non-public request record makes the generator silently skip validation, and its claim that the default is 'file-internal' accessibility (a top-level record defaults to internal, not file); worth verifying against the .NET 11 generator before any post refresh.
+
+### 2026-10-18 drafted - how-to-handle-network-errors-gracefully-in-a-flutter-app
+
+**Original:** 2026-06-01 - How to Handle Network Errors Gracefully in a Flutter App
+
+**Bluesky:** Flutter's http package never times out on its own and never throws on a 500. So a stalled request spins forever, and an error payload gets parsed as data. Add .timeout(), check statusCode, then map each failure to a state the user can act on.
+
+**Mastodon:** connectivity_plus reporting wifi does not mean your Flutter app is online. Behind a captive portal that has not been accepted yet, the request still fails with a SocketException or a timeout, and if the portal answers with a 200 HTML page, jsonDecode throws a FormatException instead. Use the connectivity stream for an offline banner, treat the exception handler as the source of truth, and only show Retry where retrying can actually succeed.
+
+**Notes:** 2552 words with 10 internal links into the Flutter cluster (dispose controllers, FormatException JSON, Dart isolates, GetX to Riverpod, RenderFlex overflow). The only longer eligible evergreen, how-to-add-a-health-check-endpoint-to-a-minimal-api-in-aspnetcore-11 (2658 words, 10 links), was passed over because last week's pick was also a minimal API post; it is the natural next pick. Flutter was last resurfaced on 09-13 (Dart records vs Freezed), so this rotates back to mobile after four .NET picks. gsc-candidates.json is an empty array, so no traction signal; depth and link count decided. Fresh angle: the obvious copy is the post's sealed NetworkResult plus exhaustive switch pattern. Neither hook repeats it. Bluesky leads with the two silent defaults of the http package (no timeout, no throw on non-2xx). Mastodon takes the captive portal trap, where connectivity_plus says online and the failure shows up as a socket error or a FormatException. Post refresh idea: since http 1.x, IOClient surfaces socket failures as ClientException (an internal subtype that also implements SocketException), so the on-clause ordering paragraph is worth re-checking against the current package.
 
 ---
 
