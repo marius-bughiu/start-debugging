@@ -70,9 +70,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
-  },
-  {
-    "slug": "2026/10/how-to-make-animatedswitcher-animate-when-the-child-type-does-not-change",
-    "text": "Flutter's AnimatedSwitcher only transitions when Widget.canUpdate fails, so two Text widgets with no key just update in place. The fix is a ValueKey on the direct child, built from your data. Not UniqueKey, and not a key one level down. Bonus: why a direction-aware slide breaks when transitionBuilder is a tear-off."
   }
 ]
