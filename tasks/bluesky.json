@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/10/opentelemetry-dotnet-1-20-configuresampler-lets-libraries-wrap-the-apps-sampler",
-    "text": "OpenTelemetry .NET 1.20 adds ConfigureSampler: libraries can wrap the app's sampler instead of overwriting OTEL_TRACES_SAMPLER."
   }
 ]
