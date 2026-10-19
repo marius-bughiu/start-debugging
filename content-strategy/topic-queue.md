@@ -180,7 +180,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to catch uncaught async errors in a Flutter app with `runZonedGuarded` and `PlatformDispatcher.instance.onError` → slug: 2026/10/how-to-catch-uncaught-async-errors-in-flutter-with-runzonedguarded-and-platformdispatcher
 - How to replay the latest value to late subscribers of a Dart `Stream` without rxdart's `BehaviorSubject` → slug: 2026/10/how-to-replay-the-latest-value-to-late-subscribers-of-a-dart-stream-without-rxdart
 - How to make `AnimatedSwitcher` animate when the child widget type does not change in Flutter → slug: 2026/10/how-to-make-animatedswitcher-animate-when-the-child-type-does-not-change
-- How to define custom design tokens with `ThemeExtension` and animate them between light and dark themes in Flutter
+- How to define custom design tokens with `ThemeExtension` and animate them between light and dark themes in Flutter → slug: 2026/10/how-to-define-custom-design-tokens-with-themeextension-in-flutter
 - How to restore UI state after Android process death in Flutter with `RestorationMixin`
 - How to mark a controller action's response as nullable in ASP.NET Core's built-in OpenAPI document
 
