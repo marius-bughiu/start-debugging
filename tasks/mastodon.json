@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/how-to-restore-ui-state-after-android-process-death-in-flutter-with-restorationmixin",
+    "text": "Android kills backgrounded apps, and a Flutter app comes back with every StatefulWidget reset. Opt in with restorationScopeId, RestorationMixin and Restorable properties, and restorablePush for routes. Verified on an API 36 emulator, plus the restorablePush gotcha that hung my tests until the builder moved to top level."
   }
 ]
