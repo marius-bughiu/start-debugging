@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/opentelemetry-dotnet-1-20-configuresampler-lets-libraries-wrap-the-apps-sampler",
+    "text": "OpenTelemetry .NET 1.20.0 adds TracerProviderBuilder.ConfigureSampler. The callback gets the sampler the SDK already resolved (SetSampler, OTEL_TRACES_SAMPLER or the default), so a library can decorate it instead of silently replacing it. Callbacks chain in order. Here is how it works, plus the disposal catch."
   }
 ]
