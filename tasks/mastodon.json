@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/fix-bad-state-stream-has-already-been-listened-to-in-flutter",
+    "text": "Flutter's 'Bad state: Stream has already been listened to' is a second listen() on a single-subscription stream, and cancelling the first does not reset it. The sneaky source: stream.map() inside build(), which resubscribes on every rebuild. Repros and fixes on Flutter 3.44.8, plus the broadcast trap that renders null."
   }
 ]
