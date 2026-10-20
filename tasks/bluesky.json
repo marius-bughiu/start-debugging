@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/10/how-to-isolate-users-and-sessions-in-a-foundry-hosted-microsoft-agent-framework-agent",
+    "text": "Foundry hosted agents isolate history per user, but not the files your tools write. Here's how to key them by session + user in C#."
   }
 ]
