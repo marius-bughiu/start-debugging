@@ -70,9 +70,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
-  },
-  {
-    "slug": "2026/10/how-to-mark-a-controller-action-response-as-nullable-in-aspnetcore-openapi",
-    "text": "ASP.NET Core's built-in OpenAPI only marks a controller response nullable for a bare Person? return. ActionResult<Person?> and IActionResult lose it on .NET 10 and .NET 11 RC2. Fix included, plus the catch: MVC sends 204 for a null result, not 200 with null, so the spec lies unless you flip TreatNullValueAsNoContent."
   }
 ]
