@@ -70,9 +70,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
-  },
-  {
-    "slug": "2026/10/how-to-isolate-users-and-sessions-in-a-foundry-hosted-microsoft-agent-framework-agent",
-    "text": "Foundry hosted agents on protocol 2.0.0 keep each user's conversations private, even in a shared session. The files, rows and caches your agent's tools write are not. Delegating with x-ms-user-identity, the custom role it now needs, and why Foundry User is the wrong role for your chat backend."
   }
 ]
