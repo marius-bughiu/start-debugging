@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/fix-platformexception-sign-in-failed-apiexception-10-google-sign-in-flutter",
+    "text": "PlatformException(sign_in_failed, ApiException: 10) in Flutter is not a code bug. It is DEVELOPER_ERROR: no Android OAuth client matches your package name and signing SHA-1. Play builds need the Play App Signing key, flavors need their own client, and on google_sign_in 7.x it can even surface as a fake 'canceled'."
   }
 ]
