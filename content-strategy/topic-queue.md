@@ -182,7 +182,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to make `AnimatedSwitcher` animate when the child widget type does not change in Flutter → slug: 2026/10/how-to-make-animatedswitcher-animate-when-the-child-type-does-not-change
 - How to define custom design tokens with `ThemeExtension` and animate them between light and dark themes in Flutter → slug: 2026/10/how-to-define-custom-design-tokens-with-themeextension-in-flutter
 - How to restore UI state after Android process death in Flutter with `RestorationMixin` → slug: 2026/10/how-to-restore-ui-state-after-android-process-death-in-flutter-with-restorationmixin
-- How to mark a controller action's response as nullable in ASP.NET Core's built-in OpenAPI document
+- How to mark a controller action's response as nullable in ASP.NET Core's built-in OpenAPI document → slug: 2026/10/how-to-mark-a-controller-action-response-as-nullable-in-aspnetcore-openapi
 
 ## Fix / error
 
