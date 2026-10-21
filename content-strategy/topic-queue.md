@@ -358,7 +358,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `NU1608` / `NU1107` version conflict between Pomelo.EntityFrameworkCore.MySql and EF Core 10 → slug: 2026/10/fix-nu1608-nu1107-version-conflict-pomelo-entityframeworkcore-mysql-ef-core-10 (measured on SDK 10.0.302: Design/Identity 10 -> NU1107; direct Relational 10 -> NU1608; bare EFCore 10 -> silent Relational 9.0.0 mix; all mixes MissingMethodException AbstractionsStrings.ArgumentIsEmpty in UseMySql; Pomelo nightly feed has no 10.x; EF 9.0.21 on net10 + Identity 9.0.21 works; Microting 10.0.12 compiles unchanged, same SQL; Oracle MySql.EntityFrameworkCore 10.0.9 UseMySQL differs in StartsWith SQL; no live MySQL server run)
 - Fix: `Bad state: Stream has already been listened to` in Flutter → slug: 2026/10/fix-bad-state-stream-has-already-been-listened-to-in-flutter
 - Fix: `PlatformException(sign_in_failed, com.google.android.gms.common.api.ApiException: 10)` with Google Sign-In in Flutter → slug: 2026/10/fix-platformexception-sign-in-failed-apiexception-10-google-sign-in-flutter
-- Fix: `Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is X, expected version is Y` in a Flutter Android build
+- Fix: `Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is X, expected version is Y` in a Flutter Android build → slug: 2026/10/fix-module-was-compiled-with-an-incompatible-version-of-kotlin-in-a-flutter-android-build
 - Fix: `HttpProtocolException: The HTTP/2 server reset the stream. HTTP/2 error code 'PROTOCOL_ERROR'` from .NET `HttpClient` under load
 
 ## Vs / comparison

@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/fix-module-was-compiled-with-an-incompatible-version-of-kotlin-in-a-flutter-android-build",
+    "text": "\"Module was compiled with an incompatible version of Kotlin\" in a Flutter build means a dependency is 2+ Kotlin minors ahead of your compiler. Bump the KGP in settings.gradle.kts to X minus one. Gotcha: plugins compile with your app's KGP, not their own, and AGP 9.0.1 quietly raises anything below 2.2.10."
   }
 ]
