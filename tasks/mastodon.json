@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/mcp-csharp-sdk-2-3-serverinfo-is-nullable",
+    "text": "ModelContextProtocol 2.3.0 changes McpClient.ServerInfo to Implementation? because servers on the 2026-07-28 protocol may leave their identity out of server/discover. Nothing changes at runtime, but nullable warnings-as-errors builds will stop compiling. Why it changed, and the null-safe fix."
   }
 ]
