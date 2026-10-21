@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/how-to-let-github-copilot-drive-a-desktop-app-with-computer-use",
+    "text": "GitHub Copilot computer use (preview) lets the CLI and the Copilot app drive macOS and Windows desktop apps. How to turn it on, write prompts that keep it read-only, and lock it down. Gotcha: an allow-all/yolo session skips the per-app consent prompt, and \"Always allow\" is shared between the CLI and the app."
   }
 ]
