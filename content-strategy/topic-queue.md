@@ -524,7 +524,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What decides whether EF Core scaffolds a SQL Server `date` column as `DateOnly` or `DateTime`? → slug: 2026/10/what-decides-whether-ef-core-scaffolds-a-sql-server-date-as-dateonly-or-datetime
 - What is the difference between a source-breaking and a binary-breaking change in a .NET library?
 - What is the `depend_on_referenced_packages` lint in Dart and why does it fire on transitive imports?
-- What happens to an expired `MemoryCache` entry, and when is it actually removed from memory?
+- What happens to an expired `MemoryCache` entry, and when is it actually removed from memory? → slug: 2026/10/what-happens-to-an-expired-memorycache-entry-and-when-is-it-removed
 - What does EF Core write back into an entity after `SaveChangesAsync` (generated keys, concurrency tokens, relationship fix-up)?
 - What does `FileShare` actually control when opening a file in .NET, and how does it interact with another handle's `FileAccess`?
 - What is `pubspec_overrides.yaml` and when should I use it in a Flutter monorepo?
