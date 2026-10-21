@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/10/fix-the-http2-server-reset-the-stream-protocol-error-httpclient",
+    "text": "HttpClient's HTTP/2 PROTOCOL_ERROR is one RST_STREAM for one request and is never auto-retried. Usually a proxy sent it, not Kestrel."
   }
 ]

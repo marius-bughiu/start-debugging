@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/fix-the-http2-server-reset-the-stream-protocol-error-httpclient",
+    "text": "\"The HTTP/2 server reset the stream. PROTOCOL_ERROR\" means a peer rejected that one request. SocketsHttpHandler retries REFUSED_STREAM up to 3 times but never PROTOCOL_ERROR. How to tell whether Kestrel or the proxy sent it, which requests trip it under load, and a retry that skips POST."
   }
 ]

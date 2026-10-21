@@ -359,7 +359,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Bad state: Stream has already been listened to` in Flutter → slug: 2026/10/fix-bad-state-stream-has-already-been-listened-to-in-flutter
 - Fix: `PlatformException(sign_in_failed, com.google.android.gms.common.api.ApiException: 10)` with Google Sign-In in Flutter → slug: 2026/10/fix-platformexception-sign-in-failed-apiexception-10-google-sign-in-flutter
 - Fix: `Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is X, expected version is Y` in a Flutter Android build → slug: 2026/10/fix-module-was-compiled-with-an-incompatible-version-of-kotlin-in-a-flutter-android-build
-- Fix: `HttpProtocolException: The HTTP/2 server reset the stream. HTTP/2 error code 'PROTOCOL_ERROR'` from .NET `HttpClient` under load
+- Fix: `HttpProtocolException: The HTTP/2 server reset the stream. HTTP/2 error code 'PROTOCOL_ERROR'` from .NET `HttpClient` under load → slug: 2026/10/fix-the-http2-server-reset-the-stream-protocol-error-httpclient
 
 ## Vs / comparison
 
