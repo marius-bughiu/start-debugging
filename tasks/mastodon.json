@@ -70,9 +70,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
-  },
-  {
-    "slug": "2026/10/fix-claude-code-request-rejected-as-unprocessable-by-the-model",
-    "text": "A screenshot-heavy Claude Code session can get stuck on \"Request rejected as unprocessable by the model\": every old image is resent each turn. Update to 2.1.290+, run claude --continue, and it trims to 510, 255, then 127 images. Also: the /compact fallback and the Playwright MCP flag that stops the pile-up."
   }
 ]
