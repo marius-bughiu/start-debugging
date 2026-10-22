@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/lazy-t-vs-lazyinitializer-vs-double-checked-locking-in-csharp",
+    "text": "Lazy<T> vs LazyInitializer vs hand-written double-checked locking on .NET 10: reads are free in all three, but under a 16-thread race the lock-free LazyInitializer ran the factory 12 times, and Lazy<T> caches a factory exception forever. Measured numbers and when each one wins."
   }
 ]
