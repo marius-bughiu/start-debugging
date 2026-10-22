@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/unawaited-futures-vs-discarded-futures-lint-in-dart",
+    "text": "Dart's unawaited_futures and discarded_futures never fire on the same line: one checks async bodies, the other sync ones. In Flutter, _load() in initState and onPressed: () { push(); } are caught only by discarded_futures, and onPressed: () => push() by neither. Full case table on Dart 3.12.2."
   }
 ]

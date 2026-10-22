@@ -431,7 +431,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `Thread.Sleep` vs `Task.Delay` vs `SpinWait` for waiting in C# → slug: 2026/10/thread-sleep-vs-task-delay-vs-spinwait-for-waiting-in-csharp (measured on .NET 10.0.10, M4/macOS: 200 x 1s Thread.Sleep on the pool took 18 s and stalled a new work item 17 s vs 1 s for Task.Delay; SpinUntil degrades to Sleep(1) after 20 spins, MRES wakes ~50x faster than polling)
 - `FileSystemWatcher` vs polling for detecting file changes on a network share in .NET → slug: 2026/10/filesystemwatcher-vs-polling-for-detecting-file-changes-on-a-network-share-in-dotnet (sourced from runtime main: Windows FSW sets EnableRaisingEvents=false on any non-abort error and never restarts; 64 KB network buffer cap; hybrid snapshot-diff tested on .NET 10.0.10, scan 20.5 ms/10k files local APFS M4)
 - `Expanded` vs `Flexible` (`FlexFit.tight` vs `FlexFit.loose`) in Flutter → slug: 2026/10/expanded-vs-flexible-in-flutter
-- `unawaited_futures` vs `discarded_futures` lint in Dart: which one catches which un-awaited call
+- `unawaited_futures` vs `discarded_futures` lint in Dart: which one catches which un-awaited call → slug: 2026/10/unawaited-futures-vs-discarded-futures-lint-in-dart
 - `Lazy<T>` vs `LazyInitializer.EnsureInitialized` vs double-checked locking in C#
 
 ## Migration / upgrade
