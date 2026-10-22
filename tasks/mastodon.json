@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/expanded-vs-flexible-in-flutter",
+    "text": "Expanded vs Flexible in Flutter, measured with flutter test on 3.44. Expanded forces its child to the full share; Flexible lets it stay smaller. The catch: RenderFlex computes shares once, so a loose child's unused space is never given to its siblings. Plus the scroll-view case where only Flexible survives."
   }
 ]
