@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/maui-10-0-120-blazorwebview-accepts-file-drops-on-windows-and-image-drags-on-android",
+    "text": "Blazor Hybrid drop zones that worked in the browser but not in the desktop app? MAUI 10.0.120 turns on WebView2 AllowDrop on Windows and registers AndroidX DropDataContentProvider on Android. Watch for the new MAUI1002 warning if you still use the legacy manifest merger."
   }
 ]
