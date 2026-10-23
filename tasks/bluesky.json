@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/10/fix-claude-code-repeated-529-overloaded-errors-in-a-headless-run",
+    "text": "Claude Code on Opus with an API key quits after the third 529, about 1.5s of backoff. MAX_RETRIES won't fix it. Three fixes that do."
   }
 ]
