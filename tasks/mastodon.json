@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/migrate-a-flutter-app-from-color-withopacity-to-color-withvalues",
+    "text": "Migrating Flutter off Color.withOpacity? dart fix rewrites withOpacity, opacity and value, but leaves red/green/blue/alpha to you, where swapping .red for .r silently breaks every '< 128' check. Also measured: withOpacity drops Display P3 to sRGB, and Map<Color, T> lookups miss after the swap."
   }
 ]
