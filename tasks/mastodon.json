@@ -70,9 +70,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
-  },
-  {
-    "slug": "2026/10/fix-claude-code-repeated-529-overloaded-errors-in-a-headless-run",
-    "text": "Long claude -p job died with \"Repeated 529 Overloaded errors\"? On Opus with an API key, Claude Code stops at the third consecutive 529 and never looks at CLAUDE_CODE_MAX_RETRIES. Use --fallback-model, the retry watchdog with a max wait, or the new OVERLOADED_RETRY delay vars (2.1.292+)."
   }
 ]
