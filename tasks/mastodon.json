@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/playwright-dotnet-1-64-locator-within-is-locator-chaining-read-backwards",
+    "text": "Locator.Within() landed in Microsoft.Playwright 1.64, so you can write 'this button, within that dialog'. I probed it on Chromium 156: it builds the same locator as the old parent.Locator(child) chain. The release's real upgrade risk is elsewhere: elements in hidden iframes now count as hidden."
   }
 ]

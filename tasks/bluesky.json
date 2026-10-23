@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/10/playwright-dotnet-1-64-locator-within-is-locator-chaining-read-backwards",
+    "text": "Playwright .NET 1.64's Locator.Within() builds the exact same locator as parent.Locator(child). Measured, plus the real Nth() trap."
   }
 ]
