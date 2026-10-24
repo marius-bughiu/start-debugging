@@ -523,7 +523,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What does a C# `with` expression actually copy, and why don't computed record properties recalculate? → slug: 2026/10/what-does-a-csharp-with-expression-actually-copy
 - What decides whether EF Core scaffolds a SQL Server `date` column as `DateOnly` or `DateTime`? → slug: 2026/10/what-decides-whether-ef-core-scaffolds-a-sql-server-date-as-dateonly-or-datetime
 - What is the difference between a source-breaking and a binary-breaking change in a .NET library?
-- What is the `depend_on_referenced_packages` lint in Dart and why does it fire on transitive imports?
+- What is the `depend_on_referenced_packages` lint in Dart and why does it fire on transitive imports? → slug: 2026/10/what-is-the-depend-on-referenced-packages-lint-in-dart
 - What happens to an expired `MemoryCache` entry, and when is it actually removed from memory? → slug: 2026/10/what-happens-to-an-expired-memorycache-entry-and-when-is-it-removed
 - What does EF Core write back into an entity after `SaveChangesAsync` (generated keys, concurrency tokens, relationship fix-up)?
 - What does `FileShare` actually control when opening a file in .NET, and how does it interact with another handle's `FileAccess`?
