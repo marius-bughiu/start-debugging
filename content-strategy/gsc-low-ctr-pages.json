@@ -1,78 +1,15 @@
 [
   {
     "page": "https://startdebugging.net/archive/",
-    "position": 6.69,
-    "impressions": 323,
+    "position": 6.64,
+    "impressions": 275,
     "clicks": 2,
-    "ctr": 0.0062
+    "ctr": 0.0073
   },
   {
     "page": "https://startdebugging.net/2026/06/gate-cursor-sdk-tool-calls-with-auto-review-and-permissions-json/",
-    "position": 7.51,
-    "impressions": 73,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/es/tags/",
-    "position": 2.6,
-    "impressions": 62,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2023/08/what-comes-after-quadrillion/",
-    "position": 13.72,
-    "impressions": 60,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/page/27/",
-    "position": 6.6,
-    "impressions": 60,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2023/10/c-12-interceptors/",
-    "position": 8.71,
-    "impressions": 56,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2023/07/c-12-primary-constructors/",
-    "position": 5.47,
-    "impressions": 55,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2023/10/what-comes-after-decillion/",
-    "position": 16.07,
-    "impressions": 55,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2019/07/xamarin-forms-using-onplatform/",
-    "position": 9.59,
-    "impressions": 54,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/2023/03/c-raw-string-literals/",
-    "position": 15.42,
-    "impressions": 53,
-    "clicks": 0,
-    "ctr": 0
-  },
-  {
-    "page": "https://startdebugging.net/de/start-here/",
-    "position": 6.25,
-    "impressions": 53,
+    "position": 7.55,
+    "impressions": 64,
     "clicks": 0,
     "ctr": 0
   }
