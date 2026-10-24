@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/10/agent-framework-1-26-ag-ui-endpoints-resolve-scoped-agents-per-request",
+    "text": "Agent Framework 1.26: MapAGUIServer now resolves Scoped agents per request instead of freezing the first one into a singleton."
   }
 ]

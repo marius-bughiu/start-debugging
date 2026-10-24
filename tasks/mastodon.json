@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/agent-framework-1-26-ag-ui-endpoints-resolve-scoped-agents-per-request",
+    "text": "Before Agent Framework 1.26, AG-UI endpoints resolved your keyed AIAgent once at mapping time, so a Scoped agent quietly became a singleton and kept the first tenant's state. 1.26 resolves it per request and adds a selector overload that picks the agent from the route, a header, or a claim."
   }
 ]
