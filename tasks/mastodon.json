@@ -70,9 +70,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
-  },
-  {
-    "slug": "2026/10/what-is-the-depend-on-referenced-packages-lint-in-dart",
-    "text": "Dart's depend_on_referenced_packages fires on imports that compile fine: a package pulled in by another dependency is borrowed, not owned. Dev dependencies only count outside lib/, bin/ and build hooks, overrides never count, and pub workspaces don't inherit. Gotcha: conditional import URIs slip past the lint and pub publish."
   }
 ]
