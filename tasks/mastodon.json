@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/how-to-configure-a-self-referencing-many-to-many-relationship-in-ef-core",
+    "text": "Modeling followers/following in EF Core 11? The convention works, but on SQL Server one join FK silently becomes ClientCascade, so deleting a user whose rows aren't loaded fails with error 547. Map an explicit Follow entity, pick the cascade side yourself, and bulk-delete join rows first."
   }
 ]
