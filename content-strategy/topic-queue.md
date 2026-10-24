@@ -183,6 +183,15 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to define custom design tokens with `ThemeExtension` and animate them between light and dark themes in Flutter → slug: 2026/10/how-to-define-custom-design-tokens-with-themeextension-in-flutter
 - How to restore UI state after Android process death in Flutter with `RestorationMixin` → slug: 2026/10/how-to-restore-ui-state-after-android-process-death-in-flutter-with-restorationmixin
 - How to mark a controller action's response as nullable in ASP.NET Core's built-in OpenAPI document → slug: 2026/10/how-to-mark-a-controller-action-response-as-nullable-in-aspnetcore-openapi
+- How to configure a self-referencing many-to-many relationship (followers/following) in EF Core
+- How to lock screen orientation for a single screen in Flutter, and why iPad multitasking ignores it
+- How to serialize and deserialize a Dart sealed class hierarchy to and from JSON
+- How to remove items from a Dart `List` while iterating over it without a `ConcurrentModificationError`
+- How to use a different Serilog output template per log level when configuring from `appsettings.json`
+- How to keep separate migrations folders for multiple DbContexts in one EF Core project
+- How to serve static files from a folder outside `wwwroot` in ASP.NET Core
+- How to iterate over two collections in lockstep without heap allocations in C#
+- How to call the OpenAI API from a Flutter web app without exposing the API key
 
 ## Fix / error
 
@@ -360,6 +369,14 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `PlatformException(sign_in_failed, com.google.android.gms.common.api.ApiException: 10)` with Google Sign-In in Flutter → slug: 2026/10/fix-platformexception-sign-in-failed-apiexception-10-google-sign-in-flutter
 - Fix: `Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is X, expected version is Y` in a Flutter Android build → slug: 2026/10/fix-module-was-compiled-with-an-incompatible-version-of-kotlin-in-a-flutter-android-build
 - Fix: `HttpProtocolException: The HTTP/2 server reset the stream. HTTP/2 error code 'PROTOCOL_ERROR'` from .NET `HttpClient` under load → slug: 2026/10/fix-the-http2-server-reset-the-stream-protocol-error-httpclient
+- Fix: `CS0704 Cannot do non-virtual member lookup in 'T' because it is a type parameter` when calling a C# 14 static extension member
+- Fix: `CS0165 Use of unassigned local variable` on an `is` pattern variable after retargeting from .NET Standard 2.1 to .NET 10
+- Fix: `[MemberNotNull]` has no effect on a static factory method and CS8618 still fires
+- Fix: `The property 'X' is part of a key and so cannot be modified or marked as modified` in EF Core
+- Fix: `Cannot access a disposed object. Object name: 'IServiceProvider'` in ASP.NET Core
+- Fix: `Response.Cookies.Append` does not set the cookie in the browser in ASP.NET Core (SameSite, Secure, CORS credentials)
+- Fix: Azure DevOps NuGet restore fails with `Unable to find version 'x.y.z' of package` from an internal feed
+- Fix: `flutter upgrade` refuses to run without `--force` because `Your flutter checkout has local changes`
 
 ## Vs / comparison
 
@@ -433,6 +450,11 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `Expanded` vs `Flexible` (`FlexFit.tight` vs `FlexFit.loose`) in Flutter → slug: 2026/10/expanded-vs-flexible-in-flutter
 - `unawaited_futures` vs `discarded_futures` lint in Dart: which one catches which un-awaited call → slug: 2026/10/unawaited-futures-vs-discarded-futures-lint-in-dart
 - `Lazy<T>` vs `LazyInitializer.EnsureInitialized` vs double-checked locking in C# → slug: 2026/10/lazy-t-vs-lazyinitializer-vs-double-checked-locking-in-csharp
+- `ref T` loop vs `Span<T>` indexing in C#: why the span version is faster in .NET 10
+- Returning `bool` (Try pattern) vs throwing exceptions for expected failures in C#
+- `FileSystemInfo.LastWriteTime` setter vs `File.SetLastWriteTime` in .NET
+- `shared_preferences` vs a JSON file in the `path_provider` documents directory for persisting settings in Flutter
+- `yield return` iterator vs returning a `List<T>`: what an `IEnumerable` method actually costs in C#
 
 ## Migration / upgrade
 
@@ -483,6 +505,11 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a Flutter app from `WidgetsBindingObserver.didChangeAppLifecycleState` to `AppLifecycleListener` → slug: 2026/10/migrate-a-flutter-app-from-widgetsbindingobserver-to-applifecyclelistener
 - Migrate a Flutter app from `Color.withOpacity` to `Color.withValues` → slug: 2026/10/migrate-a-flutter-app-from-color-withopacity-to-color-withvalues
 - Migrate a Flutter app from `MaterialStateProperty` to `WidgetStateProperty`
+- Migrate a Flutter Android project's Gradle scripts from Groovy to Kotlin DSL (`build.gradle` to `build.gradle.kts`)
+- Migrate a .NET test project from Moq to NSubstitute
+- Migrate a .NET test project from FluentAssertions 8 to AwesomeAssertions after the license change
+- Migrate an ASP.NET Core app from `Startup.cs` to the minimal hosting model
+- Migrate a Flutter app from `textScaleFactor` to `TextScaler`
 
 ## What is / concept
 
@@ -533,6 +560,12 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is `[ModuleInitializer]` in C# and when should a library use it?
 - What does `[CallerArgumentExpression]` capture, and how do I use it in my own guard methods?
 - What is `AsyncLocal<T>` and why doesn't a value set inside an awaited method flow back to the caller?
+- Why does enabling MARS stop `TransactionScope` from escalating to MSDTC in SQL Server?
+- What happens if you start a thread from a finalizer in .NET?
+- When is `Stopwatch` not high resolution in .NET, and what do `IsHighResolution` and `Frequency` report on each OS?
+- Why is the first limiter in `PartitionedRateLimiter.CreateChained` called twice per request?
+- What is the difference between `==` and `identical` in Dart, and what does `==` fall back to?
+- Why does `Future.delayed` or a `Timer` fire later than the requested `Duration` in Dart?
 
 ## Consumed
 
