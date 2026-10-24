@@ -256,6 +256,19 @@
     ]
   },
   {
+    "url": "https://github.com/flutter/flutter/blob/master/examples/api/lib/material/theme/theme_extension.1.dart",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/10/how-to-define-custom-design-tokens-with-themeextension-in-flutter.md",
+      "site/src/content/blog/de/2026/10/how-to-define-custom-design-tokens-with-themeextension-in-flutter.md",
+      "site/src/content/blog/es/2026/10/how-to-define-custom-design-tokens-with-themeextension-in-flutter.md",
+      "site/src/content/blog/ja/2026/10/how-to-define-custom-design-tokens-with-themeextension-in-flutter.md",
+      "site/src/content/blog/pt-br/2026/10/how-to-define-custom-design-tokens-with-themeextension-in-flutter.md",
+      "site/src/content/blog/ru/2026/10/how-to-define-custom-design-tokens-with-themeextension-in-flutter.md"
+    ]
+  },
+  {
     "url": "https://github.com/jlowin/fastmcp/issues/932",
     "status": 404,
     "ok": false,
@@ -748,6 +761,26 @@
     ]
   },
   {
+    "url": "https://openjdk.org/jeps/472",
+    "status": null,
+    "ok": false,
+    "error": "timeout",
+    "sources": [
+      "site/src/content/blog/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
+      "site/src/content/blog/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
+      "site/src/content/blog/de/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
+      "site/src/content/blog/de/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
+      "site/src/content/blog/es/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
+      "site/src/content/blog/es/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
+      "site/src/content/blog/ja/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
+      "site/src/content/blog/ja/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
+      "site/src/content/blog/pt-br/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
+      "site/src/content/blog/pt-br/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
+      "site/src/content/blog/ru/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md",
+      "site/src/content/blog/ru/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build.md"
+    ]
+  },
+  {
     "url": "https://partner.microsoft.com/dashboard/apps-and-games/overview",
     "status": null,
     "ok": false,
@@ -903,6 +936,19 @@
       "site/src/content/blog/ja/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
       "site/src/content/blog/pt-br/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md",
       "site/src/content/blog/ru/2026/09/how-to-keep-flutter-location-tracking-running-in-the-background-on-android-15.md"
+    ]
+  },
+  {
+    "url": "https://support.google.com/googleplay/android-developer/answer/9842756",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/10/fix-platformexception-sign-in-failed-apiexception-10-google-sign-in-flutter.md",
+      "site/src/content/blog/de/2026/10/fix-platformexception-sign-in-failed-apiexception-10-google-sign-in-flutter.md",
+      "site/src/content/blog/es/2026/10/fix-platformexception-sign-in-failed-apiexception-10-google-sign-in-flutter.md",
+      "site/src/content/blog/ja/2026/10/fix-platformexception-sign-in-failed-apiexception-10-google-sign-in-flutter.md",
+      "site/src/content/blog/pt-br/2026/10/fix-platformexception-sign-in-failed-apiexception-10-google-sign-in-flutter.md",
+      "site/src/content/blog/ru/2026/10/fix-platformexception-sign-in-failed-apiexception-10-google-sign-in-flutter.md"
     ]
   },
   {
@@ -1087,6 +1133,14 @@
       "site/src/content/blog/ja/2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026.md",
       "site/src/content/blog/pt-br/2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026.md",
       "site/src/content/blog/ru/2026/08/automapper-vs-mapperly-vs-hand-written-mapping-in-2026.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Azure.AI.AgentServer.Core",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/10/how-to-isolate-users-and-sessions-in-a-foundry-hosted-microsoft-agent-framework-agent.md"
     ]
   },
   {
@@ -1429,6 +1483,19 @@
       "site/src/content/blog/pt-br/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md",
       "site/src/content/blog/ru/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11.md",
       "site/src/content/blog/ru/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11.md"
+    ]
+  },
+  {
+    "url": "https://www.nuget.org/packages/Microsoft.Extensions.Caching.Memory",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/10/what-happens-to-an-expired-memorycache-entry-and-when-is-it-removed.md",
+      "site/src/content/blog/de/2026/10/what-happens-to-an-expired-memorycache-entry-and-when-is-it-removed.md",
+      "site/src/content/blog/es/2026/10/what-happens-to-an-expired-memorycache-entry-and-when-is-it-removed.md",
+      "site/src/content/blog/ja/2026/10/what-happens-to-an-expired-memorycache-entry-and-when-is-it-removed.md",
+      "site/src/content/blog/pt-br/2026/10/what-happens-to-an-expired-memorycache-entry-and-when-is-it-removed.md",
+      "site/src/content/blog/ru/2026/10/what-happens-to-an-expired-memorycache-entry-and-when-is-it-removed.md"
     ]
   },
   {
@@ -1987,6 +2054,25 @@
       "site/src/content/blog/ja/2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11.md",
       "site/src/content/blog/pt-br/2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11.md",
       "site/src/content/blog/ru/2026/08/how-to-configure-kestrel-to-serve-http-3-in-aspnetcore-11.md"
+    ]
+  },
+  {
+    "url": "https://www.thinktecture.com/en/net/native-aot-with-asp-net-core-overview/",
+    "status": 404,
+    "ok": false,
+    "sources": [
+      "site/src/content/blog/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis.md",
+      "site/src/content/blog/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis.md",
+      "site/src/content/blog/de/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis.md",
+      "site/src/content/blog/de/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis.md",
+      "site/src/content/blog/es/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis.md",
+      "site/src/content/blog/es/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis.md",
+      "site/src/content/blog/ja/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis.md",
+      "site/src/content/blog/ja/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis.md",
+      "site/src/content/blog/pt-br/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis.md",
+      "site/src/content/blog/ru/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis.md",
+      "site/src/content/blog/ru/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis.md"
     ]
   },
   {
