@@ -184,7 +184,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to restore UI state after Android process death in Flutter with `RestorationMixin` → slug: 2026/10/how-to-restore-ui-state-after-android-process-death-in-flutter-with-restorationmixin
 - How to mark a controller action's response as nullable in ASP.NET Core's built-in OpenAPI document → slug: 2026/10/how-to-mark-a-controller-action-response-as-nullable-in-aspnetcore-openapi
 - How to configure a self-referencing many-to-many relationship (followers/following) in EF Core → slug: 2026/10/how-to-configure-a-self-referencing-many-to-many-relationship-in-ef-core
-- How to lock screen orientation for a single screen in Flutter, and why iPad multitasking ignores it
+- How to lock screen orientation for a single screen in Flutter, and why iPad multitasking ignores it → slug: 2026/10/how-to-lock-screen-orientation-for-a-single-screen-in-flutter
 - How to serialize and deserialize a Dart sealed class hierarchy to and from JSON
 - How to remove items from a Dart `List` while iterating over it without a `ConcurrentModificationError`
 - How to use a different Serilog output template per log level when configuring from `appsettings.json`
