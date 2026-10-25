@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/fix-claude-code-hooks-fail-with-plugin-directory-does-not-exist",
+    "text": "\"Plugin directory does not exist\" means your Claude Code session lost the folder it loaded a plugin from: an update past the 14-day orphan sweep, a claude.ai sync, or a moved --plugin-dir. The catch: the hook fails open and the error shows only once per event, so a quiet transcript is not a fix."
   }
 ]
