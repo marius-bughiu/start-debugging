@@ -36,16 +36,6 @@ Move approved entries under `## Approved`, remove after posting.
 
 <!-- The scheduled task appends new entries here. Stale drafts (>14 days) are culled on the next run. -->
 
-### 2026-10-04 drafted - ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp
-
-**Original:** 2026-05-21 - IEnumerable vs IAsyncEnumerable vs IQueryable in C#: which one should the method return?
-
-**Bluesky:** Counting 1M rows in .NET 11 with EF Core 11: ToList then loop 1,380 ms, AsAsyncEnumerable 1,210 ms, CountAsync plus SumAsync 38 ms. Streaming beats buffering by about 12 percent. Letting SQL Server do the math beats both by 30x.
-
-**Mastodon:** Returning IQueryable<T> from a service looks flexible. It means every caller now writes your SQL. A .Where with a local C# method throws at materialization in EF Core 11, a renamed column becomes a codebase-wide search, and if the DbContext was disposed when the method returned, the caller's ToList throws ObjectDisposedException. Keep IQueryable in the repository, return IReadOnlyList<T> or IAsyncEnumerable<T>, and make materialization the boundary.
-
-**Notes:** Longest remaining eligible evergreen with 7 internal links (2513 words) into the EF Core cluster (IAsyncEnumerable with EF Core 11, N+1 detection, compiled queries, bulk insert benchmark, file streaming). stringbuilder-vs-string-interpolation-in-dotnet-11 is 10 words longer but has fewer links, and another allocation benchmark two weeks after List vs Span would read as repetition. This one also moves off last week's UI framework pick into data access. gsc-candidates.json and gsc-rising.json carry only site: queries plus one single impression row (c# using declaration), so no traction signal; depth and link count decided. Fresh angle: the obvious copy is the post's summary rule (IQueryable when the provider translates, IAsyncEnumerable when the producer awaits, IEnumerable otherwise). Neither hook repeats it. Bluesky leads with the million row benchmark to show that streaming vs buffering is the small win and pushing the aggregate to SQL is the big one. Mastodon takes the leaked IQueryable repository trap, including the disposed DbContext failure at the caller. Hooks avoid the post's claims that the compiler stays silent on a missing [EnumeratorCancellation] (CS8425 warns) and that IAsyncEnumerable LINQ needs System.Linq.Async (built into the BCL since .NET 10); worth a post refresh.
-
 ### 2026-10-11 drafted - migrate-a-minimal-api-from-manual-validation-to-built-in-validation-in-aspnetcore-11
 
 **Original:** 2026-07-09 - Migrate a minimal API from manual validation checks to built-in validation in ASP.NET Core 11
@@ -65,6 +55,16 @@ Move approved entries under `## Approved`, remove after posting.
 **Mastodon:** connectivity_plus reporting wifi does not mean your Flutter app is online. Behind a captive portal that has not been accepted yet, the request still fails with a SocketException or a timeout, and if the portal answers with a 200 HTML page, jsonDecode throws a FormatException instead. Use the connectivity stream for an offline banner, treat the exception handler as the source of truth, and only show Retry where retrying can actually succeed.
 
 **Notes:** 2552 words with 10 internal links into the Flutter cluster (dispose controllers, FormatException JSON, Dart isolates, GetX to Riverpod, RenderFlex overflow). The only longer eligible evergreen, how-to-add-a-health-check-endpoint-to-a-minimal-api-in-aspnetcore-11 (2658 words, 10 links), was passed over because last week's pick was also a minimal API post; it is the natural next pick. Flutter was last resurfaced on 09-13 (Dart records vs Freezed), so this rotates back to mobile after four .NET picks. gsc-candidates.json is an empty array, so no traction signal; depth and link count decided. Fresh angle: the obvious copy is the post's sealed NetworkResult plus exhaustive switch pattern. Neither hook repeats it. Bluesky leads with the two silent defaults of the http package (no timeout, no throw on non-2xx). Mastodon takes the captive portal trap, where connectivity_plus says online and the failure shows up as a socket error or a FormatException. Post refresh idea: since http 1.x, IOClient surfaces socket failures as ClientException (an internal subtype that also implements SocketException), so the on-clause ordering paragraph is worth re-checking against the current package.
+
+### 2026-10-25 drafted - how-to-serialize-a-polymorphic-type-hierarchy-with-jsonderivedtype-in-system-text-json
+
+**Original:** 2026-07-27 - How to serialize a polymorphic type hierarchy with JsonDerivedType in System.Text.Json
+
+**Bluesky:** TypedResults.Ok(card) infers Ok<CardPayment>, so System.Text.Json writes no $type discriminator and the client cannot tell which subtype it got. Cast to the base type and $type is back. In .NET the declared type picks the contract, not the runtime type.
+
+**Mastodon:** Polymorphic JSON stored in a PostgreSQL jsonb column comes back with the error 'must specify a type discriminator', even though $type is right there? jsonb does not keep key order (shorter keys sort first), so an Id property lands ahead of $type, and System.Text.Json needs the discriminator first. AllowOutOfOrderMetadataProperties (.NET 9+) fixes the read but buffers the whole object before binding. Fine for small events, not for multi-megabyte documents.
+
+**Notes:** Longest eligible evergreen (2840 words, 11 internal links into the System.Text.Json cluster: custom JsonConverter, JsonException conversion fix, Newtonsoft migration, Native AOT minimal APIs, typed results unions, OpenAPI transformers). pubDate 2026-07-27 is exactly 90 days back, so it just cleared the floor. Runner up how-to-publish-a-dotnet-11-app-as-a-container-image-with-publishcontainer (2816 words, 8 links, same pubDate) is the natural next pick; how-to-add-a-health-check-endpoint-to-a-minimal-api-in-aspnetcore-11 was skipped again to avoid two minimal API picks in three weeks. Serialization has not been resurfaced in the past 90 days, and it rotates off last week's Flutter pick. gsc-candidates.json holds only site: queries, so no traction signal; depth and link count decided. Fresh angle: the obvious copy is the post's five step recipe and the exceptions table. Neither hook repeats it. Bluesky takes the TypedResults.Ok inference trap that drops the discriminator in minimal APIs. Mastodon takes the jsonb key reordering cause of the misleading 'must specify a type discriminator' error, plus the buffering cost of the .NET 9 opt-in. The Mastodon detail that jsonb sorts shorter keys first goes slightly beyond the post (which only says jsonb normalizes key order); it matches PostgreSQL's documented storage behavior, but worth a glance before posting.
 
 ---
 
