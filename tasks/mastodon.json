@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/how-to-serialize-and-deserialize-a-dart-sealed-class-hierarchy-to-and-from-json",
+    "text": "Round-tripping a Dart sealed class through JSON needs a discriminator you write yourself. Tested on Dart 3.13.7: hand-written map patterns, json_serializable 6.15.2, and Freezed 4.0.3 unionKey/fallbackUnion. Gotcha: a case with a field named like the unionKey silently replaces the discriminator in toJson."
   }
 ]
