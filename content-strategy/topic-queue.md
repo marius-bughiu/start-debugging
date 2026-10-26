@@ -188,7 +188,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to serialize and deserialize a Dart sealed class hierarchy to and from JSON → slug: 2026/10/how-to-serialize-and-deserialize-a-dart-sealed-class-hierarchy-to-and-from-json
 - How to remove items from a Dart `List` while iterating over it without a `ConcurrentModificationError` → slug: 2026/10/how-to-remove-items-from-a-dart-list-while-iterating-over-it
 - How to use a different Serilog output template per log level when configuring from `appsettings.json` → slug: 2026/10/how-to-use-a-different-serilog-output-template-per-log-level-from-appsettings-json
-- How to keep separate migrations folders for multiple DbContexts in one EF Core project
+- How to keep separate migrations folders for multiple DbContexts in one EF Core project → slug: 2026/10/how-to-keep-separate-migrations-folders-for-multiple-dbcontexts-in-ef-core
 - How to serve static files from a folder outside `wwwroot` in ASP.NET Core
 - How to iterate over two collections in lockstep without heap allocations in C#
 - How to call the OpenAI API from a Flutter web app without exposing the API key

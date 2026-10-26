@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/how-to-keep-separate-migrations-folders-for-multiple-dbcontexts-in-ef-core",
+    "text": "EF Core puts your second DbContext's migrations in Migrations/<Name> on its own, but only based on which context went first. Pass --output-dir once per context and later migrations follow. Sharing one folder breaks the build with CS0111 as soon as both have an InitialCreate. Plus the history-table trap."
   }
 ]
