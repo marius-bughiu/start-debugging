@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/copilot-dynamic-workflows-vs-fleet-vs-github-agentic-workflows",
+    "text": "Three ways to put several Copilot agents on one job. /fleet lets Copilot pick the split per run, a dynamic workflow puts the split in code you can resume and budget, and gh-aw wraps either in a read-only Actions job. The catch: a chat agent never starts a workflow on its own, and gh-aw can't pause one."
   }
 ]
