@@ -70,9 +70,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
-  },
-  {
-    "slug": "2026/10/how-to-use-a-different-serilog-output-template-per-log-level-from-appsettings-json",
-    "text": "Two Serilog sinks with restrictedToMinimumLevel print every error twice: it is a lower bound, not a range. For a different layout per log level from appsettings.json, use an ExpressionTemplate with {#if} blocks, or two Logger sub-loggers with complementary ByIncludingOnly / ByExcluding filters. Tested on Serilog 4.4."
   }
 ]
