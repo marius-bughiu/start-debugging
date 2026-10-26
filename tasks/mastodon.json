@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/dotnet-10-0-14-oob-fixes-brotli-decompression-overflow-cve-2026-111497",
+    "text": ".NET shipped an out-of-band release on Oct 25: 8.0.33, 9.0.22, 10.0.14 and 11 RC3. It fixes a Brotli buffer overflow reachable through request decompression and HttpClient, and re-issues two October CVEs the Patch Tuesday builds did not fully close. Self-contained apps and containers need a republish."
   }
 ]
