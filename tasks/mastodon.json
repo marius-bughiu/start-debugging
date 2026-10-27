@@ -70,9 +70,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
-  },
-  {
-    "slug": "2026/10/fix-the-property-is-part-of-a-key-and-so-cannot-be-modified-in-ef-core",
-    "text": "'The property is part of a key and so cannot be modified' in EF Core fires at the next DetectChanges, not where the key changed. Four causes reproduced on EF Core 10: DTO SetValues, alternate keys, composite keys with an identifying FK, and true re-keys. Plus why ExecuteUpdate on a PK hits the FK constraint."
   }
 ]
