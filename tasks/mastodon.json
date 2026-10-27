@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/copilot-local-sandbox-vs-cloud-sandbox-vs-dev-container",
+    "text": "Copilot now has three ways to isolate an agent: the free local sandbox, a dev container, and per-second cloud sandboxes. They draw the line in different places. One gotcha: since CLI 1.0.100 the local sandbox lets commands reach localhost and your LAN by default, and cloud sandboxes can't run headless."
   }
 ]
