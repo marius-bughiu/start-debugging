@@ -369,10 +369,10 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `PlatformException(sign_in_failed, com.google.android.gms.common.api.ApiException: 10)` with Google Sign-In in Flutter → slug: 2026/10/fix-platformexception-sign-in-failed-apiexception-10-google-sign-in-flutter
 - Fix: `Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is X, expected version is Y` in a Flutter Android build → slug: 2026/10/fix-module-was-compiled-with-an-incompatible-version-of-kotlin-in-a-flutter-android-build
 - Fix: `HttpProtocolException: The HTTP/2 server reset the stream. HTTP/2 error code 'PROTOCOL_ERROR'` from .NET `HttpClient` under load → slug: 2026/10/fix-the-http2-server-reset-the-stream-protocol-error-httpclient
-- Fix: `CS0704 Cannot do non-virtual member lookup in 'T' because it is a type parameter` when calling a C# 14 static extension member
+- Fix: `CS0704 Cannot do non-virtual member lookup in 'T' because it is a type parameter` when calling a C# 14 static extension member (skipped: same intent as 2026/08/how-to-write-a-static-extension-member-for-every-enum-type-in-csharp-14, which has a CS0704 section)
 - Fix: `CS0165 Use of unassigned local variable` on an `is` pattern variable after retargeting from .NET Standard 2.1 to .NET 10
 - Fix: `[MemberNotNull]` has no effect on a static factory method and CS8618 still fires
-- Fix: `The property 'X' is part of a key and so cannot be modified or marked as modified` in EF Core
+- Fix: `The property 'X' is part of a key and so cannot be modified or marked as modified` in EF Core → slug: 2026/10/fix-the-property-is-part-of-a-key-and-so-cannot-be-modified-in-ef-core
 - Fix: `Cannot access a disposed object. Object name: 'IServiceProvider'` in ASP.NET Core
 - Fix: `Response.Cookies.Append` does not set the cookie in the browser in ASP.NET Core (SameSite, Secure, CORS credentials)
 - Fix: Azure DevOps NuGet restore fails with `Unable to find version 'x.y.z' of package` from an internal feed
