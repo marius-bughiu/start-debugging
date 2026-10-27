@@ -191,7 +191,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - How to keep separate migrations folders for multiple DbContexts in one EF Core project → slug: 2026/10/how-to-keep-separate-migrations-folders-for-multiple-dbcontexts-in-ef-core
 - How to serve static files from a folder outside `wwwroot` in ASP.NET Core
 - How to iterate over two collections in lockstep without heap allocations in C# → slug: 2026/10/how-to-iterate-over-two-collections-in-lockstep-without-heap-allocations-in-csharp
-- How to call the OpenAI API from a Flutter web app without exposing the API key
+- How to call the OpenAI API from a Flutter web app without exposing the API key → slug: 2026/10/how-to-call-the-openai-api-from-a-flutter-web-app-without-exposing-the-api-key
 
 ## Fix / error
 

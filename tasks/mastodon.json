@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/how-to-call-the-openai-api-from-a-flutter-web-app-without-exposing-the-api-key",
+    "text": "Building a Flutter web app on OpenAI? String.fromEnvironment compiles your key straight into main.dart.js and main.dart.wasm. The fix is a small proxy: verify the user, pin the model on the server, set safety_identifier, and stream the SSE back with shelf output buffering off so tokens still arrive live."
   }
 ]
