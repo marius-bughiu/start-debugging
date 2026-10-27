@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/how-to-iterate-over-two-collections-in-lockstep-without-heap-allocations-in-csharp",
+    "text": "Looping over two collections together in C# without allocating: Enumerable.Zip boxes both enumerators (144-208 B per call, ~10x slower). Slice two spans to the same length and use one index instead. Gotcha: pass a List<T> as IEnumerable<T> and even a hand-written loop boxes 80 B."
   }
 ]
