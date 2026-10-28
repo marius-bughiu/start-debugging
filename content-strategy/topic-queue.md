@@ -370,8 +370,8 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is X, expected version is Y` in a Flutter Android build → slug: 2026/10/fix-module-was-compiled-with-an-incompatible-version-of-kotlin-in-a-flutter-android-build
 - Fix: `HttpProtocolException: The HTTP/2 server reset the stream. HTTP/2 error code 'PROTOCOL_ERROR'` from .NET `HttpClient` under load → slug: 2026/10/fix-the-http2-server-reset-the-stream-protocol-error-httpclient
 - Fix: `CS0704 Cannot do non-virtual member lookup in 'T' because it is a type parameter` when calling a C# 14 static extension member (skipped: same intent as 2026/08/how-to-write-a-static-extension-member-for-every-enum-type-in-csharp-14, which has a CS0704 section)
-- Fix: `CS0165 Use of unassigned local variable` on an `is` pattern variable after retargeting from .NET Standard 2.1 to .NET 10
-- Fix: `[MemberNotNull]` has no effect on a static factory method and CS8618 still fires
+- Fix: `CS0165 Use of unassigned local variable` on an `is` pattern variable after retargeting from .NET Standard 2.1 to .NET 10 (skipped 2026-10-28: premise unconfirmed; retargeting up raises the default C# version, and C# 10 improved definite assignment removes CS0165 cases rather than adding them)
+- Fix: `[MemberNotNull]` has no effect on a static factory method and CS8618 still fires → slug: 2026/10/fix-membernotnull-has-no-effect-on-a-static-factory-method
 - Fix: `The property 'X' is part of a key and so cannot be modified or marked as modified` in EF Core → slug: 2026/10/fix-the-property-is-part-of-a-key-and-so-cannot-be-modified-in-ef-core
 - Fix: `Cannot access a disposed object. Object name: 'IServiceProvider'` in ASP.NET Core
 - Fix: `Response.Cookies.Append` does not set the cookie in the browser in ASP.NET Core (SameSite, Secure, CORS credentials)
