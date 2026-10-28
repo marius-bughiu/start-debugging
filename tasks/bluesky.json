@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/10/fix-response-cookies-append-does-not-set-the-cookie-in-aspnet-core",
+    "text": "Response.Cookies.Append ran but no cookie? The browser rejected it. SameSite=None needs Secure; fetch needs credentials: 'include'."
   }
 ]
