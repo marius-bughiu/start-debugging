@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/10/ignite-ui-for-blazor-goes-mit-50-free-components-in-igniteui-blazor-lite",
-    "text": "50+ Ignite UI for Blazor controls are now MIT. Gotcha: the theme CSS lives at _content/IgniteUI.Blazor/, not .Lite."
   }
 ]
