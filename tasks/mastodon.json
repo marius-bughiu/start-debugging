@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/claude-haiku-5-5-vs-sonnet-5-5-vs-opus-5-5-for-coding-agent-subagents",
+    "text": "Opus 5.5 orchestrates, Sonnet 5.5 implements and reviews, Haiku 5.5 searches and triages. The catch: Haiku 5.5 bills every request over 100k prompt tokens at 5x, cache reads included. Set autoCompactWindow: 100000 on the subagent, and pin full model IDs, since the haiku alias means Haiku 4.5 on Bedrock."
   }
 ]

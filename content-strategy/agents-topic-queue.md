@@ -152,7 +152,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Local Ollama models vs cloud models in GitHub Copilot: what you give up → slug: 2026/09/local-ollama-models-vs-cloud-models-in-github-copilot
 - Copilot dynamic workflows vs `/fleet` vs GitHub Agentic Workflows: which multi-agent option to reach for → slug: 2026/10/copilot-dynamic-workflows-vs-fleet-vs-github-agentic-workflows
 - Copilot local sandbox vs cloud sandbox vs a dev container: how much isolation each gives an agent → slug: 2026/10/copilot-local-sandbox-vs-cloud-sandbox-vs-dev-container
-- Claude Haiku 5.5 vs Sonnet 5.5 vs Opus 5.5 for coding-agent subagents: picking a model per role
+- Claude Haiku 5.5 vs Sonnet 5.5 vs Opus 5.5 for coding-agent subagents: picking a model per role → slug: 2026/10/claude-haiku-5-5-vs-sonnet-5-5-vs-opus-5-5-for-coding-agent-subagents
 - Specialist A2A agents vs distributed skills over MCP: when to collapse agents into skills
 
 ## Migration / upgrade
