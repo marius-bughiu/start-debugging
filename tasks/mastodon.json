@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/fix-cannot-access-a-disposed-object-object-name-iserviceprovider",
+    "text": "ObjectDisposedException with Object name: 'IServiceProvider' means something resolved a service after its DI scope, or the whole host, was disposed. Four causes reproduced on .NET 10, from Task.Run capturing RequestServices to a BackgroundService ignoring its stopping token, and why IServiceScopeFactory is the fix."
   }
 ]

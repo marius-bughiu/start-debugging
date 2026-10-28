@@ -373,7 +373,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `CS0165 Use of unassigned local variable` on an `is` pattern variable after retargeting from .NET Standard 2.1 to .NET 10 (skipped 2026-10-28: premise unconfirmed; retargeting up raises the default C# version, and C# 10 improved definite assignment removes CS0165 cases rather than adding them)
 - Fix: `[MemberNotNull]` has no effect on a static factory method and CS8618 still fires → slug: 2026/10/fix-membernotnull-has-no-effect-on-a-static-factory-method
 - Fix: `The property 'X' is part of a key and so cannot be modified or marked as modified` in EF Core → slug: 2026/10/fix-the-property-is-part-of-a-key-and-so-cannot-be-modified-in-ef-core
-- Fix: `Cannot access a disposed object. Object name: 'IServiceProvider'` in ASP.NET Core
+- Fix: `Cannot access a disposed object. Object name: 'IServiceProvider'` in ASP.NET Core → slug: 2026/10/fix-cannot-access-a-disposed-object-object-name-iserviceprovider
 - Fix: `Response.Cookies.Append` does not set the cookie in the browser in ASP.NET Core (SameSite, Secure, CORS credentials)
 - Fix: Azure DevOps NuGet restore fails with `Unable to find version 'x.y.z' of package` from an internal feed
 - Fix: `flutter upgrade` refuses to run without `--force` because `Your flutter checkout has local changes`
