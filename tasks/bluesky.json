@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/10/claude-haiku-5-5-vs-sonnet-5-5-vs-opus-5-5-for-coding-agent-subagents",
-    "text": "Haiku 5.5 is 20x cheaper than Sonnet 5.5 per token, until a subagent's prompt passes 100k. Which subagent roles get which 5.5 model."
   }
 ]
