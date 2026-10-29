@@ -376,7 +376,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Fix: `Cannot access a disposed object. Object name: 'IServiceProvider'` in ASP.NET Core → slug: 2026/10/fix-cannot-access-a-disposed-object-object-name-iserviceprovider
 - Fix: `Response.Cookies.Append` does not set the cookie in the browser in ASP.NET Core (SameSite, Secure, CORS credentials) → slug: 2026/10/fix-response-cookies-append-does-not-set-the-cookie-in-aspnet-core
 - Fix: Azure DevOps NuGet restore fails with `Unable to find version 'x.y.z' of package` from an internal feed → slug: 2026/10/fix-azure-devops-nuget-restore-unable-to-find-version-of-package-from-an-internal-feed
-- Fix: `flutter upgrade` refuses to run without `--force` because `Your flutter checkout has local changes`
+- Fix: `flutter upgrade` refuses to run without `--force` because `Your flutter checkout has local changes` → slug: 2026/10/fix-flutter-upgrade-your-flutter-checkout-has-local-changes
 
 ## Vs / comparison
 

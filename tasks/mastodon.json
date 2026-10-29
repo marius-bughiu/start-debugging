@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/fix-flutter-upgrade-your-flutter-checkout-has-local-changes",
+    "text": "'Your flutter checkout has local changes' usually means Flutter dirtied its own pubspec.lock: up to 3.44.x, the upgrade ran pub upgrade on the SDK itself. Restore that file or git stash -u, then upgrade from outside the SDK folder. And --force is a git reset --hard that still leaves untracked files behind."
   }
 ]
