@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/10/fix-azure-devops-nuget-restore-unable-to-find-version-of-package-from-an-internal-feed",
+    "text": "Azure DevOps can't find a NuGet version that's right there in the feed? Your build identity is probably a Reader, not a Collaborator."
   }
 ]
