@@ -70,9 +70,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
-  },
-  {
-    "slug": "2026/10/specialist-a2a-agents-vs-distributed-skills-over-mcp",
-    "text": "Turning thin A2A specialist agents into skills over MCP halved model calls and cut latency from 15.5 s to 6.3 s in Microsoft's demo, but used 22% more tokens. The decision matrix for which agents to collapse, why wrapping an agent in MCP is only a transport change, and the Agent Framework 1.17 wiring."
   }
 ]
