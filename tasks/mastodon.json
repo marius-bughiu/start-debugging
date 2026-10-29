@@ -70,9 +70,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
-  },
-  {
-    "slug": "2026/10/mudblazor-9-12-ignores-stale-serverdata-and-autocomplete-results",
-    "text": "MudBlazor 9.12.0 fixes a long-standing race: MudAutocomplete and ServerData grids kept whichever request finished last, so a slow broad search could replace newer results. Each search now gets a version number or a cancelled token, and stale results are dropped. Two behavior changes to know before upgrading."
   }
 ]
