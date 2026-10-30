@@ -48,10 +48,6 @@
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
   },
   {
-    "slug": "2026/10/ref-t-loop-vs-span-t-indexing-in-csharp",
-    "text": "On .NET 10, span[i] in a for loop beats Unsafe.Add(ref r, i) by 2-5%: the int index blocks strength reduction. Listings inside."
-  },
-  {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Moving an agent to Opus 5.5 or Sonnet 5.5? Disabled thinking and forced tool_choice now return 400, and effort defaults moved."
   }

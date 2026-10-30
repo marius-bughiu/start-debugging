@@ -72,10 +72,6 @@
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
   },
   {
-    "slug": "2026/10/ref-t-loop-vs-span-t-indexing-in-csharp",
-    "text": "Rewrote a hot loop with ref T and Unsafe.Add to skip bounds checks? On .NET 10 the safe for loop over span[i] already has no bounds check, gets strength reduction and counts down, and measured 2-5% faster than an int-indexed Unsafe.Add loop. Gotcha: use an nint index and the ref loop ties it, never wins."
-  },
-  {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
   }
