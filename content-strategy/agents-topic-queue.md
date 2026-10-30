@@ -176,7 +176,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Migrate a stdio MCP server to a remote OAuth-protected HTTP server with dynamic client registration → slug: 2026/09/migrate-a-stdio-mcp-server-to-remote-oauth-with-cimd-and-dcr-fallback
 - Migrate duplicated per-tool rule files (`.cursorrules`, `CLAUDE.md`, `copilot-instructions.md`) to a single `AGENTS.md` source of truth → slug: 2026/09/migrate-cursorrules-claude-md-copilot-instructions-to-one-agents-md
 - Migrate a Cursor cloud agent workflow off GitHub to Cursor Origin repos → slug: 2026/09/migrate-a-cursor-cloud-agent-workflow-off-github-to-cursor-origin
-- Migrate a coding agent from Claude Sonnet 4.6 / Opus 4.7 to the 5.5 model family (model IDs, effort, cost)
+- Migrate a coding agent from Claude Sonnet 4.6 / Opus 4.7 to the 5.5 model family (model IDs, effort, cost) → slug: 2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family
 - Migrate a `/fleet` prompt to a reusable Copilot dynamic workflow
 - Migrate specialist A2A agents in Microsoft Agent Framework to skills served over MCP
 
