@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/ref-t-loop-vs-span-t-indexing-in-csharp",
+    "text": "Rewrote a hot loop with ref T and Unsafe.Add to skip bounds checks? On .NET 10 the safe for loop over span[i] already has no bounds check, gets strength reduction and counts down, and measured 2-5% faster than an int-indexed Unsafe.Add loop. Gotcha: use an nint index and the ref loop ties it, never wins."
   }
 ]
