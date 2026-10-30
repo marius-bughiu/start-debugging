@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/10/filesysteminfo-lastwritetime-setter-vs-file-setlastwritetime-in-dotnet",
+    "text": "Setting a file's modified time in .NET: FileInfo setter or File.SetLastWriteTimeUtc? Same syscall underneath, but the setter only refreshes its own instance, File.* fails on Windows folders, and a FileStream flushing on Dispose silently overwrites the time you just set. Flush, then set by handle."
   }
 ]

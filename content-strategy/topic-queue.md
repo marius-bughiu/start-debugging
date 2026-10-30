@@ -452,7 +452,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - `Lazy<T>` vs `LazyInitializer.EnsureInitialized` vs double-checked locking in C# → slug: 2026/10/lazy-t-vs-lazyinitializer-vs-double-checked-locking-in-csharp
 - `ref T` loop vs `Span<T>` indexing in C#: why the span version is faster in .NET 10 → slug: 2026/10/ref-t-loop-vs-span-t-indexing-in-csharp (measured on .NET 10.0.10 M4: int-index Unsafe.Add 2.4-3.6% slower than span[i]; nint index or ref walk ties; x64 via crossgen2 shows per-iteration movsxd)
 - Returning `bool` (Try pattern) vs throwing exceptions for expected failures in C#
-- `FileSystemInfo.LastWriteTime` setter vs `File.SetLastWriteTime` in .NET
+- `FileSystemInfo.LastWriteTime` setter vs `File.SetLastWriteTime` in .NET → slug: 2026/10/filesysteminfo-lastwritetime-setter-vs-file-setlastwritetime-in-dotnet (verified on .NET 10.0.10 APFS: same internal FileSystem.SetLastWriteTime; setter invalidates only its own instance; File.Set* on a directory fails on Windows (no BACKUP_SEMANTICS); local File.SetLastWriteTime(MinValue) throws in UTC+ zones, FileInfo setter clamps; buffered FileStream flush on Dispose overwrites the time)
 - `shared_preferences` vs a JSON file in the `path_provider` documents directory for persisting settings in Flutter
 - `yield return` iterator vs returning a `List<T>`: what an `IEnumerable` method actually costs in C#
 
