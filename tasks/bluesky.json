@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/10/marten-9-55-fixes-the-turkish-i-in-document-table-names",
-    "text": "Marten under tr-TR stored Invoice in mt_doc_ınvoice. 9.55.0 lowercases invariantly: rename the tables before you upgrade."
   }
 ]
