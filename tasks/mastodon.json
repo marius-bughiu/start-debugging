@@ -70,5 +70,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "A Cursor Projects coordinator never writes code. It hands slices to fresh cloud workers that share only the repo and the Project's Context files. Seed plan.md, conventions.md and a ledger first, cut slices with disjoint files, and turn every review comment into a rule. Gotcha: Context edits skip git and code review."
+  },
+  {
+    "slug": "2026/10/marten-9-55-fixes-the-turkish-i-in-document-table-names",
+    "text": "Marten 9.55.0 now lowercases document aliases with the invariant culture. On Turkish or Azerbaijani servers, a type named Invoice used to live in mt_doc_ınvoice (dotless ı), so upgrading without renaming those tables first makes your documents look gone. Here is the SQL to fix it."
   }
 ]
