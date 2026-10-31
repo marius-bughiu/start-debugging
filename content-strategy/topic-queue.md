@@ -454,7 +454,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Returning `bool` (Try pattern) vs throwing exceptions for expected failures in C#
 - `FileSystemInfo.LastWriteTime` setter vs `File.SetLastWriteTime` in .NET → slug: 2026/10/filesysteminfo-lastwritetime-setter-vs-file-setlastwritetime-in-dotnet (verified on .NET 10.0.10 APFS: same internal FileSystem.SetLastWriteTime; setter invalidates only its own instance; File.Set* on a directory fails on Windows (no BACKUP_SEMANTICS); local File.SetLastWriteTime(MinValue) throws in UTC+ zones, FileInfo setter clamps; buffered FileStream flush on Dispose overwrites the time)
 - `shared_preferences` vs a JSON file in the `path_provider` documents directory for persisting settings in Flutter → slug: 2026/10/shared-preferences-vs-json-file-for-persisting-settings-in-flutter
-- `yield return` iterator vs returning a `List<T>`: what an `IEnumerable` method actually costs in C#
+- `yield return` iterator vs returning a `List<T>`: what an `IEnumerable` method actually costs in C# → slug: 2026/10/yield-return-iterator-vs-returning-a-list-in-csharp (measured on .NET 10.0.10 M4: iterator 40 B/call constant, single foreach ~2x faster than fill+read List at 1k/100k; iterator.ToList slowest; generated Dispose resets state to -2 so the instance is reused on the same thread; JIT sometimes stack-allocates it for First/Count)
 
 ## Migration / upgrade
 
