@@ -17,7 +17,10 @@ cd site
 npm ci
 npm run dev      # http://localhost:4321
 npm run build    # static build to site/dist
+npm run build:page -- 2026/10/<slug>   # just one post and its translations; see site/scripts/build-page.mjs
 ```
+
+CI runs the full build on every push to `main`, so checking a post only needs `build:page`.
 
 ## License
 

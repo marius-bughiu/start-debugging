@@ -22,7 +22,11 @@ function rehypeLazyImages() {
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const CONTENT_DIR = path.join(__dirname, "src", "content");
 
-const LASTMOD_BY_PATH = buildLastmodMap(CONTENT_DIR);
+// Sitemap lastmod reads every post's frontmatter; a single-page build
+// (BUILD_ONLY, see scripts/build-page.mjs) has no use for it.
+const LASTMOD_BY_PATH = process.env.BUILD_ONLY
+  ? new Map()
+  : buildLastmodMap(CONTENT_DIR);
 
 export default defineConfig({
   site: "https://startdebugging.net",
