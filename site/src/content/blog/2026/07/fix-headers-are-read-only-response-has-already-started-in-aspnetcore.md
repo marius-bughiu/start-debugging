@@ -179,7 +179,7 @@ Because the downstream write went into a `MemoryStream` and not into the connect
 
 **`Response.Redirect` counts as a header write.** A redirect sets the `Location` header and a 3xx status, so calling it after any body write throws exactly this exception. If you find yourself redirecting from inside an action that has already written output, the real bug is that the decision to redirect was made too late; move it above the first write.
 
-**Streaming endpoints have a tiny header window.** When you [stream a file from an endpoint without buffering](/2026/07/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering/), the response starts the moment the first chunk flushes. Any `Content-Disposition` or `Content-Type` you want must be set before that first `WriteAsync`. If an error occurs mid-stream you cannot switch to a 500, because the 200 header block is already on the wire; the connection just terminates. Design streaming handlers to validate everything and set all headers up front.
+**Streaming endpoints have a tiny header window.** When you [stream a file from an endpoint without buffering](/2026/04/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering/), the response starts the moment the first chunk flushes. Any `Content-Disposition` or `Content-Type` you want must be set before that first `WriteAsync`. If an error occurs mid-stream you cannot switch to a 500, because the 200 header block is already on the wire; the connection just terminates. Design streaming handlers to validate everything and set all headers up front.
 
 **This is not the synchronous-I/O error.** `Headers are read-only, response has already started` is about *ordering*, not about sync versus async. If your message instead reads `Synchronous operations are disallowed`, that is a different problem with a different fix, covered in [InvalidOperationException: Synchronous operations are disallowed](/2026/05/fix-invalidoperationexception-synchronous-operations-are-disallowed). Do not confuse the two; switching `WriteAsync` to `Write` will not help here and reordering will not help there.
 
@@ -192,7 +192,7 @@ Because the downstream write went into a `MemoryStream` and not into the connect
 ## Related
 
 - [How to add a global exception filter in ASP.NET Core 11](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) shows the `HasStarted` guard in a real exception handler.
-- [How to stream a file from an ASP.NET Core endpoint without buffering](/2026/07/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering/) explains exactly when a streamed response commits its headers.
+- [How to stream a file from an ASP.NET Core endpoint without buffering](/2026/04/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering/) explains exactly when a streamed response commits its headers.
 - [How to add response compression to an ASP.NET Core 11 API](/2026/07/how-to-add-response-compression-to-an-aspnetcore-11-api/) is the supported way to transform the body without hand-buffering.
 - [How to return a typed Results union from a minimal API endpoint](/2026/07/how-to-return-a-typed-results-union-from-a-minimal-api-endpoint-in-aspnetcore-11/) keeps status and headers declarative so ordering can't go wrong.
 - [Fix: InvalidOperationException: Synchronous operations are disallowed](/2026/05/fix-invalidoperationexception-synchronous-operations-are-disallowed) is the other InvalidOperationException that looks similar but isn't.

@@ -183,7 +183,7 @@ app.Use(async (context, next) =>
 
 **`Response.Redirect` はヘッダー書き込みに数えられます。** リダイレクトは `Location` ヘッダーと 3xx ステータスを設定するため、ボディを書き込んだ後にそれを呼び出すとまさにこの例外を投げます。すでに出力を書き込んだアクションの内部からリダイレクトしていることに気づいたら、本当のバグはリダイレクトの決定が遅すぎたことです。それを最初の書き込みの前に移動してください。
 
-**ストリーミングエンドポイントのヘッダーの窓は極めて小さいです。** [バッファリングなしでエンドポイントからファイルをストリームする](/2026/07/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering/)とき、レスポンスは最初のチャンクがフラッシュされる瞬間に開始します。必要な `Content-Disposition` や `Content-Type` はすべて、その最初の `WriteAsync` の前に設定しなければなりません。ストリームの途中でエラーが起きても 500 に切り替えることはできません。200 のヘッダーブロックがすでにワイヤー上にあるからです。接続は単に終了します。ストリーミングハンドラーは、すべてを検証し、すべてのヘッダーを前もって設定するように設計してください。
+**ストリーミングエンドポイントのヘッダーの窓は極めて小さいです。** [バッファリングなしでエンドポイントからファイルをストリームする](/2026/04/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering/)とき、レスポンスは最初のチャンクがフラッシュされる瞬間に開始します。必要な `Content-Disposition` や `Content-Type` はすべて、その最初の `WriteAsync` の前に設定しなければなりません。ストリームの途中でエラーが起きても 500 に切り替えることはできません。200 のヘッダーブロックがすでにワイヤー上にあるからです。接続は単に終了します。ストリーミングハンドラーは、すべてを検証し、すべてのヘッダーを前もって設定するように設計してください。
 
 **これは同期 I/O のエラーではありません。** `Headers are read-only, response has already started` は*順序*についてであり、同期か非同期かについてではありません。メッセージが代わりに `Synchronous operations are disallowed` と読める場合、それは別の修正を持つ別の問題であり、[InvalidOperationException: Synchronous operations are disallowed](/ja/2026/05/fix-invalidoperationexception-synchronous-operations-are-disallowed)で扱っています。この 2 つを混同しないでください。`WriteAsync` を `Write` に切り替えてもここでは役立たず、並べ替えてもあちらでは役立ちません。
 
@@ -196,7 +196,7 @@ app.Use(async (context, next) =>
 ## 関連記事
 
 - [ASP.NET Core 11 でグローバル例外フィルターを追加する方法](/ja/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/)は、実際の例外ハンドラーでの `HasStarted` 保護を示します。
-- [バッファリングなしで ASP.NET Core エンドポイントからファイルをストリームする方法](/2026/07/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering/)は、ストリームされるレスポンスがいつヘッダーをコミットするかを正確に説明します。
+- [バッファリングなしで ASP.NET Core エンドポイントからファイルをストリームする方法](/2026/04/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering/)は、ストリームされるレスポンスがいつヘッダーをコミットするかを正確に説明します。
 - [ASP.NET Core 11 API にレスポンス圧縮を追加する方法](/ja/2026/07/how-to-add-response-compression-to-an-aspnetcore-11-api/)は、手作業のバッファなしにボディを変換するサポートされた方法です。
 - [minimal API エンドポイントから型付き Results ユニオンを返す方法](/ja/2026/07/how-to-return-a-typed-results-union-from-a-minimal-api-endpoint-in-aspnetcore-11/)は、ステータスとヘッダーを宣言的に保ち、順序が誤りようがないようにします。
 - [修正: InvalidOperationException: Synchronous operations are disallowed](/ja/2026/05/fix-invalidoperationexception-synchronous-operations-are-disallowed)は、似て見えるが別物であるもう一つの InvalidOperationException です。

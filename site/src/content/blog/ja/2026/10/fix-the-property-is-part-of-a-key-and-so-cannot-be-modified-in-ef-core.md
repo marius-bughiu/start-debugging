@@ -251,7 +251,7 @@ var rows = await db.Blogs
 
 ## 関連記事
 
-セットベースのステートメントでキーを変更する場合は、[一括書き込みのための ExecuteUpdate と ExecuteDelete](/ja/2026/05/how-to-use-executeupdate-and-executedelete-for-bulk-writes-in-ef-core-11/) の解説で API と追跡中のエンティティとの相互作用を扱っており、[ExecuteUpdate と、エンティティを読み込んで SaveChanges を呼ぶ方法の比較](/2026/05/ef-core-executeupdate-vs-loading-entities-and-savechanges/)では、それぞれがどの場面に適しているかを説明しています。キーの振り直しの削除側が、子がまだ古い行を指しているために失敗する場合は、[外部キー制約エラーの修正](/ja/2026/06/fix-foreign-key-constraint-failed-when-deleting-an-entity-in-ef-core-11/)を参照してください。例外が発生する前に、どのエントリが保存されようとしているかを正確に確認するには、[`ChangeTracker.GetEntriesForState`](/ja/2026/04/efcore-11-changetracker-getentriesforstate/) でダンプするのが最も手軽です。
+セットベースのステートメントでキーを変更する場合は、[一括書き込みのための ExecuteUpdate と ExecuteDelete](/ja/2026/05/how-to-use-executeupdate-and-executedelete-for-bulk-writes-in-ef-core-11/) の解説で API と追跡中のエンティティとの相互作用を扱っており、[ExecuteUpdate と、エンティティを読み込んで SaveChanges を呼ぶ方法の比較](/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/)では、それぞれがどの場面に適しているかを説明しています。キーの振り直しの削除側が、子がまだ古い行を指しているために失敗する場合は、[外部キー制約エラーの修正](/ja/2026/06/fix-foreign-key-constraint-failed-when-deleting-an-entity-in-ef-core-11/)を参照してください。例外が発生する前に、どのエントリが保存されようとしているかを正確に確認するには、[`ChangeTracker.GetEntriesForState`](/ja/2026/04/efcore-11-changetracker-getentriesforstate/) でダンプするのが最も手軽です。
 
 ## 参考資料
 
