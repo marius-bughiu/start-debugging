@@ -4,7 +4,7 @@
 //   npm run build:page -- 2026/10/my-post            English post + every translation on disk
 //   npm run build:page -- de/2026/10/my-post         one locale only
 //   npm run build:page -- src/content/blog/2026/10/my-post.md   exactly this file
-//   npm run build:page -- pillars/dotnet-11-tracker  a pillar page
+//   npm run build:page -- pillars/dotnet-11-tracker  English pillar + every translation on disk
 //
 // This is the real `astro build` (frontmatter schema, markdown rendering, the
 // post template) with the blog collection narrowed to the given posts (see
@@ -23,6 +23,12 @@
 //     spelled with the wrong letter case or locale prefix, or at a same-page
 //     #anchor with no matching id. A link that was already broken on main is
 //     listed as a warning instead: the full build never checked links.
+//
+// Warning only: a translated page links to the English post or pillar
+// although it exists in the page's locale (/2026/07/x/ on a de page while
+// de/2026/07/x.md is there), which sends the reader to the English page.
+// Links with an hreflang, such as the language switcher's, cross locales on
+// purpose and are left out.
 //
 // Built pages match production except where they list other posts (related
 // and prev/next posts, a pillar's post index) and, for one-locale and .md
@@ -139,7 +145,11 @@ function resolveTarget(arg) {
   if (pillar) {
     const file = path.join(PILLAR_DIR, ...(pillar[1] ? [pillar[1]] : []), `${pillar[2]}.md`);
     if (!existsExactly(file)) throw new Error(`no such pillar: ${path.relative(SITE_DIR, file)}`);
-    return [file];
+    if (pillar[1]) return [file];
+    const translations = TRANSLATED_LOCALES.map((l) => path.join(PILLAR_DIR, l, `${pillar[2]}.md`)).filter(
+      existsExactly,
+    );
+    return [file, ...translations];
   }
 
   const post = slug.match(POST_SLUG_RE);
@@ -360,9 +370,16 @@ function linkProblem(target) {
   return nameProblem ? `${shown} is not published at its path (${nameProblem})` : null;
 }
 
-// ids, <a name> and <a href> values of real tags. Script, style and comment
-// bodies are dropped first, and text never matches: a code sample's
-// `<div id="x">` is printed with its `<` escaped.
+// The same post or pillar in `lang` for a link written without a locale
+// prefix (/2026/07/x/ -> /de/2026/07/x/), or null when it has one.
+function sameLocalePath(target, lang) {
+  const m = target.match(POST_PATH_RE) ?? target.match(PILLAR_PATH_RE);
+  return m && m[1] === undefined ? `/${lang}${target}` : null;
+}
+
+// ids, <a name> values and the href and hreflang of each <a>, from real tags.
+// Script, style and comment bodies are dropped first, and text never matches:
+// a code sample's `<div id="x">` is printed with its `<` escaped.
 const TAG_RE = /<([a-zA-Z][a-zA-Z0-9-]*)((?:\s+[^\s"'<>/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s"'=<>`]+))?)*)\s*\/?>/g;
 const ATTR_RE = /([^\s"'<>/=]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+)))?/g;
 const NAMED_ENTITIES = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'" };
@@ -376,7 +393,7 @@ const decodeEntities = (s) =>
   });
 function scanHtml(html) {
   const ids = new Set();
-  const hrefs = [];
+  const links = [];
   const markup = html.replace(/<!--[\s\S]*?-->|<(script|style)\b[\s\S]*?<\/\1\s*>/gi, "");
   for (const [, tag, attrText] of markup.matchAll(TAG_RE)) {
     const attrs = {};
@@ -386,14 +403,15 @@ function scanHtml(html) {
     if (attrs.id) ids.add(safeDecode(attrs.id));
     if (tag.toLowerCase() === "a") {
       if (attrs.name) ids.add(safeDecode(attrs.name));
-      if (attrs.href) hrefs.push(attrs.href);
+      if (attrs.href) links.push({ href: attrs.href, hreflang: attrs.hreflang });
     }
   }
-  return { ids, hrefs };
+  return { ids, links };
 }
 
 const problems = [];
 const alreadyBroken = [];
+const untranslated = [];
 if (errorsLogged > 0) problems.push(`Astro logged ${errorsLogged} error(s) above; a page may be missing its content`);
 
 let linksChecked = 0;
@@ -412,8 +430,8 @@ for (const s of selected) {
 
   // Link targets are checked against the source files, not the output: only
   // the selected posts were built.
-  const { ids, hrefs } = scanHtml(fs.readFileSync(htmlPath, "utf8"));
-  for (const href of hrefs) {
+  const { ids, links } = scanHtml(fs.readFileSync(htmlPath, "utf8"));
+  for (const { href, hreflang } of links) {
     let problem;
     if (href.startsWith("#")) {
       const id = safeDecode(href.slice(1));
@@ -427,7 +445,11 @@ for (const s of selected) {
       const result = target === null ? undefined : linkProblem(target);
       if (result === undefined) continue;
       linksChecked++;
-      if (result === null) continue;
+      if (result === null) {
+        const translation = s.lang === "en" || hreflang !== undefined ? null : sameLocalePath(target, s.lang);
+        if (translation && linkProblem(translation) === null) untranslated.push(`${s.urlPath}: ${href} -> ${translation}`);
+        continue;
+      }
       problem = `-> ${result}`;
     }
     (wasAlreadyThere(s.file, href) ? alreadyBroken : problems).push(`${s.urlPath}: ${href} ${problem}`);
@@ -440,6 +462,12 @@ console.log(`[build-page] ${linksChecked} post/pillar/anchor link(s) checked in 
 if (alreadyBroken.length > 0) {
   console.log(`[build-page] ${alreadyBroken.length} link problem(s) already on ${BASE_REF}, so not failing this run:`);
   for (const p of alreadyBroken) console.log(`  ${p}`);
+}
+if (untranslated.length > 0) {
+  console.log(
+    `[build-page] ${untranslated.length} link(s) go to the English page although the translation exists; add the locale prefix:`,
+  );
+  for (const p of untranslated) console.log(`  ${p}`);
 }
 if (problems.length > 0) {
   console.error(`[build-page] ${problems.length} problem(s):`);
