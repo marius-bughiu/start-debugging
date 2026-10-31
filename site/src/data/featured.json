@@ -1,7 +1,7 @@
 {
   "slugs": [
-    "2026/04/efcore-11-sql-server-vector-search-diskann-indexes",
-    "2026/04/csharp-15-union-types-dotnet-11-preview-2",
-    "2026/04/dotnet-11-runtime-async-cleaner-stack-traces"
+    "2026/10/how-to-tail-a-log-file-in-csharp-while-another-process-is-writing-to-it",
+    "2026/10/how-to-use-a-different-serilog-output-template-per-log-level-from-appsettings-json",
+    "2026/10/how-to-detect-windows-session-lock-unlock-logon-and-logoff-events-in-csharp"
   ]
 }

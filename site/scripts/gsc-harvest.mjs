@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-// GSC harvester. Produces four artefacts under content-strategy/:
+// GSC harvester. Produces five artefacts under content-strategy/:
 //
+//   gsc-summary.json          unfiltered property totals, current/prior 28 days
 //   gsc-candidates.json       page-2 queries (positions 11-20), last 7 days
 //   gsc-rising.json           queries with the largest week-over-week
 //                             impression delta, current position <= 30
@@ -29,6 +30,13 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import url from "node:url";
 import { buildLastmodMap } from "../src/lib/content-paths.mjs";
+import {
+  GSC_TIME_ZONE,
+  buildSearchWindows,
+  isSiteOperatorQuery,
+  propertyTotalsRequest,
+  searchConsoleDay,
+} from "./lib/gsc-reporting.mjs";
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..", "..");
@@ -38,6 +46,7 @@ const CANDIDATES_OUT = path.join(ROOT, "content-strategy", "gsc-candidates.json"
 const RISING_OUT = path.join(ROOT, "content-strategy", "gsc-rising.json");
 const LOW_CTR_OUT = path.join(ROOT, "content-strategy", "gsc-low-ctr-pages.json");
 const NOT_INDEXED_OUT = path.join(ROOT, "content-strategy", "gsc-not-indexed.json");
+const SUMMARY_OUT = path.join(ROOT, "content-strategy", "gsc-summary.json");
 
 const siteUrl = "sc-domain:startdebugging.net";
 const inspectOrigin = "https://startdebugging.net";
@@ -68,16 +77,51 @@ try {
 
 const webmasters = google.webmasters({ version: "v3", auth });
 
-const isoDay = (d) => d.toISOString().slice(0, 10);
-const dayMs = 24 * 60 * 60 * 1000;
 const now = new Date();
+const reportingDate = searchConsoleDay(now);
+const windows = buildSearchWindows(reportingDate);
+const { startDate: last7Start, endDate: last7End } = windows.current7;
+const { startDate: prior7Start, endDate: prior7End } = windows.prior7;
+const { startDate: last28Start, endDate: last28End } = windows.current28;
 
-const last7End = isoDay(now);
-const last7Start = isoDay(new Date(now.getTime() - 7 * dayMs));
-const prior7End = isoDay(new Date(now.getTime() - 7 * dayMs - dayMs));
-const prior7Start = isoDay(new Date(now.getTime() - 14 * dayMs - dayMs));
-const last28End = last7End;
-const last28Start = isoDay(new Date(now.getTime() - 28 * dayMs));
+// Property totals must not be calculated from filtered opportunities or query
+// rows: query rows omit anonymized searches and are capped by the API.
+const totals = await Promise.all(
+  [windows.current28, windows.prior28].map(async (period) => {
+    const response = await webmasters.searchanalytics.query({
+      siteUrl,
+      requestBody: propertyTotalsRequest(period),
+    });
+    const row = response.data.rows?.[0];
+    return {
+      ...period,
+      hasData: !!row,
+      clicks: row?.clicks ?? 0,
+      impressions: row?.impressions ?? 0,
+      ctr: row?.ctr ?? 0,
+      position: row?.position ?? null,
+    };
+  }),
+);
+await fs.writeFile(SUMMARY_OUT, JSON.stringify({
+  generatedAt: now.toISOString(),
+  siteUrl,
+  reportingDate,
+  timeZone: GSC_TIME_ZONE,
+  type: "web",
+  dataState: "final",
+  aggregationType: "byProperty",
+  current: totals[0],
+  prior: totals[1],
+  opportunityWindows: { current7: windows.current7, prior7: windows.prior7, current28: windows.current28 },
+  caveats: [
+    "Query opportunities omit anonymized queries and are limited to the API's top 1000 query rows; they are not site traffic totals.",
+    "site: operator queries are excluded only from candidate/rising opportunities, not property totals or page-level reports.",
+    "Page CTR and average position need query and search-intent review before interpreting them as title problems.",
+    "The requested inclusive windows end three reporting days ago and use final data; unusual reporting delays can still leave a window incomplete.",
+  ],
+}, null, 2) + "\n");
+console.log(`[gsc-harvest] Wrote unfiltered 28-day property comparison to ${path.relative(ROOT, SUMMARY_OUT)}`);
 
 // 1. Page-2 queries (positions 11-20), last 7 days. Format unchanged so
 //    monthly-retro-prompt.md can keep reading it.
@@ -87,11 +131,14 @@ const candidatesRes = await webmasters.searchanalytics.query({
   requestBody: {
     startDate: last7Start,
     endDate: last7End,
+    type: "web",
+    dataState: "final",
     dimensions: ["query"],
     rowLimit: 1000,
   },
 });
-const candidatesRows = candidatesRes.data.rows || [];
+const candidatesRows = (candidatesRes.data.rows || [])
+  .filter((r) => !isSiteOperatorQuery(r.keys[0]));
 const page2 = candidatesRows
   .filter((r) => r.position >= 11 && r.position <= 20)
   .map((r) => ({
@@ -116,6 +163,8 @@ const priorRes = await webmasters.searchanalytics.query({
   requestBody: {
     startDate: prior7Start,
     endDate: prior7End,
+    type: "web",
+    dataState: "final",
     dimensions: ["query"],
     rowLimit: 1000,
   },
@@ -155,6 +204,8 @@ const pagesRes = await webmasters.searchanalytics.query({
   requestBody: {
     startDate: last28Start,
     endDate: last28End,
+    type: "web",
+    dataState: "final",
     dimensions: ["page"],
     rowLimit: 1000,
   },

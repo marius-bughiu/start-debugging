@@ -1,6 +1,22 @@
 {
-  "intro": "New here? These are the posts I'd point a developer at first. They're longer, more evergreen, or do more teaching than the daily news posts. Updated whenever I write something I'd genuinely recommend.",
+  "intro": "Start with a problem you need to solve. These guides explain the fix, show the code, and cover the edge cases, with selected language and tooling articles for further reading.",
   "sections": [
+    {
+      "heading": "Practical debugging",
+      "blurb": "Read a live log safely, configure Serilog without duplicate errors, and handle Windows session events.",
+      "translations": {
+        "de": { "heading": "Debugging in der Praxis", "blurb": "Laufende Protokolldateien sicher lesen, Serilog ohne doppelte Fehlermeldungen konfigurieren und Windows-Sitzungsereignisse behandeln." },
+        "es": { "heading": "Depuración práctica", "blurb": "Lee un archivo de registro en uso, configura Serilog sin duplicar errores y gestiona eventos de sesión de Windows." },
+        "pt-br": { "heading": "Depuração na prática", "blurb": "Leia um arquivo de log em uso, configure o Serilog sem duplicar erros e trate eventos de sessão do Windows." },
+        "ru": { "heading": "Отладка на практике", "blurb": "Безопасное чтение растущего журнала, настройка Serilog без дублирования ошибок и обработка событий сеанса Windows." },
+        "ja": { "heading": "実践的なデバッグ", "blurb": "書き込み中のログを安全に読み取り、エラーを重複させずに Serilog を設定し、Windows セッションイベントを処理します。" }
+      },
+      "slugs": [
+        "2026/10/how-to-tail-a-log-file-in-csharp-while-another-process-is-writing-to-it",
+        "2026/10/how-to-use-a-different-serilog-output-template-per-log-level-from-appsettings-json",
+        "2026/10/how-to-detect-windows-session-lock-unlock-logon-and-logoff-events-in-csharp"
+      ]
+    },
     {
       "heading": "C# language",
       "blurb": "What actually changed in the language and how it lands in real code.",
@@ -45,8 +61,7 @@
       },
       "slugs": [
         "2026/01/net-10-performance-searchvalues",
-        "2026/01/perfetto-dotnet-trace-a-practical-profiling-loop-for-net-9-net-10",
-        "2026/04/building-a-microsecond-database-engine-in-csharp"
+        "2026/01/perfetto-dotnet-trace-a-practical-profiling-loop-for-net-9-net-10"
       ]
     },
     {

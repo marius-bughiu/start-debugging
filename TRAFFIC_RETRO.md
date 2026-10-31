@@ -131,3 +131,13 @@ Monthly summaries appended by `start-debugging-monthly-retro` on the 1st Monday 
 - Newsletter subscriber count:
 - Social referrals by source:
 - Next month's 3 priorities:
+
+## 2026-10-31 — Traffic audit correction
+
+Fresh Search Console web totals show 64 clicks in April, 39 in May, 7 in June, 10 in July, 11 in August, and 3 in September. September 30–October 27 has 12 clicks / 1,401 impressions, versus 3 / 5,470 for September 2–29. These are unfiltered property totals, not sums of the opportunity files.
+
+GA4 confirms existing readership outside Google: October 3–30 shows 2,033 organic-search sessions and 1,101 engaged sessions (54.16%, 51 seconds average engagement), including 1,397 sessions from Bing and 276 from DuckDuckGo. Google accounts for 18 GA4 sessions in that different reporting window. Total sessions are 30,170, but direct/referral spikes have very low engagement; the all-channel total is not a reliable audience-growth headline. The initial GA4 API scope failure was worked around with authenticated browser access.
+
+The prior conclusion that snippets were the bottleneck was unsupported: `site:` searches dominate many visible-query rows, and page-average positions do not establish normal-query ranking wins. Query-filtered totals omit anonymized searches. The Pages report (October 23) shows 5,307 discovered/not indexed and 668 crawled/not indexed URLs; all-known-page totals include taxonomy and localized routes. Manual actions and Security issues both report no issues.
+
+A local first patch repairs custom engagement events and search reporting, refreshes featured guides, and moves the fixed top advertisement below article content. The detailed evidence, GA4 reconciliation, limitations, and proposed November experiment are maintained in `content-strategy/traffic-recovery-2026-10-31.md` with raw API/UI snapshots beside it. Those files are local under the existing content-strategy ignore policy. No deployment or publishing schedule changes were performed by this audit.

@@ -282,16 +282,16 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFYE38MD6S"></script>
-    <script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
 
-      gtag('config', 'G-QFYE38MD6S');
+      window.gtag('config', 'G-QFYE38MD6S');
     </script>
 
     <!-- Custom GA4 events: share clicks, scroll depth, outbound clicks,
-         newsletter subscribe. See TRAFFIC_ROADMAP.md task 5.1. -->
+         newsletter submission intent. See TRAFFIC_ROADMAP.md task 5.1. -->
     <script is:inline>
       (function () {
         function track(name, params) {
@@ -311,9 +311,8 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
           });
         }, true);
 
-        // Newsletter subscribe: footer form + inline post-page form. We can't
-        // see the cross-origin Buttondown response so track on submit
-        // intent — close enough for funnel measurement.
+        // Newsletter submission intent: the cross-origin Buttondown response
+        // is not visible here, so this is not a confirmed subscription.
         document.addEventListener('submit', function (e) {
           var f = e.target instanceof HTMLFormElement ? e.target : null;
           if (!f) return;
@@ -321,7 +320,7 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
           if (action.indexOf('buttondown.com') === -1) return;
           var tagInput = f.querySelector('input[name="tag"]');
           var placement = tagInput && tagInput.value ? tagInput.value : 'unknown';
-          track('newsletter_subscribe', {
+          track('newsletter_submit', {
             placement: placement,
             page_path: location.pathname,
           });
