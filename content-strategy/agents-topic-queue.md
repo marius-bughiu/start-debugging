@@ -177,8 +177,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Migrate duplicated per-tool rule files (`.cursorrules`, `CLAUDE.md`, `copilot-instructions.md`) to a single `AGENTS.md` source of truth → slug: 2026/09/migrate-cursorrules-claude-md-copilot-instructions-to-one-agents-md
 - Migrate a Cursor cloud agent workflow off GitHub to Cursor Origin repos → slug: 2026/09/migrate-a-cursor-cloud-agent-workflow-off-github-to-cursor-origin
 - Migrate a coding agent from Claude Sonnet 4.6 / Opus 4.7 to the 5.5 model family (model IDs, effort, cost) → slug: 2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family
-- Migrate a `/fleet` prompt to a reusable Copilot dynamic workflow
-- Migrate specialist A2A agents in Microsoft Agent Framework to skills served over MCP
+- Migrate a `/fleet` prompt to a reusable Copilot dynamic workflow (skipped: same intent as 2026/10/copilot-dynamic-workflows-vs-fleet-vs-github-agentic-workflows, whose dynamic-workflow section converts a repeated /fleet prompt into defineWorkflow code, plus 2026/10/how-to-define-a-github-copilot-cli-dynamic-workflow-and-run-it-from-ci)
+- Migrate specialist A2A agents in Microsoft Agent Framework to skills served over MCP (skipped: same intent as 2026/10/specialist-a2a-agents-vs-distributed-skills-over-mcp, which covers the collapse decision, the Agent Framework 1.17 wiring and a migrate-one-domain-first plan, plus 2026/08/serve-agent-skills-from-an-mcp-server-in-dotnet-with-usemcpskills)
 
 ## Patterns
 
@@ -201,7 +201,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Patterns: measuring an agent's fixed token overhead - system prompt and tool schemas before the first user token → slug: 2026/09/measure-an-agents-fixed-token-overhead-before-the-first-user-token
 - Patterns: stateless tool design - passing state handles as tool arguments instead of relying on the transport (skipped: same intent as 2026/08/stateful-vs-stateless-mcp-servers-what-breaks-when-the-session-goes-away, whose "The handle pattern, verified" section covers server-minted handles as tool arguments and the SEP-2567 design rules)
 - Patterns: self-healing end-to-end tests when a coding agent renames selectors → slug: 2026/09/self-healing-e2e-tests-when-a-coding-agent-renames-selectors
-- Patterns: fail-closed vs fail-open hooks for agent guardrails
+- Patterns: fail-closed vs fail-open hooks for agent guardrails → slug: 2026/10/fail-closed-vs-fail-open-hooks-for-coding-agent-guardrails
 - Patterns: post-merge verification for agent-authored PRs (monitoring plans and per-environment verdicts)
 - Patterns: retry and backoff for long agent loops under overloaded and rate-limit errors
 - Patterns: a coordinator agent plus worker agents for multi-day projects
