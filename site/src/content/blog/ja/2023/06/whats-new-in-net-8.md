@@ -13,7 +13,7 @@ translationDate: 2026-05-01
 ---
 .NET 8 は **2023 年 11 月 14 日** に LTS (Long Term Support) バージョンとしてリリースされ、リリース日から少なくとも 3 年間はサポート、アップデート、バグ修正を受け続けます。
 
-例によって、.NET 8 では新しいバージョンの C# 言語、すなわち C# 12 がサポートされます。専用ページ [C# 12 の新機能](/2023/06/whats-new-in-c-12/) もご覧ください。
+例によって、.NET 8 では新しいバージョンの C# 言語、すなわち C# 12 がサポートされます。専用ページ [C# 12 の新機能](/ja/2023/06/whats-new-in-c-12/) もご覧ください。
 
 それでは、.NET 8 の変更点と新機能の一覧を見ていきましょう。
 
@@ -41,7 +41,7 @@ translationDate: 2026-05-01
 -   設定バインディング向けの Source Generator
 -   リフレクションの改善
     -   リフレクション不要に: [UnsafeAccessorAttribute](/ja/2023/10/unsafe-accessor/) のご紹介 ([パフォーマンスベンチマーク](/ja/2023/11/net-8-performance-unsafeaccessor-vs-reflection/) を参照)
-    -   [`readonly` フィールドの更新](/2023/06/whats-new-in-net-8/)
+    -   [`readonly` フィールドの更新](/ja/2023/06/whats-new-in-net-8/)
 -   Native AOT サポート
 -   パフォーマンス改善
 -   .NET コンテナイメージ

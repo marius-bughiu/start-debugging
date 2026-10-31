@@ -77,7 +77,7 @@ context.push('/orders/42'); // push on top of the current stack
 
 ここでの強みは、同時に鋭い刃でもあります：ナビゲーションのターゲットは文字列なのです。`context.go('/orders/42')` はコンパイラーによってチェックされません。パスを打ち間違えたりルートをリネームしたりすると、それに気づくのは実行時です。`go_router` にはこれに対する答えがあります。[`go_router_builder` による型付きルート](https://pub.dev/packages/go_router_builder) がそれで、型付きの `GoRouteData` クラスを生成してくれるので、`OrderRoute(id: 42).go(context)` のように呼び出せます。しかしそれは、デフォルトの流儀が文字列であるパッケージに後付けされたオプトインのコード生成であり、実際には多くの go_router のコードベースでは一度も有効化されないままです。
 
-`go_router` はまた、人々が実際にこれを採用する理由となる 2 つの機能も備えています。`ShellRoute` と `StatefulShellRoute.indexedStack` は永続的なシェル（タブ切り替えをまたいで生き残るボトムナビゲーションバー）を提供し、トップレベルの `redirect` コールバックがツリー全体の認証ゲーティングを扱います。シェルとディープリンク設定の完全なウォークスルーが欲しければ、[go_router でネストされたルートとディープリンクをセットアップする](/2026/06/how-to-set-up-nested-routes-and-deep-links-with-go-router-in-flutter/) を参照してください。
+`go_router` はまた、人々が実際にこれを採用する理由となる 2 つの機能も備えています。`ShellRoute` と `StatefulShellRoute.indexedStack` は永続的なシェル（タブ切り替えをまたいで生き残るボトムナビゲーションバー）を提供し、トップレベルの `redirect` コールバックがツリー全体の認証ゲーティングを扱います。シェルとディープリンク設定の完全なウォークスルーが欲しければ、[go_router でネストされたルートとディープリンクをセットアップする](/ja/2026/06/how-to-set-up-nested-routes-and-deep-links-with-go-router-in-flutter/) を参照してください。
 
 複数年にわたる意思決定にとって重要なステータスの注意点が 1 つあります：Flutter チームは `go_router` を機能完成済み（feature-complete）としてリストしています。彼らの [ロードマップの記述](https://pub.dev/packages/go_router) にはこうあります：
 
@@ -182,23 +182,23 @@ Navigator.of(context).push(
 コミットした後に人々を噛む点がいくつかあります：
 
 - **go_router：文字列はチェックされない。** パスをリネームすると、実行時にそこへ当たるまで静かに壊れたままです。早いうちに `go_router_builder` を採用して型付きルートにするか、あるいはすべてのパスを 1 つの定数ファイルにまとめ、生の文字列を決してインライン化しないようにしましょう。
-- **go_router：await の後の `context`。** 宣言的なナビゲーションであっても `use_build_context_synchronously` リントから免除されるわけではありません。`async` のギャップの後に古い `BuildContext` でナビゲートするのは、これまでと同じバグです。[await の後に BuildContext を安全に使う](/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/) を参照してください。
+- **go_router：await の後の `context`。** 宣言的なナビゲーションであっても `use_build_context_synchronously` リントから免除されるわけではありません。`async` のギャップの後に古い `BuildContext` でナビゲートするのは、これまでと同じバグです。[await の後に BuildContext を安全に使う](/ja/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/) を参照してください。
 - **auto_route：生成ファイルのドリフト。** 雑なマージや Dart SDK のバンプの後、生成された `.gr.dart` が古くなって、わけのわからないエラーを生むことがあります。修正はほぼ常に、差分を眺めることではなく `dart run build_runner build --delete-conflicting-outputs` です。
 - **auto_route：パイプラインの中のもう 1 つの codegen ツール。** すでに Freezed、json_serializable、あるいは Riverpod のジェネレーターを走らせているなら、`auto_route` は同期を保たなければならないもう 1 つの要素です。CI では、`build_runner` のステップを忘れると、あなたのマシンではなくビルドが失敗します。
 - **両方：ディープリンクは今でもネイティブの設定が必要。** どちらのパッケージも、Android と iOS が URL を Flutter に単独で手渡すようにはできません。あなたは今でも `AndroidManifest.xml` と iOS のエンタイトルメントを編集して、スキームやアプリリンクを登録する必要があります。パッケージは URL が到着すればそれを解決しますが、それを到着させることはプラットフォーム側の作業です。
 - **両者間の移行はタダではない。** go_router のルートテーブルと auto_route の注釈付きクラスは、構造的に異なります。プロジェクトの途中で切り替えるということはルート層を書き直すことを意味するので、今スプリントではなく 2 年の視野を念頭に置いて選びましょう。
 
-ルーティングだけでなく、より広いスタックをまだ決めている最中なら、この同じ「公式で退屈 vs 機能豊富なコミュニティ」という緊張は状態管理にも現れます。それは [Provider vs Riverpod vs Bloc](/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/) で解説しています。そしてプラットフォームの選択そのものについては [Flutter vs React Native vs MAUI](/2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026/) で解説しています。
+ルーティングだけでなく、より広いスタックをまだ決めている最中なら、この同じ「公式で退屈 vs 機能豊富なコミュニティ」という緊張は状態管理にも現れます。それは [Provider vs Riverpod vs Bloc](/ja/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/) で解説しています。そしてプラットフォームの選択そのものについては [Flutter vs React Native vs MAUI](/ja/2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026/) で解説しています。
 
 実際のプロジェクトとの接触を生き延びる要約はこうです：`go_router` は公式で、安定していて、URL ネイティブだからこそデフォルトです。`auto_route` は、コンパイル時にチェックされるナビゲーションがコードジェネレーターに見合う大規模アプリでその価値を発揮します。生の Navigator 2.0 は、ナビゲーションモデルがルートテーブルに収まらないまれなアプリのためのものです。そして素朴な `Navigator.push` は、これらのどれも必要としない小さなアプリにとって今でも正しい答えです。最も強力な層ではなく、あなたの実際の問題を解く最も低い層を選びましょう。
 
 ## 関連記事
 
-- [Flutter で go_router を使ってネストされたルートとディープリンクをセットアップする方法](/2026/06/how-to-set-up-nested-routes-and-deep-links-with-go-router-in-flutter/)
-- [Flutter で await の後に BuildContext を安全に使う方法](/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/)
-- [2026 年の Flutter 状態管理における Provider vs Riverpod vs Bloc](/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/)
-- [2026 年の新しいモバイルプロジェクトにおける Flutter vs React Native vs MAUI](/2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026/)
-- [Flutter 2 アプリを Flutter 3.x へ移行する：null 安全チェックリスト](/2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist/)
+- [Flutter で go_router を使ってネストされたルートとディープリンクをセットアップする方法](/ja/2026/06/how-to-set-up-nested-routes-and-deep-links-with-go-router-in-flutter/)
+- [Flutter で await の後に BuildContext を安全に使う方法](/ja/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/)
+- [2026 年の Flutter 状態管理における Provider vs Riverpod vs Bloc](/ja/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/)
+- [2026 年の新しいモバイルプロジェクトにおける Flutter vs React Native vs MAUI](/ja/2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026/)
+- [Flutter 2 アプリを Flutter 3.x へ移行する：null 安全チェックリスト](/ja/2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist/)
 
 ## 出典
 

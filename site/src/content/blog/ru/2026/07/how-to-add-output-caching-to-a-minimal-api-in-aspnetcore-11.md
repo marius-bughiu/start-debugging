@@ -91,7 +91,7 @@ app.MapGet("/prices", GetPrices)
 
 ## Кешируем целую группу маршрутов сразу
 
-Повторять `.CacheOutput()` на каждой конечной точке быстро надоедает. Поскольку `MapGroup` возвращает `RouteGroupBuilder`, разделяющий соглашения, вы можете прикрепить кеширование выходных данных к группе, и каждая конечная точка внутри его унаследует. Это чисто сочетается с модулями конечных точек по ресурсам, описанными в [организации конечных точек minimal API с MapGroup](/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/):
+Повторять `.CacheOutput()` на каждой конечной точке быстро надоедает. Поскольку `MapGroup` возвращает `RouteGroupBuilder`, разделяющий соглашения, вы можете прикрепить кеширование выходных данных к группе, и каждая конечная точка внутри его унаследует. Это чисто сочетается с модулями конечных точек по ресурсам, описанными в [организации конечных точек minimal API с MapGroup](/ru/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/):
 
 ```csharp
 // .NET 11, C# 14
@@ -158,7 +158,7 @@ app.MapPost("/catalog", async (Product product, AppDbContext db, IOutputCacheSto
 });
 ```
 
-Теперь кеш отдаёт мгновенные чтения и остаётся свежим: истечение через пять минут (или даже через час) является страховочной сеткой, а настоящая инвалидация происходит ровно тогда, когда происходит запись. Если вы привязываете вызов `EvictByTagAsync` к тому же `SaveChanges`, который меняет строку, читатели никогда не видят данные старше последней успешной записи. Это хорошо сочетается с выявлением запросов, стоящих за этими записями; если конечная точка чтения достаточно медленна, чтобы вы потянулись за кешированием, стоит сначала исключить [N+1 запрос в EF Core](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/), потому что кеширование медленного запроса лишь скрывает проблему.
+Теперь кеш отдаёт мгновенные чтения и остаётся свежим: истечение через пять минут (или даже через час) является страховочной сеткой, а настоящая инвалидация происходит ровно тогда, когда происходит запись. Если вы привязываете вызов `EvictByTagAsync` к тому же `SaveChanges`, который меняет строку, читатели никогда не видят данные старше последней успешной записи. Это хорошо сочетается с выявлением запросов, стоящих за этими записями; если конечная точка чтения достаточно медленна, чтобы вы потянулись за кешированием, стоит сначала исключить [N+1 запрос в EF Core](/ru/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/), потому что кеширование медленного запроса лишь скрывает проблему.
 
 Теги можно регистрировать декларативно и на базовой политике, что помечает каждую подходящую конечную точку, не трогая каждую по отдельности:
 
@@ -243,7 +243,7 @@ app.MapGet("/cheap", GetCheapThing)
     .CacheOutput(policy => policy.Expire(TimeSpan.FromSeconds(5)).SetLocking(false));
 ```
 
-Оставьте её включённой для всего дорогого. Защита от stampede это ровно то, что нужно под нагрузкой, и это тот же класс задач, который [HybridCache](/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/) решает для кеширования данных, а не кеширования целого ответа.
+Оставьте её включённой для всего дорогого. Защита от stampede это ровно то, что нужно под нагрузкой, и это тот же класс задач, который [HybridCache](/ru/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/) решает для кеширования данных, а не кеширования целого ответа.
 
 ## Дешёвая повторная валидация через ETag
 
@@ -292,11 +292,11 @@ builder.Services.AddOutputCache(options =>
 
 ## Related
 
-- [How to organize minimal API endpoints with MapGroup in ASP.NET Core 11](/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)
-- [How to use HybridCache in ASP.NET Core 11 with Redis as the L2 cache](/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/)
-- [HybridCache vs IMemoryCache vs IDistributedCache in .NET 11](/2026/06/hybridcache-vs-imemorycache-vs-idistributedcache-in-dotnet-11/)
-- [How to detect N+1 queries in EF Core 11](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)
-- [How to add per-endpoint rate limiting in ASP.NET Core 11](/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11/)
+- [How to organize minimal API endpoints with MapGroup in ASP.NET Core 11](/ru/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)
+- [How to use HybridCache in ASP.NET Core 11 with Redis as the L2 cache](/ru/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/)
+- [HybridCache vs IMemoryCache vs IDistributedCache in .NET 11](/ru/2026/06/hybridcache-vs-imemorycache-vs-idistributedcache-in-dotnet-11/)
+- [How to detect N+1 queries in EF Core 11](/ru/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)
+- [How to add per-endpoint rate limiting in ASP.NET Core 11](/ru/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11/)
 
 ## Sources
 

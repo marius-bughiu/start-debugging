@@ -51,7 +51,7 @@ await using (var db = new BloggingContext(options))
 Console.WriteLine($"second: {sw.ElapsedMilliseconds} ms");
 ```
 
-SQL Server 2025 を対象とする 30 エンティティのデモモデルで EF Core 11.0.0 を温まったノート PC で動かすと、1 回目のイテレーションはおよそ `380 ms` を、2 回目はおよそ `4 ms` を出力します。モデル構築が支配的です。同じコードがコールドな AWS Lambda(host が呼び出しごとに立ち上がる)に対して動くと、その 380 ms はそのままユーザーから見える p99 レイテンシに着地します。これは [.NET 11 AWS Lambda のコールドスタート時間を縮める](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/) で扱った問題のクラスそのものです。
+SQL Server 2025 を対象とする 30 エンティティのデモモデルで EF Core 11.0.0 を温まったノート PC で動かすと、1 回目のイテレーションはおよそ `380 ms` を、2 回目はおよそ `4 ms` を出力します。モデル構築が支配的です。同じコードがコールドな AWS Lambda(host が呼び出しごとに立ち上がる)に対して動くと、その 380 ms はそのままユーザーから見える p99 レイテンシに着地します。これは [.NET 11 AWS Lambda のコールドスタート時間を縮める](/ja/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/) で扱った問題のクラスそのものです。
 
 ## 対策その一: IHostedService で起動時にモデルをウォームアップ
 
@@ -188,9 +188,9 @@ builder.Services.AddDbContext<TenantBloggingContext>(o => o
 
 ## 関連
 
-- [変更追跡を壊さずに DbContext をモックする方法](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/)
+- [変更追跡を壊さずに DbContext をモックする方法](/ja/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/)
 - [EF Core 11 で IAsyncEnumerable を使う方法](/ja/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/)
-- [.NET 11 AWS Lambda のコールドスタート時間を縮める方法](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/)
+- [.NET 11 AWS Lambda のコールドスタート時間を縮める方法](/ja/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/)
 - [EF Core 11: RemoveDbContext とプールド factory のテストでの差し替え](/ja/2026/04/efcore-11-removedbcontext-pooled-factory-test-swap/)
 - [EF Core 11 preview 3 が split queries で reference join を刈り取る](/ja/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/)
 

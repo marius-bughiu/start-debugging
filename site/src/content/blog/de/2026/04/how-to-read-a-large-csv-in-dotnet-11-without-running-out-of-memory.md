@@ -225,7 +225,7 @@ static decimal ParseAmount(ReadOnlySequence<byte> line)
 }
 ```
 
-Das ist ausführlich, behandelt keine gequoteten Felder, und Sie sollten danach nicht greifen, es sei denn, Sie haben einen echten Bottleneck gemessen. Was Sie dafür bekommen, ist Throughput innerhalb von 10 % dessen, was die zugrundeliegende Speicherung liefern kann, weil der verwaltete Code im Wesentlichen keine Arbeit jenseits der Komma-Suche macht. Ein verwandter Trick, der hilft, wenn der Hot Path eine kleine Menge an Trennzeichen oder Sentinel-Bytes hat, ist [`SearchValues<T>`, eingeführt in .NET 10](/2026/01/net-10-performance-searchvalues/), das den Scan für ein beliebiges Byte aus einer Menge vektorisiert.
+Das ist ausführlich, behandelt keine gequoteten Felder, und Sie sollten danach nicht greifen, es sei denn, Sie haben einen echten Bottleneck gemessen. Was Sie dafür bekommen, ist Throughput innerhalb von 10 % dessen, was die zugrundeliegende Speicherung liefern kann, weil der verwaltete Code im Wesentlichen keine Arbeit jenseits der Komma-Suche macht. Ein verwandter Trick, der hilft, wenn der Hot Path eine kleine Menge an Trennzeichen oder Sentinel-Bytes hat, ist [`SearchValues<T>`, eingeführt in .NET 10](/de/2026/01/net-10-performance-searchvalues/), das den Scan für ein beliebiges Byte aus einer Menge vektorisiert.
 
 ## Fallstricke, die Sie in Produktion beißen werden
 
@@ -247,7 +247,7 @@ using var reader = new StreamReader(zstd);
 // feed `reader` to CsvReader or parse lines directly
 ```
 
-Für Kontext zur neuen built-in Zstandard-Unterstützung siehe [die native Zstandard-Kompression von .NET 11](/2026/04/dotnet-11-zstandard-compression-system-io/). Vor .NET 11 brauchten Sie das NuGet-Paket `ZstdNet`; die System.IO.Compression-Version ist deutlich schneller und vermeidet eine P/Invoke-Abhängigkeit.
+Für Kontext zur neuen built-in Zstandard-Unterstützung siehe [die native Zstandard-Kompression von .NET 11](/de/2026/04/dotnet-11-zstandard-compression-system-io/). Vor .NET 11 brauchten Sie das NuGet-Paket `ZstdNet`; die System.IO.Compression-Version ist deutlich schneller und vermeidet eine P/Invoke-Abhängigkeit.
 
 Cancellation ist wichtiger, als Sie denken. Ein 20 GB CSV-Parse ist eine Operation von mehreren Minuten. Wenn der Aufrufer aufgibt, wollen Sie, dass der Enumerator es beim nächsten Datensatz bemerkt und `OperationCanceledException` wirft, nicht bis zum Ende läuft. Alle Async-Varianten oben fädeln einen `CancellationToken`; für die synchrone `File.ReadLines`-Schleife prüfen Sie `ct.ThrowIfCancellationRequested()` innerhalb des Schleifenkörpers in einem vernünftigen Intervall (alle 1000 Zeilen, nicht jede Zeile).
 

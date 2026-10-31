@@ -124,4 +124,4 @@ Esta característica en C# 14 alinea la sintaxis de las lambdas con la comodidad
 
 -   [Novedades en C# 14 | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14)
 -   [Parámetros simples de lambda con modificadores | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/simple-lambda-parameters-with-modifiers)
--   [Novedades en C# 14 | StartDebugging.NET](/2024/12/csharp-14/)
+-   [Novedades en C# 14 | StartDebugging.NET](/es/2024/12/csharp-14/)

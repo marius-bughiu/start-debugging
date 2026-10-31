@@ -19,7 +19,7 @@ translationDate: 2026-07-03
 
 ## デフォルトのバリデーションレスポンスの見た目
 
-[コントローラーなしで Minimal API のリクエストボディをバリデーションする方法](/2026/06/how-to-validate-request-bodies-in-minimal-apis-without-controllers-in-aspnetcore-11/) で扱ったセットアップから始めます。`AddValidation()` を呼び、リクエストレコードにアノテーションを付け、あとはソースジェネレーターに仕事をさせます。
+[コントローラーなしで Minimal API のリクエストボディをバリデーションする方法](/ja/2026/06/how-to-validate-request-bodies-in-minimal-apis-without-controllers-in-aspnetcore-11/) で扱ったセットアップから始めます。`AddValidation()` を呼び、リクエストレコードにアノテーションを付け、あとはソースジェネレーターに仕事をさせます。
 
 ```csharp
 // .NET 11, C# 14 -- Program.cs
@@ -139,7 +139,7 @@ app.UseStatusCodePages();    // fills empty 4xx/5xx responses with ProblemDetail
 app.Run();
 ```
 
-これらがないと、素の `Results.NotFound()` やマッチしなかったルートは空のボディを返します。なぜなら問題の詳細は「まだボディコンテンツを持たないレスポンス」に対してのみ生成されるからです。バリデーションはこの結線を必要としない例外です。バリデーションフィルター自体が `IProblemDetailsService` を呼び出すので、その `400` は `UseStatusCodePages()` を追加するかどうかに関わらずカスタマイズされます。バリデーションが捕まえないものをグローバルなバックストップで捕まえたい場合、例外パスの仕組みは [ASP.NET Core 11 でグローバル例外フィルターを追加する方法](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) で扱っています。
+これらがないと、素の `Results.NotFound()` やマッチしなかったルートは空のボディを返します。なぜなら問題の詳細は「まだボディコンテンツを持たないレスポンス」に対してのみ生成されるからです。バリデーションはこの結線を必要としない例外です。バリデーションフィルター自体が `IProblemDetailsService` を呼び出すので、その `400` は `UseStatusCodePages()` を追加するかどうかに関わらずカスタマイズされます。バリデーションが捕まえないものをグローバルなバックストップで捕まえたい場合、例外パスの仕組みは [ASP.NET Core 11 でグローバル例外フィルターを追加する方法](/ja/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) で扱っています。
 
 ## バリデーションで 400 の代わりに 422 を返す
 
@@ -234,15 +234,15 @@ app.MapPost("/legacy/products", (CreateProduct product) =>
 - **内部情報を `Detail` に漏らさないでください。** コールバック内で例外メッセージを `ProblemDetails.Detail` に詰め込みたくなります。本番ではそれがスタックトレースの断片や内部の型名を露出させます。`Detail` はクライアントに安全なものに保ち、診断情報は代わりにログの中で `traceId` の背後に置いてください。
 - **コールバックはすべてのエラーのホットパスで実行されます。** 安価に保ってください。`Activity.Current` を読み、ディクショナリのキーを設定するのは問題ありませんが、`CustomizeProblemDetails` の中でデータベース接続を開いたりリモートサービスを呼んだりするのはダメです。レスポンスを書き込む間に同期的に実行されるからです。
 
-覚えておくべきモデルは次のとおりです。`AddValidation()` が何が不正かを決め、`AddProblemDetails()` がその不正さがどう記述されるかを決め、`CustomizeProblemDetails` が、フレームワークが生成したすべてのエラーに対してその記述を一度に形作る唯一の場所です。`traceId` はそこで追加し、`title` はそこで書き換え、`422` へはそこで昇格させ、シリアライズを所有する必要があるときだけカスタムの `IProblemDetailsWriter` に手を伸ばしてください。バリデーションフィルターが捕まえないものについては、[グローバル例外フィルター](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) が同じカスタマイズを運びます。そして組み込みのバリデーターがそもそもあなたのルールをカバーするかまだ判断中なら、[Minimal API バリデーション vs FluentValidation](/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11/) がその線を引きます。
+覚えておくべきモデルは次のとおりです。`AddValidation()` が何が不正かを決め、`AddProblemDetails()` がその不正さがどう記述されるかを決め、`CustomizeProblemDetails` が、フレームワークが生成したすべてのエラーに対してその記述を一度に形作る唯一の場所です。`traceId` はそこで追加し、`title` はそこで書き換え、`422` へはそこで昇格させ、シリアライズを所有する必要があるときだけカスタムの `IProblemDetailsWriter` に手を伸ばしてください。バリデーションフィルターが捕まえないものについては、[グローバル例外フィルター](/ja/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) が同じカスタマイズを運びます。そして組み込みのバリデーターがそもそもあなたのルールをカバーするかまだ判断中なら、[Minimal API バリデーション vs FluentValidation](/ja/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11/) がその線を引きます。
 
 ## 関連記事
 
-- [ASP.NET Core 11 でコントローラーなしで Minimal API のリクエストボディをバリデーションする方法](/2026/06/how-to-validate-request-bodies-in-minimal-apis-without-controllers-in-aspnetcore-11/)：この記事がカスタマイズする `AddValidation()` のセットアップについて。
-- [ASP.NET Core 11 における Minimal API バリデーション vs FluentValidation](/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11/)：出力をカスタマイズする前に、組み込みのバリデーターがあなたのルールに合うかどうかについて。
-- [ASP.NET Core 11 でグローバル例外フィルターを追加する方法](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/)：バリデーションが捕まえないものを、同じ `ProblemDetails` の形で捕まえることについて。
-- [ASP.NET Core 11 で MapGroup を使って Minimal API のエンドポイントを整理する方法](/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)：ルートグループ全体にバリデーションとその問題の詳細を適用することについて。
-- [ASP.NET Core 11 における Minimal API vs コントローラー](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/)：2 つのエンドポイントモデルでエラー処理がどう異なるかについて。
+- [ASP.NET Core 11 でコントローラーなしで Minimal API のリクエストボディをバリデーションする方法](/ja/2026/06/how-to-validate-request-bodies-in-minimal-apis-without-controllers-in-aspnetcore-11/)：この記事がカスタマイズする `AddValidation()` のセットアップについて。
+- [ASP.NET Core 11 における Minimal API バリデーション vs FluentValidation](/ja/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11/)：出力をカスタマイズする前に、組み込みのバリデーターがあなたのルールに合うかどうかについて。
+- [ASP.NET Core 11 でグローバル例外フィルターを追加する方法](/ja/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/)：バリデーションが捕まえないものを、同じ `ProblemDetails` の形で捕まえることについて。
+- [ASP.NET Core 11 で MapGroup を使って Minimal API のエンドポイントを整理する方法](/ja/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)：ルートグループ全体にバリデーションとその問題の詳細を適用することについて。
+- [ASP.NET Core 11 における Minimal API vs コントローラー](/ja/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/)：2 つのエンドポイントモデルでエラー処理がどう異なるかについて。
 
 ## 出典
 

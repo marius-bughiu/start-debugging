@@ -84,4 +84,4 @@ El soporte para tipos genéricos no enlazados en la expresión `nameof` es una m
 2.  [Generics and attributes – C# | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/reflection-and-attributes/generics-and-attributes#:~:text=constructed%20generic%20types%2C%20not%20on,Dictionary)
 3.  [The nameof expression – evaluate the text name of a symbol – C# reference | Microsoft Learn](https://msdn.microsoft.com/en-us/library/dn986596.aspx#:~:text=Console.WriteLine%28nameof%28List,%2F%2F%20output%3A%20List)
 4.  [Unbound generic types in `nameof` – C# feature specifications (preview) | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/unbound-generic-types-in-nameof#:~:text=Motivation)
-5.  [What's new in C# 14 | StartDebugging.NET](/2024/12/csharp-14/)
+5.  [What's new in C# 14 | StartDebugging.NET](/es/2024/12/csharp-14/)

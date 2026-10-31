@@ -242,10 +242,10 @@ Ein Abbruch-Button, der funktioniert, ist neun von zehn Mal das Ergebnis von dre
 
 ## Verwandte Lektüre
 
-- [Streaming von Datenbankzeilen mit IAsyncEnumerable](/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/), das sich stark auf dieselbe Token-Installation stützt.
-- [Sauberere async Stack-Traces in der .NET 11 Runtime](/2026/04/dotnet-11-runtime-async-cleaner-stack-traces/), nützlich, wenn eine `OperationCanceledException` tief in einer Pipeline auftaucht.
+- [Streaming von Datenbankzeilen mit IAsyncEnumerable](/de/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/), das sich stark auf dieselbe Token-Installation stützt.
+- [Sauberere async Stack-Traces in der .NET 11 Runtime](/de/2026/04/dotnet-11-runtime-async-cleaner-stack-traces/), nützlich, wenn eine `OperationCanceledException` tief in einer Pipeline auftaucht.
 - [Wie man mehrere Werte aus einer Methode in C# 14 zurückgibt](/de/2026/04/how-to-return-multiple-values-from-a-method-in-csharp-14/) passt gut zu async-Methoden, die "Ergebnis oder Abbruchgrund" zurückgeben wollen.
-- [Das Ende von `lock (object)` in .NET 9](/2026/01/net-9-the-end-of-lockobject/) für den breiteren Threading-Kontext, in dem Ihr Abbruch-Code läuft.
+- [Das Ende von `lock (object)` in .NET 9](/de/2026/01/net-9-the-end-of-lockobject/) für den breiteren Threading-Kontext, in dem Ihr Abbruch-Code läuft.
 
 ## Quellen
 

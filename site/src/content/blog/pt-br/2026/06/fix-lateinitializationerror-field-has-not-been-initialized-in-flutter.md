@@ -136,9 +136,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 }
 ```
 
-A guarda `if (!mounted) return;` antes do `setState` não é opcional aqui: um callback assíncrono que se resolve depois que o usuário saiu da tela vai, caso contrário, lançar um erro diferente. Essa guarda é a mesma disciplina que você precisa para [usar BuildContext com segurança depois de um await](/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/), e ela acompanha todo callback aguardado em um `State`.
+A guarda `if (!mounted) return;` antes do `setState` não é opcional aqui: um callback assíncrono que se resolve depois que o usuário saiu da tela vai, caso contrário, lançar um erro diferente. Essa guarda é a mesma disciplina que você precisa para [usar BuildContext com segurança depois de um await](/pt-br/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/), e ela acompanha todo callback aguardado em um `State`.
 
-Para qualquer coisa além de um único valor, prefira um `FutureBuilder` ou, se você está usando Riverpod, um `AsyncValue` que codifica carregamento, erro e dados como três casos explícitos. Escrever o resultado direto em um campo depois de um await é exatamente o padrão que produz este crash e seus irmãos no momento do disposal; modelar a requisição como estado em vez disso é abordado em [mostrar estados de carregamento e erro com AsyncValue](/2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod/).
+Para qualquer coisa além de um único valor, prefira um `FutureBuilder` ou, se você está usando Riverpod, um `AsyncValue` que codifica carregamento, erro e dados como três casos explícitos. Escrever o resultado direto em um campo depois de um await é exatamente o padrão que produz este crash e seus irmãos no momento do disposal; modelar a requisição como estado em vez disso é abordado em [mostrar estados de carregamento e erro com AsyncValue](/pt-br/2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod/).
 
 ### 2. Se o valor é síncrono, atribua-o em initState antes do primeiro build
 
@@ -166,7 +166,7 @@ class _EditorState extends State<Editor> {
 }
 ```
 
-Este é o uso legítimo de `late final` em um `State`: você precisa de `widget.initialText`, que não está disponível em um inicializador de campo, mas está disponível em `initState()`, que ainda roda antes de qualquer build. Como o controller é criado exatamente uma vez e nunca reatribuído, `late final` é o modificador correto, e você ainda lhe deve um `dispose()`, como o [guia de disposal de controllers](/2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks/) expõe.
+Este é o uso legítimo de `late final` em um `State`: você precisa de `widget.initialText`, que não está disponível em um inicializador de campo, mas está disponível em `initState()`, que ainda roda antes de qualquer build. Como o controller é criado exatamente uma vez e nunca reatribuído, `late final` é o modificador correto, e você ainda lhe deve um `dispose()`, como o [guia de disposal de controllers](/pt-br/2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks/) expõe.
 
 ### 3. Use um inicializador preguiçoso para que o campo nunca possa ficar sem atribuição
 
@@ -217,7 +217,7 @@ Fazer isso em `initState()` ou lança a exceção (Flutter mais antigo) ou retor
 
 Ele lança em release, mas a mensagem sumiu. Em builds de release, a maquinaria de assertion é removida, mas uma leitura de `late`-sem-inicializador ainda lança `LateInitializationError`; apenas a mensagem rica de debug é reduzida. Não presuma que crashes de `late` são exclusivos do debug. Eles vão para produção.
 
-`late` versus o operador de null-check. Recorrer a `late` para silenciar "the non-nullable field must be initialized" é o mesmo instinto que faz as pessoas espalharem `!` para silenciar a nulabilidade. Ambos adiam uma garantia de tempo de compilação para um crash de runtime. Se um valor pode legitimamente estar ausente, modele-o como anulável e trate o null; `late` é apenas para valores que estão sempre presentes, mas atribuídos um pouco depois da declaração. O modelo mental mais amplo de null safety, incluindo quando `late` é e quando não é a válvula de escape correta, está no [checklist de null safety do Flutter 2 para 3.x](/2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist/).
+`late` versus o operador de null-check. Recorrer a `late` para silenciar "the non-nullable field must be initialized" é o mesmo instinto que faz as pessoas espalharem `!` para silenciar a nulabilidade. Ambos adiam uma garantia de tempo de compilação para um crash de runtime. Se um valor pode legitimamente estar ausente, modele-o como anulável e trate o null; `late` é apenas para valores que estão sempre presentes, mas atribuídos um pouco depois da declaração. O modelo mental mais amplo de null safety, incluindo quando `late` é e quando não é a válvula de escape correta, está no [checklist de null safety do Flutter 2 para 3.x](/pt-br/2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist/).
 
 Um campo `late` lido dentro de seu próprio inicializador. Se um inicializador preguiçoso `late final x = ...x...;` lê `x`, você recebe um `LateInitializationError` sobre leitura durante a inicialização. O ciclo é o bug; quebre-o computando o valor sem referenciar o campo.
 
@@ -225,11 +225,11 @@ A única disciplina que remove toda esta classe de bugs: use `late` apenas para 
 
 ## Relacionados
 
-- [How to use BuildContext safely after an await in Flutter](/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/) cobre a guarda `mounted` da qual a correção assíncrona acima depende.
-- [How to show loading and error states with AsyncValue in Flutter Riverpod](/2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod/) é a alternativa estruturada a escrever resultados assíncronos em um campo `late`.
-- [Fix: A TextEditingController was used after being disposed in Flutter](/2026/06/fix-texteditingcontroller-was-used-after-being-disposed-in-flutter/) é a outra metade do ciclo de vida do controller da qual os controllers `late final` participam.
-- [How to dispose controllers in Flutter to avoid memory leaks](/2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks/) combina com o padrão `late final TextEditingController` da correção 2.
-- [Migrate a Flutter 2 app to Flutter 3.x: null safety checklist](/2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist/) explica onde `late` se encaixa em null safety e onde tipos anuláveis são a melhor escolha.
+- [How to use BuildContext safely after an await in Flutter](/pt-br/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/) cobre a guarda `mounted` da qual a correção assíncrona acima depende.
+- [How to show loading and error states with AsyncValue in Flutter Riverpod](/pt-br/2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod/) é a alternativa estruturada a escrever resultados assíncronos em um campo `late`.
+- [Fix: A TextEditingController was used after being disposed in Flutter](/pt-br/2026/06/fix-texteditingcontroller-was-used-after-being-disposed-in-flutter/) é a outra metade do ciclo de vida do controller da qual os controllers `late final` participam.
+- [How to dispose controllers in Flutter to avoid memory leaks](/pt-br/2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks/) combina com o padrão `late final TextEditingController` da correção 2.
+- [Migrate a Flutter 2 app to Flutter 3.x: null safety checklist](/pt-br/2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist/) explica onde `late` se encaixa em null safety e onde tipos anuláveis são a melhor escolha.
 
 ## Fontes
 

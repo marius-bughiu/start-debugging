@@ -148,4 +148,4 @@ public partial class Car
 -   [Что нового в C# 14 | Microsoft Learn](https://learn.microsoft.com/dotnet/csharp/whats-new/csharp-14#more-partial-members)
 -   [Partial-события и конструкторы -- спецификации возможностей C# (preview) | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/partial-events-and-constructors#:~:text=A%20partial%20event%20declaration%20is,it%20is%20a%20defining%20declaration)
 -   [Partial Events & Constructors in .NET 10 Preview 2 | by Sukhpinder Singh](https://medium.com/write-a-catalyst/partial-events-constructors-in-net-10-preview-2-8002f0d714b2#:~:text=1)
--   [Что нового в .NET 10 | StartDebugging.NET](/2024/12/dotnet-10/)
+-   [Что нового в .NET 10 | StartDebugging.NET](/ru/2024/12/dotnet-10/)

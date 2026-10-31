@@ -135,7 +135,7 @@ Die sauberste Art, über die Aufteilung nachzudenken:
 
 Daraus ergeben sich zwei praktische Regeln. Erstens: Duplizieren Sie keine Einträge der automatischen Memory "zur Sicherheit" in CLAUDE.md. Die automatische Memory wird ebenfalls in jeder Sitzung geladen. Zweitens: Wenn die automatische Memory ein Muster ansammelt, das das gesamte Team kennen sollte, befördern Sie es: öffnen Sie `MEMORY.md`, kopieren Sie den Eintrag in CLAUDE.md, und mit `/memory` können Sie das Original löschen. Die Beförderung ist der Moment, in dem aus "Claude hat das über mich beobachtet" "wir als Team haben das so entschieden" wird.
 
-Mehr zur Aufteilung deckt der Beitrag über das [Planen wiederkehrender Claude-Code-Routinen](/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues/) ab; er behandelt, was eine autonome Ausführung ohne Mensch im Loop überlebt, was ein nützlicher Drucktest dafür ist, ob Ihre CLAUDE.md tatsächlich in sich abgeschlossen ist.
+Mehr zur Aufteilung deckt der Beitrag über das [Planen wiederkehrender Claude-Code-Routinen](/de/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues/) ab; er behandelt, was eine autonome Ausführung ohne Mensch im Loop überlebt, was ein nützlicher Drucktest dafür ist, ob Ihre CLAUDE.md tatsächlich in sich abgeschlossen ist.
 
 ## Auf Befolgung trimmen
 
@@ -165,8 +165,8 @@ Die andere Diagnose, die wissenswert ist: HTML-Block-Kommentare (`<!-- like this
 
 ## Verwandt
 
-- [So planen Sie eine wiederkehrende Claude-Code-Aufgabe, die GitHub-Issues triagiert](/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues/) deckt ab, was eine CLAUDE.md für autonome Läufe braucht.
-- [Claude Code 2.1.119: Start aus einem PR mit GitLab und Bitbucket](/2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket/) für die verwandte Frage "wo wohnen meine Anweisungen in einer Cloud-Sitzung".
+- [So planen Sie eine wiederkehrende Claude-Code-Aufgabe, die GitHub-Issues triagiert](/de/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues/) deckt ab, was eine CLAUDE.md für autonome Läufe braucht.
+- [Claude Code 2.1.119: Start aus einem PR mit GitLab und Bitbucket](/de/2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket/) für die verwandte Frage "wo wohnen meine Anweisungen in einer Cloud-Sitzung".
 - [Visual Studio 2026 Copilot Agent Skills](/de/2026/04/visual-studio-2026-copilot-agent-skills/) ist das nächstliegende Pendant auf Microsoft-Seite: Skill-Dateien gegenüber persistentem Kontext.
 - [Einen MCP-Server in TypeScript bauen](/de/2026/04/how-to-build-an-mcp-server-in-typescript-that-wraps-a-cli/) für den Fall, dass die bessere Antwort als "mehr Regeln in CLAUDE.md" lautet "exponieren Sie das Werkzeug für den Agenten".
 

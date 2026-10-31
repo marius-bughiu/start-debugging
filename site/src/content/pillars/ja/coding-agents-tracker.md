@@ -20,9 +20,9 @@ translationOf: "coding-agents-tracker"
 
 ## まず読むべき記事
 
-このトピックが初めてなら、.NET 側については [Microsoft Agent Framework 1.0: Building AI Agents in Pure C#](/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) から、2026 年の多くの記事の土台となっている MCP の配線については [Wiring Model Context Protocol servers from C# on .NET 10](/2026/01/microsoft-mcp-wiring-model-context-protocol-servers-from-c-on-net-10/) から始めてください。
+このトピックが初めてなら、.NET 側については [Microsoft Agent Framework 1.0: Building AI Agents in Pure C#](/ja/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) から、2026 年の多くの記事の土台となっている MCP の配線については [Wiring Model Context Protocol servers from C# on .NET 10](/ja/2026/01/microsoft-mcp-wiring-model-context-protocol-servers-from-c-on-net-10/) から始めてください。
 
-Copilot に特化した内容としては、[Agent Skills land in Visual Studio 2026 18.5](/2026/04/visual-studio-2026-copilot-agent-skills/) と [What 878 Copilot Coding Agent PRs in dotnet/runtime actually look like](/2026/03/copilot-coding-agent-dotnet-runtime-ten-months-data/) が機能面と実際の運用結果の両方を扱っています。
+Copilot に特化した内容としては、[Agent Skills land in Visual Studio 2026 18.5](/ja/2026/04/visual-studio-2026-copilot-agent-skills/) と [What 878 Copilot Coding Agent PRs in dotnet/runtime actually look like](/ja/2026/03/copilot-coding-agent-dotnet-runtime-ten-months-data/) が機能面と実際の運用結果の両方を扱っています。
 
 ## このページについて
 

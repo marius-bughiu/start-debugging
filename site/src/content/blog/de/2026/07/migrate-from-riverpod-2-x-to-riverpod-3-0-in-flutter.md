@@ -23,7 +23,7 @@ Eine echte App von `flutter_riverpod` 2.x auf 3.x zu aktualisieren ist üblicher
 Riverpod 2.x funktioniert weiterhin, also muss das Argument für einen Umstieg konkret sein:
 
 - **Automatische Wiederholung** mit exponentiellem Backoff ist eingebaut. Ein `FutureProvider`, der bei einem instabilen Netzwerk fehlschlägt, bleibt nicht mehr fehlgeschlagen, bis Sie ihn manuell mit `ref.invalidate` zurücksetzen.
-- **`Ref.mounted`** ersetzt das selbstgebaute "lebt dieser Provider nach dem await noch"-Mixin, das jede nicht-triviale App früher mitschleppen musste. Siehe [Ref.mounted nach einer async-Lücke prüfen](/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/) für das vollständige Muster.
+- **`Ref.mounted`** ersetzt das selbstgebaute "lebt dieser Provider nach dem await noch"-Mixin, das jede nicht-triviale App früher mitschleppen musste. Siehe [Ref.mounted nach einer async-Lücke prüfen](/de/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/) für das vollständige Muster.
 - **Ein einheitlicher `Ref`-Typ** und ein `Notifier` pro Form. Keine `AutoDisposeFamilyAsyncNotifier`-Typnamen mehr, die sich wie ein Compiler-Belastungstest lesen.
 - **Offline-Persistenz** und **Mutationen** kommen als experimentelle APIs, sodass Formular-Übermittlungszustand und Cache-über-Neustart hinweg nicht mehr etwas sind, das Sie von Hand bauen.
 
@@ -102,7 +102,7 @@ import 'package:flutter_riverpod/legacy.dart';
 final counterProvider = StateProvider<int>((ref) => 0);
 ```
 
-Das ist ein bewusster Anstoß, keine Deprecation-Warnung, die Sie für immer ignorieren können. Der langfristige Schritt ist, jeden `StateProvider` als `Notifier` und jeden `StateNotifierProvider` als `Notifier` oder `AsyncNotifier` umzuschreiben, dieselbe Zielform, auf der Sie beim [Migrieren vom provider-Paket](/2026/06/migrate-from-provider-to-riverpod-in-flutter/) landen würden. Aber Sie müssen diese Umschreibung nicht während der Versionsanhebung erledigen. Fügen Sie den Import hinzu, werden Sie grün, und konvertieren Sie später.
+Das ist ein bewusster Anstoß, keine Deprecation-Warnung, die Sie für immer ignorieren können. Der langfristige Schritt ist, jeden `StateProvider` als `Notifier` und jeden `StateNotifierProvider` als `Notifier` oder `AsyncNotifier` umzuschreiben, dieselbe Zielform, auf der Sie beim [Migrieren vom provider-Paket](/de/2026/06/migrate-from-provider-to-riverpod-in-flutter/) landen würden. Aber Sie müssen diese Umschreibung nicht während der Versionsanhebung erledigen. Fügen Sie den Import hinzu, werden Sie grün, und konvertieren Sie später.
 
 **Prüfen:** Die App kompiliert. Greppen Sie nach `legacy.dart` und bestätigen Sie, dass jede Datei, die einen Legacy-Provider verwendet, den Import hat, und keine Datei ihn ohne Bedarf importiert (der Linter markiert den ungenutzten Import).
 
@@ -186,7 +186,7 @@ try {
 }
 ```
 
-Der ungewrappte Pfad ist `AsyncValue`. Wenn Sie einen Provider mit `.when(error: ...)` rendern oder gegen einen `AsyncError` matchen, ist der Fehler, den Sie dort erhalten, Ihre ursprüngliche Exception, nicht der Wrapper. Also ist UI-Code, der Zustand reaktiv liest, unbetroffen; nur imperatives `ref.read(...future)` innerhalb eines `try`/`catch` benötigt die Änderung. Der spezielle Beitrag zu [Riverpods 3.0 ProviderException](/2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error/) behandelt die Randfälle.
+Der ungewrappte Pfad ist `AsyncValue`. Wenn Sie einen Provider mit `.when(error: ...)` rendern oder gegen einen `AsyncError` matchen, ist der Fehler, den Sie dort erhalten, Ihre ursprüngliche Exception, nicht der Wrapper. Also ist UI-Code, der Zustand reaktiv liest, unbetroffen; nur imperatives `ref.read(...future)` innerhalb eines `try`/`catch` benötigt die Änderung. Der spezielle Beitrag zu [Riverpods 3.0 ProviderException](/de/2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error/) behandelt die Randfälle.
 
 **Prüfen:** Greppen Sie nach `ref.read(` kombiniert mit `.future` innerhalb von `try`-Blöcken und nach jeder `catch`-Klausel, die eine Domänen-Exception benennt. Fügen Sie einen Test hinzu, der einen Provider werfen lässt und bestätigt, dass Ihr Handler noch läuft.
 
@@ -194,7 +194,7 @@ Der ungewrappte Pfad ist `AsyncValue`. Wenn Sie einen Provider mit `.when(error:
 
 In 2.x hatten verschiedene Provider-Typen unterschiedliche Regeln, um zu entscheiden, wann Listener benachrichtigt werden. In 3.0 verwenden sie alle `==`. Für `Notifier`-Zustand ist das üblicherweise in Ordnung, aber es beißt hart bei `StreamProvider` und `StreamNotifier`: Wenn Ihr Stream Objekte emittiert, die per `==` gleich sind (zum Beispiel veränderliche Klassen, die Gleichheit nicht überschreiben, oder zwei Werte, die zufällig gleich vergleichen), wird die zweite Emission jetzt als Duplikat verworfen.
 
-Der Fehlermodus ist eine UI, die aufhört zu aktualisieren, obwohl der Stream eindeutig emittiert. Der Fix ist, sicherzustellen, dass der emittierte Typ korrekte Gleichheitssemantik hat. Wenn Sie Domänenobjekte emittieren, geben Sie ihnen Wertgleichheit (ein `record`, eine Freezed-Klasse oder ein handgeschriebenes `==`/`hashCode`). Siehe [Dart records vs Freezed classes](/2026/05/dart-records-vs-freezed-classes/) dazu, wozu man greifen sollte.
+Der Fehlermodus ist eine UI, die aufhört zu aktualisieren, obwohl der Stream eindeutig emittiert. Der Fix ist, sicherzustellen, dass der emittierte Typ korrekte Gleichheitssemantik hat. Wenn Sie Domänenobjekte emittieren, geben Sie ihnen Wertgleichheit (ein `record`, eine Freezed-Klasse oder ein handgeschriebenes `==`/`hashCode`). Siehe [Dart records vs Freezed classes](/de/2026/05/dart-records-vs-freezed-classes/) dazu, wozu man greifen sollte.
 
 ```dart
 // Riverpod 3.x -- two distinct ticks that are == would be collapsed.
@@ -284,11 +284,11 @@ Diese Migration ist in der Praxis eine Einbahntür. In dem Moment, in dem Sie `i
 
 ## Verwandt
 
-- [Migrate from provider to Riverpod in Flutter](/2026/06/migrate-from-provider-to-riverpod-in-flutter/)
-- [How to check Ref.mounted after an async gap in Flutter Riverpod 3](/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/)
-- [Fix: Riverpod 3.0 throws ProviderException instead of the original error](/2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error/)
-- [Provider vs Riverpod vs Bloc for Flutter state management in 2026](/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/)
-- [Migrate from FutureBuilder to a Riverpod AsyncNotifier in Flutter](/2026/06/migrate-from-futurebuilder-to-a-riverpod-asyncnotifier-in-flutter/)
+- [Migrate from provider to Riverpod in Flutter](/de/2026/06/migrate-from-provider-to-riverpod-in-flutter/)
+- [How to check Ref.mounted after an async gap in Flutter Riverpod 3](/de/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/)
+- [Fix: Riverpod 3.0 throws ProviderException instead of the original error](/de/2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error/)
+- [Provider vs Riverpod vs Bloc for Flutter state management in 2026](/de/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/)
+- [Migrate from FutureBuilder to a Riverpod AsyncNotifier in Flutter](/de/2026/06/migrate-from-futurebuilder-to-a-riverpod-asyncnotifier-in-flutter/)
 
 ## Quellen
 

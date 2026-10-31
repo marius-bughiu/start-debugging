@@ -11,7 +11,7 @@ translationOf: "2023/10/jsonnode-net-8-api-updates"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-В рамках .NET 8 у `JsonNode` и `JsonArray` появилось несколько новых пунктов в API. О [deep copy и deep equality мы уже рассказывали в предыдущей статье](/2023/10/deep-cloning-and-deep-equality-of-a-jsonnode/), но это далеко не всё.
+В рамках .NET 8 у `JsonNode` и `JsonArray` появилось несколько новых пунктов в API. О [deep copy и deep equality мы уже рассказывали в предыдущей статье](/ru/2023/10/deep-cloning-and-deep-equality-of-a-jsonnode/), но это далеко не всё.
 
 ## `GetValueKind`
 

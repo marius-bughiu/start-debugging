@@ -22,7 +22,7 @@ Die meisten Teams greifen zu früh zu einem benutzerdefinierten Konverter. Bevor
 
 - Eigenschaftsnamen, die nicht passen: nutzen Sie `JsonPropertyNameAttribute` oder eine `JsonNamingPolicy`. Preview 3 hat `JsonNamingPolicy.PascalCase` und ein Member-Level-`[JsonNamingPolicy]`-Attribut hinzugefügt, sodass die [Naming Policies in System.Text.Json 11](/de/2026/04/system-text-json-11-pascalcase-per-member-naming/) wahrscheinlich abdecken, was Sie brauchen.
 - Zahlen als Strings: `JsonNumberHandling.AllowReadingFromString` auf `JsonSerializerOptions`.
-- Enums als Strings: `JsonStringEnumConverter` ist eingebaut. Es gibt sogar eine [trim-freundliche Variante für Native AOT](/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/).
+- Enums als Strings: `JsonStringEnumConverter` ist eingebaut. Es gibt sogar eine [trim-freundliche Variante für Native AOT](/de/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/).
 - Schreibgeschützte Eigenschaften oder Konstruktorparameter: der Source Generator (`[JsonSerializable]` plus `JsonSerializerContext`) behandelt Records und primäre Konstruktoren direkt.
 - Polymorphie per Diskriminator: `[JsonDerivedType]` und `[JsonPolymorphic]` (in .NET 7 hinzugefügt) vermeiden fast jeden alten Konverter-Trick.
 
@@ -340,7 +340,7 @@ Für AOT-freundliche Factories tun Sie eines von beidem:
 - Beschränken Sie die Factory auf eine bekannte, endliche Menge geschlossener Generika und instanziieren Sie sie direkt mit `new ResultConverter<MyValue, MyError>()` pro Paar.
 - Annotieren Sie die Factory mit `[RequiresDynamicCode]` und `[RequiresUnreferencedCode]`, akzeptieren Sie die Trim-Warnungen und dokumentieren Sie, dass AOT-Konsumenten den geschlossenen Konverter manuell registrieren müssen.
 
-Das Muster, Interceptors zu nutzen, damit `JsonSerializer.Serialize`-Aufrufe automatisch einen generierten Kontext aufgreifen, behandelt im [C#-14-Interceptor-Vorschlag für quellgenerierten JSON](/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/), ist unabhängig von Konvertern: selbst damit schreiben Sie Ihren benutzerdefinierten `JsonConverter<T>` weiterhin auf dieselbe Weise.
+Das Muster, Interceptors zu nutzen, damit `JsonSerializer.Serialize`-Aufrufe automatisch einen generierten Kontext aufgreifen, behandelt im [C#-14-Interceptor-Vorschlag für quellgenerierten JSON](/de/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/), ist unabhängig von Konvertern: selbst damit schreiben Sie Ihren benutzerdefinierten `JsonConverter<T>` weiterhin auf dieselbe Weise.
 
 ## Stolperfallen, in der Reihenfolge, wie oft sie zuschlagen
 
@@ -358,8 +358,8 @@ Wenn Sie das im Kopf behalten, braucht ein Konverter selten mehr als 30 Zeilen C
 
 - [How to use Channels instead of BlockingCollection in C#](/de/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) -- Async-First-Muster, dieselbe Ära des API-Designs.
 - [System.Text.Json in .NET 11 Preview 3 fügt PascalCase und Per-Member-Naming hinzu](/de/2026/04/system-text-json-11-pascalcase-per-member-naming/) -- wann eine Naming Policy reicht und ein Konverter nicht.
-- [How to use JsonStringEnumConverter with Native AOT](/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/) -- die Trim-/AOT-Geschichte für eingebaute Konverter.
-- [Interceptors for System.Text.Json source generation](/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/) -- eine parallele Ergonomie-Richtung, die es zu verfolgen lohnt.
+- [How to use JsonStringEnumConverter with Native AOT](/de/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/) -- die Trim-/AOT-Geschichte für eingebaute Konverter.
+- [Interceptors for System.Text.Json source generation](/de/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/) -- eine parallele Ergonomie-Richtung, die es zu verfolgen lohnt.
 - [How to return multiple values from a method in C# 14](/de/2026/04/how-to-return-multiple-values-from-a-method-in-csharp-14/) -- die Value-Tuple- und Record-Muster, die oft einen Konverter brauchen.
 
 ## Quellen

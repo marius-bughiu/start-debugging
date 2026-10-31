@@ -23,7 +23,7 @@ translationDate: 2026-07-09
 Riverpod 2.x はまだ動作するので、移行する理由は具体的でなければなりません。
 
 - **指数バックオフ付きの自動リトライ**が組み込まれました。不安定なネットワークで失敗した `FutureProvider` は、手動で `ref.invalidate` するまで失敗したままになる、ということがなくなります。
-- **`Ref.mounted`** が、非自明なアプリがどれも抱えていた「await のあとにこのプロバイダーはまだ生きているか」を判定する手作りの mixin を置き換えます。完全なパターンについては [async ギャップのあとに Ref.mounted を確認する方法](/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/) を参照してください。
+- **`Ref.mounted`** が、非自明なアプリがどれも抱えていた「await のあとにこのプロバイダーはまだ生きているか」を判定する手作りの mixin を置き換えます。完全なパターンについては [async ギャップのあとに Ref.mounted を確認する方法](/ja/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/) を参照してください。
 - **統一された単一の `Ref` 型**と、形状ごとに 1 つの `Notifier`。コンパイラの耐久テストのように読める `AutoDisposeFamilyAsyncNotifier` のような型名はもうありません。
 - **オフライン永続化**と**ミューテーション**が実験的 API として導入され、フォーム送信の状態や再起動をまたいだキャッシュを自分で組み立てる必要がなくなります。
 
@@ -102,7 +102,7 @@ import 'package:flutter_riverpod/legacy.dart';
 final counterProvider = StateProvider<int>((ref) => 0);
 ```
 
-これは、ずっと無視できる非推奨警告ではなく、意図的な後押しです。長期的な方向性は、各 `StateProvider` を `Notifier` として、各 `StateNotifierProvider` を `Notifier` または `AsyncNotifier` として書き直すことであり、これは [provider パッケージからの移行](/2026/06/migrate-from-provider-to-riverpod-in-flutter/) で行き着くのと同じ目標形状です。ただし、バージョン更新の際にその書き直しを行う必要はありません。インポートを追加し、グリーンにして、変換は後で行えばよいのです。
+これは、ずっと無視できる非推奨警告ではなく、意図的な後押しです。長期的な方向性は、各 `StateProvider` を `Notifier` として、各 `StateNotifierProvider` を `Notifier` または `AsyncNotifier` として書き直すことであり、これは [provider パッケージからの移行](/ja/2026/06/migrate-from-provider-to-riverpod-in-flutter/) で行き着くのと同じ目標形状です。ただし、バージョン更新の際にその書き直しを行う必要はありません。インポートを追加し、グリーンにして、変換は後で行えばよいのです。
 
 **確認:** アプリがコンパイルできること。`legacy.dart` を grep して、レガシープロバイダーを使うすべてのファイルにインポートがあること、そして必要がないのにインポートしているファイルがないこと（未使用インポートはリンターが指摘します）を確認します。
 
@@ -186,7 +186,7 @@ try {
 }
 ```
 
-ラップされない経路は `AsyncValue` です。プロバイダーを `.when(error: ...)` でレンダリングしたり `AsyncError` をパターンマッチしたりすると、そこで得られるエラーはラッパーではなく元の例外です。したがって、状態をリアクティブに読み取る UI コードは影響を受けません。`try`/`catch` 内の命令的な `ref.read(...future)` だけが変更を必要とします。[Riverpod 3.0 の ProviderException](/2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error/) に関する専用の解説で、コーナーケースを扱っています。
+ラップされない経路は `AsyncValue` です。プロバイダーを `.when(error: ...)` でレンダリングしたり `AsyncError` をパターンマッチしたりすると、そこで得られるエラーはラッパーではなく元の例外です。したがって、状態をリアクティブに読み取る UI コードは影響を受けません。`try`/`catch` 内の命令的な `ref.read(...future)` だけが変更を必要とします。[Riverpod 3.0 の ProviderException](/ja/2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error/) に関する専用の解説で、コーナーケースを扱っています。
 
 **確認:** `try` ブロック内で `ref.read(` と `.future` が組み合わさっている箇所、およびドメイン例外を名指しする `catch` 節を grep します。プロバイダーをスローさせ、ハンドラーがまだ実行されることをアサートするテストを追加します。
 
@@ -194,7 +194,7 @@ try {
 
 2.x では、プロバイダーの型ごとにリスナーへ通知するタイミングを判定するルールが異なっていました。3.0 ではすべてが `==` を使います。`Notifier` の状態についてはこれはたいてい問題ありませんが、`StreamProvider` と `StreamNotifier` では厳しく効いてきます。ストリームが `==` で等しいオブジェクト（たとえば、等価性をオーバーライドしていない可変クラスや、たまたま等しく比較される 2 つの値）を発行すると、2 回目の発行は重複として破棄されるようになります。
 
-失敗の様態は、ストリームが明らかに発行しているのに更新が止まる UI です。修正は、発行される型が正しい等価性のセマンティクスを持つようにすることです。ドメインオブジェクトを発行するなら、それらに値等価性を与えます（`record`、Freezed クラス、または手書きの `==`/`hashCode`）。どちらを選ぶべきかについては [Dart の record と Freezed クラス](/2026/05/dart-records-vs-freezed-classes/) を参照してください。
+失敗の様態は、ストリームが明らかに発行しているのに更新が止まる UI です。修正は、発行される型が正しい等価性のセマンティクスを持つようにすることです。ドメインオブジェクトを発行するなら、それらに値等価性を与えます（`record`、Freezed クラス、または手書きの `==`/`hashCode`）。どちらを選ぶべきかについては [Dart の record と Freezed クラス](/ja/2026/05/dart-records-vs-freezed-classes/) を参照してください。
 
 ```dart
 // Riverpod 3.x -- two distinct ticks that are == would be collapsed.
@@ -284,11 +284,11 @@ class LoggingObserver extends ProviderObserver {
 
 ## 関連記事
 
-- [Flutter で provider から Riverpod へ移行する](/2026/06/migrate-from-provider-to-riverpod-in-flutter/)
-- [Flutter Riverpod 3 で async ギャップのあとに Ref.mounted を確認する方法](/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/)
-- [修正: Riverpod 3.0 が元のエラーの代わりに ProviderException をスローする](/2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error/)
-- [2026 年の Flutter 状態管理における provider・Riverpod・Bloc の比較](/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/)
-- [Flutter で FutureBuilder から Riverpod AsyncNotifier へ移行する](/2026/06/migrate-from-futurebuilder-to-a-riverpod-asyncnotifier-in-flutter/)
+- [Flutter で provider から Riverpod へ移行する](/ja/2026/06/migrate-from-provider-to-riverpod-in-flutter/)
+- [Flutter Riverpod 3 で async ギャップのあとに Ref.mounted を確認する方法](/ja/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/)
+- [修正: Riverpod 3.0 が元のエラーの代わりに ProviderException をスローする](/ja/2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error/)
+- [2026 年の Flutter 状態管理における provider・Riverpod・Bloc の比較](/ja/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/)
+- [Flutter で FutureBuilder から Riverpod AsyncNotifier へ移行する](/ja/2026/06/migrate-from-futurebuilder-to-a-riverpod-asyncnotifier-in-flutter/)
 
 ## 出典
 

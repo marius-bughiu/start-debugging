@@ -13,7 +13,7 @@ translatedBy: "claude"
 translationDate: 2026-04-24
 ---
 
-[.NET 8 は](https://startdebugging.net/2023/08/net-8-json-serialize-property-names-using-snake-case-and-kebab-case/) `System.Text.Json` のための組み込みネーミングポリシーの最初のバッチ (camel、snake、kebab の両ケーシング) を導入しました。.NET 11 の Preview 3 は最後の明白なギャップを埋め、ほとんどの DTO 形状に対して手書きの `JsonConverter` を不要にする 2 つのノブをさらに追加します。作業は [dotnet/runtime #124644](https://github.com/dotnet/runtime/pull/124644)、[#124645](https://github.com/dotnet/runtime/pull/124645)、[#124646](https://github.com/dotnet/runtime/pull/124646) を通じて出荷されました。
+[.NET 8 は](https://startdebugging.net/ja/2023/08/net-8-json-serialize-property-names-using-snake-case-and-kebab-case/) `System.Text.Json` のための組み込みネーミングポリシーの最初のバッチ (camel、snake、kebab の両ケーシング) を導入しました。.NET 11 の Preview 3 は最後の明白なギャップを埋め、ほとんどの DTO 形状に対して手書きの `JsonConverter` を不要にする 2 つのノブをさらに追加します。作業は [dotnet/runtime #124644](https://github.com/dotnet/runtime/pull/124644)、[#124645](https://github.com/dotnet/runtime/pull/124645)、[#124646](https://github.com/dotnet/runtime/pull/124646) を通じて出荷されました。
 
 ## PascalCase が組み込みポリシーに加わる
 

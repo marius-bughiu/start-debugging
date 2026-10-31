@@ -57,7 +57,7 @@ translationDate: 2026-07-23
 
 `CreateSlimBuilder` は、Native AOT Web API テンプレート（`dotnet new webapiaot`）のデフォルトとなることを特に目的として .NET 8 で導入されました。以下があなたのデプロイに当てはまる場合に選びましょう。
 
-- **`<PublishAot>true</PublishAot>` または積極的なトリミング（`<PublishTrimmed>true</PublishTrimmed>`）で発行する場合。** スリムビルダーは、トリムに適さないコードパスをグラフに引き込むことを避け、警告を抑えて出力を小さく保ちます。このビルダーが設計対象としているフル AOT のセットアップについては、[ASP.NET Core minimal API で Native AOT を使う方法](/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/) を参照してください。
+- **`<PublishAot>true</PublishAot>` または積極的なトリミング（`<PublishTrimmed>true</PublishTrimmed>`）で発行する場合。** スリムビルダーは、トリムに適さないコードパスをグラフに引き込むことを避け、警告を抑えて出力を小さく保ちます。このビルダーが設計対象としているフル AOT のセットアップについては、[ASP.NET Core minimal API で Native AOT を使う方法](/ja/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/) を参照してください。
 - **TLS を終端するプロキシまたはイングレス（Nginx、Caddy、YARP、Azure Application Gateway）の背後で実行する場合。** プロキシが HTTPS を処理するため、プレーンな HTTP をリッスンするあなたのプロセスはまさに正しい構成です。これは、スリムビルダーが Kestrel の HTTPS 構成を削除することで作り込んでいる前提です。
 - **minimal API のマイクロサービスに対して、妥当な範囲で最小のコンテナイメージを求める場合。** トリミングと AOT を組み合わせることで、スリムビルダーは攻撃対象領域の小さな、単一の小さなネイティブ実行ファイルを生み出します。
 
@@ -111,7 +111,7 @@ app.Run();
 
 Native AOT Web API テンプレートに関する Microsoft 自身のベンチマークは、Native AOT 発行を、トリミングされたランタイムビルドおよびトリミングされていないランタイムビルドと比較し、AOT アプリが 3 つの中でアプリサイズ、メモリ使用量、起動時間が最も低いと報告しています。.NET 8 のリリースノートは、スペクトラムの空の端についての具体的な基準を示しています：上記の `CreateEmptyBuilder` の「Hello, World」サンプルを linux-x64 マシンで Native AOT を用いて発行すると、約 8.5 MB の自己完結型ネイティブ実行ファイルが生成されました。この数値は、AOT とトリミングが仕事を終えたときにほぼゼロのベースラインがどう見えるか、を示すものです。
 
-発行されるフットプリントの実際の順序は、大きいものから小さいものへ、`CreateBuilder`、次に `CreateSlimBuilder`、次に `CreateEmptyBuilder` です。しかしそれらの差が開くのは、`PublishAot` または `PublishTrimmed` の下でのみです。プレーンなビルドを出荷すれば、スリムまたは空のビルダーの手間を払いながら、その報酬を回収しないことになります。これが最もよくある間違いです：「スリムのほうが速そう」という理由で、通常のデプロイにスリムビルダーを選んでしまうことです。それは実行時に速いのではなく、トリミングしたときに小さいのです。トリミングをしていないなら、スリムの道にコミットする前に [Native AOT が実際にあなたに何を強いるか](/2026/06/what-is-native-aot-and-what-does-it-cost-you/) を読む価値があり、[Native AOT vs ReadyToRun vs JIT](/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/) は各発行モードがどこで勝つかを扱っています。
+発行されるフットプリントの実際の順序は、大きいものから小さいものへ、`CreateBuilder`、次に `CreateSlimBuilder`、次に `CreateEmptyBuilder` です。しかしそれらの差が開くのは、`PublishAot` または `PublishTrimmed` の下でのみです。プレーンなビルドを出荷すれば、スリムまたは空のビルダーの手間を払いながら、その報酬を回収しないことになります。これが最もよくある間違いです：「スリムのほうが速そう」という理由で、通常のデプロイにスリムビルダーを選んでしまうことです。それは実行時に速いのではなく、トリミングしたときに小さいのです。トリミングをしていないなら、スリムの道にコミットする前に [Native AOT が実際にあなたに何を強いるか](/ja/2026/06/what-is-native-aot-and-what-does-it-cost-you/) を読む価値があり、[Native AOT vs ReadyToRun vs JIT](/ja/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/) は各発行モードがどこで勝つかを扱っています。
 
 ## あなたの代わりに選んでくれる落とし穴
 
@@ -121,19 +121,19 @@ Native AOT Web API テンプレートに関する Microsoft 自身のベンチ�
 - **静的 Web アセットは `CreateBuilder` を強制します。** `UseStaticWebAssets` を失う Blazor または Razor の UI アプリは、起動時に例外もなく壊れたスタイリングを出荷します。これは静かに噛みついてくるので、特別な理由がない限り、UI アプリはすべて `CreateBuilder` のアプリとして扱いましょう。
 - **正規表現または alpha のルート制約は `CreateBuilder` を強制します。** ルーティングテーブルに `{code:regex(^[A-Z]{3}$)}` や `{slug:alpha}` があると、スリムビルダーはそれらの制約を解決しません。`:int`、`:guid`、`:datetime` のようなプリミティブ制約は影響を受けません。
 - **AOT に TLS プロキシが加わると `CreateSlimBuilder` を強制します。** プロキシを前面に置くマイクロサービスのために AOT を発行しているなら、スリムが意図されたデフォルトであり、`CreateBuilder` から始めてそれに抗うと、トリムに適さないコードがグラフに引き戻されます。
-- **MVC コントローラーは AOT を完全に排除し、それが問い全体を変えます。** MVC は Native AOT 互換ではないため、コントローラーが必要ならどのみちフル AOT にはできず、スリムビルダーの主な利点は消え去ります。まだその選択を天秤にかけているなら、[ASP.NET Core 11 における minimal API vs コントローラー](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/) を参照してください。
+- **MVC コントローラーは AOT を完全に排除し、それが問い全体を変えます。** MVC は Native AOT 互換ではないため、コントローラーが必要ならどのみちフル AOT にはできず、スリムビルダーの主な利点は消え去ります。まだその選択を天秤にかけているなら、[ASP.NET Core 11 における minimal API vs コントローラー](/ja/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/) を参照してください。
 
 ## 結論、もう一度
 
-デフォルトは `CreateBuilder` にしましょう。これは、IIS、静的 Web アセット、MVC、Blazor、正規表現のルート制約を使うすべてのアプリを含め、圧倒的多数の ASP.NET Core 11 アプリにとって正しい選択です。`CreateSlimBuilder` に移るのは、トリミングまたは Native AOT で発行し、かつ TLS を終端するプロキシの背後に位置するときだけです。これはまさに `webapiaot` テンプレートが対象とするシナリオです。HTTPS や HTTP/3 が必要なら、`UseKestrelHttpsConfiguration()` または `UseQuic()` の呼び出し 1 つで追加し直しましょう。`CreateEmptyBuilder` は、最後の 1 つまで自分で登録し、その下限を計測したい、本当に最小のサービスのために懐に忍ばせておきましょう。やってはいけない唯一のことは、速いという理屈で、通常の JIT デプロイにスリムまたは空のビルダーを選ぶことです。それはトリミングしたときに小さいのであって、実行時に速いのではなく、通常のビルドでは摩擦だけを得て見返りは得られません。そもそも古いホストをこのモデルに移行しようとしているなら、どのファクトリメソッドを呼ぶかを最適化する前に越えるべき関門が [IWebHostBuilder から WebApplication.CreateBuilder への移行](/2026/06/migrate-from-iwebhostbuilder-to-webapplication-createbuilder/) です。
+デフォルトは `CreateBuilder` にしましょう。これは、IIS、静的 Web アセット、MVC、Blazor、正規表現のルート制約を使うすべてのアプリを含め、圧倒的多数の ASP.NET Core 11 アプリにとって正しい選択です。`CreateSlimBuilder` に移るのは、トリミングまたは Native AOT で発行し、かつ TLS を終端するプロキシの背後に位置するときだけです。これはまさに `webapiaot` テンプレートが対象とするシナリオです。HTTPS や HTTP/3 が必要なら、`UseKestrelHttpsConfiguration()` または `UseQuic()` の呼び出し 1 つで追加し直しましょう。`CreateEmptyBuilder` は、最後の 1 つまで自分で登録し、その下限を計測したい、本当に最小のサービスのために懐に忍ばせておきましょう。やってはいけない唯一のことは、速いという理屈で、通常の JIT デプロイにスリムまたは空のビルダーを選ぶことです。それはトリミングしたときに小さいのであって、実行時に速いのではなく、通常のビルドでは摩擦だけを得て見返りは得られません。そもそも古いホストをこのモデルに移行しようとしているなら、どのファクトリメソッドを呼ぶかを最適化する前に越えるべき関門が [IWebHostBuilder から WebApplication.CreateBuilder への移行](/ja/2026/06/migrate-from-iwebhostbuilder-to-webapplication-createbuilder/) です。
 
 ## Related
 
-- [ASP.NET Core minimal API で Native AOT を使う方法](/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/)
-- [.NET 11 で IWebHostBuilder から WebApplication.CreateBuilder へ移行する](/2026/06/migrate-from-iwebhostbuilder-to-webapplication-createbuilder/)
-- [.NET 11 における Native AOT vs ReadyToRun vs JIT](/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/)
-- [Native AOT とは何か、そしてそれはあなたに何を強いるのか？](/2026/06/what-is-native-aot-and-what-does-it-cost-you/)
-- [ASP.NET Core 11 における minimal API vs コントローラー](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/)
+- [ASP.NET Core minimal API で Native AOT を使う方法](/ja/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/)
+- [.NET 11 で IWebHostBuilder から WebApplication.CreateBuilder へ移行する](/ja/2026/06/migrate-from-iwebhostbuilder-to-webapplication-createbuilder/)
+- [.NET 11 における Native AOT vs ReadyToRun vs JIT](/ja/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/)
+- [Native AOT とは何か、そしてそれはあなたに何を強いるのか？](/ja/2026/06/what-is-native-aot-and-what-does-it-cost-you/)
+- [ASP.NET Core 11 における minimal API vs コントローラー](/ja/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/)
 
 ## Sources
 

@@ -21,7 +21,7 @@ minimal API が `Program.cs` を `app.MapGet(...)` 呼び出しが千行も並�
 
 minimal API には魅力的なデモが付いてきます。アプリ全体が 1 つのファイルに収まる、というものです。これはサンプルには素晴らしく、実際のサービスにはひどいものです。リソースがいくつか集まり、それぞれが 5 つの CRUD 動詞に加えていくつかのサブルートを持つようになる頃には、`Program.cs` は数百行の route handler が DI の登録、ミドルウェアの配線、`app.Run()` と入り混じったものになっています。編集したい `MapPut` を見つけるために、認証のセットアップを通り過ぎてスクロールすることになります。3 つの handler がすべて `/api/v1/orders` で始まり、そのうちの 1 つはプレフィックスにタイプミスがあって、本番環境で 404 が出るまで誰も気づきません。
 
-解決策は「コントローラーに戻る」ことではありません。コントローラーは規約（リソースごとに 1 クラス、ルーティングは属性で）によって整理を実現しますが、その代償としてリフレクションベースの MVC パイプラインが付いてきます。minimal API はこれを `MapGroup` と素朴な C# の拡張メソッドで解決し、軽量で AOT に優しいエンドポイントモデルを保ちます。2 つのモデルでまだ迷っている場合は、トレードオフが [ASP.NET Core 11 における minimal API とコントローラーの比較](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/) にまとめられています。本ガイドは、あなたが minimal API を選び、それをスケールさせたいことを前提としています。
+解決策は「コントローラーに戻る」ことではありません。コントローラーは規約（リソースごとに 1 クラス、ルーティングは属性で）によって整理を実現しますが、その代償としてリフレクションベースの MVC パイプラインが付いてきます。minimal API はこれを `MapGroup` と素朴な C# の拡張メソッドで解決し、軽量で AOT に優しいエンドポイントモデルを保ちます。2 つのモデルでまだ迷っている場合は、トレードオフが [ASP.NET Core 11 における minimal API とコントローラーの比較](/ja/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/) にまとめられています。本ガイドは、あなたが minimal API を選び、それをスケールさせたいことを前提としています。
 
 ## MapGroup は RouteGroupBuilder を返す
 
@@ -137,7 +137,7 @@ admin.MapGet("/users", ListUsers);
 admin.MapDelete("/users/{id:int}", DeleteUser);
 ```
 
-`RequireAuthorization`、`WithTags`、`WithMetadata`、`RequireRateLimiting`、`AddEndpointFilter`、`AddEndpointFilterFactory` はすべて `IEndpointConventionBuilder` のメソッドであり、`RouteGroupBuilder` がそのインターフェースを実装しているため、すべてがメンバーに流れ下ります。グループ内のルートで分割されたエンドポイントごとのレート制限が必要な場合は、[エンドポイントごとのレート制限ガイド](/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11/) が、`RequireRateLimiting` がグループのポリシーとどう組み合わさるかを扱っています。
+`RequireAuthorization`、`WithTags`、`WithMetadata`、`RequireRateLimiting`、`AddEndpointFilter`、`AddEndpointFilterFactory` はすべて `IEndpointConventionBuilder` のメソッドであり、`RouteGroupBuilder` がそのインターフェースを実装しているため、すべてがメンバーに流れ下ります。グループ内のルートで分割されたエンドポイントごとのレート制限が必要な場合は、[エンドポイントごとのレート制限ガイド](/ja/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11/) が、`RequireRateLimiting` がグループのポリシーとどう組み合わさるかを扱っています。
 
 心に留めておく価値のある微妙な点が 1 つあります。グループ上の `AddEndpointFilter` はミドルウェアでは**ありません**。プレフィックスへのリクエストごとに 1 回実行されるわけではありません。ビルド時に、各エンドポイントのフィルターパイプラインへ個別に適用されます。実用上の違いは、フィルターはグループ内のエンドポイントが実際に一致したときにのみ実行される、という点です。404 になる `/admin/nonexistent` へのリクエストは `AuditFilter` を決して呼び出しませんが、`/admin` パスセグメント上のミドルウェアなら呼び出します。パスに限定した本物のミドルウェアが欲しい場合は、代わりに `app.UseWhen(ctx => ctx.Request.Path.StartsWithSegments("/admin"), ...)` を使ってください。
 
@@ -241,7 +241,7 @@ v2.MapTodos(version: 2);
 var todos = app.MapGroup("/todos").WithTags("Todos");
 ```
 
-タグがない場合、組み込みの OpenAPI ジェネレーターは最初のルートセグメントをタグとして使うフォールバックに頼ります。これはたいてい機能しますが、プレフィックスのリファクタリングが API のセクション名を黙って変えてしまわないよう、明示的に設定する価値があります。仕様で認証フローも公開する場合は、グループはセキュリティ要件を付与するのに適した場所で、各操作にそれが表示されるようになります。`WithOpenApi` とセキュリティスキームの配線については [.NET 11 で OpenAPI 認証フローを Swagger UI に追加する](/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11/) を参照してください。
+タグがない場合、組み込みの OpenAPI ジェネレーターは最初のルートセグメントをタグとして使うフォールバックに頼ります。これはたいてい機能しますが、プレフィックスのリファクタリングが API のセクション名を黙って変えてしまわないよう、明示的に設定する価値があります。仕様で認証フローも公開する場合は、グループはセキュリティ要件を付与するのに適した場所で、各操作にそれが表示されるようになります。`WithOpenApi` とセキュリティスキームの配線については [.NET 11 で OpenAPI 認証フローを Swagger UI に追加する](/ja/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11/) を参照してください。
 
 ## リファクタリング前に知っておくと良い落とし穴
 
@@ -251,17 +251,17 @@ var todos = app.MapGroup("/todos").WithTags("Todos");
 - **グループプレフィックスはパス全体に対する制約ではありません。** `MapGroup("/api")` は、別の場所にあるトップレベルの `MapGet("/api/...")` 呼び出しが一致することを妨げません。グループは、あなたがそれを*通じて*登録したエンドポイントだけを支配します。
 - **グループ上の `RequireAuthorization()` は加算的であり、上書きではありません。** 内側のグループやエンドポイントも別のポリシーで `RequireAuthorization` を呼ぶ場合、両方のポリシーが適用されます（リクエストはすべてを満たす必要があります）。「内側が勝つ」という意味論はありません。
 - **`AddEndpointFilterFactory` はビルド時に、エンドポイントごとに 1 回実行され、リクエストごとではありません。** ファクトリーは `MethodInfo` を検査し、実際のリクエストごとのデリゲートを返します。コストの高いリクエストごとのロジックを（返されるデリゲートではなく）ファクトリー本体に置くと、リクエスト時には決して実行されません。これは、ドキュメントがエンドポイントのグループに対して `DbContext` をプライベートクエリモードに切り替えるのに使うのと同じファクトリーパターンです。
-- **Native AOT はこれらすべてで問題なく動作します。** グループ、拡張メソッドによるモジュール、フィルターはすべて AOT に優しい minimal API の表面の一部であり、どれもリフレクションへのフォールバックを強制しません。トリミングや AOT で発行する場合は、グループ化された handler をきれいにソース生成させる request delegate ジェネレーターの詳細について [ASP.NET Core minimal API で Native AOT を使う](/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/) を参照してください。
+- **Native AOT はこれらすべてで問題なく動作します。** グループ、拡張メソッドによるモジュール、フィルターはすべて AOT に優しい minimal API の表面の一部であり、どれもリフレクションへのフォールバックを強制しません。トリミングや AOT で発行する場合は、グループ化された handler をきれいにソース生成させる request delegate ジェネレーターの詳細について [ASP.NET Core minimal API で Native AOT を使う](/ja/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/) を参照してください。
 
 持ち帰るべきメンタルモデルはこうです。`RouteGroupBuilder` は、記憶されたプレフィックスと記憶された規約のセットを持つだけの `IEndpointRouteBuilder` です。あらゆる整理の技、モジュール化、ネスト、バージョニング、共有認証、はこの 1 つの事実から導かれます。まずリソースごとに 1 つの `MapXxx` 拡張メソッドを抽出し、`Program.cs` を呼び出しのリストに畳み込み、URL 階層が本当にネストするときにだけネストしたグループに手を伸ばしてください。
 
 ## 関連
 
-- [ASP.NET Core 11 における minimal API とコントローラーの比較](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/)。2 つのエンドポイントモデルでまだ迷っている場合に。
-- [ASP.NET Core 11 でグローバル例外フィルターを追加する](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/)。グループ化されたすべてのエンドポイントの例外を 1 か所で捕捉するために。
-- [ASP.NET Core 11 でエンドポイントごとのレート制限を追加する](/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11/)。`RequireRateLimiting` をグループポリシーと組み合わせるために。
-- [.NET 11 で OpenAPI 認証フローを Swagger UI に追加する](/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11/)。グループのタグにセキュリティスキームを付与するために。
-- [ASP.NET Core minimal API で Native AOT を使う](/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/)。グループ化されたエンドポイントをトリミングおよび AOT で発行するために。
+- [ASP.NET Core 11 における minimal API とコントローラーの比較](/ja/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/)。2 つのエンドポイントモデルでまだ迷っている場合に。
+- [ASP.NET Core 11 でグローバル例外フィルターを追加する](/ja/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/)。グループ化されたすべてのエンドポイントの例外を 1 か所で捕捉するために。
+- [ASP.NET Core 11 でエンドポイントごとのレート制限を追加する](/ja/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11/)。`RequireRateLimiting` をグループポリシーと組み合わせるために。
+- [.NET 11 で OpenAPI 認証フローを Swagger UI に追加する](/ja/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11/)。グループのタグにセキュリティスキームを付与するために。
+- [ASP.NET Core minimal API で Native AOT を使う](/ja/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/)。グループ化されたエンドポイントをトリミングおよび AOT で発行するために。
 
 ## 出典
 

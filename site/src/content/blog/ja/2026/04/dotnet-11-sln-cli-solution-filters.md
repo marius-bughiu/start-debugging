@@ -66,4 +66,4 @@ dotnet sln backend.slnf add src/Services/NewService.csproj
 
 `dotnet sln` はプロジェクトパスを呼び出し元ではなくフィルターからの相対で解決します。IDE の読み方と一致します。`.slnf` が `build/filters/` にあり、`src/` のプロジェクトを指しているとき、保存されるパスは `..\..\src\Foo\Foo.csproj` で、`dotnet sln list` も同じように表示します。別のワーキングディレクトリからフィルター編集をスクリプト化するときに覚えておく価値があります。
 
-[`dotnet run -e` によるインライン環境変数](https://github.com/dotnet/sdk/pull/52664) と、以前の [EF Core のシングルステップマイグレーション](https://startdebugging.net/2026/04/efcore-11-single-step-migrations-dotnet-ef-update-add/) と組み合わせて、Preview 3 は「これをやるために Visual Studio を開かないと」のセットを削り続けています。完全なリストは [.NET 11 Preview 3 SDK ノート](https://github.com/dotnet/core/blob/main/release-notes/11.0/preview/preview3/sdk.md) にあります。
+[`dotnet run -e` によるインライン環境変数](https://github.com/dotnet/sdk/pull/52664) と、以前の [EF Core のシングルステップマイグレーション](https://startdebugging.net/ja/2026/04/efcore-11-single-step-migrations-dotnet-ef-update-add/) と組み合わせて、Preview 3 は「これをやるために Visual Studio を開かないと」のセットを削り続けています。完全なリストは [.NET 11 Preview 3 SDK ノート](https://github.com/dotnet/core/blob/main/release-notes/11.0/preview/preview3/sdk.md) にあります。

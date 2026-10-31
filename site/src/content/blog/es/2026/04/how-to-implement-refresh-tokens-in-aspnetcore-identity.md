@@ -283,8 +283,8 @@ Devolver el refresh token en el cuerpo JSON, como hace `MapIdentityApi`, es una 
 
 - [Cómo testear código que usa HttpClient](/es/2026/04/how-to-unit-test-code-that-uses-httpclient/) cubre cómo testear el lado cliente de un `DelegatingHandler` consciente de tokens, que es exactamente donde vive la lógica de refresh en la mayoría de los consumidores.
 - [Cómo añadir un filtro global de excepciones en ASP.NET Core 11](/es/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) es un buen sitio para traducir `SecurityTokenExpiredException` a un 401 con la pista de refrescar.
-- [Cómo mockear DbContext sin romper el change tracking](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) importa aquí porque la lógica de rotación es el sitio donde más quieres un test de integración real con EF Core.
-- [Scalar en ASP.NET Core: por qué tu bearer token es ignorado en .NET 10](/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/) es la madriguera donde caen muchos la primera vez que el flujo nuevo no se comporta como Swashbuckle.
+- [Cómo mockear DbContext sin romper el change tracking](/es/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) importa aquí porque la lógica de rotación es el sitio donde más quieres un test de integración real con EF Core.
+- [Scalar en ASP.NET Core: por qué tu bearer token es ignorado en .NET 10](/es/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/) es la madriguera donde caen muchos la primera vez que el flujo nuevo no se comporta como Swashbuckle.
 
 ## Fuentes
 

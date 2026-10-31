@@ -196,7 +196,7 @@ change tracker 自体は、EF Core 11 時点でも内部的に参照同一性を
 
 ## JSON カラムと record
 
-EF Core 7 が JSON カラムマッピングを追加し、EF Core 11 はそれを [SQL Server 2025 での JSON_CONTAINS 翻訳](/2026/04/efcore-11-json-contains-sql-server-2025/) と JSON ドキュメント内の複合型でさらに拡張します。位置指定 record は owned JSON 型に対して人間工学的にフィットします:
+EF Core 7 が JSON カラムマッピングを追加し、EF Core 11 はそれを [SQL Server 2025 での JSON_CONTAINS 翻訳](/ja/2026/04/efcore-11-json-contains-sql-server-2025/) と JSON ドキュメント内の複合型でさらに拡張します。位置指定 record は owned JSON 型に対して人間工学的にフィットします:
 
 ```csharp
 // .NET 11, C# 14, EF Core 11
@@ -258,9 +258,9 @@ public record CreateOrder(string CustomerName, Money Total, Address ShipTo);
 
 ## 関連記事
 
-- [EF Core 11 が DetectChanges をスキップする GetEntriesForState を追加](/2026/04/efcore-11-changetracker-getentriesforstate/) は、この記事が依拠する change tracker の内部をカバーします。
-- [EF Core 11 が split クエリの不要な reference join を剪定](/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/) は、エンティティがナビゲーションに大きく依存している場合のよい伴侶です。
-- [EF Core 11 が SQL Server 2025 で Contains を JSON_CONTAINS に翻訳](/2026/04/efcore-11-json-contains-sql-server-2025/) は、上記の JSON マッピング record パターンと結びつきます。
+- [EF Core 11 が DetectChanges をスキップする GetEntriesForState を追加](/ja/2026/04/efcore-11-changetracker-getentriesforstate/) は、この記事が依拠する change tracker の内部をカバーします。
+- [EF Core 11 が split クエリの不要な reference join を剪定](/ja/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/) は、エンティティがナビゲーションに大きく依存している場合のよい伴侶です。
+- [EF Core 11 が SQL Server 2025 で Contains を JSON_CONTAINS に翻訳](/ja/2026/04/efcore-11-json-contains-sql-server-2025/) は、上記の JSON マッピング record パターンと結びつきます。
 - [C# 14 のメソッドから複数の値を返す方法](/ja/2026/04/how-to-return-multiple-values-from-a-method-in-csharp-14/) は、メソッド戻り値レベルで record がタプルやクラスに勝つときをより深く扱います。
 
 ## 参考資料

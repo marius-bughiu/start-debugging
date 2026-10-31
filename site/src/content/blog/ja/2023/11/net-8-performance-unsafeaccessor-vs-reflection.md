@@ -11,7 +11,7 @@ translationOf: "2023/11/net-8-performance-unsafeaccessor-vs-reflection"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-以前の記事で、[`UnsafeAccessor` を使ってプライベートメンバーにアクセスする方法](/2023/10/unsafe-accessor/) を取り上げました。今回は、その性能をリフレクションと比較し、本当にオーバーヘッドゼロなのかを確認します。
+以前の記事で、[`UnsafeAccessor` を使ってプライベートメンバーにアクセスする方法](/ja/2023/10/unsafe-accessor/) を取り上げました。今回は、その性能をリフレクションと比較し、本当にオーバーヘッドゼロなのかを確認します。
 
 ここでは 4 つのベンチマークを行います。
 

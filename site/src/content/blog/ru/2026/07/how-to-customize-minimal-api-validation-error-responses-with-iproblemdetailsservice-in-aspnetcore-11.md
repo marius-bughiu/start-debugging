@@ -19,7 +19,7 @@ translationDate: 2026-07-03
 
 ## Как выглядит ответ валидации по умолчанию
 
-Начните с настройки, описанной в [как валидировать тела запросов в minimal API без контроллеров](/2026/06/how-to-validate-request-bodies-in-minimal-apis-without-controllers-in-aspnetcore-11/): вызовите `AddValidation()`, добавьте аннотации к record запроса и дайте генератору исходного кода сделать работу.
+Начните с настройки, описанной в [как валидировать тела запросов в minimal API без контроллеров](/ru/2026/06/how-to-validate-request-bodies-in-minimal-apis-without-controllers-in-aspnetcore-11/): вызовите `AddValidation()`, добавьте аннотации к record запроса и дайте генератору исходного кода сделать работу.
 
 ```csharp
 // .NET 11, C# 14 -- Program.cs
@@ -139,7 +139,7 @@ app.UseStatusCodePages();    // fills empty 4xx/5xx responses with ProblemDetail
 app.Run();
 ```
 
-Без них голый `Results.NotFound()` или несопоставленный маршрут вернёт пустое тело, потому что problem details генерируются только "для ответов, которые ещё не имеют содержимого тела". Валидация - это исключение, которому не нужно такое подключение: сам фильтр валидации вызывает `IProblemDetailsService`, поэтому его `400` настраивается независимо от того, добавили ли вы `UseStatusCodePages()`. Если вы также хотите, чтобы ваш глобальный обработчик-подстраховка ловил то, что не ловит валидация, механика пути обработки исключений описана в [как добавить глобальный фильтр исключений в ASP.NET Core 11](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/).
+Без них голый `Results.NotFound()` или несопоставленный маршрут вернёт пустое тело, потому что problem details генерируются только "для ответов, которые ещё не имеют содержимого тела". Валидация - это исключение, которому не нужно такое подключение: сам фильтр валидации вызывает `IProblemDetailsService`, поэтому его `400` настраивается независимо от того, добавили ли вы `UseStatusCodePages()`. Если вы также хотите, чтобы ваш глобальный обработчик-подстраховка ловил то, что не ловит валидация, механика пути обработки исключений описана в [как добавить глобальный фильтр исключений в ASP.NET Core 11](/ru/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/).
 
 ## Возврат 422 вместо 400 для валидации
 
@@ -234,15 +234,15 @@ app.MapPost("/legacy/products", (CreateProduct product) =>
 - **Не допускайте утечки внутренностей в `Detail`.** Соблазнительно засунуть сообщение исключения в `ProblemDetails.Detail` внутри колбэка. В продакшене это раскрывает фрагменты трассировки стека и внутренние имена типов. Держите `Detail` безопасным для клиента и вместо этого помещайте диагностическую информацию за вашим `traceId` в журналах.
 - **Колбэк выполняется на горячем пути каждой ошибки.** Держите его дешёвым. Чтение `Activity.Current` и установка ключей словаря - это нормально; открытие соединения с базой данных или вызов удалённого сервиса внутри `CustomizeProblemDetails` - нет, потому что он выполняется синхронно во время записи ответа.
 
-Модель, которую стоит запомнить: `AddValidation()` решает, что некорректно, `AddProblemDetails()` решает, как описывается некорректность, а `CustomizeProblemDetails` - это единственное место, где можно оформить это описание сразу для каждой ошибки, генерируемой фреймворком. Добавьте свой `traceId` там, перепишите `title` там, повысьте до `422` там и прибегайте к собственному `IProblemDetailsWriter` только тогда, когда вам нужно владеть сериализацией. Для всего, что фильтр валидации не ловит, [глобальный фильтр исключений](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) проносит ту же настройку насквозь, а если вы всё ещё решаете, покрывает ли встроенный валидатор ваши правила вообще, [валидация minimal API против FluentValidation](/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11/) проводит эту границу.
+Модель, которую стоит запомнить: `AddValidation()` решает, что некорректно, `AddProblemDetails()` решает, как описывается некорректность, а `CustomizeProblemDetails` - это единственное место, где можно оформить это описание сразу для каждой ошибки, генерируемой фреймворком. Добавьте свой `traceId` там, перепишите `title` там, повысьте до `422` там и прибегайте к собственному `IProblemDetailsWriter` только тогда, когда вам нужно владеть сериализацией. Для всего, что фильтр валидации не ловит, [глобальный фильтр исключений](/ru/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) проносит ту же настройку насквозь, а если вы всё ещё решаете, покрывает ли встроенный валидатор ваши правила вообще, [валидация minimal API против FluentValidation](/ru/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11/) проводит эту границу.
 
 ## Связанное
 
-- [Как валидировать тела запросов в minimal API без контроллеров в ASP.NET Core 11](/2026/06/how-to-validate-request-bodies-in-minimal-apis-without-controllers-in-aspnetcore-11/) - настройка `AddValidation()`, которую настраивает этот пост.
-- [Валидация minimal API против FluentValidation в ASP.NET Core 11](/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11/) - подходит ли встроенный валидатор вашим правилам, прежде чем настраивать его вывод.
-- [Как добавить глобальный фильтр исключений в ASP.NET Core 11](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) - как ловить то, что не ловит валидация, с той же формой `ProblemDetails`.
-- [Как организовать конечные точки minimal API с помощью MapGroup в ASP.NET Core 11](/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/) - применение валидации и её problem details ко всей группе маршрутов.
-- [Minimal API против контроллеров в ASP.NET Core 11](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/) - чем различается обработка ошибок между двумя моделями конечных точек.
+- [Как валидировать тела запросов в minimal API без контроллеров в ASP.NET Core 11](/ru/2026/06/how-to-validate-request-bodies-in-minimal-apis-without-controllers-in-aspnetcore-11/) - настройка `AddValidation()`, которую настраивает этот пост.
+- [Валидация minimal API против FluentValidation в ASP.NET Core 11](/ru/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11/) - подходит ли встроенный валидатор вашим правилам, прежде чем настраивать его вывод.
+- [Как добавить глобальный фильтр исключений в ASP.NET Core 11](/ru/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) - как ловить то, что не ловит валидация, с той же формой `ProblemDetails`.
+- [Как организовать конечные точки minimal API с помощью MapGroup в ASP.NET Core 11](/ru/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/) - применение валидации и её problem details ко всей группе маршрутов.
+- [Minimal API против контроллеров в ASP.NET Core 11](/ru/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/) - чем различается обработка ошибок между двумя моделями конечных точек.
 
 ## Источники
 

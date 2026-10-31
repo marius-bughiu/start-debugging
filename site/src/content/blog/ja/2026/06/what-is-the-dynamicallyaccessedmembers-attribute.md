@@ -18,7 +18,7 @@ translationDate: 2026-06-20
 
 ## なぜトリマーにヒントが必要なのか
 
-トリミング、そしてそれを必須とする [Native AOT](/2026/06/what-is-native-aot-and-what-does-it-cost-you/) のビルドは、到達可能性解析によって動作します。トリマーはエントリーポイントから出発し、静的に見えるあらゆるメソッド呼び出し、フィールドアクセス、型参照をたどり、触れたものすべてを「保持」とマークし、残りを削除します。これが、自己完結型アプリが 70 MB から 15 MB に縮小する仕組みです。フレームワークは巨大で、あなたのアプリはそのほんの一部しか使っていません。
+トリミング、そしてそれを必須とする [Native AOT](/ja/2026/06/what-is-native-aot-and-what-does-it-cost-you/) のビルドは、到達可能性解析によって動作します。トリマーはエントリーポイントから出発し、静的に見えるあらゆるメソッド呼び出し、フィールドアクセス、型参照をたどり、触れたものすべてを「保持」とマークし、残りを削除します。これが、自己完結型アプリが 70 MB から 15 MB に縮小する仕組みです。フレームワークは巨大で、あなたのアプリはそのほんの一部しか使っていません。
 
 リフレクションはこのたどりを断ち切ります。`type.GetMethods()` と書くと、トリマーは `type` がランタイムにどの型を保持しているのか分からないため、どのメソッドを保持すべきか判断できません。トリマーには 2 つの選択肢があります。その呼び出しに流れ込み得るあらゆる型のあらゆるメソッドを保持する(これではトリミングが完全に台無しになります)か、何も保持せずにランタイムで気づかせるかです。トリマーはそのどちらもしません。代わりに、リフレクションを行う BCL のメソッド自体に注釈が付けられており、トリマーはあなたが渡す `Type` がそれに見合った約束を持つことを要求します。`[DynamicallyAccessedMembers]` は、その約束を行うための手段です。
 
@@ -174,22 +174,22 @@ static void RunHelper()
 }
 ```
 
-多くの呼び出し箇所でどちらかの脱出口に手を伸ばしている自分に気づいたら、それは、その API が根本的にリフレクションに依存した形をしており、コンパイル時のコード生成に置き換えるべきだというサインです。リフレクションベースのシリアライザーやマッパーがその典型例です。`GetProperties()` のたどりを注釈で回避する代わりに、ビルド時にアクセスコードを生成するソースジェネレーターを採用します。その用語が初めてなら、[ソースジェネレーターとは何か、いつ必要になるか](/2026/06/what-is-a-source-generator-and-when-do-i-need-one/)が入門になります。そして、それがソースジェネレーター版の `System.Text.Json` が存在する理由です。
+多くの呼び出し箇所でどちらかの脱出口に手を伸ばしている自分に気づいたら、それは、その API が根本的にリフレクションに依存した形をしており、コンパイル時のコード生成に置き換えるべきだというサインです。リフレクションベースのシリアライザーやマッパーがその典型例です。`GetProperties()` のたどりを注釈で回避する代わりに、ビルド時にアクセスコードを生成するソースジェネレーターを採用します。その用語が初めてなら、[ソースジェネレーターとは何か、いつ必要になるか](/ja/2026/06/what-is-a-source-generator-and-when-do-i-need-one/)が入門になります。そして、それがソースジェネレーター版の `System.Text.Json` が存在する理由です。
 
 ## RequiresUnreferencedCode との関係
 
 `[DynamicallyAccessedMembers]` を `[RequiresUnreferencedCode]` と混同しやすいものです。これらは隣接する問題を解決します。`[DynamicallyAccessedMembers]` は解析可能なリフレクションのためのものです。`Type` のどのメンバーに触れるかを正確に把握しているので、それを明示すればトリマーがそれらを保持します。`[RequiresUnreferencedCode]` は、まったくトリムセーフにできないリフレクションのためのものであり、そのメソッドがトリマーにはモデル化できない何かをしているという表明です。メソッドにこれを注釈しても何も解決しません。それは、ライブラリ作者がその制限を文書化できる public API に警告が到達するまで、`[DynamicallyAccessedMembers]` がその要件を伝播するのと同じように、`IL2026` 警告をすべての呼び出し元へ伝播します。要件を表現できるときは `[DynamicallyAccessedMembers]` を使い、本当にできないときにのみ `[RequiresUnreferencedCode]` にフォールバックしてください。
 
-実践的なワークフローは、トリミングと AOT のストーリー全体を支配するものと同じです。アナライザーをオンにし、すべての `IL2xxx` 警告をノイズではなく本物の欠陥として扱い、出荷する前にその件数をゼロまで減らすことです。ライブラリに `<IsTrimmable>true</IsTrimmable>` を設定すればそのプロジェクトに絞った警告が得られますし、`<PublishTrimmed>true</PublishTrimmed>` と `TrimmerRootAssembly` のエントリーを備えた小さなトリミングテストアプリをビルドすれば、依存グラフ全体にわたるすべての警告を確認できます。クリーンなビルドが契約です。AOT 非互換の呼び出しがアナライザーをすり抜け、ランタイムでのみ失敗するとき、あなたは [Native AOT における PlatformNotSupportedException](/2026/05/fix-platformnotsupportedexception-in-native-aot/) のデバッグに逆戻りします。それこそ、これらの注釈が防ぐために存在しているサイレントな失敗です。そして、これを実際の Web サービスのために組み込んでいるなら、[ASP.NET Core minimal API で Native AOT を使う方法](/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/)が、クリーンビルドのレシピを端から端まで案内します。
+実践的なワークフローは、トリミングと AOT のストーリー全体を支配するものと同じです。アナライザーをオンにし、すべての `IL2xxx` 警告をノイズではなく本物の欠陥として扱い、出荷する前にその件数をゼロまで減らすことです。ライブラリに `<IsTrimmable>true</IsTrimmable>` を設定すればそのプロジェクトに絞った警告が得られますし、`<PublishTrimmed>true</PublishTrimmed>` と `TrimmerRootAssembly` のエントリーを備えた小さなトリミングテストアプリをビルドすれば、依存グラフ全体にわたるすべての警告を確認できます。クリーンなビルドが契約です。AOT 非互換の呼び出しがアナライザーをすり抜け、ランタイムでのみ失敗するとき、あなたは [Native AOT における PlatformNotSupportedException](/ja/2026/05/fix-platformnotsupportedexception-in-native-aot/) のデバッグに逆戻りします。それこそ、これらの注釈が防ぐために存在しているサイレントな失敗です。そして、これを実際の Web サービスのために組み込んでいるなら、[ASP.NET Core minimal API で Native AOT を使う方法](/ja/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/)が、クリーンビルドのレシピを端から端まで案内します。
 
 これらすべてが腑に落ちる心構えはこうです。`[DynamicallyAccessedMembers]` はコードを保持しません。それは、リフレクション呼び出しから、その `Type` が生まれた場所まで、`Type` 値のフローに沿って要件を伝播させるものであり、保持が起きるのは要件が最終的に着地する `typeof` または具体的な代入の地点だけです。このフローを正しく把握すれば、トリミングは謎めいた本番限定のクラッシュの源ではなくなり、本当に信頼できるコンパイラー機能になります。
 
 ## 関連記事
 
-- [Native AOT とは何か、何を犠牲にするのか?](/2026/06/what-is-native-aot-and-what-does-it-cost-you/) では、AOT のもとでなぜトリミングが必須なのか、ほかに何を手放すのかを説明しています。
-- [ソースジェネレーターとは何か、いつ必要になるか?](/2026/06/what-is-a-source-generator-and-when-do-i-need-one/) では、注釈を付けられないリフレクションを置き換えるコンパイル時のコード生成を取り上げています。
-- [ASP.NET Core minimal API で Native AOT を使う方法](/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/) は、これらの警告が実践でどう現れるかを示すクリーンビルドのウォークスルーです。
-- [修正: Native AOT における PlatformNotSupportedException](/2026/05/fix-platformnotsupportedexception-in-native-aot/) は、注釈が付き警告のないビルドが防ぐランタイムの失敗です。
+- [Native AOT とは何か、何を犠牲にするのか?](/ja/2026/06/what-is-native-aot-and-what-does-it-cost-you/) では、AOT のもとでなぜトリミングが必須なのか、ほかに何を手放すのかを説明しています。
+- [ソースジェネレーターとは何か、いつ必要になるか?](/ja/2026/06/what-is-a-source-generator-and-when-do-i-need-one/) では、注釈を付けられないリフレクションを置き換えるコンパイル時のコード生成を取り上げています。
+- [ASP.NET Core minimal API で Native AOT を使う方法](/ja/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/) は、これらの警告が実践でどう現れるかを示すクリーンビルドのウォークスルーです。
+- [修正: Native AOT における PlatformNotSupportedException](/ja/2026/05/fix-platformnotsupportedexception-in-native-aot/) は、注釈が付き警告のないビルドが防ぐランタイムの失敗です。
 
 ## ソース
 

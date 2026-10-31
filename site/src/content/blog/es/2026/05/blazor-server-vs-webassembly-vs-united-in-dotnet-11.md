@@ -160,7 +160,7 @@ Los números a continuación vienen de un `dotnet new blazor`, `dotnet new blazo
 
 El Blazor Web App en modo Auto le gana a WebAssembly autónomo en first paint por un factor de cinco porque no espera al bundle. No le gana al Server autónomo porque, una vez que el bundle de WebAssembly termina de cargar, igualmente cuesta memoria. El punto no es que Auto sea el más rápido en una métrica. El punto es que nunca es el más lento.
 
-Para una mirada más profunda a cómo el SDK de .NET 11 recorta el bundle WASM, mira [la nueva plantilla Blazor WebWorker de .NET 11](/2026/04/dotnet-11-preview-2-blazor-webworker-template/), que usa los mismos ajustes del trimmer.
+Para una mirada más profunda a cómo el SDK de .NET 11 recorta el bundle WASM, mira [la nueva plantilla Blazor WebWorker de .NET 11](/es/2026/04/dotnet-11-preview-2-blazor-webworker-template/), que usa los mismos ajustes del trimmer.
 
 ## El gotcha que decide por ti
 
@@ -172,7 +172,7 @@ Tres cosas fuerzan la decisión sin importar tu preferencia:
 
 3. **HTTPS, antiforgery y el estado de autenticación fluyen por cookies por defecto.** Los componentes WebAssembly no ven esas cookies en solicitudes cross-origin. Si la parte WebAssembly de un Blazor Web App llama a una API externa, necesitas un flujo de token OIDC encima, no solo la cookie del host. Este es el tropezón más común al migrar una app Blazor Server a la plantilla Web App.
 
-Para el ángulo específico de antiforgery, [el comportamiento de TempData en Blazor SSR en .NET 11](/2026/04/blazor-ssr-tempdata-dotnet-11/) y la [guía de lógica de validación compartida](/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly/) cubren los patrones prácticos.
+Para el ángulo específico de antiforgery, [el comportamiento de TempData en Blazor SSR en .NET 11](/es/2026/04/blazor-ssr-tempdata-dotnet-11/) y la [guía de lógica de validación compartida](/es/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly/) cubren los patrones prácticos.
 
 ## Recomendación reformulada
 
@@ -182,11 +182,11 @@ Si ya estás en Blazor Server hoy y sopesas una migración, el destino casi siem
 
 ## Relacionado
 
-- [Minimal APIs vs controllers en ASP.NET Core 11](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/) para las decisiones de API backend que abre un Blazor Web App.
-- [Cómo usar Tailwind CSS con Blazor WebAssembly en .NET 11](/2026/05/how-to-use-tailwind-css-with-blazor-webassembly-in-dotnet-11/) para las diferencias del pipeline de estilos entre WASM autónomo y la plantilla Blazor Web App.
-- [Cómo compartir lógica de validación entre servidor y Blazor WebAssembly](/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly/) para el patrón práctico de "proyecto compartido" que la plantilla Web App formaliza.
-- [Native AOT vs ReadyToRun vs JIT en .NET 11](/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/) para los compromisos del modo de compilación que afectan tanto a Server como a WASM.
-- [Blazor virtualize con altura variable en .NET 11 Preview 3](/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3/) para una de las APIs nuevas que benefician a listas de componentes en modo Auto.
+- [Minimal APIs vs controllers en ASP.NET Core 11](/es/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/) para las decisiones de API backend que abre un Blazor Web App.
+- [Cómo usar Tailwind CSS con Blazor WebAssembly en .NET 11](/es/2026/05/how-to-use-tailwind-css-with-blazor-webassembly-in-dotnet-11/) para las diferencias del pipeline de estilos entre WASM autónomo y la plantilla Blazor Web App.
+- [Cómo compartir lógica de validación entre servidor y Blazor WebAssembly](/es/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly/) para el patrón práctico de "proyecto compartido" que la plantilla Web App formaliza.
+- [Native AOT vs ReadyToRun vs JIT en .NET 11](/es/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/) para los compromisos del modo de compilación que afectan tanto a Server como a WASM.
+- [Blazor virtualize con altura variable en .NET 11 Preview 3](/es/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3/) para una de las APIs nuevas que benefician a listas de componentes en modo Auto.
 
 ## Fuentes
 

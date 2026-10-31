@@ -194,7 +194,7 @@ Para deploys em container, build com `--self-contained true` é implícito sob `
 
 ## Guias relacionados no Start Debugging
 
-- A alavanca Native AOT está dentro de uma história mais ampla de cold-start: [o playbook de cold-start do AWS Lambda no .NET 11](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/) percorre o caminho AOT em `provided.al2023` com o mesmo setup de gerador de código-fonte.
+- A alavanca Native AOT está dentro de uma história mais ampla de cold-start: [o playbook de cold-start do AWS Lambda no .NET 11](/pt-br/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/) percorre o caminho AOT em `provided.al2023` com o mesmo setup de gerador de código-fonte.
 - Para OpenAPI em cima de uma API mínima AOT, o [guia de geração de cliente OpenAPI](/pt-br/2026/04/how-to-generate-strongly-typed-client-from-openapi-spec-dotnet-11/) cobre o round trip de metadados de API mínima a um `HttpClient` tipado.
 - Projetos AOT proíbem JSON baseado em reflexão, então [escrever um `JsonConverter` customizado em System.Text.Json](/pt-br/2026/04/how-to-write-a-custom-jsonconverter-in-system-text-json/) é o primer certo quando uma conversão embutida não basta.
 - Uma história limpa de exceções importa mais sob AOT, onde diagnósticos baseados em reflexão não estão disponíveis: [adicionar um filtro global de exceção no ASP.NET Core 11](/pt-br/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) mostra o caminho `IExceptionHandler`, totalmente compatível com AOT.

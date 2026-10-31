@@ -40,4 +40,4 @@ E tem mais. Olhando além do undecillion, você tem:
 -   vigintillion (63 zeros)
 -   centillion (303 zeros)
 
-Quer saber quanto tempo um PC levaria para contar até um trillion da escala curta? Confira este artigo: [Counting up to one trillion](/2013/10/counting-up-to-one-trillion/).
+Quer saber quanto tempo um PC levaria para contar até um trillion da escala curta? Confira este artigo: [Counting up to one trillion](/pt-br/2013/10/counting-up-to-one-trillion/).

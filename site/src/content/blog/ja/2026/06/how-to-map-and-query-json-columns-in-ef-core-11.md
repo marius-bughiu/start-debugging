@@ -128,7 +128,7 @@ FROM [Blogs] AS [b]
 WHERE JSON_CONTAINS([b].[Tags], 'ef-core') = 1
 ```
 
-これは古くて遅い `OPENJSON` ベースの変換を置き換え、`JSON_CONTAINS` は定義されていれば JSON インデックスを使えます。この変換については、それを有効にする互換性レベルの切り替えも含めて、[EF Core 11 と JSON_CONTAINS に関する記事](/2026/04/efcore-11-json-contains-sql-server-2025/)で詳しく扱いました。鋭い注意点が 1 つあります。`JSON_CONTAINS` は null を検索できないため、EF は片側が null 非許容であると証明できる場合 (null でない定数、または null 非許容のカラムや要素) にのみそれを出力します。それが判断できない場合は、クエリが正しい答えを返し続けるように `OPENJSON` 形式にフォールバックします。
+これは古くて遅い `OPENJSON` ベースの変換を置き換え、`JSON_CONTAINS` は定義されていれば JSON インデックスを使えます。この変換については、それを有効にする互換性レベルの切り替えも含めて、[EF Core 11 と JSON_CONTAINS に関する記事](/ja/2026/04/efcore-11-json-contains-sql-server-2025/)で詳しく扱いました。鋭い注意点が 1 つあります。`JSON_CONTAINS` は null を検索できないため、EF は片側が null 非許容であると証明できる場合 (null でない定数、または null 非許容のカラムや要素) にのみそれを出力します。それが判断できない場合は、クエリが正しい答えを返し続けるように `OPENJSON` 形式にフォールバックします。
 
 ### パスとモードを指定した検索: EF.Functions.JsonContains
 
@@ -183,7 +183,7 @@ SET [Details].modify('$.Viewers', JSON_VALUE([b].[Details], '$.Viewers' RETURNIN
 FROM [Blogs] AS [b]
 ```
 
-確固たる要件が 1 つあります。JSON への `ExecuteUpdate` は、型が *複合型* としてマッピングされている場合にのみ機能します。所有エンティティ型では機能しません。これは新しいコードで複合型を好むべき最も具体的な理由であり、[`ExecuteUpdate` とエンティティを読み込んでから SaveChanges を呼ぶこと](/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/)の間のより広いトレードオフもここに当てはまります。
+確固たる要件が 1 つあります。JSON への `ExecuteUpdate` は、型が *複合型* としてマッピングされている場合にのみ機能します。所有エンティティ型では機能しません。これは新しいコードで複合型を好むべき最も具体的な理由であり、[`ExecuteUpdate` とエンティティを読み込んでから SaveChanges を呼ぶこと](/ja/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/)の間のより広いトレードオフもここに当てはまります。
 
 ## JSON カラムが TPT および TPC 継承で機能するようになった
 
@@ -221,7 +221,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 ## 噛みついてくるエッジケース
 
-**所有型と複合型のセマンティクス。** 所有エンティティ型では、あるドキュメントを別のドキュメントに代入すること (`blog.BillingDetails = blog.ShippingDetails`) は例外をスローします。同じエンティティインスタンスを 2 回追跡できないためです。複合型は値で比較・代入されるため、代入は単にフィールドをコピーします。JSON にまだ所有型を使っているなら、複合型への移行はこの種のバグのカテゴリ全体を取り除きます。これは、不変の値の形に対する[EF Core 11 で record を正しく使う](/2026/04/how-to-use-records-with-ef-core-11-correctly/)規律とよく噛み合います。
+**所有型と複合型のセマンティクス。** 所有エンティティ型では、あるドキュメントを別のドキュメントに代入すること (`blog.BillingDetails = blog.ShippingDetails`) は例外をスローします。同じエンティティインスタンスを 2 回追跡できないためです。複合型は値で比較・代入されるため、代入は単にフィールドをコピーします。JSON にまだ所有型を使っているなら、複合型への移行はこの種のバグのカテゴリ全体を取り除きます。これは、不変の値の形に対する[EF Core 11 で record を正しく使う](/ja/2026/04/how-to-use-records-with-ef-core-11-correctly/)規律とよく噛み合います。
 
 **struct の複合型はまだコレクションに入れられません。** EF Core 10 は複合型に `struct` と `record struct` のサポートを追加しました。これはその値セマンティクスによく合います。しかし struct の複合型の *コレクション* は現在サポートされていません。ネストした型がリストの中にある場合はクラスを使ってください。
 
@@ -229,7 +229,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 **nvarchar から json へのマイグレーションは自動です。** 互換性レベルを 170 に引き上げると、既存の `nvarchar(max)` JSON カラムは次のマイグレーションでネイティブの `json` 型に書き換えられます。本番に適用する前にそのマイグレーションを確認してください。すべての JSON カラムを一度に変更するスキーマ変更です。
 
-**インデックス。** JSON インデックスは、`JSON_CONTAINS` とパス検索を大規模に高速化するものです。ネイティブの `json` 型は `CREATE JSON INDEX` をサポートしますが、プレーンテキストのカラムはサポートしません。JSON クエリがホットパスなら、ネイティブ型とインデックスは seek とフルスキャンの違いであり、これはクエリプランをめぐる[EF Core 6 から 11 へのマイグレーションの破壊的変更](/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/)で現れるのと同じ教訓です。
+**インデックス。** JSON インデックスは、`JSON_CONTAINS` とパス検索を大規模に高速化するものです。ネイティブの `json` 型は `CREATE JSON INDEX` をサポートしますが、プレーンテキストのカラムはサポートしません。JSON クエリがホットパスなら、ネイティブ型とインデックスは seek とフルスキャンの違いであり、これはクエリプランをめぐる[EF Core 6 から 11 へのマイグレーションの破壊的変更](/ja/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/)で現れるのと同じ教訓です。
 
 要約すると、`[ComplexType]` と `ToJson()` を選び、カラムが本物の `json` になるように SQL Server 2025 を対象にし、その後は LINQ でドキュメントをモデルの他の部分と同じように扱います。EF Core 11 はフィルタリング、配列の `Contains`、パスのチェック、さらには一括更新までもサーバー側の JSON 関数に変換するため、ドキュメントはクエリされるためだけにメモリへ往復する必要が決してありません。
 

@@ -13,7 +13,7 @@ translationDate: 2026-05-01
 ---
 O .NET 10 será lançado em novembro de 2025. O .NET 10 é uma versão Long Term Support (LTS), que receberá suporte gratuito e correções por 3 anos a partir da data de lançamento, até novembro de 2028.
 
-O .NET 10 será lançado junto com o C# 14. Veja [o que há de novo no C# 14](/2024/12/csharp-14/).
+O .NET 10 será lançado junto com o C# 14. Veja [o que há de novo no C# 14](/pt-br/2024/12/csharp-14/).
 
 Há vários novos recursos e melhorias no runtime do .NET 10:
 

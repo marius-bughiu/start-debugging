@@ -124,4 +124,4 @@ Esse recurso no C# 14 alinha a sintaxe das lambdas com a conveniência da infer�
 
 -   [Novidades no C# 14 | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14)
 -   [Parâmetros simples de lambda com modificadores | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/simple-lambda-parameters-with-modifiers)
--   [Novidades no C# 14 | StartDebugging.NET](/2024/12/csharp-14/)
+-   [Novidades no C# 14 | StartDebugging.NET](/pt-br/2024/12/csharp-14/)

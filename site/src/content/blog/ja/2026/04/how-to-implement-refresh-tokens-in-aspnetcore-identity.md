@@ -283,8 +283,8 @@ builder.Services
 
 - [HttpClient を使うコードのユニットテスト方法](/ja/2026/04/how-to-unit-test-code-that-uses-httpclient/) は、トークンを意識する `DelegatingHandler` のクライアント側のテストを扱います。多くのコンシューマーではここがリフレッシュロジックの居場所です。
 - [ASP.NET Core 11 でグローバル例外フィルターを追加する方法](/ja/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) は、`SecurityTokenExpiredException` をリフレッシュを促す 401 に翻訳するきれいな場所です。
-- [DbContext を change tracking を壊さずにモックする方法](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) は、ローテーションロジックこそ実 EF Core の統合テストが最も欲しい場所なので関係します。
-- [ASP.NET Core での Scalar: .NET 10 で bearer token が無視される理由](/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/) は、新フローが Swashbuckle のように振る舞わない最初の場面で多くの人が落ちる落とし穴です。
+- [DbContext を change tracking を壊さずにモックする方法](/ja/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) は、ローテーションロジックこそ実 EF Core の統合テストが最も欲しい場所なので関係します。
+- [ASP.NET Core での Scalar: .NET 10 で bearer token が無視される理由](/ja/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/) は、新フローが Swashbuckle のように振る舞わない最初の場面で多くの人が落ちる落とし穴です。
 
 ## ソース
 

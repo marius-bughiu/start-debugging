@@ -77,7 +77,7 @@ context.push('/orders/42'); // push on top of the current stack
 
 Die Stärke hier ist zugleich die scharfe Kante: Navigationsziele sind Strings. `context.go('/orders/42')` wird nicht vom Compiler geprüft. Vertippen Sie sich im Pfad oder benennen Sie eine Route um, erfahren Sie es zur Laufzeit. `go_router` hat eine Antwort, [typisierte Routen über `go_router_builder`](https://pub.dev/packages/go_router_builder), das typisierte `GoRouteData`-Klassen generiert, sodass Sie `OrderRoute(id: 42).go(context)` statt eines Strings aufrufen können. Aber das ist eine optionale Code-Generierung, die auf ein Paket aufgesetzt wird, dessen Standard-Idiom Strings sind, und in der Praxis schalten viele go_router-Codebasen sie nie ein.
 
-`go_router` besitzt außerdem die zwei Funktionen, für die Leute es tatsächlich einsetzen. `ShellRoute` und `StatefulShellRoute.indexedStack` geben Ihnen eine persistente Hülle (eine untere Navigationsleiste, die Tab-Wechsel übersteht), und ein `redirect`-Callback auf oberster Ebene übernimmt das Auth-Gating für den gesamten Baum. Wenn Sie den vollständigen Durchgang zu Hüllen und Deep-Link-Konfiguration möchten, siehe [Nested Routes und Deep Links mit go_router einrichten](/2026/06/how-to-set-up-nested-routes-and-deep-links-with-go-router-in-flutter/).
+`go_router` besitzt außerdem die zwei Funktionen, für die Leute es tatsächlich einsetzen. `ShellRoute` und `StatefulShellRoute.indexedStack` geben Ihnen eine persistente Hülle (eine untere Navigationsleiste, die Tab-Wechsel übersteht), und ein `redirect`-Callback auf oberster Ebene übernimmt das Auth-Gating für den gesamten Baum. Wenn Sie den vollständigen Durchgang zu Hüllen und Deep-Link-Konfiguration möchten, siehe [Nested Routes und Deep Links mit go_router einrichten](/de/2026/06/how-to-set-up-nested-routes-and-deep-links-with-go-router-in-flutter/).
 
 Eine Statusanmerkung, die für eine mehrjährige Entscheidung zählt: Das Flutter-Team führt `go_router` als feature-complete. Ihre [Roadmap-Aussage](https://pub.dev/packages/go_router) lautet:
 
@@ -182,23 +182,23 @@ Die offizielle Dokumentation segnet dies ausdrücklich ab für "small applicatio
 Ein paar Dinge beißen Leute, nachdem sie sich festgelegt haben:
 
 - **go_router: Strings sind ungeprüft.** Das Umbenennen eines Pfades ist ein stiller Bruch, bis Sie zur Laufzeit darauf stoßen. Übernehmen Sie entweder früh `go_router_builder` für typisierte Routen, oder halten Sie jeden Pfad in einer einzigen Konstantendatei und schreiben Sie nie einen rohen String inline.
-- **go_router: `context` nach einem await.** Deklarative Navigation befreit Sie nicht vom `use_build_context_synchronously`-Lint. Das Navigieren mit einem veralteten `BuildContext` nach einer `async`-Lücke ist derselbe Bug, der es immer war; siehe [BuildContext sicher nach einem await verwenden](/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/).
+- **go_router: `context` nach einem await.** Deklarative Navigation befreit Sie nicht vom `use_build_context_synchronously`-Lint. Das Navigieren mit einem veralteten `BuildContext` nach einer `async`-Lücke ist derselbe Bug, der es immer war; siehe [BuildContext sicher nach einem await verwenden](/de/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/).
 - **auto_route: Drift generierter Dateien.** Nach einem chaotischen Merge oder einem Sprung der Dart-SDK-Version kann die generierte `.gr.dart` veralten und verwirrende Fehler produzieren. Die Behebung ist fast immer `dart run build_runner build --delete-conflicting-outputs`, nicht das Starren auf das Diff.
 - **auto_route: ein weiteres Codegen-Tool in Ihrer Pipeline.** Wenn Sie bereits Freezed, json_serializable oder den Generator von Riverpod laufen lassen, ist `auto_route` eine weitere Sache, die synchron bleiben muss. In der CI lässt ein vergessener `build_runner`-Schritt den Build fehlschlagen, nicht Ihre Maschine.
 - **Beide: Deep Links brauchen immer noch native Konfiguration.** Kein Paket kann Android und iOS dazu bringen, eine URL von sich aus an Flutter zu übergeben. Sie bearbeiten immer noch die `AndroidManifest.xml` und die iOS-Entitlements, um Ihr Schema oder Ihre App-Links zu registrieren. Das Paket löst die URL auf, sobald sie eintrifft; sie zum Eintreffen zu bringen, ist Plattformarbeit.
 - **Die Migration zwischen ihnen ist nicht kostenlos.** go_router-Routentabellen und die annotierten Klassen von auto_route sind strukturell verschieden. Ein Wechsel mitten im Projekt bedeutet, die Routing-Schicht neu zu schreiben, wählen Sie also mit dem Zwei-Jahres-Horizont im Blick, nicht mit diesem Sprint.
 
-Wenn Sie noch Ihren breiteren Stack entscheiden statt nur das Routing, zeigt sich dieselbe Spannung "offiziell-und-langweilig vs. funktionsreich-Community" auch beim State-Management, das ich in [Provider vs. Riverpod vs. Bloc](/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/) durchgehe, und bei der Plattformwahl selbst in [Flutter vs. React Native vs. MAUI](/2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026/).
+Wenn Sie noch Ihren breiteren Stack entscheiden statt nur das Routing, zeigt sich dieselbe Spannung "offiziell-und-langweilig vs. funktionsreich-Community" auch beim State-Management, das ich in [Provider vs. Riverpod vs. Bloc](/de/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/) durchgehe, und bei der Plattformwahl selbst in [Flutter vs. React Native vs. MAUI](/de/2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026/).
 
 Die Zusammenfassung, die den Kontakt mit einem echten Projekt übersteht: `go_router` ist der Standard, weil es offiziell, stabil und URL-nativ ist. `auto_route` verdient sich seinen Platz bei großen Apps, in denen zur Kompilierzeit geprüfte Navigation einen Code-Generator wert ist. Der reine Navigator 2.0 ist für die seltene App, deren Navigationsmodell nicht in eine Routentabelle passt. Und das schlichte `Navigator.push` ist immer noch die korrekte Antwort für eine kleine App, die nichts davon braucht. Wählen Sie die niedrigste Ebene, die Ihr tatsächliches Problem löst, nicht die mächtigste.
 
 ## Ähnliche Beiträge
 
-- [Nested Routes und Deep Links mit go_router in Flutter einrichten](/2026/06/how-to-set-up-nested-routes-and-deep-links-with-go-router-in-flutter/)
-- [BuildContext sicher nach einem await in Flutter verwenden](/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/)
-- [Provider vs. Riverpod vs. Bloc für Flutter-State-Management im Jahr 2026](/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/)
-- [Flutter vs. React Native vs. MAUI für ein neues Mobilprojekt im Jahr 2026](/2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026/)
-- [Eine Flutter-2-App auf Flutter 3.x migrieren: Null-Safety-Checkliste](/2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist/)
+- [Nested Routes und Deep Links mit go_router in Flutter einrichten](/de/2026/06/how-to-set-up-nested-routes-and-deep-links-with-go-router-in-flutter/)
+- [BuildContext sicher nach einem await in Flutter verwenden](/de/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/)
+- [Provider vs. Riverpod vs. Bloc für Flutter-State-Management im Jahr 2026](/de/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/)
+- [Flutter vs. React Native vs. MAUI für ein neues Mobilprojekt im Jahr 2026](/de/2026/05/flutter-vs-react-native-vs-maui-for-a-new-mobile-project-in-2026/)
+- [Eine Flutter-2-App auf Flutter 3.x migrieren: Null-Safety-Checkliste](/de/2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist/)
 
 ## Quellen
 

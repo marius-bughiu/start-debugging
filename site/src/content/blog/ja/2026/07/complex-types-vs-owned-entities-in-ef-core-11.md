@@ -17,7 +17,7 @@ translationDate: 2026-07-22
 
 EF Core 11 (.NET 11 と C# 14) では、`Address`、`Money`、`DateRange` のような値オブジェクトは**複合型**としてマッピングし、**所有エンティティ**に手を伸ばすのはストレージの形がそれを強制するときだけにしてください。つまり、値が独自のテーブルを必要とする場合や、コレクションを別々の行として保存する必要がある場合です。この 1 つの軸がほぼすべてのケースを決めます。複合型は値のセマンティクスを持ち、アイデンティティを持ちません。これはまさに値オブジェクトそのものです。一方、所有エンティティは値オブジェクトの衣装をまとった完全なエンティティ型であり、その衣装は常にずり落ちます。EF Core 11 は、所有エンティティを選ぶ最後の理由がほぼ消え去ったリリースです。というのも、複合型は TPT/TPC 継承で動作するようになり、`ExecuteUpdate` をサポートし、JSON にマッピングすればコレクションを許容し、キーやインデックスを持てるようになったからです。
 
-この記事は決定についての話であり、仕組みの話ではありません。ステップバイステップの構成が知りたい場合は、[EF Core 11 で所有エンティティの代わりに複合型をマッピングする方法](/2026/07/how-to-map-a-complex-type-instead-of-an-owned-entity-in-ef-core-11/)をお読みください。ここでは 2 つのマッピングを真正面から比較し、それぞれがどこで勝つのかを示し、あなたの代わりに選択してくれる落とし穴を挙げます。
+この記事は決定についての話であり、仕組みの話ではありません。ステップバイステップの構成が知りたい場合は、[EF Core 11 で所有エンティティの代わりに複合型をマッピングする方法](/ja/2026/07/how-to-map-a-complex-type-instead-of-an-owned-entity-in-ef-core-11/)をお読みください。ここでは 2 つのマッピングを真正面から比較し、それぞれがどこで勝つのかを示し、あなたの代わりに選択してくれる落とし穴を挙げます。
 
 ## 1 画面に収まる機能マトリクス
 
@@ -48,8 +48,8 @@ EF Core 11 (.NET 11 と C# 14) では、`Address`、`Money`、`DateRange` のよ
 
 - **その型が完全にそのデータによって定義される場合。** `Address`、`Money`、`GeoPoint`、`DateRange`、`PersonName` などです。同一のフィールドを持つ 2 つのインスタンスが交換可能なら、それは値であり、値は値のセマンティクスを望みます。EF Core 11 では `b.ComplexProperty(c => c.ShippingAddress)` と書けば、フィールドはオーナーのテーブルにインラインで配置されます。
 - **値を自然に代入したり比較したりしたい場合。** `customer.BillingAddress = customer.ShippingAddress` はフィールドをコピーしてきれいに保存し、`Where(c => c.BillingAddress == c.ShippingAddress)` は内容でフィルタリングします。以下で説明するように、これらは両方とも所有エンティティでは壊れます。
-- **一括書き込みが値の内部に到達してほしい場合。** EF Core 11 は複合型のメンバーへの `ExecuteUpdate` をサポートします： `ExecuteUpdateAsync(s => s.SetProperty(c => c.ShippingAddress.PostalCode, "010001"))`。所有エンティティはこれを一度も許可したことがありません。高速な書き込みパスを気にするなら、これだけで決定的です。トレードオフは [ExecuteUpdate vs エンティティの読み込みと SaveChanges](/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/) と同じものです。
-- **値が `struct` や `record` である場合。** 所有エンティティは EF Core がキーを付けて追跡できる参照型でなければなりません。複合型は `readonly struct Money` や `record` になれます。これは「アイデンティティなし」という考えと一致します。record の相互作用は [EF Core 11 で record を正しく使う方法](/2026/04/how-to-use-records-with-ef-core-11-correctly/) で全文を読む価値があります。
+- **一括書き込みが値の内部に到達してほしい場合。** EF Core 11 は複合型のメンバーへの `ExecuteUpdate` をサポートします： `ExecuteUpdateAsync(s => s.SetProperty(c => c.ShippingAddress.PostalCode, "010001"))`。所有エンティティはこれを一度も許可したことがありません。高速な書き込みパスを気にするなら、これだけで決定的です。トレードオフは [ExecuteUpdate vs エンティティの読み込みと SaveChanges](/ja/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/) と同じものです。
+- **値が `struct` や `record` である場合。** 所有エンティティは EF Core がキーを付けて追跡できる参照型でなければなりません。複合型は `readonly struct Money` や `record` になれます。これは「アイデンティティなし」という考えと一致します。record の相互作用は [EF Core 11 で record を正しく使う方法](/ja/2026/04/how-to-use-records-with-ef-core-11-correctly/) で全文を読む価値があります。
 
 Microsoft のガイダンスはこのデフォルトについて微妙な言い方をしていません。EF Core 11 のリリースノートは、複合型の安定化作業が「所有エンティティのマッピング手法に代わるものとして複合型を使えるようにするため」に特に行われたと述べており、EF Core 10 のノートは既存の所有エンティティのユーザーに切り替えるよう伝えました。複合型をデフォルトとして扱い、所有エンティティを例外として扱ってください。
 
@@ -107,7 +107,7 @@ await context.Customers
 
 1 つ目は変更追跡です。所有エンティティは、EF Core が管理するシャドウキーとともに、変更トラッカー内の独自のノードとして追跡されます。複合型は独立したノードではなく、そのカラムはオーナーの一部として、カラム差分のレベルで追跡されます。集約ごとに多くの値オブジェクトを持つオブジェクトグラフでは、`SaveChanges` の際にスナップショットを取り、修復し、差分を取るエントリが少なくなります。この違いは通常エンティティごとには小さいですが、読み込む値オブジェクトの数に応じてスケールし、そして単純に帳簿付けが少ないので、厳密に複合型に有利です。
 
-2 つ目は結合であり、それはストレージ上の理由で実際に選ぶであろう所有エンティティのケースにのみ当てはまります。`OwnsOne(...).ToTable("Addresses")` のマッピングは別テーブルに存在するので、オーナーをその値オブジェクトとともに読み込むことは結合です。テーブル分割された複合型は別テーブルを持たず、したがって結合もありません。もし単なる習慣で値オブジェクトを所有エンティティに移し、それがどのみちオーナーのテーブルに配置された (デフォルト) なら、両者はストレージ的に等価であり、追跡の違いだけが残ります。所有エンティティの目玉機能 (別テーブル) を実際に使った瞬間に、複合型が構造上回避する結合コストを引き受けることになります。より広い追跡コストの全体像については、[EF Core 11 における AsNoTracking vs AsNoTrackingWithIdentityResolution](/2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11/) に同じ力学が現れます。
+2 つ目は結合であり、それはストレージ上の理由で実際に選ぶであろう所有エンティティのケースにのみ当てはまります。`OwnsOne(...).ToTable("Addresses")` のマッピングは別テーブルに存在するので、オーナーをその値オブジェクトとともに読み込むことは結合です。テーブル分割された複合型は別テーブルを持たず、したがって結合もありません。もし単なる習慣で値オブジェクトを所有エンティティに移し、それがどのみちオーナーのテーブルに配置された (デフォルト) なら、両者はストレージ的に等価であり、追跡の違いだけが残ります。所有エンティティの目玉機能 (別テーブル) を実際に使った瞬間に、複合型が構造上回避する結合コストを引き受けることになります。より広い追跡コストの全体像については、[EF Core 11 における AsNoTracking vs AsNoTrackingWithIdentityResolution](/ja/2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11/) に同じ力学が現れます。
 
 つまり、正直なパフォーマンスの言明はこうです： 複合型は同等の同一テーブルの所有エンティティより決して遅くならず、追跡において構造的により軽量です。所有エンティティは、複合型にできない唯一のことのためにそれらを使うときに、まさに結合を引き受けます。
 
@@ -115,11 +115,11 @@ await context.Customers
 
 好みに関係なく、あなたの代わりに決定を下しうるものが 2 つあります。
 
-1 つ目はあなたの EF Core のバージョンです。上記のすべては EF Core 11 を前提としています。EF Core 9 以前では、複合型は TPT/TPC 継承を持つエンティティで使えず、ネストしたメンバーへの `ExecuteUpdate` にはバグがあり、ネストした複合型の比較は誤っており、`ComplexCollection` は存在しませんでした。EF Core 9 に固定されているなら、継承された値オブジェクトやコレクションについては所有エンティティが依然として実用的な選択かもしれず、アップグレードの一環として切り替えを計画すべきです。[EF Core 6 から EF Core 11 への移行ガイド](/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/) はこれと並んで表面化しがちな破壊的変更をカバーしています。また、EF Core 11 の `UseSqlServer` は互換性レベル 160 (SQL Server 2022) をデフォルトにするようになり、これは一部の JSON 変換に影響することに注意してください。
+1 つ目はあなたの EF Core のバージョンです。上記のすべては EF Core 11 を前提としています。EF Core 9 以前では、複合型は TPT/TPC 継承を持つエンティティで使えず、ネストしたメンバーへの `ExecuteUpdate` にはバグがあり、ネストした複合型の比較は誤っており、`ComplexCollection` は存在しませんでした。EF Core 9 に固定されているなら、継承された値オブジェクトやコレクションについては所有エンティティが依然として実用的な選択かもしれず、アップグレードの一環として切り替えを計画すべきです。[EF Core 6 から EF Core 11 への移行ガイド](/ja/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/) はこれと並んで表面化しがちな破壊的変更をカバーしています。また、EF Core 11 の `UseSqlServer` は互換性レベル 160 (SQL Server 2022) をデフォルトにするようになり、これは一部の JSON 変換に影響することに注意してください。
 
 2 つ目は、オプショナルな値のルールです。オプショナル (null 許容) な複合型は、**少なくとも 1 つの必須の、非 null 許容プロパティ** を持たなければなりません。というのも、EF Core はそのカラムを使って「値全体が null」であることと「値は存在するがそのオプショナルなフィールドが null」であることを区別するからです。本当にすべてのフィールドが null 許容である値オブジェクトを持っている場合、オプショナルな複合型はビルドされず、判別子を追加するか、null 許容性を再考するか、所有エンティティにフォールバックすることになります。実際には、本物の `Address` や `Money` は常に必須のフィールドを持つので、これがかみつくことはめったにありませんが、これはあなたの手を所有エンティティへと強制しうる唯一のモデリング上の制約です。
 
-クエリフィルターは両方で同じように振る舞います： グローバルまたは名前付きのフィルターは値オブジェクトではなくオーナー側のエンティティに定義されるので、論理削除とマルチテナンシーはどちらのマッピングを選んでも同一に動作します。それが気がかりなら、[EF Core 11 における名前付きクエリフィルター vs 単一のグローバルクエリフィルター](/2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11/) を参照してください。これは複合型と所有エンティティの間の差別化要因ではありません。
+クエリフィルターは両方で同じように振る舞います： グローバルまたは名前付きのフィルターは値オブジェクトではなくオーナー側のエンティティに定義されるので、論理削除とマルチテナンシーはどちらのマッピングを選んでも同一に動作します。それが気がかりなら、[EF Core 11 における名前付きクエリフィルター vs 単一のグローバルクエリフィルター](/ja/2026/07/named-query-filters-vs-a-single-global-query-filter-in-ef-core-11/) を参照してください。これは複合型と所有エンティティの間の差別化要因ではありません。
 
 ## 推奨、はっきりと述べる
 
@@ -129,11 +129,11 @@ EF Core 11 では、値オブジェクトにはデフォルトで複合型を使
 
 ## 関連する読み物
 
-- [EF Core 11 で所有エンティティの代わりに複合型をマッピングする方法](/2026/07/how-to-map-a-complex-type-instead-of-an-owned-entity-in-ef-core-11/) は、`OwnsOne` から `ComplexProperty` への移行を含む、完全なステップバイステップです。
-- [EF Core 11 で record を正しく使う方法](/2026/04/how-to-use-records-with-ef-core-11-correctly/) は、複合型としての record 対エンティティとしての record をより深く掘り下げます。
-- [EF Core 11 で JSON カラムをマッピングしてクエリする方法](/2026/06/how-to-map-and-query-json-columns-in-ef-core-11/) は、両方のマッピングが共有する JSON ストレージのオプションをカバーします。
-- [ExecuteUpdate vs エンティティの読み込みと SaveChanges](/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/) は、複合型が値オブジェクトのために解き放つ一括更新のパスを枠組みします。
-- [EF Core 11 でテーブル・パー・ハイアラーキー (TPH) 継承マッピングを構成する方法](/2026/07/how-to-configure-table-per-hierarchy-tph-inheritance-mapping-in-ef-core-11/) は、オーナーが継承階層に位置するときの相棒です。
+- [EF Core 11 で所有エンティティの代わりに複合型をマッピングする方法](/ja/2026/07/how-to-map-a-complex-type-instead-of-an-owned-entity-in-ef-core-11/) は、`OwnsOne` から `ComplexProperty` への移行を含む、完全なステップバイステップです。
+- [EF Core 11 で record を正しく使う方法](/ja/2026/04/how-to-use-records-with-ef-core-11-correctly/) は、複合型としての record 対エンティティとしての record をより深く掘り下げます。
+- [EF Core 11 で JSON カラムをマッピングしてクエリする方法](/ja/2026/06/how-to-map-and-query-json-columns-in-ef-core-11/) は、両方のマッピングが共有する JSON ストレージのオプションをカバーします。
+- [ExecuteUpdate vs エンティティの読み込みと SaveChanges](/ja/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/) は、複合型が値オブジェクトのために解き放つ一括更新のパスを枠組みします。
+- [EF Core 11 でテーブル・パー・ハイアラーキー (TPH) 継承マッピングを構成する方法](/ja/2026/07/how-to-configure-table-per-hierarchy-tph-inheritance-mapping-in-ef-core-11/) は、オーナーが継承階層に位置するときの相棒です。
 
 ## ソース
 

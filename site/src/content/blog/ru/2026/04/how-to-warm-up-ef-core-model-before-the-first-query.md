@@ -51,7 +51,7 @@ await using (var db = new BloggingContext(options))
 Console.WriteLine($"second: {sw.ElapsedMilliseconds} ms");
 ```
 
-На демо-модели из 30 сущностей, нацеленной на SQL Server 2025 с EF Core 11.0.0 на тёплом ноутбуке, первая итерация печатает около `380 ms`, а вторая около `4 ms`. Доминирует построение модели. Если тот же код запускается против холодного AWS Lambda, где host поднимается на каждый вызов, эти 380 мс приземляются прямо в видимую пользователю задержку p99, что ровно тот класс проблемы, который рассматривается в [сокращении времени холодного старта AWS Lambda на .NET 11](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/).
+На демо-модели из 30 сущностей, нацеленной на SQL Server 2025 с EF Core 11.0.0 на тёплом ноутбуке, первая итерация печатает около `380 ms`, а вторая около `4 ms`. Доминирует построение модели. Если тот же код запускается против холодного AWS Lambda, где host поднимается на каждый вызов, эти 380 мс приземляются прямо в видимую пользователю задержку p99, что ровно тот класс проблемы, который рассматривается в [сокращении времени холодного старта AWS Lambda на .NET 11](/ru/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/).
 
 ## Решение один: прогрев модели на старте через IHostedService
 
@@ -188,9 +188,9 @@ builder.Services.AddDbContext<TenantBloggingContext>(o => o
 
 ## Связанное
 
-- [Как мокать DbContext, не ломая отслеживание изменений](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/)
+- [Как мокать DbContext, не ломая отслеживание изменений](/ru/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/)
 - [Как использовать IAsyncEnumerable с EF Core 11](/ru/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/)
-- [Как сократить время холодного старта AWS Lambda на .NET 11](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/)
+- [Как сократить время холодного старта AWS Lambda на .NET 11](/ru/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/)
 - [EF Core 11: RemoveDbContext и замена pooled factory для тестов](/ru/2026/04/efcore-11-removedbcontext-pooled-factory-test-swap/)
 - [EF Core 11 preview 3 обрезает reference joins в split queries](/ru/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/)
 

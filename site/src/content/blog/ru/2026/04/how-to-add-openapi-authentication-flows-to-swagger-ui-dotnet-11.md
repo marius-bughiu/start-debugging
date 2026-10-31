@@ -28,7 +28,7 @@ translationDate: 2026-04-28
 1. Документ OpenAPI больше не зона ответственности Swashbuckle, поэтому все примеры с `OperationFilter` и `DocumentFilter` на Stack Overflow устарели. Новая точка расширения — `IOpenApiDocumentTransformer` и `IOpenApiOperationTransformer`.
 2. Swagger UI теперь опционален. Если он нужен, ставится `Swashbuckle.AspNetCore.SwaggerUI` (только UI-пакет, около 600 КБ) и направляется на JSON-документ, который выдаёт новый генератор.
 
-Если нужен только UI «попробовать endpoint», [Scalar — более лёгкая альтернатива](/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/), читающая тот же документ OpenAPI. Transformer'ы ниже формируют корректную модель безопасности OpenAPI 3.x, поэтому любой UI, уважающий спецификацию, подхватит auth-потоки.
+Если нужен только UI «попробовать endpoint», [Scalar — более лёгкая альтернатива](/ru/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/), читающая тот же документ OpenAPI. Transformer'ы ниже формируют корректную модель безопасности OpenAPI 3.x, поэтому любой UI, уважающий спецификацию, подхватит auth-потоки.
 
 ## Минимальная настройка Bearer JWT
 
@@ -308,7 +308,7 @@ builder.Services.AddOpenApi(o =>
 
 **OAuth-redirect URL при не-корневом path base.** Когда приложение работает за reverse proxy на `/api`, Swagger UI собирает редирект как `/api/swagger/oauth2-redirect.html`. Регистрация в IdP должна включать ровно этот путь, иначе callback падает с `redirect_uri_mismatch`. Если редирект выглядит странно — проверьте заголовки `Forwarded` и `UsePathBase`.
 
-**Native AOT.** На момент .NET 11 новый генератор OpenAPI не помечен как trim-safe для произвольных transformer'ов, а статическая отдача `Swashbuckle.AspNetCore.SwaggerUI` хоть и работает под AOT, transformer'ам стоит избегать reflection по закрытым generic'ам. Если вылезли предупреждения `RequiresUnreferencedCode`, обратитесь к [руководству по Native AOT с minimal API](/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/) — там описан рабочий шаблон.
+**Native AOT.** На момент .NET 11 новый генератор OpenAPI не помечен как trim-safe для произвольных transformer'ов, а статическая отдача `Swashbuckle.AspNetCore.SwaggerUI` хоть и работает под AOT, transformer'ам стоит избегать reflection по закрытым generic'ам. Если вылезли предупреждения `RequiresUnreferencedCode`, обратитесь к [руководству по Native AOT с minimal API](/ru/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/) — там описан рабочий шаблон.
 
 **Пооперационные требования добавляются, а не заменяют.** Если в документе есть глобальный `SecurityRequirements` *и* operation transformer добавляет своё, оба считаются альтернативами (OR-семантика OpenAPI). Для публичного endpoint'а нужно явно очистить `operation.Security`, а не просто оставить transformer в покое.
 
@@ -329,15 +329,15 @@ app.UseSwaggerUI(c =>
 });
 ```
 
-Каждый документ несёт собственный набор `securitySchemes`, поэтому transformer, выполняющийся per-document, вызывается по разу на версию. Хорошая новость: за общим состоянием гнаться не приходится. Плохая: если забыть зарегистрировать transformer для документа v2, замочек будет только в v1. Шаблон чисто стыкуется с `WithDocumentPerVersion()` из `Asp.Versioning` 10.0 (разобрано в [посте про версионирование API](/2026/04/api-versioning-openapi-dotnet-10/)).
+Каждый документ несёт собственный набор `securitySchemes`, поэтому transformer, выполняющийся per-document, вызывается по разу на версию. Хорошая новость: за общим состоянием гнаться не приходится. Плохая: если забыть зарегистрировать transformer для документа v2, замочек будет только в v1. Шаблон чисто стыкуется с `WithDocumentPerVersion()` из `Asp.Versioning` 10.0 (разобрано в [посте про версионирование API](/ru/2026/04/api-versioning-openapi-dotnet-10/)).
 
 ## Похожее
 
-- [Scalar in ASP.NET Core: why your Bearer token is ignored (.NET 10)](/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/)
-- [Asp.Versioning 10.0 finally plays nicely with built-in OpenAPI in .NET 10](/2026/04/api-versioning-openapi-dotnet-10/)
-- [How to generate strongly-typed client code from an OpenAPI spec in .NET 11](/2026/04/how-to-generate-strongly-typed-client-from-openapi-spec-dotnet-11/)
-- [How to implement refresh tokens in ASP.NET Core Identity](/2026/04/how-to-implement-refresh-tokens-in-aspnetcore-identity/)
-- [How to use Native AOT with ASP.NET Core minimal APIs](/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/)
+- [Scalar in ASP.NET Core: why your Bearer token is ignored (.NET 10)](/ru/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/)
+- [Asp.Versioning 10.0 finally plays nicely with built-in OpenAPI in .NET 10](/ru/2026/04/api-versioning-openapi-dotnet-10/)
+- [How to generate strongly-typed client code from an OpenAPI spec in .NET 11](/ru/2026/04/how-to-generate-strongly-typed-client-from-openapi-spec-dotnet-11/)
+- [How to implement refresh tokens in ASP.NET Core Identity](/ru/2026/04/how-to-implement-refresh-tokens-in-aspnetcore-identity/)
+- [How to use Native AOT with ASP.NET Core minimal APIs](/ru/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/)
 
 ## Источники
 

@@ -183,7 +183,7 @@ var summaries = await db.Orders
 
 ### Id のない record をマッピングする
 
-位置指定の `record` はエンティティとして問題なく機能しますが、そのパラメータの1つが発見可能なキーになる場合に限られます。`public record OrderSummary(Guid Reference, decimal Total);` は、クラスと同じ理由でこのエラーになります。`Reference` は `Id` ではありません。最初のパラメータを `Id` と名付けるか、位置指定パラメータに `[property: Key]` を付けるか、`OnModelCreating` で `HasKey` を設定します。init-only プロパティや値の等価性を含む record のマッピングの仕組みは、[EF Core 11 で record を正しく使う](/2026/04/how-to-use-records-with-ef-core-11-correctly/)のガイドで扱っています。
+位置指定の `record` はエンティティとして問題なく機能しますが、そのパラメータの1つが発見可能なキーになる場合に限られます。`public record OrderSummary(Guid Reference, decimal Total);` は、クラスと同じ理由でこのエラーになります。`Reference` は `Id` ではありません。最初のパラメータを `Id` と名付けるか、位置指定パラメータに `[property: Key]` を付けるか、`OnModelCreating` で `HasKey` を設定します。init-only プロパティや値の等価性を含む record のマッピングの仕組みは、[EF Core 11 で record を正しく使う](/ja/2026/04/how-to-use-records-with-ef-core-11-correctly/)のガイドで扱っています。
 
 ### Database.SqlQuery<T> と FromSql の結果型
 
@@ -195,7 +195,7 @@ var summaries = await db.Orders
 
 ### 実行時ではなく dotnet ef でのみ失敗する
 
-`dotnet ef migrations add` と `dotnet ef database update` は完全なモデルを構築するため、狭い実行時のコードパスではまだ発火していなかったモデルエラーを表面化させます。エラーは本物で、ツールが先に見つけただけです。デザイン時のビルドがコンテキストを構築すらできない場合は、先に別のメッセージが出ます。それは [なぜ dotnet ef migrations add が DbContext を作成できないのか](/2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext/) で扱っています。
+`dotnet ef migrations add` と `dotnet ef database update` は完全なモデルを構築するため、狭い実行時のコードパスではまだ発火していなかったモデルエラーを表面化させます。エラーは本物で、ツールが先に見つけただけです。デザイン時のビルドがコンテキストを構築すらできない場合は、先に別のメッセージが出ます。それは [なぜ dotnet ef migrations add が DbContext を作成できないのか](/ja/2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext/) で扱っています。
 
 ### null 許容、またはシャドウされたキー
 
@@ -212,7 +212,7 @@ dotnet ef dbcontext info --startup-project ./Api
 
 モデルが有効なら、これはプロバイダーとコンテキストの詳細を出力します。型がまだキーなしで未指定なら、同じ例外をスローし、メッセージがどの型が未解決のままかを正確に伝えます。1つずつ対処してください。複数のビュー型や DTO 型を持つモデルは、それぞれが処理されるまで型ごとに1回ずつスローすることがあります。
 
-覚えておく価値のあるメンタルモデル: このエラーは、EF Core があなたに型を分類するよう求めているものです。同一性を持つエンティティ、キーなしの読み取り専用の形、または非エンティティ。それに答えれば、修正は機械的です。これらの型をテストに組み込み、変更追跡を正しく振る舞わせたいときは、[変更追跡を壊さずに DbContext をモックする](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/)と[最初のクエリの前に EF Core のモデルをウォームアップする](/2026/04/how-to-warm-up-ef-core-model-before-the-first-query/)のパターンが、キーを正しく設定することとよく噛み合います。
+覚えておく価値のあるメンタルモデル: このエラーは、EF Core があなたに型を分類するよう求めているものです。同一性を持つエンティティ、キーなしの読み取り専用の形、または非エンティティ。それに答えれば、修正は機械的です。これらの型をテストに組み込み、変更追跡を正しく振る舞わせたいときは、[変更追跡を壊さずに DbContext をモックする](/ja/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/)と[最初のクエリの前に EF Core のモデルをウォームアップする](/ja/2026/04/how-to-warm-up-ef-core-model-before-the-first-query/)のパターンが、キーを正しく設定することとよく噛み合います。
 
 ## 出典
 

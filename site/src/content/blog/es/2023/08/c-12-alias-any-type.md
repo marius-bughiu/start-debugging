@@ -52,4 +52,4 @@ namespace ConsoleApp8
 
 > The feature 'using type alias' is currently in Preview and _unsupported_. To use Preview features, use the 'preview' language version.
 
-Este error significa que tu proyecto aún no usa C# 12, así que no puedes usar las nuevas características del lenguaje. Si quieres cambiar a C# 12 y no sabes cómo, consulta [nuestra guía para migrar tu proyecto a C# 12](/2023/06/how-to-switch-to-c-12/).
+Este error significa que tu proyecto aún no usa C# 12, así que no puedes usar las nuevas características del lenguaje. Si quieres cambiar a C# 12 y no sabes cómo, consulta [nuestra guía para migrar tu proyecto a C# 12](/es/2023/06/how-to-switch-to-c-12/).

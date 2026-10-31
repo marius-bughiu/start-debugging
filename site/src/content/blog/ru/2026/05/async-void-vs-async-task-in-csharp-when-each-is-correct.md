@@ -126,7 +126,7 @@ private async Task SaveAsync(FormData form)
 - **Потерянные трассировки стека.** Исключение, всплывающее на synchronization context, теряет исходный стек точки вызова. Вы видите перебрасываемый кадр, а не "это было вызвано из `OnSaveClicked`".
 - **Никакой отмены.** Вы не можете пропустить отмену через метод, потому что у вызывающего нет `Task`, который можно ожидать. Аргумент `CancellationToken` всё ещё работает внутри метода, но вызывающий не может реагировать на `OperationCanceledException`, так как оно никогда не распространяется обратно.
 - **Никакого таймаута через `Task.WhenAny`.** Распространённый шаблон - `await Task.WhenAny(work, Task.Delay(timeout, ct))`. Для этого вам нужен `Task`. У `async void` его нет.
-- **Никаких тестов на завершение.** xUnit, NUnit и MSTest могут ожидать `async Task`-метод теста и наблюдать его результат. Они не могут ожидать `async void`-тест. Некоторые фреймворки делают особые случаи для `async void`-тестовых методов (старый NUnit, MSTest v2 с особенностями адаптера); ни один не рекомендует это. Смотрите более детальный шаблон в [как тестировать код, использующий HttpClient](/2026/04/how-to-unit-test-code-that-uses-httpclient/), где каждый тест - `async Task`.
+- **Никаких тестов на завершение.** xUnit, NUnit и MSTest могут ожидать `async Task`-метод теста и наблюдать его результат. Они не могут ожидать `async void`-тест. Некоторые фреймворки делают особые случаи для `async void`-тестовых методов (старый NUnit, MSTest v2 с особенностями адаптера); ни один не рекомендует это. Смотрите более детальный шаблон в [как тестировать код, использующий HttpClient](/ru/2026/04/how-to-unit-test-code-that-uses-httpclient/), где каждый тест - `async Task`.
 - **Fire-and-forget, который также fire-and-crash.** Многие шаблоны "fire-and-forget" молча становятся вызовами `async void`, когда разработчики забывают `await`. Решение - не `async void`; решение - явный discard `_ = SomeAsync();` и принятие того, что получаемый `Task` не наблюдается, или, что лучше, передача задачи в известное место, которое её наблюдает (логгер, фоновая очередь).
 
 ## Бенчмарк: экономит ли что-нибудь `async void`?
@@ -173,9 +173,9 @@ public class AsyncShapes
 
 Если вас тянет к `async void` для не-событийного метода, две вещи должны изменить ваше мнение моментально.
 
-Первое - fire-and-forget-задачи, охватывающие время жизни запроса. ASP.NET Core по умолчанию не даёт вам `SynchronizationContext`, поэтому исключение в `async void` всплывает в `ThreadPool.UnobservedExceptionEvent` и, в зависимости от ваших настроек `<ServerGarbageCollection>`, может уронить с собой worker-процесс. В тот момент, когда вы решаете "запустить какую-то фоновую работу из контроллера", переключайтесь на `IHostedService` или, для разового запуска, возвращайте `Task` фреймворку через что-то, что его наблюдает (`BackgroundService`, очередь, осведомлённая об `IHostApplicationLifetime`, [Channels](/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/)).
+Первое - fire-and-forget-задачи, охватывающие время жизни запроса. ASP.NET Core по умолчанию не даёт вам `SynchronizationContext`, поэтому исключение в `async void` всплывает в `ThreadPool.UnobservedExceptionEvent` и, в зависимости от ваших настроек `<ServerGarbageCollection>`, может уронить с собой worker-процесс. В тот момент, когда вы решаете "запустить какую-то фоновую работу из контроллера", переключайтесь на `IHostedService` или, для разового запуска, возвращайте `Task` фреймворку через что-то, что его наблюдает (`BackgroundService`, очередь, осведомлённая об `IHostApplicationLifetime`, [Channels](/ru/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/)).
 
-Второе - интерфейсы. Если вы когда-либо захотите, чтобы метод был мокаемым или частью контракта, он должен что-то возвращать. `Task` - стандартный тип возврата для асинхронной операции, не производящей значения. `void` не может быть ожидаем через `await` мок-объектом или fake, и вы не сможете координировать настройку теста вокруг него. Шаблон мокинга в [как мокать DbContext без поломки отслеживания изменений](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) опирается на члены, возвращающие `Task`, по той же причине.
+Второе - интерфейсы. Если вы когда-либо захотите, чтобы метод был мокаемым или частью контракта, он должен что-то возвращать. `Task` - стандартный тип возврата для асинхронной операции, не производящей значения. `void` не может быть ожидаем через `await` мок-объектом или fake, и вы не сможете координировать настройку теста вокруг него. Шаблон мокинга в [как мокать DbContext без поломки отслеживания изменений](/ru/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) опирается на члены, возвращающие `Task`, по той же причине.
 
 ## Категоричная рекомендация, ещё раз
 
@@ -188,11 +188,11 @@ public class AsyncShapes
 
 ## Связанное
 
-- [Как отменить долго выполняющуюся Task в C# без deadlock'а](/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/)
-- [Как использовать Channels вместо BlockingCollection в C#](/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/)
-- [Как тестировать код, использующий HttpClient](/2026/04/how-to-unit-test-code-that-uses-httpclient/)
-- [Fix: TaskCanceledException: A task was canceled в HttpClient](/2026/05/fix-taskcanceledexception-a-task-was-canceled-httpclient/)
-- [Fix: InvalidOperationException: Synchronous operations are disallowed в ASP.NET Core](/2026/05/fix-invalidoperationexception-synchronous-operations-are-disallowed/)
+- [Как отменить долго выполняющуюся Task в C# без deadlock'а](/ru/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/)
+- [Как использовать Channels вместо BlockingCollection в C#](/ru/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/)
+- [Как тестировать код, использующий HttpClient](/ru/2026/04/how-to-unit-test-code-that-uses-httpclient/)
+- [Fix: TaskCanceledException: A task was canceled в HttpClient](/ru/2026/05/fix-taskcanceledexception-a-task-was-canceled-httpclient/)
+- [Fix: InvalidOperationException: Synchronous operations are disallowed в ASP.NET Core](/ru/2026/05/fix-invalidoperationexception-synchronous-operations-are-disallowed/)
 
 ## Источники
 

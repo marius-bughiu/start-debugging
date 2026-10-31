@@ -160,7 +160,7 @@ app.Run();
 
 Blazor Web App в режиме Auto выигрывает у автономного WebAssembly по first paint в пять раз, потому что не ждёт пакет. Автономный Server он не выигрывает, потому что как только пакет WebAssembly догружается, память расходуется так же. Дело не в том, что Auto самый быстрый по какой-то одной метрике. Дело в том, что он никогда не самый медленный.
 
-Для более глубокого взгляда на то, как SDK .NET 11 урезает пакет WASM, посмотрите [новый шаблон Blazor WebWorker в .NET 11](/2026/04/dotnet-11-preview-2-blazor-webworker-template/), который использует те же настройки trimmer.
+Для более глубокого взгляда на то, как SDK .NET 11 урезает пакет WASM, посмотрите [новый шаблон Blazor WebWorker в .NET 11](/ru/2026/04/dotnet-11-preview-2-blazor-webworker-template/), который использует те же настройки trimmer.
 
 ## Подводный камень, который выбирает за вас
 
@@ -172,7 +172,7 @@ Blazor Web App в режиме Auto выигрывает у автономног
 
 3. **HTTPS, antiforgery и состояние аутентификации идут через cookies по умолчанию.** Компоненты WebAssembly не видят эти cookies для cross-origin запросов. Если часть WebAssembly в Blazor Web App вызывает внешнюю API, поверх нужен поток токенов OIDC, а не только cookie хоста. Это самый частый камень преткновения при миграции приложения Blazor Server на шаблон Web App.
 
-По части antiforgery [поведение TempData в Blazor SSR в .NET 11](/2026/04/blazor-ssr-tempdata-dotnet-11/) и [руководство по совместной логике валидации](/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly/) разбирают практические паттерны.
+По части antiforgery [поведение TempData в Blazor SSR в .NET 11](/ru/2026/04/blazor-ssr-tempdata-dotnet-11/) и [руководство по совместной логике валидации](/ru/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly/) разбирают практические паттерны.
 
 ## Рекомендация ещё раз
 
@@ -182,11 +182,11 @@ Blazor Web App в режиме Auto выигрывает у автономног
 
 ## Связанное
 
-- [Minimal APIs vs контроллеры в ASP.NET Core 11](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/) — про решения по бекенд-API, которые открывает Blazor Web App.
-- [Как использовать Tailwind CSS с Blazor WebAssembly в .NET 11](/2026/05/how-to-use-tailwind-css-with-blazor-webassembly-in-dotnet-11/) — про различия пайплайна стилей между автономным WASM и шаблоном Blazor Web App.
-- [Как делить логику валидации между сервером и Blazor WebAssembly](/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly/) — про практический паттерн "общего проекта", который шаблон Web App формализует.
-- [Native AOT vs ReadyToRun vs JIT в .NET 11](/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/) — про компромиссы режима компиляции, которые касаются и Server, и WASM.
-- [Blazor `Virtualize` с переменной высотой в .NET 11 Preview 3](/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3/) — про одну из новых API, выгодных спискам компонентов в режиме Auto.
+- [Minimal APIs vs контроллеры в ASP.NET Core 11](/ru/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/) — про решения по бекенд-API, которые открывает Blazor Web App.
+- [Как использовать Tailwind CSS с Blazor WebAssembly в .NET 11](/ru/2026/05/how-to-use-tailwind-css-with-blazor-webassembly-in-dotnet-11/) — про различия пайплайна стилей между автономным WASM и шаблоном Blazor Web App.
+- [Как делить логику валидации между сервером и Blazor WebAssembly](/ru/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly/) — про практический паттерн "общего проекта", который шаблон Web App формализует.
+- [Native AOT vs ReadyToRun vs JIT в .NET 11](/ru/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/) — про компромиссы режима компиляции, которые касаются и Server, и WASM.
+- [Blazor `Virtualize` с переменной высотой в .NET 11 Preview 3](/ru/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3/) — про одну из новых API, выгодных спискам компонентов в режиме Auto.
 
 ## Источники
 

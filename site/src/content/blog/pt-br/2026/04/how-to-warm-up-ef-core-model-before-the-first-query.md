@@ -51,7 +51,7 @@ await using (var db = new BloggingContext(options))
 Console.WriteLine($"second: {sw.ElapsedMilliseconds} ms");
 ```
 
-Em um modelo demo de 30 entidades apontando para SQL Server 2025 com EF Core 11.0.0 em um notebook quente, a primeira iteração imprime cerca de `380 ms` e a segunda cerca de `4 ms`. A construção do modelo domina. Se o mesmo código rodar contra um AWS Lambda frio onde o host sobe por invocação, esses 380 ms aterrissam direto na latência p99 visível ao usuário, que é exatamente a classe de problema coberta em [reduzir o tempo de partida fria de um AWS Lambda com .NET 11](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/).
+Em um modelo demo de 30 entidades apontando para SQL Server 2025 com EF Core 11.0.0 em um notebook quente, a primeira iteração imprime cerca de `380 ms` e a segunda cerca de `4 ms`. A construção do modelo domina. Se o mesmo código rodar contra um AWS Lambda frio onde o host sobe por invocação, esses 380 ms aterrissam direto na latência p99 visível ao usuário, que é exatamente a classe de problema coberta em [reduzir o tempo de partida fria de um AWS Lambda com .NET 11](/pt-br/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/).
 
 ## Solução um: aquecer o modelo na inicialização com IHostedService
 
@@ -188,9 +188,9 @@ Esse é o mesmo formato de aquecer qualquer cache: descubra onde mora o custo, m
 
 ## Relacionado
 
-- [Como mockar DbContext sem quebrar o change tracking](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/)
+- [Como mockar DbContext sem quebrar o change tracking](/pt-br/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/)
 - [Como usar IAsyncEnumerable com EF Core 11](/pt-br/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/)
-- [Como reduzir o tempo de partida fria de um AWS Lambda com .NET 11](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/)
+- [Como reduzir o tempo de partida fria de um AWS Lambda com .NET 11](/pt-br/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/)
 - [EF Core 11: RemoveDbContext e o swap de pooled factory para testes](/pt-br/2026/04/efcore-11-removedbcontext-pooled-factory-test-swap/)
 - [EF Core 11 preview 3 poda joins de referência em split queries](/pt-br/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/)
 

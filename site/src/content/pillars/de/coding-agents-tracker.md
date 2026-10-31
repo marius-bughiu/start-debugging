@@ -20,9 +20,9 @@ Dieses Thema sammelt alles auf der Seite zu **KI-Coding-Agenten, LLMs und dem Mo
 
 ## Womit anfangen
 
-Wenn Sie neu in diesem Thema sind, starten Sie mit [Microsoft Agent Framework 1.0: Building AI Agents in Pure C#](/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) für die .NET-Seite, und [Wiring Model Context Protocol servers from C# on .NET 10](/2026/01/microsoft-mcp-wiring-model-context-protocol-servers-from-c-on-net-10/) für die MCP-Grundlagen, auf denen die meisten Beiträge von 2026 aufbauen.
+Wenn Sie neu in diesem Thema sind, starten Sie mit [Microsoft Agent Framework 1.0: Building AI Agents in Pure C#](/de/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) für die .NET-Seite, und [Wiring Model Context Protocol servers from C# on .NET 10](/de/2026/01/microsoft-mcp-wiring-model-context-protocol-servers-from-c-on-net-10/) für die MCP-Grundlagen, auf denen die meisten Beiträge von 2026 aufbauen.
 
-Speziell zu Copilot behandeln [Agent Skills land in Visual Studio 2026 18.5](/2026/04/visual-studio-2026-copilot-agent-skills/) und [What 878 Copilot Coding Agent PRs in dotnet/runtime actually look like](/2026/03/copilot-coding-agent-dotnet-runtime-ten-months-data/) sowohl die Feature-Oberfläche als auch die Ergebnisse aus der Praxis.
+Speziell zu Copilot behandeln [Agent Skills land in Visual Studio 2026 18.5](/de/2026/04/visual-studio-2026-copilot-agent-skills/) und [What 878 Copilot Coding Agent PRs in dotnet/runtime actually look like](/de/2026/03/copilot-coding-agent-dotnet-runtime-ten-months-data/) sowohl die Feature-Oberfläche als auch die Ergebnisse aus der Praxis.
 
 ## Was auf dieser Seite steht
 

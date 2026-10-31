@@ -22,7 +22,7 @@ La mayoría de los equipos recurren a un convertidor personalizado demasiado pro
 
 - Nombres de propiedades que no coinciden: usa `JsonPropertyNameAttribute` o un `JsonNamingPolicy`. Preview 3 agregó `JsonNamingPolicy.PascalCase` y un atributo `[JsonNamingPolicy]` a nivel de miembro, así que las [políticas de nombres en System.Text.Json 11](/es/2026/04/system-text-json-11-pascalcase-per-member-naming/) probablemente cubren lo que necesitas.
 - Números como cadenas: `JsonNumberHandling.AllowReadingFromString` en `JsonSerializerOptions`.
-- Enums como cadenas: `JsonStringEnumConverter` está integrado. Incluso hay una [variante compatible con trim para Native AOT](/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/).
+- Enums como cadenas: `JsonStringEnumConverter` está integrado. Incluso hay una [variante compatible con trim para Native AOT](/es/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/).
 - Propiedades de solo lectura o parámetros de constructor: el generador de código fuente (`[JsonSerializable]` más `JsonSerializerContext`) maneja records y constructores primarios directamente.
 - Polimorfismo por discriminador: `[JsonDerivedType]` y `[JsonPolymorphic]` (agregados en .NET 7) evitan casi todos los antiguos trucos de convertidores.
 
@@ -340,7 +340,7 @@ Para factorías compatibles con AOT, haz una de estas:
 - Restringe la factory a un conjunto conocido y finito de genéricos cerrados e instánciaalos directamente con `new ResultConverter<MyValue, MyError>()` por par.
 - Anota la factory con `[RequiresDynamicCode]` y `[RequiresUnreferencedCode]`, acepta las advertencias de trim y documenta que los consumidores AOT deben registrar el convertidor cerrado manualmente.
 
-El patrón de usar interceptors para hacer que las llamadas a `JsonSerializer.Serialize` recojan automáticamente un contexto generado, discutido en [la propuesta de interceptors de C# 14 para JSON con generación de código fuente](/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/), es independiente de los convertidores: incluso con eso, sigues escribiendo tu `JsonConverter<T>` personalizado de la misma manera.
+El patrón de usar interceptors para hacer que las llamadas a `JsonSerializer.Serialize` recojan automáticamente un contexto generado, discutido en [la propuesta de interceptors de C# 14 para JSON con generación de código fuente](/es/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/), es independiente de los convertidores: incluso con eso, sigues escribiendo tu `JsonConverter<T>` personalizado de la misma manera.
 
 ## Trampas, en orden de qué tan seguido muerden
 
@@ -358,8 +358,8 @@ Si tienes esto en mente, un convertidor rara vez toma más de 30 líneas de cód
 
 - [Cómo usar Channels en lugar de BlockingCollection en C#](/es/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) -- patrones primero-asíncrono, misma era de diseño de API.
 - [System.Text.Json en .NET 11 Preview 3 agrega PascalCase y nombres por miembro](/es/2026/04/system-text-json-11-pascalcase-per-member-naming/) -- cuando una política de nombres es suficiente y un convertidor no.
-- [Cómo usar JsonStringEnumConverter con Native AOT](/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/) -- la historia de trim/AOT para convertidores integrados.
-- [Interceptors para la generación de código fuente de System.Text.Json](/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/) -- una dirección paralela de ergonomía que vale la pena seguir.
+- [Cómo usar JsonStringEnumConverter con Native AOT](/es/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/) -- la historia de trim/AOT para convertidores integrados.
+- [Interceptors para la generación de código fuente de System.Text.Json](/es/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/) -- una dirección paralela de ergonomía que vale la pena seguir.
 - [Cómo retornar múltiples valores desde un método en C# 14](/es/2026/04/how-to-return-multiple-values-from-a-method-in-csharp-14/) -- los patrones de value-tuple y record que a menudo terminan necesitando un convertidor.
 
 ## Fuentes

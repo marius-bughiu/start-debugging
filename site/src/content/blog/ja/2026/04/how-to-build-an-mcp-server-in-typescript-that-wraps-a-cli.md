@@ -349,7 +349,7 @@ inspector はブラウザ UI を開き、そこでツールをリストし、引
 
 MCP サーバーは CLI が何をするかを気にしません。必要なのは、よく定義された入力スキーマ (Zod が 3 行で与えてくれる) と、バイナリを実行して出力を返すハンドラーだけです。
 
-チームが TypeScript の代わりに C# を使う場合、同じパターンが [.NET 10 で MCP サーバーを配線する際にカバーした ModelContextProtocol NuGet パッケージ](/2026/01/microsoft-mcp-wiring-model-context-protocol-servers-from-c-on-net-10/) 経由で利用可能です。IDE が MCP を直接バンドルする際の MCP の見え方を広く見るには、[Visual Studio 2022 17.14.30 の中で出荷される Azure MCP Server](/ja/2026/04/azure-mcp-server-visual-studio-2022-17-14-30/) は、このプロトコルが目指すスケールの有用な実例です。そして、複数のツールを協調させる自律エージェントを構築していて、生の MCP を超えるフレームワークが必要な場合、[Microsoft Agent Framework 1.0](/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) が C# 側をカバーします。IDE レベルのエージェント統合については、[Visual Studio 2026 18.5 の agent skills](/ja/2026/04/visual-studio-2026-copilot-agent-skills/) が、Copilot がリポジトリの `SKILL.md` から skill 定義を自動検出する方法を示しています。
+チームが TypeScript の代わりに C# を使う場合、同じパターンが [.NET 10 で MCP サーバーを配線する際にカバーした ModelContextProtocol NuGet パッケージ](/ja/2026/01/microsoft-mcp-wiring-model-context-protocol-servers-from-c-on-net-10/) 経由で利用可能です。IDE が MCP を直接バンドルする際の MCP の見え方を広く見るには、[Visual Studio 2022 17.14.30 の中で出荷される Azure MCP Server](/ja/2026/04/azure-mcp-server-visual-studio-2022-17-14-30/) は、このプロトコルが目指すスケールの有用な実例です。そして、複数のツールを協調させる自律エージェントを構築していて、生の MCP を超えるフレームワークが必要な場合、[Microsoft Agent Framework 1.0](/ja/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) が C# 側をカバーします。IDE レベルのエージェント統合については、[Visual Studio 2026 18.5 の agent skills](/ja/2026/04/visual-studio-2026-copilot-agent-skills/) が、Copilot がリポジトリの `SKILL.md` から skill 定義を自動検出する方法を示しています。
 
 ## ソースリンク
 

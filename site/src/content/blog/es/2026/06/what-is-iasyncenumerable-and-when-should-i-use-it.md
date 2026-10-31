@@ -98,7 +98,7 @@ await foreach (var line in ReadLinesAsync("huge.log", ct))
 
 El compilador expande esto en llamadas a `GetAsyncEnumerator`, un bucle de `await MoveNextAsync()` que lee `Current` en cada vuelta, y un `await DisposeAsync()` en un bloque finally. El bucle es totalmente secuencial: el elemento N+1 no se solicita hasta que tu cuerpo termina con el elemento N. Esa forma secuencial, dirigida por la demanda, es la característica, no una limitación. Es lo que acota la memoria y te da contrapresión natural: un consumidor lento ralentiza automáticamente al productor, porque el siguiente `await` del productor no se reanuda hasta la siguiente llamada a `MoveNextAsync`.
 
-Si el orden de iteración no importa y quieres concurrencia, `await foreach` es la herramienta equivocada. Usa [Parallel.ForEachAsync](/2026/05/parallel-foreach-vs-parallel-foreachasync-vs-task-whenall/), que puede consumir un `IAsyncEnumerable<T>` y ejecutar el cuerpo para varios elementos a la vez con un límite de grado de paralelismo. `await foreach` es para procesamiento ordenado, uno a la vez.
+Si el orden de iteración no importa y quieres concurrencia, `await foreach` es la herramienta equivocada. Usa [Parallel.ForEachAsync](/es/2026/05/parallel-foreach-vs-parallel-foreachasync-vs-task-whenall/), que puede consumir un `IAsyncEnumerable<T>` y ejecutar el cuerpo para varios elementos a la vez con un límite de grado de paralelismo. `await foreach` es para procesamiento ordenado, uno a la vez.
 
 ## Cancelación: el par `WithCancellation` más `[EnumeratorCancellation]`
 
@@ -138,7 +138,7 @@ await foreach (var item in stream.ConfigureAwait(false))
 }
 ```
 
-Esto configura tanto los `await` de `MoveNextAsync` como el `await` final de `DisposeAsync`. En una aplicación moderna de ASP.NET Core no hay contexto de sincronización que capturar, así que ahí es una operación nula, pero todavía importa para código de biblioteca, hosts de consola y cualquier cosa que pudiera ejecutarse bajo un contexto de interfaz de usuario o heredado. Las concesiones son las mismas que en todas partes del código asíncrono, cubiertas en [si ConfigureAwait todavía importa en .NET 11](/2026/05/configureawait-false-vs-default-in-dotnet-11/).
+Esto configura tanto los `await` de `MoveNextAsync` como el `await` final de `DisposeAsync`. En una aplicación moderna de ASP.NET Core no hay contexto de sincronización que capturar, así que ahí es una operación nula, pero todavía importa para código de biblioteca, hosts de consola y cualquier cosa que pudiera ejecutarse bajo un contexto de interfaz de usuario o heredado. Las concesiones son las mismas que en todas partes del código asíncrono, cubiertas en [si ConfigureAwait todavía importa en .NET 11](/es/2026/05/configureawait-false-vs-default-in-dotnet-11/).
 
 ## LINQ sobre flujos asíncronos ahora viene incluido
 
@@ -164,7 +164,7 @@ Usa `IAsyncEnumerable<T>` cuando se cumplan estas tres condiciones:
 2. Producir cada elemento implica **E/S asíncrona** (base de datos, red, archivo, cola de mensajes).
 3. Quieres **empezar a procesar antes de que llegue el último elemento**, o no puedes permitirte retenerlos todos en memoria a la vez.
 
-Casos concretos que encajan: transmitir filas desde una base de datos para una exportación, como se cubre en [usar IAsyncEnumerable con EF Core 11](/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/); leer una API paginada página por página y entregar cada elemento a medida que llegan las páginas; seguir un log o un flujo de mensajes que nunca termina; canalizar datos hacia un [Channel](/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) o un `PipeWriter`. En ASP.NET Core, devolver `IAsyncEnumerable<T>` desde una minimal API o una acción de controlador transmite el arreglo JSON al cliente elemento por elemento en lugar de almacenar en búfer toda la respuesta.
+Casos concretos que encajan: transmitir filas desde una base de datos para una exportación, como se cubre en [usar IAsyncEnumerable con EF Core 11](/es/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/); leer una API paginada página por página y entregar cada elemento a medida que llegan las páginas; seguir un log o un flujo de mensajes que nunca termina; canalizar datos hacia un [Channel](/es/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) o un `PipeWriter`. En ASP.NET Core, devolver `IAsyncEnumerable<T>` desde una minimal API o una acción de controlador transmite el arreglo JSON al cliente elemento por elemento en lugar de almacenar en búfer toda la respuesta.
 
 ## Cuándo no deberías
 
@@ -185,11 +185,11 @@ Los flujos asíncronos convirtieron la incómoda celda inferior derecha de la ma
 
 ## Relacionado
 
-- [How to use IAsyncEnumerable<T> with EF Core 11](/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/) aplica todo esto a transmitir filas de base de datos.
-- [IEnumerable vs IAsyncEnumerable vs IQueryable in C#](/2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp/) es la guía de decisión comparativa para las tres interfaces de secuencia.
-- [How to stream a file from an ASP.NET Core endpoint without buffering](/2026/04/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering/) es la contraparte de respuesta HTTP para producir un flujo.
-- [How to cancel a long-running Task in C# without deadlocking](/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/) profundiza en los tokens de cancelación de los que dependen los flujos asíncronos.
-- [Streaming tasks with .NET 9 Task.WhenEach](/2026/01/streaming-tasks-with-net-9-task-wheneach/) es la otra forma principal de consumir resultados a medida que se completan.
+- [How to use IAsyncEnumerable<T> with EF Core 11](/es/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/) aplica todo esto a transmitir filas de base de datos.
+- [IEnumerable vs IAsyncEnumerable vs IQueryable in C#](/es/2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp/) es la guía de decisión comparativa para las tres interfaces de secuencia.
+- [How to stream a file from an ASP.NET Core endpoint without buffering](/es/2026/04/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering/) es la contraparte de respuesta HTTP para producir un flujo.
+- [How to cancel a long-running Task in C# without deadlocking](/es/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/) profundiza en los tokens de cancelación de los que dependen los flujos asíncronos.
+- [Streaming tasks with .NET 9 Task.WhenEach](/es/2026/01/streaming-tasks-with-net-9-task-wheneach/) es la otra forma principal de consumir resultados a medida que se completan.
 
 ## Fuentes
 

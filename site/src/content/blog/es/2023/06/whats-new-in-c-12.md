@@ -12,13 +12,13 @@ translationDate: 2026-05-01
 ---
 C# 12 trae multitud de nuevas características y mejoras que simplifican la experiencia de programación y abren nuevas posibilidades en el desarrollo de software.
 
-Si aún no has cambiado a C# 12, [aquí te explicamos cómo hacerlo](/2023/06/how-to-switch-to-c-12/).
+Si aún no has cambiado a C# 12, [aquí te explicamos cómo hacerlo](/es/2023/06/how-to-switch-to-c-12/).
 
 Profundicemos en la lista de nuevas características de C# 12:
 
 -   [Constructores primarios](/es/2023/07/c-12-primary-constructors/)
     
--   [Parámetros lambda opcionales (por defecto)](/2023/05/c-12-default-values-for-parameters-in-lambda-expressions/)
+-   [Parámetros lambda opcionales (por defecto)](/es/2023/05/c-12-default-values-for-parameters-in-lambda-expressions/)
 -   [Alias para cualquier tipo](/es/2023/08/c-12-alias-any-type/)
 -   [Expresiones de colección](/es/2023/08/c-12-collection-expressions/) (📽️ [video](https://www.youtube.com/watch?v=p1RJ4QaCAEo))
 -   [Inline arrays](/es/2023/08/c-12-inline-arrays/)

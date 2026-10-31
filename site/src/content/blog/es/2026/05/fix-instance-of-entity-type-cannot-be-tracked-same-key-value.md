@@ -112,7 +112,7 @@ public async Task<IActionResult> Update(int id, CustomerDto dto)
 
 `AnyAsync` no materializa una entidad, así que nada queda rastreado. `db.Update(updated)` adjunta la nueva instancia en estado `Modified` y EF Core escribe cada propiedad como un único viaje de ida y vuelta de `UPDATE`. La compensación frente a la solución 1 es que cada columna se escribe en el cable, sucia o no, porque EF Core no tiene valores originales contra los que diferenciar. Para tablas anchas esto desperdicia; para tablas estrechas es el código más simple.
 
-Para patrones más amplios sobre qué se rastrea y qué no, revisa el resumen en [la API de entradas del rastreador de cambios](/2026/04/efcore-11-changetracker-getentriesforstate/).
+Para patrones más amplios sobre qué se rastrea y qué no, revisa el resumen en [la API de entradas del rastreador de cambios](/es/2026/04/efcore-11-changetracker-getentriesforstate/).
 
 ### 3. Desvincula la entidad existente, luego adjunta la tuya
 
@@ -176,7 +176,7 @@ Si cargas un cliente con sus pedidos en eager loading, y luego intentas `Attach(
 
 ### DbContext mockeado en pruebas
 
-Si estás usando un `DbContext` mockeado para escribir pruebas, el mock a menudo no implementa el mapa de identidad correctamente, así que producción golpea este error y las pruebas pasan. Lo opuesto también ocurre: un proveedor en memoria real rastrea entidades que el mock no rastreaba, y la prueba falla por razones que nada tienen que ver con el sistema bajo prueba. La solución es probar contra un proveedor real; la guía de [trampas al mockear DbContext](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) cubre lo que el mock sí da y lo que no.
+Si estás usando un `DbContext` mockeado para escribir pruebas, el mock a menudo no implementa el mapa de identidad correctamente, así que producción golpea este error y las pruebas pasan. Lo opuesto también ocurre: un proveedor en memoria real rastrea entidades que el mock no rastreaba, y la prueba falla por razones que nada tienen que ver con el sistema bajo prueba. La solución es probar contra un proveedor real; la guía de [trampas al mockear DbContext](/es/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) cubre lo que el mock sí da y lo que no.
 
 ### EnableSensitiveDataLogging es tu depurador
 
@@ -208,7 +208,7 @@ Esto es concurrencia, no conflicto de clave. Un `DbContext` con scope no es thre
 
 ## Relacionado
 
-Para el contexto más amplio de EF Core, revisa el resumen sobre [detección de consultas N+1](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/), la guía de [consultas compiladas en rutas calientes](/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/) y el recorrido de [records como entidades de EF Core](/2026/04/how-to-use-records-with-ef-core-11-correctly/) que tiene sus propias trampas del mapa de identidad alrededor de las expresiones `with`. Cuando golpeas este error en código de arranque y no en un manejador de solicitudes, la [lista de verificación de DefaultConnection](/2026/05/fix-no-connection-string-named-defaultconnection/) cubre el lado de la configuración. Para fixtures de prueba que pasan una base de datos real a tu código, el [recorrido de Testcontainers](/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers/) es la configuración más limpia.
+Para el contexto más amplio de EF Core, revisa el resumen sobre [detección de consultas N+1](/es/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/), la guía de [consultas compiladas en rutas calientes](/es/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/) y el recorrido de [records como entidades de EF Core](/es/2026/04/how-to-use-records-with-ef-core-11-correctly/) que tiene sus propias trampas del mapa de identidad alrededor de las expresiones `with`. Cuando golpeas este error en código de arranque y no en un manejador de solicitudes, la [lista de verificación de DefaultConnection](/es/2026/05/fix-no-connection-string-named-defaultconnection/) cubre el lado de la configuración. Para fixtures de prueba que pasan una base de datos real a tu código, el [recorrido de Testcontainers](/es/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers/) es la configuración más limpia.
 
 ## Fuentes
 

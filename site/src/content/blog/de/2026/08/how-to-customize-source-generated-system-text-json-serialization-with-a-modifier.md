@@ -21,7 +21,7 @@ Um einen quellcodegenerierten `System.Text.Json`-Vertrag anzupassen, gehört der
 
 ## Warum Vertragsanpassung und Quellcodegenerierung unvereinbar wirken
 
-Die Vertragsanpassung kam mit .NET 7. Sie übergeben `System.Text.Json` eine `Action<JsonTypeInfo>`, und die Bibliothek ruft Sie einmal pro Typ auf, nachdem der Vertrag gebaut, aber bevor er verwendet wurde. So können Sie Eigenschaften umbenennen, entfernen, synthetische hinzufügen oder die Lese- und Schreib-Delegates umhüllen. Der kanonische Einstiegspunkt ist `DefaultJsonTypeInfoResolver.Modifiers`, und .NET 8 hat [die Erweiterungsmethode `WithAddedModifier`](/2023/10/system-text-json-how-to-modify-existing-type-info-resolver/) ergänzt, mit der sich ein Modifier über jeden `IJsonTypeInfoResolver` legen lässt, nicht nur über den reflectionbasierten.
+Die Vertragsanpassung kam mit .NET 7. Sie übergeben `System.Text.Json` eine `Action<JsonTypeInfo>`, und die Bibliothek ruft Sie einmal pro Typ auf, nachdem der Vertrag gebaut, aber bevor er verwendet wurde. So können Sie Eigenschaften umbenennen, entfernen, synthetische hinzufügen oder die Lese- und Schreib-Delegates umhüllen. Der kanonische Einstiegspunkt ist `DefaultJsonTypeInfoResolver.Modifiers`, und .NET 8 hat [die Erweiterungsmethode `WithAddedModifier`](/de/2023/10/system-text-json-how-to-modify-existing-type-info-resolver/) ergänzt, mit der sich ein Modifier über jeden `IJsonTypeInfoResolver` legen lässt, nicht nur über den reflectionbasierten.
 
 Dieses "jeder Resolver" ist der entscheidende Punkt, denn ein quellcodegenerierter `JsonSerializerContext` **ist** ein `IJsonTypeInfoResolver`. Es gibt keinen technischen Grund, warum ein Modifier `MyContext.Default` nicht dekorieren könnte. Der Grund, warum so viele zu dem Schluss kommen, Vertrags-Modifier funktionierten nicht mit Quellcodegenerierung, ist, dass die naheliegende Verdrahtung den Modifier ohne Warnung, ohne Exception und ohne Compiler-Diagnose wegwirft.
 
@@ -188,7 +188,7 @@ Modifier werden in der Reihenfolge angewendet, in der Sie sie hinzufügen. Bei z
 
 ## Native AOT: Modifier sind nicht das, was bricht
 
-Der ganze Grund, hier [einen Source Generator](/2026/06/what-is-a-source-generator-and-when-do-i-need-one/) einzusetzen, sind Trimming und Native AOT. Die naheliegende Sorge ist also, ob ein angehängter Modifier Reflection wieder hereinzieht. Tut er nicht. Ich habe denselben Code erneut mit `<JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>` ausgeführt, was `PublishAot` und `PublishTrimmed` für Sie setzen:
+Der ganze Grund, hier [einen Source Generator](/de/2026/06/what-is-a-source-generator-and-when-do-i-need-one/) einzusetzen, sind Trimming und Native AOT. Die naheliegende Sorge ist also, ob ein angehängter Modifier Reflection wieder hereinzieht. Tut er nicht. Ich habe denselben Code erneut mit `<JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>` ausgeführt, was `PublishAot` und `PublishTrimmed` für Sie setzen:
 
 ```text
 IsReflectionEnabledByDefault = False
@@ -204,7 +204,7 @@ was not provided by TypeInfoResolver of type
 'System.Text.Json.Serialization.Metadata.JsonTypeInfoResolverWithAddedModifiers'.
 ```
 
-Wenn Sie auf den verwandten Fehler zur [deaktivierten reflectionbasierten Serialisierung](/2026/07/fix-reflection-based-serialization-has-been-disabled-for-this-application/) stoßen, fehlt ein Resolver, der Modifier ist nicht defekt.
+Wenn Sie auf den verwandten Fehler zur [deaktivierten reflectionbasierten Serialisierung](/de/2026/07/fix-reflection-based-serialization-has-been-disabled-for-this-application/) stoßen, fehlt ein Resolver, der Modifier ist nicht defekt.
 
 ## Der eigentliche Preis: Sie geben den generierten Fast Path auf
 
@@ -261,7 +261,7 @@ modifierCalls after 3 serializations (fresh options)   = 12
 
 Sobald eine Options-Instanz benutzt wurde, sind sowohl sie als auch die daraus entstandenen Verträge eingefroren. `WriteIndented` nach der ersten Serialisierung zuzuweisen, wirft `InvalidOperationException: This JsonSerializerOptions instance is read-only or has already been used in serialization or deserialization`, und der Griff nach `options.GetTypeInfo(...)`, um nachträglich `Properties` zu bearbeiten, wirft das `JsonTypeInfo`-Pendant. Alle Vertragsänderungen müssen im Modifier passieren.
 
-Wenn Sie mehrere Resolver übereinanderlegen wollen statt eines einzelnen dekorierten Context, akzeptiert [`TypeInfoResolverChain`](/2023/10/add-remove-typeinforesolver-to-existing-jsonserializeroptions/) den dekorierten Resolver genauso wie den einfachen, und die Kette wird der Reihe nach abgefragt, bis ein Vertrag ungleich null zurückkommt. Dasselbe Muster deckt eine Hierarchie ab, die bereits [`JsonDerivedType` für Polymorphie](/2026/07/how-to-serialize-a-polymorphic-type-hierarchy-with-jsonderivedtype-in-system-text-json/) verwendet, denn die abgeleiteten Verträge laufen wie jeder andere Typ durch den Modifier.
+Wenn Sie mehrere Resolver übereinanderlegen wollen statt eines einzelnen dekorierten Context, akzeptiert [`TypeInfoResolverChain`](/de/2023/10/add-remove-typeinforesolver-to-existing-jsonserializeroptions/) den dekorierten Resolver genauso wie den einfachen, und die Kette wird der Reihe nach abgefragt, bis ein Vertrag ungleich null zurückkommt. Dasselbe Muster deckt eine Hierarchie ab, die bereits [`JsonDerivedType` für Polymorphie](/de/2026/07/how-to-serialize-a-polymorphic-type-hierarchy-with-jsonderivedtype-in-system-text-json/) verwendet, denn die abgeleiteten Verträge laufen wie jeder andere Typ durch den Modifier.
 
 Die Kurzfassung zum Merken: Dekorieren Sie den Resolver, nie den Context, prüfen Sie gegen `AttributeProvider` statt gegen `Name`, lassen Sie den Generierungsmodus auf dem Standard und speichern Sie die Options zwischen.
 

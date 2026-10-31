@@ -90,7 +90,7 @@ if (next is null)
 Process(next);
 ```
 
-`FirstOrDefault` はシーケンスが空のとき `default(TSource)` を返します。参照型なら `null`、`int` なら `0`、構造体なら `default` です。null 許容注釈が有効なコードベース（`<Nullable>enable</Nullable>`、新しい .NET 11 テンプレートでの既定）では、コンパイラは結果を `Order?` として型付けし、null をチェックするまで指摘し続けます。これはまさにあなたが欲しい安全性です。このチェックを飛ばさないでください。`First` を `FirstOrDefault` に置き換えてすぐに結果を逆参照するのは、`InvalidOperationException` を1行あとの `NullReferenceException` に交換するだけです。null 許容の警告が雑音に感じられるなら、それはコンパイラが本当にやるべき作業を指し示しているのであり、[CS8618 と null 非許容プロパティ](/2026/07/fix-cs8618-non-nullable-property-must-contain-a-non-null-value-when-exiting-constructor/) に直接つながります。
+`FirstOrDefault` はシーケンスが空のとき `default(TSource)` を返します。参照型なら `null`、`int` なら `0`、構造体なら `default` です。null 許容注釈が有効なコードベース（`<Nullable>enable</Nullable>`、新しい .NET 11 テンプレートでの既定）では、コンパイラは結果を `Order?` として型付けし、null をチェックするまで指摘し続けます。これはまさにあなたが欲しい安全性です。このチェックを飛ばさないでください。`First` を `FirstOrDefault` に置き換えてすぐに結果を逆参照するのは、`InvalidOperationException` を1行あとの `NullReferenceException` に交換するだけです。null 許容の警告が雑音に感じられるなら、それはコンパイラが本当にやるべき作業を指し示しているのであり、[CS8618 と null 非許容プロパティ](/ja/2026/07/fix-cs8618-non-nullable-property-must-contain-a-non-null-value-when-exiting-constructor/) に直接つながります。
 
 .NET 6 以降には、独自の既定値を指定できるオーバーロードもあり、妥当なフォールバックがある場合は別途 null チェックを書くよりすっきりします。
 
@@ -143,11 +143,11 @@ int max = prices.DefaultIfEmpty(0).Max();     // 0 when empty
 
 - **`.Single()` は2つの異なるメッセージを投げます。** `.Single()` は*ちょうど1つ*の要素を保証するため、2通りの失敗があり得ます。0個のときは `Sequence contains no elements`、2個以上のときは `Sequence contains more than one element` です。「more than one」のバリアントが見えているなら、`FirstOrDefault` は修正になりません。一意性の仮定が間違っている（`WHERE` 句の欠落、キーの重複）か、複数のうち1つだけが欲しいので `First` を使うべきかのどちらかです。2つ目の一致それ自体が投げる価値のあるバグである場合にのみ `Single` を使ってください。
 
-- **EF Core は `First`/`Single` から同じものを投げ、それらの非同期版も同様です。** `dbContext.Orders.First(o => o.Id == id)` は `SELECT TOP(1)` に変換され、一致する行がないと `Sequence contains no elements` を投げます。`FirstAsync` と `SingleAsync` も同一に投げます。修正は `FirstOrDefaultAsync` / `SingleOrDefaultAsync` に null チェックを加えることです。これらはデータベースに対して実行されるため、空の結果はしばしば正常です（行が削除された、id が間違っている）。したがって非同期の `*OrDefault` オーバーロードが通常あなたの求めるものです。LINQ 演算子がメモリ上でも SQL としてでも同じ動作をする理由は [IEnumerable vs IAsyncEnumerable vs IQueryable](/2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp/) を参照してください。
+- **EF Core は `First`/`Single` から同じものを投げ、それらの非同期版も同様です。** `dbContext.Orders.First(o => o.Id == id)` は `SELECT TOP(1)` に変換され、一致する行がないと `Sequence contains no elements` を投げます。`FirstAsync` と `SingleAsync` も同一に投げます。修正は `FirstOrDefaultAsync` / `SingleOrDefaultAsync` に null チェックを加えることです。これらはデータベースに対して実行されるため、空の結果はしばしば正常です（行が削除された、id が間違っている）。したがって非同期の `*OrDefault` オーバーロードが通常あなたの求めるものです。LINQ 演算子がメモリ上でも SQL としてでも同じ動作をする理由は [IEnumerable vs IAsyncEnumerable vs IQueryable](/ja/2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp/) を参照してください。
 
 - **値型シーケンスに対する `FirstOrDefault` は null ではなく 0 を返します。** `List<int>` の場合、空のリストに対する `FirstOrDefault()` は `0` を返し、これは有効な `int` であって、実際の最初の要素が `0` であるのと区別がつきません。「空」と「最初の値がたまたま既定値だった」を区別する必要があるなら、null 許容に射影する（`.Select(x => (int?)x).FirstOrDefault()`）か、既定のセンチネル値に頼らず `.Any()` でガードしてください。
 
-- **空のシーケンスは、欠落したデータではなく、誤って変換されたクエリから来ることがあります。** EF Core では、フィルターの一部を黙ってクライアント側で評価するクエリや、そもそも変換できなかったクエリが、期待とは異なる（多くは空の）結果セットを返すことがあります。データベースに対する `First` が例外を投げ、その行が存在すると確信しているなら、クエリが意図どおりに変換されたかを確認してください。この失敗モードは [LINQ 式を変換できませんでした](/2026/07/fix-the-linq-expression-could-not-be-translated-in-ef-core-11/) で扱っています。
+- **空のシーケンスは、欠落したデータではなく、誤って変換されたクエリから来ることがあります。** EF Core では、フィルターの一部を黙ってクライアント側で評価するクエリや、そもそも変換できなかったクエリが、期待とは異なる（多くは空の）結果セットを返すことがあります。データベースに対する `First` が例外を投げ、その行が存在すると確信しているなら、クエリが意図どおりに変換されたかを確認してください。この失敗モードは [LINQ 式を変換できませんでした](/ja/2026/07/fix-the-linq-expression-could-not-be-translated-in-ef-core-11/) で扱っています。
 
 - **try/catch で包むと本当の問いが覆い隠されます。** `First` の呼び出しの周りで `InvalidOperationException` を捕捉すれば技術的にはクラッシュを止められますが、無関係な `InvalidOperationException`（たとえば列挙中にコレクションが変更されたエラー）も捕捉してしまい、シーケンスがなぜ空だったのかについて何も教えてくれません。`*OrDefault` に明示的な分岐を加えるほうを優先してください。より高速（例外機構なし）で、範囲が狭く、自己文書化されています。
 
@@ -155,10 +155,10 @@ int max = prices.DefaultIfEmpty(0).Max();     // 0 when empty
 
 ## 関連
 
-- [解決: EF Core 11 で LINQ 式を変換できませんでした](/2026/07/fix-the-linq-expression-could-not-be-translated-in-ef-core-11/)：空の結果が、期待どおりに実行されなかったクエリから来る場合に。
-- [C# における IEnumerable vs IAsyncEnumerable vs IQueryable](/2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp/)：`First` がメモリ上とデータベースに対して同じ動作をする理由と、クエリが実際にいつ実行されるかについて。
-- [解決: CS8618 null 非許容プロパティは非 null 値を含む必要があります](/2026/07/fix-cs8618-non-nullable-property-must-contain-a-non-null-value-when-exiting-constructor/)：`FirstOrDefault` が返す null 許容の結果を処理するために。
-- [.NET 11 における LINQ FullJoin とタプルを返す結合](/2026/06/linq-fulljoin-tuple-returning-joins-dotnet-11-preview-5/)：シーケンスを空にしてしまう行を落とさずに結合結果を整形するために。
+- [解決: EF Core 11 で LINQ 式を変換できませんでした](/ja/2026/07/fix-the-linq-expression-could-not-be-translated-in-ef-core-11/)：空の結果が、期待どおりに実行されなかったクエリから来る場合に。
+- [C# における IEnumerable vs IAsyncEnumerable vs IQueryable](/ja/2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp/)：`First` がメモリ上とデータベースに対して同じ動作をする理由と、クエリが実際にいつ実行されるかについて。
+- [解決: CS8618 null 非許容プロパティは非 null 値を含む必要があります](/ja/2026/07/fix-cs8618-non-nullable-property-must-contain-a-non-null-value-when-exiting-constructor/)：`FirstOrDefault` が返す null 許容の結果を処理するために。
+- [.NET 11 における LINQ FullJoin とタプルを返す結合](/ja/2026/06/linq-fulljoin-tuple-returning-joins-dotnet-11-preview-5/)：シーケンスを空にしてしまう行を落とさずに結合結果を整形するために。
 
 ## 出典
 

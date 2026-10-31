@@ -137,7 +137,7 @@ CREATE TABLE [Customers] (
 );
 ```
 
-O mapeamento JSON lhe dá uma coisa que o table splitting não consegue fazer: **coleções dentro do tipo mapeado**. Um tipo complexo mapeado com table splitting tem que ser um único valor, mas um tipo complexo mapeado para JSON pode conter uma `List<string>` ou uma lista aninhada de value objects. Você ainda pode consultar dentro do documento. No SQL Server 2025, `context.Customers.Where(c => c.ShippingAddress.City == "Cluj")` traduz para uma busca com `JSON_VALUE`, e o EF Core 11 adiciona `EF.Functions.JsonPathExists` e `EF.Functions.JsonContains`, ambos funcionando contra tipos complexos mapeados para JSON. Para o panorama mais amplo sobre consultar dados mapeados em JSON, veja [como mapear e consultar colunas JSON no EF Core 11](/2026/06/how-to-map-and-query-json-columns-in-ef-core-11/) e a [tradução de JSON_CONTAINS adicionada no SQL Server 2025](/2026/04/efcore-11-json-contains-sql-server-2025/).
+O mapeamento JSON lhe dá uma coisa que o table splitting não consegue fazer: **coleções dentro do tipo mapeado**. Um tipo complexo mapeado com table splitting tem que ser um único valor, mas um tipo complexo mapeado para JSON pode conter uma `List<string>` ou uma lista aninhada de value objects. Você ainda pode consultar dentro do documento. No SQL Server 2025, `context.Customers.Where(c => c.ShippingAddress.City == "Cluj")` traduz para uma busca com `JSON_VALUE`, e o EF Core 11 adiciona `EF.Functions.JsonPathExists` e `EF.Functions.JsonContains`, ambos funcionando contra tipos complexos mapeados para JSON. Para o panorama mais amplo sobre consultar dados mapeados em JSON, veja [como mapear e consultar colunas JSON no EF Core 11](/pt-br/2026/06/how-to-map-and-query-json-columns-in-ef-core-11/) e a [tradução de JSON_CONTAINS adicionada no SQL Server 2025](/pt-br/2026/04/efcore-11-json-contains-sql-server-2025/).
 
 ## O que a semântica de valor de fato lhe traz
 
@@ -171,7 +171,7 @@ await context.Customers
         s.SetProperty(c => c.ShippingAddress.PostalCode, "010001"));
 ```
 
-Se você está ponderando os caminhos de escrita contra carregar e mutar entidades, os trade-offs são os mesmos abordados em [ExecuteUpdate vs carregar entidades e SaveChanges](/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/); os tipos complexos simplesmente tornam o caso do value object elegível para o caminho rápido.
+Se você está ponderando os caminhos de escrita contra carregar e mutar entidades, os trade-offs são os mesmos abordados em [ExecuteUpdate vs carregar entidades e SaveChanges](/pt-br/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/); os tipos complexos simplesmente tornam o caso do value object elegível para o caminho rápido.
 
 Structs também funcionam, o que se alinha bem com a ideia de "sem identidade":
 
@@ -184,7 +184,7 @@ public struct Money
 }
 ```
 
-Records também se encaixam bem, e a interação entre records, tipos complexos e change tracking vale a leitura completa em [como usar records com o EF Core 11 corretamente](/2026/04/how-to-use-records-with-ef-core-11-correctly/).
+Records também se encaixam bem, e a interação entre records, tipos complexos e change tracking vale a leitura completa em [como usar records com o EF Core 11 corretamente](/pt-br/2026/04/how-to-use-records-with-ef-core-11-correctly/).
 
 ## Migrando um mapeamento OwnsOne existente para um tipo complexo
 
@@ -197,7 +197,7 @@ Se você já usa `OwnsOne`, a troca é mecânica, e com table splitting normalme
 5. **Adicione e inspecione a migração.** Rode `dotnet ef migrations add SwitchAddressToComplexType`. Para um `OwnsOne` com table splitting na mesma tabela, a migração deve ser vazia ou quase vazia, porque as colunas não se movem. Se ela quiser dropar e recriar colunas, os nomes das suas colunas divergiram; fixe-os com `HasColumnName` até que o diff esteja limpo, para não perder dados.
 6. **Verifique o comportamento de preservação de dados em uma cópia primeiro.** Aplique a migração em um banco de dados de teste restaurado a partir de produção antes de rodá-la de verdade, especialmente se você está saindo de uma tabela separada ou de JSON em `nvarchar` para o tipo `json` nativo.
 
-A única migração que genuinamente move dados é ir de `OwnsOne(...).ToTable("Addresses")` (uma tabela separada) para um tipo complexo com table splitting. Não há um caminho autogerado limpo para isso, porque as linhas precisam mover-se da tabela filha para a pai. Escreva essa migração à mão: adicione as novas colunas, `UPDATE ... FROM` para copiar os valores, depois drope a tabela antiga. Se você já está no meio de um upgrade do EF Core, o mesmo cuidado se aplica ao resto do seu modelo; o [guia de migração do EF Core 6 para o EF Core 11](/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/) cobre as breaking changes que tendem a surgir junto com esta.
+A única migração que genuinamente move dados é ir de `OwnsOne(...).ToTable("Addresses")` (uma tabela separada) para um tipo complexo com table splitting. Não há um caminho autogerado limpo para isso, porque as linhas precisam mover-se da tabela filha para a pai. Escreva essa migração à mão: adicione as novas colunas, `UPDATE ... FROM` para copiar os valores, depois drope a tabela antiga. Se você já está no meio de um upgrade do EF Core, o mesmo cuidado se aplica ao resto do seu modelo; o [guia de migração do EF Core 6 para o EF Core 11](/pt-br/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/) cobre as breaking changes que tendem a surgir junto com esta.
 
 ## O EF Core 11 remove o atrito de herança e configuração
 
@@ -263,11 +263,11 @@ A regra prática é a mesma que separa uma `class` de um `record`: se a coisa é
 
 ## Leitura relacionada
 
-- [Como usar records com o EF Core 11 corretamente](/2026/04/how-to-use-records-with-ef-core-11-correctly/) aprofunda em records como tipos complexos versus entidades e nas regras de change tracking por trás dessa divisão.
-- [Como mapear e consultar colunas JSON no EF Core 11](/2026/06/how-to-map-and-query-json-columns-in-ef-core-11/) cobre o lado de consulta dos tipos complexos mapeados para JSON.
-- [O EF Core 11 traduz Contains para JSON_CONTAINS no SQL Server 2025](/2026/04/efcore-11-json-contains-sql-server-2025/) explica as funções JSON que agora funcionam contra tipos complexos.
-- [ExecuteUpdate vs carregar entidades e SaveChanges](/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/) enquadra o caminho de atualização em massa que os tipos complexos liberam para value objects.
-- [Migre do EF Core 6 para o EF Core 11: breaking changes que realmente incomodam](/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/) é o complemento se esta troca faz parte de um upgrade maior.
+- [Como usar records com o EF Core 11 corretamente](/pt-br/2026/04/how-to-use-records-with-ef-core-11-correctly/) aprofunda em records como tipos complexos versus entidades e nas regras de change tracking por trás dessa divisão.
+- [Como mapear e consultar colunas JSON no EF Core 11](/pt-br/2026/06/how-to-map-and-query-json-columns-in-ef-core-11/) cobre o lado de consulta dos tipos complexos mapeados para JSON.
+- [O EF Core 11 traduz Contains para JSON_CONTAINS no SQL Server 2025](/pt-br/2026/04/efcore-11-json-contains-sql-server-2025/) explica as funções JSON que agora funcionam contra tipos complexos.
+- [ExecuteUpdate vs carregar entidades e SaveChanges](/pt-br/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/) enquadra o caminho de atualização em massa que os tipos complexos liberam para value objects.
+- [Migre do EF Core 6 para o EF Core 11: breaking changes que realmente incomodam](/pt-br/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/) é o complemento se esta troca faz parte de um upgrade maior.
 
 ## Fontes
 

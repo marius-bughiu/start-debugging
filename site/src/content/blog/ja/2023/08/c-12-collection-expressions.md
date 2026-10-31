@@ -104,4 +104,4 @@ List<int> a = [1, 2, 3, .. a1, 4, 5];
 
 > Error CS8652 The feature 'collection literals' is currently in Preview and _unsupported_. To use Preview features, use the 'preview' language version.
 
-これらのエラーは、プロジェクトがまだ C# 12 を使っておらず、新しい言語機能を利用できないことを意味します。C# 12 に切り替えたいけれどやり方がわからない場合は、[プロジェクトを C# 12 に切り替えるガイド](/2023/06/how-to-switch-to-c-12/) をご覧ください。
+これらのエラーは、プロジェクトがまだ C# 12 を使っておらず、新しい言語機能を利用できないことを意味します。C# 12 に切り替えたいけれどやり方がわからない場合は、[プロジェクトを C# 12 に切り替えるガイド](/ja/2023/06/how-to-switch-to-c-12/) をご覧ください。

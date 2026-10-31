@@ -79,7 +79,7 @@ Dynamic PGO が有効なとき、tier 0 のコードは未最適化であるだ�
 </PropertyGroup>
 ```
 
-トレードオフは、計測付きの tier 0 コードが素の tier 0 よりわずかに遅く、わずかに大きく、tier 1 の結果がより良くなることです。何時間も動くサーバーにとっては、これは簡単な勝ちです。何かが tier 1 に到達する前に終了する短命な関数にとっては、計測は報酬のない純粋なコストであり、これはコールドスタートに敏感なワークロードが時々これをオフにする理由の1つです。このシナリオのより詳しい扱いは、[.NET 11 の AWS Lambda のコールドスタート時間を短縮する方法](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/)のガイドにあります。
+トレードオフは、計測付きの tier 0 コードが素の tier 0 よりわずかに遅く、わずかに大きく、tier 1 の結果がより良くなることです。何時間も動くサーバーにとっては、これは簡単な勝ちです。何かが tier 1 に到達する前に終了する短命な関数にとっては、計測は報酬のない純粋なコストであり、これはコールドスタートに敏感なワークロードが時々これをオフにする理由の1つです。このシナリオのより詳しい扱いは、[.NET 11 の AWS Lambda のコールドスタート時間を短縮する方法](/ja/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/)のガイドにあります。
 
 ## 階層化が実際に起きるのを見る方法
 
@@ -91,9 +91,9 @@ dotnet-trace collect --process-id 1234 \
   --providers Microsoft-Windows-DotNETRuntime:0x1000:5
 ```
 
-`MethodJittingStarted` と `MethodLoadVerbose` のイベントには最適化階層のフィールドが含まれるため、あるメソッドが2回、まず tier 0 として、次に tier 1 として現れれば、それがあなたの探している昇格です。これらのトレースの読み方の手順については、[dotnet-trace で .NET アプリをプロファイリングする方法](/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output/)の記事を参照してください。
+`MethodJittingStarted` と `MethodLoadVerbose` のイベントには最適化階層のフィールドが含まれるため、あるメソッドが2回、まず tier 0 として、次に tier 1 として現れれば、それがあなたの探している昇格です。これらのトレースの読み方の手順については、[dotnet-trace で .NET アプリをプロファイリングする方法](/ja/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output/)の記事を参照してください。
 
-各階層で JIT が生成した機械語を見たい場合、`DOTNET_JitDisasmSummary=1` はメソッドごとにその tier を1行で出力し、`DOTNET_JitDisasm` にメソッド名を設定すると実際のアセンブリをダンプします。[Rider 2026.1 の逆アセンブルビューア](/2026/04/rider-2026-1-asm-viewer-jit-nativeaot-disassembly/)のようなツールは、環境変数と格闘することなく同じ出力を見せてくれます。同じメソッドの tier 0 と tier 1 の逆アセンブルを比較することは、「最適化済み」が何をもたらすかについての直観を養う最速の方法です。
+各階層で JIT が生成した機械語を見たい場合、`DOTNET_JitDisasmSummary=1` はメソッドごとにその tier を1行で出力し、`DOTNET_JitDisasm` にメソッド名を設定すると実際のアセンブリをダンプします。[Rider 2026.1 の逆アセンブルビューア](/ja/2026/04/rider-2026-1-asm-viewer-jit-nativeaot-disassembly/)のようなツールは、環境変数と格闘することなく同じ出力を見せてくれます。同じメソッドの tier 0 と tier 1 の逆アセンブルを比較することは、「最適化済み」が何をもたらすかについての直観を養う最速の方法です。
 
 ## 誰もがはまる計測の罠
 
@@ -110,17 +110,17 @@ dotnet-trace collect --process-id 1234 \
 - `TieredCompilationQuickJitForLoops`（env `DOTNET_TC_QuickJitForLoops`、x64/arm64 では .NET 7 以降デフォルトで有効）：OSR と組み合わさっており、変える価値があることはめったにありません。
 - `TieredPGO`（env `DOTNET_TieredPGO`、.NET 8 以降デフォルトで有効）：超短命なプロセスのために正当に無効化するかもしれないもの、あるいはデフォルト変更以前の .NET 6/7 アプリのために有効化するかもしれないものです。
 
-これらはすべて `.csproj` の MSBuild プロパティと、`runtimeconfig.json` の `System.Runtime.*` キーに対応しており、Microsoft の[コンパイル構成設定](https://learn.microsoft.com/en-us/dotnet/core/runtime-config/compilation)のリファレンスに文書化されています。階層型 JIT と JIT を完全に手放すことを天秤にかけているなら、そのトレードオフは [Native AOT 対 ReadyToRun 対 素の JIT](/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/) と、[Native AOT があなたに何を強いるか](/2026/06/what-is-native-aot-and-what-does-it-cost-you/)のより深い考察にあります。AOT のコードは Dynamic PGO の再最適化をまったく受けないからです。
+これらはすべて `.csproj` の MSBuild プロパティと、`runtimeconfig.json` の `System.Runtime.*` キーに対応しており、Microsoft の[コンパイル構成設定](https://learn.microsoft.com/en-us/dotnet/core/runtime-config/compilation)のリファレンスに文書化されています。階層型 JIT と JIT を完全に手放すことを天秤にかけているなら、そのトレードオフは [Native AOT 対 ReadyToRun 対 素の JIT](/ja/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/) と、[Native AOT があなたに何を強いるか](/ja/2026/06/what-is-native-aot-and-what-does-it-cost-you/)のより深い考察にあります。AOT のコードは Dynamic PGO の再最適化をまったく受けないからです。
 
 心に留めておくべきメンタルモデルはこうです。あなたのプロセスは、静かにメモを取っている、安価で生成の速い tier 0 のコードで起動します。少数のメソッドが自らホットであることを証明します。バックグラウンドのスレッドが、そのメモに基づいた完全な最適化器で、まさにそれらのメソッドを書き換えます。そして OSR が、呼び出しカウントでは取りこぼすであろう、ループに閉じ込められたものを捕まえます。それがトレースの中で起きているのを見られるようになれば、階層型コンパイルはブラックボックスであることをやめ、あなたが捉えられるツールになります。
 
 ## 関連記事
 
-- [.NET 11 における Native AOT 対 ReadyToRun 対 素の JIT](/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/)
-- [Native AOT とは何か、そして何を強いるのか？](/2026/06/what-is-native-aot-and-what-does-it-cost-you/)
-- [dotnet-trace で .NET アプリをプロファイリングし、出力を読む方法](/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output/)
-- [.NET 11 の AWS Lambda のコールドスタート時間を短縮する方法](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/)
-- [JIT と Native AOT の逆アセンブルのための Rider 2026.1 の ASM ビューア](/2026/04/rider-2026-1-asm-viewer-jit-nativeaot-disassembly/)
+- [.NET 11 における Native AOT 対 ReadyToRun 対 素の JIT](/ja/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/)
+- [Native AOT とは何か、そして何を強いるのか？](/ja/2026/06/what-is-native-aot-and-what-does-it-cost-you/)
+- [dotnet-trace で .NET アプリをプロファイリングし、出力を読む方法](/ja/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output/)
+- [.NET 11 の AWS Lambda のコールドスタート時間を短縮する方法](/ja/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/)
+- [JIT と Native AOT の逆アセンブルのための Rider 2026.1 の ASM ビューア](/ja/2026/04/rider-2026-1-asm-viewer-jit-nativeaot-disassembly/)
 
 ## 出典
 

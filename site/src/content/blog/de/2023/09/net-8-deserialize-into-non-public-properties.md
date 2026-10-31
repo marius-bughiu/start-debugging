@@ -12,7 +12,7 @@ translationOf: "2023/09/net-8-deserialize-into-non-public-properties"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-Ähnlich wie beim [Serialisieren in nicht-öffentliche Member](/2023/09/net-8-include-non-public-members-in-json-serialization/) können Sie in nicht-öffentliche Member deserialisieren, indem Sie einen Konstruktor mit Parametern bereitstellen, deren Namen den nicht-öffentlichen Membern entsprechen, und die Member mit dem `JsonInclude`-Attribut versehen.
+Ähnlich wie beim [Serialisieren in nicht-öffentliche Member](/de/2023/09/net-8-include-non-public-members-in-json-serialization/) können Sie in nicht-öffentliche Member deserialisieren, indem Sie einen Konstruktor mit Parametern bereitstellen, deren Namen den nicht-öffentlichen Membern entsprechen, und die Member mit dem `JsonInclude`-Attribut versehen.
 
 Springen wir direkt zu einem Beispiel:
 

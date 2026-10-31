@@ -51,7 +51,7 @@ await using (var db = new BloggingContext(options))
 Console.WriteLine($"second: {sw.ElapsedMilliseconds} ms");
 ```
 
-Auf einem Demo-Modell mit 30 Entitäten gegen SQL Server 2025 mit EF Core 11.0.0 auf einem warmen Laptop druckt die erste Iteration etwa `380 ms` und die zweite etwa `4 ms`. Der Modellaufbau dominiert. Wenn derselbe Code gegen ein kaltes AWS Lambda läuft, bei dem der Host pro Invocation hochgefahren wird, landen diese 380 ms direkt in der nutzersichtbaren p99-Latenz, was genau die Klasse von Problem ist, die in [Kaltstartzeit eines .NET 11 AWS Lambda reduzieren](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/) behandelt wird.
+Auf einem Demo-Modell mit 30 Entitäten gegen SQL Server 2025 mit EF Core 11.0.0 auf einem warmen Laptop druckt die erste Iteration etwa `380 ms` und die zweite etwa `4 ms`. Der Modellaufbau dominiert. Wenn derselbe Code gegen ein kaltes AWS Lambda läuft, bei dem der Host pro Invocation hochgefahren wird, landen diese 380 ms direkt in der nutzersichtbaren p99-Latenz, was genau die Klasse von Problem ist, die in [Kaltstartzeit eines .NET 11 AWS Lambda reduzieren](/de/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/) behandelt wird.
 
 ## Lösung eins: Modell beim Start mit IHostedService aufwärmen
 
@@ -188,9 +188,9 @@ Das ist dieselbe Form wie das Aufwärmen jedes Caches: herausfinden, wo die Kost
 
 ## Verwandt
 
-- [DbContext mocken, ohne das Change Tracking zu zerstören](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/)
+- [DbContext mocken, ohne das Change Tracking zu zerstören](/de/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/)
 - [IAsyncEnumerable mit EF Core 11 verwenden](/de/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/)
-- [Kaltstartzeit eines .NET 11 AWS Lambda reduzieren](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/)
+- [Kaltstartzeit eines .NET 11 AWS Lambda reduzieren](/de/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/)
 - [EF Core 11: RemoveDbContext und der Pooled-Factory-Test-Swap](/de/2026/04/efcore-11-removedbcontext-pooled-factory-test-swap/)
 - [EF Core 11 Preview 3 beschneidet Reference Joins bei Split Queries](/de/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/)
 

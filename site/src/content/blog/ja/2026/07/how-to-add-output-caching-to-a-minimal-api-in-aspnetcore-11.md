@@ -91,7 +91,7 @@ app.MapGet("/prices", GetPrices)
 
 ## ルートグループ全体を一度にキャッシュする
 
-すべてのエンドポイントで `.CacheOutput()` を繰り返すのはすぐに嫌になります。`MapGroup` は規約を共有する `RouteGroupBuilder` を返すため、グループに出力キャッシュをアタッチすれば、その中のすべてのエンドポイントがそれを継承します。これは[MapGroup による Minimal API エンドポイントの整理](/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)で扱ったリソースごとのエンドポイントモジュールとうまく合成できます。
+すべてのエンドポイントで `.CacheOutput()` を繰り返すのはすぐに嫌になります。`MapGroup` は規約を共有する `RouteGroupBuilder` を返すため、グループに出力キャッシュをアタッチすれば、その中のすべてのエンドポイントがそれを継承します。これは[MapGroup による Minimal API エンドポイントの整理](/ja/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)で扱ったリソースごとのエンドポイントモジュールとうまく合成できます。
 
 ```csharp
 // .NET 11, C# 14
@@ -158,7 +158,7 @@ app.MapPost("/catalog", async (Product product, AppDbContext db, IOutputCacheSto
 });
 ```
 
-これでキャッシュは即座の読み取りを提供しつつ、鮮度を保ちます。5 分（あるいは 1 時間でも）の有効期限はセーフティネットであり、本当の無効化は書き込みが着地したまさにそのときに起こります。`EvictByTagAsync` の呼び出しを行を変更するのと同じ `SaveChanges` に結びつければ、読み手が最後に成功した書き込みより古いデータを見ることはありません。これはそうした書き込みの背後にあるクエリを突き止めることともよく組み合わさります。読み取りエンドポイントがキャッシュに手を伸ばすほど遅いなら、まず [EF Core での N+1 クエリ](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)を排除する価値があります。遅いクエリをキャッシュしても問題を隠すだけだからです。
+これでキャッシュは即座の読み取りを提供しつつ、鮮度を保ちます。5 分（あるいは 1 時間でも）の有効期限はセーフティネットであり、本当の無効化は書き込みが着地したまさにそのときに起こります。`EvictByTagAsync` の呼び出しを行を変更するのと同じ `SaveChanges` に結びつければ、読み手が最後に成功した書き込みより古いデータを見ることはありません。これはそうした書き込みの背後にあるクエリを突き止めることともよく組み合わさります。読み取りエンドポイントがキャッシュに手を伸ばすほど遅いなら、まず [EF Core での N+1 クエリ](/ja/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)を排除する価値があります。遅いクエリをキャッシュしても問題を隠すだけだからです。
 
 タグはベースポリシー上で宣言的に登録することもでき、各エンドポイントに触れることなく一致するすべてのエンドポイントにタグを付けます。
 
@@ -243,7 +243,7 @@ app.MapGet("/cheap", GetCheapThing)
     .CacheOutput(policy => policy.Expire(TimeSpan.FromSeconds(5)).SetLocking(false));
 ```
 
-高コストなものについては有効のままにしておきましょう。スタンピード対策は負荷時にまさに望むものであり、これは [HybridCache](/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/) がレスポンス全体のキャッシュではなくデータキャッシュのために解決するのと同じ種類の問題です。
+高コストなものについては有効のままにしておきましょう。スタンピード対策は負荷時にまさに望むものであり、これは [HybridCache](/ja/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/) がレスポンス全体のキャッシュではなくデータキャッシュのために解決するのと同じ種類の問題です。
 
 ## ETag による安価な再検証
 
@@ -292,11 +292,11 @@ Minimal API における出力キャッシュは、小さく合成可能な部�
 
 ## 関連記事
 
-- [ASP.NET Core 11 で MapGroup を使って Minimal API エンドポイントを整理する方法](/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)
-- [ASP.NET Core 11 で Redis を L2 キャッシュとして HybridCache を使う方法](/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/)
-- [.NET 11 における HybridCache vs IMemoryCache vs IDistributedCache](/2026/06/hybridcache-vs-imemorycache-vs-idistributedcache-in-dotnet-11/)
-- [EF Core 11 で N+1 クエリを検出する方法](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)
-- [ASP.NET Core 11 でエンドポイントごとのレート制限を追加する方法](/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11/)
+- [ASP.NET Core 11 で MapGroup を使って Minimal API エンドポイントを整理する方法](/ja/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)
+- [ASP.NET Core 11 で Redis を L2 キャッシュとして HybridCache を使う方法](/ja/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/)
+- [.NET 11 における HybridCache vs IMemoryCache vs IDistributedCache](/ja/2026/06/hybridcache-vs-imemorycache-vs-idistributedcache-in-dotnet-11/)
+- [EF Core 11 で N+1 クエリを検出する方法](/ja/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)
+- [ASP.NET Core 11 でエンドポイントごとのレート制限を追加する方法](/ja/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11/)
 
 ## 出典
 

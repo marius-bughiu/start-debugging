@@ -90,7 +90,7 @@ dotnet lambda package --configuration Release \
 
 Das globale Tool `Amazon.Lambda.Tools` packt das `bootstrap`-Binary in ein ZIP, das Sie als Custom-Runtime hochladen. Mit einer 256-MB-Funktion und dem obigen Boilerplate liegen Kaltstarts im Bereich **150 ms bis 300 ms**, gegenüber 1500-2000 ms auf der gemanagten Runtime.
 
-Der Trade-off: Jede reflection-lastige Bibliothek, die Sie hineinziehen, wird zu einer Trim-Warnung. Source-Generatoren von `System.Text.Json` übernehmen Serialisierung, aber wenn Sie irgendetwas verwenden, das zur Laufzeit über generische Typen reflektiert (älteres AutoMapper, Newtonsoft, reflection-basierte MediatR-Handler), bekommen Sie ILLink-Warnungen oder eine Laufzeitausnahme. Behandeln Sie jede Warnung als echten Bug. Eine trim-freundliche Mediator-Alternative wird in [SwitchMediator v3, ein Zero-Alloc-Mediator, der AOT-freundlich bleibt](/2026/01/switchmediator-v3-a-zero-alloc-mediator-that-stays-friendly-to-aot/) behandelt.
+Der Trade-off: Jede reflection-lastige Bibliothek, die Sie hineinziehen, wird zu einer Trim-Warnung. Source-Generatoren von `System.Text.Json` übernehmen Serialisierung, aber wenn Sie irgendetwas verwenden, das zur Laufzeit über generische Typen reflektiert (älteres AutoMapper, Newtonsoft, reflection-basierte MediatR-Handler), bekommen Sie ILLink-Warnungen oder eine Laufzeitausnahme. Behandeln Sie jede Warnung als echten Bug. Eine trim-freundliche Mediator-Alternative wird in [SwitchMediator v3, ein Zero-Alloc-Mediator, der AOT-freundlich bleibt](/de/2026/01/switchmediator-v3-a-zero-alloc-mediator-that-stays-friendly-to-aot/) behandelt.
 
 ## Hebel 2: SnapStart auf der gemanagten dotnet10-Runtime
 
@@ -251,7 +251,7 @@ Provisioned Concurrency hält `N` Instanzen dauerhaft warm. Kaltstarts auf diese
 4. **Verifizieren** mit INIT_DURATION bei der tatsächlichen Deploy-Speichergröße. Power Tuning verwenden, wenn die Kosten-vs-Latenz-Kurve zählt.
 5. **Provisioned Concurrency** nur danach, und nur mit Auto-Scaling.
 
-Den Rest der .NET-11-Lambda-Geschichte (Runtime-Versionen, Deploy-Form, was sich ändert, wenn Sie von `dotnet10` auf eine zukünftige gemanagte `dotnet11`-Runtime umstellen) deckt [AWS Lambda unterstützt .NET 10: was vor dem Runtime-Wechsel zu prüfen ist](/2026/01/aws-lambda-supports-net-10-what-to-verify-before-you-flip-the-runtime/) ab, das das Begleitstück zu diesem Beitrag ist.
+Den Rest der .NET-11-Lambda-Geschichte (Runtime-Versionen, Deploy-Form, was sich ändert, wenn Sie von `dotnet10` auf eine zukünftige gemanagte `dotnet11`-Runtime umstellen) deckt [AWS Lambda unterstützt .NET 10: was vor dem Runtime-Wechsel zu prüfen ist](/de/2026/01/aws-lambda-supports-net-10-what-to-verify-before-you-flip-the-runtime/) ab, das das Begleitstück zu diesem Beitrag ist.
 
 ## Quellen
 

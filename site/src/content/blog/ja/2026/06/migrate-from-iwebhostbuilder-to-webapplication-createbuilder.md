@@ -43,7 +43,7 @@ translationDate: 2026-06-06
 ## 事前チェックリスト
 
 1. すべての開発マシンと CI ランナーに .NET 11 SDK をインストールします。`dotnet --list-sdks` で確認し、`11.0.x` が表示されることを確かめます。
-2. プロジェクトがすでに `net6.0` 以降をターゲットにしていることを確認します。ミニマルホスティングモデルは .NET 6 より前には存在しないため、.NET 5 以前のアプリはまずフレームワークの引き上げが必要です。LTS バージョンも併せて越える場合は [.NET 8 から .NET 11 へのチェックリスト](/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist/)を、より大きな飛躍については [.NET Framework 4.8 から .NET 11 へのガイド](/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026/)を参照してください。
+2. プロジェクトがすでに `net6.0` 以降をターゲットにしていることを確認します。ミニマルホスティングモデルは .NET 6 より前には存在しないため、.NET 5 以前のアプリはまずフレームワークの引き上げが必要です。LTS バージョンも併せて越える場合は [.NET 8 から .NET 11 へのチェックリスト](/ja/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist/)を、より大きな飛躍については [.NET Framework 4.8 から .NET 11 へのガイド](/ja/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026/)を参照してください。
 3. `Startup` クラスの棚卸しをします。`ConfigureServices` のすべての行と、`Configure` のすべてのミドルウェア呼び出しを順番にリストアップします。`Configure` の順序は、保持しなければならない契約です。
 4. `IStartupFilter` の実装と `IHostingStartup` のアセンブリを grep します。これらは `Startup` の外で実行され、忘れやすいものです。
 5. ワンコマンドでロールバックできるよう、クリーンなベースラインをコミットします。
@@ -214,7 +214,7 @@ using (var scope = app.Services.CreateScope())
 app.Run();
 ```
 
-これは移行で最もよくある実行時の破綻です。一般的なルールとそのバリエーションは、[シングルトンからスコープ付きサービスを解決する](/2026/05/fix-cannot-consume-scoped-service-from-singleton/)と [BackgroundService 内でスコープ付きサービスを使う](/2026/05/how-to-use-scoped-services-inside-a-backgroundservice-in-aspnetcore-11/)で取り上げています。
+これは移行で最もよくある実行時の破綻です。一般的なルールとそのバリエーションは、[シングルトンからスコープ付きサービスを解決する](/ja/2026/05/fix-cannot-consume-scoped-service-from-singleton/)と [BackgroundService 内でスコープ付きサービスを使う](/ja/2026/05/how-to-use-scoped-services-inside-a-backgroundservice-in-aspnetcore-11/)で取り上げています。
 
 **`WebApplicationFactory<TStartup>` には指し示すべき `Startup` がもうない。** `WebApplicationFactory<Startup>` を参照していた統合テストは、新しいエントリポイント型が必要です。ミニマルホストのエントリポイントは自動生成される `Program` クラスですが、これは `internal` なので、テストプロジェクトからは見えません。`Program.cs` の末尾に partial 宣言を追加して公開します。
 
@@ -227,11 +227,11 @@ public partial class Program { }
 
 **`IStartupFilter` はまだ実行されるが、順序がずれる。** `services.AddTransient<IStartupFilter, MyFilter>()` 経由で登録されたフィルターは引き続き実行され、構成されたパイプラインを包みます。ミニマルホスティングでは、それらが包む明示的な `Configure` メソッドがないため、ルーティングのセットアップより前に実行されると想定していたフィルターが、いまでは少し異なる位置で実行される可能性があります。`IStartupFilter` を純粋にライブラリからミドルウェアを注入するために使っていた場合は、そのミドルウェアが `app.Use...` 呼び出しに対してどこに着地するかを監査し、リクエストの動作が異なる場合は並べ替えてください。
 
-**一致したエンドポイントを読むミドルウェアには明示的な `UseRouting` が必要。** `UseRouting` を削除するのは一般的なケースでは問題ありませんが、`context.GetEndpoint()` を呼び出すミドルウェアがある場合、それはルーティングが実行された後に置かなければなりません。そのミドルウェアの前に `app.UseRouting()` を再追加し、`app.MapControllers()` をその後に保ちます。2 つのエンドポイントスタイルのより深い比較については、[ASP.NET Core 11 におけるミニマル API とコントローラーの比較](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/)を参照してください。
+**一致したエンドポイントを読むミドルウェアには明示的な `UseRouting` が必要。** `UseRouting` を削除するのは一般的なケースでは問題ありませんが、`context.GetEndpoint()` を呼び出すミドルウェアがある場合、それはルーティングが実行された後に置かなければなりません。そのミドルウェアの前に `app.UseRouting()` を再追加し、`app.MapControllers()` をその後に保ちます。2 つのエンドポイントスタイルのより深い比較については、[ASP.NET Core 11 におけるミニマル API とコントローラーの比較](/ja/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/)を参照してください。
 
 **名前付きオプションの順序依存の登録。** 一部のチームは、ライブラリの `IHostingStartup` より前に `ConfigureServices` が実行されることに依存していました。ミニマルホストは `builder.Build()` の時点で `builder.Services` を積極的に評価するため、コレクションをキャプチャするライブラリ拡張を呼び出した後にサービスを登録していた場合、タイミングが異なることがあります。これはまれですが、移行後に構成したオプションが null で返ってくる場合は、それを消費する `Add...` 呼び出しより後に登録していないか確認してください。
 
-`WebApplication.CreateBuilder` に移行すれば、残りのモダンなサーフェスが開けます。コントローラーと並ぶミニマル API エンドポイント、Native AOT 向けの `CreateSlimBuilder`、そして [ASP.NET Core 11 にグローバル例外ハンドラーを追加する](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/)で示されたよりクリーンな例外処理です。ホスティングの移行が関門であり、それ以外はそこから段階的に進められます。
+`WebApplication.CreateBuilder` に移行すれば、残りのモダンなサーフェスが開けます。コントローラーと並ぶミニマル API エンドポイント、Native AOT 向けの `CreateSlimBuilder`、そして [ASP.NET Core 11 にグローバル例外ハンドラーを追加する](/ja/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/)で示されたよりクリーンな例外処理です。ホスティングの移行が関門であり、それ以外はそこから段階的に進められます。
 
 ## ソース
 

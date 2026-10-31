@@ -137,7 +137,7 @@ CREATE TABLE [Customers] (
 );
 ```
 
-Die JSON-Abbildung bringt Ihnen eine Sache, die Table Splitting nicht kann: **Collections innerhalb des abgebildeten Typs**. Ein mit Table Splitting abgebildeter komplexer Typ muss ein einzelner Wert sein, aber ein auf JSON abgebildeter komplexer Typ kann eine `List<string>` oder eine verschachtelte Liste von Value Objects enthalten. Sie können weiterhin in das Dokument hinein abfragen. Auf SQL Server 2025 wird `context.Customers.Where(c => c.ShippingAddress.City == "Cluj")` in eine `JSON_VALUE`-Suche übersetzt, und EF Core 11 fügt `EF.Functions.JsonPathExists` und `EF.Functions.JsonContains` hinzu, die beide gegen auf JSON abgebildete komplexe Typen funktionieren. Für das größere Bild zur Abfrage von JSON-abgebildeten Daten siehe [wie man JSON-Spalten in EF Core 11 abbildet und abfragt](/2026/06/how-to-map-and-query-json-columns-in-ef-core-11/) und die [JSON_CONTAINS-Übersetzung, die auf SQL Server 2025 hinzugefügt wurde](/2026/04/efcore-11-json-contains-sql-server-2025/).
+Die JSON-Abbildung bringt Ihnen eine Sache, die Table Splitting nicht kann: **Collections innerhalb des abgebildeten Typs**. Ein mit Table Splitting abgebildeter komplexer Typ muss ein einzelner Wert sein, aber ein auf JSON abgebildeter komplexer Typ kann eine `List<string>` oder eine verschachtelte Liste von Value Objects enthalten. Sie können weiterhin in das Dokument hinein abfragen. Auf SQL Server 2025 wird `context.Customers.Where(c => c.ShippingAddress.City == "Cluj")` in eine `JSON_VALUE`-Suche übersetzt, und EF Core 11 fügt `EF.Functions.JsonPathExists` und `EF.Functions.JsonContains` hinzu, die beide gegen auf JSON abgebildete komplexe Typen funktionieren. Für das größere Bild zur Abfrage von JSON-abgebildeten Daten siehe [wie man JSON-Spalten in EF Core 11 abbildet und abfragt](/de/2026/06/how-to-map-and-query-json-columns-in-ef-core-11/) und die [JSON_CONTAINS-Übersetzung, die auf SQL Server 2025 hinzugefügt wurde](/de/2026/04/efcore-11-json-contains-sql-server-2025/).
 
 ## Was Wertsemantik Ihnen tatsächlich bringt
 
@@ -171,7 +171,7 @@ await context.Customers
         s.SetProperty(c => c.ShippingAddress.PostalCode, "010001"));
 ```
 
-Wenn Sie die Schreibpfade gegen das Laden und Mutieren von Entitäten abwägen, sind die Kompromisse dieselben, die in [ExecuteUpdate vs. Laden von Entitäten und SaveChanges](/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/) behandelt werden; komplexe Typen machen den Value-Object-Fall einfach für den schnellen Pfad geeignet.
+Wenn Sie die Schreibpfade gegen das Laden und Mutieren von Entitäten abwägen, sind die Kompromisse dieselben, die in [ExecuteUpdate vs. Laden von Entitäten und SaveChanges](/de/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/) behandelt werden; komplexe Typen machen den Value-Object-Fall einfach für den schnellen Pfad geeignet.
 
 Structs funktionieren ebenfalls, was gut zur Idee der "keinen Identität" passt:
 
@@ -184,7 +184,7 @@ public struct Money
 }
 ```
 
-Records passen auch gut, und das Zusammenspiel zwischen Records, komplexen Typen und Change Tracking ist es wert, vollständig in [wie man Records mit EF Core 11 korrekt verwendet](/2026/04/how-to-use-records-with-ef-core-11-correctly/) nachzulesen.
+Records passen auch gut, und das Zusammenspiel zwischen Records, komplexen Typen und Change Tracking ist es wert, vollständig in [wie man Records mit EF Core 11 korrekt verwendet](/de/2026/04/how-to-use-records-with-ef-core-11-correctly/) nachzulesen.
 
 ## Eine bestehende OwnsOne-Abbildung zu einem komplexen Typ migrieren
 
@@ -197,7 +197,7 @@ Wenn Sie bereits `OwnsOne` ausliefern, ist der Wechsel mechanisch, und mit Table
 5. **Fügen Sie die Migration hinzu und prüfen Sie sie.** Führen Sie `dotnet ef migrations add SwitchAddressToComplexType` aus. Bei einem tabellengesplitteten `OwnsOne` auf derselben Tabelle sollte die Migration leer oder nahezu leer sein, weil sich die Spalten nicht bewegen. Wenn sie Spalten löschen und neu erstellen will, sind Ihre Spaltennamen abgewichen; fixieren Sie sie mit `HasColumnName`, bis der Diff sauber ist, damit Sie keine Daten verlieren.
 6. **Überprüfen Sie das datenerhaltende Verhalten zuerst an einer Kopie.** Wenden Sie die Migration auf eine Wegwerf-Datenbank an, die aus der Produktion wiederhergestellt wurde, bevor Sie sie echt ausführen, besonders wenn Sie von einer separaten Tabelle oder von `nvarchar`-JSON zum nativen `json`-Typ wechseln.
 
-Die eine Migration, die tatsächlich Daten bewegt, ist der Wechsel von `OwnsOne(...).ToTable("Addresses")` (eine separate Tabelle) zu einem tabellengesplitteten komplexen Typ. Dafür gibt es keinen sauberen automatisch generierten Pfad, weil die Zeilen aus der Kindtabelle in die Elterntabelle wandern müssen. Schreiben Sie diese Migration von Hand: Fügen Sie die neuen Spalten hinzu, nutzen Sie `UPDATE ... FROM`, um die Werte hinüberzukopieren, und löschen Sie dann die alte Tabelle. Wenn Sie bereits tief in einem EF-Core-Upgrade stecken, gilt dieselbe Sorgfalt für den Rest Ihres Modells; der [Migrationsleitfaden von EF Core 6 auf EF Core 11](/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/) behandelt die Breaking Changes, die tendenziell zusammen mit diesem auftauchen.
+Die eine Migration, die tatsächlich Daten bewegt, ist der Wechsel von `OwnsOne(...).ToTable("Addresses")` (eine separate Tabelle) zu einem tabellengesplitteten komplexen Typ. Dafür gibt es keinen sauberen automatisch generierten Pfad, weil die Zeilen aus der Kindtabelle in die Elterntabelle wandern müssen. Schreiben Sie diese Migration von Hand: Fügen Sie die neuen Spalten hinzu, nutzen Sie `UPDATE ... FROM`, um die Werte hinüberzukopieren, und löschen Sie dann die alte Tabelle. Wenn Sie bereits tief in einem EF-Core-Upgrade stecken, gilt dieselbe Sorgfalt für den Rest Ihres Modells; der [Migrationsleitfaden von EF Core 6 auf EF Core 11](/de/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/) behandelt die Breaking Changes, die tendenziell zusammen mit diesem auftauchen.
 
 ## EF Core 11 beseitigt die Reibung bei Vererbung und Konfiguration
 
@@ -263,11 +263,11 @@ Die Faustregel ist dieselbe, die eine `class` von einem `record` trennt: Wenn da
 
 ## Weiterführende Lektüre
 
-- [Wie man Records mit EF Core 11 korrekt verwendet](/2026/04/how-to-use-records-with-ef-core-11-correctly/) geht tiefer auf Records als komplexe Typen versus Entitäten ein und die Change-Tracking-Regeln hinter der Trennung.
-- [Wie man JSON-Spalten in EF Core 11 abbildet und abfragt](/2026/06/how-to-map-and-query-json-columns-in-ef-core-11/) behandelt die Abfrageseite von JSON-abgebildeten komplexen Typen.
-- [EF Core 11 übersetzt Contains zu JSON_CONTAINS auf SQL Server 2025](/2026/04/efcore-11-json-contains-sql-server-2025/) erklärt die JSON-Funktionen, die nun gegen komplexe Typen funktionieren.
-- [ExecuteUpdate vs. Laden von Entitäten und SaveChanges](/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/) rahmt den Bulk-Update-Pfad ein, den komplexe Typen für Value Objects freischalten.
-- [Migration von EF Core 6 auf EF Core 11: Breaking Changes, die tatsächlich wehtun](/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/) ist der Begleiter, falls dieser Wechsel Teil eines größeren Upgrades ist.
+- [Wie man Records mit EF Core 11 korrekt verwendet](/de/2026/04/how-to-use-records-with-ef-core-11-correctly/) geht tiefer auf Records als komplexe Typen versus Entitäten ein und die Change-Tracking-Regeln hinter der Trennung.
+- [Wie man JSON-Spalten in EF Core 11 abbildet und abfragt](/de/2026/06/how-to-map-and-query-json-columns-in-ef-core-11/) behandelt die Abfrageseite von JSON-abgebildeten komplexen Typen.
+- [EF Core 11 übersetzt Contains zu JSON_CONTAINS auf SQL Server 2025](/de/2026/04/efcore-11-json-contains-sql-server-2025/) erklärt die JSON-Funktionen, die nun gegen komplexe Typen funktionieren.
+- [ExecuteUpdate vs. Laden von Entitäten und SaveChanges](/de/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/) rahmt den Bulk-Update-Pfad ein, den komplexe Typen für Value Objects freischalten.
+- [Migration von EF Core 6 auf EF Core 11: Breaking Changes, die tatsächlich wehtun](/de/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/) ist der Begleiter, falls dieser Wechsel Teil eines größeren Upgrades ist.
 
 ## Quellen
 

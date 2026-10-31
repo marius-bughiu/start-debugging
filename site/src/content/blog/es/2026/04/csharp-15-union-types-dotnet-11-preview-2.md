@@ -65,7 +65,7 @@ La propiedad `Value` da acceso a la instancia subyacente. Combinado con genéric
 
 ## Cómo difiere de la propuesta anterior
 
-En enero de 2026, [cubrimos la propuesta de uniones discriminadas](/2026/01/csharp-proposal-discriminated-unions/) que definía miembros dentro de la unión misma (más cercano a los enums de F# o Rust). El diseño entregado de C# 15 toma una dirección diferente: **las uniones de tipo componen tipos existentes** en lugar de declarar nuevos inline. Esto significa que tus `Circle`, `Rectangle`, y `Triangle` son clases o records regulares que ya tienes. La unión simplemente los agrupa.
+En enero de 2026, [cubrimos la propuesta de uniones discriminadas](/es/2026/01/csharp-proposal-discriminated-unions/) que definía miembros dentro de la unión misma (más cercano a los enums de F# o Rust). El diseño entregado de C# 15 toma una dirección diferente: **las uniones de tipo componen tipos existentes** en lugar de declarar nuevos inline. Esto significa que tus `Circle`, `Rectangle`, y `Triangle` son clases o records regulares que ya tienes. La unión simplemente los agrupa.
 
 ## Comenzando
 

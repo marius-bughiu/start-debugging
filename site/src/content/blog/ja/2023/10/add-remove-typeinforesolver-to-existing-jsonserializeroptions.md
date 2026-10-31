@@ -34,7 +34,7 @@ options.TypeInfoResolverChain.Add(new ResolverC());
 options.TypeInfoResolverChain.RemoveAt(0);
 ```
 
-type info resolver のチェーンに対する変更を禁止したい場合は、[`JsonSerializerOptions` インスタンスを読み取り専用にする](/2023/09/net-8-mark-jsonserializeroptions-as-readonly/) という方法があります。これは、options インスタンスに対して `MakeReadOnly()` メソッドを呼び出すことで行え、その後に type info resolver のチェーンを変更しようとすると、次の `InvalidOperationException` が必ずスローされるようになります。
+type info resolver のチェーンに対する変更を禁止したい場合は、[`JsonSerializerOptions` インスタンスを読み取り専用にする](/ja/2023/09/net-8-mark-jsonserializeroptions-as-readonly/) という方法があります。これは、options インスタンスに対して `MakeReadOnly()` メソッドを呼び出すことで行え、その後に type info resolver のチェーンを変更しようとすると、次の `InvalidOperationException` が必ずスローされるようになります。
 
 ```plaintext
 Unhandled exception. System.InvalidOperationException: This JsonSerializerOptions instance is read-only or has already been used in serialization or deserialization.

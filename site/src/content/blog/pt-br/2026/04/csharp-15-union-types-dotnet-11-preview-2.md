@@ -65,7 +65,7 @@ A propriedade `Value` dá acesso à instância subjacente. Combinada com genéri
 
 ## Como isto difere da proposta anterior
 
-Em janeiro de 2026, [cobrimos a proposta de unions discriminadas](/2026/01/csharp-proposal-discriminated-unions/) que definia membros dentro do próprio union (mais próximo aos enums de F# ou Rust). O design entregue do C# 15 toma uma direção diferente: **type unions compõem tipos existentes** em vez de declarar novos inline. Isso significa que seus `Circle`, `Rectangle`, e `Triangle` são classes ou records regulares que você já tem. O union apenas os agrupa.
+Em janeiro de 2026, [cobrimos a proposta de unions discriminadas](/pt-br/2026/01/csharp-proposal-discriminated-unions/) que definia membros dentro do próprio union (mais próximo aos enums de F# ou Rust). O design entregue do C# 15 toma uma direção diferente: **type unions compõem tipos existentes** em vez de declarar novos inline. Isso significa que seus `Circle`, `Rectangle`, e `Triangle` são classes ou records regulares que você já tem. O union apenas os agrupa.
 
 ## Começando
 

@@ -21,7 +21,7 @@ translationDate: 2026-08-10
 
 ## コントラクトのカスタマイズとソース生成が両立しないように見える理由
 
-コントラクトのカスタマイズは .NET 7 で導入されました。`System.Text.Json` に `Action<JsonTypeInfo>` を渡すと、コントラクトが構築された後、使用される前に型ごとに一度呼び出されます。そこでプロパティの名前を変えたり、削除したり、合成プロパティを追加したり、取得と設定のデリゲートをラップしたりできます。標準的な入口は `DefaultJsonTypeInfoResolver.Modifiers` で、.NET 8 では [`WithAddedModifier` 拡張メソッド](/2023/10/system-text-json-how-to-modify-existing-type-info-resolver/)が追加され、リフレクションベースのものに限らず任意の `IJsonTypeInfoResolver` にモディファイアーを重ねられるようになりました。
+コントラクトのカスタマイズは .NET 7 で導入されました。`System.Text.Json` に `Action<JsonTypeInfo>` を渡すと、コントラクトが構築された後、使用される前に型ごとに一度呼び出されます。そこでプロパティの名前を変えたり、削除したり、合成プロパティを追加したり、取得と設定のデリゲートをラップしたりできます。標準的な入口は `DefaultJsonTypeInfoResolver.Modifiers` で、.NET 8 では [`WithAddedModifier` 拡張メソッド](/ja/2023/10/system-text-json-how-to-modify-existing-type-info-resolver/)が追加され、リフレクションベースのものに限らず任意の `IJsonTypeInfoResolver` にモディファイアーを重ねられるようになりました。
 
 この「任意の resolver」という点が重要です。ソース生成された `JsonSerializerContext` は `IJsonTypeInfoResolver` **そのもの**だからです。モディファイアーが `MyContext.Default` を装飾できない技術的な理由はありません。コントラクトのモディファイアーはソース生成では使えないと多くの人が結論づけるのは、自然に見える配線がモディファイアーを警告も例外もコンパイラー診断もなしに捨ててしまうからです。
 
@@ -188,7 +188,7 @@ static void RedactByAttribute(JsonTypeInfo typeInfo)
 
 ## Native AOT: 壊れるのはモディファイアーではない
 
-ここで[ソースジェネレーター](/2026/06/what-is-a-source-generator-and-when-do-i-need-one/)を使う理由はトリミングと Native AOT なので、モディファイアーを付けるとリフレクションが戻ってくるのではないかという懸念が当然生じます。戻ってきません。`PublishAot` と `PublishTrimmed` が自動で設定する `<JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>` を指定して、同じコードを再実行しました。
+ここで[ソースジェネレーター](/ja/2026/06/what-is-a-source-generator-and-when-do-i-need-one/)を使う理由はトリミングと Native AOT なので、モディファイアーを付けるとリフレクションが戻ってくるのではないかという懸念が当然生じます。戻ってきません。`PublishAot` と `PublishTrimmed` が自動で設定する `<JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>` を指定して、同じコードを再実行しました。
 
 ```text
 IsReflectionEnabledByDefault = False
@@ -204,7 +204,7 @@ was not provided by TypeInfoResolver of type
 'System.Text.Json.Serialization.Metadata.JsonTypeInfoResolverWithAddedModifiers'.
 ```
 
-[リフレクションベースのシリアル化が無効化されている](/2026/07/fix-reflection-based-serialization-has-been-disabled-for-this-application/)という兄弟エラーに遭遇した場合も、原因は resolver の欠落であって、モディファイアーの不具合ではありません。
+[リフレクションベースのシリアル化が無効化されている](/ja/2026/07/fix-reflection-based-serialization-has-been-disabled-for-this-application/)という兄弟エラーに遭遇した場合も、原因は resolver の欠落であって、モディファイアーの不具合ではありません。
 
 ## 実際のコスト: 生成された高速パスを手放すこと
 
@@ -261,7 +261,7 @@ modifierCalls after 3 serializations (fresh options)   = 12
 
 options インスタンスが一度使われると、そのインスタンスも、そこから生成されたコントラクトも凍結されます。最初のシリアル化の後に `WriteIndented` を代入すると `InvalidOperationException: This JsonSerializerOptions instance is read-only or has already been used in serialization or deserialization` が発生し、`options.GetTypeInfo(...)` に踏み込んで後から `Properties` を編集しようとすると `JsonTypeInfo` 版の同等の例外が発生します。コントラクトの変更はすべてモディファイアーの内側で行う必要があります。
 
-装飾された 1 つのコンテキストではなく複数の resolver を重ねたい場合、[`TypeInfoResolverChain`](/2023/10/add-remove-typeinforesolver-to-existing-jsonserializeroptions/) は素の resolver と同じように装飾済み resolver も受け付け、チェーンは null 以外のコントラクトが返るまで順に問い合わせられます。同じパターンは、すでに[`JsonDerivedType` による多態性](/2026/07/how-to-serialize-a-polymorphic-type-hierarchy-with-jsonderivedtype-in-system-text-json/)を使っている階層にも適用できます。派生側のコントラクトも他の型と同様にモディファイアーを通るからです。
+装飾された 1 つのコンテキストではなく複数の resolver を重ねたい場合、[`TypeInfoResolverChain`](/ja/2023/10/add-remove-typeinforesolver-to-existing-jsonserializeroptions/) は素の resolver と同じように装飾済み resolver も受け付け、チェーンは null 以外のコントラクトが返るまで順に問い合わせられます。同じパターンは、すでに[`JsonDerivedType` による多態性](/ja/2026/07/how-to-serialize-a-polymorphic-type-hierarchy-with-jsonderivedtype-in-system-text-json/)を使っている階層にも適用できます。派生側のコントラクトも他の型と同様にモディファイアーを通るからです。
 
 覚えておくべき要点は次のとおりです。装飾するのはコンテキストではなく resolver、判定は `Name` ではなく `AttributeProvider`、生成モードは既定のまま、そして options はキャッシュすること。
 

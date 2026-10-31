@@ -194,7 +194,7 @@ Für Container-Deployments ist Build mit `--self-contained true` unter `PublishA
 
 ## Verwandte Anleitungen auf Start Debugging
 
-- Der Native-AOT-Hebel sitzt in einer breiteren Cold-Start-Geschichte: [das .NET-11-AWS-Lambda-Cold-Start-Playbook](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/) läuft den AOT-auf-`provided.al2023`-Pfad mit demselben Source-Generator-Setup ab.
+- Der Native-AOT-Hebel sitzt in einer breiteren Cold-Start-Geschichte: [das .NET-11-AWS-Lambda-Cold-Start-Playbook](/de/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/) läuft den AOT-auf-`provided.al2023`-Pfad mit demselben Source-Generator-Setup ab.
 - Für OpenAPI auf einer AOT-Minimal-API behandelt die [Anleitung zur OpenAPI-Client-Generierung](/de/2026/04/how-to-generate-strongly-typed-client-from-openapi-spec-dotnet-11/) den Round Trip von Minimal-API-Metadaten zu einem typisierten `HttpClient`.
 - AOT-Projekte verbieten reflection-basiertes JSON, daher ist [einen eigenen `JsonConverter` in System.Text.Json schreiben](/de/2026/04/how-to-write-a-custom-jsonconverter-in-system-text-json/) der richtige Einstieg, wenn eine eingebaute Konvertierung nicht ausreicht.
 - Eine saubere Exception-Geschichte zählt unter AOT mehr, wo reflection-basierte Diagnostik nicht zur Verfügung steht: [einen globalen Exception-Filter in ASP.NET Core 11 ergänzen](/de/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) zeigt den `IExceptionHandler`-Pfad, der vollständig AOT-kompatibel ist.

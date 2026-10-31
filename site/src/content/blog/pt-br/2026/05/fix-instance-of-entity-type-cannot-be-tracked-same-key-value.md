@@ -112,7 +112,7 @@ public async Task<IActionResult> Update(int id, CustomerDto dto)
 
 `AnyAsync` não materializa uma entidade, então nada fica rastreado. `db.Update(updated)` anexa a nova instância no estado `Modified` e o EF Core escreve cada propriedade como um único round-trip de `UPDATE`. A contrapartida em relação à correção 1 é que cada coluna é escrita pelo fio, suja ou não, porque o EF Core não tem valores originais para comparar. Para tabelas largas isso é desperdício; para tabelas estreitas é o código mais simples.
 
-Para padrões mais amplos sobre o que rastreia e o que não rastreia, veja o resumo em [a API de entradas do rastreador de alterações](/2026/04/efcore-11-changetracker-getentriesforstate/).
+Para padrões mais amplos sobre o que rastreia e o que não rastreia, veja o resumo em [a API de entradas do rastreador de alterações](/pt-br/2026/04/efcore-11-changetracker-getentriesforstate/).
 
 ### 3. Desanexe a entidade existente e depois anexe a sua
 
@@ -176,7 +176,7 @@ Se você carrega um cliente com seus pedidos em eager loading e depois tenta `At
 
 ### DbContext mockado em testes
 
-Se você está usando um `DbContext` mockado para escrever testes, o mock muitas vezes não implementa o mapa de identidade corretamente, então produção bate nesse erro e os testes passam. O contrário também acontece: um provedor in-memory real rastreia entidades que o mock não rastreava, e o teste falha por motivos que nada têm a ver com o sistema sob teste. A correção é testar contra um provedor real; o guia [armadilhas ao mockar DbContext](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) cobre o que o mock dá e o que não dá.
+Se você está usando um `DbContext` mockado para escrever testes, o mock muitas vezes não implementa o mapa de identidade corretamente, então produção bate nesse erro e os testes passam. O contrário também acontece: um provedor in-memory real rastreia entidades que o mock não rastreava, e o teste falha por motivos que nada têm a ver com o sistema sob teste. A correção é testar contra um provedor real; o guia [armadilhas ao mockar DbContext](/pt-br/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) cobre o que o mock dá e o que não dá.
 
 ### EnableSensitiveDataLogging é seu depurador
 
@@ -208,7 +208,7 @@ Isso é concorrência, não conflito de chave. Um `DbContext` com escopo não é
 
 ## Relacionado
 
-Para o contexto mais amplo do EF Core, veja o resumo de [detecção de consultas N+1](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/), o guia de [consultas compiladas em hot paths](/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/) e o passeio por [records como entidades do EF Core](/2026/04/how-to-use-records-with-ef-core-11-correctly/), que tem suas próprias armadilhas do mapa de identidade ao redor de expressões `with`. Quando você bate nesse erro em código de inicialização ao invés de um handler de requisição, a [checklist de DefaultConnection](/2026/05/fix-no-connection-string-named-defaultconnection/) cobre o lado da configuração. Para fixtures de teste que entregam um banco real para o seu código, o [passeio do Testcontainers](/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers/) é a configuração mais limpa.
+Para o contexto mais amplo do EF Core, veja o resumo de [detecção de consultas N+1](/pt-br/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/), o guia de [consultas compiladas em hot paths](/pt-br/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/) e o passeio por [records como entidades do EF Core](/pt-br/2026/04/how-to-use-records-with-ef-core-11-correctly/), que tem suas próprias armadilhas do mapa de identidade ao redor de expressões `with`. Quando você bate nesse erro em código de inicialização ao invés de um handler de requisição, a [checklist de DefaultConnection](/pt-br/2026/05/fix-no-connection-string-named-defaultconnection/) cobre o lado da configuração. Para fixtures de teste que entregam um banco real para o seu código, o [passeio do Testcontainers](/pt-br/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers/) é a configuração mais limpa.
 
 ## Fontes
 

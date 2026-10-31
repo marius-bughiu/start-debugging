@@ -135,7 +135,7 @@ Claude Code 2.1.59 は自動メモリを追加しました。あなたの修正�
 
 この区別から二つの実用ルールが出てきます。第一に、自動メモリの項目を「念のため」CLAUDE.md に複製しないでください。自動メモリも毎セッションロードされます。第二に、自動メモリにチーム全員が知るべきパターンが蓄積したら昇格させてください。`MEMORY.md` を開き、その項目を CLAUDE.md にコピーすると、`/memory` で元を削除できます。昇格は「Claude が私についてそう観測した」が「私たちはチームとしてそう決めた」に変わる瞬間です。
 
-この分割について詳しくは、[Claude Code ルーチンを定期実行する方法](/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues/)の記事で、ループに人間がいない自律実行で何が生き残るかを扱っており、CLAUDE.md が実際に自己完結しているかの有用なストレステストになります。
+この分割について詳しくは、[Claude Code ルーチンを定期実行する方法](/ja/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues/)の記事で、ループに人間がいない自律実行で何が生き残るかを扱っており、CLAUDE.md が実際に自己完結しているかの有用なストレステストになります。
 
 ## 遵守度の調整
 
@@ -165,8 +165,8 @@ CLAUDE.md はアドバイザリーです。hook は決定論的です。[hook �
 
 ## 関連
 
-- [GitHub issues のトリアージを行う Claude Code の定期タスクを設定する方法](/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues/) は、自律実行のために CLAUDE.md に必要なものを扱います。
-- [Claude Code 2.1.119: GitLab と Bitbucket での PR から起動](/2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket/) は「クラウドセッションで指示はどこに住むのか」という関連する問いを扱います。
+- [GitHub issues のトリアージを行う Claude Code の定期タスクを設定する方法](/ja/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues/) は、自律実行のために CLAUDE.md に必要なものを扱います。
+- [Claude Code 2.1.119: GitLab と Bitbucket での PR から起動](/ja/2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket/) は「クラウドセッションで指示はどこに住むのか」という関連する問いを扱います。
 - [Visual Studio 2026 Copilot エージェントスキル](/ja/2026/04/visual-studio-2026-copilot-agent-skills/) は Microsoft 側で最も近い類似物です。skill ファイル対永続的 context。
 - [TypeScript で MCP サーバーを作る](/ja/2026/04/how-to-build-an-mcp-server-in-typescript-that-wraps-a-cli/) は「CLAUDE.md にルールを増やす」よりも「ツールをエージェントに公開する」方が良い回答であるケース向けです。
 

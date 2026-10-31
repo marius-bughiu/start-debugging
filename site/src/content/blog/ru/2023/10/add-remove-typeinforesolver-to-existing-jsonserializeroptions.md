@@ -34,7 +34,7 @@ options.TypeInfoResolverChain.Add(new ResolverC());
 options.TypeInfoResolverChain.RemoveAt(0);
 ```
 
-Если вы хотите запретить изменения цепочки type info resolver, это можно сделать [пометив экземпляр `JsonSerializerOptions` как только для чтения](/2023/09/net-8-mark-jsonserializeroptions-as-readonly/). Для этого нужно вызвать метод `MakeReadOnly()` у экземпляра options. После этого любая попытка изменить цепочку type info resolver приведёт к следующему `InvalidOperationException`.
+Если вы хотите запретить изменения цепочки type info resolver, это можно сделать [пометив экземпляр `JsonSerializerOptions` как только для чтения](/ru/2023/09/net-8-mark-jsonserializeroptions-as-readonly/). Для этого нужно вызвать метод `MakeReadOnly()` у экземпляра options. После этого любая попытка изменить цепочку type info resolver приведёт к следующему `InvalidOperationException`.
 
 ```plaintext
 Unhandled exception. System.InvalidOperationException: This JsonSerializerOptions instance is read-only or has already been used in serialization or deserialization.

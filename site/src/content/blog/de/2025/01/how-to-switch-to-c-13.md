@@ -60,5 +60,5 @@ Zusätzlich zu den Versionsnummern gibt es bestimmte Schlüsselwörter, die zur 
 
 Vielleicht möchten Sie auf eine andere C#-Version wechseln, in dem Fall:
 
--   [Wie man auf C# 12 umstellt](/2023/06/how-to-switch-to-c-12/)
--   [Wie man auf C# 11 umstellt](/2023/03/how-to-switch-to-c-11/)
+-   [Wie man auf C# 12 umstellt](/de/2023/06/how-to-switch-to-c-12/)
+-   [Wie man auf C# 11 umstellt](/de/2023/03/how-to-switch-to-c-11/)

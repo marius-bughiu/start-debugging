@@ -132,7 +132,7 @@ class Values extends _$Values {
 }
 ```
 
-Devolver `true` incondicionalmente restaura el comportamiento previo a 3.0 de "notificar en cada emisión" para este único provider sin cambiar el valor por defecto global para el resto de tu app. También puedes hacerlo más inteligente, por ejemplo comparando longitudes o un contador de versión, si las reconstrucciones incondicionales son demasiado agresivas. Ten en cuenta que el `StreamProvider((ref) => ...)` funcional puro no tiene un hook `updateShouldNotify`, así que esta solución requiere la forma basada en clases. Si todavía estás decidiendo entre los estilos funcional y basado en clases, la guía de [migración de Riverpod 2.x a 3.0](/2026/07/migrate-from-riverpod-2-x-to-riverpod-3-0-in-flutter/) recorre cuándo vale la pena cada uno.
+Devolver `true` incondicionalmente restaura el comportamiento previo a 3.0 de "notificar en cada emisión" para este único provider sin cambiar el valor por defecto global para el resto de tu app. También puedes hacerlo más inteligente, por ejemplo comparando longitudes o un contador de versión, si las reconstrucciones incondicionales son demasiado agresivas. Ten en cuenta que el `StreamProvider((ref) => ...)` funcional puro no tiene un hook `updateShouldNotify`, así que esta solución requiere la forma basada en clases. Si todavía estás decidiendo entre los estilos funcional y basado en clases, la guía de [migración de Riverpod 2.x a 3.0](/es/2026/07/migrate-from-riverpod-2-x-to-riverpod-3-0-in-flutter/) recorre cuándo vale la pena cada uno.
 
 ## Cómo confirmar que este es tu bug y no otra cosa
 
@@ -142,20 +142,20 @@ El síntoma (un widget respaldado por stream que se actualiza una vez y se conge
 2. Adjunta un listener puro temporal: `ref.watch(repositoryProvider).stream.listen((v) => debugPrint('raw: $v'))`. Si el listener puro se dispara cada vez pero `ref.watch(valuesProvider)` no se reconstruye, la capa del provider está deduplicando, lo que confirma el filtro `==`.
 3. Verifica si el objeto emitido es la misma instancia. Si estás empujando un campo, una lista cacheada o un modelo singleton, casi con seguridad estás cayendo en esto.
 
-Si en cambio el stream mismo deja de dispararse, ese es un problema distinto: un `StreamSubscription` que fue cancelado, un controller que fue cerrado, o un provider que fue desechado y recreado. Para el lado del desecho en los ciclos de vida de stream, mira [cancelar un StreamSubscription en dispose](/2026/07/how-to-cancel-a-streamsubscription-in-dispose-in-flutter/).
+Si en cambio el stream mismo deja de dispararse, ese es un problema distinto: un `StreamSubscription` que fue cancelado, un controller que fue cerrado, o un provider que fue desechado y recreado. Para el lado del desecho en los ciclos de vida de stream, mira [cancelar un StreamSubscription en dispose](/es/2026/07/how-to-cancel-a-streamsubscription-in-dispose-in-flutter/).
 
 ## Trampas relacionadas en la misma versión 3.0
 
 El filtro de igualdad es uno de un grupo de cambios de 3.0 que aparecen en tiempo de ejecución en lugar de en tiempo de compilación, que es lo que los hace caros de depurar. Otros dos que vale la pena conocer antes de que despliegues:
 
-- **Los errores ahora salen envueltos.** Un provider que lanza ya no relanza tu excepción original directamente. Mira [Riverpod 3.0 lanza ProviderException en lugar del error original](/2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error/) para saber cómo desenvolverlo.
-- **Los providers fallidos reintentan automáticamente.** Un `FutureProvider` o `StreamProvider` que da error reintentará con backoff exponencial por defecto, lo que puede enmascarar un bug o martillar un endpoint que está fallando. Desactívalo por provider o globalmente como se describe en [desactivar el reintento automático de providers de Riverpod 3.0](/2026/07/how-to-disable-riverpod-3-0-automatic-provider-retry/).
+- **Los errores ahora salen envueltos.** Un provider que lanza ya no relanza tu excepción original directamente. Mira [Riverpod 3.0 lanza ProviderException en lugar del error original](/es/2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error/) para saber cómo desenvolverlo.
+- **Los providers fallidos reintentan automáticamente.** Un `FutureProvider` o `StreamProvider` que da error reintentará con backoff exponencial por defecto, lo que puede enmascarar un bug o martillar un endpoint que está fallando. Desactívalo por provider o globalmente como se describe en [desactivar el reintento automático de providers de Riverpod 3.0](/es/2026/07/how-to-disable-riverpod-3-0-automatic-provider-retry/).
 
-Y si los huecos asíncronos dentro de tu notifier tocan `ref` después de un `await`, protégelos con el chequeo mounted que se cubre en [verificar Ref.mounted después de un hueco asíncrono](/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/).
+Y si los huecos asíncronos dentro de tu notifier tocan `ref` después de un `await`, protégelos con el chequeo mounted que se cubre en [verificar Ref.mounted después de un hueco asíncrono](/es/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/).
 
 ## La regla de una línea para recordar
 
-Riverpod 3.0 reconstruye cuando `previous != next`. Si tu `StreamProvider` reutiliza un objeto mutable, `previous` y `next` son la misma referencia, así que siempre son iguales y nunca se reconstruye. Emite snapshots inmutables (o dale a tu tipo de valor una igualdad real) y el framework hace lo correcto. Recurre a `updateShouldNotify` solo cuando no puedas controlar el valor emitido. Para una mirada más amplia a cuándo un `StreamProvider` y su `AsyncValue` son siquiera la herramienta correcta frente a los widgets builder más antiguos, la comparación de [FutureBuilder y StreamBuilder frente al AsyncValue de Riverpod](/2026/06/futurebuilder-streambuilder-vs-riverpod-asyncvalue-in-flutter/) es una buena lectura siguiente.
+Riverpod 3.0 reconstruye cuando `previous != next`. Si tu `StreamProvider` reutiliza un objeto mutable, `previous` y `next` son la misma referencia, así que siempre son iguales y nunca se reconstruye. Emite snapshots inmutables (o dale a tu tipo de valor una igualdad real) y el framework hace lo correcto. Recurre a `updateShouldNotify` solo cuando no puedas controlar el valor emitido. Para una mirada más amplia a cuándo un `StreamProvider` y su `AsyncValue` son siquiera la herramienta correcta frente a los widgets builder más antiguos, la comparación de [FutureBuilder y StreamBuilder frente al AsyncValue de Riverpod](/es/2026/06/futurebuilder-streambuilder-vs-riverpod-asyncvalue-in-flutter/) es una buena lectura siguiente.
 
 ## Fuentes
 

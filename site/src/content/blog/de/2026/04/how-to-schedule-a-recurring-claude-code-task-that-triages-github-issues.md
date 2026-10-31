@@ -209,8 +209,8 @@ Ein paar Dinge beißen Sie beim ersten geplanten Lauf, wenn Sie nicht vorbeugen.
 
 ## Verwandte Lektüre
 
-- Das vollständige Claude-Code-Release, das `--from-pr` für GitLab und Bitbucket geöffnet hat, passt gut zu Cloud-Routines: siehe [Claude Code 2.1.119: PRs aus GitLab, Bitbucket und GHE](/2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket/).
-- Wenn die Routine während der Triage aus einem `.NET`-Geschäftssystem lesen soll, exponieren Sie es zuerst über MCP. Der Walkthrough ist in [Wie man einen eigenen MCP-Server in C# auf .NET 11 baut](/2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11/).
+- Das vollständige Claude-Code-Release, das `--from-pr` für GitLab und Bitbucket geöffnet hat, passt gut zu Cloud-Routines: siehe [Claude Code 2.1.119: PRs aus GitLab, Bitbucket und GHE](/de/2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket/).
+- Wenn die Routine während der Triage aus einem `.NET`-Geschäftssystem lesen soll, exponieren Sie es zuerst über MCP. Der Walkthrough ist in [Wie man einen eigenen MCP-Server in C# auf .NET 11 baut](/de/2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11/).
 - Für die GitHub-Copilot-förmige Entsprechung gibt es die Agent-Skills-Variante in [Visual Studio 2026 Copilot Agent Skills](/de/2026/04/visual-studio-2026-copilot-agent-skills/).
 - Für C#-Entwicklerinnen und -Entwickler, die Agent-Runner auf der Microsoft-Seite statt auf der Anthropic-Seite bauen, ist [Microsoft Agent Framework 1.0](/de/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) der produktionsreife Einstieg.
 - Und zur Bring-Your-Own-Key-Ökonomie, falls Sie lieber Token gegen ein anderes Modell zahlen, siehe [GitHub Copilot in VS Code mit BYOK Anthropic, Ollama und Foundry Local](/de/2026/04/github-copilot-vs-code-byok-anthropic-ollama-foundry-local/).

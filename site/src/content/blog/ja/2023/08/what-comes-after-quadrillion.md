@@ -40,4 +40,4 @@ translationDate: 2026-05-01
 -   vigintillion (ゼロ 63 個)
 -   centillion (ゼロ 303 個)
 
-PC が短進法の trillion (1 兆) まで数えるのにどれくらいかかるか興味がありますか? こちらの記事をどうぞ: [Counting up to one trillion](/2013/10/counting-up-to-one-trillion/)。
+PC が短進法の trillion (1 兆) まで数えるのにどれくらいかかるか興味がありますか? こちらの記事をどうぞ: [Counting up to one trillion](/ja/2013/10/counting-up-to-one-trillion/)。

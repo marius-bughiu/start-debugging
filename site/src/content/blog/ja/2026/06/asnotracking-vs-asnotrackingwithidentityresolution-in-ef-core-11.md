@@ -70,7 +70,7 @@ bool same = ReferenceEquals(posts[0].Blog, posts[1].Blog); // true when BlogId m
 
 ## AsNoTracking を選ぶべきとき
 
-- **単純な読み取り専用のリストと DTO。** グリッド、API のレスポンス、レポート。クエリして、射影またはシリアライズして、終わりです。インスタンスを比較することが決してないのに identity map のコストを払う理由はありません。これは圧倒的多数の読み取りにとって正しいデフォルトであり、[ホットパスでのコンパイル済みクエリ](/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/) と自然に組み合わさります。
+- **単純な読み取り専用のリストと DTO。** グリッド、API のレスポンス、レポート。クエリして、射影またはシリアライズして、終わりです。インスタンスを比較することが決してないのに identity map のコストを払う理由はありません。これは圧倒的多数の読み取りにとって正しいデフォルトであり、[ホットパスでのコンパイル済みクエリ](/ja/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/) と自然に組み合わさります。
 - **各エンティティをちょうど一度だけ返すクエリ。** 分岐する `Include` を持たないフラットな `context.Customers.Where(...)` は重複を生み得ないので、identity resolution はオーバーヘッドを加える以外に何もしません。エンティティのインスタンスを含まない匿名型や DTO に射影する場合も同じで、そこでは EF Core はオペレーターの有無にかかわらずトラッキングを一切行いません。
 - **行ごとに処理する大きな結果のストリーミング。** `IAsyncEnumerable<T>` で反復し、各項目を処理後に破棄する場合、同時に 2 つのインスタンスを保持することは決してないので、重複排除は何ももたらさず、余分な変更トラッカーは純粋なコストです。
 - **タイトな読み取りパスをチューニングしている。** `AsNoTracking` は下限です。すべての読み取りをデフォルトで安価にするためにコンテキストのデフォルトを `NoTracking` に設定している場合、特定のクエリが identity resolution を必要としない限り、個々のクエリはそのままにしてください。
@@ -80,7 +80,7 @@ bool same = ReferenceEquals(posts[0].Blog, posts[1].Blog); // true when BlogId m
 - **親が繰り返されるコレクションのナビゲーションに対する `Include`。** 注文をその顧客とともに、あるいは投稿をそのブログとともに読み込むと、同じ親の行が子ごとに一度ずつ返ってきます。identity resolution がなければ、子ごとに別々の `Customer`/`Blog` オブジェクトが得られ、メモリを浪費すると同時に、共有オブジェクトを期待して `order.Customer` をたどるコードを壊します。これはこのメソッドが存在する典型的なケースです。
 - **コードが参照の等価性やインメモリの重複排除に依存している。** インスタンスをキーとする `Dictionary<Blog, ...>` を構築したり、参照でグループ化したり、関連エンティティをメモリ内で変更してすべての参照がその変更を見ることを期待したりする場合、`AsNoTracking` は静かに裏切ります。なぜなら各「同じ」エンティティは別々のオブジェクトだからです。identity resolution は、トラッキングのコストなしに、トラッキングクエリから得られるであろう単一インスタンスの保証を復元します。
 - **トラッキングをグローバルに無効化したが、それでも一貫したグラフが必要。** コンテキストのデフォルトが `NoTracking` で、ある読み取りが重複排除されたオブジェクトグラフを必要とする場合、`AsNoTrackingWithIdentityResolution()` はクエリ単位のオプトインです。一貫したグラフを得るために完全なトラッキングまで戻る必要はありません。
-- **デカルト爆発に遭遇し、メモリ内のオブジェクトを減らしたい。** 複数コレクションの `Include` は行を劇的に増やし得ます。正しい主要な対処は通常 [デカルト爆発を避けるためのクエリ分割](/2026/06/how-to-use-query-splitting-to-avoid-a-cartesian-explosion-in-ef-core-11/) ですが、単一のクエリを維持する場合、identity resolution は少なくとも重複した親オブジェクトをそれぞれ 1 インスタンスに畳み込みます。
+- **デカルト爆発に遭遇し、メモリ内のオブジェクトを減らしたい。** 複数コレクションの `Include` は行を劇的に増やし得ます。正しい主要な対処は通常 [デカルト爆発を避けるためのクエリ分割](/ja/2026/06/how-to-use-query-splitting-to-avoid-a-cartesian-explosion-in-ef-core-11/) ですが、単一のクエリを維持する場合、identity resolution は少なくとも重複した親オブジェクトをそれぞれ 1 インスタンスに畳み込みます。
 
 ## ベンチマーク
 
@@ -119,7 +119,7 @@ var blogsByInstance = posts
 // because every p.Blog is a distinct object even when BlogId matches.
 ```
 
-何も例外を投げません。クエリは成功し、データは行ごとには正しく、バグはあとになって誤った件数や重複した処理として現れるだけです。これは ["the instance of entity type cannot be tracked"](/2026/05/fix-instance-of-entity-type-cannot-be-tracked-same-key-value/) の背後にあるものと同じ種類の失敗です。EF Core のインスタンスの同一性は帳簿付けであり、帳簿付けをオフにすると、オブジェクトの同一性に頼ることはできません。対処は `p.Blog.BlogId` (参照ではなくキー) でグループ化するか、参照が想定どおりに畳み込まれるようクエリを `AsNoTrackingWithIdentityResolution()` に切り替えることです。
+何も例外を投げません。クエリは成功し、データは行ごとには正しく、バグはあとになって誤った件数や重複した処理として現れるだけです。これは ["the instance of entity type cannot be tracked"](/ja/2026/05/fix-instance-of-entity-type-cannot-be-tracked-same-key-value/) の背後にあるものと同じ種類の失敗です。EF Core のインスタンスの同一性は帳簿付けであり、帳簿付けをオフにすると、オブジェクトの同一性に頼ることはできません。対処は `p.Blog.BlogId` (参照ではなくキー) でグループ化するか、参照が想定どおりに畳み込まれるようクエリを `AsNoTrackingWithIdentityResolution()` に切り替えることです。
 
 2 つ目の、より静かな落とし穴: identity resolution は **クエリスコープ** です。バックグラウンドのトラッカーはその 1 つのクエリの列挙の間だけ生き、その後 GC されます。別々の 2 つの `AsNoTrackingWithIdentityResolution()` クエリは互いに identity map を共有しないので、最初のクエリの `Blog` は 2 番目のクエリの `Blog` と参照が等しくなることは決してありません。クエリをまたぐ同一性が必要なら、本物のトラッキングが必要です。コンテキスト全体でのインスタンス共有を期待して identity resolution に手を伸ばさないでください。それはそういう動作ではありません。
 
@@ -129,16 +129,16 @@ var blogsByInstance = posts
 
 読み取り専用の作業では `AsNoTracking` をデフォルトにし、それについて二度考えないでください。EF Core 11 が提供する最も安価な読み取りであり、圧倒的多数のクエリにとって正しく、フラットな結果や DTO への射影では厳密に正しい選択です。クエリを `AsNoTrackingWithIdentityResolution` に格上げするのは、2 つの条件が同時に成り立つときだけです。結果が本当に同じエンティティを複数回含むこと (親を子にわたって展開する `Include` が教科書的なトリガーです)、そしてコードの中の何かがキーごとに単一の共有インスタンスを受け取ることに依存していること (参照の等価性、インメモリのグループ化、グラフの一貫性) です。その状況では、このメソッドはノートラッキングに近いコストでトラッキングクエリ品質のオブジェクトグラフを与え、重複が多い場合はより少なく割り当てることさえあります。その状況の外では純粋なオーバーヘッドです。
 
-そして、本当の問題が行数の多さである場合は、どちらにも手を伸ばさないでください。複数の `Include` を持つクエリが爆発しているなら、永続的な対処は [クエリ分割](/2026/06/how-to-use-query-splitting-to-avoid-a-cartesian-explosion-in-ef-core-11/) かより鋭い射影であって、本来取得すべきでなかった行に対するクライアント側の重複排除パスではありません。偶発的な [N+1 クエリ](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/) から遠ざけるのと同じ本能がここでも当てはまります。データベースが実際に必要なものを返すようにクエリを形作り、その上で、結果の使い方にとって正しい最も安価なマテリアライズを選んでください。
+そして、本当の問題が行数の多さである場合は、どちらにも手を伸ばさないでください。複数の `Include` を持つクエリが爆発しているなら、永続的な対処は [クエリ分割](/ja/2026/06/how-to-use-query-splitting-to-avoid-a-cartesian-explosion-in-ef-core-11/) かより鋭い射影であって、本来取得すべきでなかった行に対するクライアント側の重複排除パスではありません。偶発的な [N+1 クエリ](/ja/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/) から遠ざけるのと同じ本能がここでも当てはまります。データベースが実際に必要なものを返すようにクエリを形作り、その上で、結果の使い方にとって正しい最も安価なマテリアライズを選んでください。
 
 ## 関連記事
 
-- [EF Core ExecuteUpdate とエンティティの読み込みおよび SaveChanges: どちらを使うべきか](/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/)
-- [EF Core 11 でデカルト爆発を避けるためにクエリ分割を使う方法](/2026/06/how-to-use-query-splitting-to-avoid-a-cartesian-explosion-in-ef-core-11/)
-- [EF Core 11 で N+1 クエリを検出する方法](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)
-- [EF Core でホットパス向けにコンパイル済みクエリを使う方法](/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/)
-- [変更トラッキングを壊さずに DbContext をモックする方法](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/)
-- [Fix: the instance of entity type cannot be tracked because another instance with the same key value is already being tracked](/2026/05/fix-instance-of-entity-type-cannot-be-tracked-same-key-value/)
+- [EF Core ExecuteUpdate とエンティティの読み込みおよび SaveChanges: どちらを使うべきか](/ja/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/)
+- [EF Core 11 でデカルト爆発を避けるためにクエリ分割を使う方法](/ja/2026/06/how-to-use-query-splitting-to-avoid-a-cartesian-explosion-in-ef-core-11/)
+- [EF Core 11 で N+1 クエリを検出する方法](/ja/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)
+- [EF Core でホットパス向けにコンパイル済みクエリを使う方法](/ja/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/)
+- [変更トラッキングを壊さずに DbContext をモックする方法](/ja/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/)
+- [Fix: the instance of entity type cannot be tracked because another instance with the same key value is already being tracked](/ja/2026/05/fix-instance-of-entity-type-cannot-be-tracked-same-key-value/)
 
 ## 出典
 

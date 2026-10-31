@@ -12,7 +12,7 @@ translationOf: "2023/09/net-8-deserialize-into-non-public-properties"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-De forma similar a [serializar a miembros no públicos](/2023/09/net-8-include-non-public-members-in-json-serialization/), puedes deserializar en miembros no públicos proporcionando un constructor con parámetros que coincidan con los nombres de los miembros no públicos y anotando dichos miembros con el atributo `JsonInclude`.
+De forma similar a [serializar a miembros no públicos](/es/2023/09/net-8-include-non-public-members-in-json-serialization/), puedes deserializar en miembros no públicos proporcionando un constructor con parámetros que coincidan con los nombres de los miembros no públicos y anotando dichos miembros con el atributo `JsonInclude`.
 
 Vayamos directamente a un ejemplo:
 

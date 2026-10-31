@@ -183,7 +183,7 @@ var summaries = await db.Orders
 
 ### Einen Record ohne Id abbilden
 
-Ein positionaler `record` funktioniert gut als Entität, aber nur, wenn einer seiner Parameter zu einem auffindbaren Schlüssel wird. `public record OrderSummary(Guid Reference, decimal Total);` läuft aus demselben Grund in diesen Fehler wie die Klasse: `Reference` ist nicht `Id`. Benennen Sie den ersten Parameter `Id`, ergänzen Sie `[property: Key]` am positionalen Parameter oder konfigurieren Sie `HasKey` in `OnModelCreating`. Die Mechanik der Abbildung von Records, einschließlich init-only-Eigenschaften und Wertgleichheit, wird im Leitfaden zur [korrekten Verwendung von Records mit EF Core 11](/2026/04/how-to-use-records-with-ef-core-11-correctly/) behandelt.
+Ein positionaler `record` funktioniert gut als Entität, aber nur, wenn einer seiner Parameter zu einem auffindbaren Schlüssel wird. `public record OrderSummary(Guid Reference, decimal Total);` läuft aus demselben Grund in diesen Fehler wie die Klasse: `Reference` ist nicht `Id`. Benennen Sie den ersten Parameter `Id`, ergänzen Sie `[property: Key]` am positionalen Parameter oder konfigurieren Sie `HasKey` in `OnModelCreating`. Die Mechanik der Abbildung von Records, einschließlich init-only-Eigenschaften und Wertgleichheit, wird im Leitfaden zur [korrekten Verwendung von Records mit EF Core 11](/de/2026/04/how-to-use-records-with-ef-core-11-correctly/) behandelt.
 
 ### Ergebnistypen von Database.SqlQuery<T> und FromSql
 
@@ -195,7 +195,7 @@ Ist der Typ in Anführungszeichen ein Framework- oder Bibliothekstyp, hat ihn ei
 
 ### Es schlägt nur unter dotnet ef fehl, nicht zur Laufzeit
 
-`dotnet ef migrations add` und `dotnet ef database update` erstellen das vollständige Modell, sie bringen also Modellfehler ans Licht, die ein enger Laufzeit-Codepfad vielleicht noch nicht ausgelöst hat. Der Fehler ist echt; die Tools haben ihn nur zuerst gefunden. Kann der Entwurfszeit-Build Ihren Kontext nicht einmal konstruieren, sehen Sie zuerst eine andere Meldung; diese wird in [warum dotnet ef migrations add Ihren DbContext nicht erstellen kann](/2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext/) behandelt.
+`dotnet ef migrations add` und `dotnet ef database update` erstellen das vollständige Modell, sie bringen also Modellfehler ans Licht, die ein enger Laufzeit-Codepfad vielleicht noch nicht ausgelöst hat. Der Fehler ist echt; die Tools haben ihn nur zuerst gefunden. Kann der Entwurfszeit-Build Ihren Kontext nicht einmal konstruieren, sehen Sie zuerst eine andere Meldung; diese wird in [warum dotnet ef migrations add Ihren DbContext nicht erstellen kann](/de/2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext/) behandelt.
 
 ### Ein nullbarer oder verdeckter Schlüssel
 
@@ -212,7 +212,7 @@ dotnet ef dbcontext info --startup-project ./Api
 
 Ist das Modell gültig, gibt dies den Provider und die Kontextdetails aus. Ist ein Typ weiterhin schlüssellos und unmarkiert, wirft es dieselbe Ausnahme, und die Meldung sagt Ihnen genau, welcher Typ noch ungelöst ist. Arbeiten Sie sie einzeln ab; ein Modell mit mehreren View- oder DTO-Typen kann einmal pro Typ werfen, bis jeder behandelt ist.
 
-Das Denkmodell, das es sich zu merken lohnt: dieser Fehler ist EF Core, das Sie bittet, einen Typ einzuordnen. Entität mit Identität, schreibgeschützte schlüssellose Form oder Nicht-Entität. Sobald Sie das beantworten, ist die Lösung mechanisch. Wenn Sie diese Typen in Ihre Tests einbinden und möchten, dass sich das Change-Tracking richtig verhält, passen die Muster aus [DbContext mocken, ohne das Change-Tracking zu zerstören](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) und [das EF-Core-Modell vor der ersten Abfrage aufwärmen](/2026/04/how-to-warm-up-ef-core-model-before-the-first-query/) gut dazu, Ihre Schlüssel richtig zu setzen.
+Das Denkmodell, das es sich zu merken lohnt: dieser Fehler ist EF Core, das Sie bittet, einen Typ einzuordnen. Entität mit Identität, schreibgeschützte schlüssellose Form oder Nicht-Entität. Sobald Sie das beantworten, ist die Lösung mechanisch. Wenn Sie diese Typen in Ihre Tests einbinden und möchten, dass sich das Change-Tracking richtig verhält, passen die Muster aus [DbContext mocken, ohne das Change-Tracking zu zerstören](/de/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) und [das EF-Core-Modell vor der ersten Abfrage aufwärmen](/de/2026/04/how-to-warm-up-ef-core-model-before-the-first-query/) gut dazu, Ihre Schlüssel richtig zu setzen.
 
 ## Quellen
 

@@ -22,7 +22,7 @@ translationDate: 2026-04-25
 
 - プロパティ名が一致しない場合: `JsonPropertyNameAttribute` または `JsonNamingPolicy` を使います。Preview 3 では `JsonNamingPolicy.PascalCase` とメンバーレベルの `[JsonNamingPolicy]` 属性が追加されたので、[System.Text.Json 11 の命名ポリシー](/ja/2026/04/system-text-json-11-pascalcase-per-member-naming/)で必要なものはおそらくカバーされます。
 - 数値を文字列として扱いたい場合: `JsonSerializerOptions` 上の `JsonNumberHandling.AllowReadingFromString`。
-- 列挙型を文字列として扱いたい場合: `JsonStringEnumConverter` が組み込まれています。[Native AOT 向けのトリム対応版](/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/)もあります。
+- 列挙型を文字列として扱いたい場合: `JsonStringEnumConverter` が組み込まれています。[Native AOT 向けのトリム対応版](/ja/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/)もあります。
 - 読み取り専用プロパティやコンストラクター引数: ソースジェネレーター (`[JsonSerializable]` と `JsonSerializerContext`) が record とプライマリコンストラクターを直接扱います。
 - 識別子による多態性: `[JsonDerivedType]` と `[JsonPolymorphic]` (.NET 7 で追加) があれば、古いコンバーターのトリックはほとんど不要になります。
 
@@ -340,7 +340,7 @@ AOT に優しいファクトリのためには、次のいずれかを行って�
 - ファクトリを既知で有限な閉じたジェネリックの集合に制限し、ペアごとに直接 `new ResultConverter<MyValue, MyError>()` でインスタンス化する。
 - ファクトリに `[RequiresDynamicCode]` と `[RequiresUnreferencedCode]` を付与し、トリム警告を受け入れ、AOT 利用者は閉じたコンバーターを手動で登録する必要があることをドキュメント化する。
 
-[ソース生成された JSON 向けの C# 14 インターセプター提案](/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/)で論じられている、インターセプターを使って `JsonSerializer.Serialize` 呼び出しが生成されたコンテキストを自動的に拾うパターンは、コンバーターとは独立しています。それを使っても、カスタム `JsonConverter<T>` の書き方は同じです。
+[ソース生成された JSON 向けの C# 14 インターセプター提案](/ja/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/)で論じられている、インターセプターを使って `JsonSerializer.Serialize` 呼び出しが生成されたコンテキストを自動的に拾うパターンは、コンバーターとは独立しています。それを使っても、カスタム `JsonConverter<T>` の書き方は同じです。
 
 ## はまりやすい順に並べた落とし穴
 
@@ -358,8 +358,8 @@ AOT に優しいファクトリのためには、次のいずれかを行って�
 
 - [How to use Channels instead of BlockingCollection in C#](/ja/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) -- 非同期ファーストのパターン、同じ時代の API 設計。
 - [System.Text.Json in .NET 11 Preview 3 adds PascalCase and per-member naming](/ja/2026/04/system-text-json-11-pascalcase-per-member-naming/) -- 命名ポリシーで十分でコンバーターが不要な場合。
-- [How to use JsonStringEnumConverter with Native AOT](/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/) -- 組み込みコンバーターのトリム/AOT 事情。
-- [Interceptors for System.Text.Json source generation](/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/) -- 並行する人間工学方向の話、追跡の価値あり。
+- [How to use JsonStringEnumConverter with Native AOT](/ja/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/) -- 組み込みコンバーターのトリム/AOT 事情。
+- [Interceptors for System.Text.Json source generation](/ja/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/) -- 並行する人間工学方向の話、追跡の価値あり。
 - [How to return multiple values from a method in C# 14](/ja/2026/04/how-to-return-multiple-values-from-a-method-in-csharp-14/) -- 値タプルと record のパターン。コンバーターが必要になりがち。
 
 ## 出典

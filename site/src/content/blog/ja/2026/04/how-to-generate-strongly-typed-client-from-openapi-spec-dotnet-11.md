@@ -266,15 +266,15 @@ NSwag はクライアントクラスと対応する `IWeatherClient` インタ�
 
 **モデル名の衝突は名前空間で自動的に解決されます。** `GET /posts/{id}` と `GET /users/{id}` の両方が `Item` という名前のスキーマを参照する場合、Kiota は `Posts.Item.Item` と `Users.Item.Item` を生成します。名前が衝突するように見える場合は `using` 文を確認してください。
 
-**Minimal API エンドポイントの `CancellationToken` は無料です。** パラメーターとして宣言するだけで ASP.NET Core がリクエストアボートトークンにバインドします。属性は不要です。Kiota の各呼び出しに渡すと、ブラウザーが接続を閉じるかゲートウェイタイムアウトが発生したときに HTTP クライアントが自動的にキャンセルされます。C# での協調的タスクキャンセルの仕組みについては [デッドロックなしに長時間実行 Task を C# でキャンセルする方法](/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/) で詳しく解説しています。
+**Minimal API エンドポイントの `CancellationToken` は無料です。** パラメーターとして宣言するだけで ASP.NET Core がリクエストアボートトークンにバインドします。属性は不要です。Kiota の各呼び出しに渡すと、ブラウザーが接続を閉じるかゲートウェイタイムアウトが発生したときに HTTP クライアントが自動的にキャンセルされます。C# での協調的タスクキャンセルの仕組みについては [デッドロックなしに長時間実行 Task を C# でキャンセルする方法](/ja/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/) で詳しく解説しています。
 
 **再生成はローカルだけでなく CI でも行ってください。** `dotnet tool restore && kiota generate [...]` をパイプラインのステップとして追加してください。仕様が変更されリポジトリの生成コードが古くなった場合、ビルドがリリース前に差分を検出します。
 
 ## 関連記事
 
-- API サーバー側を公開していて Scalar ドキュメント UI で Bearer 認証が正しく表示されるようにしたい場合、設定は直感的ではありません: [ASP.NET Core の Scalar: Bearer トークンが無視される理由](/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/)
-- サービス間の呼び出しが REST ではなく gRPC を使用している場合、コンテナーネットワークのトラップは HTTP とは異なります: [.NET 9 と .NET 10 のコンテナーでの gRPC](/2026/01/grpc-in-containers-feels-hard-in-net-9-and-net-10-4-traps-you-can-fix/)
-- HTTP クライアント層への分散トレースの追加は [ASP.NET Core 11 のネイティブ OpenTelemetry トレーシング](/2026/04/aspnetcore-11-native-opentelemetry-tracing/) と自然にペアになります。
+- API サーバー側を公開していて Scalar ドキュメント UI で Bearer 認証が正しく表示されるようにしたい場合、設定は直感的ではありません: [ASP.NET Core の Scalar: Bearer トークンが無視される理由](/ja/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/)
+- サービス間の呼び出しが REST ではなく gRPC を使用している場合、コンテナーネットワークのトラップは HTTP とは異なります: [.NET 9 と .NET 10 のコンテナーでの gRPC](/ja/2026/01/grpc-in-containers-feels-hard-in-net-9-and-net-10-4-traps-you-can-fix/)
+- HTTP クライアント層への分散トレースの追加は [ASP.NET Core 11 のネイティブ OpenTelemetry トレーシング](/ja/2026/04/aspnetcore-11-native-opentelemetry-tracing/) と自然にペアになります。
 
 ## ソースリンク
 

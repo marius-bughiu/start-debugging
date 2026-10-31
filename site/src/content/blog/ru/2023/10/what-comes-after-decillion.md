@@ -40,4 +40,4 @@ translationDate: 2026-05-01
 -   vigintillion (63 нуля)
 -   centillion (303 нуля)
 
-Хотите узнать, сколько времени понадобится ПК, чтобы досчитать до trillion в короткой шкале? Загляните в эту статью: [Counting up to one trillion](/2013/10/counting-up-to-one-trillion/).
+Хотите узнать, сколько времени понадобится ПК, чтобы досчитать до trillion в короткой шкале? Загляните в эту статью: [Counting up to one trillion](/ru/2013/10/counting-up-to-one-trillion/).

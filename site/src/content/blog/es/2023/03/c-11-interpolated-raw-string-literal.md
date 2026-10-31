@@ -10,7 +10,7 @@ translationOf: "2023/03/c-11-interpolated-raw-string-literal"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-C# 11 introduce en el lenguaje el concepto de [literales raw string](/2023/03/c-raw-string-literals/) y, con ello, llega también un conjunto de nuevas funcionalidades para la interpolación de cadenas.
+C# 11 introduce en el lenguaje el concepto de [literales raw string](/es/2023/03/c-raw-string-literals/) y, con ello, llega también un conjunto de nuevas funcionalidades para la interpolación de cadenas.
 
 En primer lugar, puedes seguir usando la sintaxis de interpolación tal como la conoces, en combinación con los literales raw string, así:
 

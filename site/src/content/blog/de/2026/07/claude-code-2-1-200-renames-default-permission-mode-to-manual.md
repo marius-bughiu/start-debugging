@@ -40,7 +40,7 @@ Wenn Sie Claude Code skripten oder eine eingecheckte Konfiguration mit einem Tea
 
 Die zweite Änderung ist diejenige, die im Code-Review erwähnenswert ist. Das `AskUserQuestion`-Tool, mit dem der Agent Ihnen mitten in einer Aufgabe eine Multiple-Choice-Entscheidung vorlegt, fuhr früher nach einer Leerlaufzeit automatisch fort und wählte eine hervorgehobene Option aus, wenn Sie sich entfernt hatten. Das ist praktisch, bis es Sie stillschweigend auf einen Arbeitszweig festlegt, den Sie nicht gelesen haben.
 
-In 2.1.200 fahren diese Dialoge standardmäßig nicht mehr automatisch fort. Der Agent wartet auf Sie. Wenn Sie das alte Weggeh-Verhalten tatsächlich möchten, aktivieren Sie ein Leerlauf-Timeout explizit über `/config`, anstatt es zu erhalten, ob Sie danach gefragt haben oder nicht. Das ist derselbe Instinkt, "keine unumkehrbaren Dinge im Namen des Benutzers entscheiden", der auch hinter [2.1.183 steckt, das destruktive git- und IaC-Befehle im Auto-Modus blockiert](/2026/06/claude-code-2-1-183-auto-mode-blocks-destructive-commands/).
+In 2.1.200 fahren diese Dialoge standardmäßig nicht mehr automatisch fort. Der Agent wartet auf Sie. Wenn Sie das alte Weggeh-Verhalten tatsächlich möchten, aktivieren Sie ein Leerlauf-Timeout explizit über `/config`, anstatt es zu erhalten, ob Sie danach gefragt haben oder nicht. Das ist derselbe Instinkt, "keine unumkehrbaren Dinge im Namen des Benutzers entscheiden", der auch hinter [2.1.183 steckt, das destruktive git- und IaC-Befehle im Auto-Modus blockiert](/de/2026/06/claude-code-2-1-183-auto-mode-blocks-destructive-commands/).
 
 ## Der Rest des Releases
 

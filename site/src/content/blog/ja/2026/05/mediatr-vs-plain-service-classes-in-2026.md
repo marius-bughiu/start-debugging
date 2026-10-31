@@ -101,7 +101,7 @@ public async Task<OrderDto> Get(int id, IOrderService orders, CancellationToken 
 
 単純な版はより短く、そして決定的に重要なのは、`orders.GetByIdAsync` で定義へ移動を押すと、実行されるメソッドに着地することです。`sender.Send(new GetOrderById(id))` では MediatR の `Send` に着地し、推測するか「実装を検索」という遠回りで handler にたどり着きます。小さなチームではこの差はわずかです。何百もの handler を抱える大規模なコードベースでは、直接たどれることの喪失は、呼び出し側を handler の型から切り離す見返りとして MediatR モデルが課す、現実的で日常的な税金です。その切り離しが何かをもたらすかどうかは、呼び出し側に触れずに handler を入れ替える人が一度でもいるかにかかっており、実際にはまれです。
 
-登録も比較に値します。MediatR は起動時にアセンブリをスキャンします。単純なサービスクラスは明示的に登録され、いずれかを忘れると（最初のリクエストではなく）起動時に失敗します。これは [Unable to resolve service for type while attempting to activate](/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/) の背後にある種類のミスに直接関係します。
+登録も比較に値します。MediatR は起動時にアセンブリをスキャンします。単純なサービスクラスは明示的に登録され、いずれかを忘れると（最初のリクエストではなく）起動時に失敗します。これは [Unable to resolve service for type while attempting to activate](/ja/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/) の背後にある種類のミスに直接関係します。
 
 ```csharp
 // .NET 11, C# 14 - registration, side by side
@@ -158,7 +158,7 @@ builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.Decorate<IOrderService, LoggingOrderService>();
 ```
 
-トレードオフは正直です。MediatR の behavior は単一の登録ですべてのリクエストに対してジェネリックですが、デコレーターはインターフェースごとです。横断的関心事が1つか2つで、サービスインターフェースがほんの一握りなら、デコレーターが明快さで勝ります。10個の behaviors を200種類のリクエスト型に一様に適用しなければならないなら、MediatR のジェネリックなパイプラインは本当にコードが少なく、それがとどまる（そして支払う、または Community の資格を得る）ことが擁護できるシナリオです。実際には HTTP の関心事であるリクエストレベルの関心事については、人々が behaviors に入れるものの一部はむしろ middleware やフィルターに属することに注意してください。これは [ASP.NET Core 11 でグローバルな例外フィルターを追加する](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) が扱うのと同じ領域です。
+トレードオフは正直です。MediatR の behavior は単一の登録ですべてのリクエストに対してジェネリックですが、デコレーターはインターフェースごとです。横断的関心事が1つか2つで、サービスインターフェースがほんの一握りなら、デコレーターが明快さで勝ります。10個の behaviors を200種類のリクエスト型に一様に適用しなければならないなら、MediatR のジェネリックなパイプラインは本当にコードが少なく、それがとどまる（そして支払う、または Community の資格を得る）ことが擁護できるシナリオです。実際には HTTP の関心事であるリクエストレベルの関心事については、人々が behaviors に入れるものの一部はむしろ middleware やフィルターに属することに注意してください。これは [ASP.NET Core 11 でグローバルな例外フィルターを追加する](/ja/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) が扱うのと同じ領域です。
 
 ## ディスパッチが実際にかかるコスト
 
@@ -172,7 +172,7 @@ builder.Services.Decorate<IOrderService, LoggingOrderService>();
 | 起動時のアセンブリスキャン | はい、handler 数とともに増加 | なし |
 | 呼び出しごとのオーダー | 数十 ns + 小さなアロケーション | 約1 ns、アロケーションゼロ |
 
-ここでの方法論的な誠実さ: データベースやネットワークに触れる handler に対しては、数十ナノ秒は見えません。一般的な数字を信じるのではなく、BenchmarkDotNet で自分のオブジェクトの形を測るべきです。実際に現れるコストは起動です。何百もの handler を登録するためにアセンブリをスキャンすると、コールドスタートに測定可能なミリ秒が加わります。これは serverless にとって重要で、[.NET 11 の AWS Lambda のコールドスタート時間を短縮する](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/) で戦う類のものです。明示的で単純な登録はこれを完全に回避し、trimming に対して安全に保つべきリフレクションによる探索がないため、trimming と Native AOT に対してより親和的です。
+ここでの方法論的な誠実さ: データベースやネットワークに触れる handler に対しては、数十ナノ秒は見えません。一般的な数字を信じるのではなく、BenchmarkDotNet で自分のオブジェクトの形を測るべきです。実際に現れるコストは起動です。何百もの handler を登録するためにアセンブリをスキャンすると、コールドスタートに測定可能なミリ秒が加わります。これは serverless にとって重要で、[.NET 11 の AWS Lambda のコールドスタート時間を短縮する](/ja/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/) で戦う類のものです。明示的で単純な登録はこれを完全に回避し、trimming に対して安全に保つべきリフレクションによる探索がないため、trimming と Native AOT に対してより親和的です。
 
 ## あなたの代わりに決めてくれる要点
 
@@ -184,7 +184,7 @@ builder.Services.Decorate<IOrderService, LoggingOrderService>();
 
 **12.5.0 に固定するのは、現実的なコストを伴う現実的な選択肢です。** 最後の無料バージョンの Apache 2.0 は失効しません。しかし、セキュリティパッチを受けないバージョンに凍結し、保守リスクを自分で引き受けることになります。それは安定した社内アプリには問題なく、インターネットに露出するものには危険です。
 
-**`Send` しか呼ばないなら、メディエーターは不要です。** 正直なテスト: ソリューションを開いて `IPipelineBehavior` と `INotification` を検索してください。behaviors がゼロで通知も発行していないなら、MediatR はメソッド呼び出しの上の間接化レイヤーとして機能しており、それを取り除くのは、コードをよりたどりやすくし、依存関係を1つ減らし、ライセンスの問題を一手で消す機械的なリファクタリングです。これは [System.Text.Json vs Newtonsoft.Json（2026年）](/2026/05/system-text-json-vs-newtonsoft-json-in-2026/) で同梱の選択肢を選ぶ背後にあるのと同じ、ライブラリの合理化の本能です。
+**`Send` しか呼ばないなら、メディエーターは不要です。** 正直なテスト: ソリューションを開いて `IPipelineBehavior` と `INotification` を検索してください。behaviors がゼロで通知も発行していないなら、MediatR はメソッド呼び出しの上の間接化レイヤーとして機能しており、それを取り除くのは、コードをよりたどりやすくし、依存関係を1つ減らし、ライセンスの問題を一手で消す機械的なリファクタリングです。これは [System.Text.Json vs Newtonsoft.Json（2026年）](/ja/2026/05/system-text-json-vs-newtonsoft-json-in-2026/) で同梱の選択肢を選ぶ背後にあるのと同じ、ライブラリの合理化の本能です。
 
 ## 結論を一行で
 
@@ -192,11 +192,11 @@ builder.Services.Decorate<IOrderService, LoggingOrderService>();
 
 ## 関連
 
-- [Minimal APIs vs controllers in ASP.NET Core 11](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/)
-- [Fix: Unable to resolve service for type while attempting to activate](/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/)
-- [Fix: Cannot consume scoped service from singleton](/2026/05/fix-cannot-consume-scoped-service-from-singleton/)
-- [HttpClient vs HttpClientFactory vs Refit](/2026/05/httpclient-vs-httpclientfactory-vs-refit/)
-- [System.Text.Json vs Newtonsoft.Json（2026年）](/2026/05/system-text-json-vs-newtonsoft-json-in-2026/)
+- [Minimal APIs vs controllers in ASP.NET Core 11](/ja/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/)
+- [Fix: Unable to resolve service for type while attempting to activate](/ja/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/)
+- [Fix: Cannot consume scoped service from singleton](/ja/2026/05/fix-cannot-consume-scoped-service-from-singleton/)
+- [HttpClient vs HttpClientFactory vs Refit](/ja/2026/05/httpclient-vs-httpclientfactory-vs-refit/)
+- [System.Text.Json vs Newtonsoft.Json（2026年）](/ja/2026/05/system-text-json-vs-newtonsoft-json-in-2026/)
 
 ## 出典
 

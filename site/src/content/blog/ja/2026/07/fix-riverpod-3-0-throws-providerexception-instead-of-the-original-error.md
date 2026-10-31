@@ -150,7 +150,7 @@ class UserView extends ConsumerWidget {
 }
 ```
 
-`error is NotFoundException` が直接マッチしている点に注目してください。`AsyncValue.error` はそもそも `ProviderException` を保持していないので、アンラップは不要です。どのみちローディングとエラーの UI を描画するのであれば、命令的な `try`/`catch` よりもこちらを選びましょう。同じパターンは [AsyncValue でローディングとエラーの状態を表示する](/2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod/) の土台にもなっています。
+`error is NotFoundException` が直接マッチしている点に注目してください。`AsyncValue.error` はそもそも `ProviderException` を保持していないので、アンラップは不要です。どのみちローディングとエラーの UI を描画するのであれば、命令的な `try`/`catch` よりもこちらを選びましょう。同じパターンは [AsyncValue でローディングとエラーの状態を表示する](/ja/2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod/) の土台にもなっています。
 
 ### 3. ref.listen の onError でエラーを処理する（これもラップされない）
 
@@ -190,23 +190,23 @@ ref.listen<AsyncValue<User>>(userProvider, (prev, next) {}, onError: (error, sta
 
 **リトライはラッパーを無視します。** Riverpod 3.0 の自動リトライ（指数バックオフ、200ms から 6.4s の上限まで倍増）は、本物のプロバイダービルド失敗はリトライしますが、依存先から単に伝播しただけの `ProviderException` はリトライしません。これにより、失敗した末端プロバイダーが、あらゆる下流プロバイダーにわたってリトライの嵐を引き起こすのを防いでいます。これは設定するものではありません。キャッチして再スローされた `ProviderException` は「すでに考慮済み」として扱われる、とだけ知っておいてください。
 
-**ラッパーは async ギャップのガードではありません。** `ProviderException` をキャッチするのはプロバイダーが *失敗する* ことへの対処であり、await の途中でプロバイダーが *破棄される* ことには何もしません。それらは別のクラッシュです。await の後に `UnmountedRefException` も見られる場合、それはこれではなく [ref.mounted の問題](/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/) であり、キャッチではなく `if (!ref.mounted) return;` のガードが必要です。
+**ラッパーは async ギャップのガードではありません。** `ProviderException` をキャッチするのはプロバイダーが *失敗する* ことへの対処であり、await の途中でプロバイダーが *破棄される* ことには何もしません。それらは別のクラッシュです。await の後に `UnmountedRefException` も見られる場合、それはこれではなく [ref.mounted の問題](/ja/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/) であり、キャッチではなく `if (!ref.mounted) return;` のガードが必要です。
 
 **`on ProviderException` の中の `rethrow` は、内側のエラーではなくラッパーを再スローします。** `default` ブランチが `rethrow` を行うと、スタックの上位にいる呼び出し側は依然として `ProviderException` を見ます。それはたいてい望んだ動作です（出所が保持されます）が、外側の層が生のドメイン例外を期待している場合は、内側のものを明示的に再スローしてください。`Error.throwWithStackTrace(e.exception, e.stackTrace)`。
 
 ## 2.x から 3.0 へのアップグレードにおける位置づけ
 
-これは、より大きな 3.0 マイグレーションの中の 1 項目にすぎず、`Ref.mounted` のライフサイクル変更や、統一された `Notifier` クラスへの移行と並ぶものです。今アップグレードをしているなら、`try` でラップされ、型付きの `on SomeException catch` を伴う `ref.read(` の呼び出しと、`catch` ブロック内の `.future` 読み取りをコードベースから grep してください。それらが、静かにマッチしなくなった呼び出し箇所です。`AsyncValue` を描画するウィジェットコードは安全です。Notifier が所有するライフサイクルとエラーセマンティクスが現代のデフォルトである理由の全体像については、[2026 年の Provider vs Riverpod vs Bloc](/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/) を参照してください。まだ古い `provider` パッケージを使っているなら、[provider から Riverpod への移行](/2026/06/migrate-from-provider-to-riverpod-in-flutter/) が、これらに直面する前の移行をカバーしています。
+これは、より大きな 3.0 マイグレーションの中の 1 項目にすぎず、`Ref.mounted` のライフサイクル変更や、統一された `Notifier` クラスへの移行と並ぶものです。今アップグレードをしているなら、`try` でラップされ、型付きの `on SomeException catch` を伴う `ref.read(` の呼び出しと、`catch` ブロック内の `.future` 読み取りをコードベースから grep してください。それらが、静かにマッチしなくなった呼び出し箇所です。`AsyncValue` を描画するウィジェットコードは安全です。Notifier が所有するライフサイクルとエラーセマンティクスが現代のデフォルトである理由の全体像については、[2026 年の Provider vs Riverpod vs Bloc](/ja/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/) を参照してください。まだ古い `provider` パッケージを使っているなら、[provider から Riverpod への移行](/ja/2026/06/migrate-from-provider-to-riverpod-in-flutter/) が、これらに直面する前の移行をカバーしています。
 
-これを整理し続けるためのメンタルモデル。`ProviderException` は「グラフ内のプロバイダーが失敗し、それをあなたが命令的に読み取った」という意味です。本当の原因を求めて `.exception` に手を伸ばすか、あるいはより良い方法として、ラップがまったく起きない `AsyncValue` を通じて失敗をリアクティブに消費しましょう。[ネットワークエラーを適切に処理する](/2026/06/how-to-handle-network-errors-gracefully-in-a-flutter-app/) のと同じ規律がここにも当てはまります。呼び出し箇所ごとに、値に反応しているのか、スローされた失敗に反応しているのかを判断し、期待する形でエラーを渡してくれる API を選びましょう。
+これを整理し続けるためのメンタルモデル。`ProviderException` は「グラフ内のプロバイダーが失敗し、それをあなたが命令的に読み取った」という意味です。本当の原因を求めて `.exception` に手を伸ばすか、あるいはより良い方法として、ラップがまったく起きない `AsyncValue` を通じて失敗をリアクティブに消費しましょう。[ネットワークエラーを適切に処理する](/ja/2026/06/how-to-handle-network-errors-gracefully-in-a-flutter-app/) のと同じ規律がここにも当てはまります。呼び出し箇所ごとに、値に反応しているのか、スローされた失敗に反応しているのかを判断し、期待する形でエラーを渡してくれる API を選びましょう。
 
 ## 関連記事
 
-- [Flutter Riverpod 3 で async ギャップの後に Ref.mounted をチェックする方法](/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/)：アップグレード後にのみ表面化するもう 1 つの Riverpod 3.0 エラーで、スローの経路ではなく async ギャップの経路で起きます。
-- [Flutter Riverpod で AsyncValue を使ってローディングとエラーの状態を表示する方法](/2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod/)：命令的な try/catch に代わるリアクティブな手段で、ラップの影響を受けません。
-- [解決策: Flutter Riverpod でウィジェットが破棄された後に "ref" を使用できない](/2026/06/fix-cannot-use-ref-after-the-widget-was-disposed-in-flutter-riverpod/)：これと混同されがちな別の Riverpod クラッシュです。
-- [2026 年の Flutter 状態管理における Provider vs Riverpod vs Bloc](/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/)：Riverpod のエラーとライフサイクルのモデルが現在のデフォルトである理由をカバーします。
-- [Flutter で provider から Riverpod へ移行する](/2026/06/migrate-from-provider-to-riverpod-in-flutter/)：まだレガシーパッケージを使っているなら、これがこの前のステップです。
+- [Flutter Riverpod 3 で async ギャップの後に Ref.mounted をチェックする方法](/ja/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/)：アップグレード後にのみ表面化するもう 1 つの Riverpod 3.0 エラーで、スローの経路ではなく async ギャップの経路で起きます。
+- [Flutter Riverpod で AsyncValue を使ってローディングとエラーの状態を表示する方法](/ja/2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod/)：命令的な try/catch に代わるリアクティブな手段で、ラップの影響を受けません。
+- [解決策: Flutter Riverpod でウィジェットが破棄された後に "ref" を使用できない](/ja/2026/06/fix-cannot-use-ref-after-the-widget-was-disposed-in-flutter-riverpod/)：これと混同されがちな別の Riverpod クラッシュです。
+- [2026 年の Flutter 状態管理における Provider vs Riverpod vs Bloc](/ja/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/)：Riverpod のエラーとライフサイクルのモデルが現在のデフォルトである理由をカバーします。
+- [Flutter で provider から Riverpod へ移行する](/ja/2026/06/migrate-from-provider-to-riverpod-in-flutter/)：まだレガシーパッケージを使っているなら、これがこの前のステップです。
 
 ## 出典
 

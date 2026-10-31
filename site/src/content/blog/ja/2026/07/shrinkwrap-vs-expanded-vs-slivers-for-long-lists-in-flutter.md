@@ -18,7 +18,7 @@ translationDate: 2026-07-07
 
 Flutter の長いリストでは、優劣ははっきりしています。リストがヘッダーの下にある唯一のスクロール要素なら `Expanded` を使い、リストが他のセクションとスクロールを共有した瞬間に sliver（つまり `CustomScrollView`）へ切り替えてください。長いリストで `shrinkWrap: true` に頼ることは絶対に避けてください。それは最も短い差分で layout エラーを黙らせますが、同時にリストに最初のフレームですべての要素を build させ、スクロールを 60fps に保つ遅延リサイクルを捨ててしまいます。この記事では、この3つを Flutter 3.x（3.44 で検証、Dart 3.x）で対決させ、機能マトリクス、正確なコストを示す build 回数のベンチマーク、そしてあなたの代わりに結論を決める唯一のポイントを示します。
 
-この3つは、同じ widget の交換可能なつまみではありません。`Expanded` と `shrinkWrap` は「`Column` の中のこの `ListView` の高さはいくつか」に答える2つの方法であり、一方で sliver は `Column` プラス `ListView` という形そのものを置き換えます。この3つが衝突するのは、`Column` の中の `ListView` が `Vertical viewport was given unbounded height` を投げたときに人々が試す3つの答えだからです。もしそのアサーションでここにたどり着いたのなら、根本原因の完全な解説は [Column の中に ListView を unbounded-height エラーなしでネストする方法](/2026/07/how-to-nest-a-listview-inside-a-column-in-flutter-without-an-unbounded-height-error/) にあります。この記事は、赤い画面が消えたあとにどの解決策を残すべきか、というより鋭い問いです。
+この3つは、同じ widget の交換可能なつまみではありません。`Expanded` と `shrinkWrap` は「`Column` の中のこの `ListView` の高さはいくつか」に答える2つの方法であり、一方で sliver は `Column` プラス `ListView` という形そのものを置き換えます。この3つが衝突するのは、`Column` の中の `ListView` が `Vertical viewport was given unbounded height` を投げたときに人々が試す3つの答えだからです。もしそのアサーションでここにたどり着いたのなら、根本原因の完全な解説は [Column の中に ListView を unbounded-height エラーなしでネストする方法](/ja/2026/07/how-to-nest-a-listview-inside-a-column-in-flutter-without-an-unbounded-height-error/) にあります。この記事は、赤い画面が消えたあとにどの解決策を残すべきか、というより鋭い問いです。
 
 ## 機能マトリクス
 
@@ -39,7 +39,7 @@ Flutter の長いリストでは、優劣ははっきりしています。リス
 
 通常の `ListView` は遅延 viewport です。ウィンドウ内に表示されている要素と小さなキャッシュ範囲だけを build してレイアウトし、スクロールに応じてそれらの widget をリサイクルします。10,000 行のリストを作っても、どの瞬間にも存在するのは約15行だけです。この遅延こそが Flutter リストのパフォーマンスのすべてです。
 
-`shrinkWrap: true` はそれをオフにします。（軸を埋めるのではなく）内容に合わせて自分のサイズを決めるには、viewport は自分の合計の高さを知る必要があり、それを知る唯一の方法はすべての子を前もって build して測定することです。つまり `shrinkWrap` は遅延リストを積極的なリストに変えます。N 要素は最初のフレームで N 回の build 呼び出し、N 個の `RenderBox` レイアウト、そして N に比例するメモリを意味します。人々がよくそれを試す3行の設定画面では、それは何でもありません。フィードでは、タイムラインで見える最初のフレームの停止になります（[DevTools で Flutter アプリの jank をプロファイルする方法](/2026/05/how-to-profile-jank-in-a-flutter-app-with-devtools/) を参照）。
+`shrinkWrap: true` はそれをオフにします。（軸を埋めるのではなく）内容に合わせて自分のサイズを決めるには、viewport は自分の合計の高さを知る必要があり、それを知る唯一の方法はすべての子を前もって build して測定することです。つまり `shrinkWrap` は遅延リストを積極的なリストに変えます。N 要素は最初のフレームで N 回の build 呼び出し、N 個の `RenderBox` レイアウト、そして N に比例するメモリを意味します。人々がよくそれを試す3行の設定画面では、それは何でもありません。フィードでは、タイムラインで見える最初のフレームの停止になります（[DevTools で Flutter アプリの jank をプロファイルする方法](/ja/2026/05/how-to-profile-jank-in-a-flutter-app-with-devtools/) を参照）。
 
 `Expanded` はリストを遅延のまま保ちます。これは `Flex` の子で、`Column` が他の子を測定したあとに残ったスペースに等しいタイトな高さを強制します。`ListView` は有界の `maxHeight` を受け取り、そのウィンドウをちょうど埋め、その中で行をリサイクルします。コストは O(viewport) で、要素数に依存しません。
 
@@ -100,7 +100,7 @@ Column(
 
 長いリストが単独でないとき、つまり他のセクションとスクロールを共有するとき、あるいは画面にスクロールで消えていくヘッダーが必要なときは、sliver を使った `CustomScrollView` に頼ってください。
 
-- **1つのスクロールの中に2つ以上のスクロール可能セクション**、たとえばリストがグリッドへ流れ込む場合。このケースは [sliver で ListView と GridView を1つのスクロールに混在させる方法](/2026/07/how-to-mix-a-listview-and-a-gridview-in-one-scroll-view-with-slivers-in-flutter/) で端から端まで扱っています。2つの `ListView` を `Column` に積んでその physics を無効にするのは、sliver が置き換えるために存在するアンチパターンです。
+- **1つのスクロールの中に2つ以上のスクロール可能セクション**、たとえばリストがグリッドへ流れ込む場合。このケースは [sliver で ListView と GridView を1つのスクロールに混在させる方法](/ja/2026/07/how-to-mix-a-listview-and-a-gridview-in-one-scroll-view-with-slivers-in-flutter/) で端から端まで扱っています。2つの `ListView` を `Column` に積んでその physics を無効にするのは、sliver が置き換えるために存在するアンチパターンです。
 - **折りたたみ式またはフローティングのヘッダー。** すでに `CustomScrollView` があれば、`pinned`、`floating`、`expandedHeight` を持つ `SliverAppBar` はほぼ無料です。`Column` ベースの同等物は存在しません。
 - **内容とともにスクロールで消えるべきヘッダー。** `SliverToBoxAdapter` は遅延セクションのあいだに単発の box widget を包み、自然にスクロールで消えるようにします。
 
@@ -160,7 +160,7 @@ Column(
 
 長いリストでは、順位づけはこうです。**リストが他の何かとスクロールを共有するなら sliver、唯一のスクロール要素なら `Expanded`、そして `shrinkWrap` は決して使わない。** `shrinkWrap: true` は、`Column` の中で内容に合わせてサイズを決める必要のある短く固定されたリストのためだけに、道具箱に残しておいてください。落とし穴は、3つすべてが unbounded-height エラーを消してしまうことです。だから、大きな layout アサーションを、実データの下でしか現れないパフォーマンス退行と静かに引き換えるものを、うっかり出荷しやすいのです。この選択を「どうすればリストを遅延のまま保てるか」と読めば、答えは常に `Expanded` か sliver であり、決して `shrinkWrap` ではありません。
 
-これらのいずれかの中で行が自分の幅をあふれた場合、それは tile レベルの別問題である [RenderFlex overflowed](/2026/05/fix-renderflex-overflowed-in-flutter/) であり、外側の layout の選択とは無関係です。そしてどの layout を選ぶにせよ、それが `ScrollController` を使うなら、widget がアンマウントされたときにリークしないよう [dispose すること](/2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks/) を忘れないでください。
+これらのいずれかの中で行が自分の幅をあふれた場合、それは tile レベルの別問題である [RenderFlex overflowed](/ja/2026/05/fix-renderflex-overflowed-in-flutter/) であり、外側の layout の選択とは無関係です。そしてどの layout を選ぶにせよ、それが `ScrollController` を使うなら、widget がアンマウントされたときにリークしないよう [dispose すること](/ja/2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks/) を忘れないでください。
 
 ## 出典
 

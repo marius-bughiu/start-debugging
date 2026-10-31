@@ -65,7 +65,7 @@ Die `Value`-Eigenschaft gibt Zugriff auf die zugrunde liegende Instanz. Kombinie
 
 ## Wie sich das vom früheren Vorschlag unterscheidet
 
-Im Januar 2026 haben wir den [Vorschlag zu Discriminated Unions](/2026/01/csharp-proposal-discriminated-unions/) behandelt, der Member innerhalb der Union selbst definierte (näher an F#- oder Rust-Enums). Das ausgelieferte C# 15-Design schlägt eine andere Richtung ein: **Type Unions komponieren existierende Typen**, statt neue inline zu deklarieren. Das bedeutet, Ihre `Circle`, `Rectangle` und `Triangle` sind reguläre Klassen oder Records, die Sie bereits haben. Die Union gruppiert sie nur.
+Im Januar 2026 haben wir den [Vorschlag zu Discriminated Unions](/de/2026/01/csharp-proposal-discriminated-unions/) behandelt, der Member innerhalb der Union selbst definierte (näher an F#- oder Rust-Enums). Das ausgelieferte C# 15-Design schlägt eine andere Richtung ein: **Type Unions komponieren existierende Typen**, statt neue inline zu deklarieren. Das bedeutet, Ihre `Circle`, `Rectangle` und `Triangle` sind reguläre Klassen oder Records, die Sie bereits haben. Die Union gruppiert sie nur.
 
 ## Loslegen
 

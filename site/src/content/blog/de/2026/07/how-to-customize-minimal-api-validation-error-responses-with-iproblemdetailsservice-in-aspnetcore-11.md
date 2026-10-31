@@ -19,7 +19,7 @@ Die integrierte Minimal-API-Validierung liefert Ihnen kostenlos einen `400 Bad R
 
 ## Wie die Standard-Validierungsantwort aussieht
 
-Beginnen Sie mit dem Setup, das in [Wie man Request-Bodies in Minimal APIs ohne Controller validiert](/2026/06/how-to-validate-request-bodies-in-minimal-apis-without-controllers-in-aspnetcore-11/) behandelt wird: rufen Sie `AddValidation()` auf, annotieren Sie einen Request-Record und lassen Sie den Source Generator die Arbeit erledigen.
+Beginnen Sie mit dem Setup, das in [Wie man Request-Bodies in Minimal APIs ohne Controller validiert](/de/2026/06/how-to-validate-request-bodies-in-minimal-apis-without-controllers-in-aspnetcore-11/) behandelt wird: rufen Sie `AddValidation()` auf, annotieren Sie einen Request-Record und lassen Sie den Source Generator die Arbeit erledigen.
 
 ```csharp
 // .NET 11, C# 14 -- Program.cs
@@ -139,7 +139,7 @@ app.UseStatusCodePages();    // fills empty 4xx/5xx responses with ProblemDetail
 app.Run();
 ```
 
-Ohne diese gibt ein nacktes `Results.NotFound()` oder eine nicht zugeordnete Route einen leeren Body zurück, weil Problem Details nur "for responses that do not have body content yet" erzeugt werden. Die Validierung ist die Ausnahme, die diese Verdrahtung nicht benötigt: der Validierungsfilter selbst ruft `IProblemDetailsService` auf, sodass seine `400` angepasst wird, unabhängig davon, ob Sie `UseStatusCodePages()` hinzufügen oder nicht. Wenn Sie außerdem möchten, dass Ihr globaler Rückhalt abfängt, was die Validierung nicht abfängt, wird die Mechanik des Ausnahmepfads in [Wie man einen globalen Exception-Filter in ASP.NET Core 11 hinzufügt](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) behandelt.
+Ohne diese gibt ein nacktes `Results.NotFound()` oder eine nicht zugeordnete Route einen leeren Body zurück, weil Problem Details nur "for responses that do not have body content yet" erzeugt werden. Die Validierung ist die Ausnahme, die diese Verdrahtung nicht benötigt: der Validierungsfilter selbst ruft `IProblemDetailsService` auf, sodass seine `400` angepasst wird, unabhängig davon, ob Sie `UseStatusCodePages()` hinzufügen oder nicht. Wenn Sie außerdem möchten, dass Ihr globaler Rückhalt abfängt, was die Validierung nicht abfängt, wird die Mechanik des Ausnahmepfads in [Wie man einen globalen Exception-Filter in ASP.NET Core 11 hinzufügt](/de/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) behandelt.
 
 ## Statt 400 eine 422 für die Validierung zurückgeben
 
@@ -234,15 +234,15 @@ Es gibt hier eine scharfe Kante, die klar ausgesprochen werden sollte: eine `Pro
 - **Lassen Sie keine Interna in `Detail` durchsickern.** Es ist verlockend, eine Ausnahmenachricht innerhalb des Callbacks in `ProblemDetails.Detail` zu stopfen. In der Produktion legt das Stack-Trace-Fragmente und interne Typnamen offen. Halten Sie `Detail` client-sicher und legen Sie die Diagnoseinformationen stattdessen hinter Ihrer `traceId` in den Logs ab.
 - **Der Callback läuft auf dem Hot Path jedes Fehlers.** Halten Sie ihn günstig. `Activity.Current` zu lesen und Dictionary-Schlüssel zu setzen ist in Ordnung; das Öffnen einer Datenbankverbindung oder das Aufrufen eines Remote-Dienstes innerhalb von `CustomizeProblemDetails` nicht, weil er synchron läuft, während die Antwort geschrieben wird.
 
-Das Modell, das man behalten sollte: `AddValidation()` entscheidet, was ungültig ist, `AddProblemDetails()` entscheidet, wie die Ungültigkeit beschrieben wird, und `CustomizeProblemDetails` ist die eine Stelle, um diese Beschreibung für jeden vom Framework erzeugten Fehler auf einmal zu formen. Fügen Sie Ihre `traceId` dort hinzu, schreiben Sie den `title` dort um, stufen Sie dort zu `422` hoch und greifen Sie nur dann zu einem eigenen `IProblemDetailsWriter`, wenn Sie die Serialisierung selbst besitzen müssen. Für alles, was der Validierungsfilter nicht abfängt, trägt der [globale Exception-Filter](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) dieselbe Anpassung weiter, und falls Sie noch entscheiden, ob der integrierte Validator Ihre Regeln überhaupt abdeckt, zieht [Minimal-API-Validierung vs. FluentValidation](/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11/) diese Grenze.
+Das Modell, das man behalten sollte: `AddValidation()` entscheidet, was ungültig ist, `AddProblemDetails()` entscheidet, wie die Ungültigkeit beschrieben wird, und `CustomizeProblemDetails` ist die eine Stelle, um diese Beschreibung für jeden vom Framework erzeugten Fehler auf einmal zu formen. Fügen Sie Ihre `traceId` dort hinzu, schreiben Sie den `title` dort um, stufen Sie dort zu `422` hoch und greifen Sie nur dann zu einem eigenen `IProblemDetailsWriter`, wenn Sie die Serialisierung selbst besitzen müssen. Für alles, was der Validierungsfilter nicht abfängt, trägt der [globale Exception-Filter](/de/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) dieselbe Anpassung weiter, und falls Sie noch entscheiden, ob der integrierte Validator Ihre Regeln überhaupt abdeckt, zieht [Minimal-API-Validierung vs. FluentValidation](/de/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11/) diese Grenze.
 
 ## Verwandt
 
-- [Wie man Request-Bodies in Minimal APIs ohne Controller in ASP.NET Core 11 validiert](/2026/06/how-to-validate-request-bodies-in-minimal-apis-without-controllers-in-aspnetcore-11/) für das `AddValidation()`-Setup, das dieser Beitrag anpasst.
-- [Minimal-API-Validierung vs. FluentValidation in ASP.NET Core 11](/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11/) dafür, ob der integrierte Validator zu Ihren Regeln passt, bevor Sie seine Ausgabe anpassen.
-- [Wie man einen globalen Exception-Filter in ASP.NET Core 11 hinzufügt](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) für das Abfangen dessen, was die Validierung nicht abfängt, mit derselben `ProblemDetails`-Form.
-- [Wie man Minimal-API-Endpunkte mit MapGroup in ASP.NET Core 11 organisiert](/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/) für das Anwenden von Validierung und ihren Problem Details über eine ganze Routengruppe.
-- [Minimal APIs vs. Controller in ASP.NET Core 11](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/) dafür, wie sich die Fehlerbehandlung zwischen den beiden Endpunktmodellen unterscheidet.
+- [Wie man Request-Bodies in Minimal APIs ohne Controller in ASP.NET Core 11 validiert](/de/2026/06/how-to-validate-request-bodies-in-minimal-apis-without-controllers-in-aspnetcore-11/) für das `AddValidation()`-Setup, das dieser Beitrag anpasst.
+- [Minimal-API-Validierung vs. FluentValidation in ASP.NET Core 11](/de/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11/) dafür, ob der integrierte Validator zu Ihren Regeln passt, bevor Sie seine Ausgabe anpassen.
+- [Wie man einen globalen Exception-Filter in ASP.NET Core 11 hinzufügt](/de/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) für das Abfangen dessen, was die Validierung nicht abfängt, mit derselben `ProblemDetails`-Form.
+- [Wie man Minimal-API-Endpunkte mit MapGroup in ASP.NET Core 11 organisiert](/de/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/) für das Anwenden von Validierung und ihren Problem Details über eine ganze Routengruppe.
+- [Minimal APIs vs. Controller in ASP.NET Core 11](/de/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/) dafür, wie sich die Fehlerbehandlung zwischen den beiden Endpunktmodellen unterscheidet.
 
 ## Quellen
 

@@ -79,4 +79,4 @@ policies:
 
 MCP 仕様はトランスポートとツール記述フォーマットを与えてくれます。意図的に、呼び出しの認可方法は語りません。各チームは独自のアドホックな allowlist をミドルウェアに書き続けてきました。たいていは、ツールの説明が十分にフレンドリーだったせいでモデルが `delete_user` を呼び出してしまったことを発見した同じ日にです。それを監査トレイル、構造化されたポリシー、レスポンスサニタイザーを備えた文書化されたカーネルに引き上げる作業は、5 つのリポジトリで 5 種類の形で繰り返したくない種類の仕事です。
 
-すでに C# でカスタム MCP サーバーを出荷している方 (参照: [how to build a custom MCP server in C# on .NET 11](/2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11/)) であれば、`GovernanceKernel.EvaluateToolCall` をリクエストパイプラインに繋ぐのは午後 1 つで終わる仕事です。
+すでに C# でカスタム MCP サーバーを出荷している方 (参照: [how to build a custom MCP server in C# on .NET 11](/ja/2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11/)) であれば、`GovernanceKernel.EvaluateToolCall` をリクエストパイプラインに繋ぐのは午後 1 つで終わる仕事です。

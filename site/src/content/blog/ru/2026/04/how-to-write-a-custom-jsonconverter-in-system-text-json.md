@@ -22,7 +22,7 @@ translationDate: 2026-04-25
 
 - Имена свойств не совпадают: используйте `JsonPropertyNameAttribute` или `JsonNamingPolicy`. В preview 3 добавлены `JsonNamingPolicy.PascalCase` и атрибут `[JsonNamingPolicy]` уровня члена, поэтому [политики именования в System.Text.Json 11](/ru/2026/04/system-text-json-11-pascalcase-per-member-naming/), скорее всего, покрывают то, что вам нужно.
 - Числа в виде строк: `JsonNumberHandling.AllowReadingFromString` в `JsonSerializerOptions`.
-- Перечисления в виде строк: `JsonStringEnumConverter` встроен. Существует даже [совместимый с trim вариант для Native AOT](/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/).
+- Перечисления в виде строк: `JsonStringEnumConverter` встроен. Существует даже [совместимый с trim вариант для Native AOT](/ru/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/).
 - Свойства только для чтения или параметры конструктора: генератор исходного кода (`[JsonSerializable]` плюс `JsonSerializerContext`) обрабатывает записи и первичные конструкторы напрямую.
 - Полиморфизм по дискриминатору: `[JsonDerivedType]` и `[JsonPolymorphic]` (добавлены в .NET 7) избавляют почти от всех старых трюков с конвертерами.
 
@@ -340,7 +340,7 @@ string json = JsonSerializer.Serialize(invoice, options);
 - Ограничьте фабрику известным конечным набором закрытых обобщённых и инстанциируйте их напрямую с `new ResultConverter<MyValue, MyError>()` для каждой пары.
 - Пометьте фабрику атрибутами `[RequiresDynamicCode]` и `[RequiresUnreferencedCode]`, примите предупреждения trim и задокументируйте, что потребители AOT должны регистрировать закрытый конвертер вручную.
 
-Шаблон использования интерсепторов, чтобы вызовы `JsonSerializer.Serialize` автоматически подбирали сгенерированный контекст, обсуждаемый в [предложении интерсепторов C# 14 для сгенерированного исходным кодом JSON](/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/), независим от конвертеров: даже с ним вы всё равно пишете свой пользовательский `JsonConverter<T>` тем же способом.
+Шаблон использования интерсепторов, чтобы вызовы `JsonSerializer.Serialize` автоматически подбирали сгенерированный контекст, обсуждаемый в [предложении интерсепторов C# 14 для сгенерированного исходным кодом JSON](/ru/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/), независим от конвертеров: даже с ним вы всё равно пишете свой пользовательский `JsonConverter<T>` тем же способом.
 
 ## Подводные камни, в порядке частоты возникновения
 
@@ -358,8 +358,8 @@ string json = JsonSerializer.Serialize(invoice, options);
 
 - [Как использовать Channels вместо BlockingCollection в C#](/ru/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) -- паттерны "async-first", та же эпоха проектирования API.
 - [System.Text.Json в .NET 11 Preview 3 добавляет PascalCase и именование по членам](/ru/2026/04/system-text-json-11-pascalcase-per-member-naming/) -- когда политики именования достаточно, а конвертера -- нет.
-- [Как использовать JsonStringEnumConverter с Native AOT](/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/) -- история trim/AOT для встроенных конвертеров.
-- [Интерсепторы для генерации исходного кода System.Text.Json](/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/) -- параллельное направление эргономики, за которым стоит следить.
+- [Как использовать JsonStringEnumConverter с Native AOT](/ru/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/) -- история trim/AOT для встроенных конвертеров.
+- [Интерсепторы для генерации исходного кода System.Text.Json](/ru/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/) -- параллельное направление эргономики, за которым стоит следить.
 - [Как вернуть несколько значений из метода в C# 14](/ru/2026/04/how-to-return-multiple-values-from-a-method-in-csharp-14/) -- паттерны кортежей значений и записей, которым часто нужен конвертер.
 
 ## Источники

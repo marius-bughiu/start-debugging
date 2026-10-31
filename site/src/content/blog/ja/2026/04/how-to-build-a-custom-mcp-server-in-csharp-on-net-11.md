@@ -28,7 +28,7 @@ Anthropic と MCP のチームは TypeScript、Python、C# の公式 SDK を出�
 - **ビジネス ロジックがすでに .NET にある。** EF Core モデル、Microsoft.Identity.Web 認証、Hangfire / Quartz のスケジュール ジョブ、Polly のリトライ ポリシー、Refit 経由で公開した内部 API。これらを Python や Node に再実装してエージェントから呼べるようにするのは、無駄な作業です。C# SDK ならメソッドに `[McpServerTool]` を付けて出荷できます。
 - **標準的な .NET ホスティング モデルが欲しい。** `IHostedService`、`IHttpClientFactory`、`IConfiguration`、`Microsoft.Extensions.Logging` 経由の構造化ログ、OpenTelemetry。SDK は `Host.CreateApplicationBuilder` に直接プラグインするので、可観測性と構成は他の ASP.NET Core サービスと同じに見えます。
 
-プロトコル自体の背景は、やや古い [Microsoft `mcp` を .NET 10 で配線する概要](/2026/01/microsoft-mcp-wiring-model-context-protocol-servers-from-c-on-net-10/) が contract-first の考え方をカバーしています。本記事は .NET 11 と 1.0 後の SDK 向けの具体的な how-to アップデートです。
+プロトコル自体の背景は、やや古い [Microsoft `mcp` を .NET 10 で配線する概要](/ja/2026/01/microsoft-mcp-wiring-model-context-protocol-servers-from-c-on-net-10/) が contract-first の考え方をカバーしています。本記事は .NET 11 と 1.0 後の SDK 向けの具体的な how-to アップデートです。
 
 ## .NET 11 SDK でのプロジェクト セットアップ
 
@@ -355,7 +355,7 @@ app.Run();
 - Hangfire / Quartz スケジューラーをラップして、エージェントにバックグラウンド ジョブの確認や起動をさせる。
 - 既存の認証パイプライン込みで、本物の API のまわりに内部 Refit クライアントをラップして、エージェントにアプリと同じ面に話させる。
 
-主に別言語で作業しているなら、[CLI をラップする TypeScript の同等のサーバー](/ja/2026/04/how-to-build-an-mcp-server-in-typescript-that-wraps-a-cli/) は `@modelcontextprotocol/sdk` を使った Node.js をカバーし、[公式 `mcp` SDK を使った Python ガイド](/2026/04/how-to-build-a-custom-mcp-server-in-python-with-the-official-sdk/) は FastMCP パターンをカバーします。さらに MCP の先、C# でのマルチエージェント オーケストレーションを見ているなら、[Microsoft Agent Framework 1.0](/ja/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) が MCP の止まったところ -- プランナー、マルチエージェント ハンドオフ、永続的な実行状態 -- を引き継ぎます。
+主に別言語で作業しているなら、[CLI をラップする TypeScript の同等のサーバー](/ja/2026/04/how-to-build-an-mcp-server-in-typescript-that-wraps-a-cli/) は `@modelcontextprotocol/sdk` を使った Node.js をカバーし、[公式 `mcp` SDK を使った Python ガイド](/ja/2026/04/how-to-build-a-custom-mcp-server-in-python-with-the-official-sdk/) は FastMCP パターンをカバーします。さらに MCP の先、C# でのマルチエージェント オーケストレーションを見ているなら、[Microsoft Agent Framework 1.0](/ja/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) が MCP の止まったところ -- プランナー、マルチエージェント ハンドオフ、永続的な実行状態 -- を引き継ぎます。
 
 MCP サーバー自体は、ツールが SQLite データベースをラップしているか、SignalR ハブか、500 行のドメイン サービスかを気にしません。型付きパラメータ (C# の属性が無料で提供) と、SDK がシリアライズできる戻り値、そして余分なバイトの混じらない stdio ストリームだけが必要です。
 

@@ -12,7 +12,7 @@ translationOf: "2023/09/net-8-deserialize-into-non-public-properties"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-[非公開メンバーへのシリアライズ](/2023/09/net-8-include-non-public-members-in-json-serialization/) と同じように、非公開メンバーの名前に一致するパラメーターを持つコンストラクターを用意し、対象の非公開メンバーに `JsonInclude` 属性を付けることで、非公開メンバーへのデシリアライズが可能になります。
+[非公開メンバーへのシリアライズ](/ja/2023/09/net-8-include-non-public-members-in-json-serialization/) と同じように、非公開メンバーの名前に一致するパラメーターを持つコンストラクターを用意し、対象の非公開メンバーに `JsonInclude` 属性を付けることで、非公開メンバーへのデシリアライズが可能になります。
 
 さっそく例を見てみましょう。
 

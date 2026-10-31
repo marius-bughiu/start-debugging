@@ -196,7 +196,7 @@ await db.SaveChangesAsync();
 
 ## JSON-колонки и records
 
-EF Core 7 добавил маппинг JSON-колонок, а EF Core 11 расширяет это [трансляцией JSON_CONTAINS на SQL Server 2025](/2026/04/efcore-11-json-contains-sql-server-2025/) и комплексными типами внутри JSON-документов. Позиционные records эргономично подходят для owned JSON-типов:
+EF Core 7 добавил маппинг JSON-колонок, а EF Core 11 расширяет это [трансляцией JSON_CONTAINS на SQL Server 2025](/ru/2026/04/efcore-11-json-contains-sql-server-2025/) и комплексными типами внутри JSON-документов. Позиционные records эргономично подходят для owned JSON-типов:
 
 ```csharp
 // .NET 11, C# 14, EF Core 11
@@ -258,9 +258,9 @@ public record CreateOrder(string CustomerName, Money Total, Address ShipTo);
 
 ## Связанное чтение
 
-- [EF Core 11 добавляет GetEntriesForState, чтобы пропустить DetectChanges](/2026/04/efcore-11-changetracker-getentriesforstate/) покрывает внутренности change tracker, на которые опирается эта статья.
-- [EF Core 11 убирает ненужные reference-джойны в split-запросах](/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/) - хороший спутник, если ваши сущности активно используют навигации.
-- [EF Core 11 транслирует Contains в JSON_CONTAINS на SQL Server 2025](/2026/04/efcore-11-json-contains-sql-server-2025/) связан с паттерном JSON-маппленных records выше.
+- [EF Core 11 добавляет GetEntriesForState, чтобы пропустить DetectChanges](/ru/2026/04/efcore-11-changetracker-getentriesforstate/) покрывает внутренности change tracker, на которые опирается эта статья.
+- [EF Core 11 убирает ненужные reference-джойны в split-запросах](/ru/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/) - хороший спутник, если ваши сущности активно используют навигации.
+- [EF Core 11 транслирует Contains в JSON_CONTAINS на SQL Server 2025](/ru/2026/04/efcore-11-json-contains-sql-server-2025/) связан с паттерном JSON-маппленных records выше.
 - [Как вернуть несколько значений из метода в C# 14](/ru/2026/04/how-to-return-multiple-values-from-a-method-in-csharp-14/) глубже разбирает, когда records выигрывают над кортежами и классами на уровне возврата метода.
 
 ## Источники

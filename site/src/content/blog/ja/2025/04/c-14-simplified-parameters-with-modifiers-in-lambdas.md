@@ -124,4 +124,4 @@ C# 14 のこの機能は、言語の他の場所にある型推論の便利さ�
 
 -   [C# 14 の新機能 | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14)
 -   [修飾子付きのシンプルなラムダパラメーター | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/simple-lambda-parameters-with-modifiers)
--   [C# 14 の新機能 | StartDebugging.NET](/2024/12/csharp-14/)
+-   [C# 14 の新機能 | StartDebugging.NET](/ja/2024/12/csharp-14/)

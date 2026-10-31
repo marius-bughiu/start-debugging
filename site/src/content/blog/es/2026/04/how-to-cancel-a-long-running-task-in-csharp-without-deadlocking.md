@@ -242,10 +242,10 @@ Un botón de cancelar que funcione es nueve de cada diez veces resultado de tres
 
 ## Lecturas relacionadas
 
-- [Haciendo streaming de filas de la base de datos con IAsyncEnumerable](/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/), que se apoya mucho en la misma fontanería de tokens.
-- [Stack traces de async más limpios en el runtime de .NET 11](/2026/04/dotnet-11-runtime-async-cleaner-stack-traces/), útil cuando una `OperationCanceledException` aflora en lo profundo de un pipeline.
+- [Haciendo streaming de filas de la base de datos con IAsyncEnumerable](/es/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/), que se apoya mucho en la misma fontanería de tokens.
+- [Stack traces de async más limpios en el runtime de .NET 11](/es/2026/04/dotnet-11-runtime-async-cleaner-stack-traces/), útil cuando una `OperationCanceledException` aflora en lo profundo de un pipeline.
 - [Cómo devolver múltiples valores desde un método en C# 14](/es/2026/04/how-to-return-multiple-values-from-a-method-in-csharp-14/) combina bien con métodos asíncronos que quieren devolver "resultado o razón de cancelación".
-- [El final de `lock (object)` en .NET 9](/2026/01/net-9-the-end-of-lockobject/) para el contexto de threading más amplio dentro del cual se ejecuta tu código de cancelación.
+- [El final de `lock (object)` en .NET 9](/es/2026/01/net-9-the-end-of-lockobject/) para el contexto de threading más amplio dentro del cual se ejecuta tu código de cancelación.
 
 ## Enlaces de origen
 

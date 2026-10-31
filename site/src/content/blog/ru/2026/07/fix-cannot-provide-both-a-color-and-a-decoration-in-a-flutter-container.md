@@ -155,7 +155,7 @@ Container(
 )
 ```
 
-Если вы здесь берёте цвета из `ColorScheme` Material 3, роли (`surface`, `surfaceContainerHigh`, `primaryContainer`) важны для контраста как в светлом, так и в тёмном режиме; см. [как задать акцентный цвет в приложении Flutter с помощью ColorScheme Material 3](/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme/), чтобы понять, к какой роли обращаться.
+Если вы здесь берёте цвета из `ColorScheme` Material 3, роли (`surface`, `surfaceContainerHigh`, `primaryContainer`) важны для контраста как в светлом, так и в тёмном режиме; см. [как задать акцентный цвет в приложении Flutter с помощью ColorScheme Material 3](/ru/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme/), чтобы понять, к какой роли обращаться.
 
 ### У AnimatedContainer ровно то же правило
 
@@ -212,22 +212,22 @@ Container(
 2. Если трассировка не помогает, потому что `Container` строится в цикле или в общем билдере, сделайте grep по проекту на `color:` и `decoration:`, появляющиеся близко друг к другу. Регулярное выражение `Container\([^)]*color:[^)]*decoration:` ловит большинство однострочных случаев; многострочные требуют ручного просмотра общей карточки или плитки.
 3. Поскольку это выбрасывается на этапе конструирования, hot reload выявляет это мгновенно. Добавьте границу или декорацию, сохраните, и если кадр покраснеет, у вас на экране нужный виджет.
 
-Это поведение на этапе конструирования противоположно утверждениям компоновки вроде [RenderBox was not laid out](/2026/06/fix-renderbox-was-not-laid-out-in-flutter/), которые появляются только после запуска конвейера компоновки и часто указывают на несколько виджетов в стороне от настоящей причины.
+Это поведение на этапе конструирования противоположно утверждениям компоновки вроде [RenderBox was not laid out](/ru/2026/06/fix-renderbox-was-not-laid-out-in-flutter/), которые появляются только после запуска конвейера компоновки и часто указывают на несколько виджетов в стороне от настоящей причины.
 
 ## Подводные камни и похожие ошибки
 
 - **`BoxDecoration.color` против `Container.color` и порядок отрисовки.** Они не идентичны во всех случаях. `Container.color` рисует за ребёнком, но также за любой `decoration`, будь она разрешена; `BoxDecoration.color` рисует как часть декорации, которая находится за `foregroundDecoration`. Для плоской заливки результат -- тот же пиксель, но если вы также используете `foregroundDecoration`, порядок слоёв важен.
 - **Всплески `Ink` и `InkWell` исчезают поверх цветного Container.** Если вы дали `Container` `color`, а затем обернули ребёнка в `InkWell`, рябь рисуется за цветом `Container` и пропадает. Исправление -- тот же ход: удалите `Container.color` и используйте виджет `Ink` с `decoration` или `Material` с цветом, чтобы слой чернил находился над заливкой.
-- **`The following assertion was thrown building` с другим сообщением.** Если ваша ошибка упоминает `Incorrect use of ParentDataWidget` вместо color и decoration, это отдельный баг контракта компоновки; см. [Incorrect use of ParentDataWidget: Expanded должен быть внутри Flex](/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter/).
+- **`The following assertion was thrown building` с другим сообщением.** Если ваша ошибка упоминает `Incorrect use of ParentDataWidget` вместо color и decoration, это отдельный баг контракта компоновки; см. [Incorrect use of ParentDataWidget: Expanded должен быть внутри Flex](/ru/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter/).
 - **Release-сборки скрывают это, а не чинят.** Поскольку проверка -- это `assert`, release-сборка её убирает и рисует с тем аргументом, который сохранил конструктор. Не выпускайте в предположении, что "в release работает". Оно работает случайно, и следующий скачок SDK может изменить, какой аргумент побеждает.
 - **`DecoratedBox` выбрасывает ту же концептуальную ошибку иначе.** У `DecoratedBox` вообще нет аргумента `color`, только `decoration`, поэтому там вы не сможете наткнуться на это утверждение. Если вы использовали `DecoratedBox` и хотели цвет, он всегда идёт в `BoxDecoration`.
 
 ## Похожее
 
-- [Исправление: A RenderFlex overflowed во Flutter](/2026/05/fix-renderflex-overflowed-in-flutter/) -- другое утверждение, на которое новички натыкаются первым при построении компоновок карточек и строк.
-- [Исправление: RenderBox was not laid out во Flutter](/2026/06/fix-renderbox-was-not-laid-out-in-flutter/) охватывает ошибку на этапе компоновки, которая, в отличие от этой, указывает в сторону от настоящей причины.
-- [Исправление: Incorrect use of ParentDataWidget: Expanded должен быть внутри Flex](/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter/) -- родственное утверждение контракта конструирования, которое стоит уметь распознавать.
-- [Как задать акцентный цвет в приложении Flutter с помощью ColorScheme Material 3](/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme/) объясняет, какую роль `ColorScheme` подавать в ваш `BoxDecoration.color`.
+- [Исправление: A RenderFlex overflowed во Flutter](/ru/2026/05/fix-renderflex-overflowed-in-flutter/) -- другое утверждение, на которое новички натыкаются первым при построении компоновок карточек и строк.
+- [Исправление: RenderBox was not laid out во Flutter](/ru/2026/06/fix-renderbox-was-not-laid-out-in-flutter/) охватывает ошибку на этапе компоновки, которая, в отличие от этой, указывает в сторону от настоящей причины.
+- [Исправление: Incorrect use of ParentDataWidget: Expanded должен быть внутри Flex](/ru/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter/) -- родственное утверждение контракта конструирования, которое стоит уметь распознавать.
+- [Как задать акцентный цвет в приложении Flutter с помощью ColorScheme Material 3](/ru/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme/) объясняет, какую роль `ColorScheme` подавать в ваш `BoxDecoration.color`.
 
 ## Источники
 

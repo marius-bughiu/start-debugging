@@ -90,7 +90,7 @@ dotnet lambda package --configuration Release \
 
 `Amazon.Lambda.Tools` グローバルツールが `bootstrap` バイナリを ZIP にまとめ、それをカスタムランタイムとしてアップロードします。256 MB のファンクションと上記のボイラープレートで、コールドスタートはおおよそ **150 ms から 300 ms** の範囲、マネージドランタイムの 1500-2000 ms から下がるでしょう。
 
-トレードオフ: 引っ張ってくるリフレクション重めのライブラリはトリム警告になります。`System.Text.Json` のソースジェネレーターがシリアライゼーションを扱いますが、ランタイムでジェネリクス型に対してリフレクションするもの(古い AutoMapper、Newtonsoft、リフレクションベースの MediatR ハンドラ)を使うと、ILLink 警告かランタイム例外が出ます。すべての警告を本物のバグとして扱ってください。トリム互換のメディエータの代替は、[SwitchMediator v3、AOT に優しいゼロアロケーションメディエータ](/2026/01/switchmediator-v3-a-zero-alloc-mediator-that-stays-friendly-to-aot/) で扱っています。
+トレードオフ: 引っ張ってくるリフレクション重めのライブラリはトリム警告になります。`System.Text.Json` のソースジェネレーターがシリアライゼーションを扱いますが、ランタイムでジェネリクス型に対してリフレクションするもの(古い AutoMapper、Newtonsoft、リフレクションベースの MediatR ハンドラ)を使うと、ILLink 警告かランタイム例外が出ます。すべての警告を本物のバグとして扱ってください。トリム互換のメディエータの代替は、[SwitchMediator v3、AOT に優しいゼロアロケーションメディエータ](/ja/2026/01/switchmediator-v3-a-zero-alloc-mediator-that-stays-friendly-to-aot/) で扱っています。
 
 ## レバー 2: マネージド dotnet10 ランタイムの SnapStart
 
@@ -251,7 +251,7 @@ Provisioned concurrency は `N` インスタンスを永続的に温かく保ち
 4. **検証** -- 実際のデプロイメモリサイズで INIT_DURATION を確認。コスト対遅延カーブが重要なら Power Tuning を使う。
 5. **Provisioned concurrency** は上記の後、自動スケーリングと一緒のときだけ。
 
-.NET 11 Lambda の物語の残り(ランタイムバージョン、デプロイ形、`dotnet10` から将来のマネージド `dotnet11` ランタイムに切り替えると何が変わるか)は、本記事の伴侶である [AWS Lambda が .NET 10 をサポート: ランタイム切り替え前に確認すべきこと](/2026/01/aws-lambda-supports-net-10-what-to-verify-before-you-flip-the-runtime/) で扱っています。
+.NET 11 Lambda の物語の残り(ランタイムバージョン、デプロイ形、`dotnet10` から将来のマネージド `dotnet11` ランタイムに切り替えると何が変わるか)は、本記事の伴侶である [AWS Lambda が .NET 10 をサポート: ランタイム切り替え前に確認すべきこと](/ja/2026/01/aws-lambda-supports-net-10-what-to-verify-before-you-flip-the-runtime/) で扱っています。
 
 ## 出典
 

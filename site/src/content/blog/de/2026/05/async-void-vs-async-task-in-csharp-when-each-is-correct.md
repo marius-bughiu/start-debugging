@@ -126,7 +126,7 @@ Wenn eine Methode laut fehlschlagen muss, wenn etwas schief läuft, nichts Sinnv
 - **Verlorene Stack Traces.** Die Exception, die im Synchronization Context auftaucht, verliert den ursprünglichen Aufrufstack. Sie sehen den rethrowten Frame, nicht "dies wurde aus `OnSaveClicked` aufgerufen".
 - **Keine Cancellation.** Sie können Cancellation nicht durchreichen, weil der Aufrufer keinen `Task` zum Abwarten hat. Ein `CancellationToken`-Argument funktioniert innerhalb der Methode weiterhin, aber der Aufrufer kann nicht auf eine `OperationCanceledException` reagieren, da sie nie zurück propagiert.
 - **Kein Timeout via `Task.WhenAny`.** Ein gängiges Muster ist `await Task.WhenAny(work, Task.Delay(timeout, ct))`. Dafür brauchen Sie einen `Task`. `async void` hat keinen.
-- **Keine Tests auf Abschluss.** xUnit, NUnit und MSTest können eine `async Task`-Testmethode mit `await` abwarten und ihr Ergebnis beobachten. Sie können einen `async void`-Test nicht abwarten. Einige Frameworks behandeln `async void`-Testmethoden gesondert (älteres NUnit, MSTest v2 mit Adapter-Eigenheiten); keines empfiehlt es. Sehen Sie sich das ausführlichere Muster in [wie man Code testet, der HttpClient verwendet](/2026/04/how-to-unit-test-code-that-uses-httpclient/) an, wo jeder Test `async Task` ist.
+- **Keine Tests auf Abschluss.** xUnit, NUnit und MSTest können eine `async Task`-Testmethode mit `await` abwarten und ihr Ergebnis beobachten. Sie können einen `async void`-Test nicht abwarten. Einige Frameworks behandeln `async void`-Testmethoden gesondert (älteres NUnit, MSTest v2 mit Adapter-Eigenheiten); keines empfiehlt es. Sehen Sie sich das ausführlichere Muster in [wie man Code testet, der HttpClient verwendet](/de/2026/04/how-to-unit-test-code-that-uses-httpclient/) an, wo jeder Test `async Task` ist.
 - **Fire-and-Forget, das auch Fire-and-Crash ist.** Viele "Fire-and-Forget"-Muster werden stillschweigend zu `async void`-Aufrufen, wenn Entwickler das `await` vergessen. Die Lösung ist nicht `async void`; die Lösung ist ein explizites `_ = SomeAsync();` Discard und die Akzeptanz, dass der resultierende `Task` unbeobachtet ist, oder besser, den Task an einen bekannten Ort zu übergeben, der ihn beobachtet (ein Logger, eine Hintergrund-Queue).
 
 ## Der Benchmark: spart `async void` etwas?
@@ -173,9 +173,9 @@ Die `async void`-Version spart 16 Byte (eine `Task`-Instanz) und ist etwa 4% sch
 
 Wenn Sie für eine Nicht-Event-Methode versucht sind, `async void` zu nehmen, sollten zwei Dinge Ihre Meinung auf der Stelle ändern.
 
-Das erste sind Fire-and-Forget-Tasks, die sich über die Lebensdauer eines Requests erstrecken. ASP.NET Core gibt Ihnen standardmäßig keinen `SynchronizationContext`, sodass eine Exception in einem `async void` zu `ThreadPool.UnobservedExceptionEvent` aufsteigt und je nach Ihren `<ServerGarbageCollection>`-Einstellungen den Worker-Prozess mitreißen kann. In dem Moment, in dem Sie sich entscheiden, "etwas Hintergrundarbeit aus einem Controller anzustoßen", wechseln Sie zu `IHostedService` oder, für einen One-Shot, geben Sie den `Task` an das Framework zurück über etwas, das ihn beobachtet (`BackgroundService`, eine `IHostApplicationLifetime`-aware Queue, [Channels](/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/)).
+Das erste sind Fire-and-Forget-Tasks, die sich über die Lebensdauer eines Requests erstrecken. ASP.NET Core gibt Ihnen standardmäßig keinen `SynchronizationContext`, sodass eine Exception in einem `async void` zu `ThreadPool.UnobservedExceptionEvent` aufsteigt und je nach Ihren `<ServerGarbageCollection>`-Einstellungen den Worker-Prozess mitreißen kann. In dem Moment, in dem Sie sich entscheiden, "etwas Hintergrundarbeit aus einem Controller anzustoßen", wechseln Sie zu `IHostedService` oder, für einen One-Shot, geben Sie den `Task` an das Framework zurück über etwas, das ihn beobachtet (`BackgroundService`, eine `IHostApplicationLifetime`-aware Queue, [Channels](/de/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/)).
 
-Das zweite sind Interfaces. Wenn eine Methode jemals mockbar oder Teil eines Vertrags sein soll, muss sie etwas zurückgeben. `Task` ist der Standard-Rückgabetyp für eine asynchrone Operation, die keinen Wert erzeugt. `void` kann von einem Mock oder Fake nicht mit `await` abgewartet werden, und Sie können das Test-Setup nicht darum herum koordinieren. Das Mocking-Muster in [wie man DbContext mockt, ohne das Change Tracking zu brechen](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) stützt sich aus demselben Grund auf `Task`-zurückgebende Member.
+Das zweite sind Interfaces. Wenn eine Methode jemals mockbar oder Teil eines Vertrags sein soll, muss sie etwas zurückgeben. `Task` ist der Standard-Rückgabetyp für eine asynchrone Operation, die keinen Wert erzeugt. `void` kann von einem Mock oder Fake nicht mit `await` abgewartet werden, und Sie können das Test-Setup nicht darum herum koordinieren. Das Mocking-Muster in [wie man DbContext mockt, ohne das Change Tracking zu brechen](/de/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) stützt sich aus demselben Grund auf `Task`-zurückgebende Member.
 
 ## Die meinungsstarke Empfehlung, noch einmal
 
@@ -188,11 +188,11 @@ Zwei Korollare, die ins Muskelgedächtnis übergehen sollten:
 
 ## Verwandt
 
-- [Wie Sie einen lang laufenden Task in C# ohne Deadlock abbrechen](/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/)
-- [Wie Sie Channels statt BlockingCollection in C# verwenden](/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/)
-- [Wie Sie Code testen, der HttpClient verwendet](/2026/04/how-to-unit-test-code-that-uses-httpclient/)
-- [Fix: TaskCanceledException: A task was canceled in HttpClient](/2026/05/fix-taskcanceledexception-a-task-was-canceled-httpclient/)
-- [Fix: InvalidOperationException: Synchronous operations are disallowed in ASP.NET Core](/2026/05/fix-invalidoperationexception-synchronous-operations-are-disallowed/)
+- [Wie Sie einen lang laufenden Task in C# ohne Deadlock abbrechen](/de/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/)
+- [Wie Sie Channels statt BlockingCollection in C# verwenden](/de/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/)
+- [Wie Sie Code testen, der HttpClient verwendet](/de/2026/04/how-to-unit-test-code-that-uses-httpclient/)
+- [Fix: TaskCanceledException: A task was canceled in HttpClient](/de/2026/05/fix-taskcanceledexception-a-task-was-canceled-httpclient/)
+- [Fix: InvalidOperationException: Synchronous operations are disallowed in ASP.NET Core](/de/2026/05/fix-invalidoperationexception-synchronous-operations-are-disallowed/)
 
 ## Quellen
 

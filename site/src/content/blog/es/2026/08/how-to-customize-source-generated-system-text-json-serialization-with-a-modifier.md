@@ -21,7 +21,7 @@ Para personalizar un contrato de `System.Text.Json` generado por código fuente,
 
 ## Por qué la personalización de contratos y la generación de código fuente parecen incompatibles
 
-La personalización de contratos llegó en .NET 7. Le entregas a `System.Text.Json` un `Action<JsonTypeInfo>` y este te llama una vez por tipo, después de construir el contrato pero antes de usarlo, así que puedes renombrar propiedades, quitarlas, agregar propiedades sintéticas o envolver los delegados de lectura y escritura. El punto de entrada canónico es `DefaultJsonTypeInfoResolver.Modifiers`, y .NET 8 agregó [el método de extensión `WithAddedModifier`](/2023/10/system-text-json-how-to-modify-existing-type-info-resolver/) para que puedas superponer un modificador sobre cualquier `IJsonTypeInfoResolver`, no solo sobre el basado en reflexión.
+La personalización de contratos llegó en .NET 7. Le entregas a `System.Text.Json` un `Action<JsonTypeInfo>` y este te llama una vez por tipo, después de construir el contrato pero antes de usarlo, así que puedes renombrar propiedades, quitarlas, agregar propiedades sintéticas o envolver los delegados de lectura y escritura. El punto de entrada canónico es `DefaultJsonTypeInfoResolver.Modifiers`, y .NET 8 agregó [el método de extensión `WithAddedModifier`](/es/2023/10/system-text-json-how-to-modify-existing-type-info-resolver/) para que puedas superponer un modificador sobre cualquier `IJsonTypeInfoResolver`, no solo sobre el basado en reflexión.
 
 Esa parte de "cualquier resolver" es lo importante, porque un `JsonSerializerContext` generado por código fuente **es** un `IJsonTypeInfoResolver`. No hay ninguna razón técnica por la que un modificador no pueda decorar `MyContext.Default`. La razón por la que tanta gente concluye que los modificadores de contrato no funcionan con la generación de código fuente es que el cableado que parece natural descarta el modificador sin advertencia, sin excepción y sin diagnóstico del compilador.
 
@@ -188,7 +188,7 @@ Los modificadores se componen en el orden en que los agregas. Al encadenar dos l
 
 ## Native AOT: los modificadores no son lo que se rompe
 
-La razón entera para usar [un generador de código fuente](/2026/06/what-is-a-source-generator-and-when-do-i-need-one/) aquí es el trimming y Native AOT, así que la preocupación obvia es si adjuntar un modificador vuelve a arrastrar la reflexión. No lo hace. Repetí el mismo código con `<JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>`, que es lo que `PublishAot` y `PublishTrimmed` configuran por ti:
+La razón entera para usar [un generador de código fuente](/es/2026/06/what-is-a-source-generator-and-when-do-i-need-one/) aquí es el trimming y Native AOT, así que la preocupación obvia es si adjuntar un modificador vuelve a arrastrar la reflexión. No lo hace. Repetí el mismo código con `<JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>`, que es lo que `PublishAot` y `PublishTrimmed` configuran por ti:
 
 ```text
 IsReflectionEnabledByDefault = False
@@ -204,7 +204,7 @@ was not provided by TypeInfoResolver of type
 'System.Text.Json.Serialization.Metadata.JsonTypeInfoResolverWithAddedModifiers'.
 ```
 
-Si te encuentras con el error hermano sobre [la serialización basada en reflexión deshabilitada](/2026/07/fix-reflection-based-serialization-has-been-disabled-for-this-application/), eso es un resolver ausente, no un modificador roto.
+Si te encuentras con el error hermano sobre [la serialización basada en reflexión deshabilitada](/es/2026/07/fix-reflection-based-serialization-has-been-disabled-for-this-application/), eso es un resolver ausente, no un modificador roto.
 
 ## El costo real: renuncias a la ruta rápida generada
 
@@ -261,7 +261,7 @@ modifierCalls after 3 serializations (fresh options)   = 12
 
 Una vez que se ha usado una instancia de opciones, tanto ella como los contratos que produjo quedan congelados. Asignar `WriteIndented` después de la primera serialización lanza `InvalidOperationException: This JsonSerializerOptions instance is read-only or has already been used in serialization or deserialization`, y entrar a `options.GetTypeInfo(...)` para editar `Properties` después del hecho lanza el equivalente de `JsonTypeInfo`. Todos los cambios de contrato tienen que ocurrir dentro del modificador.
 
-Si necesitas superponer varios resolvers en vez de un solo contexto decorado, [`TypeInfoResolverChain`](/2023/10/add-remove-typeinforesolver-to-existing-jsonserializeroptions/) acepta el resolver decorado igual de bien que el simple, y la cadena se consulta en orden hasta que un contrato vuelve distinto de null. El mismo patrón cubre una jerarquía que ya usa [`JsonDerivedType` para polimorfismo](/2026/07/how-to-serialize-a-polymorphic-type-hierarchy-with-jsonderivedtype-in-system-text-json/), porque los contratos derivados pasan por el modificador como cualquier otro tipo.
+Si necesitas superponer varios resolvers en vez de un solo contexto decorado, [`TypeInfoResolverChain`](/es/2023/10/add-remove-typeinforesolver-to-existing-jsonserializeroptions/) acepta el resolver decorado igual de bien que el simple, y la cadena se consulta en orden hasta que un contrato vuelve distinto de null. El mismo patrón cubre una jerarquía que ya usa [`JsonDerivedType` para polimorfismo](/es/2026/07/how-to-serialize-a-polymorphic-type-hierarchy-with-jsonderivedtype-in-system-text-json/), porque los contratos derivados pasan por el modificador como cualquier otro tipo.
 
 La versión corta para tener presente: decora el resolver, nunca el contexto, compara contra `AttributeProvider` en vez de `Name`, mantén el modo de generación por defecto y guarda las opciones en caché.
 

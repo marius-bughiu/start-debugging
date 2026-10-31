@@ -239,7 +239,7 @@ No uses `Lock` para coordinación entre procesos o entre máquinas. Es solo intr
 
 - [Cómo usar Channels en lugar de BlockingCollection en C#](/es/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) cubre el patrón productor/consumidor que muchas veces sustituye los locks por completo.
 - [Cómo cancelar una Task de larga duración en C# sin deadlocks](/es/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/) es el compañero sobre cancelación de este post.
-- [.NET 9: el final de lock(object)](/2026/01/net-9-the-end-of-lockobject/) es la introducción tipo noticia al tipo, escrita cuando salió .NET 9.
+- [.NET 9: el final de lock(object)](/es/2026/01/net-9-the-end-of-lockobject/) es la introducción tipo noticia al tipo, escrita cuando salió .NET 9.
 - [Cómo escribir un source generator para INotifyPropertyChanged](/es/2026/04/how-to-write-a-source-generator-for-inotifypropertychanged/) muestra el tipo de generador que puede que tengas que actualizar para soportar `Lock`.
 
 ## Fuentes

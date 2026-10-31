@@ -47,7 +47,7 @@ translationDate: 2026-05-22
 Выбирайте его как вариант по умолчанию для всего нового на .NET 11. Конкретно:
 
 - **API на ASP.NET Core.** Фреймворк уже использует System.Text.Json внутри и настраивает за вас удобные для веба значения по умолчанию: имена свойств в camelCase, сопоставление без учёта регистра и поддержку чисел в кавычках. Добавлять `Microsoft.AspNetCore.Mvc.NewtonsoftJson`, чтобы вернуть старое поведение, -- это шаг назад, если только конкретная возможность не вынуждает вас.
-- **Всё, что будет работать под Native AOT или агрессивным trimming.** Это не предпочтение, а жёсткое требование. У System.Text.Json есть [генератор исходного кода](/2026/04/how-to-write-a-custom-jsonconverter-in-system-text-json/), который порождает метаданные сериализации на этапе компиляции, поэтому в среде выполнения рефлексия не нужна. Newtonsoft.Json построен на рефлексии в среде выполнения и `Reflection.Emit`, чего AOT не допускает. Если вас интересуют компромиссы здесь, посмотрите разбор [Native AOT vs ReadyToRun vs JIT](/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/).
+- **Всё, что будет работать под Native AOT или агрессивным trimming.** Это не предпочтение, а жёсткое требование. У System.Text.Json есть [генератор исходного кода](/ru/2026/04/how-to-write-a-custom-jsonconverter-in-system-text-json/), который порождает метаданные сериализации на этапе компиляции, поэтому в среде выполнения рефлексия не нужна. Newtonsoft.Json построен на рефлексии в среде выполнения и `Reflection.Emit`, чего AOT не допускает. Если вас интересуют компромиссы здесь, посмотрите разбор [Native AOT vs ReadyToRun vs JIT](/ru/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/).
 - **Пути с высокой пропускной способностью или чувствительные к памяти.** Сериализаторы, отправщики логов, потребители шины сообщений, всё, что работает в тесном цикле. System.Text.Json работает напрямую над `ReadOnlySpan<byte>` и UTF-8, избегая промежуточных строковых аллокаций, которые делает Newtonsoft.Json.
 - **Вам нужен детерминированный вывод, соответствующий спецификации.** System.Text.Json строго следует RFC 8259. Он экранирует чувствительные для HTML символы по умолчанию как мера эшелонированной защиты от XSS и раскрытия информации, что важно, когда JSON встраивается в страницу.
 
@@ -118,7 +118,7 @@ var options = new JsonSerializerOptions
 var config = JsonSerializer.Deserialize<Config>(input, options);
 ```
 
-Эта строгость -- самый частый источник послемиграционного сюрприза, когда полезная нагрузка, работавшая годами, вдруг бросает исключение, что также объясняет, почему ошибки вроде [значения JSON, которое не удалось преобразовать](/2026/05/fix-jsonexception-the-json-value-could-not-be-converted/) или [DateTime, который не разбирается](/2026/05/fix-the-json-value-could-not-be-converted-to-system-datetime/), появляются сразу после перехода.
+Эта строгость -- самый частый источник послемиграционного сюрприза, когда полезная нагрузка, работавшая годами, вдруг бросает исключение, что также объясняет, почему ошибки вроде [значения JSON, которое не удалось преобразовать](/ru/2026/05/fix-jsonexception-the-json-value-could-not-be-converted/) или [DateTime, который не разбирается](/ru/2026/05/fix-the-json-value-could-not-be-converted-to-system-datetime/), появляются сразу после перехода.
 
 ## Что на самом деле показывают бенчмарки
 
@@ -147,7 +147,7 @@ var config = JsonSerializer.Deserialize<Config>(input, options);
 
 **Траектория сопровождения.** Newtonsoft.Json не мёртв и не устарел. James Newton-King, который теперь работает в Microsoft над самим System.Text.Json, по-прежнему выпускает релизы безопасности и исправлений (13.0.4 вышла 2025-12-30). Но он явно в режиме сопровождения: никакой крупной работы над возможностями, никакой стратегии AOT впереди. System.Text.Json получает новые возможности в каждом релизе .NET. Ставить новый код на активно развивающуюся библиотеку -- это выбор с меньшим риском для системы, которую вы будете сопровождать годами.
 
-**Обработка ссылок и циклы объектов различаются.** У Newtonsoft.Json есть `ReferenceLoopHandling` и `PreserveReferencesHandling`. System.Text.Json отображает их на `ReferenceHandler.IgnoreCycles` и `ReferenceHandler.Preserve`, но поведение не идентично (`IgnoreCycles` пишет `null` там, где Newtonsoft.Json опускает свойство). Если вы сериализуете графы сущностей EF Core, это разница между чистой полезной нагрузкой и [исключением о возможном цикле объектов](/2026/05/fix-possible-object-cycle-was-detected-system-text-json/). Знайте, какой обработчик вам нужен, до миграции.
+**Обработка ссылок и циклы объектов различаются.** У Newtonsoft.Json есть `ReferenceLoopHandling` и `PreserveReferencesHandling`. System.Text.Json отображает их на `ReferenceHandler.IgnoreCycles` и `ReferenceHandler.Preserve`, но поведение не идентично (`IgnoreCycles` пишет `null` там, где Newtonsoft.Json опускает свойство). Если вы сериализуете графы сущностей EF Core, это разница между чистой полезной нагрузкой и [исключением о возможном цикле объектов](/ru/2026/05/fix-possible-object-cycle-was-detected-system-text-json/). Знайте, какой обработчик вам нужен, до миграции.
 
 **Лицензии идентичны.** Обе поставляются под MIT, поэтому в отличие от ситуации с MediatR или AutoMapper, лицензия здесь не фактор. Не позволяйте вопросу «бесплатен ли ещё Newtonsoft.Json?» вести решение: да, бесплатен, и System.Text.Json тоже.
 
@@ -157,11 +157,11 @@ var config = JsonSerializer.Deserialize<Config>(input, options);
 
 ## Связанное
 
-- [How to write a custom JsonConverter in System.Text.Json](/2026/04/how-to-write-a-custom-jsonconverter-in-system-text-json/)
-- [Fix: a possible object cycle was detected with System.Text.Json](/2026/05/fix-possible-object-cycle-was-detected-system-text-json/)
-- [Fix: the JSON value could not be converted](/2026/05/fix-jsonexception-the-json-value-could-not-be-converted/)
-- [Fix: the JSON value could not be converted to System.DateTime](/2026/05/fix-the-json-value-could-not-be-converted-to-system-datetime/)
-- [Native AOT vs ReadyToRun vs JIT in .NET 11](/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/)
+- [How to write a custom JsonConverter in System.Text.Json](/ru/2026/04/how-to-write-a-custom-jsonconverter-in-system-text-json/)
+- [Fix: a possible object cycle was detected with System.Text.Json](/ru/2026/05/fix-possible-object-cycle-was-detected-system-text-json/)
+- [Fix: the JSON value could not be converted](/ru/2026/05/fix-jsonexception-the-json-value-could-not-be-converted/)
+- [Fix: the JSON value could not be converted to System.DateTime](/ru/2026/05/fix-the-json-value-could-not-be-converted-to-system-datetime/)
+- [Native AOT vs ReadyToRun vs JIT in .NET 11](/ru/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/)
 
 ## Источники
 

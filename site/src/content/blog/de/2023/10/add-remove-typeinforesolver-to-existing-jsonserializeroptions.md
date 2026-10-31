@@ -34,7 +34,7 @@ Neben dem Hinzufügen neuer Type Resolver zu bestehenden `JsonSerializerOptions`
 options.TypeInfoResolverChain.RemoveAt(0);
 ```
 
-Wenn Sie Änderungen an der Type-Info-Resolver-Kette verhindern möchten, geht das, indem Sie [die `JsonSerializerOptions`-Instanz als readonly markieren](/2023/09/net-8-mark-jsonserializeroptions-as-readonly/). Dazu rufen Sie die Methode `MakeReadOnly()` auf der Options-Instanz auf. Danach erzwingt jeder spätere Versuch, die Kette zu verändern, die folgende `InvalidOperationException`.
+Wenn Sie Änderungen an der Type-Info-Resolver-Kette verhindern möchten, geht das, indem Sie [die `JsonSerializerOptions`-Instanz als readonly markieren](/de/2023/09/net-8-mark-jsonserializeroptions-as-readonly/). Dazu rufen Sie die Methode `MakeReadOnly()` auf der Options-Instanz auf. Danach erzwingt jeder spätere Versuch, die Kette zu verändern, die folgende `InvalidOperationException`.
 
 ```plaintext
 Unhandled exception. System.InvalidOperationException: This JsonSerializerOptions instance is read-only or has already been used in serialization or deserialization.

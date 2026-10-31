@@ -90,7 +90,7 @@ dotnet lambda package --configuration Release \
 
 Глобальный инструмент `Amazon.Lambda.Tools` упаковывает бинарник `bootstrap` в ZIP, который вы загружаете как кастомный runtime. С функцией 256 MB и шаблоном выше ожидайте холодные старты в диапазоне **150 ms - 300 ms**, упавшие с 1500-2000 ms на управляемом runtime.
 
-Компромисс: каждая библиотека, тяжёлая на reflection, которую вы тянете, становится trim-предупреждением. Генераторы кода `System.Text.Json` покрывают сериализацию, но если используете что-то, что отражает по generic-типам в runtime (старый AutoMapper, Newtonsoft, обработчики MediatR на reflection), получите предупреждения ILLink или исключение в runtime. Воспринимайте каждое предупреждение как реальный баг. Альтернатива mediator, дружественная к trim, рассмотрена в [SwitchMediator v3, медиатор с нулевыми аллокациями, остающийся дружественным к AOT](/2026/01/switchmediator-v3-a-zero-alloc-mediator-that-stays-friendly-to-aot/).
+Компромисс: каждая библиотека, тяжёлая на reflection, которую вы тянете, становится trim-предупреждением. Генераторы кода `System.Text.Json` покрывают сериализацию, но если используете что-то, что отражает по generic-типам в runtime (старый AutoMapper, Newtonsoft, обработчики MediatR на reflection), получите предупреждения ILLink или исключение в runtime. Воспринимайте каждое предупреждение как реальный баг. Альтернатива mediator, дружественная к trim, рассмотрена в [SwitchMediator v3, медиатор с нулевыми аллокациями, остающийся дружественным к AOT](/ru/2026/01/switchmediator-v3-a-zero-alloc-mediator-that-stays-friendly-to-aot/).
 
 ## Рычаг 2: SnapStart на управляемом runtime dotnet10
 
@@ -251,7 +251,7 @@ Provisioned concurrency держит `N` экземпляров постоянн
 4. **Проверьте** через INIT_DURATION на реальном размере памяти деплоя. Используйте Power Tuning, если важна кривая стоимость-vs-задержка.
 5. **Provisioned concurrency** только после всего вышеперечисленного и только с auto-scaling.
 
-Остальная часть истории Lambda на .NET 11 (версии runtime, форма деплоя, что меняется при переключении с `dotnet10` на будущий управляемый runtime `dotnet11`) рассмотрена в [AWS Lambda поддерживает .NET 10: что проверить перед переключением runtime](/2026/01/aws-lambda-supports-net-10-what-to-verify-before-you-flip-the-runtime/), сопровождающем этот пост.
+Остальная часть истории Lambda на .NET 11 (версии runtime, форма деплоя, что меняется при переключении с `dotnet10` на будущий управляемый runtime `dotnet11`) рассмотрена в [AWS Lambda поддерживает .NET 10: что проверить перед переключением runtime](/ru/2026/01/aws-lambda-supports-net-10-what-to-verify-before-you-flip-the-runtime/), сопровождающем этот пост.
 
 ## Источники
 

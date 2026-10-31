@@ -242,10 +242,10 @@ public sealed class Crawler(IHttpClientFactory http, ILogger<Crawler> log) : Bac
 
 ## 関連記事
 
-- [IAsyncEnumerable でデータベースの行をストリーミングする](/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/)。同じトークン配線に大きく依存しています。
-- [.NET 11 ランタイムでのよりクリーンな async スタックトレース](/2026/04/dotnet-11-runtime-async-cleaner-stack-traces/)。パイプラインの深いところで `OperationCanceledException` が浮かび上がるときに役立ちます。
+- [IAsyncEnumerable でデータベースの行をストリーミングする](/ja/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/)。同じトークン配線に大きく依存しています。
+- [.NET 11 ランタイムでのよりクリーンな async スタックトレース](/ja/2026/04/dotnet-11-runtime-async-cleaner-stack-traces/)。パイプラインの深いところで `OperationCanceledException` が浮かび上がるときに役立ちます。
 - [C# 14 のメソッドから複数の値を返す方法](/ja/2026/04/how-to-return-multiple-values-from-a-method-in-csharp-14/) は、「結果またはキャンセル理由」を返したい async メソッドとよく組み合わさります。
-- [.NET 9 における `lock (object)` の終焉](/2026/01/net-9-the-end-of-lockobject/)。キャンセルコードが動く、より広い threading コンテキストについて。
+- [.NET 9 における `lock (object)` の終焉](/ja/2026/01/net-9-the-end-of-lockobject/)。キャンセルコードが動く、より広い threading コンテキストについて。
 
 ## 参考資料
 

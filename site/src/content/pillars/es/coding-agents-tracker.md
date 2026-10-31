@@ -20,9 +20,9 @@ Este pilar reúne todo lo del sitio sobre **agentes de código con IA, LLMs y el
 
 ## Qué leer primero
 
-Si eres nuevo en este tema, empieza con [Microsoft Agent Framework 1.0: Building AI Agents in Pure C#](/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) para el lado de .NET, y [Wiring Model Context Protocol servers from C# on .NET 10](/2026/01/microsoft-mcp-wiring-model-context-protocol-servers-from-c-on-net-10/) para la parte de MCP sobre la que se construyen la mayoría de los posts de 2026.
+Si eres nuevo en este tema, empieza con [Microsoft Agent Framework 1.0: Building AI Agents in Pure C#](/es/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) para el lado de .NET, y [Wiring Model Context Protocol servers from C# on .NET 10](/es/2026/01/microsoft-mcp-wiring-model-context-protocol-servers-from-c-on-net-10/) para la parte de MCP sobre la que se construyen la mayoría de los posts de 2026.
 
-Sobre Copilot en particular, [Agent Skills land in Visual Studio 2026 18.5](/2026/04/visual-studio-2026-copilot-agent-skills/) y [What 878 Copilot Coding Agent PRs in dotnet/runtime actually look like](/2026/03/copilot-coding-agent-dotnet-runtime-ten-months-data/) cubren tanto la superficie de la característica como los resultados reales.
+Sobre Copilot en particular, [Agent Skills land in Visual Studio 2026 18.5](/es/2026/04/visual-studio-2026-copilot-agent-skills/) y [What 878 Copilot Coding Agent PRs in dotnet/runtime actually look like](/es/2026/03/copilot-coding-agent-dotnet-runtime-ten-months-data/) cubren tanto la superficie de la característica como los resultados reales.
 
 ## Qué hay en esta página
 

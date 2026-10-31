@@ -125,10 +125,10 @@ Esta es la opción por defecto para apps del lado del servidor. Elígela cuando:
   });
   ```
 
-- **Esperas tráfico en ráfagas sobre un endpoint costoso.** El bloqueo de recursos está activado por defecto, así que cuando una entrada muy solicitada expira y llegan cien solicitudes a la vez, solo la primera regenera mientras el resto espera. El response caching no hace nada respecto a la estampida. Este es el mismo tipo de problema que [HybridCache resuelve para el almacenamiento de datos en caché](/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/) en lugar del almacenamiento en caché de la respuesta completa.
+- **Esperas tráfico en ráfagas sobre un endpoint costoso.** El bloqueo de recursos está activado por defecto, así que cuando una entrada muy solicitada expira y llegan cien solicitudes a la vez, solo la primera regenera mientras el resto espera. El response caching no hace nada respecto a la estampida. Este es el mismo tipo de problema que [HybridCache resuelve para el almacenamiento de datos en caché](/es/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/) en lugar del almacenamiento en caché de la respuesta completa.
 - **Ejecutas más de una instancia.** Cambia el almacén en memoria por Redis con `AddStackExchangeRedisOutputCache` y una expulsión de etiqueta en un nodo las limpia en todos. El response caching no puede abarcar varios nodos.
 
-La configuración completa de extremo a extremo, incluyendo políticas con nombre, `MapGroup` y el almacén de Redis, se cubre en [cómo agregar output caching a una minimal API](/2026/07/how-to-add-output-caching-to-a-minimal-api-in-aspnetcore-11/).
+La configuración completa de extremo a extremo, incluyendo políticas con nombre, `MapGroup` y el almacén de Redis, se cubre en [cómo agregar output caching a una minimal API](/es/2026/07/how-to-add-output-caching-to-a-minimal-api-in-aspnetcore-11/).
 
 ## Cuándo elegir response caching
 
@@ -169,11 +169,11 @@ Usa output caching por defecto en ASP.NET Core 11. Está controlado por el servi
 
 ## Relacionados
 
-- [Cómo agregar output caching a una minimal API en ASP.NET Core 11](/2026/07/how-to-add-output-caching-to-a-minimal-api-in-aspnetcore-11/)
-- [Cómo usar HybridCache en ASP.NET Core 11 con Redis como caché L2](/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/)
-- [HybridCache vs IMemoryCache vs IDistributedCache en .NET 11](/2026/06/hybridcache-vs-imemorycache-vs-idistributedcache-in-dotnet-11/)
-- [Cómo organizar endpoints de minimal API con MapGroup en ASP.NET Core 11](/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)
-- [Cómo agregar compresión de respuestas a una API de ASP.NET Core 11](/2026/07/how-to-add-response-compression-to-an-aspnetcore-11-api/)
+- [Cómo agregar output caching a una minimal API en ASP.NET Core 11](/es/2026/07/how-to-add-output-caching-to-a-minimal-api-in-aspnetcore-11/)
+- [Cómo usar HybridCache en ASP.NET Core 11 con Redis como caché L2](/es/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/)
+- [HybridCache vs IMemoryCache vs IDistributedCache en .NET 11](/es/2026/06/hybridcache-vs-imemorycache-vs-idistributedcache-in-dotnet-11/)
+- [Cómo organizar endpoints de minimal API con MapGroup en ASP.NET Core 11](/es/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)
+- [Cómo agregar compresión de respuestas a una API de ASP.NET Core 11](/es/2026/07/how-to-add-response-compression-to-an-aspnetcore-11-api/)
 
 ## Fuentes
 

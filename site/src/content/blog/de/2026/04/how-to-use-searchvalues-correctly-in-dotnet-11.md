@@ -251,7 +251,7 @@ Wenn Sie für `linux-arm64` veröffentlichen, werden die NEON-Kernels automatisc
 
 ## Verwandte Lektüre
 
-- [Span<T> vs ReadOnlySpan<T> und wann sich welcher rechnet](/2026/01/net-10-performance-searchvalues/) deckt eine ältere Momentaufnahme von `SearchValues` aus der .NET-10-Zeit ab; lesenswert für den SIMD-Hintergrund.
+- [Span<T> vs ReadOnlySpan<T> und wann sich welcher rechnet](/de/2026/01/net-10-performance-searchvalues/) deckt eine ältere Momentaufnahme von `SearchValues` aus der .NET-10-Zeit ab; lesenswert für den SIMD-Hintergrund.
 - [Channels statt BlockingCollection](/de/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) ist der richtige Transport, wenn Sie Eingaben in einem Worker scannen.
 - [Wie man große CSV-Dateien in .NET 11 ohne Speicherüberlauf liest](/de/2026/04/how-to-read-a-large-csv-in-dotnet-11-without-running-out-of-memory/) verwendet `SearchValues<char>` für die Trennzeichen-Suche im Parser.
 - [Wie man erkennt, wann eine Datei in .NET fertig geschrieben ist](/de/2026/04/how-to-detect-when-a-file-finishes-being-written-to-in-dotnet/) passt natürlich zum CSV-Scanner oben, wenn Sie Inbox-Dateien konsumieren.

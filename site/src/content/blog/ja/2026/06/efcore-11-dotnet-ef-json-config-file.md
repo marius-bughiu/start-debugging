@@ -55,4 +55,4 @@ dotnet ef migrations add AddAudit --context AuditDbContext
 
 同じプレビューには、スクリプティングと相性のよい小さな補完的変更もあります。EF ツールはすべてのログとステータスのメッセージを標準エラー出力に書き込むようになり、標準出力はコマンドの実際の結果のためだけに予約されます。そのため `dotnet ef migrations script > schema.sql` は、バナーのノイズが混ざらないクリーンな SQL を返します。
 
-これは、[EF Core 11 Preview 4: テンポラルテーブルの期間列がついに本物のプロパティになれる](/2026/05/ef-core-11-temporal-tables-clr-period-properties/) で扱ったテンポラルテーブルのエルゴノミクス改善と同時に登場します。全体の概要については、[dotnet ef ドキュメントの「構成ファイル」セクション](https://learn.microsoft.com/en-us/ef/core/cli/dotnet#configuration-file)と [EF Core 11 の新機能ページ](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-11.0/whatsnew)を参照してください。
+これは、[EF Core 11 Preview 4: テンポラルテーブルの期間列がついに本物のプロパティになれる](/ja/2026/05/ef-core-11-temporal-tables-clr-period-properties/) で扱ったテンポラルテーブルのエルゴノミクス改善と同時に登場します。全体の概要については、[dotnet ef ドキュメントの「構成ファイル」セクション](https://learn.microsoft.com/en-us/ef/core/cli/dotnet#configuration-file)と [EF Core 11 の新機能ページ](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-11.0/whatsnew)を参照してください。

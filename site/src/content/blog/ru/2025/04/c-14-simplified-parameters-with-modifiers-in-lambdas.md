@@ -124,4 +124,4 @@ SumElements sum = (scoped data) =>
 
 -   [Что нового в C# 14 | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14)
 -   [Простые параметры лямбды с модификаторами | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/simple-lambda-parameters-with-modifiers)
--   [Что нового в C# 14 | StartDebugging.NET](/2024/12/csharp-14/)
+-   [Что нового в C# 14 | StartDebugging.NET](/ru/2024/12/csharp-14/)

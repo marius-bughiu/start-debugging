@@ -194,7 +194,7 @@ curl -s http://localhost:5000/todos | head -c 200
 
 ## Связанные руководства на Start Debugging
 
-- Рычаг Native AOT сидит внутри более широкой истории cold-start: [руководство по cold-start AWS Lambda на .NET 11](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/) проходит путь AOT-на-`provided.al2023` с тем же setup генератора исходного кода.
+- Рычаг Native AOT сидит внутри более широкой истории cold-start: [руководство по cold-start AWS Lambda на .NET 11](/ru/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/) проходит путь AOT-на-`provided.al2023` с тем же setup генератора исходного кода.
 - Для OpenAPI поверх AOT-минимального API [руководство по генерации клиента OpenAPI](/ru/2026/04/how-to-generate-strongly-typed-client-from-openapi-spec-dotnet-11/) покрывает проход от метаданных минимального API до типизированного `HttpClient`.
 - AOT-проекты запрещают JSON на reflection, поэтому [написание собственного `JsonConverter` в System.Text.Json](/ru/2026/04/how-to-write-a-custom-jsonconverter-in-system-text-json/) -- правильный праймер, когда встроенной конверсии недостаточно.
 - Чистая история исключений важнее под AOT, где диагностика на reflection недоступна: [добавление глобального фильтра исключений в ASP.NET Core 11](/ru/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) показывает путь `IExceptionHandler`, полностью совместимый с AOT.

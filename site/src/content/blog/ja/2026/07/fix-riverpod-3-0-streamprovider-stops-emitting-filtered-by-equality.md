@@ -132,7 +132,7 @@ class Values extends _$Values {
 }
 ```
 
-無条件に `true` を返すことで、アプリの残りの部分についてのグローバルなデフォルトを変えることなく、このプロバイダー 1 つだけについて 3.0 以前の「すべての発行で通知する」挙動を復元します。無条件の再構築が過剰すぎる場合は、たとえば長さやバージョンカウンターを比較するなど、もっと賢くすることもできます。生の関数型 `StreamProvider((ref) => ...)` には `updateShouldNotify` フックがないので、この修正にはクラスベースの形式が必要です。関数型とクラスベースのスタイルのどちらにするかまだ迷っているなら、[Riverpod 2.x から 3.0 への移行](/2026/07/migrate-from-riverpod-2-x-to-riverpod-3-0-in-flutter/)ガイドが、それぞれがどんなときに価値があるかを詳しく説明しています。
+無条件に `true` を返すことで、アプリの残りの部分についてのグローバルなデフォルトを変えることなく、このプロバイダー 1 つだけについて 3.0 以前の「すべての発行で通知する」挙動を復元します。無条件の再構築が過剰すぎる場合は、たとえば長さやバージョンカウンターを比較するなど、もっと賢くすることもできます。生の関数型 `StreamProvider((ref) => ...)` には `updateShouldNotify` フックがないので、この修正にはクラスベースの形式が必要です。関数型とクラスベースのスタイルのどちらにするかまだ迷っているなら、[Riverpod 2.x から 3.0 への移行](/ja/2026/07/migrate-from-riverpod-2-x-to-riverpod-3-0-in-flutter/)ガイドが、それぞれがどんなときに価値があるかを詳しく説明しています。
 
 ## これが自分のバグで他の何かではないと確認する方法
 
@@ -142,20 +142,20 @@ class Values extends _$Values {
 2. 一時的な生のリスナーをアタッチします：`ref.watch(repositoryProvider).stream.listen((v) => debugPrint('raw: $v'))`。生のリスナーが毎回発火するのに `ref.watch(valuesProvider)` が再構築しない場合、プロバイダー層が重複を排除しており、`==` フィルターが確定します。
 3. 発行されるオブジェクトが同じインスタンスかどうかを確認します。フィールド、キャッシュされたリスト、シングルトンのモデルをプッシュしているなら、ほぼ間違いなくこれに当たっています。
 
-もし代わりにストリーム自体が発火を止めるなら、それは別の問題です：キャンセルされた `StreamSubscription`、クローズされたコントローラー、破棄されて再作成されたプロバイダーです。ストリームのライフサイクルの破棄側については、[dispose での StreamSubscription のキャンセル](/2026/07/how-to-cancel-a-streamsubscription-in-dispose-in-flutter/)を参照してください。
+もし代わりにストリーム自体が発火を止めるなら、それは別の問題です：キャンセルされた `StreamSubscription`、クローズされたコントローラー、破棄されて再作成されたプロバイダーです。ストリームのライフサイクルの破棄側については、[dispose での StreamSubscription のキャンセル](/ja/2026/07/how-to-cancel-a-streamsubscription-in-dispose-in-flutter/)を参照してください。
 
 ## 同じ 3.0 リリースにある関連する落とし穴
 
 等価性フィルターは、コンパイル時ではなく実行時に表面化する 3.0 変更のひとかたまりのうちの 1 つで、それがデバッグを高くつくものにしています。出荷前に知っておく価値のある他の 2 つ：
 
-- **エラーはラップされて出てくるようになりました。** スローするプロバイダーは、元の例外を直接再スローしなくなりました。アンラップの方法については[Riverpod 3.0 が元のエラーの代わりに ProviderException をスローする](/2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error/)を参照してください。
-- **失敗したプロバイダーは自動的にリトライします。** エラーになった `FutureProvider` や `StreamProvider` は、デフォルトで指数バックオフでリトライします。これはバグを覆い隠したり、失敗しているエンドポイントを叩き続けたりする可能性があります。[Riverpod 3.0 の自動プロバイダーリトライを無効化する](/2026/07/how-to-disable-riverpod-3-0-automatic-provider-retry/)で説明されているように、プロバイダーごとまたはグローバルにオフにしてください。
+- **エラーはラップされて出てくるようになりました。** スローするプロバイダーは、元の例外を直接再スローしなくなりました。アンラップの方法については[Riverpod 3.0 が元のエラーの代わりに ProviderException をスローする](/ja/2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error/)を参照してください。
+- **失敗したプロバイダーは自動的にリトライします。** エラーになった `FutureProvider` や `StreamProvider` は、デフォルトで指数バックオフでリトライします。これはバグを覆い隠したり、失敗しているエンドポイントを叩き続けたりする可能性があります。[Riverpod 3.0 の自動プロバイダーリトライを無効化する](/ja/2026/07/how-to-disable-riverpod-3-0-automatic-provider-retry/)で説明されているように、プロバイダーごとまたはグローバルにオフにしてください。
 
-そして、notifier 内の非同期のギャップが `await` の後に `ref` に触れる場合は、[非同期ギャップの後の Ref.mounted のチェック](/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/)で扱っている mounted チェックでガードしてください。
+そして、notifier 内の非同期のギャップが `await` の後に `ref` に触れる場合は、[非同期ギャップの後の Ref.mounted のチェック](/ja/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/)で扱っている mounted チェックでガードしてください。
 
 ## 覚えておくべき 1 行のルール
 
-Riverpod 3.0 は `previous != next` のときに再構築します。`StreamProvider` がミュータブルオブジェクトを再利用すると、`previous` と `next` は同じ参照になり、常に等しいので決して再構築しません。イミュータブルなスナップショットを発行する（または値の型に本物の等価性を与える）ことで、フレームワークは正しく動作します。`updateShouldNotify` に手を伸ばすのは、発行される値を制御できないときだけにしてください。そもそも `StreamProvider` とその `AsyncValue` が、古いビルダーウィジェットに対して正しいツールなのかどうかについて、より広い視点で見たいなら、[FutureBuilder と StreamBuilder を Riverpod の AsyncValue と比較する](/2026/06/futurebuilder-streambuilder-vs-riverpod-asyncvalue-in-flutter/)が次に読むのに良い記事です。
+Riverpod 3.0 は `previous != next` のときに再構築します。`StreamProvider` がミュータブルオブジェクトを再利用すると、`previous` と `next` は同じ参照になり、常に等しいので決して再構築しません。イミュータブルなスナップショットを発行する（または値の型に本物の等価性を与える）ことで、フレームワークは正しく動作します。`updateShouldNotify` に手を伸ばすのは、発行される値を制御できないときだけにしてください。そもそも `StreamProvider` とその `AsyncValue` が、古いビルダーウィジェットに対して正しいツールなのかどうかについて、より広い視点で見たいなら、[FutureBuilder と StreamBuilder を Riverpod の AsyncValue と比較する](/ja/2026/06/futurebuilder-streambuilder-vs-riverpod-asyncvalue-in-flutter/)が次に読むのに良い記事です。
 
 ## 参考資料
 

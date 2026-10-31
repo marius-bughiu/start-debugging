@@ -43,4 +43,4 @@ Unhandled exception. System.InvalidOperationException: This JsonSerializerOption
 
 ## Sobrecarga [`MakeReadOnly(bool populateMissingResolver)`](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.jsonserializeroptions.makereadonly#system-text-json-jsonserializeroptions-makereadonly\(system-boolean\))
 
-Cuando se pasa `populateMissingResolver` como `true`, el método añadirá el resolver por defecto basado en reflexión a tus `JsonSerializerOptions` si falta. Cuidado al [usar este método en aplicaciones trimmed / Native AOT, ya que arrastrará los ensamblados relacionados con la reflexión y los incluirá en tu build](/2023/10/system-text-json-disable-reflection-based-serialization/).
+Cuando se pasa `populateMissingResolver` como `true`, el método añadirá el resolver por defecto basado en reflexión a tus `JsonSerializerOptions` si falta. Cuidado al [usar este método en aplicaciones trimmed / Native AOT, ya que arrastrará los ensamblados relacionados con la reflexión y los incluirá en tu build](/es/2023/10/system-text-json-disable-reflection-based-serialization/).

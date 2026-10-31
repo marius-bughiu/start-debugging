@@ -21,7 +21,7 @@ Para evitar que uma minimal API transforme o `Program.cs` em uma parede de mil l
 
 As minimal APIs vêm com uma demo sedutora: o app inteiro em um único arquivo. Isso é ótimo para um exemplo e terrível para um serviço real. Quando você já tem um punhado de recursos, cada um com os cinco verbos CRUD mais um par de sub-rotas, o `Program.cs` são algumas centenas de linhas de route handlers entremeados com o registro de DI, o cabeamento do middleware e o `app.Run()`. Você rola para além da configuração de autenticação para achar o `MapPut` que queria editar. Três handlers começam todos com `/api/v1/orders` e um deles tem um erro de digitação no prefixo que ninguém percebe até um 404 em produção.
 
-A solução não é "voltar aos controllers". Os controllers resolvem a organização por convenção (uma classe por recurso, atributos para roteamento) ao custo do pipeline do MVC baseado em reflexão. As minimal APIs resolvem isso com `MapGroup` mais métodos de extensão simples de C#, e você mantém o modelo de endpoints enxuto e amigável ao AOT. Se você ainda está decidindo entre os dois modelos, os prós e contras estão detalhados em [minimal APIs vs controllers no ASP.NET Core 11](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/). Este guia assume que você já escolheu as minimal APIs e quer que elas escalem.
+A solução não é "voltar aos controllers". Os controllers resolvem a organização por convenção (uma classe por recurso, atributos para roteamento) ao custo do pipeline do MVC baseado em reflexão. As minimal APIs resolvem isso com `MapGroup` mais métodos de extensão simples de C#, e você mantém o modelo de endpoints enxuto e amigável ao AOT. Se você ainda está decidindo entre os dois modelos, os prós e contras estão detalhados em [minimal APIs vs controllers no ASP.NET Core 11](/pt-br/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/). Este guia assume que você já escolheu as minimal APIs e quer que elas escalem.
 
 ## MapGroup retorna um RouteGroupBuilder
 
@@ -137,7 +137,7 @@ admin.MapGet("/users", ListUsers);
 admin.MapDelete("/users/{id:int}", DeleteUser);
 ```
 
-`RequireAuthorization`, `WithTags`, `WithMetadata`, `RequireRateLimiting`, `AddEndpointFilter` e `AddEndpointFilterFactory` são todos métodos de `IEndpointConventionBuilder`, e `RouteGroupBuilder` implementa essa interface, então todos fluem para os membros. Se você precisa de rate limiting por endpoint particionado pela rota dentro de um grupo, o [guia de rate limiting por endpoint](/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11/) cobre como `RequireRateLimiting` se compõe com a política de um grupo.
+`RequireAuthorization`, `WithTags`, `WithMetadata`, `RequireRateLimiting`, `AddEndpointFilter` e `AddEndpointFilterFactory` são todos métodos de `IEndpointConventionBuilder`, e `RouteGroupBuilder` implementa essa interface, então todos fluem para os membros. Se você precisa de rate limiting por endpoint particionado pela rota dentro de um grupo, o [guia de rate limiting por endpoint](/pt-br/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11/) cobre como `RequireRateLimiting` se compõe com a política de um grupo.
 
 Há uma sutileza que vale a pena internalizar: `AddEndpointFilter` sobre um grupo **não** é middleware. Ele não roda uma vez por requisição ao prefixo. Ele é aplicado ao pipeline de filtros de cada endpoint individualmente, em tempo de build. A diferença prática é que o filtro só roda quando um endpoint do grupo realmente corresponde. Uma requisição a `/admin/nonexistent` que dá 404 nunca invoca `AuditFilter`, enquanto um middleware sobre o segmento de rota `/admin` invocaria. Se você quer middleware de verdade limitado a um caminho, use `app.UseWhen(ctx => ctx.Request.Path.StartsWithSegments("/admin"), ...)`.
 
@@ -241,7 +241,7 @@ Para qualquer coisa além do versionamento por URL feito à mão (versionamento 
 var todos = app.MapGroup("/todos").WithTags("Todos");
 ```
 
-Sem uma tag, o gerador de OpenAPI integrado recorre a usar o primeiro segmento de rota como tag, o que normalmente funciona mas convém definir explicitamente para que uma refatoração do prefixo não renomeie silenciosamente as seções da sua API. Se você também expõe fluxos de autenticação na especificação, o grupo é o lugar certo para anexar o requisito de segurança de modo que ele apareça em cada operação, veja [adicionar fluxos de autenticação OpenAPI ao Swagger UI no .NET 11](/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11/) para o cabeamento de `WithOpenApi` e dos esquemas de segurança.
+Sem uma tag, o gerador de OpenAPI integrado recorre a usar o primeiro segmento de rota como tag, o que normalmente funciona mas convém definir explicitamente para que uma refatoração do prefixo não renomeie silenciosamente as seções da sua API. Se você também expõe fluxos de autenticação na especificação, o grupo é o lugar certo para anexar o requisito de segurança de modo que ele apareça em cada operação, veja [adicionar fluxos de autenticação OpenAPI ao Swagger UI no .NET 11](/pt-br/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11/) para o cabeamento de `WithOpenApi` e dos esquemas de segurança.
 
 ## Detalhes que valem a pena saber antes de refatorar
 
@@ -251,17 +251,17 @@ Algumas arestas afiadas que é fácil topar quando você reestrutura pela primei
 - **Um prefixo de grupo não é uma restrição sobre o caminho inteiro.** `MapGroup("/api")` não impede que outras chamadas `MapGet("/api/...")` de nível superior em outro lugar correspondam. O grupo só governa os endpoints que você registra *através* dele.
 - **`RequireAuthorization()` sobre um grupo é aditivo, não sobrescreve.** Se um grupo interno ou um endpoint também chamam `RequireAuthorization` com uma política diferente, ambas as políticas se aplicam (a requisição deve satisfazer todas). Não há uma semântica de "o interno vence".
 - **`AddEndpointFilterFactory` roda uma vez em tempo de build, por endpoint, não por requisição.** A fábrica inspeciona `MethodInfo` e retorna o delegate real por requisição. Colocar lógica cara por requisição no corpo da fábrica (em vez de no delegate retornado) significa que ela nunca roda em tempo de requisição. Este é o mesmo padrão de fábrica que a documentação usa para colocar um `DbContext` em modo de consulta privada para um grupo de endpoints.
-- **Native AOT funciona bem com tudo isso.** Grupos, módulos por método de extensão e filtros são todos parte da superfície de minimal API amigável ao AOT; nada disso força um fallback para reflexão. Se você publica com trimming ou AOT, veja [usar Native AOT com minimal APIs do ASP.NET Core](/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/) para os detalhes do gerador de request delegates que fazem os handlers agrupados serem gerados por fonte de forma limpa.
+- **Native AOT funciona bem com tudo isso.** Grupos, módulos por método de extensão e filtros são todos parte da superfície de minimal API amigável ao AOT; nada disso força um fallback para reflexão. Se você publica com trimming ou AOT, veja [usar Native AOT com minimal APIs do ASP.NET Core](/pt-br/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/) para os detalhes do gerador de request delegates que fazem os handlers agrupados serem gerados por fonte de forma limpa.
 
 O modelo mental para levar: um `RouteGroupBuilder` é apenas um `IEndpointRouteBuilder` com um prefixo lembrado e um conjunto lembrado de convenções. Todo truque organizacional, módulos, aninhamento, versionamento, autenticação compartilhada, deriva desse único fato. Comece extraindo um método de extensão `MapXxx` por recurso, reduza o `Program.cs` a uma lista de chamadas, e recorra a grupos aninhados só quando a hierarquia de URLs realmente aninhar.
 
 ## Relacionado
 
-- [Minimal APIs vs controllers no ASP.NET Core 11](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/) se você ainda está escolhendo entre os dois modelos de endpoints.
-- [Adicionar um filtro global de exceções no ASP.NET Core 11](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) para capturar exceções em cada endpoint agrupado em um único lugar.
-- [Adicionar rate limiting por endpoint no ASP.NET Core 11](/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11/) para compor `RequireRateLimiting` com uma política de grupo.
-- [Adicionar fluxos de autenticação OpenAPI ao Swagger UI no .NET 11](/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11/) para anexar esquemas de segurança à tag de um grupo.
-- [Usar Native AOT com minimal APIs do ASP.NET Core](/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/) para publicar endpoints agrupados com trimming e AOT.
+- [Minimal APIs vs controllers no ASP.NET Core 11](/pt-br/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/) se você ainda está escolhendo entre os dois modelos de endpoints.
+- [Adicionar um filtro global de exceções no ASP.NET Core 11](/pt-br/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) para capturar exceções em cada endpoint agrupado em um único lugar.
+- [Adicionar rate limiting por endpoint no ASP.NET Core 11](/pt-br/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11/) para compor `RequireRateLimiting` com uma política de grupo.
+- [Adicionar fluxos de autenticação OpenAPI ao Swagger UI no .NET 11](/pt-br/2026/04/how-to-add-openapi-authentication-flows-to-swagger-ui-dotnet-11/) para anexar esquemas de segurança à tag de um grupo.
+- [Usar Native AOT com minimal APIs do ASP.NET Core](/pt-br/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/) para publicar endpoints agrupados com trimming e AOT.
 
 ## Fontes
 

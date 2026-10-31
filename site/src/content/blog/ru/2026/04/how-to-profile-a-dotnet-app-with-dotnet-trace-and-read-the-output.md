@@ -150,7 +150,7 @@ dotnet-trace convert myapp_20260425_120000.nettrace --format Speedscope -o myapp
 
 ### Perfetto / chrome://tracing
 
-`--format Chromium` создаёт JSON-файл, который можно перетащить в `chrome://tracing` или [ui.perfetto.dev](https://ui.perfetto.dev/). Это представление сильно для вопросов параллелизма: всплески пула потоков, async-водопады и симптомы блокировок читаются на временной шкале естественнее, чем во flame graph. Сообщество писало про [использование dotnet-trace с Perfetto](https://dfamonteiro.com/posts/using-dotnet-trace-with-perfetto/) с полным циклом, и мы подробнее разбирали [практический workflow Perfetto + dotnet-trace](/2026/01/perfetto-dotnet-trace-a-practical-profiling-loop-for-net-9-net-10/) в начале года.
+`--format Chromium` создаёт JSON-файл, который можно перетащить в `chrome://tracing` или [ui.perfetto.dev](https://ui.perfetto.dev/). Это представление сильно для вопросов параллелизма: всплески пула потоков, async-водопады и симптомы блокировок читаются на временной шкале естественнее, чем во flame graph. Сообщество писало про [использование dotnet-trace с Perfetto](https://dfamonteiro.com/posts/using-dotnet-trace-with-perfetto/) с полным циклом, и мы подробнее разбирали [практический workflow Perfetto + dotnet-trace](/ru/2026/01/perfetto-dotnet-trace-a-practical-profiling-loop-for-net-9-net-10/) в начале года.
 
 ### dotnet-trace report (CLI)
 

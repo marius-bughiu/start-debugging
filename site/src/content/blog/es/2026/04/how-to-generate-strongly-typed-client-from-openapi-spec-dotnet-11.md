@@ -266,15 +266,15 @@ NSwag produce un único archivo C# que contiene la clase cliente y una interfaz 
 
 **Las colisiones de nombres de modelos se resuelven con espacios de nombres automáticamente.** Si `GET /posts/{id}` y `GET /users/{id}` referencian ambos un esquema llamado `Item`, Kiota genera `Posts.Item.Item` y `Users.Item.Item`. Revisa tus sentencias `using` si los nombres parecen colisionar.
 
-**`CancellationToken` en endpoints de API mínima es gratuito.** Decláralo como parámetro y ASP.NET Core lo vincula al token de cancelación de la solicitud sin ningún atributo. Pásalo a cada llamada de Kiota y tu cliente HTTP se cancela automáticamente cuando el navegador cierra la conexión o se activa un timeout de gateway. La mecánica de la cancelación cooperativa de tareas en C# se cubre en profundidad en [cómo cancelar una tarea de larga duración en C# sin interbloqueo](/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/).
+**`CancellationToken` en endpoints de API mínima es gratuito.** Decláralo como parámetro y ASP.NET Core lo vincula al token de cancelación de la solicitud sin ningún atributo. Pásalo a cada llamada de Kiota y tu cliente HTTP se cancela automáticamente cuando el navegador cierra la conexión o se activa un timeout de gateway. La mecánica de la cancelación cooperativa de tareas en C# se cubre en profundidad en [cómo cancelar una tarea de larga duración en C# sin interbloqueo](/es/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/).
 
 **Regenera en CI, no solo localmente.** Añade `dotnet tool restore && kiota generate [...]` como paso de la pipeline. Si la especificación cambia y el código generado en el repositorio queda desactualizado, la compilación detectará la diferencia antes de que llegue a producción.
 
 ## Artículos relacionados
 
-- Si expones el servidor de la API y quieres que la autenticación Bearer aparezca correctamente en la interfaz de documentación de Scalar, el cableado no es obvio: [Scalar en ASP.NET Core: por qué se ignora tu token Bearer](/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/)
-- Si tus llamadas de servicio a servicio van por gRPC en lugar de REST, las trampas de red en contenedores son diferentes a las de HTTP: [gRPC en contenedores en .NET 9 y .NET 10](/2026/01/grpc-in-containers-feels-hard-in-net-9-and-net-10-4-traps-you-can-fix/)
-- Añadir trazas distribuidas a la capa del cliente HTTP encaja bien con [trazado nativo de OpenTelemetry en ASP.NET Core 11](/2026/04/aspnetcore-11-native-opentelemetry-tracing/)
+- Si expones el servidor de la API y quieres que la autenticación Bearer aparezca correctamente en la interfaz de documentación de Scalar, el cableado no es obvio: [Scalar en ASP.NET Core: por qué se ignora tu token Bearer](/es/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/)
+- Si tus llamadas de servicio a servicio van por gRPC en lugar de REST, las trampas de red en contenedores son diferentes a las de HTTP: [gRPC en contenedores en .NET 9 y .NET 10](/es/2026/01/grpc-in-containers-feels-hard-in-net-9-and-net-10-4-traps-you-can-fix/)
+- Añadir trazas distribuidas a la capa del cliente HTTP encaja bien con [trazado nativo de OpenTelemetry en ASP.NET Core 11](/es/2026/04/aspnetcore-11-native-opentelemetry-tracing/)
 
 ## Fuentes
 

@@ -209,8 +209,8 @@ Claude преобразует `30m` в cron-выражение, планируе
 
 ## Связанное чтение
 
-- Полный релиз Claude Code, открывший `--from-pr` для GitLab и Bitbucket, хорошо сочетается с облачными routines: см. [Claude Code 2.1.119: PR из GitLab, Bitbucket и GHE](/2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket/).
-- Если вы хотите, чтобы routine читала из бизнес-системы на `.NET` во время триажа, сначала откройте её через MCP. Прохождение в [Как создать собственный MCP-сервер на C# на .NET 11](/2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11/).
+- Полный релиз Claude Code, открывший `--from-pr` для GitLab и Bitbucket, хорошо сочетается с облачными routines: см. [Claude Code 2.1.119: PR из GitLab, Bitbucket и GHE](/ru/2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket/).
+- Если вы хотите, чтобы routine читала из бизнес-системы на `.NET` во время триажа, сначала откройте её через MCP. Прохождение в [Как создать собственный MCP-сервер на C# на .NET 11](/ru/2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11/).
 - Для эквивалента в формате GitHub Copilot версия с agent skills в [Visual Studio 2026 Copilot agent skills](/ru/2026/04/visual-studio-2026-copilot-agent-skills/).
 - Для C#-разработчиков, строящих agent runner со стороны Microsoft, а не Anthropic, [Microsoft Agent Framework 1.0](/ru/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) -- готовая к продакшену точка входа.
 - А по экономике bring-your-own-key, если вы предпочитаете платить за токены против другой модели, см. [GitHub Copilot в VS Code с BYOK Anthropic, Ollama и Foundry Local](/ru/2026/04/github-copilot-vs-code-byok-anthropic-ollama-foundry-local/).

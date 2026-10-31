@@ -40,4 +40,4 @@ Doch es geht weiter. Über das quintillion hinaus gibt es:
 -   vigintillion (63 Nullen)
 -   centillion (303 Nullen)
 
-Sie möchten wissen, wie lange ein PC braucht, um bis zu einer trillion (Kurzskala) zu zählen? Werfen Sie einen Blick auf diesen Artikel: [Counting up to one trillion](/2013/10/counting-up-to-one-trillion/).
+Sie möchten wissen, wie lange ein PC braucht, um bis zu einer trillion (Kurzskala) zu zählen? Werfen Sie einen Blick auf diesen Artikel: [Counting up to one trillion](/de/2013/10/counting-up-to-one-trillion/).

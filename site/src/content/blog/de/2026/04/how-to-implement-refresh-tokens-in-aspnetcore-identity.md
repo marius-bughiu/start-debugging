@@ -283,8 +283,8 @@ Das Refresh Token wie `MapIdentityApi` im JSON-Body zurückzugeben, ist verteidi
 
 - [HttpClient-Code mit Unit-Tests prüfen](/de/2026/04/how-to-unit-test-code-that-uses-httpclient/) deckt das Testen der Client-Seite eines token-bewussten `DelegatingHandler` ab, also genau dort, wo bei den meisten Konsumenten die Refresh-Logik lebt.
 - [Globalen Exception-Filter in ASP.NET Core 11 hinzufügen](/de/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) ist ein sauberer Ort, um `SecurityTokenExpiredException` in eine 401 mit Refresh-Hinweis zu übersetzen.
-- [DbContext mocken, ohne Change Tracking zu zerstören](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) ist hier wichtig, weil die Rotationslogik die Stelle ist, an der Sie am dringendsten einen echten EF-Core-Integrationstest haben wollen.
-- [Scalar in ASP.NET Core: warum Ihr Bearer Token in .NET 10 ignoriert wird](/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/) ist das Kaninchenloch, in das viele beim ersten Mal fallen, wenn der neue Flow sich nicht wie Swashbuckle verhält.
+- [DbContext mocken, ohne Change Tracking zu zerstören](/de/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) ist hier wichtig, weil die Rotationslogik die Stelle ist, an der Sie am dringendsten einen echten EF-Core-Integrationstest haben wollen.
+- [Scalar in ASP.NET Core: warum Ihr Bearer Token in .NET 10 ignoriert wird](/de/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/) ist das Kaninchenloch, in das viele beim ersten Mal fallen, wenn der neue Flow sich nicht wie Swashbuckle verhält.
 
 ## Quellen
 

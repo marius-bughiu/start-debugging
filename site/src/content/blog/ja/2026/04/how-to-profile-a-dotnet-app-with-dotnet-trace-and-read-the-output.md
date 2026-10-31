@@ -150,7 +150,7 @@ dotnet-trace convert myapp_20260425_120000.nettrace --format Speedscope -o myapp
 
 ### Perfetto / chrome://tracing
 
-`--format Chromium` は `chrome://tracing` や [ui.perfetto.dev](https://ui.perfetto.dev/) にドロップできる JSON ファイルを生成します。このビューは並行性に関する問いに強く、スレッドプールのスパイク、async のウォーターフォール、ロック競合の兆候は、フレームグラフよりタイムライン上のほうが自然に読み取れます。コミュニティ記事の [Using dotnet-trace with Perfetto](https://dfamonteiro.com/posts/using-dotnet-trace-with-perfetto/) は完全なループを解説しており、私たちも今年初めに [Perfetto + dotnet-trace の実践的なワークフロー](/2026/01/perfetto-dotnet-trace-a-practical-profiling-loop-for-net-9-net-10/) をより詳しく取り上げています。
+`--format Chromium` は `chrome://tracing` や [ui.perfetto.dev](https://ui.perfetto.dev/) にドロップできる JSON ファイルを生成します。このビューは並行性に関する問いに強く、スレッドプールのスパイク、async のウォーターフォール、ロック競合の兆候は、フレームグラフよりタイムライン上のほうが自然に読み取れます。コミュニティ記事の [Using dotnet-trace with Perfetto](https://dfamonteiro.com/posts/using-dotnet-trace-with-perfetto/) は完全なループを解説しており、私たちも今年初めに [Perfetto + dotnet-trace の実践的なワークフロー](/ja/2026/01/perfetto-dotnet-trace-a-practical-profiling-loop-for-net-9-net-10/) をより詳しく取り上げています。
 
 ### dotnet-trace report (CLI)
 

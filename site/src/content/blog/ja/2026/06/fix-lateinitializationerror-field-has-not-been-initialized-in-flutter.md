@@ -136,9 +136,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 }
 ```
 
-`setState` の前にある `if (!mounted) return;` ガードはここでは省略できません。ユーザーが画面を離れた後に解決する async コールバックは、これがないと別のエラーをスローします。そのガードは、[await の後で BuildContext を安全に使う方法](/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/)で必要になるのと同じ規律であり、`State` 内の await されたあらゆるコールバックに付いて回ります。
+`setState` の前にある `if (!mounted) return;` ガードはここでは省略できません。ユーザーが画面を離れた後に解決する async コールバックは、これがないと別のエラーをスローします。そのガードは、[await の後で BuildContext を安全に使う方法](/ja/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/)で必要になるのと同じ規律であり、`State` 内の await されたあらゆるコールバックに付いて回ります。
 
-単一の値を超えるものについては、`FutureBuilder` を使うか、Riverpod を使っているなら、ローディング・エラー・データを 3 つの明示的なケースとしてエンコードする `AsyncValue` を選んでください。await の後に結果をそのままフィールドへ書き込むのは、まさにこのクラッシュとその破棄時の兄弟を生み出すパターンです。リクエストを状態としてモデル化する方法は、[AsyncValue でローディングとエラー状態を表示する](/2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod/)で扱っています。
+単一の値を超えるものについては、`FutureBuilder` を使うか、Riverpod を使っているなら、ローディング・エラー・データを 3 つの明示的なケースとしてエンコードする `AsyncValue` を選んでください。await の後に結果をそのままフィールドへ書き込むのは、まさにこのクラッシュとその破棄時の兄弟を生み出すパターンです。リクエストを状態としてモデル化する方法は、[AsyncValue でローディングとエラー状態を表示する](/ja/2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod/)で扱っています。
 
 ### 2. 値が同期的なら、最初のビルドより前に initState で代入する
 
@@ -166,7 +166,7 @@ class _EditorState extends State<Editor> {
 }
 ```
 
-これが `State` における `late final` の正当な用途です。`widget.initialText` が必要で、それはフィールド初期化子では利用できませんが、`initState()` では利用でき、`initState()` はどのビルドよりも前に実行されます。コントローラーはちょうど一度だけ生成され、二度と再代入されないため、`late final` が正しい修飾子であり、[コントローラー破棄ガイド](/2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks/)で説明されているとおり、それに対する `dispose()` の責任は依然として残ります。
+これが `State` における `late final` の正当な用途です。`widget.initialText` が必要で、それはフィールド初期化子では利用できませんが、`initState()` では利用でき、`initState()` はどのビルドよりも前に実行されます。コントローラーはちょうど一度だけ生成され、二度と再代入されないため、`late final` が正しい修飾子であり、[コントローラー破棄ガイド](/ja/2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks/)で説明されているとおり、それに対する `dispose()` の責任は依然として残ります。
 
 ### 3. 遅延初期化子を使い、フィールドが未代入になり得ないようにする
 
@@ -217,7 +217,7 @@ class _BannerState extends State<Banner> {
 
 リリースではスローするのにメッセージが消えている。リリースビルドではアサーション機構が削られますが、初期化子なしの `late` の読み取りは依然として `LateInitializationError` をスローします。減らされるのは充実したデバッグメッセージだけです。`late` のクラッシュがデバッグ専用だと思い込まないでください。本番に出荷されます。
 
-`late` 対 null チェック演算子。「null 非許容のフィールドは初期化されなければならない」を黙らせるために `late` に手を伸ばすのは、null 許容性を黙らせるために `!` をまき散らすのと同じ衝動です。どちらもコンパイル時の保証をランタイムのクラッシュへと先送りします。値が正当に存在しないことがあり得るなら、それを null 許容としてモデル化し null を処理してください。`late` は、常に存在するが宣言よりわずかに後で代入される値のためだけのものです。`late` がいつ適切な逃げ道で、いつそうでないかを含む、より広い null 安全性のメンタルモデルは、[Flutter 2 から 3.x への null 安全性チェックリスト](/2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist/)にあります。
+`late` 対 null チェック演算子。「null 非許容のフィールドは初期化されなければならない」を黙らせるために `late` に手を伸ばすのは、null 許容性を黙らせるために `!` をまき散らすのと同じ衝動です。どちらもコンパイル時の保証をランタイムのクラッシュへと先送りします。値が正当に存在しないことがあり得るなら、それを null 許容としてモデル化し null を処理してください。`late` は、常に存在するが宣言よりわずかに後で代入される値のためだけのものです。`late` がいつ適切な逃げ道で、いつそうでないかを含む、より広い null 安全性のメンタルモデルは、[Flutter 2 から 3.x への null 安全性チェックリスト](/ja/2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist/)にあります。
 
 自分自身の初期化子の中で読み取られる `late` フィールド。遅延 `late final x = ...x...;` の初期化子が `x` を読み取ると、初期化中の読み取りに関する `LateInitializationError` が出ます。循環がバグです。フィールドを参照せずに値を計算することで循環を断ち切ってください。
 
@@ -225,11 +225,11 @@ class _BannerState extends State<Banner> {
 
 ## 関連記事
 
-- [Flutter で await の後に BuildContext を安全に使う方法](/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/)は、上記の async 修正が依存する `mounted` ガードを扱っています。
-- [Flutter Riverpod の AsyncValue でローディングとエラー状態を表示する方法](/2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod/)は、非同期の結果を `late` フィールドに書き込むことの構造化された代替です。
-- [修正: A TextEditingController was used after being disposed in Flutter](/2026/06/fix-texteditingcontroller-was-used-after-being-disposed-in-flutter/)は、`late final` コントローラーが関わるコントローラーのライフサイクルのもう半分です。
-- [Flutter でメモリリークを避けるためにコントローラーを破棄する方法](/2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks/)は、修正 2 の `late final TextEditingController` パターンと対になります。
-- [Flutter 2 アプリを Flutter 3.x へ移行する: null 安全性チェックリスト](/2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist/)は、`late` が null 安全性のどこに収まり、どこで null 許容型のほうが良い選択になるかを説明しています。
+- [Flutter で await の後に BuildContext を安全に使う方法](/ja/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/)は、上記の async 修正が依存する `mounted` ガードを扱っています。
+- [Flutter Riverpod の AsyncValue でローディングとエラー状態を表示する方法](/ja/2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod/)は、非同期の結果を `late` フィールドに書き込むことの構造化された代替です。
+- [修正: A TextEditingController was used after being disposed in Flutter](/ja/2026/06/fix-texteditingcontroller-was-used-after-being-disposed-in-flutter/)は、`late final` コントローラーが関わるコントローラーのライフサイクルのもう半分です。
+- [Flutter でメモリリークを避けるためにコントローラーを破棄する方法](/ja/2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks/)は、修正 2 の `late final TextEditingController` パターンと対になります。
+- [Flutter 2 アプリを Flutter 3.x へ移行する: null 安全性チェックリスト](/ja/2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist/)は、`late` が null 安全性のどこに収まり、どこで null 許容型のほうが良い選択になるかを説明しています。
 
 ## 参考資料
 

@@ -23,7 +23,7 @@ translationDate: 2026-07-09
 Riverpod 2.x всё ещё работает, поэтому доводы в пользу перехода должны быть конкретными:
 
 - **Автоматический повтор** с экспоненциальной выдержкой встроен из коробки. `FutureProvider`, который падает на нестабильной сети, больше не остаётся в состоянии ошибки до тех пор, пока вы вручную не вызовете `ref.invalidate`.
-- **`Ref.mounted`** заменяет самописный примесь "жив ли ещё этот провайдер после await", который таскало с собой каждое нетривиальное приложение. Полный шаблон смотрите в [проверке Ref.mounted после асинхронного разрыва](/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/).
+- **`Ref.mounted`** заменяет самописный примесь "жив ли ещё этот провайдер после await", который таскало с собой каждое нетривиальное приложение. Полный шаблон смотрите в [проверке Ref.mounted после асинхронного разрыва](/ru/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/).
 - **Единый тип `Ref`** и один `Notifier` на каждую форму. Больше никаких имён вроде `AutoDisposeFamilyAsyncNotifier`, которые читаются как стресс-тест для компилятора.
 - **Офлайн-персистентность** и **мутации** появляются как экспериментальные API, так что состояние отправки форм и кеширование между перезапусками перестают быть тем, что вы строите вручную.
 
@@ -102,7 +102,7 @@ import 'package:flutter_riverpod/legacy.dart';
 final counterProvider = StateProvider<int>((ref) => 0);
 ```
 
-Это осознанный толчок, а не предупреждение об устаревании, которое можно игнорировать вечно. Долгосрочный шаг -- переписать каждый `StateProvider` как `Notifier`, а каждый `StateNotifierProvider` как `Notifier` или `AsyncNotifier`, та же целевая форма, к которой вы придёте при [переходе с пакета provider](/2026/06/migrate-from-provider-to-riverpod-in-flutter/). Но делать это переписывание во время подъёма версии не обязательно. Добавьте импорт, добейтесь зелёного результата и конвертируйте позже.
+Это осознанный толчок, а не предупреждение об устаревании, которое можно игнорировать вечно. Долгосрочный шаг -- переписать каждый `StateProvider` как `Notifier`, а каждый `StateNotifierProvider` как `Notifier` или `AsyncNotifier`, та же целевая форма, к которой вы придёте при [переходе с пакета provider](/ru/2026/06/migrate-from-provider-to-riverpod-in-flutter/). Но делать это переписывание во время подъёма версии не обязательно. Добавьте импорт, добейтесь зелёного результата и конвертируйте позже.
 
 **Проверка:** приложение компилируется. Сделайте grep по `legacy.dart` и убедитесь, что каждый файл, использующий legacy-провайдер, имеет импорт, и ни один файл не импортирует его без надобности (линтер отметит неиспользуемый импорт).
 
@@ -186,7 +186,7 @@ try {
 }
 ```
 
-Развёрнутый путь -- это `AsyncValue`. Когда вы рендерите провайдер через `.when(error: ...)` или сопоставляете с образцом `AsyncError`, ошибка, которую вы там получаете, -- это ваше исходное исключение, а не обёртка. Так что UI-код, читающий состояние реактивно, не затронут; изменения нужны только императивному `ref.read(...future)` внутри `try`/`catch`. Отдельная статья про [ProviderException в Riverpod 3.0](/2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error/) разбирает угловые случаи.
+Развёрнутый путь -- это `AsyncValue`. Когда вы рендерите провайдер через `.when(error: ...)` или сопоставляете с образцом `AsyncError`, ошибка, которую вы там получаете, -- это ваше исходное исключение, а не обёртка. Так что UI-код, читающий состояние реактивно, не затронут; изменения нужны только императивному `ref.read(...future)` внутри `try`/`catch`. Отдельная статья про [ProviderException в Riverpod 3.0](/ru/2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error/) разбирает угловые случаи.
 
 **Проверка:** сделайте grep по `ref.read(` в сочетании с `.future` внутри блоков `try`, а также по любой конструкции `catch`, которая называет доменное исключение. Добавьте тест, который заставляет провайдер бросить исключение, и проверяет, что ваш обработчик по-прежнему выполняется.
 
@@ -194,7 +194,7 @@ try {
 
 В 2.x у разных типов провайдеров были разные правила решения о том, когда уведомлять слушателей. В 3.0 все они используют `==`. Для состояния `Notifier` это обычно нормально, но больно бьёт по `StreamProvider` и `StreamNotifier`: если ваш поток эмитит объекты, равные по `==` (например, изменяемые классы, не переопределяющие равенство, или два значения, которые случайно оказываются равными), вторая эмиссия теперь отбрасывается как дубликат.
 
-Проявление сбоя -- это UI, который перестаёт обновляться, хотя поток явно эмитит. Исправление в том, чтобы эмитируемый тип имел корректную семантику равенства. Если вы эмитите доменные объекты, дайте им равенство по значению (`record`, класс Freezed или написанные вручную `==`/`hashCode`). См. [записи Dart против классов Freezed](/2026/05/dart-records-vs-freezed-classes/), чтобы понять, к чему тянуться.
+Проявление сбоя -- это UI, который перестаёт обновляться, хотя поток явно эмитит. Исправление в том, чтобы эмитируемый тип имел корректную семантику равенства. Если вы эмитите доменные объекты, дайте им равенство по значению (`record`, класс Freezed или написанные вручную `==`/`hashCode`). См. [записи Dart против классов Freezed](/ru/2026/05/dart-records-vs-freezed-classes/), чтобы понять, к чему тянуться.
 
 ```dart
 // Riverpod 3.x -- two distinct ticks that are == would be collapsed.
@@ -284,11 +284,11 @@ class LoggingObserver extends ProviderObserver {
 
 ## Похожее
 
-- [Переход с provider на Riverpod во Flutter](/2026/06/migrate-from-provider-to-riverpod-in-flutter/)
-- [Как проверить Ref.mounted после асинхронного разрыва во Flutter Riverpod 3](/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/)
-- [Исправление: Riverpod 3.0 бросает ProviderException вместо исходной ошибки](/2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error/)
-- [Provider против Riverpod против Bloc для управления состоянием во Flutter в 2026 году](/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/)
-- [Переход с FutureBuilder на Riverpod AsyncNotifier во Flutter](/2026/06/migrate-from-futurebuilder-to-a-riverpod-asyncnotifier-in-flutter/)
+- [Переход с provider на Riverpod во Flutter](/ru/2026/06/migrate-from-provider-to-riverpod-in-flutter/)
+- [Как проверить Ref.mounted после асинхронного разрыва во Flutter Riverpod 3](/ru/2026/07/how-to-check-ref-mounted-after-an-async-gap-in-flutter-riverpod-3/)
+- [Исправление: Riverpod 3.0 бросает ProviderException вместо исходной ошибки](/ru/2026/07/fix-riverpod-3-0-throws-providerexception-instead-of-the-original-error/)
+- [Provider против Riverpod против Bloc для управления состоянием во Flutter в 2026 году](/ru/2026/06/provider-vs-riverpod-vs-bloc-for-flutter-state-management-in-2026/)
+- [Переход с FutureBuilder на Riverpod AsyncNotifier во Flutter](/ru/2026/06/migrate-from-futurebuilder-to-a-riverpod-asyncnotifier-in-flutter/)
 
 ## Источники
 

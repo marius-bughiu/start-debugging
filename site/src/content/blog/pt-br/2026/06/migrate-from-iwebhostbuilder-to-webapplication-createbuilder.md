@@ -43,7 +43,7 @@ Note a última linha. A *interface* `IWebHostBuilder` não foi removida. O `WebA
 ## Checklist pré-decolagem
 
 1. Instale o SDK do .NET 11 em todas as máquinas de desenvolvimento e runners de CI. Verifique com `dotnet --list-sdks` e confirme que `11.0.x` aparece.
-2. Confirme que o projeto já tem como alvo `net6.0` ou posterior. O modelo de hospedagem mínima não existe antes do .NET 6, então uma aplicação .NET 5 ou anterior precisa primeiro de um salto de framework. Veja o [checklist de migração do .NET 8 para o .NET 11](/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist/) se você também estiver cruzando versões LTS, ou o [guia do .NET Framework 4.8 para o .NET 11](/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026/) para o salto maior.
+2. Confirme que o projeto já tem como alvo `net6.0` ou posterior. O modelo de hospedagem mínima não existe antes do .NET 6, então uma aplicação .NET 5 ou anterior precisa primeiro de um salto de framework. Veja o [checklist de migração do .NET 8 para o .NET 11](/pt-br/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist/) se você também estiver cruzando versões LTS, ou o [guia do .NET Framework 4.8 para o .NET 11](/pt-br/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026/) para o salto maior.
 3. Faça um inventário da sua classe `Startup`. Liste cada linha em `ConfigureServices` e cada chamada de middleware em `Configure`, em ordem. A ordem em `Configure` é o contrato que você precisa preservar.
 4. Faça um grep por implementações de `IStartupFilter` e assemblies de `IHostingStartup`. Eles rodam fora de `Startup` e são fáceis de esquecer.
 5. Faça commit de uma baseline limpa para ter um rollback de um comando.
@@ -214,7 +214,7 @@ using (var scope = app.Services.CreateScope())
 app.Run();
 ```
 
-Esta é a quebra de tempo de execução mais comum da migração. A regra geral e suas variantes são abordadas em [resolver serviços com escopo a partir de um singleton](/2026/05/fix-cannot-consume-scoped-service-from-singleton/) e em [usar serviços com escopo dentro de um BackgroundService](/2026/05/how-to-use-scoped-services-inside-a-backgroundservice-in-aspnetcore-11/).
+Esta é a quebra de tempo de execução mais comum da migração. A regra geral e suas variantes são abordadas em [resolver serviços com escopo a partir de um singleton](/pt-br/2026/05/fix-cannot-consume-scoped-service-from-singleton/) e em [usar serviços com escopo dentro de um BackgroundService](/pt-br/2026/05/how-to-use-scoped-services-inside-a-backgroundservice-in-aspnetcore-11/).
 
 **`WebApplicationFactory<TStartup>` não tem mais um `Startup` para apontar.** Testes de integração que referenciavam `WebApplicationFactory<Startup>` precisam de um novo tipo de ponto de entrada. O ponto de entrada do host mínimo é a classe `Program` gerada automaticamente, mas ela é `internal`, então o projeto de teste não consegue vê-la. Exponha-a adicionando uma declaração parcial no final de `Program.cs`:
 
@@ -227,11 +227,11 @@ Depois mude a factory de teste para `WebApplicationFactory<Program>`. Sem a decl
 
 **`IStartupFilter` ainda executa, mas a ordem muda.** Filtros registrados via `services.AddTransient<IStartupFilter, MyFilter>()` continuam a executar, envolvendo o pipeline configurado. Com a hospedagem mínima não há um método `Configure` explícito para eles envolverem, então um filtro que assumia rodar antes da sua configuração de roteamento pode agora rodar em uma posição ligeiramente diferente. Se você usou `IStartupFilter` puramente para injetar middleware de uma biblioteca, audite onde esse middleware aterrissa em relação às suas chamadas `app.Use...` e reordene se uma requisição se comportar de forma diferente.
 
-**Middleware que lê o endpoint correspondente precisa de `UseRouting` explícito.** Remover `UseRouting` é tranquilo para o caso comum, mas se você tem um middleware chamando `context.GetEndpoint()`, ele precisa ficar depois que o roteamento rodou. Readicione `app.UseRouting()` antes desse middleware e mantenha `app.MapControllers()` depois dele. Para uma comparação mais profunda dos dois estilos de endpoint, veja [minimal APIs vs controllers no ASP.NET Core 11](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/).
+**Middleware que lê o endpoint correspondente precisa de `UseRouting` explícito.** Remover `UseRouting` é tranquilo para o caso comum, mas se você tem um middleware chamando `context.GetEndpoint()`, ele precisa ficar depois que o roteamento rodou. Readicione `app.UseRouting()` antes desse middleware e mantenha `app.MapControllers()` depois dele. Para uma comparação mais profunda dos dois estilos de endpoint, veja [minimal APIs vs controllers no ASP.NET Core 11](/pt-br/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/).
 
 **Registro dependente de ordem de named options.** Um punhado de equipes dependia de `ConfigureServices` rodar antes do `IHostingStartup` de uma biblioteca. O host mínimo avalia `builder.Services` ansiosamente em `builder.Build()`, então se você registrou um serviço depois de chamar uma extensão de biblioteca que capturou a coleção, o timing pode diferir. Isso é raro, mas se uma option configurada voltar nula após a migração, verifique se você a registrou depois da chamada `Add...` que a consome.
 
-Uma vez que você esteja em `WebApplication.CreateBuilder`, o resto da superfície moderna se abre: endpoints de minimal API ao lado dos seus controllers, `CreateSlimBuilder` para Native AOT, e o tratamento de exceções mais limpo mostrado em [adicionar um manipulador global de exceções no ASP.NET Core 11](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/). A migração de hospedagem é o portão; todo o resto é incremental a partir daí.
+Uma vez que você esteja em `WebApplication.CreateBuilder`, o resto da superfície moderna se abre: endpoints de minimal API ao lado dos seus controllers, `CreateSlimBuilder` para Native AOT, e o tratamento de exceções mais limpo mostrado em [adicionar um manipulador global de exceções no ASP.NET Core 11](/pt-br/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/). A migração de hospedagem é o portão; todo o resto é incremental a partir daí.
 
 ## Fontes
 

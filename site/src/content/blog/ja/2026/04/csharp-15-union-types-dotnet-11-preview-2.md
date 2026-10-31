@@ -65,7 +65,7 @@ public union Result<T>(T, ErrorInfo)
 
 ## これは以前の提案とどう違うか
 
-2026 年 1 月、ユニオン自体の中にメンバーを定義する [discriminated union 提案](/2026/01/csharp-proposal-discriminated-unions/) (F# や Rust の enum に近い) を取り上げました。出荷された C# 15 のデザインは異なる方向を取ります。**型ユニオンは新しいものをインラインで宣言するのではなく、既存の型を合成する** のです。これはあなたの `Circle`、`Rectangle`、`Triangle` がすでに持っている通常のクラスまたは record であることを意味します。ユニオンは単にそれらをグループ化します。
+2026 年 1 月、ユニオン自体の中にメンバーを定義する [discriminated union 提案](/ja/2026/01/csharp-proposal-discriminated-unions/) (F# や Rust の enum に近い) を取り上げました。出荷された C# 15 のデザインは異なる方向を取ります。**型ユニオンは新しいものをインラインで宣言するのではなく、既存の型を合成する** のです。これはあなたの `Circle`、`Rectangle`、`Triangle` がすでに持っている通常のクラスまたは record であることを意味します。ユニオンは単にそれらをグループ化します。
 
 ## はじめに
 

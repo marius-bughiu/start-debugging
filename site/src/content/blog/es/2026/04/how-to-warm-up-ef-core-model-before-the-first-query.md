@@ -51,7 +51,7 @@ await using (var db = new BloggingContext(options))
 Console.WriteLine($"second: {sw.ElapsedMilliseconds} ms");
 ```
 
-En un modelo demo de 30 entidades apuntando a SQL Server 2025 con EF Core 11.0.0 sobre un portátil caliente, la primera iteración imprime alrededor de `380 ms` y la segunda alrededor de `4 ms`. La construcción del modelo domina. Si el mismo código se ejecuta contra un AWS Lambda en frío donde el host se levanta por invocación, esos 380 ms aterrizan directamente en la latencia p99 visible al usuario, que es exactamente la clase de problema cubierta en [reducir el tiempo de arranque en frío de un AWS Lambda con .NET 11](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/).
+En un modelo demo de 30 entidades apuntando a SQL Server 2025 con EF Core 11.0.0 sobre un portátil caliente, la primera iteración imprime alrededor de `380 ms` y la segunda alrededor de `4 ms`. La construcción del modelo domina. Si el mismo código se ejecuta contra un AWS Lambda en frío donde el host se levanta por invocación, esos 380 ms aterrizan directamente en la latencia p99 visible al usuario, que es exactamente la clase de problema cubierta en [reducir el tiempo de arranque en frío de un AWS Lambda con .NET 11](/es/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/).
 
 ## Solución uno: precalentar el modelo al arranque con IHostedService
 
@@ -188,9 +188,9 @@ Esta es la misma forma que precalentar cualquier caché: averigua dónde vive el
 
 ## Relacionado
 
-- [Cómo simular DbContext sin romper el seguimiento de cambios](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/)
+- [Cómo simular DbContext sin romper el seguimiento de cambios](/es/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/)
 - [Cómo usar IAsyncEnumerable con EF Core 11](/es/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/)
-- [Cómo reducir el tiempo de arranque en frío de un AWS Lambda con .NET 11](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/)
+- [Cómo reducir el tiempo de arranque en frío de un AWS Lambda con .NET 11](/es/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/)
 - [EF Core 11: RemoveDbContext y el swap de pooled factory en pruebas](/es/2026/04/efcore-11-removedbcontext-pooled-factory-test-swap/)
 - [EF Core 11 preview 3 elimina joins de referencia en split queries](/es/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/)
 

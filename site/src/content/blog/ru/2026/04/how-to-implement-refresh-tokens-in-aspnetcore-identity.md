@@ -283,8 +283,8 @@ builder.Services
 
 - [Как тестировать код, использующий HttpClient](/ru/2026/04/how-to-unit-test-code-that-uses-httpclient/) разбирает тестирование клиентской стороны токен-осведомлённого `DelegatingHandler`, где у большинства потребителей и живёт логика обновления.
 - [Как добавить глобальный фильтр исключений в ASP.NET Core 11](/ru/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) удобное место, чтобы превращать `SecurityTokenExpiredException` в 401 с подсказкой обновить токен.
-- [Как мокать DbContext, не ломая change tracking](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) важно тут, потому что логика ротации это самое место, где вам сильнее всего нужен реальный интеграционный тест с EF Core.
-- [Scalar в ASP.NET Core: почему ваш bearer token игнорируется в .NET 10](/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/) кроличья нора, в которую падают, когда новый поток ведёт себя не так, как Swashbuckle.
+- [Как мокать DbContext, не ломая change tracking](/ru/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) важно тут, потому что логика ротации это самое место, где вам сильнее всего нужен реальный интеграционный тест с EF Core.
+- [Scalar в ASP.NET Core: почему ваш bearer token игнорируется в .NET 10](/ru/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/) кроличья нора, в которую падают, когда новый поток ведёт себя не так, как Swashbuckle.
 
 ## Источники
 

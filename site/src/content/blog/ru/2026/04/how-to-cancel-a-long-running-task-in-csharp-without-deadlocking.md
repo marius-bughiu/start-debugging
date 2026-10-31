@@ -242,10 +242,10 @@ public sealed class Crawler(IHttpClientFactory http, ILogger<Crawler> log) : Bac
 
 ## Связанное чтение
 
-- [Стриминг строк из базы с IAsyncEnumerable](/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/), который сильно опирается на ту же обвязку токенов.
-- [Более чистые async stack traces в рантайме .NET 11](/2026/04/dotnet-11-runtime-async-cleaner-stack-traces/), полезно, когда `OperationCanceledException` всплывает глубоко в пайплайне.
+- [Стриминг строк из базы с IAsyncEnumerable](/ru/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/), который сильно опирается на ту же обвязку токенов.
+- [Более чистые async stack traces в рантайме .NET 11](/ru/2026/04/dotnet-11-runtime-async-cleaner-stack-traces/), полезно, когда `OperationCanceledException` всплывает глубоко в пайплайне.
 - [Как вернуть несколько значений из метода в C# 14](/ru/2026/04/how-to-return-multiple-values-from-a-method-in-csharp-14/) хорошо сочетается с async-методами, которые хотят вернуть «результат или причину отмены».
-- [Конец `lock (object)` в .NET 9](/2026/01/net-9-the-end-of-lockobject/) для более широкого контекста threading, в котором работает ваш код отмены.
+- [Конец `lock (object)` в .NET 9](/ru/2026/01/net-9-the-end-of-lockobject/) для более широкого контекста threading, в котором работает ваш код отмены.
 
 ## Источники
 

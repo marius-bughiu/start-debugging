@@ -20,9 +20,9 @@ translationOf: "coding-agents-tracker"
 
 ## С чего начать
 
-Если вы только начинаете знакомиться с темой, прочтите [Microsoft Agent Framework 1.0: Building AI Agents in Pure C#](/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) для .NET-части, и [Wiring Model Context Protocol servers from C# on .NET 10](/2026/01/microsoft-mcp-wiring-model-context-protocol-servers-from-c-on-net-10/) для подключения MCP, на котором строится большинство статей 2026 года.
+Если вы только начинаете знакомиться с темой, прочтите [Microsoft Agent Framework 1.0: Building AI Agents in Pure C#](/ru/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) для .NET-части, и [Wiring Model Context Protocol servers from C# on .NET 10](/ru/2026/01/microsoft-mcp-wiring-model-context-protocol-servers-from-c-on-net-10/) для подключения MCP, на котором строится большинство статей 2026 года.
 
-Конкретно по Copilot: [Agent Skills land in Visual Studio 2026 18.5](/2026/04/visual-studio-2026-copilot-agent-skills/) и [What 878 Copilot Coding Agent PRs in dotnet/runtime actually look like](/2026/03/copilot-coding-agent-dotnet-runtime-ten-months-data/) покрывают и поверхность возможностей, и реальные результаты.
+Конкретно по Copilot: [Agent Skills land in Visual Studio 2026 18.5](/ru/2026/04/visual-studio-2026-copilot-agent-skills/) и [What 878 Copilot Coding Agent PRs in dotnet/runtime actually look like](/ru/2026/03/copilot-coding-agent-dotnet-runtime-ten-months-data/) покрывают и поверхность возможностей, и реальные результаты.
 
 ## Что на этой странице
 

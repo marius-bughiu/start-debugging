@@ -98,7 +98,7 @@ await foreach (var line in ReadLinesAsync("huge.log", ct))
 
 Der Compiler erweitert dies zu Aufrufen von `GetAsyncEnumerator`, einer Schleife aus `await MoveNextAsync()`, die jede Runde `Current` liest, und einem `await DisposeAsync()` in einem finally-Block. Die Schleife ist vollständig sequenziell: Element N+1 wird erst angefordert, wenn Ihr Rumpf mit Element N fertig ist. Diese sequenzielle, bedarfsgesteuerte Form ist die Funktion, keine Einschränkung. Sie ist es, die den Speicher begrenzt und Ihnen natürlichen Gegendruck gibt: ein langsamer Konsument verlangsamt automatisch den Erzeuger, weil das nächste `await` des Erzeugers erst beim nächsten Aufruf von `MoveNextAsync` fortgesetzt wird.
 
-Wenn die Iterationsreihenfolge keine Rolle spielt und Sie Nebenläufigkeit wollen, ist `await foreach` das falsche Werkzeug. Verwenden Sie [Parallel.ForEachAsync](/2026/05/parallel-foreach-vs-parallel-foreachasync-vs-task-whenall/), das ein `IAsyncEnumerable<T>` konsumieren und den Rumpf für mehrere Elemente gleichzeitig mit einer Obergrenze für den Parallelitätsgrad ausführen kann. `await foreach` ist für geordnete Verarbeitung, eines nach dem anderen.
+Wenn die Iterationsreihenfolge keine Rolle spielt und Sie Nebenläufigkeit wollen, ist `await foreach` das falsche Werkzeug. Verwenden Sie [Parallel.ForEachAsync](/de/2026/05/parallel-foreach-vs-parallel-foreachasync-vs-task-whenall/), das ein `IAsyncEnumerable<T>` konsumieren und den Rumpf für mehrere Elemente gleichzeitig mit einer Obergrenze für den Parallelitätsgrad ausführen kann. `await foreach` ist für geordnete Verarbeitung, eines nach dem anderen.
 
 ## Abbruch: das Paar `WithCancellation` plus `[EnumeratorCancellation]`
 
@@ -138,7 +138,7 @@ await foreach (var item in stream.ConfigureAwait(false))
 }
 ```
 
-Dies konfiguriert sowohl die `MoveNextAsync`-Awaits als auch das abschließende `DisposeAsync`-Await. In einer modernen ASP.NET-Core-Anwendung gibt es keinen Synchronisationskontext zum Einfangen, also ist es dort ein No-Op, aber es ist weiterhin wichtig für Bibliothekscode, Konsolen-Hosts und alles, was unter einem UI- oder Legacy-Kontext laufen könnte. Die Abwägungen sind dieselben wie überall sonst im asynchronen Code, behandelt in [ob ConfigureAwait in .NET 11 noch wichtig ist](/2026/05/configureawait-false-vs-default-in-dotnet-11/).
+Dies konfiguriert sowohl die `MoveNextAsync`-Awaits als auch das abschließende `DisposeAsync`-Await. In einer modernen ASP.NET-Core-Anwendung gibt es keinen Synchronisationskontext zum Einfangen, also ist es dort ein No-Op, aber es ist weiterhin wichtig für Bibliothekscode, Konsolen-Hosts und alles, was unter einem UI- oder Legacy-Kontext laufen könnte. Die Abwägungen sind dieselben wie überall sonst im asynchronen Code, behandelt in [ob ConfigureAwait in .NET 11 noch wichtig ist](/de/2026/05/configureawait-false-vs-default-in-dotnet-11/).
 
 ## LINQ über asynchrone Streams ist jetzt integriert
 
@@ -164,7 +164,7 @@ Verwenden Sie `IAsyncEnumerable<T>`, wenn alle drei dieser Bedingungen zutreffen
 2. Das Erzeugen jedes Elements beinhaltet **asynchrone E/A** (Datenbank, Netzwerk, Datei, Nachrichtenwarteschlange).
 3. Sie möchten **mit der Verarbeitung beginnen, bevor das letzte Element eintrifft**, oder Sie können es sich nicht leisten, sie alle auf einmal im Speicher zu halten.
 
-Konkrete Fälle, die passen: Zeilen aus einer Datenbank für einen Export streamen, wie behandelt in [IAsyncEnumerable mit EF Core 11 verwenden](/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/); eine paginierte API Seite für Seite lesen und jedes Element ausgeben, sobald die Seiten eintreffen; ein Log oder einen Nachrichtenstrom verfolgen, der nie endet; Daten in einen [Channel](/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) oder einen `PipeWriter` leiten. In ASP.NET Core streamt das Zurückgeben von `IAsyncEnumerable<T>` aus einer Minimal API oder einer Controller-Aktion das JSON-Array Element für Element an den Client, statt die gesamte Antwort zu puffern.
+Konkrete Fälle, die passen: Zeilen aus einer Datenbank für einen Export streamen, wie behandelt in [IAsyncEnumerable mit EF Core 11 verwenden](/de/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/); eine paginierte API Seite für Seite lesen und jedes Element ausgeben, sobald die Seiten eintreffen; ein Log oder einen Nachrichtenstrom verfolgen, der nie endet; Daten in einen [Channel](/de/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) oder einen `PipeWriter` leiten. In ASP.NET Core streamt das Zurückgeben von `IAsyncEnumerable<T>` aus einer Minimal API oder einer Controller-Aktion das JSON-Array Element für Element an den Client, statt die gesamte Antwort zu puffern.
 
 ## Wann Sie es nicht sollten
 
@@ -185,11 +185,11 @@ Asynchrone Streams machten die unbequeme untere rechte Zelle der Wert-/Sammlungs
 
 ## Verwandt
 
-- [How to use IAsyncEnumerable<T> with EF Core 11](/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/) wendet all dies auf das Streamen von Datenbankzeilen an.
-- [IEnumerable vs IAsyncEnumerable vs IQueryable in C#](/2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp/) ist der vergleichende Entscheidungsleitfaden für die drei Sequenzschnittstellen.
-- [How to stream a file from an ASP.NET Core endpoint without buffering](/2026/04/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering/) ist das HTTP-Antwort-Gegenstück zum Erzeugen eines Streams.
-- [How to cancel a long-running Task in C# without deadlocking](/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/) geht tiefer auf die Abbruch-Token ein, von denen asynchrone Streams abhängen.
-- [Streaming tasks with .NET 9 Task.WhenEach](/2026/01/streaming-tasks-with-net-9-task-wheneach/) ist die andere Hauptmethode, um Ergebnisse zu konsumieren, sobald sie abgeschlossen sind.
+- [How to use IAsyncEnumerable<T> with EF Core 11](/de/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/) wendet all dies auf das Streamen von Datenbankzeilen an.
+- [IEnumerable vs IAsyncEnumerable vs IQueryable in C#](/de/2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp/) ist der vergleichende Entscheidungsleitfaden für die drei Sequenzschnittstellen.
+- [How to stream a file from an ASP.NET Core endpoint without buffering](/de/2026/04/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering/) ist das HTTP-Antwort-Gegenstück zum Erzeugen eines Streams.
+- [How to cancel a long-running Task in C# without deadlocking](/de/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/) geht tiefer auf die Abbruch-Token ein, von denen asynchrone Streams abhängen.
+- [Streaming tasks with .NET 9 Task.WhenEach](/de/2026/01/streaming-tasks-with-net-9-task-wheneach/) ist die andere Hauptmethode, um Ergebnisse zu konsumieren, sobald sie abgeschlossen sind.
 
 ## Quellen
 

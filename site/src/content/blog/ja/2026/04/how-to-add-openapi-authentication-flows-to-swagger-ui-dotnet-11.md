@@ -28,7 +28,7 @@ translationDate: 2026-04-28
 1. OpenAPI ドキュメントは Swashbuckle の責務ではなくなったため、Stack Overflow にある `OperationFilter` や `DocumentFilter` のサンプルはすべて古くなりました。新しい拡張ポイントは `IOpenApiDocumentTransformer` と `IOpenApiOperationTransformer` です。
 2. Swagger UI はオプションになりました。再び使うなら `Swashbuckle.AspNetCore.SwaggerUI`（UI パッケージのみ、約 600 KB）をインストールし、新しいジェネレーターが出力する JSON ドキュメントを指し示します。
 
-「試しに叩く UI」だけでよければ、[Scalar の方が軽量な選択肢](/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/) です。同じ OpenAPI ドキュメントを読みます。下の transformer は OpenAPI 3.x の有効なセキュリティモデルを生成するため、仕様に従う UI ならどれでも認証フローを拾います。
+「試しに叩く UI」だけでよければ、[Scalar の方が軽量な選択肢](/ja/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/) です。同じ OpenAPI ドキュメントを読みます。下の transformer は OpenAPI 3.x の有効なセキュリティモデルを生成するため、仕様に従う UI ならどれでも認証フローを拾います。
 
 ## 最小限の Bearer JWT 構成
 
@@ -308,7 +308,7 @@ builder.Services.AddOpenApi(o =>
 
 **ルート以外の path base での OAuth リダイレクト URL。** リバースプロキシの `/api` 配下でアプリが動いている場合、Swagger UI はリダイレクト先を `/api/swagger/oauth2-redirect.html` として組み立てます。IdP 側の登録にもまったく同じパスが含まれていないと、コールバックは `redirect_uri_mismatch` で失敗します。リダイレクトがおかしく見えたら、`Forwarded` ヘッダーと `UsePathBase` を確認してください。
 
-**Native AOT。** .NET 11 時点では、新しい OpenAPI ジェネレーターは任意の transformer に対して trim-safe としてアノテートされていません。`Swashbuckle.AspNetCore.SwaggerUI` の静的ファイル配信は AOT 下でも動きますが、transformer 側はクローズドジェネリックに対する reflection を避けるべきです。`RequiresUnreferencedCode` 警告に当たったら、[minimal API における Native AOT のガイド](/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/) を参照してください。
+**Native AOT。** .NET 11 時点では、新しい OpenAPI ジェネレーターは任意の transformer に対して trim-safe としてアノテートされていません。`Swashbuckle.AspNetCore.SwaggerUI` の静的ファイル配信は AOT 下でも動きますが、transformer 側はクローズドジェネリックに対する reflection を避けるべきです。`RequiresUnreferencedCode` 警告に当たったら、[minimal API における Native AOT のガイド](/ja/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/) を参照してください。
 
 **オペレーション単位の要件は追加されるだけで、置き換えではない。** ドキュメントにグローバルな `SecurityRequirements` *と* operation transformer の追加要件の両方があると、両者は OpenAPI の OR セマンティクスで代替として評価されます。公開エンドポイントを作るには、`operation.Security` を明示的にクリアする必要があり、transformer をそのまま放置するだけでは足りません。
 
@@ -329,15 +329,15 @@ app.UseSwaggerUI(c =>
 });
 ```
 
-各ドキュメントは固有の `securitySchemes` を持つため、ドキュメント単位で動く transformer はバージョンごとに 1 回呼ばれます。よい点は、共有状態を追いかける必要がないこと。悪い点は、v2 ドキュメント向けの transformer 登録を忘れると鍵マークが v1 にしか付かないこと。このパターンは `Asp.Versioning` 10.0 の `WithDocumentPerVersion()`（[API バージョニング記事](/2026/04/api-versioning-openapi-dotnet-10/) で扱っています）と素直にかみ合います。
+各ドキュメントは固有の `securitySchemes` を持つため、ドキュメント単位で動く transformer はバージョンごとに 1 回呼ばれます。よい点は、共有状態を追いかける必要がないこと。悪い点は、v2 ドキュメント向けの transformer 登録を忘れると鍵マークが v1 にしか付かないこと。このパターンは `Asp.Versioning` 10.0 の `WithDocumentPerVersion()`（[API バージョニング記事](/ja/2026/04/api-versioning-openapi-dotnet-10/) で扱っています）と素直にかみ合います。
 
 ## 関連記事
 
-- [Scalar in ASP.NET Core: why your Bearer token is ignored (.NET 10)](/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/)
-- [Asp.Versioning 10.0 finally plays nicely with built-in OpenAPI in .NET 10](/2026/04/api-versioning-openapi-dotnet-10/)
-- [How to generate strongly-typed client code from an OpenAPI spec in .NET 11](/2026/04/how-to-generate-strongly-typed-client-from-openapi-spec-dotnet-11/)
-- [How to implement refresh tokens in ASP.NET Core Identity](/2026/04/how-to-implement-refresh-tokens-in-aspnetcore-identity/)
-- [How to use Native AOT with ASP.NET Core minimal APIs](/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/)
+- [Scalar in ASP.NET Core: why your Bearer token is ignored (.NET 10)](/ja/2026/01/scalar-in-asp-net-core-why-your-bearer-token-is-ignored-net-10/)
+- [Asp.Versioning 10.0 finally plays nicely with built-in OpenAPI in .NET 10](/ja/2026/04/api-versioning-openapi-dotnet-10/)
+- [How to generate strongly-typed client code from an OpenAPI spec in .NET 11](/ja/2026/04/how-to-generate-strongly-typed-client-from-openapi-spec-dotnet-11/)
+- [How to implement refresh tokens in ASP.NET Core Identity](/ja/2026/04/how-to-implement-refresh-tokens-in-aspnetcore-identity/)
+- [How to use Native AOT with ASP.NET Core minimal APIs](/ja/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/)
 
 ## 出典
 

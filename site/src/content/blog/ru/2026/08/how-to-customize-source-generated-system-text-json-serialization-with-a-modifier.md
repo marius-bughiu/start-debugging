@@ -21,7 +21,7 @@ translationDate: 2026-08-10
 
 ## Почему настройка контрактов и генерация исходного кода кажутся несовместимыми
 
-Настройка контрактов появилась в .NET 7. Вы передаёте `System.Text.Json` делегат `Action<JsonTypeInfo>`, и он вызывается один раз для каждого типа: после того, как контракт построен, но до того, как он использован. Так можно переименовывать свойства, удалять их, добавлять синтетические или оборачивать делегаты чтения и записи. Канонической точкой входа является `DefaultJsonTypeInfoResolver.Modifiers`, а в .NET 8 добавили [метод расширения `WithAddedModifier`](/2023/10/system-text-json-how-to-modify-existing-type-info-resolver/), позволяющий наложить модификатор на любой `IJsonTypeInfoResolver`, а не только на основанный на рефлексии.
+Настройка контрактов появилась в .NET 7. Вы передаёте `System.Text.Json` делегат `Action<JsonTypeInfo>`, и он вызывается один раз для каждого типа: после того, как контракт построен, но до того, как он использован. Так можно переименовывать свойства, удалять их, добавлять синтетические или оборачивать делегаты чтения и записи. Канонической точкой входа является `DefaultJsonTypeInfoResolver.Modifiers`, а в .NET 8 добавили [метод расширения `WithAddedModifier`](/ru/2023/10/system-text-json-how-to-modify-existing-type-info-resolver/), позволяющий наложить модификатор на любой `IJsonTypeInfoResolver`, а не только на основанный на рефлексии.
 
 Именно слова "любой resolver" здесь и важны, потому что сгенерированный `JsonSerializerContext` **является** `IJsonTypeInfoResolver`. Никаких технических причин, по которым модификатор не мог бы декорировать `MyContext.Default`, не существует. Вывод о том, что модификаторы контрактов не работают с генерацией исходного кода, так распространён потому, что естественно выглядящий способ подключения выбрасывает модификатор без предупреждения, без исключения и без диагностики компилятора.
 
@@ -188,7 +188,7 @@ static void RedactByAttribute(JsonTypeInfo typeInfo)
 
 ## Native AOT: ломаются не модификаторы
 
-Весь смысл использовать здесь [генератор исходного кода](/2026/06/what-is-a-source-generator-and-when-do-i-need-one/) в trimming и Native AOT, поэтому очевидное опасение состоит в том, не тянет ли подключённый модификатор рефлексию обратно. Не тянет. Я повторил тот же код с `<JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>`, а именно это значение устанавливают за вас `PublishAot` и `PublishTrimmed`:
+Весь смысл использовать здесь [генератор исходного кода](/ru/2026/06/what-is-a-source-generator-and-when-do-i-need-one/) в trimming и Native AOT, поэтому очевидное опасение состоит в том, не тянет ли подключённый модификатор рефлексию обратно. Не тянет. Я повторил тот же код с `<JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>`, а именно это значение устанавливают за вас `PublishAot` и `PublishTrimmed`:
 
 ```text
 IsReflectionEnabledByDefault = False
@@ -204,7 +204,7 @@ was not provided by TypeInfoResolver of type
 'System.Text.Json.Serialization.Metadata.JsonTypeInfoResolverWithAddedModifiers'.
 ```
 
-Если вы столкнулись с родственной ошибкой про [отключённую сериализацию на основе рефлексии](/2026/07/fix-reflection-based-serialization-has-been-disabled-for-this-application/), это отсутствующий resolver, а не сломанный модификатор.
+Если вы столкнулись с родственной ошибкой про [отключённую сериализацию на основе рефлексии](/ru/2026/07/fix-reflection-based-serialization-has-been-disabled-for-this-application/), это отсутствующий resolver, а не сломанный модификатор.
 
 ## Реальная цена: вы отказываетесь от сгенерированного быстрого пути
 
@@ -261,7 +261,7 @@ modifierCalls after 3 serializations (fresh options)   = 12
 
 После того как экземпляр options был использован, и он сам, и порождённые им контракты замораживаются. Присваивание `WriteIndented` после первой сериализации бросает `InvalidOperationException: This JsonSerializerOptions instance is read-only or has already been used in serialization or deserialization`, а попытка через `options.GetTypeInfo(...)` отредактировать `Properties` задним числом бросает аналог для `JsonTypeInfo`. Все изменения контракта должны происходить внутри модификатора.
 
-Если нужно наложить несколько resolver вместо одного декорированного контекста, [`TypeInfoResolverChain`](/2023/10/add-remove-typeinforesolver-to-existing-jsonserializeroptions/) принимает декорированный resolver так же, как и обычный, и цепочка опрашивается по порядку, пока контракт не вернётся отличным от null. Тот же приём подходит для иерархии, которая уже использует [`JsonDerivedType` для полиморфизма](/2026/07/how-to-serialize-a-polymorphic-type-hierarchy-with-jsonderivedtype-in-system-text-json/), поскольку производные контракты проходят через модификатор как любой другой тип.
+Если нужно наложить несколько resolver вместо одного декорированного контекста, [`TypeInfoResolverChain`](/ru/2023/10/add-remove-typeinforesolver-to-existing-jsonserializeroptions/) принимает декорированный resolver так же, как и обычный, и цепочка опрашивается по порядку, пока контракт не вернётся отличным от null. Тот же приём подходит для иерархии, которая уже использует [`JsonDerivedType` для полиморфизма](/ru/2026/07/how-to-serialize-a-polymorphic-type-hierarchy-with-jsonderivedtype-in-system-text-json/), поскольку производные контракты проходят через модификатор как любой другой тип.
 
 Короткая версия, которую стоит держать в голове: декорируйте resolver, а не контекст, сравнивайте через `AttributeProvider`, а не через `Name`, оставляйте режим генерации по умолчанию и кешируйте options.
 

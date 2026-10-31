@@ -191,7 +191,7 @@ static class Cursor
 }
 ```
 
-Note o `AsNoTracking()` na consulta. Estas são linhas de lista somente leitura, então não há razão para pagar pelo rastreador de mudanças; se você não tem certeza de quando isso importa, veja [AsNoTracking vs AsNoTrackingWithIdentityResolution no EF Core 11](/2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11/). Para um endpoint de lista quente, esta consulta também é forte candidata a uma [consulta compilada](/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/), já que o formato nunca muda entre requisições.
+Note o `AsNoTracking()` na consulta. Estas são linhas de lista somente leitura, então não há razão para pagar pelo rastreador de mudanças; se você não tem certeza de quando isso importa, veja [AsNoTracking vs AsNoTrackingWithIdentityResolution no EF Core 11](/pt-br/2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11/). Para um endpoint de lista quente, esta consulta também é forte candidata a uma [consulta compilada](/pt-br/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/), já que o formato nunca muda entre requisições.
 
 ## O índice não é opcional
 
@@ -204,7 +204,7 @@ modelBuilder.Entity<Post>()
     .IsDescending(true, true);
 ```
 
-O guia oficial é categórico sobre isso na [seção de índices](https://learn.microsoft.com/en-us/ef/core/querying/pagination): seu índice precisa corresponder à sua ordenação de paginação. Se você ordena por `(CreatedAt DESC, PostId DESC)` mas indexa `(CreatedAt ASC, PostId ASC)`, muitos bancos de dados ainda conseguem escanear o índice para trás, mas no momento em que você adiciona uma terceira coluna ou uma direção incompatível, o planejador recorre a uma ordenação sobre o conjunto filtrado inteiro e sua página de custo constante se foi. A direção do índice é parte do contrato, não um detalhe. Esta é a mesma classe de problema de "o plano de consulta está fazendo algo que você não pediu" que uma [consulta N+1](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/) acidental: o LINQ parece bom, mas o plano conta a história real, então verifique o plano de execução real uma vez antes de colocar em produção.
+O guia oficial é categórico sobre isso na [seção de índices](https://learn.microsoft.com/en-us/ef/core/querying/pagination): seu índice precisa corresponder à sua ordenação de paginação. Se você ordena por `(CreatedAt DESC, PostId DESC)` mas indexa `(CreatedAt ASC, PostId ASC)`, muitos bancos de dados ainda conseguem escanear o índice para trás, mas no momento em que você adiciona uma terceira coluna ou uma direção incompatível, o planejador recorre a uma ordenação sobre o conjunto filtrado inteiro e sua página de custo constante se foi. A direção do índice é parte do contrato, não um detalhe. Esta é a mesma classe de problema de "o plano de consulta está fazendo algo que você não pediu" que uma [consulta N+1](/pt-br/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/) acidental: o LINQ parece bom, mas o plano conta a história real, então verifique o plano de execução real uma vez antes de colocar em produção.
 
 ## Por que não a sintaxe de tupla que você já viu em SQL puro
 
@@ -226,11 +226,11 @@ A paginação por offset nem sempre está errada. Para uma tabela de administra�
 
 ## Relacionados
 
-- [How to use query splitting to avoid a cartesian explosion in EF Core 11](/2026/06/how-to-use-query-splitting-to-avoid-a-cartesian-explosion-in-ef-core-11/)
-- [AsNoTracking vs AsNoTrackingWithIdentityResolution in EF Core 11](/2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11/)
-- [How to detect N+1 queries in EF Core 11](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)
-- [How to use compiled queries with EF Core for hot paths](/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/)
-- [How to use IAsyncEnumerable with EF Core 11](/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/)
+- [How to use query splitting to avoid a cartesian explosion in EF Core 11](/pt-br/2026/06/how-to-use-query-splitting-to-avoid-a-cartesian-explosion-in-ef-core-11/)
+- [AsNoTracking vs AsNoTrackingWithIdentityResolution in EF Core 11](/pt-br/2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11/)
+- [How to detect N+1 queries in EF Core 11](/pt-br/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)
+- [How to use compiled queries with EF Core for hot paths](/pt-br/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/)
+- [How to use IAsyncEnumerable with EF Core 11](/pt-br/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/)
 
 ## Fontes
 

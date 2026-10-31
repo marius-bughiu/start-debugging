@@ -43,7 +43,7 @@ Fíjate en la última fila. La *interfaz* `IWebHostBuilder` no se elimina. `WebA
 ## Lista de verificación previa
 
 1. Instala el SDK de .NET 11 en cada máquina de desarrollo y runner de CI. Verifica con `dotnet --list-sdks` y confirma que aparece `11.0.x`.
-2. Confirma que el proyecto ya tiene como destino `net6.0` o posterior. El modelo de hospedaje mínimo no existe antes de .NET 6, así que una aplicación en .NET 5 o anterior necesita primero un salto de framework. Consulta la [lista de verificación de .NET 8 a .NET 11](/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist/) si además estás cruzando versiones LTS, o la [guía de .NET Framework 4.8 a .NET 11](/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026/) para el salto mayor.
+2. Confirma que el proyecto ya tiene como destino `net6.0` o posterior. El modelo de hospedaje mínimo no existe antes de .NET 6, así que una aplicación en .NET 5 o anterior necesita primero un salto de framework. Consulta la [lista de verificación de .NET 8 a .NET 11](/es/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist/) si además estás cruzando versiones LTS, o la [guía de .NET Framework 4.8 a .NET 11](/es/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026/) para el salto mayor.
 3. Inventaría tu clase `Startup`. Lista cada línea de `ConfigureServices` y cada llamada de middleware en `Configure`, en orden. El orden en `Configure` es el contrato que debes preservar.
 4. Busca con grep las implementaciones de `IStartupFilter` y los ensamblados `IHostingStartup`. Estos se ejecutan fuera de `Startup` y es fácil olvidarlos.
 5. Confirma una línea base limpia para tener una reversión en un solo comando.
@@ -214,7 +214,7 @@ using (var scope = app.Services.CreateScope())
 app.Run();
 ```
 
-Esta es la ruptura en tiempo de ejecución más común en la migración. La regla general y sus variantes se cubren en [resolver servicios scoped desde un singleton](/2026/05/fix-cannot-consume-scoped-service-from-singleton/) y en [usar servicios scoped dentro de un BackgroundService](/2026/05/how-to-use-scoped-services-inside-a-backgroundservice-in-aspnetcore-11/).
+Esta es la ruptura en tiempo de ejecución más común en la migración. La regla general y sus variantes se cubren en [resolver servicios scoped desde un singleton](/es/2026/05/fix-cannot-consume-scoped-service-from-singleton/) y en [usar servicios scoped dentro de un BackgroundService](/es/2026/05/how-to-use-scoped-services-inside-a-backgroundservice-in-aspnetcore-11/).
 
 **`WebApplicationFactory<TStartup>` ya no tiene un `Startup` al que apuntar.** Las pruebas de integración que referenciaban `WebApplicationFactory<Startup>` necesitan un nuevo tipo de punto de entrada. El punto de entrada del host mínimo es la clase `Program` autogenerada, pero es `internal`, así que el proyecto de pruebas no puede verla. Exponla agregando una declaración parcial al final de `Program.cs`:
 
@@ -227,11 +227,11 @@ Luego cambia la fábrica de pruebas a `WebApplicationFactory<Program>`. Sin la d
 
 **`IStartupFilter` sigue ejecutándose, pero el orden cambia.** Los filtros registrados vía `services.AddTransient<IStartupFilter, MyFilter>()` continúan ejecutándose, envolviendo el pipeline configurado. Con el hospedaje mínimo no hay un método `Configure` explícito que envolver, así que un filtro que asumía que se ejecutaba antes de tu configuración de enrutamiento puede ahora ejecutarse en una posición ligeramente diferente. Si usabas `IStartupFilter` únicamente para inyectar middleware de una biblioteca, audita dónde aterriza ese middleware respecto a tus llamadas `app.Use...` y reordena si una solicitud se comporta de forma diferente.
 
-**El middleware que lee el endpoint coincidente necesita `UseRouting` explícito.** Eliminar `UseRouting` está bien para el caso común, pero si tienes middleware que llama a `context.GetEndpoint()`, debe ubicarse después de que el enrutamiento se haya ejecutado. Vuelve a agregar `app.UseRouting()` antes de ese middleware y mantén `app.MapControllers()` después. Para una comparación más profunda de los dos estilos de endpoint, consulta [minimal APIs vs controladores en ASP.NET Core 11](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/).
+**El middleware que lee el endpoint coincidente necesita `UseRouting` explícito.** Eliminar `UseRouting` está bien para el caso común, pero si tienes middleware que llama a `context.GetEndpoint()`, debe ubicarse después de que el enrutamiento se haya ejecutado. Vuelve a agregar `app.UseRouting()` antes de ese middleware y mantén `app.MapControllers()` después. Para una comparación más profunda de los dos estilos de endpoint, consulta [minimal APIs vs controladores en ASP.NET Core 11](/es/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/).
 
 **Registro de opciones nombradas dependiente del orden.** Un puñado de equipos dependían de que `ConfigureServices` se ejecutara antes del `IHostingStartup` de una biblioteca. El host mínimo evalúa `builder.Services` de forma anticipada en `builder.Build()`, así que si registraste un servicio después de llamar a una extensión de biblioteca que capturó la colección, el momento puede diferir. Esto es raro, pero si una opción configurada vuelve null después de la migración, comprueba si la registraste después de la llamada `Add...` que la consume.
 
-Una vez que estás en `WebApplication.CreateBuilder`, el resto de la superficie moderna se abre: endpoints de minimal API junto a tus controladores, `CreateSlimBuilder` para Native AOT, y el manejo de excepciones más limpio mostrado en [agregar un manejador global de excepciones en ASP.NET Core 11](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/). La migración del hospedaje es la puerta; todo lo demás es incremental a partir de ahí.
+Una vez que estás en `WebApplication.CreateBuilder`, el resto de la superficie moderna se abre: endpoints de minimal API junto a tus controladores, `CreateSlimBuilder` para Native AOT, y el manejo de excepciones más limpio mostrado en [agregar un manejador global de excepciones en ASP.NET Core 11](/es/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/). La migración del hospedaje es la puerta; todo lo demás es incremental a partir de ahí.
 
 ## Fuentes
 

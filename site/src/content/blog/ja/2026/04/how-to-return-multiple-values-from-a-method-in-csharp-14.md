@@ -271,7 +271,7 @@ public class MultiReturnBench
 
 ## このブログ内の関連記事
 
-言語進化のコンテキストについては、[C# 言語バージョン履歴](/2024/12/csharp-language-version-history/) がタプル、records、デコンストラクションがどのように到達したかをたどります。`union` キーワードや exhaustive pattern matching がこの構図のどこに収まるか興味があれば、[.NET 11 Preview 2 の C# 15 union 型](/2026/04/csharp-15-union-types-dotnet-11-preview-2/) と先行の [C# discriminated unions 提案](/2026/01/csharp-proposal-discriminated-unions/) を見てください。どちらも「複数の形のうち 1 つを返す」対「多くの形を返す」の計算を変えます。ホットパスでの struct vs class 選択のパフォーマンス面については、古めの [FrozenDictionary vs Dictionary のベンチマーク](/2024/04/net-8-performance-dictionary-vs-frozendictionary/) が、上で `record struct` が好まれる根拠となるアロケーションのストーリーを捉えています。そして冗長なタプル型を読みやすさのために別名化したいなら、[C# 12 alias any type](/2023/08/c-12-alias-any-type/) が欲しい機能です。
+言語進化のコンテキストについては、[C# 言語バージョン履歴](/ja/2024/12/csharp-language-version-history/) がタプル、records、デコンストラクションがどのように到達したかをたどります。`union` キーワードや exhaustive pattern matching がこの構図のどこに収まるか興味があれば、[.NET 11 Preview 2 の C# 15 union 型](/ja/2026/04/csharp-15-union-types-dotnet-11-preview-2/) と先行の [C# discriminated unions 提案](/ja/2026/01/csharp-proposal-discriminated-unions/) を見てください。どちらも「複数の形のうち 1 つを返す」対「多くの形を返す」の計算を変えます。ホットパスでの struct vs class 選択のパフォーマンス面については、古めの [FrozenDictionary vs Dictionary のベンチマーク](/ja/2024/04/net-8-performance-dictionary-vs-frozendictionary/) が、上で `record struct` が好まれる根拠となるアロケーションのストーリーを捉えています。そして冗長なタプル型を読みやすさのために別名化したいなら、[C# 12 alias any type](/ja/2023/08/c-12-alias-any-type/) が欲しい機能です。
 
 ## 参考資料
 

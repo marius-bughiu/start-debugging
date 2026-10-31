@@ -13,7 +13,7 @@ translatedBy: "claude"
 translationDate: 2026-04-24
 ---
 
-[.NET 8 ввёл](https://startdebugging.net/2023/08/net-8-json-serialize-property-names-using-snake-case-and-kebab-case/) первую партию встроенных политик именования для `System.Text.Json`: camel, snake и kebab в обоих регистрах. Preview 3 в .NET 11 закрывает последний очевидный пробел и добавляет ещё две ручки, благодаря которым самописные `JsonConverter` становятся не нужны для большинства форм DTO. Работа вышла в [dotnet/runtime #124644](https://github.com/dotnet/runtime/pull/124644), [#124645](https://github.com/dotnet/runtime/pull/124645) и [#124646](https://github.com/dotnet/runtime/pull/124646).
+[.NET 8 ввёл](https://startdebugging.net/ru/2023/08/net-8-json-serialize-property-names-using-snake-case-and-kebab-case/) первую партию встроенных политик именования для `System.Text.Json`: camel, snake и kebab в обоих регистрах. Preview 3 в .NET 11 закрывает последний очевидный пробел и добавляет ещё две ручки, благодаря которым самописные `JsonConverter` становятся не нужны для большинства форм DTO. Работа вышла в [dotnet/runtime #124644](https://github.com/dotnet/runtime/pull/124644), [#124645](https://github.com/dotnet/runtime/pull/124645) и [#124646](https://github.com/dotnet/runtime/pull/124646).
 
 ## PascalCase присоединяется к встроенным политикам
 

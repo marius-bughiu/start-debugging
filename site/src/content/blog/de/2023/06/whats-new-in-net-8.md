@@ -13,7 +13,7 @@ translationDate: 2026-05-01
 ---
 .NET 8 wurde am **14. November 2023** als LTS-Version (Long Term Support) veröffentlicht und erhält damit für mindestens drei Jahre nach Release weiterhin Support, Updates und Fehlerbehebungen.
 
-Wie üblich bringt .NET 8 Unterstützung für eine neue Version der C#-Sprache mit, nämlich C# 12. Sehen Sie sich unsere eigene Seite zu [Neuigkeiten in C# 12](/2023/06/whats-new-in-c-12/) an.
+Wie üblich bringt .NET 8 Unterstützung für eine neue Version der C#-Sprache mit, nämlich C# 12. Sehen Sie sich unsere eigene Seite zu [Neuigkeiten in C# 12](/de/2023/06/whats-new-in-c-12/) an.
 
 Tauchen wir in die Liste der Änderungen und neuen Features in .NET 8 ein:
 
@@ -41,7 +41,7 @@ Tauchen wir in die Liste der Änderungen und neuen Features in .NET 8 ein:
 -   Source Generator für Konfigurationsbindung
 -   Verbesserungen bei Reflection
     -   Schluss mit Reflection: lernen Sie [UnsafeAccessorAttribute](/de/2023/10/unsafe-accessor/) kennen (siehe [Performance-Benchmarks](/de/2023/11/net-8-performance-unsafeaccessor-vs-reflection/))
-    -   [Aktualisieren von `readonly`-Feldern](/2023/06/whats-new-in-net-8/)
+    -   [Aktualisieren von `readonly`-Feldern](/de/2023/06/whats-new-in-net-8/)
 -   Native AOT-Unterstützung
 -   Performance-Verbesserungen
 -   .NET-Container-Images

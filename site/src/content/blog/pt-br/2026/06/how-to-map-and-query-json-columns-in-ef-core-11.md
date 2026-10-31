@@ -128,7 +128,7 @@ FROM [Blogs] AS [b]
 WHERE JSON_CONTAINS([b].[Tags], 'ef-core') = 1
 ```
 
-Isso substitui a tradução antiga e mais lenta baseada em `OPENJSON`, e o `JSON_CONTAINS` pode usar um índice JSON se houver um definido. Cobri essa tradução em detalhe no [artigo sobre EF Core 11 e JSON_CONTAINS](/2026/04/efcore-11-json-contains-sql-server-2025/), incluindo a troca de nível de compatibilidade que a ativa. Um ponto delicado: o `JSON_CONTAINS` não consegue pesquisar por null, então o EF só o emite quando consegue provar que um lado não admite null (uma constante não nula, ou uma coluna ou elemento não anulável). Quando não consegue, recorre à forma `OPENJSON` para que a consulta ainda retorne a resposta correta.
+Isso substitui a tradução antiga e mais lenta baseada em `OPENJSON`, e o `JSON_CONTAINS` pode usar um índice JSON se houver um definido. Cobri essa tradução em detalhe no [artigo sobre EF Core 11 e JSON_CONTAINS](/pt-br/2026/04/efcore-11-json-contains-sql-server-2025/), incluindo a troca de nível de compatibilidade que a ativa. Um ponto delicado: o `JSON_CONTAINS` não consegue pesquisar por null, então o EF só o emite quando consegue provar que um lado não admite null (uma constante não nula, ou uma coluna ou elemento não anulável). Quando não consegue, recorre à forma `OPENJSON` para que a consulta ainda retorne a resposta correta.
 
 ### Pesquisa com caminho e modo específicos: EF.Functions.JsonContains
 
@@ -183,7 +183,7 @@ SET [Details].modify('$.Viewers', JSON_VALUE([b].[Details], '$.Viewers' RETURNIN
 FROM [Blogs] AS [b]
 ```
 
-Um requisito firme: `ExecuteUpdate` em JSON só funciona quando o tipo é mapeado como um *tipo complexo*. Não funciona para tipos de entidade owned. Esta é a razão mais concreta para preferir tipos complexos em código novo, e o compromisso mais amplo entre [`ExecuteUpdate` e carregar entidades para depois chamar SaveChanges](/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/) também se aplica aqui.
+Um requisito firme: `ExecuteUpdate` em JSON só funciona quando o tipo é mapeado como um *tipo complexo*. Não funciona para tipos de entidade owned. Esta é a razão mais concreta para preferir tipos complexos em código novo, e o compromisso mais amplo entre [`ExecuteUpdate` e carregar entidades para depois chamar SaveChanges](/pt-br/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/) também se aplica aqui.
 
 ## As colunas JSON agora funcionam com herança TPT e TPC
 
@@ -221,7 +221,7 @@ Se você mantém um modelo de domínio com uma hierarquia de herança real, esta
 
 ## Casos limítrofes que mordem
 
-**Semântica de owned versus complexo.** Com tipos de entidade owned, atribuir um documento a outro (`blog.BillingDetails = blog.ShippingDetails`) lança uma exceção, porque a mesma instância de entidade não pode ser rastreada duas vezes. Os tipos complexos são comparados e atribuídos por valor, então a atribuição apenas copia os campos. Se você ainda está com tipos owned para JSON, migrar para tipos complexos elimina toda uma categoria desses bugs; combina bem com a disciplina de [usar records com EF Core 11 corretamente](/2026/04/how-to-use-records-with-ef-core-11-correctly/) para formas de valor imutáveis.
+**Semântica de owned versus complexo.** Com tipos de entidade owned, atribuir um documento a outro (`blog.BillingDetails = blog.ShippingDetails`) lança uma exceção, porque a mesma instância de entidade não pode ser rastreada duas vezes. Os tipos complexos são comparados e atribuídos por valor, então a atribuição apenas copia os campos. Se você ainda está com tipos owned para JSON, migrar para tipos complexos elimina toda uma categoria desses bugs; combina bem com a disciplina de [usar records com EF Core 11 corretamente](/pt-br/2026/04/how-to-use-records-with-ef-core-11-correctly/) para formas de valor imutáveis.
 
 **Tipos complexos struct ainda não podem estar em coleções.** O EF Core 10 adicionou suporte de `struct` e `record struct` para tipos complexos, o que combina bem com sua semântica de valor. Mas uma *coleção* de tipos complexos struct não é suportada atualmente. Use uma classe se o tipo aninhado vive em uma lista.
 
@@ -229,7 +229,7 @@ Se você mantém um modelo de domínio com uma hierarquia de herança real, esta
 
 **A migração de nvarchar para json é automática.** Elevar o nível de compatibilidade para 170 reescreve as colunas JSON `nvarchar(max)` existentes para o tipo `json` nativo na próxima migração. Revise essa migração antes de aplicá-la em produção; é uma mudança de esquema em cada coluna JSON de uma vez.
 
-**Indexação.** Um índice JSON é o que faz o `JSON_CONTAINS` e as buscas por caminho serem rápidos em escala. O tipo `json` nativo suporta `CREATE JSON INDEX`; colunas de texto puro não. Se suas consultas JSON são caminhos críticos, o tipo nativo mais um índice é a diferença entre um seek e uma varredura completa, a mesma lição que aparece nas [mudanças disruptivas da migração do EF Core 6 para o 11](/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/) em torno dos planos de consulta.
+**Indexação.** Um índice JSON é o que faz o `JSON_CONTAINS` e as buscas por caminho serem rápidos em escala. O tipo `json` nativo suporta `CREATE JSON INDEX`; colunas de texto puro não. Se suas consultas JSON são caminhos críticos, o tipo nativo mais um índice é a diferença entre um seek e uma varredura completa, a mesma lição que aparece nas [mudanças disruptivas da migração do EF Core 6 para o 11](/pt-br/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/) em torno dos planos de consulta.
 
 A versão curta: opte por `[ComplexType]` mais `ToJson()`, aponte para o SQL Server 2025 para que a coluna seja `json` de verdade, e depois trate o documento como qualquer outra parte do seu modelo em LINQ. O EF Core 11 traduz a filtragem, o `Contains` do array, as verificações de caminho e até as atualizações em massa para funções JSON do lado do servidor, então o documento nunca precisa fazer uma ida à memória só para ser consultado.
 

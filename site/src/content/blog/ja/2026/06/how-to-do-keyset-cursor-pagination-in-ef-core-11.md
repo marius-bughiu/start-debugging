@@ -191,7 +191,7 @@ static class Cursor
 }
 ```
 
-クエリ上の `AsNoTracking()` に注目してください。これらは読み取り専用のリスト行なので、変更トラッカーのコストを払う理由はありません。それがいつ重要になるかが分からない場合は、[EF Core 11 における AsNoTracking と AsNoTrackingWithIdentityResolution の違い](/2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11/)を参照してください。アクセスの多いリストエンドポイントでは、このクエリは[コンパイル済みクエリ](/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/)の有力な候補でもあります。リクエスト間で形が決して変わらないからです。
+クエリ上の `AsNoTracking()` に注目してください。これらは読み取り専用のリスト行なので、変更トラッカーのコストを払う理由はありません。それがいつ重要になるかが分からない場合は、[EF Core 11 における AsNoTracking と AsNoTrackingWithIdentityResolution の違い](/ja/2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11/)を参照してください。アクセスの多いリストエンドポイントでは、このクエリは[コンパイル済みクエリ](/ja/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/)の有力な候補でもあります。リクエスト間で形が決して変わらないからです。
 
 ## インデックスは省略可能ではない
 
@@ -204,7 +204,7 @@ modelBuilder.Entity<Post>()
     .IsDescending(true, true);
 ```
 
-公式ガイダンスは[インデックスのセクション](https://learn.microsoft.com/en-us/ef/core/querying/pagination)でこれについて率直です: インデックスはページネーションの並べ替えに対応しなければなりません。`(CreatedAt DESC, PostId DESC)` で並べ替えているのに `(CreatedAt ASC, PostId ASC)` でインデックスを作ると、多くのデータベースはインデックスを逆方向にスキャンできますが、3 列目を加えたり方向が一致しなくなったりした瞬間に、プランナーはフィルター済みのセット全体に対するソートにフォールバックし、コスト一定のページは失われます。インデックスの方向は契約の一部であって、些細な詳細ではありません。これは、偶発的な [N+1 クエリ](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)と同じ種類の「クエリプランが頼んでいないことをしている」問題です: LINQ は問題なく見えるのに、プランが本当の話を語ります。だから、出荷する前に一度、実際の実行プランを確認してください。
+公式ガイダンスは[インデックスのセクション](https://learn.microsoft.com/en-us/ef/core/querying/pagination)でこれについて率直です: インデックスはページネーションの並べ替えに対応しなければなりません。`(CreatedAt DESC, PostId DESC)` で並べ替えているのに `(CreatedAt ASC, PostId ASC)` でインデックスを作ると、多くのデータベースはインデックスを逆方向にスキャンできますが、3 列目を加えたり方向が一致しなくなったりした瞬間に、プランナーはフィルター済みのセット全体に対するソートにフォールバックし、コスト一定のページは失われます。インデックスの方向は契約の一部であって、些細な詳細ではありません。これは、偶発的な [N+1 クエリ](/ja/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)と同じ種類の「クエリプランが頼んでいないことをしている」問題です: LINQ は問題なく見えるのに、プランが本当の話を語ります。だから、出荷する前に一度、実際の実行プランを確認してください。
 
 ## 生の SQL で見たことのあるタプル構文を使わない理由
 
@@ -226,11 +226,11 @@ modelBuilder.Entity<Post>()
 
 ## 関連記事
 
-- [EF Core 11 でクエリ分割を使ってデカルト爆発を回避する方法](/2026/06/how-to-use-query-splitting-to-avoid-a-cartesian-explosion-in-ef-core-11/)
-- [EF Core 11 における AsNoTracking と AsNoTrackingWithIdentityResolution の違い](/2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11/)
-- [EF Core 11 で N+1 クエリを検出する方法](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)
-- [ホットパス向けに EF Core でコンパイル済みクエリを使う方法](/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/)
-- [EF Core 11 で IAsyncEnumerable を使う方法](/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/)
+- [EF Core 11 でクエリ分割を使ってデカルト爆発を回避する方法](/ja/2026/06/how-to-use-query-splitting-to-avoid-a-cartesian-explosion-in-ef-core-11/)
+- [EF Core 11 における AsNoTracking と AsNoTrackingWithIdentityResolution の違い](/ja/2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11/)
+- [EF Core 11 で N+1 クエリを検出する方法](/ja/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)
+- [ホットパス向けに EF Core でコンパイル済みクエリを使う方法](/ja/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/)
+- [EF Core 11 で IAsyncEnumerable を使う方法](/ja/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/)
 
 ## ソース
 

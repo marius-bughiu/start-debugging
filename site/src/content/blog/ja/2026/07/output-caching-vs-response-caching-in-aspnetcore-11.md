@@ -125,10 +125,10 @@ public sealed class CatalogController : ControllerBase
   });
   ```
 
-- **高コストなエンドポイントにバースト的なトラフィックが来ると予想している。** リソースロックがデフォルトで有効なので、ホットなエントリの有効期限が切れて 100 件のリクエストが一斉に到着しても、再生成するのは最初の 1 件だけで、残りは待機します。レスポンスキャッシュはサンダリングハード問題に対して何もしません。これは、レスポンス全体のキャッシュではなく[HybridCache がデータキャッシュのために解決する](/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/)のと同じ種類の問題です。
+- **高コストなエンドポイントにバースト的なトラフィックが来ると予想している。** リソースロックがデフォルトで有効なので、ホットなエントリの有効期限が切れて 100 件のリクエストが一斉に到着しても、再生成するのは最初の 1 件だけで、残りは待機します。レスポンスキャッシュはサンダリングハード問題に対して何もしません。これは、レスポンス全体のキャッシュではなく[HybridCache がデータキャッシュのために解決する](/ja/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/)のと同じ種類の問題です。
 - **複数のインスタンスを動かしている。** インメモリストアを `AddStackExchangeRedisOutputCache` で Redis に差し替えれば、1 つのノードでのタグ無効化がすべてのノードをクリアします。レスポンスキャッシュはノードをまたげません。
 
-名前付きポリシー、`MapGroup`、Redis ストアを含む完全なエンドツーエンドのセットアップは、[minimal API に出力キャッシュを追加する方法](/2026/07/how-to-add-output-caching-to-a-minimal-api-in-aspnetcore-11/)で解説しています。
+名前付きポリシー、`MapGroup`、Redis ストアを含む完全なエンドツーエンドのセットアップは、[minimal API に出力キャッシュを追加する方法](/ja/2026/07/how-to-add-output-caching-to-a-minimal-api-in-aspnetcore-11/)で解説しています。
 
 ## レスポンスキャッシュを選ぶべきとき
 
@@ -169,11 +169,11 @@ ASP.NET Core 11 では出力キャッシュをデフォルトにしましょう�
 
 ## 関連記事
 
-- [ASP.NET Core 11 で minimal API に出力キャッシュを追加する方法](/2026/07/how-to-add-output-caching-to-a-minimal-api-in-aspnetcore-11/)
-- [ASP.NET Core 11 で Redis を L2 キャッシュとして HybridCache を使う方法](/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/)
-- [.NET 11 における HybridCache と IMemoryCache と IDistributedCache](/2026/06/hybridcache-vs-imemorycache-vs-idistributedcache-in-dotnet-11/)
-- [ASP.NET Core 11 で MapGroup を使って minimal API エンドポイントを整理する方法](/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)
-- [ASP.NET Core 11 の API にレスポンス圧縮を追加する方法](/2026/07/how-to-add-response-compression-to-an-aspnetcore-11-api/)
+- [ASP.NET Core 11 で minimal API に出力キャッシュを追加する方法](/ja/2026/07/how-to-add-output-caching-to-a-minimal-api-in-aspnetcore-11/)
+- [ASP.NET Core 11 で Redis を L2 キャッシュとして HybridCache を使う方法](/ja/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/)
+- [.NET 11 における HybridCache と IMemoryCache と IDistributedCache](/ja/2026/06/hybridcache-vs-imemorycache-vs-idistributedcache-in-dotnet-11/)
+- [ASP.NET Core 11 で MapGroup を使って minimal API エンドポイントを整理する方法](/ja/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)
+- [ASP.NET Core 11 の API にレスポンス圧縮を追加する方法](/ja/2026/07/how-to-add-response-compression-to-an-aspnetcore-11-api/)
 
 ## Sources
 

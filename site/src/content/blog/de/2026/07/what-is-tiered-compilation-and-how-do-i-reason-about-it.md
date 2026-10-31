@@ -79,7 +79,7 @@ Das ist eine Optimierung, die ein statischer Compiler nicht durchführen kann, d
 </PropertyGroup>
 ```
 
-Der Kompromiss besteht darin, dass der instrumentierte Tier-0-Code geringfügig langsamer und geringfügig größer ist als einfacher Tier-0-Code, und das Tier-1-Ergebnis ist besser. Für einen Server, der stundenlang läuft, ist das ein leichter Gewinn. Für eine kurzlebige Funktion, die endet, bevor irgendetwas Tier 1 erreicht, ist die Instrumentierung reine Kosten ohne Nutzen, was einer der Gründe ist, warum kaltstartsensible Arbeitslasten dies manchmal abschalten. Eine ausführlichere Behandlung dieses Szenarios finden Sie im Leitfaden zum [Reduzieren der Kaltstartzeit einer .NET-11-AWS-Lambda](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/).
+Der Kompromiss besteht darin, dass der instrumentierte Tier-0-Code geringfügig langsamer und geringfügig größer ist als einfacher Tier-0-Code, und das Tier-1-Ergebnis ist besser. Für einen Server, der stundenlang läuft, ist das ein leichter Gewinn. Für eine kurzlebige Funktion, die endet, bevor irgendetwas Tier 1 erreicht, ist die Instrumentierung reine Kosten ohne Nutzen, was einer der Gründe ist, warum kaltstartsensible Arbeitslasten dies manchmal abschalten. Eine ausführlichere Behandlung dieses Szenarios finden Sie im Leitfaden zum [Reduzieren der Kaltstartzeit einer .NET-11-AWS-Lambda](/de/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/).
 
 ## Wie Sie das Tiering tatsächlich in Aktion sehen
 
@@ -91,9 +91,9 @@ dotnet-trace collect --process-id 1234 \
   --providers Microsoft-Windows-DotNETRuntime:0x1000:5
 ```
 
-Die Ereignisse `MethodJittingStarted` und `MethodLoadVerbose` tragen ein Feld für die Optimierungsstufe, sodass eine Methode, die zweimal auftaucht, zuerst als Tier 0 und dann als Tier 1, die Beförderung ist, nach der Sie suchen. Eine Anleitung zum Lesen dieser Traces finden Sie im Beitrag über das [Profiling einer .NET-Anwendung mit dotnet-trace](/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output/).
+Die Ereignisse `MethodJittingStarted` und `MethodLoadVerbose` tragen ein Feld für die Optimierungsstufe, sodass eine Methode, die zweimal auftaucht, zuerst als Tier 0 und dann als Tier 1, die Beförderung ist, nach der Sie suchen. Eine Anleitung zum Lesen dieser Traces finden Sie im Beitrag über das [Profiling einer .NET-Anwendung mit dotnet-trace](/de/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output/).
 
-Wenn Sie den Maschinencode sehen möchten, den der JIT auf jeder Stufe erzeugt hat, gibt `DOTNET_JitDisasmSummary=1` eine Zeile pro Methode mit ihrem Tier aus, und wenn Sie `DOTNET_JitDisasm` auf einen Methodennamen setzen, wird der tatsächliche Assembler-Code ausgegeben. Werkzeuge wie der [Disassembly-Viewer von Rider 2026.1](/2026/04/rider-2026-1-asm-viewer-jit-nativeaot-disassembly/) legen dieselbe Ausgabe offen, ohne dass Sie mit Umgebungsvariablen ringen müssen. Das Vergleichen des Tier-0- und Tier-1-Disassemblys derselben Methode ist der schnellste Weg, ein Gespür dafür zu entwickeln, was "optimiert" einbringt.
+Wenn Sie den Maschinencode sehen möchten, den der JIT auf jeder Stufe erzeugt hat, gibt `DOTNET_JitDisasmSummary=1` eine Zeile pro Methode mit ihrem Tier aus, und wenn Sie `DOTNET_JitDisasm` auf einen Methodennamen setzen, wird der tatsächliche Assembler-Code ausgegeben. Werkzeuge wie der [Disassembly-Viewer von Rider 2026.1](/de/2026/04/rider-2026-1-asm-viewer-jit-nativeaot-disassembly/) legen dieselbe Ausgabe offen, ohne dass Sie mit Umgebungsvariablen ringen müssen. Das Vergleichen des Tier-0- und Tier-1-Disassemblys derselben Methode ist der schnellste Weg, ein Gespür dafür zu entwickeln, was "optimiert" einbringt.
 
 ## Die Messfalle, in die jeder tappt
 
@@ -110,17 +110,17 @@ Die Standardeinstellungen sind gut. Das .NET-Team stimmt sie an einer riesigen S
 - `TieredCompilationQuickJitForLoops` (env `DOTNET_TC_QuickJitForLoops`, standardmäßig aktiviert seit .NET 7 auf x64/arm64): zusammen mit OSR selten eine Änderung wert.
 - `TieredPGO` (env `DOTNET_TieredPGO`, standardmäßig aktiviert seit .NET 8): das, was Sie für ultrakurzlebige Prozesse legitim deaktivieren könnten, oder für eine .NET-6/7-Anwendung aktivieren, die dem Standardwechsel vorausging.
 
-Alle diese entsprechen MSBuild-Eigenschaften in der `.csproj` und `System.Runtime.*`-Schlüsseln in der `runtimeconfig.json`, dokumentiert in der Microsoft-Referenz zu den [Konfigurationseinstellungen für die Kompilierung](https://learn.microsoft.com/en-us/dotnet/core/runtime-config/compilation). Wenn Sie den gestuften JIT gegen den vollständigen Verzicht auf den JIT abwägen, finden Sie die Kompromisse in [Native AOT vs ReadyToRun vs reiner JIT](/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/) und in der tiefergehenden Betrachtung, [was Native AOT Sie kostet](/2026/06/what-is-native-aot-and-what-does-it-cost-you/), da AOT-Code überhaupt nie die Neuoptimierung von Dynamic PGO erhält.
+Alle diese entsprechen MSBuild-Eigenschaften in der `.csproj` und `System.Runtime.*`-Schlüsseln in der `runtimeconfig.json`, dokumentiert in der Microsoft-Referenz zu den [Konfigurationseinstellungen für die Kompilierung](https://learn.microsoft.com/en-us/dotnet/core/runtime-config/compilation). Wenn Sie den gestuften JIT gegen den vollständigen Verzicht auf den JIT abwägen, finden Sie die Kompromisse in [Native AOT vs ReadyToRun vs reiner JIT](/de/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/) und in der tiefergehenden Betrachtung, [was Native AOT Sie kostet](/de/2026/06/what-is-native-aot-and-what-does-it-cost-you/), da AOT-Code überhaupt nie die Neuoptimierung von Dynamic PGO erhält.
 
 Das Denkmodell, das Sie sich merken sollten: Ihr Prozess startet in billigem, schnell zu erzeugendem Tier-0-Code, der unauffällig Notizen macht; eine kleine Zahl von Methoden beweist, dass sie heiß sind; ein Hintergrund-Thread schreibt genau diese Methoden mit dem vollständigen, durch die Notizen informierten Optimierer neu; und OSR fängt alles ab, was in einer Schleife feststeckt, die das Aufrufzählen verpassen würde. Sobald Sie das in einem Trace geschehen sehen können, hört Tiered Compilation auf, eine Blackbox zu sein, und wird zu einem Werkzeug, über das Sie nachdenken können.
 
 ## Verwandt
 
-- [Native AOT vs ReadyToRun vs reiner JIT in .NET 11](/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/)
-- [Was ist Native AOT und was kostet es Sie?](/2026/06/what-is-native-aot-and-what-does-it-cost-you/)
-- [Wie Sie eine .NET-Anwendung mit dotnet-trace profilieren und die Ausgabe lesen](/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output/)
-- [Wie Sie die Kaltstartzeit einer .NET-11-AWS-Lambda reduzieren](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/)
-- [Der ASM-Viewer von Rider 2026.1 für JIT- und Native-AOT-Disassembly](/2026/04/rider-2026-1-asm-viewer-jit-nativeaot-disassembly/)
+- [Native AOT vs ReadyToRun vs reiner JIT in .NET 11](/de/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/)
+- [Was ist Native AOT und was kostet es Sie?](/de/2026/06/what-is-native-aot-and-what-does-it-cost-you/)
+- [Wie Sie eine .NET-Anwendung mit dotnet-trace profilieren und die Ausgabe lesen](/de/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output/)
+- [Wie Sie die Kaltstartzeit einer .NET-11-AWS-Lambda reduzieren](/de/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/)
+- [Der ASM-Viewer von Rider 2026.1 für JIT- und Native-AOT-Disassembly](/de/2026/04/rider-2026-1-asm-viewer-jit-nativeaot-disassembly/)
 
 ## Quellen
 

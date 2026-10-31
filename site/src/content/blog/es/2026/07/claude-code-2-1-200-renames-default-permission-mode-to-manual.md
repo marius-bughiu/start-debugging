@@ -40,7 +40,7 @@ Si programas scripts con Claude Code o compartes una configuración versionada c
 
 El segundo cambio es el que vale la pena señalar en la revisión de código. La herramienta `AskUserQuestion`, que es como el agente te presenta una decisión de opción múltiple a mitad de una tarea, solía continuar automáticamente después de un periodo de inactividad, eligiendo una opción resaltada si te alejabas. Eso es conveniente hasta el momento en que te compromete de forma silenciosa con una rama de trabajo que no leíste.
 
-En 2.1.200 estos diálogos ya no continúan automáticamente de forma predeterminada. El agente te espera. Si realmente quieres el antiguo comportamiento de alejarte, activas un tiempo de espera por inactividad de forma explícita a través de `/config` en lugar de obtenerlo lo hayas pedido o no. Este es el mismo instinto de "no decidir cosas irreversibles en nombre del usuario" que hay detrás de [2.1.183 bloqueando comandos destructivos de git e IaC en el modo automático](/2026/06/claude-code-2-1-183-auto-mode-blocks-destructive-commands/).
+En 2.1.200 estos diálogos ya no continúan automáticamente de forma predeterminada. El agente te espera. Si realmente quieres el antiguo comportamiento de alejarte, activas un tiempo de espera por inactividad de forma explícita a través de `/config` en lugar de obtenerlo lo hayas pedido o no. Este es el mismo instinto de "no decidir cosas irreversibles en nombre del usuario" que hay detrás de [2.1.183 bloqueando comandos destructivos de git e IaC en el modo automático](/es/2026/06/claude-code-2-1-183-auto-mode-blocks-destructive-commands/).
 
 ## El resto de la versión
 

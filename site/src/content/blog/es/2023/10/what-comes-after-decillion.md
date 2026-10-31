@@ -40,4 +40,4 @@ Pero hay más. Si vas más allá de undecillion, tienes:
 -   vigintillion (63 ceros)
 -   centillion (303 ceros)
 
-¿Te interesa saber cuánto tardaría un PC en contar hasta un billón estadounidense (trillion)? Echa un vistazo a este artículo: [Counting up to one trillion](/2013/10/counting-up-to-one-trillion/).
+¿Te interesa saber cuánto tardaría un PC en contar hasta un billón estadounidense (trillion)? Echa un vistazo a este artículo: [Counting up to one trillion](/es/2013/10/counting-up-to-one-trillion/).

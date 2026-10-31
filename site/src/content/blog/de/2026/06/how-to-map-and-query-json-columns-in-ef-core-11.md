@@ -128,7 +128,7 @@ FROM [Blogs] AS [b]
 WHERE JSON_CONTAINS([b].[Tags], 'ef-core') = 1
 ```
 
-Das ersetzt die ältere, langsamere `OPENJSON`-basierte Übersetzung, und `JSON_CONTAINS` kann einen JSON-Index verwenden, falls einer definiert ist. Ich habe diese Übersetzung ausführlich im [Artikel über EF Core 11 und JSON_CONTAINS](/2026/04/efcore-11-json-contains-sql-server-2025/) behandelt, einschließlich des Kompatibilitätsebenen-Schalters, der sie aktiviert. Eine scharfe Kante: `JSON_CONTAINS` kann nicht nach null suchen, daher emittiert EF es nur, wenn es beweisen kann, dass eine Seite nicht nullbar ist (eine nicht-null-Konstante oder eine nicht nullbare Spalte oder ein nicht nullbares Element). Wenn es das nicht kann, fällt es auf die `OPENJSON`-Form zurück, damit die Abfrage weiterhin die richtige Antwort liefert.
+Das ersetzt die ältere, langsamere `OPENJSON`-basierte Übersetzung, und `JSON_CONTAINS` kann einen JSON-Index verwenden, falls einer definiert ist. Ich habe diese Übersetzung ausführlich im [Artikel über EF Core 11 und JSON_CONTAINS](/de/2026/04/efcore-11-json-contains-sql-server-2025/) behandelt, einschließlich des Kompatibilitätsebenen-Schalters, der sie aktiviert. Eine scharfe Kante: `JSON_CONTAINS` kann nicht nach null suchen, daher emittiert EF es nur, wenn es beweisen kann, dass eine Seite nicht nullbar ist (eine nicht-null-Konstante oder eine nicht nullbare Spalte oder ein nicht nullbares Element). Wenn es das nicht kann, fällt es auf die `OPENJSON`-Form zurück, damit die Abfrage weiterhin die richtige Antwort liefert.
 
 ### Pfad- und modusspezifische Suche: EF.Functions.JsonContains
 
@@ -183,7 +183,7 @@ SET [Details].modify('$.Viewers', JSON_VALUE([b].[Details], '$.Viewers' RETURNIN
 FROM [Blogs] AS [b]
 ```
 
-Eine feste Anforderung: `ExecuteUpdate` in JSON funktioniert nur, wenn der Typ als *komplexer Typ* gemappt ist. Es funktioniert nicht für Owned-Entity-Typen. Dies ist der konkreteste Grund, komplexe Typen für neuen Code zu bevorzugen, und der breitere Kompromiss zwischen [`ExecuteUpdate` und dem Laden von Entitäten mit anschließendem SaveChanges](/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/) gilt auch hier.
+Eine feste Anforderung: `ExecuteUpdate` in JSON funktioniert nur, wenn der Typ als *komplexer Typ* gemappt ist. Es funktioniert nicht für Owned-Entity-Typen. Dies ist der konkreteste Grund, komplexe Typen für neuen Code zu bevorzugen, und der breitere Kompromiss zwischen [`ExecuteUpdate` und dem Laden von Entitäten mit anschließendem SaveChanges](/de/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/) gilt auch hier.
 
 ## JSON-Spalten funktionieren jetzt mit TPT- und TPC-Vererbung
 
@@ -221,7 +221,7 @@ Wenn Sie ein Domänenmodell mit einer echten Vererbungshierarchie pflegen, ist d
 
 ## Randfälle, die beißen
 
-**Owned- versus komplexe Semantik.** Bei Owned-Entity-Typen wirft das Zuweisen eines Dokuments an ein anderes (`blog.BillingDetails = blog.ShippingDetails`) eine Ausnahme, weil dieselbe Entity-Instanz nicht zweimal verfolgt werden kann. Komplexe Typen werden nach Wert verglichen und zugewiesen, sodass die Zuweisung einfach die Felder kopiert. Wenn Sie für JSON noch bei Owned-Typen sind, beseitigt die Migration zu komplexen Typen eine ganze Kategorie dieser Bugs; das passt gut zur Disziplin, [Records mit EF Core 11 korrekt zu verwenden](/2026/04/how-to-use-records-with-ef-core-11-correctly/) für unveränderliche Wertformen.
+**Owned- versus komplexe Semantik.** Bei Owned-Entity-Typen wirft das Zuweisen eines Dokuments an ein anderes (`blog.BillingDetails = blog.ShippingDetails`) eine Ausnahme, weil dieselbe Entity-Instanz nicht zweimal verfolgt werden kann. Komplexe Typen werden nach Wert verglichen und zugewiesen, sodass die Zuweisung einfach die Felder kopiert. Wenn Sie für JSON noch bei Owned-Typen sind, beseitigt die Migration zu komplexen Typen eine ganze Kategorie dieser Bugs; das passt gut zur Disziplin, [Records mit EF Core 11 korrekt zu verwenden](/de/2026/04/how-to-use-records-with-ef-core-11-correctly/) für unveränderliche Wertformen.
 
 **Struct-komplexe Typen können noch nicht in Sammlungen sein.** EF Core 10 fügte `struct`- und `record struct`-Unterstützung für komplexe Typen hinzu, was gut zu ihrer Wertsemantik passt. Aber eine *Sammlung* von Struct-komplexen Typen wird derzeit nicht unterstützt. Verwenden Sie eine Klasse, wenn der verschachtelte Typ in einer Liste lebt.
 
@@ -229,7 +229,7 @@ Wenn Sie ein Domänenmodell mit einer echten Vererbungshierarchie pflegen, ist d
 
 **Die Migration von nvarchar zu json ist automatisch.** Das Anheben der Kompatibilitätsebene auf 170 schreibt vorhandene `nvarchar(max)`-JSON-Spalten bei der nächsten Migration auf den nativen `json`-Typ um. Prüfen Sie diese Migration, bevor Sie sie in der Produktion anwenden; es ist eine Schemaänderung an jeder JSON-Spalte auf einmal.
 
-**Indizierung.** Ein JSON-Index ist das, was `JSON_CONTAINS` und Pfad-Lookups bei Skalierung schnell macht. Der native `json`-Typ unterstützt `CREATE JSON INDEX`; reine Textspalten nicht. Wenn Ihre JSON-Abfragen heiße Pfade sind, ist der native Typ plus ein Index der Unterschied zwischen einem Seek und einem vollständigen Scan, dieselbe Lektion, die in den [Breaking Changes der Migration von EF Core 6 zu 11](/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/) rund um Abfragepläne auftaucht.
+**Indizierung.** Ein JSON-Index ist das, was `JSON_CONTAINS` und Pfad-Lookups bei Skalierung schnell macht. Der native `json`-Typ unterstützt `CREATE JSON INDEX`; reine Textspalten nicht. Wenn Ihre JSON-Abfragen heiße Pfade sind, ist der native Typ plus ein Index der Unterschied zwischen einem Seek und einem vollständigen Scan, dieselbe Lektion, die in den [Breaking Changes der Migration von EF Core 6 zu 11](/de/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/) rund um Abfragepläne auftaucht.
 
 Die Kurzfassung: Greifen Sie zu `[ComplexType]` plus `ToJson()`, zielen Sie auf SQL Server 2025, damit die Spalte echtes `json` ist, und behandeln Sie das Dokument dann wie jeden anderen Teil Ihres Modells in LINQ. EF Core 11 übersetzt das Filtern, das Array-`Contains`, die Pfadprüfungen und sogar die Massenaktualisierungen zu serverseitigen JSON-Funktionen, sodass das Dokument nie eine Reise in den Speicher antreten muss, nur um abgefragt zu werden.
 

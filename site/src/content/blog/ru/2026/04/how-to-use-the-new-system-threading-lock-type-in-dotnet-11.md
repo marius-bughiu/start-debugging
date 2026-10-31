@@ -239,7 +239,7 @@ private readonly object _gate = new();
 
 - [Как использовать Channels вместо BlockingCollection в C#](/ru/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) разбирает паттерн producer/consumer, который часто заменяет локи целиком.
 - [Как отменить долго работающую Task в C# без deadlock](/ru/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/) — это компаньон по отмене для этого поста.
-- [.NET 9: конец lock(object)](/2026/01/net-9-the-end-of-lockobject/) — это новостная вводная по типу, написанная на релиз .NET 9.
+- [.NET 9: конец lock(object)](/ru/2026/01/net-9-the-end-of-lockobject/) — это новостная вводная по типу, написанная на релиз .NET 9.
 - [Как написать source generator для INotifyPropertyChanged](/ru/2026/04/how-to-write-a-source-generator-for-inotifypropertychanged/) показывает, какой генератор вам, возможно, придётся обновить под `Lock`.
 
 ## Источники

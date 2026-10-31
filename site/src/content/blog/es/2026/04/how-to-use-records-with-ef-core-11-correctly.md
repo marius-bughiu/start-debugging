@@ -196,7 +196,7 @@ De nuevo, el arreglo no es discutir con el runtime. Es mantener la igualdad por 
 
 ## Columnas JSON y records
 
-EF Core 7 añadió mapeo de columnas JSON, y EF Core 11 lo extiende más con [traducción de JSON_CONTAINS en SQL Server 2025](/2026/04/efcore-11-json-contains-sql-server-2025/) y tipos complejos dentro de documentos JSON. Los records posicionales son un encaje ergonómico para tipos JSON owned:
+EF Core 7 añadió mapeo de columnas JSON, y EF Core 11 lo extiende más con [traducción de JSON_CONTAINS en SQL Server 2025](/es/2026/04/efcore-11-json-contains-sql-server-2025/) y tipos complejos dentro de documentos JSON. Los records posicionales son un encaje ergonómico para tipos JSON owned:
 
 ```csharp
 // .NET 11, C# 14, EF Core 11
@@ -258,9 +258,9 @@ Esa es toda la regla general: clases para cosas con identidad, records para cosa
 
 ## Lecturas relacionadas
 
-- [EF Core 11 añade GetEntriesForState para saltar DetectChanges](/2026/04/efcore-11-changetracker-getentriesforstate/) cubre los internals del change tracker en los que se apoya este post.
-- [EF Core 11 poda joins de referencia innecesarios en split queries](/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/) es un buen complemento si tus entidades dependen mucho de las navigations.
-- [EF Core 11 traduce Contains a JSON_CONTAINS en SQL Server 2025](/2026/04/efcore-11-json-contains-sql-server-2025/) se enlaza con el patrón de record mapeado a JSON de arriba.
+- [EF Core 11 añade GetEntriesForState para saltar DetectChanges](/es/2026/04/efcore-11-changetracker-getentriesforstate/) cubre los internals del change tracker en los que se apoya este post.
+- [EF Core 11 poda joins de referencia innecesarios en split queries](/es/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/) es un buen complemento si tus entidades dependen mucho de las navigations.
+- [EF Core 11 traduce Contains a JSON_CONTAINS en SQL Server 2025](/es/2026/04/efcore-11-json-contains-sql-server-2025/) se enlaza con el patrón de record mapeado a JSON de arriba.
 - [Cómo devolver múltiples valores desde un método en C# 14](/es/2026/04/how-to-return-multiple-values-from-a-method-in-csharp-14/) profundiza en cuándo los records ganan sobre tuplas y clases a nivel de retorno de método.
 
 ## Fuentes

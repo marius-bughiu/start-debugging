@@ -160,7 +160,7 @@ app.Run();
 
 Auto モードの Blazor Web App はバンドルを待たないため、first paint でスタンドアロン WebAssembly に 5 倍差をつけて勝ちます。一方でスタンドアロン Server には勝てません。WebAssembly バンドルが読み込まれた後はメモリを消費してしまうからです。要点は「Auto がある一つの指標で最速」ということではありません。「Auto はけっして最遅にならない」ということです。
 
-.NET 11 SDK がどのように WASM バンドルをトリミングするかについてもっと深く知りたい方は、同じ trimmer 設定を使う [.NET 11 の新しい Blazor WebWorker テンプレート](/2026/04/dotnet-11-preview-2-blazor-webworker-template/) をご覧ください。
+.NET 11 SDK がどのように WASM バンドルをトリミングするかについてもっと深く知りたい方は、同じ trimmer 設定を使う [.NET 11 の新しい Blazor WebWorker テンプレート](/ja/2026/04/dotnet-11-preview-2-blazor-webworker-template/) をご覧ください。
 
 ## あなたに代わって決めてくれる落とし穴
 
@@ -172,7 +172,7 @@ Auto モードの Blazor Web App はバンドルを待たないため、first pa
 
 3. **HTTPS、antiforgery、認証状態は既定で cookie 経由で流れます。** WebAssembly コンポーネントは cross-origin のリクエストでこれらの cookie を見られません。Blazor Web App の WebAssembly 部分が外部 API を呼ぶ場合、ホスト cookie だけでは不十分で、OIDC トークン フローを上に重ねる必要があります。これは Blazor Server アプリを Web App テンプレートに移行する際に最もよくつまずくポイントです。
 
-antiforgery の観点については、[.NET 11 の Blazor SSR での TempData の挙動](/2026/04/blazor-ssr-tempdata-dotnet-11/) と [共有バリデーション ロジックのガイド](/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly/) が実践的なパターンを扱っています。
+antiforgery の観点については、[.NET 11 の Blazor SSR での TempData の挙動](/ja/2026/04/blazor-ssr-tempdata-dotnet-11/) と [共有バリデーション ロジックのガイド](/ja/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly/) が実践的なパターンを扱っています。
 
 ## 推奨の再掲
 
@@ -182,11 +182,11 @@ antiforgery の観点については、[.NET 11 の Blazor SSR での TempData �
 
 ## 関連
 
-- [ASP.NET Core 11 における Minimal APIs vs コントローラー](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/) — Blazor Web App が開くバックエンド API の意思決定について。
-- [.NET 11 で Blazor WebAssembly と Tailwind CSS を使う方法](/2026/05/how-to-use-tailwind-css-with-blazor-webassembly-in-dotnet-11/) — スタンドアロン WASM と Blazor Web App テンプレートのスタイル パイプラインの違いについて。
-- [サーバーと Blazor WebAssembly でバリデーション ロジックを共有する方法](/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly/) — Web App テンプレートが定式化する「共有プロジェクト」パターンの実践について。
-- [.NET 11 における Native AOT vs ReadyToRun vs JIT](/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/) — Server と WASM の双方に影響するコンパイル モードのトレードオフについて。
-- [.NET 11 Preview 3 における Blazor `Virtualize` の可変高対応](/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3/) — Auto モードのコンポーネント リストが恩恵を受ける新 API の 1 つ。
+- [ASP.NET Core 11 における Minimal APIs vs コントローラー](/ja/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/) — Blazor Web App が開くバックエンド API の意思決定について。
+- [.NET 11 で Blazor WebAssembly と Tailwind CSS を使う方法](/ja/2026/05/how-to-use-tailwind-css-with-blazor-webassembly-in-dotnet-11/) — スタンドアロン WASM と Blazor Web App テンプレートのスタイル パイプラインの違いについて。
+- [サーバーと Blazor WebAssembly でバリデーション ロジックを共有する方法](/ja/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly/) — Web App テンプレートが定式化する「共有プロジェクト」パターンの実践について。
+- [.NET 11 における Native AOT vs ReadyToRun vs JIT](/ja/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/) — Server と WASM の双方に影響するコンパイル モードのトレードオフについて。
+- [.NET 11 Preview 3 における Blazor `Virtualize` の可変高対応](/ja/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3/) — Auto モードのコンポーネント リストが恩恵を受ける新 API の 1 つ。
 
 ## 出典
 

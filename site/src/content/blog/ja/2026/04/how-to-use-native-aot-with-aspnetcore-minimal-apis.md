@@ -194,7 +194,7 @@ curl -s http://localhost:5000/todos | head -c 200
 
 ## Start Debugging の関連ガイド
 
-- Native AOT のレバーはより広いコールドスタートの物語の中にあります: [.NET 11 AWS Lambda コールドスタートのプレイブック](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/) は同じソースジェネレーター設定で AOT-on-`provided.al2023` のパスを歩みます。
+- Native AOT のレバーはより広いコールドスタートの物語の中にあります: [.NET 11 AWS Lambda コールドスタートのプレイブック](/ja/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/) は同じソースジェネレーター設定で AOT-on-`provided.al2023` のパスを歩みます。
 - AOT minimal API の上の OpenAPI については、[OpenAPI クライアント生成ガイド](/ja/2026/04/how-to-generate-strongly-typed-client-from-openapi-spec-dotnet-11/) が minimal API メタデータから型付き `HttpClient` への往復をカバーしています。
 - AOT プロジェクトは reflection ベースの JSON を禁じるので、[System.Text.Json でカスタム `JsonConverter` を書く](/ja/2026/04/how-to-write-a-custom-jsonconverter-in-system-text-json/) は組み込みの変換が足りないときの正しい入門です。
 - AOT 下では reflection ベースの診断が利用できないので、きれいな例外の物語はより重要になります: [ASP.NET Core 11 でグローバル例外フィルタを追加する](/ja/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) は完全に AOT 互換な `IExceptionHandler` パスを示します。

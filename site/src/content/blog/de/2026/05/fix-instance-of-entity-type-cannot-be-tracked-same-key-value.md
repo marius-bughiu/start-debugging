@@ -112,7 +112,7 @@ public async Task<IActionResult> Update(int id, CustomerDto dto)
 
 `AnyAsync` materialisiert keine Entität, also wird nichts verfolgt. `db.Update(updated)` hängt die neue Instanz im Zustand `Modified` an, und EF Core schreibt jede Eigenschaft als einen einzelnen `UPDATE`-Roundtrip. Der Kompromiss gegenüber Lösung 1 ist, dass jede Spalte über die Leitung geschrieben wird, schmutzig oder nicht, weil EF Core keine ursprünglichen Werte zum Vergleichen hat. Für breite Tabellen ist das verschwenderisch; für schmale Tabellen ist es der einfachste Code.
 
-Für umfassendere Muster dazu, was verfolgt wird und was nicht, siehe den Überblick in [der Change Tracker Entries API](/2026/04/efcore-11-changetracker-getentriesforstate/).
+Für umfassendere Muster dazu, was verfolgt wird und was nicht, siehe den Überblick in [der Change Tracker Entries API](/de/2026/04/efcore-11-changetracker-getentriesforstate/).
 
 ### 3. Lösen Sie die vorhandene Entität, dann hängen Sie Ihre an
 
@@ -176,7 +176,7 @@ Wenn Sie einen Kunden mit seinen Bestellungen eager laden und dann später `Atta
 
 ### Gemockter DbContext in Tests
 
-Wenn Sie einen gemockten `DbContext` zum Schreiben von Tests verwenden, implementiert das Mock oft die Identity Map nicht korrekt, sodass die Produktion auf diesen Fehler trifft und die Tests bestehen. Das Gegenteil passiert auch: Ein echter In-Memory-Provider verfolgt Entitäten, die das Mock nicht verfolgte, und der Test schlägt aus Gründen fehl, die nichts mit dem zu testenden System zu tun haben. Die Behebung ist, gegen einen echten Provider zu testen; der Leitfaden zu [DbContext-Mocking-Fallstricken](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) deckt ab, was das Mock leistet und was nicht.
+Wenn Sie einen gemockten `DbContext` zum Schreiben von Tests verwenden, implementiert das Mock oft die Identity Map nicht korrekt, sodass die Produktion auf diesen Fehler trifft und die Tests bestehen. Das Gegenteil passiert auch: Ein echter In-Memory-Provider verfolgt Entitäten, die das Mock nicht verfolgte, und der Test schlägt aus Gründen fehl, die nichts mit dem zu testenden System zu tun haben. Die Behebung ist, gegen einen echten Provider zu testen; der Leitfaden zu [DbContext-Mocking-Fallstricken](/de/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) deckt ab, was das Mock leistet und was nicht.
 
 ### EnableSensitiveDataLogging ist Ihr Debugger
 
@@ -208,7 +208,7 @@ Das ist Nebenläufigkeit, kein Schlüsselkonflikt. Ein scoped `DbContext` ist ni
 
 ## Verwandt
 
-Für den breiteren EF Core Kontext siehe den Überblick zur [N+1 Query-Erkennung](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/), den Leitfaden zu [kompilierten Queries auf Hot Paths](/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/) und die Tour durch [Records als EF Core Entitäten](/2026/04/how-to-use-records-with-ef-core-11-correctly/), die ihre eigenen Identity-Map-Fallstricke rund um `with`-Ausdrücke hat. Wenn Sie diesen Fehler im Startup-Code statt in einem Request-Handler treffen, deckt die [DefaultConnection-Suchcheckliste](/2026/05/fix-no-connection-string-named-defaultconnection/) die Konfigurationsseite ab. Für Test-Fixtures, die Ihrem Code eine echte Datenbank übergeben, ist die [Testcontainers-Tour](/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers/) das sauberste Setup.
+Für den breiteren EF Core Kontext siehe den Überblick zur [N+1 Query-Erkennung](/de/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/), den Leitfaden zu [kompilierten Queries auf Hot Paths](/de/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/) und die Tour durch [Records als EF Core Entitäten](/de/2026/04/how-to-use-records-with-ef-core-11-correctly/), die ihre eigenen Identity-Map-Fallstricke rund um `with`-Ausdrücke hat. Wenn Sie diesen Fehler im Startup-Code statt in einem Request-Handler treffen, deckt die [DefaultConnection-Suchcheckliste](/de/2026/05/fix-no-connection-string-named-defaultconnection/) die Konfigurationsseite ab. Für Test-Fixtures, die Ihrem Code eine echte Datenbank übergeben, ist die [Testcontainers-Tour](/de/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers/) das sauberste Setup.
 
 ## Quellen
 

@@ -218,11 +218,11 @@ catch (Exception ex)
 
 ## Связанное
 
-- [Как правильно использовать records с EF Core 11](/2026/04/how-to-use-records-with-ef-core-11-correctly/) хорошо сочетается с потоковым чтением, когда ваши сущности неизменяемые.
-- [Одношаговые миграции EF Core 11 через `dotnet ef update add`](/2026/04/efcore-11-single-step-migrations-dotnet-ef-update-add/) покрывает сторону инструментов того же релиза.
-- [Стриминг задач с Task.WhenEach в .NET 9](/2026/01/streaming-tasks-with-net-9-task-wheneach/) для другого главного паттерна `IAsyncEnumerable<T>` в современном .NET.
-- [HttpClient GetFromJsonAsAsyncEnumerable](/2023/10/httpclient-get-json-as-asyncenumerable/) показывает тот же потоковый паттерн на стороне HTTP.
-- [EF Core 11 preview 3 подрезает reference-джойны в split-запросах](/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/) для контекста производительности того же релиза.
+- [Как правильно использовать records с EF Core 11](/ru/2026/04/how-to-use-records-with-ef-core-11-correctly/) хорошо сочетается с потоковым чтением, когда ваши сущности неизменяемые.
+- [Одношаговые миграции EF Core 11 через `dotnet ef update add`](/ru/2026/04/efcore-11-single-step-migrations-dotnet-ef-update-add/) покрывает сторону инструментов того же релиза.
+- [Стриминг задач с Task.WhenEach в .NET 9](/ru/2026/01/streaming-tasks-with-net-9-task-wheneach/) для другого главного паттерна `IAsyncEnumerable<T>` в современном .NET.
+- [HttpClient GetFromJsonAsAsyncEnumerable](/ru/2023/10/httpclient-get-json-as-asyncenumerable/) показывает тот же потоковый паттерн на стороне HTTP.
+- [EF Core 11 preview 3 подрезает reference-джойны в split-запросах](/ru/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/) для контекста производительности того же релиза.
 
 ## Источники
 

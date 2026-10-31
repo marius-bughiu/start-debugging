@@ -225,7 +225,7 @@ static decimal ParseAmount(ReadOnlySequence<byte> line)
 }
 ```
 
-これは冗長で、クオートされたフィールドを扱わず、実際のボトルネックを計測していない限り手を伸ばすべきではありません。引き換えに得られるのは、下のストレージが提供できる範囲の 10% 以内のスループットです。マネージドコードがコンマ探し以上のことをほぼしないからです。ホットパスに小さな区切りやセンチネルバイトの集合があるときに役立つ関連トリックは、[.NET 10 で導入された `SearchValues<T>`](/2026/01/net-10-performance-searchvalues/) で、集合内の任意のバイトのスキャンをベクトル化します。
+これは冗長で、クオートされたフィールドを扱わず、実際のボトルネックを計測していない限り手を伸ばすべきではありません。引き換えに得られるのは、下のストレージが提供できる範囲の 10% 以内のスループットです。マネージドコードがコンマ探し以上のことをほぼしないからです。ホットパスに小さな区切りやセンチネルバイトの集合があるときに役立つ関連トリックは、[.NET 10 で導入された `SearchValues<T>`](/ja/2026/01/net-10-performance-searchvalues/) で、集合内の任意のバイトのスキャンをベクトル化します。
 
 ## 本番で噛みつく落とし穴
 
@@ -247,7 +247,7 @@ using var reader = new StreamReader(zstd);
 // feed `reader` to CsvReader or parse lines directly
 ```
 
-新しい組み込み Zstandard サポートのコンテキストは、[.NET 11 のネイティブ Zstandard 圧縮](/2026/04/dotnet-11-zstandard-compression-system-io/) を参照してください。.NET 11 より前は `ZstdNet` NuGet パッケージが必要でしたが、System.IO.Compression 版は大幅に高速で P/Invoke の依存も避けます。
+新しい組み込み Zstandard サポートのコンテキストは、[.NET 11 のネイティブ Zstandard 圧縮](/ja/2026/04/dotnet-11-zstandard-compression-system-io/) を参照してください。.NET 11 より前は `ZstdNet` NuGet パッケージが必要でしたが、System.IO.Compression 版は大幅に高速で P/Invoke の依存も避けます。
 
 キャンセルは思っているより重要です。20 GB の CSV パースは数分のオペレーションです。呼び出し側が諦めたら、enumerator は次のレコードでそれに気づき `OperationCanceledException` を投げてほしい、最後まで走ってほしくありません。上の async バリアントはすべて `CancellationToken` を通します。同期の `File.ReadLines` ループでは、ループ本体で適切な間隔で `ct.ThrowIfCancellationRequested()` をチェックしてください (1000 行ごと、毎行ではなく)。
 

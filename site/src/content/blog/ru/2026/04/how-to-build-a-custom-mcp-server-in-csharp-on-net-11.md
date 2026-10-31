@@ -28,7 +28,7 @@ translationDate: 2026-04-29
 - **Ваша бизнес-логика уже на .NET.** Модели EF Core, аутентификация Microsoft.Identity.Web, плановые задачи Hangfire / Quartz, политики повторов Polly, внутреннее API через Refit. Переписывать что-либо из этого на Python или Node, чтобы агент мог это вызвать, -- пустая трата времени. C#-SDK позволяет поставить `[McpServerTool]` на метод и отгружать.
 - **Вы хотите стандартную модель хостинга .NET.** `IHostedService`, `IHttpClientFactory`, `IConfiguration`, структурированное журналирование через `Microsoft.Extensions.Logging`, OpenTelemetry. SDK подключается напрямую к `Host.CreateApplicationBuilder`, поэтому наблюдаемость и конфигурация выглядят так же, как в любом другом ASP.NET Core-сервисе.
 
-Для контекста по самому протоколу [более старый обзор обвязки `mcp` от Microsoft для .NET 10](/2026/01/microsoft-mcp-wiring-model-context-protocol-servers-from-c-on-net-10/) описывает мышление "контракт прежде всего"; этот пост -- конкретное how-to-обновление для .NET 11 и пост-1.0 SDK.
+Для контекста по самому протоколу [более старый обзор обвязки `mcp` от Microsoft для .NET 10](/ru/2026/01/microsoft-mcp-wiring-model-context-protocol-servers-from-c-on-net-10/) описывает мышление "контракт прежде всего"; этот пост -- конкретное how-to-обновление для .NET 11 и пост-1.0 SDK.
 
 ## Настройка проекта на .NET 11 SDK
 
@@ -355,7 +355,7 @@ app.Run();
 - Оберните планировщик Hangfire / Quartz и позвольте агенту инспектировать или запускать фоновые задачи.
 - Оберните внутренний клиент Refit вокруг вашего реального API с существующим auth-конвейером, чтобы агент общался с той же поверхностью, что и ваши приложения.
 
-Если вы в основном работаете на другом языке, [эквивалентный сервер на TypeScript, оборачивающий CLI](/ru/2026/04/how-to-build-an-mcp-server-in-typescript-that-wraps-a-cli/) покрывает Node.js с `@modelcontextprotocol/sdk`, а [руководство по Python с использованием официального SDK `mcp`](/2026/04/how-to-build-a-custom-mcp-server-in-python-with-the-official-sdk/) покрывает паттерн FastMCP. И если вы смотрите за пределы MCP -- на мульти-агентную оркестрацию на C#, [Microsoft Agent Framework 1.0](/ru/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) подхватывает там, где MCP останавливается, с планировщиками, мульти-агентным handoff и долговечным состоянием прогона.
+Если вы в основном работаете на другом языке, [эквивалентный сервер на TypeScript, оборачивающий CLI](/ru/2026/04/how-to-build-an-mcp-server-in-typescript-that-wraps-a-cli/) покрывает Node.js с `@modelcontextprotocol/sdk`, а [руководство по Python с использованием официального SDK `mcp`](/ru/2026/04/how-to-build-a-custom-mcp-server-in-python-with-the-official-sdk/) покрывает паттерн FastMCP. И если вы смотрите за пределы MCP -- на мульти-агентную оркестрацию на C#, [Microsoft Agent Framework 1.0](/ru/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) подхватывает там, где MCP останавливается, с планировщиками, мульти-агентным handoff и долговечным состоянием прогона.
 
 Самому MCP-серверу всё равно, оборачивает ли ваш инструмент базу SQLite, hub SignalR или 500-строчный доменный сервис. Ему нужны только типизированные параметры (атрибуты C# дают это бесплатно), значение возврата, которое SDK может сериализовать, и stdio-поток без заблудших байтов.
 

@@ -239,7 +239,7 @@ private readonly object _gate = new();
 
 - [C# で BlockingCollection の代わりに Channels を使う方法](/ja/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) はロックを丸ごと置き換えがちな producer/consumer パターンを扱います。
 - [C# で長時間実行する Task をデッドロックなく取り消す方法](/ja/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/) は本記事のキャンセル コンパニオンです。
-- [.NET 9: lock(object) の終焉](/2026/01/net-9-the-end-of-lockobject/) は .NET 9 リリース時に書かれたニュース調の型紹介です。
+- [.NET 9: lock(object) の終焉](/ja/2026/01/net-9-the-end-of-lockobject/) は .NET 9 リリース時に書かれたニュース調の型紹介です。
 - [INotifyPropertyChanged 用の Source Generator を書く方法](/ja/2026/04/how-to-write-a-source-generator-for-inotifypropertychanged/) は `Lock` 対応で更新が必要になりがちなジェネレーター像を示します。
 
 ## 出典

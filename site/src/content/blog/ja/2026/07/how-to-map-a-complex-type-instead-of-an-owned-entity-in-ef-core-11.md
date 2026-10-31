@@ -137,7 +137,7 @@ CREATE TABLE [Customers] (
 );
 ```
 
-JSON マッピングは、テーブル分割にはできない 1 つのことをもたらします。**マッピングされた型の内部のコレクション**です。テーブル分割でマッピングされた複合型は単一の値でなければなりませんが、JSON にマッピングされた複合型は `List<string>` や値オブジェクトのネストされたリストを含められます。ドキュメントの中へクエリすることも依然として可能です。SQL Server 2025 では、`context.Customers.Where(c => c.ShippingAddress.City == "Cluj")` は `JSON_VALUE` の検索に変換され、EF Core 11 は `EF.Functions.JsonPathExists` と `EF.Functions.JsonContains` を追加します。どちらも JSON にマッピングされた複合型に対して機能します。JSON にマッピングされたデータのクエリに関するより広い全体像については、[EF Core 11 で JSON 列をマッピングしてクエリする方法](/2026/06/how-to-map-and-query-json-columns-in-ef-core-11/)と[SQL Server 2025 で追加された JSON_CONTAINS の変換](/2026/04/efcore-11-json-contains-sql-server-2025/)を参照してください。
+JSON マッピングは、テーブル分割にはできない 1 つのことをもたらします。**マッピングされた型の内部のコレクション**です。テーブル分割でマッピングされた複合型は単一の値でなければなりませんが、JSON にマッピングされた複合型は `List<string>` や値オブジェクトのネストされたリストを含められます。ドキュメントの中へクエリすることも依然として可能です。SQL Server 2025 では、`context.Customers.Where(c => c.ShippingAddress.City == "Cluj")` は `JSON_VALUE` の検索に変換され、EF Core 11 は `EF.Functions.JsonPathExists` と `EF.Functions.JsonContains` を追加します。どちらも JSON にマッピングされた複合型に対して機能します。JSON にマッピングされたデータのクエリに関するより広い全体像については、[EF Core 11 で JSON 列をマッピングしてクエリする方法](/ja/2026/06/how-to-map-and-query-json-columns-in-ef-core-11/)と[SQL Server 2025 で追加された JSON_CONTAINS の変換](/ja/2026/04/efcore-11-json-contains-sql-server-2025/)を参照してください。
 
 ## 値のセマンティクスが実際にもたらすもの
 
@@ -171,7 +171,7 @@ await context.Customers
         s.SetProperty(c => c.ShippingAddress.PostalCode, "010001"));
 ```
 
-書き込みのパスをエンティティのロードと変更と比較検討しているなら、そのトレードオフは[ExecuteUpdate とエンティティのロードおよび SaveChanges の比較](/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/)で扱ったものと同じです。複合型は単純に、値オブジェクトのケースを高速パスの対象にします。
+書き込みのパスをエンティティのロードと変更と比較検討しているなら、そのトレードオフは[ExecuteUpdate とエンティティのロードおよび SaveChanges の比較](/ja/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/)で扱ったものと同じです。複合型は単純に、値オブジェクトのケースを高速パスの対象にします。
 
 構造体も機能し、これは "同一性なし" という考えにきれいに合致します。
 
@@ -184,7 +184,7 @@ public struct Money
 }
 ```
 
-レコード型もよく適合します。レコード型、複合型、変更追跡の相互作用については、[EF Core 11 でレコード型を正しく使う方法](/2026/04/how-to-use-records-with-ef-core-11-correctly/)を全文読む価値があります。
+レコード型もよく適合します。レコード型、複合型、変更追跡の相互作用については、[EF Core 11 でレコード型を正しく使う方法](/ja/2026/04/how-to-use-records-with-ef-core-11-correctly/)を全文読む価値があります。
 
 ## 既存の OwnsOne マッピングを複合型に移行する
 
@@ -197,7 +197,7 @@ public struct Money
 5. **マイグレーションを追加して確認する。** `dotnet ef migrations add SwitchAddressToComplexType` を実行します。同じテーブル上のテーブル分割された `OwnsOne` の場合、列は移動しないためマイグレーションは空またはほぼ空のはずです。列を削除して再作成しようとする場合、列名が食い違っています。データを失わないように、差分がきれいになるまで `HasColumnName` で列名を固定してください。
 6. **データが保持されることを先にコピーで検証する。** 本番から復元したスクラッチデータベースにマイグレーションを適用してから本番で実行します。特に別テーブルからの移動や、`nvarchar` の JSON からネイティブの `json` 型への移動の場合はそうしてください。
 
-本当にデータを移動する唯一のマイグレーションは、`OwnsOne(...).ToTable("Addresses")`（別テーブル）からテーブル分割された複合型への移行です。行を子テーブルから親テーブルへ移動しなければならないため、クリーンな自動生成のパスはありません。そのマイグレーションは手で書いてください。新しい列を追加し、`UPDATE ... FROM` で値をコピーし、それから古いテーブルを削除します。すでに EF Core のアップグレードの真っ最中なら、同じ注意がモデルの残りの部分にも当てはまります。[EF Core 6 から EF Core 11 への移行ガイド](/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/)は、この切り替えと並んで表面化しがちな破壊的変更を扱っています。
+本当にデータを移動する唯一のマイグレーションは、`OwnsOne(...).ToTable("Addresses")`（別テーブル）からテーブル分割された複合型への移行です。行を子テーブルから親テーブルへ移動しなければならないため、クリーンな自動生成のパスはありません。そのマイグレーションは手で書いてください。新しい列を追加し、`UPDATE ... FROM` で値をコピーし、それから古いテーブルを削除します。すでに EF Core のアップグレードの真っ最中なら、同じ注意がモデルの残りの部分にも当てはまります。[EF Core 6 から EF Core 11 への移行ガイド](/ja/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/)は、この切り替えと並んで表面化しがちな破壊的変更を扱っています。
 
 ## EF Core 11 は継承と構成の摩擦を取り除きます
 
@@ -263,11 +263,11 @@ EF Core 11 は複合型のための安定化修正もまとめて投入しまし
 
 ## 関連する読み物
 
-- [EF Core 11 でレコード型を正しく使う方法](/2026/04/how-to-use-records-with-ef-core-11-correctly/)は、複合型としてのレコード型とエンティティ、そしてその分割の背後にある変更追跡の規則をより深く掘り下げています。
-- [EF Core 11 で JSON 列をマッピングしてクエリする方法](/2026/06/how-to-map-and-query-json-columns-in-ef-core-11/)は、JSON にマッピングされた複合型のクエリ側を扱っています。
-- [EF Core 11 は SQL Server 2025 で Contains を JSON_CONTAINS に変換する](/2026/04/efcore-11-json-contains-sql-server-2025/)は、複合型に対して機能するようになった JSON 関数を説明しています。
-- [ExecuteUpdate とエンティティのロードおよび SaveChanges の比較](/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/)は、複合型が値オブジェクトのために解き放つ一括更新のパスを位置づけています。
-- [EF Core 6 から EF Core 11 への移行：実際に効いてくる破壊的変更](/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/)は、この切り替えがより大きなアップグレードの一部である場合の相棒です。
+- [EF Core 11 でレコード型を正しく使う方法](/ja/2026/04/how-to-use-records-with-ef-core-11-correctly/)は、複合型としてのレコード型とエンティティ、そしてその分割の背後にある変更追跡の規則をより深く掘り下げています。
+- [EF Core 11 で JSON 列をマッピングしてクエリする方法](/ja/2026/06/how-to-map-and-query-json-columns-in-ef-core-11/)は、JSON にマッピングされた複合型のクエリ側を扱っています。
+- [EF Core 11 は SQL Server 2025 で Contains を JSON_CONTAINS に変換する](/ja/2026/04/efcore-11-json-contains-sql-server-2025/)は、複合型に対して機能するようになった JSON 関数を説明しています。
+- [ExecuteUpdate とエンティティのロードおよび SaveChanges の比較](/ja/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/)は、複合型が値オブジェクトのために解き放つ一括更新のパスを位置づけています。
+- [EF Core 6 から EF Core 11 への移行：実際に効いてくる破壊的変更](/ja/2026/06/migrate-ef-core-6-to-ef-core-11-breaking-changes/)は、この切り替えがより大きなアップグレードの一部である場合の相棒です。
 
 ## 出典
 

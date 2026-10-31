@@ -155,7 +155,7 @@ Container(
 )
 ```
 
-Si aquí estás sacando colores de un `ColorScheme` de Material 3, los roles (`surface`, `surfaceContainerHigh`, `primaryContainer`) importan para el contraste tanto en modo claro como oscuro; consulta [cómo establecer el color de acento en una app de Flutter con el ColorScheme de Material 3](/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme/) para saber a qué rol recurrir.
+Si aquí estás sacando colores de un `ColorScheme` de Material 3, los roles (`surface`, `surfaceContainerHigh`, `primaryContainer`) importan para el contraste tanto en modo claro como oscuro; consulta [cómo establecer el color de acento en una app de Flutter con el ColorScheme de Material 3](/es/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme/) para saber a qué rol recurrir.
 
 ### AnimatedContainer tiene exactamente la misma regla
 
@@ -212,22 +212,22 @@ El mensaje de la aserción nombra el archivo y la línea dentro de `container.da
 2. Si la traza no ayuda porque el `Container` se construye en un bucle o en un builder compartido, busca en tu proyecto `color:` y `decoration:` que aparezcan juntos. La regex `Container\([^)]*color:[^)]*decoration:` captura la mayoría de los casos de una sola línea; los de varias líneas necesitan un escaneo manual de la tarjeta o ficha compartida.
 3. Como esto se lanza en tiempo de construcción, el hot reload lo hace aflorar al instante. Añade el borde o la decoración, guarda, y si el frame se pone rojo tienes el widget correcto en pantalla.
 
-Este comportamiento en tiempo de construcción es lo opuesto a las aserciones de layout como [RenderBox was not laid out](/2026/06/fix-renderbox-was-not-laid-out-in-flutter/), que solo aparecen una vez que se ejecuta el pipeline de layout y a menudo apuntan a varios widgets de distancia de la causa real.
+Este comportamiento en tiempo de construcción es lo opuesto a las aserciones de layout como [RenderBox was not laid out](/es/2026/06/fix-renderbox-was-not-laid-out-in-flutter/), que solo aparecen una vez que se ejecuta el pipeline de layout y a menudo apuntan a varios widgets de distancia de la causa real.
 
 ## Trampas y errores parecidos
 
 - **`BoxDecoration.color` frente a `Container.color` y el orden de pintado.** No son idénticos en todos los casos. `Container.color` pinta detrás del hijo pero también detrás de cualquier `decoration` si se permitiera una; `BoxDecoration.color` pinta como parte de la decoración, que se sitúa detrás de `foregroundDecoration`. Para un relleno plano el resultado es el mismo píxel, pero si además usas `foregroundDecoration`, la disposición en capas importa.
 - **Los splashes de `Ink` e `InkWell` desaparecen sobre un Container con color.** Si le diste a un `Container` un `color` y luego envolviste un hijo en `InkWell`, el efecto de onda pinta detrás del color del `Container` y se desvanece. La solución es el mismo movimiento: elimina `Container.color` y usa un widget `Ink` con una `decoration`, o un `Material` con un color, para que la capa de tinta se sitúe encima del relleno.
-- **`The following assertion was thrown building` con un mensaje diferente.** Si tu error menciona `Incorrect use of ParentDataWidget` en lugar de color y decoration, ese es un error de contrato de layout distinto; consulta [Incorrect use of ParentDataWidget: Expanded debe estar dentro de Flex](/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter/).
+- **`The following assertion was thrown building` con un mensaje diferente.** Si tu error menciona `Incorrect use of ParentDataWidget` en lugar de color y decoration, ese es un error de contrato de layout distinto; consulta [Incorrect use of ParentDataWidget: Expanded debe estar dentro de Flex](/es/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter/).
 - **Las compilaciones de release lo ocultan, no lo arreglan.** Como la comprobación es un `assert`, una compilación de release la elimina y pinta usando el argumento que el constructor haya almacenado. No hagas envíos suponiendo que "funciona en release". Funciona por accidente, y la próxima actualización del SDK puede cambiar qué argumento gana.
 - **`DecoratedBox` lanza el mismo error conceptual de forma distinta.** `DecoratedBox` no tiene ningún argumento `color`, solo `decoration`, así que no puedes toparte con esta aserción ahí. Si estabas usando `DecoratedBox` y querías un color, siempre va en el `BoxDecoration`.
 
 ## Relacionado
 
-- [Solución: A RenderFlex overflowed en Flutter](/2026/05/fix-renderflex-overflowed-in-flutter/) es la otra aserción con la que los principiantes se topan primero al construir layouts de tarjetas y filas.
-- [Solución: RenderBox was not laid out en Flutter](/2026/06/fix-renderbox-was-not-laid-out-in-flutter/) cubre un error en tiempo de layout que, a diferencia de este, apunta lejos de la causa real.
-- [Solución: Incorrect use of ParentDataWidget: Expanded debe estar dentro de Flex](/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter/) es una aserción de contrato de construcción hermana que vale la pena reconocer.
-- [Cómo establecer el color de acento en una app de Flutter con el ColorScheme de Material 3](/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme/) explica qué rol del `ColorScheme` alimentar en tu `BoxDecoration.color`.
+- [Solución: A RenderFlex overflowed en Flutter](/es/2026/05/fix-renderflex-overflowed-in-flutter/) es la otra aserción con la que los principiantes se topan primero al construir layouts de tarjetas y filas.
+- [Solución: RenderBox was not laid out en Flutter](/es/2026/06/fix-renderbox-was-not-laid-out-in-flutter/) cubre un error en tiempo de layout que, a diferencia de este, apunta lejos de la causa real.
+- [Solución: Incorrect use of ParentDataWidget: Expanded debe estar dentro de Flex](/es/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter/) es una aserción de contrato de construcción hermana que vale la pena reconocer.
+- [Cómo establecer el color de acento en una app de Flutter con el ColorScheme de Material 3](/es/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme/) explica qué rol del `ColorScheme` alimentar en tu `BoxDecoration.color`.
 
 ## Fuentes
 

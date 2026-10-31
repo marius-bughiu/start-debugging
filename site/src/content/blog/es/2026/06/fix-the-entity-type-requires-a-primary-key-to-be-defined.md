@@ -183,7 +183,7 @@ var summaries = await db.Orders
 
 ### Mapear un record sin Id
 
-Un `record` posicional funciona bien como entidad, pero solo si uno de sus parámetros se convierte en una clave descubrible. `public record OrderSummary(Guid Reference, decimal Total);` cae en este error por la misma razón que la clase: `Reference` no es `Id`. Nombra el primer parámetro `Id`, agrega `[property: Key]` al parámetro posicional o configura `HasKey` en `OnModelCreating`. Los mecanismos de mapear records, incluidas las propiedades init-only y la igualdad por valor, se cubren en la guía sobre [usar records con EF Core 11 correctamente](/2026/04/how-to-use-records-with-ef-core-11-correctly/).
+Un `record` posicional funciona bien como entidad, pero solo si uno de sus parámetros se convierte en una clave descubrible. `public record OrderSummary(Guid Reference, decimal Total);` cae en este error por la misma razón que la clase: `Reference` no es `Id`. Nombra el primer parámetro `Id`, agrega `[property: Key]` al parámetro posicional o configura `HasKey` en `OnModelCreating`. Los mecanismos de mapear records, incluidas las propiedades init-only y la igualdad por valor, se cubren en la guía sobre [usar records con EF Core 11 correctamente](/es/2026/04/how-to-use-records-with-ef-core-11-correctly/).
 
 ### Tipos de resultado de Database.SqlQuery<T> y FromSql
 
@@ -195,7 +195,7 @@ Si el tipo entre comillas es un tipo del framework o de una biblioteca, una nave
 
 ### Solo falla con dotnet ef, no en tiempo de ejecución
 
-`dotnet ef migrations add` y `dotnet ef database update` construyen el modelo completo, así que sacan a la luz errores de modelo que un camino de código en tiempo de ejecución más acotado quizá no haya disparado todavía. El error es real; las herramientas simplemente lo encontraron primero. Si la compilación en tiempo de diseño ni siquiera puede construir tu contexto, verás un mensaje distinto primero; ese se cubre en [por qué dotnet ef migrations add no puede crear tu DbContext](/2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext/).
+`dotnet ef migrations add` y `dotnet ef database update` construyen el modelo completo, así que sacan a la luz errores de modelo que un camino de código en tiempo de ejecución más acotado quizá no haya disparado todavía. El error es real; las herramientas simplemente lo encontraron primero. Si la compilación en tiempo de diseño ni siquiera puede construir tu contexto, verás un mensaje distinto primero; ese se cubre en [por qué dotnet ef migrations add no puede crear tu DbContext](/es/2026/05/fix-dotnet-ef-migrations-add-unable-to-create-dbcontext/).
 
 ### Una clave anulable o eclipsada
 
@@ -212,7 +212,7 @@ dotnet ef dbcontext info --startup-project ./Api
 
 Si el modelo es válido, esto imprime el proveedor y los detalles del contexto. Si un tipo sigue sin clave y sin marcar, lanza la misma excepción, y el mensaje te dice exactamente qué tipo queda sin resolver. Resuélvelos de uno en uno; un modelo con varios tipos de vista o DTO puede lanzar una vez por tipo hasta que cada uno esté tratado.
 
-El modelo mental que vale la pena conservar: este error es EF Core pidiéndote que clasifiques un tipo. Entidad con identidad, forma de solo lectura sin clave, o no-una-entidad. Una vez que respondes eso, la solución es mecánica. Cuando conectas estos tipos en tus pruebas y quieres que el rastreo de cambios se comporte, los patrones de [simular DbContext sin romper el rastreo de cambios](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) y [precalentar el modelo de EF Core antes de la primera consulta](/2026/04/how-to-warm-up-ef-core-model-before-the-first-query/) combinan bien con tener tus claves correctas.
+El modelo mental que vale la pena conservar: este error es EF Core pidiéndote que clasifiques un tipo. Entidad con identidad, forma de solo lectura sin clave, o no-una-entidad. Una vez que respondes eso, la solución es mecánica. Cuando conectas estos tipos en tus pruebas y quieres que el rastreo de cambios se comporte, los patrones de [simular DbContext sin romper el rastreo de cambios](/es/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) y [precalentar el modelo de EF Core antes de la primera consulta](/es/2026/04/how-to-warm-up-ef-core-model-before-the-first-query/) combinan bien con tener tus claves correctas.
 
 ## Fuentes
 

@@ -196,7 +196,7 @@ Auch hier ist die Lösung nicht, mit der Runtime zu streiten. Es ist, Werte­gle
 
 ## JSON-Spalten und Records
 
-EF Core 7 hat JSON-Column-Mapping hinzugefügt, und EF Core 11 erweitert es weiter mit [JSON_CONTAINS-Übersetzung auf SQL Server 2025](/2026/04/efcore-11-json-contains-sql-server-2025/) und Complex Types innerhalb von JSON-Dokumenten. Positionale Records sind ein ergonomischer Fit für owned JSON-Typen:
+EF Core 7 hat JSON-Column-Mapping hinzugefügt, und EF Core 11 erweitert es weiter mit [JSON_CONTAINS-Übersetzung auf SQL Server 2025](/de/2026/04/efcore-11-json-contains-sql-server-2025/) und Complex Types innerhalb von JSON-Dokumenten. Positionale Records sind ein ergonomischer Fit für owned JSON-Typen:
 
 ```csharp
 // .NET 11, C# 14, EF Core 11
@@ -258,9 +258,9 @@ Das ist die ganze Faustregel: Klassen für Dinge mit Identität, Records für Di
 
 ## Verwandte Lektüre
 
-- [EF Core 11 fügt GetEntriesForState hinzu, um DetectChanges zu überspringen](/2026/04/efcore-11-changetracker-getentriesforstate/) deckt die Change-Tracker-Internals ab, auf die sich dieser Beitrag stützt.
-- [EF Core 11 entfernt unnötige Reference Joins in Split Queries](/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/) ist ein guter Begleiter, wenn Ihre Entities stark auf Navigations setzen.
-- [EF Core 11 übersetzt Contains zu JSON_CONTAINS auf SQL Server 2025](/2026/04/efcore-11-json-contains-sql-server-2025/) verbindet sich mit dem JSON-gemappten-Record-Pattern oben.
+- [EF Core 11 fügt GetEntriesForState hinzu, um DetectChanges zu überspringen](/de/2026/04/efcore-11-changetracker-getentriesforstate/) deckt die Change-Tracker-Internals ab, auf die sich dieser Beitrag stützt.
+- [EF Core 11 entfernt unnötige Reference Joins in Split Queries](/de/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/) ist ein guter Begleiter, wenn Ihre Entities stark auf Navigations setzen.
+- [EF Core 11 übersetzt Contains zu JSON_CONTAINS auf SQL Server 2025](/de/2026/04/efcore-11-json-contains-sql-server-2025/) verbindet sich mit dem JSON-gemappten-Record-Pattern oben.
 - [Wie man mehrere Werte aus einer Methode in C# 14 zurückgibt](/de/2026/04/how-to-return-multiple-values-from-a-method-in-csharp-14/) geht tiefer darauf ein, wann Records über Tupel und Klassen auf Methoden-Return-Ebene gewinnen.
 
 ## Quellen

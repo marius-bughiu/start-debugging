@@ -10,7 +10,7 @@ translationOf: "2023/03/c-11-interpolated-raw-string-literal"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-C# 11 は [raw 文字列リテラル](/2023/03/c-raw-string-literals/) という概念を言語に導入し、それに伴って文字列補間に関する新機能も追加されています。
+C# 11 は [raw 文字列リテラル](/ja/2023/03/c-raw-string-literals/) という概念を言語に導入し、それに伴って文字列補間に関する新機能も追加されています。
 
 まず、これまでどおり補間構文を、raw 文字列リテラルと組み合わせて使えます。
 

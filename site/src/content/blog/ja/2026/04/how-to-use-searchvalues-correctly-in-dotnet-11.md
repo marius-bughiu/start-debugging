@@ -251,7 +251,7 @@ internal static partial class IdentifierScanner
 
 ## 関連する読み物
 
-- [Span<T> と ReadOnlySpan<T> の使い分け](/2026/01/net-10-performance-searchvalues/) は、.NET 10 の時代の `SearchValues` の早期スナップショットを扱っています。SIMD の背景については参照してください。
+- [Span<T> と ReadOnlySpan<T> の使い分け](/ja/2026/01/net-10-performance-searchvalues/) は、.NET 10 の時代の `SearchValues` の早期スナップショットを扱っています。SIMD の背景については参照してください。
 - [BlockingCollection の代わりに Channels を使う](/ja/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) は、ワーカーで入力をスキャンする際の正しい転送手段です。
 - [.NET 11 で大きな CSV をメモリ不足にせず読む方法](/ja/2026/04/how-to-read-a-large-csv-in-dotnet-11-without-running-out-of-memory/) はパーサーで区切り文字スキャンに `SearchValues<char>` を使っています。
 - [.NET でファイルへの書き込み完了を検知する方法](/ja/2026/04/how-to-detect-when-a-file-finishes-being-written-to-in-dotnet/) は、上記の CSV スキャナーと組み合わせて inbox ファイルを消費する場面に自然にフィットします。

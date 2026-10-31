@@ -24,7 +24,7 @@ ASP.NET Core の minimal API が .NET 10 より前に作られたものなら、
 
 - **コードを削除でき、ルールが宣言的になります。** record 上の `[Required, Length(3, 20)] string Sku` は、`Sku` を受け取るすべてのハンドラーにある命令的なチェック 3 行を置き換えます。制約はデータのすぐそばに一度だけ書きます。
 - **一貫性のないエラー形を返さなくなります。** 手書きの `Results.BadRequest("Sku is required")` は、書いた人によって、あるエンドポイントでは素のstring を、別のエンドポイントでは JSON オブジェクトを返します。組み込みバリデーターはどこでも単一の `HttpValidationProblemDetails`（RFC 9457）ボディを、プロパティ名をキーとして返します。
-- **検証は trim セーフのままです。** この機能は実行時のリフレクションではなくコンパイル時のソースジェネレーターなので、Native AOT と積極的な trim の下でもクリーンに発行されます。同じ理由で [Native AOT の minimal API スタック](/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/)にも付属します。
+- **検証は trim セーフのままです。** この機能は実行時のリフレクションではなくコンパイル時のソースジェネレーターなので、Native AOT と積極的な trim の下でもクリーンに発行されます。同じ理由で [Native AOT の minimal API スタック](/ja/2026/04/how-to-use-native-aot-with-aspnetcore-minimal-apis/)にも付属します。
 - **query、ルート、ヘッダーのパラメーターも検証されます。** 手動チェックはほぼ必ず JSON ボディをカバーし、ページングのパラメーターを忘れます。組み込みフィルターは、ルートと query 文字列からバインドされたスカラーのパラメーターを同じ属性で検証します。
 
 ## 何が壊れるか
@@ -164,7 +164,7 @@ app.MapPost("/products", async (CreateProduct product, IProductRepository repo, 
 });
 ```
 
-あるいは、非同期ルールが多いなら、まさにそれらのリクエスト型のためだけに FluentValidation を残し、単純なものは組み込み機能に任せます。トレードオフは [minimal API 検証と FluentValidation の比較](/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11/)で詳しく述べています。短く言えば、非同期ルールと豊かな条件ロジックが、検証ライブラリを残す 2 つの理由です。`DbContext` の呼び出しを `IValidatableObject` へ無理に押し込もうとしないでください。これは同期であり、スレッドをブロックするか、`.Result` によるデッドロックの領域へ押しやります。
+あるいは、非同期ルールが多いなら、まさにそれらのリクエスト型のためだけに FluentValidation を残し、単純なものは組み込み機能に任せます。トレードオフは [minimal API 検証と FluentValidation の比較](/ja/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11/)で詳しく述べています。短く言えば、非同期ルールと豊かな条件ロジックが、検証ライブラリを残す 2 つの理由です。`DbContext` の呼び出しを `IValidatableObject` へ無理に押し込もうとしないでください。これは同期であり、スレッドをブロックするか、`.Result` によるデッドロックの領域へ押しやります。
 
 **検証：** 一意性チェックは引き続き重複した SKU を拒否し（今度は `409`、または選んだ任意のステータスとして）、初めての SKU は引き続き成功します。
 
@@ -244,18 +244,18 @@ app.MapPost("/products", (CreateProduct product)
 - **非 `public` 型による静かな no-op。** 群を抜いて頻繁です。属性を `record CreateProduct(...)` へ移し、ビルドは成功するのに、型が `public` でないため検証は決して発火しません。警告はありません。移行したエンドポイントが不正な入力を拒否しなくなったら、まずアクセス修飾子を確認してください。
 - **位置指定 record の属性ターゲット。** 位置指定 record では、`[Required] string Name` は検証ジェネレーターが直接読み取ります。明示的なターゲット `[property: Required] string Name` が必要なのは、別のツールが実行時に生成されたプロパティをリフレクトする場合だけです。2 つの期待を混同することが、「なぜこの属性は無視されるのか」という混乱のよくある原因です。
 - **入れ子オブジェクトは再帰的に検証され、驚くことがあります。** リクエスト record が `BillingAddress` record を参照していると、ジェネレーターは住所も検証し、エラーキーは `Billing.PostalCode` のようなドット区切りのパスを使います。古い手動コードが最上位オブジェクトだけをチェックしていた場合、以前は決して検証しなかった入れ子フィールドで 400 が出るようになることがあります。通常はこれが正しいのですが、想定しておくべき動作の変化です。
-- **フィルターの順序。** 検証はエンドポイント単位のフィルターとして実行されます。すでに独自の `AddEndpointFilter` 呼び出しを追加しているなら、検証がチェーンのどこに位置するかを、特にルートグループをまたいで把握してください。合成のルールは [MapGroup による minimal API エンドポイントの整理](/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)にあるものと同じです。
-- **エラー契約を誤って静かに変えない。** 移行後の `ProblemDetails` を特定の形（独自の `type` URI、追加メンバー）に合わせたいなら、エンドポイント単位ではなく一元的に形を整えてください。仕組みは [IProblemDetailsService による minimal API 検証エラー応答のカスタマイズ](/2026/07/how-to-customize-minimal-api-validation-error-responses-with-iproblemdetailsservice-in-aspnetcore-11/)にあります。
+- **フィルターの順序。** 検証はエンドポイント単位のフィルターとして実行されます。すでに独自の `AddEndpointFilter` 呼び出しを追加しているなら、検証がチェーンのどこに位置するかを、特にルートグループをまたいで把握してください。合成のルールは [MapGroup による minimal API エンドポイントの整理](/ja/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)にあるものと同じです。
+- **エラー契約を誤って静かに変えない。** 移行後の `ProblemDetails` を特定の形（独自の `type` URI、追加メンバー）に合わせたいなら、エンドポイント単位ではなく一元的に形を整えてください。仕組みは [IProblemDetailsService による minimal API 検証エラー応答のカスタマイズ](/ja/2026/07/how-to-customize-minimal-api-validation-error-responses-with-iproblemdetailsservice-in-aspnetcore-11/)にあります。
 
 持ち帰るべきメンタルモデルはこうです。この移行は新しいフレームワークの採用ではなく、命令的なガードコードを削除し、同じルールをリクエスト型上で宣言的に表現し直すことです。属性で表現できるルールは `DataAnnotations` へ、フィールド間のものは `IValidatableObject` へ、再利用可能なものは独自の `ValidationAttribute` へ移り、非同期のものは形がすでに有効と保証された後にハンドラー内で明示的なまま残ります。エンドポイントを 1 つずつ進め、それぞれを無効リクエストの呼び出しで検証すれば、各ハンドラーを開いていた `if` ブロックの定型コードは、ただ消えてなくなります。
 
 ## 関連
 
-- [ASP.NET Core 11 でコントローラーなしに minimal API のリクエストボディを検証する方法](/2026/06/how-to-validate-request-bodies-in-minimal-apis-without-controllers-in-aspnetcore-11/)：移行先の組み込み機能の完全なセットアップについて。
-- [ASP.NET Core 11 における minimal API 検証と FluentValidation の比較](/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11/)：何を検証ライブラリに残し、何を組み込みへ移すかの判断について。
-- [ASP.NET Core 11 で IProblemDetailsService により minimal API 検証エラー応答をカスタマイズする方法](/2026/07/how-to-customize-minimal-api-validation-error-responses-with-iproblemdetailsservice-in-aspnetcore-11/)：移行後の 400 ボディの整形について。
-- [ASP.NET Core 11 における minimal API とコントローラーの比較](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/)：この下地となるエンドポイントモデルの判断について。
-- [ASP.NET Core 11 で MapGroup により minimal API エンドポイントを整理する方法](/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)：検証フィルターがグループフィルターに対してどこに位置するかについて。
+- [ASP.NET Core 11 でコントローラーなしに minimal API のリクエストボディを検証する方法](/ja/2026/06/how-to-validate-request-bodies-in-minimal-apis-without-controllers-in-aspnetcore-11/)：移行先の組み込み機能の完全なセットアップについて。
+- [ASP.NET Core 11 における minimal API 検証と FluentValidation の比較](/ja/2026/06/minimal-api-validation-vs-fluentvalidation-in-aspnetcore-11/)：何を検証ライブラリに残し、何を組み込みへ移すかの判断について。
+- [ASP.NET Core 11 で IProblemDetailsService により minimal API 検証エラー応答をカスタマイズする方法](/ja/2026/07/how-to-customize-minimal-api-validation-error-responses-with-iproblemdetailsservice-in-aspnetcore-11/)：移行後の 400 ボディの整形について。
+- [ASP.NET Core 11 における minimal API とコントローラーの比較](/ja/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/)：この下地となるエンドポイントモデルの判断について。
+- [ASP.NET Core 11 で MapGroup により minimal API エンドポイントを整理する方法](/ja/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)：検証フィルターがグループフィルターに対してどこに位置するかについて。
 
 ## 出典
 

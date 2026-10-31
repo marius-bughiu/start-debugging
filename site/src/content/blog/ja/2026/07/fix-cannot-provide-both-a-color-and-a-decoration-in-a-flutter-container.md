@@ -155,7 +155,7 @@ Container(
 )
 ```
 
-ここで Material 3 の `ColorScheme` から色を取り出しているなら、ロール（`surface`、`surfaceContainerHigh`、`primaryContainer`）はライトモードとダークモードの両方でのコントラストにとって重要です。どのロールに手を伸ばすべきかは [Material 3 の ColorScheme で Flutter アプリのアクセントカラーを設定する方法](/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme/) を参照してください。
+ここで Material 3 の `ColorScheme` から色を取り出しているなら、ロール（`surface`、`surfaceContainerHigh`、`primaryContainer`）はライトモードとダークモードの両方でのコントラストにとって重要です。どのロールに手を伸ばすべきかは [Material 3 の ColorScheme で Flutter アプリのアクセントカラーを設定する方法](/ja/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme/) を参照してください。
 
 ### AnimatedContainer にも全く同じルールがある
 
@@ -212,22 +212,22 @@ Container(
 2. `Container` がループ内や共有ビルダー内で構築されていてトレースが役に立たない場合は、`color:` と `decoration:` が近くに現れる箇所をプロジェクト全体で grep します。正規表現 `Container\([^)]*color:[^)]*decoration:` はほとんどの1行のケースを捕捉します。複数行のものは、共有のカードやタイルを手動で走査する必要があります。
 3. これは構築時に発生するため、ホットリロードで即座に表面化します。境界線または decoration を追加して保存し、フレームが赤くなれば、画面上に正しいウィジェットがあります。
 
-この構築時の挙動は、[RenderBox was not laid out](/2026/06/fix-renderbox-was-not-laid-out-in-flutter/) のようなレイアウトのアサーションとは正反対です。それらはレイアウトのパイプラインが実行されて初めて現れ、しばしば本当の原因からいくつも離れたウィジェットを指し示します。
+この構築時の挙動は、[RenderBox was not laid out](/ja/2026/06/fix-renderbox-was-not-laid-out-in-flutter/) のようなレイアウトのアサーションとは正反対です。それらはレイアウトのパイプラインが実行されて初めて現れ、しばしば本当の原因からいくつも離れたウィジェットを指し示します。
 
 ## 落とし穴とよく似たエラー
 
 - **`BoxDecoration.color` と `Container.color` の描画順序。** これらはすべてのケースで同一ではありません。`Container.color` は子の後ろに描画しますが、もし `decoration` が許されていればその後ろにも描画します。`BoxDecoration.color` は decoration の一部として描画され、それは `foregroundDecoration` の後ろに位置します。フラットな塗りつぶしなら結果は同じピクセルですが、`foregroundDecoration` も使う場合は重なり順が重要になります。
 - **色付きの Container の上で `Ink` と `InkWell` のスプラッシュが消える。** `Container` に `color` を与えたうえで子を `InkWell` で包むと、波紋は `Container` の色の後ろに描画されて消えてしまいます。解決策は同じ動きです。`Container.color` を削除し、`decoration` を持つ `Ink` ウィジェットか、色を持つ `Material` を使い、インクのレイヤーが塗りつぶしの上に位置するようにします。
-- **別のメッセージの `The following assertion was thrown building`。** エラーが color と decoration ではなく `Incorrect use of ParentDataWidget` に言及している場合、それは別のレイアウト契約のバグです。[Incorrect use of ParentDataWidget: Expanded は Flex の中に置く必要がある](/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter/) を参照してください。
+- **別のメッセージの `The following assertion was thrown building`。** エラーが color と decoration ではなく `Incorrect use of ParentDataWidget` に言及している場合、それは別のレイアウト契約のバグです。[Incorrect use of ParentDataWidget: Expanded は Flex の中に置く必要がある](/ja/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter/) を参照してください。
 - **リリースビルドはこれを隠すだけで、直しはしません。** このチェックは `assert` なので、リリースビルドはそれを取り除き、コンストラクターが保存した方の引数を使って描画します。「リリースでは動く」という前提で出荷しないでください。それは偶然動いているだけで、次の SDK の更新でどちらの引数が勝つかが変わる可能性があります。
 - **`DecoratedBox` は同じ概念のエラーを別の形で発生させます。** `DecoratedBox` には `color` 引数がまったくなく `decoration` だけなので、そこでこのアサーションに突き当たることはありません。`DecoratedBox` を使っていて色が欲しかったのなら、それは常に `BoxDecoration` に入れます。
 
 ## 関連記事
 
-- [解決策: Flutter で A RenderFlex overflowed](/2026/05/fix-renderflex-overflowed-in-flutter/) は、カードや行のレイアウトを構築する際に初心者が最初に突き当たるもう1つのアサーションです。
-- [解決策: Flutter で RenderBox was not laid out](/2026/06/fix-renderbox-was-not-laid-out-in-flutter/) は、この記事とは異なり本当の原因から離れた場所を指すレイアウト時のエラーを扱います。
-- [解決策: Incorrect use of ParentDataWidget: Expanded は Flex の中に置く必要がある](/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter/) は、認識しておく価値のある兄弟的な構築契約のアサーションです。
-- [Material 3 の ColorScheme で Flutter アプリのアクセントカラーを設定する方法](/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme/) は、どの `ColorScheme` のロールを `BoxDecoration.color` に供給すべきかを説明します。
+- [解決策: Flutter で A RenderFlex overflowed](/ja/2026/05/fix-renderflex-overflowed-in-flutter/) は、カードや行のレイアウトを構築する際に初心者が最初に突き当たるもう1つのアサーションです。
+- [解決策: Flutter で RenderBox was not laid out](/ja/2026/06/fix-renderbox-was-not-laid-out-in-flutter/) は、この記事とは異なり本当の原因から離れた場所を指すレイアウト時のエラーを扱います。
+- [解決策: Incorrect use of ParentDataWidget: Expanded は Flex の中に置く必要がある](/ja/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter/) は、認識しておく価値のある兄弟的な構築契約のアサーションです。
+- [Material 3 の ColorScheme で Flutter アプリのアクセントカラーを設定する方法](/ja/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme/) は、どの `ColorScheme` のロールを `BoxDecoration.color` に供給すべきかを説明します。
 
 ## 出典
 

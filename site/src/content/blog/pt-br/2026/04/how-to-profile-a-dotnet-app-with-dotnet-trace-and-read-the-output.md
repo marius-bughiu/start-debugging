@@ -150,7 +150,7 @@ Arraste o `.speedscope.json` resultante para [speedscope.app](https://www.speeds
 
 ### Perfetto / chrome://tracing
 
-`--format Chromium` produz um arquivo JSON que você pode soltar em `chrome://tracing` ou [ui.perfetto.dev](https://ui.perfetto.dev/). Essa view brilha para perguntas de concorrência: picos de thread pool, cascatas async e sintomas de contenção de locks se leem mais naturalmente em uma timeline do que em um flame graph. O artigo da comunidade [Using dotnet-trace with Perfetto](https://dfamonteiro.com/posts/using-dotnet-trace-with-perfetto/) percorre um loop completo, e nós cobrimos [um fluxo prático de Perfetto + dotnet-trace](/2026/01/perfetto-dotnet-trace-a-practical-profiling-loop-for-net-9-net-10/) com mais detalhes no início deste ano.
+`--format Chromium` produz um arquivo JSON que você pode soltar em `chrome://tracing` ou [ui.perfetto.dev](https://ui.perfetto.dev/). Essa view brilha para perguntas de concorrência: picos de thread pool, cascatas async e sintomas de contenção de locks se leem mais naturalmente em uma timeline do que em um flame graph. O artigo da comunidade [Using dotnet-trace with Perfetto](https://dfamonteiro.com/posts/using-dotnet-trace-with-perfetto/) percorre um loop completo, e nós cobrimos [um fluxo prático de Perfetto + dotnet-trace](/pt-br/2026/01/perfetto-dotnet-trace-a-practical-profiling-loop-for-net-9-net-10/) com mais detalhes no início deste ano.
 
 ### dotnet-trace report (CLI)
 

@@ -101,7 +101,7 @@ public async Task<OrderDto> Get(int id, IOrderService orders, CancellationToken 
 
 Простая версия короче, и, что критично, нажатие "перейти к определению" на `orders.GetByIdAsync` приводит вас к методу, который выполняется. С `sender.Send(new GetOrderById(id))` вы попадаете в `Send` от MediatR и переходите к handler-у угадыванием или окольным путём через "найти реализации". В небольшой команде эта разница незначительна. В большой кодовой базе с сотнями handler-ов потеря прямой навигации - реальный ежедневный налог, который модель MediatR взимает в обмен на развязку вызывающего кода от типа handler-а. Даёт ли вам что-то эта развязка, зависит от того, заменяет ли кто-нибудь когда-либо handler, не трогая вызывающий код, что на практике редкость.
 
-Регистрация тоже заслуживает сравнения. MediatR сканирует сборки при запуске; простые сервисные классы регистрируются явно, и вы получаете сбой во время запуска (а не при первом запросе), если забудете какой-то из них, что напрямую связано с теми ошибками, что стоят за [Unable to resolve service for type while attempting to activate](/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/).
+Регистрация тоже заслуживает сравнения. MediatR сканирует сборки при запуске; простые сервисные классы регистрируются явно, и вы получаете сбой во время запуска (а не при первом запросе), если забудете какой-то из них, что напрямую связано с теми ошибками, что стоят за [Unable to resolve service for type while attempting to activate](/ru/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/).
 
 ```csharp
 // .NET 11, C# 14 - registration, side by side
@@ -158,7 +158,7 @@ builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.Decorate<IOrderService, LoggingOrderService>();
 ```
 
-Компромисс честен: behavior MediatR универсален для каждого запроса при одной регистрации, тогда как декоратор действует на отдельный интерфейс. Если у вас одна-две сквозные функции и горстка сервисных интерфейсов, декораторы выигрывают в ясности. Если у вас десять behaviors, которые должны единообразно применяться к двумстам типам запросов, универсальный конвейер MediatR действительно требует меньше кода, и это тот сценарий, в котором остаться (и платить или квалифицироваться для Community) оправданно. Для запросных функций, которые на самом деле являются функциями HTTP, учтите, что часть того, что люди помещают в behaviors, относится к middleware или фильтрам, к той же области, что охватывает [добавление глобального фильтра исключений в ASP.NET Core 11](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/).
+Компромисс честен: behavior MediatR универсален для каждого запроса при одной регистрации, тогда как декоратор действует на отдельный интерфейс. Если у вас одна-две сквозные функции и горстка сервисных интерфейсов, декораторы выигрывают в ясности. Если у вас десять behaviors, которые должны единообразно применяться к двумстам типам запросов, универсальный конвейер MediatR действительно требует меньше кода, и это тот сценарий, в котором остаться (и платить или квалифицироваться для Community) оправданно. Для запросных функций, которые на самом деле являются функциями HTTP, учтите, что часть того, что люди помещают в behaviors, относится к middleware или фильтрам, к той же области, что охватывает [добавление глобального фильтра исключений в ASP.NET Core 11](/ru/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/).
 
 ## Сколько на самом деле стоит диспетчеризация
 
@@ -172,7 +172,7 @@ builder.Services.Decorate<IOrderService, LoggingOrderService>();
 | Сканирование сборок при запуске | Да, растёт с числом handler-ов | Никакого |
 | Порядок величины на вызов | Десятки нс + небольшая аллокация | ~1 нс, ноль аллокаций |
 
-Методологическая честность здесь: на фоне handler-а, который обращается к базе данных или сети, десятки наносекунд незаметны, и вам стоит измерять собственные формы объектов с помощью BenchmarkDotNet, а не доверять обобщённой цифре. Стоимость, которая действительно проявляется на практике, - это запуск. Сканирование сборок для регистрации сотен handler-ов добавляет измеримые миллисекунды к холодному старту, что важно для serverless и относится к тому, с чем вы боретесь при [сокращении времени холодного старта AWS Lambda на .NET 11](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/). Явная простая регистрация полностью обходит это и дружелюбнее к trimming и Native AOT, потому что нет рефлексивного обнаружения, которое нужно держать безопасным для trimming.
+Методологическая честность здесь: на фоне handler-а, который обращается к базе данных или сети, десятки наносекунд незаметны, и вам стоит измерять собственные формы объектов с помощью BenchmarkDotNet, а не доверять обобщённой цифре. Стоимость, которая действительно проявляется на практике, - это запуск. Сканирование сборок для регистрации сотен handler-ов добавляет измеримые миллисекунды к холодному старту, что важно для serverless и относится к тому, с чем вы боретесь при [сокращении времени холодного старта AWS Lambda на .NET 11](/ru/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/). Явная простая регистрация полностью обходит это и дружелюбнее к trimming и Native AOT, потому что нет рефлексивного обнаружения, которое нужно держать безопасным для trimming.
 
 ## Деталь, которая решает за вас
 
@@ -184,7 +184,7 @@ builder.Services.Decorate<IOrderService, LoggingOrderService>();
 
 **Зафиксировать 12.5.0 - реальный вариант с реальной ценой.** Apache 2.0 на последней бесплатной версии не истекает. Но вы замораживаетесь на версии, которая не получает патчей безопасности, и наследуете риск сопровождения сами. Это нормально для стабильного внутреннего приложения и опасно для всего, что выставлено в интернет.
 
-**Если вы только когда-либо вызываете `Send`, медиатор вам не нужен.** Честная проверка: откройте своё решение и поищите `IPipelineBehavior` и `INotification`. Если behaviors ноль и вы не публикуете уведомления, MediatR работает как слой косвенности поверх вызовов методов, и его удаление - механический рефакторинг, который делает код более навигируемым, убирает зависимость и стирает вопрос лицензии одним движением. Это тот же инстинкт рационализации библиотек, что стоит за выбором встроенного варианта в [System.Text.Json против Newtonsoft.Json в 2026](/2026/05/system-text-json-vs-newtonsoft-json-in-2026/).
+**Если вы только когда-либо вызываете `Send`, медиатор вам не нужен.** Честная проверка: откройте своё решение и поищите `IPipelineBehavior` и `INotification`. Если behaviors ноль и вы не публикуете уведомления, MediatR работает как слой косвенности поверх вызовов методов, и его удаление - механический рефакторинг, который делает код более навигируемым, убирает зависимость и стирает вопрос лицензии одним движением. Это тот же инстинкт рационализации библиотек, что стоит за выбором встроенного варианта в [System.Text.Json против Newtonsoft.Json в 2026](/ru/2026/05/system-text-json-vs-newtonsoft-json-in-2026/).
 
 ## Решение, в одну строку
 
@@ -192,11 +192,11 @@ builder.Services.Decorate<IOrderService, LoggingOrderService>();
 
 ## Связанное
 
-- [Minimal APIs vs controllers in ASP.NET Core 11](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/)
-- [Fix: Unable to resolve service for type while attempting to activate](/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/)
-- [Fix: Cannot consume scoped service from singleton](/2026/05/fix-cannot-consume-scoped-service-from-singleton/)
-- [HttpClient vs HttpClientFactory vs Refit](/2026/05/httpclient-vs-httpclientfactory-vs-refit/)
-- [System.Text.Json против Newtonsoft.Json в 2026](/2026/05/system-text-json-vs-newtonsoft-json-in-2026/)
+- [Minimal APIs vs controllers in ASP.NET Core 11](/ru/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/)
+- [Fix: Unable to resolve service for type while attempting to activate](/ru/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/)
+- [Fix: Cannot consume scoped service from singleton](/ru/2026/05/fix-cannot-consume-scoped-service-from-singleton/)
+- [HttpClient vs HttpClientFactory vs Refit](/ru/2026/05/httpclient-vs-httpclientfactory-vs-refit/)
+- [System.Text.Json против Newtonsoft.Json в 2026](/ru/2026/05/system-text-json-vs-newtonsoft-json-in-2026/)
 
 ## Источники
 

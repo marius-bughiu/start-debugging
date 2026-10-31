@@ -209,8 +209,8 @@ Claude は `30m` を cron 表現に変換し、生成された 8 文字 ID で p
 
 ## 関連リーディング
 
-- `--from-pr` を GitLab と Bitbucket に開いた完全な Claude Code リリースはクラウド routines とよく合います: [Claude Code 2.1.119: GitLab、Bitbucket、GHE からの PR](/2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket/) を参照してください。
-- routine がトリアージ中に `.NET` 業務システムから読みたいなら、まず MCP で公開してください。手順は [.NET 11 で C# のカスタム MCP サーバーを作る方法](/2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11/) にあります。
+- `--from-pr` を GitLab と Bitbucket に開いた完全な Claude Code リリースはクラウド routines とよく合います: [Claude Code 2.1.119: GitLab、Bitbucket、GHE からの PR](/ja/2026/04/claude-code-2-1-119-from-pr-gitlab-bitbucket/) を参照してください。
+- routine がトリアージ中に `.NET` 業務システムから読みたいなら、まず MCP で公開してください。手順は [.NET 11 で C# のカスタム MCP サーバーを作る方法](/ja/2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11/) にあります。
 - GitHub Copilot 形の同等品は agent skills 版が [Visual Studio 2026 Copilot エージェントスキル](/ja/2026/04/visual-studio-2026-copilot-agent-skills/) にあります。
 - Anthropic 側ではなく Microsoft 側でエージェントランナーを構築する C# 開発者には、[Microsoft Agent Framework 1.0](/ja/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) が本番対応の入口です。
 - 別のモデルに対するトークンで支払うなら、bring-your-own-key の経済については [VS Code の GitHub Copilot で BYOK Anthropic、Ollama、Foundry Local](/ja/2026/04/github-copilot-vs-code-byok-anthropic-ollama-foundry-local/) を参照してください。

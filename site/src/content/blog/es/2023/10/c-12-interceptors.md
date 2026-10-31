@@ -11,7 +11,7 @@ translationOf: "2023/10/c-12-interceptors"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-Los interceptors son una característica experimental del compilador introducida en .NET 8, lo que significa que puede cambiar o ser eliminada en una futura versión del framework. Para ver qué más hay nuevo en .NET 8, echa un vistazo a nuestra página [What's new in .NET 8](/2023/06/whats-new-in-net-8/).
+Los interceptors son una característica experimental del compilador introducida en .NET 8, lo que significa que puede cambiar o ser eliminada en una futura versión del framework. Para ver qué más hay nuevo en .NET 8, echa un vistazo a nuestra página [What's new in .NET 8](/es/2023/06/whats-new-in-net-8/).
 
 Para activar la característica, tendrás que activar un feature flag añadiendo `<Features>InterceptorsPreview</Features>` a tu archivo `.csproj`.
 

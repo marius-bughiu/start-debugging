@@ -191,7 +191,7 @@ static class Cursor
 }
 ```
 
-Обратите внимание на `AsNoTracking()` в запросе. Это строки списка только для чтения, поэтому нет причин платить за трекер изменений; если вы не уверены, когда это имеет значение, см. [AsNoTracking vs AsNoTrackingWithIdentityResolution в EF Core 11](/2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11/). Для активно используемой конечной точки со списком этот запрос также является сильным кандидатом на [скомпилированный запрос](/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/), поскольку его форма никогда не меняется между запросами.
+Обратите внимание на `AsNoTracking()` в запросе. Это строки списка только для чтения, поэтому нет причин платить за трекер изменений; если вы не уверены, когда это имеет значение, см. [AsNoTracking vs AsNoTrackingWithIdentityResolution в EF Core 11](/ru/2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11/). Для активно используемой конечной точки со списком этот запрос также является сильным кандидатом на [скомпилированный запрос](/ru/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/), поскольку его форма никогда не меняется между запросами.
 
 ## Индекс не опционален
 
@@ -204,7 +204,7 @@ modelBuilder.Entity<Post>()
     .IsDescending(true, true);
 ```
 
-Официальное руководство прямолинейно об этом в [разделе об индексах](https://learn.microsoft.com/en-us/ef/core/querying/pagination): ваш индекс должен соответствовать порядку вашей пагинации. Если вы сортируете по `(CreatedAt DESC, PostId DESC)`, но индексируете `(CreatedAt ASC, PostId ASC)`, многие базы данных всё ещё могут сканировать индекс в обратном направлении, но как только вы добавите третий столбец или несоответствующее направление, планировщик откатится к сортировке по всему отфильтрованному набору, и ваша страница постоянной стоимости пропала. Направление индекса - это часть контракта, а не деталь. Это тот же класс проблем "план запроса делает то, о чём вы не просили", что и случайный [запрос N+1](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/): LINQ выглядит нормально, но план рассказывает реальную историю, поэтому проверьте фактический план выполнения один раз перед выпуском.
+Официальное руководство прямолинейно об этом в [разделе об индексах](https://learn.microsoft.com/en-us/ef/core/querying/pagination): ваш индекс должен соответствовать порядку вашей пагинации. Если вы сортируете по `(CreatedAt DESC, PostId DESC)`, но индексируете `(CreatedAt ASC, PostId ASC)`, многие базы данных всё ещё могут сканировать индекс в обратном направлении, но как только вы добавите третий столбец или несоответствующее направление, планировщик откатится к сортировке по всему отфильтрованному набору, и ваша страница постоянной стоимости пропала. Направление индекса - это часть контракта, а не деталь. Это тот же класс проблем "план запроса делает то, о чём вы не просили", что и случайный [запрос N+1](/ru/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/): LINQ выглядит нормально, но план рассказывает реальную историю, поэтому проверьте фактический план выполнения один раз перед выпуском.
 
 ## Почему не синтаксис кортежей, который вы видели в сыром SQL
 
@@ -226,11 +226,11 @@ Offset-пагинация не всегда неправа. Для неболь�
 
 ## Связанные материалы
 
-- [Как использовать разделение запросов, чтобы избежать декартова взрыва в EF Core 11](/2026/06/how-to-use-query-splitting-to-avoid-a-cartesian-explosion-in-ef-core-11/)
-- [AsNoTracking vs AsNoTrackingWithIdentityResolution в EF Core 11](/2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11/)
-- [Как обнаружить запросы N+1 в EF Core 11](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)
-- [Как использовать скомпилированные запросы с EF Core для горячих путей](/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/)
-- [Как использовать IAsyncEnumerable с EF Core 11](/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/)
+- [Как использовать разделение запросов, чтобы избежать декартова взрыва в EF Core 11](/ru/2026/06/how-to-use-query-splitting-to-avoid-a-cartesian-explosion-in-ef-core-11/)
+- [AsNoTracking vs AsNoTrackingWithIdentityResolution в EF Core 11](/ru/2026/06/asnotracking-vs-asnotrackingwithidentityresolution-in-ef-core-11/)
+- [Как обнаружить запросы N+1 в EF Core 11](/ru/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)
+- [Как использовать скомпилированные запросы с EF Core для горячих путей](/ru/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/)
+- [Как использовать IAsyncEnumerable с EF Core 11](/ru/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/)
 
 ## Источники
 

@@ -11,7 +11,7 @@ translationOf: "2023/11/net-8-performance-unsafeaccessor-vs-reflection"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-Em um artigo anterior vimos [como acessar membros privados usando `UnsafeAccessor`](/2023/10/unsafe-accessor/). Desta vez, queremos olhar para o desempenho dele em comparação com Reflection e ver se realmente é zero-overhead ou não.
+Em um artigo anterior vimos [como acessar membros privados usando `UnsafeAccessor`](/pt-br/2023/10/unsafe-accessor/). Desta vez, queremos olhar para o desempenho dele em comparação com Reflection e ver se realmente é zero-overhead ou não.
 
 Vamos rodar quatro benchmarks.
 

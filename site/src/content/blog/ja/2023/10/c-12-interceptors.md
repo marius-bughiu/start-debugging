@@ -11,7 +11,7 @@ translationOf: "2023/10/c-12-interceptors"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-Interceptors は .NET 8 で導入された実験的なコンパイラー機能で、将来のリリースで仕様が変わったり、削除されたりする可能性があります。.NET 8 のそのほかの新機能については、[What's new in .NET 8](/2023/06/whats-new-in-net-8/) のページを見てみてください。
+Interceptors は .NET 8 で導入された実験的なコンパイラー機能で、将来のリリースで仕様が変わったり、削除されたりする可能性があります。.NET 8 のそのほかの新機能については、[What's new in .NET 8](/ja/2023/06/whats-new-in-net-8/) のページを見てみてください。
 
 この機能を有効にするには、`.csproj` ファイルに `<Features>InterceptorsPreview</Features>` を追加して機能フラグを ON にする必要があります。
 

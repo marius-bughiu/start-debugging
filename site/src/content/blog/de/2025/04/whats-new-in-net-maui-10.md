@@ -14,7 +14,7 @@ translationDate: 2026-05-01
 ---
 .NET MAUI 10 wurde im November 2025 zusammen mit .NET 10 und C# 14 veröffentlicht.  
   
-.NET 10 ist eine Long-Term-Support-Version (LTS) und erhält ab Veröffentlichungsdatum 3 Jahre lang kostenlosen Support und Patches, bis November 2028. Weitere Informationen finden Sie unter [Neuerungen in .NET 10](/2024/12/dotnet-10/) und [Neuerungen in C# 14](/2024/12/csharp-14/).
+.NET 10 ist eine Long-Term-Support-Version (LTS) und erhält ab Veröffentlichungsdatum 3 Jahre lang kostenlosen Support und Patches, bis November 2028. Weitere Informationen finden Sie unter [Neuerungen in .NET 10](/de/2024/12/dotnet-10/) und [Neuerungen in C# 14](/de/2024/12/csharp-14/).
 
 In .NET MAUI 10 gibt es mehrere neue Funktionen und Verbesserungen:
 

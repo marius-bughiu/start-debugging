@@ -98,7 +98,7 @@ await foreach (var line in ReadLinesAsync("huge.log", ct))
 
 コンパイラーはこれを、`GetAsyncEnumerator` の呼び出し、毎回 `Current` を読む `await MoveNextAsync()` のループ、そして finally ブロック内の `await DisposeAsync()` へと展開します。ループは完全に逐次的です。要素 N+1 は、本体が要素 N を処理し終えるまで要求されません。この逐次的で需要駆動の形は、制限ではなく機能です。これがメモリを抑え、自然なバックプレッシャーを与えます。遅いコンシューマーは自動的にプロデューサーを減速させます。プロデューサーの次の `await` は、次の `MoveNextAsync` 呼び出しまで再開しないからです。
 
-イテレーション順序が重要でなく並行性が欲しい場合、`await foreach` は誤ったツールです。`IAsyncEnumerable<T>` を消費し、並列度の上限つきで複数の要素に対して本体を一度に実行できる [Parallel.ForEachAsync](/2026/05/parallel-foreach-vs-parallel-foreachasync-vs-task-whenall/) を使ってください。`await foreach` は順序つきで一度に 1 つずつの処理のためのものです。
+イテレーション順序が重要でなく並行性が欲しい場合、`await foreach` は誤ったツールです。`IAsyncEnumerable<T>` を消費し、並列度の上限つきで複数の要素に対して本体を一度に実行できる [Parallel.ForEachAsync](/ja/2026/05/parallel-foreach-vs-parallel-foreachasync-vs-task-whenall/) を使ってください。`await foreach` は順序つきで一度に 1 つずつの処理のためのものです。
 
 ## キャンセル: `WithCancellation` と `[EnumeratorCancellation]` のペア
 
@@ -138,7 +138,7 @@ await foreach (var item in stream.ConfigureAwait(false))
 }
 ```
 
-これは `MoveNextAsync` の await と、最後の `DisposeAsync` の await の両方を構成します。最新の ASP.NET Core アプリにはキャプチャすべき同期コンテキストがないので、そこでは何もしませんが、ライブラリコード、コンソールホスト、UI やレガシーのコンテキスト下で動作し得るものにとっては依然として重要です。トレードオフは非同期コードのほかの場所と同じで、[ConfigureAwait は .NET 11 でまだ重要か](/2026/05/configureawait-false-vs-default-in-dotnet-11/) で扱っています。
+これは `MoveNextAsync` の await と、最後の `DisposeAsync` の await の両方を構成します。最新の ASP.NET Core アプリにはキャプチャすべき同期コンテキストがないので、そこでは何もしませんが、ライブラリコード、コンソールホスト、UI やレガシーのコンテキスト下で動作し得るものにとっては依然として重要です。トレードオフは非同期コードのほかの場所と同じで、[ConfigureAwait は .NET 11 でまだ重要か](/ja/2026/05/configureawait-false-vs-default-in-dotnet-11/) で扱っています。
 
 ## 非同期ストリーム上の LINQ は今や標準で同梱される
 
@@ -164,7 +164,7 @@ await foreach (var line in firstTenErrors.WithCancellation(ct))
 2. 各要素の生成が **非同期 I/O**（データベース、ネットワーク、ファイル、メッセージキュー）を伴う。
 3. **最後の要素が到着する前に処理を開始したい**、またはそれらを一度にすべてメモリに保持する余裕がない。
 
-具体的に当てはまるケース: [EF Core 11 で IAsyncEnumerable を使う](/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/) で扱っているように、エクスポートのためにデータベースから行をストリーミングする。ページ分割された API をページごとに読み、ページが到着するたびに各要素を返す。決して終わらないログやメッセージのストリームを追う。データを [Channel](/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) や `PipeWriter` へ流し込む。ASP.NET Core では、minimal API やコントローラーアクションから `IAsyncEnumerable<T>` を返すと、レスポンス全体をバッファリングする代わりに JSON 配列を要素ごとにクライアントへストリーミングします。
+具体的に当てはまるケース: [EF Core 11 で IAsyncEnumerable を使う](/ja/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/) で扱っているように、エクスポートのためにデータベースから行をストリーミングする。ページ分割された API をページごとに読み、ページが到着するたびに各要素を返す。決して終わらないログやメッセージのストリームを追う。データを [Channel](/ja/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) や `PipeWriter` へ流し込む。ASP.NET Core では、minimal API やコントローラーアクションから `IAsyncEnumerable<T>` を返すと、レスポンス全体をバッファリングする代わりに JSON 配列を要素ごとにクライアントへストリーミングします。
 
 ## いつ使うべきでないか
 
@@ -185,11 +185,11 @@ await foreach (var line in firstTenErrors.WithCancellation(ct))
 
 ## 関連
 
-- [How to use IAsyncEnumerable<T> with EF Core 11](/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/) は、これらすべてをデータベースの行のストリーミングに適用します。
-- [IEnumerable vs IAsyncEnumerable vs IQueryable in C#](/2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp/) は、3 つのシーケンスインターフェースの並列の判断ガイドです。
-- [How to stream a file from an ASP.NET Core endpoint without buffering](/2026/04/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering/) は、ストリームを生成する側の HTTP レスポンス版の対応物です。
-- [How to cancel a long-running Task in C# without deadlocking](/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/) は、非同期ストリームが依存するキャンセルトークンをより深く掘り下げます。
-- [Streaming tasks with .NET 9 Task.WhenEach](/2026/01/streaming-tasks-with-net-9-task-wheneach/) は、結果が完了するそばから消費するもう 1 つの主要な方法です。
+- [How to use IAsyncEnumerable<T> with EF Core 11](/ja/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/) は、これらすべてをデータベースの行のストリーミングに適用します。
+- [IEnumerable vs IAsyncEnumerable vs IQueryable in C#](/ja/2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp/) は、3 つのシーケンスインターフェースの並列の判断ガイドです。
+- [How to stream a file from an ASP.NET Core endpoint without buffering](/ja/2026/04/how-to-stream-a-file-from-an-aspnetcore-endpoint-without-buffering/) は、ストリームを生成する側の HTTP レスポンス版の対応物です。
+- [How to cancel a long-running Task in C# without deadlocking](/ja/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/) は、非同期ストリームが依存するキャンセルトークンをより深く掘り下げます。
+- [Streaming tasks with .NET 9 Task.WhenEach](/ja/2026/01/streaming-tasks-with-net-9-task-wheneach/) は、結果が完了するそばから消費するもう 1 つの主要な方法です。
 
 ## 出典
 

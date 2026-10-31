@@ -136,9 +136,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 }
 ```
 
-Der `if (!mounted) return;`-Schutz vor `setState` ist hier nicht optional: Ein asynchroner Callback, der aufgelöst wird, nachdem der Benutzer den Screen verlassen hat, wirft andernfalls einen anderen Fehler. Dieser Schutz ist dieselbe Disziplin, die Sie beim [sicheren Verwenden von BuildContext nach einem await](/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/) benötigen, und er begleitet jeden abgewarteten Callback in einem `State`.
+Der `if (!mounted) return;`-Schutz vor `setState` ist hier nicht optional: Ein asynchroner Callback, der aufgelöst wird, nachdem der Benutzer den Screen verlassen hat, wirft andernfalls einen anderen Fehler. Dieser Schutz ist dieselbe Disziplin, die Sie beim [sicheren Verwenden von BuildContext nach einem await](/de/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/) benötigen, und er begleitet jeden abgewarteten Callback in einem `State`.
 
-Für alles, was über einen einzelnen Wert hinausgeht, bevorzugen Sie einen `FutureBuilder` oder, wenn Sie Riverpod verwenden, einen `AsyncValue`, der Laden, Fehler und Daten als drei explizite Fälle kodiert. Das Ergebnis direkt nach einem await in ein Feld zu schreiben, ist genau das Muster, das diesen Absturz und seine Geschwister zur Dispose-Zeit erzeugt; das Modellieren der Anfrage als Zustand stattdessen wird im Beitrag [Lade- und Fehlerzustände mit AsyncValue anzeigen](/2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod/) behandelt.
+Für alles, was über einen einzelnen Wert hinausgeht, bevorzugen Sie einen `FutureBuilder` oder, wenn Sie Riverpod verwenden, einen `AsyncValue`, der Laden, Fehler und Daten als drei explizite Fälle kodiert. Das Ergebnis direkt nach einem await in ein Feld zu schreiben, ist genau das Muster, das diesen Absturz und seine Geschwister zur Dispose-Zeit erzeugt; das Modellieren der Anfrage als Zustand stattdessen wird im Beitrag [Lade- und Fehlerzustände mit AsyncValue anzeigen](/de/2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod/) behandelt.
 
 ### 2. Wenn der Wert synchron ist, weisen Sie ihn in initState vor dem ersten Build zu
 
@@ -166,7 +166,7 @@ class _EditorState extends State<Editor> {
 }
 ```
 
-Dies ist die legitime Verwendung von `late final` in einem `State`: Sie benötigen `widget.initialText`, das in einem Feld-Initialisierer nicht verfügbar ist, aber in `initState()` verfügbar ist, das immer noch vor jedem Build läuft. Da der Controller genau einmal erstellt und nie neu zugewiesen wird, ist `late final` der richtige Modifikator, und Sie schulden ihm immer noch ein `dispose()`, wie der [Leitfaden zur Controller-Entsorgung](/2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks/) darlegt.
+Dies ist die legitime Verwendung von `late final` in einem `State`: Sie benötigen `widget.initialText`, das in einem Feld-Initialisierer nicht verfügbar ist, aber in `initState()` verfügbar ist, das immer noch vor jedem Build läuft. Da der Controller genau einmal erstellt und nie neu zugewiesen wird, ist `late final` der richtige Modifikator, und Sie schulden ihm immer noch ein `dispose()`, wie der [Leitfaden zur Controller-Entsorgung](/de/2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks/) darlegt.
 
 ### 3. Verwenden Sie einen Lazy-Initialisierer, damit das Feld nie unzugewiesen sein kann
 
@@ -217,7 +217,7 @@ Dies in `initState()` zu tun, wirft entweder (älteres Flutter) oder liefert ver
 
 Es wirft im Release, aber die Meldung ist verschwunden. In Release-Builds wird die Assertion-Maschinerie entfernt, aber ein `late`-Lesezugriff ohne Initialisierer wirft immer noch `LateInitializationError`; nur die ausführliche Debug-Meldung wird reduziert. Gehen Sie nicht davon aus, dass `late`-Abstürze nur im Debug auftreten. Sie gehen in den Versand.
 
-`late` versus der Null-Check-Operator. Zu `late` zu greifen, um "the non-nullable field must be initialized" zum Schweigen zu bringen, ist derselbe Instinkt, der Leute dazu bringt, `!` zu verteilen, um Nullbarkeit zum Schweigen zu bringen. Beide verlagern eine Garantie zur Compile-Zeit in einen Laufzeitabsturz. Wenn ein Wert legitim fehlen kann, modellieren Sie ihn als nullbar und behandeln Sie das null; `late` ist nur für Werte, die immer vorhanden sind, aber etwas nach der Deklaration zugewiesen werden. Das umfassendere Null-Safety-Denkmodell, einschließlich der Frage, wann `late` die richtige Notlösung ist und wann nicht, finden Sie in der [Null-Safety-Checkliste für Flutter 2 zu 3.x](/2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist/).
+`late` versus der Null-Check-Operator. Zu `late` zu greifen, um "the non-nullable field must be initialized" zum Schweigen zu bringen, ist derselbe Instinkt, der Leute dazu bringt, `!` zu verteilen, um Nullbarkeit zum Schweigen zu bringen. Beide verlagern eine Garantie zur Compile-Zeit in einen Laufzeitabsturz. Wenn ein Wert legitim fehlen kann, modellieren Sie ihn als nullbar und behandeln Sie das null; `late` ist nur für Werte, die immer vorhanden sind, aber etwas nach der Deklaration zugewiesen werden. Das umfassendere Null-Safety-Denkmodell, einschließlich der Frage, wann `late` die richtige Notlösung ist und wann nicht, finden Sie in der [Null-Safety-Checkliste für Flutter 2 zu 3.x](/de/2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist/).
 
 Ein `late`-Feld, das innerhalb seines eigenen Initialisierers gelesen wird. Wenn ein verzögerter `late final x = ...x...;`-Initialisierer `x` liest, erhalten Sie einen `LateInitializationError` über das Lesen während der Initialisierung. Der Zyklus ist der Fehler; brechen Sie ihn, indem Sie den Wert berechnen, ohne das Feld zu referenzieren.
 
@@ -225,11 +225,11 @@ Die einzige Disziplin, die diese ganze Fehlerklasse beseitigt: Verwenden Sie `la
 
 ## Verwandt
 
-- [How to use BuildContext safely after an await in Flutter](/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/) behandelt den `mounted`-Schutz, von dem die obige asynchrone Lösung abhängt.
-- [How to show loading and error states with AsyncValue in Flutter Riverpod](/2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod/) ist die strukturierte Alternative zum Schreiben asynchroner Ergebnisse in ein `late`-Feld.
-- [Fix: A TextEditingController was used after being disposed in Flutter](/2026/06/fix-texteditingcontroller-was-used-after-being-disposed-in-flutter/) ist die andere Hälfte des Controller-Lebenszyklus, an dem `late final`-Controller teilnehmen.
-- [How to dispose controllers in Flutter to avoid memory leaks](/2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks/) passt zum `late final TextEditingController`-Muster in Lösung 2.
-- [Migrate a Flutter 2 app to Flutter 3.x: null safety checklist](/2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist/) erklärt, wo `late` in die Null-Safety passt und wo nullbare Typen die bessere Wahl sind.
+- [How to use BuildContext safely after an await in Flutter](/de/2026/06/how-to-use-buildcontext-safely-after-an-await-in-flutter/) behandelt den `mounted`-Schutz, von dem die obige asynchrone Lösung abhängt.
+- [How to show loading and error states with AsyncValue in Flutter Riverpod](/de/2026/06/how-to-show-loading-and-error-states-with-asyncvalue-in-flutter-riverpod/) ist die strukturierte Alternative zum Schreiben asynchroner Ergebnisse in ein `late`-Feld.
+- [Fix: A TextEditingController was used after being disposed in Flutter](/de/2026/06/fix-texteditingcontroller-was-used-after-being-disposed-in-flutter/) ist die andere Hälfte des Controller-Lebenszyklus, an dem `late final`-Controller teilnehmen.
+- [How to dispose controllers in Flutter to avoid memory leaks](/de/2026/06/how-to-dispose-controllers-in-flutter-to-avoid-memory-leaks/) passt zum `late final TextEditingController`-Muster in Lösung 2.
+- [Migrate a Flutter 2 app to Flutter 3.x: null safety checklist](/de/2026/06/migrate-a-flutter-2-app-to-flutter-3-x-null-safety-checklist/) erklärt, wo `late` in die Null-Safety passt und wo nullbare Typen die bessere Wahl sind.
 
 ## Quellen
 

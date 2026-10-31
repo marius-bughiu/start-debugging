@@ -189,7 +189,7 @@ await foreach (ReportRow row in reports.GetRowsAsync(year, ct))
 
 レスポンスボディを直接書き込んでいるため、最初の `FlushAsync` 呼び出しでヘッダーがコミットされた後はステータスコードを返せません。バイトを書き込む前に `ctx.Response.StatusCode` を設定してください。サービス呼び出しが 500 を返すような形で失敗する可能性がある場合は、`BodyWriter` に触れる前にそれを確認してください。
 
-ZIP 生成については、.NET 11 (`System.IO.Compression` を通じて) で任意の書き込み可能なストリームに書き込む `ZipArchive` を作成できます。`ctx.Response.Body` をラップする `StreamWriter` を渡してください (`ZipArchive` は `PipeWriter` ではなく `Stream` を期待するため、`BodyWriter` を直接渡さないでください)。このアプローチは [C# ZIP files to Stream](/2023/11/c-zip-files-to-stream/) の記事でカバーされており、.NET 8 で追加された新しい `CreateFromDirectory` オーバーロードを使用しています。同様に、エクスポートが Zstandard で圧縮されている場合は、レスポンスボディの前に圧縮ストリームをチェーンしてください -- [.NET 11 の Zstandard 圧縮サポート](/2026/04/dotnet-11-zstandard-compression-system-io/) の新しいビルトイン `ZstandardStream` は NuGet 依存関係を避けます。
+ZIP 生成については、.NET 11 (`System.IO.Compression` を通じて) で任意の書き込み可能なストリームに書き込む `ZipArchive` を作成できます。`ctx.Response.Body` をラップする `StreamWriter` を渡してください (`ZipArchive` は `PipeWriter` ではなく `Stream` を期待するため、`BodyWriter` を直接渡さないでください)。このアプローチは [C# ZIP files to Stream](/ja/2023/11/c-zip-files-to-stream/) の記事でカバーされており、.NET 8 で追加された新しい `CreateFromDirectory` オーバーロードを使用しています。同様に、エクスポートが Zstandard で圧縮されている場合は、レスポンスボディの前に圧縮ストリームをチェーンしてください -- [.NET 11 の Zstandard 圧縮サポート](/ja/2026/04/dotnet-11-zstandard-compression-system-io/) の新しいビルトイン `ZstandardStream` は NuGet 依存関係を避けます。
 
 ## レンジリクエスト: 無料で再開可能なダウンロード
 

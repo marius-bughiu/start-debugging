@@ -34,7 +34,7 @@ namespace System.Runtime.CompilerServices
 
 ### Error CS8652 The feature 'primary constructors' is currently in Preview and _unsupported_. To use Preview features, use the 'preview' language version.
 
-Это значит, что вы используете .NET 8, но ещё не перешли на C# 12. Можно либо [перейти на C# 12](/2023/06/how-to-switch-to-c-12/), либо определить атрибут без primary constructors, например так:
+Это значит, что вы используете .NET 8, но ещё не перешли на C# 12. Можно либо [перейти на C# 12](/ru/2023/06/how-to-switch-to-c-12/), либо определить атрибут без primary constructors, например так:
 
 ```cs
 namespace System.Runtime.CompilerServices

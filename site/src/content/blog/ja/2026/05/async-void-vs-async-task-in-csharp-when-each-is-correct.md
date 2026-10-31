@@ -126,7 +126,7 @@ private async Task SaveAsync(FormData form)
 - **失われたスタックトレース。** synchronization context に現れる例外は元の呼び出しサイトのスタックを失います。再スローされたフレームは見えますが、「これは `OnSaveClicked` から呼ばれました」は見えません。
 - **キャンセルなし。** 呼び出し側が待つ `Task` を持たないので、キャンセルを通過させることはできません。`CancellationToken` 引数はメソッド内では機能しますが、呼び出し側は `OperationCanceledException` に反応できません。後ろに伝播することがないからです。
 - **`Task.WhenAny` 経由のタイムアウトなし。** 一般的なパターンは `await Task.WhenAny(work, Task.Delay(timeout, ct))` です。これには `Task` が必要です。`async void` には存在しません。
-- **完了に対するテストなし。** xUnit, NUnit, MSTest は `async Task` テストメソッドを `await` でき、その結果を観察できます。それらは `async void` テストを `await` できません。一部のフレームワークは `async void` テストメソッドを特別扱いします (古い NUnit、アダプターのクセを持つ MSTest v2)。いずれも推奨はしていません。より詳細なパターンを [HttpClient を使うコードをユニットテストする方法](/2026/04/how-to-unit-test-code-that-uses-httpclient/) で見てください。そこではすべてのテストが `async Task` です。
+- **完了に対するテストなし。** xUnit, NUnit, MSTest は `async Task` テストメソッドを `await` でき、その結果を観察できます。それらは `async void` テストを `await` できません。一部のフレームワークは `async void` テストメソッドを特別扱いします (古い NUnit、アダプターのクセを持つ MSTest v2)。いずれも推奨はしていません。より詳細なパターンを [HttpClient を使うコードをユニットテストする方法](/ja/2026/04/how-to-unit-test-code-that-uses-httpclient/) で見てください。そこではすべてのテストが `async Task` です。
 - **fire-and-crash でもある fire-and-forget。** 多くの「fire-and-forget」パターンは、開発者が `await` を忘れたときに静かに `async void` 呼び出しになります。修正は `async void` ではありません。修正は明示的な `_ = SomeAsync();` ディスカードであり、結果の `Task` が観察されないことを受け入れることです。あるいはより良いのは、それを観察する既知の場所 (ロガー、バックグラウンドキュー) に task を渡すことです。
 
 ## ベンチマーク: `async void` は何かを節約するのか?
@@ -173,9 +173,9 @@ public class AsyncShapes
 
 イベントでないメソッドに対して `async void` に惹かれているなら、その場で考えを変えるべき 2 つの事柄があります。
 
-1 つ目はリクエストのライフタイムにまたがる fire-and-forget タスクです。ASP.NET Core はデフォルトで `SynchronizationContext` を提供しないので、`async void` の例外は `ThreadPool.UnobservedExceptionEvent` に上がり、`<ServerGarbageCollection>` の設定によってはワーカープロセスごと落とすことができます。「コントローラーからバックグラウンド作業を起動する」と決めた瞬間、`IHostedService` に切り替えるか、一回限りのものについては、それを観察するもの (`BackgroundService`、`IHostApplicationLifetime` を意識したキュー、[Channels](/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/)) 経由でフレームワークに `Task` を返してください。
+1 つ目はリクエストのライフタイムにまたがる fire-and-forget タスクです。ASP.NET Core はデフォルトで `SynchronizationContext` を提供しないので、`async void` の例外は `ThreadPool.UnobservedExceptionEvent` に上がり、`<ServerGarbageCollection>` の設定によってはワーカープロセスごと落とすことができます。「コントローラーからバックグラウンド作業を起動する」と決めた瞬間、`IHostedService` に切り替えるか、一回限りのものについては、それを観察するもの (`BackgroundService`、`IHostApplicationLifetime` を意識したキュー、[Channels](/ja/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/)) 経由でフレームワークに `Task` を返してください。
 
-2 つ目はインターフェースです。メソッドをモックできるようにしたい、あるいは契約の一部にしたいなら、何かを返さなければなりません。`Task` は、値を生成しない非同期操作の標準的な戻り値の型です。`void` はモックや fake が `await` できず、そのまわりでテストセットアップを調整できません。[変更追跡を壊さずに DbContext をモックする方法](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) のモックパターンは、同じ理由で `Task` を返すメンバーに依存しています。
+2 つ目はインターフェースです。メソッドをモックできるようにしたい、あるいは契約の一部にしたいなら、何かを返さなければなりません。`Task` は、値を生成しない非同期操作の標準的な戻り値の型です。`void` はモックや fake が `await` できず、そのまわりでテストセットアップを調整できません。[変更追跡を壊さずに DbContext をモックする方法](/ja/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) のモックパターンは、同じ理由で `Task` を返すメンバーに依存しています。
 
 ## 主張のあるおすすめ、再び
 
@@ -188,11 +188,11 @@ public class AsyncShapes
 
 ## 関連
 
-- [C# で長時間実行される Task をデッドロックなしでキャンセルする方法](/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/)
-- [C# で BlockingCollection の代わりに Channels を使う方法](/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/)
-- [HttpClient を使うコードをユニットテストする方法](/2026/04/how-to-unit-test-code-that-uses-httpclient/)
-- [Fix: TaskCanceledException: A task was canceled in HttpClient](/2026/05/fix-taskcanceledexception-a-task-was-canceled-httpclient/)
-- [Fix: InvalidOperationException: Synchronous operations are disallowed in ASP.NET Core](/2026/05/fix-invalidoperationexception-synchronous-operations-are-disallowed/)
+- [C# で長時間実行される Task をデッドロックなしでキャンセルする方法](/ja/2026/04/how-to-cancel-a-long-running-task-in-csharp-without-deadlocking/)
+- [C# で BlockingCollection の代わりに Channels を使う方法](/ja/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/)
+- [HttpClient を使うコードをユニットテストする方法](/ja/2026/04/how-to-unit-test-code-that-uses-httpclient/)
+- [Fix: TaskCanceledException: A task was canceled in HttpClient](/ja/2026/05/fix-taskcanceledexception-a-task-was-canceled-httpclient/)
+- [Fix: InvalidOperationException: Synchronous operations are disallowed in ASP.NET Core](/ja/2026/05/fix-invalidoperationexception-synchronous-operations-are-disallowed/)
 
 ## ソース
 

@@ -60,5 +60,5 @@ Além dos números de versão, existem certas palavras-chave que podem ser usada
 
 Talvez você esteja procurando mudar para uma versão diferente do C#, nesse caso:
 
--   [Como mudar para C# 12](/2023/06/how-to-switch-to-c-12/)
--   [Como mudar para C# 11](/2023/03/how-to-switch-to-c-11/)
+-   [Como mudar para C# 12](/pt-br/2023/06/how-to-switch-to-c-12/)
+-   [Como mudar para C# 11](/pt-br/2023/03/how-to-switch-to-c-11/)

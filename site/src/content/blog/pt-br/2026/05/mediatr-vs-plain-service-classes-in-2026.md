@@ -101,7 +101,7 @@ public async Task<OrderDto> Get(int id, IOrderService orders, CancellationToken 
 
 A versão simples é mais curta e, o que é crucial, pressionar ir para definição em `orders.GetByIdAsync` te leva ao método que executa. Com `sender.Send(new GetOrderById(id))` você cai no `Send` do MediatR, e navega até o handler adivinhando ou com um desvio de "encontrar implementações". Em um time pequeno essa diferença é leve. Em uma base de código grande com centenas de handlers, a perda de navegabilidade direta é um imposto real e diário que o modelo do MediatR impõe em troca de desacoplar o chamador do tipo do handler. Se esse desacoplamento te traz algo depende de se alguém um dia troca um handler sem tocar no chamador, o que na prática é raro.
 
-O registro também merece uma comparação. O MediatR varre assemblies ao iniciar; as classes de serviço simples se registram de forma explícita, e você obtém uma falha em tempo de inicialização (não na primeira requisição) se esquecer alguma, o que se relaciona diretamente com o tipo de erros por trás de [Unable to resolve service for type while attempting to activate](/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/).
+O registro também merece uma comparação. O MediatR varre assemblies ao iniciar; as classes de serviço simples se registram de forma explícita, e você obtém uma falha em tempo de inicialização (não na primeira requisição) se esquecer alguma, o que se relaciona diretamente com o tipo de erros por trás de [Unable to resolve service for type while attempting to activate](/pt-br/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/).
 
 ```csharp
 // .NET 11, C# 14 - registration, side by side
@@ -158,7 +158,7 @@ builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.Decorate<IOrderService, LoggingOrderService>();
 ```
 
-A troca é honesta: o behavior do MediatR é genérico sobre cada requisição com um único registro, ao passo que um decorador é por interface. Se você tem uma ou duas preocupações transversais e um punhado de interfaces de serviço, os decoradores ganham em clareza. Se você tem dez behaviors que precisam se aplicar de forma uniforme a duzentos tipos de requisição, o pipeline genérico do MediatR é genuinamente menos código, e esse é o cenário em que ficar (e pagar, ou qualificar para Community) é defensável. Para preocupações no nível da requisição que na verdade são preocupações de HTTP, note que parte do que as pessoas colocam em behaviors pertence ao middleware ou aos filtros, a mesma superfície coberta por [adicionar um filtro global de exceções no ASP.NET Core 11](/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/).
+A troca é honesta: o behavior do MediatR é genérico sobre cada requisição com um único registro, ao passo que um decorador é por interface. Se você tem uma ou duas preocupações transversais e um punhado de interfaces de serviço, os decoradores ganham em clareza. Se você tem dez behaviors que precisam se aplicar de forma uniforme a duzentos tipos de requisição, o pipeline genérico do MediatR é genuinamente menos código, e esse é o cenário em que ficar (e pagar, ou qualificar para Community) é defensável. Para preocupações no nível da requisição que na verdade são preocupações de HTTP, note que parte do que as pessoas colocam em behaviors pertence ao middleware ou aos filtros, a mesma superfície coberta por [adicionar um filtro global de exceções no ASP.NET Core 11](/pt-br/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/).
 
 ## Quanto o despacho custa de verdade
 
@@ -172,7 +172,7 @@ O desempenho é o argumento mais fraco em qualquer direção, e você não dever
 | Varredura de assemblies ao iniciar | Sim, cresce com o número de handlers | Nenhuma |
 | Ordem de grandeza por chamada | Dezenas de ns + pequena alocação | ~1 ns, zero alocação |
 
-A honestidade metodológica aqui: contra um handler que toca um banco de dados ou a rede, dezenas de nanossegundos são invisíveis, e você deveria medir as suas próprias formas de objeto com BenchmarkDotNet em vez de confiar em um número genérico. O custo que de fato aparece na prática é a inicialização. Varrer assemblies para registrar centenas de handlers adiciona milissegundos mensuráveis à inicialização a frio, o que importa para serverless e é o tipo de coisa contra a qual você luta ao [reduzir o tempo de inicialização a frio de uma AWS Lambda com .NET 11](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/). O registro explícito e simples evita isso por completo e é mais amigável com o trimming e o Native AOT, porque não há descoberta reflexiva para manter segura ao trimming.
+A honestidade metodológica aqui: contra um handler que toca um banco de dados ou a rede, dezenas de nanossegundos são invisíveis, e você deveria medir as suas próprias formas de objeto com BenchmarkDotNet em vez de confiar em um número genérico. O custo que de fato aparece na prática é a inicialização. Varrer assemblies para registrar centenas de handlers adiciona milissegundos mensuráveis à inicialização a frio, o que importa para serverless e é o tipo de coisa contra a qual você luta ao [reduzir o tempo de inicialização a frio de uma AWS Lambda com .NET 11](/pt-br/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/). O registro explícito e simples evita isso por completo e é mais amigável com o trimming e o Native AOT, porque não há descoberta reflexiva para manter segura ao trimming.
 
 ## O detalhe que decide por você
 
@@ -184,7 +184,7 @@ Algumas restrições resolvem isso antes de o gosto arquitetural entrar em cena.
 
 **Fixar 12.5.0 é uma opção real com um custo real.** Apache 2.0 na última versão gratuita não expira. Mas você congela em uma versão que não recebe patches de segurança, e herda você mesmo o risco de manutenção. Isso é aceitável para um app interno estável e perigoso para qualquer coisa exposta à internet.
 
-**Se você só chama `Send`, você não precisa de um mediator.** O teste honesto: abra a sua solução e procure `IPipelineBehavior` e `INotification`. Se há zero behaviors e você não publica notificações, o MediatR está funcionando como uma camada de indireção sobre chamadas de método, e removê-lo é uma refatoração mecânica que torna o código mais navegável, remove uma dependência e apaga a questão da licença em um único movimento. Esse é o mesmo instinto de racionalização de bibliotecas por trás de escolher a opção embutida em [System.Text.Json vs Newtonsoft.Json em 2026](/2026/05/system-text-json-vs-newtonsoft-json-in-2026/).
+**Se você só chama `Send`, você não precisa de um mediator.** O teste honesto: abra a sua solução e procure `IPipelineBehavior` e `INotification`. Se há zero behaviors e você não publica notificações, o MediatR está funcionando como uma camada de indireção sobre chamadas de método, e removê-lo é uma refatoração mecânica que torna o código mais navegável, remove uma dependência e apaga a questão da licença em um único movimento. Esse é o mesmo instinto de racionalização de bibliotecas por trás de escolher a opção embutida em [System.Text.Json vs Newtonsoft.Json em 2026](/pt-br/2026/05/system-text-json-vs-newtonsoft-json-in-2026/).
 
 ## A decisão, em uma linha
 
@@ -192,11 +192,11 @@ Para código novo em .NET 11 em 2026, escreva classes de serviço simples e inje
 
 ## Relacionados
 
-- [Minimal APIs vs controllers in ASP.NET Core 11](/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/)
-- [Fix: Unable to resolve service for type while attempting to activate](/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/)
-- [Fix: Cannot consume scoped service from singleton](/2026/05/fix-cannot-consume-scoped-service-from-singleton/)
-- [HttpClient vs HttpClientFactory vs Refit](/2026/05/httpclient-vs-httpclientfactory-vs-refit/)
-- [System.Text.Json vs Newtonsoft.Json em 2026](/2026/05/system-text-json-vs-newtonsoft-json-in-2026/)
+- [Minimal APIs vs controllers in ASP.NET Core 11](/pt-br/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/)
+- [Fix: Unable to resolve service for type while attempting to activate](/pt-br/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/)
+- [Fix: Cannot consume scoped service from singleton](/pt-br/2026/05/fix-cannot-consume-scoped-service-from-singleton/)
+- [HttpClient vs HttpClientFactory vs Refit](/pt-br/2026/05/httpclient-vs-httpclientfactory-vs-refit/)
+- [System.Text.Json vs Newtonsoft.Json em 2026](/pt-br/2026/05/system-text-json-vs-newtonsoft-json-in-2026/)
 
 ## Fontes
 

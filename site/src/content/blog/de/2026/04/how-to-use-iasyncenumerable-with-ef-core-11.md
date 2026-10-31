@@ -218,11 +218,11 @@ Streaming gewinnt, wenn das Ergebnis groß ist, wenn Speicher wichtig ist, wenn 
 
 ## Verwandt
 
-- [Wie man Records mit EF Core 11 korrekt verwendet](/2026/04/how-to-use-records-with-ef-core-11-correctly/) passt gut zu Streaming-Reads, wenn Ihre Entitäten unveränderlich sind.
-- [Ein-Schritt-Migrationen mit EF Core 11 `dotnet ef update add`](/2026/04/efcore-11-single-step-migrations-dotnet-ef-update-add/) deckt die Tooling-Seite derselben Release ab.
-- [Streaming von Tasks mit .NET 9 Task.WhenEach](/2026/01/streaming-tasks-with-net-9-task-wheneach/) für das andere Hauptmuster von `IAsyncEnumerable<T>` im modernen .NET.
-- [HttpClient GetFromJsonAsAsyncEnumerable](/2023/10/httpclient-get-json-as-asyncenumerable/) zeigt das gleiche Streaming-Muster auf der HTTP-Seite.
-- [EF Core 11 Preview 3 entfernt Reference Joins in Split Queries](/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/) für den Performance-Kontext derselben Release.
+- [Wie man Records mit EF Core 11 korrekt verwendet](/de/2026/04/how-to-use-records-with-ef-core-11-correctly/) passt gut zu Streaming-Reads, wenn Ihre Entitäten unveränderlich sind.
+- [Ein-Schritt-Migrationen mit EF Core 11 `dotnet ef update add`](/de/2026/04/efcore-11-single-step-migrations-dotnet-ef-update-add/) deckt die Tooling-Seite derselben Release ab.
+- [Streaming von Tasks mit .NET 9 Task.WhenEach](/de/2026/01/streaming-tasks-with-net-9-task-wheneach/) für das andere Hauptmuster von `IAsyncEnumerable<T>` im modernen .NET.
+- [HttpClient GetFromJsonAsAsyncEnumerable](/de/2023/10/httpclient-get-json-as-asyncenumerable/) zeigt das gleiche Streaming-Muster auf der HTTP-Seite.
+- [EF Core 11 Preview 3 entfernt Reference Joins in Split Queries](/de/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/) für den Performance-Kontext derselben Release.
 
 ## Quellen
 

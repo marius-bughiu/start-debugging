@@ -251,7 +251,7 @@ internal static partial class IdentifierScanner
 
 ## Связанное чтение
 
-- [Span<T> vs ReadOnlySpan<T> и когда что оправдывает себя](/2026/01/net-10-performance-searchvalues/) описывает более ранний срез `SearchValues` времён .NET 10; вернитесь к нему за SIMD-контекстом.
+- [Span<T> vs ReadOnlySpan<T> и когда что оправдывает себя](/ru/2026/01/net-10-performance-searchvalues/) описывает более ранний срез `SearchValues` времён .NET 10; вернитесь к нему за SIMD-контекстом.
 - [Channels вместо BlockingCollection](/ru/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) -- правильный транспорт, когда вы сканируете входы в воркере.
 - [Как читать большой CSV в .NET 11, не упираясь в память](/ru/2026/04/how-to-read-a-large-csv-in-dotnet-11-without-running-out-of-memory/) использует `SearchValues<char>` для сканирования разделителей в парсере.
 - [Как обнаружить, что файл дописан в .NET](/ru/2026/04/how-to-detect-when-a-file-finishes-being-written-to-in-dotnet/) естественно сочетается с CSV-сканером выше при потреблении файлов из inbox.

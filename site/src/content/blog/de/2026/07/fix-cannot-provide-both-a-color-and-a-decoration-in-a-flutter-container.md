@@ -155,7 +155,7 @@ Container(
 )
 ```
 
-Wenn Sie hier Farben aus einem Material-3-`ColorScheme` ziehen, sind die Rollen (`surface`, `surfaceContainerHigh`, `primaryContainer`) für den Kontrast sowohl im hellen als auch im dunklen Modus wichtig; siehe [wie man die Akzentfarbe in einer Flutter-App mit dem Material-3-ColorScheme setzt](/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme/), um zu erfahren, zu welcher Rolle man greift.
+Wenn Sie hier Farben aus einem Material-3-`ColorScheme` ziehen, sind die Rollen (`surface`, `surfaceContainerHigh`, `primaryContainer`) für den Kontrast sowohl im hellen als auch im dunklen Modus wichtig; siehe [wie man die Akzentfarbe in einer Flutter-App mit dem Material-3-ColorScheme setzt](/de/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme/), um zu erfahren, zu welcher Rolle man greift.
 
 ### AnimatedContainer hat genau dieselbe Regel
 
@@ -212,22 +212,22 @@ Die Assertion-Meldung nennt die Datei und Zeile innerhalb von `container.dart`, 
 2. Wenn der Trace nicht hilft, weil der `Container` in einer Schleife oder einem geteilten Builder gebaut wird, durchsuchen Sie Ihr Projekt nach `color:` und `decoration:`, die nah beieinander erscheinen. Die Regex `Container\([^)]*color:[^)]*decoration:` fängt die meisten einzeiligen Fälle; mehrzeilige brauchen einen manuellen Durchgang der geteilten Karte oder Kachel.
 3. Da dies zur Konstruktionszeit ausgelöst wird, bringt Hot Reload es sofort zum Vorschein. Fügen Sie den Rahmen oder die Decoration hinzu, speichern Sie, und wenn der Frame rot wird, haben Sie das richtige Widget auf dem Bildschirm.
 
-Dieses Verhalten zur Konstruktionszeit ist das Gegenteil von Layout-Assertions wie [RenderBox was not laid out](/2026/06/fix-renderbox-was-not-laid-out-in-flutter/), die erst auftauchen, wenn die Layout-Pipeline läuft, und oft mehrere Widgets von der eigentlichen Ursache entfernt zeigen.
+Dieses Verhalten zur Konstruktionszeit ist das Gegenteil von Layout-Assertions wie [RenderBox was not laid out](/de/2026/06/fix-renderbox-was-not-laid-out-in-flutter/), die erst auftauchen, wenn die Layout-Pipeline läuft, und oft mehrere Widgets von der eigentlichen Ursache entfernt zeigen.
 
 ## Fallstricke und ähnlich aussehende Fehler
 
 - **`BoxDecoration.color` versus `Container.color` und die Zeichenreihenfolge.** Sie sind nicht in jedem Fall identisch. `Container.color` zeichnet hinter dem Kind, aber auch hinter jeder `decoration`, wäre eine erlaubt; `BoxDecoration.color` zeichnet als Teil der Decoration, die hinter `foregroundDecoration` sitzt. Für eine flache Füllung ist das Ergebnis derselbe Pixel, aber wenn Sie auch `foregroundDecoration` verwenden, ist die Schichtung wichtig.
 - **`Ink`- und `InkWell`-Splashes verschwinden über einem farbigen Container.** Wenn Sie einem `Container` eine `color` gegeben und dann ein Kind in `InkWell` gewickelt haben, zeichnet die Welligkeit hinter der Farbe des `Container` und verschwindet. Die Lösung ist derselbe Zug: Entfernen Sie `Container.color` und verwenden Sie ein `Ink`-Widget mit einer `decoration` oder ein `Material` mit einer Farbe, damit die Ink-Schicht über der Füllung sitzt.
-- **`The following assertion was thrown building` mit einer anderen Meldung.** Wenn Ihr Fehler `Incorrect use of ParentDataWidget` statt color und decoration erwähnt, ist das ein separater Layout-Vertrags-Bug; siehe [Incorrect use of ParentDataWidget: Expanded muss innerhalb von Flex stehen](/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter/).
+- **`The following assertion was thrown building` mit einer anderen Meldung.** Wenn Ihr Fehler `Incorrect use of ParentDataWidget` statt color und decoration erwähnt, ist das ein separater Layout-Vertrags-Bug; siehe [Incorrect use of ParentDataWidget: Expanded muss innerhalb von Flex stehen](/de/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter/).
 - **Release-Builds verbergen ihn, sie beheben ihn nicht.** Da die Prüfung ein `assert` ist, entfernt ein Release-Build sie und zeichnet mit dem Argument, das der Konstruktor gespeichert hat. Liefern Sie nicht in der Annahme aus, "es funktioniert im Release". Es funktioniert zufällig, und der nächste SDK-Sprung kann ändern, welches Argument gewinnt.
 - **`DecoratedBox` löst denselben konzeptionellen Fehler anders aus.** `DecoratedBox` hat überhaupt kein `color`-Argument, nur `decoration`, sodass Sie dort nicht auf diese Assertion stoßen können. Wenn Sie `DecoratedBox` verwendet und eine Farbe wollten, geht sie immer in das `BoxDecoration`.
 
 ## Verwandt
 
-- [Lösung: A RenderFlex overflowed in Flutter](/2026/05/fix-renderflex-overflowed-in-flutter/) ist die andere Assertion, auf die Einsteiger beim Bauen von Karten- und Zeilen-Layouts zuerst stoßen.
-- [Lösung: RenderBox was not laid out in Flutter](/2026/06/fix-renderbox-was-not-laid-out-in-flutter/) behandelt einen Fehler zur Layout-Zeit, der anders als dieser von der eigentlichen Ursache wegzeigt.
-- [Lösung: Incorrect use of ParentDataWidget: Expanded muss innerhalb von Flex stehen](/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter/) ist eine verwandte Konstruktionsvertrags-Assertion, die zu erkennen sich lohnt.
-- [Wie man die Akzentfarbe in einer Flutter-App mit dem Material-3-ColorScheme setzt](/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme/) erklärt, welche `ColorScheme`-Rolle Sie in Ihr `BoxDecoration.color` einspeisen.
+- [Lösung: A RenderFlex overflowed in Flutter](/de/2026/05/fix-renderflex-overflowed-in-flutter/) ist die andere Assertion, auf die Einsteiger beim Bauen von Karten- und Zeilen-Layouts zuerst stoßen.
+- [Lösung: RenderBox was not laid out in Flutter](/de/2026/06/fix-renderbox-was-not-laid-out-in-flutter/) behandelt einen Fehler zur Layout-Zeit, der anders als dieser von der eigentlichen Ursache wegzeigt.
+- [Lösung: Incorrect use of ParentDataWidget: Expanded muss innerhalb von Flex stehen](/de/2026/07/fix-incorrect-use-of-parentdatawidget-expanded-must-be-inside-flex-in-flutter/) ist eine verwandte Konstruktionsvertrags-Assertion, die zu erkennen sich lohnt.
+- [Wie man die Akzentfarbe in einer Flutter-App mit dem Material-3-ColorScheme setzt](/de/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme/) erklärt, welche `ColorScheme`-Rolle Sie in Ihr `BoxDecoration.color` einspeisen.
 
 ## Quellen
 

@@ -218,11 +218,11 @@ catch (Exception ex)
 
 ## 関連
 
-- [EF Core 11 で record を正しく使う方法](/2026/04/how-to-use-records-with-ef-core-11-correctly/) は、エンティティが不変のときのストリーミング読み込みとよく組み合わさります。
-- [`dotnet ef update add` による EF Core 11 の 1 ステップマイグレーション](/2026/04/efcore-11-single-step-migrations-dotnet-ef-update-add/) は同じリリースのツーリング面をカバーします。
-- [.NET 9 の Task.WhenEach でタスクをストリーミング](/2026/01/streaming-tasks-with-net-9-task-wheneach/) はモダン .NET のもう 1 つの主要な `IAsyncEnumerable<T>` パターンです。
-- [HttpClient GetFromJsonAsAsyncEnumerable](/2023/10/httpclient-get-json-as-asyncenumerable/) は同じストリーミングの形を HTTP 側で示します。
-- [EF Core 11 preview 3 の split query でのリファレンス JOIN の剪定](/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/) は同じリリースのパフォーマンス面の文脈です。
+- [EF Core 11 で record を正しく使う方法](/ja/2026/04/how-to-use-records-with-ef-core-11-correctly/) は、エンティティが不変のときのストリーミング読み込みとよく組み合わさります。
+- [`dotnet ef update add` による EF Core 11 の 1 ステップマイグレーション](/ja/2026/04/efcore-11-single-step-migrations-dotnet-ef-update-add/) は同じリリースのツーリング面をカバーします。
+- [.NET 9 の Task.WhenEach でタスクをストリーミング](/ja/2026/01/streaming-tasks-with-net-9-task-wheneach/) はモダン .NET のもう 1 つの主要な `IAsyncEnumerable<T>` パターンです。
+- [HttpClient GetFromJsonAsAsyncEnumerable](/ja/2023/10/httpclient-get-json-as-asyncenumerable/) は同じストリーミングの形を HTTP 側で示します。
+- [EF Core 11 preview 3 の split query でのリファレンス JOIN の剪定](/ja/2026/04/efcore-11-preview-3-prunes-reference-joins-split-queries/) は同じリリースのパフォーマンス面の文脈です。
 
 ## 参考資料
 

@@ -124,4 +124,4 @@ Diese Funktion in C# 14 bringt die Lambda-Syntax in Einklang mit der Bequemlichk
 
 -   [Neuerungen in C# 14 | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14)
 -   [Einfache Lambda-Parameter mit Modifizierern | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-14.0/simple-lambda-parameters-with-modifiers)
--   [Neuerungen in C# 14 | StartDebugging.NET](/2024/12/csharp-14/)
+-   [Neuerungen in C# 14 | StartDebugging.NET](/de/2024/12/csharp-14/)

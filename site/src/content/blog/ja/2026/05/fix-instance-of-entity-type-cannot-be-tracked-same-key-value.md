@@ -112,7 +112,7 @@ public async Task<IActionResult> Update(int id, CustomerDto dto)
 
 `AnyAsync` はエンティティをマテリアライズしないので、何も追跡されません。`db.Update(updated)` は新しいインスタンスを `Modified` 状態でアタッチし、EF Core はすべてのプロパティを 1 回の `UPDATE` ラウンドトリップで書き込みます。修正 1 と比べたトレードオフは、ダーティかどうかにかかわらず全カラムが回線に書き込まれる点です。EF Core が比較できる元の値を持っていないからです。広いテーブルでは無駄が多く、狭いテーブルではこれが最もシンプルなコードです。
 
-何が追跡され何が追跡されないかというより広範なパターンについては、[変更トラッカーのエントリー API](/2026/04/efcore-11-changetracker-getentriesforstate/) のまとめを参照してください。
+何が追跡され何が追跡されないかというより広範なパターンについては、[変更トラッカーのエントリー API](/ja/2026/04/efcore-11-changetracker-getentriesforstate/) のまとめを参照してください。
 
 ### 3. 既存のエンティティをデタッチしてから自分のものをアタッチする
 
@@ -176,7 +176,7 @@ customer をその注文と一緒に eager 読み込みし、後で別の場所�
 
 ### テストでモックされた DbContext
 
-テストを書くためにモックの `DbContext` を使っていると、モックが identity map を正しく実装していないことがよくあり、本番でこのエラーに当たってもテストはパスします。逆もあります: 実際の in-memory プロバイダーがモックでは追跡しなかったエンティティを追跡し、テスト対象のシステムとは無関係な理由でテストが失敗するパターンです。修正は実プロバイダーに対してテストすることです。[DbContext モッキングの落とし穴](/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) ガイドが、モックが提供するもの・しないものをカバーしています。
+テストを書くためにモックの `DbContext` を使っていると、モックが identity map を正しく実装していないことがよくあり、本番でこのエラーに当たってもテストはパスします。逆もあります: 実際の in-memory プロバイダーがモックでは追跡しなかったエンティティを追跡し、テスト対象のシステムとは無関係な理由でテストが失敗するパターンです。修正は実プロバイダーに対してテストすることです。[DbContext モッキングの落とし穴](/ja/2026/04/how-to-mock-dbcontext-without-breaking-change-tracking/) ガイドが、モックが提供するもの・しないものをカバーしています。
 
 ### EnableSensitiveDataLogging はあなたのデバッガーです
 
@@ -208,7 +208,7 @@ builder.Services.AddDbContext<AppDb>(o => o
 
 ## 関連記事
 
-EF Core のより広い文脈については、[N+1 クエリ検出](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/) のまとめ、[ホットパスでのコンパイル済みクエリ](/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/) のガイド、そして [EF Core エンティティとしての records](/2026/04/how-to-use-records-with-ef-core-11-correctly/) のウォークスルーを参照してください。最後の記事には `with` 式まわりの independent な identity map の落とし穴があります。リクエストハンドラーではなく起動コードでこのエラーに当たった場合は、[DefaultConnection ルックアップのチェックリスト](/2026/05/fix-no-connection-string-named-defaultconnection/) が設定側をカバーします。実データベースをコードに渡すテストフィクスチャには、[Testcontainers ウォークスルー](/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers/) が最もクリーンなセットアップです。
+EF Core のより広い文脈については、[N+1 クエリ検出](/ja/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/) のまとめ、[ホットパスでのコンパイル済みクエリ](/ja/2026/05/how-to-use-compiled-queries-with-ef-core-for-hot-paths/) のガイド、そして [EF Core エンティティとしての records](/ja/2026/04/how-to-use-records-with-ef-core-11-correctly/) のウォークスルーを参照してください。最後の記事には `with` 式まわりの independent な identity map の落とし穴があります。リクエストハンドラーではなく起動コードでこのエラーに当たった場合は、[DefaultConnection ルックアップのチェックリスト](/ja/2026/05/fix-no-connection-string-named-defaultconnection/) が設定側をカバーします。実データベースをコードに渡すテストフィクスチャには、[Testcontainers ウォークスルー](/ja/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers/) が最もクリーンなセットアップです。
 
 ## ソース
 

@@ -91,7 +91,7 @@ También existe un atributo `[OutputCache]` si prefieres atributos en un handler
 
 ## Cachea todo un grupo de rutas a la vez
 
-Repetir `.CacheOutput()` en cada endpoint se vuelve tedioso rápido. Como `MapGroup` devuelve un `RouteGroupBuilder` que comparte convenciones, puedes adjuntar output caching al grupo y cada endpoint dentro lo hereda. Esto compone limpiamente con los módulos de endpoints por recurso que se cubren en [organizar endpoints de minimal API con MapGroup](/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/):
+Repetir `.CacheOutput()` en cada endpoint se vuelve tedioso rápido. Como `MapGroup` devuelve un `RouteGroupBuilder` que comparte convenciones, puedes adjuntar output caching al grupo y cada endpoint dentro lo hereda. Esto compone limpiamente con los módulos de endpoints por recurso que se cubren en [organizar endpoints de minimal API con MapGroup](/es/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/):
 
 ```csharp
 // .NET 11, C# 14
@@ -158,7 +158,7 @@ app.MapPost("/catalog", async (Product product, AppDbContext db, IOutputCacheSto
 });
 ```
 
-Ahora el caché sirve lecturas instantáneas y se mantiene fresco: una expiración de cinco minutos (o incluso de una hora) es una red de seguridad, y la invalidación real ocurre exactamente cuando llega una escritura. Si atas la llamada a `EvictByTagAsync` al mismo `SaveChanges` que muta la fila, los lectores nunca ven datos más viejos que la última escritura exitosa. Esto combina bien con rastrear las consultas detrás de esas escrituras; si un endpoint de lectura es tan lento que estás recurriendo al caché, vale la pena descartar primero una [consulta N+1 en EF Core](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/), porque cachear una consulta lenta solo esconde el problema.
+Ahora el caché sirve lecturas instantáneas y se mantiene fresco: una expiración de cinco minutos (o incluso de una hora) es una red de seguridad, y la invalidación real ocurre exactamente cuando llega una escritura. Si atas la llamada a `EvictByTagAsync` al mismo `SaveChanges` que muta la fila, los lectores nunca ven datos más viejos que la última escritura exitosa. Esto combina bien con rastrear las consultas detrás de esas escrituras; si un endpoint de lectura es tan lento que estás recurriendo al caché, vale la pena descartar primero una [consulta N+1 en EF Core](/es/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/), porque cachear una consulta lenta solo esconde el problema.
 
 También puedes registrar tags de forma declarativa en una política base, lo que etiqueta cada endpoint coincidente sin tocar cada uno:
 
@@ -243,7 +243,7 @@ app.MapGet("/cheap", GetCheapThing)
     .CacheOutput(policy => policy.Expire(TimeSpan.FromSeconds(5)).SetLocking(false));
 ```
 
-Déjalo activado para cualquier cosa costosa. La protección contra stampede es exactamente lo que quieres bajo carga, y es la misma clase de problema que [HybridCache](/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/) resuelve para el caché de datos en lugar del caché de respuesta completa.
+Déjalo activado para cualquier cosa costosa. La protección contra stampede es exactamente lo que quieres bajo carga, y es la misma clase de problema que [HybridCache](/es/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/) resuelve para el caché de datos en lugar del caché de respuesta completa.
 
 ## Revalidación barata con ETags
 
@@ -292,11 +292,11 @@ Output caching en una minimal API se reduce a un conjunto pequeño y componible 
 
 ## Relacionados
 
-- [How to organize minimal API endpoints with MapGroup in ASP.NET Core 11](/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)
-- [How to use HybridCache in ASP.NET Core 11 with Redis as the L2 cache](/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/)
-- [HybridCache vs IMemoryCache vs IDistributedCache in .NET 11](/2026/06/hybridcache-vs-imemorycache-vs-idistributedcache-in-dotnet-11/)
-- [How to detect N+1 queries in EF Core 11](/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)
-- [How to add per-endpoint rate limiting in ASP.NET Core 11](/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11/)
+- [How to organize minimal API endpoints with MapGroup in ASP.NET Core 11](/es/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/)
+- [How to use HybridCache in ASP.NET Core 11 with Redis as the L2 cache](/es/2026/06/how-to-use-hybridcache-in-aspnetcore-11-with-redis-as-the-l2-cache/)
+- [HybridCache vs IMemoryCache vs IDistributedCache in .NET 11](/es/2026/06/hybridcache-vs-imemorycache-vs-idistributedcache-in-dotnet-11/)
+- [How to detect N+1 queries in EF Core 11](/es/2026/05/how-to-detect-n-plus-1-queries-in-ef-core-11/)
+- [How to add per-endpoint rate limiting in ASP.NET Core 11](/es/2026/04/how-to-add-per-endpoint-rate-limiting-in-aspnetcore-11/)
 
 ## Fuentes
 

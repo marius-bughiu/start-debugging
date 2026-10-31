@@ -90,7 +90,7 @@ dotnet lambda package --configuration Release \
 
 La herramienta global `Amazon.Lambda.Tools` empaqueta el binario `bootstrap` en un ZIP que subes como runtime personalizado. Con una función de 256 MB y el boilerplate de arriba, espera arranques en frío en el rango de **150 ms a 300 ms**, bajando de 1500-2000 ms en el runtime gestionado.
 
-El compromiso: cada biblioteca con mucha reflexión que metas se convierte en una advertencia de trim. Los generadores de código fuente de `System.Text.Json` manejan la serialización, pero si usas algo que reflexiona sobre tipos genéricos en runtime (AutoMapper antiguo, Newtonsoft, handlers de MediatR basados en reflexión), obtendrás advertencias ILLink o una excepción en runtime. Trata cada advertencia como un bug real. Una alternativa de mediator amigable con trim se cubre en [SwitchMediator v3, un mediator zero-alloc que se mantiene amigable con AOT](/2026/01/switchmediator-v3-a-zero-alloc-mediator-that-stays-friendly-to-aot/).
+El compromiso: cada biblioteca con mucha reflexión que metas se convierte en una advertencia de trim. Los generadores de código fuente de `System.Text.Json` manejan la serialización, pero si usas algo que reflexiona sobre tipos genéricos en runtime (AutoMapper antiguo, Newtonsoft, handlers de MediatR basados en reflexión), obtendrás advertencias ILLink o una excepción en runtime. Trata cada advertencia como un bug real. Una alternativa de mediator amigable con trim se cubre en [SwitchMediator v3, un mediator zero-alloc que se mantiene amigable con AOT](/es/2026/01/switchmediator-v3-a-zero-alloc-mediator-that-stays-friendly-to-aot/).
 
 ## Palanca 2: SnapStart en el runtime gestionado dotnet10
 
@@ -251,7 +251,7 @@ A través de aproximadamente una docena de Lambdas .NET que he ajustado:
 4. **Verifica** con INIT_DURATION al tamaño de memoria de despliegue real. Usa Power Tuning si la curva costo-vs-latencia importa.
 5. **Concurrencia provisionada** solo después de lo anterior, y solo con auto-escalado.
 
-El resto de la historia de Lambda con .NET 11 (versiones de runtime, forma de despliegue, qué cambia si volteas de `dotnet10` a un futuro runtime gestionado `dotnet11`) se cubre en [AWS Lambda soporta .NET 10: qué verificar antes de voltear el runtime](/2026/01/aws-lambda-supports-net-10-what-to-verify-before-you-flip-the-runtime/), que es el compañero de este post.
+El resto de la historia de Lambda con .NET 11 (versiones de runtime, forma de despliegue, qué cambia si volteas de `dotnet10` a un futuro runtime gestionado `dotnet11`) se cubre en [AWS Lambda soporta .NET 10: qué verificar antes de voltear el runtime](/es/2026/01/aws-lambda-supports-net-10-what-to-verify-before-you-flip-the-runtime/), que es el compañero de este post.
 
 ## Fuentes
 

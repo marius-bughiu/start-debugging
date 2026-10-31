@@ -22,7 +22,7 @@ A maioria das equipes recorre a um conversor customizado cedo demais. Antes de e
 
 - Nomes de propriedades que não correspondem: use `JsonPropertyNameAttribute` ou um `JsonNamingPolicy`. O Preview 3 adicionou `JsonNamingPolicy.PascalCase` e um atributo `[JsonNamingPolicy]` em nível de membro, então as [políticas de nomenclatura no System.Text.Json 11](/pt-br/2026/04/system-text-json-11-pascalcase-per-member-naming/) provavelmente cobrem o que você precisa.
 - Números como strings: `JsonNumberHandling.AllowReadingFromString` em `JsonSerializerOptions`.
-- Enums como strings: `JsonStringEnumConverter` é nativo. Existe até uma [variante compatível com trim para Native AOT](/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/).
+- Enums como strings: `JsonStringEnumConverter` é nativo. Existe até uma [variante compatível com trim para Native AOT](/pt-br/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/).
 - Propriedades somente leitura ou parâmetros de construtor: o gerador de código-fonte (`[JsonSerializable]` mais `JsonSerializerContext`) lida com records e construtores primários diretamente.
 - Polimorfismo por discriminador: `[JsonDerivedType]` e `[JsonPolymorphic]` (adicionados no .NET 7) evitam quase todos os truques antigos com conversores.
 
@@ -340,7 +340,7 @@ Para factories compatíveis com AOT, faça uma das opções:
 - Restringir a factory a um conjunto conhecido e finito de genéricos fechados e instanciá-los diretamente com `new ResultConverter<MyValue, MyError>()` por par.
 - Anotar a factory com `[RequiresDynamicCode]` e `[RequiresUnreferencedCode]`, aceitar os avisos de trim e documentar que consumidores AOT precisam registrar o conversor fechado manualmente.
 
-O padrão de usar interceptors para fazer chamadas `JsonSerializer.Serialize` automaticamente pegarem um contexto gerado, discutido em [a proposta de interceptors do C# 14 para JSON gerado por código-fonte](/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/), é independente de conversores: mesmo com isso, você ainda escreve seu `JsonConverter<T>` customizado da mesma forma.
+O padrão de usar interceptors para fazer chamadas `JsonSerializer.Serialize` automaticamente pegarem um contexto gerado, discutido em [a proposta de interceptors do C# 14 para JSON gerado por código-fonte](/pt-br/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/), é independente de conversores: mesmo com isso, você ainda escreve seu `JsonConverter<T>` customizado da mesma forma.
 
 ## Pegadinhas, em ordem de frequência com que aparecem
 
@@ -358,8 +358,8 @@ Se você mantiver isso em mente, um conversor raramente leva mais de 30 linhas d
 
 - [Como usar Channels em vez de BlockingCollection em C#](/pt-br/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) -- padrões assíncronos por padrão, mesma era de design de API.
 - [System.Text.Json no .NET 11 Preview 3 adiciona PascalCase e nomenclatura por membro](/pt-br/2026/04/system-text-json-11-pascalcase-per-member-naming/) -- quando uma política de nomenclatura é suficiente e um conversor não.
-- [Como usar JsonStringEnumConverter com Native AOT](/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/) -- a história de trim/AOT para conversores nativos.
-- [Interceptors para geração de código-fonte do System.Text.Json](/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/) -- uma direção de ergonomia paralela que vale acompanhar.
+- [Como usar JsonStringEnumConverter com Native AOT](/pt-br/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/) -- a história de trim/AOT para conversores nativos.
+- [Interceptors para geração de código-fonte do System.Text.Json](/pt-br/2026/02/csharp-14-interceptors-system-text-json-source-generation-ergonomics/) -- uma direção de ergonomia paralela que vale acompanhar.
 - [Como retornar múltiplos valores de um método em C# 14](/pt-br/2026/04/how-to-return-multiple-values-from-a-method-in-csharp-14/) -- os padrões de value-tuple e record que muitas vezes acabam precisando de um conversor.
 
 ## Fontes
