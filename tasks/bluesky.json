@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/11/migrate-a-dotnet-test-project-from-fluentassertions-8-to-awesomeassertions",
+    "text": "FluentAssertions 8 to AwesomeAssertions: swap the package, drop License.Accepted, rename a namespace. Tested on .NET 10."
   }
 ]

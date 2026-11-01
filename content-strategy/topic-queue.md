@@ -507,7 +507,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a Flutter app from `MaterialStateProperty` to `WidgetStateProperty` → slug: 2026/10/migrate-a-flutter-app-from-materialstateproperty-to-widgetstateproperty
 - Migrate a Flutter Android project's Gradle scripts from Groovy to Kotlin DSL (`build.gradle` to `build.gradle.kts`) → slug: 2026/10/migrate-a-flutter-android-project-from-groovy-to-kotlin-dsl
 - Migrate a .NET test project from Moq to NSubstitute → slug: 2026/11/migrate-a-dotnet-test-project-from-moq-to-nsubstitute
-- Migrate a .NET test project from FluentAssertions 8 to AwesomeAssertions after the license change
+- Migrate a .NET test project from FluentAssertions 8 to AwesomeAssertions after the license change → slug: 2026/11/migrate-a-dotnet-test-project-from-fluentassertions-8-to-awesomeassertions
 - Migrate an ASP.NET Core app from `Startup.cs` to the minimal hosting model
 - Migrate a Flutter app from `textScaleFactor` to `TextScaler`
 
