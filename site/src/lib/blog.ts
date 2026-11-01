@@ -122,15 +122,13 @@ export function estimateReadingTimeMinutes(
 
 /**
  * Site-relative path where a post's generated OG image lives.
- * Matches the layout emitted by scripts/generate-og-images.mjs.
+ * Matches the layout emitted by scripts/generate-og-images.mjs, which renders
+ * English posts only, so a translation uses its English original's image.
  */
 export function ogImagePathForPost(post: BlogPost): string {
-  const lang = langOf(post);
-  const base = baseSlugOf(post);
-  const m = base.match(/^(\d{4})\/(\d{2})\/([^/]+)$/);
+  const m = baseSlugOf(post).match(/^(\d{4})\/(\d{2})\/([^/]+)$/);
   if (!m) return "/og/default.png";
-  if (lang === "en") return `/og/${m[1]}/${m[2]}/${m[3]}.png`;
-  return `/og/${lang}/${m[1]}/${m[2]}/${m[3]}.png`;
+  return `/og/${m[1]}/${m[2]}/${m[3]}.png`;
 }
 
 /**

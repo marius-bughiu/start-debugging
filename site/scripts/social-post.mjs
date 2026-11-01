@@ -16,7 +16,7 @@
  * title.
  *
  * Usage:
- *   node scripts/social-post.mjs                              # latest post, dry-run
+ *   node scripts/social-post.mjs                              # latest English post, dry-run
  *   node scripts/social-post.mjs --file=src/content/blog/...  # explicit post
  *   node scripts/social-post.mjs --apply                      # send for real
  *   node scripts/social-post.mjs --platforms=bluesky          # limit targets
@@ -63,16 +63,28 @@ const PLATFORM_FILTER = (flagValue("platforms") ?? "bluesky,mastodon")
 
 // --- Helpers --------------------------------------------------------------
 
+// Translations live under blog/<locale>/ and are never posted. They land in
+// their own commits, so one can sit on top of a new English post in a push.
+const TRANSLATED_LOCALES = ["es", "pt-br", "de", "ru", "ja"];
+
+function isTranslation(file) {
+  return TRANSLATED_LOCALES.includes(path.relative(CONTENT_ROOT, file).split(path.sep)[0]);
+}
+
 async function resolvePostFile() {
   if (FILE_ARG) {
     const p = path.isAbsolute(FILE_ARG) ? FILE_ARG : path.resolve(process.cwd(), FILE_ARG);
     await fs.access(p);
     return p;
   }
-  // Fall back to the most recent blog file by git history.
+  // Fall back to the most recent English blog file by git history. git drops
+  // the locale folders itself, so translations can't fill the `head` window.
   try {
+    const excludeTranslations = TRANSLATED_LOCALES.map(
+      (l) => `':(exclude)site/src/content/blog/${l}/'`,
+    ).join(" ");
     const raw = execSync(
-      "git log --name-only --pretty=format: -- 'site/src/content/blog/**/*.md' | head -20",
+      `git log --name-only --pretty=format: -- 'site/src/content/blog/**/*.md' ${excludeTranslations} | head -20`,
       { cwd: REPO_ROOT, encoding: "utf8" },
     );
     const seen = new Set();
@@ -92,8 +104,8 @@ async function resolvePostFile() {
   } catch {
     // git not available - fall through to filesystem walk
   }
-  // Last resort: newest mtime under CONTENT_ROOT.
-  const files = await walk(CONTENT_ROOT);
+  // Last resort: newest mtime among English posts under CONTENT_ROOT.
+  const files = (await walk(CONTENT_ROOT)).filter((f) => !isTranslation(f));
   let best = null;
   let bestM = 0;
   for (const f of files) {

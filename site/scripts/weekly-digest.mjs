@@ -2,8 +2,8 @@
 /**
  * weekly-digest.mjs
  *
- * Build a short weekly digest from the last N days of blog posts and (with
- * --apply) send it via Buttondown as a draft or scheduled email.
+ * Build a short weekly digest from the last N days of English blog posts and
+ * (with --apply) send it via Buttondown as a draft or scheduled email.
  *
  * The digest is deliberately boring: 5 posts max, title + one sentence each
  * (drawn from the post's description front-matter, not a generated summary),
@@ -120,6 +120,9 @@ async function collectRecent() {
     const raw = await fs.readFile(file, "utf8");
     const { data } = matter(raw);
     if (data.draft) continue;
+    // English-only, like generate-llms-txt.mjs: a translation carries its
+    // original's pubDate and would take a second slot for the same post.
+    if (data.lang && data.lang !== "en") continue;
     if (!data.pubDate) continue;
     const t = new Date(data.pubDate).valueOf();
     if (t < cutoff || t > now) continue;
