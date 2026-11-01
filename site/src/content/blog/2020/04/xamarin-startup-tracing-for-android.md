@@ -29,4 +29,4 @@ Some numbers shared by the Xamarin team:
 
 Enabling it is simple: just go to your Xamarin Android project settings (right-click > Properties) and tick "Enable Startup Tracing" under "Code Generation and Runtime" as shown in the image below.
 
-![](/wp-content/uploads/2020/04/Annotation-2020-04-04-122649-3.png)
+![Xamarin Android project options with Enable Startup Tracing checked under Code Generation and Runtime.](/wp-content/uploads/2020/04/Annotation-2020-04-04-122649-3.png)

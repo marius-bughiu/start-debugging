@@ -303,4 +303,4 @@ La gente borra `const`, lo que lo convierte en "The method 'CupertinoPageTransit
 - [Referencia de la API de `PageTransitionsBuilder`](https://api.flutter.dev/flutter/widgets/PageTransitionsBuilder-class.html).
 - [flutter/flutter#172929](https://github.com/flutter/flutter/issues/172929), el issue de seguimiento.
 - Los PR [#174321](https://github.com/flutter/flutter/pull/174321), [#175560](https://github.com/flutter/flutter/pull/175560), [#177080](https://github.com/flutter/flutter/pull/177080) y [#179776](https://github.com/flutter/flutter/pull/179776).
-- [Correcciones basadas en datos](https://dart.dev/tools/fix) en la documentación de Dart.
+- [Correcciones basadas en datos](https://dart.dev/tools/dart-fix) en la documentación de Dart.

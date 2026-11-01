@@ -303,4 +303,4 @@ As pessoas removem o `const`, o que o transforma em "The method 'CupertinoPageTr
 - [Referência da API `PageTransitionsBuilder`](https://api.flutter.dev/flutter/widgets/PageTransitionsBuilder-class.html).
 - [flutter/flutter#172929](https://github.com/flutter/flutter/issues/172929), a issue de acompanhamento.
 - PRs [#174321](https://github.com/flutter/flutter/pull/174321), [#175560](https://github.com/flutter/flutter/pull/175560), [#177080](https://github.com/flutter/flutter/pull/177080) e [#179776](https://github.com/flutter/flutter/pull/179776).
-- [Correções orientadas a dados](https://dart.dev/tools/fix) na documentação do Dart.
+- [Correções orientadas a dados](https://dart.dev/tools/dart-fix) na documentação do Dart.

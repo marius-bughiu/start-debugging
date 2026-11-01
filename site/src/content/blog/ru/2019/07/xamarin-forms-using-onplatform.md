@@ -28,7 +28,7 @@ OnPlatform позволяет именно это и может использо
 
 Посмотрим на результат:
 
-![](/wp-content/uploads/2019/07/xamarin-forms-on-platform.png)
+![Страница About в Xamarin Forms: кнопка Learn More зелёная на Android и фиолетовая на UWP.](/wp-content/uploads/2019/07/xamarin-forms-on-platform.png)
 
 В качестве альтернативы можно использовать следующий синтаксис, более удобный при работе с более сложными типами данных.
 

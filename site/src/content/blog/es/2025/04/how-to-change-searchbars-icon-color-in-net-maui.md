@@ -13,7 +13,7 @@ translationDate: 2026-05-01
 ---
 A partir de .NET 10, la barra de búsqueda de MAUI incluye una nueva propiedad para cambiar el color del icono de búsqueda del `SearchBar`: `SearchIconColor`.
 
-[![](/wp-content/uploads/2025/04/image.png)](/wp-content/uploads/2025/04/image.png)
+[![SearchBar de .NET MAUI con un icono de búsqueda morado y el texto de ejemplo Search videos.](/wp-content/uploads/2025/04/image.png)](/wp-content/uploads/2025/04/image.png)
 
 Como con cualquier propiedad enlazable, puedes asignarle un valor de color como `Purple` o enlazarla a un recurso de la siguiente manera:
 

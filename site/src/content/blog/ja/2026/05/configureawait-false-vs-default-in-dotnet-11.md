@@ -38,7 +38,7 @@ translationDate: 2026-05-21
 
 `ConfigureAwait(false)` は、`SynchronizationContext.Current` と `TaskScheduler.Current` の読み取りを完全にスキップする awaiter を持つ `ConfiguredTaskAwaitable` を返します。継続は常にスレッドプールへポストされます。これが機能のすべてです。ランタイム内の 1 つの分岐です。
 
-.NET 11 の runtime async 作業は、ときに "runtime async" または "ボクシングなしの async" と呼ばれ、JIT による状態機械の生成方法を変更しますが ([.NET 11 preview 1 アナウンス](https://devblogs.microsoft.com/dotnet/announcing-dotnet-11-preview-1/) を参照)、捕捉コンテキストのセマンティクスは変えません。JIT は、多くのケースで別個の状態機械ボックスをアロケートする代わりに、特殊化された単一の継続を発行するようになり、これにより `await` は .NET 8 よりも安価になりました。`ConfigureAwait(false)` のプレーンな `await` に対するコストは相応に縮まりますが、両者のホットパスでの差はもともとナノ秒単位の 1 桁の範囲でした。パフォーマンスは 2026 年においてこの選択が重要となる理由ではありません。
+.NET 11 の runtime async 作業は、ときに "runtime async" または "ボクシングなしの async" と呼ばれ、JIT による状態機械の生成方法を変更しますが ([.NET 11 preview 1 アナウンス](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-1/) を参照)、捕捉コンテキストのセマンティクスは変えません。JIT は、多くのケースで別個の状態機械ボックスをアロケートする代わりに、特殊化された単一の継続を発行するようになり、これにより `await` は .NET 8 よりも安価になりました。`ConfigureAwait(false)` のプレーンな `await` に対するコストは相応に縮まりますが、両者のホットパスでの差はもともとナノ秒単位の 1 桁の範囲でした。パフォーマンスは 2026 年においてこの選択が重要となる理由ではありません。
 
 ## `ConfigureAwait(false)` が依然として重要な場面
 
@@ -236,5 +236,5 @@ UI コード (WinForms、WPF、MAUI、Avalonia、Uno) では: 本当に UI ス�
 - [`Task.ConfigureAwait` のドキュメント](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.configureawait), MS Learn。
 - [`ConfigureAwaitOptions` 列挙型](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.configureawaitoptions), MS Learn。
 - [CA2007: 待機したタスクで ConfigureAwait を呼び出すことを検討する](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca2007), MS Learn。
-- [Announcing .NET 11 Preview 1](https://devblogs.microsoft.com/dotnet/announcing-dotnet-11-preview-1/), .NET ブログ、runtime async セクション。
+- [Announcing .NET 11 Preview 1](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-1/), .NET ブログ、runtime async セクション。
 - [`TaskAwaiter` のソース](https://github.com/dotnet/runtime/blob/main/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/TaskAwaiter.cs), GitHub の `dotnet/runtime`。

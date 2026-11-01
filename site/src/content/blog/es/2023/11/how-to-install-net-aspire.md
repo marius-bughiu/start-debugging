@@ -45,7 +45,7 @@ dotnet workload install aspire
 
 En tu Visual Studio Installer, asegúrate de seleccionar el workload **ASP.NET and web development** y, en el panel derecho, en **Optional**, marca **.NET Aspire SDK (Preview)** y luego haz clic en **Modify** para iniciar el proceso de instalación.
 
-[![](/wp-content/uploads/2023/11/image-1-1024x524.png)](/wp-content/uploads/2023/11/image-1.png)
+[![Visual Studio Installer con ASP.NET and web development seleccionado y .NET Aspire SDK (Preview) marcado en Optional.](/wp-content/uploads/2023/11/image-1-1024x524.png)](/wp-content/uploads/2023/11/image-1.png)
 
 ## Install Docker Desktop
 
@@ -53,7 +53,7 @@ Puedes descargar la última versión de Docker Desktop aquí: [https://www.docke
 
 Pasa por el instalador con las opciones por defecto y, después de un reinicio, deberías estar listo.
 
-[![](/wp-content/uploads/2023/11/image-2.png)](/wp-content/uploads/2023/11/image-2.png)
+[![Instalador de Docker Desktop con las opciones de usar WSL 2 en lugar de Hyper-V y crear un acceso directo marcadas.](/wp-content/uploads/2023/11/image-2.png)](/wp-content/uploads/2023/11/image-2.png)
 
 Ten en cuenta que Docker Desktop es gratis solo para uso personal por desarrolladores individuales, educación y la comunidad de código abierto. Cualquier otro tipo de uso está sujeto a una tarifa de licencia. Asegúrate de revisar [su página de precios](https://www.docker.com/pricing/) si tienes dudas.
 

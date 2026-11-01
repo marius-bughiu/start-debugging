@@ -224,5 +224,5 @@ include: package:flutter_lints/flutter.yaml
 
 - [Understanding null safety](https://dart.dev/null-safety/understanding-null-safety), документация Dart, которая определяет оператор `!` как проверяемое приведение к ненулевому типу и объясняет, почему проверка должна выполняться во время выполнения.
 - [Null safety unsound migration and the `!` operator](https://dart.dev/null-safety), документация языка Dart.
-- [unnecessary_non_null_assertion lint rule](https://dart.dev/tools/linter-rules/unnecessary_non_null_assertion), правила линтера Dart.
+- [unnecessary_non_null_assertion lint rule](https://dart.dev/tools/diagnostics/unnecessary_non_null_assertion), правила линтера Dart.
 - [firstWhereOrNull](https://pub.dev/documentation/collection/latest/collection/IterableExtension/firstWhereOrNull.html), документация API `package:collection`.

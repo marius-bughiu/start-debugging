@@ -38,7 +38,7 @@ Ler as linhas acima só ajuda se você lembrar o que `await` faz por baixo dos p
 
 `ConfigureAwait(false)` retorna um `ConfiguredTaskAwaitable` cujo awaiter pula totalmente as leituras de `SynchronizationContext.Current` e `TaskScheduler.Current`. A continuação sempre é postada no thread pool. Essa é a feature inteira. É um branch no runtime.
 
-O trabalho de runtime async do .NET 11, às vezes chamado "runtime async" ou "async sem boxing", muda como o JIT gera a máquina de estados (veja o [anúncio do .NET 11 preview 1](https://devblogs.microsoft.com/dotnet/announcing-dotnet-11-preview-1/)) mas não muda a semântica do contexto capturado. O JIT agora emite uma única continuação especializada em muitos casos em vez de alocar uma caixa separada para a máquina de estados, o que significa que `await` está mais barato do que no .NET 8. O custo de `ConfigureAwait(false)` em relação a um `await` puro encolhe na mesma proporção, mas a diferença entre os dois em um caminho quente já estava na casa de um dígito de nanossegundos. Performance não é o motivo pelo qual essa escolha importa em 2026.
+O trabalho de runtime async do .NET 11, às vezes chamado "runtime async" ou "async sem boxing", muda como o JIT gera a máquina de estados (veja o [anúncio do .NET 11 preview 1](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-1/)) mas não muda a semântica do contexto capturado. O JIT agora emite uma única continuação especializada em muitos casos em vez de alocar uma caixa separada para a máquina de estados, o que significa que `await` está mais barato do que no .NET 8. O custo de `ConfigureAwait(false)` em relação a um `await` puro encolhe na mesma proporção, mas a diferença entre os dois em um caminho quente já estava na casa de um dígito de nanossegundos. Performance não é o motivo pelo qual essa escolha importa em 2026.
 
 ## Quando `ConfigureAwait(false)` ainda importa
 
@@ -236,5 +236,5 @@ Para código de UI (WinForms, WPF, MAUI, Avalonia, Uno): dentro de handlers de e
 - [Documentação de `Task.ConfigureAwait`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.configureawait), MS Learn.
 - [Enum `ConfigureAwaitOptions`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.configureawaitoptions), MS Learn.
 - [CA2007: Considere chamar ConfigureAwait na tarefa aguardada](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca2007), MS Learn.
-- [Announcing .NET 11 Preview 1](https://devblogs.microsoft.com/dotnet/announcing-dotnet-11-preview-1/), blog do .NET, seção de runtime async.
+- [Announcing .NET 11 Preview 1](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-1/), blog do .NET, seção de runtime async.
 - [Código-fonte de `TaskAwaiter`](https://github.com/dotnet/runtime/blob/main/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/TaskAwaiter.cs), `dotnet/runtime` no GitHub.

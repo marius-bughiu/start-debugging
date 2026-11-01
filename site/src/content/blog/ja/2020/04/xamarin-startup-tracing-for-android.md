@@ -31,4 +31,4 @@ Xamarin チームが共有しているいくつかの数値です。
 
 有効にするのは簡単です。Xamarin Android プロジェクトの設定 (右クリック > Properties) を開き、下の画像のように "Code Generation and Runtime" の "Enable Startup Tracing" にチェックを入れるだけです。
 
-![](/wp-content/uploads/2020/04/Annotation-2020-04-04-122649-3.png)
+![Code Generation and Runtime の Enable Startup Tracing にチェックを入れた Xamarin Android のプロジェクト設定。](/wp-content/uploads/2020/04/Annotation-2020-04-04-122649-3.png)

@@ -13,7 +13,7 @@ For the equivalent .NET client workflow, see [detecting text language with Azure
 
 ## Provisioning
 
-[![](/wp-content/uploads/2023/11/image-11.png)](/wp-content/uploads/2023/11/image-11.png)
+[![Azure marketplace entry named Language service, published by Microsoft.](/wp-content/uploads/2023/11/image-11.png)](/wp-content/uploads/2023/11/image-11.png)
 
 The first step in analyzing text with Azure AI Language is provisioning a `Language service` resource in Azure. For testing purposes you can use the Free `F0` tier which has a limit of 5000 transactions per month.
 

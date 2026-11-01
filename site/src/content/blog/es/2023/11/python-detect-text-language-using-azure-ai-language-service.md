@@ -15,7 +15,7 @@ El servicio Azure AI Language proporciona a las personas desarrolladoras una API
 
 ## Aprovisionamiento
 
-[![](/wp-content/uploads/2023/11/image-11.png)](/wp-content/uploads/2023/11/image-11.png)
+[![Entrada Language service de Microsoft en Azure Marketplace.](/wp-content/uploads/2023/11/image-11.png)](/wp-content/uploads/2023/11/image-11.png)
 
 El primer paso para analizar texto con Azure AI Language es aprovisionar un recurso `Language service` en Azure. Para fines de prueba puedes usar el nivel gratuito `F0`, que tiene un límite de 5000 transacciones al mes.
 

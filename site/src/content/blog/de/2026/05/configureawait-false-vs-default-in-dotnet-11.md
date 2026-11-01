@@ -38,7 +38,7 @@ Die Zeilen oben helfen nur, wenn Sie sich erinnern, was `await` unter der Haube 
 
 `ConfigureAwait(false)` liefert ein `ConfiguredTaskAwaitable`, dessen Awaiter die Lese-Zugriffe auf `SynchronizationContext.Current` und `TaskScheduler.Current` vollständig überspringt. Die Continuation wird immer in den Thread-Pool gepostet. Das ist das gesamte Feature. Es ist ein Zweig in der Laufzeit.
 
-Die Runtime-Async-Arbeit in .NET 11, gelegentlich "Runtime Async" oder "boxing-free async" genannt, ändert die Codegenerierung der Zustandsmaschine durch den JIT (siehe die [Ankündigung von .NET 11 Preview 1](https://devblogs.microsoft.com/dotnet/announcing-dotnet-11-preview-1/)), ändert aber nichts an der Semantik des erfassten Kontexts. Der JIT emittiert in vielen Fällen jetzt eine einzige spezialisierte Continuation, statt eine eigene Zustandsmaschinen-Box zu allozieren, womit `await` günstiger ist als in .NET 8. Die Kosten von `ConfigureAwait(false)` gegenüber einem reinen `await` schrumpfen entsprechend, doch der Unterschied auf einem heißen Pfad bewegte sich ohnehin im einstelligen Nanosekundenbereich. Performance ist 2026 nicht der Grund, warum diese Wahl wichtig ist.
+Die Runtime-Async-Arbeit in .NET 11, gelegentlich "Runtime Async" oder "boxing-free async" genannt, ändert die Codegenerierung der Zustandsmaschine durch den JIT (siehe die [Ankündigung von .NET 11 Preview 1](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-1/)), ändert aber nichts an der Semantik des erfassten Kontexts. Der JIT emittiert in vielen Fällen jetzt eine einzige spezialisierte Continuation, statt eine eigene Zustandsmaschinen-Box zu allozieren, womit `await` günstiger ist als in .NET 8. Die Kosten von `ConfigureAwait(false)` gegenüber einem reinen `await` schrumpfen entsprechend, doch der Unterschied auf einem heißen Pfad bewegte sich ohnehin im einstelligen Nanosekundenbereich. Performance ist 2026 nicht der Grund, warum diese Wahl wichtig ist.
 
 ## Wann `ConfigureAwait(false)` immer noch wichtig ist
 
@@ -236,5 +236,5 @@ Für UI-Code (WinForms, WPF, MAUI, Avalonia, Uno): In Event-Handlern und View-Mo
 - [Dokumentation zu `Task.ConfigureAwait`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.configureawait), MS Learn.
 - [Enum `ConfigureAwaitOptions`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.configureawaitoptions), MS Learn.
 - [CA2007: Erwägen Sie, ConfigureAwait auf der erwarteten Task aufzurufen](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca2007), MS Learn.
-- [Announcing .NET 11 Preview 1](https://devblogs.microsoft.com/dotnet/announcing-dotnet-11-preview-1/), .NET-Blog, Abschnitt Runtime-Async.
+- [Announcing .NET 11 Preview 1](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-1/), .NET-Blog, Abschnitt Runtime-Async.
 - [Quelltext von `TaskAwaiter`](https://github.com/dotnet/runtime/blob/main/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/TaskAwaiter.cs), `dotnet/runtime` auf GitHub.

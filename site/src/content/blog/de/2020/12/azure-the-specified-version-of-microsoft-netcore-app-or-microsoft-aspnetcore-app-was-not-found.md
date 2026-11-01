@@ -20,7 +20,7 @@ Wenn Sie diesen Fehler erhalten, gehen Sie zu Ihrem App Service > Settings > Con
 
 Nach den Änderungen müssen Sie den App Service zudem manuell neu starten, damit sie wirksam werden.
 
-![](/wp-content/uploads/2020/12/image-1024x463.png)
+![Azure App Service-Konfiguration mit dem Stack .NET und der Frameworkversion .NET 5 (Early Access).](/wp-content/uploads/2020/12/image-1024x463.png)
 
 Die vollständige Fehlermeldung:
 

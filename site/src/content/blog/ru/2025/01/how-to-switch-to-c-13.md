@@ -40,7 +40,7 @@ translationDate: 2026-05-01
 
 ## Версия языка неактивна и не может быть изменена
 
-[![](/wp-content/uploads/2023/03/image.png)](/wp-content/uploads/2023/03/image.png)
+[![Настройки проекта Visual Studio: поле Language version недоступно и показывает 10.0.](/wp-content/uploads/2023/03/image.png)](/wp-content/uploads/2023/03/image.png)
 
 Версию языка нельзя изменить из окна **Properties** проекта. Версия привязана к версии target .NET framework проекта и будет обновляться в соответствии с ней.
 

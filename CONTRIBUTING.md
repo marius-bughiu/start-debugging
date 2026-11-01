@@ -41,6 +41,16 @@ Keep the historical page counts in `LEGACY_TAG_PAGES` when normalizing source ta
 
 Related articles are selected using specific shared topics and title relevance. For editorial recommendations, add `relatedPosts` to a post's frontmatter as a list of canonical base slugs, for example `2026/04/dapper-nvarchar-implicit-conversion-kills-sql-server-indexes`. Use no leading slash, locale prefix, or trailing slash. Picks resolve to published articles in the reader's language; unavailable translations are skipped. List only articles that help the reader continue the topic.
 
+## SEO validation and audits
+
+The production build validates the sitemap, canonical URLs, page metadata, and language alternatives before deployment. Keep redirect URLs outside the sitemap, and preserve reciprocal language links when changing translated routes.
+
+Run `npm run seo:indexing-audit` from `site/` to refresh the fixed cohort in `site/scripts/gsc-indexing-cohort.json`. It uses existing Google Application Default Credentials with `webmasters.readonly`, checks live page responses separately, and saves all inspection results under `content-strategy/`, including indexed controls and API errors. Timestamped snapshots allow comparisons of the same URLs. This is a diagnostic sample, not a sitewide indexing rate, and does not submit indexing requests.
+
+Article screenshots need descriptive alt text; decorative images can use an empty alt. Eligible static local images receive dimensions and responsive WebP variants during the build; animations, author attributes and links to original images are preserved. Keep offscreen images lazy. For a measured above-fold/LCP image, an HTML `img` can explicitly set `loading="eager"` and `fetchpriority="high"`; the pipeline preserves those choices.
+
+Run `npm run link-rot-check -- --recheck` to revisit the last link report, or use `--extract-only` for an offline inventory. Each network audit writes the legacy issues list and a timestamped audit sidecar with verified statuses and source occurrences. A failed HEAD request is checked with GET before being classified. Blocked, rate-limited, and transient requests need investigation; replace references only after confirming a dead destination and an equivalent source.
+
 ## Licensing of contributions
 
 start-debugging uses a split license model, and your contribution is licensed accordingly based on what you change:

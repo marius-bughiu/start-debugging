@@ -73,4 +73,4 @@ Einige Regeln, die im Hinterkopf behalten werden sollten:
 
 C# 12 gab uns die Syntax. C# 13 erweiterte `params`, um Collection Expressions zu akzeptieren. C# 14 verbreiterte implizite Span-Konvertierungen. Nun entfernt C# 15 den letzten häufigen Grund, Collection Expressions aufzugeben: Konstruktorkonfiguration. Wenn Sie bereits auf [.NET 11 Preview 2](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-2/) oder später sind, können Sie das heute mit `<LangVersion>preview</LangVersion>` in Ihrer Projektdatei ausprobieren.
 
-Vollständige Spec: [Collection expression arguments proposal](https://github.com/dotnet/csharplang/blob/main/proposals/collection-expression-arguments.md).
+Vollständige Spec: [Collection expression arguments proposal](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-15.0/collection-expression-arguments.md).

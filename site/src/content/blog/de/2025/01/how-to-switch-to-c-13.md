@@ -40,7 +40,7 @@ Es gibt zwei Wege, diesen Fehler zu beheben:
 
 ## Sprachversion ist ausgegraut und kann nicht geändert werden
 
-[![](/wp-content/uploads/2023/03/image.png)](/wp-content/uploads/2023/03/image.png)
+[![Visual Studio-Projekteinstellungen mit deaktiviertem Feld Language version und dem Wert 10.0.](/wp-content/uploads/2023/03/image.png)](/wp-content/uploads/2023/03/image.png)
 
 Die Sprachversion lässt sich nicht über das Fenster **Properties** des Projekts ändern. Die Version ist an die Target-.NET-Framework-Version Ihres Projekts gekoppelt und wird entsprechend aktualisiert.
 

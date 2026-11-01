@@ -37,7 +37,7 @@ Existem duas formas de resolver esse erro:
 
 ## A versão da linguagem está esmaecida e não pode ser modificada
 
-[![](/wp-content/uploads/2023/03/image.png)](/wp-content/uploads/2023/03/image.png)
+[![Configurações do projeto no Visual Studio com o campo Language version desabilitado e o valor 10.0.](/wp-content/uploads/2023/03/image.png)](/wp-content/uploads/2023/03/image.png)
 
 A versão da linguagem não pode ser alterada pela janela de **Propriedades** do projeto. A versão está vinculada à versão do target .NET framework do seu projeto e será atualizada de acordo com ela.
 

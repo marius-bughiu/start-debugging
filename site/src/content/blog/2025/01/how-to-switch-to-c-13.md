@@ -36,7 +36,7 @@ There are two ways to solve this error:
 
 ## Language version is greyed out and cannot be modified
 
-[![](/wp-content/uploads/2023/03/image.png)](/wp-content/uploads/2023/03/image.png)
+[![Visual Studio project settings with the Language version field disabled and showing 10.0.](/wp-content/uploads/2023/03/image.png)](/wp-content/uploads/2023/03/image.png)
 
 The Language version cannot be changed from the **Properties** window of the project. The version is linked to the target .NET framework version of your project and will be updated accordingly depending on that.
 

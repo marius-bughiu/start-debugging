@@ -23,27 +23,27 @@ translationDate: 2026-05-01
 
 まず、Android スマートフォンにアプリをダウンロードしてインストールします。インストール後、セットアップウィザードを進め、必要な権限 (オーディオとビデオの録音 / 録画) をアプリに付与すれば完了です。アプリは、ストリーミングしている IP アドレスとポートなどの情報を表示します。次のステップで使うので、控えておいてください。
 
-![](/wp-content/uploads/2019/04/image-7.png)
+![デスクトップクライアントの接続に使う Wi-Fi の IP アドレスとポートを表示する Android の DroidCam。](/wp-content/uploads/2019/04/image-7.png)
 
 次に、Windows または Linux 用のクライアントをダウンロードしてインストールします。インストール後にアプリを起動し、Android アプリで表示されている IP アドレスとポート番号をそのまま入力します。
 
-![](/wp-content/uploads/2019/04/image-8.png)
+![端末の IP とポートが入力され、Video と Audio が有効になった DroidCam Client の Wi-Fi 接続画面。](/wp-content/uploads/2019/04/image-8.png)
 
 準備ができたら Start を押します。これで真新しいウェブカメラの完成です！
 
-![](/wp-content/uploads/2019/04/image-9.png)
+![接続したスマートフォンのカメラ映像を表示する DroidCam Client。](/wp-content/uploads/2019/04/image-9.png)
 
 最後のステップは、ビデオソースを Streamlabs に追加することです。Streamlabs OBS を開き、+ をクリックして新しい Source を追加します。
 
-![](/wp-content/uploads/2019/04/image-5-1024x555.png)
+![Video Capture Device に下線が付いた Streamlabs の Add Source 画面。](/wp-content/uploads/2019/04/image-5-1024x555.png)
 
 開いたポップアップで Video Capture Device を選択し、Add Source をクリックします。次の画面で Add New Source をクリックします。これでデバイスの設定をいじれるようになります。まず Device のドロップダウンから DroidCam を選択してください。私の場合は DroidCam Source という名称になっています。続いて、希望する結果になるよう各種設定を調整します。私の場合は、既定値のままで問題ありませんでした。終わったら Done をクリックします。
 
-![](/wp-content/uploads/2019/04/image-10.png)
+![DroidCam Source 3 を選択し、カメラのプレビューを表示した Streamlabs の Video Capture Device 設定。](/wp-content/uploads/2019/04/image-10.png)
 
 これで、ビデオソースをシーン上でドラッグしたり、好きなサイズに変えたりできます。準備ができたら配信を開始できます。
 
-![](/wp-content/uploads/2019/04/image-11-1024x555.png)
+![デスクトップキャプチャの右下にスマートフォンのカメラ映像を小さく重ねた Streamlabs のシーン。](/wp-content/uploads/2019/04/image-11-1024x555.png)
 
 ## ヒント
 

@@ -91,7 +91,7 @@ Then get onto a good build. Memory behavior has swung sharply between patch rele
 npm install -g @anthropic-ai/claude-code@2.1.16
 ```
 
-Check the [Claude Code release notes](https://code.claude.com/docs/en/release-notes) and the [open memory issues](https://github.com/anthropics/claude-code/issues?q=is%3Aissue+label%3Aperf%3Amemory) before you pin, because a later patch usually fixes what an earlier one broke, and you would rather move forward than freeze on an old build. Rolling back is a stopgap, not a home.
+Check the [Claude Code release notes](https://code.claude.com/docs/en/changelog) and the [open memory issues](https://github.com/anthropics/claude-code/issues?q=is%3Aissue+label%3Aperf%3Amemory) before you pin, because a later patch usually fixes what an earlier one broke, and you would rather move forward than freeze on an old build. Rolling back is a stopgap, not a home.
 
 ## Fix 3: the context window is a different meter
 

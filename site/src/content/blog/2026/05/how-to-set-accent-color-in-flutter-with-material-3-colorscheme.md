@@ -270,7 +270,7 @@ If you are migrating a larger Flutter app at the same time, the [GetX to Riverpo
 ## Sources
 
 - Flutter API: [`ColorScheme.fromSeed`](https://api.flutter.dev/flutter/material/ColorScheme/ColorScheme.fromSeed.html)
-- Flutter API: [`ThemeData.colorSchemeSeed`](https://api.flutter.dev/flutter/material/ThemeData/colorSchemeSeed.html)
+- Flutter API: [`ThemeData.colorSchemeSeed`](https://api.flutter.dev/flutter/material/ThemeData/ThemeData.html)
 - Flutter API: [`DynamicSchemeVariant`](https://api.flutter.dev/flutter/material/DynamicSchemeVariant.html)
 - Material 3 spec: [color roles](https://m3.material.io/styles/color/roles)
 - pub.dev: [`dynamic_color`](https://pub.dev/packages/dynamic_color) for Material You and harmonization

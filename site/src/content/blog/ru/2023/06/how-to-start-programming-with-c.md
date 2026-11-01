@@ -32,19 +32,19 @@ C# считается дружелюбным к новичкам и отличн
 
 Файлы кода C# пишутся и компилируются как часть проекта. Несколько проектов объединяются в решение. Для начала нужно создать **Новый проект**. Можно воспользоваться **Быстрыми действиями** на странице **Приветствия**, чтобы создать новый проект на C#.
 
-[![](/wp-content/uploads/2023/06/image.png)](/wp-content/uploads/2023/06/image.png)
+[![Быстрые действия Visual Studio с выделенной кнопкой New Project.](/wp-content/uploads/2023/06/image.png)](/wp-content/uploads/2023/06/image.png)
 
 Быстрые действия в Visual Studio 2022 с подсвеченным пунктом Новый проект.
 
 Чтобы начать просто, создадим новое консольное приложение. Найдите в списке шаблонов 'console' и выберите тот, у которого есть значок C#, как показано ниже:
 
-[![](/wp-content/uploads/2023/06/image-1.png)](/wp-content/uploads/2023/06/image-1.png)
+[![Поиск шаблонов console в Visual Studio: шаблон C# Console App выделен над вариантом Visual Basic.](/wp-content/uploads/2023/06/image-1.png)](/wp-content/uploads/2023/06/image-1.png)
 
 Список шаблонов проекта в Visual Studio 2022 с подсвеченным шаблоном консольного приложения C#.
 
 Продолжайте мастер с настройками по умолчанию, и вы должны оказаться в состоянии, похожем на это:
 
-[![](/wp-content/uploads/2023/06/image-2.png)](/wp-content/uploads/2023/06/image-2.png)
+[![В Visual Studio открыт Program.cs с Console.WriteLine для вывода Hello, World!, справа показан проект в Solution Explorer.](/wp-content/uploads/2023/06/image-2.png)](/wp-content/uploads/2023/06/image-2.png)
 
 Visual Studio 2022 показывает новое консольное приложение C# с использованием инструкций верхнего уровня.
 
@@ -60,13 +60,13 @@ Visual Studio 2022 показывает новое консольное прил
 
 Далее запустим программу и посмотрим, что она выводит. Чтобы скомпилировать и запустить программу, можно использовать кнопку Run на панели инструментов или просто нажать **F5**.
 
-[![](/wp-content/uploads/2023/06/image-3.png)](/wp-content/uploads/2023/06/image-3.png)
+[![Панель Visual Studio с выделенной зелёной кнопкой запуска ConsoleApp6.](/wp-content/uploads/2023/06/image-3.png)](/wp-content/uploads/2023/06/image-3.png)
 
 Панель инструментов в Visual Studio 2022 с подсвеченной кнопкой Run.
 
 Visual Studio сначала скомпилирует ваш проект, а затем запустит его. Поскольку это консольное приложение, появится консольное окно с сообщением "Hello, World!" в первой строке.
 
-[![](/wp-content/uploads/2023/06/image-4.png)](/wp-content/uploads/2023/06/image-4.png)
+[![Консоль выводит Hello, World! и сообщает об успешном завершении с кодом 0.](/wp-content/uploads/2023/06/image-4.png)](/wp-content/uploads/2023/06/image-4.png)
 
 Консольное окно, отображающее "Hello, World!".
 

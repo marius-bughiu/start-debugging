@@ -13,7 +13,7 @@ translationDate: 2026-05-01
 ---
 .NET 10 から、MAUI のサーチバーには `SearchBar` の検索アイコンの色を変更するための新しいプロパティ `SearchIconColor` が追加されました。
 
-[![](/wp-content/uploads/2025/04/image.png)](/wp-content/uploads/2025/04/image.png)
+[![紫色の検索アイコンと Search videos のプレースホルダーを表示する .NET MAUI の SearchBar。](/wp-content/uploads/2025/04/image.png)](/wp-content/uploads/2025/04/image.png)
 
 他のバインド可能なプロパティと同様に、`Purple` のような色の値を割り当てたり、次のようにリソースにバインドしたりできます。
 

@@ -216,4 +216,4 @@ If you do ship an app bundle, Play splits it per ABI anyway, so each user downlo
 - [.NET RID catalog](https://learn.microsoft.com/en-us/dotnet/core/rid-catalog) for the Android runtime identifier names.
 - [CoreCLR progress and the Mono timeline for .NET MAUI](https://devblogs.microsoft.com/dotnet/coreclr-progress-and-mono-timeline-dotnet-maui/), for the removal of the Mono path in Preview 6 and the arm32 status.
 - [dotnet/maui#27697](https://github.com/dotnet/maui/issues/27697), the report that surfaced the .NET 9 default change as a Play Store compatibility regression.
-- [Support 64-bit architectures](https://developer.android.com/google-play/64-bit) in the Google Play developer documentation.
+- [Support 64-bit architectures](https://developer.android.com/google/play/requirements/64-bit) in the Google Play developer documentation.

@@ -28,7 +28,7 @@ About ページに Learn More ボタンがあります。その色を、Android 
 
 結果を見てみましょう。
 
-![](/wp-content/uploads/2019/07/xamarin-forms-on-platform.png)
+![Android では緑色、UWP では紫色の Learn More ボタンを表示する Xamarin Forms の About ページ。](/wp-content/uploads/2019/07/xamarin-forms-on-platform.png)
 
 あるいは、より複雑なデータ型を扱うときに便利な、次の構文も使えます。
 

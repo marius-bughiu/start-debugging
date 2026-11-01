@@ -384,5 +384,5 @@ El modelo mental más corto para la migración: GetX intercambia corrección por
 - [flutter_riverpod en pub.dev](https://pub.dev/packages/flutter_riverpod)
 - [riverpod_generator en pub.dev](https://pub.dev/packages/riverpod_generator)
 - [go_router en pub.dev](https://pub.dev/packages/go_router)
-- [Recetas de pruebas de Riverpod](https://riverpod.dev/docs/essentials/testing)
+- [Recetas de pruebas de Riverpod](https://riverpod.dev/docs/how_to/testing)
 - [Paquete GetX en pub.dev](https://pub.dev/packages/get)

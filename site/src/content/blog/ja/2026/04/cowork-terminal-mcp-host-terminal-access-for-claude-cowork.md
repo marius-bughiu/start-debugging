@@ -13,7 +13,7 @@ translatedBy: "claude"
 translationDate: 2026-04-29
 ---
 
-[Claude Cowork](https://www.anthropic.com/claude-cowork) は、お使いのマシン上でサンドボックス化された Linux VM の中で動作します。このサンドボックスのおかげで Cowork を放置して動かしておくのも安心ですが、その代わりにエージェントは自力でプロジェクトの依存をインストールしたり、ビルドを実行したり、ホストのリポジトリにコミットを push したりすることができません。橋渡しがなければ、エージェントは VM のファイルシステムの境界で立ち止まってしまいます。[`cowork-terminal-mcp`](https://github.com/marius-bughiu/cowork-terminal-mcp) v0.4.1 はその橋です。ホスト側で動く単機能の [MCP](https://modelcontextprotocol.io/) サーバーで、`execute_command` というツールを 1 つだけ公開し、それ以上のことはしません。全体でおよそ 200 行の TypeScript で、npm では [`cowork-terminal-mcp`](https://www.npmjs.com/package/cowork-terminal-mcp) として配布されています。
+[Claude Cowork](https://claude.com/product/cowork) は、お使いのマシン上でサンドボックス化された Linux VM の中で動作します。このサンドボックスのおかげで Cowork を放置して動かしておくのも安心ですが、その代わりにエージェントは自力でプロジェクトの依存をインストールしたり、ビルドを実行したり、ホストのリポジトリにコミットを push したりすることができません。橋渡しがなければ、エージェントは VM のファイルシステムの境界で立ち止まってしまいます。[`cowork-terminal-mcp`](https://github.com/marius-bughiu/cowork-terminal-mcp) v0.4.1 はその橋です。ホスト側で動く単機能の [MCP](https://modelcontextprotocol.io/) サーバーで、`execute_command` というツールを 1 つだけ公開し、それ以上のことはしません。全体でおよそ 200 行の TypeScript で、npm では [`cowork-terminal-mcp`](https://www.npmjs.com/package/cowork-terminal-mcp) として配布されています。
 
 ## サーバーが公開する唯一のツール
 

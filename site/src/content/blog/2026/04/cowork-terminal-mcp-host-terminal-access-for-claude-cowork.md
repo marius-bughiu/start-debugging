@@ -9,7 +9,7 @@ tags:
   - "ai-coding-agents"
 ---
 
-[Claude Cowork](https://www.anthropic.com/claude-cowork) runs inside a sandboxed Linux VM on your machine. That sandbox is what makes Cowork comfortable to leave running unattended, but it also means the agent cannot install your project's dependencies, run your build, or push a commit to your host repo on its own. Without a bridge, the agent stops at the VM's filesystem boundary. [`cowork-terminal-mcp`](https://github.com/marius-bughiu/cowork-terminal-mcp) v0.4.1 is that bridge: a single-purpose [MCP server](https://modelcontextprotocol.io/) that runs on the host, exposes one tool (`execute_command`), and calls it a day. The whole thing is roughly 200 lines of TypeScript and ships on npm as [`cowork-terminal-mcp`](https://www.npmjs.com/package/cowork-terminal-mcp).
+[Claude Cowork](https://claude.com/product/cowork) runs inside a sandboxed Linux VM on your machine. That sandbox is what makes Cowork comfortable to leave running unattended, but it also means the agent cannot install your project's dependencies, run your build, or push a commit to your host repo on its own. Without a bridge, the agent stops at the VM's filesystem boundary. [`cowork-terminal-mcp`](https://github.com/marius-bughiu/cowork-terminal-mcp) v0.4.1 is that bridge: a single-purpose [MCP server](https://modelcontextprotocol.io/) that runs on the host, exposes one tool (`execute_command`), and calls it a day. The whole thing is roughly 200 lines of TypeScript and ships on npm as [`cowork-terminal-mcp`](https://www.npmjs.com/package/cowork-terminal-mcp).
 
 ## The one tool the server exposes
 

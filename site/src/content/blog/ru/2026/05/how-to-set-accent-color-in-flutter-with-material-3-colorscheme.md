@@ -274,7 +274,7 @@ class CallToAction extends StatelessWidget {
 ## Источники
 
 - Flutter API: [`ColorScheme.fromSeed`](https://api.flutter.dev/flutter/material/ColorScheme/ColorScheme.fromSeed.html)
-- Flutter API: [`ThemeData.colorSchemeSeed`](https://api.flutter.dev/flutter/material/ThemeData/colorSchemeSeed.html)
+- Flutter API: [`ThemeData.colorSchemeSeed`](https://api.flutter.dev/flutter/material/ThemeData/ThemeData.html)
 - Flutter API: [`DynamicSchemeVariant`](https://api.flutter.dev/flutter/material/DynamicSchemeVariant.html)
 - Спецификация Material 3: [роли цвета](https://m3.material.io/styles/color/roles)
 - pub.dev: [`dynamic_color`](https://pub.dev/packages/dynamic_color) для Material You и гармонизации

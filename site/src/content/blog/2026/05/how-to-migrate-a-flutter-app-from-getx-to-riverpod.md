@@ -380,5 +380,5 @@ The shortest mental model for the migration: GetX trades correctness for ergonom
 - [flutter_riverpod on pub.dev](https://pub.dev/packages/flutter_riverpod)
 - [riverpod_generator on pub.dev](https://pub.dev/packages/riverpod_generator)
 - [go_router on pub.dev](https://pub.dev/packages/go_router)
-- [Riverpod testing recipes](https://riverpod.dev/docs/essentials/testing)
+- [Riverpod testing recipes](https://riverpod.dev/docs/how_to/testing)
 - [GetX package on pub.dev](https://pub.dev/packages/get)

@@ -224,5 +224,5 @@ El operador bang es una promesa al compilador, saldada en runtime, y `Null check
 
 - [Understanding null safety](https://dart.dev/null-safety/understanding-null-safety), documentación de Dart, que define el operador `!` como un cast verificado al tipo no anulable y explica por qué la comprobación debe ejecutarse en runtime.
 - [Null safety unsound migration and the `!` operator](https://dart.dev/null-safety), documentación del lenguaje Dart.
-- [unnecessary_non_null_assertion lint rule](https://dart.dev/tools/linter-rules/unnecessary_non_null_assertion), reglas del linter de Dart.
+- [unnecessary_non_null_assertion lint rule](https://dart.dev/tools/diagnostics/unnecessary_non_null_assertion), reglas del linter de Dart.
 - [firstWhereOrNull](https://pub.dev/documentation/collection/latest/collection/IterableExtension/firstWhereOrNull.html), documentación de la API de `package:collection`.

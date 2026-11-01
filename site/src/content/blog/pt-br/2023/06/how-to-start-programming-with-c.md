@@ -32,19 +32,19 @@ Um ambiente típico de desenvolvimento seria o Visual Studio rodando no Windows.
 
 Os arquivos de código C# são escritos e compilados como parte de um projeto. Vários projetos formam uma solução. Para começar, precisamos criar primeiro um **Novo Projeto**. Você pode usar as **Ações Rápidas** na página de **Boas-vindas** para criar um novo projeto C#.
 
-[![](/wp-content/uploads/2023/06/image.png)](/wp-content/uploads/2023/06/image.png)
+[![Ações rápidas do Visual Studio com New Project destacado.](/wp-content/uploads/2023/06/image.png)](/wp-content/uploads/2023/06/image.png)
 
 Ações rápidas no Visual Studio 2022, com Novo Projeto destacado.
 
 Para começar de forma simples, vamos criar uma nova aplicação de console. Pesquise na lista de templates por 'console' e escolha o que tem o selo C# como indicado abaixo:
 
-[![](/wp-content/uploads/2023/06/image-1.png)](/wp-content/uploads/2023/06/image-1.png)
+[![Busca de modelos console no Visual Studio com Console App em C# destacado acima da opção de Visual Basic.](/wp-content/uploads/2023/06/image-1.png)](/wp-content/uploads/2023/06/image-1.png)
 
 Uma lista de templates de projeto no Visual Studio 2022, com o template de aplicação de console C# destacado.
 
 Continue pelo assistente usando os valores padrão e você deve terminar em um estado parecido com este:
 
-[![](/wp-content/uploads/2023/06/image-2.png)](/wp-content/uploads/2023/06/image-2.png)
+[![Visual Studio com Program.cs aberto, Console.WriteLine para exibir Hello, World! e o projeto no Gerenciador de Soluções.](/wp-content/uploads/2023/06/image-2.png)](/wp-content/uploads/2023/06/image-2.png)
 
 Visual Studio 2022 mostrando uma nova aplicação de console C# usando instruções de nível superior.
 
@@ -60,13 +60,13 @@ No centro do editor você tem este arquivo **Program.cs** aberto. O arquivo cont
 
 A seguir, vamos rodar o programa e ver o que ele produz. Para compilar e executar o programa, você pode usar o botão Run na barra de ferramentas ou simplesmente pressionar **F5**.
 
-[![](/wp-content/uploads/2023/06/image-3.png)](/wp-content/uploads/2023/06/image-3.png)
+[![Barra de ferramentas do Visual Studio com o botão verde para executar ConsoleApp6 destacado.](/wp-content/uploads/2023/06/image-3.png)](/wp-content/uploads/2023/06/image-3.png)
 
 Uma barra de ferramentas no Visual Studio 2022, com o botão Run destacado.
 
 O Visual Studio primeiro compilará seu projeto e depois o executará. Por se tratar de uma aplicação de console, uma janela de console aparecerá, com a mensagem "Hello, World!" na primeira linha.
 
-[![](/wp-content/uploads/2023/06/image-4.png)](/wp-content/uploads/2023/06/image-4.png)
+[![Saída do console com Hello, World! e encerramento bem-sucedido com código 0.](/wp-content/uploads/2023/06/image-4.png)](/wp-content/uploads/2023/06/image-4.png)
 
 Uma janela de console exibindo "Hello, World!".
 

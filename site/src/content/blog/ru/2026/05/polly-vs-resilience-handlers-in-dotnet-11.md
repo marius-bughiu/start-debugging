@@ -216,7 +216,7 @@ await pipeline.ExecuteAsync(static async ct => await DoWorkAsync(ct), ct);
 - [Build resilient HTTP apps: key development patterns](https://learn.microsoft.com/en-us/dotnet/core/resilience/http-resilience) - `AddStandardResilienceHandler`, `AddResilienceHandler`, значения по умолчанию стандартного конвейера и список временных результатов.
 - [Introduction to resilient app development](https://learn.microsoft.com/en-us/dotnet/core/resilience/) - как `Microsoft.Extensions.Resilience` строится на Polly и добавляет телеметрию.
 - [Polly docs: Resilience pipelines](https://www.pollydocs.org/pipelines/) - `ResiliencePipelineBuilder`, `ExecuteAsync` и registry.
-- [Polly docs: Advanced dependency injection](https://www.pollydocs.org/advanced/dependency-injection/) - `AddResiliencePipeline`, `ResiliencePipelineRegistry` и динамические перезагрузки.
+- [Polly docs: Advanced dependency injection](https://www.pollydocs.org/advanced/dependency-injection.html) - `AddResiliencePipeline`, `ResiliencePipelineRegistry` и динамические перезагрузки.
 - [Polly v7 to v8 migration guide](https://www.pollydocs.org/migration-v8.html) - почему API `Policy` было заменено на `ResiliencePipeline`.
 - [Microsoft.Extensions.Http.Resilience on NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Http.Resilience) - текущая версия пакета и его зависимости.
 </content>

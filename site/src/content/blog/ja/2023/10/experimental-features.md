@@ -20,7 +20,7 @@ C# 12 から、型、メソッド、プロパティ、アセンブリを experim
 
 > CS1696 Single-line comment or end-of-line expected.
 
-[![](/wp-content/uploads/2023/10/image-3.png)](/wp-content/uploads/2023/10/image-3.png)
+[![BAR-001 を使った pragma ディレクティブに警告が付き、Foo() の呼び出しにも下線が残っている。](/wp-content/uploads/2023/10/image-3.png)](/wp-content/uploads/2023/10/image-3.png)
 
 属性内に `UrlFormat` を指定して、experimental な機能に関するドキュメントへ開発者を誘導することもできます。`https://acme.com/warnings/BAR001` のような絶対 URL を指定する方法と、`https://acme.com/warnings/{0}` のような汎用的な文字列フォーマットの URL を指定してフレームワークに任せる方法があります。
 

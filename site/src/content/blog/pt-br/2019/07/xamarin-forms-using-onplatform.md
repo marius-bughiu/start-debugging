@@ -28,7 +28,7 @@ Na página About há um botão Learn More. Vamos deixar a cor dele dependente de
 
 E vejamos o resultado:
 
-![](/wp-content/uploads/2019/07/xamarin-forms-on-platform.png)
+![Página About do Xamarin Forms com o botão Learn More verde no Android e roxo no UWP.](/wp-content/uploads/2019/07/xamarin-forms-on-platform.png)
 
 Como alternativa, você pode usar a seguinte sintaxe, que é mais conveniente ao lidar com tipos de dado mais elaborados.
 

@@ -40,7 +40,7 @@ C# 13 の機能を試している間、次のようなエラーに遭遇する�
 
 ## 言語バージョンがグレー表示されて変更できない
 
-[![](/wp-content/uploads/2023/03/image.png)](/wp-content/uploads/2023/03/image.png)
+[![Language version が無効になり、10.0 と表示されている Visual Studio のプロジェクト設定。](/wp-content/uploads/2023/03/image.png)](/wp-content/uploads/2023/03/image.png)
 
 言語バージョンはプロジェクトの **Properties** ウィンドウからは変更できません。バージョンはプロジェクトのターゲット .NET フレームワークのバージョンに連動しており、それに応じて更新されます。
 

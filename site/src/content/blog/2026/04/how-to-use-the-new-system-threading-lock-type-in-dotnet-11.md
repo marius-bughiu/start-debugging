@@ -141,7 +141,7 @@ else
 
 ## The await trap, made worse
 
-You could never `await` inside a `lock` statement on `Monitor`. The compiler outright refused with [CS1996](https://learn.microsoft.com/dotnet/csharp/misc/cs1996): "Cannot await in the body of a lock statement." The reason is that `Monitor` tracks ownership by managed thread ID, so resuming an `await` on a different thread would release the lock from the wrong owner.
+You could never `await` inside a `lock` statement on `Monitor`. The compiler outright refused with [CS1996](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/lock-semantics#lock-statement-errors): "Cannot await in the body of a lock statement." The reason is that `Monitor` tracks ownership by managed thread ID, so resuming an `await` on a different thread would release the lock from the wrong owner.
 
 `Lock` has the same constraint, and the compiler enforces it the same way. Try this:
 

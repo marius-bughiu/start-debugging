@@ -215,5 +215,5 @@ Wenn Sie eine Migration aus einer bestehenden App abwägen:
 - [.NET-MAUI-Dokumentation](https://learn.microsoft.com/dotnet/maui/), Microsoft Learn, abgerufen am 2026-05-27.
 - [Avalonia-11.3-Release-Notes](https://github.com/AvaloniaUI/Avalonia/releases) auf GitHub.
 - [Uno-Platform-6.0-Ankündigung](https://platform.uno/blog/) und Uno-Platform-Dokumentation.
-- [Status der Avalonia-Browser-Unterstützung](https://docs.avaloniaui.net/docs/next/guides/platforms/web/), abgerufen am 2026-05-27.
-- [WinUI-3-XAML-Kompatibilität in Uno Platform](https://platform.uno/docs/articles/winui-doc-links-overview.html), Uno-Platform-Dokumentation.
+- [Status der Avalonia-Browser-Unterstützung](https://docs.avaloniaui.net/docs/deployment/webassembly), abgerufen am 2026-05-27.
+- [WinUI-3-XAML-Kompatibilität in Uno Platform](https://platform.uno/docs/articles/implemented-views.html), Uno-Platform-Dokumentation.

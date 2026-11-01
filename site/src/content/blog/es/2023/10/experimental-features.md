@@ -20,7 +20,7 @@ El atributo `Experimental` requiere que se pase un parámetro `diagnosticId` en 
 
 > CS1696 Single-line comment or end-of-line expected.
 
-[![](/wp-content/uploads/2023/10/image-3.png)](/wp-content/uploads/2023/10/image-3.png)
+[![Las directivas pragma con BAR-001 muestran advertencias y la llamada Foo() sigue subrayada.](/wp-content/uploads/2023/10/image-3.png)](/wp-content/uploads/2023/10/image-3.png)
 
 También puedes especificar un `UrlFormat` dentro del atributo para guiar a los desarrolladores hacia la documentación relacionada con la característica experimental. Puedes especificar una URL absoluta, como `https://acme.com/warnings/BAR001`, o una URL con un formato de cadena genérico (`https://acme.com/warnings/{0}`) y dejar que el framework haga su magia.
 

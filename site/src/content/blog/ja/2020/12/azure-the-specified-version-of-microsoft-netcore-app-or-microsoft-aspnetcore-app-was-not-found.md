@@ -20,7 +20,7 @@ ASP.NET MVC や Web API のプロジェクトで .NET のメジャーバージ�
 
 変更後は、設定を反映させるために App Service を手動で再起動する必要があります。
 
-![](/wp-content/uploads/2020/12/image-1024x463.png)
+![スタックを .NET、フレームワークのバージョンを .NET 5 (Early Access) に設定した Azure App Service の構成画面。](/wp-content/uploads/2020/12/image-1024x463.png)
 
 完全なエラーメッセージは次のとおりです。
 

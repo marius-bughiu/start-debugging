@@ -23,27 +23,27 @@ Vamos ao que interessa. Para usar seu celular Android como webcam você vai prec
 
 Primeiro, baixe e instale o app no celular Android. Após instalar, passe pelo assistente de configuração, conceda as permissões necessárias (gravar áudio e vídeo) e pronto. Agora o app deve mostrar informações como o endereço IP e a porta em que está transmitindo o vídeo. Deixe à mão, vamos precisar no próximo passo.
 
-![](/wp-content/uploads/2019/04/image-7.png)
+![DroidCam no Android mostra o endereço IP do Wi-Fi e a porta para conectar o cliente de desktop.](/wp-content/uploads/2019/04/image-7.png)
 
 Em seguida, baixe e instale o cliente para Windows ou Linux. Após a instalação, abra o app e preencha o endereço IP e a porta exatamente como aparecem no aplicativo Android.
 
-![](/wp-content/uploads/2019/04/image-8.png)
+![Janela de conexão Wi-Fi do DroidCam Client com IP e porta preenchidos e Video e Audio ativados.](/wp-content/uploads/2019/04/image-8.png)
 
 Quando estiver pronto, clique em Start. E voilà, sua nova webcam!
 
-![](/wp-content/uploads/2019/04/image-9.png)
+![DroidCam Client exibe a imagem da câmera do telefone conectado.](/wp-content/uploads/2019/04/image-9.png)
 
 O último passo é adicionar a fonte de vídeo no Streamlabs. Abra o Streamlabs OBS e clique em + para adicionar uma nova Source.
 
-![](/wp-content/uploads/2019/04/image-5-1024x555.png)
+![Janela Add Source do Streamlabs com Video Capture Device sublinhado.](/wp-content/uploads/2019/04/image-5-1024x555.png)
 
 No popup que se abre, selecione Video Capture Device e clique em Add Source. Na próxima tela, clique em Add New Source. Agora você pode mexer nas configurações do dispositivo. Primeiro, selecione o DroidCam no dropdown Device; no meu caso aparece como DroidCam Source. Em seguida, brinque com os ajustes até obter o resultado desejado; para mim os padrões funcionaram bem. Quando terminar, clique em Done.
 
-![](/wp-content/uploads/2019/04/image-10.png)
+![Configurações de Video Capture Device no Streamlabs com DroidCam Source 3 selecionado e prévia da câmera.](/wp-content/uploads/2019/04/image-10.png)
 
 Agora você pode arrastar a fonte de vídeo pela sua cena e redimensionar como quiser. Quando estiver pronto, pode começar a transmitir.
 
-![](/wp-content/uploads/2019/04/image-11-1024x555.png)
+![Cena do Streamlabs com a câmera do telefone em uma pequena sobreposição no canto inferior direito da captura de tela.](/wp-content/uploads/2019/04/image-11-1024x555.png)
 
 ## Dica
 

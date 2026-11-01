@@ -274,7 +274,7 @@ M2 から M3 への素早いマッピング:
 ## ソース
 
 - Flutter API: [`ColorScheme.fromSeed`](https://api.flutter.dev/flutter/material/ColorScheme/ColorScheme.fromSeed.html)
-- Flutter API: [`ThemeData.colorSchemeSeed`](https://api.flutter.dev/flutter/material/ThemeData/colorSchemeSeed.html)
+- Flutter API: [`ThemeData.colorSchemeSeed`](https://api.flutter.dev/flutter/material/ThemeData/ThemeData.html)
 - Flutter API: [`DynamicSchemeVariant`](https://api.flutter.dev/flutter/material/DynamicSchemeVariant.html)
 - Material 3 仕様: [色ロール](https://m3.material.io/styles/color/roles)
 - pub.dev: Material You と調和のための [`dynamic_color`](https://pub.dev/packages/dynamic_color)

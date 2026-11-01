@@ -220,4 +220,4 @@ Play требует 64-битный бинарник рядом с любым 32
 - [Каталог RID в .NET](https://learn.microsoft.com/ru-ru/dotnet/core/rid-catalog) для имён runtime identifiers для Android.
 - [CoreCLR progress and the Mono timeline for .NET MAUI](https://devblogs.microsoft.com/dotnet/coreclr-progress-and-mono-timeline-dotnet-maui/), про удаление пути через Mono в Preview 6 и статус arm32.
 - [dotnet/maui#27697](https://github.com/dotnet/maui/issues/27697), сообщение, которое выявило изменение значений по умолчанию в .NET 9 как регрессию совместимости в Play Store.
-- [Поддержка 64-разрядных архитектур](https://developer.android.com/google-play/64-bit) в документации для разработчиков Google Play.
+- [Поддержка 64-разрядных архитектур](https://developer.android.com/google/play/requirements/64-bit) в документации для разработчиков Google Play.

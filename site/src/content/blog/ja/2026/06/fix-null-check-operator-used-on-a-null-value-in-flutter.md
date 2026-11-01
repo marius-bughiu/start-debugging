@@ -224,5 +224,5 @@ bang 演算子はコンパイラーへの約束で、ランタイムで清算さ
 
 - [Understanding null safety](https://dart.dev/null-safety/understanding-null-safety)、Dart ドキュメント。`!` 演算子を null 非許容型へのチェック付きキャストとして定義し、なぜチェックがランタイムで実行される必要があるかを説明しています。
 - [Null safety unsound migration and the `!` operator](https://dart.dev/null-safety)、Dart 言語ドキュメント。
-- [unnecessary_non_null_assertion lint rule](https://dart.dev/tools/linter-rules/unnecessary_non_null_assertion)、Dart リンタールール。
+- [unnecessary_non_null_assertion lint rule](https://dart.dev/tools/diagnostics/unnecessary_non_null_assertion)、Dart リンタールール。
 - [firstWhereOrNull](https://pub.dev/documentation/collection/latest/collection/IterableExtension/firstWhereOrNull.html)、`package:collection` の API ドキュメント。

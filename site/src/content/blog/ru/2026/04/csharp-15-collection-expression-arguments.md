@@ -73,4 +73,4 @@ Dictionary<string, int> headers = [
 
 C# 12 дал нам синтаксис. C# 13 расширил `params`, чтобы принимать выражения-коллекции. C# 14 расширил неявные преобразования span. Теперь C# 15 устраняет последнюю распространённую причину отказа от выражений-коллекций: настройка конструктора. Если вы уже на [.NET 11 Preview 2](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-2/) или позже, вы можете попробовать это сегодня с `<LangVersion>preview</LangVersion>` в файле проекта.
 
-Полная спецификация: [Collection expression arguments proposal](https://github.com/dotnet/csharplang/blob/main/proposals/collection-expression-arguments.md).
+Полная спецификация: [Collection expression arguments proposal](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-15.0/collection-expression-arguments.md).

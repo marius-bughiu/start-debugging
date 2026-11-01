@@ -216,7 +216,7 @@ Para código novo no .NET 11 em 2026: se você está adicionando resiliência a 
 - [Build resilient HTTP apps: key development patterns](https://learn.microsoft.com/en-us/dotnet/core/resilience/http-resilience) - `AddStandardResilienceHandler`, `AddResilienceHandler`, os padrões do pipeline padrão e a lista de resultados transitórios.
 - [Introduction to resilient app development](https://learn.microsoft.com/en-us/dotnet/core/resilience/) - como o `Microsoft.Extensions.Resilience` se constrói sobre o Polly e adiciona telemetria.
 - [Polly docs: Resilience pipelines](https://www.pollydocs.org/pipelines/) - `ResiliencePipelineBuilder`, `ExecuteAsync` e o registry.
-- [Polly docs: Advanced dependency injection](https://www.pollydocs.org/advanced/dependency-injection/) - `AddResiliencePipeline`, `ResiliencePipelineRegistry` e as recargas dinâmicas.
+- [Polly docs: Advanced dependency injection](https://www.pollydocs.org/advanced/dependency-injection.html) - `AddResiliencePipeline`, `ResiliencePipelineRegistry` e as recargas dinâmicas.
 - [Polly v7 to v8 migration guide](https://www.pollydocs.org/migration-v8.html) - por que a API `Policy` foi substituída pelo `ResiliencePipeline`.
 - [Microsoft.Extensions.Http.Resilience on NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Http.Resilience) - versão atual do pacote e suas dependências.
 </content>

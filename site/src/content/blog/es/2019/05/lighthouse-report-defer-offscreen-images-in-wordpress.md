@@ -31,6 +31,6 @@ Solo esto subió el rating de rendimiento del blog 20 puntos, de 41 a 61. Veamos
 
 Personalmente tuve algunos problemas tras instalar el plugin, con un par de imágenes que se rompían así:
 
-![](/wp-content/uploads/2019/04/image-6-1024x490.png)
+![Página del blog con un retrato sobredimensionado en la barra lateral About tras activar la carga diferida.](/wp-content/uploads/2019/04/image-6-1024x490.png)
 
 Esto se debía a algunos estilos hardcodeados que tenía en los propios tags img, lo cual además se considera mala práctica. He movido todo a un par de clases CSS que se cargan por separado y ahora todo está bien.

@@ -216,7 +216,7 @@ await pipeline.ExecuteAsync(static async ct => await DoWorkAsync(ct), ct);
 - [Build resilient HTTP apps: key development patterns](https://learn.microsoft.com/en-us/dotnet/core/resilience/http-resilience) - `AddStandardResilienceHandler`、`AddResilienceHandler`、標準パイプラインのデフォルト値、一時的な結果のリスト。
 - [Introduction to resilient app development](https://learn.microsoft.com/en-us/dotnet/core/resilience/) - `Microsoft.Extensions.Resilience` がどのように Polly の上に構築され、テレメトリを加えるか。
 - [Polly docs: Resilience pipelines](https://www.pollydocs.org/pipelines/) - `ResiliencePipelineBuilder`、`ExecuteAsync`、registry。
-- [Polly docs: Advanced dependency injection](https://www.pollydocs.org/advanced/dependency-injection/) - `AddResiliencePipeline`、`ResiliencePipelineRegistry`、動的リロード。
+- [Polly docs: Advanced dependency injection](https://www.pollydocs.org/advanced/dependency-injection.html) - `AddResiliencePipeline`、`ResiliencePipelineRegistry`、動的リロード。
 - [Polly v7 to v8 migration guide](https://www.pollydocs.org/migration-v8.html) - なぜ `Policy` API が `ResiliencePipeline` に置き換えられたか。
 - [Microsoft.Extensions.Http.Resilience on NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Http.Resilience) - パッケージの現在のバージョンと依存関係。
 </content>

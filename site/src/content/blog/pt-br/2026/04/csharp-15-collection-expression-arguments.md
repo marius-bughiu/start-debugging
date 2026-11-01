@@ -73,4 +73,4 @@ Algumas regras para ter em mente:
 
 C# 12 nos deu a sintaxe. C# 13 estendeu `params` para aceitar expressões de coleção. C# 14 ampliou as conversões implícitas de span. Agora C# 15 remove a última razão comum para abandonar as expressões de coleção: configuração do construtor. Se você já está no [.NET 11 Preview 2](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-2/) ou posterior, pode experimentar isto hoje com `<LangVersion>preview</LangVersion>` no seu arquivo de projeto.
 
-Spec completa: [Proposta de argumentos em expressões de coleção](https://github.com/dotnet/csharplang/blob/main/proposals/collection-expression-arguments.md).
+Spec completa: [Proposta de argumentos em expressões de coleção](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-15.0/collection-expression-arguments.md).

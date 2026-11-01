@@ -384,5 +384,5 @@ void main() {
 - [flutter_riverpod на pub.dev](https://pub.dev/packages/flutter_riverpod)
 - [riverpod_generator на pub.dev](https://pub.dev/packages/riverpod_generator)
 - [go_router на pub.dev](https://pub.dev/packages/go_router)
-- [Рецепты тестирования Riverpod](https://riverpod.dev/docs/essentials/testing)
+- [Рецепты тестирования Riverpod](https://riverpod.dev/docs/how_to/testing)
 - [Пакет GetX на pub.dev](https://pub.dev/packages/get)

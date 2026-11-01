@@ -31,7 +31,7 @@ translationDate: 2026-05-01
 
 ## 言語バージョンがグレーアウトされて変更できない
 
-[![](/wp-content/uploads/2023/03/image.png)](/wp-content/uploads/2023/03/image.png)
+[![Language version が無効になり、10.0 と表示されている Visual Studio のプロジェクト設定。](/wp-content/uploads/2023/03/image.png)](/wp-content/uploads/2023/03/image.png)
 
 言語バージョンは、プロジェクトの **プロパティ** ウィンドウからは変更できません。バージョンはプロジェクトのターゲット .NET framework バージョンに連動しており、それに応じて更新されます。
 

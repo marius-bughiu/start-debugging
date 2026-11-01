@@ -113,7 +113,7 @@ builder.Services.AddDbContext<OrdersContext>(options =>
         sql => sql.CommandTimeout(600))); // 10 minutes
 ```
 
-`UseSqlServer` の 2 番目の引数は `Action<SqlServerDbContextOptionsBuilder>` です。`CommandTimeout(int seconds)` は [SqlServerDbContextOptionsBuilder](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.infrastructure.sqlserverdbcontextoptionsbuilder.commandtimeout) に存在します。これは EF Core がこのコンテキスト上で構築するすべての `DbCommand`、マイグレーションランナーがディスパッチするものも含めて、`CommandTimeout` を設定します。
+`UseSqlServer` の 2 番目の引数は `Action<SqlServerDbContextOptionsBuilder>` です。`CommandTimeout(int seconds)` は [SqlServerDbContextOptionsBuilder](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.infrastructure.relationaldbcontextoptionsbuilder-2.commandtimeout) に存在します。これは EF Core がこのコンテキスト上で構築するすべての `DbCommand`、マイグレーションランナーがディスパッチするものも含めて、`CommandTimeout` を設定します。
 
 ツール用に `IDesignTimeDbContextFactory<OrdersContext>` がある場合は、そこにも設定してください。両方が存在する場合、`dotnet ef` は `CreateHostBuilder` よりも `IDesignTimeDbContextFactory<T>` を優先するため、このオーバーライドはデザインタイム実行で有効になります:
 
@@ -222,7 +222,7 @@ options.UseSqlServer(connectionString, sql =>
 ## ソース
 
 - [EF Core CLI リファレンス](https://learn.microsoft.com/en-us/ef/core/cli/dotnet) - `dotnet ef` オプションの標準リスト。
-- [SqlServerDbContextOptionsBuilder.CommandTimeout](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.infrastructure.sqlserverdbcontextoptionsbuilder.commandtimeout) API ドキュメント。
+- [SqlServerDbContextOptionsBuilder.CommandTimeout](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.infrastructure.relationaldbcontextoptionsbuilder-2.commandtimeout) API ドキュメント。
 - [RelationalDatabaseFacadeExtensions.SetCommandTimeout](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.setcommandtimeout) API ドキュメント。
 - [dotnet/efcore#6613](https://github.com/dotnet/efcore/issues/6613) "Allow customizing migration commands timeout" は CLI フラグが存在しない理由を追跡しています。
 - [dotnet/efcore#22887](https://github.com/dotnet/efcore/issues/22887) マイグレーションバンドルのケースと接続文字列の回避策をカバーしています。

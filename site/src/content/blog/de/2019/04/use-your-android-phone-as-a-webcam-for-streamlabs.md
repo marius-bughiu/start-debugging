@@ -23,27 +23,27 @@ Legen wir los. Um Ihr Android-Smartphone als Webcam zu nutzen, brauchen Sie zwei
 
 Laden Sie zunächst die App auf Ihr Android-Smartphone und installieren Sie sie. Gehen Sie nach der Installation den Setup-Assistenten durch, erteilen Sie der App die nötigen Berechtigungen (Audio und Video aufzeichnen), und fertig. Die App zeigt nun Informationen wie die IP-Adresse und den Port, auf dem das Video gestreamt wird. Halten Sie diese bereit, wir brauchen sie im nächsten Schritt.
 
-![](/wp-content/uploads/2019/04/image-7.png)
+![DroidCam unter Android zeigt die WLAN-IP-Adresse und den Port für die Verbindung mit dem Desktop-Client.](/wp-content/uploads/2019/04/image-7.png)
 
 Als Nächstes laden Sie den Client für Windows oder Linux herunter und installieren ihn. Nach der Installation starten Sie die App und tragen die IP-Adresse und Portnummer genauso ein, wie sie in der Android-Anwendung erscheinen.
 
-![](/wp-content/uploads/2019/04/image-8.png)
+![WLAN-Verbindungsdialog von DroidCam Client mit eingetragener Geräte-IP und Port sowie aktiviertem Video und Audio.](/wp-content/uploads/2019/04/image-8.png)
 
 Wenn Sie soweit sind, klicken Sie auf Start. Und voilà, Ihre brandneue Webcam!
 
-![](/wp-content/uploads/2019/04/image-9.png)
+![DroidCam Client zeigt das Kamerabild des verbundenen Smartphones.](/wp-content/uploads/2019/04/image-9.png)
 
 Der letzte Schritt ist, die Videoquelle in Streamlabs hinzuzufügen. Öffnen Sie dazu Streamlabs OBS und klicken Sie auf +, um eine neue Source hinzuzufügen.
 
-![](/wp-content/uploads/2019/04/image-5-1024x555.png)
+![Streamlabs-Dialog Add Source mit unterstrichener Option Video Capture Device.](/wp-content/uploads/2019/04/image-5-1024x555.png)
 
 Wählen Sie im erscheinenden Popup Video Capture Device und klicken Sie auf Add Source. Im nächsten Bildschirm einfach Add New Source anklicken. Nun können Sie an den Einstellungen für das Gerät spielen. Wählen Sie zunächst aus dem Device-Dropdown DroidCam aus; in meinem Fall heißt es DroidCam Source. Spielen Sie dann mit den Einstellungen, bis Sie das gewünschte Ergebnis erhalten; bei mir haben die Standardwerte gut funktioniert. Wenn Sie fertig sind, klicken Sie auf Done.
 
-![](/wp-content/uploads/2019/04/image-10.png)
+![Streamlabs-Einstellungen für Video Capture Device mit ausgewählter DroidCam Source 3 und Kameravorschau.](/wp-content/uploads/2019/04/image-10.png)
 
 Jetzt können Sie die Videoquelle in Ihrer Szene verschieben und nach Belieben skalieren. Sobald Sie soweit sind, können Sie mit dem Streaming beginnen.
 
-![](/wp-content/uploads/2019/04/image-11-1024x555.png)
+![Streamlabs-Szene mit dem Smartphone-Kamerabild als kleinem Overlay unten rechts in der Bildschirmaufnahme.](/wp-content/uploads/2019/04/image-11-1024x555.png)
 
 ## Tipp
 

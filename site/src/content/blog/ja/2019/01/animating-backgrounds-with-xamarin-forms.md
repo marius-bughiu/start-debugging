@@ -14,7 +14,7 @@ translationDate: 2026-05-01
 ---
 最近、Xamarin Forms でアニメーションを触り始め、自分のアプリ (Charades for Dota 2) のためにかっこいい背景アニメーションを作ったので、共有しようと思います。前置きはここまで、最終結果はこちらです。
 
-![](/wp-content/uploads/2019/01/animations3.gif)
+![青い長方形のレイヤーで構成された Xamarin Forms の背景アニメーション。](/wp-content/uploads/2019/01/animations3.gif)
 
 GIF が少しカクついていますが、これは私の PC がエミュレーターをきちんと動かしきれないためです。実機ではアニメーションは滑らかです。
 

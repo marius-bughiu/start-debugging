@@ -14,7 +14,7 @@ translationDate: 2026-05-01
 
 ## Подготовка
 
-[![](/wp-content/uploads/2023/11/image-11.png)](/wp-content/uploads/2023/11/image-11.png)
+[![Служба Language service от Microsoft в Azure Marketplace.](/wp-content/uploads/2023/11/image-11.png)](/wp-content/uploads/2023/11/image-11.png)
 
 Первый шаг при анализе текста с помощью Azure AI Language — подготовка ресурса `Language service` в Azure. Для тестирования можно использовать бесплатный уровень `F0` с лимитом 5000 транзакций в месяц.
 

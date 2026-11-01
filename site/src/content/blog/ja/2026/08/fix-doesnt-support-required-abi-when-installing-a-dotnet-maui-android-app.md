@@ -220,4 +220,4 @@ App Bundle で配信するなら、Play はいずれにせよ ABI ごとに分�
 - [.NET RID カタログ](https://learn.microsoft.com/ja-jp/dotnet/core/rid-catalog)、Android の runtime identifier 名について。
 - [CoreCLR progress and the Mono timeline for .NET MAUI](https://devblogs.microsoft.com/dotnet/coreclr-progress-and-mono-timeline-dotnet-maui/)、Preview 6 での Mono 経路の削除と arm32 の状況について。
 - [dotnet/maui#27697](https://github.com/dotnet/maui/issues/27697)、.NET 9 の既定値変更を Play ストアの互換性リグレッションとして表面化させた報告。
-- [64 ビットアーキテクチャのサポート](https://developer.android.com/google-play/64-bit)、Google Play のデベロッパー向けドキュメント。
+- [64 ビットアーキテクチャのサポート](https://developer.android.com/google/play/requirements/64-bit)、Google Play のデベロッパー向けドキュメント。

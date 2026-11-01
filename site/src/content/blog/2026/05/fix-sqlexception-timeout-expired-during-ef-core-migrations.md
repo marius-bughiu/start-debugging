@@ -109,7 +109,7 @@ builder.Services.AddDbContext<OrdersContext>(options =>
         sql => sql.CommandTimeout(600))); // 10 minutes
 ```
 
-The second argument to `UseSqlServer` is an `Action<SqlServerDbContextOptionsBuilder>`. `CommandTimeout(int seconds)` lives on [SqlServerDbContextOptionsBuilder](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.infrastructure.sqlserverdbcontextoptionsbuilder.commandtimeout). It sets the `CommandTimeout` for every `DbCommand` EF Core builds on this context, including the ones the migration runner dispatches.
+The second argument to `UseSqlServer` is an `Action<SqlServerDbContextOptionsBuilder>`. `CommandTimeout(int seconds)` lives on [SqlServerDbContextOptionsBuilder](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.infrastructure.relationaldbcontextoptionsbuilder-2.commandtimeout). It sets the `CommandTimeout` for every `DbCommand` EF Core builds on this context, including the ones the migration runner dispatches.
 
 If you have an `IDesignTimeDbContextFactory<OrdersContext>` for tooling, set it there too. `dotnet ef` prefers `IDesignTimeDbContextFactory<T>` over `CreateHostBuilder` when both are present, so this override takes effect for design-time runs:
 
@@ -218,7 +218,7 @@ If the command killed the connection mid-flight and you are stuck on the next ru
 ## Sources
 
 - [EF Core CLI reference](https://learn.microsoft.com/en-us/ef/core/cli/dotnet) - the canonical list of `dotnet ef` options.
-- [SqlServerDbContextOptionsBuilder.CommandTimeout](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.infrastructure.sqlserverdbcontextoptionsbuilder.commandtimeout) API docs.
+- [SqlServerDbContextOptionsBuilder.CommandTimeout](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.infrastructure.relationaldbcontextoptionsbuilder-2.commandtimeout) API docs.
 - [RelationalDatabaseFacadeExtensions.SetCommandTimeout](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.setcommandtimeout) API docs.
 - [dotnet/efcore#6613](https://github.com/dotnet/efcore/issues/6613) "Allow customizing migration commands timeout" tracks why no CLI flag exists.
 - [dotnet/efcore#22887](https://github.com/dotnet/efcore/issues/22887) covers the migration-bundle case and the connection-string workaround.

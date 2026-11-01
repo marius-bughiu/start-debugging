@@ -15,7 +15,7 @@ Azure AI Language サービスは、テキストからの言語判定、感情�
 
 ## プロビジョニング
 
-[![](/wp-content/uploads/2023/11/image-11.png)](/wp-content/uploads/2023/11/image-11.png)
+[![Azure Marketplace に表示された Microsoft の Language service。](/wp-content/uploads/2023/11/image-11.png)](/wp-content/uploads/2023/11/image-11.png)
 
 Azure AI Language でテキストを分析する最初のステップは、Azure 上で `Language service` リソースをプロビジョニングすることです。テスト目的では、月あたり 5000 トランザクションの上限がある無料の `F0` ティアを使用できます。
 

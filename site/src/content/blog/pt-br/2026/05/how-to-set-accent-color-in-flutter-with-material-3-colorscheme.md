@@ -274,7 +274,7 @@ Se você está migrando um app Flutter maior ao mesmo tempo, o [passo a passo de
 ## Fontes
 
 - API do Flutter: [`ColorScheme.fromSeed`](https://api.flutter.dev/flutter/material/ColorScheme/ColorScheme.fromSeed.html)
-- API do Flutter: [`ThemeData.colorSchemeSeed`](https://api.flutter.dev/flutter/material/ThemeData/colorSchemeSeed.html)
+- API do Flutter: [`ThemeData.colorSchemeSeed`](https://api.flutter.dev/flutter/material/ThemeData/ThemeData.html)
 - API do Flutter: [`DynamicSchemeVariant`](https://api.flutter.dev/flutter/material/DynamicSchemeVariant.html)
 - Especificação do Material 3: [papéis de cor](https://m3.material.io/styles/color/roles)
 - pub.dev: [`dynamic_color`](https://pub.dev/packages/dynamic_color) para Material You e harmonização

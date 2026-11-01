@@ -215,5 +215,5 @@ Avalonia はクリティカルパスにネイティブコントロールの膨�
 - [.NET MAUI ドキュメント](https://learn.microsoft.com/dotnet/maui/)、Microsoft Learn、2026-05-27 アクセス。
 - [Avalonia 11.3 リリースノート](https://github.com/AvaloniaUI/Avalonia/releases) GitHub。
 - [Uno Platform 6.0 発表](https://platform.uno/blog/) と Uno Platform ドキュメント。
-- [Avalonia のブラウザサポート状況](https://docs.avaloniaui.net/docs/next/guides/platforms/web/)、2026-05-27 アクセス。
-- [Uno Platform における WinUI 3 XAML 互換性](https://platform.uno/docs/articles/winui-doc-links-overview.html)、Uno Platform ドキュメント。
+- [Avalonia のブラウザサポート状況](https://docs.avaloniaui.net/docs/deployment/webassembly)、2026-05-27 アクセス。
+- [Uno Platform における WinUI 3 XAML 互換性](https://platform.uno/docs/articles/implemented-views.html)、Uno Platform ドキュメント。

@@ -28,7 +28,8 @@
     "cwv-audit:baseline": "node scripts/cwv-audit.mjs --baseline --label=baseline",
     "link-rot-check": "node scripts/link-rot-check.mjs",
     "indexnow-ping": "node scripts/indexnow-ping.mjs",
-    "wp:migrate": "node scripts/wp-migrate.mjs"
+    "wp:migrate": "node scripts/wp-migrate.mjs",
+    "seo:indexing-audit": "node scripts/gsc-indexing-audit.mjs"
   },
   "dependencies": {
     "dotenv": "^16.6.1",
@@ -46,6 +47,14 @@
     "gray-matter": "^4.0.3",
     "pagefind": "^1.4.0",
     "satori": "^0.12.1",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "parse5": "^7.3.0",
+    "saxes": "^6.0.0",
+    "unified": "^11.0.5",
+    "remark-parse": "^11.0.0",
+    "remark-gfm": "^4.0.1",
+    "rehype-raw": "^7.0.0",
+    "sharp": "^0.34.5",
+    "@astrojs/markdown-remark": "^6.3.10"
   }
 }

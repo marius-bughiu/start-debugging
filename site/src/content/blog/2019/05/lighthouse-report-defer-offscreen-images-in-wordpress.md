@@ -29,6 +29,6 @@ Next, check whether the images you do load are oversized: [resizing and compress
 
 I personally had some troubles after installing the plugin with a couple of images blowing up like so:
 
-![](/wp-content/uploads/2019/04/image-6-1024x490.png)
+![Blog page with an oversized portrait in the About sidebar after enabling lazy loading.](/wp-content/uploads/2019/04/image-6-1024x490.png)
 
 This was because of some hardcoded styling I had on the img tags themselves, which is anyways considered bad practice. I’ve moved everything in a couple of CSS classes that load up separately and now everything is fine.

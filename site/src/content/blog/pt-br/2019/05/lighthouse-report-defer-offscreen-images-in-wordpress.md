@@ -31,6 +31,6 @@ Só isso já subiu a nota de performance do blog em 20 pontos, de 41 para 61. Va
 
 Eu mesmo tive alguns problemas depois de instalar o plugin, com algumas imagens estourando assim:
 
-![](/wp-content/uploads/2019/04/image-6-1024x490.png)
+![Página do blog com um retrato grande demais na barra lateral About após ativar o carregamento adiado.](/wp-content/uploads/2019/04/image-6-1024x490.png)
 
 Isso aconteceu por causa de algumas estilizações hardcoded que eu tinha nas próprias tags img, o que de qualquer forma é considerado má prática. Movi tudo para um par de classes CSS que carregam separadamente e agora está tudo certo.

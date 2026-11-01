@@ -31,6 +31,6 @@ Allein das hat den Performance-Wert des Blogs um 20 Punkte angehoben, von 41 auf
 
 Bei mir gab es nach der Installation des Plugins ein paar Probleme, bei denen einzelne Bilder so explodierten:
 
-![](/wp-content/uploads/2019/04/image-6-1024x490.png)
+![Blogseite mit einem übergroßen Porträt in der About-Seitenleiste nach dem Aktivieren von Lazy Loading.](/wp-content/uploads/2019/04/image-6-1024x490.png)
 
 Grund dafür war hartcodiertes Styling direkt in den img-Tags, was ohnehin als schlechte Praxis gilt. Ich habe alles in zwei separat geladene CSS-Klassen ausgelagert, und jetzt passt alles.

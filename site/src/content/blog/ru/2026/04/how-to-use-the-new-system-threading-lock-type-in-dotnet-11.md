@@ -145,7 +145,7 @@ else
 
 ## Ловушка с await, теперь хуже
 
-Сделать `await` внутри `lock` на основе `Monitor` было нельзя никогда. Компилятор отказывал прямо с [CS1996](https://learn.microsoft.com/dotnet/csharp/misc/cs1996): "Cannot await in the body of a lock statement". Причина в том, что `Monitor` отслеживает владение по managed thread id, поэтому возобновление `await` на другом потоке отпустило бы лок от лица не того владельца.
+Сделать `await` внутри `lock` на основе `Monitor` было нельзя никогда. Компилятор отказывал прямо с [CS1996](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/lock-semantics#lock-statement-errors): "Cannot await in the body of a lock statement". Причина в том, что `Monitor` отслеживает владение по managed thread id, поэтому возобновление `await` на другом потоке отпустило бы лок от лица не того владельца.
 
 У `Lock` ровно то же ограничение, и компилятор обеспечивает его тем же способом. Попробуйте:
 

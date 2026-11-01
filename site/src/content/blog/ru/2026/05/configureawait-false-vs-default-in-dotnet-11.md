@@ -38,7 +38,7 @@ translationDate: 2026-05-21
 
 `ConfigureAwait(false)` возвращает `ConfiguredTaskAwaitable`, awaiter которого полностью пропускает чтение `SynchronizationContext.Current` и `TaskScheduler.Current`. Продолжение всегда отправляется в пул потоков. Это вся фича. Это одна ветка в среде выполнения.
 
-Работа по runtime async в .NET 11, иногда называемая "runtime async" или "async без боксинга", меняет, как JIT генерирует машину состояний (см. [анонс .NET 11 preview 1](https://devblogs.microsoft.com/dotnet/announcing-dotnet-11-preview-1/)), но не меняет семантику захваченного контекста. JIT теперь во многих случаях генерирует одно специализированное продолжение вместо аллокации отдельной коробки для машины состояний, что делает `await` дешевле, чем в .NET 8. Стоимость `ConfigureAwait(false)` относительно обычного `await` соответственно сокращается, но разница между ними на горячем пути и раньше укладывалась в однозначное число наносекунд. Производительность — не та причина, по которой этот выбор имеет значение в 2026 году.
+Работа по runtime async в .NET 11, иногда называемая "runtime async" или "async без боксинга", меняет, как JIT генерирует машину состояний (см. [анонс .NET 11 preview 1](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-1/)), но не меняет семантику захваченного контекста. JIT теперь во многих случаях генерирует одно специализированное продолжение вместо аллокации отдельной коробки для машины состояний, что делает `await` дешевле, чем в .NET 8. Стоимость `ConfigureAwait(false)` относительно обычного `await` соответственно сокращается, но разница между ними на горячем пути и раньше укладывалась в однозначное число наносекунд. Производительность — не та причина, по которой этот выбор имеет значение в 2026 году.
 
 ## Когда `ConfigureAwait(false)` всё ещё важен
 
@@ -236,5 +236,5 @@ public class ConfigureAwaitBench
 - [Документация `Task.ConfigureAwait`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.configureawait), MS Learn.
 - [Перечисление `ConfigureAwaitOptions`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.configureawaitoptions), MS Learn.
 - [CA2007: Рассмотрите вызов ConfigureAwait у ожидаемой задачи](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca2007), MS Learn.
-- [Announcing .NET 11 Preview 1](https://devblogs.microsoft.com/dotnet/announcing-dotnet-11-preview-1/), блог .NET, раздел про runtime async.
+- [Announcing .NET 11 Preview 1](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-1/), блог .NET, раздел про runtime async.
 - [Исходный код `TaskAwaiter`](https://github.com/dotnet/runtime/blob/main/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/TaskAwaiter.cs), `dotnet/runtime` на GitHub.

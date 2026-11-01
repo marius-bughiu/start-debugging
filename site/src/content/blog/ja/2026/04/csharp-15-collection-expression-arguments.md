@@ -73,4 +73,4 @@ Dictionary<string, int> headers = [
 
 C# 12 は構文を与えてくれました。C# 13 は `params` を拡張してコレクション式を受け入れるようにしました。C# 14 は暗黙の span 変換を広げました。今や C# 15 はコレクション式を放棄する最後の一般的な理由 -- コンストラクタの設定 -- を取り除きます。すでに [.NET 11 Preview 2](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-2/) 以降にいるなら、プロジェクトファイルに `<LangVersion>preview</LangVersion>` を入れて今日これを試せます。
 
-完全な仕様: [Collection expression arguments proposal](https://github.com/dotnet/csharplang/blob/main/proposals/collection-expression-arguments.md)。
+完全な仕様: [Collection expression arguments proposal](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-15.0/collection-expression-arguments.md)。

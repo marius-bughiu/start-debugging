@@ -13,7 +13,7 @@ translationDate: 2026-05-01
 ---
 Начиная с .NET 10, у строки поиска MAUI появилось новое свойство для изменения цвета иконки поиска у `SearchBar`: `SearchIconColor`.
 
-[![](/wp-content/uploads/2025/04/image.png)](/wp-content/uploads/2025/04/image.png)
+[![SearchBar в .NET MAUI с фиолетовым значком поиска и подсказкой Search videos.](/wp-content/uploads/2025/04/image.png)](/wp-content/uploads/2025/04/image.png)
 
 Как и любому bindable-свойству, ему можно присвоить значение цвета, например `Purple`, или привязать его к ресурсу следующим образом:
 

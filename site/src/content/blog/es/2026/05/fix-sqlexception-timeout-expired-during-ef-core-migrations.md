@@ -112,7 +112,7 @@ builder.Services.AddDbContext<OrdersContext>(options =>
         sql => sql.CommandTimeout(600))); // 10 minutos
 ```
 
-El segundo argumento de `UseSqlServer` es un `Action<SqlServerDbContextOptionsBuilder>`. `CommandTimeout(int seconds)` vive en [SqlServerDbContextOptionsBuilder](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.infrastructure.sqlserverdbcontextoptionsbuilder.commandtimeout). Configura el `CommandTimeout` para cada `DbCommand` que EF Core construya sobre este contexto, incluidos los que envía el ejecutor de migraciones.
+El segundo argumento de `UseSqlServer` es un `Action<SqlServerDbContextOptionsBuilder>`. `CommandTimeout(int seconds)` vive en [SqlServerDbContextOptionsBuilder](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.infrastructure.relationaldbcontextoptionsbuilder-2.commandtimeout). Configura el `CommandTimeout` para cada `DbCommand` que EF Core construya sobre este contexto, incluidos los que envía el ejecutor de migraciones.
 
 Si tienes un `IDesignTimeDbContextFactory<OrdersContext>` para las herramientas, configúralo también ahí. `dotnet ef` prefiere `IDesignTimeDbContextFactory<T>` sobre `CreateHostBuilder` cuando ambos están presentes, así que esta sobrescritura entra en vigor para las ejecuciones de tiempo de diseño:
 
@@ -221,7 +221,7 @@ Si el comando mató la conexión a mitad de camino y te quedas atascado en la si
 ## Fuentes
 
 - [Referencia de la CLI de EF Core](https://learn.microsoft.com/en-us/ef/core/cli/dotnet) - la lista canónica de opciones de `dotnet ef`.
-- API de [SqlServerDbContextOptionsBuilder.CommandTimeout](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.infrastructure.sqlserverdbcontextoptionsbuilder.commandtimeout).
+- API de [SqlServerDbContextOptionsBuilder.CommandTimeout](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.infrastructure.relationaldbcontextoptionsbuilder-2.commandtimeout).
 - API de [RelationalDatabaseFacadeExtensions.SetCommandTimeout](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.setcommandtimeout).
 - [dotnet/efcore#6613](https://github.com/dotnet/efcore/issues/6613) "Allow customizing migration commands timeout" registra por qué no existe una opción CLI.
 - [dotnet/efcore#22887](https://github.com/dotnet/efcore/issues/22887) cubre el caso del paquete de migración y la alternativa de la cadena de conexión.

@@ -13,7 +13,7 @@ translationDate: 2026-05-01
 ---
 Ab .NET 10 bietet die Suchleiste von MAUI eine neue Eigenschaft, mit der Sie die Farbe des Suchsymbols der `SearchBar` ändern können: `SearchIconColor`.
 
-[![](/wp-content/uploads/2025/04/image.png)](/wp-content/uploads/2025/04/image.png)
+[![.NET MAUI SearchBar mit violettem Suchsymbol und dem Platzhalter Search videos.](/wp-content/uploads/2025/04/image.png)](/wp-content/uploads/2025/04/image.png)
 
 Wie bei jeder bindbaren Eigenschaft können Sie ihr einen Farbwert wie `Purple` zuweisen oder sie an eine Ressource binden, wie folgt:
 

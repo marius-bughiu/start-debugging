@@ -32,19 +32,19 @@ C# は初心者にやさしく、新しくプログラミングを始める人�
 
 C# のコードファイルは、プロジェクトの一部として記述・コンパイルされます。複数のプロジェクトでソリューションを構成します。始めるには、まず **新しいプロジェクト** を作成する必要があります。**スタート** ページの **クイックアクション** から、新しい C# プロジェクトを作成できます。
 
-[![](/wp-content/uploads/2023/06/image.png)](/wp-content/uploads/2023/06/image.png)
+[![New Project が強調表示された Visual Studio の Quick actions。](/wp-content/uploads/2023/06/image.png)](/wp-content/uploads/2023/06/image.png)
 
 Visual Studio 2022 のクイックアクション。新しいプロジェクトがハイライトされている。
 
 シンプルに始めるため、新しいコンソールアプリケーションを作成します。テンプレート一覧で 'console' を検索し、下記のように C# のバッジが付いているテンプレートを選択してください。
 
-[![](/wp-content/uploads/2023/06/image-1.png)](/wp-content/uploads/2023/06/image-1.png)
+[![console で検索した Visual Studio のテンプレート一覧で、Visual Basic の上にある C# Console App が強調表示されている。](/wp-content/uploads/2023/06/image-1.png)](/wp-content/uploads/2023/06/image-1.png)
 
 Visual Studio 2022 のプロジェクトテンプレート一覧。C# コンソールアプリケーションのテンプレートがハイライトされている。
 
 ウィザードを既定値のまま進めると、次のような状態になります。
 
-[![](/wp-content/uploads/2023/06/image-2.png)](/wp-content/uploads/2023/06/image-2.png)
+[![Program.cs に Hello, World! を出力する Console.WriteLine があり、右側の Solution Explorer にプロジェクトが表示された Visual Studio。](/wp-content/uploads/2023/06/image-2.png)](/wp-content/uploads/2023/06/image-2.png)
 
 トップレベルステートメントを使用した新しい C# コンソールアプリケーションを表示している Visual Studio 2022。
 
@@ -60,13 +60,13 @@ Visual Studio 2022 のプロジェクトテンプレート一覧。C# コンソ�
 
 次に、プログラムを実行して出力を確認しましょう。プログラムをビルドして実行するには、ツールバーの Run ボタンを使うか、単に **F5** を押します。
 
-[![](/wp-content/uploads/2023/06/image-3.png)](/wp-content/uploads/2023/06/image-3.png)
+[![ConsoleApp6 を実行する緑色のボタンが強調表示された Visual Studio のツールバー。](/wp-content/uploads/2023/06/image-3.png)](/wp-content/uploads/2023/06/image-3.png)
 
 Run ボタンがハイライトされた Visual Studio 2022 のツールバー。
 
 Visual Studio はまずプロジェクトをビルドし、その後実行します。コンソールアプリケーションなので、コンソールウィンドウが表示され、最初の行に "Hello, World!" のメッセージが出ます。
 
-[![](/wp-content/uploads/2023/06/image-4.png)](/wp-content/uploads/2023/06/image-4.png)
+[![Hello, World! と終了コード 0 による正常終了を表示するコンソール。](/wp-content/uploads/2023/06/image-4.png)](/wp-content/uploads/2023/06/image-4.png)
 
 "Hello, World!" を表示しているコンソールウィンドウ。
 

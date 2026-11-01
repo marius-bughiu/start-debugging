@@ -28,19 +28,19 @@ A typical developer environment would be Visual Studio running on Windows. Visua
 
 C# code files are written and compiled part of a project. Multiple projects make up a solution. In order to get started, we’ll need to create a **New Project** first. You can use the **Quick actions** in the **Welcome** page to create a new C# project.
 
-[![](/wp-content/uploads/2023/06/image.png)](/wp-content/uploads/2023/06/image.png)
+[![Visual Studio Quick actions with New Project highlighted.](/wp-content/uploads/2023/06/image.png)](/wp-content/uploads/2023/06/image.png)
 
 Quick actions in Visual Studio 2022, with New Project highlighted.
 
 To start simple, we’ll want to create a new console application. Search in the list of templates for ‘console’ and choose the one which has the C# badge as indicated below:
 
-[![](/wp-content/uploads/2023/06/image-1.png)](/wp-content/uploads/2023/06/image-1.png)
+[![Visual Studio template search for console with the C# Console App template highlighted above the Visual Basic option.](/wp-content/uploads/2023/06/image-1.png)](/wp-content/uploads/2023/06/image-1.png)
 
 A list of project templates in Visual Studio 2022, with the C# console application template highlighted.
 
 Continue through the wizard using the default values and you should end up in a state similar to this:
 
-[![](/wp-content/uploads/2023/06/image-2.png)](/wp-content/uploads/2023/06/image-2.png)
+[![Visual Studio with Program.cs open, Console.WriteLine printing Hello, World!, and the project visible in Solution Explorer.](/wp-content/uploads/2023/06/image-2.png)](/wp-content/uploads/2023/06/image-2.png)
 
 Visual Studio 2022 showing a new C# console application using top-level statements.
 
@@ -56,13 +56,13 @@ In the center of your editor you have this **Program.cs** file open. The file co
 
 Next, let’s run the program and see what it outputs. To compile and run the program, you can use the Run button in the toolbar, or simply press **F5**.
 
-[![](/wp-content/uploads/2023/06/image-3.png)](/wp-content/uploads/2023/06/image-3.png)
+[![Visual Studio toolbar with the green Run button for ConsoleApp6 highlighted.](/wp-content/uploads/2023/06/image-3.png)](/wp-content/uploads/2023/06/image-3.png)
 
 A toolbar in Visual Studio 2022, having the Run button highlighted.
 
 Visual Studio will first compile your project and then execute it. This being a console application, a console window will show up, with the message “Hello, World!” on the first line.
 
-[![](/wp-content/uploads/2023/06/image-4.png)](/wp-content/uploads/2023/06/image-4.png)
+[![Console output showing Hello, World! and a successful exit with code 0.](/wp-content/uploads/2023/06/image-4.png)](/wp-content/uploads/2023/06/image-4.png)
 
 A console window displaying “Hello, World!”.
 

@@ -384,5 +384,5 @@ O modelo mental mais curto para a migração: GetX troca correção por ergonomi
 - [flutter_riverpod no pub.dev](https://pub.dev/packages/flutter_riverpod)
 - [riverpod_generator no pub.dev](https://pub.dev/packages/riverpod_generator)
 - [go_router no pub.dev](https://pub.dev/packages/go_router)
-- [Receitas de teste do Riverpod](https://riverpod.dev/docs/essentials/testing)
+- [Receitas de teste do Riverpod](https://riverpod.dev/docs/how_to/testing)
 - [Pacote GetX no pub.dev](https://pub.dev/packages/get)

@@ -145,7 +145,7 @@ else
 
 ## La trampa de await, ahora peor
 
-Nunca pudiste hacer `await` dentro de una sentencia `lock` con `Monitor`. El compilador lo rechazaba directamente con [CS1996](https://learn.microsoft.com/dotnet/csharp/misc/cs1996): "Cannot await in the body of a lock statement". La razón es que `Monitor` rastrea la propiedad por id de hilo administrado, así que reanudar un `await` en otro hilo liberaría el lock desde el dueño equivocado.
+Nunca pudiste hacer `await` dentro de una sentencia `lock` con `Monitor`. El compilador lo rechazaba directamente con [CS1996](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/lock-semantics#lock-statement-errors): "Cannot await in the body of a lock statement". La razón es que `Monitor` rastrea la propiedad por id de hilo administrado, así que reanudar un `await` en otro hilo liberaría el lock desde el dueño equivocado.
 
 `Lock` tiene la misma restricción y el compilador la aplica de la misma manera. Prueba esto:
 

@@ -26,7 +26,7 @@ In the about page there’s a Learn More button, let's make its color platform d
 
 And let’s look at the result:
 
-![](/wp-content/uploads/2019/07/xamarin-forms-on-platform.png)
+![Xamarin Forms About page with a green Learn More button on Android and a purple Learn more button on UWP.](/wp-content/uploads/2019/07/xamarin-forms-on-platform.png)
 
 Alternatively, you could also use the following syntax which is more convenient when dealing with fancier data types.
 

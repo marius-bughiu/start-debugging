@@ -384,5 +384,5 @@ Flutter のタスクが移行だけということは稀です。[マルチバ�
 - [pub.dev の flutter_riverpod](https://pub.dev/packages/flutter_riverpod)
 - [pub.dev の riverpod_generator](https://pub.dev/packages/riverpod_generator)
 - [pub.dev の go_router](https://pub.dev/packages/go_router)
-- [Riverpod テストレシピ](https://riverpod.dev/docs/essentials/testing)
+- [Riverpod テストレシピ](https://riverpod.dev/docs/how_to/testing)
 - [pub.dev の GetX パッケージ](https://pub.dev/packages/get)

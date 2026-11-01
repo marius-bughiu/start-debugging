@@ -215,5 +215,5 @@ Avalonia выигрывает холодный старт по всем фрон
 - [Документация .NET MAUI](https://learn.microsoft.com/dotnet/maui/), Microsoft Learn, дата обращения 2026-05-27.
 - [Релизные заметки Avalonia 11.3](https://github.com/AvaloniaUI/Avalonia/releases) на GitHub.
 - [Анонс Uno Platform 6.0](https://platform.uno/blog/) и документация Uno Platform.
-- [Статус поддержки браузера в Avalonia](https://docs.avaloniaui.net/docs/next/guides/platforms/web/), дата обращения 2026-05-27.
-- [Совместимость XAML WinUI 3 в Uno Platform](https://platform.uno/docs/articles/winui-doc-links-overview.html), документация Uno Platform.
+- [Статус поддержки браузера в Avalonia](https://docs.avaloniaui.net/docs/deployment/webassembly), дата обращения 2026-05-27.
+- [Совместимость XAML WinUI 3 в Uno Platform](https://platform.uno/docs/articles/implemented-views.html), документация Uno Platform.

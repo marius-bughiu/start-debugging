@@ -40,7 +40,7 @@ Hay dos formas de resolver este error:
 
 ## La versión del lenguaje aparece atenuada y no se puede modificar
 
-[![](/wp-content/uploads/2023/03/image.png)](/wp-content/uploads/2023/03/image.png)
+[![Propiedades del proyecto en Visual Studio con el campo Language version deshabilitado y el valor 10.0.](/wp-content/uploads/2023/03/image.png)](/wp-content/uploads/2023/03/image.png)
 
 La versión del lenguaje no se puede cambiar desde la ventana **Properties** del proyecto. La versión está vinculada a la versión del target .NET framework de tu proyecto y se actualizará en consecuencia según ese.
 

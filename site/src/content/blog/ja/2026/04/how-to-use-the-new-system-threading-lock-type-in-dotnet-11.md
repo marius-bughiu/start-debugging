@@ -145,7 +145,7 @@ else
 
 ## await の罠、いっそう悪化
 
-`Monitor` ベースの `lock` 文の中で `await` することは元々できませんでした。コンパイラは [CS1996](https://learn.microsoft.com/dotnet/csharp/misc/cs1996) で正面から拒否します: "Cannot await in the body of a lock statement"。理由は、`Monitor` がオーナーシップをマネージド スレッド ID で追跡するため、`await` を別のスレッドで再開すると誤ったオーナーから解放してしまうからです。
+`Monitor` ベースの `lock` 文の中で `await` することは元々できませんでした。コンパイラは [CS1996](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/lock-semantics#lock-statement-errors) で正面から拒否します: "Cannot await in the body of a lock statement"。理由は、`Monitor` がオーナーシップをマネージド スレッド ID で追跡するため、`await` を別のスレッドで再開すると誤ったオーナーから解放してしまうからです。
 
 `Lock` にも同じ制約があり、コンパイラは同じ方法で強制します。試してみてください:
 

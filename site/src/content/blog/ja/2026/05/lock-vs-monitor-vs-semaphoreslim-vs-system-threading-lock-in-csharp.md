@@ -195,7 +195,7 @@ public sealed class BoundedBuffer<T>
 
 3 つの制約は好みを完全に上書きします。
 
-**クリティカルセクション内の `await` は `SemaphoreSlim` を強制します。** これはスタイルの選択ではありません。`lock`、`Monitor`、`Lock` は所有権をマネージドスレッドで追跡し、`await` は別のスレッドで再開しうるため、間違った所有者からロックを解放してしまいます。C# コンパイラーは `lock` 内の `await` を [CS1996](https://learn.microsoft.com/dotnet/csharp/misc/cs1996) で拒否します。狡猾なバリエーションは `await` を囲む `using (_gate.EnterScope())` です。これはコンパイルされるかもしれませんが、継続が一度も入っていないスレッドで scope を破棄しようとすると、実行時に `SynchronizationLockException` をスローします。本体が待機するなら、あなたは `SemaphoreSlim` です。以上です。これは、内部で [async void と async Task がなぜこれほど異なる挙動をするのか](/ja/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct/)の背後にある推論と同じです。
+**クリティカルセクション内の `await` は `SemaphoreSlim` を強制します。** これはスタイルの選択ではありません。`lock`、`Monitor`、`Lock` は所有権をマネージドスレッドで追跡し、`await` は別のスレッドで再開しうるため、間違った所有者からロックを解放してしまいます。C# コンパイラーは `lock` 内の `await` を [CS1996](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/lock-semantics#lock-statement-errors) で拒否します。狡猾なバリエーションは `await` を囲む `using (_gate.EnterScope())` です。これはコンパイルされるかもしれませんが、継続が一度も入っていないスレッドで scope を破棄しようとすると、実行時に `SynchronizationLockException` をスローします。本体が待機するなら、あなたは `SemaphoreSlim` です。以上です。これは、内部で [async void と async Task がなぜこれほど異なる挙動をするのか](/ja/2026/05/async-void-vs-async-task-in-csharp-when-each-is-correct/)の背後にある推論と同じです。
 
 **条件変数は `Monitor` を強制します。** あなたの調整が本当に「シグナルされるまで眠る」セマンティクスを必要とし、`Channel<T>` が合わないなら、それを行えるのは `Monitor.Wait` / `Pulse` だけです。
 

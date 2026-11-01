@@ -69,4 +69,4 @@ A few rules to keep in mind:
 
 C# 12 gave us the syntax. C# 13 extended `params` to accept collection expressions. C# 14 broadened implicit span conversions. Now C# 15 removes the last common reason to abandon collection expressions: constructor configuration. If you are already on [.NET 11 Preview 2](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-2/) or later, you can try this today with `<LangVersion>preview</LangVersion>` in your project file.
 
-Full spec: [Collection expression arguments proposal](https://github.com/dotnet/csharplang/blob/main/proposals/collection-expression-arguments.md).
+Full spec: [Collection expression arguments proposal](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-15.0/collection-expression-arguments.md).

@@ -20,7 +20,7 @@ Si recibes este error, ve a tu App Service > Settings > Configuration y asegúra
 
 Tras hacer los cambios, también deberás reiniciar manualmente el App Service para que surtan efecto.
 
-![](/wp-content/uploads/2020/12/image-1024x463.png)
+![Configuración de Azure App Service con la pila .NET y la versión .NET 5 (Early Access).](/wp-content/uploads/2020/12/image-1024x463.png)
 
 El mensaje de error completo:
 

@@ -20,7 +20,7 @@ translationDate: 2026-05-01
 
 После внесения изменений вам также нужно вручную перезапустить App Service, чтобы они вступили в силу.
 
-![](/wp-content/uploads/2020/12/image-1024x463.png)
+![Конфигурация Azure App Service: выбран стек .NET и версия .NET 5 (Early Access).](/wp-content/uploads/2020/12/image-1024x463.png)
 
 Полный текст ошибки:
 

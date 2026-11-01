@@ -20,7 +20,7 @@ translationDate: 2026-05-01
 
 > CS1696 Single-line comment or end-of-line expected.
 
-[![](/wp-content/uploads/2023/10/image-3.png)](/wp-content/uploads/2023/10/image-3.png)
+[![В директивах pragma с BAR-001 видны предупреждения, а вызов Foo() остаётся подчёркнутым.](/wp-content/uploads/2023/10/image-3.png)](/wp-content/uploads/2023/10/image-3.png)
 
 В атрибуте также можно указать `UrlFormat`, чтобы направить разработчиков к документации, связанной с экспериментальной функциональностью. Можно указать абсолютный URL, например `https://acme.com/warnings/BAR001`, или универсальный URL с подстановкой (`https://acme.com/warnings/{0}`) и позволить фреймворку сделать остальное.
 

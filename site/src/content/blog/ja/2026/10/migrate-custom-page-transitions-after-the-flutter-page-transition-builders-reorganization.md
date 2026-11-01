@@ -303,4 +303,4 @@ lib/main.dart:14:33: Error: Not a constant expression.
 - [`PageTransitionsBuilder` API リファレンス](https://api.flutter.dev/flutter/widgets/PageTransitionsBuilder-class.html)。
 - [flutter/flutter#172929](https://github.com/flutter/flutter/issues/172929), 追跡用の issue。
 - PR [#174321](https://github.com/flutter/flutter/pull/174321)、[#175560](https://github.com/flutter/flutter/pull/175560)、[#177080](https://github.com/flutter/flutter/pull/177080)、[#179776](https://github.com/flutter/flutter/pull/179776)。
-- Dart ドキュメントの[データ駆動の修正](https://dart.dev/tools/fix)。
+- Dart ドキュメントの[データ駆動の修正](https://dart.dev/tools/dart-fix)。

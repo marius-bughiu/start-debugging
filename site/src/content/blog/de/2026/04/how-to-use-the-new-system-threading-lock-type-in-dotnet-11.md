@@ -145,7 +145,7 @@ else
 
 ## Die await-Falle, jetzt schlimmer
 
-Sie konnten bei `Monitor` nie innerhalb einer `lock`-Anweisung `await` verwenden. Der Compiler verweigerte das direkt mit [CS1996](https://learn.microsoft.com/dotnet/csharp/misc/cs1996): "Cannot await in the body of a lock statement". Der Grund ist, dass `Monitor` Ownership über die verwaltete Thread-ID verfolgt, sodass das Fortsetzen eines `await` auf einem anderen Thread den Lock vom falschen Besitzer freigeben würde.
+Sie konnten bei `Monitor` nie innerhalb einer `lock`-Anweisung `await` verwenden. Der Compiler verweigerte das direkt mit [CS1996](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/lock-semantics#lock-statement-errors): "Cannot await in the body of a lock statement". Der Grund ist, dass `Monitor` Ownership über die verwaltete Thread-ID verfolgt, sodass das Fortsetzen eines `await` auf einem anderen Thread den Lock vom falschen Besitzer freigeben würde.
 
 `Lock` hat dieselbe Einschränkung, und der Compiler erzwingt sie auf dieselbe Weise. Versuchen Sie das:
 

@@ -28,7 +28,7 @@ Auf der About-Seite gibt es einen Learn-More-Button. Machen wir seine Farbe plat
 
 Und schauen wir uns das Ergebnis an:
 
-![](/wp-content/uploads/2019/07/xamarin-forms-on-platform.png)
+![Xamarin Forms-About-Seite mit grüner Learn More-Schaltfläche unter Android und violetter Learn more-Schaltfläche unter UWP.](/wp-content/uploads/2019/07/xamarin-forms-on-platform.png)
 
 Alternativ können Sie auch die folgende Syntax verwenden, die bei komplexeren Datentypen praktischer ist.
 

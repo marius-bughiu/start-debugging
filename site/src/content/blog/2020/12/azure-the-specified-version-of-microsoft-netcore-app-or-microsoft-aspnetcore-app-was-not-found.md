@@ -16,7 +16,7 @@ If you get this error, go to your App Service > Settings > Configuration and mak
   
 After making the changes, you will also need to manually restart the App Service for them to take effect.
 
-![](/wp-content/uploads/2020/12/image-1024x463.png)
+![Azure App Service Configuration with the stack set to .NET and the framework version set to .NET 5 (Early Access).](/wp-content/uploads/2020/12/image-1024x463.png)
 
 The complete error message:
 

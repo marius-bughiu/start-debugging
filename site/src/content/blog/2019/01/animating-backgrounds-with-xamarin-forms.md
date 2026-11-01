@@ -10,7 +10,7 @@ tags:
 ---
 I’ve started playing with animations in Xamarin Forms only recently and created a cool background animation for one of my apps (Charades for Dota 2) which I thought I would share. So without any extra introduction, this is the final result:
 
-![](/wp-content/uploads/2019/01/animations3.gif)
+![Layered blue rectangles forming the Xamarin Forms animated background.](/wp-content/uploads/2019/01/animations3.gif)
 
 The GIF is a bit jittery but that's just because my PC can't handle the emulator properly. On a device, the animations are smooth.
 

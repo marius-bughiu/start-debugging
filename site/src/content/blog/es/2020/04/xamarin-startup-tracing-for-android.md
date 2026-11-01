@@ -31,4 +31,4 @@ Algunos números compartidos por el equipo de Xamarin:
 
 Activarlo es sencillo: solo ve a la configuración de tu proyecto Xamarin Android (clic derecho > Properties) y marca "Enable Startup Tracing" en "Code Generation and Runtime", como se muestra en la imagen siguiente.
 
-![](/wp-content/uploads/2020/04/Annotation-2020-04-04-122649-3.png)
+![Opciones del proyecto Xamarin Android con Enable Startup Tracing marcado en Code Generation and Runtime.](/wp-content/uploads/2020/04/Annotation-2020-04-04-122649-3.png)

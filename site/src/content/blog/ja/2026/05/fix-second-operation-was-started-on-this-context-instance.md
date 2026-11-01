@@ -214,5 +214,5 @@ Kestrel がレスポンスボディで `Stream.ReadAsync` の代わりに `Strea
 - [Avoiding DbContext threading issues](https://learn.microsoft.com/en-us/ef/core/dbcontext-configuration/#avoiding-dbcontext-threading-issues), EF Core ドキュメント。
 - [`IDbContextFactory<TContext>` interface](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1), Microsoft Learn。
 - [`AddDbContextFactory` extension](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.dependencyinjection.entityframeworkservicecollectionextensions.adddbcontextfactory), Microsoft Learn。
-- [`ConcurrencyDetector` source](https://github.com/dotnet/efcore/blob/main/src/EFCore/Internal/ConcurrencyDetector.cs), GitHub の dotnet/efcore。
+- [`ConcurrencyDetector` source](https://github.com/dotnet/efcore/blob/main/src/EFCore/Infrastructure/Internal/ConcurrencyDetector.cs), GitHub の dotnet/efcore。
 - [`IServiceScopeFactory.CreateAsyncScope`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.dependencyinjection.serviceproviderserviceextensions.createasyncscope), Microsoft Learn。

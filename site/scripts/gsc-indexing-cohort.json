@@ -1,0 +1,55 @@
+{
+  "siteUrl": "sc-domain:startdebugging.net",
+  "origin": "https://startdebugging.net",
+  "selection": "Fixed purposive cohort from the October 31 audit: five established controls, five August/September article URLs including one translation, and two topic guides. This is not a sitewide indexing estimate.",
+  "urls": [
+    {
+      "path": "/",
+      "group": "established-control"
+    },
+    {
+      "path": "/2023/06/how-to-fix-command-dotnet-ef-not-found/",
+      "group": "established-control"
+    },
+    {
+      "path": "/2023/10/how-to-fix-missingpluginexception-no-implementation-found-for-method-getall/",
+      "group": "established-control"
+    },
+    {
+      "path": "/2026/06/gate-cursor-sdk-tool-calls-with-auto-review-and-permissions-json/",
+      "group": "established-control"
+    },
+    {
+      "path": "/2026/06/fix-renderbox-was-not-laid-out-in-flutter/",
+      "group": "established-control"
+    },
+    {
+      "path": "/2026/08/webapplicationfactory-vs-testcontainers-for-aspnetcore-integration-tests/",
+      "group": "discovery-article"
+    },
+    {
+      "path": "/2026/08/how-to-store-an-enum-as-a-string-in-ef-core-11-with-a-value-converter/",
+      "group": "discovery-article"
+    },
+    {
+      "path": "/2026/09/how-to-add-the-current-user-id-to-every-log-entry-in-aspnet-core/",
+      "group": "discovery-article"
+    },
+    {
+      "path": "/2026/09/what-is-a-flutter-key-and-when-does-omitting-it-cause-bugs/",
+      "group": "discovery-article"
+    },
+    {
+      "path": "/de/2026/09/how-to-add-the-current-user-id-to-every-log-entry-in-aspnet-core/",
+      "group": "discovery-article"
+    },
+    {
+      "path": "/pillars/dotnet-11-tracker/",
+      "group": "topic-guide"
+    },
+    {
+      "path": "/pillars/async-and-concurrency-in-csharp/",
+      "group": "topic-guide"
+    }
+  ]
+}

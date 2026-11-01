@@ -14,7 +14,7 @@ translationDate: 2026-05-01
 ---
 Ich habe erst kürzlich begonnen, mit Animationen in Xamarin Forms zu spielen, und für eine meiner Apps (Charades for Dota 2) eine schöne Hintergrundanimation gebaut, die ich gerne teilen wollte. Ohne weitere Vorrede ist das hier das Endergebnis:
 
-![](/wp-content/uploads/2019/01/animations3.gif)
+![Übereinanderliegende blaue Rechtecke bilden den animierten Xamarin Forms-Hintergrund.](/wp-content/uploads/2019/01/animations3.gif)
 
 Das GIF ruckelt etwas, aber nur weil mein PC den Emulator nicht richtig stemmt. Auf einem Gerät laufen die Animationen flüssig.
 

@@ -5,20 +5,8 @@ import url from "node:url";
 import { rehypeInjectAd } from "./src/lib/rehype-inject-ad.mjs";
 import { buildLastmodMap } from "./src/lib/content-paths.mjs";
 import { isTagAliasPath } from "./src/lib/tags.mjs";
-
-/** Rehype plugin: adds loading="lazy" to all <img> elements */
-function rehypeLazyImages() {
-  return (tree) => {
-    const visit = (node) => {
-      if (node.type === "element" && node.tagName === "img") {
-        node.properties = node.properties || {};
-        node.properties.loading = "lazy";
-      }
-      if (node.children) node.children.forEach(visit);
-    };
-    visit(tree);
-  };
-}
+import rehypeRaw from "rehype-raw";
+import { rehypeArticleImages } from "./src/lib/rehype-article-images.mjs";
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const CONTENT_DIR = path.join(__dirname, "src", "content");
@@ -81,7 +69,7 @@ export default defineConfig({
       themes: { light: "github-light", dark: "github-dark-default" },
       defaultColor: false,
     },
-    rehypePlugins: [rehypeLazyImages, rehypeInjectAd],
+    rehypePlugins: [rehypeRaw, rehypeArticleImages, rehypeInjectAd],
   },
   ...(process.env.VITE_CACHE_DIR
     ? { vite: { cacheDir: process.env.VITE_CACHE_DIR } }
