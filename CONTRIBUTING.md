@@ -39,6 +39,8 @@ Prefer an existing tag before adding a new spelling. Reviewed synonyms live in [
 
 Keep the historical page counts in `LEGACY_TAG_PAGES` when normalizing source tags. GitHub Pages serves Astro's static HTML redirects, with immediate meta refresh and a canonical target; these redirect pages are excluded from the sitemap.
 
+Related articles are selected using specific shared topics and title relevance. For editorial recommendations, add `relatedPosts` to a post's frontmatter as a list of canonical base slugs, for example `2026/04/dapper-nvarchar-implicit-conversion-kills-sql-server-indexes`. Use no leading slash, locale prefix, or trailing slash. Picks resolve to published articles in the reader's language; unavailable translations are skipped. List only articles that help the reader continue the topic.
+
 ## Licensing of contributions
 
 start-debugging uses a split license model, and your contribution is licensed accordingly based on what you change:

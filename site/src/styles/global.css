@@ -866,11 +866,7 @@ footer {
   background: transparent;
 }
 
-/* Related posts section below a post */
-.related-section {
-  margin-top: 28px;
-}
-
+/* Shared section headings on article indexes. */
 .related-heading {
   font-size: 16px;
   letter-spacing: 0.02em;
@@ -879,8 +875,7 @@ footer {
   font-weight: 600;
 }
 
-/* Comments section (giscus) below related posts. Match heading style with
-   .related-heading; the iframe handles its own internal styling. */
+/* The iframe handles the comments' internal styling. */
 .comments-section {
   margin-top: 28px;
   display: flex;
@@ -1194,7 +1189,32 @@ footer {
 :root:not([data-theme]) .theme-picker { display: none; }
 
 /* A comfortable measure and visible links for reading technical articles. */
-main:has(> article.prose) { max-width: 840px; }
+main:has(> article.prose), main:has(> .article-layout) { max-width: 840px; }
+.article-layout { display: grid; grid-template-columns: minmax(0, 1fr); }
+.article-layout > * { min-width: 0; }
+.article-after { min-width: 0; }
+
+/* Add room for discovery rather than taking it from the reading column. */
+@media (min-width: 1160px) {
+  main:has(> .article-layout--with-related) { max-width: 1132px; }
+  body:has(.article-layout--with-related) > :is(header, footer) { max-width: 1132px; }
+  .article-layout--with-related {
+    grid-template-columns: minmax(0, 792px) 260px;
+    column-gap: 32px;
+  }
+  .article-layout--with-related > :is(.article-breadcrumbs, .prose, .article-after) {
+    grid-column: 1;
+  }
+  .article-layout.article-layout--with-related > .related-articles {
+    grid-column: 2;
+    grid-row: 2 / 4;
+    margin-top: 0;
+  }
+  .article-layout--with-related > .related-articles[data-sticky] {
+    position: sticky;
+    top: 24px;
+  }
+}
 .prose { line-height: 1.75; }
 .prose :is(p, li, blockquote) a {
   text-decoration: underline;

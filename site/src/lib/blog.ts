@@ -1,4 +1,5 @@
 import { getCollection, type CollectionEntry } from "astro:content";
+import { createRelatedPostRanker } from "./related-posts.mjs";
 
 export type BlogPost = CollectionEntry<"blog">;
 export type Pillar = CollectionEntry<"pillars">;
@@ -147,33 +148,26 @@ export async function getAdjacentPosts(
   };
 }
 
+const relatedPostRankers = new Map<Locale, Promise<(post: BlogPost, limit?: number) => BlogPost[]>>();
+
 /**
- * Score posts by shared-tag count relative to `post`, filtered to the same
- * language. Only recommend posts sharing a tag; unrelated recent posts
- * are not useful just to fill a fixed number of slots.
+ * Recommend published articles in the same language using subject relevance,
+ * optional curated choices and a small framework-version preference.
  */
 export async function getRelatedPosts(
   post: BlogPost,
   limit = 4,
 ): Promise<BlogPost[]> {
-  const posts = await getPublishedBlogPosts(langOf(post));
-  const sourceTags = new Set(post.data.tags ?? []);
-
-  const scored = posts
-    .filter((p) => p.slug !== post.slug)
-    .map((p) => {
-      const tags = p.data.tags ?? [];
-      let overlap = 0;
-      for (const t of tags) if (sourceTags.has(t)) overlap++;
-      return { post: p, overlap };
-    }).filter((item) => item.overlap > 0);
-
-  scored.sort((a, b) => {
-    if (b.overlap !== a.overlap) return b.overlap - a.overlap;
-    return b.post.data.pubDate.valueOf() - a.post.data.pubDate.valueOf();
-  });
-
-  return scored.slice(0, limit).map((s) => s.post);
+  const lang = langOf(post);
+  // Builds share a content snapshot. Dev requests rebuild the small index so
+  // changing frontmatter never leaves stale suggestions in the preview.
+  if (import.meta.env.DEV) {
+    return createRelatedPostRanker(await getPublishedBlogPosts(lang))(post, limit);
+  }
+  if (!relatedPostRankers.has(lang)) {
+    relatedPostRankers.set(lang, getPublishedBlogPosts(lang).then(createRelatedPostRanker));
+  }
+  return (await relatedPostRankers.get(lang)!)(post, limit);
 }
 
 /** Posts that share at least one tag with a pillar's indexTags, sorted newest-first. */

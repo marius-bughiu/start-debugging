@@ -1,6 +1,7 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 import { canonicalTag, canonicalTags } from "../lib/tags.mjs";
+import { RELATED_POST_SLUG } from "../lib/related-posts.mjs";
 
 const LOCALES = ["en", "es", "pt-br", "de", "ru", "ja"] as const;
 
@@ -29,6 +30,10 @@ const blog = defineCollection({
     updatedDate: z.date().optional(),
     draft: z.boolean().optional(),
     tags: z.array(z.string()).optional(),
+    // Optional editorial choices, resolved to published posts in this language.
+    relatedPosts: z.array(z.string().regex(RELATED_POST_SLUG,
+      "Use a canonical base slug: YYYY/MM/article-name, without a locale or slashes at either end."
+    )).optional(),
     lang: z.enum(LOCALES).default("en"),
     translationOf: z.string().optional(),
     translatedBy: z.enum(["claude", "human"]).optional(),

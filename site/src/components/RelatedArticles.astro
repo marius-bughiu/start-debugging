@@ -1,0 +1,112 @@
+---
+import { estimateReadingTimeMinutes, langOf, urlPathForPost, type BlogPost } from "../lib/blog";
+import { relatedTopicTags } from "../lib/related-posts.mjs";
+import { tagTitle } from "../lib/tags.mjs";
+import { t } from "../i18n";
+
+interface Props {
+  post: BlogPost;
+  related: BlogPost[];
+}
+
+const { post, related } = Astro.props;
+const lang = langOf(post);
+const baseUrl = import.meta.env.BASE_URL;
+const prefix = lang === "en" ? baseUrl : `${baseUrl}${lang}/`;
+---
+
+{related.length > 0 && (
+  <aside class="panel related-articles" aria-labelledby="related-heading" data-pagefind-ignore>
+    <h2 id="related-heading">{t("post.related", lang)}</h2>
+    <ul class="related-articles-list">
+      {related.map((candidate) => {
+        const topic = relatedTopicTags(post, candidate)[0];
+        return (
+          <li>
+            <a class="related-article-title" href={urlPathForPost(candidate)}>{candidate.data.title}</a>
+            <div class="related-article-meta">
+              {topic && <a href={`${prefix}tag/${topic}/`}>{tagTitle(topic)}</a>}
+              <span>{`${estimateReadingTimeMinutes(candidate.body, lang)} ${t("post.minRead", lang)}`}</span>
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  </aside>
+)}
+
+<style>
+  .related-articles {
+    margin-top: 24px;
+    padding: 20px;
+    align-self: start;
+    min-width: 0;
+  }
+
+  h2 {
+    margin: 0 0 20px;
+    font-size: 16px;
+    font-weight: 650;
+    line-height: 1.4;
+    color: var(--text);
+  }
+
+  .related-articles-list {
+    display: grid;
+    gap: 18px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li + li {
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+  }
+
+  .related-article-title {
+    display: block;
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    text-underline-offset: 3px;
+  }
+
+  .related-article-title:hover,
+  .related-article-title:focus-visible {
+    color: var(--link);
+  }
+
+  .related-article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 12px;
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .related-article-meta a { color: var(--muted); }
+  .related-article-meta a:hover { color: var(--link); }
+  .related-article-meta span { white-space: nowrap; }
+</style>
+
+<script>
+  // A tall rail should scroll with the page. Stick only when it fits fully
+  // in the viewport, including after font changes or window resizing.
+  const rails = document.querySelectorAll<HTMLElement>(".related-articles");
+  const updateRails = () => {
+    rails.forEach((rail) => {
+      rail.toggleAttribute("data-sticky", rail.offsetHeight <= window.innerHeight - 48);
+    });
+  };
+  const observer = new ResizeObserver(updateRails);
+  rails.forEach((rail) => observer.observe(rail));
+  window.addEventListener("resize", updateRails, { passive: true });
+  updateRails();
+</script>
