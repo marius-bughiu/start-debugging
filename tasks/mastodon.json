@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/migrate-a-dotnet-test-project-from-moq-to-nsubstitute",
-    "text": "Migrating .NET tests from Moq 4.21 to NSubstitute 6.2 runs both side by side, one file at a time. The trap: Received(3) on a non-virtual member passes even if it was never called, and only the analyzer warns. Plus why Returns(order, null) never returns null, and the NS1000 false positive on Protected()."
   }
 ]
