@@ -119,7 +119,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: Claude Code ignores `AGENTS.md` - import it from `CLAUDE.md` or symlink it → slug: 2026/09/fix-claude-code-ignores-agents-md
 - Fix: Claude Code stuck on "Request rejected as unprocessable by the model" in a long image-heavy session → slug: 2026/10/fix-claude-code-request-rejected-as-unprocessable-by-the-model
 - Fix: `529 overloaded_error` ends a long headless Claude Code run (tune the overloaded-retry backoff env vars) → slug: 2026/10/fix-claude-code-repeated-529-overloaded-errors-in-a-headless-run
-- Fix: a Copilot agent command fails with permission or network denied after local sandboxing is enabled
+- Fix: a Copilot agent command fails with permission or network denied after local sandboxing is enabled → slug: 2026/10/fix-copilot-agent-command-fails-with-permission-or-network-denied-after-enabling-local-sandboxing
 - Fix: Claude Code hooks fail with "Plugin directory does not exist" → slug: 2026/10/fix-claude-code-hooks-fail-with-plugin-directory-does-not-exist
 
 ## Vs / comparison
