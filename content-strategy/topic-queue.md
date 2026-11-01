@@ -549,7 +549,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is ref-safe-context in C# and how does the compiler decide it for ref locals? → slug: 2026/10/what-is-ref-safe-context-in-csharp-and-how-does-the-compiler-decide-it-for-ref-locals
 - What does a C# `with` expression actually copy, and why don't computed record properties recalculate? → slug: 2026/10/what-does-a-csharp-with-expression-actually-copy
 - What decides whether EF Core scaffolds a SQL Server `date` column as `DateOnly` or `DateTime`? → slug: 2026/10/what-decides-whether-ef-core-scaffolds-a-sql-server-date-as-dateonly-or-datetime
-- What is the difference between a source-breaking and a binary-breaking change in a .NET library?
+- What is the difference between a source-breaking and a binary-breaking change in a .NET library? → slug: 2026/10/what-is-the-difference-between-a-source-breaking-and-a-binary-breaking-change-in-a-dotnet-library
 - What is the `depend_on_referenced_packages` lint in Dart and why does it fire on transitive imports? → slug: 2026/10/what-is-the-depend-on-referenced-packages-lint-in-dart
 - What happens to an expired `MemoryCache` entry, and when is it actually removed from memory? → slug: 2026/10/what-happens-to-an-expired-memorycache-entry-and-when-is-it-removed
 - What does EF Core write back into an entity after `SaveChangesAsync` (generated keys, concurrency tokens, relationship fix-up)?
