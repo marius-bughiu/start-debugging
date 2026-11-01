@@ -504,7 +504,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a Flutter app's local storage from Hive to Drift → slug: 2026/10/migrate-a-flutter-app-from-hive-to-drift
 - Migrate a Flutter app from `WidgetsBindingObserver.didChangeAppLifecycleState` to `AppLifecycleListener` → slug: 2026/10/migrate-a-flutter-app-from-widgetsbindingobserver-to-applifecyclelistener
 - Migrate a Flutter app from `Color.withOpacity` to `Color.withValues` → slug: 2026/10/migrate-a-flutter-app-from-color-withopacity-to-color-withvalues
-- Migrate a Flutter app from `MaterialStateProperty` to `WidgetStateProperty`
+- Migrate a Flutter app from `MaterialStateProperty` to `WidgetStateProperty` → slug: 2026/10/migrate-a-flutter-app-from-materialstateproperty-to-widgetstateproperty
 - Migrate a Flutter Android project's Gradle scripts from Groovy to Kotlin DSL (`build.gradle` to `build.gradle.kts`)
 - Migrate a .NET test project from Moq to NSubstitute
 - Migrate a .NET test project from FluentAssertions 8 to AwesomeAssertions after the license change
