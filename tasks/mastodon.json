@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/10/try-pattern-vs-throwing-exceptions-for-expected-failures-in-csharp",
+    "text": "Try pattern or throw? The happy path costs the same (a try block is free on .NET 10), so it comes down to how often you fail: a caught FormatException is ~500x slower than a failed TryParse and allocates every time. Plus the gotcha: async methods can't have out params, so what do you return instead?"
   }
 ]
