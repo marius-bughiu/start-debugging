@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/10/try-pattern-vs-throwing-exceptions-for-expected-failures-in-csharp",
-    "text": "A failed int.TryParse: 4.9 ns. Catching FormatException instead: 2,487 ns and 480 B. Measured on .NET 10 vs .NET 8."
   }
 ]
