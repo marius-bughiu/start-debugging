@@ -57,6 +57,8 @@ Both commands also accept a `--connection` parameter now, so you can target a sp
 dotnet ef migrations remove --connection "Server=staging;Database=App;..."
 ```
 
+For deploying reviewed migrations without installing the SDK on the target machine, consider [EF Core migration bundles](/2026/07/how-to-apply-ef-core-11-migrations-in-production-with-migrations-bundle/). They package existing migrations as a deployment artifact, which serves a different purpose from scaffolding a new migration with `--add`.
+
 ## When to reach for it
 
 For prototyping and inner-loop development, `--add` removes friction. For container-based deployment pipelines, it removes an entire build stage. Just keep in mind that runtime-compiled migrations bypass your normal build warnings, so treat the generated files as artifacts that still deserve a review before they hit `main`.

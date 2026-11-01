@@ -4,6 +4,7 @@ import path from "node:path";
 import url from "node:url";
 import { rehypeInjectAd } from "./src/lib/rehype-inject-ad.mjs";
 import { buildLastmodMap } from "./src/lib/content-paths.mjs";
+import { isTagAliasPath } from "./src/lib/tags.mjs";
 
 /** Rehype plugin: adds loading="lazy" to all <img> elements */
 function rehypeLazyImages() {
@@ -59,7 +60,10 @@ export default defineConfig({
       // /page/1/ is a 301 to /. Astro still emits the redirect HTML in the
       // static build, but it ships with noindex — including it in the sitemap
       // would advertise an unindexable URL.
-      filter: (page) => !/\/page\/1\/?$/.test(new URL(page).pathname),
+      filter: (page) => {
+        const pathname = new URL(page).pathname;
+        return !/\/page\/1\/?$/.test(pathname) && !isTagAliasPath(pathname);
+      },
       serialize(item) {
         try {
           const pathname = new URL(item.url).pathname;
@@ -73,6 +77,10 @@ export default defineConfig({
     }),
   ],
   markdown: {
+    shikiConfig: {
+      themes: { light: "github-light", dark: "github-dark-default" },
+      defaultColor: false,
+    },
     rehypePlugins: [rehypeLazyImages, rehypeInjectAd],
   },
   ...(process.env.VITE_CACHE_DIR

@@ -24,3 +24,5 @@ In contrast, `Memory<int>` and the likes will continue to be serialized as JSON 
 JsonSerializer.Serialize<Memory<int>>(new int[] { 28, 70, 0 });
 // Output: [28,70,0]
 ```
+
+If the bytes start in an array, see [creating a ReadOnlyMemory view over an array](/2026/05/how-to-convert-array-to-readonlymemory-in-csharp/) before passing the memory value to the serializer.

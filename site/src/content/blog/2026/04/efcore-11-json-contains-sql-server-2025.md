@@ -25,6 +25,8 @@ protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 
 Compatibility level 170 is what SQL Server 2025 reports; lower levels will keep using the older translation so this is safe to leave off until you actually upgrade the database.
 
+The column type is another part of the upgrade: [native JSON versus nvarchar(max) in EF Core 11](/2026/09/json-vs-nvarchar-max-for-storing-json-in-sql-server-with-ef-core-11/) compares storage, indexing, and migration constraints on SQL Server 2025.
+
 ## What Contains looks like now
 
 Take a classic "tags as JSON array" shape:

@@ -57,6 +57,8 @@ dotnet publish -c Release -f net10.0 -p:PublishTrimmed=true
 
 If you plan to go further into native AOT in .NET 10, publish that way too, and validate that your dependencies are actually AOT-compatible (serialization, reflection, native libs).
 
+For the System.Text.Json portion of that audit, see [disabling reflection-based serialization](/2023/10/system-text-json-disable-reflection-based-serialization/) to expose reliance on reflection fallbacks.
+
 ## A practical checklist for the first .NET 10 rollout
 
 -   **Measure cold start and steady-state separately**: p50 and p99 for both.

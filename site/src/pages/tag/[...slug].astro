@@ -1,48 +1,20 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPublishedBlogPosts } from "../../lib/blog";
-import type { BlogPost } from "../../lib/blog";
+import { tagPages, tagTitle } from "../../lib/tags.mjs";
 
 const baseUrl = import.meta.env.BASE_URL;
 
 export async function getStaticPaths() {
-  const PAGE_SIZE = 10;
-  const allPosts = await getPublishedBlogPosts();
-  const tagMap = new Map<string, BlogPost[]>();
-
-  for (const post of allPosts) {
-    for (const tag of post.data.tags ?? []) {
-      if (!tagMap.has(tag)) tagMap.set(tag, []);
-      tagMap.get(tag)!.push(post);
-    }
-  }
-
-  const paths: {
-    params: { slug: string };
-    props: { tag: string; posts: BlogPost[]; totalCount: number; page: number; totalPages: number };
-  }[] = [];
-
-  for (const [tag, tagPosts] of tagMap) {
-    const totalPages = Math.max(1, Math.ceil(tagPosts.length / PAGE_SIZE));
-    for (let page = 1; page <= totalPages; page++) {
-      const start = (page - 1) * PAGE_SIZE;
-      paths.push({
-        params: { slug: page === 1 ? tag : `${tag}/${page}` },
-        props: {
-          tag,
-          posts: tagPosts.slice(start, start + PAGE_SIZE),
-          totalCount: tagPosts.length,
-          page,
-          totalPages,
-        },
-      });
-    }
-  }
-
-  return paths;
+  return tagPages(await getPublishedBlogPosts()).map(({ slug, ...props }) => ({
+    params: { slug },
+    props,
+  }));
 }
 
-const { tag, posts, totalCount, page, totalPages } = Astro.props;
+const { tag, posts, totalCount, page, totalPages, redirect } = Astro.props;
+if (redirect) return Astro.redirect(`${baseUrl}tag/${redirect}/`, 301);
+const label = tagTitle(tag);
 
 const tagBase = `${baseUrl}tag/${tag}/`;
 const prevHref = page > 1 ? (page === 2 ? tagBase : `${tagBase}${page - 1}/`) : null;
@@ -50,13 +22,13 @@ const nextHref = page < totalPages ? `${tagBase}${page + 1}/` : null;
 ---
 
 <BaseLayout
-  title={`Posts tagged "${tag}"${page > 1 ? ` (Page ${page})` : ""} - Start Debugging`}
-  description={`All articles tagged with ${tag}.`}
+  title={`Posts tagged "${label}"${page > 1 ? ` (Page ${page})` : ""} - Start Debugging`}
+  description={`Tutorials, troubleshooting, and programming notes about ${label}.${page > 1 ? ` Page ${page}.` : ""}`}
   canonicalUrl={Astro.url.href}
   type="website"
 >
   <section class="stack">
-    <h1 class="h1">Tag: {tag}</h1>
+    <h1 class="h1">{label}</h1>
     <p class="muted">
       {totalCount} post{totalCount !== 1 ? "s" : ""}
       {totalPages > 1 ? <> &middot; Page {page} of {totalPages}</> : null}
@@ -73,7 +45,7 @@ const nextHref = page < totalPages ? `${tagBase}${page + 1}/` : null;
           ))}
         </div>
         <a class="post-card-title-link stack" href={`${baseUrl}${post.slug}/`}>
-          <div class="h2">{post.data.title}</div>
+          <h2 class="h2">{post.data.title}</h2>
           {post.data.description ? <div class="muted">{post.data.description}</div> : null}
         </a>
       </article>

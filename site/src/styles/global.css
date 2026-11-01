@@ -1,18 +1,54 @@
+/* Light is the no-script default; system dark mode also works without JS. */
 :root {
+  color-scheme: light;
+  --bg: #f6f8fc;
+  --panel: #ffffff;
+  --text: #182338;
+  --muted: #536176;
+  --link: #075b96;
+  --border: #d8e0eb;
+  --shadow: rgba(27, 45, 74, 0.05);
+  --code-bg: #ffffff;
+  --control: #eef2f8;
+  --hover: #e2eaf4;
+  --glow-blue: rgba(139, 211, 255, 0.12);
+  --glow-green: rgba(151, 255, 193, 0.08);
+  --accent: #b93828;
+  --max: 980px;
+}
+
+:root[data-theme="dark"] {
   color-scheme: dark;
   --bg: #0b1020;
   --panel: rgba(255, 255, 255, 0.06);
-  --text: rgba(255, 255, 255, 0.92);
-  --muted: rgba(255, 255, 255, 0.72);
+  --text: #edf1f7;
+  --muted: #b7c2d3;
   --link: #8bd3ff;
-  --border: rgba(255, 255, 255, 0.12);
-  --shadow: rgba(0, 0, 0, 0.35);
-  --max: 980px;
-  --code-bg: rgba(36, 41, 46, 0.78);
-  /* Brand accent — sampled from public/brand-logo.jpg. Used for focus
-     outlines and text selection so the brand colour shows up in subtle
-     interaction states without overriding the cyan link palette. */
+  --border: rgba(255, 255, 255, 0.14);
+  --shadow: rgba(0, 0, 0, 0.2);
+  --code-bg: #171e2e;
+  --control: rgba(255, 255, 255, 0.03);
+  --hover: rgba(255, 255, 255, 0.08);
+  --glow-blue: rgba(139, 211, 255, 0.12);
+  --glow-green: rgba(151, 255, 193, 0.08);
   --accent: #f16652;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --bg: #0b1020;
+    --panel: rgba(255, 255, 255, 0.06);
+    --text: #edf1f7;
+    --muted: #b7c2d3;
+    --link: #8bd3ff;
+    --border: rgba(255, 255, 255, 0.14);
+    --shadow: rgba(0, 0, 0, 0.2);
+    --code-bg: #171e2e;
+    --control: rgba(255, 255, 255, 0.03);
+    --hover: rgba(255, 255, 255, 0.08);
+    --accent: #f16652;
+  }
 }
 
 * {
@@ -46,12 +82,12 @@ body::before {
   z-index: -1;
   background: radial-gradient(
       1200px 800px at 20% 10%,
-      rgba(139, 211, 255, 0.18),
+      var(--glow-blue),
       transparent 50%
     ),
     radial-gradient(
       1200px 800px at 90% 20%,
-      rgba(151, 255, 193, 0.14),
+      var(--glow-green),
       transparent 55%
     ),
     var(--bg);
@@ -137,7 +173,7 @@ a.panel.card:focus-visible {
 
 a.pill:hover,
 a.pill:focus-visible {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--hover);
   color: var(--text);
   text-decoration: none;
 }
@@ -202,7 +238,7 @@ footer {
   padding: 6px 10px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--control);
   color: var(--muted);
   font-size: 14px;
   max-width: 100%;
@@ -219,6 +255,7 @@ footer {
 
 .h1 {
   font-size: clamp(26px, 3.2vw, 38px);
+  line-height: 1.2;
   letter-spacing: -0.02em;
   margin: 0;
 }
@@ -263,7 +300,7 @@ footer {
   font-size: 0.95em;
   padding: 0.15em 0.35em;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--hover);
 }
 
 .prose pre {
@@ -366,7 +403,7 @@ footer {
   padding: 6px 12px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--control);
   color: var(--text);
   font-size: 14px;
   cursor: pointer;
@@ -376,7 +413,7 @@ footer {
 .share-btn:hover,
 .share-btn:focus-visible {
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--hover);
 }
 
 /* Header layout + search trigger */
@@ -407,7 +444,7 @@ footer {
 
 .header-search-trigger:hover,
 .header-search-trigger:focus-visible {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--hover);
   color: var(--text);
 }
 
@@ -417,7 +454,7 @@ footer {
   padding: 2px 6px;
   border-radius: 6px;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--panel);
   color: var(--muted);
 }
 
@@ -440,7 +477,7 @@ footer {
 
 .header-lang-trigger:hover,
 .header-lang[open] .header-lang-trigger {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--hover);
   color: var(--text);
 }
 
@@ -486,7 +523,7 @@ footer {
 
 .header-lang-menu a:hover,
 .header-lang-menu a:focus-visible {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--hover);
   color: var(--text);
 }
 
@@ -549,6 +586,11 @@ footer {
   --pagefind-ui-tag: var(--panel);
 }
 
+#pagefind-search .pagefind-ui__search-input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
 /* showImages:false still leaves the grid column reservation on some
    Pagefind UI versions — force a single-column layout so results don't
    appear indented as if there were a missing thumbnail. */
@@ -582,7 +624,7 @@ footer {
 .pagefind-ui .pagefind-ui__search-clear:hover,
 .pagefind-ui .pagefind-ui__search-clear:focus-visible {
   color: var(--text);
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--hover);
 }
 
 /* Homepage hero */
@@ -605,7 +647,7 @@ footer {
 
 .home-cta:hover,
 .home-cta:focus-visible {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--hover);
   text-decoration: none;
 }
 
@@ -799,7 +841,7 @@ footer {
 
 .prev-next-item:hover,
 .prev-next-item:focus-visible {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--hover);
   text-decoration: none;
 }
 
@@ -1027,7 +1069,7 @@ footer {
 
 .footer-newsletter-submit:hover,
 .footer-newsletter-submit:focus-visible {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--hover);
   color: var(--text);
 }
 
@@ -1041,7 +1083,7 @@ footer {
 
 .inline-subscribe-submit:hover,
 .inline-subscribe-submit:focus-visible {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--hover);
   color: var(--text);
 }
 
@@ -1104,3 +1146,115 @@ footer {
   margin: 0 auto;
 }
 
+
+/* Keyboard access and persistent navigation. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 12px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--bg);
+  transform: translateY(-160%);
+}
+.skip-link:focus { transform: translateY(0); }
+
+.primary-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  margin-top: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.primary-nav a { padding: 4px 0; color: var(--muted); }
+.primary-nav a:hover, .primary-nav a[aria-current] {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+.theme-picker { gap: 4px; padding: 0 8px; }
+.theme-picker select {
+  min-height: 36px;
+  max-width: 120px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+.theme-picker option { color: var(--text); background: var(--bg); }
+:root:not([data-theme]) .theme-picker { display: none; }
+
+/* A comfortable measure and visible links for reading technical articles. */
+main:has(> article.prose) { max-width: 840px; }
+.prose { line-height: 1.75; }
+.prose :is(p, li, blockquote) a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.prose :is(h2, h3)[id] { margin-bottom: 0; line-height: 1.3; scroll-margin-top: 24px; }
+.prose :is(h2, h3)[id]:target { color: var(--link); }
+.prose table { border-collapse: collapse; font-size: 0.9375rem; }
+.prose th, .prose td { padding: 10px 14px; border: 1px solid var(--border); }
+.prose th { background: var(--control); text-align: left; }
+.prose blockquote { margin: 0; border-left: 3px solid var(--link); padding: 8px 18px; color: var(--muted); }
+
+/* Shiki emits both palettes. Set variables on each token, not an ancestor,
+   so the per-token custom properties resolve at the point of use. */
+.astro-code, .astro-code span {
+  color: var(--shiki-light) !important;
+  font-style: var(--shiki-light-font-style) !important;
+  font-weight: var(--shiki-light-font-weight) !important;
+  text-decoration: var(--shiki-light-text-decoration) !important;
+}
+:root[data-theme="dark"] :is(.astro-code, .astro-code span) {
+  color: var(--shiki-dark) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) :is(.astro-code, .astro-code span) {
+    color: var(--shiki-dark) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
+}
+.home-tagline { max-width: 760px; font-size: clamp(22px, 2.5vw, 30px); font-weight: 650; line-height: 1.4; letter-spacing: -0.02em; }
+.featured-card { align-content: start; }
+.featured-card > .row { align-content: start; min-height: 76px; }
+.featured-card .post-card-title-link { align-content: start; }
+.featured-card .post-card-title-link .muted {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 14px;
+}
+.post-card:hover { border-color: var(--link); }
+.topic-guides { margin-block: 18px; }
+.topic-guides-list { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+
+@media (max-width: 640px) {
+  main, header, footer { padding-left: 16px; padding-right: 16px; }
+  .header-actions { gap: 6px; }
+  .header-search-label, .header-search-kbd { display: none; }
+  .header-search-trigger { min-height: 38px; }
+  .primary-nav { gap: 6px 18px; margin-top: 16px; }
+  .card { padding: 16px; }
+  .featured-card > .row { min-height: 0; }
+  .prev-next-empty { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}

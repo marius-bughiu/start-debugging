@@ -58,6 +58,8 @@ usersV2.MapGet("", () => Results.Ok(new { shape = "v2" }));
 
 The `Users` name becomes the API group; `HasApiVersion` is what the API explorer reads to decide which OpenAPI document each endpoint belongs in.
 
+If you are also moving the application to .NET 11, the [Swashbuckle-to-built-in-OpenAPI migration guide](/2026/06/migrate-from-swashbuckle-to-built-in-openapi-in-dotnet-11/) covers replacing custom filters with transformers before you wire versioning back in.
+
 ## Why this matters now
 
 If you started a new ASP.NET Core 9 or 10 app and skipped Swashbuckle on principle, versioning was the one thing pulling you back. With `Asp.Versioning.OpenApi` 10.0.0-rc.1 that escape hatch closes. The RC suffix is the only reason to wait: the API surface is the one that ships, and the team is targeting GA alongside the .NET 10 servicing train. The full sample lives in [Sander's repo linked from the post](https://devblogs.microsoft.com/dotnet/api-versioning-in-dotnet-10-applications/) and is worth cloning before the next time you reach for a hand-rolled transformer.

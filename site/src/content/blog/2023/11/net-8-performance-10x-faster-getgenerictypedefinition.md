@@ -9,6 +9,8 @@ tags:
 ---
 .NET 8 brings some neat performance improvements for existing APIs that handle type information. One such API that has seen a significant improvement is `GetGenericTypeDefinition`.
 
+For a separate reflection cost comparison involving private member access, see the [.NET 8 UnsafeAccessor benchmarks](/2023/11/net-8-performance-unsafeaccessor-vs-reflection/).
+
 In my benchmarks, the .NET 8 implementation is almost 10 times faster compared to the .NET 7 version.
 
 ```plaintext

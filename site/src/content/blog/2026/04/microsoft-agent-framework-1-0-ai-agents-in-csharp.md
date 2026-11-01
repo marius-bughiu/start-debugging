@@ -70,6 +70,8 @@ AIAgent agent = chatClient.CreateAIAgent(
 
 The framework handles tool discovery, schema generation, and invocation automatically. MCP-exposed tools work the same way, the agent resolves them at runtime from any MCP-compliant server.
 
+For tools that need confirmation before execution, [Agent Framework's human-in-the-loop approval flow](/2026/05/agent-framework-human-in-the-loop-tool-approval-csharp/) shows how to wrap a function and resume the same session after the user responds.
+
 ## Why this matters now
 
 Before 1.0, building a .NET agent meant choosing between Semantic Kernel (good enterprise integration, limited orchestration) or AutoGen (powerful multi-agent patterns, rougher .NET story). Agent Framework removes that choice. One package, one programming model, production-ready.

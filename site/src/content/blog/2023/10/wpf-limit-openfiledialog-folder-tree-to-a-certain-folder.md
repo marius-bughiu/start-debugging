@@ -10,6 +10,8 @@ tags:
 ---
 Starting with .NET 8, you can constrain the `OpenFileDialog` and `OpenFolderDialog` folder tree to a given root folder. You can do so by setting the `RootDirectory` property on the dialog before calling `ShowDialog()`.
 
+If your application selects folders rather than files, the [OpenFolderDialog walkthrough](/2023/10/wpf-open-folder-dialog/) covers creating the picker and reading its selected paths.
+
 It’s very important to note that this does not limit the selection and the navbar navigation in any way. The user will still be able to navigate to folders outside the specified `RootDirectory`. The same goes for the `InitialDirectory` property which you can set to any folder you’d like outside the `RootDirectory`.
 
 Let’s look at an example:

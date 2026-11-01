@@ -42,3 +42,5 @@ Here's a complete, self-contained version you can paste into an HTML file — it
 ```
 
 The same trick works with any gradient — list the noise (or any texture image) first in the comma-separated `background-image` value to stack it on top of the gradient.
+
+For a hover effect around the textured panel, the [CSS3 perspective and rotation example](/2012/03/3d-animations-using-pure-css3/) shows how to animate a card with transforms.

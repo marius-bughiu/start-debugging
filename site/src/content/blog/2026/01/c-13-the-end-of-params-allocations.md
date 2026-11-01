@@ -31,7 +31,7 @@ Even if you passed a single integer, the runtime had to allocate an array on the
 
 ## Zero-Allocation with `params ReadOnlySpan<T>`
 
-C# 13 allows the `params` modifier on any type that supports collection expressions. The most impactful change is support for `ReadOnlySpan<T>`.
+C# 13 allows the `params` modifier on any type that supports [collection expressions](/2023/08/c-12-collection-expressions/). The most impactful change is support for `ReadOnlySpan<T>`.
 
 ```cs
 // C# 13 way

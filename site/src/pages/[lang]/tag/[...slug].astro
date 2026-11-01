@@ -7,57 +7,21 @@ import {
   urlPathForPost,
   type Locale,
 } from "../../../lib/blog";
-import type { BlogPost } from "../../../lib/blog";
+import { tagPages, tagTitle } from "../../../lib/tags.mjs";
 import { t } from "../../../i18n";
 
 export async function getStaticPaths() {
-  const PAGE_SIZE = 10;
-  const paths: {
-    params: { lang: string; slug: string };
-    props: {
-      lang: Locale;
-      tag: string;
-      posts: BlogPost[];
-      totalCount: number;
-      page: number;
-      totalPages: number;
-    };
-  }[] = [];
-
+  const paths = [];
   for (const lang of LOCALES) {
     if (lang === "en") continue;
-    const allPosts = await getPublishedBlogPosts(lang);
-    const tagMap = new Map<string, BlogPost[]>();
-    for (const post of allPosts) {
-      for (const tag of post.data.tags ?? []) {
-        if (!tagMap.has(tag)) tagMap.set(tag, []);
-        tagMap.get(tag)!.push(post);
-      }
-    }
-
-    for (const [tag, tagPosts] of tagMap) {
-      const totalPages = Math.max(1, Math.ceil(tagPosts.length / PAGE_SIZE));
-      for (let page = 1; page <= totalPages; page++) {
-        const start = (page - 1) * PAGE_SIZE;
-        paths.push({
-          params: { lang, slug: page === 1 ? tag : `${tag}/${page}` },
-          props: {
-            lang,
-            tag,
-            posts: tagPosts.slice(start, start + PAGE_SIZE),
-            totalCount: tagPosts.length,
-            page,
-            totalPages,
-          },
-        });
-      }
+    for (const { slug, ...props } of tagPages(await getPublishedBlogPosts(lang), 10, lang)) {
+      paths.push({ params: { lang, slug }, props: { lang, ...props } });
     }
   }
-
   return paths;
 }
 
-const { lang, tag, posts, totalCount, page, totalPages } = Astro.props;
+const { lang, tag, posts, totalCount, page, totalPages, redirect } = Astro.props;
 
 if (!isLocale(Astro.params.lang ?? "") || Astro.params.lang === "en") {
   return Astro.redirect("/404");
@@ -65,6 +29,8 @@ if (!isLocale(Astro.params.lang ?? "") || Astro.params.lang === "en") {
 
 const baseUrl = import.meta.env.BASE_URL;
 const langPrefix = `${baseUrl}${lang}/`;
+if (redirect) return Astro.redirect(`${langPrefix}tag/${redirect}/`, 301);
+const label = tagTitle(tag);
 const tagBase = `${langPrefix}tag/${tag}/`;
 const prevHref = page > 1 ? (page === 2 ? tagBase : `${tagBase}${page - 1}/`) : null;
 const nextHref = page < totalPages ? `${tagBase}${page + 1}/` : null;
@@ -74,14 +40,14 @@ const postCountLabel = (n: number) =>
 ---
 
 <BaseLayout
-  title={`${t("tagPage.prefix", lang)} ${tag}${page > 1 ? ` (${t("listing.page", lang)} ${page})` : ""} - Start Debugging`}
-  description={`${totalCount} ${postCountLabel(totalCount)}.`}
+  title={`${t("tagPage.prefix", lang)} ${label}${page > 1 ? ` (${t("listing.page", lang)} ${page})` : ""} - Start Debugging`}
+  description={`${t("tagPage.description", lang).replace("{tag}", label)}${page > 1 ? ` ${t("listing.page", lang)} ${page}.` : ""}`}
   canonicalUrl={Astro.url.href}
   type="website"
   lang={lang}
 >
   <section class="stack">
-    <h1 class="h1">{t("tagPage.prefix", lang)} {tag}</h1>
+    <h1 class="h1">{label}</h1>
     <p class="muted">
       {totalCount} {postCountLabel(totalCount)}
       {totalPages > 1 ? <> &middot; {t("listing.page", lang)} {page} {t("listing.of", lang)} {totalPages}</> : null}
@@ -98,7 +64,7 @@ const postCountLabel = (n: number) =>
           ))}
         </div>
         <a class="post-card-title-link stack" href={urlPathForPost(post)}>
-          <div class="h2">{post.data.title}</div>
+          <h2 class="h2">{post.data.title}</h2>
           {post.data.description ? <div class="muted">{post.data.description}</div> : null}
         </a>
       </article>

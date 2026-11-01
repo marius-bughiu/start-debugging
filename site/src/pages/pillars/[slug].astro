@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import TableOfContents from "../../components/TableOfContents.astro";
+import ArticleBreadcrumbs from "../../components/ArticleBreadcrumbs.astro";
 import {
   getPublishedPillars,
   getPillarPosts,
@@ -25,7 +27,7 @@ interface Props {
 const { pillar } = Astro.props;
 
 const posts = await getPillarPosts(pillar.data.indexTags);
-const { Content } = await pillar.render();
+const { Content, headings } = await pillar.render();
 
 const siteOrigin = Astro.site?.origin ?? "https://startdebugging.net";
 const translationsMap = await getPillarTranslations(pillar);
@@ -56,11 +58,15 @@ const groupKeys = Array.from(groups.keys()).sort((a, b) =>
   updatedDate={pillar.data.updatedDate ?? pillar.data.pubDate}
   translations={Object.keys(translations).length > 1 ? translations : undefined}
 >
+  <ArticleBreadcrumbs title={pillar.data.title} />
+
   <article class="stack">
     <h1 class="h1">{pillar.data.title}</h1>
     {pillar.data.tagline ? (
       <p class="muted" style="font-size: 18px;">{pillar.data.tagline}</p>
     ) : null}
+
+    <TableOfContents headings={headings} />
 
     <section class="prose stack">
       <Content />

@@ -14,7 +14,7 @@ foo.bar()
 
 will fail with a `NoSuchMethod` error whenever `foo` is `null`. The error will say: `NoSuchMethod: the method 'bar' was called on null`.
 
-This is the equivalent of a `NullReferenceException` in C#.
+This is the equivalent of a [NullReferenceException in C#](/2023/10/c-what-is-a-nullreferenceexception-and-how-to-fix-it/).
 
 ## How do I fix it?
 

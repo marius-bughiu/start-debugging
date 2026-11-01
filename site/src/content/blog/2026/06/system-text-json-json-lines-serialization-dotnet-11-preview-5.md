@@ -61,4 +61,6 @@ await foreach (var reading in JsonSerializer.DeserializeAsyncEnumerable<SensorRe
 
 Note that `GetReadings` is an `IAsyncEnumerable<T>`, so the serializer pulls records as it writes them. You can stream straight from a database cursor or an HTTP response into a JSONL file without materializing a `List<T>` first. That is the whole point: constant memory regardless of how many records you push through.
 
+For the database side, [streaming EF Core results with IAsyncEnumerable](/2026/04/how-to-use-iasyncenumerable-with-ef-core-11/) explains query composition, cancellation, and the context lifetime that must outlast enumeration.
+
 This is still a preview, so the exact signatures can shift before the November release. But the API shape mirrors the read side closely enough that it is safe to start designing around it. If you have been gluing together `Utf8JsonWriter` and manual newlines to emit JSONL, this is the call that replaces all of it.

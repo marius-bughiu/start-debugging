@@ -8,7 +8,7 @@ tags:
   - "dotnet"
   - "dotnet-8"
 ---
-Starting with C# 12, a new `ExperimentalAttribute` is introduced allowing you to mark types, methods, properties or assemblies as being experimental features. This will trigger a compiler warning during usage which can be disabled using a `#pragma` tag.
+Starting with [C# 12](/2023/06/how-to-switch-to-c-12/), a new `ExperimentalAttribute` is introduced allowing you to mark types, methods, properties or assemblies as being experimental features. This will trigger a compiler warning during usage which can be disabled using a `#pragma` tag.
 
 The `Experimental` attribute requires a `diagnosticId` parameter to be passed in the constructor. That diagnostic ID will be part of the compiler error message that gets generated whenever the experimental feature is used. Note – you can use the same diagnostic-id in multiple attributes if you wish to.
 

@@ -23,6 +23,8 @@ There are two important things to note about this method:
 -   the resulting list can contain duplicates, it is not a list of unique picks.
 -   this opens up the `length` parameter to be larger than the length of the list of choices.
 
+To randomize the existing array instead of making repeated picks, use [Random.Shuffle](/2023/10/c-how-to-shuffle-an-array/).
+
 With all this being said, let’s take a few examples. Let’s assume the following array of choices:
 
 ```cs

@@ -23,6 +23,8 @@ For a Windows desktop utility, “no cloud” can be the product:
 
 If you are building internal tooling on **.NET 8** (or even .NET 9), this “offline-first by default” mindset is a good baseline.
 
+For a local desktop tool that also stores credentials, the [WPF SSH manager example](/2026/01/an-open-source-wpf-ssh-manager-shows-a-practical-pattern-xterm-js-in-webview2-secrets-via-dpapi/) pairs SQLite persistence with Windows DPAPI protection.
+
 ## SQLite fits WinUI 3 apps because it keeps the domain small
 
 SQLite is not “a database choice”, it is a scope choice. You are saying:

@@ -11,6 +11,8 @@ While Xamarin keeps adding features and improves the performance of Xamarin Form
 
 While I like how the app looks, it has a big issue – performance. Even on high-end devices the scrolling is sluggish and on low-end devices it keeps on throwing OutOfMemory exceptions due to the images that are being loaded. So, a change was needed. In this article I’ll only cover the first one – the scrolling performance; we’ll have a look at the OutOfMemory exceptions another time.
 
+If the delay happens while opening the Android app, before the list appears, look at [Xamarin startup tracing](/2020/04/xamarin-startup-tracing-for-android/) as a separate performance investigation.
+
 ### The Item template
 
 First thing you need to look at when troubleshooting performance is the ListView ItemTemplate. Any kind of optimization that you can do at this level will have a big impact on the overall performance of your ListView. Look at things like:

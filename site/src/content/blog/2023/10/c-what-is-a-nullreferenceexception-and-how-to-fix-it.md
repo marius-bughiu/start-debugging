@@ -47,6 +47,8 @@ string myString = null;
 int? length = myString?.Length; // 'length' will be null if 'myString' is null.
 ```
 
+For required method arguments, .NET 6 and later provide [ArgumentNullException.ThrowIfNull](/2023/03/c-best-way-to-throw-exception-if-null/) to reject null immediately. When a default value is appropriate, [null-coalescing assignment](/2020/04/c-8-0-null-coalescing-assignment/) can initialize a value only when it is null.
+
 ### Nullable reference types
 
 Another way to avoid `NullReferenceException`s is by enabling nullable reference types, a feature introduced in C# 8.0. It helps developers write safer and more reliable code by providing a way to express whether a reference type (e.g., classes and interfaces) can be null or non-null. This feature helps catch potential null reference exceptions at compile time and improves code readability and maintainability.

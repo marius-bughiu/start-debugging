@@ -75,4 +75,6 @@ For .NET 9 and .NET 10 codebases, the best “day to day” posture is boring:
 -   Review dependency diffs like code diffs.
 -   Avoid floating versions in production apps unless you have a strong reason and strong monitoring.
 
+For containerized applications, also [inventory NuGet and image dependencies separately with SBOMs](/2026/01/sbom-for-net-in-docker-stop-trying-to-force-one-tool-to-see-everything/) so the versions that ship remain visible.
+
 The original discussion thread is here: [https://www.reddit.com/r/dotnet/comments/1qf9lnp/nuget\_gallery\_supply\_chain\_attack/](https://www.reddit.com/r/dotnet/comments/1qf9lnp/nuget_gallery_supply_chain_attack/). If you maintain packages, it is worth checking your NuGet account notifications and auditing any recent ownership changes today.

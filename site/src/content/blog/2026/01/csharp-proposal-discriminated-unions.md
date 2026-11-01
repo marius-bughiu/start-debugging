@@ -9,6 +9,8 @@ tags:
 ---
 The “holy grail” of C# features has been in talks for years now. And after years of relying on third-party libraries like `OneOf` or verbose class hierarchies, it looks like we may finally get native support for **Discriminated Unions (DUs)** in a future version of C#.
 
+For the later C# 15 design, see [type unions in .NET 11 Preview 2](/2026/04/csharp-15-union-types-dotnet-11-preview-2/), which explains how composing existing types differs from the earlier proposal shown here.
+
 ## The Problem: Representing “One Of”
 
 If you wanted a function to return _either_ a generic `Success` result _or_ a specific `Error`, you had bad options:

@@ -18,6 +18,8 @@ A search request wants two things that the existing verbs cannot give you togeth
 
 Teams have papered over this for a decade by sending `POST /search` with a JSON body and quietly pretending it is idempotent. That works, but it lies to every cache and intermediary in the path. The IETF `QUERY` method is the honest version: `GET` semantics (safe, idempotent, cacheable) plus a request body. Preview 4 does not invent the method, it teaches the OpenAPI pipeline to describe it correctly.
 
+If your app does not yet generate a document, first [configure built-in ASP.NET Core OpenAPI](/2026/06/how-to-expose-openapi-without-swashbuckle-in-aspnetcore-11/). That guide covers service registration, document endpoints, and a browser UI before adding method-specific options.
+
 ## Mapping a QUERY endpoint
 
 Routing already supported arbitrary verbs, so there is no new attribute to learn. You map a QUERY endpoint with the existing `MapMethods` overload:

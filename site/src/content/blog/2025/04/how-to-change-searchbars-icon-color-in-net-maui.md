@@ -7,7 +7,7 @@ tags:
   - "dotnet"
   - "dotnet-10"
 ---
-Starting with .NET 10, MAUI’s search bar comes with a new property for changing the `SearchBar`‘s search icon color: `SearchIconColor`.
+Starting with [.NET MAUI 10](/2025/04/whats-new-in-net-maui-10/), MAUI’s search bar comes with a new property for changing the `SearchBar`‘s search icon color: `SearchIconColor`.
 
 [![](/wp-content/uploads/2025/04/image.png)](/wp-content/uploads/2025/04/image.png)
 

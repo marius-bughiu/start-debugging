@@ -66,6 +66,8 @@ Visual Studio will first compile your project and then execute it. This being a 
 
 A console window displaying “Hello, World!”.
 
+As you begin writing more code, [Visual Studio code snippets](/2012/01/improve-productivity-by-using-code-snippets/) can help you insert common constructs such as loops using short aliases.
+
 ## Learning resources
 
 Now that your environment is properly set up and you've run your first C# program, it’s time to start learning more about the language. To that end, there are several great resources available to get you started. We’ll enumerate a few below:

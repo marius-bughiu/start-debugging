@@ -12,6 +12,8 @@ This is a mistake that many (including myself) will make. A new piece of technol
 
 Instead of spending time switching to newer technologies or updating and re-testing after each of your 250 dependencies release a minor update, that time could be spent on developing and delivering new functionality to be used by your end-users. Really, nobody cares you are running the latest version of Angular if you lack features which your competitors have.
 
+For a concrete example of the build issues a major dependency update can expose, see the [Xamarin Forms 3 upgrade walkthrough](/2018/04/upgrading-xamarin-forms-3/).
+
 **Ok, you might say, but what happens in 3 years time when it becomes necessary to upgrade and you are 10 major versions behind and you have tons of “legacy” code?**
 
 First, be proud of what you've achieved. The fact that you've prioritized your resources properly means that your business is now driving the change and requires you to upgrade. Without this prioritization, your business might have never taken off, you would still be working in the dark, upgrading between Angular versions without anyone actually using your software.

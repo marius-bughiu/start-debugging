@@ -36,6 +36,8 @@ acrylicBrush.TintOpacity = 0.8;
 renderer.Background = acrylicBrush;
 ```
 
+For cases where only a property value needs to differ across platforms, [OnPlatform in Xamarin Forms](/2019/07/xamarin-forms-using-onplatform/) lets you express those values in shared XAML.
+
 I’ve set the TintColor and FallbackColor to match the color that I’ve set in XAML, while for the opacity I chose to go with 80%. Play with these values until you obtain the desired effect. As for what each of the properties does exactly:
 
 > -   **TintColor**: the color/tint overlay layer. Consider specifying both the RGB color value and alpha channel opacity.

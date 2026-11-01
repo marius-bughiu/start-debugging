@@ -26,6 +26,8 @@ The C# language service (Roslyn) still runs in its own process, so the memory fi
 
 That's roughly 81-85% less memory on all three repos.
 
+The [Native AOT tradeoff guide](/2026/06/what-is-native-aot-and-what-does-it-cost-you/) explains why startup and memory can improve, alongside the trimming and dynamic-code constraints a tool must accommodate to make this switch.
+
 ## A project cache you can commit
 
 The other half of the speedup is a persistent project cache. The first load evaluates your projects and stores the results. Later opens read from the cache and skip the full design-time evaluation. On the Aspire repo, the active file is usable in 0.47s instead of 84.1s, and the whole solution is ready in 3.0s. Orleans takes 0.53s for the active file and 2.3s for the full solution, down from 50.3s.

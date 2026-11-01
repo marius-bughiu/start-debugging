@@ -12,6 +12,8 @@ tags:
 
 Shyju Krishnankutty published [Durable Workflows in Microsoft Agent Framework](https://devblogs.microsoft.com/dotnet/durable-workflows-in-microsoft-agent-framework/) on the .NET Blog on May 6, 2026. The headline is that the workflow programming model from `Microsoft.Agents.AI.Workflows` now plugs into the Durable Task stack via the prerelease `Microsoft.Agents.AI.DurableTask` package, so a multi-step agent run can checkpoint after every executor and resume on a different process after a crash, scale event, or redeploy. This is the missing piece for taking a multi-agent pipeline from a console demo to something you can actually host.
 
+The [Agent Framework 1.0 overview](/2026/04/microsoft-agent-framework-1-0-ai-agents-in-csharp/) introduces agents, connectors, and tool registration before adding the workflow and durability layers described here.
+
 ## The piece that was already there
 
 A workflow is a directed graph of `Executor<TInput, TOutput>` nodes wired with `WorkflowBuilder`. This part is in the stable [Microsoft.Agents.AI.Workflows](https://www.nuget.org/packages/Microsoft.Agents.AI.Workflows) package and is not new:

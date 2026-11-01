@@ -11,6 +11,8 @@ While developing Xamarin Forms applications you will often find yourself in a si
 
 OnPlatform allows you to do just that and can be used both from C# code and XAML. Let’s look at a few examples. For this article, we’ll be working with a new master-detail project.
 
+If the UWP version needs a native material instead of a different color value, see the [Acrylic brush example for a Xamarin Forms MasterDetail page](/2018/01/using-acrylic-brush-xamarin-forms-masterdetail/).
+
 ## Using OnPlatform with XAML
 
 In the about page there’s a Learn More button, let's make its color platform dependent: green for Android, orange for iOS and purple for UWP.

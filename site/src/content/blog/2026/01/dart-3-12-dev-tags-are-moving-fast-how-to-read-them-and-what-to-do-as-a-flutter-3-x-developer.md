@@ -20,6 +20,8 @@ If you are on Flutter stable, you should not randomly upgrade your toolchain to 
 
 Think of dev tags as a compatibility preview channel.
 
+Keep that experiment separate from your normal Flutter build; the [Flutter SDK and engine pinning walkthrough](/2026/01/flutter-3-38-6-and-the-engine-version-bump-reproducible-builds-get-easier-if-you-pin-it/) shows how to make the production toolchain reproducible.
+
 ## Reading the version string without guessing
 
 The format `3.12.0-12.0.dev` looks weird until you treat it as: “3.12.0 prerelease, dev build number 12”. You do not need to infer features from the number itself. You use it to pin a known toolchain when testing.

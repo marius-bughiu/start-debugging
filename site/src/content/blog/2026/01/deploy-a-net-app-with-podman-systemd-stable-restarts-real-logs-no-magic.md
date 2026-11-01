@@ -78,6 +78,8 @@ Use environment variables and a mounted config directory instead of baking secre
 
 If your app fails fast due to missing config, endless restarts are noise. Prefer a restart policy that does not hammer the box. Systemd lets you control delays and burst limits.
 
+For services that run background work, add [job heartbeats and duration metrics](/2026/01/monitor-background-jobs-in-net-9-and-net-10-without-hangfire-health-metrics-alerts/) so a running process is not mistaken for a job making progress.
+
 If you want a single “am I doing this right?” test: reboot the VM and see if your .NET service comes back up without you SSH-ing in. That is the bar.
 
 Further reading: [https://docs.podman.io/](https://docs.podman.io/)

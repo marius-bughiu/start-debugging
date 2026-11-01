@@ -22,6 +22,8 @@ SSH itself is solved. What is worth studying is how this app stitches together t
 
 This is a pattern I like because it keeps the “hard UX problem” (terminal rendering) inside a proven web component, while the rest stays idiomatic .NET 8.
 
+For a smaller persistence example, the [WinUI 3 notes app walkthrough](/2026/01/a-winui-3-local-only-notes-app-is-the-right-kind-of-boring-offline-first-sqlite-keyboard-first/) shows direct Microsoft.Data.Sqlite inserts and queries in .NET 8.
+
 ## DPAPI is a good default for local-only credentials
 
 DPAPI is not cross-machine encryption. It is tied to the current Windows user profile (or machine, depending on scope). That is a feature for a single-user desktop app.

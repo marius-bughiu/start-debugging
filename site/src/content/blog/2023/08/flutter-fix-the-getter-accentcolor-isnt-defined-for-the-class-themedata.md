@@ -34,6 +34,8 @@ MaterialApp(
 )
 ```
 
+For a Material 3 app, continue with [building a ColorScheme from a seed color](/2026/05/how-to-set-accent-color-in-flutter-with-material-3-colorscheme/) to configure the full palette, including light and dark themes.
+
 ## If the issue is with your project’s dependencies
 
 The error might not be coming from your code, but from one of your project’s dependencies, like `material` for example. In that case, you can try updating your dependencies.

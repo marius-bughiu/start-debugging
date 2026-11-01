@@ -9,6 +9,8 @@ tags:
 ---
 .NET 8 includes new `CreateFromDirectory` overloads which enable you to create a ZIP file without writing it to disk. This is particularly useful in situations where you don't need to store the zipped resources and only use the ZIP content for transfer.
 
+If you are moving this workflow to .NET 10 or .NET 11, see [creating and extracting ZIP files asynchronously](/2026/09/how-to-create-and-extract-zip-files-asynchronously-with-ziparchive-in-dotnet-11/) for the newer APIs and their stream disposal differences.
+
 For example: if you were to provide an API allowing multi-file download. That endpoint will most likely compress the selected files into a `.zip` and provide that for download. By using the new overloads, you can easily bypass the disk – reducing the load on the disk and offering a faster response time to your users.
 
 ```cs

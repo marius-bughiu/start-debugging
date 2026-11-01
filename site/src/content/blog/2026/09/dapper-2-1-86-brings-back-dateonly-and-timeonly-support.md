@@ -57,6 +57,8 @@ The standard workaround was a `SqlMapper.TypeHandler<DateOnly>` registered at st
 
 If your handler only converted between `DateOnly` and `DateTime`, you lose nothing. If it did anything custom, such as writing dates as `yyyyMMdd` strings or integers, it is now skipped on the parameter path, and the database receives whatever the provider does with a raw `DateOnly`. Test before you upgrade.
 
+If the same SQL Server schema is also scaffolded with EF Core, [its DateOnly and TimeOnly type-selection rules](/2026/10/what-decides-whether-ef-core-scaffolds-a-sql-server-date-as-dateonly-or-datetime/) explain why generated entity properties can change with the provider version. That is a separate mapping path from Dapper's handlers.
+
 ## Scope
 
 The support is compiled for the `net8.0` and `net10.0` targets in the package. The `netstandard2.0` and `net461` builds do not have it, and the test suite explicitly does not expect it to work with the legacy `System.Data.SqlClient`. Use `Microsoft.Data.SqlClient`.

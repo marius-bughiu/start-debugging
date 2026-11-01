@@ -26,6 +26,8 @@ claude --from-pr https://github.acme.internal/acme/api/pull/482
 
 Same flag, same flow, four different review hosts.
 
+Once the session has the right PR context, later releases also let you [run Claude Code reviews as background subagents](/2026/07/claude-code-2-1-218-code-review-runs-as-a-background-subagent/), keeping the review output out of the main working conversation.
+
 ## prUrlTemplate replaces the github.com footer link
 
 Even with `--from-pr` working, one piece of friction remained: the footer badge that surfaces the active PR was pinned to github.com, because the URL was hardcoded into the CLI. v2.1.119 adds a `prUrlTemplate` setting that points that badge at a custom code-review URL instead. The same release also notes that `owner/repo#N` shorthand links in agent output now use your git remote's host instead of always pointing at github.com, so the rewrite is consistent across the surface.

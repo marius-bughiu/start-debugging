@@ -8,7 +8,7 @@ tags:
 ---
 If you were taught that 1 MB = 1024 KB, you were taught wrong. 1 MB actually equals 1000 KB, while 1 MiB = 1024 KiB. The mebi prefix in MebiByte (MiB) stands for _mega_ and _binary_ – which refers to it as being a power of 2 – thus the values such as 32, 64, 128, 256, 512, 1024, 2048 and so on.
 
-The megabyte (MB) on the other hand is always a power of 10, so you’ve got 1 KB = 1000 bytes, 1 MB = 1000 KB and 1 GB = 1000 MB.
+[The megabyte (MB)](/2023/08/what-does-megabyte-mean/) on the other hand is always a power of 10, so you’ve got 1 KB = 1000 bytes, 1 MB = 1000 KB and 1 GB = 1000 MB.
 
 ## Differences between Operating Systems
 

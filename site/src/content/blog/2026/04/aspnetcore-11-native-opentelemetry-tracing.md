@@ -59,4 +59,6 @@ Fewer packages means a smaller dependency graph, faster restore times, and one l
 
 If you are already running the instrumentation package, nothing breaks. The framework attributes and the package attributes merge cleanly on the same `Activity`. You can remove the package reference when you are ready, test your dashboards, and move on.
 
+Sampling is a separate decision from collecting these attributes. For libraries on OpenTelemetry .NET 1.20 or later, [ConfigureSampler lets you wrap the application's sampler](/2026/10/opentelemetry-dotnet-1-20-configuresampler-lets-libraries-wrap-the-apps-sampler/) without silently replacing its sampling policy.
+
 The [full ASP.NET Core .NET 11 Preview 2 release notes](https://github.com/dotnet/core/blob/main/release-notes/11.0/preview/preview2/aspnetcore.md) cover the rest of the changes, including Blazor SSR TempData support and the new Web Worker project template.

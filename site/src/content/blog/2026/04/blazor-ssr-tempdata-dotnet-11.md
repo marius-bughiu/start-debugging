@@ -72,4 +72,6 @@ builder.Services
 
 TempData does not work with interactive Blazor Server or Blazor WebAssembly render modes. It is scoped to static SSR, where each navigation is a full HTTP request. For interactive scenarios, `PersistentComponentState` or your own cascading state remain the right tools.
 
+For the prerender-to-interactive handoff specifically, see [how to persist state across Blazor's render boundary](/2026/06/how-to-persist-state-across-the-blazor-static-to-interactive-render-boundary-in-dotnet-11/). That addresses initialization state rather than a one-time message between HTTP requests.
+
 This is a small addition, but it removes one of the common "why can't Blazor do what Razor Pages can?" complaints. Grab [.NET 11 Preview 2](https://dotnet.microsoft.com/download/dotnet/11.0) and try it in your next SSR form flow.

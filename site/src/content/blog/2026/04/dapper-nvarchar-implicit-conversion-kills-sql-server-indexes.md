@@ -55,6 +55,8 @@ var result = await connection.QueryFirstOrDefaultAsync<Product>(
 
 By specifying `DbType.AnsiString` with the correct column size, the generated parameter matches the column type exactly. SQL Server can now use the index seek it was designed for.
 
+Fix the SQL plan before drawing conclusions from an ORM benchmark. The [EF Core compiled queries, raw SQL, and Dapper comparison](/2026/05/ef-core-compiled-queries-vs-raw-sql-vs-dapper/) separates client-side query overhead from the database work this conversion problem affects.
+
 ## When This Matters Most
 
 Small tables may hide the problem entirely. The performance cliff appears as data grows: a table with 100,000 rows might show a 176x slowdown, while one with a million rows is even worse. If you're using Dapper with `varchar` columns (which is common in legacy databases and systems that don't need Unicode), audit your parameter types.

@@ -10,7 +10,7 @@ tags:
   - "csharp"
 ---
 
-EF Core's split queries have always had a sharp edge: when you mixed `Include` of reference navigations with `Include` of collection navigations, every child query still re-joined the reference tables, even though nothing in those collection queries needed them. EF Core 11 Preview 3 fixes that, along with a related `ORDER BY` over-specification. The [release notes](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-11.0/whatsnew) clock the benchmark impact at 29% for one common split-query scenario and 22% for a single-query case. It is the kind of change that shows up in production without any LINQ edits on your side.
+EF Core's [split queries](/2026/06/how-to-use-query-splitting-to-avoid-a-cartesian-explosion-in-ef-core-11/) have always had a sharp edge: when you mixed `Include` of reference navigations with `Include` of collection navigations, every child query still re-joined the reference tables, even though nothing in those collection queries needed them. EF Core 11 Preview 3 fixes that, along with a related `ORDER BY` over-specification. The [release notes](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-11.0/whatsnew) clock the benchmark impact at 29% for one common split-query scenario and 22% for a single-query case. It is the kind of change that shows up in production without any LINQ edits on your side.
 
 ## The extra join that was never needed
 

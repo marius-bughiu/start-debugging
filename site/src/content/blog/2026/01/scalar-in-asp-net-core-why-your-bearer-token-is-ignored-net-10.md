@@ -65,6 +65,8 @@ The second pitfall is wiring: Scalar needs to point at the OpenAPI document you 
 
 In Scalar, there is also an option to configure HTTP Bearer auth in the UI mapping layer. If you use that, treat it as a convenience, not the source of truth. The OpenAPI contract should still declare the Bearer scheme.
 
+For the Scalar 2.x mapping APIs, the [ASP.NET Core 11 Scalar setup guide](/2026/08/how-to-serve-openapi-docs-with-scalar-instead-of-swagger-ui-in-aspnetcore-11/) includes document routing and development-token configuration examples.
+
 ## A quick reality check
 
 If you want to confirm the root cause in minutes:

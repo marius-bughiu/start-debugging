@@ -44,6 +44,8 @@ If you have multiple option profiles, the interceptor needs a deterministic mapp
 
 ## The constraints that make or break it (AOT is the judge)
 
+The [reflection-based JSON serialization switch](/2023/10/system-text-json-disable-reflection-based-serialization/) is useful context for testing whether a serialization path really relies on generated metadata.
+
 For this to be more than a nice idea, it has to survive the environments where source generation matters most:
 
 - **NativeAOT and trimming**: the rewrite must not accidentally reintroduce reflection-based fallbacks.

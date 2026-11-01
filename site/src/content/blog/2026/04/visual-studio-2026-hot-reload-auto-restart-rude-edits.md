@@ -58,6 +58,8 @@ A small example to illustrate what now survives Hot Reload without a full restar
 
 Changing the `<h1>` text, tweaking the lambda, or adding a second button keeps working with Hot Reload. If you now refactor `Increment` into an `async Task IncrementAsync()` (a rude edit because the signature changed), auto-restart kicks in, the process bounces, and you are back at `/counter` without touching the debugger toolbar.
 
+If you run the application from the CLI, [.NET 11's dotnet watch updates](/2026/04/dotnet-watch-11-preview-3-aspire-crash-recovery/) cover Aspire service watching and recovery after a crash; those are separate from Visual Studio's project-level auto-restart setting.
+
 ## What to watch out for
 
 Auto-restart does not preserve in-process state. If your debugging loop depends on a warm cache, an authenticated session, or a SignalR connection, you will lose it on restart. Two practical mitigations:

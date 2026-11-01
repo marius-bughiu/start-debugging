@@ -21,6 +21,8 @@ public static IJsonTypeInfoResolver WithAddedModifier(
 
 This will create for you an instance of `JsonTypeInfoResolverWithAddedModifiers` (an `IJsonTypeInfoResolver`) capable of handling your schema modifications.
 
+If you need to change which resolvers participate rather than modify their contracts, use [TypeInfoResolverChain to add or remove resolvers](/2023/10/add-remove-typeinforesolver-to-existing-jsonserializeroptions/).
+
 Let’s look at a simple usage example, assuming an arbitrary `MyTypeInfoResolver`:
 
 ```cs

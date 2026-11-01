@@ -10,6 +10,8 @@ Starting with .NET 9, the JIT compiler got smarter about how it allocates memory
 
 In .NET 10, this feature was expanded to include small, fixed-size arrays of value types. The JIT will stack-allocate these arrays when it knows they only live as long as the method they’re in.
 
+For the related case of arrays accessed through interfaces, see [.NET 10 array enumeration and conditional escape analysis](/2025/04/net-10-array-ennumeration-performance-improvements-jit-array-de-abstraction/).
+
 Take this example:
 
 ```cs

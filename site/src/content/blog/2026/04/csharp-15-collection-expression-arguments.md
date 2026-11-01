@@ -8,7 +8,7 @@ tags:
   - "collection-expressions"
 ---
 
-Collection expressions landed in C# 12 and have been absorbing new capabilities ever since. C# 15, shipping with [.NET 11](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-11/overview), adds a missing piece: you can now pass arguments to the collection's constructor or factory method with a `with(...)` element placed at the start of the expression.
+[Collection expressions landed in C# 12](/2023/08/c-12-collection-expressions/) and have been absorbing new capabilities ever since. C# 15, shipping with [.NET 11](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-11/overview), adds a missing piece: you can now pass arguments to the collection's constructor or factory method with a `with(...)` element placed at the start of the expression.
 
 ## Why this matters
 

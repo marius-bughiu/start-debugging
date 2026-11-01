@@ -54,7 +54,7 @@ Released with .NET 10, C# 14 introduces several quality-of-life improvements.
 
 ### The field Keyword
 
-You no longer need to manually declare backing fields for properties. The `field` keyword allows you to access the compiler-generated field directly inside accessors.
+You no longer need to manually declare backing fields for properties. The [`field` keyword](/2025/04/c-14-the-field-keyword-and-field-backed-properties/) allows you to access the compiler-generated field directly inside accessors.
 
 ```csharp
 public string Name { 

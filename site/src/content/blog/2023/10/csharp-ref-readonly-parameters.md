@@ -9,6 +9,8 @@ tags:
 ---
 The `ref readonly` modifier enables a more transparent way of passing read-only references to a method. Passing of readonly references was already possible in C# by using the `in` modifier ever since version 7.2, but that syntax had some limitations, or rather too little constraints.
 
+The syntax requires C# 12; see [configuring your project for C# 12](/2023/06/how-to-switch-to-c-12/) if you need to enable that language version.
+
 So how does the new modifier work? Let’s assume the following method signature:
 
 ```cs

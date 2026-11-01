@@ -59,7 +59,7 @@ const translations = buildLocaleUrlMap(siteOrigin, (l) =>
         <div class="row">
           <span class="pill">{post.data.pubDate.toISOString().slice(0, 10)}</span>
           {post.data.tags?.slice(0, 3).map((tag) => (
-            <span class="pill">{tag}</span>
+            <a class="pill" href={`${langPrefix}tag/${tag}/`}>{tag}</a>
           ))}
         </div>
         <a class="post-card-title-link stack" href={urlPathForPost(post)}>
@@ -73,8 +73,9 @@ const translations = buildLocaleUrlMap(siteOrigin, (l) =>
   </section>
 
   {totalPages > 1 ? (
-    <div class="row" style="margin-top: 14px;">
+    <nav class="row" style="margin-top: 14px;" aria-label={t("listing.page", lang)}>
       <span class="muted">{t("listing.page", lang)} 1 {t("listing.of", lang)} {totalPages}</span>
-    </div>
+      <a class="pill" href={`${langPrefix}page/2/`} rel="next">{t("listing.nextArrow", lang)}</a>
+    </nav>
   ) : null}
 </BaseLayout>

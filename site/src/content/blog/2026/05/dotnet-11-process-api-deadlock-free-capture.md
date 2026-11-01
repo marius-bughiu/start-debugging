@@ -46,6 +46,8 @@ Console.WriteLine(result.StandardOutput);
 
 `ProcessTextOutput` carries the captured stdout, stderr, the process ID, and a `ProcessExitStatus` that reports both exit code and, on Unix, the terminating signal. There is a sibling `Process.ReadAllText` for callers that already have a running `Process`, plus `ReadAllLines/Async` for streaming `IEnumerable<ProcessOutputLine>` with a `StandardError` flag on each line, and `ReadAllBytes/Async` for binary tools. Per the blog, the sync `RunAndCaptureText` allocates roughly 4.5x less memory than the equivalent event-based loop on Windows.
 
+Later .NET 11 RC 1 APIs add [POSIX signal sending and richer process exit-status handling](/2026/09/dotnet-11-rc-1-process-signal-exit-status/), which complements output capture when a supervisor must request graceful shutdown and inspect how the child exited.
+
 ## Lifetime and Detachment
 
 Two long-standing footguns also get first-class support. `ProcessStartInfo.KillOnParentExit` ties the child to the parent's lifetime on Windows, Linux, and Android, so a crashing CLI tool no longer leaves orphaned workers. `ProcessStartInfo.StartDetached` is the opposite: the child outlives the parent and the terminal that spawned it. And `Process.StartAndForget` returns just the PID and immediately releases the parent's handle, which is what you want for fire-and-forget launches:

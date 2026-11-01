@@ -52,6 +52,6 @@ final Radius topLeft =
 
 ## Where this actually pays off
 
-Most apps do not need pixel-perfect corner matching, and `SafeArea` still handles the common case of keeping content out of the notch. This is for the surfaces that read as part of the device itself: bottom sheets that slide up to the glass edge, immersive media players, kiosk layouts, and the new predictive-back transitions, which Flutter 3.44 already wires up to `displayCornerRadii` so the outgoing screen shrinks into a correctly rounded rectangle.
+Most apps do not need pixel-perfect corner matching, and [`SafeArea` and system-bar insets](/2026/08/fix-flutter-ui-overlaps-the-android-navigation-bar-after-targeting-sdk-35/) still handle the common case of keeping content out of the notch. This is for the surfaces that read as part of the device itself: bottom sheets that slide up to the glass edge, immersive media players, kiosk layouts, and the new predictive-back transitions, which Flutter 3.44 already wires up to `displayCornerRadii` so the outgoing screen shrinks into a correctly rounded rectangle.
 
 The feature is small, but it closes a gap that forced every designer-developer handoff to end in a guessed number. Treat `null` as "assume square, fall back to your own constant" and the rest is just reading a value the OS was holding all along. See the [MediaQueryData.displayCornerRadii docs](https://api.flutter.dev/flutter/widgets/MediaQueryData/displayCornerRadii.html) for the full contract.

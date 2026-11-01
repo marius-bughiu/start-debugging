@@ -9,6 +9,8 @@ tags:
 ---
 Reflection allows you to obtain type information at runtime and to access private members of a class using that information. This can be particularly useful when dealing with classes outside of your control – provided by a third-party package. While powerful, reflection is also very slow, which is one of the main deterrents in using it. No more.
 
+The [UnsafeAccessor versus reflection benchmarks](/2023/11/net-8-performance-unsafeaccessor-vs-reflection/) compare private-method calls with direct access and cached reflection on .NET 8.
+
 .NET 8 introduces a new way to access private members with zero overhead through the use of the `UnsafeAccessor` attribute. The attribute can be applied to an `extern static` method. The implementation for the method will be provided by the runtime based on attribute information and method signature. If no match is found for the information provided, the method call will throw either a `MissingFieldException` or a `MissingMethodException`.
 
 Let’s look at a few examples of how to use `UnsafeAccessor`. Let’s consider the following class with private members:

@@ -15,6 +15,8 @@ The assumption that high-performance database engines require C, C++, or Rust is
 
 Baumann's core argument is that the bottleneck in database engine design is memory layout, not language choice. Modern C# provides the tools to control memory at a level that would have been impossible a decade ago.
 
+For the buffer-view part of that toolkit, [how `Span<T>` avoids allocations and copies](/2026/06/what-is-span-and-when-does-it-make-my-code-faster/) explains the mechanics and the cases where it does not improve performance.
+
 `ref struct` types live exclusively on the stack, eliminating heap allocations on hot paths:
 
 ```csharp

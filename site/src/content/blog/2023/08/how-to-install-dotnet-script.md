@@ -21,6 +21,8 @@ Then to execute a script file you simply call `dotnet script <file_path>` like i
 dotnet script startdebugging.csx
 ```
 
+To supply input values to the script, see [passing arguments to dotnet script](/2023/06/how-to-pass-arguments-to-a-dotnet-script/) with the `--` separator and the `Args` collection.
+
 ## How to initialize a new dotnet script
 
 If you are just getting started and you want to create a new dotnet script file you can use the `init` command to scaffold a script project.

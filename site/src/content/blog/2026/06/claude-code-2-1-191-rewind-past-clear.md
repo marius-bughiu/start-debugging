@@ -38,6 +38,8 @@ Esc Esc
 # select one, restore conversation + code, keep going
 ```
 
+Before clearing solely to reduce usage, [inspect the session's fixed context overhead](/2026/09/measure-an-agents-fixed-token-overhead-before-the-first-user-token/) as well. The guide uses `/context` to separate loaded instructions and tools from the conversation you are resetting.
+
 ## Why this changes how you use /clear
 
 The honest reason people hesitated to run `/clear` was loss aversion. Clearing meant committing to the cut, so you would keep a stale, expensive context around just in case. Making the reset reversible flips that. `/clear` becomes a cheap, routine way to keep each window tight, because a wrong cut is recoverable instead of permanent.

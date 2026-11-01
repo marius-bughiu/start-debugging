@@ -24,6 +24,8 @@ This is gated behind the agent-host mode. Turn it on in `settings.json`:
 
 With that set, the **Agents** window becomes the hub. New chats land in a **Chats** section under the parent session, and you focus the window with the `workbench.action.openAgentsWindow` command.
 
+If you also use Cursor, its [side-chat workflow](/2026/07/cursor-3-11-side-chats-parallel-agent-threads/) provides a comparable way to investigate a tangent and bring the conclusion back with an at-mention. The controls and session model differ from VS Code's agent-host chats.
+
 ## Quick chats drop the workspace requirement
 
 The second change that removes friction is quick chats. You can now start a conversation from the Agents window without opening a folder first. That sounds minor until you realize how often you want to ask an agent something that has nothing to do with the currently open project, and previously had to open a scratch workspace to do it. Quick chats are supported only by agent-host sessions, so they ride the same `chat.agentHost.enabled` switch.

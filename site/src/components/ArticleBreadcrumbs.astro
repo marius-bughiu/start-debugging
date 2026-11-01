@@ -1,0 +1,60 @@
+---
+import type { Locale } from "../lib/blog";
+import { t } from "../i18n";
+
+interface Props {
+  title: string;
+  lang?: Locale;
+}
+
+const { title, lang = "en" } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
+const homeUrl = lang === "en" ? baseUrl : `${baseUrl}${lang}/`;
+const labels: Record<Locale, string> = {
+  en: "Breadcrumb",
+  es: "Ruta de navegación",
+  "pt-br": "Caminho de navegação",
+  de: "Brotkrümelnavigation",
+  ru: "Навигационная цепочка",
+  ja: "パンくずリスト",
+};
+---
+
+<nav class="article-breadcrumbs" aria-label={labels[lang]} data-pagefind-ignore>
+  <ol>
+    <li><a href={homeUrl}>{t("nav.home", lang)}</a></li>
+    <li aria-current="page"><span aria-hidden="true">/</span> <span class="breadcrumb-title">{title}</span></li>
+  </ol>
+</nav>
+
+<style>
+  .article-breadcrumbs {
+    margin-bottom: 16px;
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+
+  ol {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: flex;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  li:first-child {
+    flex: none;
+  }
+
+  .breadcrumb-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>

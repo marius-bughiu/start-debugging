@@ -20,7 +20,7 @@ To get started, add an `appsettings.json` file in your shared project. Make sure
 }
 ```
 
-Next, we need to get hold of the resource stream.
+Next, we need to [get hold of the resource stream](/2020/11/get-embedded-resource-stream-in-net-core/).
 
 ```cs
 Stream resourceStream = GetType().GetTypeInfo().Assembly.GetManifestResourceStream("SignalRChat.appsettings.json");

@@ -23,3 +23,5 @@ services.AddIdentity<IdentityUser, IdentityRole>(options =>
 The full exception for reference:
 
 > System.AggregateException: ‘Some services are not able to be constructed (Error while validating the service descriptor ‘ServiceType: Microsoft.AspNetCore.Identity.IUserClaimsPrincipalFactory1\[Areas.Identity.Data.ApplicationUser\] Lifetime: Scoped ImplementationType: Areas.Identity.Data.AdditionalUserClaimsPrincipalFactory’: Unable to resolve service for type ‘Microsoft.AspNetCore.Identity.UserManager1\[Areas.Identity.Data.ApplicationUser\]’ while attempting to activate ‘Areas.Identity.Data.AdditionalUserClaimsPrincipalFactory’.)’
+
+If the error instead says a service cannot be resolved while activating another type, see [diagnosing missing dependency-injection registrations](/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/) for that separate failure mode.

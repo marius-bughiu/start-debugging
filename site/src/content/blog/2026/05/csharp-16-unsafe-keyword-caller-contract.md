@@ -45,6 +45,8 @@ void Caller2()
 
 That is the whole point: the `unsafe` block is where you assert "I have checked the precondition," so it should be small and deliberate, not wrapped around a whole method.
 
+Before exposing a pointer-based API, consider whether the buffer operations can be expressed with [Span and ReadOnlySpan](/2026/06/what-is-span-and-when-does-it-make-my-code-faster/). That guide covers allocation-free views and slicing without requiring raw pointer access at the call site.
+
 ## Smaller surface, stricter default
 
 A few other rules tighten the model. The `unsafe` type modifier is gone, so unsafety lives only on methods, properties, and fields. Pointer types no longer make a signature unsafe on their own; passing a `byte*` is fine, dereferencing it is the unsafe act. And `extern` declarations get a new `safe` modifier to attest that a P/Invoke is safe to call:

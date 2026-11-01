@@ -67,6 +67,8 @@ It’s probably not worth it if:
 -   You’re shipping a single-command utility
 -   You need exotic parsing behavior and expect to live in System.CommandLine internals
 
+For a small one-off utility, the [.NET file-based app workflow](/2026/01/net-10-file-based-apps-just-got-multi-file-scripts-include-is-landing/) is another way to organize a script and its helpers.
+
 If you want to evaluate it quickly, these are the best starting points:
 
 -   Docs: [https://rushuiguan.github.io/commandline/](https://rushuiguan.github.io/commandline/)

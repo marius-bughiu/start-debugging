@@ -36,6 +36,8 @@ CVE-2026-50549 attacks the guardrail directly. Before writing, Cursor canonicali
 
 That is a classic fail-open. A write-only symlink pointing at Cursor's own sandbox helper, `cursorsandbox`, sails through the check and lets an attacker overwrite the very binary that is supposed to contain the agent.
 
+For agent builders, [information-flow checks at the tool dispatcher](/2026/09/information-flow-control-to-block-prompt-injection-in-agents/) provide a concrete way to track untrusted inputs before a tool executes. That is a separate application-level control, alongside fixing the sandbox implementation.
+
 ## Why "trusted" agent tools are the new attack surface
 
 The uncomfortable lesson is that `run_terminal_cmd` is not a user typing commands. It is a tool the model invokes with arguments the model chose, and those arguments came from text the model read. Once you accept that any content flowing into the context window is potentially adversarial, a parameter like `working_directory` stops looking like configuration and starts looking like attacker input.

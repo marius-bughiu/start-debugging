@@ -9,6 +9,8 @@ tags:
 ---
 Whether you are developing a custom controls library or simply organizing your solution into multiple projects, you will most likely end up in the situation where you want to register some view handlers and services from within a MAUI library.
 
+For a concrete control to package this way, the [AdMob banner integration for MAUI](/2023/11/how-to-add-admob-to-your-maui-app/) builds Android and iOS handlers and registers them with the app builder.
+
 To start off, there’s no such thing as zero-configuration registration. MAUI uses a builder pattern to create the application and you will need access to that builder in order to register your handlers and services.
 
 The best approach to this problem is to define a static class with an `MauiAppBuilder` extension method in your library project. See an example below:

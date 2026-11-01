@@ -36,6 +36,8 @@ services.AddDbContext<AppDbContext>(o => o.UseSqlite("DataSource=:memory:"));
 
 `RemoveDbContext<TContext>()` strips the context registration, the bound `DbContextOptions<TContext>`, and the configuration callbacks EF Core has accumulated for that context. There is also a more surgical `RemoveExtension<TExtension>()` for the case where you want to keep most of the configuration intact but drop a single options extension, for example removing the SQL Server retry strategy without rebuilding the whole pipeline.
 
+If the test needs SQL Server semantics, the [Testcontainers integration-testing guide](/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers/) shows how to connect a replacement registration to an isolated SQL Server instance and manage its lifetime.
+
 ## Pooled factories without duplicating configuration
 
 The second change targets `AddPooledDbContextFactory<TContext>()`. Previously the call required an options delegate, even when the context already overrode `OnConfiguring` or had registered its configuration through `ConfigureDbContext<TContext>()`. Preview 3 adds a parameterless overload, so a context that already knows how to configure itself can be exposed as a pooled factory in one line:

@@ -29,6 +29,8 @@ The flow described in the post is:
 
 This is not the whole story (signing is its own rabbit hole), but it shows the key idea: a macOS runner builds and uploads an artifact.
 
+To keep the CI-built app and your local attach tools aligned, use an explicit SDK version as shown in [pinning Flutter and its engine in CI](/2026/01/flutter-3-38-6-and-the-engine-version-bump-reproducible-builds-get-easier-if-you-pin-it/).
+
 ```yaml
 name: ios-ipa
 on:

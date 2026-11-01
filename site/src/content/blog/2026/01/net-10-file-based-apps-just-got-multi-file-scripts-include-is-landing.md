@@ -23,6 +23,8 @@ The desired behavior is spelled out in the SDK issue: `dotnet run file.cs` shoul
 
 With `#:include`, the main file can pull in other `.cs` files so the compiler sees a single compilation unit for the run. It’s the missing bridge between “script feel” and “real code organization”.
 
+The later [.NET 11 Preview 5 `#:ref` directive](/2026/06/dotnet-11-preview-5-file-based-apps-ref-directive/) adds a different option: referencing another file-based app as a separate library rather than merging its source.
+
 This is not a C# language feature; it's a .NET SDK capability for file-based apps. That matters because it can evolve quickly in .NET 10 previews without waiting for a language version.
 
 ## A tiny multi-file script you can actually run

@@ -19,6 +19,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { canonicalTag } from "../src/lib/tags.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SITE_ROOT = path.resolve(__dirname, "..");
@@ -136,7 +137,7 @@ function normalizeFile(src) {
     const prefix = m[1];
     const quoted = m[2] !== undefined;
     const value = m[2] ?? m[3];
-    const normalized = MAP.get(value) ?? value;
+    const normalized = canonicalTag(MAP.get(value) ?? value);
 
     if (seen.has(normalized)) {
       changes.push({ kind: "dedupe", value, normalized });

@@ -29,6 +29,8 @@ That is what MCP is aiming for: a protocol boundary so the client and server can
 
 The exact API surface depends on which C# MCP library you pick (and it is still early). The server shape is stable though: define tools, validate inputs, execute, return structured output.
 
+For a later end-to-end implementation, see [building a C# MCP server on .NET 11](/2026/04/how-to-build-a-custom-mcp-server-in-csharp-on-net-11/) using the official 1.2 SDK, tool registration, and stdio transport.
+
 Here is a minimal C# 14 style example for .NET 10 showing the “contract first” approach. Treat it as a template for the shape of your handlers.
 
 ```cs

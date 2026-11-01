@@ -26,6 +26,8 @@ Right, so how we did this: first, we pick the colors. In our case, we need 5 col
 </ContentPage.Resources>
 ```
 
+To use different color palettes on Android, iOS and UWP, define the color resources with [OnPlatform values in XAML](/2019/07/xamarin-forms-using-onplatform/).
+
 Next, setup your page so that you have 4 background layers – each layer being a `BoxView` with its own color. Notice how we order the colors from the darkest shade to the lightest.
 
 ```xml

@@ -1,5 +1,6 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
+import { canonicalTag, canonicalTags } from "../lib/tags.mjs";
 
 const LOCALES = ["en", "es", "pt-br", "de", "ru", "ja"] as const;
 
@@ -42,7 +43,12 @@ const blog = defineCollection({
     // Set `comments: false` to suppress the widget on a post that would
     // otherwise show it; set `comments: true` to opt an older post in.
     comments: z.boolean().optional(),
-  }),
+  }).transform((data) => ({
+    ...data,
+    // Keep the old spellings for backward-compatible static redirect pages.
+    tagAliases: [...new Set((data.tags ?? []).filter((tag) => canonicalTag(tag) !== tag))],
+    tags: data.tags ? canonicalTags(data.tags) : undefined,
+  })),
 });
 
 const pillars = defineCollection({
@@ -50,7 +56,7 @@ const pillars = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    indexTags: z.array(z.string()),
+    indexTags: z.array(z.string()).transform(canonicalTags),
     pubDate: z.date(),
     updatedDate: z.date().optional(),
     draft: z.boolean().optional(),

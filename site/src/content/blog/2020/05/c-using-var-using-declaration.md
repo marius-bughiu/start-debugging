@@ -61,6 +61,8 @@ static int SplitFile(string filePath)
 
 As you can notice in the example above, the containing scope doesn’t have to be a method. It can also be the inside of a `for`, `foreach` or `while` statement for example, or even a `using` block if you are that savage. In each of these cases the object will be disposed at the end of the enclosing scope.
 
+For resources that need asynchronous cleanup, see [IAsyncDisposable and await using](/2026/07/how-to-implement-and-consume-iasyncdisposable-with-await-using-in-csharp/) for the corresponding disposal pattern.
+
 ## Error CS1674
 
 Using var declarations also come with compile-time errors in case the expression following `using` isn’t an `IDisposable`.

@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import TableOfContents from "../../../components/TableOfContents.astro";
+import TopicGuides from "../../../components/TopicGuides.astro";
+import ArticleBreadcrumbs from "../../../components/ArticleBreadcrumbs.astro";
 import Giscus from "../../../components/Giscus.astro";
 import AdSlot from "../../../components/AdSlot.astro";
 import { getCollection } from "astro:content";
@@ -36,7 +39,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props as { post: BlogPost };
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 const canonicalUrl = Astro.url.href;
 const baseUrl = import.meta.env.BASE_URL;
 const ogImage = ogImagePathForPost(post);
@@ -84,6 +87,8 @@ const related = await getRelatedPosts(post, 4);
   template={post.data.template}
   body={post.body}
 >
+  <ArticleBreadcrumbs title={post.data.title} lang={lang} />
+
   <article
     class="panel card stack prose"
     data-pagefind-body
@@ -108,13 +113,15 @@ const related = await getRelatedPosts(post, 4);
       <h1 class="h1">{post.data.title}</h1>
       {post.data.description ? <p class="muted">{post.data.description}</p> : null}
       <div class="byline">
-        <span>By <span class="byline-author">Marius Bughiu</span></span>
+        <span>By <a class="byline-author" href={`${baseUrl}about/`}>Marius Bughiu</a></span>
         <span class="byline-sep">&middot;</span>
         <span>{readingMinutes} min read</span>
         <span class="byline-sep">&middot;</span>
         <time datetime={post.data.pubDate.toISOString()}>{pubDateIso}</time>
       </div>
     </div>
+
+    <TableOfContents headings={headings} lang={lang} />
 
     <Content />
 
@@ -162,6 +169,8 @@ const related = await getRelatedPosts(post, 4);
       </p>
     </aside>
   </article>
+
+  <TopicGuides post={post} />
 
   {(prev || next) ? (
     <nav class="prev-next" aria-label="Post navigation">

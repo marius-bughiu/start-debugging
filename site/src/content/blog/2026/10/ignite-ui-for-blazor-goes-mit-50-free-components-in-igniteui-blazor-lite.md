@@ -71,7 +71,7 @@ No `<script>` tag is needed. A JavaScript initializer loads the web components w
 }
 ```
 
-The `@rendermode` line matters. The components are built on JavaScript interop, so they need `InteractiveServer`, `InteractiveWebAssembly` or `InteractiveAuto`. Static SSR is not supported, and a page without a render mode just renders inert markup.
+The `@rendermode` line matters. The components are built on JavaScript interop, so they need [`InteractiveServer`, `InteractiveWebAssembly` or `InteractiveAuto`](/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11/). Static SSR is not supported, and a page without a render mode just renders inert markup.
 
 ## The part that lands in .NET 11
 

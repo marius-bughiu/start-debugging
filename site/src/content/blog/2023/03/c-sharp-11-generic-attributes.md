@@ -8,6 +8,8 @@ tags:
 ---
 All right folks, generic attributes are finally a thing in C#! 🥳
 
+Make sure the project is [configured to use C# 11](/2023/03/how-to-switch-to-c-11/) before trying the generic attribute syntax below.
+
 You can define one just as you would define any other generic class:
 
 ```cs

@@ -50,6 +50,8 @@ syft myapp:ci -o cyclonedx-json=.\sbom\container.cdx.json
 
 If you want the app SBOM to match what actually ships, generate it from the same commit that produced the container image and store both artifacts together.
 
+The [NuGet lock-file and Package Source Mapping setup](/2026/01/nuget-become-owner-request-spam-what-to-do-and-what-to-lock-down-in-net-9-net-10/) complements that provenance by making dependency restores explicit.
+
 ## Should you merge the BOMs?
 
 If your main question is “Should I merge these BOMs into one?”, my default answer is: don’t merge by default.

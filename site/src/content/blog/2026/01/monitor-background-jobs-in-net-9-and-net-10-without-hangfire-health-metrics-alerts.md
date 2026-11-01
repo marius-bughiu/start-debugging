@@ -19,6 +19,8 @@ Source discussion: [https://www.reddit.com/r/dotnet/comments/1q86tv7/how\_do\_yo
 
 If you only have logs, you will be blind during “it is slow but not dead” incidents. Add a health check and at least one metric.
 
+When those metrics identify a slow job, the [dotnet-trace and Perfetto profiling loop](/2026/01/perfetto-dotnet-trace-a-practical-profiling-loop-for-net-9-net-10/) helps investigate the work behind the latency spike.
+
 ## A simple pattern: heartbeat + last error + duration metric
 
 This works in .NET 9 / .NET 10 with a plain `BackgroundService`:

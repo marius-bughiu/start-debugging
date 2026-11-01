@@ -50,6 +50,8 @@ order?.Customer?.Address?.IsVerified = true;
 
 The assignment only executes if the left-hand side evaluates to a non-null reference. The right-hand side is never evaluated when the target is null.
 
+If null indicates a bug rather than an optional update, use the [NullReferenceException debugging guide](/2023/10/c-what-is-a-nullreferenceexception-and-how-to-fix-it/) to trace where the missing object came from.
+
 ## How It Works
 
 The expression `P?.A = B` is equivalent to:

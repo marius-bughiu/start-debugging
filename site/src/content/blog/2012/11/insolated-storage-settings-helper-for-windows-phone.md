@@ -12,6 +12,8 @@ Decided that I’d share a really simple helper class that I often use in my Win
 -   **void SaveItem(string key, object item)** – saves the item passed as a parameter in the IsolatedStorageSettings using the specified key.
 -   **void SaveItems(Dictionary<string, object> items)**  – used for saving multiple items at once. All the items in the dictionary are saved in the IsolatedStorageSettings with their respective keys.
 
+One use for these methods is remembering the latitude and longitude obtained in the [Windows Phone GPS location example](/2012/01/windows-phone-7-getting-the-current-gps-location-from-the-device/).
+
 This is not much, but that’s all I ever needed for my apps. Hope it will be of help. Code below.
 
 ```csharp

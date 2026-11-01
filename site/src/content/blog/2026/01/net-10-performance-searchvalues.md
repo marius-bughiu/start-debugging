@@ -36,6 +36,8 @@ This is O(N \* M) where N is input length and M is the number of words. It scans
 
 With .NET 10, you can pre-compute the search strategy.
 
+For a fuller treatment of reusing that precomputed instance, see the [.NET 11 SearchValues usage guide](/2026/04/how-to-use-searchvalues-correctly-in-dotnet-11/), particularly its static-caching examples.
+
 ```cs
 using System.Buffers;
 

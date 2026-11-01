@@ -65,7 +65,7 @@ const tagline =
               ))}
             </div>
             <a class="post-card-title-link stack" href={`${baseUrl}${post.slug}/`}>
-              <div class="h2">{post.data.title}</div>
+              <h3 class="h2">{post.data.title}</h3>
               {post.data.description ? <div class="muted">{post.data.description}</div> : null}
             </a>
           </article>
@@ -85,7 +85,7 @@ const tagline =
           ))}
         </div>
         <a class="post-card-title-link stack" href={`${baseUrl}${post.slug}/`}>
-          <div class="h2">{post.data.title}</div>
+          <h3 class="h2">{post.data.title}</h3>
           {post.data.description ? <div class="muted">{post.data.description}</div> : null}
         </a>
       </article>

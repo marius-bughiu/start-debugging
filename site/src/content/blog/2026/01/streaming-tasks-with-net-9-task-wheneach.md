@@ -47,3 +47,5 @@ public async Task ProcessImagesAsync(List<string> urls)
 3.  **Simplicity**: The code is linear and readable. No more `while` loops or list mutations.
 
 This is one of those small API additions that deletes a lot of “utility” code from our projects.
+
+When the input is one JSON response rather than a collection of tasks, [HttpClient.GetFromJsonAsAsyncEnumerable](/2023/10/httpclient-get-json-as-asyncenumerable/) offers a different way to process arriving items with await foreach.

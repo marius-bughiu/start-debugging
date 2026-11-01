@@ -28,6 +28,8 @@ i ??= Method1();
 i ??= Method2(); // Method2 is never called because i != null
 ```
 
+Use a fallback when null is expected. When null means a required argument is missing, .NET 6 and later also provide [ArgumentNullException.ThrowIfNull](/2023/03/c-best-way-to-throw-exception-if-null/) for an explicit guard.
+
 ## Use cases
 
 The operator helps simplify the code and make it more readable in situations where you would normally go through different `if` branches until a certain variable’s value is set.

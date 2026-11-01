@@ -60,7 +60,7 @@ Despite not implementing `IEnumerable`, you can still use them inside a `foreach
 foreach (var item in arr) { }
 ```
 
-In a similar fashion, you can also use the spread operator in combination with inline arrays.
+In a similar fashion, you can also use the [spread operator](/2023/08/c-12-collection-expressions/) in combination with inline arrays.
 
 ```cs
 int[] m = [1, 2, 3, ..arr];

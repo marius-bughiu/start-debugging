@@ -48,4 +48,6 @@ patterns:
     reminder: "Multi-tenant code must filter by org_id."
 ```
 
+For the separate pull-request stage, the [Copilot, Bugbot, and Claude Code review-action comparison](/2026/09/copilot-code-review-vs-cursor-bugbot-vs-claude-code-review-action/) covers hosting, validation, and workflow differences.
+
 None of the three layers block writes or commits. Findings reach the writing Claude as instructions, and the reviewer can still miss things. Treat it as one layer of defense in depth: it sits in-session, ahead of `/security-review` on demand and full Code Review on the PR. For the exact hook events and env-var toggles, the [plugin docs](https://code.claude.com/docs/en/security-guidance) lay it all out.

@@ -46,6 +46,8 @@ You could already deny credential reads with `filesystem.denyRead`. The point of
 
 That makes it a clean lever for managed deployments. Ship `~/.aws` and `~/.ssh` denies plus token unsets from your MDM, and developers cannot widen them locally. It pairs naturally with a locked-down policy: `enabled: true`, `failIfUnavailable: true`, and `allowUnsandboxedCommands: false`.
 
+For workflows that still need authenticated requests, the later [credential-gateway guide](/2026/09/keep-api-keys-out-of-agent-context-with-a-credential-gateway/) covers proxy-side token injection and the `mask` mode added in Claude Code 2.1.199. Those options go beyond the deny-only configuration available in the release described here.
+
 ## Two caveats worth knowing
 
 There is no built-in deny list. Only the files and variables you name are restricted, so an empty config protects nothing. The setting also affects sandboxed Bash commands only. To strip Anthropic and cloud provider credentials from every subprocess regardless of sandboxing, set the `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` environment variable instead.

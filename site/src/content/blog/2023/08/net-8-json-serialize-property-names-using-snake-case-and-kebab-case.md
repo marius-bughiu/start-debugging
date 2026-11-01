@@ -81,3 +81,5 @@ Just like the previous example, but using `JsonNamingPolicy.KebabCaseUpper` for 
 ```json
 {"MAKE":"Mazda","MODEL-ID":"MX-5","LAUNCH-YEAR":1989}
 ```
+
+Finish setting the naming policy before [making JsonSerializerOptions read-only](/2023/09/net-8-mark-jsonserializeroptions-as-readonly/) if you want to protect a shared configuration from later changes.

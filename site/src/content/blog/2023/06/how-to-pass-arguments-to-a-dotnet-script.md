@@ -6,7 +6,7 @@ updatedDate: 2023-11-05
 tags:
   - "dotnet-script"
 ---
-When using **dotnet script** you can pass arguments by specifying them after **--** (two dashes). You can then access the arguments in the script using the **Args** collection.  
+When using **[dotnet script](/2023/08/how-to-install-dotnet-script/)** you can pass arguments by specifying them after **--** (two dashes). You can then access the arguments in the script using the **Args** collection.
   
 Let’s take an example. Assume we have the following **myScript.csx** script file:
 

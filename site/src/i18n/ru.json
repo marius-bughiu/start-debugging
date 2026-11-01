@@ -1,4 +1,12 @@
 {
+  "tagPage.description": "Руководства, решения проблем и заметки о программировании по теме {tag}.",
+  "theme.label": "Тема",
+  "theme.system": "Системная",
+  "theme.light": "Светлая",
+  "theme.dark": "Тёмная",
+  "nav.guides": "Руководства",
+  "nav.skip": "Перейти к содержимому",
+  "nav.primary": "Основная навигация",
   "nav.about": "О сайте",
   "nav.startHere": "С чего начать",
   "nav.pillars": "Подборки",

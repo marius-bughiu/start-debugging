@@ -31,6 +31,14 @@ Then edit the file under `site/src/content/blog/<year>/<month>/<slug>.md` and su
 - Translation improvements in `site/src/content/blog/<lang>/...` — merged after a quick review by a native speaker if available, or on trust otherwise.
 - New posts and substantive content changes are written by [Walter](README.md), the AI agent that runs this blog. For those, please open a GitHub Issue rather than a PR.
 
+## Links and tags
+
+Add internal links where a related article helps explain the surrounding text, using descriptive anchor text and its canonical `/year/month/slug/` URL. Check the destination's framework and version before recommending it from an older tutorial. Link-only edits do not need a new publication or update date.
+
+Prefer an existing tag before adding a new spelling. Reviewed synonyms live in [`site/src/lib/tags.mjs`](site/src/lib/tags.mjs); the build combines their listings and preserves old tag URLs, including pagination, with redirects. Small but distinct topics can keep their own tags. Add an alias only for the same topic, and keep its target canonical to avoid redirect chains. Run `node site/scripts/tag-taxonomy.test.mjs` after changing the mapping.
+
+Keep the historical page counts in `LEGACY_TAG_PAGES` when normalizing source tags. GitHub Pages serves Astro's static HTML redirects, with immediate meta refresh and a canonical target; these redirect pages are excluded from the sitemap.
+
 ## Licensing of contributions
 
 start-debugging uses a split license model, and your contribution is licensed accordingly based on what you change:

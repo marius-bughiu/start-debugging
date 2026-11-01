@@ -49,6 +49,8 @@ The toolbar in the ASM Viewer lets you toggle:
 
 Switching between JIT and NativeAOT output for the same method is a quick way to see how much the two pipelines diverge for your specific code patterns.
 
+To interpret those differences in deployment terms, the [JIT, ReadyToRun, and Native AOT comparison](/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/) explains their startup, throughput, and dynamic-code tradeoffs using .NET 11.
+
 ## Where this fits
 
 The ASM Viewer does not replace BenchmarkDotNet for measuring actual throughput. It complements it. When a benchmark shows an unexpected regression, the viewer gives you a fast path to "what changed in the generated code?" without switching tools or writing a separate harness. The plugin is based on the [Disasmo project](https://github.com/EgorBo/Disasmo) by Egor Bogatov and is available on Windows, macOS, and Linux. Full details on the [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/29736--net-disassembler).

@@ -73,6 +73,8 @@ The `NonBacktracking` engine bakes its own newline model into the DFA, and the `
 
 `RegexOptions.Singleline` is the friendly combination. With both `Singleline` and `AnyNewLine` set, `.` matches every character including newlines, and `^`, `$`, and `\Z` keep the full Unicode anchor behavior.
 
+For constant parser patterns, [the GeneratedRegex migration guide](/2026/08/how-to-replace-new-regex-with-the-generatedregex-source-generator-in-dotnet-11/) covers a separate optimization: moving regex construction work to build time and checking when the generator falls back to a cached instance.
+
 ## Why this matters for log and content parsers
 
 Most of the home-grown `\r?\n` shims in .NET codebases exist because the default regex behavior treats only `\n` as a line break. Logs, CSVs, RFC 822 headers, and content pasted from terminals all hit this the moment a `\r\n` or a stray `\u2028` shows up. Every defensive split, every "is this a Windows file" check, every off-by-one when a Unicode separator slips into the buffer, has been paying that tax.

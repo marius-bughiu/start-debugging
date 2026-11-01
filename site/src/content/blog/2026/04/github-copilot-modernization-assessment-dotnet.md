@@ -39,6 +39,8 @@ modernize assess --multi-repo ./repos --target dotnet10 --coverage deep
 
 The `--target` flag is where the scenario presets live: `dotnet10` triggers the .NET Framework to .NET 10 upgrade path, while `java-openjdk21` covers the Java equivalent. The `--coverage` flag trades runtime for depth, and deep coverage is the one that actually inspects transitive NuGet references.
 
+The later [modernize-dotnet portable plugin release](/2026/07/modernize-dotnet-anywhere-github-copilot-cli-plugin/) extends this assessment-and-plan workflow across Visual Studio, VS Code, the Copilot CLI, and GitHub.
+
 ## Treating the assessment like code
 
 Because the report is a set of Markdown and JSON files, you can lint it. Here is a small script that fails CI when the assessment gains new Mandatory issues:

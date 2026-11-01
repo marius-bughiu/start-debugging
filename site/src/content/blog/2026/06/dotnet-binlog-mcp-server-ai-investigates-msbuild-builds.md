@@ -57,4 +57,6 @@ For slow builds, `binlog_expensive_projects`, `binlog_expensive_targets`, and `b
 
 That single prompt replaces the tedious side-by-side scan you do when a build works on your machine and fails in CI.
 
+For unattended failures, the follow-up on [running the Binlog MCP Server in CI](/2026/07/run-the-binlog-mcp-server-in-ci-to-auto-triage-build-failures/) shows how to trigger analysis only after a failed build and make the log available to the agent.
+
 This is part of a broader pattern of Microsoft wrapping .NET diagnostics in MCP so agents can drive them. The server lives in [`dotnet/skills`](https://github.com/dotnet/skills); file issues there. If you have a flaky CI build sitting in a log nobody wants to open, this is the lowest-effort way to point a model at it.

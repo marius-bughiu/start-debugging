@@ -17,6 +17,8 @@ AWS introduced the Priority and Flex inference tiers for Bedrock in November 202
 
 Until v2.1.122, the only way to pick a tier with Claude Code on Bedrock was to wrap the request layer yourself or proxy through something that could inject the header. The [feature request issue](https://github.com/anthropics/claude-code/issues/16329) that landed in this release closes that gap.
 
+Tier pricing is only one part of the bill. [Measuring an agent's fixed token overhead](/2026/09/measure-an-agents-fixed-token-overhead-before-the-first-user-token/) helps you distinguish an expensive request tier from a large system prompt or tool catalogue repeated on every turn.
+
 ## The actual usage
 
 ```bash

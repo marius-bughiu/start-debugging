@@ -31,3 +31,5 @@ The first warning sign you will see is during compilation, where you will get a 
 Then, when running the compiled code, you will get a runtime exception:
 
 > System.Reflection.MissingMetadataException: ‘System.Text.Json.Serialization.Converters.EnumConverter<MyEnum>’ is missing metadata.
+
+For the rest of an AOT serialization setup, also consider [disabling reflection-based JSON serialization in .NET 8](/2023/10/system-text-json-disable-reflection-based-serialization/) so the project does not rely on the default reflection path.

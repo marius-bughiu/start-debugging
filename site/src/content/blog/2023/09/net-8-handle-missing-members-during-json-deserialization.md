@@ -39,3 +39,5 @@ new JsonSerializerOptions
 Be ready to catch it. With `JsonUnmappedMemberHandling` set to `Disallow`, the following exception will be thrown when deserializing a JSON payload with additional members.
 
 > **System.Text.Json.JsonException**: ‘The JSON property ‘<property name>’ could not be mapped to any .NET member contained in type ‘<namespace>+<type name>’.’
+
+An unmapped property is different from a value with the wrong type or format. For the latter, see [diagnosing “The JSON value could not be converted”](/2026/05/fix-jsonexception-the-json-value-could-not-be-converted/).

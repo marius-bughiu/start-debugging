@@ -56,6 +56,8 @@ canvas.DrawText("Hello, variable fonts", 0, 0, font, paint);
 
 Before this, callers had to drop down to native HarfBuzz handles to set axis coordinates. Preview 1 surfaces the same controls in plain managed APIs across SkiaSharp and HarfBuzzSharp.
 
+For the release that followed these previews, see [SkiaSharp 4.0 stable and its migration considerations](/2026/07/skiasharp-4-0-stable-release-faster-gpu-rendering/), including the path-builder changes that matter to custom renderers.
+
 ## Pulling the Preview
 
 The package is published behind `aka.ms/skiasharp-40-package`. The preview targets the same set of platforms as 3.x (`net8.0`, `net9.0`, `net10.0`, plus the usual mobile heads), and the team is asking for feedback before locking the API surface for the stable 4.0 release. If you maintain a custom Skia control library, this is the window to test the immutable path semantics against your draw loop and report anything that mutates a path after caching it -- that is the exact pattern that goes from "works in 3.x" to "needs an `SKPathBuilder`" in 4.0.

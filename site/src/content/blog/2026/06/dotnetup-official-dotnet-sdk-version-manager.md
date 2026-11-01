@@ -47,6 +47,8 @@ With a version manager that understands this file, the resolution becomes a sing
 
 ## Where it stands right now
 
+The later [dotnetup public preview walkthrough](/2026/10/dotnetup-public-preview-installs-the-sdk-your-global-json-pins/) covers the installer, PATH modes, and how SDK requirements are tracked from `global.json`.
+
 `dotnetup` is in internal preview. There is no one-line installer on the .NET website yet, and the practical way to try it today is to build it from source. A public preview is planned for the coming months. Notably, the `dotnet/sdk` `main` branch already uses `dotnetup` as part of its own build, which is a strong signal that this is the intended future of .NET installation rather than an experiment.
 
 If you maintain CI pipelines or onboard developers onto repos with strict SDK pins, this is the tool to watch. Track progress in the [dotnet/sdk issue on using dotnetup in build scripts](https://github.com/dotnet/sdk/issues/52699) and the [awareness issue noting the main branch now builds with it](https://github.com/dotnet/sdk/issues/54601).

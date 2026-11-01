@@ -70,6 +70,8 @@ StoresMap.ClusterClicked += async (sender, e) =>
 
 Setting `e.Handled = true` is what lets you keep the camera where it is and present a custom UI instead.
 
+If that UI navigates to a place-details page, [Shell route parameters and query properties](/2026/07/how-to-use-shell-route-parameters-and-query-properties-in-dotnet-maui-11/) provide the next step for passing the selected pin's identity to the destination.
+
 ## Why this is the upgrade you were waiting for
 
 Before Preview 3, the pragmatic options were to write a clustering algorithm by hand on top of `CameraChanged` or to swap the `Map` control for a platform-specific wrapper like MPowerKit.GoogleMaps. Both had downsides: the first fought MapKit's own coordinate snapping, and the second bypassed `Microsoft.Maui.Controls.Maps` entirely. Having `IsClusteringEnabled`, `ClusteringIdentifier`, and `ClusterClicked` in the box means you can keep your existing bindings and data templates, add one property, and ship.

@@ -25,3 +25,5 @@ And for a simple usage example:
 int[] foo = [1, 2, 3];
 Random.Shared.Shuffle(foo); // [2, 1, 3]
 ```
+
+If you need a selection of random items instead of a reordered source, use [Random.GetItems](/2023/11/c-randomly-choose-items-from-a-list/); its result can contain repeated picks.

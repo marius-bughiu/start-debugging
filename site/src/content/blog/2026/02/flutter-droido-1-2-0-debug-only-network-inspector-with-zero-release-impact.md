@@ -57,6 +57,8 @@ The promise "zero impact on release builds" is specific enough that you can vali
 - **Runtime**: confirm the inspector code is never referenced when `kReleaseMode` is true (the `assert` pattern enforces this).
 - **Intercept points**: verify it hooks where your app actually sends traffic (Dio vs `http` vs generated clients).
 
+For a broader audit of what reaches the shipped APK or IPA, the [FlutterGuard build-artifact workflow](/2026/01/flutterguard-cli-a-fast-what-can-an-attacker-extract-check-for-flutter-3-x-apps/) checks exposed configuration, metadata, and debug information.
+
 If Droido holds up, this is the type of tool that improves day-to-day debugging without turning into a long-term maintenance tax.
 
 Sources:

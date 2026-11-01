@@ -52,6 +52,8 @@ You pay for the convenience in places that matter in production:
 
 None of this makes Flet bad. It just makes it a different product: Flutter-rendered UI with Python semantics.
 
+For a direct Dart approach to desktop app structure, the [TypeMonkey architecture example](/2026/01/typemonkey-is-a-good-reminder-flutter-desktop-apps-need-architecture-first-polish-later/) separates UI state, typing logic, and persistence.
+
 ## When I would pick Flet
 
 -   Internal tools where time-to-first-UI is the main constraint.

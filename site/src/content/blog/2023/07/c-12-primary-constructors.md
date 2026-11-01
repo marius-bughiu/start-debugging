@@ -6,7 +6,7 @@ updatedDate: 2023-11-05
 tags:
   - "csharp"
 ---
-Starting from C# 12, it is possible to define a primary constructor within classes and structs. The parameters are placed in parentheses right after the type name.
+Starting from [C# 12](/2023/06/how-to-switch-to-c-12/), it is possible to define a primary constructor within classes and structs. The parameters are placed in parentheses right after the type name.
 
 ```cs
 public class Car(string make)

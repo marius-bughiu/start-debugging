@@ -19,4 +19,6 @@ As you can see, this blog ain’t doing so good. Luckily, Lighthouse gives you a
 
 You can play around with the settings, test using a mobile device or using different connection speeds matching your target audience and generate different reports. Once you’ve got your baseline, it’s time to start improving on those issues.
 
+Two image-related findings to tackle are [deferring offscreen images](/2019/05/lighthouse-report-defer-offscreen-images-in-wordpress/) and [properly sizing and compressing images](/2019/07/lighthouse-report-properly-size-images/); the walkthroughs show how those changes affected this blog.
+
 Can you get to the perfect score?

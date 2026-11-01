@@ -1,0 +1,98 @@
+---
+import type { Locale } from "../lib/blog";
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+  lang?: Locale;
+}
+
+const { headings, lang = "en" } = Astro.props;
+const labels: Record<Locale, string> = {
+  en: "On this page",
+  es: "En esta página",
+  "pt-br": "Nesta página",
+  de: "Auf dieser Seite",
+  ru: "На этой странице",
+  ja: "このページの内容",
+};
+
+// Use Astro's rendered heading IDs, including its duplicate-heading suffixes.
+// Keep subsection links with their parent and omit H3s before the first H2.
+const sections: { heading: Heading; children: Heading[] }[] = [];
+for (const heading of headings) {
+  if (heading.depth === 2) sections.push({ heading, children: [] });
+  else if (heading.depth === 3 && sections.length) {
+    sections[sections.length - 1].children.push(heading);
+  }
+}
+---
+
+{sections.length >= 3 ? (
+  <nav class="article-toc" aria-label={labels[lang]} data-pagefind-ignore>
+    <details open>
+      <summary>{labels[lang]}</summary>
+      <ul>
+        {sections.map(({ heading, children }) => (
+          <li>
+            <a href={`#${heading.slug}`}>{heading.text}</a>
+            {children.length > 0 ? (
+              <ul>
+                {children.map((child) => (
+                  <li><a href={`#${child.slug}`}>{child.text}</a></li>
+                ))}
+              </ul>
+            ) : null}
+          </li>
+        ))}
+      </ul>
+    </details>
+  </nav>
+) : null}
+
+<style>
+  .article-toc {
+    padding: 16px 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--panel);
+    font-size: 0.9375rem;
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .article-toc ul {
+    display: grid;
+    gap: 8px;
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+  }
+
+  .article-toc ul ul {
+    margin-top: 8px;
+    padding-left: 16px;
+    border-left: 1px solid var(--border);
+  }
+
+  .article-toc li {
+    margin: 0;
+  }
+
+  .article-toc a {
+    text-underline-offset: 3px;
+  }
+
+  :global(.prose :is(h2, h3)[id]) {
+    scroll-margin-top: 24px;
+  }
+</style>

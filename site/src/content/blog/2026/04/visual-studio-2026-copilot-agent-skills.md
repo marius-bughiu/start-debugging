@@ -53,3 +53,5 @@ Up to now the usual pattern was a sprawling `.github/copilot-instructions.md` or
 Skills also compose with Custom Agents. An `.agent.md` file can scope which skills it pulls in, which is how teams end up with a "backend-reviewer" agent that only sees EF Core and ASP.NET Core skills while a "mobile-reviewer" agent sees MAUI and Flutter ones.
 
 Microsoft notes the browsing and creation UI is still coming in a later 18.x update, so for now it is text files in folders. That is fine. Text files in folders are what version control is for.
+
+A later release adds [built-in .NET skills in Visual Studio 18.8](/2026/08/visual-studio-18-8-built-in-dotnet-agent-skills-off-by-default/), with a separate opt-in setting for the skills Microsoft bundles with the IDE.

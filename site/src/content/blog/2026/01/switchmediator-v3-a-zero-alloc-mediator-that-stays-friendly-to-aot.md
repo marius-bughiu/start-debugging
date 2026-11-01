@@ -53,6 +53,8 @@ What I look for:
 -   **Allocated bytes per operation** should be close to zero for trivial requests.
 -   **Throughput** should scale with the handler work, not the dispatch overhead.
 
+To follow up in a running service, use [dotnet-trace with Perfetto](/2026/01/perfetto-dotnet-trace-a-practical-profiling-loop-for-net-9-net-10/) to see how dispatch work lines up with CPU activity and GC pauses.
+
 If you see allocations in the dispatch path, you can usually find them by switching the return type to `ValueTask` (as above) and by keeping request/response types as records or structs that are predictable to the JIT.
 
 ## AOT-friendly usually means “explicit”

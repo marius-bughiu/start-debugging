@@ -52,7 +52,7 @@ Two behavior changes are called out in the PR:
 - A superseded autocomplete search no longer raises `ReturnedItemsCountChanged`.
 - `ReloadServerData()` no longer throws when a newer load replaces it.
 
-If you wrapped `ReloadServerData()` in a `try/catch` to swallow `TaskCanceledException`, that code is now dead. You should still pass the token through, since a cancelled request that actually stops is cheaper than one MudBlazor quietly discards:
+If you wrapped `ReloadServerData()` in a `try/catch` to swallow `TaskCanceledException`, that code is now dead. You should still [propagate the CancellationToken through your async methods](/2026/07/how-to-propagate-a-cancellationtoken-through-async-methods-in-dotnet-11/), since a cancelled request that actually stops is cheaper than one MudBlazor quietly discards:
 
 ```csharp
 private async Task<GridData<Order>> LoadOrders(GridState<Order> state, CancellationToken ct)

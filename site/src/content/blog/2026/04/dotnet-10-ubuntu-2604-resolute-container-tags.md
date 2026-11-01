@@ -27,6 +27,8 @@ FROM mcr.microsoft.com/dotnet/aspnet:10.0-resolute
 
 The `noble` images still exist and keep receiving 24.04 base updates, so there is no forced cutover. The `chiseled` variants move forward in lockstep: `10.0-resolute-chiseled` is published alongside the full image. If you were already on chiseled noble images for distroless style deployments, the upgrade is a tag swap and a rebuild.
 
+Before changing the publish mode as well as the base tag, compare [framework-dependent, self-contained, and Native AOT container images](/2026/09/framework-dependent-vs-self-contained-vs-native-aot-for-a-dotnet-11-container-image/). The guide uses .NET 11 tags and explains which mechanics also apply to .NET 10.
+
 ## Installing .NET 10 from the archive
 
 No Microsoft package feed is needed on 26.04. The Ubuntu archive carries the SDK directly:

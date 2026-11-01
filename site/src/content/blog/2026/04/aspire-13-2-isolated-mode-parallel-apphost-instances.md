@@ -15,6 +15,8 @@ Running two copies of the same Aspire app at once has always meant fighting `add
 
 By default `aspire run` binds to fixed ports: the dashboard at 18888, OTLP at 4317/4318, and predictable bindings for each resource. That is fine for a single developer on a single branch. Once you add a second worktree, a coding agent spinning up another instance, or an integration test that wants a live AppHost, everything collides. Teams have been patching this with `launchSettings.json` tweaks or custom port maps, and none of it composes.
 
+If your solution does not have an AppHost yet, start with [adding Aspire to an existing ASP.NET Core solution](/2026/07/how-to-add-aspire-to-an-existing-aspnetcore-solution-without-restructuring-it/); isolated mode is a workflow for running that host, not a replacement for the initial wiring.
+
 ## What --isolated actually changes
 
 `--isolated` on `aspire run` or `aspire start` does two things per invocation. First, every port that would normally bind to a fixed number (dashboard, OTLP, resource endpoints) is bound to a random free port instead. Service discovery picks up the dynamic values, so the app itself does not need to know what its siblings chose. Second, the user secrets backing store is keyed by an instance ID unique to the run, so connection strings and API keys do not leak across parallel AppHosts.

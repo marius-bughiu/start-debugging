@@ -9,6 +9,8 @@ tags:
 ---
 In .NET 10 Preview 1, the JIT compiler got better at optimizing how arrays are used with interfaces, especially when looping through them using `foreach`. This was the first step toward reducing the extra cost that comes with using enumerators to go through arrays. Preview 2 builds on this work with even more improvements.
 
+The same release also expands [stack allocation of small value-type arrays](/2025/04/net-10-stack-allocation-of-arrays-of-value-types/), another case where escape analysis can remove a heap allocation.
+
 Take a look at the following example:
 
 ```cs

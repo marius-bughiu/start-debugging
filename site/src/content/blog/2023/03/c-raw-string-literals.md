@@ -33,6 +33,8 @@ Lorem ipsum "dolor" sit amet,
     consectetur adipiscing elit.
 ```
 
+When the string also needs values from variables or expressions, use [interpolated raw string literals](/2023/03/c-11-interpolated-raw-string-literal/) and choose the brace delimiters to match the content.
+
 ## Whitespace before the closing sequence
 
 The whitespace before the closing double-quotes controls the whitespace which is removed from your raw string expression. In the example above, we had 4 white spaces before the **“””** sequence, so four spaces were removed from each line of the expression. If we only had 2 white spaces before the end sequence, only 2 white space characters would have been removed from each line of the raw string.

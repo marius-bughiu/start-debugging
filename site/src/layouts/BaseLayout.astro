@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import ThemeInit from "../components/ThemeInit.astro";
+import ThemePicker from "../components/ThemePicker.astro";
 import {
   LOCALES,
   LOCALE_HREFLANG,
@@ -196,6 +198,14 @@ if (type === "article" && body && template && lang === "en") {
 
 // RSS feed URL for the active language.
 const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xml`;
+const localeBase = lang === "en" ? baseUrl : `${baseUrl}${lang}/`;
+const navigation = [
+  { path: 'start-here/', key: 'nav.startHere' },
+  { path: 'pillars/', key: 'nav.guides' },
+  { path: 'tags/', key: 'nav.tags' },
+  { path: 'archive/', key: 'nav.archive' },
+  { path: 'about/', key: 'nav.about' },
+] as const;
 ---
 
 <!doctype html>
@@ -203,6 +213,7 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <ThemeInit />
     <title>{title}</title>
     {description ? <meta name="description" content={description} /> : null}
     <link rel="icon" type="image/jpeg" href={`${baseUrl}brand-logo.ico`} />
@@ -440,6 +451,7 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
     ) : null}
   </head>
   <body>
+    <a class="skip-link" href="#main-content">{t('nav.skip', lang)}</a>
     <header>
       <div class="row header-row">
         <a class="pill" href={lang === "en" ? baseUrl : `${baseUrl}${lang}/`} style="padding: 4px 12px 4px 6px; gap: 8px;">
@@ -447,6 +459,7 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
           <span style="line-height: 1; margin-bottom: -1px;">{t("site.brand", lang)}</span>
         </a>
         <div class="header-actions">
+          <ThemePicker lang={lang} />
           <div class="header-search">
             <button
               type="button"
@@ -485,6 +498,11 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
           ) : null}
         </div>
       </div>
+      <nav class="primary-nav" aria-label={t('nav.primary', lang)}>
+        {navigation.map(({ path, key }) => (
+          <a href={`${localeBase}${path}`} aria-current={Astro.url.pathname === `${localeBase}${path}` ? 'page' : Astro.url.pathname.startsWith(`${localeBase}${path}`) ? 'location' : undefined}>{t(key, lang)}</a>
+        ))}
+      </nav>
     </header>
 
     <div
@@ -547,6 +565,7 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
         function openOverlay() {
           overlay.hidden = false;
           document.documentElement.style.overflow = 'hidden';
+          overlay.querySelector('button').focus();
           loadPagefind().then(function () {
             const input = overlay.querySelector('input');
             if (input) input.focus();
@@ -561,15 +580,28 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
         function closeOverlay() {
           overlay.hidden = true;
           document.documentElement.style.overflow = '';
+          opener.focus();
         }
 
         opener.addEventListener('click', openOverlay);
         closers.forEach(function (c) { c.addEventListener('click', closeOverlay); });
         document.addEventListener('keydown', function (e) {
           if (e.key === 'Escape' && !overlay.hidden) closeOverlay();
+          if (e.key === 'Tab' && !overlay.hidden) {
+            const focusable = Array.from(overlay.querySelectorAll('a[href],button,input,select,textarea,[tabindex="0"]'))
+              .filter((el) => !el.disabled && el.getClientRects().length > 0);
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault(); last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault(); first.focus();
+            }
+          }
           if (
             e.key === '/' &&
             overlay.hidden &&
+            !document.activeElement?.isContentEditable &&
             !/^(input|textarea|select)$/i.test(document.activeElement && document.activeElement.tagName || '')
           ) {
             e.preventDefault();
@@ -579,7 +611,7 @@ const rssUrl = lang === "en" ? `${siteUrl}/rss.xml` : `${siteUrl}/${lang}/rss.xm
       })();
     </script>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <slot />
     </main>
 

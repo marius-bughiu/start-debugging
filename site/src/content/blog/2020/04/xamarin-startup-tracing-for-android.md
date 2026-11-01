@@ -9,6 +9,8 @@ tags:
 ---
 Your app's startup time matters because it's the first impression that the user gets to make about its performance. It doesn’t matter what you promise me if it takes 10 seconds to load the app each time I try and use it. I might even uninstall it thinking it doesn’t actually work. And with Xamarin Android this has been a hot topic over time. Now the team decided to tackle the problem a bit more aggressively by introducing startup tracing.
 
+For slow scrolling after the app has opened, investigate [Xamarin Forms ListView performance](/2017/12/xamarin-listview-performance/) separately from startup time.
+
 ## What is startup tracing?
 
 It basically means that part of your assemblies will be compiled ahead of time (AOT) instead of just in time (JIT) thus reducing overhead when executing code but increasing APK size.

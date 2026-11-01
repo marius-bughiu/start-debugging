@@ -9,7 +9,7 @@ tags:
 ---
 One less-known feature of the `UnsafeAccessorAttribute` is that it also allows you to access auto-generated backing fields of auto-properties – fields with unspeakable names.
 
-The way to access them is very similar to accessing fields, the only difference being the member name pattern, which looks like this:
+The way to access them is very similar to [accessing fields with UnsafeAccessor](/2023/10/unsafe-accessor/), the only difference being the member name pattern, which looks like this:
 
 ```plaintext
 <MyProperty>k__BackingField

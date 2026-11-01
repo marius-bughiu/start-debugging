@@ -9,6 +9,8 @@ tags:
 ---
 The Azure AI Language service provides developers with an API for common text analysis techniques, such as the ability to detect language from text, perform sentiment analysis, key phrase extraction, and named entity recognition and linking.
 
+For the equivalent .NET client workflow, see [detecting text language with Azure AI Language in C#](/2023/11/how-to-detect-text-language-using-azure-ai-language-service/).
+
 ## Provisioning
 
 [![](/wp-content/uploads/2023/11/image-11.png)](/wp-content/uploads/2023/11/image-11.png)

@@ -71,6 +71,8 @@ Hooks ship in the bundle too. A plugin can enforce a format pass after every edi
 }
 ```
 
+Before packaging an existing setup, [sort Cursor rules into skills, subagents, and plugins](/2026/08/migrate-cursor-rules-to-skills-subagents-and-plugins/). That migration guide explains which instructions should stay always on and which belong in an on-demand component.
+
 ## Distribution is the real feature
 
 The Customize page shows a leaderboard of the most-used plugins, skills, and MCPs across your team, and any of them install with one click. Team marketplaces now import plugin repositories from GitLab, BitBucket, or Azure DevOps, not just GitHub, so a company-internal registry no longer forces a vendor choice. Plugins can also carry prebuilt canvases, shared setup templates a teammate opens and reuses, with the Hex and Atlassian canvases as the first examples.

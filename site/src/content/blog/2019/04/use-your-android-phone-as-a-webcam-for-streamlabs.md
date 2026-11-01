@@ -41,6 +41,8 @@ Now you get to drag the video source around your scene and resize it as you want
 
 ![](/wp-content/uploads/2019/04/image-11-1024x555.png)
 
+For another scene element, the [Streamlabs polls walkthrough](/2020/08/polls-for-streamlabs-interact-with-your-viewers/) covers adding a widget that lets viewers vote in chat.
+
 ## Tip
 
 One of the problems when using phones as webcams is getting them to sit in a steady position, preferably at a certain height and angle. You can solve this problem using a smartphone tripod.

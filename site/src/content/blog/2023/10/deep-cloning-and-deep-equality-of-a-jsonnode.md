@@ -21,3 +21,5 @@ public partial class JsonNode
 The `DeepClone()` method will create and return a deep clone of the current node and all of its descendants.
 
 On the other hand, `DeepEquals()` will compare the property values of the node and all of its descendants and return `true` only when their JSON representations are equivalent. An interesting thing to note here is that `DeepEquals` is not an instance method like you would have been used to with `Object.Equals(...)`, nor is it an extension method – so you cannot simply `node1.DeepEquals(node2)`. You will always need to explicitly call the static method like this: `JsonNode.DeepEquals(node1, node2)`.
+
+To inspect or edit the resulting tree, the other [JsonNode API additions in .NET 8](/2023/10/jsonnode-net-8-api-updates/) include GetPropertyName, GetElementIndex and ReplaceWith.

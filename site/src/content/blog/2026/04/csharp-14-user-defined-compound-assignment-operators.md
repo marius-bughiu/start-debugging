@@ -76,4 +76,6 @@ Prefix `++` and `--` follow the same pattern with `public void operator ++()`. P
 
 The language does not enforce consistency between `+` and `+=`, so you can ship one without the other. The LDM [looked at this in April 2025](https://github.com/dotnet/csharplang/blob/main/meetings/2025/LDM-2025-04-02.md) and decided against mandatory pairing. `checked` variants work the same way: declare `public void operator checked +=(int y)` alongside the regular one. `readonly` is allowed on structs but, as the spec notes, it rarely makes sense given the whole point of the method is to mutate the instance.
 
+A separate C# 14 addition, [null-conditional assignment](/2026/02/csharp-14-null-conditional-assignment/), covers the call-site question of skipping an assignment when its receiver is null; it does not define the operator itself.
+
 The feature ships with C# 14 on .NET 10, usable today in Visual Studio 2026 or the .NET 10 SDK. For existing libraries exposing big-data value types, retrofitting an instance `+=` is one of the cheapest performance wins available in this release. See the full overview in [What's new in C# 14](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14).

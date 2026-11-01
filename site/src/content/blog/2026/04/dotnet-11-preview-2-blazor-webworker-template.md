@@ -91,6 +91,8 @@ This is the part that used to be 200 lines of interop. In .NET 11 it is three:
 
 `WebWorkerClient.CreateAsync` boots the worker, waits for the .NET runtime inside it to be ready, and returns a client you invoke by fully qualified method name. The main thread never blocks, so your `StateHasChanged` calls keep the UI smooth while two million numbers get factored on a background OS thread.
 
+For the later template name and a complete invocation/disposal flow, see [running CPU-bound Blazor work in a Web Worker](/2026/08/how-to-run-cpu-bound-work-in-a-blazor-webassembly-app-with-web-workers-in-dotnet-11/), which also covers cancellation and timeouts.
+
 ## Why this matters
 
 Before .NET 11 the Blazor community relied on third-party packages like [Tewr/BlazorWorker](https://github.com/Tewr/BlazorWorker) or rolled a bespoke `JSImport`/`JSExport` bridge every time. The new template removes that class of boilerplate entirely, ships as the blessed path from Microsoft, and composes with the existing JSImport/JSExport source generators. If you have been postponing background work in Blazor because the plumbing cost was too high, Preview 2 is the release that makes the cost zero. Full release notes are on the [.NET 11 Preview 2 announcement](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-2/) and the updated [.NET on Web Workers docs](https://learn.microsoft.com/en-us/aspnet/core/client-side/dotnet-on-webworkers?view=aspnetcore-10.0).

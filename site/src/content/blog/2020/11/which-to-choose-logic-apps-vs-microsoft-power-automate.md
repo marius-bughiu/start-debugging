@@ -14,6 +14,8 @@ Both are design-first technologies, meaning that they provide user interfaces al
 -   They can control the workflow using conditions
 -   They can produce outputs
 
+If your workflow needs to be implemented in code, compare the [Azure Functions and WebJobs approaches](/2020/11/azure-functions-vs-webjobs-which-to-choose/) alongside these designer-based services.
+
 ## Logic Apps
 
 Logic Apps is a service provided by Azure which you can use to automate, orchestrate, and integrate disparate components of a distributed application. Through Logic Apps, you can draw out complex workflows that model complex business processes.

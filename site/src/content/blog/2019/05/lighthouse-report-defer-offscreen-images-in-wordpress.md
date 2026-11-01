@@ -23,6 +23,8 @@ Just add it to your WordPress site and you’re done. Now when users will access
 
 This one thing alone bumped the performance rating of the blog by 20 points, from 41 to 61. Let’s see where we go next.
 
+Next, check whether the images you do load are oversized: [resizing and compressing images](/2019/07/lighthouse-report-properly-size-images/) addresses that separate source of download cost.
+
 ## Troubleshooting
 
 I personally had some troubles after installing the plugin with a couple of images blowing up like so:

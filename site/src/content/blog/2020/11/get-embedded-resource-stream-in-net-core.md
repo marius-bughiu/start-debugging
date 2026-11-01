@@ -26,6 +26,8 @@ Once you know the resource identifier, all you need is a reference to the assemb
 typeof(MyClass).Assembly.GetManifestResourceStream("MyApp.Core.Assets.Images.logo.png")
 ```
 
+For a practical use of an embedded resource stream, see [loading appsettings.json in Xamarin Forms](/2020/11/how-to-use-appsettings-json-with-xamarin-forms/), which passes the stream to the configuration builder.
+
 ## Retrieve list with all embedded resources in an assembly
 
 If you can’t find the resource, it’s usually because of one of the following:

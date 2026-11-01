@@ -54,3 +54,5 @@ Here's a complete, self-contained example using a Google-hosted font you can pas
 </body>
 </html>
 ```
+
+After adding the font files, run a [Lighthouse performance audit](/2019/04/audit-your-sites-performance-accessibility-and-user-experience-using-google-lighthouse/) to compare page loading before and after the typography change.

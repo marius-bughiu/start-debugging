@@ -86,6 +86,8 @@ var snapshot = await context.Orders
 
 The only difference is that the returned entities now carry the period values on the CLR object instead of hiding them behind `EF.Property<>`.
 
+To verify period values after inserts and updates, use [integration tests against a real SQL Server with Testcontainers](/2026/05/how-to-write-integration-tests-against-real-sql-server-with-testcontainers/), so the test exercises SQL Server's temporal behavior as well as the CLR mapping.
+
 ## Migration is optional
 
 If you have an existing model with shadow period columns, you do not need to change anything. The old API still works. For any new temporal-mapped entity, putting `PeriodStart` and `PeriodEnd` on the class is now the path of least resistance.

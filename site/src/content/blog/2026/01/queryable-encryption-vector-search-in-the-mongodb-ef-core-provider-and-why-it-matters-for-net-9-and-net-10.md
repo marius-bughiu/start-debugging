@@ -47,6 +47,8 @@ The big win is architectural: you can keep query intent in code reviews (who is 
 
 Vector search is showing up everywhere because search is shifting from keyword matching to similarity matching. The provider adds mapping for vector fields and a vector search query API.
 
+For the surrounding semantic-search and RAG concepts, [Generative AI for Beginners .NET v2](/2026/03/generative-ai-beginners-dotnet-v2-dotnet10-meai/) offers a .NET 10 learning path.
+
 From the DevBlogs post, you map a float array as a binary vector:
 
 ```cs

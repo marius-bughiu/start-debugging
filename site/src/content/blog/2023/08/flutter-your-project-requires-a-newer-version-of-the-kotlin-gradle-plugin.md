@@ -24,3 +24,5 @@ buildscript {
     ext.kotlin_version = '1.9.0'
 [...]
 ```
+
+For projects using `settings.gradle` or `settings.gradle.kts`, the [Kotlin metadata mismatch guide](/2026/10/fix-module-was-compiled-with-an-incompatible-version-of-kotlin-in-a-flutter-android-build/) explains where newer builds declare the Kotlin plugin version and how to check dependency compatibility.

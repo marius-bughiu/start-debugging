@@ -51,6 +51,8 @@ Run `dotnet run -e FEATURE_X=on -e TENANT=acme` and the target prints `FEATURE_X
 
 `dotnet run -e` is not a replacement for `launchSettings.json`. Launch profiles still make sense for the common configurations you hit every day and for debug scenarios in Visual Studio or Rider. The CLI flag is best for the one-shot cases: reproducing a bug someone reported under a specific `LOG_LEVEL`, testing a feature flag without committing a profile, or wiring up a quick CI step in `dotnet watch` without rewriting a YAML file.
 
+If a profile launches another `dotnet run` or `dotnet watch` process, check the [nested launch-profile environment-variable trap](/2026/09/fix-launchsettings-environment-variables-ignored-for-executable-profile/) when the app sees a different value than the outer process set.
+
 One small caveat: values with spaces or shell-special characters still need quoting for your shell. `dotnet run -e "GREETING=hello world"` is fine in bash and PowerShell, `dotnet run -e GREETING="hello world"` works in `cmd.exe`. The SDK itself accepts the assignment as-is, but the shell gets to parse the command line first.
 
 The smallest .NET 11 Preview 3 feature on paper, and probably one of the most-used in practice. Full release notes live at [What's new in the SDK and tooling for .NET 11](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-11/sdk), and the announcement post is on the [.NET Blog](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-3/).

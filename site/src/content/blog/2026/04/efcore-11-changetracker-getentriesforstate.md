@@ -63,6 +63,8 @@ Because `SaveChanges` always runs its own detection pass, the audit loop now rea
 
 Avoid it for code that must see every pending change before save, for example a UI that renders "you have 3 unsaved edits". In that case `Entries()` is still correct because its detection pass is the whole point.
 
+For bulk updates, first decide whether you need the tracked save pipeline at all. The [comparison of ExecuteUpdate and tracked SaveChanges](/2026/06/ef-core-executeupdate-vs-loading-entities-and-savechanges/) covers the interceptor and concurrency behavior you give up when bypassing it.
+
 ## Measuring the win
 
 The impact grows with tracked-entity count. For a context holding 10,000 entities with complex value objects, `Entries()` runs a per-property scan to decide whether anything changed. Replacing an audit read of `Entries().Where(e => e.State != EntityState.Unchanged)` with `GetEntriesForState(false, true, true, false)` trims one full pass, which is typically 10-30% of total `SaveChanges` time in audit-heavy OLTP paths.

@@ -38,6 +38,8 @@ Two knobs matter once you enable the big switch:
 -   `WarningsAsErrors`: escalate only specific warning IDs.
 -   `NoWarn`: suppress specific warning IDs (ideally with a comment and a tracking link).
 
+For the nullability issue behind CS8602, see [diagnosing and preventing NullReferenceException](/2023/10/c-what-is-a-nullreferenceexception-and-how-to-fix-it/) before deciding which warnings to escalate.
+
 Example for tightening one warning while leaving the rest as warnings:
 
 ```xml

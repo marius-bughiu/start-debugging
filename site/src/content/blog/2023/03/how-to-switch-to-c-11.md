@@ -35,6 +35,8 @@ If you must override the language version, you have to do it as specified above,
 
 Remember that each C# language version has a minimum supported .NET version. C# 11 is supported only on .NET 7 and newer versions. C# 10 is supported only on .NET 6 and newer versions. C# 9 is supported only on .NET 5 and newer versions.
 
+With C# 11 enabled, [raw string literals](/2023/03/c-raw-string-literals/) and [generic attributes](/2023/03/c-sharp-11-generic-attributes/) are two concrete features to try.
+
 ## C# LangVersion options
 
 Besides the version numbers, there are certain keywords that can be used to specify the language version of your project:

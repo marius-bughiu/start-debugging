@@ -1,4 +1,5 @@
 ---
+import { tagTitle } from "../../lib/tags.mjs";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPublishedBlogPosts } from "../../lib/blog";
 
@@ -42,7 +43,7 @@ const totalPosts = allPosts.length;
     <div class="row tag-cloud">
       {tags.map(({ tag, count }) => (
         <a class="pill" href={`${baseUrl}tag/${tag}/`}>
-          {tag}
+          {tagTitle(tag)}
           <span class="tag-count muted">{count}</span>
         </a>
       ))}

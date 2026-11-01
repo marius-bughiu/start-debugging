@@ -46,6 +46,8 @@ var items = new List<string> { "a", "b", "c" };
 
 If you see the suggestion to convert to `["a", "b", "c"]`, the analysis engine is running.
 
+The suggested syntax is a [C# 12 collection expression](/2023/08/c-12-collection-expressions/); the language guide explains its target-type requirement and spread operator.
+
 ## Who this is for
 
 Cursor users writing C# now get first-class analysis without leaving their AI-native editor. VS Code users who avoided Rider because of cost or preference get the same inspection depth ReSharper has offered Visual Studio users for two decades. And OSS maintainers get it all for free.

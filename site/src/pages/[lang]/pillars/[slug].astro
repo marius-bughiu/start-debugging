@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import TableOfContents from "../../../components/TableOfContents.astro";
+import ArticleBreadcrumbs from "../../../components/ArticleBreadcrumbs.astro";
 import {
   getPublishedPillars,
   getPillarPosts,
@@ -51,7 +53,7 @@ if (!isLocale(Astro.params.lang ?? "") || Astro.params.lang === "en") {
 }
 
 const posts = await getPillarPosts(pillar.data.indexTags, lang);
-const { Content } = await pillar.render();
+const { Content, headings } = await pillar.render();
 
 const siteOrigin = Astro.site?.origin ?? "https://startdebugging.net";
 const translationsMap = await getPillarTranslations(pillar);
@@ -84,11 +86,15 @@ const langPrefix = `${baseUrl}${lang}/`;
   lang={lang}
   translations={Object.keys(translations).length > 1 ? translations : undefined}
 >
+  <ArticleBreadcrumbs title={pillar.data.title} lang={lang} />
+
   <article class="stack">
     <h1 class="h1">{pillar.data.title}</h1>
     {pillar.data.tagline ? (
       <p class="muted" style="font-size: 18px;">{pillar.data.tagline}</p>
     ) : null}
+
+    <TableOfContents headings={headings} lang={lang} />
 
     <section class="prose stack">
       <Content />

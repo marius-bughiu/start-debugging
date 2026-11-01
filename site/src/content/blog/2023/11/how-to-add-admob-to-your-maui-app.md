@@ -9,6 +9,8 @@ tags:
 ---
 One of the first things people think about when developing for a new platform / using a new technology is monetization; and in my case the question is: how easy is it to integrate AdMob? For .NET MAUI the answer would be: “It depends” – it depends on luck & on the complexity of what you want to achieve; but I will detail this as we move along.
 
+If you plan to distribute the banner control in a separate project, the [MAUI library handler registration pattern](/2023/11/maui-library-register-handlers/) shows how to expose its setup through a MauiAppBuilder extension.
+
 In this article we’re going to look at how to display a banner ad using AdMob on both Android and iOS.
 
 The first thing we need to do is add the platform-specific AdMob packages:

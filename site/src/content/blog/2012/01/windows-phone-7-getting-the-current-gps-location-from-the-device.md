@@ -61,6 +61,8 @@ void geoWatcher_PositionChanged(object sender, GeoPositionChangedEventArgs<GeoCo
 }
 ```
 
+If your app needs to remember the last coordinates between launches, the [Windows Phone Isolated Storage settings helper](/2012/11/insolated-storage-settings-helper-for-windows-phone/) provides methods for saving and retrieving those values.
+
 That’s it. Now if you want to get rid of the object and stop reading the current location after reading the first set of values you can simply add the following lines of code to the event handler. Otherwise you can create a method for it and call it whenever you wish.
 
 ```cs

@@ -39,6 +39,8 @@ Set it to `true` in managed or policy settings alongside a non-empty `availableM
 
 The two settings cover different scopes. `enforceAvailableModels` makes Default obey the allowlist, while the `env` block pins which version a permitted alias like `sonnet` resolves to. One caveat worth memorizing: an empty `availableModels: []` never engages enforcement, so users keep their tier Default no matter what `enforceAvailableModels` says.
 
+The later [Sonnet 5 default-model rollout](/2026/07/claude-sonnet-5-claude-code-default-new-tokenizer-token-budgets/) illustrates why this distinction matters: changing an alias or account default can also change tokenizer and request-budget assumptions.
+
 ## The 2.1.176 hardening pass
 
 A day later, 2.1.176 sealed two adjacent edges. Alias model picks can no longer be redirected to a blocked model through `ANTHROPIC_DEFAULT_*_MODEL` environment variables, and `/fast` now refuses to toggle when the switch would land on a model outside the allowlist.

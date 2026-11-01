@@ -153,3 +153,5 @@ Here's the modern, vendor-prefix-free version as a self-contained HTML file. Ope
 ```
 
 The `-webkit-` and `-moz-` prefixes from the original snippets are no longer needed — every browser shipping since 2013 supports the unprefixed properties.
+
+To give the poster backgrounds a texture, combine this animation with a [layered noise image and CSS gradient](/2012/03/css3-textured-noisy-gradient-background/).

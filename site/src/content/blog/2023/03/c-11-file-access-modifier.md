@@ -8,6 +8,8 @@ tags:
 ---
 The **file** modifier restricts a type’s scope and visibility to the file in which it is declared. This is especially useful in situations where you want to avoid name collisions among types – like in the case of generated types using source generators.
 
+This is a C# 11 feature; see [how to enable C# 11 in your project](/2023/03/how-to-switch-to-c-11/) if you need to configure the language version first.
+
 A quick example:
 
 ```cs

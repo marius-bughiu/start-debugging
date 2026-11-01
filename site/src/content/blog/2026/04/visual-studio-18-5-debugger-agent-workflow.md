@@ -28,6 +28,8 @@ Once your solution is open, you switch Copilot Chat into Debugger mode and hand 
 
 The supported scenarios in the 18.5 GA drop are "exceptions, logic inconsistencies, and state corruption." Performance regressions and concurrency-only bugs are not on that list yet.
 
+For a performance regression, [capture and inspect a dotnet-trace profile](/2026/04/how-to-profile-a-dotnet-app-with-dotnet-trace-and-read-the-output/) to collect runtime evidence outside the Debugger Agent workflow.
+
 ## What a session looks like
 
 A minimal walkthrough for a classic null-ref looks like this:

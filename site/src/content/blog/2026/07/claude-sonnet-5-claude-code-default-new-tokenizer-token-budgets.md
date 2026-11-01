@@ -35,6 +35,8 @@ curl https://api.anthropic.com/v1/messages/count_tokens \
 
 Run the same payload against `claude-sonnet-4-6` and compare `input_tokens`. That delta is your budget correction.
 
+For agents, [measure instructions and tool-schema overhead separately](/2026/09/measure-an-agents-fixed-token-overhead-before-the-first-user-token/) so the recount includes the repeated prefix as well as the visible user message.
+
 ## Three API behaviors that now 400
 
 If you call Sonnet 5 directly, three requests that worked on Sonnet 4.6 now return `400`:

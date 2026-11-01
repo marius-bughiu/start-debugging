@@ -9,7 +9,7 @@ tags:
   - "dotnet-9"
   - "performance"
 ---
-.NET 9 brings significant improvements to LINQ’s `ToArray` method, both in terms of speed, as well as memory allocation. To achieve this, the new implementation makes use of new runtime features such as `InlineArray` to significantly reduce memory allocations and improve speed, especially when dealing with an `IEnumerable<T>` of unknown length. If you’re curious about the implementation, you can [check out the PR on GitHub](https://github.com/dotnet/runtime/pull/96570).
+.NET 9 brings significant improvements to LINQ’s `ToArray` method, both in terms of speed, as well as memory allocation. To achieve this, the new implementation makes use of new runtime features such as [`InlineArray`](/2023/08/c-12-inline-arrays/) to significantly reduce memory allocations and improve speed, especially when dealing with an `IEnumerable<T>` of unknown length. If you’re curious about the implementation, you can [check out the PR on GitHub](https://github.com/dotnet/runtime/pull/96570).
 
 ## .NET 8 vs .NET 9
 

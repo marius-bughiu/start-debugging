@@ -26,6 +26,8 @@ cmd.ExecuteQuery<MyTableType>().Select(t => t.MyColumnName).ToArray();
 
 If you don’t like using the table-associated type, you can always define a custom DTO for this particular query and use that instead. Remember, it needs to have a public parameterless constructor.
 
+For C# 12 model classes, remember that [declaring a primary constructor](/2023/07/c-12-primary-constructors/) removes the implicit parameterless constructor; keep this query requirement in mind when defining the DTO.
+
 ```cs
 public class MyQueryDto
 {

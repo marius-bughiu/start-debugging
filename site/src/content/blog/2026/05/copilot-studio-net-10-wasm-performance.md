@@ -54,6 +54,8 @@ For a workload that runs inside Microsoft 365 surfaces and gets hit constantly, 
 
 ## What this means for your Blazor WebAssembly app
 
+If you are still choosing where Blazor components should run, the [Server, WebAssembly, and Auto render-mode comparison](/2026/05/blazor-server-vs-webassembly-vs-united-in-dotnet-11/) covers download size and startup tradeoffs. Blazor Auto is a different hosting strategy from the dual WebAssembly engines in this case study.
+
 If you ship a Blazor WebAssembly or .NET WASM app and you are still on .NET 8, the migration is cheap. Bump `TargetFramework` to `net10.0`, restore, publish, and let the new fingerprinting and AOT defaults run. If you have a custom hashing or IL-stripping step in your pipeline, delete it.
 
 If you do not ship dual JIT and AOT engines (most apps do not), you will not see the 15% package growth Copilot Studio saw. You will get the IL-stripping savings without the dedup loss. That is the configuration .NET 10's defaults are tuned for.

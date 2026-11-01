@@ -26,3 +26,5 @@ dialog.ShowDialog();
 That’s it. Now the files picked by the user using the `OpenFileDialog` will no longer show in the recent files list or in the start menu.
 
 Note: `AddToRecent` has a default value of `true`. So unless you explicitly set it to `false`, the files picked using the dialogs will show up in the recents.
+
+Recent-file entries are separate from the dialog's own remembered state. To isolate the last-used folder and window position between pickers, see [individual dialog states with ClientGuid](/2023/10/wpf-individual-dialog-states-using-clientguid/).

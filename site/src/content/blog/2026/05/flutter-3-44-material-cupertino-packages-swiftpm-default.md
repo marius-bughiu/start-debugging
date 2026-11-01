@@ -37,6 +37,8 @@ dependencies:
 
 The second-order benefit is binary size. Apps that only use Cupertino can stop dragging Material's theming, typography, and icon set into the tree-shaken bundle once the SDK copies are removed in a future release. Flutter's own [release notes for 3.44.0](https://docs.flutter.dev/release/release-notes/release-notes-3.44.0) call this the "code freeze" of the bundled libraries: bug fixes only, no new APIs.
 
+The later [Material and Cupertino package migration guide](/2026/09/migrate-flutter-material-and-cupertino-imports-to-standalone-packages/) walks through import rewrites and compatibility issues when dependencies still use the SDK copies.
+
 ## SwiftPM is now the default on iOS and macOS
 
 The other big switch is `flutter config --enable-swift-package-manager` being on by default for new projects. `flutter create` no longer generates a `Podfile`. Plugins resolved through pub still get a `Package.swift` shim, and Xcode opens the project as a Swift package graph directly. For existing apps, the upgrade path is short:
@@ -49,6 +51,8 @@ flutter run -d ios
 ```
 
 CocoaPods is not removed; it stays as the fallback when you opt out, or when a plugin has not published a `Package.swift`. The deprecation warnings now flag plugins that still ship Pods-only.
+
+For an existing iOS project, follow the [CocoaPods-to-SwiftPM cleanup guide](/2026/10/migrate-a-flutter-ios-app-from-cocoapods-to-swift-package-manager/) to inspect plugin support and remove the old integration after the new build works.
 
 ## What else landed in 3.44
 

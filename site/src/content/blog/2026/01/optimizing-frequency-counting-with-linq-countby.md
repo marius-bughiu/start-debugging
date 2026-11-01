@@ -42,6 +42,8 @@ foreach (var (level, count) in logLevels.CountBy(level => level))
 
 The syntax is not just cleaner; it explicitly declares the intent: we are counting by a key.
 
+If you then materialize the aggregate results for reuse, the [.NET 9 ToList versus ToArray benchmarks](/2025/01/net-performance-tolist-vs-toarray/) cover that separate allocation decision.
+
 ## Performance Implications
 
 Under the hood, `CountBy` is optimized to avoid allocating the grouping buckets that `GroupBy` requires. In a traditional `GroupBy` scenario, the runtime often has to create a `Grouping<TKey, TElement>` object for every unique key, and internally maintains a collection of elements for that key. If you have 1 million items and 100 unique keys, `GroupBy` might still do significant work organizing those 1 million items into lists.

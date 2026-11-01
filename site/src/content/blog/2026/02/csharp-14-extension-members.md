@@ -9,7 +9,7 @@ tags:
   - "extension-members"
 ---
 
-C# 14 ships with .NET 10 and brings the most requested evolution to extension methods since their introduction in C# 3.0. You can now define extension properties, extension operators, and static extension members using the new `extension` keyword.
+C# 14 ships with .NET 10 and brings the most requested evolution to extension methods since their introduction in [C# 3.0](/2024/12/csharp-language-version-history/). You can now define extension properties, extension operators, and static extension members using the new `extension` keyword.
 
 ## From Extension Methods to Extension Blocks
 

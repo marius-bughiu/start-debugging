@@ -77,4 +77,6 @@ When you wire the real particle widget in, aim for predictable defaults:
 -   Prefer preloaded images over runtime decoding.
 -   Pause effects when the screen is not visible.
 
+Use the [Flutter DevTools jank-profiling workflow](/2026/05/how-to-profile-jank-in-a-flutter-app-with-devtools/) to check whether the effect is spending time in Dart work or rasterization.
+
 If you want the authoritative API surface, use the upstream docs and examples as the source of truth: [pub.dev](https://pub.dev/packages/particles_flutter) and [GitHub](https://github.com/rajajain08/particles_flutter).

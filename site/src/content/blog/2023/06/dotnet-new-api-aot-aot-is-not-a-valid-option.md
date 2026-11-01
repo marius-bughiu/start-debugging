@@ -11,3 +11,5 @@ The correct syntax for generating a project with AOT is `--aot` (with 2 hyphens)
 ```bash
 dotnet new api --aot
 ```
+
+Once the project is created, check JSON converters for AOT compatibility. For enums serialized as strings, .NET 8 provides an [AOT-compatible `JsonStringEnumConverter<TEnum>`](/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/).

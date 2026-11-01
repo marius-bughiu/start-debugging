@@ -62,3 +62,5 @@ IBase value = new Derived2Impl { Base = 0, Derived = 1, Derived2 = 2 };
 JsonSerializer.Serialize(value);
 // Output: {"Base":0}
 ```
+
+When you also need to restore the concrete subtype while deserializing, see [polymorphic serialization with JsonDerivedType](/2026/07/how-to-serialize-a-polymorphic-type-hierarchy-with-jsonderivedtype-in-system-text-json/) for the discriminator-based approach.

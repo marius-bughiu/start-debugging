@@ -79,7 +79,7 @@ The improvements are structural:
 
 ## Best Practices
 
-This feature requires both **.NET 9** and **C# 13**. If you are upgrading an existing project, you can mechanically replace `private readonly object _lock = new();` with `private readonly Lock _lock = new();`. The compiler handles the rest.
+This feature requires both **.NET 9** and **[C# 13](/2025/01/how-to-switch-to-c-13/)**. If you are upgrading an existing project, you can mechanically replace `private readonly object _lock = new();` with `private readonly Lock _lock = new();`. The compiler handles the rest.
 
 Do not expose the `Lock` instance publicly. Just like the old `object` pattern, encapsulation is key to preventing deadlocks caused by external code locking on your internal synchronization primitives.
 

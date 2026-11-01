@@ -50,6 +50,8 @@ Start with questions you can answer in minutes:
 -   **Thread pool behavior**: Do you see bursts of worker threads that correlate with latency spikes?
 -   **GC correlation**: Do pause windows line up with the slow request or only with background activity?
 
+For worker services, [job heartbeats and duration histograms](/2026/01/monitor-background-jobs-in-net-9-and-net-10-without-hangfire-health-metrics-alerts/) help identify which job and time window to capture.
+
 Once you find a suspicious window, jump back to code and add a surgical change (for example: reduce allocations, avoid sync-over-async, remove a lock from the request hot path, or batch expensive calls).
 
 ## One pragmatic pattern: trace in Release, without losing symbols

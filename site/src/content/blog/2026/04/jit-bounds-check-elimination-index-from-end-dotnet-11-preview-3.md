@@ -58,6 +58,8 @@ The same rewrite applies to `i + 2`, `i + 3`, and so on, as long as the constant
 
 A single bounds check costs under a nanosecond on modern CPUs. The real pressure is second-order: the branch slot it consumes, the loop-unrolling decisions it blocks, the vectorization opportunities it defeats. When RyuJIT proves a whole inner loop is bounds-safe, it is free to unroll more aggressively and hand the block to the auto-vectorizer. That is where a 1% micro-win on paper turns into a 10 to 20% improvement on a real numeric kernel.
 
+For an IDE-based comparison, the [Rider ASM Viewer setup and snapshot workflow](/2026/04/rider-2026-1-asm-viewer-jit-nativeaot-disassembly/) shows how to inspect and diff the generated assembly.
+
 ## Trying it today
 
 Neither optimization needs a feature flag. Run any .NET 11 Preview 3 SDK and they kick in automatically. Set `DOTNET_JitDisasm=TailSum` to dump the generated code, run once on .NET 10 and once on Preview 3, and diff. If you maintain hot loops over arrays or spans, especially anything that peeks at the end of a buffer or walks with a fixed stride, this is a free speedup waiting in Preview 3.

@@ -12,6 +12,8 @@ tags:
 
 Microsoft [shipped .NET 11 Preview 4 on May 12, 2026](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-4/), and for MAUI developers the headline is small in the changelog but huge in day-to-day work: `dotnet watch` now drives Hot Reload on Android devices, Android emulators, and the iOS Simulator. Until this preview, the MAUI mobile loop was "edit, rebuild, redeploy" for anything outside of XAML. Preview 4 closes that gap.
 
+For the general watcher lifecycle and its launch settings, see [how dotnet watch differs from dotnet run](/2026/07/what-is-the-difference-between-dotnet-watch-and-dotnet-run/). The mobile-specific target and linker settings are below.
+
 ## The actual workflow
 
 Open a MAUI app, pick a target framework and a device, and run:

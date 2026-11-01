@@ -66,6 +66,8 @@ Practical mitigation for Flutter 3.x apps:
 -   **Rotate compromised keys** and scope them tightly server-side.
 -   **Avoid shipping verbose logs** in release (guard `debugPrint`, structured logging, and feature flags).
 
+The [Droido debug-only network inspector example](/2026/02/flutter-droido-1-2-0-debug-only-network-inspector-with-zero-release-impact/) shows where to gate diagnostic initialization and what to verify in the release build.
+
 If you want to evaluate FlutterGuard, start by running it against one production APK/IPA and one internal build. You will quickly learn where your current process leaks information, and you can then decide whether to make it part of your CI gates.
 
 Resource: [FlutterGuard CLI README](https://github.com/flutterguard/flutterguard-cli)

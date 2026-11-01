@@ -7,7 +7,7 @@ tags:
   - "dotnet"
   - "dotnet-8"
 ---
-With .NET 8 we are introduced to a new dictionary type which improves the performance of read operations. The catch: you are not allowed to make any changes to the keys and values once the collection is created. This type is particularly useful for collections that are populated on first use and then persisted for the duration of a long-lived service.
+With [.NET 8](/2023/06/whats-new-in-net-8/) we are introduced to a new dictionary type which improves the performance of read operations. The catch: you are not allowed to make any changes to the keys and values once the collection is created. This type is particularly useful for collections that are populated on first use and then persisted for the duration of a long-lived service.
 
 Let’s have a look at what this means in numbers. I am interested in two things:
 

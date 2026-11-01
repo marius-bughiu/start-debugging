@@ -18,3 +18,5 @@ After this, if you're working with a new project & building for Android, you're 
 Go to properties in your Android project, choose Android Options and click on Advanced at the bottom. Then type in "1G" for the Java Max Heap Size option. I wonder when they will decide to make this a default in new projects...
 
 Build again, and voila! It's working now.
+
+Once the upgraded project builds, try [styling Xamarin Forms 3 with CSS](/2018/04/getting-started-with-css-in-xamarin-forms-3/) to explore one of the features introduced in that release.

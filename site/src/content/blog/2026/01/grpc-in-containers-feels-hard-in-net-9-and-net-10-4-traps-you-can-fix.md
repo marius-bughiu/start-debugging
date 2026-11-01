@@ -75,4 +75,6 @@ That last bullet is where many default Nginx configs fail for gRPC.
 
 If you want a single reference point before touching Kubernetes, start by validating locally: run the container, hit it with `grpcurl`, then put a proxy in front and verify it still negotiates HTTP/2 end-to-end.
 
+For running the container as a service on a Linux VM, see [deploying .NET with Podman and systemd](/2026/01/deploy-a-net-app-with-podman-systemd-stable-restarts-real-logs-no-magic/) for restart and logging setup.
+
 Further reading: [https://learn.microsoft.com/aspnet/core/grpc/](https://learn.microsoft.com/aspnet/core/grpc/)

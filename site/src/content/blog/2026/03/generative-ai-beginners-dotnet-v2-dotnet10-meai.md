@@ -48,6 +48,8 @@ The restructured curriculum runs in five self-contained lessons:
 
 The agent lesson is particularly relevant if you have been following .NET 10's MCP support. The course connects multi-agent orchestration directly to that feature using the `Microsoft.Extensions.AI.Abstractions` MCP client, so you can run samples against local or remote MCP servers without framework gymnastics.
 
+For a complementary server-side view, the [.NET 10 MCP tool-contract overview](/2026/01/microsoft-mcp-wiring-model-context-protocol-servers-from-c-on-net-10/) focuses on input validation, structured results, and service boundaries.
+
 ## Migrating from Version 1
 
 The eleven Semantic Kernel samples from Version 1 are moved to a deprecated folder inside the repo -- they still run, but are no longer presented as the recommended pattern. If you worked through Version 1, the core concepts remain the same. The migration is mostly a swap at the API layer: replace Semantic Kernel's `Kernel` and `IKernelBuilder` with `IChatClient` and the standard `IServiceCollection` extensions.

@@ -23,6 +23,8 @@ The workflow is the same everywhere, and that is the point. The agent follows an
 
 Because those artifacts are committed to the repo, your team reviews the plan the same way you review a PR, before execution touches a line of code.
 
+The earlier [modernization assessment walkthrough](/2026/04/github-copilot-modernization-assessment-dotnet/) explains the Mandatory, Potential, and Optional findings and how to track that report in version control.
+
 ## Running It From the Copilot CLI
 
 The CLI path installs the agent as a plugin, then drives it with natural language. The commands are short:

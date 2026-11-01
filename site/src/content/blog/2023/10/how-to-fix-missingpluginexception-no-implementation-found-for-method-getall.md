@@ -112,6 +112,8 @@ android {
 
 Just follow the instructions in the error message and the issue should be solved.
 
+For the same Android SDK constraint in a background task plugin, see [diagnosing the background_fetch minSdkVersion 21 error](/2026/05/fix-flutter-background-fetch-requires-minsdkversion-21/), including the different Gradle template formats.
+
 ## Build might be in an invalid state
 
 Maybe there’s nothing wrong with your code or project dependencies. The project might have run into some invalid state while installing the plugin. To attempt and solve that, try running the `flutter clean` command, followed by a `flutter pub get`. This will do a clean restore of your project’s dependency. Now run your app again and check if the issue is still there or not.

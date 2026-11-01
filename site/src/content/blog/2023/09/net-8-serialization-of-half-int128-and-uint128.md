@@ -26,3 +26,5 @@ Console.WriteLine(JsonSerializer.Serialize(Int128.MaxValue));
 Console.WriteLine(JsonSerializer.Serialize(UInt128.MaxValue));
 // Output: 340282366920938463463374607431768211455
 ```
+
+If your wire format requires a different representation than the built-in numeric output, a [custom System.Text.Json converter](/2026/04/how-to-write-a-custom-jsonconverter-in-system-text-json/) gives you control over how the value is read and written.

@@ -7,6 +7,8 @@ tags:
 ---
 This is a question I get asked often, and it comes both from people within the industry as well as others from outside our tiny little circle – people at the start of their careers or people worried I might be out of a job soon. And whenever I try to explain why I’m not afraid – why software engineers and others in general should not be afraid – I’m usually met with some resistance – “_but AI already does that and that, surely it can do that as well in no time!_“.
 
+For a later look at how this plays out in a large codebase, the [2026 Copilot Coding Agent analysis in dotnet/runtime](/2026/03/copilot-coding-agent-dotnet-runtime-ten-months-data/) discusses task success, human review capacity, and work that still needs engineering judgment.
+
 Maybe.
 
 ## “AI is doing websites already”

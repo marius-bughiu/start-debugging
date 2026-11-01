@@ -42,6 +42,8 @@ A common pattern is a console app that pulls in `Microsoft.Extensions.AI` and `N
 
 `System.Formats.Asn1`, `System.Diagnostics.DiagnosticSource`, `System.Text.Json`, and `System.Threading.Channels` all disappear from the resolved graph. Their CVE entries stop showing up in `dotnet list package --vulnerable` because they were never going to be loaded at runtime in the first place.
 
+If you are cleaning up direct package references across a solution as well, [Central Package Management with Directory.Packages.props](/2026/08/migrate-a-dotnet-solution-to-central-package-management-with-directory-packages-props/) consolidates their versions. That controls the references you declare; pruning handles the redundant framework dependencies during restore.
+
 ## Opting Out
 
 The escape hatches both exist:

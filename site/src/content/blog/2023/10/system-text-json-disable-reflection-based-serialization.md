@@ -9,6 +9,8 @@ tags:
 ---
 Starting with .NET 8 you can disable the default reflection-based serializer that comes with `System.Text.Json`. This can be useful in trimmed and native AOT applications where you don’t want to include the reflection components in your build.
 
+If your JSON models contain enums, also check [using JsonStringEnumConverter with Native AOT in .NET 8](/2023/09/net-8-how-to-use-jsonstringenumconverter-with-native-aot/): disabling reflection is only one part of making the serialization path AOT-compatible.
+
 You can enable this feature by setting the `JsonSerializerIsReflectionEnabledByDefault` property to `false` in your `.csproj` file.
 
 ```xml

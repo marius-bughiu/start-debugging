@@ -12,3 +12,5 @@ Those of you wanting to learn more about metro design and how to make your apps 
 The first article in the series (about the metro design principles) is already up. A link to the post and to all the upcoming ones can be found here (ux.artu.tv has since been taken down).
 
 Articles will pop up once a week, maybe twice, so be sure to check them out.
+
+For a concrete Windows Phone control built around the Metro style, see the [Metro TimeBlock example](/2012/02/metro-timeblock/).

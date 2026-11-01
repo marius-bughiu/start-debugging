@@ -1,4 +1,12 @@
 {
+  "tagPage.description": "{tag} に関するチュートリアル、トラブルシューティング、プログラミングの解説。",
+  "theme.label": "テーマ",
+  "theme.system": "システム",
+  "theme.light": "ライト",
+  "theme.dark": "ダーク",
+  "nav.guides": "ガイド",
+  "nav.skip": "本文へスキップ",
+  "nav.primary": "メインナビゲーション",
   "nav.about": "このサイトについて",
   "nav.startHere": "はじめに読む",
   "nav.pillars": "まとめ",

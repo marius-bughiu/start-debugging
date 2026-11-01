@@ -55,6 +55,8 @@ The improvement is entirely internal to Kestrel. There is no API change, no conf
 
 ## Other .NET 11 performance wins
 
+For HTTP/3 traffic, [Kestrel also starts request processing earlier on new connections](/2026/04/aspnetcore-11-kestrel-http3-early-request-processing/). That optimization addresses handshake latency, a separate path from malformed HTTP/1.1 parsing.
+
 This is not the only allocation reduction in .NET 11 Preview. The HTTP logging middleware now pools its `ResponseBufferingStream` instances, cutting per-request allocations when response body logging is enabled. Combined with the parser change, .NET 11 continues the runtime team's pattern of turning exception-heavy hot paths into struct-based result flows.
 
 If you want to see the impact on your own workload, run a before/after benchmark with [Bombardier](https://github.com/codesenberg/bombardier) or `wrk` while injecting a percentage of malformed requests. The parser change is transparent, but the numbers should speak for themselves.

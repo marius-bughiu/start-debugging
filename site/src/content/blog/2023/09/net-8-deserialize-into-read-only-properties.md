@@ -31,3 +31,5 @@ new JsonSerializerOptions
     PreferredObjectCreationHandling = JsonObjectCreationHandling.Populate
 };
 ```
+
+If the obstacle is member visibility rather than a missing setter, see [deserializing non-public properties in .NET 8](/2023/09/net-8-deserialize-into-non-public-properties/) for the constructor and JsonInclude approach.

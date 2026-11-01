@@ -23,4 +23,6 @@ Properties of the control:
 
 **Fill –** sets the background color of the control (the square-like blocks).
 
+If your palette starts as hexadecimal strings, the [hex-to-Color extension method](/2012/01/extension-method-hex-to-color/) covers the conversion step for using those values in C#.
+
 That's about it. If you have any problems with it or need help, leave a comment below. You can download the code from [this link](https://www.dropbox.com/s/mjiba8cugtj8fdz/StartDebugging.zip?dl=0), it contains both the control and a couple of samples.

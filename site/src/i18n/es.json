@@ -1,4 +1,12 @@
 {
+  "tagPage.description": "Tutoriales, soluciones de problemas y notas de programación sobre {tag}.",
+  "theme.label": "Tema",
+  "theme.system": "Sistema",
+  "theme.light": "Claro",
+  "theme.dark": "Oscuro",
+  "nav.guides": "Guías",
+  "nav.skip": "Saltar al contenido",
+  "nav.primary": "Navegación principal",
   "nav.about": "Acerca de",
   "nav.startHere": "Empieza aquí",
   "nav.pillars": "Pilares",

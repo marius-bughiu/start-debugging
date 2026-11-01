@@ -47,4 +47,6 @@ When a Flutter build changes with no code changes, I check this order:
 
 The reason I like calling out `engine.version` is that it makes the second bullet actionable. Once you treat the Flutter SDK as an immutable input, the rest of the pipeline gets easier to reason about.
 
+To investigate upcoming Dart changes without moving that production pin, use a separate [Dart dev-tag compatibility check](/2026/01/dart-3-12-dev-tags-are-moving-fast-how-to-read-them-and-what-to-do-as-a-flutter-3-x-developer/).
+
 If you maintain multiple apps, make the pin visible. A `README` snippet or a CI check that verifies Flutter 3.38.6 is cheap, and it saves hours the first time someone asks: “what changed?”.

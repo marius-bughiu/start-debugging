@@ -66,6 +66,8 @@ On larger codebases, the hidden cost of YAML is not syntax. It is change managem
 -   Keep data flow explicit. Modules can return strongly typed results that downstream modules consume.
 -   Let analyzers catch dependency mistakes early. If you call into another module, forgetting to declare `[DependsOn]` should not be a runtime surprise.
 
+For the scan module, the [.NET container SBOM workflow](/2026/01/sbom-for-net-in-docker-stop-trying-to-force-one-tool-to-see-everything/) separates NuGet dependency inventory from image package inventory.
+
 If you are already living in .NET 9 or .NET 10, treating your pipeline as a small C# app is not “overengineering”. It is a shorter feedback loop and fewer production surprises.
 
 If you want to dig deeper, start from the project’s “Quick Start” and docs: [Full Documentation](https://thomhurst.github.io/ModularPipelines).

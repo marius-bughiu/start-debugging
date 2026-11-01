@@ -22,3 +22,5 @@ Second image – that’s an image of me. 200px by 200px displayed in a 86px con
 Last one – it’s an image from one of the articles. Here it’s important to know the width of your posts container. For my blog that is 523px. The image is already that size but I had copy pasted it from the snipping tool so it’s not optimized at all + it’s a PNG when I really don’t care about transparency in this case so it could just as well be a JPEG.
 
 Update the images & we’re done.
+
+Run the [Lighthouse audit again](/2019/04/audit-your-sites-performance-accessibility-and-user-experience-using-google-lighthouse/) to compare against your baseline. For images below the initial viewport, [deferring offscreen images](/2019/05/lighthouse-report-defer-offscreen-images-in-wordpress/) is a separate optimization to consider.

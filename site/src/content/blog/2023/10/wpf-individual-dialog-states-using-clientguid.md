@@ -10,6 +10,8 @@ tags:
 ---
 A new `ClientGuid` property, introduced with .NET 8, allows you to uniquely identify dialogs such as the `OpenFileDialog` and the `OpenFolderDialog`, with the purpose of storing state – such as window size, position and last used folder – separately per dialog.
 
+For a complete folder-picker example to apply this to, see [using WPF's OpenFolderDialog](/2023/10/wpf-open-folder-dialog/).
+
 To benefit from this behavior, configure the `ClientGuid` of your dialog to a known identifier before calling the `ShowDialog()` method.
 
 ```cs

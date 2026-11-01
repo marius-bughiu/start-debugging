@@ -47,3 +47,5 @@ As expected, this will output the following:
 ```json
 {"PrivateProperty":1,"ProtectedProperty":2,"InternalProperty":3}
 ```
+
+To read JSON back into those members, see [deserializing into non-public properties](/2023/09/net-8-deserialize-into-non-public-properties/) for the constructor configuration used on the read path.

@@ -57,6 +57,8 @@ NativeLibrary.SetDllImportResolver(typeof(HelloAddon).Assembly,
         : 0);
 ```
 
+Before expanding the addon, review the [Native AOT build and runtime tradeoffs](/2026/06/what-is-native-aot-and-what-does-it-cost-you/), particularly trimming, dynamic code, and platform-specific publishing requirements.
+
 ## The Project File
 
 Enabling AOT is a two-line change. `AllowUnsafeBlocks` is required because N-API interop leans on function pointers and spans over native memory.

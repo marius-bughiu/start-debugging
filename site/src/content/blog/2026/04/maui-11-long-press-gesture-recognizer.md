@@ -22,6 +22,8 @@ The new recognizer sits next to `TapGestureRecognizer`, `PanGestureRecognizer`, 
 
 Because it hangs off `GestureRecognizers`, any `View` that already accepts gestures picks it up without handler changes.
 
+If the interaction should move data between views, use the separate [MAUI drag-and-drop recognizers](/2026/05/how-to-implement-drag-and-drop-in-maui-11/); that guide covers data packages and platform-specific drag behavior.
+
 ## Replacing TouchBehavior in XAML
 
 A context menu on an avatar image is the canonical case. In .NET MAUI 10 this typically required a TouchBehavior with a `LongPressCommand`. In .NET MAUI 11 it collapses to:

@@ -32,6 +32,8 @@ Console.WriteLine(instance.readonlyField); // 42
 
 But the same can be achieved using the `UnsafeAccessorAttribute` without the performance penalty associated with reflection. Modifying readonly fields is no different than modifying any other field when it comes to unsafe accessors.
 
+The [UnsafeAccessor versus reflection benchmarks](/2023/11/net-8-performance-unsafeaccessor-vs-reflection/) compare the access costs, including cached reflection.
+
 ```cs
 var instance = new Foo();
 

@@ -9,6 +9,8 @@ tags:
 ---
 A new extension method – `GetFromJsonAsAsyncEnumerable<T>` – has been added to the `HttpClient` part of .NET 8. This new method will take the response body JSON and deserialize it into an async enumerable operation.
 
+This streaming API is one of several [serialization changes in .NET 8](/2023/06/whats-new-in-net-8/); the release overview also covers resolver customization and the new JSON naming policies.
+
 The complete signature of the extension method is as follows:
 
 ```cs

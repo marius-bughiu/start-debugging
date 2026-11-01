@@ -29,6 +29,8 @@ if (dialog.ShowDialog() == true)
 
 Like with any dialog, if the user clicks the **Select Folder** button, `ShowDialog()` will return `true`, otherwise, it will return `false`.
 
+When different features in your app use separate folder pickers, [give each dialog a stable ClientGuid](/2023/10/wpf-individual-dialog-states-using-clientguid/) to keep their remembered folders and window state independent.
+
 The open folder dialog uses Windows Explorer for browsing and selecting the folders, just like the `OpenFileDialog`. As a result, the dialog will look different depending on your OS. On Windows 11, it will look similar to this:
 
 [![WPF open folder dialog on Windows 11.](/wp-content/uploads/2023/10/image-1.png)](/wp-content/uploads/2023/10/image-1.png)

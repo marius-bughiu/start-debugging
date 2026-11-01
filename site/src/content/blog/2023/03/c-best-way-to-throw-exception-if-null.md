@@ -14,6 +14,8 @@ ArgumentNullException.ThrowIfNull(myParam);
 
 The method will throw an **ArgumentNullException** when **myParam** is **null**. It will do nothing otherwise.
 
+Checking required parameters at the entry point also makes a missing argument easier to diagnose than a later [NullReferenceException](/2023/10/c-what-is-a-nullreferenceexception-and-how-to-fix-it/) when the value is dereferenced.
+
 ThrowIfNull can take in two parameters:
 
 -   **object? argument** – the reference type object that needs to be checked if null

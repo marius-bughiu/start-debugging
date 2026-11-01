@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import {
+  getPublishedBlogPosts,
+  LOCALES,
+  urlPathForPost,
+  type BlogPost,
+  type Locale,
+} from "../../../lib/blog";
+import { t } from "../../../i18n";
+
+export async function getStaticPaths() {
+  const PAGE_SIZE = 10;
+  const paths = [];
+  for (const lang of LOCALES) {
+    if (lang === "en") continue;
+    const allPosts = await getPublishedBlogPosts(lang);
+    const totalPages = Math.max(1, Math.ceil(allPosts.length / PAGE_SIZE));
+    for (let page = 1; page <= totalPages; page++) {
+      paths.push({
+        params: { lang, page: String(page) },
+        props: {
+          lang,
+          page,
+          totalPages,
+          posts: allPosts.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE),
+        },
+      });
+    }
+  }
+  return paths;
+}
+
+interface Props {
+  lang: Locale;
+  page: number;
+  totalPages: number;
+  posts: BlogPost[];
+}
+
+const { lang, page, totalPages, posts } = Astro.props;
+const langPrefix = `${import.meta.env.BASE_URL}${lang}/`;
+
+if (page === 1) {
+  return Astro.redirect(langPrefix, 301);
+}
+
+const prevHref = page === 2 ? langPrefix : `${langPrefix}page/${page - 1}/`;
+const nextHref = page < totalPages ? `${langPrefix}page/${page + 1}/` : null;
+const pageLabel = `${t("listing.page", lang)} ${page} ${t("listing.of", lang)} ${totalPages}`;
+---
+
+<BaseLayout
+  title={`${t("listing.blog", lang)} (${t("listing.page", lang)} ${page}) - Start Debugging`}
+  description={`${t("site.tagline", lang)} ${pageLabel}.`}
+  canonicalUrl={Astro.url.href}
+  type="website"
+  lang={lang}
+>
+  <section class="stack">
+    <h1 class="h1">{t("listing.blog", lang)}</h1>
+    <p class="muted">{pageLabel}</p>
+  </section>
+
+  <section class="stack" style="margin-top: 18px;">
+    {posts.map((post) => (
+      <article class="panel card stack post-card">
+        <div class="row">
+          <span class="pill">{post.data.pubDate.toISOString().slice(0, 10)}</span>
+          {post.data.tags?.slice(0, 3).map((tag) => (
+            <a class="pill" href={`${langPrefix}tag/${tag}/`}>{tag}</a>
+          ))}
+        </div>
+        <a class="post-card-title-link stack" href={urlPathForPost(post)}>
+          <h2 class="h2">{post.data.title}</h2>
+          {post.data.description ? <div class="muted">{post.data.description}</div> : null}
+        </a>
+      </article>
+    ))}
+  </section>
+
+  <nav class="row" style="margin-top: 14px;" aria-label={t("listing.page", lang)}>
+    <a class="pill" href={prevHref} rel="prev">{t("listing.prev", lang)}</a>
+    {nextHref ? (
+      <a class="pill" href={nextHref} rel="next">{t("listing.next", lang)}</a>
+    ) : <span class="muted">{t("listing.end", lang)}</span>}
+  </nav>
+</BaseLayout>

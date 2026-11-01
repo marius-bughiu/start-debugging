@@ -9,7 +9,7 @@ tags:
   - "dotnet-watch"
 ---
 
-`dotnet watch` has always been the quiet workhorse of the .NET inner loop. It reloads your app when files change, applies hot reload where it can, and stays out of the way when it cannot. .NET 11 Preview 3 (shipped April 14, 2026) pushes the tool forward on three specific pain points: running distributed apps, surviving crashes, and dealing with Ctrl+C on Windows desktop targets.
+[`dotnet watch`](/2026/07/what-is-the-difference-between-dotnet-watch-and-dotnet-run/) has always been the quiet workhorse of the .NET inner loop. It reloads your app when files change, applies hot reload where it can, and stays out of the way when it cannot. .NET 11 Preview 3 (shipped April 14, 2026) pushes the tool forward on three specific pain points: running distributed apps, surviving crashes, and dealing with Ctrl+C on Windows desktop targets.
 
 ## Aspire app hosts now watch cleanly
 

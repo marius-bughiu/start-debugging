@@ -18,6 +18,8 @@ In kebab case, all letters are lowercase, and words are separated by hyphens, ma
 
 Kebab case is commonly used in HTML and CSS for naming properties, classes and variables.
 
+For a C# serialization example, see [using kebab-case and snake_case for JSON property names](/2023/08/net-8-json-serialize-property-names-using-snake-case-and-kebab-case/).
+
 ## A brief history
 
 The term “kebab case” as a naming convention for computer programming gained popularity in the late 20th century and early 21st century, primarily due to its relevance in web development.

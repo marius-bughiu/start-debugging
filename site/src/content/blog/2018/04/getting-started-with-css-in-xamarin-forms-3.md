@@ -16,7 +16,7 @@ So, to jump right into it – there’s two ways of adding CSS to your applicati
 
 And once you have the CSS included, you use it by either specifying **StyleClass** or the shorthand **class** property on your XAML element.
 
-To exemplify we’ll do some changes to a new Xamarin Forms project that uses the master detail template. So go ahead – File > New project and upgrade it to Xamarin Forms 3.
+To exemplify we’ll do some changes to a new Xamarin Forms project that uses the master detail template. So go ahead – File > New project and [upgrade it to Xamarin Forms 3](/2018/04/upgrading-xamarin-forms-3/).
 
 First off, the CDATA way. Let’s say we want to make the elements of our list orange. Go to the ItemsPage and inside the XAML, above the `<ContentPage.ToolbarItems>` tag, drop this:
 

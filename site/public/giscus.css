@@ -8,8 +8,8 @@
  * https://startdebugging.net/giscus.css. Configured in
  * `.github/workflows/deploy-pages.yml` (PUBLIC_GISCUS_THEME).
  *
- * Targets `main` per Giscus theme convention. Site is dark-only — there
- * is no light variant.
+ * Targets `main` per Giscus theme convention. Used for the site's dark
+ * theme; Giscus.astro switches to its light theme with the site preference.
  */
 
 main {

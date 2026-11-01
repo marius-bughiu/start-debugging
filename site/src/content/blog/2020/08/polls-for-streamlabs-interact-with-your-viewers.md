@@ -56,6 +56,8 @@ In case you haven’t already, add the widget to at least one of your scenes. Th
 
 The widget won’t display anything until you start a poll using the ‘Start poll’ button, so it’s best to do this while you’re not yet live. Create a test poll, start it and arrange the app widget in your scenes as you like it. When done, just stop the poll from the app and the widget will go back to displaying nothing and being fully transparent.
 
+If the same scene also needs a camera feed, the [Android phone webcam setup for Streamlabs](/2019/04/use-your-android-phone-as-a-webcam-for-streamlabs/) shows how to add it as a video source.
+
 ## Step 4: Go live with your poll!
 
 Now that you’ve created your poll and configured it the way you like it, plus added the app widget to your scenes, you’re ready to go live. If you plan a longer streaming session you can even prepare multiple polls upfront and simply start and switch between them when needed.

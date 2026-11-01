@@ -48,3 +48,5 @@ A chat like "the staging app service is returning 502, pull the last hour of fai
 ## When the standalone server still makes sense
 
 The bundled build follows VS servicing cadence, which lags the upstream `Azure.Mcp.Server` release. If you need a tool that landed last week, register the standalone server alongside the bundled one in `mcp.json` and Copilot will merge the tool lists. For everyone else, deleting that config file is now the right move.
+
+For a later standalone upgrade, review the [Azure MCP Server 3.0 parameter and security-default changes](/2026/10/azure-mcp-server-3-0-rejects-unknown-parameters-and-goes-secure-by-default/) before reusing scripts or prompts written for 2.x.

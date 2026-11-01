@@ -8,6 +8,8 @@ tags:
 ---
 Okay, so what I will do here is explain to you how to create your own code snippets to use in Visual Studio 2010 without using any add-ins related to snippet designing. A post on snippet designers / explorers and how you can use them to build better snippets faster will come sometime next week I believe, but this time I can't promise.
 
+If snippets are new to you, start with [using code snippets in Visual Studio](/2012/01/improve-productivity-by-using-code-snippets/) to see how shortcuts and editable placeholders work.
+
 ## Part 1: Creating a simple code snippet
 
 So let’s get started. Open up your Visual Studio and go to **File – New File** (or Ctrl + N) and create a new XML file. Don’t worry about the file’s name at this point as it is not that important. An XML file with a line of code will automatically be generated for you. So, the first thing we need to do in this brand new file is to add the **CodeSnippets** namespace and a **CodeSnippet** element to it right after the first line; to do so copy-paste the code below:

@@ -58,6 +58,6 @@ With `ANTHROPIC_API_KEY` set, `claude -p` and the Agent SDK authenticate against
 
 ## Before the deadline
 
-Three things are worth doing this week. Claim the one-time credit from the email Anthropic sent (it is a manual action in account settings). Audit what your programmatic usage actually costs at API rates, so you know whether the credit covers a week or a month. Then tell whoever owns your CI that the monthly allowance is now finite, and decide per pipeline whether overflow should bill or hard-fail.
+Three things are worth doing this week. Claim the one-time credit from the email Anthropic sent (it is a manual action in account settings). Audit what your programmatic usage actually costs at API rates, so you know whether the credit covers a week or a month. Include the [fixed token overhead of agent instructions and tool schemas](/2026/09/measure-an-agents-fixed-token-overhead-before-the-first-user-token/) in that estimate, especially for jobs that create many short sessions. Then tell whoever owns your CI that the monthly allowance is now finite, and decide per pipeline whether overflow should bill or hard-fail.
 
 For the authoritative terms, read the [Claude release notes](https://support.claude.com/en/articles/12138966-release-notes) and the [Anthropic newsroom](https://www.anthropic.com/news).

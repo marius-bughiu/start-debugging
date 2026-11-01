@@ -45,7 +45,7 @@ The patterns Anthropic leans on are visible here: parallel fan-out, then adversa
 
 ## What it costs you, and when it triggers
 
-The obvious risk is cost. A run that legitimately spins up hundreds of agents burns tokens fast, which is exactly why the 1,000-agent cap exists as a runaway backstop. Claude Code shows you the script and the rough plan before the first workflow fires and asks you to confirm.
+The obvious risk is cost. When estimating a fan-out, [measure the fixed context overhead of each agent](/2026/09/measure-an-agents-fixed-token-overhead-before-the-first-user-token/): tool schemas and instructions consume tokens before the subagent starts its own work. A run that legitimately spins up hundreds of agents burns tokens fast, which is exactly why the 1,000-agent cap exists as a runaway backstop. Claude Code shows you the script and the rough plan before the first workflow fires and asks you to confirm.
 
 There are two ways in. You can describe the objective directly and let Claude decide a workflow is warranted, or you can turn on the `ultracode` effort setting so it reaches for orchestration automatically on substantial tasks. Opus 4.8 also ships a cheaper Fast mode (about 2x the standard rate for roughly 2.5x the speed), which makes the many-small-agents pattern less punishing than it would have been on earlier releases.
 

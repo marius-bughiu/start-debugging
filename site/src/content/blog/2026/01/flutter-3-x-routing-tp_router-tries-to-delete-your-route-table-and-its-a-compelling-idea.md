@@ -67,6 +67,8 @@ class AppRouter extends RootStackRouter {}
 
 `tp_router` is trying to remove that last step entirely.
 
+For the broader routing trade-offs, see [go_router versus auto_route versus Navigator 2.0](/2026/07/go-router-vs-auto-route-vs-navigator-2-0-in-flutter/), including the cost of code generation and typed navigation.
+
 ## Getting it running in a Flutter 3.x project
 
 The dependencies shown in the thread are:

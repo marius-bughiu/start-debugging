@@ -45,7 +45,7 @@ No synthetic `MoveNext`, no `AsyncMethodBuilderCore`, no type-mangled generics. 
 
 Preview 2 added a critical fix: breakpoints now bind correctly inside runtime-async methods. In Preview 1, the debugger sometimes skipped breakpoints or landed on unexpected lines when stepping through `await` boundaries. With Preview 2, you can set a breakpoint on a line after an `await`, hit it, and inspect locals normally. Stepping over an `await` lands on the next statement, not inside runtime infrastructure.
 
-This also benefits profiling tools and diagnostic logging. Anything that calls `new StackTrace()` or reads `Environment.StackTrace` at runtime now sees the real call chain, which makes structured logging and custom exception handlers more useful without extra filtering.
+This also benefits profiling tools and diagnostic logging. Anything that calls `new StackTrace()` or reads `Environment.StackTrace` at runtime now sees the real call chain, which makes [structured logging](/2026/05/how-to-set-up-structured-logging-with-serilog-and-seq-in-dotnet-11/) and custom exception handlers more useful without extra filtering.
 
 ## Enabling Runtime Async
 

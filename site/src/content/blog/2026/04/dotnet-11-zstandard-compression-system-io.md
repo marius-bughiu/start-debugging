@@ -15,6 +15,8 @@ tags:
 
 Zstandard (zstd), developed by Meta, sits in a sweet spot between speed and ratio. Internal benchmarks from the .NET team show it compresses 2-7x faster than Brotli and Deflate at equivalent quality, and decompresses 2-14x faster at the fastest level. For HTTP payloads, log shipping, or binary serialization, that gap is significant.
 
+For HTTP responses specifically, the [Zstandard, Brotli, and Gzip comparison](/2026/08/zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11/) covers middleware negotiation, compression levels, and measured trade-offs beyond the stream API.
+
 ## Streaming Compression in Five Lines
 
 The API mirrors `BrotliStream` and `GZipStream`, so the migration path is familiar:

@@ -56,6 +56,8 @@ A telling observation from the data: a single developer could queue nine substan
 
 Architectural decisions, cross-platform reasoning, and judgment calls about API shape consistently required human intervention. CCA's merged code breaks down as 65.7% test code versus 49.9% for human contributors. It is strongest at filling in the mechanical work humans routinely deprioritize.
 
+For the earlier perspective on this division of work, see [the 2023 discussion of AI and software engineering roles](/2023/10/the-ai-revolution-should-software-engineers-be-afraid-for-their-jobs/).
+
 The broader validation covered seven .NET repositories (aspire, roslyn, aspnetcore, efcore, extensions, and others): 1,885 merged PRs from 2,963 submitted, a 68.6% success rate. The pattern holds at scale.
 
 For teams thinking about adopting Copilot Coding Agent: start with small cleanup or test tasks, write your instructions file before anything else, and plan for review capacity to become the next constraint.

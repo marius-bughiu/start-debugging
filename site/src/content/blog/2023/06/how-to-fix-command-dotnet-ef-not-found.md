@@ -33,6 +33,8 @@ dotnet tool install --global dotnet-ef --version 7.*
 dotnet tool install --global dotnet-ef --version 8.*
 ```
 
+If the installation command itself fails, use the [dotnet-ef installation error guide](/2026/08/fix-dotnet-tool-install-global-dotnet-ef-throws-an-error/) to distinguish package-version, feed and tool-shim errors; that guide uses the .NET 10 SDK.
+
 ## Uninstall dotnet-ef
 
 If you’re done with the tool and are looking to uninstall `dotnet-ef`, you can do so using the `dotnet tool uninstall` command.

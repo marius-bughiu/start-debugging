@@ -31,6 +31,8 @@ The README is refreshingly concrete about versions and infrastructure:
 
 Even if you never care about the recruiting domain, this is a real-world reference for “how many moving parts show up the moment AI is not a toy feature”.
 
+If you want to work through the foundations first, [Generative AI for Beginners .NET v2](/2026/03/generative-ai-beginners-dotnet-v2-dotnet10-meai/) covers document processing, RAG, and model integration on .NET 10.
+
 ## Config discipline: user secrets locally, env vars in prod
 
 The repo calls out the two practices I want every .NET 10 team to standardize:

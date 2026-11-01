@@ -20,6 +20,8 @@ On mobile you can sometimes get away with a single state object and a pile of wi
 
 That is why I like projects that start with structure. Clean architecture is not a religion, it is a way to make your second and third feature less painful than the first.
 
+To investigate the latency side, the [Flutter DevTools profiling guide](/2026/05/how-to-profile-jank-in-a-flutter-app-with-devtools/) shows how to distinguish expensive Dart work from rendering costs.
+
 ## Model the typing loop as explicit states
 
 Dart 3 gives you `sealed` classes. For app state, that is a practical way to avoid “nullable soup” and random boolean flags.

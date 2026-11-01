@@ -1,0 +1,47 @@
+---
+import {
+  getPublishedPillars,
+  langOf,
+  urlPathForPillar,
+  type BlogPost,
+  type Locale,
+} from "../lib/blog";
+
+interface Props {
+  post: BlogPost;
+  limit?: number;
+}
+
+const { post, limit = 3 } = Astro.props;
+const lang = langOf(post);
+const tags = new Set((post.data.tags ?? []).map((tag) => tag.toLowerCase()));
+const guides = (await getPublishedPillars(lang))
+  .map((pillar) => ({
+    pillar,
+    overlap: new Set(pillar.data.indexTags.map((tag) => tag.toLowerCase())
+      .filter((tag) => tags.has(tag))).size,
+  }))
+  .filter(({ overlap }) => overlap > 0)
+  .sort((a, b) => b.overlap - a.overlap || a.pillar.data.title.localeCompare(b.pillar.data.title))
+  .slice(0, limit);
+
+const headings: Record<Locale, string> = {
+  en: "Explore the topic",
+  es: "Explora el tema",
+  "pt-br": "Explore o tema",
+  de: "Mehr zum Thema",
+  ru: "Подробнее по теме",
+  ja: "関連するトピック",
+};
+---
+
+{guides.length > 0 && (
+  <nav class="panel card stack topic-guides" aria-labelledby="topic-guides-heading" data-pagefind-ignore>
+    <h2 class="h2" id="topic-guides-heading">{headings[lang]}</h2>
+    <ul class="topic-guides-list">
+      {guides.map(({ pillar }) => (
+        <li><a href={urlPathForPillar(pillar)}>{pillar.data.title}</a></li>
+      ))}
+    </ul>
+  </nav>
+)}

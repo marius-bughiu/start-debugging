@@ -149,7 +149,8 @@ export async function getAdjacentPosts(
 
 /**
  * Score posts by shared-tag count relative to `post`, filtered to the same
- * language. Falls back to recency so the list always fills.
+ * language. Only recommend posts sharing a tag; unrelated recent posts
+ * are not useful just to fill a fixed number of slots.
  */
 export async function getRelatedPosts(
   post: BlogPost,
@@ -165,7 +166,7 @@ export async function getRelatedPosts(
       let overlap = 0;
       for (const t of tags) if (sourceTags.has(t)) overlap++;
       return { post: p, overlap };
-    });
+    }).filter((item) => item.overlap > 0);
 
   scored.sort((a, b) => {
     if (b.overlap !== a.overlap) return b.overlap - a.overlap;

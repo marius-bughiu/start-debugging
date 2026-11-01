@@ -24,6 +24,8 @@ tags:
 
 It returns a JSON object with `stdout`, `stderr`, `exitCode`, and `timedOut`. Output is capped at 1MB per stream, with a `[stdout truncated at 1MB]` (or `stderr`) suffix appended when the limit is hit.
 
+Because this is a host-process bridge with an inherited environment, review [how a credential gateway keeps real API keys out of agent context](/2026/09/keep-api-keys-out-of-agent-context-with-a-credential-gateway/) before using it for commands that need secrets.
+
 Why one tool? Because every "list files", "run the tests", "what does git status say" request collapses into a shell command. A second tool would just be a thinner wrapper over the same `spawn`. The MCP catalogue stays small, the model doesn't pick the wrong tool, and the host attack surface stays trivial to audit.
 
 ## Wiring it into Claude Cowork

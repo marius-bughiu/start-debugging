@@ -63,3 +63,5 @@ string myHexString = "#78196DFD";
 Color myColor = new Color();
 myColor = myHexString.ToColor();
 ```
+
+For an example of a Windows Phone control with configurable foreground and background colors, see [Metro TimeBlock](/2012/02/metro-timeblock/).

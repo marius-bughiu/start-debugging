@@ -55,6 +55,8 @@ var results = await context.Blogs
 
 In practice, most RAG and recommendation workloads want the approximate path. If you previously offloaded vector search to a dedicated database (Qdrant, Pinecone, pgvector), this brings it back into the SQL Server you are already running, with EF Core managing the schema.
 
+If your documents live in MongoDB instead, its [EF Core provider also exposes vector search](/2026/01/queryable-encryption-vector-search-in-the-mongodb-ef-core-provider-and-why-it-matters-for-net-9-and-net-10/), with a different mapping and query API from the SQL Server examples here.
+
 ## Requirements
 
 This feature targets SQL Server 2025, which introduced DiskANN vector indexes. The `VECTOR_SEARCH()` function and the related `CREATE VECTOR INDEX` syntax are experimental in SQL Server at the time of writing, so expect changes. The EF Core APIs mirror that experimental status.

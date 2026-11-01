@@ -81,4 +81,6 @@ The “it works” phase is easy. The “it feels responsive” phase is where m
 -   Always debounce and cancel. Every analysis call must accept a `CancellationToken`, and you should cancel the previous request when new input arrives.
 -   Avoid full-solution work in per-keystroke paths. Completion, classification, and live diagnostics should focus on the current document and its project, not trigger solution reloads.
 
+If the editor still stalls, a [short dotnet-trace capture inspected in Perfetto](/2026/01/perfetto-dotnet-trace-a-practical-profiling-loop-for-net-9-net-10/) can help locate CPU work, waiting, and GC activity during the edit loop.
+
 If you want to build an IDE on .NET 10, Roslyn is the leverage. WinForms is just the transport layer for pixels and clicks. The quality bar is whether your edit loop stays incremental under pressure.

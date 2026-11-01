@@ -6,7 +6,7 @@ updatedDate: 2023-11-05
 tags:
   - "csharp"
 ---
-While trying out C# 12 features, it’s possible you might come across errors similar to these:
+While trying out [C# 12 features](/2023/06/whats-new-in-c-12/), it’s possible you might come across errors similar to these:
 
 > Feature is not available in C# 11.0. Please use language version 12.0 or later.
 
