@@ -500,7 +500,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate custom page transitions after the Flutter page transition builders reorganization → slug: 2026/10/migrate-custom-page-transitions-after-the-flutter-page-transition-builders-reorganization
 - Migrate a Flutter iOS app from CocoaPods to Swift Package Manager → slug: 2026/10/migrate-a-flutter-ios-app-from-cocoapods-to-swift-package-manager
 - Migrate a Blazor app that loads routable components from another assembly from .NET 8 to .NET 10 → slug: 2026/10/migrate-blazor-routable-components-from-another-assembly-dotnet-8-to-dotnet-10
-- Migrate a Flutter app from `WillPopScope` to `PopScope` and `onPopInvokedWithResult`
+- Migrate a Flutter app from `WillPopScope` to `PopScope` and `onPopInvokedWithResult` → slug: 2026/10/migrate-a-flutter-app-from-willpopscope-to-popscope
 - Migrate a Flutter app's local storage from Hive to Drift → slug: 2026/10/migrate-a-flutter-app-from-hive-to-drift
 - Migrate a Flutter app from `WidgetsBindingObserver.didChangeAppLifecycleState` to `AppLifecycleListener` → slug: 2026/10/migrate-a-flutter-app-from-widgetsbindingobserver-to-applifecyclelistener
 - Migrate a Flutter app from `Color.withOpacity` to `Color.withValues` → slug: 2026/10/migrate-a-flutter-app-from-color-withopacity-to-color-withvalues
