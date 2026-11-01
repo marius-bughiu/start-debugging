@@ -18,6 +18,7 @@
  * Usage:
  *   node scripts/social-post.mjs                              # latest English post, dry-run
  *   node scripts/social-post.mjs --file=src/content/blog/...  # explicit post
+ *   node scripts/social-post.mjs --range=<before>..<after>    # every English post a push added
  *   node scripts/social-post.mjs --apply                      # send for real
  *   node scripts/social-post.mjs --platforms=bluesky          # limit targets
  *
@@ -34,7 +35,7 @@ import "dotenv/config";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { execSync } from "node:child_process";
+import { execFileSync, execSync } from "node:child_process";
 import matter from "gray-matter";
 import { buildUtmUrl } from "./lib/utm.mjs";
 
@@ -56,6 +57,7 @@ const flagValue = (name) => {
 
 const APPLY = has("--apply");
 const FILE_ARG = flagValue("file");
+const RANGE_ARG = flagValue("range");
 const PLATFORM_FILTER = (flagValue("platforms") ?? "bluesky,mastodon")
   .split(",")
   .map((s) => s.trim().toLowerCase())
@@ -66,6 +68,12 @@ const PLATFORM_FILTER = (flagValue("platforms") ?? "bluesky,mastodon")
 // Translations live under blog/<locale>/ and are never posted. They land in
 // their own commits, so one can sit on top of a new English post in a push.
 const TRANSLATED_LOCALES = ["es", "pt-br", "de", "ru", "ja"];
+
+// English posts as git pathspecs: git drops the locale folders itself.
+const ENGLISH_POST_PATHSPECS = [
+  "site/src/content/blog/**/*.md",
+  ...TRANSLATED_LOCALES.map((l) => `:(exclude)site/src/content/blog/${l}/`),
+];
 
 function isTranslation(file) {
   return TRANSLATED_LOCALES.includes(path.relative(CONTENT_ROOT, file).split(path.sep)[0]);
@@ -80,11 +88,9 @@ async function resolvePostFile() {
   // Fall back to the most recent English blog file by git history. git drops
   // the locale folders itself, so translations can't fill the `head` window.
   try {
-    const excludeTranslations = TRANSLATED_LOCALES.map(
-      (l) => `':(exclude)site/src/content/blog/${l}/'`,
-    ).join(" ");
+    const pathspecs = ENGLISH_POST_PATHSPECS.map((p) => `'${p}'`).join(" ");
     const raw = execSync(
-      `git log --name-only --pretty=format: -- 'site/src/content/blog/**/*.md' ${excludeTranslations} | head -20`,
+      `git log --name-only --pretty=format: -- ${pathspecs} | head -20`,
       { cwd: REPO_ROOT, encoding: "utf8" },
     );
     const seen = new Set();
@@ -117,6 +123,52 @@ async function resolvePostFile() {
   }
   if (!best) throw new Error("No blog posts found under " + CONTENT_ROOT);
   return best;
+}
+
+// A push's range as distribute.yml passes it (github.event.before..github.sha),
+// resolved to commit SHAs. null when it can't be diffed: the first push of a
+// branch (before is all zeros), a force push whose old head is no longer in
+// history, or no git at all.
+function resolveRange(spec) {
+  const ends = spec.split("..");
+  if (ends.length !== 2 || !ends[0] || !ends[1] || /^0+$/.test(ends[0])) return null;
+  try {
+    return ends.map((rev) =>
+      execFileSync("git", ["rev-parse", "--verify", "--quiet", `${rev}^{commit}`], {
+        cwd: REPO_ROOT,
+        encoding: "utf8",
+        stdio: ["ignore", "pipe", "ignore"],
+      }).trim(),
+    );
+  } catch {
+    return null;
+  }
+}
+
+// English posts that exist at `after` but not at `before`: every new post in
+// the push, whichever commit added it and whatever was committed on top.
+// --no-renames counts a post moved into place as new; an older post that only
+// moved has no task under its new slug, so it stays quiet.
+function postsAddedBetween(before, after) {
+  const raw = execFileSync(
+    "git",
+    ["diff", "--name-only", "--no-renames", "--diff-filter=A", before, after, "--", ...ENGLISH_POST_PATHSPECS],
+    { cwd: REPO_ROOT, encoding: "utf8" },
+  );
+  return raw.split("\n").filter(Boolean).map((p) => path.resolve(REPO_ROOT, p));
+}
+
+// --file wins, then --range; without either, the latest English post as before.
+async function resolvePostFiles() {
+  if (FILE_ARG || !RANGE_ARG) return [await resolvePostFile()];
+  const range = resolveRange(RANGE_ARG);
+  if (!range) {
+    console.log(`[social-post] can't diff ${RANGE_ARG} (new branch, force push or no git) - using the latest English post`);
+    return [await resolvePostFile()];
+  }
+  const files = postsAddedBetween(...range);
+  console.log(`[social-post] ${files.length} new English post(s) in ${range.map((s) => s.slice(0, 7)).join("..")}`);
+  return files;
 }
 
 async function walk(dir) {
@@ -271,13 +323,14 @@ async function postToMastodon({ summary, slug }) {
 
 // --- Main -----------------------------------------------------------------
 
-async function main() {
-  const file = await resolvePostFile();
+// Post one entry to each selected platform that has a task for it. Returns
+// true if any platform failed.
+async function announce(file) {
   const raw = await fs.readFile(file, "utf8");
   const { data } = matter(raw);
   if (data.draft) {
     console.log(`[social-post] ${file} is a draft - refusing to post.`);
-    return;
+    return false;
   }
   if (!data.title) throw new Error(`Missing title in ${file}`);
 
@@ -332,6 +385,15 @@ async function main() {
       console.error(`  - ${name}: FAILED ${err.message}`);
       anyFailed = true;
     }
+  }
+
+  return anyFailed;
+}
+
+async function main() {
+  let anyFailed = false;
+  for (const file of await resolvePostFiles()) {
+    if (await announce(file)) anyFailed = true;
   }
 
   if (!APPLY) {

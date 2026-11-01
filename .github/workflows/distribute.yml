@@ -6,6 +6,13 @@ name: Distribute new post
 # successful posts splice their entry out of `tasks/<channel>.json`, so
 # re-runs on rebuilds / doc edits are safe.
 #
+# A push announces every English post it added (github.event.before..
+# github.sha), not just the newest commit's, so a second post or an edit
+# committed on top can't hide one. If a channel fails partway through,
+# dispatch the missed post with `file` instead of re-running the job: a
+# re-run checks out the same commit, whose task file still lists the posts
+# that already went out.
+#
 # All task writes are serialised in the final `update-tasks` aggregator
 # job, which downloads each channel's tasks artifact and pushes a single
 # commit. That avoids the parallel-push race you'd get if every matrix
@@ -107,6 +114,8 @@ jobs:
         run: |
           if [ -n "${{ inputs.file }}" ]; then
             node ${{ matrix.script }} --apply ${{ matrix.flags }} --file="${{ inputs.file }}"
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            node ${{ matrix.script }} --apply ${{ matrix.flags }} --range="${{ github.event.before }}..${{ github.sha }}"
           else
             node ${{ matrix.script }} --apply ${{ matrix.flags }}
           fi
