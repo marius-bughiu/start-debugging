@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/10/how-to-serve-static-files-from-a-folder-outside-wwwroot-in-aspnet-core",
-    "text": "Serving a folder outside wwwroot in ASP.NET Core is one extra UseStaticFiles call, but it 404s for reasons that look identical: unknown extensions like .apk, dot-prefixed file names, or a content root that is the shell's cwd after publish. Each cause, tested on ASP.NET Core 10."
   }
 ]
