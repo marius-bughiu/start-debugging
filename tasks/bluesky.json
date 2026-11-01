@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/11/retry-and-backoff-for-long-agent-loops-under-overloaded-and-rate-limit-errors",
+    "text": "The Anthropic SDK quits after 2 retries in ~1.2s; a mid-stream overloaded_error arrives as a 200. A retry layer for long runs."
   }
 ]
