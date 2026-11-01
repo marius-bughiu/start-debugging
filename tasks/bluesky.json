@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/10/migrate-a-flutter-android-project-from-groovy-to-kotlin-dsl",
+    "text": "Renaming build.gradle to .kts is the easy part. After the quotes-and-parens pass, 23 compiler errors remain. The fix for each one."
   }
 ]
