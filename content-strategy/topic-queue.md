@@ -553,7 +553,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is the `depend_on_referenced_packages` lint in Dart and why does it fire on transitive imports? → slug: 2026/10/what-is-the-depend-on-referenced-packages-lint-in-dart
 - What happens to an expired `MemoryCache` entry, and when is it actually removed from memory? → slug: 2026/10/what-happens-to-an-expired-memorycache-entry-and-when-is-it-removed
 - What does EF Core write back into an entity after `SaveChangesAsync` (generated keys, concurrency tokens, relationship fix-up)? → slug: 2026/11/what-does-ef-core-write-back-into-an-entity-after-savechangesasync
-- What does `FileShare` actually control when opening a file in .NET, and how does it interact with another handle's `FileAccess`?
+- What does `FileShare` actually control when opening a file in .NET, and how does it interact with another handle's `FileAccess`? → slug: 2026/11/what-does-fileshare-control-and-how-does-it-interact-with-fileaccess-in-dotnet
 - What is `pubspec_overrides.yaml` and when should I use it in a Flutter monorepo?
 
 ---
