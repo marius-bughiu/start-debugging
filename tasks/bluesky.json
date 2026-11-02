@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/11/agent-framework-1-27-redirects-can-no-longer-switch-the-http-client",
+    "text": "Agent Framework 1.27 for .NET: a 302 can no longer move a workflow request onto your authenticated HttpClient. It throws instead."
   }
 ]
