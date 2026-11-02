@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/11/migrate-a-flutter-app-from-textscalefactor-to-textscaler",
+    "text": "Moving a Flutter app from textScaleFactor to TextScaler? dart fix only rewrites MediaQueryData, and its output for a capped text scale wraps the old number in TextScaler.linear, which throws away Android 14's nonlinear curve. Use clamp or withClampedTextScaling instead. Measured on Flutter 3.44.8."
   }
 ]
