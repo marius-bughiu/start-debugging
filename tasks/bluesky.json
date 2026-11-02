@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/11/migrate-a-flutter-app-from-textscalefactor-to-textscaler",
-    "text": "dart fix migrates 3 of 9 textScaleFactor uses, and its cap rewrite quietly flattens Android 14 nonlinear font scaling."
   }
 ]
