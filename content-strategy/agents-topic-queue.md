@@ -204,7 +204,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Patterns: fail-closed vs fail-open hooks for agent guardrails → slug: 2026/10/fail-closed-vs-fail-open-hooks-for-coding-agent-guardrails
 - Patterns: post-merge verification for agent-authored PRs (monitoring plans and per-environment verdicts) (skipped: same intent as 2026/10/how-to-monitor-agent-authored-prs-after-deploy-with-cursor-rollouts-and-datadog, which covers Cursor Rollouts' rollout plan comment and per-environment checks at deploy, 20 minutes, 1 hour, 1 day and 3 days)
 - Patterns: retry and backoff for long agent loops under overloaded and rate-limit errors → slug: 2026/11/retry-and-backoff-for-long-agent-loops-under-overloaded-and-rate-limit-errors
-- Patterns: a coordinator agent plus worker agents for multi-day projects
+- Patterns: a coordinator agent plus worker agents for multi-day projects → slug: 2026/11/coordinator-agent-plus-worker-agents-for-multi-day-projects
 
 ## What is / concept
 
