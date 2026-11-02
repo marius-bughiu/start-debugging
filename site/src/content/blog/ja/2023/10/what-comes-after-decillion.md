@@ -15,7 +15,7 @@ translationDate: 2026-05-01
 -   million (ゼロ 6 個)
 -   billion (ゼロ 9 個)
 -   trillion (ゼロ 12 個)
--   quadrillion (ゼロ 15 個)
+-   [quadrillion](/ja/2023/08/what-comes-after-quadrillion/) (ゼロ 15 個)
 -   quintillion (ゼロ 18 個)
 -   sextillion (ゼロ 21 個)
 -   septillion (ゼロ 24 個)

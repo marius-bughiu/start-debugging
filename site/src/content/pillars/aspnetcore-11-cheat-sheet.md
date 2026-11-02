@@ -18,6 +18,8 @@ Settle the forks: [minimal APIs vs controllers](/2026/05/minimal-apis-vs-control
 
 In the pipeline, [endpoint filters vs middleware](/2026/07/endpoint-filters-vs-middleware-in-aspnetcore-11/) settles that fork, and for caching, [output vs response caching](/2026/07/output-caching-vs-response-caching-in-aspnetcore-11/) is the call; multi-tenant apps should read [Redis key prefix vs separate database vs separate instance](/2026/10/redis-key-prefix-vs-separate-database-vs-separate-instance-for-multi-tenant-caching-in-aspnetcore/) before sharing one cache. For configuration, [IOptions vs IOptionsSnapshot vs IOptionsMonitor](/2026/08/ioptions-vs-ioptionssnapshot-vs-ioptionsmonitor-in-dotnet-11/) picks the lifetime, and [WebApplicationFactory vs Testcontainers](/2026/08/webapplicationfactory-vs-testcontainers-for-aspnetcore-integration-tests/) picks the test harness. For observability, [OpenTelemetry](/2026/05/how-to-use-opentelemetry-with-dotnet-11-and-a-free-backend/) and [Serilog and Seq](/2026/05/how-to-set-up-structured-logging-with-serilog-and-seq-in-dotnet-11/) are the starting points.
 
+Coming from ASP.NET Framework? Start with [migrating `System.Web.HttpContext` to ASP.NET Core](/2026/06/migrate-from-system-web-httpcontext-to-aspnetcore-httpcontext/) before adapting request-dependent application code.
+
 ## What's on this page
 
 The list below auto-collects posts tagged with any of: `aspnetcore`, `aspnet-core`, `aspnet`. Newest first.

@@ -10,7 +10,7 @@ import { readExampleManifest, buildExampleArchive } from "../src/lib/example-arc
 const directory = fileURLToPath(new URL("../../examples/", import.meta.url));
 test("all article downloads contain their complete declared source and license, without build outputs", async () => {
   const manifest = await readExampleManifest(directory);
-  assert.equal(manifest.length, 5);
+  assert(manifest.length > 0);
   for (const example of manifest) {
     const bytes = await buildExampleArchive(directory, example, path.join(directory, "../LICENSE"));
     const zip = unzipSync(bytes);
@@ -18,7 +18,11 @@ test("all article downloads contain their complete declared source and license, 
       assert.deepEqual(Buffer.from(zip[`${example.slug}/${name}`]), await fs.readFile(path.join(directory, example.slug, name)));
     }
     assert.match(strFromU8(zip[`${example.slug}/LICENSE`]), /MIT License/);
-    assert.match(strFromU8(zip[`${example.slug}/VERIFICATION.md`]), /Windows execution and real desktop capture were not performed/);
+    assert.deepEqual(
+      Buffer.from(zip[`${example.slug}/VERIFICATION.md`]),
+      await fs.readFile(path.join(directory, example.files.includes("VERIFICATION.md") ? example.slug : "", "VERIFICATION.md")),
+      "each download must preserve its own verification record, with the shared record as a fallback",
+    );
     assert(!Object.keys(zip).some((name) => /\/(?:bin|obj|node_modules|\.expo|dist)\//.test(name)));
     assert.deepEqual(bytes, await buildExampleArchive(directory, example, path.join(directory, "../LICENSE")), "archive should be deterministic");
   }

@@ -27,7 +27,7 @@ Pero hay más. Si vas más allá del quintillion, tienes:
 -   septillion (24 ceros)
 -   octillion (27 ceros)
 -   nonillion (30 ceros)
--   decillion (33 ceros)
+-   [decillion](/es/2023/10/what-comes-after-decillion/) (33 ceros)
 -   undecillion (36 ceros)
 -   duodecillion (39 ceros)
 -   tredecillion (42 ceros)

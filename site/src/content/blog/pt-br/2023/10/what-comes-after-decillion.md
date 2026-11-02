@@ -15,7 +15,7 @@ Essa é uma pergunta bastante comum. Você tem:
 -   million (6 zeros)
 -   billion (9 zeros)
 -   trillion (12 zeros)
--   quadrillion (15 zeros)
+-   [quadrillion](/pt-br/2023/08/what-comes-after-quadrillion/) (15 zeros)
 -   quintillion (18 zeros)
 -   sextillion (21 zeros)
 -   septillion (24 zeros)

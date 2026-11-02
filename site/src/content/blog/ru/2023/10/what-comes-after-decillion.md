@@ -15,7 +15,7 @@ translationDate: 2026-05-01
 -   million (6 нулей)
 -   billion (9 нулей)
 -   trillion (12 нулей)
--   quadrillion (15 нулей)
+-   [quadrillion](/ru/2023/08/what-comes-after-quadrillion/) (15 нулей)
 -   quintillion (18 нулей)
 -   sextillion (21 нулей)
 -   septillion (24 нуля)

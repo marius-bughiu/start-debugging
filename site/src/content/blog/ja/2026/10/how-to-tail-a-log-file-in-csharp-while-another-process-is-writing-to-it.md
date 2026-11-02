@@ -295,6 +295,7 @@ public static async Task<IReadOnlyList<string>> ReadLastLinesAsync(
 - ホステッドサービスから tail をきれいに停止するには、[非同期呼び出しチェーン全体で `CancellationToken` を伝播させます](/ja/2026/07/how-to-propagate-a-cancellationtoken-through-async-methods-in-dotnet-11/)。
 - 行を複数のコンシューマーに振り分けたい場合は、[tail 側と処理側の間に `Channel<T>` を置きます](/ja/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/)。
 - ライター側については、[.NET 11 での Serilog と Seq による構造化ログの設定](/ja/2026/05/how-to-set-up-structured-logging-with-serilog-and-seq-in-dotnet-11/) で、この記事が読み取る対象のファイルシンク設定を紹介しています。
+- ログを書き込む側の書式については、[appsettings.json でレベルごとに Serilog の出力テンプレートを設定する方法](/ja/2026/10/how-to-use-a-different-serilog-output-template-per-log-level-from-appsettings-json/)をご覧ください.
 
 ## 参考資料
 

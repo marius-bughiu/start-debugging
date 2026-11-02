@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "test": "node --test scripts/*.test.mjs scripts/lib/*.test.mjs",
     "prebuild": "node scripts/generate-og-images.mjs && node scripts/generate-llms-txt.mjs",
     "build": "astro build",
     "postbuild": "pagefind --site dist && node scripts/sitemap-sanity.mjs",
@@ -30,7 +31,8 @@
     "indexnow-ping": "node scripts/indexnow-ping.mjs",
     "wp:migrate": "node scripts/wp-migrate.mjs",
     "seo:indexing-audit": "node scripts/gsc-indexing-audit.mjs",
-    "seo:discovery-audit": "node scripts/gsc-indexing-audit.mjs --cohort=scripts/gsc-discovery-cohort.json --output-dir=../content-strategy/discovery-audit"
+    "seo:discovery-audit": "node scripts/gsc-indexing-audit.mjs --cohort=scripts/gsc-discovery-cohort.json --output-dir=../content-strategy/discovery-audit",
+    "seo:discovery-graph": "node scripts/discovery-graph.mjs"
   },
   "dependencies": {
     "dotenv": "^16.6.1",

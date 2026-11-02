@@ -51,7 +51,11 @@ Run `npm run seo:indexing-audit` from `site/` to refresh the fixed cohort in `si
 
 `npm run seo:discovery-audit` tracks the separate 30-URL discovery/content-review cohort and writes to `content-strategy/discovery-audit/`, preserving the original cohort's history. Its URLs include established controls, observed organic landing pages, featured guides and restored examples. Keep cohort membership stable when comparing results.
 
+After a full production build, run `npm run seo:discovery-graph -- --dist=dist --output=../content-strategy/discovery-graph.json --cohort=scripts/gsc-discovery-cohort.json` from `site/` to measure discovery paths. Use a complete build or an extracted Pages artifact; a targeted `build:page` output cannot establish sitewide reachability. The report separates same-language click depth and contextual article/guide links from navigation, listing, and related-article links. It describes the rendered link graph, not Google's crawl history or a ranking threshold. Review weak paths for useful editorial links before changing content.
+
 Pillar `indexTags` select articles sharing any listed subject tag. When a subject spans technologies, optional `indexRequireAnyTags` also requires at least one listed technology tag. This keeps a C# async guide focused without changing the articles' URLs, tag indexes or language availability. Run `node --test scripts/pillar-posts.test.mjs` from `site/` after changing that selection logic.
+
+Runnable downloads live in `examples/`, with explicit source-file lists in `examples/manifest.json`. Include a project-specific `VERIFICATION.md` when adding an example: record the actual SDK/runtime, platform, commands, results, and limits. The archive preserves that record and uses the shared verification record for older projects. Add behavioral checks to `.github/workflows/examples.yml`; do not include build outputs in the manifest.
 
 Article screenshots need descriptive alt text; decorative images can use an empty alt. Eligible static local images receive dimensions and responsive WebP variants during the build; animations, author attributes and links to original images are preserved. Keep offscreen images lazy. For a measured above-fold/LCP image, an HTML `img` can explicitly set `loading="eager"` and `fetchpriority="high"`; the pipeline preserves those choices.
 

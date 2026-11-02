@@ -27,7 +27,7 @@ E tem mais. Olhando além do quintillion, você tem:
 -   septillion (24 zeros)
 -   octillion (27 zeros)
 -   nonillion (30 zeros)
--   decillion (33 zeros)
+-   [decillion](/pt-br/2023/10/what-comes-after-decillion/) (33 zeros)
 -   undecillion (36 zeros)
 -   duodecillion (39 zeros)
 -   tredecillion (42 zeros)

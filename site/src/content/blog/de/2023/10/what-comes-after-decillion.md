@@ -15,7 +15,7 @@ Das ist eine recht häufige Frage. Sie haben:
 -   million (6 Nullen)
 -   billion (9 Nullen)
 -   trillion (12 Nullen)
--   quadrillion (15 Nullen)
+-   [quadrillion](/de/2023/08/what-comes-after-quadrillion/) (15 Nullen)
 -   quintillion (18 Nullen)
 -   sextillion (21 Nullen)
 -   septillion (24 Nullen)

@@ -18,6 +18,38 @@
       ]
     },
     {
+      "heading": "Runnable examples",
+      "blurb": "Download small projects for process waits, JSON serialization, and a React Native two-column layout. Each includes run instructions and verification details.",
+      "translations": {
+        "de": {
+          "heading": "Ausführbare Beispiele",
+          "blurb": "Lade kleine Projekte zum Warten auf Prozesse, zur JSON-Serialisierung und für ein zweispaltiges React-Native-Layout herunter. Jedes enthält Startanweisungen und Angaben zur Überprüfung."
+        },
+        "es": {
+          "heading": "Ejemplos ejecutables",
+          "blurb": "Descarga proyectos pequeños para esperar procesos, serializar JSON y crear un diseño de dos columnas en React Native. Cada uno incluye instrucciones de ejecución y detalles de verificación."
+        },
+        "pt-br": {
+          "heading": "Exemplos executáveis",
+          "blurb": "Baixe pequenos projetos para aguardar processos, serializar JSON e criar um layout de duas colunas no React Native. Cada um inclui instruções de execução e detalhes da verificação."
+        },
+        "ru": {
+          "heading": "Запускаемые примеры",
+          "blurb": "Скачайте небольшие проекты об ожидании процессов, сериализации JSON и двухколоночной раскладке React Native. В каждом есть инструкции по запуску и сведения о проверке."
+        },
+        "ja": {
+          "heading": "実行できるサンプル",
+          "blurb": "プロセスの待機、JSON シリアル化、React Native の2列レイアウトを試せる小さなプロジェクトです。実行手順と検証内容を確認できます。"
+        }
+      },
+      "slugs": [
+        "2023/08/c-how-to-wait-for-a-process-to-end",
+        "2023/10/system-text-json-disable-reflection-based-serialization",
+        "2023/09/net-8-mark-jsonserializeroptions-as-readonly",
+        "2023/11/2-column-react-native"
+      ]
+    },
+    {
       "heading": "C# language",
       "blurb": "What actually changed in the language and how it lands in real code.",
       "translations": {

@@ -11,7 +11,7 @@ This is quite a frequent question. You’ve got:
 -   million (6 zeroes)
 -   billion (9 zeroes)
 -   trillion (12 zeroes)
--   quadrillion (15 zeroes)
+-   [quadrillion](/2023/08/what-comes-after-quadrillion/) (15 zeroes)
 -   quintillion (18 zeroes)
 -   sextillion (21 zeroes)
 -   septillion (24 zeroes)

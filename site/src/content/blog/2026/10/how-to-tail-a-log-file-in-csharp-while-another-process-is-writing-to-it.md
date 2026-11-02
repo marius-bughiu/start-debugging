@@ -291,6 +291,7 @@ Here `StreamReader` is fine, because this is a one-shot read: the only partial d
 - To stop the tail cleanly from a hosted service, [propagate the `CancellationToken` through the async call chain](/2026/07/how-to-propagate-a-cancellationtoken-through-async-methods-in-dotnet-11/).
 - If you want to fan lines out to several consumers, put a [`Channel<T>` between the tailer and the processors](/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/).
 - For the writer side, [structured logging with Serilog and Seq in .NET 11](/2026/05/how-to-set-up-structured-logging-with-serilog-and-seq-in-dotnet-11/) shows the file sink configuration this post reads from.
+- For per-level formatting on the writer side, see [configuring different Serilog output templates from appsettings.json](/2026/10/how-to-use-a-different-serilog-output-template-per-log-level-from-appsettings-json/).
 
 ## Sources
 

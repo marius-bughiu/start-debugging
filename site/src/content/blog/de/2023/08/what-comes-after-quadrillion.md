@@ -27,7 +27,7 @@ Doch es geht weiter. Über das quintillion hinaus gibt es:
 -   septillion (24 Nullen)
 -   octillion (27 Nullen)
 -   nonillion (30 Nullen)
--   decillion (33 Nullen)
+-   [decillion](/de/2023/10/what-comes-after-decillion/) (33 Nullen)
 -   undecillion (36 Nullen)
 -   duodecillion (39 Nullen)
 -   tredecillion (42 Nullen)

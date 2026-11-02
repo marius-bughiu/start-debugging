@@ -295,6 +295,7 @@ public static async Task<IReadOnlyList<string>> ReadLastLinesAsync(
 - Чтобы корректно остановить чтение из размещённой службы, [передавайте `CancellationToken` через цепочку асинхронных вызовов](/ru/2026/07/how-to-propagate-a-cancellationtoken-through-async-methods-in-dotnet-11/).
 - Если нужно раздавать строки нескольким потребителям, поставьте [`Channel<T>` между читателем и обработчиками](/ru/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/).
 - Для стороны записи [структурированное журналирование с Serilog и Seq в .NET 11](/ru/2026/05/how-to-set-up-structured-logging-with-serilog-and-seq-in-dotnet-11/) показывает конфигурацию файлового приёмника, из которого читает эта статья.
+- О форматировании на стороне записи читайте в статье [о разных шаблонах вывода Serilog для уровней журнала в appsettings.json](/ru/2026/10/how-to-use-a-different-serilog-output-template-per-log-level-from-appsettings-json/).
 
 ## Источники
 

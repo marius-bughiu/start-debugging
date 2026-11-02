@@ -30,7 +30,8 @@ export async function buildExampleArchive(directory, example, licenseFile) {
     add(name, await fs.readFile(filename));
   }
   add("LICENSE", await fs.readFile(licenseFile));
-  add("VERIFICATION.md", await fs.readFile(path.join(directory, "VERIFICATION.md")));
+  if (!example.files.includes("VERIFICATION.md"))
+    add("VERIFICATION.md", await fs.readFile(path.join(directory, "VERIFICATION.md")));
   if (example.slug !== "react-native-two-columns") add("NuGet.Config", await fs.readFile(path.join(directory, "NuGet.Config")));
   return zipSync(entries, { level: 9 });
 }

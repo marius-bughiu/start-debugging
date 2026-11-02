@@ -32,6 +32,10 @@ jobs:
         working-directory: site
         run: npm ci
 
+      - name: Test site tooling
+        working-directory: site
+        run: npm test
+
       - name: Build
         working-directory: site
         env:

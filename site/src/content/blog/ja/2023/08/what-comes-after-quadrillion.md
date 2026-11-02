@@ -27,7 +27,7 @@ translationDate: 2026-05-01
 -   septillion (ゼロ 24 個)
 -   octillion (ゼロ 27 個)
 -   nonillion (ゼロ 30 個)
--   decillion (ゼロ 33 個)
+-   [decillion](/ja/2023/10/what-comes-after-decillion/) (ゼロ 33 個)
 -   undecillion (ゼロ 36 個)
 -   duodecillion (ゼロ 39 個)
 -   tredecillion (ゼロ 42 個)

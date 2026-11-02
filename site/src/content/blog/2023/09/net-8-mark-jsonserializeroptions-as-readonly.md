@@ -1,42 +1,80 @@
 ---
 title: ".NET 8 – Mark JsonSerializerOptions as readonly"
-description: "Learn how to mark JsonSerializerOptions instances as read-only in .NET 8 using MakeReadOnly, and how to check the IsReadOnly property."
+description: "Freeze JsonSerializerOptions with MakeReadOnly, fix the missing TypeInfoResolver error, and create a mutable copy in a runnable .NET 8 example."
 pubDate: 2023-09-11
-updatedDate: 2023-11-05
+updatedDate: 2026-11-02
 tags:
   - "csharp"
   - "dotnet"
   - "dotnet-8"
 ---
-Starting with .NET 8, you can mark `JsonSerializerOptions` instances as read-only, preventing further changes to the instance. To freeze the instance, simply call `MakeReadOnly` on the options instance.
+Starting with .NET 8, `JsonSerializerOptions.MakeReadOnly()` freezes an options instance. Configure its `TypeInfoResolver` first: a fresh options object has no resolver, so calling the parameterless method immediately throws `InvalidOperationException`.
 
-Let’s take an example:
+> **Correction — November 2, 2026:** The previous example omitted its resolver and therefore failed at `MakeReadOnly()`. The example below uses generated metadata and also works with reflection defaults disabled.
+
+## Freeze configured options
+
+This complete `Program.cs` uses a source-generated resolver, serializes with the frozen options, rejects a later change, and creates an independently configurable copy:
 
 ```cs
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
 var options = new JsonSerializerOptions
 {
-    AllowTrailingCommas = true,
-    PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseUpper,
-    PreferredObjectCreationHandling = JsonObjectCreationHandling.Populate,
+    TypeInfoResolver = DemoJsonContext.Default,
+    PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseUpper
 };
-
 options.MakeReadOnly();
+Console.WriteLine(options.IsReadOnly);
+Console.WriteLine(JsonSerializer.Serialize(new Widget(42, "Ada"), options));
+
+try
+{
+    options.WriteIndented = true;
+}
+catch (InvalidOperationException)
+{
+    Console.WriteLine("Mutation rejected");
+}
+
+var copy = new JsonSerializerOptions(options);
+Console.WriteLine(copy.IsReadOnly);
+copy.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+Console.WriteLine(JsonSerializer.Serialize(new Widget(42, "Ada"), copy));
+
+public sealed record Widget(int Id, string Name);
+
+[JsonSerializable(typeof(Widget))]
+internal partial class DemoJsonContext : JsonSerializerContext { }
 ```
 
-Furthermore, you can check if an instance was frozen or not by checking the `IsReadOnly` property.
+The output is:
 
-```cs
-options.IsReadOnly
+```text
+True
+{"ID":42,"NAME":"Ada"}
+Mutation rejected
+False
+{"id":42,"name":"Ada"}
 ```
 
-Attempting to modify a `JsonSerializerOptions` instance after it was marked as read only will result in an `InvalidOperationException`:
+`IsReadOnly` becomes `true` after freezing. Repeating `MakeReadOnly()` is safe. Changing a setting afterwards throws `InvalidOperationException`. Serialization or deserialization also makes the options instance read-only.
 
-```plaintext
-Unhandled exception. System.InvalidOperationException: This JsonSerializerOptions instance is read-only or has already been used in serialization or deserialization.
-   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_SerializerOptionsReadOnly(JsonSerializerContext context)
-   at System.Text.Json.JsonSerializerOptions.VerifyMutable()
+The copy constructor retains the source settings, including the resolver, but creates a mutable options instance. Configure the copy before first use; serializing with it freezes that copy too.
+
+## Why does MakeReadOnly throw without a resolver?
+
+`new JsonSerializerOptions().MakeReadOnly()` does not select a resolver automatically. Supply one explicitly, as above, or use `MakeReadOnly(populateMissingResolver: true)` when reflection-based serialization is intended and enabled.
+
+The latter overload fills a missing resolver with the reflection-based default. With reflection defaults disabled, it cannot fill that gap and throws `InvalidOperationException`. It is not a replacement for generated metadata in a trimmed or Native AOT application. See [disabling reflection defaults and configuring a context](/2023/10/system-text-json-disable-reflection-based-serialization/) and the [MakeReadOnly API contract](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.jsonserializeroptions.makereadonly?view=net-8.0).
+
+## Run the verified example
+
+[Download the complete System.Text.Json options project](/examples/system-text-json-options.zip), extract it, and run:
+
+```sh
+dotnet run -c Release
 ```
 
-## [`MakeReadOnly(bool populateMissingResolver)`](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.jsonserializeroptions.makereadonly#system-text-json-jsonserializeroptions-makereadonly\(system-boolean\)) overload
-
-When `populateMissingResolver` is passed as `true`, the method will go ahead and add the default reflection resolver to your `JsonSerializerOptions` when missing. Careful when [using this method in trimmed / Native AOT applications as it will root the reflection-related assemblies and include them in your build](/2023/10/system-text-json-disable-reflection-based-serialization/).
+The dependency-free .NET 8 project checks missing resolvers, repeated freezing, rejected mutation, source-generated serialization, and copy behavior. It separately exercises `populateMissingResolver` with reflection defaults disabled and enabled. All checks passed on actual .NET 8.0.33 and .NET 10.0.10 runtimes; commands and results are in the archive's verification record.

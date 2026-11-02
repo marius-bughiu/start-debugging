@@ -75,5 +75,36 @@
     "articles": [
       "2023/11/2-column-react-native"
     ]
+  },
+  {
+    "slug": "system-text-json-options",
+    "title": "System.Text.Json metadata and read-only options",
+    "summary": "Reproduce reflection-disabled failures, use a source-generated context, and verify resolver requirements when freezing serializer options.",
+    "requirements": ".NET 8 SDK and runtime, or .NET 10 SDK and runtime",
+    "files": [
+      "README.md",
+      "VERIFICATION.md",
+      "SystemTextJsonOptions.csproj",
+      "Program.cs"
+    ],
+    "articles": [
+      "2023/10/system-text-json-disable-reflection-based-serialization",
+      "2023/09/net-8-mark-jsonserializeroptions-as-readonly"
+    ]
+  },
+  {
+    "slug": "process-wait",
+    "title": "Wait for a child process in C#",
+    "summary": "Run synchronous and asynchronous waits, inspect exit codes, and distinguish a timed-out or canceled wait from terminating the child.",
+    "requirements": ".NET 10 SDK; .NET 8 runtime for the net8.0 target",
+    "files": [
+      "README.md",
+      "VERIFICATION.md",
+      "ProcessWait.csproj",
+      "Program.cs"
+    ],
+    "articles": [
+      "2023/08/c-how-to-wait-for-a-process-to-end"
+    ]
   }
 ]

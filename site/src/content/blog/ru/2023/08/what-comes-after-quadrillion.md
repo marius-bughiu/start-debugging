@@ -27,7 +27,7 @@ translationDate: 2026-05-01
 -   septillion (24 нуля)
 -   octillion (27 нулей)
 -   nonillion (30 нулей)
--   decillion (33 нуля)
+-   [decillion](/ru/2023/10/what-comes-after-decillion/) (33 нуля)
 -   undecillion (36 нулей)
 -   duodecillion (39 нулей)
 -   tredecillion (42 нуля)

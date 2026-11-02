@@ -21,12 +21,17 @@ jobs:
           dotnet-version: |
             7.0.x
             8.0.x
+            10.0.x
       - run: dotnet run --project examples/unsafe-accessor -c Release
       - run: dotnet restore examples/unsafe-accessor-benchmarks --locked-mode
       - run: dotnet run --project examples/unsafe-accessor-benchmarks -c Release -- --verify
       - run: dotnet restore examples/generic-type-definition-benchmarks --locked-mode
       - run: dotnet run --project examples/generic-type-definition-benchmarks -c Release -f net8.0 -- --verify
       - run: dotnet run --project examples/generic-type-definition-benchmarks -c Release -f net7.0 -- --verify
+      - run: dotnet run --project examples/system-text-json-options -c Release -f net8.0
+      - run: dotnet run --project examples/system-text-json-options -c Release --property:ExampleTargetFramework=net10.0
+      - run: dotnet run --project examples/process-wait -c Release -f net8.0
+      - run: dotnet run --project examples/process-wait -c Release -f net10.0
 
   windows-screenshot:
     runs-on: windows-latest
@@ -36,6 +41,21 @@ jobs:
         with:
           dotnet-version: 8.0.x
       - run: dotnet run --project examples/windows-screenshot -c Release -- --self-test
+
+  process-wait-platforms:
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+      - run: dotnet run --project examples/process-wait -c Release -f net8.0
+      - run: dotnet run --project examples/process-wait -c Release -f net10.0
 
   react-native-web:
     runs-on: ubuntu-latest
