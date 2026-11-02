@@ -4,6 +4,7 @@ description: "Verwenden Sie für neuen Cache-Code in .NET 11 standardmäßig Hyb
 pubDate: 2026-06-14
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "dotnet"
   - "aspnetcore"

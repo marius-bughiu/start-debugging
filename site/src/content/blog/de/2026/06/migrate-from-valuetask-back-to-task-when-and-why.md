@@ -5,6 +5,7 @@ pubDate: 2026-06-06
 updatedDate: 2026-06-06
 template: migration
 tags:
+  - "dotnet-11"
   - "migration"
   - "csharp"
   - "dotnet"

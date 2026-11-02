@@ -4,6 +4,7 @@ description: "Verwenden Sie String-Interpolation, um einen festen Satz von Werte
 pubDate: 2026-05-25
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "csharp"
   - "dotnet"

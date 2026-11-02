@@ -4,6 +4,7 @@ description: "固定された値のセットを一度に組み立てるなら文
 pubDate: 2026-05-25
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "csharp"
   - "dotnet"

@@ -4,6 +4,7 @@ description: "Выбирайте модель isolated worker для любой 
 pubDate: 2026-05-26
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "azure-functions"
   - "dotnet"

@@ -3,6 +3,7 @@ title: ".NET 11 Raises the Minimum CPU Baseline to x86-64-v2"
 description: ".NET 11 Preview 4 drops support for pre-2013 x86/x64 chips and bumps the JIT baseline to x86-64-v2. Here is what breaks, why, and how to check your hardware before you upgrade."
 pubDate: 2026-06-03
 tags:
+  - "dotnet-11"
   - "dotnet"
   - "performance"
   - "native-aot"

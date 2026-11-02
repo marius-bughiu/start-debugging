@@ -2,6 +2,7 @@
 title: "Cómo guardar un enum como string en EF Core 11 con un value converter"
 description: "Guarda los enums de C# como strings legibles en lugar de ints en EF Core 11: HasConversion, configuración masiva para todos los enums, la trampa de nvarchar(max), el problema del ordenamiento y cómo migrar una columna int existente."
 pubDate: 2026-08-03
+updatedDate: 2026-11-02
 template: how-to
 tags:
   - "ef-core"
@@ -16,24 +17,24 @@ translatedBy: "claude"
 translationDate: 2026-08-03
 ---
 
-Respuesta corta: en EF Core 11 (ejecutándose sobre .NET 11 con C# 14), agrega `.HasConversion<string>()` a la propiedad y EF Core elige por ti el converter integrado `EnumToStringConverter<TEnum>`. Agrega `.HasMaxLength(...)` al mismo tiempo, porque sin eso SQL Server te da una columna `nvarchar(max)` que ningún índice va a tocar. Hazlo una sola vez para todos los enums del modelo con `configurationBuilder.Properties<Enum>().HaveConversion<string>()` en `ConfigureConventions`. La igualdad y `Contains` se siguen traduciendo correctamente a SQL; las comparaciones relacionales como `>` y `OrderBy` pasan silenciosamente a orden alfabético, y eso es lo único que realmente se rompe.
+Usa `.HasConversion<string>()` para guardar nombres de enum con EF Core. Elige una longitud que cubra todos los nombres válidos y revisa el DDL generado. Los filtros de igualdad usan el valor convertido. La comparación y ordenación de texto siguen la intercalación de la base, que puede diferir del orden numérico del flujo.
 
-Este post cubre las tres formas de configurar la conversión, cómo se ven realmente el DDL y el SQL generados, los cinco problemas que muerden en producción y el procedimiento de migración para una columna que ya guarda ints.
+**Corrección, 2 de noviembre de 2026.** Antes se afirmaba que el conversor integrado no podía leer cadenas numéricas y que 900 bytes era el límite universal de las claves de índice de SQL Server. Ambas afirmaciones eran incorrectas. La migración distingue ahora materializar un valor de encontrarlo con un filtro.
 
-Todo el SQL y el comportamiento de abajo se midieron con EF Core 10.0.10 contra SQLite y contra el generador de DDL del proveedor de SQL Server, usando el SDK .NET 10.0.201. EF Core 11 requiere el runtime de .NET 11, así que no pude ejecutarlo en esta máquina; las diferencias de EF Core 11 que se señalan abajo provienen de las [notas de la versión de EF Core 11](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-11.0/whatsnew) y están marcadas como tales. La API de conversión de valores en sí no cambió entre EF Core 8 y 11.
+La comprobación se hizo con SDK 10.0.302 y EF Core 10.0.10. Se ejecutaron lecturas y predicados en SQLite y se generó DDL y SQL de consultas para SQL Server sin conexión al servidor. Las optimizaciones específicas de EF Core 11 están en las [notas de versión](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-11.0/whatsnew). [Convertir valores nulos de base de datos](/es/2026/09/how-to-write-an-ef-core-11-value-converter-that-maps-null-to-a-non-null-value/) es otro problema.
 
 ## Por qué el mapeo int por defecto es un pasivo
 
-Por defecto EF Core mapea un enum a su tipo numérico subyacente. `OrderStatus.Shipped` se convierte en `2`. Eso es compacto y ordena tal como el enum declara, pero acopla tu base de datos al *orden de declaración* de un tipo de C#.
+Por defecto EF Core usa el tipo numérico subyacente. Con valores implícitos, insertar o reordenar miembros puede cambiar los números de los siguientes. Asigna valores explícitos estables si esos números forman parte del contrato persistido.
 
 ```csharp
-// .NET 11, C# 14
+// Implicit numeric values follow declaration order.
 public enum OrderStatus { Pending, Paid, Shipped, Delivered, Cancelled }
 ```
 
 Seis meses después alguien inserta `Refunded` entre `Paid` y `Shipped` porque se lee mejor. El enum sigue compilando, todas las pruebas siguen pasando, y toda fila de la base de datos que decía `Shipped` ahora significa `Refunded`. No hay error de compilación ni error en tiempo de ejecución. Es un bug de corrupción silenciosa de datos que solo aparece cuando una persona lee un reporte.
 
-Los strings no tienen ese modo de falla. `"Shipped"` significa `Shipped` sin importar lo que le hagas al orden de declaración, y la columna es legible para cualquiera que corra SQL ad-hoc, una herramienta de BI o una consulta de soporte. Lo pagas en almacenamiento, en ancho de índice y en la advertencia sobre ordenamiento de más abajo.
+Los nombres eliminan la dependencia del orden declarado. Cambiar un nombre modifica el contrato almacenado y requiere migración o asignación explícita. Considera legibilidad, almacenamiento, índices y ordenación.
 
 ## Las tres formas de configurar la conversión
 
@@ -53,7 +54,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 La segunda forma escribe las dos lambdas explícitamente. Casi nunca la necesitas para un enum simple, pero es lo que muestra primero la [documentación de conversiones de valores](https://learn.microsoft.com/en-us/ef/core/modeling/value-conversions), así que vale la pena reconocerla:
 
 ```csharp
-// EF Core 11 - equivalent to HasConversion<string>(), just more typing
+// Explicit converter: Enum.Parse here is case-sensitive.
 modelBuilder.Entity<Order>()
     .Property(o => o.Status)
     .HasConversion(
@@ -106,7 +107,7 @@ La configuración previa a las convenciones sobrescribe las convenciones *y* las
 
 ## La trampa de nvarchar(max)
 
-Este es el error más común de todos, y es invisible hasta que una consulta se pone lenta.
+Especifica una longitud apropiada y revisa la migración. SQL Server distingue columnas normales, claves de índice y columnas incluidas que no son clave.
 
 Configura la conversión sin longitud y el proveedor de SQL Server no tiene idea de cuán largos son los strings, así que elige lo más ancho que tiene. Este es el DDL que EF Core generó para un modelo con tres propiedades enum convertidas, de las cuales solo dos fijan una longitud:
 
@@ -120,7 +121,7 @@ CREATE TABLE [Orders] (
 );
 ```
 
-`Status` no tenía facetas, así que quedó como `nvarchar(max)`. En SQL Server no puedes poner un índice normal sobre una columna `nvarchar(max)` en absoluto, y las columnas de estado son exactamente el tipo de columna por la que filtras constantemente. `PrevStatus` usó `.HasMaxLength(20).IsUnicode(false)` y quedó como un prolijo `varchar(20)`.
+En este ejemplo `Status` sin facetas es `nvarchar(max)`. No puede ser una clave de índice normal, aunque puede incluirse como columna no clave en un índice no agrupado. `PrevStatus` con `.HasMaxLength(20).IsUnicode(false)` resulta `varchar(20)`.
 
 Hay una salvedad que conviene conocer: si declaras un índice sobre la propiedad, el proveedor de SQL Server de EF Core recae en su valor por defecto para columnas clave en lugar de `max`:
 
@@ -141,7 +142,7 @@ GO
 CREATE INDEX [IX_Orders_Status] ON [Orders] ([Status]);
 ```
 
-`nvarchar(450)` son 900 bytes, el límite de tamaño de clave de índice en SQL Server. Funciona, pero una clave de 900 bytes para una columna que guarda `"Pending"` es un desperdicio de cada página del índice. Fija la longitud tú. Los nombres de enum son cortos; 32 o 64 caracteres no Unicode casi siempre es lo correcto.
+El proveedor SQL Server generó `nvarchar(450)` para la propiedad indexada en EF Core 10.0.10: admite hasta 900 bytes de datos de caracteres. Desde SQL Server 2016, las claves de índice agrupado admiten hasta 900 bytes y las no agrupadas hasta 1.700. El máximo declarado no es el tamaño real de un valor corto. Elige una longitud válida para todos los nombres o códigos.
 
 Si quieres que la longitud viaje con el converter en lugar de repetirla en cada propiedad, pasa `ConverterMappingHints`:
 
@@ -207,7 +208,7 @@ Con tres filas que contienen `Pending`, `Delivered` y `Cancelled`, LINQ en memor
 
 La solución no es una opción del converter. O mantienes un int para todo lo que ordenes o compares por rango, o agregas una columna explícita `int SortOrder`, o reemplazas la consulta de rango por un conjunto explícito: `Where(o => finished.Contains(o.Status))`. Si ya tienes código en producción que compara enums por rango, búscalo con grep antes de cambiar el mapeo.
 
-### ToString() en una consulta emite un CAST, y EF Core 11 lo elimina
+### Inspeccionar el SQL de ToString()
 
 Proyectar o filtrar sobre `Status.ToString()` parece inofensivo cuando la columna ya es un string, pero EF Core 10 sigue emitiendo el cast implicado por la llamada CLR:
 
@@ -220,7 +221,7 @@ context.Orders.Where(o => o.Status.ToString()!.StartsWith("P"))
 WHERE CAST([o].[Status] AS nvarchar(max)) LIKE N'P%'
 ```
 
-Ese cast es semánticamente inocuo y un desastre para el planificador de consultas: envolver la columna en una función impide que SQL Server use cualquier índice sobre ella. EF Core 11 detecta y elimina los casts redundantes durante el post-procesamiento del SQL, y las notas de la versión señalan las propiedades con conversión de valor como la fuente habitual. En EF Core 11 la misma consulta produce un `WHERE [o].[Status] LIKE N'P%'` limpio. Si estás en EF Core 10 o anterior, quita el `.ToString()` y usa `EF.Functions.Like` sobre la propiedad, o espera la actualización. Verificar esto es una buena razón para mantener [el registro de SQL activado en desarrollo](/es/2026/07/how-to-log-the-sql-that-ef-core-11-generates/).
+El proveedor SQL Server de EF Core 10.0.10 generó el `CAST` mostrado. El uso de índice depende del plan efectivo. EF Core 11 documenta una optimización de conversiones redundantes, pero comprueba `ToQueryString()` con tu proveedor y versión. Para un estado exacto, compara valores de enum. `EF.Functions.Like` espera una expresión de texto, por lo que no admite directamente la propiedad enum. Consulta [logging de SQL en desarrollo](/es/2026/07/how-to-log-the-sql-that-ef-core-11-generates/).
 
 ## Leer los valores de vuelta: nombres desconocidos y mayúsculas
 
@@ -247,17 +248,18 @@ row 3 | None
 
 El viaje de ida y vuelta funciona. Consultar no: `Where(o => o.Perms.HasFlag(Perms.Write))` no se puede traducir a un predicado de string, y `LIKE '%Write%'` no encuentra nada útil y escanea todo. Mantén los enums `[Flags]` como ints, o modela los permisos como filas.
 
-### Los parámetros de SQL crudo ignoran el converter en silencio
+### Pasar el valor del proveedor en SQL directo
 
-La documentación de conversión de valores lista esto como una limitación conocida, y vale la pena ver cómo se ve, porque no lanza excepción:
+Un argumento interpolado de SQL directo no usa automáticamente el conversor de la propiedad. Proporciona la representación almacenada. Para la conversión integrada por nombre:
 
 ```csharp
+var providerValue = OrderStatus.Pending.ToString();
 var rows = await context.Orders
-    .FromSql($"SELECT Id, Status FROM Orders WHERE Status = {OrderStatus.Pending}")
+    .FromSql($"SELECT * FROM Orders WHERE Status = {providerValue}")
     .ToListAsync();
 ```
 
-El parámetro llega a la base de datos como `DbType = Int32` con valor `0`. La consulta corre, no encuentra nada y devuelve una lista vacía. Pasa `OrderStatus.Pending.ToString()` explícitamente en SQL crudo, o quédate en LINQ. Esta es una falla distinta de las que están detrás de [la expresión LINQ no se pudo traducir](/es/2026/07/fix-the-linq-expression-could-not-be-translated-in-ef-core-11/): aquí no hay excepción alguna.
+La interpolación usa aquí un parámetro. Con una conversión personalizada a `PND`, pasa ese código para `Pending`. El entero subyacente puede dar filas distintas o un error de conversión según el proveedor. Una consulta de entidad necesita las columnas requeridas para materializarla. Es distinto de [un error de traducción de LINQ](/es/2026/07/fix-the-linq-expression-could-not-be-translated-in-ef-core-11/).
 
 ## Guardar códigos cortos en lugar de nombres
 
@@ -303,16 +305,16 @@ Los predicados se traducen a través del converter, así que `Where(o => o.Statu
 
 ## Migrar una columna que ya guarda ints
 
-No dejes que EF Core genere esta migración por ti. La que produce es un único `AlterColumn`, que en SQL Server ejecuta una conversión implícita de `int` a `nvarchar`: el valor `2` se vuelve el string `"2"`, no `"Shipped"`. Después de eso ninguna fila se puede parsear y la siguiente lectura lanza excepción.
+Una conversión directa de columna puede guardar `2` como texto `"2"` en vez de `"Shipped"`. En SQLite, el conversor integrado de EF Core 10.0.10 materializó ambas cadenas como `Shipped`. El filtro de igualdad para `Shipped` solo encontró la fila con el nombre porque el valor enviado era `"Shipped"`. Incluso `"99"` se materializó como valor sin nombre, mientras que `"Bogus"` lanzó una excepción. El texto numérico altera el contrato aunque la lectura funcione.
 
-El procedimiento seguro son cuatro pasos:
+En una migración coordinada, rellena explícitamente los nombres previstos. Haz copia de seguridad, prueba sobre una copia y considera escritores que aún usen la columna antigua durante el despliegue.
 
 1. Agrega el converter al modelo y luego genera la migración con `dotnet ef migrations add StoreStatusAsString`.
 2. Abre la migración generada y reemplaza el `AlterColumn` por un `AddColumn` para una columna temporal, por ejemplo `StatusText nvarchar(20) NULL`.
 3. Agrega un relleno con `migrationBuilder.Sql(...)` entre el add y el drop, mapeando cada int a su nombre explícitamente: `UPDATE Orders SET StatusText = CASE Status WHEN 0 THEN 'Pending' WHEN 1 THEN 'Paid' ... END;`. Escribe el CASE a mano contra la declaración del enum tal como existe en este commit, no contra lo que llegue a ser después.
 4. Elimina la columna vieja, renombra `StatusText` a `Status` y hazla `NOT NULL`. Escribe la lógica espejo en `Down` para que la migración sea reversible.
 
-Verifica el SQL antes de que corra en cualquier lugar real. `dotnet ef migrations script` lo imprime, y ese mismo script es lo que un [migration bundle](/es/2026/07/how-to-apply-ef-core-11-migrations-in-production-with-migrations-bundle/) ejecutará en la máquina destino. Si el enum se usa como clave foránea o dentro de un índice filtrado, elimina y recrea el índice en la misma migración.
+Antes de eliminar columnas, verifica recuentos, enteros sin correspondencia, nulabilidad y todas las asignaciones. Reconstruye índices y claves externas afectados y prueba actualización y reversión cuando corresponda. Revisa `dotnet ef migrations script` y ensaya el despliegue real, incluido el [bundle de migración](/es/2026/07/how-to-apply-ef-core-11-migrations-in-production-with-migrations-bundle/) si lo utilizas.
 
 Un último consejo sobre el modelo en sí: los value converters son para una sola columna. En el momento en que te encuentres serializando varios campos en un string para sortear eso, lo que quieres es un [tipo complejo mapeado a JSON](/es/2026/07/how-to-map-a-complex-type-instead-of-an-owned-entity-in-ef-core-11/), que EF Core 11 puede indexar y actualizar en el lugar. Y si EF Core se niega a mapear la propiedad del todo, ese es otro problema con otra solución, cubierto en [el error de propiedad que no se pudo mapear](/es/2026/07/fix-property-could-not-be-mapped-not-a-supported-primitive-type-in-ef-core-11/).
 
@@ -323,3 +325,5 @@ Un último consejo sobre el modelo en sí: los value converters son para una sol
 - [What's New in EF Core 11](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-11.0/whatsnew) para la eliminación de los CAST inocuos.
 - Referencia de la API de [EnumToStringConverter&lt;TEnum&gt;](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.storage.valueconversion.enumtostringconverter-1).
 - [dotnet/efcore#10434](https://github.com/dotnet/efcore/issues/10434), el issue de seguimiento para consultar dentro de propiedades con conversión de valor.
+- [SQL Server index key limits](https://learn.microsoft.com/en-us/sql/sql-server/maximum-capacity-specifications-for-sql-server?view=sql-server-ver17)
+- [EF Core 10.0.10 enum converter source](https://github.com/dotnet/efcore/blob/v10.0.10/src/EFCore/Storage/ValueConversion/Internal/StringEnumConverter.cs)

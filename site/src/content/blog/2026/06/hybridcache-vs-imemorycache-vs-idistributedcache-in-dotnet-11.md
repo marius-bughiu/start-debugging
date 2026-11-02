@@ -4,6 +4,7 @@ description: "Default to HybridCache for new caching code in .NET 11. Reach for 
 pubDate: 2026-06-14
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "dotnet"
   - "aspnetcore"

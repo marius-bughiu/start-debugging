@@ -4,6 +4,7 @@ description: "Pick the isolated worker model for every new Azure Functions app o
 pubDate: 2026-05-26
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "azure-functions"
   - "dotnet"

@@ -4,6 +4,7 @@ description: "Escolha BackgroundService para loops em processo, IHostedService p
 pubDate: 2026-06-03
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "dotnet"
   - "aspnetcore"

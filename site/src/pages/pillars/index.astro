@@ -8,7 +8,7 @@ const pillars = await getPublishedPillars();
 const withCounts = await Promise.all(
   pillars.map(async (p) => ({
     pillar: p,
-    count: (await getPillarPosts(p.data.indexTags)).length,
+    count: (await getPillarPosts(p.data.indexTags, "en", p.data.indexRequireAnyTags)).length,
   })),
 );
 ---

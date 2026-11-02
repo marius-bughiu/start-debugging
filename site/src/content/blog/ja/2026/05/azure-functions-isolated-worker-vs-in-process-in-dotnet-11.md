@@ -4,6 +4,7 @@ description: "2026 年の .NET 11 上の Azure Functions アプリケーショ�
 pubDate: 2026-05-26
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "azure-functions"
   - "dotnet"

@@ -3,6 +3,7 @@ title: ".NET 11 が最小 CPU ベースラインを x86-64-v2 に引き上げ"
 description: ".NET 11 Preview 4 は 2013 年より前の x86/x64 チップのサポートを打ち切り、JIT のベースラインを x86-64-v2 に引き上げます。何が壊れるのか、なぜなのか、アップグレード前にハードウェアを確認する方法を解説します。"
 pubDate: 2026-06-03
 tags:
+  - "dotnet-11"
   - "dotnet"
   - "performance"
   - "native-aot"

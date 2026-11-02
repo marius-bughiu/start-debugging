@@ -4,6 +4,7 @@ description: "Escolha Blazor Web App ou WebAssembly autônomo conforme hosting, 
 pubDate: 2026-05-26
 updatedDate: 2026-11-02
 tags:
+  - "dotnet-11"
   - "comparison"
   - "blazor"
   - "dotnet"

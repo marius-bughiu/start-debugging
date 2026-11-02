@@ -2,7 +2,7 @@
 title: "Migrar do MediatR para injeção de dependência simples no .NET 11"
 description: "Uma lista de verificação passo a passo para remover o MediatR 12-14 e substituir os handlers de IRequest, ISender, os pipeline behaviors e INotification por classes de serviço simples e injeção por construtor."
 pubDate: 2026-05-30
-updatedDate: 2026-05-30
+updatedDate: 2026-11-02
 template: migration
 tags:
   - "migration"
@@ -16,16 +16,17 @@ translatedBy: "claude"
 translationDate: 2026-05-30
 ---
 
-Remover o MediatR de uma base de código em .NET 11 é uma refatoração mecânica, não uma reescrita. Para um serviço típico com 50-150 handlers, reserve de meio dia a um dia: a maioria dos handlers se colapsa um a um em métodos sobre classes de serviço simples, as chamadas a `ISender.Send` viram chamadas diretas à interface, e a única parte que exige raciocínio de design é o pipeline. O que quebra é tudo que dependia da resolução de handlers em runtime ou do envoltório de `IPipelineBehavior<,>` em volta de cada requisição; isso vira injeção por construtor e decorators. Vale a pena fazer se você só chama `Send`, se você está acima da linha de receita de $5,000,000 da edição Community do MediatR e não quer comprar uma licença comercial, ou se você quer Native AOT e compatibilidade com trimming. Não vale a pena se seus pipeline behaviors são fundamentais em centenas de tipos de requisição.
+Migre uma requisição por vez. Substitua seu handler por um método de serviço, atualize os chamadores e preserve validação, transações e notificações. Estime o trabalho a partir das dependências e dos pontos de chamada antes de alterar os registros.
 
-Versões referenciadas: este guia cobre a remoção do MediatR 12.5.0 (a última versão com licença Apache 2.0), 13.0 (lançada em 2025-07-02, a primeira versão com licença dupla Reciprocal Public License 1.5 / comercial da Lucky Penny Software) e a linha atual 14.x. O código de substituição mira `<TargetFramework>net11.0</TargetFramework>` com o SDK do .NET 11 e C# 14, mais Scrutor 6.x para os decorators. Se você ainda está decidindo *se* deve sair, leia primeiro [MediatR vs classes de serviço simples em 2026](/pt-br/2026/05/mediatr-vs-plain-service-classes-in-2026/); este artigo assume que a decisão já foi tomada.
+**Correção — 2 de novembro de 2026:** corrigimos a fase da falha de DI e os critérios Community, retiramos afirmações não medidas sobre a partida a frio e ajustamos o decorador ao contrato de escrita.
+
+Os exemplos têm como destino `net11.0` e ilustram os contratos do MediatR 13/14. A verificação de DI abaixo foi executada no .NET 10. Se a arquitetura ainda está em discussão, comece pela [comparação entre MediatR e serviços diretos](/pt-br/2026/05/mediatr-vs-plain-service-classes-in-2026/).
 
 ## Por que as equipes estão removendo o MediatR justamente agora
 
-- **A licença força uma decisão acima dos $5M.** O uso open-source gratuito do MediatR 13+ é sob a RPL-1.5, uma licença copyleft recíproca projetada para fechar a brecha do SaaS. Se você distribui software comercial de código fechado acima do limiar de receita da edição Community, essa licença não serve para você, então é comprar ou sair.
-- **Ir para a definição leva ao handler, não ao `Send`.** As chamadas diretas à interface restauram a navegabilidade que a indireção do mediator custa em cada salto.
-- **A inicialização fica mais barata e o AOT fica mais fácil.** Remover a varredura de assemblies para o registro de handlers corta milissegundos de cold start e elimina a reflexão que briga com o trimming, o que importa ao [reduzir o tempo de cold start de um AWS Lambda em .NET 11](/pt-br/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/).
-- **O cabeamento falha na inicialização, não na primeira requisição.** O registro explícito com `AddScoped` transforma uma dependência ausente em um erro em tempo de inicialização em vez de uma `InvalidOperationException` em runtime.
+- Levante as versões do MediatR em uso e confira os [critérios do fornecedor](https://luckypennysoftware.com/faq), inclusive financiamento e uso institucional, antes de tratar a licença como motivo para migrar.
+- Numa chamada de interface, ir à definição leva ao método da interface, e a IDE permite localizar as implementações. A partir de `Send`, procure o handler do tipo de requisição.
+- Se o tempo de inicialização influencia a migração, meça a partida a frio da mesma implantação antes e depois. Verifique a aplicação publicada se precisar de trimming ou Native AOT.
 
 ## O que quebra
 
@@ -119,7 +120,7 @@ public async Task<OrderDto> Get(int id, IOrderService orders, CancellationToken 
 
 3. **Registre os serviços explicitamente.**
 
-Remova `AddMediatR(...)` e registre cada serviço. O registro explícito é seguro para trimming e falha rápido na inicialização, que é exatamente o modo de falha por trás de [Unable to resolve service for type while attempting to activate](/pt-br/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/).
+Remova `AddMediatR(...)` após converter os handlers restantes. Registre explicitamente as interfaces e implementações substitutas. As [dependências de construtor ausentes](/pt-br/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/) aparecem na validação ou na resolução. Confira os registros no ambiente de implantação. Habilite `ValidateOnBuild` para o provedor padrão verificar os grafos de construtores registrados durante a construção do host. Em produção, sem validação, uma dependência ausente pode falhar só ao solicitar o serviço. `ValidateScopes` verifica os tempos de vida separadamente. Veja as [opções do provedor do ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-10.0#validatescopes-and-validateonbuild).
 
 ```csharp
 // .NET 11, C# 14 - BEFORE
@@ -131,7 +132,7 @@ builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 ```
 
-Se você quer um registro baseado em convenção sem o modelo de reflexão do MediatR, o Scrutor varre pelo nome da interface:
+Para registro por convenção, o Scrutor pode examinar um assembly e selecionar nomes de classe:
 
 ```csharp
 // .NET 11, C# 14, Scrutor 6.x - register every *Service against its interface
@@ -142,7 +143,7 @@ builder.Services.Scan(scan => scan
     .WithScopedLifetime());
 ```
 
-**Verifique:** a aplicação inicia. Execute-a e acesse um endpoint migrado; um registro ausente agora lança na inicialização, não na primeira requisição. Confirme que nenhum erro de serviço scoped a partir de singleton se infiltrou, a classe de bug coberta em [Cannot consume scoped service from singleton](/pt-br/2026/05/fix-cannot-consume-scoped-service-from-singleton/).
+No teste em .NET 10, habilitar explicitamente `ValidateOnBuild` fez a construção do host falhar por uma dependência ausente. Desabilitar a opção permitiu construir o host e a falha ocorreu quando um escopo solicitou `IOrderService`. Resolva cada serviço migrado dentro de um escopo e chame o endpoint.
 
 4. **Substitua os pipeline behaviors por decorators ou middleware.**
 
@@ -170,22 +171,25 @@ builder.Services.Decorate<IOrderService, LoggingOrderService>();
 
 Para concerns que na verdade são concerns de HTTP (logging de requisições, mapeamento de exceções para ProblemDetails, autenticação), tire-os completamente da camada de aplicação para middleware do ASP.NET Core ou um filtro de endpoint. Um behavior que capturava exceções e moldava as respostas pertence ao mesmo lugar que [um filtro de exceções global no ASP.NET Core 11](/pt-br/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/), não a um decorator.
 
-Se você usava FluentValidation dentro de um `ValidationBehavior`, mantenha os validadores e chame-os a partir de um único decorator ou de um filtro de endpoint de minimal API:
+Para uma operação de escrita, dê ao decorador o contrato próprio `IOrderWriter`. O `IOrderService` de leitura pode manter `GetByIdAsync`.
 
 ```csharp
-// .NET 11, C# 14 - a validation decorator replacing ValidationBehavior for one interface
-public sealed class ValidatingOrderService(
-    IOrderService inner,
-    IValidator<CreateOrder> validator) : IOrderService
-{
-    public async Task<OrderDto> CreateAsync(CreateOrder cmd, CancellationToken ct)
-    {
-        await validator.ValidateAndThrowAsync(cmd, ct);
-        return await inner.CreateAsync(cmd, ct);
-    }
+using FluentValidation;
 
-    public Task<OrderDto> GetByIdAsync(int orderId, CancellationToken ct)
-        => inner.GetByIdAsync(orderId, ct);
+public interface IOrderWriter
+{
+    Task<OrderDto> CreateAsync(CreateOrder command, CancellationToken ct);
+}
+
+public sealed class ValidatingOrderWriter(
+    IOrderWriter inner,
+    IValidator<CreateOrder> validator) : IOrderWriter
+{
+    public async Task<OrderDto> CreateAsync(CreateOrder command, CancellationToken ct)
+    {
+        await validator.ValidateAndThrowAsync(command, ct);
+        return await inner.CreateAsync(command, ct);
+    }
 }
 ```
 
@@ -239,10 +243,10 @@ Execute esta lista de cima a baixo e não pule a linha de desempenho:
 
 - `dotnet build -c Release` tem sucesso sem avisos.
 - `dotnet test` passa com zero falhas, incluindo os testes de behavior e de fan-out que você adicionou nos passos 4 e 5.
-- A aplicação inicia e cada endpoint antes despachado pelo MediatR retorna a mesma resposta que antes. Um registro ausente agora aparece aqui, na inicialização.
+- Inicie a aplicação e chame cada endpoint migrado. Confira a resposta e a resolução dos serviços scoped.
 - `grep -rn "MediatR" src/` não retorna nada.
 - Nenhum aviso de licença aparece nos logs (a verificação de licença do MediatR 13+ registrava um aviso com uma chave não registrada; agora deve ter desaparecido).
-- O cold start é igual ou melhor. Se a aplicação é serverless, meça o tempo de inicialização antes e depois; remover a varredura de assemblies não deve piorá-lo.
+- Compare a partida a frio antes e depois com o perfil de publicação que será entregue.
 
 ## Plano de rollback
 
@@ -252,7 +256,7 @@ Esta migração é reversível por commit mas tediosa de desfazer em bloco, ent�
 
 **A ordem de `IPipelineBehavior` não mapeia de forma limpa para decorators.** O MediatR executa os behaviors na ordem de registro em volta de um único handler. Os decorators do Scrutor se aninham na ordem em que você chama `Decorate`, e o *último* decorator registrado é o envoltório *mais externo*. Erre a ordem e seu decorator de logging executa dentro do seu decorator de validação em vez de em volta dele. Escreva um teste de ordenação por interface decorada.
 
-**Um `ISender` dentro de um handler que chama outro handler vira uma chamada direta ao serviço, e isso pode expor um ciclo.** A indireção do MediatR escondia as dependências entre handlers. Quando `OrderService` injeta `ICustomerService` e `CustomerService` injeta `IOrderService`, o container lança na inicialização com uma dependência circular. Isso é a migração trazendo à tona um problema de design que o MediatR estava mascarando; quebre o ciclo extraindo a lógica compartilhada para um terceiro serviço.
+Um ciclo pode aparecer na validação do grafo registrado ou na resolução dos serviços. Se `OrderService` e `CustomerService` dependem um do outro, extraia a operação compartilhada para um terceiro serviço.
 
 **Requisições de streaming precisam de `IAsyncEnumerable<T>`, não `Task<T>`.** Se você usava `IStreamRequest<T>` e `CreateStream`, o método de substituição retorna `IAsyncEnumerable<T>` e usa `yield return`. Não o colapse em um `Task<List<T>>`; isso muda a semântica de streaming e pode estourar a memória em resultados grandes, a mesma armadilha descrita em [ler um CSV grande no .NET 11 sem ficar sem memória](/pt-br/2026/04/how-to-read-a-large-csv-in-dotnet-11-without-running-out-of-memory/).
 

@@ -29,7 +29,8 @@
     "link-rot-check": "node scripts/link-rot-check.mjs",
     "indexnow-ping": "node scripts/indexnow-ping.mjs",
     "wp:migrate": "node scripts/wp-migrate.mjs",
-    "seo:indexing-audit": "node scripts/gsc-indexing-audit.mjs"
+    "seo:indexing-audit": "node scripts/gsc-indexing-audit.mjs",
+    "seo:discovery-audit": "node scripts/gsc-indexing-audit.mjs --cohort=scripts/gsc-discovery-cohort.json --output-dir=../content-strategy/discovery-audit"
   },
   "dependencies": {
     "dotenv": "^16.6.1",

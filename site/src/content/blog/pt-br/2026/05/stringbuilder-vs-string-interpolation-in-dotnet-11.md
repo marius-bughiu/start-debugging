@@ -4,6 +4,7 @@ description: "Use a interpolação de strings para compor de uma vez só um conj
 pubDate: 2026-05-25
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "csharp"
   - "dotnet"

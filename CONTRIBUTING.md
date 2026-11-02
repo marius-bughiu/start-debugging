@@ -37,6 +37,8 @@ Add internal links where a related article helps explain the surrounding text, u
 
 Prefer an existing tag before adding a new spelling. Reviewed synonyms live in [`site/src/lib/tags.mjs`](site/src/lib/tags.mjs); the build combines their listings and preserves old tag URLs, including pagination, with redirects. Small but distinct topics can keep their own tags. Add an alias only for the same topic, and keep its target canonical to avoid redirect chains. Run `node site/scripts/tag-taxonomy.test.mjs` after changing the mapping.
 
+An article explicitly targeting .NET 11 also needs the existing `dotnet-11` tag so it appears in the version tracker. General `dotnet` tags alone do not establish a version scope. Tag-only corrections preserve publication and update dates.
+
 Keep the historical page counts in `LEGACY_TAG_PAGES` when normalizing source tags. GitHub Pages serves Astro's static HTML redirects, with immediate meta refresh and a canonical target; these redirect pages are excluded from the sitemap.
 
 Related articles are selected using specific shared topics and title relevance. For editorial recommendations, add `relatedPosts` to a post's frontmatter as a list of canonical base slugs, for example `2026/04/dapper-nvarchar-implicit-conversion-kills-sql-server-indexes`. Use no leading slash, locale prefix, or trailing slash. Picks resolve to published articles in the reader's language; unavailable translations are skipped. List only articles that help the reader continue the topic.
@@ -46,6 +48,10 @@ Related articles are selected using specific shared topics and title relevance. 
 The production build validates the sitemap, canonical URLs, page metadata, and language alternatives before deployment. Keep redirect URLs outside the sitemap, and preserve reciprocal language links when changing translated routes.
 
 Run `npm run seo:indexing-audit` from `site/` to refresh the fixed cohort in `site/scripts/gsc-indexing-cohort.json`. It uses existing Google Application Default Credentials with `webmasters.readonly`, checks live page responses separately, and saves all inspection results under `content-strategy/`, including indexed controls and API errors. Timestamped snapshots allow comparisons of the same URLs. This is a diagnostic sample, not a sitewide indexing rate, and does not submit indexing requests.
+
+`npm run seo:discovery-audit` tracks the separate 30-URL discovery/content-review cohort and writes to `content-strategy/discovery-audit/`, preserving the original cohort's history. Its URLs include established controls, observed organic landing pages, featured guides and restored examples. Keep cohort membership stable when comparing results.
+
+Pillar `indexTags` select articles sharing any listed subject tag. When a subject spans technologies, optional `indexRequireAnyTags` also requires at least one listed technology tag. This keeps a C# async guide focused without changing the articles' URLs, tag indexes or language availability. Run `node --test scripts/pillar-posts.test.mjs` from `site/` after changing that selection logic.
 
 Article screenshots need descriptive alt text; decorative images can use an empty alt. Eligible static local images receive dimensions and responsive WebP variants during the build; animations, author attributes and links to original images are preserved. Keep offscreen images lazy. For a measured above-fold/LCP image, an HTML `img` can explicitly set `loading="eager"` and `fetchpriority="high"`; the pipeline preserves those choices.
 

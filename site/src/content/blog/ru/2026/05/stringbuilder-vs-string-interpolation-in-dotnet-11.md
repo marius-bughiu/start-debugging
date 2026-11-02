@@ -4,6 +4,7 @@ description: "Используйте интерполяцию строк для 
 pubDate: 2026-05-25
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "csharp"
   - "dotnet"

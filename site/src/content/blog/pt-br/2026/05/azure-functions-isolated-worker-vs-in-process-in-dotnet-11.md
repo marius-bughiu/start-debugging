@@ -4,6 +4,7 @@ description: "Escolha o modelo isolated worker para toda nova aplicação Azure 
 pubDate: 2026-05-26
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "azure-functions"
   - "dotnet"

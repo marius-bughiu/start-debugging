@@ -4,6 +4,7 @@ description: ".NET 11 の新しいキャッシュコードでは、デフォル�
 pubDate: 2026-06-14
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "dotnet"
   - "aspnetcore"

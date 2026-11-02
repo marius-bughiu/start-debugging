@@ -1,28 +1,30 @@
 ---
 title: "The .NET 11 tracker"
-description: "Every preview, every feature, every breaking change - one place to bookmark for the .NET 11 release cycle."
+description: "Track the .NET 11 release candidate, support policy, runtime changes and upgrade checks, with links to integration testing, EF Core and request logging guides."
 tagline: "One bookmark for the whole .NET 11 cycle."
 pubDate: 2026-04-18
-updatedDate: 2026-10-25
+updatedDate: 2026-11-02
 indexTags:
   - ".net 11"
   - "dotnet 11"
   - ".net 11 preview"
   - "dotnet-11"
-  - "dotnet"
-  - ".net"
 ---
 
-This pillar collects everything I've written about **.NET 11**: previews, runtime changes, GC and JIT work, and the new BCL surface. I keep it current as each preview and release candidate drops.
+As of November 2, 2026, **.NET 11 RC3** is the current release candidate. Microsoft released it on October 25 as an [out-of-band security update](https://devblogs.microsoft.com/dotnet/dotnet-october-2026-oob-security-updates/). Its [support policy](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core) identifies the go-live release and its support window. .NET 11 is a Standard Term Support (STS) release. Teams moving from .NET 8 LTS should account for that difference when planning the next upgrade.
 
-## What to read first
+**Correction, November 2, 2026.** An earlier version listed RC2 as newest and described the .NET 8 to 11 move as LTS-to-LTS. The index now selects .NET 11 tags so articles about other versions no longer appear solely because they carry a general .NET tag.
 
-RC 2 is newest: [`CborReader` parses CBOR one chunk at a time](/2026/10/dotnet-11-rc-2-cborreader-reads-cbor-incrementally/). From RC 1, [reproducible container images](/2026/09/dotnet-11-rc-1-reproducible-container-images-source-date-epoch/), [Process can SIGTERM a child without P/Invoke](/2026/09/dotnet-11-rc-1-process-signal-exit-status/), and [SignalR swaps an expiring token without dropping the connection](/2026/09/signalr-authentication-refresh-finalized-dotnet-11-rc-1/). In the runtime, [the JIT devirtualizes generic virtual methods](/2026/09/dotnet-11-jit-devirtualizes-generic-virtual-methods/), while [a single-field wrapper struct](/2026/10/what-is-transparent-struct-layout-and-why-does-a-single-field-wrapper-struct-change-the-calling-convention-in-dotnet/) still isn't passed like its field on every ABI. The breaking change to know first: [the minimum CPU baseline rising to x86-64-v2](/2026/06/dotnet-11-minimum-cpu-baseline-x86-64-v2/), which older hardware fails.
+## Release and runtime changes
 
-Upgrading? Start from the checklists: [Migrate from .NET 8 to .NET 11: the full checklist](/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist/) for an LTS-to-LTS jump, or [.NET Framework 4.8 to .NET 11](/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026/) for the old framework; [dotnetup](/2026/10/dotnetup-public-preview-installs-the-sdk-your-global-json-pins/) installs whatever SDK `global.json` pins. With versions scattered across csproj files, [move to Central Package Management](/2026/08/migrate-a-dotnet-solution-to-central-package-management-with-directory-packages-props/) first. On the test side, the SDK's default runner changed: [migrate from VSTest to Microsoft.Testing.Platform](/2026/09/migrate-from-vstest-to-microsoft-testing-platform-in-dotnet-11/) covers the opt-in; [exit code 5, "Zero tests ran"](/2026/10/fix-dotnet-test-exit-code-5-zero-tests-ran-microsoft-testing-platform/) is usually a rejected option, and [a silent fallback to VSTest on Linux CI](/2026/10/fix-dotnet-test-falls-back-to-vstest-in-linux-ci-microsoft-testing-platform/) usually a missing `global.json`.
+For RC2, see [incremental CBOR parsing](/2026/10/dotnet-11-rc-2-cborreader-reads-cbor-incrementally/). RC1 introduced work on [reproducible container images](/2026/09/dotnet-11-rc-1-reproducible-container-images-source-date-epoch/), [process signals](/2026/09/dotnet-11-rc-1-process-signal-exit-status/) and [SignalR authentication refresh](/2026/09/signalr-authentication-refresh-finalized-dotnet-11-rc-1/). Runtime topics include [generic virtual method devirtualization](/2026/09/dotnet-11-jit-devirtualizes-generic-virtual-methods/), [struct calling conventions](/2026/10/what-is-transparent-struct-layout-and-why-does-a-single-field-wrapper-struct-change-the-calling-convention-in-dotnet/) and [CPU compatibility](/2026/06/dotnet-11-minimum-cpu-baseline-x86-64-v2/).
 
-## What's on this page
+## Plan and validate an upgrade
 
-The table below auto-collects posts tagged with any of: `.net 11`, `dotnet 11`, `.net 11 preview`, `dotnet-11`, `dotnet`, `.net`, newest first.
+Start with the [.NET 8 migration checklist](/2026/05/migrate-from-dotnet-8-to-dotnet-11-full-checklist/) or the [.NET Framework 4.8 migration guide](/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026/). For a multi-project solution, review [SDK selection](/2026/10/dotnetup-public-preview-installs-the-sdk-your-global-json-pins/) and [central package management](/2026/08/migrate-a-dotnet-solution-to-central-package-management-with-directory-packages-props/). If changing test runners, check [Microsoft.Testing.Platform configuration](/2026/09/migrate-from-vstest-to-microsoft-testing-platform-in-dotnet-11/), [exit code 5](/2026/10/fix-dotnet-test-exit-code-5-zero-tests-ran-microsoft-testing-platform/) and [VSTest fallback](/2026/10/fix-dotnet-test-falls-back-to-vstest-in-linux-ci-microsoft-testing-platform/).
 
-For quick reference instead of chronology, see the companion [EF Core 11 cheat sheet](/pillars/efcore-11-cheat-sheet/), [C# 14 features](/pillars/csharp-14-features/), and [async and concurrency](/pillars/async-and-concurrency-in-csharp/) pillars.
+Use [WebApplicationFactory and Testcontainers](/2026/08/webapplicationfactory-vs-testcontainers-for-aspnetcore-integration-tests/) to decide which HTTP and database behavior an integration test must exercise. For a change to stored data, [enum-to-string conversion](/2026/08/how-to-store-an-enum-as-a-string-in-ef-core-11-with-a-value-converter/) shows why numeric strings and named values can produce different query results. To trace an authenticated request through the upgraded application, see [user-ID logging and its request-lifetime limits](/2026/09/how-to-add-the-current-user-id-to-every-log-entry-in-aspnet-core/).
+
+## Browse by topic
+
+The chronological index below matches .NET 11 version tags. For focused reference, continue with [EF Core 11](/pillars/efcore-11-cheat-sheet/), [C# 14](/pillars/csharp-14-features/) or [async and concurrency](/pillars/async-and-concurrency-in-csharp/).

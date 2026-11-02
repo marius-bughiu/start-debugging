@@ -5,6 +5,7 @@ pubDate: 2026-06-05
 updatedDate: 2026-06-05
 template: migration
 tags:
+  - "dotnet-11"
   - "migration"
   - "blazor"
   - "dotnet"

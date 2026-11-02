@@ -4,6 +4,7 @@ description: "Use string interpolation for one-shot composition of a fixed set o
 pubDate: 2026-05-25
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "csharp"
   - "dotnet"

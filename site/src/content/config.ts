@@ -62,6 +62,7 @@ const pillars = defineCollection({
     title: z.string(),
     description: z.string(),
     indexTags: z.array(z.string()).transform(canonicalTags),
+    indexRequireAnyTags: z.array(z.string()).min(1).transform(canonicalTags).optional(),
     pubDate: z.date(),
     updatedDate: z.date().optional(),
     draft: z.boolean().optional(),

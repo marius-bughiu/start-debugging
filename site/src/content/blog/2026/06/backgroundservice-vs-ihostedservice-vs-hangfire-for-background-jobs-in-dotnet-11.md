@@ -4,6 +4,7 @@ description: "Pick BackgroundService for in-process loops, raw IHostedService wh
 pubDate: 2026-06-03
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "dotnet"
   - "aspnetcore"

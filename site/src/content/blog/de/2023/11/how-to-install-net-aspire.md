@@ -1,7 +1,8 @@
 ---
-title: ".NET Aspire installieren (dotnet workload install aspire)"
-description: "Installieren Sie .NET Aspire über `dotnet workload install aspire`. Schritt-für-Schritt-Einrichtung von .NET 8, dem Aspire-Workload und Docker unter Windows, macOS und Linux."
+title: "Die Aspire CLI für einen C#-AppHost installieren"
+description: "Die Aspire CLI für einen C#-AppHost installieren und prüfen. Warum dotnet workload install aspire zur ursprünglichen .NET-8-Vorschau gehört."
 pubDate: 2023-11-15
+updatedDate: 2026-11-02
 tags:
   - "aspire"
   - "dotnet"
@@ -10,51 +11,31 @@ translationOf: "2023/11/how-to-install-net-aspire"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-.NET Aspire ist ein umfassendes, cloudorientiertes Framework für die Erstellung skalierbarer, beobachtbarer und produktionsreifer verteilter Anwendungen. In diesem Artikel sehen wir uns die Voraussetzungen für den Einstieg in .NET Aspire an. Wenn Sie einen Überblick über .NET Aspire und seinen Mehrwert wünschen, lesen Sie unseren Artikel [What is .NET Aspire](/de/2023/11/what-is-net-aspire/).
 
-Es gibt drei Hauptdinge, die Sie für die Entwicklung von Anwendungen mit .NET Aspire benötigen:
+Installiere für einen **C#-AppHost** mit Aspire 13.x das .NET 10 SDK und die Aspire CLI. Prüfe im Terminal, ob ein 10.x-SDK aufgelistet ist, installiere die CLI als globales .NET-Tool und kontrolliere, ob die Shell sie findet:
 
--   [.NET 8](#install-net-8)
--   den [.NET Aspire-Workload](#install-the-net-aspire-workload)
--   und [Docker Desktop](#install-docker-desktop)
+```sh
+dotnet --list-sdks
+dotnet tool install --global Aspire.Cli
+aspire --version
+```
 
-Wenn Sie planen, Visual Studio für die Entwicklung Ihrer Anwendung zu verwenden, beachten Sie, dass Sie Visual Studio 2022 Preview, Version 17.9 oder höher benötigen.
+Findet der letzte Befehl `aspire` nicht, öffne das Terminal erneut und prüfe, ob das Verzeichnis der globalen .NET-Tools in `PATH` liegt. Für Windows-Paketmanager, Homebrew und weitere Methoden gibt es die [CLI-Installationsanleitung](https://aspire.dev/get-started/install-cli/). Wähle eine Installationsmethode.
 
-## Install .NET 8
+Startet der AppHost einen Redis- oder Datenbankcontainer, muss auch eine Containerlaufzeit laufen. Docker Desktop und Podman sind mögliche Optionen. Die [Aspire-Voraussetzungen](https://aspire.dev/get-started/prerequisites/) erklären deren Konfiguration und unterscheiden das für den C#-AppHost benötigte SDK von den Zielframeworks der gestarteten Dienste.
 
-Wenn Sie Visual Studio verwenden und bereits auf die neueste Version aktualisiert haben, ist .NET 8 bereits installiert. Falls Sie nicht auf der neuesten Version sind, stellen Sie sicher, dass Sie Visual Studio Version 17.9 oder höher verwenden, dann sind Sie auf der sicheren Seite.
+## Warum ältere Anleitungen eine Aspire-Workload installieren
 
-Wenn Sie Visual Studio nicht verwenden, können Sie das .NET 8 SDK hier herunterladen und installieren: [https://dotnet.microsoft.com/en-us/download/dotnet/8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+**Korrektur — 2. November 2026:** `dotnet workload install aspire` gehörte zur [.NET-8-Vorschau vom November 2023](https://devblogs.microsoft.com/dotnet/introducing-dotnet-aspire-simplifying-cloud-native-development-with-dotnet-8/). Mit [Aspire 9 zogen die Vorlagen in NuGet-Pakete um](https://aspire.dev/whats-new/aspire-9/), und die Workload wurde nicht mehr benötigt. Der folgende Befehl und die Screenshots dokumentieren diese frühere Einrichtung:
 
-## Install the .NET Aspire workload
-
-Der .NET Aspire-Workload kann auf zwei Arten installiert werden:
-
--   über die Kommandozeile mit der dotnet-CLI
--   oder über den Visual Studio Installer (für Visual Studio beachten Sie, dass Sie VS 17.9 oder höher benötigen)
-
-### Using .NET CLI
-
-Der Befehl zur Installation von .NET Aspire über die Kommandozeile ist recht einfach. Stellen Sie nur sicher, dass das .NET 8 SDK installiert ist, und Sie können den Workload-Installationsbefehl ausführen:
-
-```bash
+```sh
 dotnet workload install aspire
 ```
 
-### Using the Visual Studio Installer
-
-Wählen Sie im Visual Studio Installer den Workload **ASP.NET and web development** aus und aktivieren Sie im rechten Bereich unter **Optional** das Kontrollkästchen **.NET Aspire SDK (Preview)**. Klicken Sie dann auf **Modify**, um den Installationsvorgang zu starten.
+Der Visual Studio Installer bot damals unter der Webentwicklungsworkload die optionale Komponente **.NET Aspire SDK (Preview)** an. Das zweite Bild zeigt das damalige Docker-Desktop-Installationsprogramm für Windows.
 
 [![Visual Studio Installer mit ausgewählter ASP.NET-Webentwicklungsworkload und aktiviertem .NET Aspire SDK (Preview) unter Optional.](/wp-content/uploads/2023/11/image-1-1024x524.png)](/wp-content/uploads/2023/11/image-1.png)
 
-## Install Docker Desktop
-
-Sie können die neueste Version von Docker Desktop hier herunterladen: [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
-
-Durchlaufen Sie den Installer mit den Standardoptionen, und nach einem Neustart sollten Sie startklar sein.
-
 [![Docker Desktop-Installer mit aktivierten Optionen für WSL 2 statt Hyper-V und eine Desktopverknüpfung.](/wp-content/uploads/2023/11/image-2.png)](/wp-content/uploads/2023/11/image-2.png)
 
-Beachten Sie, dass Docker Desktop nur für den persönlichen Gebrauch durch einzelne Entwickler, im Bildungsbereich und in der Open-Source-Community kostenlos ist. Jede andere Art der Nutzung unterliegt einer Lizenzgebühr. Prüfen Sie im Zweifelsfall die [Preisseite](https://www.docker.com/pricing/).
-
-Mit allem installiert sind Sie nun bereit, mit .NET Aspire loszulegen!
+Wenn `aspire --version` funktioniert, [erstelle deine erste Aspire-Starteranwendung](/de/2023/11/getting-started-with-net-aspire/). [Wie Aspire Dienste verbindet](/de/2023/11/what-is-net-aspire/), erklärt die Rolle des AppHost.

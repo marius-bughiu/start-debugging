@@ -52,7 +52,7 @@ if (!isLocale(Astro.params.lang ?? "") || Astro.params.lang === "en") {
   return Astro.redirect("/404");
 }
 
-const posts = await getPillarPosts(pillar.data.indexTags, lang);
+const posts = await getPillarPosts(pillar.data.indexTags, lang, pillar.data.indexRequireAnyTags);
 const { Content, headings } = await pillar.render();
 
 const siteOrigin = Astro.site?.origin ?? "https://startdebugging.net";

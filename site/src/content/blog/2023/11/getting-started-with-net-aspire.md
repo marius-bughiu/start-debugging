@@ -1,175 +1,61 @@
 ---
-title: "Getting started with .NET Aspire"
-description: "A step-by-step guide to building your first .NET Aspire application, covering project structure, service discovery, and the Aspire dashboard."
+title: "Create and run your first Aspire starter app"
+description: "Build a C# Aspire starter with an API and Blazor frontend, open its dashboard, and compare the original .NET 8 preview project and screenshots."
 pubDate: 2023-11-15
+updatedDate: 2026-11-02
 tags:
   - "aspire"
   - "dotnet"
 ---
-This article will guide you through building your first .NET Aspire application. If you want an overview of .NET Aspire and what it brings to the table, check out our [What is .NET Aspire](/2023/11/what-is-net-aspire/) article.
 
-## Prerequisites
+Start with the [Aspire CLI and C# prerequisites](/2023/11/how-to-install-net-aspire/). For a **new** solution, the `aspire-starter` template gives you an API service, a Blazor frontend and an AppHost that connects them. If you already have a solution, follow the [Aspire 13.4 guide to adding an AppHost to existing projects](/2026/07/how-to-add-aspire-to-an-existing-aspnetcore-solution-without-restructuring-it/).
 
-There are a few things you need to have ready before you get started with .NET Aspire:
+## Create the starter and open its dashboard
 
--   Visual Studio 2022 Preview (version 17.9 or higher)
-    -   with the .NET Aspire workload installed
-    -   and .NET 8.0
--   Docker Desktop
+From the directory where you want the new solution, run:
 
-If you prefer not to use Visual Studio, you can also install .NET Aspire using the dotnet CLI using the `dotnet workload install aspire` command. And then you are free to use whichever IDE you like.
+```sh
+aspire new aspire-starter -n HelloAspire -o HelloAspire
+cd HelloAspire
+aspire run
+```
 
-For a comprehensive guide on how to install all the required .NET Aspire prerequisites, check out [How to install .NET Aspire](/2023/11/how-to-install-net-aspire/).
+Follow any template prompts. The first command creates the solution in `HelloAspire`. The last runs its AppHost. Open the dashboard URL printed in the terminal, then open the web frontend’s endpoint from the resources list. Visit the weather page to send a request through the frontend to the API. In the dashboard, inspect the service logs and the trace for that request. Use `Ctrl+C` in the terminal to stop the app.
 
-## Create new project
+In the generated starter, `ApiService` serves the data, `Web` consumes it, and `ServiceDefaults` supplies common configuration. The AppHost registers the projects and connects the frontend to its dependencies. See the [current C# quickstart](https://aspire.dev/get-started/first-app/?lang=csharp) for the template structure, or [the Aspire overview](/2023/11/what-is-net-aspire/) for how a resource reference works.
 
-In Visual Studio, go to **File** > **New** > **Project**, select **.NET Aspire** in the project type dropdown, or search for the word "Aspire". This should bring up two templates:
+## Archive: the November 2023 .NET 8 preview
 
--   **.NET Aspire Application** – an empty .NET Aspire project template.
--   **.NET Aspire Starter Application** – a more comprehensive project template containing a Blazor frontend, an API backend service, and – optionally – caching using Redis.
+**Correction — November 2, 2026:** The steps above use the Aspire 13.x CLI. The screenshots, optional Redis switch and `AddRedisContainer` API below belong to the [2023 preview](https://devblogs.microsoft.com/dotnet/introducing-dotnet-aspire-simplifying-cloud-native-development-with-dotnet-8/). Its AppHost targeted `net8.0` and referenced [Aspire.Hosting 8.0.0-preview.1.23557.2](https://www.nuget.org/packages/Aspire.Hosting/8.0.0-preview.1.23557.2).
 
-We will choose the **.NET Aspire Starter Application** template for our first .NET Aspire app.
+In Visual Studio 2022 Preview, the original walkthrough selected **.NET Aspire Starter Application**, then enabled **Use Redis for caching**. Its CLI equivalent was:
 
-[![Visual Studio's create new project dialog showing a list of filtered .NET Aspire project templates.](/wp-content/uploads/2023/11/image-9.png)](/wp-content/uploads/2023/11/image-9.png)
-
-Give your project a name, and make sure that, in the **Additional information** dialog, you enable the **Use Redis for caching** option. This is entirely optional, but it serves as a good example of what .NET Aspire can do for you.
-
-[![Additional information dialog for the .NET Aspire Starter Application project template with the optional Use Redis for caching (required Docker) option.](/wp-content/uploads/2023/11/image-5.png)](/wp-content/uploads/2023/11/image-5.png)
-
-### Using dotnet CLI
-
-You can also create .NET Aspire apps using the dotnet CLI. For creating an app using the .NET Aspire Starter Application template, use the following command, replacing `Foo` with your desired solution name.
-
-```bash
+```sh
 dotnet new aspire-starter --use-redis-cache --output Foo
 ```
 
-## Project structure
+[![Visual Studio's create new project dialog showing a list of filtered .NET Aspire project templates.](/wp-content/uploads/2023/11/image-9.png)](/wp-content/uploads/2023/11/image-9.png)
 
-With the .NET Aspire solution created, let's have a look at its structure. You should have 4 projects under your solution:
+[![Additional information dialog for the .NET Aspire Starter Application project template with the optional Use Redis for caching (required Docker) option.](/wp-content/uploads/2023/11/image-5.png)](/wp-content/uploads/2023/11/image-5.png)
 
--   **ApiService**: an ASP.NET Core API project used by the frontend to retrieve data.
--   **AppHost**: acts as an orchestrator by connecting and configuring the different projects and services of your .NET Aspire application.
--   **ServiceDefaults**: a shared project used to manage configurations related to resilience, service discovery, and telemetry.
--   **Web**: a Blazor application acting as our frontend.
-
-The dependencies between the projects look like this:
+The AppHost referenced `ApiService` and `Web`. Those two projects shared `ServiceDefaults`, as shown in the original dependency diagram:
 
 [![A project dependencies graph for a .NET Aspire Starter Application showing AppHost at the top, dependent on ApiService and Web, both dependent on ServiceDefaults.](/wp-content/uploads/2023/11/image-6.png)](/wp-content/uploads/2023/11/image-6.png)
 
-Let’s start at the top.
-
-## AppHost project
-
-This is our .NET Aspire solution orchestrator project. Its role is to connect and configure the different projects and services of our .NET Aspire application.
-
-Let's have a look at its `.csproj` file:
-
-```xml
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <IsAspireHost>true</IsAspireHost>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Foo.ApiService\Foo.ApiService.csproj" />
-    <ProjectReference Include="..\Foo.Web\Foo.Web.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Aspire.Hosting" Version="8.0.0-preview.1.23557.2" />
-  </ItemGroup>
-
-</Project>
-```
-
-Two things will stand out:
-
--   the `IsAspireHost` element which explicitly marks this project as being our solution’s orchestrator
--   the `Aspire.Hosting` package reference. This package contains core API and abstractions for the .NET Aspire application model. Since the framework is still in preview, the .NET Aspire NuGet packages are marked as preview releases as well.
-
-Let’s look next at `Program.cs`. You’ll notice there a very familiar builder pattern used to link together the different projects and to enable caching.
+The preview AppHost registered Redis as `cache` and the API as `apiservice`. The web frontend referenced both. This is the historical API shape:
 
 ```cs
 var builder = DistributedApplication.CreateBuilder(args);
-
 var cache = builder.AddRedisContainer("cache");
-
-var apiservice = builder.AddProject<Projects.Foo_ApiService>("apiservice");
-
+var api = builder.AddProject<Projects.Foo_ApiService>("apiservice");
 builder.AddProject<Projects.Foo_Web>("webfrontend")
     .WithReference(cache)
-    .WithReference(apiservice);
-
+    .WithReference(api);
 builder.Build().Run();
 ```
 
-What the code above essentially does is the following:
-
--   creates an `IDistributedApplicationBuilder` instance used to build our `DistributedApplication`
--   creates a `RedisContainerResource` which we can reference later in our projects and services
--   adds our `ApiService` project to the application and holds an instance to the `ProjectResource`
--   adds our `Web` project to the application, referencing the Redis cache and the `ApiService`
--   before finally calling `Build()` to build our `DistributedApplication` instance, and `Run()` to run it.
-
-## ApiService project
-
-The `ApiService` project exposes a `/weatherforecast` endpoint which we can consume from our `Web` project. In order to make the API available for consumption, we registered it in our `AppHost` project, and gave it the name `apiservice`.
-
-```cs
-builder.AddProject<Projects.Foo_ApiService>("apiservice")
-```
-
-## Web project
-
-The `Web` project represents our Blazor frontend and consumes the `/weatherforecast` endpoint exposed by our `ApiService`. The way it does it is where the .NET Aspire magic starts to really kick in.
-
-You'll notice that it uses a typed `HttpClient`:
-
-```cs
-public class WeatherApiClient(HttpClient httpClient)
-{
-    public async Task<WeatherForecast[]> GetWeatherAsync()
-    {
-        return await httpClient.GetFromJsonAsync<WeatherForecast[]>("/weatherforecast") ?? [];
-    }
-}
-```
-
-Now, if you look inside `Program.cs` you will notice something interesting on line 14:
-
-```cs
-builder.Services.AddHttpClient<WeatherApiClient>(client =>
-    client.BaseAddress = new("http://apiservice"));
-```
-
-Remember how we gave our `ApiService` project the name `apiservice` when adding it as a `ProjectResource` in our `DistributedApplication`? Now this line configures the typed `WeatherApiClient` to use service discovery and connect to a service named `apiservice`. `http://apiservice` will automatically resolve to the correct address of our `ApiService` resource without any additional configuration required on your part.
-
-## ServiceDefaults project
-
-Similar to the `AppHost` project, the shared project is also differentiated through a special project property:
-
-```xml
-<IsAspireSharedProject>true</IsAspireSharedProject>
-```
-
-The project ensures that all the different projects and services are set up in the same way when it comes to resilience, service discovery, and telemetry. It does this by exposing a set of extension methods which can be called by the solution’s projects and services on their own `IHostApplicationBuilder` instances.
-
-## Run the project
-
-In order to run the project, make sure you have the `AppHost` set up as your start project and hit run (F5) in Visual Studio. Alternatively, you can run the project from the command line, using `dotnet run --project Foo/Foo.AppHost`, replacing `Foo` with your project name.
-
-After the application starts, you will be presented with the .NET Aspire dashboard.
+The original dashboard showed the projects and container together. Opening the trace for a weather request exposed its individual service calls:
 
 [![The .NET Aspire dashboard running the .NET Aspire Starter Application project template.](/wp-content/uploads/2023/11/image-7-1024x414.png)](/wp-content/uploads/2023/11/image-7.png)
 
-The dashboard allows you to monitor the various parts of your .NET Aspire application: your projects, containers, and executables. It also provides aggregated, structured logs for your services, request traces, and various other useful metrics.
-
 [![A request trace inside the .NET Aspire dashboard showing the request in stages as it passes through the different application components.](/wp-content/uploads/2023/11/image-8.png)](/wp-content/uploads/2023/11/image-8.png)
-
-And that’s it! Congratulations on building and running your very first .NET Aspire application!

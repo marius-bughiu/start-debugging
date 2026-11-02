@@ -1,56 +1,37 @@
 ---
-title: "How to install .NET Aspire (dotnet workload install aspire)"
-description: "Install .NET Aspire via `dotnet workload install aspire`. Step-by-step setup of .NET 8, the Aspire workload, and Docker on Windows, macOS, Linux."
+title: "How to install the Aspire CLI for a C# AppHost"
+description: "Install and verify the Aspire CLI for a C# AppHost. See why dotnet workload install aspire belongs to the original .NET 8 preview."
 pubDate: 2023-11-15
+updatedDate: 2026-11-02
 tags:
   - "aspire"
   - "dotnet"
 ---
-.NET Aspire is a comprehensive, cloud-oriented framework designed for creating scalable, observable, and production-grade distributed applications. In this article we’ll look at the prerequisites of getting started with .NET Aspire. If you want an overview of .NET Aspire and what it brings to the table, check out our [What is .NET Aspire](/2023/11/what-is-net-aspire/) article.
 
-There are three main things you will need in order to develop applications using .NET Aspire:
+For an Aspire 13.x **C# AppHost**, install the .NET 10 SDK and the Aspire CLI. In a terminal, check that a 10.x SDK is listed, install the CLI as a .NET global tool, then verify that your shell can find it:
 
--   [.NET 8](#install-net-8)
--   the [.NET Aspire workload](#install-the-net-aspire-workload)
--   and [Docker Desktop](#install-docker-desktop)
+```sh
+dotnet --list-sdks
+dotnet tool install --global Aspire.Cli
+aspire --version
+```
 
-If you are planning to use Visual Studio for developing your application, note that you will need to use Visual Studio 2022 Preview, version 17.9 or higher.
+If the final command cannot find `aspire`, reopen the terminal and check that the .NET global tools directory is on your `PATH`. For a Windows package manager, Homebrew or another installation method, see [the CLI installation guide](https://aspire.dev/get-started/install-cli/). Choose one installation method.
 
-## Install .NET 8
+An AppHost that starts a Redis or database container also needs a running container runtime. Docker Desktop and Podman are options. The [Aspire prerequisites](https://aspire.dev/get-started/prerequisites/) explain the runtime configuration and distinguish the SDK needed by a C# AppHost from the target frameworks of the services it runs.
 
-If you’re using Visual Studio and you’ve already updated to the latest version, then you already have .NET 8 installed. If you are not on the latest version, make sure you are using Visual Studio version 17.9 or higher and that should have you covered.
+## Why older instructions install an Aspire workload
 
-If you are not using Visual Studio, you can download and install the .NET 8 SDK from here: [https://dotnet.microsoft.com/en-us/download/dotnet/8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+**Correction — November 2, 2026:** `dotnet workload install aspire` was the setup command for the [November 2023 .NET 8 preview](https://devblogs.microsoft.com/dotnet/introducing-dotnet-aspire-simplifying-cloud-native-development-with-dotnet-8/). [Aspire 9 moved the templates into NuGet packages](https://aspire.dev/whats-new/aspire-9/) and removed the workload requirement. The following command and screenshots document that earlier setup:
 
-## Install the .NET Aspire workload
-
-The .NET Aspire workload can be installed one of two ways:
-
--   from command-line using the dotnet CLI
--   or using the Visual Studio Installer (for Visual Studio note that you will need VS 17.9 or higher)
-
-### Using .NET CLI
-
-The command to install .NET Aspire from command line is quite simple. Just make sure you have the .NET 8 SDK installed and you are ready to run the install workload command:
-
-```bash
+```sh
 dotnet workload install aspire
 ```
 
-### Using the Visual Studio Installer
-
-In your Visual Studio Installer, make sure you select the **ASP.NET and web development** workload, and then on the right panel, under **Optional**, make sure to check **.NET Aspire SDK (Preview)**, then click **Modify** to begin the install process.
+In the preview, Visual Studio Installer offered an optional **.NET Aspire SDK (Preview)** component under the web development workload. The second screenshot shows the Docker Desktop installer on Windows at the time.
 
 [![Visual Studio Installer with ASP.NET and web development selected and .NET Aspire SDK (Preview) checked under Optional.](/wp-content/uploads/2023/11/image-1-1024x524.png)](/wp-content/uploads/2023/11/image-1.png)
 
-## Install Docker Desktop
-
-You can download the latest version of Docker for Desktop here: [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
-
-Run through the installer with the default options and, after a restart, you should be good to go.
-
 [![Docker Desktop installer with Use WSL 2 instead of Hyper-V and Add shortcut to desktop checked.](/wp-content/uploads/2023/11/image-2.png)](/wp-content/uploads/2023/11/image-2.png)
 
-Note that Docker Desktop is free only for personal use by individual developers, education and open source community. Any other kind of usage is subject to a license fee. Make sure to check [their pricing page](https://www.docker.com/pricing/) if you are in doubt.
-
-With everything installed, you are now ready to start building with .NET Aspire!
+Once `aspire --version` works, [create your first Aspire starter app](/2023/11/getting-started-with-net-aspire/). To see why an AppHost is involved, read [how Aspire connects services](/2023/11/what-is-net-aspire/).

@@ -32,7 +32,7 @@ const withCounts = await Promise.all(
     return {
       pillar: p,
       slug,
-      count: (await getPillarPosts(p.data.indexTags, lang)).length,
+      count: (await getPillarPosts(p.data.indexTags, lang, p.data.indexRequireAnyTags)).length,
     };
   }),
 );

@@ -1,0 +1,157 @@
+{
+  "siteUrl": "sc-domain:startdebugging.net",
+  "origin": "https://startdebugging.net",
+  "selection": "Purposive 30-URL discovery cohort established November 2, 2026: original 12 controls/discovery URLs, nine observed organic landing pages, three featured guides, three restored-example articles and three Aspire guides. Not a sitewide indexing estimate. Retain the original 12-URL cohort separately.",
+  "urls": [
+    {
+      "path": "/",
+      "group": "established-control",
+      "reason": "Retained from the October 31 fixed diagnostic cohort."
+    },
+    {
+      "path": "/2023/06/how-to-fix-command-dotnet-ef-not-found/",
+      "group": "established-control",
+      "reason": "Retained from the October 31 fixed diagnostic cohort."
+    },
+    {
+      "path": "/2023/10/how-to-fix-missingpluginexception-no-implementation-found-for-method-getall/",
+      "group": "established-control",
+      "reason": "Retained from the October 31 fixed diagnostic cohort."
+    },
+    {
+      "path": "/2026/06/gate-cursor-sdk-tool-calls-with-auto-review-and-permissions-json/",
+      "group": "established-control",
+      "reason": "Retained from the October 31 fixed diagnostic cohort."
+    },
+    {
+      "path": "/2026/06/fix-renderbox-was-not-laid-out-in-flutter/",
+      "group": "established-control",
+      "reason": "Retained from the October 31 fixed diagnostic cohort."
+    },
+    {
+      "path": "/2026/08/webapplicationfactory-vs-testcontainers-for-aspnetcore-integration-tests/",
+      "group": "discovery-article",
+      "reason": "Retained from the October 31 fixed diagnostic cohort."
+    },
+    {
+      "path": "/2026/08/how-to-store-an-enum-as-a-string-in-ef-core-11-with-a-value-converter/",
+      "group": "discovery-article",
+      "reason": "Retained from the October 31 fixed diagnostic cohort."
+    },
+    {
+      "path": "/2026/09/how-to-add-the-current-user-id-to-every-log-entry-in-aspnet-core/",
+      "group": "discovery-article",
+      "reason": "Retained from the October 31 fixed diagnostic cohort."
+    },
+    {
+      "path": "/2026/09/what-is-a-flutter-key-and-when-does-omitting-it-cause-bugs/",
+      "group": "discovery-article",
+      "reason": "Retained from the October 31 fixed diagnostic cohort."
+    },
+    {
+      "path": "/de/2026/09/how-to-add-the-current-user-id-to-every-log-entry-in-aspnet-core/",
+      "group": "discovery-article",
+      "reason": "Retained from the October 31 fixed diagnostic cohort."
+    },
+    {
+      "path": "/pillars/dotnet-11-tracker/",
+      "group": "topic-guide",
+      "reason": "Retained from the October 31 fixed diagnostic cohort."
+    },
+    {
+      "path": "/pillars/async-and-concurrency-in-csharp/",
+      "group": "topic-guide",
+      "reason": "Retained from the October 31 fixed diagnostic cohort."
+    },
+    {
+      "path": "/2026/07/migrate-copilot-prompt-files-to-agent-skills/",
+      "group": "existing-organic-reader",
+      "reason": "Observed organic landing page in the October 3\u201330 reader cohort."
+    },
+    {
+      "path": "/2026/08/fix-a-restricted-method-in-java-lang-system-has-been-called-in-a-flutter-gradle-build/",
+      "group": "existing-organic-reader",
+      "reason": "Observed organic landing page in the October 3\u201330 reader cohort."
+    },
+    {
+      "path": "/ja/2026/09/how-to-enable-r8-shrinking-and-obfuscation-for-a-dotnet-maui-android-release-build/",
+      "group": "existing-organic-reader",
+      "reason": "Observed organic landing page in the October 3\u201330 reader cohort."
+    },
+    {
+      "path": "/ru/2026/06/fix-the-ssl-connection-could-not-be-established-with-httpclient/",
+      "group": "existing-organic-reader",
+      "reason": "Observed organic landing page in the October 3\u201330 reader cohort."
+    },
+    {
+      "path": "/2026/04/visual-studio-2026-hot-reload-auto-restart-rude-edits/",
+      "group": "existing-organic-reader",
+      "reason": "Observed organic landing page in the October 3\u201330 reader cohort."
+    },
+    {
+      "path": "/2026/05/fix-could-not-load-file-or-assembly-in-published-app/",
+      "group": "existing-organic-reader",
+      "reason": "Observed organic landing page in the October 3\u201330 reader cohort."
+    },
+    {
+      "path": "/2026/05/migrate-from-mediatr-to-plain-dependency-injection/",
+      "group": "existing-organic-reader",
+      "reason": "Observed organic landing page in the October 3\u201330 reader cohort."
+    },
+    {
+      "path": "/2026/06/migrate-from-system-web-httpcontext-to-aspnetcore-httpcontext/",
+      "group": "existing-organic-reader",
+      "reason": "Observed organic landing page in the October 3\u201330 reader cohort."
+    },
+    {
+      "path": "/2026/08/fix-attempting-to-reconnect-to-the-server-after-a-blazor-circuit-disconnects/",
+      "group": "existing-organic-reader",
+      "reason": "Observed organic landing page in the October 3\u201330 reader cohort."
+    },
+    {
+      "path": "/2026/10/how-to-tail-a-log-file-in-csharp-while-another-process-is-writing-to-it/",
+      "group": "featured-practical-guide",
+      "reason": "Curated practical guide featured on the homepage; check discovery before further promotion."
+    },
+    {
+      "path": "/2026/10/how-to-use-a-different-serilog-output-template-per-log-level-from-appsettings-json/",
+      "group": "featured-practical-guide",
+      "reason": "Curated practical guide featured on the homepage; check discovery before further promotion."
+    },
+    {
+      "path": "/2026/10/how-to-detect-windows-session-lock-unlock-logon-and-logoff-events-in-csharp/",
+      "group": "featured-practical-guide",
+      "reason": "Curated practical guide featured on the homepage; check discovery before further promotion."
+    },
+    {
+      "path": "/2023/10/unsafe-accessor/",
+      "group": "restored-example",
+      "reason": "Reviewed article with a restored blog-hosted source project."
+    },
+    {
+      "path": "/2023/11/net-8-performance-unsafeaccessor-vs-reflection/",
+      "group": "restored-example",
+      "reason": "Reviewed article with a restored blog-hosted source project."
+    },
+    {
+      "path": "/2023/11/2-column-react-native/",
+      "group": "restored-example",
+      "reason": "Reviewed article with a restored blog-hosted source project."
+    },
+    {
+      "path": "/2023/11/how-to-install-net-aspire/",
+      "group": "aspire-intent-review",
+      "reason": "Related Aspire installation, introduction and starter guides selected for version/intent overlap review."
+    },
+    {
+      "path": "/2023/11/getting-started-with-net-aspire/",
+      "group": "aspire-intent-review",
+      "reason": "Related Aspire installation, introduction and starter guides selected for version/intent overlap review."
+    },
+    {
+      "path": "/2023/11/what-is-net-aspire/",
+      "group": "aspire-intent-review",
+      "reason": "Related Aspire installation, introduction and starter guides selected for version/intent overlap review."
+    }
+  ]
+}

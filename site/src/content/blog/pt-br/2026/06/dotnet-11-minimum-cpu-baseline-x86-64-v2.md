@@ -3,6 +3,7 @@ title: ".NET 11 eleva a linha de base minima de CPU para x86-64-v2"
 description: ".NET 11 Preview 4 deixa de dar suporte a chips x86/x64 anteriores a 2013 e eleva a linha de base do JIT para x86-64-v2. Veja o que quebra, por que e como verificar seu hardware antes de atualizar."
 pubDate: 2026-06-03
 tags:
+  - "dotnet-11"
   - "dotnet"
   - "performance"
   - "native-aot"

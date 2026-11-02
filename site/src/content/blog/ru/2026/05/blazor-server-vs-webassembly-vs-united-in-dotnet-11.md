@@ -4,6 +4,7 @@ description: "Выберите Blazor Web App или автономный WebAss
 pubDate: 2026-05-26
 updatedDate: 2026-11-02
 tags:
+  - "dotnet-11"
   - "comparison"
   - "blazor"
   - "dotnet"

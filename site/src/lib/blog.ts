@@ -1,5 +1,6 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import { createRelatedPostRanker } from "./related-posts.mjs";
+import { selectPillarPosts } from "./pillar-posts.mjs";
 
 export type BlogPost = CollectionEntry<"blog">;
 export type Pillar = CollectionEntry<"pillars">;
@@ -170,18 +171,14 @@ export async function getRelatedPosts(
   return (await relatedPostRankers.get(lang)!)(post, limit);
 }
 
-/** Posts that share at least one tag with a pillar's indexTags, sorted newest-first. */
+/** Posts matching a pillar's subject and optional technology scope, newest-first. */
 export async function getPillarPosts(
   indexTags: string[],
   lang: Locale = DEFAULT_LOCALE,
+  indexRequireAnyTags: string[] = [],
 ): Promise<BlogPost[]> {
-  const wanted = new Set(indexTags.map((t) => t.toLowerCase()));
   const posts = await getPublishedBlogPosts(lang);
-  return posts.filter((p) => {
-    const tags = (p.data.tags ?? []).map((t) => t.toLowerCase());
-    for (const t of tags) if (wanted.has(t)) return true;
-    return false;
-  });
+  return selectPillarPosts(posts, indexTags, indexRequireAnyTags);
 }
 
 export async function getPublishedPillars(

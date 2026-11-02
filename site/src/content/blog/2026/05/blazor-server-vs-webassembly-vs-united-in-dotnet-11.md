@@ -5,6 +5,7 @@ pubDate: 2026-05-26
 updatedDate: 2026-11-02
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "blazor"
   - "dotnet"

@@ -1,7 +1,8 @@
 ---
 title: "MediatR vs plain service classes in 2026: should the license change move you?"
-description: "For new code, plain service classes are the better default. MediatR's July 2025 license change matters only if you sit above the $5M Community threshold or refuse the RPL-1.5 copyleft. Keep MediatR when pipeline behaviors are load-bearing."
+description: "Compare MediatR dispatch and pipeline behaviors with direct service calls, including DI validation, licensing criteria and how to assess performance."
 pubDate: 2026-05-23
+updatedDate: 2026-11-02
 template: vs
 tags:
   - "comparison"
@@ -12,21 +13,17 @@ tags:
   - "dotnet-11"
 ---
 
-The short version: for new .NET 11 code in 2026, default to **plain service classes** and reach for MediatR only when you actually lean on its pipeline behaviors. The July 2025 license change is a real reason to re-evaluate, but it is not the cliff some people made it out to be. If your company is under $5,000,000 in gross annual revenue you can keep using the latest MediatR for free under the Community edition, so the licensing question only forces a decision for larger teams or for anyone unwilling to accept the RPL-1.5 copyleft on the free open-source license. The technical question (do you need a mediator at all?) is the one that should actually drive the choice, and for most request-dispatch use it is the indirection, not the library, that you can drop.
+Choose direct services when each request has one obvious destination. MediatR becomes more useful when several request types share pipeline behaviors or need notification fan-out. Check the license terms for the version you use as a separate decision.
 
-Versions referenced throughout: MediatR 12.5.0 is the last release under the plain Apache 2.0 license; MediatR 13.0 (released 2025-07-02) and the later 14.x line ship under a dual Reciprocal Public License 1.5 / commercial model from Lucky Penny Software. Code targets `<TargetFramework>net11.0</TargetFramework>` with the .NET 11 SDK and C# 14.
+**Correction — November 2, 2026:** Corrected the DI validation and licensing comparison and removed unsupported dispatch timing and allocation estimates.
+
+The examples target `net11.0` and illustrate the MediatR 13/14 contracts. The DI validation check described below ran on .NET 10.
 
 ## What actually changed in July 2025
 
-MediatR and AutoMapper were maintained for years by Jimmy Bogard as permissively licensed open source. On 2025-07-02 he moved both to a new company, Lucky Penny Software, and switched the licensing model. The mechanics that matter for your decision:
+MediatR 12.5.0 was distributed under Apache 2.0. The author announced RPL-1.5 and commercial options starting with 13.0.0 in July 2025. Earlier versions retain their original terms.
 
-- **Old versions stay free forever.** MediatR 12.x and earlier remain under Apache 2.0 (MIT for some older artifacts) and are not retroactively relicensed. You can pin `12.5.0` and never pay. The catch is that you get no security updates, no fixes, and no support for that line.
-- **New versions are dual-licensed.** MediatR 13.0 and later are offered under the Reciprocal Public License 1.5 (RPL-1.5) for open-source use, or a paid commercial license.
-- **There is a free Community edition.** Companies and individuals under $5,000,000 USD gross annual revenue (and who have not taken more than $10,000,000 in outside capital), non-profits under the same budget, educational use, and non-production environments all qualify to use the latest MediatR for free under the commercial agreement's Community tier.
-- **Paid tiers are team-sized.** Standard (1-10 developers), Professional (11-50), and Enterprise (unlimited), billed monthly or annually, counting only developers with "programmatic access" who write or compile code that calls MediatR.
-- **The license check only logs.** An expired or missing key produces log warnings, not a runtime failure. No feature lockout, no degraded performance, no license server or network call.
-
-So the practical fork is this. Small shop under $5M? You can stay on current MediatR for free, and the only friction is the warning log until you register a Community key. Larger or well-funded? You either pay, accept RPL-1.5's reciprocal obligations, or leave. That third group is exactly who should be reading a "vs plain service classes" comparison.
+[Lucky Penny Software’s Community criteria](https://luckypennysoftware.com/faq) include annual gross revenue or nonprofit budget below US$5 million and no more than US$10 million in outside capital. The vendor also sets conditions for government or quasi-government entities, higher-education use and client work. Check the conditions for your organization and use case.
 
 ## The feature matrix at a glance
 
@@ -34,16 +31,10 @@ So the practical fork is this. Small shop under $5M? You can stay on current Med
 | ------- | ----------- | --------------------- |
 | Request dispatch | `ISender.Send` indirection | Direct method call on an injected interface |
 | Cross-cutting concerns | First-class `IPipelineBehavior<,>` | Decorators (Scrutor) or explicit calls |
-| Go-to-definition from caller | Lands on `Send`, not the handler | Lands on the implementation |
-| Compile-time wiring safety | Runtime resolution, can fail at first call | Constructor injection, fails at startup |
+| DI validation | Depends on registrations and provider options | Depends on registrations and provider options |
 | Notifications / fan-out | Built-in `INotification` publish | Hand-rolled list of handlers |
-| Startup cost | Assembly scanning to register handlers | None beyond normal DI registration |
-| Per-call overhead | Wrapper allocation + dictionary lookup + virtual dispatch | Near-zero, JIT can devirtualize |
-| Native AOT / trimming | Needs care, reflection-based registration | Clean |
-| License (above $5M revenue) | Commercial purchase or RPL-1.5 | None, your own code |
-| New code in 2026 | Only if behaviors are load-bearing | The default |
 
-The row that decides most arguments is "cross-cutting concerns." Almost everything else in that table favors plain services. MediatR's genuine, hard-to-replace value is the pipeline: a single place to wrap every request with validation, logging, transactions, and caching. If you do not use that pipeline, you are paying indirection and licensing cost for a glorified service locator.
+The pipeline is the main design difference: it gives many requests one place to share validation, logging, transactions or caching.
 
 ## What MediatR looks like, and the plain equivalent
 
@@ -95,9 +86,11 @@ public async Task<OrderDto> Get(int id, IOrderService orders, CancellationToken 
     => await orders.GetByIdAsync(id, ct);
 ```
 
-The plain version is shorter, and crucially, pressing go-to-definition on `orders.GetByIdAsync` lands you in the method that runs. With `sender.Send(new GetOrderById(id))` it lands on MediatR's `Send`, and you navigate to the handler by guessing or by a "find implementations" detour. On a small team that difference is mild. On a large codebase with hundreds of handlers, the loss of direct navigability is a real, daily tax that the MediatR model imposes in exchange for decoupling the caller from the handler type. Whether that decoupling buys you anything depends on whether anyone ever swaps a handler without touching the caller, which in practice is rare.
+From an interface call, go-to-definition leads to the interface method and the IDE can locate its implementations. From `Send`, locate the handler for the request type.
 
-Registration is also worth comparing. MediatR scans assemblies at startup; plain services register explicitly, and you get a startup-time failure (not a first-request failure) if you forget one, which interacts directly with the kind of mistakes behind [Unable to resolve service for type while attempting to activate](/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/).
+`AddScoped` records a service registration. With the built-in provider and `ValidateOnBuild` enabled, building the host can detect an unregistered constructor dependency in a registered service. With validation disabled, the build can succeed and the failure occurs when the service is resolved. [ASP.NET Core’s default validation settings](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-10.0#validatescopes-and-validateonbuild) depend on the environment. `ValidateScopes` is a separate lifetime check.
+
+The .NET 10 check for this correction registered a scoped service with a missing constructor dependency: the default Development host failed at `Build()`, while the default Production host built and failed on resolution. An explicit `ValidateOnBuild` setting changed which phase failed.
 
 ```csharp
 // .NET 11, C# 14 - registration, side by side
@@ -105,7 +98,7 @@ Registration is also worth comparing. MediatR scans assemblies at startup; plain
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssemblyContaining<GetOrderById>());
 
-// Plain: explicit, trim-friendly, fails fast at startup if a dep is missing
+// Plain: explicitly register the scoped service
 builder.Services.AddScoped<IOrderService, OrderService>();
 ```
 
@@ -158,33 +151,21 @@ The trade is honest: MediatR's behavior is generic over every request with one r
 
 ## What the dispatch actually costs
 
-Performance is the weakest argument in either direction, and you should not pick on it alone, but it is worth knowing where the cost lives so nobody hand-waves. A plain interface call is a single virtual dispatch that the JIT can often devirtualize and inline; it allocates nothing and costs on the order of a nanosecond. A MediatR `Send` does more work per call: it looks the request type up in a handler cache, constructs or retrieves a `RequestHandlerWrapper`, walks the behavior chain via delegates, and resolves the handler from the container. That is on the order of tens of nanoseconds plus a small allocation per send, before your handler body runs.
+`Send` resolves a handler and invokes the configured pipeline. A direct call goes through the injected service instead. This article has no matched benchmark for those paths, so it reports no per-call time or allocation count.
 
-| Aspect | MediatR `Send` | Plain interface call |
-| ------ | -------------- | -------------------- |
-| Type-to-handler resolution | Dictionary lookup per call | None, bound at injection |
-| Wrapper / delegate chain | Allocated per send | None |
-| Devirtualization by JIT | No | Often yes |
-| Startup assembly scan | Yes, grows with handler count | None |
-| Order of magnitude per call | Tens of ns + small alloc | ~1 ns, zero alloc |
-
-The methodological honesty here: against a handler that touches a database or the network, tens of nanoseconds is invisible, and you should measure your own object shapes with BenchmarkDotNet rather than trust a generic figure. The cost that does show up in practice is startup. Assembly scanning to register hundreds of handlers adds measurable milliseconds to cold start, which matters for serverless and is the kind of thing you fight when [reducing cold-start time for a .NET 11 AWS Lambda](/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/). Plain explicit registration sidesteps it entirely and is friendlier to trimming and Native AOT, because there is no reflective discovery to keep trim-safe.
+If dispatch cost affects the choice, measure both paths with the same handler work, lifetime, runtime and behavior chain. Measure registration and cold start separately. Explicit registration can avoid handler scanning. Verify trimming and Native AOT against the published application.
 
 ## The gotcha that picks for you
 
 A few constraints settle this before architectural taste enters the room.
 
-**The RPL-1.5 is the real forcing function, not the price.** The free open-source option on MediatR 13+ is the Reciprocal Public License 1.5, which carries copyleft, reciprocal obligations: it is designed to close the SaaS loophole, so deploying a network service built on RPL-licensed code can obligate you to make your source available. If you ship closed-source commercial software and you are above the Community threshold, the free OSS license is not actually usable for you, and "MediatR is still open source" is misleading in your case. You either buy the commercial license or you leave. For a thin dispatcher you were not really using, leaving is easy.
-
-**The $5M revenue and $10M capital line is generous.** Most small product teams, consultancies, and startups fall under it and can keep using the newest MediatR for free under the Community edition. If that is you, the license is not a reason to rip anything out; register a Community key, silence the warning, and move on. Spending a sprint removing MediatR to avoid a bill you do not owe is the wrong trade.
-
-**Pinning 12.5.0 is a real option with a real cost.** Apache 2.0 on the last free version does not expire. But you freeze on a version that gets no security patches, and you inherit the maintenance risk yourself. That is fine for a stable internal app and dangerous for anything internet-facing.
+An application pinned to 12.5.0 stays on that release and its existing terms. Review maintenance needs before choosing a long-lived pin.
 
 **If you only ever call `Send`, you do not need a mediator.** The honest test: open your solution, search for `IPipelineBehavior` and `INotification`. If there are zero behaviors and you do not publish notifications, MediatR is functioning as an indirection layer over method calls, and removing it is a mechanical refactor that makes the code more navigable, removes a dependency, and erases the licensing question in one move. This is the same library-rationalization instinct behind choosing the in-box option in [System.Text.Json vs Newtonsoft.Json in 2026](/2026/05/system-text-json-vs-newtonsoft-json-in-2026/).
 
 ## The call, in one line
 
-For new .NET 11 code in 2026, write plain service classes and inject the interfaces directly: you get go-to-definition, fail-fast startup wiring, no per-call overhead, trim-friendliness, and zero licensing exposure. Keep MediatR only when its pipeline behaviors are doing real, uniform work across many request types, and in that case decide deliberately: stay free under the Community edition if you are under $5M, pay if you are above it and the pipeline earns the bill, and pin 12.5.0 only as a stopgap. The mistake is treating "MediatR went commercial" as either a non-event or a five-alarm fire. It is neither. It is a prompt to ask whether you needed the mediator in the first place, and for most request-dispatch code the answer was always no.
+For a direct route from a caller to a service, choose explicit injection. Keep MediatR when its shared pipeline or notifications provide value across request types. Once you have chosen services, follow the [step-by-step migration](/2026/05/migrate-from-mediatr-to-plain-dependency-injection/).
 
 ## Related
 
@@ -201,5 +182,3 @@ For new .NET 11 code in 2026, write plain service classes and inject the interfa
 - [MediatR commercial version launched (Discussion #1123)](https://github.com/LuckyPennySoftware/MediatR/discussions/1123) - confirmation that older versions stay under their original open-source license.
 - [LuckyPennySoftware/MediatR v13.0.0 release](https://github.com/LuckyPennySoftware/MediatR/releases/tag/v13.0.0) - the first dual-licensed release.
 - [Scrutor on GitHub](https://github.com/khellang/Scrutor) - the MIT-licensed `Decorate` extension used to replace pipeline behaviors with decorators.
-</content>
-</invoke>

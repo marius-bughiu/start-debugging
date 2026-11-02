@@ -4,6 +4,7 @@ description: "Usa la interpolación de cadenas para componer de una sola vez un 
 pubDate: 2026-05-25
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "csharp"
   - "dotnet"

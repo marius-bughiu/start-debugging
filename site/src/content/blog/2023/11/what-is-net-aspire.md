@@ -1,72 +1,32 @@
 ---
-title: "What is .NET Aspire?"
-description: "An overview of .NET Aspire, the cloud-oriented framework for building scalable distributed applications, covering orchestration, components, and tooling."
+title: "What is .NET Aspire? AppHost, service discovery and the dashboard"
+description: "How an Aspire AppHost connects an API and a frontend, what service defaults configure, and what you can see in the dashboard."
 pubDate: 2023-11-14
-updatedDate: 2023-11-16
+updatedDate: 2026-11-02
 tags:
   - "aspire"
   - "dotnet"
 ---
-.NET Aspire is a comprehensive, cloud-oriented framework designed for creating scalable, observable, and production-grade distributed applications. It was introduced in preview as part of the .NET 8 release.
 
-The framework is provided through a set of NuGet packages, each addressing different aspects of cloud-native application development, which are typically structured as a network of microservices rather than a single, large codebase, and rely heavily on a variety of services like databases, messaging systems, and caching solutions.
+An API and a frontend can both start successfully while the frontend still calls the wrong port. Aspire lets you describe these services and their dependencies in an **AppHost**. When you run the app locally, Aspire starts the resources and passes connection information to the services that reference them.
 
-## Orchestration
+## How the frontend finds the API
 
-Orchestration in the context of cloud-native applications involves the synchronization and administration of various components. .NET Aspire enhances this process by simplifying the setup and integration of different segments of a cloud-native application. It offers high-level abstractions for effectively handling aspects like service discovery, environmental variables, and configurations for containers, thus eliminating the need for intricate low-level coding. These abstractions ensure uniform configuration procedures across applications composed of multiple components and services.
-
-With .NET Aspire, orchestration addresses key areas such as:
-
--   **Application composition:** This involves defining the .NET projects, containers, executable files, and cloud-based resources that constitute the application.
--   **Service discovery and management of connection strings:** The application host is responsible for seamlessly incorporating accurate connection strings and service discovery details, thereby enhancing the development process.
-
-For instance, .NET Aspire enables the creation of a local Redis container resource and the setup of the corresponding connection string in a “frontend” project with minimal coding, utilizing just a couple of helper methods.
+Suppose a C# AppHost references two projects named `Api` and `Web`. This example registers each project as a resource and tells Aspire that the web service needs the API:
 
 ```cs
-// Create a distributed application builder given the command line arguments.
 var builder = DistributedApplication.CreateBuilder(args);
-
-// Add a Redis container to the application.
-var cache = builder.AddRedisContainer("cache");
-
-// Add the frontend project to the application and configure it to use the 
-// Redis container, defined as a referenced dependency.
-builder.AddProject<Projects.MyFrontend>("frontend")
-       .WithReference(cache);
+var api = builder.AddProject<Projects.Api>("api");
+builder.AddProject<Projects.Web>("web").WithReference(api);
+builder.Build().Run();
 ```
 
-## Components
+`WithReference(api)` supplies the web project with endpoint information for the resource named `api`. A client configured for service discovery can use that logical name. The frontend still has to make the HTTP request, and the API still needs to handle it. The same pattern can supply a connection string when the referenced resource is a database.
 
-.NET Aspire components, available as NuGet packages, are crafted to streamline the integration with widely-used services and platforms like Redis and PostgreSQL. These components address various aspects of cloud-native application development by offering uniform configuration setups, including the implementation of health checks and telemetry features.
+## What the other pieces do
 
-Each of these components is designed to seamlessly integrate with the .NET Aspire orchestration framework. They have the ability to automatically propagate their configurations across dependencies, based on the relationships defined in .NET project and package references. This means that if a component, say Example.ServiceFoo, depends on another, Example.ServiceBar, then Example.ServiceFoo automatically adopts the necessary configurations from Example.ServiceBar to facilitate their intercommunication.
+The starter’s **ServiceDefaults** project shares configuration for service discovery, health checks and telemetry. Each participating service calls those extensions. The **dashboard** shows resource status and endpoints, then lets you follow a request through the logs and distributed traces that the services emit. For example, a long trace can reveal whether a slow page spent its time in the frontend or waiting for an API response.
 
-To illustrate, let’s consider the usage of the .NET Aspire Service Bus component in a coding scenario.
+**Correction — November 2, 2026:** The [original .NET 8 preview announcement](https://devblogs.microsoft.com/dotnet/introducing-dotnet-aspire-simplifying-cloud-native-development-with-dotnet-8/) used older hosting APIs. The example above describes the C# AppHost model used in Aspire 13.x. A project reference alone does not configure every client automatically.
 
-```cs
-builder.AddAzureServiceBus("servicebus");
-```
-
-The `AddAzureServiceBus` method in .NET Aspire addresses several key functions:
-
-1.  It establishes a `ServiceBusClient` as a singleton within the Dependency Injection (DI) container, enabling the connection to Azure Service Bus.
-2.  This method allows for the configuration of `ServiceBusClient`, which can be done directly in the code or through external configuration settings.
-3.  Additionally, it activates relevant health checks, logging, and telemetry features specifically tailored for Azure Service Bus, ensuring efficient monitoring and maintenance.
-
-## Tooling
-
-Applications developed with .NET Aspire adhere to a uniform structure, established by the default .NET Aspire project templates. Typically, a .NET Aspire application is composed of at least three distinct projects:
-
-1.  **Foo**: This is the initial application, which can be a standard .NET project like Blazor UI or Minimal API. As the application grows, more projects can be added, and their orchestration is managed through the Foo.AppHost and Foo.ServiceDefaults projects.
-2.  **Foo.AppHost**: The AppHost project oversees the high-level orchestration of the application. This includes assembling different components such as APIs, service containers, and executables, and configuring their interconnectivity and communication.
-3.  **Foo.ServiceDefaults**: This project houses the default configuration settings for a .NET Aspire application. These settings, which include aspects like health checks and OpenTelemetry configurations, can be tailored and expanded as needed.
-
-To assist in starting with this structure, two primary .NET Aspire starter templates are offered:
-
--   **.NET Aspire Application**: A fundamental starter template, it includes just the Foo.AppHost and Foo.ServiceDefaults projects, providing the basic framework to build upon.
--   **.NET Aspire Starter Application**: A more comprehensive template, this not only contains the Foo.AppHost and Foo.ServiceDefaults projects but also comes with pre-set UI and API projects. These additional projects are pre-configured with service discovery and other standard .NET Aspire functionalities.
-
-### Read next:
-
--   [How to install .NET Aspire](/2023/11/how-to-install-net-aspire/)
--   [Build your first .NET Aspire application](/2023/11/getting-started-with-net-aspire/)
+[Install the Aspire CLI](/2023/11/how-to-install-net-aspire/) to prepare a machine, then [create and run the starter app](/2023/11/getting-started-with-net-aspire/) to see the service endpoints in the dashboard.

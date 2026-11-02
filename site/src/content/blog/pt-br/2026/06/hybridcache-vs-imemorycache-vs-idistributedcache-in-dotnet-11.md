@@ -4,6 +4,7 @@ description: "Para código de cache novo no .NET 11, use HybridCache por padrão
 pubDate: 2026-06-14
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "dotnet"
   - "aspnetcore"

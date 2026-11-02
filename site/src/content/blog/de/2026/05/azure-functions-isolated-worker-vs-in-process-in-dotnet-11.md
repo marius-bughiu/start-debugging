@@ -4,6 +4,7 @@ description: "Wählen Sie 2026 das Isolated-Worker-Modell für jede neue Azure-F
 pubDate: 2026-05-26
 template: vs
 tags:
+  - "dotnet-11"
   - "comparison"
   - "azure-functions"
   - "dotnet"

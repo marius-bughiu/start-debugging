@@ -1,7 +1,8 @@
 ---
-title: ".NET Aspire のインストール方法 (dotnet workload install aspire)"
-description: "`dotnet workload install aspire` で .NET Aspire をインストールします。Windows、macOS、Linux での .NET 8、Aspire ワークロード、Docker のセットアップ手順を解説します。"
+title: "C# AppHost 用の Aspire CLI をインストールする"
+description: "C# AppHost 用の Aspire CLI をインストールして確認します。dotnet workload install aspire が .NET 8 プレビュー当時の手順である理由も説明します。"
 pubDate: 2023-11-15
+updatedDate: 2026-11-02
 tags:
   - "aspire"
   - "dotnet"
@@ -10,51 +11,31 @@ translationOf: "2023/11/how-to-install-net-aspire"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-.NET Aspire は、スケーラブルで観測可能な本番品質の分散アプリケーションを作成するために設計された、クラウド指向の包括的なフレームワークです。この記事では、.NET Aspire を始めるための前提条件を確認します。.NET Aspire の概要とその特徴を知りたい場合は、[What is .NET Aspire](/ja/2023/11/what-is-net-aspire/) の記事をご覧ください。
 
-.NET Aspire を使ってアプリケーションを開発するには、主に 3 つのものが必要です。
+Aspire 13.x の **C# AppHost** には .NET 10 SDK と Aspire CLI をインストールします。ターミナルで 10.x SDK が表示されることを確認し、CLI を .NET グローバルツールとしてインストールして、シェルから起動できるか確認します。
 
--   [.NET 8](#install-net-8)
--   [.NET Aspire ワークロード](#install-the-net-aspire-workload)
--   そして [Docker Desktop](#install-docker-desktop)
+```sh
+dotnet --list-sdks
+dotnet tool install --global Aspire.Cli
+aspire --version
+```
 
-アプリケーション開発に Visual Studio を使用する予定がある場合は、Visual Studio 2022 Preview バージョン 17.9 以上が必要であることに注意してください。
+最後のコマンドで `aspire` が見つからなければ、ターミナルを開き直し、.NET グローバルツールのディレクトリが `PATH` に含まれているか確認します。Windows のパッケージマネージャーや Homebrew などを使う場合は、[CLI のインストールガイド](https://aspire.dev/get-started/install-cli/)から方法を一つ選んでください。
 
-## Install .NET 8
+AppHost から Redis やデータベースのコンテナを起動する場合は、コンテナランタイムも起動しておきます。Docker Desktop や Podman が使えます。[Aspire の前提条件](https://aspire.dev/get-started/prerequisites/)にはランタイムの設定と、C# AppHost に必要な SDK と各サービスのターゲットフレームワークの違いが説明されています。
 
-Visual Studio を使っていて、すでに最新バージョンに更新済みであれば、.NET 8 はすでにインストールされています。最新バージョンでない場合は、Visual Studio バージョン 17.9 以上を使用していることを確認してください。それで問題ありません。
+## 以前の手順で Aspire ワークロードをインストールする理由
 
-Visual Studio を使用しない場合は、こちらから .NET 8 SDK をダウンロードしてインストールできます: [https://dotnet.microsoft.com/en-us/download/dotnet/8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+**2026年11月2日訂正:** `dotnet workload install aspire` は [2023 年 11 月の .NET 8 プレビュー](https://devblogs.microsoft.com/dotnet/introducing-dotnet-aspire-simplifying-cloud-native-development-with-dotnet-8/)で使われたコマンドです。[Aspire 9 でテンプレートが NuGet パッケージに移り](https://aspire.dev/whats-new/aspire-9/)、ワークロードが不要になりました。以下のコマンドと画像は当時の手順を記録したものです。
 
-## Install the .NET Aspire workload
-
-.NET Aspire ワークロードは、次の 2 つの方法でインストールできます。
-
--   dotnet CLI を使用してコマンドラインから
--   または Visual Studio Installer を使用して (Visual Studio の場合は VS 17.9 以上が必要であることに注意)
-
-### Using .NET CLI
-
-.NET Aspire をコマンドラインからインストールするコマンドは非常に簡単です。.NET 8 SDK がインストールされていることを確認したら、ワークロードのインストールコマンドを実行します。
-
-```bash
+```sh
 dotnet workload install aspire
 ```
 
-### Using the Visual Studio Installer
-
-Visual Studio Installer で、**ASP.NET and web development** ワークロードを選択し、右側のパネルの **Optional** で **.NET Aspire SDK (Preview)** にチェックを入れ、**Modify** をクリックしてインストールプロセスを開始します。
+当時の Visual Studio Installer では Web 開発ワークロードのオプションに **.NET Aspire SDK (Preview)** がありました。2 枚目は当時の Windows 用 Docker Desktop インストーラーです。
 
 [![ASP.NET and web development を選択し、Optional の .NET Aspire SDK (Preview) にチェックを入れた Visual Studio Installer。](/wp-content/uploads/2023/11/image-1-1024x524.png)](/wp-content/uploads/2023/11/image-1.png)
 
-## Install Docker Desktop
-
-最新バージョンの Docker Desktop はこちらからダウンロードできます: [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
-
-デフォルトのオプションでインストーラーを進め、再起動後に準備完了です。
-
 [![Use WSL 2 instead of Hyper-V と Add shortcut to desktop にチェックが入った Docker Desktop インストーラー。](/wp-content/uploads/2023/11/image-2.png)](/wp-content/uploads/2023/11/image-2.png)
 
-なお、Docker Desktop は個人開発者の個人利用、教育、オープンソースコミュニティに限り無料です。それ以外の利用にはライセンス料が発生します。不明な場合は [価格ページ](https://www.docker.com/pricing/) を確認してください。
-
-すべてインストールできたら、いよいよ .NET Aspire での開発を始める準備が整いました!
+`aspire --version` が動作したら、[Aspire のスターターアプリを作成](/ja/2023/11/getting-started-with-net-aspire/)できます。AppHost の役割は [Aspire がサービスを接続する仕組み](/ja/2023/11/what-is-net-aspire/)で解説しています。

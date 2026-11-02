@@ -26,7 +26,7 @@ interface Props {
 }
 const { pillar } = Astro.props;
 
-const posts = await getPillarPosts(pillar.data.indexTags);
+const posts = await getPillarPosts(pillar.data.indexTags, "en", pillar.data.indexRequireAnyTags);
 const { Content, headings } = await pillar.render();
 
 const siteOrigin = Astro.site?.origin ?? "https://startdebugging.net";

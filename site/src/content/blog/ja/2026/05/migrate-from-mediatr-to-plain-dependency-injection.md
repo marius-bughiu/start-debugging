@@ -2,7 +2,7 @@
 title: ".NET 11 で MediatR からシンプルな依存性注入へ移行する"
 description: "MediatR 12-14 を削除し、IRequest ハンドラー、ISender、pipeline behavior、INotification をシンプルなサービスクラスとコンストラクター注入で置き換えるためのステップバイステップのチェックリスト。"
 pubDate: 2026-05-30
-updatedDate: 2026-05-30
+updatedDate: 2026-11-02
 template: migration
 tags:
   - "migration"
@@ -16,16 +16,17 @@ translatedBy: "claude"
 translationDate: 2026-05-30
 ---
 
-.NET 11 のコードベースから MediatR を削除するのは、書き直しではなく機械的なリファクタリングです。ハンドラーが 50-150 個ある典型的なサービスでは、半日から 1 日を見込んでください。ほとんどのハンドラーはシンプルなサービスクラスのメソッドへ 1 対 1 で畳み込まれ、`ISender.Send` の呼び出しは直接のインターフェース呼び出しになり、設計上の検討を要する唯一の部分はパイプラインです。壊れるのは、runtime でのハンドラー解決や、すべてのリクエストを `IPipelineBehavior<,>` で包む仕組みに依存していたものすべてです。それらはコンストラクター注入とデコレーターになります。これを行う価値があるのは、`Send` しか呼び出していない場合、MediatR の Community エディションの $5,000,000 の売上ラインを超えていて商用ライセンスを購入したくない場合、あるいは Native AOT と trimming への適合性が欲しい場合です。pipeline behavior が数百のリクエスト型にわたって不可欠である場合は、行う価値はありません。
+要求を一つずつ移行します。ハンドラーをサービスメソッドに置き換え、呼び出し元を更新し、必要な検証、トランザクション、通知の動作を維持します。登録を変える前に、依存関係と呼び出し箇所を調べて作業量を見積もります。
 
-参照するバージョン: このガイドは MediatR 12.5.0（Apache 2.0 ライセンス下の最後のリリース）、13.0（2025-07-02 リリース、Lucky Penny Software による Reciprocal Public License 1.5 / 商用のデュアルモデル初のリリース）、および現行の 14.x 系の削除を扱います。置き換えるコードは `<TargetFramework>net11.0</TargetFramework>` を .NET 11 SDK と C# 14 で対象とし、デコレーターには Scrutor 6.x を使います。*移行すべきかどうか*をまだ検討中であれば、まず [MediatR 対シンプルなサービスクラス（2026 年）](/ja/2026/05/mediatr-vs-plain-service-classes-in-2026/) を読んでください。この記事は決定済みであることを前提とします。
+**2026年11月2日訂正:** DI の失敗時点と Community の適格条件を修正しました。未測定のコールドスタートの主張を削除し、検証デコレーターが書き込み契約を実装するようにしました。
+
+例のターゲットは `net11.0` で、MediatR 13/14 の契約を示します。以下の DI 検証は .NET 10 で行いました。 設計を選ぶ段階なら、[MediatR とサービスの直接呼び出しの比較](/ja/2026/05/mediatr-vs-plain-service-classes-in-2026/)から始めてください。
 
 ## なぜチームは今まさに MediatR を削除しているのか
 
-- **ライセンスが $5M 超で決断を迫る。** MediatR 13+ の無償のオープンソース利用は RPL-1.5 の下にあり、これは SaaS の抜け穴を塞ぐよう設計された相互的な copyleft ライセンスです。Community エディションの売上しきい値を超えてクローズドソースの商用ソフトウェアを出荷する場合、このライセンスは使えないため、購入するか去るかです。
-- **定義へ移動するとハンドラーに着地し、`Send` には着地しない。** 直接のインターフェース呼び出しは、mediator の間接化がジャンプのたびに奪う移動しやすさを取り戻します。
-- **起動が安くなり、AOT が容易になる。** ハンドラー登録のためのアセンブリスキャンを削除するとコールドスタートのミリ秒が削られ、trimming と戦うリフレクションがなくなります。これは [.NET 11 の AWS Lambda のコールドスタート時間を短縮する](/ja/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/) ときに重要です。
-- **配線は最初のリクエストではなく起動時に失敗する。** 明示的な `AddScoped` 登録は、欠落した依存関係を runtime の `InvalidOperationException` ではなく起動時のエラーに変えます。
+- ライセンス変更を移行理由にする前に、利用中の MediatR バージョンを調べ、資金調達額や組織での用途を含む[提供元の適格条件](https://luckypennysoftware.com/faq)を確認します。
+- インターフェイス呼び出しから定義に移動するとインターフェイスのメソッドに到達し、IDE から実装を探せます。`Send` からは要求型に対応するハンドラーを探します。
+- 起動時間を移行判断に使うなら、同じデプロイ環境で移行前後のコールドスタートを測定します。トリミングや Native AOT が必要なら発行したアプリを検証します。
 
 ## 何が壊れるか
 
@@ -119,7 +120,7 @@ public async Task<OrderDto> Get(int id, IOrderService orders, CancellationToken 
 
 3. **サービスを明示的に登録する。**
 
-`AddMediatR(...)` を削除し、各サービスを登録します。明示的な登録は trimming に対して安全で、起動時に素早く失敗します。これはまさに [Unable to resolve service for type while attempting to activate](/ja/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/) の背後にある失敗モードです。
+残りのハンドラーを移行したら `AddMediatR(...)` を削除し、置き換えたインターフェイスと実装を明示的に登録します。[コンストラクターの依存関係の不足](/ja/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/)は検証時または解決時に報告されます。 デプロイ先の環境で登録を確認します。ホスト構築時に組み込みプロバイダーで登録済みコンストラクターの依存関係を検証したい場合は `ValidateOnBuild` を有効にします。本番設定で検証を無効にすると、不足がサービスの要求時まで見つからない場合があります。`ValidateScopes` は別途ライフタイムを検証します。[ASP.NET Core のプロバイダー設定](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-10.0#validatescopes-and-validateonbuild)を参照してください。
 
 ```csharp
 // .NET 11, C# 14 - BEFORE
@@ -131,7 +132,7 @@ builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 ```
 
-MediatR のリフレクションモデルなしで規約ベースの登録が欲しい場合、Scrutor はインターフェース名でスキャンします。
+規約による登録を使う場合、Scrutor でアセンブリをスキャンし、クラス名で選択できます。
 
 ```csharp
 // .NET 11, C# 14, Scrutor 6.x - register every *Service against its interface
@@ -142,7 +143,7 @@ builder.Services.Scan(scan => scan
     .WithScopedLifetime());
 ```
 
-**検証:** アプリが起動します。実行して移行済みのエンドポイントにアクセスしてください。登録の欠落は、最初のリクエストではなく起動時にスローされるようになります。singleton から scoped を取得する誤りが紛れ込んでいないことを確認します。これは [Cannot consume scoped service from singleton](/ja/2026/05/fix-cannot-consume-scoped-service-from-singleton/) で扱われているバグのクラスです。
+今回の .NET 10 のテストでは、`ValidateOnBuild` を明示的に有効にすると、コンストラクター依存関係の不足がホスト構築時に検出されました。無効なら構築は成功し、スコープから `IOrderService` を要求した時点で失敗しました。移行した各サービスをスコープ内で解決し、エンドポイントを呼び出してください。
 
 4. **pipeline behavior をデコレーターまたは middleware で置き換える。**
 
@@ -170,22 +171,25 @@ builder.Services.Decorate<IOrderService, LoggingOrderService>();
 
 実は HTTP の関心事である関心事（リクエストのログ出力、例外から ProblemDetails への対応付け、認証）については、アプリケーション層から完全に取り出して ASP.NET Core middleware またはエンドポイントフィルターへ移してください。例外を捕捉してレスポンスを整形していた behavior は、デコレーターではなく [ASP.NET Core 11 のグローバル例外フィルター](/ja/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) と同じ場所に属します。
 
-`ValidationBehavior` 内で FluentValidation を使っていた場合は、バリデーターを残し、1 つのデコレーターまたは minimal API のエンドポイントフィルターから呼び出します。
+書き込み用のデコレーターには専用の `IOrderWriter` 契約を用意します。上の読み取り用 `IOrderService` は `GetByIdAsync` のままで構いません。
 
 ```csharp
-// .NET 11, C# 14 - a validation decorator replacing ValidationBehavior for one interface
-public sealed class ValidatingOrderService(
-    IOrderService inner,
-    IValidator<CreateOrder> validator) : IOrderService
-{
-    public async Task<OrderDto> CreateAsync(CreateOrder cmd, CancellationToken ct)
-    {
-        await validator.ValidateAndThrowAsync(cmd, ct);
-        return await inner.CreateAsync(cmd, ct);
-    }
+using FluentValidation;
 
-    public Task<OrderDto> GetByIdAsync(int orderId, CancellationToken ct)
-        => inner.GetByIdAsync(orderId, ct);
+public interface IOrderWriter
+{
+    Task<OrderDto> CreateAsync(CreateOrder command, CancellationToken ct);
+}
+
+public sealed class ValidatingOrderWriter(
+    IOrderWriter inner,
+    IValidator<CreateOrder> validator) : IOrderWriter
+{
+    public async Task<OrderDto> CreateAsync(CreateOrder command, CancellationToken ct)
+    {
+        await validator.ValidateAndThrowAsync(command, ct);
+        return await inner.CreateAsync(command, ct);
+    }
 }
 ```
 
@@ -239,10 +243,10 @@ grep -rn "MediatR" src/ || echo "clean"
 
 - `dotnet build -c Release` が警告なしで成功する。
 - `dotnet test` が失敗ゼロで通り、手順 4 と 5 で追加した behavior と fan-out のテストも含まれる。
-- アプリが起動し、以前 MediatR でディスパッチされていた各エンドポイントが以前と同じレスポンスを返す。登録の欠落は、起動時のここで表面化するようになります。
+- アプリを起動し、移行した各エンドポイントを呼び出します。応答とスコープ付きサービスの解決を確認します。
 - `grep -rn "MediatR" src/` が何も返さない。
 - ログにライセンス警告が現れない（MediatR 13+ のライセンスチェックは未登録のキーで警告を記録していました。今は消えているはずです）。
-- コールドスタートが同等か改善する。アプリが serverless なら、前後で起動時間を測ってください。アセンブリスキャンの削除で悪化してはなりません。
+- 出荷予定の発行プロファイルで、移行前後のコールドスタートを比較します。
 
 ## ロールバック計画
 
@@ -252,7 +256,7 @@ grep -rn "MediatR" src/ || echo "clean"
 
 **`IPipelineBehavior` の順序はデコレーターへきれいに対応付かない。** MediatR は 1 つのハンドラーの周りで登録順に behavior を実行します。Scrutor のデコレーターは `Decorate` を呼ぶ順序で入れ子になり、*最後に*登録したデコレーターが*最も外側*のラッパーです。順序を誤ると、ログ出力のデコレーターがバリデーションのデコレーターの周りではなく内側で実行されます。デコレートしたインターフェースごとに順序のテストを 1 つ書いてください。
 
-**別のハンドラーを呼ぶハンドラー内の `ISender` は直接のサービス呼び出しになり、それが循環を露呈させることがある。** MediatR の間接化はハンドラー間の依存関係を隠していました。`OrderService` が `ICustomerService` を注入し、`CustomerService` が `IOrderService` を注入すると、コンテナーは循環依存により起動時にスローします。これは移行が、MediatR が覆い隠していた設計上の問題を表面化させているのです。共有ロジックを 3 つ目のサービスに抽出して循環を断ち切ってください。
+循環依存は、登録したグラフの検証時またはサービスの解決時に発覚します。`OrderService` と `CustomerService` が互いを必要とするなら、共通処理を別のサービスに移します。
 
 **ストリーミングリクエストには `Task<T>` ではなく `IAsyncEnumerable<T>` が必要。** `IStreamRequest<T>` と `CreateStream` を使っていた場合、置き換えるメソッドは `IAsyncEnumerable<T>` を返し、`yield return` を使います。`Task<List<T>>` に畳み込まないでください。それはストリーミングのセマンティクスを変え、大きな結果でメモリを使い果たすことがあります。これは [.NET 11 で大きな CSV をメモリ不足にならずに読む](/ja/2026/04/how-to-read-a-large-csv-in-dotnet-11-without-running-out-of-memory/) で説明されているのと同じ罠です。
 

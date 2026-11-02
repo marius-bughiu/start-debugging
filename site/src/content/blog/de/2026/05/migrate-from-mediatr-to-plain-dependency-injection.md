@@ -2,7 +2,7 @@
 title: "Migration von MediatR zu einfacher Dependency Injection in .NET 11"
 description: "Eine Schritt-für-Schritt-Checkliste, um MediatR 12-14 zu entfernen und IRequest-Handler, ISender, Pipeline Behaviors und INotification durch einfache Service-Klassen und Konstruktorinjektion zu ersetzen."
 pubDate: 2026-05-30
-updatedDate: 2026-05-30
+updatedDate: 2026-11-02
 template: migration
 tags:
   - "migration"
@@ -16,16 +16,17 @@ translatedBy: "claude"
 translationDate: 2026-05-30
 ---
 
-MediatR aus einer .NET-11-Codebasis zu entfernen ist ein mechanisches Refactoring, keine Neufassung. Für einen typischen Service mit 50-150 Handlern sollten Sie einen halben bis ganzen Tag einplanen: Die meisten Handler kollabieren eins zu eins zu Methoden auf einfachen Service-Klassen, `ISender.Send`-Aufrufe werden zu direkten Interface-Aufrufen, und der einzige Teil, der Design-Überlegungen erfordert, ist die Pipeline. Was bricht, ist alles, was auf der Laufzeitauflösung von Handlern oder dem `IPipelineBehavior<,>`-Wrapping um jede Anfrage beruhte; das wird zu Konstruktorinjektion und Decorators. Es lohnt sich, wenn Sie nur `Send` aufrufen, wenn Sie über der $5,000,000-Umsatzgrenze der Community-Edition von MediatR liegen und keine kommerzielle Lizenz kaufen möchten, oder wenn Sie Native AOT und Trimming-Freundlichkeit wollen. Es lohnt sich nicht, wenn Ihre Pipeline Behaviors über Hunderte von Anfragetypen hinweg tragend sind.
+Migriere jeweils eine Anfrage. Ersetze ihren Handler durch eine Dienstmethode, passe die Aufrufer an und erhalte Validierung, Transaktionen und Benachrichtigungen. Schätze den Aufwand anhand dieser Abhängigkeiten und Aufrufstellen, bevor du Registrierungen änderst.
 
-Referenzierte Versionen: Dieser Leitfaden behandelt das Entfernen von MediatR 12.5.0 (die letzte Version unter der Apache-2.0-Lizenz), 13.0 (veröffentlicht am 2025-07-02, die erste Version mit dualem Reciprocal Public License 1.5 / kommerziellem Modell von Lucky Penny Software) und der aktuellen 14.x-Linie. Der Ersatzcode zielt auf `<TargetFramework>net11.0</TargetFramework>` mit dem .NET-11-SDK und C# 14, plus Scrutor 6.x für die Decorators. Wenn Sie noch entscheiden, *ob* Sie wechseln sollen, lesen Sie zuerst [MediatR vs einfache Service-Klassen in 2026](/de/2026/05/mediatr-vs-plain-service-classes-in-2026/); dieser Beitrag setzt voraus, dass die Entscheidung gefallen ist.
+**Korrektur — 2. November 2026:** Fehlerzeitpunkt bei DI und Community-Kriterien korrigiert, unbelegte Kaltstartaussagen entfernt und den Validierungsdekorator an seinen Schreibvertrag angepasst.
+
+Die Beispiele zielen auf `net11.0` und zeigen die Verträge von MediatR 13/14. Die unten beschriebene DI-Prüfung lief mit .NET 10. Wenn die Architekturentscheidung noch aussteht, beginne mit dem [Vergleich von MediatR und direkten Diensten](/de/2026/05/mediatr-vs-plain-service-classes-in-2026/).
 
 ## Warum Teams MediatR gerade jetzt entfernen
 
-- **Die Lizenz erzwingt oberhalb von $5M eine Entscheidung.** Die kostenlose Open-Source-Nutzung von MediatR 13+ erfolgt unter der RPL-1.5, einer reziproken Copyleft-Lizenz, die die SaaS-Lücke schließen soll. Wenn Sie Closed-Source-Kommerzsoftware oberhalb der Umsatzschwelle der Community-Edition ausliefern, ist diese Lizenz für Sie nicht nutzbar, also heißt es kaufen oder gehen.
-- **Gehe-zu-Definition landet beim Handler, nicht bei `Send`.** Direkte Interface-Aufrufe stellen die Navigierbarkeit wieder her, die die Mediator-Indirektion Sie bei jedem Sprung kostet.
-- **Der Start wird günstiger und AOT wird einfacher.** Das Entfernen des Assembly-Scans für die Handler-Registrierung spart Millisekunden beim Kaltstart und beseitigt die Reflexion, die mit dem Trimming kämpft, was wichtig ist beim [Reduzieren der Kaltstartzeit einer .NET-11-AWS-Lambda](/de/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/).
-- **Die Verdrahtung schlägt beim Start fehl, nicht bei der ersten Anfrage.** Die explizite `AddScoped`-Registrierung verwandelt eine fehlende Abhängigkeit in einen Fehler zur Startzeit statt in eine `InvalidOperationException` zur Laufzeit.
+- Erfasse die eingesetzten MediatR-Versionen und prüfe die [Kriterien des Anbieters](https://luckypennysoftware.com/faq), darunter Finanzierung und organisatorischer Einsatz, bevor du die Lizenz als Migrationsgrund wertest.
+- Bei einem Interface-Aufruf führt der Sprung zur Definition zur Interface-Methode. Die IDE kann deren Implementierungen anzeigen. Bei `Send` suche nach dem Handler des Anfragetyps.
+- Ist die Startzeit ein Migrationskriterium, miss den Kaltstart derselben Bereitstellung vor und nach der Umstellung. Prüfe bei Trimming oder Native AOT die veröffentlichte Anwendung.
 
 ## Was bricht
 
@@ -119,7 +120,7 @@ public async Task<OrderDto> Get(int id, IOrderService orders, CancellationToken 
 
 3. **Registrieren Sie die Services explizit.**
 
-Löschen Sie `AddMediatR(...)` und registrieren Sie jeden Service. Die explizite Registrierung ist trim-sicher und schlägt beim Start schnell fehl, was genau der Fehlermodus hinter [Unable to resolve service for type while attempting to activate](/de/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/) ist.
+Entferne `AddMediatR(...)`, nachdem die übrigen Handler umgestellt sind. Registriere die neuen Interfaces und Implementierungen ausdrücklich. [Fehlende Konstruktorabhängigkeiten](/de/2026/05/fix-unable-to-resolve-service-for-type-while-attempting-to-activate/) zeigen sich bei Validierung oder Auflösung. Prüfe die Registrierungen in der Zielumgebung. Aktiviere `ValidateOnBuild`, damit der Standardprovider registrierte Konstruktorgraphen beim Erstellen des Hosts prüft. Ohne Validierung kann eine fehlende Abhängigkeit in Produktion erst beim Anfordern des Dienstes auffallen. `ValidateScopes` prüft die Lebensdauern separat. Siehe die [ASP.NET-Core-Provideroptionen](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-10.0#validatescopes-and-validateonbuild).
 
 ```csharp
 // .NET 11, C# 14 - BEFORE
@@ -131,7 +132,7 @@ builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 ```
 
-Wenn Sie eine konventionsbasierte Registrierung ohne das Reflexionsmodell von MediatR wollen, scannt Scrutor nach Interface-Namen:
+Für eine Registrierung nach Konvention kann Scrutor eine Assembly durchsuchen und Klassennamen abgleichen:
 
 ```csharp
 // .NET 11, C# 14, Scrutor 6.x - register every *Service against its interface
@@ -142,7 +143,7 @@ builder.Services.Scan(scan => scan
     .WithScopedLifetime());
 ```
 
-**Verifizieren:** Die Anwendung startet. Führen Sie sie aus und rufen Sie einen migrierten Endpunkt auf; eine fehlende Registrierung wirft nun beim Start, nicht bei der ersten Anfrage. Bestätigen Sie, dass sich keine Scoped-aus-Singleton-Fehler eingeschlichen haben, die Bug-Klasse aus [Cannot consume scoped service from singleton](/de/2026/05/fix-cannot-consume-scoped-service-from-singleton/).
+Im .NET-10-Test führte die fehlende Konstruktorabhängigkeit mit explizitem `ValidateOnBuild` beim Erstellen des Hosts zum Fehler. Ohne die Option gelang der Build, und erst die Auflösung von `IOrderService` im Scope scheiterte. Löse jeden migrierten Dienst in einem Scope auf und rufe seinen Endpunkt auf.
 
 4. **Ersetzen Sie Pipeline Behaviors durch Decorators oder Middleware.**
 
@@ -170,22 +171,25 @@ builder.Services.Decorate<IOrderService, LoggingOrderService>();
 
 Für Concerns, die in Wahrheit HTTP-Concerns sind (Request-Logging, Zuordnung von Exceptions zu ProblemDetails, Authentifizierung), verlagern Sie diese vollständig aus der Anwendungsschicht in ASP.NET-Core-Middleware oder einen Endpunkt-Filter. Ein Behavior, das Exceptions abfing und Antworten formte, gehört an denselben Ort wie [ein globaler Exception-Filter in ASP.NET Core 11](/de/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/), nicht in einen Decorator.
 
-Wenn Sie FluentValidation innerhalb eines `ValidationBehavior` verwendet haben, behalten Sie die Validatoren und rufen Sie sie aus einem einzigen Decorator oder einem Endpunkt-Filter einer Minimal-API auf:
+Für einen Schreibvorgang erhält der Dekorator einen eigenen Vertrag `IOrderWriter`. Der lesende `IOrderService` oben kann seine Methode `GetByIdAsync` behalten.
 
 ```csharp
-// .NET 11, C# 14 - a validation decorator replacing ValidationBehavior for one interface
-public sealed class ValidatingOrderService(
-    IOrderService inner,
-    IValidator<CreateOrder> validator) : IOrderService
-{
-    public async Task<OrderDto> CreateAsync(CreateOrder cmd, CancellationToken ct)
-    {
-        await validator.ValidateAndThrowAsync(cmd, ct);
-        return await inner.CreateAsync(cmd, ct);
-    }
+using FluentValidation;
 
-    public Task<OrderDto> GetByIdAsync(int orderId, CancellationToken ct)
-        => inner.GetByIdAsync(orderId, ct);
+public interface IOrderWriter
+{
+    Task<OrderDto> CreateAsync(CreateOrder command, CancellationToken ct);
+}
+
+public sealed class ValidatingOrderWriter(
+    IOrderWriter inner,
+    IValidator<CreateOrder> validator) : IOrderWriter
+{
+    public async Task<OrderDto> CreateAsync(CreateOrder command, CancellationToken ct)
+    {
+        await validator.ValidateAndThrowAsync(command, ct);
+        return await inner.CreateAsync(command, ct);
+    }
 }
 ```
 
@@ -239,10 +243,10 @@ Arbeiten Sie diese Liste von oben nach unten ab und überspringen Sie die Perfor
 
 - `dotnet build -c Release` gelingt ohne Warnungen.
 - `dotnet test` besteht mit null Fehlschlägen, einschließlich der Behavior- und Fan-out-Tests, die Sie in den Schritten 4 und 5 hinzugefügt haben.
-- Die Anwendung startet und jeder zuvor per MediatR verteilte Endpunkt gibt dieselbe Antwort wie zuvor zurück. Eine fehlende Registrierung tritt nun hier zutage, beim Start.
+- Starte die Anwendung und rufe jeden migrierten Endpunkt auf. Prüfe Antwort und Auflösung der Scoped-Dienste.
 - `grep -rn "MediatR" src/` gibt nichts zurück.
 - Keine Lizenzwarnung erscheint in den Logs (die Lizenzprüfung von MediatR 13+ protokollierte eine Warnung bei einem nicht registrierten Schlüssel; sie sollte nun verschwunden sein).
-- Der Kaltstart ist gleich oder besser. Wenn die Anwendung serverless ist, messen Sie die Startzeit vorher und nachher; das Entfernen des Assembly-Scans sollte keine Verschlechterung bringen.
+- Vergleiche den Kaltstart vor und nach der Migration mit dem vorgesehenen Veröffentlichungsprofil.
 
 ## Rollback-Plan
 
@@ -252,7 +256,7 @@ Diese Migration ist pro Commit umkehrbar, aber mühsam im Ganzen rückgängig zu
 
 **Die Reihenfolge von `IPipelineBehavior` bildet sich nicht sauber auf Decorators ab.** MediatR führt Behaviors in der Registrierungsreihenfolge um einen einzigen Handler aus. Scrutor-Decorators verschachteln sich in der Reihenfolge, in der Sie `Decorate` aufrufen, und der *zuletzt* registrierte Decorator ist der *äußerste* Wrapper. Wenn Sie die Reihenfolge falsch wählen, läuft Ihr Logging-Decorator innerhalb Ihres Validierungs-Decorators statt darum herum. Schreiben Sie einen Reihenfolgetest pro dekoriertem Interface.
 
-**Ein `ISender` innerhalb eines Handlers, der einen anderen Handler aufruft, wird zu einem direkten Service-Aufruf, und das kann einen Zyklus offenlegen.** Die Indirektion von MediatR verbarg Handler-zu-Handler-Abhängigkeiten. Wenn `OrderService` `ICustomerService` injiziert und `CustomerService` `IOrderService` injiziert, wirft der Container beim Start mit einer zirkulären Abhängigkeit. Das ist die Migration, die ein Designproblem ans Licht bringt, das MediatR maskierte; brechen Sie den Zyklus, indem Sie die gemeinsame Logik in einen dritten Service extrahieren.
+Ein Zyklus kann bei der Validierung des registrierten Graphen oder bei der Dienstauflösung auffallen. Benötigen `OrderService` und `CustomerService` einander, lagere die gemeinsame Operation in einen dritten Dienst aus.
 
 **Streaming-Anfragen brauchen `IAsyncEnumerable<T>`, nicht `Task<T>`.** Wenn Sie `IStreamRequest<T>` und `CreateStream` verwendet haben, gibt die Ersatzmethode `IAsyncEnumerable<T>` zurück und verwendet `yield return`. Kollabieren Sie sie nicht zu einem `Task<List<T>>`; das ändert die Streaming-Semantik und kann bei großen Ergebnissen den Speicher sprengen, dieselbe Falle, die in [Lesen einer großen CSV in .NET 11 ohne Speichermangel](/de/2026/04/how-to-read-a-large-csv-in-dotnet-11-without-running-out-of-memory/) beschrieben wird.
 

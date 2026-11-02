@@ -1,7 +1,8 @@
 ---
-title: ".NET Aspire 入門"
-description: "プロジェクト構成、サービスディスカバリー、Aspire ダッシュボードを取り上げながら、初めての .NET Aspire アプリケーションを構築するための手順を解説します。"
+title: "初めての Aspire スターターアプリを作成して実行する"
+description: "API と Blazor フロントエンドを備えた C# の Aspire アプリを作成し、ダッシュボードを開きます。.NET 8 プレビュー当時のプロジェクトと画像も紹介します。"
 pubDate: 2023-11-15
+updatedDate: 2026-11-02
 tags:
   - "aspire"
   - "dotnet"
@@ -10,170 +11,55 @@ translationOf: "2023/11/getting-started-with-net-aspire"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-この記事では、初めての .NET Aspire アプリケーションの構築手順を案内します。.NET Aspire の概要とその特徴を知りたい場合は、[What is .NET Aspire](/ja/2023/11/what-is-net-aspire/) の記事をご覧ください。
 
-## Prerequisites
+まず [Aspire CLI と C# の前提条件](/ja/2023/11/how-to-install-net-aspire/)を準備します。**新しい**ソリューション向けの `aspire-starter` テンプレートには、API サービス、Blazor フロントエンド、両者を接続する AppHost が含まれます。既存のソリューションには、[Aspire 13.4 で既存プロジェクトに AppHost を追加する手順](/ja/2026/07/how-to-add-aspire-to-an-existing-aspnetcore-solution-without-restructuring-it/)があります。
 
-.NET Aspire を始める前に準備しておくべきものがいくつかあります。
+## スターターを作成してダッシュボードを開く
 
--   Visual Studio 2022 Preview (バージョン 17.9 以上)
-    -   .NET Aspire ワークロードがインストールされていること
-    -   そして .NET 8.0
--   Docker Desktop
+新しいソリューションを配置したいディレクトリで実行します。
 
-Visual Studio を使用したくない場合は、`dotnet workload install aspire` コマンドで dotnet CLI を使って .NET Aspire をインストールすることもできます。その後はお好みの IDE を自由に使用できます。
+```sh
+aspire new aspire-starter -n HelloAspire -o HelloAspire
+cd HelloAspire
+aspire run
+```
 
-.NET Aspire の前提条件のインストール方法に関する包括的なガイドについては、[How to install .NET Aspire](/ja/2023/11/how-to-install-net-aspire/) をご覧ください。
+テンプレートの質問が表示されたら回答します。最初のコマンドが `HelloAspire` にソリューションを生成し、最後のコマンドが AppHost を起動します。ターミナルに表示されたダッシュボード URL を開き、リソース一覧から Web フロントエンドのエンドポイントを開きます。天気のページを表示すると、フロントエンドから API に要求が送られます。ダッシュボードでサービスのログと要求のトレースを確認し、ターミナルで `Ctrl+C` を押してアプリを停止します。
 
-## Create new project
+生成された `ApiService` はデータを提供し、`Web` はそのデータを利用します。`ServiceDefaults` は共通設定です。AppHost がプロジェクトを登録し、フロントエンドに依存先を接続します。構成は [C# クイックスタート](https://aspire.dev/get-started/first-app/?lang=csharp)、リソース参照の仕組みは [Aspire の概要](/ja/2023/11/what-is-net-aspire/)で確認できます。
 
-Visual Studio で **File** > **New** > **Project** に移動し、プロジェクトの種類のドロップダウンで **.NET Aspire** を選択するか、"Aspire" という単語を検索します。次の 2 つのテンプレートが表示されるはずです。
+## アーカイブ：2023 年 11 月の .NET 8 プレビュー
 
--   **.NET Aspire Application** -- 空の .NET Aspire プロジェクトテンプレート。
--   **.NET Aspire Starter Application** -- Blazor フロントエンド、API バックエンドサービス、そしてオプションで Redis を使ったキャッシュを含む、より包括的なプロジェクトテンプレート。
+**2026年11月2日訂正:** 上の手順は Aspire 13.x の CLI を使用します。以下の画像、Redis のオプション、`AddRedisContainer` API は [2023 年のプレビュー](https://devblogs.microsoft.com/dotnet/introducing-dotnet-aspire-simplifying-cloud-native-development-with-dotnet-8/)のものです。当時の AppHost は `net8.0` を対象に [Aspire.Hosting 8.0.0-preview.1.23557.2](https://www.nuget.org/packages/Aspire.Hosting/8.0.0-preview.1.23557.2)を参照していました。
 
-最初の .NET Aspire アプリには **.NET Aspire Starter Application** テンプレートを選択します。
+当時の Visual Studio 2022 Preview では **.NET Aspire Starter Application** を選び、**Use Redis for caching** を有効にしていました。対応する CLI コマンドはこちらです。
 
-[![フィルタリングされた .NET Aspire プロジェクトテンプレートのリストを表示する Visual Studio の新規プロジェクト作成ダイアログ。](/wp-content/uploads/2023/11/image-9.png)](/wp-content/uploads/2023/11/image-9.png)
-
-プロジェクトに名前を付け、**Additional information** ダイアログで **Use Redis for caching** オプションを有効にしてください。これは完全にオプションですが、.NET Aspire ができることの良い例として役立ちます。
-
-[![オプションの Use Redis for caching (Docker 必須) を備えた .NET Aspire Starter Application プロジェクトテンプレートの追加情報ダイアログ。](/wp-content/uploads/2023/11/image-5.png)](/wp-content/uploads/2023/11/image-5.png)
-
-### Using dotnet CLI
-
-dotnet CLI を使って .NET Aspire アプリを作成することもできます。.NET Aspire Starter Application テンプレートを使ってアプリを作成するには、次のコマンドを使用し、`Foo` を希望のソリューション名に置き換えてください。
-
-```bash
+```sh
 dotnet new aspire-starter --use-redis-cache --output Foo
 ```
 
-## Project structure
+[![フィルタリングされた .NET Aspire プロジェクトテンプレートのリストを表示する Visual Studio の新規プロジェクト作成ダイアログ。](/wp-content/uploads/2023/11/image-9.png)](/wp-content/uploads/2023/11/image-9.png)
 
-.NET Aspire ソリューションが作成されたので、その構成を見てみましょう。ソリューションには 4 つのプロジェクトがあるはずです。
+[![オプションの Use Redis for caching (Docker 必須) を備えた .NET Aspire Starter Application プロジェクトテンプレートの追加情報ダイアログ。](/wp-content/uploads/2023/11/image-5.png)](/wp-content/uploads/2023/11/image-5.png)
 
--   **ApiService**: フロントエンドがデータを取得するために使用する ASP.NET Core API プロジェクト。
--   **AppHost**: .NET Aspire アプリケーションのさまざまなプロジェクトとサービスを接続・構成することでオーケストレーターとして機能します。
--   **ServiceDefaults**: 回復力、サービスディスカバリー、テレメトリーに関連する構成を管理するために使用される共有プロジェクト。
--   **Web**: フロントエンドとして機能する Blazor アプリケーション。
-
-プロジェクト間の依存関係は次のようになります。
+AppHost は `ApiService` と `Web` を参照し、両プロジェクトは `ServiceDefaults` を共有していました。当時の依存関係図です。
 
 [![.NET Aspire Starter Application のプロジェクト依存関係グラフ。AppHost が最上位にあり、ApiService と Web に依存し、両者は ServiceDefaults に依存しています。](/wp-content/uploads/2023/11/image-6.png)](/wp-content/uploads/2023/11/image-6.png)
 
-上から始めましょう。
-
-## AppHost project
-
-これは私たちの .NET Aspire ソリューションのオーケストレータープロジェクトです。その役割は、.NET Aspire アプリケーションのさまざまなプロジェクトとサービスを接続・構成することです。
-
-その `.csproj` ファイルを見てみましょう。
-
-```xml
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <IsAspireHost>true</IsAspireHost>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Foo.ApiService\Foo.ApiService.csproj" />
-    <ProjectReference Include="..\Foo.Web\Foo.Web.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Aspire.Hosting" Version="8.0.0-preview.1.23557.2" />
-  </ItemGroup>
-
-</Project>
-```
-
-2 つの点が目立ちます。
-
--   `IsAspireHost` 要素は、このプロジェクトをソリューションのオーケストレーターとして明示的にマークします
--   `Aspire.Hosting` パッケージ参照。このパッケージには、.NET Aspire アプリケーションモデルのコア API と抽象化が含まれています。フレームワークはまだプレビュー段階にあるため、.NET Aspire NuGet パッケージもプレビューリリースとしてマークされています。
-
-次に `Program.cs` を見てみましょう。さまざまなプロジェクトを接続し、キャッシュを有効にするために使用される、非常になじみのあるビルダーパターンに気付くでしょう。
+プレビューの AppHost は Redis を `cache`、API を `apiservice` として登録していました。Web フロントエンドは両方を参照します。当時の API は次のような形でした。
 
 ```cs
 var builder = DistributedApplication.CreateBuilder(args);
-
 var cache = builder.AddRedisContainer("cache");
-
-var apiservice = builder.AddProject<Projects.Foo_ApiService>("apiservice");
-
+var api = builder.AddProject<Projects.Foo_ApiService>("apiservice");
 builder.AddProject<Projects.Foo_Web>("webfrontend")
     .WithReference(cache)
-    .WithReference(apiservice);
-
+    .WithReference(api);
 builder.Build().Run();
 ```
 
-上のコードが本質的に行うことは次のとおりです。
-
--   `DistributedApplication` を構築するために使用される `IDistributedApplicationBuilder` のインスタンスを作成します
--   後でプロジェクトとサービスから参照できる `RedisContainerResource` を作成します
--   `ApiService` プロジェクトをアプリケーションに追加し、`ProjectResource` のインスタンスを保持します
--   `Web` プロジェクトをアプリケーションに追加し、Redis キャッシュと `ApiService` を参照します
--   最後に `Build()` を呼び出して `DistributedApplication` インスタンスを構築し、`Run()` を呼び出して実行します。
-
-## ApiService project
-
-`ApiService` プロジェクトは `/weatherforecast` エンドポイントを公開しており、私たちの `Web` プロジェクトから利用できます。API を利用可能にするため、`AppHost` プロジェクトに登録し、`apiservice` という名前を付けました。
-
-```cs
-builder.AddProject<Projects.Foo_ApiService>("apiservice")
-```
-
-## Web project
-
-`Web` プロジェクトは Blazor フロントエンドを表し、`ApiService` が公開する `/weatherforecast` エンドポイントを利用します。その方法こそが、.NET Aspire の魔法が本格的に発揮される場所です。
-
-型付きの `HttpClient` を使用していることに気付くでしょう。
-
-```cs
-public class WeatherApiClient(HttpClient httpClient)
-{
-    public async Task<WeatherForecast[]> GetWeatherAsync()
-    {
-        return await httpClient.GetFromJsonAsync<WeatherForecast[]>("/weatherforecast") ?? [];
-    }
-}
-```
-
-ここで `Program.cs` を見ると、14 行目に興味深い記述があります。
-
-```cs
-builder.Services.AddHttpClient<WeatherApiClient>(client =>
-    client.BaseAddress = new("http://apiservice"));
-```
-
-`ApiService` プロジェクトを `DistributedApplication` の `ProjectResource` として追加するときに `apiservice` という名前を付けたことを覚えていますか? この行で、型付きの `WeatherApiClient` がサービスディスカバリーを使用し、`apiservice` という名前のサービスに接続するように構成されます。`http://apiservice` は、追加の構成なしで、`ApiService` リソースの正しいアドレスに自動的に解決されます。
-
-## ServiceDefaults project
-
-`AppHost` プロジェクトと同様に、共有プロジェクトも特別なプロジェクトプロパティで区別されます。
-
-```xml
-<IsAspireSharedProject>true</IsAspireSharedProject>
-```
-
-このプロジェクトは、回復力、サービスディスカバリー、テレメトリーに関して、すべての異なるプロジェクトとサービスが同じ方法でセットアップされることを保証します。これは、ソリューションのプロジェクトやサービスがそれぞれの `IHostApplicationBuilder` インスタンス上で呼び出せる一連の拡張メソッドを公開することで実現されています。
-
-## Run the project
-
-プロジェクトを実行するには、`AppHost` をスタートアッププロジェクトとして設定し、Visual Studio で run (F5) を押してください。あるいは、コマンドラインから `dotnet run --project Foo/Foo.AppHost` でプロジェクトを実行することもできます (`Foo` は実際のプロジェクト名に置き換えてください)。
-
-アプリケーションが起動すると、.NET Aspire ダッシュボードが表示されます。
+当時のダッシュボードにはプロジェクトとコンテナが一緒に表示されました。天気の要求のトレースを開くと、個々のサービス呼び出しを確認できました。
 
 [![.NET Aspire Starter Application プロジェクトテンプレートを実行している .NET Aspire ダッシュボード。](/wp-content/uploads/2023/11/image-7-1024x414.png)](/wp-content/uploads/2023/11/image-7.png)
 
-ダッシュボードでは、.NET Aspire アプリケーションのさまざまな部分 (プロジェクト、コンテナー、実行可能ファイル) を監視できます。また、サービスの集約された構造化ログ、リクエストトレース、その他のさまざまな有用なメトリクスも提供します。
-
 [![.NET Aspire ダッシュボード内のリクエストトレース。リクエストがさまざまなアプリケーションコンポーネントを通過するときの段階を示しています。](/wp-content/uploads/2023/11/image-8.png)](/wp-content/uploads/2023/11/image-8.png)
-
-これで完了です! 初めての .NET Aspire アプリケーションの構築と実行、おめでとうございます!
