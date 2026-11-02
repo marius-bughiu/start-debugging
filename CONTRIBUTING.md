@@ -55,6 +55,8 @@ Related articles are selected using specific shared topics and title relevance. 
 
 The production build validates the sitemap, canonical URLs, page metadata, and language alternatives before deployment. Keep redirect URLs outside the sitemap, and preserve reciprocal language links when changing translated routes.
 
+Embed JSON-LD with `serializeJsonLd` from `site/src/lib/json-ld.mjs`. It escapes HTML delimiters so a code example containing `</script>` stays inside the JSON data instead of terminating the script element. Run `npm test` after changing structured-data output.
+
 Run `npm run seo:indexing-audit` from `site/` to refresh the fixed cohort in `site/scripts/gsc-indexing-cohort.json`. It uses existing Google Application Default Credentials with `webmasters.readonly`, checks live page responses separately, and saves all inspection results under `content-strategy/`, including indexed controls and API errors. Timestamped snapshots allow comparisons of the same URLs. This is a diagnostic sample, not a sitewide indexing rate, and does not submit indexing requests.
 
 `npm run seo:discovery-audit` tracks the separate 30-URL discovery/content-review cohort and writes to `content-strategy/discovery-audit/`, preserving the original cohort's history. Its URLs include established controls, observed organic landing pages, featured guides and restored examples. Keep cohort membership stable when comparing results.
