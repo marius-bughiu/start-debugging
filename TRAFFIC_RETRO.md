@@ -141,3 +141,33 @@ GA4 confirms existing readership outside Google: October 3–30 shows 2,033 orga
 The prior conclusion that snippets were the bottleneck was unsupported: `site:` searches dominate many visible-query rows, and page-average positions do not establish normal-query ranking wins. Query-filtered totals omit anonymized searches. The Pages report (October 23) shows 5,307 discovered/not indexed and 668 crawled/not indexed URLs; all-known-page totals include taxonomy and localized routes. Manual actions and Security issues both report no issues.
 
 A local first patch repairs custom engagement events and search reporting, refreshes featured guides, and moves the fixed top advertisement below article content. The detailed evidence, GA4 reconciliation, limitations, and proposed November experiment are maintained in `content-strategy/traffic-recovery-2026-10-31.md` with raw API/UI snapshots beside it. Those files are local under the existing content-strategy ignore policy. No deployment or publishing schedule changes were performed by this audit.
+
+## 2026-10
+
+**Shipped:**
+- 135 posts published in October (135 files added under `site/src/content/blog/2026/10/` by October commits): 28 `post:` (news), 80 `evergreen:`, 27 `agents:`. Commit count and file count agree for the fourth month running. Seven more posts carry `2026/10` paths but were committed on 11-01, so they count toward November's commit log: five evergreen guides (three Flutter `migrate-*`, the ASP.NET Core static-files guide, the try-pattern comparison), one `what-is` explainer and one `agents:` fix. Volume dropped from September's record (144 → 135, −6%), but the mix stayed the same: evergreen is 59%. Since 10-31, every lane ships English only (translations on demand). This is the last month whose locale output follows the old fan-out model.
+- Maintenance runs: **pillar x4** (10-04, -11, -18, -25), **freshness x0**, **link-pass x1** (10-04), **topic-refill x4** (10-03, -10, -17, -24). Also fired: gsc harvest x3 (10-10, -17, -24; no 10-03 run, and the 10-31 exports came from the traffic audit, not a harvest commit), agents-queue refill x1 (10-10), evergreen resurface draft x4 (10-04, -11, -18, -25), and weekly link-rot reports (10-04: 144 broken, 10-11: 151, 10-18: 153, 10-25: 159).
+- **internal-linking came back for one run only.** The 10-04 pass was the first since the 09-27 script fix. No pass ran on 10-11, 10-18 or 10-25, so the weekly cadence is still not restored. Whatever is stopping it now is not the version-split bug. Check whether the schedule is firing at all, or firing and committing nothing.
+- **Broken links rose every week, to a new high of 159** (+15 over the month, +37 since the 09-06 report). Five retros in a row have flagged the dead-link cleanup as overdue. `link-rot-repairs-2026-11-01.json` and `link-rot-review-2026-11-01.json` now exist locally, so a repair pass may be in progress for November.
+- **freshness: seventh consecutive `x0`.** `site/scripts/freshness-pass.mjs` still does not exist, and `site/package.json:18-19` still declares `freshness-pass` / `freshness-pass:apply`.
+- Roadmap items checked off: not diffable (`TRAFFIC_ROADMAP.md` is gitignored). Current state: **33 of 40** `### [x]` items checked, unchanged from September and flat for five months.
+- Top topic clusters (tags across the 135 new posts): `dotnet` (60), `csharp` (36), `flutter` (34) tied with `ai-agents` (34). Next tier: `errors` (29), `dart` (25), `dotnet-10` (21), `comparison` (19), `how-to` (16), `dotnet-11` (16), `ef-core` (13), `performance` (12), `claude-code` (11), `llm` (10), `github-copilot` (10). After the RC 1 news peak, `dotnet-11` fell from #2 to #10 (42 → 16). Flutter/Dart rose (26 → 34 and 17 → 25), and `errors` fell from #3 to #5.
+- Other notable commits: `feat(build): add build:page` (single-post builds), `fix: improve traffic measurement and article discovery` (from the 10-31 audit), and the `chore: traffic retro 2026-09` entry.
+
+**Search signal: rolling 28-day search comparison** (GSC property `sc-domain:startdebugging.net`, search type `web`, data state `final`; exported 2026-10-31T13:45:43Z, 2 days before this retro, so current)
+- Current window: 2026-10-01 to 2026-10-28; prior window: 2026-09-03 to 2026-09-30. These are rolling windows, not calendar-month totals. October 29-31 is not covered.
+- Clicks: 3 → 13 (+10, +333%)
+- Impressions: 5,314 → 1,320 (−3,994, −75.2%)
+- CTR: 0.06% → 0.98% (+0.93 pp)
+- Average position: 7.85 → 12.43 (aggregate; query mix may differ). The 10-31 audit found that `site:` operator searches dominated the September visible-query rows. The impression drop and position shift probably reflect that mix change at least as much as any ranking change, so don't read them as a ranking loss without query-level evidence.
+- Query-level ranking wins: not assessed from the available exports.
+- Page-2 opportunities from the filtered export: none met the filters (`gsc-candidates.json` is empty, and so is `gsc-rising.json`). `gsc-low-ctr-pages.json` has a single row, `/archive/` (pos 5.66, 146 imp, 2 clicks), which is a navigation page, not an article.
+- Indexing: `gsc-not-indexed.json` (generated 2026-10-24) has **50 of 50 sampled late-October URLs not indexed**: 46 "URL is unknown to Google", 4 "Discovered - currently not indexed". Sample split: en 13, es 10, de 9, ja 6, pt-br 6, ru 6. The fixed 12-URL purposive cohort in `gsc-indexing-audit-latest.json` (11-01) shows 5 indexed, 7 not, 0 gained, 0 lost since 10-31. That cohort is not a sitewide indexing rate.
+- See `## 2026-10-31 — Traffic audit correction` above for the unfiltered monthly click history and the GA4 reconciliation. Those figures are not repeated here.
+
+**Manual fill (user):**
+- Sessions / users:
+- Top 10 landing pages:
+- Newsletter subscriber count:
+- Social referrals by source:
+- Next month's 3 priorities:
