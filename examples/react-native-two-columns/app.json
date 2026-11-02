@@ -1,0 +1,8 @@
+{
+  "expo": {
+    "name": "Two-column layout",
+    "slug": "start-debugging-two-columns",
+    "version": "1.0.0",
+    "platforms": ["android", "ios", "web"]
+  }
+}

@@ -1,0 +1,53 @@
+name: Verify article examples
+
+on:
+  push:
+    branches: [main]
+    paths: ['examples/**', '.github/workflows/examples.yml']
+  pull_request:
+    paths: ['examples/**', '.github/workflows/examples.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dotnet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            7.0.x
+            8.0.x
+      - run: dotnet run --project examples/unsafe-accessor -c Release
+      - run: dotnet restore examples/unsafe-accessor-benchmarks --locked-mode
+      - run: dotnet run --project examples/unsafe-accessor-benchmarks -c Release -- --verify
+      - run: dotnet restore examples/generic-type-definition-benchmarks --locked-mode
+      - run: dotnet run --project examples/generic-type-definition-benchmarks -c Release -f net8.0 -- --verify
+      - run: dotnet run --project examples/generic-type-definition-benchmarks -c Release -f net7.0 -- --verify
+
+  windows-screenshot:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - run: dotnet run --project examples/windows-screenshot -c Release -- --self-test
+
+  react-native-web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: examples/react-native-two-columns
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '26'
+          cache: npm
+          cache-dependency-path: examples/react-native-two-columns/package-lock.json
+      - run: npm ci --ignore-scripts
+      - run: npm run build

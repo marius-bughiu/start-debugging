@@ -1,8 +1,8 @@
 ---
-title: "Как сделать двухколоночную раскладку Flexbox в React Native"
-description: "Узнайте, как создать двухколоночную раскладку Flexbox в React Native с помощью flex-wrap, с настраиваемым числом колонок и отступами между элементами."
+title: "Как создать двухколоночную Flexbox-раскладку в React Native"
+description: "Исполняемый Expo-пример двух колонок React Native с переносом строк, числовыми размерами и отступами без строк px и calc()."
 pubDate: 2023-11-07
-updatedDate: 2023-11-15
+updatedDate: 2026-11-02
 tags:
   - "react-native"
 lang: "ru"
@@ -10,50 +10,61 @@ translationOf: "2023/11/2-column-react-native"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-Создание двухколоночной раскладки в React Native для списка элементов -- довольно распространённая задача. Такую раскладку из 2 колонок в react native можно легко получить с помощью flex. В примере ниже показано, как добиться двухколоночной раскладки с отступами между элементами.
+Для небольшой раскладки в две колонки подойдут `flexDirection: 'row'`, `flexWrap: 'wrap'` и ширина `50%` у обёртки каждого элемента. React Native принимает числовые размеры и процентные строки; CSS-значения вроде `'100px'` и `calc()` не являются допустимой заменой в нативных стилях layout.
 
-Вот наш view:
+**Исправление — 2 ноября 2026 года:** недоступный Snack заменён полным Expo-проектом. Исправлены строки `px` и высота через `calc()`. Восстановленный проект экспортирован и проверен в вебе; запуск на Android/iOS-устройстве не заявляется.
+
+## Скачать полный пример
+
+[ZIP с исходниками Expo](/examples/react-native-two-columns.zip) включает `App.js`, настройки, закреплённые зависимости и npm lockfile с версиями React/React Native, совместимыми с Expo SDK 58.0.22.
+
+```sh
+npm ci
+npm run web
+```
+
+`npm run build` выполняет статический веб-экспорт, а `npm start` запускает поддерживаемое SDK окружение разработки для платформ.
+
+## Перенос строк и отступы
+
+Пример отображает семь элементов, чтобы была видна неполная последняя строка:
 
 ```jsx
 <View style={styles.container}>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item1'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item2'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item3'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item4'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item5'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item6'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item7'}</Text></View></View>
-
+  {items.map((label) => (
+    <View key={label} style={styles.itemContainer}>
+      <View style={styles.item}>
+        <Text>{label}</Text>
+      </View>
+    </View>
+  ))}
 </View>
 ```
 
-А вот наши стили:
+Соответствующие стили:
 
-```typescript
+```javascript
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    alignContent: 'flex-start'
+    alignContent: 'flex-start',
   },
   itemContainer: {
-    width: '50%', // 50% -> 2 columns | 33% -> 3 columns | 25% -> 4 columns
-    height: '100px'
+    width: '50%',
+    height: 100,
+    padding: 8,
   },
   item: {
-    padding: '8px',
-    margin: '8px',
-    backgroundColor: '#EEEEEE',
-    height: "calc(100% - 8px)"
-  }
-})
+    flex: 1,
+    padding: 8,
+    backgroundColor: '#dde8f6',
+  },
+});
 ```
 
-Результат выглядит так:
+Padding находится внутри каждой обёртки половинной ширины, а внутренняя карточка занимает оставшуюся высоту. Вычитать padding CSS-выражением не нужно. Числа задают единицы layout React Native, а не буквальные строки CSS-пикселей.
 
-[![Двухколоночная раскладка flexbox в React Native.](/wp-content/uploads/2023/11/image.png)](/wp-content/uploads/2023/11/image.png)
+Чтобы изменить число колонок, поменяйте процент ширины, например на `'25%'` для четырёх. Для больших наборов данных используйте виртуализированный список вроде [`FlatList` с `numColumns`](https://reactnative.dev/docs/flatlist#numcolumns), а не вывод всех элементов в переносящемся `View`.
 
-Чтобы изменить количество колонок, достаточно поменять свойство `width` у `itemContainer`. `50%` даст 2 колонки, `33%` -- 3 колонки, `25%` -- 4 колонки, `20%` -- 5 колонок и так далее.
-
-Вы можете [поэкспериментировать с этим кодом вживую здесь](https://snack.expo.dev/GCz9-diFD).
+Источники: [высота и ширина React Native](https://reactnative.dev/docs/height-and-width), [Flexbox layout](https://reactnative.dev/docs/flexbox).

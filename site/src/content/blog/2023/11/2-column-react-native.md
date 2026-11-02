@@ -1,55 +1,66 @@
 ---
 title: "How to create a 2 column Flexbox layout in React Native"
-description: "Learn how to create a 2 column Flexbox layout in React Native using flex-wrap, with adjustable column counts and spacing between elements."
+description: "A runnable Expo example of a wrapped two-column React Native layout using numeric dimensions and spacing, without CSS px strings or calc()."
 pubDate: 2023-11-07
-updatedDate: 2023-11-15
+updatedDate: 2026-11-02
 tags:
   - "react-native"
 ---
-Creating a two column layout in React Native, given a list of items, is quite a common task. This react native 2 column layout can be achieved quite easily using flex. The example below shows how to achieve the two-column layout with spacing between the elements.
+A small two-column layout can use `flexDirection: 'row'`, `flexWrap: 'wrap'` and a `50%` width on each item wrapper. React Native accepts numeric layout dimensions and percentage strings; CSS values such as `'100px'` and `calc()` are not valid substitutes in native layout styles.
 
-This is our view:
+**Correction — November 2, 2026:** The missing Snack has been replaced with a complete Expo project. The original `px` strings and `calc()` height were corrected. The restored project was exported and checked on the web; no Android/iOS device run is claimed.
+
+## Download the complete example
+
+[Download the Expo source ZIP](/examples/react-native-two-columns.zip). It includes `App.js`, project settings, pinned dependencies and an npm lockfile, using Expo SDK 58.0.22's compatible React/React Native versions.
+
+```sh
+npm ci
+npm run web
+```
+
+Use `npm run build` for a static web export, or `npm start` for the platform development environment supported by the SDK.
+
+## Wrapped rows and spacing
+
+The example renders seven items so the incomplete final row is visible:
 
 ```jsx
 <View style={styles.container}>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item1'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item2'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item3'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item4'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item5'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item6'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item7'}</Text></View></View>
-
+  {items.map((label) => (
+    <View key={label} style={styles.itemContainer}>
+      <View style={styles.item}>
+        <Text>{label}</Text>
+      </View>
+    </View>
+  ))}
 </View>
 ```
 
-And this is our style:
+The relevant styles are:
 
-```typescript
+```javascript
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    alignContent: 'flex-start'
+    alignContent: 'flex-start',
   },
   itemContainer: {
-    width: '50%', // 50% -> 2 columns | 33% -> 3 columns | 25% -> 4 columns
-    height: '100px'
+    width: '50%',
+    height: 100,
+    padding: 8,
   },
   item: {
-    padding: '8px',
-    margin: '8px',
-    backgroundColor: '#EEEEEE',
-    height: "calc(100% - 8px)"
-  }
-})
+    flex: 1,
+    padding: 8,
+    backgroundColor: '#dde8f6',
+  },
+});
 ```
 
-The result looks like this:
+The padding belongs inside each half-width wrapper, and the inner card fills the remaining height. There is no need to subtract padding with a CSS expression. Numeric dimensions use React Native layout units, not literal CSS pixel strings.
 
-[![A two column flexbox layout in React Native.](/wp-content/uploads/2023/11/image.png)](/wp-content/uploads/2023/11/image.png)
+To change the column count, change the percentage width, such as `'25%'` for four columns. For large data sets use a virtualized list such as [`FlatList` with `numColumns`](https://reactnative.dev/docs/flatlist#numcolumns), rather than rendering every item in a wrapped `View`.
 
-To adjust the number of columns, simply change the `width` property of the `itemContainer`. `50%` will result in 2 columns, `33%` will be 3 columns, `25%` will be 4 columns, `20%` will be 5 columns, and so on.
-
-You can [play with this code live, here](https://snack.expo.dev/GCz9-diFD).
+Sources: [React Native height and width](https://reactnative.dev/docs/height-and-width), [Flexbox layout](https://reactnative.dev/docs/flexbox).

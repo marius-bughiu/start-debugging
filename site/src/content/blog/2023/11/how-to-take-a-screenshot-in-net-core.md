@@ -1,46 +1,63 @@
 ---
-title: "How to take a screenshot in .NET core"
-description: "Learn how to capture a screenshot of your entire desktop from a .NET console application using System.Windows.Forms. Windows-only solution covering all displays."
+title: "How to take a Windows desktop screenshot from .NET"
+description: "A runnable Windows-only .NET console sample that captures virtual-screen bounds, disposes drawing resources and saves a PNG."
 pubDate: 2023-11-04
+updatedDate: 2026-11-02
 tags:
   - "csharp"
   - "dotnet"
 ---
-In this article we’re going to look at how you can grab a screenshot of your entire desktop – that means all your displays, not just the primary one – from a console application using .NET core. This solution relies on Windows-only dependencies, so it will not work cross-platform, it will only work on Windows.
+This example uses Windows Forms and `System.Drawing` to capture the virtual-screen bounding rectangle of the current Windows desktop session. It is a Windows application, even though the project is a console program.
 
-We start with a bit of project setup. In order to grab the screen information, we will need access to `System.Windows.Forms`, and in order to have that in a .NET Console application, we’ll need to add the following reference in our `.csproj`.
+**Correction — November 2, 2026:** The missing source has been restored with complete project settings, resource disposal, output-folder handling and a synthetic-image self-test. It was cross-built on macOS; real Windows display capture was not executed during this verification.
+
+## Download and project settings
+
+[Download the runnable source](/examples/windows-screenshot.zip). Its project file contains:
 
 ```xml
-<ItemGroup>
-  <FrameworkReference Include="Microsoft.WindowsDesktop.App.WindowsForms" />
-</ItemGroup>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+</Project>
 ```
 
-Now that we have a reference to `System.Windows.Forms`, we can get hold of the screen's dimensions – we're interested in the starting coordinates (`x` and `y`) and its size (`w` and `h`). We get this information from `SystemInformation.VirtualScreen`.
+`UseWindowsForms` supplies the Windows Desktop framework reference. `EnableWindowsTargeting` permits a cross-build when targeting packs can be restored; it does not make the application runnable on macOS or Linux.
+
+## Capture the virtual screen
+
+The complete program supplies the imports and an STA entry point. Its capture operation is:
 
 ```cs
 var screen = SystemInformation.VirtualScreen;
-int x = screen.Left;
-int y = screen.Top;
-int w = screen.Width;
-int h = screen.Height;
+using var bitmap = new Bitmap(screen.Width, screen.Height);
+using (var graphics = Graphics.FromImage(bitmap))
+{
+    graphics.CopyFromScreen(
+        screen.Left, screen.Top, 0, 0, screen.Size,
+        CopyPixelOperation.SourceCopy);
+}
+bitmap.Save(filename, ImageFormat.Png);
 ```
 
-Next, we create a bitmap and copy the screen information into it – effectively creating our screenshot in memory.
+`screen.Left` and `screen.Top` may be negative when another monitor sits left or above the primary display. The bounding rectangle can include unused space between displays. It does not promise capture of other sessions, secure desktops or protected content.
 
-```cs
-var image = new Bitmap(w, h);
-using var graphics = Graphics.FromImage(image);
-graphics.CopyFromScreen(x, y, 0, 0, new Size(w, h));
+The program creates the output directory and a unique PNG filename, and disposes its bitmap and graphics objects.
+
+## Run on Windows
+
+```powershell
+dotnet run -c Release -- --self-test
+dotnet run -c Release
+dotnet run -c Release -- C:\Screenshots
 ```
 
-Last step is to write the in-memory screenshot to a file on disk. To mimic what Snipping Tool is already doing, we’re saving the image to the **Pictures** folder and include a timestamp in the file’s name.
+The self-test creates and decodes a synthetic PNG without capturing a desktop. Normal execution writes to Pictures or the supplied directory. Test real capture in the target Windows session, including its display arrangement and DPI settings.
 
-```cs
-string picturesDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-string fileName = $"Screenshot {DateTime.Now:yyyy-MM-dd HHmmss}.png";
-string filePath = Path.Combine(picturesDirectory, fileName);
-image.Save(filePath, ImageFormat.Png);
-```
-
-If you are interested in a fully working sample, you can [check out the code on GitHub](https://github.com/Start-Debugging/dotnet-samples/blob/main/screenshot/Screenshot/Program.cs).
+References: [SystemInformation.VirtualScreen](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.systeminformation.virtualscreen), [Graphics.CopyFromScreen](https://learn.microsoft.com/en-us/dotnet/api/system.drawing.graphics.copyfromscreen).

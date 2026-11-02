@@ -1,7 +1,8 @@
 ---
 title: ".NET 8 Performance: UnsafeAccessor vs. Reflection"
-description: "Benchmark von UnsafeAccessor gegen Reflection in .NET 8. So erreicht UnsafeAccessor Performance ohne Overhead im Vergleich zur klassischen Reflection."
+description: "Reproduzierbarer .NET-8-Benchmark: UnsafeAccessor, Reflection, gecachte Reflection, gecachte Delegaten und direkte Aufrufe mit beobachtbarer Arbeit vergleichen."
 pubDate: 2023-11-01
+updatedDate: 2026-11-02
 tags:
   - "csharp"
   - "dotnet"
@@ -11,60 +12,38 @@ translationOf: "2023/11/net-8-performance-unsafeaccessor-vs-reflection"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-In einem früheren Artikel haben wir gezeigt, [wie man mit `UnsafeAccessor` auf private Member zugreift](/de/2023/10/unsafe-accessor/). Diesmal werfen wir einen Blick auf die Performance im Vergleich zu Reflection, um zu sehen, ob das Ganze tatsächlich ohne Overhead ist oder nicht.
+Ein `UnsafeAccessor` bindet an einen bekannten Member ohne Reflection-Suche oder `MethodInfo.Invoke`. Ein sinnvoller Vergleich muss beobachtbare Zielarbeit enthalten und erklären, was die einzelnen Aufrufwege tun.
 
-Wir führen vier Benchmarks durch.
+**Korrektur — 2. November 2026:** Das alte Quellcode-Repository ist nicht verfügbar. Das Beispiel wurde mit Funktionsprüfung, Allokationsdiagnostik, gecachten Delegaten und passenden, nicht inline ausgeführten Zielmethoden wiederhergestellt. Die früheren Zeiten nahe null belegen keinen universell fehlenden Overhead und werden nicht mehr als reproduzierbare Messungen dargestellt.
 
-1.  **Reflection**: Wir messen das Abrufen einer privaten Methode aus einem Typ und deren Aufruf.
-2.  **Reflection mit Cache:** ähnlich wie oben, aber statt die Methode jedes Mal neu zu holen, verwenden wir eine zwischengespeicherte Referenz auf das `MethodInfo`.
-3.  **Unsafe Accessor:** Aufruf derselben privaten Methode über `UnsafeAccessor` statt über Reflection.
-4.  **Direkter Zugriff**: Aufruf einer öffentlichen Methode direkt. Das dient als Referenz, um zu prüfen, ob `UnsafeAccessor` wirklich Performance ohne Overhead liefert.
+## Herunterladen und ausführen
 
-Wenn Sie die Benchmarks selbst ausführen möchten, finden Sie den Code unten:
+[Benchmark-Quellcode herunterladen](/examples/unsafe-accessor-benchmarks.zip). Das Projekt zielt auf .NET 8 und verwendet fest BenchmarkDotNet 0.15.8.
 
-```cs
-[SimpleJob(RuntimeMoniker.Net80)]
-public class Benchmarks
-{
-    [UnsafeAccessor(UnsafeAccessorKind.Method, Name = "PrivateMethod")]
-    extern static int PrivateMethod(Foo @this, int value);
-
-    static readonly Foo _instance = new();
-
-    static readonly MethodInfo _privateMethod = typeof(Foo)
-        .GetMethod("PrivateMethod", BindingFlags.Instance | BindingFlags.NonPublic);
-
-    [Benchmark]
-    public int Reflection() => (int)typeof(Foo)
-        .GetMethod("PrivateMethod", BindingFlags.Instance | BindingFlags.NonPublic)
-        .Invoke(_instance, [42]);
-
-    [Benchmark]
-    public int ReflectionWithCache() => (int)_privateMethod.Invoke(_instance, [42]);
-
-    [Benchmark]
-    public int UnsafeAccessor() => PrivateMethod(_instance, 42);
-
-    [Benchmark]
-    public int DirectAccess() => _instance.PublicMethod(42);
-}
+```sh
+dotnet run -c Release -- --verify
+dotnet run -c Release -- --job Dry --filter '*'
+dotnet run -c Release -- --filter '*'
 ```
 
-## Benchmark-Ergebnisse
+Der erste Befehl prüft, dass alle fünf Aufrufwege für Eingabe `42` den Wert `59` liefern. Der zweite ist eine Ausführungsprüfung mit einer Iteration. Nutze den letzten Befehl für reguläre Messungen und bewahre erzeugte Umgebungs- und Berichtsdateien auf, bevor du Zeiten interpretierst.
 
-```plaintext
-| Method              | Mean       | Error     | StdDev    |
-|-------------------- |-----------:|----------:|----------:|
-| Reflection          | 35.9979 ns | 0.1670 ns | 0.1562 ns |
-| ReflectionWithCache | 21.2821 ns | 0.2283 ns | 0.2135 ns |
-| UnsafeAccessor      |  0.0035 ns | 0.0022 ns | 0.0018 ns |
-| DirectAccess        |  0.0028 ns | 0.0024 ns | 0.0023 ns |
-```
+## Was verglichen wird
 
-Die Ergebnisse sind ziemlich beeindruckend. Im Vergleich zwischen Direktzugriff und Unsafe Accessor gibt es buchstäblich keinen Unterschied. Die paar Nanosekunden Differenz lassen sich als Rauschen abtun. Tatsächlich kann es sogar passieren, dass Unsafe Accessors bei mehreren Durchläufen schneller sind. Das ist völlig normal und sagt uns im Grunde, dass beide gleichwertig sind, also ohne Overhead.
+1. **Direkter Aufruf:** ruft eine öffentliche Methode auf.
+2. **UnsafeAccessor:** bindet an eine private Methode mit derselben Operation.
+3. **Reflection-Suche und Aufruf:** sucht die Methode und ruft sie bei jeder Operation auf.
+4. **Gecachte Reflection:** verwendet `MethodInfo` erneut, übergibt aber weiterhin ein Objektarray als Argumentliste.
+5. **Gecachter Delegat:** verwendet einen offenen Instanzdelegaten für die private Methode erneut.
 
-Es macht kaum Sinn, `UnsafeAccessor` mit Reflection zu vergleichen. Performancetechnisch entsteht kein Overhead, und als Bonus bekommen Sie den ganzen syntaktischen Komfort einer echten Methodensignatur.
+Beide Zielmethoden addieren zum Eingabewert ein Instanzfeld und verwenden `MethodImplOptions.NoInlining`. Jeder Benchmark gibt das Ergebnis zurück. Die Eingabe ist ein BenchmarkDotNet-Parameter, damit die Demonstration nicht zu einer inline ausgeführten Methode mit konstanter Rückgabe schrumpft.
 
-Das heißt nicht, dass Reflection tot ist. `UnsafeAccessor` deckt nur Szenarien ab, in denen Typ und Member, auf die zugegriffen werden soll, zur Compile-Zeit bekannt sind. Wenn diese Informationen erst zur Laufzeit verfügbar sind, ist Reflection nach wie vor das Mittel der Wahl.
+`MemoryDiagnoser` erfasst Allokationen einschließlich Argumentarray und Boxing in den Reflection-Fällen. Die Wege leisten unterschiedliche Arbeit; Zeitunterschiede sind nicht allein eine Zugriffskontrolle.
 
-Der Benchmark-Code ist auch [auf GitHub verfügbar](https://github.com/Start-Debugging/dotnet-samples/blob/main/unsafe-accessor/UnsafeAccessor.Benchmarks/Benchmarks.cs).
+## Prüfung und Interpretation
+
+Das wiederhergestellte Projekt wurde mit .NET 8.0.33 auf macOS arm64 ausgeführt. Die Funktionsprüfung und alle fünf BenchmarkDotNet-Dry-Jobs bestanden. Dry-Zeiten werden bewusst nicht als Leistungstabelle veröffentlicht: Sie prüfen den Messaufbau, liefern aber keine stabilen Nanosekundenwerte.
+
+Inlining, Laufzeitversion, Architektur, Zielarbeit, Caching und Allokationen beeinflussen das Ergebnis. Ein winziger Messwert kann bedeuten, dass der JIT Arbeit entfernt hat oder die Messung unterhalb der brauchbaren Auflösung des Aufbaus liegt. Er beweist nicht, dass jeder Accessor-Aufruf kostenlos ist.
+
+Ein Accessor benötigt zudem die Signatur zur Kompilierzeit. Reflection bleibt nützlich, wenn Typ oder Member erst zur Laufzeit gefunden werden. Die [Member-Beispiele](/de/2023/10/unsafe-accessor/) und [Microsofts API-Referenz](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.unsafeaccessorattribute) erklären diesen Unterschied.

@@ -1,7 +1,8 @@
 ---
-title: "Как сделать скриншот в .NET core"
-description: "Научитесь делать снимок всего рабочего стола из консольного приложения .NET с помощью System.Windows.Forms. Решение только для Windows, охватывающее все мониторы."
+title: "Как сделать снимок рабочего стола Windows из .NET"
+description: "Исполняемый пример консольного .NET-приложения только для Windows: границы виртуального экрана, освобождение графических ресурсов и сохранение PNG."
 pubDate: 2023-11-04
+updatedDate: 2026-11-02
 tags:
   - "csharp"
   - "dotnet"
@@ -10,41 +11,57 @@ translationOf: "2023/11/how-to-take-a-screenshot-in-net-core"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-В этой статье мы посмотрим, как из консольного приложения на .NET core сделать скриншот всего рабочего стола, то есть всех мониторов, а не только основного. Это решение использует зависимости, доступные только в Windows, поэтому оно не будет работать кроссплатформенно — только под Windows.
+Пример использует Windows Forms и `System.Drawing`, чтобы захватить ограничивающий прямоугольник виртуального экрана текущей сессии рабочего стола Windows. Это Windows-приложение, хотя проект является консольной программой.
 
-Начнём с небольшой настройки проекта. Чтобы получить информацию об экране, нам понадобится доступ к `System.Windows.Forms`, а чтобы он был доступен в консольном приложении .NET, нужно добавить следующую ссылку в наш `.csproj`.
+**Исправление — 2 ноября 2026 года:** отсутствующий код восстановлен с полными настройками проекта, освобождением ресурсов, обработкой выходной папки и самопроверкой на синтетическом изображении. Он собран для Windows на macOS; реальный захват экрана Windows при этой проверке не выполнялся.
+
+## Загрузка и настройки проекта
+
+[Скачайте исходный проект](/examples/windows-screenshot.zip). Файл проекта содержит:
 
 ```xml
-<ItemGroup>
-  <FrameworkReference Include="Microsoft.WindowsDesktop.App.WindowsForms" />
-</ItemGroup>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+</Project>
 ```
 
-Теперь, когда у нас есть ссылка на `System.Windows.Forms`, мы можем получить размеры экрана. Нас интересуют начальные координаты (`x` и `y`) и его размер (`w` и `h`). Эту информацию мы берём из `SystemInformation.VirtualScreen`.
+`UseWindowsForms` добавляет ссылку на Windows Desktop framework. `EnableWindowsTargeting` разрешает кросс-сборку при возможности восстановить targeting packs; это не делает приложение исполняемым в macOS или Linux.
+
+## Захват виртуального экрана
+
+Полная программа содержит импорты и STA-точку входа. Захват выполняется так:
 
 ```cs
 var screen = SystemInformation.VirtualScreen;
-int x = screen.Left;
-int y = screen.Top;
-int w = screen.Width;
-int h = screen.Height;
+using var bitmap = new Bitmap(screen.Width, screen.Height);
+using (var graphics = Graphics.FromImage(bitmap))
+{
+    graphics.CopyFromScreen(
+        screen.Left, screen.Top, 0, 0, screen.Size,
+        CopyPixelOperation.SourceCopy);
+}
+bitmap.Save(filename, ImageFormat.Png);
 ```
 
-Затем создаём Bitmap и копируем в него информацию с экрана, фактически создавая скриншот в памяти.
+`screen.Left` и `screen.Top` могут быть отрицательными, если другой монитор находится слева или выше основного. Ограничивающий прямоугольник может включать пустые участки между экранами. Захват других сеансов, защищённых рабочих столов и защищённого контента не гарантируется.
 
-```cs
-var image = new Bitmap(w, h);
-using var graphics = Graphics.FromImage(image);
-graphics.CopyFromScreen(x, y, 0, 0, new Size(w, h));
+Программа создаёт выходной каталог и уникальное имя PNG, а затем освобождает объекты bitmap и graphics.
+
+## Запуск в Windows
+
+```powershell
+dotnet run -c Release -- --self-test
+dotnet run -c Release
+dotnet run -c Release -- C:\Screenshots
 ```
 
-Последний шаг — записать скриншот из памяти в файл на диске. Чтобы повторить поведение «Ножниц», мы сохраняем изображение в папку **Изображения** и включаем в имя файла временную метку.
+Самопроверка создаёт и декодирует синтетический PNG, не захватывая рабочий стол. Обычный запуск сохраняет файл в Pictures или указанном каталоге. Проверьте реальный захват в целевой сессии Windows, включая расположение экранов и настройки DPI.
 
-```cs
-string picturesDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-string fileName = $"Screenshot {DateTime.Now:yyyy-MM-dd HHmmss}.png";
-string filePath = Path.Combine(picturesDirectory, fileName);
-image.Save(filePath, ImageFormat.Png);
-```
-
-Если вам нужен полностью рабочий пример, вы можете [посмотреть код на GitHub](https://github.com/Start-Debugging/dotnet-samples/blob/main/screenshot/Screenshot/Program.cs).
+Справка: [SystemInformation.VirtualScreen](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.systeminformation.virtualscreen), [Graphics.CopyFromScreen](https://learn.microsoft.com/en-us/dotnet/api/system.drawing.graphics.copyfromscreen).

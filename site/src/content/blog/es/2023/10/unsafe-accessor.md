@@ -1,8 +1,8 @@
 ---
 title: "C# UnsafeAccessor: miembros privados sin reflexión (.NET 8)"
-description: "Usa el atributo `[UnsafeAccessor]` en .NET 8 para leer campos privados y llamar a métodos privados sin sobrecarga, sin reflexión y totalmente compatible con AOT."
+description: "Accede a constructores, métodos, propiedades y campos privados conocidos con UnsafeAccessor de .NET 8: ejemplos probados y límites de versión."
 pubDate: 2023-10-31
-updatedDate: 2023-11-05
+updatedDate: 2026-11-02
 tags:
   - "dotnet"
   - "dotnet-8"
@@ -11,127 +11,91 @@ translationOf: "2023/10/unsafe-accessor"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-La reflexión te permite obtener información de tipos en tiempo de ejecución y acceder a miembros privados de una clase usando esa información. Esto puede ser especialmente útil al trabajar con clases que están fuera de tu control, proporcionadas por un paquete de terceros. Aunque es potente, la reflexión también es muy lenta, lo que es uno de los principales motivos para no usarla. Eso se acabó.
+`UnsafeAccessorAttribute`, introducido en .NET 8, permite vincular un método `static extern` a un miembro conocido e inaccesible. El runtime aporta la implementación. Resulta útil cuando el tipo que declara el miembro y su firma se conocen al compilar; no sustituye la reflexión para descubrir miembros en ejecución.
 
-.NET 8 introduce una nueva forma de acceder a miembros privados sin sobrecarga mediante el uso del atributo `UnsafeAccessor`. El atributo se puede aplicar a un método `extern static`. La implementación del método la proporciona el runtime basándose en la información del atributo y la firma del método. Si no se encuentra coincidencia para la información proporcionada, la llamada al método lanzará una `MissingFieldException` o una `MissingMethodException`.
+**Corrección — 2 de noviembre de 2026:** el artículo original descartaba incorrectamente las sobrecargas y exigía una instancia para acceder a miembros estáticos. Ambas afirmaciones se corrigen aquí. El ejemplo restaurado se ejecutó en .NET 8.0.33; el rendimiento se trata por separado, sin afirmar sobrecoste cero universal.
 
-Veamos algunos ejemplos de cómo usar `UnsafeAccessor`. Consideremos la siguiente clase con miembros privados:
+## Descargar el ejemplo completo
+
+[Descarga el código ejecutable en ZIP](/examples/unsafe-accessor.zip) o consulta las [instrucciones](/examples/#unsafe-accessor). Incluye proyecto, tipos declarantes, imports y comprobaciones de todos los patrones siguientes.
+
+```sh
+dotnet run -c Release
+```
+
+El programa comprueba los valores esperados y termina con error si difieren. Una ejecución correcta imprime:
+
+```text
+PASS: constructors, instance/static members, field access, readonly accessor observation
+```
+
+## Constructores privados y sobrecargas
+
+En una clase auxiliar se permiten las sobrecargas habituales de métodos C#. Un accessor de constructor devuelve el tipo declarante y recibe los parámetros del constructor de destino:
 
 ```cs
-class Foo
+using System.Runtime.CompilerServices;
+
+internal static class Accessors
 {
-    private Foo() { }
-    private Foo(string value) 
-    {
-        InstanceProperty = value;
-    }
+    [UnsafeAccessor(UnsafeAccessorKind.Constructor)]
+    internal static extern Foo Create();
 
-    private string InstanceProperty { get; set; } = "instance-property";
-    private static string StaticProperty { get; set; } = "static-property";
-
-    private int instanceField = 1;
-    private static int staticField = 2;
-
-    private string InstanceMethod(int value) => $"instance-method:{value}";
-    private static string StaticMethod(int value) => $"static-method:{value}";
+    [UnsafeAccessor(UnsafeAccessorKind.Constructor)]
+    internal static extern Foo Create(string value);
 }
 ```
 
-## Crear instancias de objeto usando constructores privados
+Estas declaraciones se vinculan a `Foo()` y `Foo(string)`. El ZIP contiene el tipo `Foo` completo. Las funciones locales de nivel superior siguen reglas de nombres C# distintas de los métodos de una clase auxiliar; no es una limitación de `UnsafeAccessor`.
 
-Como se describió arriba, empezamos declarando los métodos `static extern`.
+## Métodos de instancia y propiedades
 
--   anotamos los métodos con el atributo `UnsafeAccessor`: `[UnsafeAccessor(UnsafeAccessorKind.Constructor)]`
--   y hacemos coincidir las firmas de los constructores. En el caso de los constructores, el tipo de retorno debe ser el tipo de la clase a la que estamos redirigiendo (`Foo`). La lista de parámetros también debe coincidir.
--   el nombre del método extern no necesita coincidir con nada ni seguir ninguna convención. Algo importante que notarás es que no puedes tener dos métodos `extern static` con el mismo nombre pero distintos parámetros, similar a la sobrecarga, así que tendrás que proporcionar nombres únicos para cada sobrecarga.
-
-Deberías terminar con esto:
-
-```cs
-[UnsafeAccessor(UnsafeAccessorKind.Constructor)]
-extern static Foo PrivateConstructor();
-
-[UnsafeAccessor(UnsafeAccessorKind.Constructor)]
-extern static Foo PrivateConstructorWithParameters(string value);
-```
-
-Crear instancias de objeto usando los constructores privados es trivial a partir de este punto.
-
-```cs
-var instance1 = PrivateConstructor();
-var instance2 = PrivateConstructorWithParameters("bar");
-```
-
-## Invocar métodos privados de instancia
-
-El primer argumento del método `extern static` será una instancia de objeto del tipo que contiene el método privado. El resto de los argumentos deben coincidir con la firma del método al que estamos apuntando. El tipo de retorno también debe coincidir.
+El primer parámetro identifica el tipo declarante y proporciona la instancia. Los demás tipos de parámetros y el retorno deben coincidir con el miembro de destino. Las propiedades se acceden mediante sus métodos accessor:
 
 ```cs
 [UnsafeAccessor(UnsafeAccessorKind.Method, Name = "InstanceMethod")]
-extern static string InstanceMethod(Foo @this, int value);
+internal static extern string CallInstance(Foo instance, int value);
 
-Console.WriteLine(InstanceMethod(instance1, 42)); 
-// Output: "instance-method:42"
-```
-
-## Leer / escribir propiedades privadas de instancia
-
-Notarás que no existe `UnsafeAccessorKind.Property`. Eso es porque, igual que con los métodos de instancia, las propiedades de instancia se acceden a través de sus métodos getter y setter:
-
--   `get_{PropertyName}`
--   `set_{PropertyName}`
-
-```cs
 [UnsafeAccessor(UnsafeAccessorKind.Method, Name = "get_InstanceProperty")]
-extern static string InstanceGetter(Foo @this);
+internal static extern string GetProperty(Foo instance);
 
 [UnsafeAccessor(UnsafeAccessorKind.Method, Name = "set_InstanceProperty")]
-extern static void InstanceSetter(Foo @this, string value);
-
-Console.WriteLine(InstanceGetter(instance1));
-// Output: "instance-property"
-
-InstanceSetter(instance1, "bar");
-
-Console.WriteLine(InstanceGetter(instance1));
-// Output: "bar"
+internal static extern void SetProperty(Foo instance, string value);
 ```
 
-## Métodos y propiedades estáticos
+El ejemplo comprueba el resultado del método privado, lee el valor inicial de la propiedad, lo escribe y vuelve a leerlo. Para miembros de instancia de un struct, el primer parámetro debe pasarse por `ref`.
 
-Se comportan de forma idéntica a los miembros de instancia, con la única diferencia de que tienes que especificar `UnsafeAccessorKind.StaticMethod` en el atributo `UnsafeAccessor`. Incluso necesitas proporcionar una instancia de objeto de ese tipo al hacer la llamada.
+## Miembros estáticos
 
-¿Y las clases `static`? Las clases estáticas no son compatibles actualmente con `UnsafeAccessor`. Hay una propuesta de API que pretende cubrir este vacío, apuntando a .NET 9: [\[API Proposal\]: UnsafeAccessorTypeAttribute for static or private type access](https://github.com/dotnet/runtime/issues/90081)
+Usa `StaticMethod` o `StaticField`. El primer parámetro sigue identificando el tipo declarante, pero **su valor no se utiliza** y puede ser null:
 
 ```cs
 [UnsafeAccessor(UnsafeAccessorKind.StaticMethod, Name = "StaticMethod")]
-extern static string StaticMethod(Foo @this, int value);
+internal static extern string CallStatic(Foo? typeMarker, int value);
 
-[UnsafeAccessor(UnsafeAccessorKind.StaticMethod, Name = "get_StaticProperty")]
-extern static string StaticGetter(Foo @this);
-
-[UnsafeAccessor(UnsafeAccessorKind.StaticMethod, Name = "set_StaticProperty")]
-extern static void StaticSetter(Foo @this, string value);
+var result = Accessors.CallStatic(null, 42);
 ```
 
-## Campos privados
+El tipo declarante de este ejemplo no es una clase estática. C# no permite usar una clase estática como tipo de parámetro; no deduzcas que este patrón de .NET 8 permite acceder a cualquier API de una clase estática.
 
-Los campos son un poco más especiales en cuanto a la sintaxis del método `extern static`. Ya no tenemos métodos getter y setter disponibles, así que en su lugar usaremos la palabra clave `ref` para obtener una referencia al campo que podemos usar tanto para leer como para escribir el valor.
+## Campos
+
+Un accessor de campo devuelve una referencia. El ejemplo lee y escribe campos tanto de instancia como estáticos:
 
 ```cs
 [UnsafeAccessor(UnsafeAccessorKind.Field, Name = "instanceField")]
-extern static ref int InstanceField(Foo @this);
+internal static extern ref int InstanceField(Foo instance);
 
 [UnsafeAccessor(UnsafeAccessorKind.StaticField, Name = "staticField")]
-extern static ref int StaticField(Foo @this);
-
-// Read the field value
-var x = InstanceField(instance1);
-var y = StaticField(instance1);
-
-// Update the field value
-InstanceField(instance1) = 3;
-StaticField(instance1) = 4;
+internal static extern ref int StaticField(Foo? typeMarker);
 ```
 
-¿Quieres probar esta característica? Puedes [encontrar todos los ejemplos anteriores en GitHub](https://github.com/Start-Debugging/dotnet-samples/blob/main/unsafe-accessor/UnsafeAccessor/Program.cs).
+Para campos readonly, consulta el [ejemplo específico](/es/2023/11/c-how-to-update-a-readonly-field-using-unsafeaccessor/). Acceder por referencia no convierte la modificación arbitraria de estado inmutable en un diseño admitido.
+
+## Límites y rendimiento
+
+Solo se busca en el tipo declarante indicado; el runtime no recorre su jerarquía de herencia. Los vínculos inexistentes a campos o métodos fallan al usarse. Firmas y restricciones incorrectas pueden causar otros errores de vinculación. El soporte de parámetros genéricos se añadió en .NET 9, por lo que esos ejemplos requieren comprobar la versión por separado.
+
+Un accessor puede evitar la búsqueda por reflexión y el manejo de argumentos de `Invoke`, pero siguen importando la operación de destino y el código generado. El [benchmark restaurado](/es/2023/11/net-8-performance-unsafeaccessor-vs-reflection/) incluye acceso directo, reflexión almacenada y un delegado almacenado, con trabajo observable.
+
+Fuente: [referencia de UnsafeAccessorAttribute de Microsoft](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.unsafeaccessorattribute).

@@ -1,7 +1,8 @@
 ---
-title: ".NET core でスクリーンショットを撮る方法"
-description: "System.Windows.Forms を使って、.NET コンソールアプリケーションからデスクトップ全体のスクリーンショットを撮る方法を解説します。Windows 限定の方法で、すべてのディスプレイをカバーします。"
+title: ".NET で Windows デスクトップのスクリーンショットを撮る"
+description: "Windows 専用の実行可能な .NET コンソール例。仮想画面の範囲を取得し、描画リソースを破棄して PNG を保存します。"
 pubDate: 2023-11-04
+updatedDate: 2026-11-02
 tags:
   - "csharp"
   - "dotnet"
@@ -10,41 +11,57 @@ translationOf: "2023/11/how-to-take-a-screenshot-in-net-core"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-この記事では、.NET core を使ったコンソールアプリケーションから、デスクトップ全体、つまりプライマリだけでなくすべてのディスプレイのスクリーンショットを撮る方法を見ていきます。この方法は Windows 専用の依存関係に依存しているため、クロスプラットフォームでは動作せず、Windows でしか動きません。
+この例は Windows Forms と `System.Drawing` を使い、現在の Windows デスクトップセッションにおける仮想画面全体の外接矩形をキャプチャします。コンソールプログラムでも、Windows アプリケーションである点は変わりません。
 
-まずはプロジェクトを少し準備するところから始めます。画面の情報を取得するには `System.Windows.Forms` へのアクセスが必要で、それを .NET コンソールアプリケーションで使うには、`.csproj` に以下の参照を追加する必要があります。
+**2026年11月2日訂正:** 失われたソースを、完全なプロジェクト設定、リソースの破棄、出力先フォルダーの処理、合成画像によるセルフテストとともに復元しました。macOS から Windows 向けにビルドしましたが、今回の検証で Windows の実画面キャプチャは実行していません。
+
+## ダウンロードとプロジェクト設定
+
+[実行可能なソースをダウンロード](/examples/windows-screenshot.zip)できます。プロジェクトファイルは次の設定です。
 
 ```xml
-<ItemGroup>
-  <FrameworkReference Include="Microsoft.WindowsDesktop.App.WindowsForms" />
-</ItemGroup>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+</Project>
 ```
 
-`System.Windows.Forms` への参照ができたので、画面のサイズを取得できます。必要なのは開始座標 (`x` と `y`) と、サイズ (`w` と `h`) です。これらの情報は `SystemInformation.VirtualScreen` から取得します。
+`UseWindowsForms` は Windows Desktop フレームワークへの参照を提供します。`EnableWindowsTargeting` は targeting pack を復元できる場合に別の OS からのビルドを許可する設定であり、macOS や Linux でアプリを実行可能にするものではありません。
+
+## 仮想画面をキャプチャする
+
+完全版には imports と STA エントリーポイントがあります。キャプチャ処理は次のとおりです。
 
 ```cs
 var screen = SystemInformation.VirtualScreen;
-int x = screen.Left;
-int y = screen.Top;
-int w = screen.Width;
-int h = screen.Height;
+using var bitmap = new Bitmap(screen.Width, screen.Height);
+using (var graphics = Graphics.FromImage(bitmap))
+{
+    graphics.CopyFromScreen(
+        screen.Left, screen.Top, 0, 0, screen.Size,
+        CopyPixelOperation.SourceCopy);
+}
+bitmap.Save(filename, ImageFormat.Png);
 ```
 
-次に Bitmap を作成し、そこに画面情報をコピーします。これでメモリ上にスクリーンショットができたことになります。
+主画面の左側や上側に別のモニターがある場合、`screen.Left` や `screen.Top` は負になります。外接矩形には画面間の未使用領域が含まれることもあります。別セッション、セキュアデスクトップ、保護されたコンテンツの取得を保証するものではありません。
 
-```cs
-var image = new Bitmap(w, h);
-using var graphics = Graphics.FromImage(image);
-graphics.CopyFromScreen(x, y, 0, 0, new Size(w, h));
+プログラムは出力ディレクトリと一意の PNG ファイル名を作成し、bitmap と graphics のオブジェクトを破棄します。
+
+## Windows で実行する
+
+```powershell
+dotnet run -c Release -- --self-test
+dotnet run -c Release
+dotnet run -c Release -- C:\Screenshots
 ```
 
-最後のステップは、メモリ上のスクリーンショットをディスクのファイルとして書き出すことです。Snipping Tool と同じ動きを真似て、画像を **Pictures** フォルダーに保存し、ファイル名にはタイムスタンプを含めます。
+セルフテストはデスクトップを撮影せず、合成 PNG を作成してデコードします。通常実行では Pictures または指定ディレクトリへ保存します。実際の取得は対象の Windows セッションで、画面配置と DPI 設定も含めて確認してください。
 
-```cs
-string picturesDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-string fileName = $"Screenshot {DateTime.Now:yyyy-MM-dd HHmmss}.png";
-string filePath = Path.Combine(picturesDirectory, fileName);
-image.Save(filePath, ImageFormat.Png);
-```
-
-完全に動くサンプルが欲しい場合は、[GitHub のコード](https://github.com/Start-Debugging/dotnet-samples/blob/main/screenshot/Screenshot/Program.cs)をチェックしてみてください。
+参照: [SystemInformation.VirtualScreen](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.systeminformation.virtualscreen)、[Graphics.CopyFromScreen](https://learn.microsoft.com/en-us/dotnet/api/system.drawing.graphics.copyfromscreen)。

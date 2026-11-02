@@ -1,7 +1,8 @@
 ---
-title: ".NET 8 のパフォーマンス: UnsafeAccessor vs. リフレクション"
-description: ".NET 8 で UnsafeAccessor とリフレクションをベンチマーク。従来のリフレクションと比べて、UnsafeAccessor がいかにオーバーヘッドゼロのパフォーマンスを実現しているかを見ていきます。"
+title: ".NET 8 の性能: UnsafeAccessor とリフレクション"
+description: "観測可能な処理で UnsafeAccessor、リフレクション、キャッシュしたリフレクションとデリゲート、直接呼び出しを比較する .NET 8 ベンチマーク。"
 pubDate: 2023-11-01
+updatedDate: 2026-11-02
 tags:
   - "csharp"
   - "dotnet"
@@ -11,60 +12,38 @@ translationOf: "2023/11/net-8-performance-unsafeaccessor-vs-reflection"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-以前の記事で、[`UnsafeAccessor` を使ってプライベートメンバーにアクセスする方法](/ja/2023/10/unsafe-accessor/) を取り上げました。今回は、その性能をリフレクションと比較し、本当にオーバーヘッドゼロなのかを確認します。
+`UnsafeAccessor` は、リフレクションによる検索や `MethodInfo.Invoke` を使わずに既知のメンバーへ結び付きます。有用な比較には、結果を観測できる処理と、各呼び出し経路が行う仕事の説明が必要です。
 
-ここでは 4 つのベンチマークを行います。
+**2026年11月2日訂正:** 以前のソースリポジトリは利用できません。機能確認、割り当て診断、キャッシュしたデリゲート、インライン化しない同等の対象メソッドを持つ例を復元しました。以前のゼロに近い時間は一律のオーバーヘッドゼロを証明せず、再現可能な測定値としては掲載しません。
 
-1.  **Reflection**: 型からプライベートメソッドを取得して呼び出す処理をベンチマークします。
-2.  **キャッシュ付きの Reflection:** 上のものと似ていますが、毎回メソッドを取得する代わりに、キャッシュした `MethodInfo` への参照を使います。
-3.  **Unsafe accessor:** 同じプライベートメソッドを、リフレクションではなく `UnsafeAccessor` で呼び出します。
-4.  **直接アクセス**: パブリックメソッドを直接呼び出します。これは、`UnsafeAccessor` が本当にオーバーヘッドゼロのパフォーマンスを実現しているかを確認するための比較対象です。
+## ダウンロードと実行
 
-ベンチマークを自分で実行したい場合は、以下のコードを使ってください。
+[ベンチマークのソースをダウンロード](/examples/unsafe-accessor-benchmarks.zip)できます。.NET 8 を対象に、BenchmarkDotNet 0.15.8 を固定しています。
 
-```cs
-[SimpleJob(RuntimeMoniker.Net80)]
-public class Benchmarks
-{
-    [UnsafeAccessor(UnsafeAccessorKind.Method, Name = "PrivateMethod")]
-    extern static int PrivateMethod(Foo @this, int value);
-
-    static readonly Foo _instance = new();
-
-    static readonly MethodInfo _privateMethod = typeof(Foo)
-        .GetMethod("PrivateMethod", BindingFlags.Instance | BindingFlags.NonPublic);
-
-    [Benchmark]
-    public int Reflection() => (int)typeof(Foo)
-        .GetMethod("PrivateMethod", BindingFlags.Instance | BindingFlags.NonPublic)
-        .Invoke(_instance, [42]);
-
-    [Benchmark]
-    public int ReflectionWithCache() => (int)_privateMethod.Invoke(_instance, [42]);
-
-    [Benchmark]
-    public int UnsafeAccessor() => PrivateMethod(_instance, 42);
-
-    [Benchmark]
-    public int DirectAccess() => _instance.PublicMethod(42);
-}
+```sh
+dotnet run -c Release -- --verify
+dotnet run -c Release -- --job Dry --filter '*'
+dotnet run -c Release -- --filter '*'
 ```
 
-## ベンチマーク結果
+最初のコマンドは、5つの経路すべてで入力 `42` に対して `59` が返ることを確認します。2つ目は1回の反復による実行確認です。通常の測定には最後のコマンドを使い、時間を解釈する前に生成された環境情報とレポートを保存してください。
 
-```plaintext
-| Method              | Mean       | Error     | StdDev    |
-|-------------------- |-----------:|----------:|----------:|
-| Reflection          | 35.9979 ns | 0.1670 ns | 0.1562 ns |
-| ReflectionWithCache | 21.2821 ns | 0.2283 ns | 0.2135 ns |
-| UnsafeAccessor      |  0.0035 ns | 0.0022 ns | 0.0018 ns |
-| DirectAccess        |  0.0028 ns | 0.0024 ns | 0.0023 ns |
-```
+## 比較するもの
 
-結果はかなりインパクトがあります。直接アクセスと unsafe accessor を比べると、文字どおり差はありません。両者の数ナノ秒の違いはノイズとして無視できますし、実際、ベンチマークを何度か走らせると、unsafe accessor のほうが速くなるケースもあります。これはまったく自然なことで、両者が等価、つまりオーバーヘッドゼロであることを基本的に示しています。
+1. **直接呼び出し:** public メソッドを呼びます。
+2. **Unsafe accessor:** 同じ処理を行う private メソッドに結び付きます。
+3. **リフレクションの検索と呼び出し:** 操作ごとにメソッドを検索して実行します。
+4. **キャッシュしたリフレクション:** `MethodInfo` を再利用しますが、引数の object 配列は渡します。
+5. **キャッシュしたデリゲート:** private メソッド用のオープンインスタンスデリゲートを再利用します。
 
-`UnsafeAccessor` をリフレクションと比較する意味はほとんどありません。パフォーマンス面ではオーバーヘッドがなく、おまけに本物のメソッドシグネチャが手に入るというシンタックスシュガーまで付いてきます。
+2つの対象メソッドは入力とインスタンスフィールドの和を返し、`MethodImplOptions.NoInlining` を指定しています。各ベンチマークも結果を返します。入力は BenchmarkDotNet のパラメーターなので、定数を返すだけのインライン化されたメソッドに例が縮退することを避けます。
 
-とはいえ、リフレクションが死んだわけではありません。`UnsafeAccessor` がカバーするのは、アクセスしたい型とメンバーがコンパイル時にわかっているケースだけです。その情報が実行時にしか得られない場合は、依然としてリフレクションが選択肢になります。
+`MemoryDiagnoser` は、リフレクション側の引数配列や boxing を含む割り当てを報告します。経路ごとの処理内容は異なるため、時間差をアクセス制御の検査だけに帰属させられません。
 
-ベンチマークのコードは [GitHub でも公開されています](https://github.com/Start-Debugging/dotnet-samples/blob/main/unsafe-accessor/UnsafeAccessor.Benchmarks/Benchmarks.cs)。
+## 検証と解釈
+
+復元したプロジェクトは macOS arm64 の .NET 8.0.33 で実行し、機能確認と5つすべての BenchmarkDotNet Dry ジョブに成功しました。Dry の時間は性能表として公開しません。測定の仕組みが実行できることの確認であり、安定したナノ秒単位の推定ではないためです。
+
+インライン化、ランタイム版、アーキテクチャ、対象処理、キャッシュ、割り当てはすべて結果に影響します。極端に短い値は、JIT が処理を除去したか、測定が有効な分解能を下回った可能性もあります。すべての accessor 操作が無料という証拠ではありません。
+
+accessor はシグネチャをコンパイル時に知る必要もあります。型やメンバーを実行時に発見する場合にはリフレクションが引き続き役立ちます。[メンバーアクセス例](/ja/2023/10/unsafe-accessor/)と [Microsoft の API リファレンス](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.unsafeaccessorattribute)で違いを確認してください。

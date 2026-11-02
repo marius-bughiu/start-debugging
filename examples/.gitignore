@@ -1,0 +1,6 @@
+**/bin/
+**/obj/
+**/node_modules/
+**/.expo/
+**/dist/
+**/BenchmarkDotNet.Artifacts/

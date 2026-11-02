@@ -1,7 +1,8 @@
 ---
-title: "C# Как обновить readonly-поле с помощью UnsafeAccessor"
-description: "Узнайте, как в C# обновить readonly-поле с помощью UnsafeAccessor — альтернативы рефлексии без потерь производительности. Доступно в .NET 8."
+title: "C#: как изменить readonly-поле через UnsafeAccessor"
+description: "Исполняемый пример .NET 8 с readonly-полем, открытым через UnsafeAccessor: явные ограничения изменения и наблюдаемое поведение."
 pubDate: 2023-11-02
+updatedDate: 2026-11-02
 tags:
   - "csharp"
   - "dotnet"
@@ -11,40 +12,39 @@ translationOf: "2023/11/c-how-to-update-a-readonly-field-using-unsafeaccessor"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-Unsafe accessors можно использовать для доступа к приватным членам класса так же, как это делается через рефлексию. То же самое касается и изменения значения readonly-поля.
+UnsafeAccessor в .NET 8 может предоставить ссылку на поле экземпляра, в том числе объявленное `readonly`. Запись через ссылку обходит обычные правила присваивания C#. Это не меняет объявление поля и не даёт общих гарантий для оптимизированных чтений неизменяемого состояния.
 
-Рассмотрим следующий класс:
+**Исправление — 2 ноября 2026 года:** недоступный пример восстановлен. Удалены общее утверждение о производительности и безусловный результат прямого чтения; проверенный пример наблюдает значение через аксессор.
+
+## Исполняемый пример
+
+[Скачайте полный пример](/examples/unsafe-accessor.zip). Помимо приватных членов он показывает следующий случай readonly:
 
 ```cs
-class Foo
+using System.Runtime.CompilerServices;
+
+var holder = new ReadonlyHolder();
+Accessors.ReadonlyField(holder) = 42;
+Console.WriteLine(Accessors.ReadonlyField(holder)); // 42 in the verified run
+
+internal sealed class ReadonlyHolder
 {
-    public readonly int readonlyField = 3;
+    public readonly int Value = 3;
+}
+
+internal static class Accessors
+{
+    [UnsafeAccessor(UnsafeAccessorKind.Field, Name = "Value")]
+    internal static extern ref int ReadonlyField(ReadonlyHolder instance);
 }
 ```
 
-Допустим, по какой-то причине вы хотите изменить значение этого поля только для чтения. С помощью рефлексии это, конечно, уже было возможно:
+Запустите загруженный проект командой `dotnet run -c Release`. Полный пример проверяет исходное значение, выполняет запись и проверяет результат аксессора на .NET 8.0.33.
 
-```cs
-var instance = new Foo();
+## Что это доказывает
 
-typeof(Foo)
-    .GetField("readonlyField", BindingFlags.Instance | BindingFlags.Public)
-    .SetValue(instance, 42);
+Сигнатура соответствует объявляющему типу, имени и типу поля. Возврат `ref int` позволяет выполнить показанное присваивание. Это не гарантирует одинаковое поведение записей через другие ссылки, конкурентных изменений и всех оптимизаций JIT/AOT. Прямое чтение в другом месте нельзя считать универсальным обещанием поддержки мутации.
 
-Console.WriteLine(instance.readonlyField); // 42
-```
+Для состояния приложения предпочтительнее инициализация в конструкторе или явно изменяемый API. Запись через рефлексию в поля экземпляра и static readonly-поля также имеет разные ограничения среды выполнения; эти случаи не взаимозаменяемы.
 
-Но того же самого можно добиться с помощью `UnsafeAccessorAttribute`, без потерь производительности, связанных с рефлексией. С точки зрения unsafe accessors изменение readonly-полей ничем не отличается от изменения любого другого поля.
-
-```cs
-var instance = new Foo();
-
-[UnsafeAccessor(UnsafeAccessorKind.Field, Name = "readonlyField")]
-extern static ref int ReadonlyField(Foo @this);
-
-ReadonlyField(instance) = 42;
-
-Console.WriteLine(instance.readonlyField); // 42
-```
-
-Этот код также [доступен на GitHub](https://github.com/Start-Debugging/dotnet-samples/blob/24d4273803c67824b2885b6f18cb8d535ec75657/unsafe-accessor/UnsafeAccessor/Program.cs#L74), если вы хотите попробовать его в деле.
+Обычные аксессоры описаны в [руководстве по доступу к членам](/ru/2023/10/unsafe-accessor/), измерение путей вызова — в [benchmark-проекте](/ru/2023/11/net-8-performance-unsafeaccessor-vs-reflection/). [Официальный справочник](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.unsafeaccessorattribute) объясняет сигнатуры и ограничения версий.

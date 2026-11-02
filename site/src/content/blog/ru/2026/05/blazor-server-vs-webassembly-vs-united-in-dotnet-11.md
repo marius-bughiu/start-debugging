@@ -1,7 +1,8 @@
 ---
-title: "Blazor Server vs Blazor WebAssembly vs Blazor United в .NET 11: что выбрать в 2026 году?"
-description: "Для любого нового Blazor-приложения на .NET 11 создавайте Blazor Web App (шаблон, ранее известный как Blazor United) и выбирайте режим рендеринга для каждой страницы. Шаблоны только Server или только WebAssembly остаются оправданными лишь в узких случаях."
+title: "Режимы рендеринга Blazor в .NET 11: Server, WebAssembly и Auto"
+description: "Выберите Blazor Web App или автономный WebAssembly по требованиям хостинга, офлайна и служб с исправленным описанием Auto."
 pubDate: 2026-05-26
+updatedDate: 2026-11-02
 tags:
   - "comparison"
   - "blazor"
@@ -14,184 +15,70 @@ translatedBy: "claude"
 translationDate: 2026-05-26
 ---
 
-Для нового Blazor-проекта на .NET 11 ответ один: шаблон Blazor Web App (модель, которую во время preview .NET 8 называли "Blazor United"). Он позволяет выбирать рендеринг по компоненту: статический серверный рендеринг для маркетинговых страниц, интерактивный Server для CRUD-экранов с низкой задержкой, интерактивный WebAssembly для виджетов с поддержкой офлайн и Auto для компонентов, которые должны переключаться с Server на WebAssembly, как только загрузится пакет WASM. Шаблоны только Server или только WebAssembly стоит выбирать только при жёстком ограничении, исключающем унифицированную модель: внутреннее приложение, где загрузка WebAssembly недопустима, или PWA, которое должно работать полностью офлайн против сторонней API.
+**Исправление — 2 ноября 2026 года:** В прежней версии были непроверенные результаты измерений и ошибки в описании Auto, шаблонов, автономной работы и границ режимов. Они исправлены. Измерения производительности .NET 11 здесь не приводятся.
 
-Эта статья ориентирована на .NET 11 (на момент написания в preview, GA запланирована на ноябрь 2026 года) и набор пакетов `Microsoft.AspNetCore.Components` 11.0.x. Шаблоны проектов взяты из `Microsoft.AspNetCore.Components.WebAssembly.Templates` и встроенного `dotnet new blazor`, поставляемого с SDK .NET 11. Там, где поведение различается между версиями, я указываю разницу между .NET 8, .NET 9, .NET 10 и .NET 11 прямо в тексте.
+Для нового серверного приложения Blazor начните с рассмотрения **Blazor Web App**. Этот шаблон поддерживает статический рендеринг и необязательную интерактивность Server, WebAssembly или Auto. Для развёртывания целиком в виде статических файлов рассмотрите **автономный Blazor WebAssembly**. «Blazor United» — раннее название объединённого подхода, а не третья устанавливаемая среда исполнения.
 
-## Что такое "Blazor United" в .NET 11 на самом деле
+На дату исправления Microsoft публикует [.NET 11 RC3 как предварительный выпуск go-live](https://dotnet.microsoft.com/en-us/download/dotnet/11.0). Текущий LTS — .NET 10; .NET 11 относится к STS. Политику поддержки среды выбирайте отдельно от архитектуры рендеринга.
 
-"Blazor United" не отдельная модель хостинга. Это было рабочее название, которым Microsoft пользовалась в течение цикла preview .NET 8 для того, что в итоге вышло как шаблон **Blazor Web App**. Шаблон объединяет четыре режима рендеринга в одном проекте:
+## Где выполняется компонент
 
-- **Static Server (SSR)**: HTML рендерится на сервере, без интерактивности, без circuit SignalR, без загрузки WebAssembly. Загружается как Razor Page.
-- **Interactive Server**: HTML рендерится на сервере, обновления DOM передаются по circuit SignalR. Классическая модель Blazor Server.
-- **Interactive WebAssembly**: Компонент выполняется в браузере на среде выполнения WebAssembly. Классическая модель Blazor WebAssembly.
-- **Interactive Auto**: Рендерится на Server, пока пользователь ждёт фоновой загрузки пакета WebAssembly, а затем прозрачно передаётся в WebAssembly при следующей навигации. Покомпонентный fallback, если WebAssembly не загрузится.
+| Вариант | Когда полезен | Что учитывать |
+| --- | --- | --- |
+| Статический SSR | Контент и формы с обработкой запросов на сервере | Нет интерактивных обработчиков C# |
+| Interactive Server | Серверные службы и небольшой первоначальный объём загрузки | Задержки связи, circuits и ресурсы сервера |
+| Interactive WebAssembly | Интерактивный интерфейс должен работать в браузере | Загрузка runtime, ограничения браузера и серверный API |
+| Interactive Auto | Нужны и поддерживаются обе среды | Две ветви выполнения для разработки и проверки |
+| Автономный WebAssembly | Статический хостинг или специально спроектированная офлайн-PWA | Кеширование и отдельная защита API |
 
-Режим объявляется для каждого компонента: `@rendermode InteractiveServer`, `@rendermode InteractiveWebAssembly` или `@rendermode InteractiveAuto`. Один и тот же файл `.razor` может работать в любом из этих режимов, если не вызывает API, специфичные для конкретного режима (об этом ниже).
+Auto выбирает интерактивную среду при создании экземпляра компонента. Сначала это может быть Server, а при последующих посещениях после кеширования — WebAssembly. **Уже работающий компонент не переносится с Server на WebAssembly.** Поэтому Auto не делает перезапуск сервера безвредным. См. [правила режимов](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/render-modes?view=aspnetcore-11.0).
 
-Blazor Server (автономный шаблон, `dotnet new blazorserver`) и Blazor WebAssembly (`dotnet new blazorwasm`) по-прежнему существуют в .NET 11, но рекомендация Microsoft с .NET 8 такова: предпочитайте унифицированный шаблон Blazor Web App, если у вас нет конкретной причины этого не делать.
+## Используйте актуальные шаблоны
 
-## Матрица возможностей
+Эти команды проверены с SDK 8.0.427 и 10.0.302. В SDK .NET 11 уточните параметры установленной сборки через `dotnet new blazor --help`: при этой проверке команды на .NET 11 не выполнялись.
 
-| Возможность                               | Blazor Server (автономный)               | Blazor WebAssembly (автономный)              | Blazor Web App / United (.NET 11)            |
-| ----------------------------------------- | ---------------------------------------- | -------------------------------------------- | -------------------------------------------- |
-| Место рендеринга                          | сервер                                   | браузер                                      | покомпонентно (Static, Server, WASM, Auto)   |
-| Начальный payload (холодный кеш)          | ~50-80 КБ HTML                           | ~1,4 МБ WASM + сборки (R2R, .NET 11)         | ~50-80 КБ HTML, WASM подгружается лениво     |
-| First Contentful Paint (LAN)              | ~80-150 мс                               | ~600-900 мс                                  | ~80-150 мс (Static / Server) ~600-900 мс (WASM-first) |
-| Время до интерактивности после FCP        | десятки мс (открытие WebSocket)          | сотни мс (загрузка WASM)                     | зависит от режима рендеринга страницы        |
-| Требуется постоянный WebSocket            | да (SignalR)                             | нет                                          | только для компонентов Interactive Server    |
-| Работает офлайн                           | нет                                      | да (с service worker)                        | да для компонентов WebAssembly, нет для Server |
-| Прямой доступ к БД / файлам / секретам    | да (процесс сервера)                     | нет (sandbox браузера)                       | да в компонентах Server, нет в компонентах WASM |
-| Поверхность API .NET                      | полная серверная среда выполнения        | урезанное, безопасное для браузера подмножество | обе, в зависимости от компонента          |
-| Отладка                                   | F5 в Visual Studio / Rider               | devtools Chrome + отладчик WebAssembly в VS  | обе                                          |
-| Потолок масштабирования на сервер         | ограничен открытыми circuits (~5k на узел) | неограничен (статика + API)                | ограничен только для страниц Interactive Server |
-| Поддержка Native AOT                      | нет (сервер по-прежнему JIT)             | частично через WASM AOT                      | по режиму рендеринга                         |
-| Аутентификация                            | cookie + circuit                         | OIDC / токен в браузере                      | cookie для SSR/Server, токен для WASM        |
-| Статус в .NET 11                          | поддерживается, не рекомендованный по умолчанию | поддерживается, не рекомендованный по умолчанию | рекомендованный по умолчанию          |
-
-Последняя строка закрывает обсуждение для большинства новых приложений. Собственные шаблоны Microsoft, примеры из документации и туториалы начинают именно с шаблона Blazor Web App. Выбор только Server или только WebAssembly в 2026 году теперь является явным отклонением, которое требует обоснования.
-
-## Когда выбирать Blazor Server (автономный)
-
-Автономный шаблон Blazor Server остаётся правильным выбором при одном из следующих ограничений:
-
-- **Внутреннее приложение в LAN, фиксированное число пользователей, запрет на загрузку WebAssembly.** Полевые сервисные инструменты, дашборды производства, экраны на этажах больницы. Загрузка 1,4 МБ WebAssembly через нестабильный киоск Wi-Fi даёт худший опыт, чем переподключение SignalR. В .NET 11 автономный шаблон Server также даёт самый лёгкий контейнерный образ, потому что никогда не копирует среду выполнения WASM в вашу публикацию.
-- **Нужно обращаться из компонента к SQL Server с Windows-аутентификацией или к сервису под Kerberos.** Компонент выполняется в процессе сервера, поэтому может использовать интегрированные учётные данные идентификации app pool. Эквивалента для WebAssembly без серверного прокси нет.
-- **В команде нет фронтенд-разработчиков и не будет.** Серверный рендеринг с circuit SignalR прячет почти все браузерные нюансы. Состояние живёт на сервере, отладка ведётся обычными инструментами .NET, и нет второго билд-пайплайна для пакета WASM.
-
-Минимальный `Program.cs` для Blazor Server в .NET 11:
-
-```csharp
-// .NET 11, C# 14, Microsoft.AspNetCore.Components.Server 11.0.x
-var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
-
-var app = builder.Build();
-
-app.UseStaticFiles();
-app.UseAntiforgery();
-
-app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
-
-app.Run();
+```bash
+dotnet new blazor -o ServerDemo --interactivity Server --no-restore
+dotnet new blazor -o AutoDemo --interactivity Auto --no-restore
+dotnet new blazorwasm -o OfflineDemo --pwa --no-restore
 ```
 
-Обратите внимание: `AddRazorComponents()` плюс `AddInteractiveServerComponents()` — это API из .NET 8+. Старый `AddServerSideBlazor()` ещё работает, но проходит через слой совместимости и не задействует новую инфраструктуру режимов рендеринга. В любом greenfield-проекте используйте новые API.
+Вариант Server использует Blazor Web App без обязательного клиентского проекта WebAssembly. Запрет на загрузку WebAssembly не требует старого шаблона `blazorserver`, которого не было в обоих проверенных SDK. Auto создаёт проект `.Client`; компоненты, выполняемые в WebAssembly, должны входить в его сборку. Шаблоны описаны в [документации инструментов](https://learn.microsoft.com/en-us/aspnet/core/blazor/tooling?view=aspnetcore-11.0).
 
-## Когда выбирать Blazor WebAssembly (автономный)
+Эта страница успешно компилировалась в созданном приложении Server с обоими SDK:
 
-Берите автономный шаблон WebAssembly, когда:
+```razor
+@page "/counter-check"
+@rendermode InteractiveServer
 
-- **Приложение должно работать офлайн.** PWA для инженеров на выезде, планшетное приложение для сотрудников в магазине, что угодно, что общается с бекендом за нестабильным каналом. Сочетайте service worker с локальным хранилищем (`IndexedDB` через `Microsoft.JSInterop`), и приложение переживёт полную потерю сети.
-- **Вы разворачиваетесь на CDN или статическом хостинге без среды выполнения .NET.** Blazor WebAssembly — это просто `wwwroot/` плюс папка `_framework/`. Положите его на Cloudflare Pages, GitHub Pages, Azure Static Web Apps или любой S3-bucket за CloudFront. Платите ноль за вычисления. Шаблон Blazor Web App, напротив, требует ASP.NET Core хост для страниц Server и SSR.
-- **Бекенд — сторонняя API, которую вы не контролируете.** Если ваше хранилище данных — Stripe, Auth0 или публичная REST API, серверной логики хостить нечего. Автономный шаблон WASM плюс поток OIDC PKCE даёт полностью клиентское приложение без собственной инфраструктуры.
-- **Вы хотите доставить фронтенд как часть приложения MAUI Hybrid или Electron.** И `BlazorWebView`, и шаблон .NET MAUI Hybrid ожидают граф компонентов в стиле автономного WebAssembly. Встраивать туда проект Blazor Web App смысла нет.
+<button @onclick="() => count++">@count</button>
 
-Минимальный `Program.cs` для Blazor WebAssembly в .NET 11:
-
-```csharp
-// .NET 11, C# 14, Microsoft.AspNetCore.Components.WebAssembly 11.0.x
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-
-var builder = WebAssemblyHostBuilder.CreateDefault(args);
-builder.RootComponents.Add<App>("#app");
-builder.RootComponents.Add<HeadOutlet>("head::after");
-
-builder.Services.AddScoped(sp => new HttpClient
-{
-    BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
-});
-
-await builder.Build().RunAsync();
+@code {
+    private int count;
+}
 ```
 
-В .NET 11 в среде выполнения WebAssembly многопоточность включена по умолчанию для новых проектов, если в `.csproj` поставить `<WasmEnableThreads>true</WasmEnableThreads>`. Это убирает одну из главных причин, по которой раньше отвергали Blazor WebAssembly: загрузка CPU больше не блокирует UI-поток.
+Статический SSR используется по умолчанию, если интерактивный режим не назначен и не унаследован. Встроенного значения `@rendermode StaticServer` нет. Удалить директиву достаточно лишь тогда, когда родитель уже не задаёт интерактивность.
 
-## Когда выбирать Blazor Web App (модель United)
+## Границы и службы
 
-Во всех остальных случаях. Унифицированный шаблон даёт один проект, в котором:
+Статический родитель может содержать интерактивные островки, включая соседние компоненты с разными режимами. Интерактивный дочерний компонент не может переключиться на несовместимый режим относительно родителя. Параметры на границе статического и интерактивного рендеринга должны сериализоваться; произвольные фрагменты рендеринга через неё не передаются.
 
-- Главная страница имеет `@rendermode StaticServer` и загружается менее чем за 100 мс вообще без JavaScript. Для поискового бота она неотличима от Razor Page.
-- Дашборд имеет `@rendermode InteractiveServer`, потому что напрямую общается с `DbContext`, и вы не хотите выставлять эти запросы наружу через API.
-- Аннотатор изображений имеет `@rendermode InteractiveWebAssembly`, потому что выполняет ONNX-модель в браузере через `Microsoft.ML.OnnxRuntime`.
-- Общие компоненты оболочки имеют `@rendermode InteractiveAuto`: рендерятся под Server при первом paint, затем передаются в WebAssembly, когда пакет догружается, так что последующие навигации мгновенные и переживают перезапуск сервера.
+Компоненты Server могут обращаться к серверным службам, но всё равно требуют авторизации и правильных сроков жизни служб. В браузерных компонентах нельзя хранить пароли базы или другие секреты. Отсутствие регистрации DI часто обнаруживается во время выполнения, а не компиляции. Auto нужны подходящие реализации служб в обеих средах. Предварительный рендеринг интерактивных компонентов включён по умолчанию, поэтому браузерные API требуют учёта жизненного цикла даже при WebAssembly.
 
-Такая композиция не повторяется больше нигде. Вы уходите от бинарного выбора "Server-приложение или WASM-приложение" к выбору по странице, ровно как Next.js позволяет смешивать `ssr`, `static` и `client`. Минимальный `Program.cs` для Blazor Web App в .NET 11:
+## Офлайн, масштабирование и Hybrid — отдельные решения
 
-```csharp
-// .NET 11, C# 14, Microsoft.AspNetCore.Components.Server 11.0.x +
-// Microsoft.AspNetCore.Components.WebAssembly.Server 11.0.x
-var builder = WebApplication.CreateBuilder(args);
+Компонент WebAssembly в Blazor Web App не делает приложение автоматически автономным. Отдельной PWA нужны service worker, кеш ресурсов, локальные данные и синхронизация. Некешированные переходы и удалённые API без сети всё равно могут не работать.
 
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents()
-    .AddInteractiveWebAssemblyComponents();
+Server требует работающего соединения SignalR. Ёмкость зависит от состояния circuit и нагрузки; универсального предела в 5000 пользователей нет. WebAssembly переносит UI в браузер, но возможности API остаются конечными. Измеряйте запуск, передачу данных, задержки и память на своём приложении: прежние таблицы фиксированных значений не имели воспроизводимых доказательств.
 
-var app = builder.Build();
+[Blazor Hybrid](https://learn.microsoft.com/en-us/aspnet/core/blazor/hybrid/?view=aspnetcore-10.0) выполняет Razor-компоненты в нативной среде .NET мобильного или настольного приложения. Автономное WebAssembly-приложение не требуется. Совместное использование библиотеки Razor — отдельное архитектурное решение.
 
-app.UseStaticFiles();
-app.UseAntiforgery();
+Для существующего приложения выбирайте минимальное изменение, устраняющее измеренную проблему. [Руководство по миграции Framework](/ru/2026/05/migrate-from-dotnet-framework-4-8-to-dotnet-11-in-2026/) также рассматривает замену `System.Web`.
 
-app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode()
-    .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(BlazorApp.Client._Imports).Assembly);
+**Границы проверки:** Генерация шаблонов, сборки Server и компонент счётчика проверены на .NET 8 и 10. Сборка .NET 11, браузерные измерения, офлайн-тест и эксперимент с жизненным циклом Auto не выполнялись.
 
-app.Run();
-```
+## Дополнительные первичные источники
 
-Проект `.Client`, идущий в комплекте с шаблоном, — это место для компонентов, которым нужно работать на WebAssembly. Компоненты только для сервера остаются в хост-проекте. Компоненты Interactive Auto живут в `.Client` (потому что должны быть достижимы и со стороны WebAssembly).
-
-## Данные по холодному старту и размеру пакета
-
-Цифры ниже получены из чистых `dotnet new blazor`, `dotnet new blazorserver` и `dotnet new blazorwasm` на SDK .NET 11 `11.0.100-preview.4.26152.6`, опубликованных через `dotnet publish -c Release` и поданных `dotnet run`. Измерено в Chrome 137 на MacBook Pro M2, с холодным кешем, при throttling "Fast 3G" в DevTools.
-
-| Метрика                                      | Blazor Server | Blazor WebAssembly | Blazor Web App (Auto на главной) |
-| -------------------------------------------- | ------------- | ------------------ | -------------------------------- |
-| Передано начального HTML                     | 8 КБ          | 4 КБ               | 8 КБ                             |
-| Передано WebAssembly + сборок                | 0             | 1,42 МБ (gzip)     | 1,42 МБ (gzip, лениво)           |
-| Время до First Contentful Paint              | 320 мс        | 1850 мс            | 340 мс                           |
-| Время до интерактивности (кнопка counter)    | 410 мс        | 2300 мс            | 440 мс (Server) / 2400 мс (передача в WASM) |
-| Память после первой навигации                | 7 МБ браузера | 38 МБ браузера     | 9 МБ, затем 41 МБ после передачи |
-
-Blazor Web App в режиме Auto выигрывает у автономного WebAssembly по first paint в пять раз, потому что не ждёт пакет. Автономный Server он не выигрывает, потому что как только пакет WebAssembly догружается, память расходуется так же. Дело не в том, что Auto самый быстрый по какой-то одной метрике. Дело в том, что он никогда не самый медленный.
-
-Для более глубокого взгляда на то, как SDK .NET 11 урезает пакет WASM, посмотрите [новый шаблон Blazor WebWorker в .NET 11](/ru/2026/04/dotnet-11-preview-2-blazor-webworker-template/), который использует те же настройки trimmer.
-
-## Подводный камень, который выбирает за вас
-
-Три вещи диктуют выбор независимо от предпочтений:
-
-1. **Нельзя внедрить `DbContext` в компонент WebAssembly.** Так же как и значение `IConfiguration`, содержащее секрет. И blob-клиент, использующий строку подключения. Браузер по дизайну — враждебная среда. Если ваш компонент должен читать БД напрямую, он обязан быть Server (или вам нужна бекенд-API, к которой обращается компонент WASM). Шаблон Blazor Web App показывает это сразу: добавьте `@inject ApplicationDbContext Db` в компонент `.Client`, и сборка упадёт с понятной ошибкой об отсутствующем внедрении зависимостей.
-
-2. **Нельзя переключать `@rendermode` внутри границы режима рендеринга.** Страница, рендерящаяся как Static Server, может содержать остров Interactive Server, а страница Interactive Server может содержать острова Interactive WebAssembly, но вложить интерактивность в интерактивность нельзя. На практике это означает: выбирайте самый низкий режим рендеринга, который годится для страницы, и поднимайтесь только на уровне островов.
-
-3. **HTTPS, antiforgery и состояние аутентификации идут через cookies по умолчанию.** Компоненты WebAssembly не видят эти cookies для cross-origin запросов. Если часть WebAssembly в Blazor Web App вызывает внешнюю API, поверх нужен поток токенов OIDC, а не только cookie хоста. Это самый частый камень преткновения при миграции приложения Blazor Server на шаблон Web App.
-
-По части antiforgery [поведение TempData в Blazor SSR в .NET 11](/ru/2026/04/blazor-ssr-tempdata-dotnet-11/) и [руководство по совместной логике валидации](/ru/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly/) разбирают практические паттерны.
-
-## Рекомендация ещё раз
-
-Для нового Blazor-проекта на .NET 11 в 2026 году начинайте с `dotnet new blazor` (шаблона Blazor Web App) и назначайте режимы рендеринга для каждой страницы. Стоимость возможности опуститься до `@rendermode StaticServer` для маркетинговой страницы или подняться до `@rendermode InteractiveWebAssembly` для компонента с поддержкой офлайн почти нулевая по сравнению со стоимостью неправильного выбора автономного шаблона и последующей переписки. Выбирайте `dotnet new blazorserver` только при жёстком запрете на загрузку WebAssembly. Выбирайте `dotnet new blazorwasm` только если в целевом окружении нет среды выполнения .NET или если вы встраиваете фронтенд в MAUI Hybrid или Electron.
-
-Если вы уже на Blazor Server и взвешиваете миграцию, цель почти всегда — шаблон Blazor Web App с большинством существующих страниц на `@rendermode InteractiveServer`. Это миграция с наименьшим риском: поведение страниц, которые переезжают, остаётся идентичным, а возможность инкрементально добавлять компоненты Static Server и Auto разблокирована.
-
-## Связанное
-
-- [Minimal APIs vs контроллеры в ASP.NET Core 11](/ru/2026/05/minimal-apis-vs-controllers-in-aspnetcore-11/) — про решения по бекенд-API, которые открывает Blazor Web App.
-- [Как использовать Tailwind CSS с Blazor WebAssembly в .NET 11](/ru/2026/05/how-to-use-tailwind-css-with-blazor-webassembly-in-dotnet-11/) — про различия пайплайна стилей между автономным WASM и шаблоном Blazor Web App.
-- [Как делить логику валидации между сервером и Blazor WebAssembly](/ru/2026/04/how-to-share-validation-logic-between-server-and-blazor-webassembly/) — про практический паттерн "общего проекта", который шаблон Web App формализует.
-- [Native AOT vs ReadyToRun vs JIT в .NET 11](/ru/2026/05/native-aot-vs-readytorun-vs-jit-in-dotnet-11/) — про компромиссы режима компиляции, которые касаются и Server, и WASM.
-- [Blazor `Virtualize` с переменной высотой в .NET 11 Preview 3](/ru/2026/04/blazor-virtualize-variable-height-dotnet-11-preview-3/) — про одну из новых API, выгодных спискам компонентов в режиме Auto.
-
-## Источники
-
-- [ASP.NET Core Blazor render modes](https://learn.microsoft.com/aspnet/core/blazor/components/render-modes), Microsoft Learn, доступ 2026-05-26.
-- [What's new in ASP.NET Core in .NET 8](https://learn.microsoft.com/aspnet/core/release-notes/aspnetcore-8.0) — про первую поставку унифицированного шаблона (тогда в preview его звали "Blazor United").
-- [What's new in ASP.NET Core for .NET 11](https://learn.microsoft.com/aspnet/core/release-notes/aspnetcore-11.0) — про улучшения для каждого режима рендеринга.
-- [ASP.NET Core Blazor WebAssembly with multithreading](https://learn.microsoft.com/aspnet/core/blazor/performance#webassembly-multithreading) — про флаг `WasmEnableThreads`.
-- [`dotnet/aspnetcore` discussion 51020](https://github.com/dotnet/aspnetcore/discussions/51020), где инженеры Microsoft объясняли, почему "United" стал "Web App" в имени GA-шаблона.
+- [Blazor hosting models](https://learn.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-10.0)
+- [Blazor PWA](https://learn.microsoft.com/en-us/aspnet/core/blazor/progressive-web-app?tabs=visual-studio)

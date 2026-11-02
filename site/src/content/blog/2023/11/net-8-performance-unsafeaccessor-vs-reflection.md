@@ -1,66 +1,45 @@
 ---
 title: ".NET 8 Performance: UnsafeAccessor vs. Reflection"
-description: "Benchmarking UnsafeAccessor vs Reflection in .NET 8. See how UnsafeAccessor achieves zero-overhead performance compared to traditional reflection."
+description: "Run a reproducible .NET 8 benchmark comparing UnsafeAccessor, reflection, cached reflection, cached delegates and direct calls with observable work."
 pubDate: 2023-11-01
+updatedDate: 2026-11-02
 tags:
   - "csharp"
   - "dotnet"
   - "dotnet-8"
 ---
-In a previous article we covered [how to access private members using `UnsafeAccessor`](/2023/10/unsafe-accessor/). This time around, we want to look at its performance compared to Reflection, and to see whether it’s truly zero-overhead or not.
+An `UnsafeAccessor` binds to a known member without reflection lookup or `MethodInfo.Invoke`. A useful comparison must keep the target work observable and explain what each path does.
 
-We’re going to do four benchmarks.
+**Correction — November 2, 2026:** The old source repository is unavailable. The sample is restored here with a functional check, allocation diagnostics, cached delegates and matching non-inlined target methods. The previous near-zero timings do not establish universal zero overhead and are no longer presented as reproducible measurements.
 
-1.  **Reflection**: we benchmark retrieving a private method from a type and invoking it.
-2.  **Reflection with cache:** similar to the one above, but instead of retrieving the method each time, we use a cached reference to the `MethodInfo`.
-3.  **Unsafe accessor:** calling the same private method using `UnsafeAccessor` instead of reflection.
-4.  **Direct access**: calling a public method directly. This should serve as a benchmark to see if `UnsafeAccessor` truly provides zero-overhead performance.
+## Download and run
 
-If you want to run the benchmarks yourself, you have the code below:
+[Download the benchmark source](/examples/unsafe-accessor-benchmarks.zip). It targets .NET 8 and pins BenchmarkDotNet 0.15.8.
 
-```cs
-[SimpleJob(RuntimeMoniker.Net80)]
-public class Benchmarks
-{
-    [UnsafeAccessor(UnsafeAccessorKind.Method, Name = "PrivateMethod")]
-    extern static int PrivateMethod(Foo @this, int value);
-
-    static readonly Foo _instance = new();
-
-    static readonly MethodInfo _privateMethod = typeof(Foo)
-        .GetMethod("PrivateMethod", BindingFlags.Instance | BindingFlags.NonPublic);
-
-    [Benchmark]
-    public int Reflection() => (int)typeof(Foo)
-        .GetMethod("PrivateMethod", BindingFlags.Instance | BindingFlags.NonPublic)
-        .Invoke(_instance, [42]);
-
-    [Benchmark]
-    public int ReflectionWithCache() => (int)_privateMethod.Invoke(_instance, [42]);
-
-    [Benchmark]
-    public int UnsafeAccessor() => PrivateMethod(_instance, 42);
-
-    [Benchmark]
-    public int DirectAccess() => _instance.PublicMethod(42);
-}
+```sh
+dotnet run -c Release -- --verify
+dotnet run -c Release -- --job Dry --filter '*'
+dotnet run -c Release -- --filter '*'
 ```
 
-## Benchmark results
+The first command verifies that all five call paths return `59` for input `42`. The second is a one-iteration execution smoke check. Use the final command for ordinary measurements and preserve its generated environment and report files before interpreting timings.
 
-```plaintext
-| Method              | Mean       | Error     | StdDev    |
-|-------------------- |-----------:|----------:|----------:|
-| Reflection          | 35.9979 ns | 0.1670 ns | 0.1562 ns |
-| ReflectionWithCache | 21.2821 ns | 0.2283 ns | 0.2135 ns |
-| UnsafeAccessor      |  0.0035 ns | 0.0022 ns | 0.0018 ns |
-| DirectAccess        |  0.0028 ns | 0.0024 ns | 0.0023 ns |
-```
+## What is compared
 
-The results are quite impressive. Comparing direct access to unsafe accessor, there’s literally no difference. The few nanoseconds difference between the two can be discarded as noise – in fact, if you run the benchmarks a few times, you might even get instances where unsafe accessors are faster. That’s perfectly normal, and it’s basically telling us that the two are equivalent – thus zero-overhead.
+1. **Direct call:** invokes a public method.
+2. **Unsafe accessor:** binds to a private method with the same operation.
+3. **Reflection lookup and invoke:** finds the method and invokes it for each operation.
+4. **Cached reflection:** reuses `MethodInfo`, but still supplies an object argument array.
+5. **Cached delegate:** reuses an open instance delegate for the private method.
 
-There’s almost no point in comparing `UnsafeAccessor` to reflection. Performance-wise you have no overhead, and as a bonus you also get all the sugar that comes with having an actual method signature.
+The two target methods return the input plus an instance field and use `MethodImplOptions.NoInlining`. Each benchmark returns the result. The input is a BenchmarkDotNet parameter, which avoids reducing the demonstration to a constant-returning, inlined method.
 
-That’s not to say that reflection is dead. `UnsafeAccessor` only covers scenarios where you know the type and member that needs to be accessed at compile-time. If that information is only available to you at runtime, reflection is still the way to go.
+`MemoryDiagnoser` reports allocations, including argument-array/boxing work in the reflection cases. Those paths do different work; a timing difference is not solely an access-control check.
 
-Benchmarks code is also [available on GitHub](https://github.com/Start-Debugging/dotnet-samples/blob/main/unsafe-accessor/UnsafeAccessor.Benchmarks/Benchmarks.cs).
+## Verification and interpretation
+
+The restored project was executed with .NET 8.0.33 on macOS arm64. Its functional verification and all five BenchmarkDotNet Dry jobs passed. Dry-job timings are deliberately not published as a performance table: they validate the harness, not a stable nanosecond estimate.
+
+Inlining, runtime version, architecture, target work, caching and allocations all affect results. A tiny measured value can mean the JIT eliminated the work or the measurement is below the harness's useful resolution. It is not proof that every accessor operation is free.
+
+An accessor also needs the member signature at compile time. Reflection remains useful when the type/member is discovered at runtime. See [the member-access examples](/2023/10/unsafe-accessor/) and [Microsoft's API reference](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.unsafeaccessorattribute) for that distinction.

@@ -1,81 +1,28 @@
 ---
-title: "CV Shortlist: an AI-powered .NET 10 SaaS went open-source, and the stack is worth studying"
-description: "CV Shortlist is an open-source .NET 10 SaaS that pairs Azure Document Intelligence with an OpenAI model. The stack, config discipline, and AI integration boundary are worth studying."
+title: "CV Shortlist: historical notes on a .NET 10 AI SaaS"
+description: "What the CV Shortlist author announced, what its former README described, and which .NET AI design ideas remain useful now that the public repository is unavailable."
 pubDate: 2026-01-18
+updatedDate: 2026-11-02
 tags:
   - "csharp"
   - "dotnet"
   - "dotnet-10"
 ---
-A C# post I bookmarked today is not “another demo app”. It is a full, opinionated SaaS that was built as a commercial product, then open-sourced as an educational reference: **CV Shortlist**.
 
-Source: [CV Shortlist repo](https://github.com/mihnea-radulescu/cvshortlist) and the original [r/csharp post](https://www.reddit.com/r/csharp/comments/1qgbjo4/saas_educational_free_and_opensource_example_cv/).
+**Status checked 2 November 2026:** the former public repository, `github.com/mihnea-radulescu/cvshortlist`, returns 404, including through GitHub's repository API. That does not establish whether it was deleted, made private, or moved. No public replacement was verified. This is a historical note, not a currently runnable source-code walkthrough.
 
-## The useful part is the integration boundary, not the UI
+## What the author actually announced
 
-Most AI sample apps stop at “call an LLM”. This one documents the real boundary that makes or breaks production features:
+In the [original announcement](https://www.reddit.com/r/csharp/comments/1qgbjo4/saas_educational_free_and_opensource_example_cv/), Mihnea Radulescu described a commercial SaaS started in November 2025, then shut down and offered as an educational MIT-licensed project. The stated technologies were .NET 10, ASP.NET Core, Blazor Server, Azure Cloud, and Azure AI Foundry. Its intended task was shortlisting candidate applications. These are the author's descriptions, not independent evidence of accuracy or production readiness.
 
--   **Azure Document Intelligence** extracts structured data from PDF CVs (including tables and multi-column layouts).
--   **OpenAI GPT-5** analyzes the extracted data, matches it to a job opening, and produces the shortlist.
+A cached copy of the former GitHub README describes Document Intelligence extracting PDF content and a GPT-5-family model comparing it with a job description. It lists EF Core 10, Azure storage/database services, and a self-hosted option that still needed Azure AI resources; the deployment instructions named `gpt-5-mini`. That historical README is not proof of the current code, model availability, deployment requirements, or test results. The unavailable repository was not built or audited in this review.
 
-That pairing is what I keep recommending when teams ask “how do we do RAG for documents?” without building a brittle OCR pipeline from scratch: use a specialized extraction service, then do reasoning on clean text and fields.
+## Useful design questions that survive the missing repository
 
-## A modern .NET 10 stack, explicitly listed
+Separating document extraction from model processing is a useful design to evaluate. Microsoft's [Document Intelligence layout documentation](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/layout?view=doc-intel-4.0.0) describes extracting text, tables, and structural information. Test that extraction against your own documents before deciding how to send the output to a model. Extraction followed by an LLM call does not, by itself, establish a retrieval-augmented generation (RAG) architecture.
 
-The README is refreshingly concrete about versions and infrastructure:
+Keep configuration outside source code, and validate the settings your application actually needs. The README's user-secrets/environment-variable advice is historical project guidance, not a complete production security design. Microsoft's [Secret Manager guidance](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-10.0) explains that user secrets are for development and are not encrypted. Environment variables also need appropriate access controls. The former illustrative `Program.cs` block has been removed: it was not inspected repository code, and its C# `required` properties did not provide runtime required-value validation through `ValidateDataAnnotations()`.
 
--   .NET 10, ASP.NET Core 10, Blazor 10, EF Core 10
--   Azure Web App, SQL Database, Blob Storage, Application Insights
--   Azure Document Intelligence and an Azure AI Foundry model (the README calls out a `gpt-5-mini` Foundry model)
--   A self-hosted variant that still depends on the two AI resources
+For an accessible learning path, see [Generative AI for Beginners .NET v2](/2026/03/generative-ai-beginners-dotnet-v2-dotnet10-meai/). Use its linked materials to explore document processing and model integration, rather than relying on an unavailable project as a deployment template.
 
-Even if you never care about the recruiting domain, this is a real-world reference for “how many moving parts show up the moment AI is not a toy feature”.
-
-If you want to work through the foundations first, [Generative AI for Beginners .NET v2](/2026/03/generative-ai-beginners-dotnet-v2-dotnet10-meai/) covers document processing, RAG, and model integration on .NET 10.
-
-## Config discipline: user secrets locally, env vars in prod
-
-The repo calls out the two practices I want every .NET 10 team to standardize:
-
--   Local debugging: store secrets in **user secrets**
--   Production deployments: use **environment variables**
-
-Here is the pattern I expect to see in `Program.cs` on projects like this:
-
-```cs
-var builder = WebApplication.CreateBuilder(args);
-
-// Local debugging: dotnet user-secrets
-if (builder.Environment.IsDevelopment())
-{
-    builder.Configuration.AddUserSecrets<Program>(optional: true);
-}
-
-builder.Services
-    .AddOptions<AiSettings>()
-    .Bind(builder.Configuration.GetSection("Ai"))
-    .ValidateDataAnnotations()
-    .ValidateOnStart();
-
-var app = builder.Build();
-app.Run();
-
-public sealed class AiSettings
-{
-    public required string DocumentIntelligenceEndpoint { get; init; }
-    public required string DocumentIntelligenceKey { get; init; }
-    public required string FoundryModel { get; init; } // example: gpt-5-mini
-}
-```
-
-The point is not these exact property names. The point is: treat the AI boundary like any other external dependency in ASP.NET Core 10, and make configuration and validation boring.
-
-## Why this matters (even if you never build HR software)
-
-If you are trying to ship AI features in .NET 10, you need working examples that include:
-
--   PDF ingestion that does not fall over on real layouts
--   multi-step processing (extract, normalize, reason, persist)
--   cloud resources with keys, rotation, telemetry, and cost controls
-
-CV Shortlist is a compact “this is what it looks like when you actually build it” reference. Read the README, scan `Program.cs`, and steal the boundary design for your own domain.
+**Correction, 2 November 2026:** distinguished the author's announcement and historical README from verified current source; removed unsupported implementation recommendations and the unverified configuration sample.

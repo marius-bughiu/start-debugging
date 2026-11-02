@@ -1,7 +1,8 @@
 ---
-title: ".NET 8 のパフォーマンス: GetGenericTypeDefinition が 10 倍高速に"
-description: ".NET 8 と .NET 7 で GetGenericTypeDefinition をベンチマークすると、ほぼ 10 倍のパフォーマンス向上が見られます。BenchmarkDotNet によるベンチマークコードと結果を紹介します。"
+title: ".NET 8 GetGenericTypeDefinition の性能: 再現可能なベンチマーク"
+description: "BenchmarkDotNet で GetGenericTypeDefinition の反復呼び出しを再現し、固定の高速化倍率を仮定せず .NET ランタイムを比較します。"
 pubDate: 2023-11-05
+updatedDate: 2026-11-02
 tags:
   - "csharp"
   - "dotnet"
@@ -11,23 +12,16 @@ translationOf: "2023/11/net-8-performance-10x-faster-getgenerictypedefinition"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-.NET 8 では、型情報を扱う既存の API にうれしいパフォーマンス改善が入っています。その中でも大きく改善された API のひとつが `GetGenericTypeDefinition` です。
+Microsoft は .NET 8 のジェネリック型情報処理の改善として、`GetGenericTypeDefinition` の結果を `Type` オブジェクトにキャッシュする最適化などを説明しています。これは特定のランタイム最適化であり、すべてのリフレクション処理に同じ倍率が適用されるという意味ではありません。
 
-私のベンチマークでは、.NET 8 の実装は .NET 7 のバージョンと比べてほぼ 10 倍高速です。
+**2026年11月2日訂正:** 元の実行成果物とソースリポジトリが利用できないため、以前の「10倍」というタイトルと出所を確認できない時間表を削除しました。過去の URL は維持し、このサイトで実行可能なベンチマークを管理します。
 
-```plaintext
-| Method                   | Runtime  | Mean      | Error     | StdDev    |
-|------------------------- |--------- |----------:|----------:|----------:|
-| GetGenericTypeDefinition | .NET 7.0 | 13.078 ns | 0.0505 ns | 0.0422 ns |
-| GetGenericTypeDefinition | .NET 8.0 |  1.611 ns | 0.0091 ns | 0.0076 ns |
-```
+## ベンチマークを復元する
 
-このベンチマークは、`BenchmarkDotNet` を使って自分で実行することもできます。
+[ソースプロジェクトをダウンロード](/examples/generic-type-definition-benchmarks.zip)できます。.NET 7 と .NET 8 の両方を対象にビルドし、BenchmarkDotNet 0.13.12 を固定しています。中心となる処理は次のとおりです。
 
 ```cs
-[SimpleJob(RuntimeMoniker.Net70)]
-[SimpleJob(RuntimeMoniker.Net80)]
-public class Benchmarks
+public class GenericTypeBenchmarks
 {
     private readonly Type _type = typeof(List<int>);
 
@@ -35,8 +29,26 @@ public class Benchmarks
     public Type GetGenericTypeDefinition() => _type.GetGenericTypeDefinition();
 }
 ```
-```cs
-BenchmarkRunner.Run<Benchmarks>();
+
+完全版には imports と runner があります。機能確認と通常の測定を実行します。
+
+```sh
+dotnet run -c Release -f net8.0 -- --verify
+dotnet run -c Release -f net8.0 -- --filter '*'
 ```
 
-そのまま動かせるサンプルが欲しい場合は、[このリポジトリをクローン](https://github.com/Start-Debugging/dotnet-samples/tree/main/reflection)して `GetGenericTypeDefinitionBenchmarks` を実行してください。
+機能確認では戻り値が `typeof(List<>)` であることを検証します。Dry ジョブは短時間の実行確認には使えますが、その時間は信頼できる性能結果ではありません。
+
+## .NET 7 と .NET 8 を比較する
+
+両方のランタイムをインストールし、明示的に選択します。
+
+```sh
+dotnet run -c Release -f net8.0 -- --runtimes net7.0 net8.0 --filter '*'
+```
+
+過去の比較を行うには、実際にそれぞれのランタイムが必要です。.NET 8 対象のアプリを新しいランタイムで実行しても .NET 8 の測定を再現したことにはなりません。結果を公開する際は、生成された環境情報とレポートも保存してください。
+
+このベンチマークは既知の `Type` に対する反復呼び出しを測ります。型のロード、キャッシュしない探索、アプリ全体を測るものではありません。Microsoft の [.NET 8 性能分析](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/)は最適化と独自の測定を説明しており、その結果はこのプロジェクトの動作確認とは別です。
+
+別のリフレクション処理については [UnsafeAccessor の比較](/ja/2023/11/net-8-performance-unsafeaccessor-vs-reflection/)を参照してください。

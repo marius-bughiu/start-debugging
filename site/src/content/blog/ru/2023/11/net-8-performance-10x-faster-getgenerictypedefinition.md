@@ -1,7 +1,8 @@
 ---
-title: "Производительность .NET 8: GetGenericTypeDefinition в 10 раз быстрее"
-description: "Бенчмарки GetGenericTypeDefinition в .NET 8 по сравнению с .NET 7 показывают почти 10-кратный рост производительности. Смотрите код бенчмарка и результаты, полученные с помощью BenchmarkDotNet."
+title: "Производительность GetGenericTypeDefinition в .NET 8: воспроизводимый benchmark"
+description: "Повторите вызовы GetGenericTypeDefinition с BenchmarkDotNet и сравните выбранные среды .NET без предположения о фиксированном ускорении."
 pubDate: 2023-11-05
+updatedDate: 2026-11-02
 tags:
   - "csharp"
   - "dotnet"
@@ -11,23 +12,16 @@ translationOf: "2023/11/net-8-performance-10x-faster-getgenerictypedefinition"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-.NET 8 приносит хорошие улучшения производительности для существующих API, работающих с информацией о типах. Один из таких API, получивший значительный прирост, — это `GetGenericTypeDefinition`.
+Microsoft описала улучшения обработки информации о generic-типах в .NET 8, включая кеширование результата `GetGenericTypeDefinition` в объекте `Type`. Это конкретная оптимизация runtime, а не постоянный множитель для любой работы с рефлексией.
 
-В моих бенчмарках реализация в .NET 8 почти в 10 раз быстрее по сравнению с версией в .NET 7.
+**Исправление — 2 ноября 2026 года:** прежний заголовок «10x» и таблица без подтверждённого источника удалены: исходные артефакты запуска и репозиторий недоступны. Исторический URL сохранён, а исполняемый benchmark теперь поддерживается вместе с сайтом.
 
-```plaintext
-| Method                   | Runtime  | Mean      | Error     | StdDev    |
-|------------------------- |--------- |----------:|----------:|----------:|
-| GetGenericTypeDefinition | .NET 7.0 | 13.078 ns | 0.0505 ns | 0.0422 ns |
-| GetGenericTypeDefinition | .NET 8.0 |  1.611 ns | 0.0091 ns | 0.0076 ns |
-```
+## Восстановить benchmark
 
-При желании этот бенчмарк можно запустить самостоятельно с помощью `BenchmarkDotNet`:
+[Скачайте исходный проект](/examples/generic-type-definition-benchmarks.zip). Он собирается для .NET 7 и .NET 8 и закрепляет BenchmarkDotNet 0.13.12. Основная работа выглядит так:
 
 ```cs
-[SimpleJob(RuntimeMoniker.Net70)]
-[SimpleJob(RuntimeMoniker.Net80)]
-public class Benchmarks
+public class GenericTypeBenchmarks
 {
     private readonly Type _type = typeof(List<int>);
 
@@ -35,8 +29,26 @@ public class Benchmarks
     public Type GetGenericTypeDefinition() => _type.GetGenericTypeDefinition();
 }
 ```
-```cs
-BenchmarkRunner.Run<Benchmarks>();
+
+Полный проект включает импорты и runner. Запустите функциональную проверку и обычные измерения:
+
+```sh
+dotnet run -c Release -f net8.0 -- --verify
+dotnet run -c Release -f net8.0 -- --filter '*'
 ```
 
-Или, если нужен готовый к запуску пример, вы можете [клонировать этот репозиторий](https://github.com/Start-Debugging/dotnet-samples/tree/main/reflection) и запустить `GetGenericTypeDefinitionBenchmarks`.
+Функциональная проверка подтверждает результат `typeof(List<>)`. Dry-задание позволяет быстро проверить выполнение, но его время не является надёжной оценкой производительности.
+
+## Сравнение .NET 7 и .NET 8
+
+Установите обе среды выполнения и выберите их явно:
+
+```sh
+dotnet run -c Release -f net8.0 -- --runtimes net7.0 net8.0 --filter '*'
+```
+
+Историческое сравнение требует именно этих runtime. Запуск приложения с целевой .NET 8 на более новой среде не воспроизводит измерения .NET 8. Сохраняйте с опубликованным результатом сгенерированные сведения об окружении и отчёты.
+
+Этот benchmark измеряет повторные вызовы для известного `Type`. Он не измеряет загрузку типов, поиск без кеша или приложение целиком. [Анализ производительности .NET 8 от Microsoft](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/) объясняет оптимизацию и приводит собственные измерения; это отдельно от проверки данного проекта.
+
+Другую работу с рефлексией рассматривает [сравнение UnsafeAccessor](/ru/2023/11/net-8-performance-unsafeaccessor-vs-reflection/).

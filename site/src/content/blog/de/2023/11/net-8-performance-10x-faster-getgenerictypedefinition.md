@@ -1,7 +1,8 @@
 ---
-title: ".NET 8 Performance: GetGenericTypeDefinition 10x schneller"
-description: "Benchmarks von GetGenericTypeDefinition in .NET 8 im Vergleich zu .NET 7 zeigen eine fast 10x bessere Leistung. Sehen Sie sich den Benchmark-Code und die Ergebnisse mit BenchmarkDotNet an."
+title: "GetGenericTypeDefinition in .NET 8: ein reproduzierbarer Benchmark"
+description: "Wiederholte GetGenericTypeDefinition-Aufrufe mit BenchmarkDotNet reproduzieren und ausgewählte .NET-Laufzeiten ohne festen Beschleunigungsfaktor vergleichen."
 pubDate: 2023-11-05
+updatedDate: 2026-11-02
 tags:
   - "csharp"
   - "dotnet"
@@ -11,23 +12,16 @@ translationOf: "2023/11/net-8-performance-10x-faster-getgenerictypedefinition"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-.NET 8 bringt einige saubere Performance-Verbesserungen für bestehende APIs, die mit Typinformationen umgehen. Eine solche API, die deutlich schneller geworden ist, ist `GetGenericTypeDefinition`.
+Microsoft dokumentierte Verbesserungen an generischen Typinformationen in .NET 8, darunter das Cachen des Ergebnisses von `GetGenericTypeDefinition` im `Type`-Objekt. Das ist eine konkrete Laufzeitoptimierung, kein fester Faktor für jede Reflection-Aufgabe.
 
-In meinen Benchmarks ist die .NET 8-Implementierung im Vergleich zur .NET 7-Version fast 10-mal schneller.
+**Korrektur — 2. November 2026:** Der frühere „10x“-Titel und die nicht zugeordneten Messwerte wurden entfernt, weil die ursprünglichen Laufartefakte und das Repository fehlen. Die historische URL bleibt erhalten; ein lauffähiger Benchmark wird jetzt mit dieser Website gepflegt.
 
-```plaintext
-| Method                   | Runtime  | Mean      | Error     | StdDev    |
-|------------------------- |--------- |----------:|----------:|----------:|
-| GetGenericTypeDefinition | .NET 7.0 | 13.078 ns | 0.0505 ns | 0.0422 ns |
-| GetGenericTypeDefinition | .NET 8.0 |  1.611 ns | 0.0091 ns | 0.0076 ns |
-```
+## Den Benchmark wiederherstellen
 
-Sie können diesen Benchmark mit `BenchmarkDotNet` selbst ausführen:
+[Quellprojekt herunterladen](/examples/generic-type-definition-benchmarks.zip). Es wird für .NET 7 und .NET 8 gebaut und verwendet fest BenchmarkDotNet 0.13.12. Die zentrale Operation ist:
 
 ```cs
-[SimpleJob(RuntimeMoniker.Net70)]
-[SimpleJob(RuntimeMoniker.Net80)]
-public class Benchmarks
+public class GenericTypeBenchmarks
 {
     private readonly Type _type = typeof(List<int>);
 
@@ -35,8 +29,26 @@ public class Benchmarks
     public Type GetGenericTypeDefinition() => _type.GetGenericTypeDefinition();
 }
 ```
-```cs
-BenchmarkRunner.Run<Benchmarks>();
+
+Das vollständige Projekt enthält Imports und Runner. Starte Funktionsprüfung und normale Messungen:
+
+```sh
+dotnet run -c Release -f net8.0 -- --verify
+dotnet run -c Release -f net8.0 -- --filter '*'
 ```
 
-Oder, wenn Sie ein lauffertiges Beispiel suchen, können Sie [dieses Repository klonen](https://github.com/Start-Debugging/dotnet-samples/tree/main/reflection) und die `GetGenericTypeDefinitionBenchmarks` ausführen.
+Die Funktionsprüfung erwartet `typeof(List<>)` als Ergebnis. Ein Dry-Job kann die Ausführung schnell prüfen, seine Zeit ist jedoch kein verlässliches Leistungsergebnis.
+
+## .NET 7 und .NET 8 vergleichen
+
+Installiere beide Laufzeiten und wähle sie ausdrücklich aus:
+
+```sh
+dotnet run -c Release -f net8.0 -- --runtimes net7.0 net8.0 --filter '*'
+```
+
+Der historische Vergleich benötigt genau diese Laufzeiten. Eine auf .NET 8 zielende Anwendung unter einer neueren Laufzeit reproduziert keine .NET-8-Messung. Bewahre die erzeugten Umgebungsdetails und Berichte mit jedem veröffentlichten Ergebnis auf.
+
+Dieser Benchmark misst wiederholte Aufrufe für einen bekannten `Type`. Er misst weder das Laden von Typen noch ungecachte Suche oder eine ganze Anwendung. Microsofts [.NET-8-Leistungsanalyse](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/) erklärt die Optimierung und berichtet eigene Messungen; diese sind von der Prüfung dieses Projekts zu unterscheiden.
+
+Eine andere Reflection-Aufgabe behandelt der [UnsafeAccessor-Vergleich](/de/2023/11/net-8-performance-unsafeaccessor-vs-reflection/).

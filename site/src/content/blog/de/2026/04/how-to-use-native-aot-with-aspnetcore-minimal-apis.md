@@ -1,7 +1,8 @@
 ---
 title: "Native AOT mit ASP.NET Core Minimal APIs verwenden"
-description: "Eine vollständige .NET-11-Anleitung zum Ausliefern einer ASP.NET Core Minimal API mit Native AOT: PublishAot, CreateSlimBuilder, quellgenerierte JSON-Serialisierung, die AddControllers-Einschränkung, IL2026-/IL3050-Warnungen und EnableRequestDelegateGenerator für Bibliotheksprojekte."
+description: "Eine Minimal API für Native AOT mit generierten JSON-Metadaten konfigurieren. Builder, Zielplattform, Warnungen und Funktionsgrenzen verstehen."
 pubDate: 2026-04-27
+updatedDate: 2026-11-02
 template: how-to
 tags:
   - "csharp"
@@ -15,197 +16,83 @@ translatedBy: "claude"
 translationDate: 2026-04-29
 ---
 
-Um eine ASP.NET Core Minimal API mit Native AOT auf .NET 11 auszuliefern, setzen Sie `<PublishAot>true</PublishAot>` in der `.csproj`, bauen Sie den Host mit `WebApplication.CreateSlimBuilder` statt `CreateBuilder` und registrieren Sie einen `JsonSerializerContext`-Source-Generator über `ConfigureHttpJsonOptions`, sodass jeder Anfrage- und Antworttyp ohne Reflection erreichbar ist. Alles, was nicht Minimal API oder gRPC ist, einschließlich `AddControllers`, Razor, SignalR-Hubs und EF-Core-Querytrees über POCO-Graphen, erzeugt beim Publish IL2026- oder IL3050-Warnungen und verhält sich zur Laufzeit unvorhersehbar. Diese Anleitung läuft den vollständigen Weg auf `Microsoft.NET.Sdk.Web` mit .NET 11 SDK und C# 14 ab, einschließlich der Teile, die das neue Projekt-Template vor Ihnen verbirgt, und endet mit einer Checkliste, mit der Sie bestätigen können, dass das veröffentlichte Binary tatsächlich keinen JIT braucht.
+Native AOT übersetzt eine Anwendung beim Veröffentlichen in nativen Code. Startzeit, Paketgröße und Speicherbedarf können sich ändern; das Ergebnis hängt von Anwendung und Ziel ab. Nicht jede ASP.NET-Core-Funktion oder Abhängigkeit wird dadurch kompatibel.
 
-## Die zwei Projektflags, die alles ändern
+**Korrektur — 2. November 2026:** Die frühere Fassung erklärte `CreateSlimBuilder` zur Pflicht, schloss alle SignalR-Server aus, band Codegenerierung an `Program.cs` und übertrieb JSON- sowie Globalisierungsgrenzen. Das Ersatzbeispiel zielt auf .NET 10; eine Ausführung unter .NET 11 wird nicht behauptet.
 
-Eine Native-AOT-Minimal-API ist ein normales ASP.NET-Core-Projekt mit zwei zusätzlichen MSBuild-Eigenschaften. Die erste schaltet den Publish-Pfad von CoreCLR auf ILC, den AOT-Compiler. Die zweite weist den Analyzer an, Ihren Build in dem Moment zum Scheitern zu bringen, in dem Sie nach einer API greifen, die Codegenerierung zur Laufzeit erfordert.
+## Anwendung mit expliziten JSON-Metadaten
+
+Erstellen Sie das Projekt `MyApi` mit dieser Projektdatei:
 
 ```xml
-<!-- .NET 11, C# 14 -->
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <TargetFramework>net11.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-
     <PublishAot>true</PublishAot>
-    <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
 </Project>
 ```
 
-`PublishAot` macht die Schwerstarbeit. Es aktiviert die Native-AOT-Kompilierung während `dotnet publish` und schaltet vor allem auch die Analyse für dynamischen Code im Build und im Editor an, sodass IL2026 (`RequiresUnreferencedCode`) und IL3050 (`RequiresDynamicCode`) bereits in der IDE aufleuchten, bevor Sie überhaupt zum Publish kommen. Microsoft dokumentiert das in der [Native-AOT-Deployment-Übersicht](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/).
-
-`InvariantGlobalization` ist nicht zwingend nötig, aber ich lasse es bei neuen Projekten aktiv. Native AOT bündelt die ICU-Datendatei unter Linux standardmäßig nicht, und ein kulturabhängiger Stringvergleich über einen Anfrage-Payload wirft in Produktion `CultureNotFoundException`, wenn man es vergisst. Liefern Sie Globalisierung explizit aus, wenn Sie sie tatsächlich brauchen.
-
-Das neue Projekt-Template (`dotnet new webapiaot`) fügt außerdem `<StripSymbols>true</StripSymbols>` und `<TrimMode>full</TrimMode>` hinzu. `TrimMode=full` ist durch `PublishAot=true` impliziert, also redundant, aber harmlos zu behalten.
-
-## CreateSlimBuilder ist nicht CreateBuilder mit kleinerem Namen
-
-Die größte Verhaltensänderung zwischen einer normalen Minimal API und einer AOT-Variante ist der Host-Builder. `WebApplication.CreateBuilder` verdrahtet jedes gängige ASP.NET-Core-Feature: HTTPS, HTTP/3, Hosting-Filter, ETW, umgebungsvariablenbasierte Konfigurationsanbieter und einen Standard-JSON-Serializer mit Reflection-Fallback. Vieles davon ist nicht Native-AOT-kompatibel, daher verwendet das AOT-Template `CreateSlimBuilder`, dokumentiert in der Referenz [ASP.NET Core support for Native AOT](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/native-aot?view=aspnetcore-10.0) und in .NET 11 unverändert.
+Dazu diese `Program.cs`:
 
 ```csharp
-// .NET 11, C# 14
-// PackageReference: Microsoft.AspNetCore.OpenApi 11.0.0
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateSlimBuilder(args);
-
 builder.Services.ConfigureHttpJsonOptions(options =>
-{
-    options.SerializerOptions.TypeInfoResolverChain.Insert(0, AppJsonContext.Default);
-});
+    options.SerializerOptions.TypeInfoResolverChain.Insert(0, AppJsonContext.Default));
 
 var app = builder.Build();
-
-var todos = app.MapGroup("/todos");
-todos.MapGet("/", () => Todo.Sample);
-todos.MapGet("/{id:int}", (int id) =>
-    Todo.Sample.FirstOrDefault(t => t.Id == id) is { } t
-        ? Results.Ok(t)
-        : Results.NotFound());
-
+app.MapGet("/todos", () => TypedResults.Ok(new[] { new Todo(1, "Write docs", false) }));
+app.MapPost("/todos", (Todo todo) => TypedResults.Ok(todo));
 app.Run();
 
-public record Todo(int Id, string Title, bool Done)
-{
-    public static readonly Todo[] Sample =
-    [
-        new(1, "Try Native AOT", true),
-        new(2, "Profile cold start", false),
-    ];
-}
+public record Todo(int Id, string Title, bool IsComplete);
 
 [JsonSerializable(typeof(Todo))]
 [JsonSerializable(typeof(Todo[]))]
 internal partial class AppJsonContext : JsonSerializerContext;
 ```
 
-Drei Dinge an dem Beispiel sind wichtig und leicht zu übersehen:
+`PublishAot` aktiviert die entsprechende AOT-Analyse und Request-Delegate-Generierung im Web-SDK-Projekt. Der JSON-Kontext enthält Metadaten für die verwendeten Wurzeltypen. Weitere Wurzeln und polymorphe Typen müssen passend zum Vertrag registriert werden; `object` erfasst nicht beliebige Laufzeittypen.
 
-1. `CreateSlimBuilder` registriert standardmäßig kein HTTPS und kein HTTP/3. Der Slim-Builder enthält JSON-Datei-Konfiguration für `appsettings`, User Secrets, Konsolen-Logging und Logging-Konfiguration, lässt aber bewusst Protokolle weg, die typischerweise von einem TLS-Termination-Proxy übernommen werden. Wenn Sie das ohne Nginx, Caddy oder YARP davor laufen lassen, fügen Sie explizit `Kestrel.Endpoints`-Konfiguration hinzu.
-2. `MapGroup("/todos")` ist in derselben Datei wie `Program.cs` in Ordnung. Verschieben Sie es in eine andere Datei desselben Projekts, und Sie sehen IL3050, sofern Sie nicht zusätzlich den Request-Delegate-Generator einschalten. Dazu gleich mehr.
-3. Der JSON-Context fügt sich an Index `0` der Resolver-Kette ein, hat also Vorrang vor dem reflection-basierten Standard-Resolver. Ohne `Insert(0, ...)` kann der Antwort-Writer von ASP.NET Core für Typen, die Sie nicht registriert haben, weiterhin auf Reflection zurückfallen, was zur Laufzeit im AOT-Modus eine `NotSupportedException` erzeugt.
+Der Request-Delegate-Generator arbeitet über die Quelldateien des Projekts hinweg. Eine Routen-Erweiterungsmethode außerhalb von `Program.cs` ist nicht allein deshalb inkompatibel. Eine separate Bibliothek benötigt passende ASP.NET-Core-Referenzen und Generatorunterstützung; eine einzelne Property genügt nicht für beliebigen Code.
 
-## JSON: Der einzige Serializer ist der, den Sie generieren
+## Für eine konkrete Plattform veröffentlichen
 
-`System.Text.Json` hat zwei Modi. Der Reflection-Modus läuft zur Laufzeit über jede Property, was sowohl mit Trimming als auch mit AOT inkompatibel ist. Der Source-Generation-Modus emittiert zur Compile-Zeit Metadaten für jeden registrierten Typ und ist vollständig AOT-sicher. Native AOT erfordert Source Generation für jeden Typ, den Sie in einen HTTP-Request-Body hinein- oder aus ihm herausreichen. Das ist die größte Quelle für "kompiliert sauber, wirft zur Laufzeit"-Bugs.
-
-Der minimal lebensfähige `JsonSerializerContext`:
-
-```csharp
-// .NET 11, C# 14
-using System.Text.Json.Serialization;
-
-[JsonSourceGenerationOptions(
-    PropertyNamingPolicy = JsonKnownNamingPolicy.CamelCase,
-    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull)]
-[JsonSerializable(typeof(Todo))]
-[JsonSerializable(typeof(Todo[]))]
-[JsonSerializable(typeof(List<Todo>))]
-[JsonSerializable(typeof(ProblemDetails))]
-internal partial class AppJsonContext : JsonSerializerContext;
+```sh
+# Use the RID and native toolchain for your deployment target.
+# This command is for an Apple Silicon Mac:
+dotnet publish -c Release -r osx-arm64 -o ./publish
+./publish/MyApi --urls http://127.0.0.1:5080
+# Replace MyApi with your project's executable name.
 ```
 
-Jeder Typ, der über die Leitung geht, muss in dieser Klasse stehen, einschließlich der `T[]`- und `List<T>`-Formen, die Sie tatsächlich aus Minimal-API-Endpunkten zurückgeben. Der Antwort-Writer von ASP.NET Core wickelt `IEnumerable<T>` im AOT-Modus nicht für Sie aus. Wenn Sie `Enumerable.Range(...).Select(...)` zurückgeben, registrieren Sie `IEnumerable<Todo>` mit oder materialisieren Sie zuerst in ein Array.
+Installieren Sie die erforderliche native Toolchain. Native AOT unterstützt normalerweise keine Veröffentlichung für ein anderes Betriebssystem; verwenden Sie einen passenden Build-Host oder Container. Self-contained bedeutet, dass die verwaltete Runtime nicht separat installiert werden muss, nicht vollständige statische Verknüpfung oder Unabhängigkeit von Systembibliotheken.
 
-Drei Fallen, die selbst sorgfältige Autoren beißen:
+Testen Sie die veröffentlichte Binärdatei einschließlich Endpunkten, Serialisierung, Authentifizierung und Fehlern. `dotnet run` nutzt gewöhnlich JIT und ersetzt diesen Test nicht. Prüfen Sie alle Trimming- und AOT-Warnungen. Sie lassen den Publish nicht automatisch scheitern; dafür müssen Warnungen als Fehler konfiguriert werden. `IL2026` betrifft Trimming-Anforderungen, `IL3050` dynamischen Code. Attribute wie `RequiresDynamicCode` geben Anforderungen weiter, reparieren aber keine Inkompatibilität.
 
-- **`Results.Json(value)` versus `return value`**: Einen Wert direkt zurückzugeben funktioniert, weil das Framework den statischen Rückgabetyp kennt. Ihn in `Results.Json(value)` zu verpacken, ohne `JsonTypeInfo<T>` mitzugeben, fällt auf den Default-Serializer zurück und kann zur Laufzeit im AOT-Modus werfen. Verwenden Sie die Überladung von `Results.Json`, die `JsonTypeInfo<T>` aus Ihrem generierten Context entgegennimmt, oder geben Sie den Wert einfach zurück.
-- **Polymorphismus**: `[JsonDerivedType(typeof(Cat))]` funktioniert unter AOT, aber der Basistyp und jeder abgeleitete Typ müssen im Context stehen. Plain-`object`-Rückgaben verlangen eine Registrierung `JsonSerializable(typeof(object))`, was dann jede Form erzwingt, die er sehen kann, also bevorzugen Sie konkrete Typen.
-- **`IFormFile` und `HttpContext.Request.ReadFromJsonAsync`**: Form-Parameter-Binding für Primitive funktioniert unter AOT, aber `ReadFromJsonAsync<T>()` ohne Context wirft. Geben Sie `AppJsonContext.Default.T` immer als zweites Argument mit.
+## Builder, JSON und Globalisierung
 
-Andrew Locks [Tour durch den Minimal-API-Source-Generator](https://andrewlock.net/exploring-the-dotnet-8-preview-exploring-the-new-minimal-api-source-generator/) und Martin Costellos Walkthrough zu [JSON-Source-Generatoren mit Minimal APIs](https://blog.martincostello.com/using-json-source-generators-with-aspnet-core-minimal-apis/) decken das ursprüngliche .NET-8-Design ab, das .NET 11 unverändert übernimmt.
+`CreateSlimBuilder` startet mit weniger Funktionen und ist ein geeigneter Ausgangspunkt, keine Pflicht. `CreateBuilder` ist möglich, wenn die ausgewählten Funktionen und Abhängigkeiten kompatibel sind. Der schlanke Builder aktiviert HTTPS und HTTP/3 nicht standardmäßig; ergänzen Sie die nötige Kestrel-Unterstützung oder terminieren Sie TLS an einem vertrauenswürdigen Proxy. Endpunktkonfiguration allein ergänzt keine fehlende Protokollunterstützung.
 
-## Bibliotheksprojekte brauchen EnableRequestDelegateGenerator
+Ein generierter Resolver schaltet Reflexion nicht automatisch in jedem Ausführungsmodus ab. Native AOT benötigt passende Metadaten; unbekannte JSON-Typen können zur Laufzeit scheitern. `Results.Json(value)` und `ReadFromJsonAsync<T>()` können konfigurierte Optionen und generierte Metadaten verwenden und sind nicht grundsätzlich verboten. Explizite `JsonTypeInfo<T>`-Überladungen machen den Vertrag am Aufruf sichtbar.
 
-Der Minimal-API-Source-Generator verwandelt jeden `MapGet(...)`, `MapPost(...)` und so weiter zur Compile-Zeit in ein streng typisiertes `RequestDelegate`. Wenn `PublishAot=true` gesetzt ist, aktiviert das SDK diesen Generator automatisch für das Webprojekt. Es aktiviert ihn **nicht** für Bibliotheksprojekte, die Sie referenzieren, auch wenn diese Bibliotheken über Erweiterungsmethoden selbst `MapGet` aufrufen.
+`InvariantGlobalization` beeinflusst das Anwendungsverhalten und ist kein Warnungsschalter. Für kulturabhängiges Verhalten müssen Unterstützung und Zielplattform-Abhängigkeiten erhalten bleiben. Aktivieren Sie den Modus nicht bloß zur Warnungsunterdrückung und erwarten Sie keine unveränderte Kultursemantik.
 
-Das Symptom sind IL3050-Warnungen beim Publish, die auf Ihre Bibliothek zeigen und sich beklagen, dass `MapGet` Reflection auf einem Delegate ausführt. Der Fix ist eine MSBuild-Eigenschaft in der Bibliothek:
+## Funktionen nach Version prüfen
 
-```xml
-<!-- Library project that defines endpoint extension methods -->
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net11.0</TargetFramework>
-    <IsAotCompatible>true</IsAotCompatible>
-    <EnableRequestDelegateGenerator>true</EnableRequestDelegateGenerator>
-  </PropertyGroup>
-</Project>
-```
+MVC-Controller und Razor Pages sind laut Supportmatrix keine allgemeine Native-AOT-Option. SignalR ist anders: .NET 9 führte Unterstützung für Client- und Serverszenarien ein, mit dokumentierten Einschränkungen und JSON-Quellgenerierung. Eine alte pauschale Ausschlussregel gilt nicht für neuere Ziele.
 
-`IsAotCompatible=true` schaltet alle vier Trim- und AOT-Analyzer ein, und `EnableRequestDelegateGenerator=true` lenkt die `Map*`-Aufrufe der Bibliothek auf den generierten Pfad. Ohne Letzteres kann die Bibliothek als AOT-kompatibel markiert sein und trotzdem IL3050 emittieren, weil der Analyzer die `Delegate.DynamicInvoke`-artigen Aufrufstellen in `RouteHandlerBuilder` so sieht. Das dotnet/aspnetcore-Team verfolgt die rauen Kanten in [Issue #58678](https://github.com/dotnet/aspnetcore/issues/58678).
+Datenbankzugriff braucht ebenfalls eine providerspezifische Prüfung. EF-Core-AOT hängt von Version und Abfragepipeline ab; normales Dapper ist nicht automatisch sicher, nur weil es kleiner ist. Veröffentlichen und testen Sie die konkreten Abhängigkeiten.
 
-Wenn die Bibliothek sowohl in AOT- als auch in Nicht-AOT-Projekten wiederverwendbar sein soll, lassen Sie die Eigenschaft drin. Der Generator fällt in regulären CoreCLR-Builds anmutig auf den Laufzeitpfad zurück.
-
-## Was Sie aufgeben müssen
-
-Native AOT ist kein Schalter, den Sie an einem fertigen MVC-Monolithen umlegen. Die Liste der nicht unterstützten Subsysteme ist kurz, aber tragend.
-
-- **MVC-Controller**: `AddControllers()` ist das kanonische Beispiel. Die API ist nicht trim-sicher und wird von Native AOT nicht unterstützt. Das dotnet/aspnetcore-Team verfolgt die langfristige Unterstützung in [Issue #53667](https://github.com/dotnet/aspnetcore/issues/53667), aber Stand .NET 11 gibt es keinen AOT-Pfad für `[ApiController]`-dekorierte Klassen. Entweder schreiben Sie die Endpunkte als Minimal APIs um, oder Sie liefern kein AOT aus. Modelle und Filter lehnen sich für sicheres Trimmen durch ILC zu stark auf Reflection und Laufzeit-Modelbinding.
-- **Razor Pages und MVC-Views**: gleicher Grund. Beide hängen von Laufzeit-View-Kompilierung ab. Sie kompilieren unter `PublishAot=true`, wenn Sie sie nicht verwenden, aber `AddRazorPages()` zu registrieren lässt IL2026 aufleuchten.
-- **SignalR-Server-Hubs**: unter AOT in .NET 11 nicht unterstützt. Die Client-Pakete haben AOT-freundliche Modi, der Hub-Host nicht.
-- **EF Core**: Die Laufzeit funktioniert, aber Query-Übersetzung, die auf Reflection über POCO-Property-Graphen angewiesen ist, kann IL2026 erzeugen, sofern Sie nicht auf Compiled Queries und quellgenerierte Konfiguration setzen. Für die meisten AOT-Services ist der richtige Schritt Dapper plus eine handgeschriebene `SqlClient`-Konfiguration, oder EF Core nur für einfachen Zugriff im Stil von `DbSet<T>.Find()`.
-- **Reflection-lastige DI-Muster**: Alles, was `IEnumerable<IPlugin>` aus einer gescannten Assembly auflöst, ist unter Trimming brüchig. Registrieren Sie konkrete Typen explizit, oder verwenden Sie einen quellgenerierten DI-Container.
-- **`AddOpenApi()`**: Die OpenAPI-Integration aus .NET 9 ist AOT-kompatibel, aber Versionen von `Swashbuckle.AspNetCore` vor dem AOT-bewussten Refactor emittieren weiterhin IL2026. Wenn Sie OpenAPI in einer AOT-Minimal-API brauchen, verwenden Sie das eingebaute Paket [`Microsoft.AspNetCore.OpenApi`](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/aspnetcore-openapi) und sparen sich Swashbuckle.
-
-Das Thinktecture-Team hat eine [lesbare Übersicht der unterstützten und nicht unterstützten Szenarien](https://www.thinktecture.com/en/net/native-aot-with-asp-net-core-overview/) veröffentlicht, auf die ich beim Onboarding eines Teams in Native AOT zurückgreife.
-
-## IL2026 und IL3050 wie ein Profi lesen
-
-Die zwei Warnungen, mit denen Sie kämpfen werden, sind leicht zu verwechseln:
-
-- **IL2026** bedeutet, der Aufruf erfordert nicht referenzierten Code. Die Implementierung liest Mitglieder per Reflection, die der Trimmer sonst entfernen würde. Häufige Ursache: einen Laufzeit-`Type` an eine Serializer-Überladung übergeben, `GetProperties()` aufrufen oder `Activator.CreateInstance(Type)` verwenden.
-- **IL3050** bedeutet, der Aufruf erfordert dynamische Codegenerierung. Selbst mit allen erhaltenen Mitgliedern braucht die Implementierung `Reflection.Emit` oder einen vergleichbaren JIT-Codegen-Schritt, den es in AOT nicht gibt. Häufige Ursache: `JsonSerializer.Serialize(object)`-Überladungen, `MakeGenericType` auf einem noch nicht instanziierten Generic, Expression-Tree-Compile.
-
-Beide werden vom `IsAotCompatible`-Analyzer aufgefangen, aber nur IL2026 wird vom reinen Trimming-Analyzer angezeigt. Ich führe während der Entwicklung immer einen einmaligen Publish nach `bin\publish` von der Kommandozeile aus, um beide auf einmal sichtbar zu machen:
-
-```bash
-dotnet publish -c Release -r linux-x64 -o ./publish
-```
-
-Eine zweite Falle: dotnet/sdk [Discussion #51966](https://github.com/dotnet/sdk/discussions/51966) verfolgt ein wiederkehrendes Problem, bei dem Visual Studio 2026 und `dotnet build` IL2026 / IL3050 in manchen Konfigurationen verschlucken, `dotnet format` sie aber zeigt. Wenn Ihr Team Visual Studio nutzt, ergänzen Sie einen CI-Schritt, der `dotnet publish` gegen die AOT-Laufzeit ausführt, sodass eine übersehene Warnung die Pipeline scheitern lässt.
-
-Wenn Sie eine Reflection nutzende API nicht vermeiden können, lässt sich die Warnung an der Aufrufstelle mit den Attributen `[RequiresUnreferencedCode]` und `[RequiresDynamicCode]` an der umhüllenden Methode unterdrücken, wodurch sich die Anforderung nach oben fortpflanzt. Tun Sie das nur, wenn Sie wissen, dass die konsumierenden Codepfade nicht auf der AOT-Publish-Oberfläche liegen. Eine Unterdrückung innerhalb eines Endpunkt-Handlers ist fast immer falsch.
-
-## Verifizieren, dass das Binary tatsächlich funktioniert
-
-Ein sauberer Publish beweist nicht, dass die App unter AOT startet. Drei Prüfungen, die ich durchführe, bevor ich Sieg verkünde:
-
-```bash
-# 1. The output is a single static binary, not a CoreCLR loader.
-ls -lh ./publish
-file ./publish/MyApi
-# Expected on Linux: "ELF 64-bit LSB pie executable ... statically linked"
-
-# 2. The runtime never loads the JIT.
-LD_DEBUG=libs ./publish/MyApi 2>&1 | grep -E "libcoreclr|libclrjit"
-# Expected: empty output. If libclrjit.so loads, you accidentally shipped a runtime fallback.
-
-# 3. A real request round-trips with the source generator.
-./publish/MyApi &
-curl -s http://localhost:5000/todos | head -c 200
-```
-
-Die dritte Prüfung ist die wichtige. Der klassische Fehlerfall ist "kompiliert, publisht, startet, gibt bei der ersten Anfrage 500 zurück", weil ein Rückgabetyp im JSON-Context fehlt. Klopfen Sie jeden Endpunkt mindestens einmal mit einem repräsentativen Payload ab, bevor Sie ausliefern.
-
-Für Container-Deployments ist Build mit `--self-contained true` unter `PublishAot=true` impliziert. Die Ausgabe `./publish/MyApi` plus zugehörige `.dbg`-Datei ist die gesamte Deploy-Einheit. Eine typische Minimal API in .NET 11 landet bei 8-12 MB stripped, gegenüber 80-90 MB eines self-contained CoreCLR-Publish.
-
-## Verwandte Anleitungen auf Start Debugging
-
-- Der Native-AOT-Hebel sitzt in einer breiteren Cold-Start-Geschichte: [das .NET-11-AWS-Lambda-Cold-Start-Playbook](/de/2026/04/how-to-reduce-cold-start-time-for-a-dotnet-11-aws-lambda/) läuft den AOT-auf-`provided.al2023`-Pfad mit demselben Source-Generator-Setup ab.
-- Für OpenAPI auf einer AOT-Minimal-API behandelt die [Anleitung zur OpenAPI-Client-Generierung](/de/2026/04/how-to-generate-strongly-typed-client-from-openapi-spec-dotnet-11/) den Round Trip von Minimal-API-Metadaten zu einem typisierten `HttpClient`.
-- AOT-Projekte verbieten reflection-basiertes JSON, daher ist [einen eigenen `JsonConverter` in System.Text.Json schreiben](/de/2026/04/how-to-write-a-custom-jsonconverter-in-system-text-json/) der richtige Einstieg, wenn eine eingebaute Konvertierung nicht ausreicht.
-- Eine saubere Exception-Geschichte zählt unter AOT mehr, wo reflection-basierte Diagnostik nicht zur Verfügung steht: [einen globalen Exception-Filter in ASP.NET Core 11 ergänzen](/de/2026/04/how-to-add-a-global-exception-filter-in-aspnetcore-11/) zeigt den `IExceptionHandler`-Pfad, der vollständig AOT-kompatibel ist.
+Zur Organisation kompatibler Handler siehe [Ressourcenmodule mit MapGroup](/de/2026/06/how-to-organize-minimal-api-endpoints-with-mapgroup-in-aspnetcore-11/).
 
 ## Quellen
 
-- [ASP.NET Core support for Native AOT (Microsoft Learn)](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/native-aot?view=aspnetcore-10.0)
-- [Native AOT deployment overview (Microsoft Learn)](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/)
-- [Source generation in System.Text.Json (Microsoft Learn)](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/source-generation)
-- [aspnetcore#58678 - Map* AOT warnings outside Program.cs](https://github.com/dotnet/aspnetcore/issues/58678)
-- [aspnetcore#53667 - Native AOT support for MVC](https://github.com/dotnet/aspnetcore/issues/53667)
-- [Andrew Lock - Exploring the new minimal API source generator](https://andrewlock.net/exploring-the-dotnet-8-preview-exploring-the-new-minimal-api-source-generator/)
-- [Martin Costello - Using JSON source generators with minimal APIs](https://blog.martincostello.com/using-json-source-generators-with-aspnet-core-minimal-apis/)
-- [Thinktecture - Native AOT with ASP.NET Core, an overview](https://www.thinktecture.com/en/net/native-aot-with-asp-net-core-overview/)
+- [ASP.NET Core Native AOT support](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/native-aot?view=aspnetcore-10.0)
+- [.NET Native AOT deployment and prerequisites](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/)
+- [System.Text.Json source generation](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/source-generation)
+- [.NET 9 SignalR Native AOT support and limitations](https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-9.0?view=aspnetcore-9.0#signalr-supports-trimming-and-native-aot)

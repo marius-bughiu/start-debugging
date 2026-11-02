@@ -1,0 +1,79 @@
+[
+  {
+    "slug": "unsafe-accessor",
+    "title": "UnsafeAccessor member access",
+    "summary": "Private constructors, methods, properties, fields, and a narrowly scoped readonly-field demonstration.",
+    "requirements": ".NET 8 runtime, with the .NET 8 SDK or newer",
+    "files": [
+      "README.md",
+      "UnsafeAccessor.csproj",
+      "Program.cs"
+    ],
+    "articles": [
+      "2023/10/unsafe-accessor",
+      "2023/11/c-how-to-update-a-readonly-field-using-unsafeaccessor"
+    ]
+  },
+  {
+    "slug": "unsafe-accessor-benchmarks",
+    "title": "UnsafeAccessor and reflection benchmarks",
+    "summary": "Observable work, cached reflection and delegates, direct calls, and allocation measurements.",
+    "requirements": ".NET 8 SDK and runtime",
+    "files": [
+      "README.md",
+      "UnsafeAccessor.Benchmarks.csproj",
+      "Program.cs",
+      "Benchmarks.cs",
+      "packages.lock.json"
+    ],
+    "articles": [
+      "2023/11/net-8-performance-unsafeaccessor-vs-reflection"
+    ]
+  },
+  {
+    "slug": "generic-type-definition-benchmarks",
+    "title": "GetGenericTypeDefinition benchmarks",
+    "summary": "A rerunnable cached-type benchmark, with optional .NET 7/.NET 8 comparison jobs.",
+    "requirements": ".NET 8 SDK; both runtimes for the historical comparison",
+    "files": [
+      "README.md",
+      "GenericTypeDefinition.Benchmarks.csproj",
+      "Program.cs",
+      "Benchmarks.cs",
+      "packages.lock.json"
+    ],
+    "articles": [
+      "2023/11/net-8-performance-10x-faster-getgenerictypedefinition"
+    ]
+  },
+  {
+    "slug": "windows-screenshot",
+    "title": "Windows virtual-desktop screenshot",
+    "summary": "A Windows console application that captures the bounding rectangle of all displays, with a synthetic-image self-test.",
+    "requirements": "Windows and the .NET 8 SDK; cross-building requires Windows targeting packs",
+    "files": [
+      "README.md",
+      "Screenshot.csproj",
+      "Program.cs"
+    ],
+    "articles": [
+      "2023/11/how-to-take-a-screenshot-in-net-core"
+    ]
+  },
+  {
+    "slug": "react-native-two-columns",
+    "title": "React Native two-column layout",
+    "summary": "An Expo application using numeric dimensions, wrapped rows, and predictable spacing.",
+    "requirements": "Node.js supported by Expo SDK 58 and npm",
+    "files": [
+      "README.md",
+      "package.json",
+      "package-lock.json",
+      "app.json",
+      "App.js"
+    ],
+    "articles": [
+      "2023/11/2-column-react-native"
+    ]
+  }
+]

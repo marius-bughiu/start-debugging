@@ -1,0 +1,38 @@
+---
+import path from "node:path";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { readExampleManifest } from "../../lib/example-archives.mjs";
+import { getPublishedBlogPosts } from "../../lib/blog";
+const examples = await readExampleManifest(path.resolve(process.cwd(), "../examples"));
+const titles = new Map((await getPublishedBlogPosts()).map((post) => [post.slug, post.data.title]));
+---
+
+<BaseLayout
+  title="Runnable article examples - Start Debugging"
+  description="Download source projects for UnsafeAccessor, reflection benchmarks, Windows screenshots, and a React Native two-column layout."
+  canonicalUrl={Astro.url.href}
+>
+  <section class="panel card stack prose">
+    <h1 class="h1">Article examples</h1>
+    <p>Each download includes the source, pinned dependencies where needed, and run instructions. Platform and verification limits are described in the accompanying README.</p>
+    {examples.map((example) => (
+      <section class="stack example-download" id={example.slug}>
+        <h2 class="h2">{example.title}</h2>
+        <p>{example.summary}</p>
+        <p class="muted">{example.requirements}</p>
+        <div class="row">
+          <a class="pill" href={`/examples/${example.slug}.zip`} download>Download source ZIP</a>
+          <a href={`https://github.com/marius-bughiu/start-debugging/tree/main/examples/${example.slug}`}>View source on GitHub</a>
+        </div>
+        <ul>
+          {example.articles.map((slug) => <li><a href={`/${slug}/`}>{titles.get(slug) ?? example.title}</a></li>)}
+        </ul>
+      </section>
+    ))}
+  </section>
+</BaseLayout>
+
+<style>
+  .example-download { border-top: 1px solid var(--border); padding-top: 24px; scroll-margin-top: 24px; }
+  .example-download p { margin: 0; }
+</style>

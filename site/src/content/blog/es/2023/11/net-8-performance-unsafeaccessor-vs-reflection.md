@@ -1,7 +1,8 @@
 ---
-title: "Rendimiento de .NET 8: UnsafeAccessor vs. Reflection"
-description: "Benchmark de UnsafeAccessor frente a Reflection en .NET 8. Mira cómo UnsafeAccessor logra rendimiento sin sobrecarga comparado con la reflexión tradicional."
+title: "Rendimiento de .NET 8: UnsafeAccessor frente a reflexión"
+description: "Benchmark reproducible de .NET 8 con UnsafeAccessor, reflexión, reflexión almacenada, delegados almacenados y llamadas directas con trabajo observable."
 pubDate: 2023-11-01
+updatedDate: 2026-11-02
 tags:
   - "csharp"
   - "dotnet"
@@ -11,60 +12,38 @@ translationOf: "2023/11/net-8-performance-unsafeaccessor-vs-reflection"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-En un artículo anterior vimos [cómo acceder a miembros privados usando `UnsafeAccessor`](/es/2023/10/unsafe-accessor/). Esta vez queremos comparar su rendimiento frente a Reflection, para ver si realmente es de coste cero o no.
+Un `UnsafeAccessor` se vincula a un miembro conocido sin buscarlo por reflexión ni usar `MethodInfo.Invoke`. Una comparación útil debe mantener observable el trabajo de destino y explicar qué hace cada ruta.
 
-Vamos a hacer cuatro benchmarks.
+**Corrección — 2 de noviembre de 2026:** el antiguo repositorio no está disponible. Se restauró el ejemplo con comprobación funcional, diagnóstico de asignaciones, delegados almacenados y métodos de destino equivalentes sin inlining. Los tiempos anteriores cercanos a cero no demuestran sobrecoste cero universal y ya no se presentan como mediciones reproducibles.
 
-1.  **Reflection**: medimos cuánto cuesta obtener un método privado de un tipo e invocarlo.
-2.  **Reflection con caché:** parecido al anterior, pero en vez de obtener el método cada vez, usamos una referencia cacheada al `MethodInfo`.
-3.  **Unsafe accessor:** llamando al mismo método privado usando `UnsafeAccessor` en lugar de reflexión.
-4.  **Acceso directo**: llamando directamente a un método público. Esto sirve de referencia para ver si `UnsafeAccessor` ofrece de verdad rendimiento sin sobrecarga.
+## Descargar y ejecutar
 
-Si quieres ejecutar los benchmarks tú mismo, aquí tienes el código:
+[Descarga el código del benchmark](/examples/unsafe-accessor-benchmarks.zip). El proyecto apunta a .NET 8 y fija BenchmarkDotNet 0.15.8.
 
-```cs
-[SimpleJob(RuntimeMoniker.Net80)]
-public class Benchmarks
-{
-    [UnsafeAccessor(UnsafeAccessorKind.Method, Name = "PrivateMethod")]
-    extern static int PrivateMethod(Foo @this, int value);
-
-    static readonly Foo _instance = new();
-
-    static readonly MethodInfo _privateMethod = typeof(Foo)
-        .GetMethod("PrivateMethod", BindingFlags.Instance | BindingFlags.NonPublic);
-
-    [Benchmark]
-    public int Reflection() => (int)typeof(Foo)
-        .GetMethod("PrivateMethod", BindingFlags.Instance | BindingFlags.NonPublic)
-        .Invoke(_instance, [42]);
-
-    [Benchmark]
-    public int ReflectionWithCache() => (int)_privateMethod.Invoke(_instance, [42]);
-
-    [Benchmark]
-    public int UnsafeAccessor() => PrivateMethod(_instance, 42);
-
-    [Benchmark]
-    public int DirectAccess() => _instance.PublicMethod(42);
-}
+```sh
+dotnet run -c Release -- --verify
+dotnet run -c Release -- --job Dry --filter '*'
+dotnet run -c Release -- --filter '*'
 ```
 
-## Resultados del benchmark
+El primer comando comprueba que las cinco rutas devuelven `59` para la entrada `42`. El segundo verifica la ejecución con una iteración. Usa el último para mediciones normales y conserva los archivos generados de entorno e informes antes de interpretar los tiempos.
 
-```plaintext
-| Method              | Mean       | Error     | StdDev    |
-|-------------------- |-----------:|----------:|----------:|
-| Reflection          | 35.9979 ns | 0.1670 ns | 0.1562 ns |
-| ReflectionWithCache | 21.2821 ns | 0.2283 ns | 0.2135 ns |
-| UnsafeAccessor      |  0.0035 ns | 0.0022 ns | 0.0018 ns |
-| DirectAccess        |  0.0028 ns | 0.0024 ns | 0.0023 ns |
-```
+## Qué se compara
 
-Los resultados son bastante impresionantes. Comparando el acceso directo con el unsafe accessor, literalmente no hay diferencia. Los pocos nanosegundos de diferencia entre ambos pueden descartarse como ruido; de hecho, si ejecutas los benchmarks varias veces, hasta puedes encontrar ocasiones en las que los unsafe accessors sean más rápidos. Eso es perfectamente normal y básicamente nos dice que los dos son equivalentes, es decir, sin sobrecarga.
+1. **Llamada directa:** invoca un método público.
+2. **Unsafe accessor:** se vincula a un método privado con la misma operación.
+3. **Búsqueda e invocación por reflexión:** busca e invoca el método en cada operación.
+4. **Reflexión almacenada:** reutiliza `MethodInfo`, pero sigue aportando un array de objetos como argumentos.
+5. **Delegado almacenado:** reutiliza un delegado de instancia abierto para el método privado.
 
-Casi no tiene sentido comparar `UnsafeAccessor` con la reflexión. En cuanto a rendimiento no hay sobrecarga y, como bonus, te llevas todo el azúcar sintáctico que conlleva tener una firma de método real.
+Los dos métodos de destino devuelven la entrada más un campo de instancia y usan `MethodImplOptions.NoInlining`. Cada benchmark devuelve el resultado. La entrada es un parámetro de BenchmarkDotNet, evitando reducir el ejemplo a un método inline que devuelve una constante.
 
-Eso no quiere decir que la reflexión esté muerta. `UnsafeAccessor` solo cubre escenarios en los que conoces el tipo y el miembro al que necesitas acceder en tiempo de compilación. Si esa información solo está disponible en tiempo de ejecución, la reflexión sigue siendo el camino.
+`MemoryDiagnoser` informa de asignaciones, incluido el array de argumentos y el boxing en los casos de reflexión. Las rutas hacen trabajo distinto; una diferencia temporal no corresponde únicamente a la comprobación de acceso.
 
-El código de los benchmarks también está [disponible en GitHub](https://github.com/Start-Debugging/dotnet-samples/blob/main/unsafe-accessor/UnsafeAccessor.Benchmarks/Benchmarks.cs).
+## Verificación e interpretación
+
+El proyecto restaurado se ejecutó con .NET 8.0.33 en macOS arm64. Pasaron la comprobación funcional y los cinco jobs Dry de BenchmarkDotNet. Sus tiempos no se publican como tabla de rendimiento: validan el arnés, no una estimación estable de nanosegundos.
+
+Inlining, versión del runtime, arquitectura, trabajo de destino, caché y asignaciones influyen en los resultados. Un tiempo diminuto puede indicar que el JIT eliminó trabajo o que la medición está por debajo de la resolución útil del arnés. No demuestra que toda operación del accessor sea gratuita.
+
+Un accessor también necesita conocer la firma al compilar. La reflexión sigue siendo útil si el tipo o miembro se descubre en ejecución. Consulta los [ejemplos de acceso a miembros](/es/2023/10/unsafe-accessor/) y la [referencia de Microsoft](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.unsafeaccessorattribute) para esa distinción.

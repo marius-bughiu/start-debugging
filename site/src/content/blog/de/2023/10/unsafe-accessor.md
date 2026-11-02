@@ -1,8 +1,8 @@
 ---
 title: "C# UnsafeAccessor: private Member ohne Reflection (.NET 8)"
-description: "Verwenden Sie das `[UnsafeAccessor]`-Attribut in .NET 8, um private Felder ohne Overhead zu lesen und private Methoden aufzurufen, ohne Reflection und vollständig AOT-kompatibel."
+description: "Mit UnsafeAccessor in .NET 8 auf bekannte private Konstruktoren, Methoden, Eigenschaften und Felder zugreifen: geprüfte Beispiele und Versionsgrenzen."
 pubDate: 2023-10-31
-updatedDate: 2023-11-05
+updatedDate: 2026-11-02
 tags:
   - "dotnet"
   - "dotnet-8"
@@ -11,127 +11,91 @@ translationOf: "2023/10/unsafe-accessor"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-Reflection erlaubt es, Typinformationen zur Laufzeit zu ermitteln und mit diesen Informationen auf private Member einer Klasse zuzugreifen. Das ist besonders nützlich, wenn Sie mit Klassen arbeiten, die nicht in Ihrer Hand liegen, etwa aus einem Drittanbieter-Paket. So mächtig Reflection auch ist, sie ist gleichzeitig sehr langsam, was einer der Hauptgründe ist, sie zu vermeiden. Damit ist jetzt Schluss.
+`UnsafeAccessorAttribute` wurde mit .NET 8 eingeführt. Eine `static extern`-Methode kann damit an einen bekannten, nicht zugänglichen Member gebunden werden; die Laufzeit stellt die Implementierung bereit. Der Ansatz eignet sich, wenn deklarierender Typ und Signatur zur Kompilierzeit bekannt sind. Er ersetzt keine Reflection zur Suche während der Laufzeit.
 
-.NET 8 führt mit dem `UnsafeAccessor`-Attribut eine neue Möglichkeit ein, ohne Overhead auf private Member zuzugreifen. Das Attribut kann auf eine `extern static`-Methode angewendet werden. Die Implementierung der Methode wird zur Laufzeit anhand der Attributinformationen und der Methodensignatur bereitgestellt. Wird zu den angegebenen Informationen keine Übereinstimmung gefunden, löst der Methodenaufruf entweder eine `MissingFieldException` oder eine `MissingMethodException` aus.
+**Korrektur — 2. November 2026:** Der ursprüngliche Artikel schloss Überladungen fälschlich aus und verlangte für statischen Zugriff eine Instanz. Beides ist unten korrigiert. Das wiederhergestellte Beispiel wurde auf .NET 8.0.33 ausgeführt. Leistung wird separat behandelt und nicht pauschal als ohne Overhead beschrieben.
 
-Sehen wir uns ein paar Beispiele für die Verwendung von `UnsafeAccessor` an. Betrachten wir die folgende Klasse mit privaten Membern:
+## Vollständiges Beispiel herunterladen
+
+[Lauffähigen Quellcode als ZIP herunterladen](/examples/unsafe-accessor.zip) oder die [Beispielanleitung öffnen](/examples/#unsafe-accessor). Enthalten sind Projekt, deklarierende Typen, Imports und Prüfungen für alle folgenden Zugriffsmuster.
+
+```sh
+dotnet run -c Release
+```
+
+Das Programm prüft erwartete Werte und beendet sich bei Abweichungen mit einem Fehler. Bei Erfolg erscheint:
+
+```text
+PASS: constructors, instance/static members, field access, readonly accessor observation
+```
+
+## Private Konstruktoren und Überladungen
+
+In einer Hilfsklasse sind gewöhnliche C#-Methodenüberladungen erlaubt. Ein Konstruktor-Accessor gibt den deklarierenden Typ zurück und übernimmt die Parameter des Zielkonstruktors:
 
 ```cs
-class Foo
+using System.Runtime.CompilerServices;
+
+internal static class Accessors
 {
-    private Foo() { }
-    private Foo(string value) 
-    {
-        InstanceProperty = value;
-    }
+    [UnsafeAccessor(UnsafeAccessorKind.Constructor)]
+    internal static extern Foo Create();
 
-    private string InstanceProperty { get; set; } = "instance-property";
-    private static string StaticProperty { get; set; } = "static-property";
-
-    private int instanceField = 1;
-    private static int staticField = 2;
-
-    private string InstanceMethod(int value) => $"instance-method:{value}";
-    private static string StaticMethod(int value) => $"static-method:{value}";
+    [UnsafeAccessor(UnsafeAccessorKind.Constructor)]
+    internal static extern Foo Create(string value);
 }
 ```
 
-## Objektinstanzen über private Konstruktoren erstellen
+Diese Deklarationen binden an `Foo()` und `Foo(string)`. Der vollständige Typ `Foo` steht im ZIP. Für lokale Funktionen in Top-Level-Code gelten andere C#-Namensregeln als für Methoden einer Hilfsklasse; das ist keine Einschränkung von `UnsafeAccessor`.
 
-Wie oben beschrieben, beginnen wir mit der Deklaration der `static extern`-Methoden.
+## Instanzmethoden und Eigenschaften
 
--   wir versehen die Methoden mit dem `UnsafeAccessor`-Attribut: `[UnsafeAccessor(UnsafeAccessorKind.Constructor)]`
--   und sorgen dafür, dass die Signaturen der Konstruktoren übereinstimmen. Bei Konstruktoren muss der Rückgabetyp der Typ der Klasse sein, auf die wir umlenken (`Foo`). Auch die Parameterliste muss passen.
--   der Name der extern-Methode muss mit nichts übereinstimmen und keiner bestimmten Konvention folgen. Eine wichtige Beobachtung: Sie können keine zwei `extern static`-Methoden mit gleichem Namen, aber unterschiedlichen Parametern haben, ähnlich wie bei Überladungen, daher müssen Sie für jede Überladung eindeutige Namen vergeben.
-
-Am Ende sollten Sie Folgendes haben:
-
-```cs
-[UnsafeAccessor(UnsafeAccessorKind.Constructor)]
-extern static Foo PrivateConstructor();
-
-[UnsafeAccessor(UnsafeAccessorKind.Constructor)]
-extern static Foo PrivateConstructorWithParameters(string value);
-```
-
-Ab diesem Punkt ist das Erstellen von Objektinstanzen über die privaten Konstruktoren trivial.
-
-```cs
-var instance1 = PrivateConstructor();
-var instance2 = PrivateConstructorWithParameters("bar");
-```
-
-## Private Instanzmethoden aufrufen
-
-Das erste Argument der `extern static`-Methode ist eine Objektinstanz des Typs, der die private Methode enthält. Die übrigen Argumente müssen der Signatur der Zielmethode entsprechen. Auch der Rückgabetyp muss übereinstimmen.
+Der erste Parameter bestimmt den deklarierenden Typ und übergibt die Instanz. Die übrigen Parameter- und Rückgabetypen müssen zum Ziel passen. Eigenschaften werden über ihre Zugriffsmethoden angesprochen:
 
 ```cs
 [UnsafeAccessor(UnsafeAccessorKind.Method, Name = "InstanceMethod")]
-extern static string InstanceMethod(Foo @this, int value);
+internal static extern string CallInstance(Foo instance, int value);
 
-Console.WriteLine(InstanceMethod(instance1, 42)); 
-// Output: "instance-method:42"
-```
-
-## Private Instanz-Properties lesen / schreiben
-
-Ihnen wird auffallen, dass es kein `UnsafeAccessorKind.Property` gibt. Das liegt daran, dass Instanz-Properties, ähnlich wie Instanzmethoden, über ihre Getter- und Setter-Methoden angesprochen werden können:
-
--   `get_{PropertyName}`
--   `set_{PropertyName}`
-
-```cs
 [UnsafeAccessor(UnsafeAccessorKind.Method, Name = "get_InstanceProperty")]
-extern static string InstanceGetter(Foo @this);
+internal static extern string GetProperty(Foo instance);
 
 [UnsafeAccessor(UnsafeAccessorKind.Method, Name = "set_InstanceProperty")]
-extern static void InstanceSetter(Foo @this, string value);
-
-Console.WriteLine(InstanceGetter(instance1));
-// Output: "instance-property"
-
-InstanceSetter(instance1, "bar");
-
-Console.WriteLine(InstanceGetter(instance1));
-// Output: "bar"
+internal static extern void SetProperty(Foo instance, string value);
 ```
 
-## Statische Methoden und Properties
+Das Beispiel prüft das Ergebnis der privaten Methode, liest den anfänglichen Eigenschaftswert, schreibt ihn und liest erneut. Bei Instanzmembern eines Structs muss der erste Parameter mit `ref` übergeben werden.
 
-Sie verhalten sich identisch zu Instanz-Membern, mit dem einzigen Unterschied, dass Sie im `UnsafeAccessor`-Attribut `UnsafeAccessorKind.StaticMethod` angeben müssen. Sie müssen sogar beim Aufruf eine Objektinstanz dieses Typs übergeben.
+## Statische Member
 
-Was ist mit `static`-Klassen? Statische Klassen werden derzeit nicht von `UnsafeAccessor`s unterstützt. Es gibt einen API-Vorschlag, der diese Lücke mit Blick auf .NET 9 schließen soll: [\[API Proposal\]: UnsafeAccessorTypeAttribute for static or private type access](https://github.com/dotnet/runtime/issues/90081)
+Verwende `StaticMethod` oder `StaticField`. Der erste Parameter bestimmt weiterhin den deklarierenden Typ, sein **Wert wird jedoch nicht verwendet** und darf null sein:
 
 ```cs
 [UnsafeAccessor(UnsafeAccessorKind.StaticMethod, Name = "StaticMethod")]
-extern static string StaticMethod(Foo @this, int value);
+internal static extern string CallStatic(Foo? typeMarker, int value);
 
-[UnsafeAccessor(UnsafeAccessorKind.StaticMethod, Name = "get_StaticProperty")]
-extern static string StaticGetter(Foo @this);
-
-[UnsafeAccessor(UnsafeAccessorKind.StaticMethod, Name = "set_StaticProperty")]
-extern static void StaticSetter(Foo @this, string value);
+var result = Accessors.CallStatic(null, 42);
 ```
 
-## Private Felder
+Der deklarierende Typ ist hier keine statische Klasse. C# erlaubt statische Klassen nicht als Parametertyp; daraus folgt also nicht, dass sich jede API einer statischen Klasse mit diesem .NET-8-Muster erreichen lässt.
 
-Felder sind in Bezug auf die Syntax der `extern static`-Methode etwas spezieller. Hier stehen uns keine Getter- und Setter-Methoden mehr zur Verfügung, daher verwenden wir das Schlüsselwort `ref`, um eine Referenz auf das Feld zu erhalten, die wir sowohl zum Lesen als auch zum Schreiben des Werts nutzen können.
+## Felder
+
+Ein Feld-Accessor gibt eine Referenz zurück. Das Beispiel liest und schreibt sowohl Instanz- als auch statische Felder:
 
 ```cs
 [UnsafeAccessor(UnsafeAccessorKind.Field, Name = "instanceField")]
-extern static ref int InstanceField(Foo @this);
+internal static extern ref int InstanceField(Foo instance);
 
 [UnsafeAccessor(UnsafeAccessorKind.StaticField, Name = "staticField")]
-extern static ref int StaticField(Foo @this);
-
-// Read the field value
-var x = InstanceField(instance1);
-var y = StaticField(instance1);
-
-// Update the field value
-InstanceField(instance1) = 3;
-StaticField(instance1) = 4;
+internal static extern ref int StaticField(Foo? typeMarker);
 ```
 
-Möchten Sie das Feature ausprobieren? Sie finden [alle obigen Beispiele auf GitHub](https://github.com/Start-Debugging/dotnet-samples/blob/main/unsafe-accessor/UnsafeAccessor/Program.cs).
+Den Sonderfall schreibgeschützter Felder behandelt das [Readonly-Beispiel](/de/2023/11/c-how-to-update-a-readonly-field-using-unsafeaccessor/). Eine Feldreferenz macht beliebige Änderungen unveränderlichen Zustands nicht zu einem unterstützten Entwurf.
+
+## Grenzen und Leistung
+
+Gesucht wird nur im angegebenen deklarierenden Typ; die Laufzeit durchläuft nicht dessen Vererbungshierarchie. Fehlende Feld- oder Methodenbindungen lösen bei Verwendung Fehler aus. Falsche Signaturen und Constraints können weitere Bindungsfehler verursachen. Unterstützung für generische Parameter kam mit .NET 9 hinzu; generische Beispiele brauchen deshalb eine eigene Versionsprüfung.
+
+Ein Accessor kann Reflection-Suche und die Argumentverarbeitung von `Invoke` vermeiden. Die Zieloperation und der erzeugte Code bleiben jedoch relevant. Der [wiederhergestellte Benchmark](/de/2023/11/net-8-performance-unsafeaccessor-vs-reflection/) enthält direkten Zugriff, gecachte Reflection und einen gecachten Delegaten mit beobachtbarer Arbeit.
+
+Quelle: [Microsofts Referenz zu UnsafeAccessorAttribute](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.unsafeaccessorattribute).

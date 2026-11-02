@@ -1,8 +1,8 @@
 ---
 title: "Nutzen Sie Ihr Android-Smartphone als Webcam für Streamlabs"
-description: "Verwandeln Sie Ihr altes Android-Smartphone mit DroidCam in eine Webcam für Streamlabs OBS, mit Schritt-für-Schritt-Anleitung."
+description: "Ein Android-Smartphone als Webcam in Streamlabs Desktop unter Windows nutzen: aktuelle DroidCam-Downloads und klar gekennzeichnete Classic-Screenshots."
 pubDate: 2019-04-30
-updatedDate: 2020-08-06
+updatedDate: 2026-11-02
 tags:
   - "android"
 lang: "de"
@@ -10,43 +10,55 @@ translationOf: "2019/04/use-your-android-phone-as-a-webcam-for-streamlabs"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-Sie brauchen eine Webcam fürs Streaming? Warum nicht eines der defekten oder veralteten Smartphones nutzen, die zu Hause herumliegen?
 
-Die meisten Smartphones können Bilder und Videos in höherer Auflösung und besserer Qualität aufnehmen als eine typische Webcam. Damit sind sie ein idealer Webcam-Ersatz fürs Streaming, insbesondere wenn Sie eines ungenutzt herumliegen haben.
+Ein Android-Smartphone mit funktionierender Kamera kann das Kamerabild einer Streamlabs-Szene liefern. Die Qualität hängt von Gerät, Licht, Verbindung und Einstellungen ab; ein altes Handy ist nicht automatisch besser als eine Webcam.
 
-Vor Kurzem hatte ich ein Google Pixel 2 XL mit defektem Display. Lange Geschichte, kurz: Ich habe das Display zerbrochen, ersetzen lassen, und 8 Monate später ist das Ersatzdisplay ausgefallen. Wegen der Kosten und fehlender Garantie habe ich entschieden, einen Schlussstrich zu ziehen und das Display nicht erneut zu tauschen. Übrig blieb ein defektes Smartphone, aber mit einer einwandfrei funktionierenden, großartigen Kamera.
+## Passende App und passenden Desktop-Client wählen
 
-Legen wir los. Um Ihr Android-Smartphone als Webcam zu nutzen, brauchen Sie zwei Dinge:
+Die Screenshots zeigen **DroidCam Classic und die ältere Streamlabs-OBS-Oberfläche unter Windows**. Das ursprüngliche Android-Paket `com.dev47apps.droidcam` lieferte am 2. November 2026 bei Prüfungen mit US-, rumänischen und deutschen Google-Play-Regionsparametern 404. Das beweist weder weltweite Entfernung noch die Verfügbarkeit für jedes bestehende Konto oder Gerät.
 
--   [DroidCam Wireless Webcam](https://play.google.com/store/apps/details?id=com.dev47apps.droidcam) für Android
--   und die Client-App für Windows oder Linux, die Sie [hier herunterladen](http://www.dev47apps.com/) können
+Für neue Installationen verlinkt der Herausgeber auf [droidcam.app](https://droidcam.app/) aktuell [DroidCam Webcam & OBS Camera von Dev47Apps](https://play.google.com/store/apps/details?id=com.dev47apps.obsdroidcam), Paket `com.dev47apps.obsdroidcam`. Dies ist eine andere Android-App, keine Umbenennung des Classic-Links. Laut [offizieller FAQ](https://droidcam.app/help/) sind neue und klassische Android-App/Client getrennte Varianten. Verwende passende Paare; die Classic-Screenshots erklären nicht die neue Oberfläche.
 
-Laden Sie zunächst die App auf Ihr Android-Smartphone und installieren Sie sie. Gehen Sie nach der Installation den Setup-Assistenten durch, erteilen Sie der App die nötigen Berechtigungen (Audio und Video aufzeichnen), und fertig. Die App zeigt nun Informationen wie die IP-Adresse und den Port, auf dem das Video gestreamt wird. Halten Sie diese bereit, wir brauchen sie im nächsten Schritt.
+Diese Anleitung gilt für **Windows**. Der [aktuelle DroidCam-Client](https://droidcam.app/windows/) unterstützt Windows 10/11; deine Streamlabs-Version muss zusätzlich deren [Systemanforderungen](https://streamlabs.com/content-hub/post/streamlabs-desktop-system-requirements) erfüllen. Ein DroidCam-Linux-Client macht daraus keine Anleitung für Streamlabs Desktop unter Linux. macOS- und OBS-Studio-Plugin-Setups sind andere Verfahren; ein OBS-Studio-Plugin ist nicht mit einer Streamlabs-Quelle gleichzusetzen.
+
+## Aktuelle Einrichtung unter Windows
+
+1. Installiere die aktuelle Android-App von Dev47Apps über den geprüften Link und erlaube Kamerazugriff. Mikrofonzugriff ist nur nötig, wenn du Telefonton verwenden möchtest.
+2. Installiere den passenden Windows-Client von der [offiziellen Download- und Einrichtungsseite](https://droidcam.app/windows/).
+3. Verbinde Handy und Rechner mit demselben Netzwerk. Öffne die App, wähle im Client **Add > DroidCam**, aktualisiere die Geräteliste und verbinde das Handy. Für USB oder Erkennungsprobleme nutze die Herstellerhilfe.
+4. Öffne Streamlabs Desktop nach der Treiberinstallation neu. Füge gemäß der [Quellen-Anleitung](https://streamlabs.com/content-hub/post/quick-start-guide-setting-up-streamlabs-desktop-for-streaming) ein **Video Capture Device** hinzu und wähle die vom Client bereitgestellte Kamera. Die aktuelle Windows-Anleitung nennt sie **DroidCam Video**; Classic kann **DroidCam Source 2/3** anzeigen.
+5. Prüfe das Vorschaubild, passe die Quelle an und erstelle eine kurze Testaufnahme. Prüfe aktivierten Ton separat; ein funktionierendes Bild garantiert keine korrekte Mikrofonzuordnung.
+
+## Classic unter Windows: archivierte Screenshots
+
+Diese Bilder erhalten die ursprüngliche Anleitung für vorhandene, zueinander passende Classic-Installationen. Laut [Classic-Verbindungsanleitung](https://www.dev47apps.com/droidcam/connect/) befinden sich Handy und Rechner im selben Netzwerk; der Client nutzt die angezeigte WLAN-IP und den Port. Der [Hersteller dokumentiert weiterhin den Classic-Windows-Client](https://www.dev47apps.com/droidcam/windows/).
+
+Die klassische Android-App zeigt die Verbindungsadresse.
 
 ![DroidCam unter Android zeigt die WLAN-IP-Adresse und den Port für die Verbindung mit dem Desktop-Client.](/wp-content/uploads/2019/04/image-7.png)
 
-Als Nächstes laden Sie den Client für Windows oder Linux herunter und installieren ihn. Nach der Installation starten Sie die App und tragen die IP-Adresse und Portnummer genauso ein, wie sie in der Android-Anwendung erscheinen.
+Trage Adresse und Port in den klassischen Windows-Client ein.
 
 ![WLAN-Verbindungsdialog von DroidCam Client mit eingetragener Geräte-IP und Port sowie aktiviertem Video und Audio.](/wp-content/uploads/2019/04/image-8.png)
 
-Wenn Sie soweit sind, klicken Sie auf Start. Und voilà, Ihre brandneue Webcam!
+Starte die Verbindung und prüfe das Vorschaubild.
 
 ![DroidCam Client zeigt das Kamerabild des verbundenen Smartphones.](/wp-content/uploads/2019/04/image-9.png)
 
-Der letzte Schritt ist, die Videoquelle in Streamlabs hinzuzufügen. Öffnen Sie dazu Streamlabs OBS und klicken Sie auf +, um eine neue Source hinzuzufügen.
+Die damalige Streamlabs-Oberfläche fügt ein Video Capture Device hinzu.
 
 ![Streamlabs-Dialog Add Source mit unterstrichener Option Video Capture Device.](/wp-content/uploads/2019/04/image-5-1024x555.png)
 
-Wählen Sie im erscheinenden Popup Video Capture Device und klicken Sie auf Add Source. Im nächsten Bildschirm einfach Add New Source anklicken. Nun können Sie an den Einstellungen für das Gerät spielen. Wählen Sie zunächst aus dem Device-Dropdown DroidCam aus; in meinem Fall heißt es DroidCam Source. Spielen Sie dann mit den Einstellungen, bis Sie das gewünschte Ergebnis erhalten; bei mir haben die Standardwerte gut funktioniert. Wenn Sie fertig sind, klicken Sie auf Done.
+Diese Installation verwendete DroidCam Source 3; entscheidend ist das von deinem Client bereitgestellte Gerät.
 
 ![Streamlabs-Einstellungen für Video Capture Device mit ausgewählter DroidCam Source 3 und Kameravorschau.](/wp-content/uploads/2019/04/image-10.png)
 
-Jetzt können Sie die Videoquelle in Ihrer Szene verschieben und nach Belieben skalieren. Sobald Sie soweit sind, können Sie mit dem Streaming beginnen.
+Positioniere und skaliere das Kamerabild in der Szene.
 
 ![Streamlabs-Szene mit dem Smartphone-Kamerabild als kleinem Overlay unten rechts in der Bildschirmaufnahme.](/wp-content/uploads/2019/04/image-11-1024x555.png)
 
-## Tipp
+Eine stabile Handyhalterung auf Augenhöhe erleichtert den Bildausschnitt. Wähle eine zum Gerät passende Halterung; die frühere Erwähnung des Huawei AF14 war ein persönlicher Kauf, keine aktuelle Preis- oder Verfügbarkeitsempfehlung.
 
-Ein Problem bei der Nutzung von Smartphones als Webcam ist, sie in einer stabilen Position zu halten, möglichst in einer bestimmten Höhe und Neigung. Das lässt sich mit einem Smartphone-Stativ lösen.
+Ein weiteres Szenenelement beschreibt die [Streamlabs-Umfragen-Anleitung](/de/2020/08/polls-for-streamlabs-interact-with-your-viewers/).
 
-Ich habe mich am Ende für ein Huawei AF14 entschieden, weil es die günstigste Option war, die meine Anforderungen erfüllt. Sobald Sie das Stativ haben, stellen Sie es in einem für Sie angenehmen Winkel und in einer Höhe nahe Ihrer Augenhöhe auf.
+**Korrektur vom 2. November 2026:** Classic und aktuelle DroidCam-App getrennt, den nicht erreichbaren Classic-Eintrag durch ausdrücklich gekennzeichnete aktuelle Downloadhinweise ersetzt und die Streamlabs-Anleitung auf Windows begrenzt. Links und Herstelleranweisungen wurden geprüft; ein Handy-/Windows-Hardwaretest wurde für dieses Update nicht durchgeführt.

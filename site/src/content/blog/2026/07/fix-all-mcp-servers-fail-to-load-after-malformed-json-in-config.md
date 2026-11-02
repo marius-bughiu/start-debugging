@@ -1,6 +1,7 @@
 ---
 title: "Fix: all MCP servers fail to load after one malformed-JSON syntax error in the config"
-description: "One trailing comma or unescaped Windows path in your MCP config makes every server vanish, not just the broken one. Validate the JSON, fix the five usual suspects, restart."
+description: "Validate the MCP config file when several servers disappear after an edit. Check JSON syntax, client-specific schemas, scope and encoding without assuming every client fails alike."
+updatedDate: 2026-11-02
 pubDate: 2026-07-17
 template: error-page
 tags:
@@ -10,203 +11,113 @@ tags:
   - "ai-agents"
 ---
 
-If every one of your MCP servers disappeared at once after you edited the config to add a new one, the config file is not valid JSON. A single trailing comma, an unescaped backslash in a Windows path, or a `//` comment invalidates the whole document, so the client cannot read any server entry, including the ones that worked yesterday. Validate the file (`python -m json.tool < config.json`), fix the syntax, and fully restart the app.
+If several MCP servers disappear immediately after a configuration edit, validate the file you changed before debugging each server. A syntax error can prevent a strict JSON parser from producing any configuration object. That is a strong lead, not proof that every missing server shares the same cause.
 
-The rest of this post is the full triage. It is tested against Claude Code 2.1.x, Claude Desktop 1.x, and Cursor 3.11, all of which load MCP servers from a plain JSON file and all of which fail the same way. The behavior is not version-dependent: JSON has no partial-parse mode, so a syntax error anywhere in the file takes down every server defined in it.
+> **Correction — November 2, 2026:** Removed unsupported cross-client/version testing claims and the unpublished MCP reference. Corrected the broken syntax examples and the distinction between valid JSON, valid client configuration and a running server. The JSON examples were checked locally with Node and Python; client reload behavior was not reproduced.
 
-## The error in context
+## Check the file the client actually uses
 
-The symptom is that `/mcp` in Claude Code shows an empty list, `claude mcp list` returns nothing (or omits the servers you just added), and Claude Desktop shows no tools and no error dialog at all. Nothing tells you the file failed to parse. That silence is the trap: you assume the new server is misconfigured and start debugging its `command`, when in fact the parser never got far enough to read a single entry.
+For Claude Code's ordinary MCP scopes, the [official configuration documentation](https://code.claude.com/docs/en/mcp#mcp-installation-scopes) describes:
 
-Run the file through any JSON parser and you see the real error. With Python:
-
-```bash
-# Works on any OS with Python 3.x installed
-python -m json.tool < claude_desktop_config.json
-```
-
-```
-Expecting property name enclosed in double quotes: line 8 column 3 (char 142)
-```
-
-Or with Node, which ships the same parser the MCP clients use:
-
-```bash
-# Node 18+; the message points at the byte offset of the first bad token
-node -e "JSON.parse(require('fs').readFileSync('.mcp.json','utf8'))"
-```
-
-```
-SyntaxError: Expected ',' or '}' after property value in JSON at position 142
-```
-
-That byte offset is the whole answer. Everything after it, including every server you thought was fine, is unreachable.
-
-## Why one typo takes down every server
-
-MCP clients store all their server definitions in a single JSON object under one `mcpServers` key:
-
-```json
-{
-  "mcpServers": {
-    "github": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-github"] },
-    "filesystem": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-filesystem", "/data"] }
-  }
-}
-```
-
-JSON is parsed as one atomic document. There is no line-by-line recovery and no "skip the bad entry and keep going." The moment the parser hits an illegal token it throws, and the client is left with no config object to iterate, so it registers zero servers. This is different from a runtime failure, where one server's `command` binary is missing or the process crashes on boot. In that case the JSON parses fine, the other servers load normally, and only the broken one shows as failed. If **all** of them vanished together, suspect the file, not the servers.
-
-Knowing which failure mode you are in saves the most time. A runtime crash gives you an error against a named server (see [MCP error -32000: Connection closed](/2026/06/fix-mcp-error-32000-connection-closed-in-claude-code/) for that path). A parse error gives you nothing but an empty list.
-
-## Where the config file actually lives
-
-Editing the wrong file produces the same empty-list symptom, so confirm the path before you touch anything.
-
-**Claude Desktop** reads one file:
-
-- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
-- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-
-**Claude Code** has three scopes, documented in the [MCP reference](https://code.claude.com/docs/en/mcp):
-
-| Scope | Stored in | Loads in |
+| Scope | File | Availability |
 | --- | --- | --- |
-| Local (default) | `~/.claude.json` | Current project only |
-| Project | `.mcp.json` in the project root | Current project, shared via git |
-| User | `~/.claude.json` | All your projects |
+| Local | Project-specific entries within `~/.claude.json` | You, in that project |
+| Project | `.mcp.json` in the project | Shared project configuration, subject to approval/trust |
+| User | `~/.claude.json` | Your projects |
 
-A syntax error in `~/.claude.json` is the worst case: it can knock out your local- and user-scoped servers across every project at once, because they all live in that one file.
+For duplicate names, local takes precedence over project, then user; managed policies can override normal configuration. A project config that has not been approved is different from a file that cannot be parsed.
 
-**Cursor** reads two files, both using the same `mcpServers` key:
+[Cursor's MCP documentation](https://cursor.com/docs/mcp) lists `.cursor/mcp.json` for a project and `~/.cursor/mcp.json` globally. Claude Desktop's [local-server setup guide](https://modelcontextprotocol.io/docs/2026-07-28/develop/connect-local-servers) describes opening its configuration through the app's developer settings. Its documented manual paths include `%APPDATA%\Claude\claude_desktop_config.json` on Windows and `~/Library/Application Support/Claude/claude_desktop_config.json` on macOS.
 
-- Global: `~/.cursor/mcp.json`
-- Project: `.cursor/mcp.json`
+MCP itself does not mandate these file names, schemas or reload behavior. A syntax error in one source does not necessarily disable servers supplied by another scope, plugin or managed configuration.
 
-If you edited `.cursor/mcp.json` but Cursor is loading the global one, or vice versa, the change looks like it did nothing. Check both.
+## Validate without printing the entire configuration
 
-## The five syntax errors that cause this
+From the directory containing a Claude Code project config:
 
-In order of how often they bite, here is what actually breaks the parse.
+```bash
+node -e "JSON.parse(require('fs').readFileSync('.mcp.json','utf8')); console.log('JSON syntax OK')"
+```
 
-### 1. A trailing comma
+Or, for the ordinary syntax examples below:
 
-JSON forbids a comma after the last element of an object or array. Every other language you write all day allows it, so the muscle memory is wrong.
+```bash
+python3 -m json.tool .mcp.json > /dev/null
+```
+
+The Node command prints its success message only after parsing the complete file. Python exits nonzero on the malformed examples. Error wording and offsets vary; an offset is not necessarily a byte offset for Unicode input.
+
+A strict parser is a useful portability check. If a client explicitly supports JSONC or another extension, follow that client's documented grammar rather than assuming its parser behaves identically to `JSON.parse`.
+
+## Recognize the common syntax errors
+
+These are intentionally **invalid** snippets. They belong in a test fixture, not a working config.
+
+A trailing comma:
+
+```text
+{"mcpServers": {"demo": {"command": "node", "args": ["server.mjs"]},}}
+```
+
+A comment in strict JSON:
+
+```text
+{"mcpServers": { /* note */ "demo": {"command": "node"}}}
+```
+
+A single-quoted key:
+
+```text
+{'mcpServers': {}}
+```
+
+A missing comma:
+
+```text
+{"command": "node" "args": ["server.mjs"]}
+```
+
+An unescaped Windows path:
+
+```text
+{"args": ["C:\Users\me\server.mjs"]}
+```
+
+In a valid JSON string, double the backslashes. Here is a complete example with no comments or trailing commas:
 
 ```json
 {
   "mcpServers": {
-    "github": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-github"] },
-    "filesystem": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-filesystem", "/data"] },   // <- kills the whole file
+    "demo": {
+      "type": "stdio",
+      "command": "C:\\Program Files\\nodejs\\node.exe",
+      "args": ["C:\\Users\\me\\server.mjs"]
+    }
   }
 }
 ```
 
-Delete the comma after the last server entry. This is the number-one cause, and it usually appears exactly when you add a second or third server and comma-terminate every line out of habit.
+Keys and string delimiters must use straight double quotes (`"`), not typographic quotation marks (`“` and `”`). Keep explanatory comments outside the JSON unless the client documents support for them. Adding an arbitrary `_comment` field may satisfy the parser while violating the client's schema.
 
-### 2. An unescaped backslash in a Windows path
+The [JSON standard](https://www.rfc-editor.org/rfc/rfc8259) defines the syntax; it does not define MCP client settings.
 
-`\` is the JSON escape character, so `"C:\Users\me\data"` contains three invalid escape sequences (`\U`, `\m`, `\d`). The parser rejects the string.
+## A successful parse is only the first check
 
-```json
-// Broken: \U is not a valid JSON escape
-"args": ["-y", "@modelcontextprotocol/server-filesystem", "C:\Users\me\data"]
+Fix the first reported syntax error and rerun validation. If parsing then succeeds, the syntax check is complete; there is no hidden later syntax error that the same parser skipped. Semantic problems can still remain. For example, `{"mcpServers": []}` is valid JSON but is not the expected object of named server entries.
 
-// Fix A: double every backslash
-"args": ["-y", "@modelcontextprotocol/server-filesystem", "C:\\Users\\me\\data"]
+Next verify the expected object shape, field types, executable or URL, and required variables. An existing file path does not guarantee execute permission, and a syntactically valid URL does not guarantee an HTTP MCP endpoint.
 
-// Fix B (simpler): use forward slashes, which Windows accepts
-"args": ["-y", "@modelcontextprotocol/server-filesystem", "C:/Users/me/data"]
+Save the file in the encoding the client expects, normally UTF-8. PowerShell encoding defaults differ between Windows PowerShell and modern PowerShell; do not assume every `Set-Content` invocation writes UTF-16. Inspect the actual file if encoding is in doubt.
+
+## Reload and confirm the effective configuration
+
+Use the client's documented reload or restart flow after saving. A reconnect action retries a server connection; it should not be assumed to reload every configuration source. For Claude Code, starting a fresh session is a straightforward way to load the edited project configuration, then inspect:
+
+```bash
+claude mcp get demo
+claude mcp list
 ```
 
-Forward slashes are the better habit because they survive a copy-paste without silently re-breaking. This is a Windows-only failure, and it overlaps with the `cmd /c` wrapping that Windows also needs for `npx`; if you are chasing Windows-specific MCP breakage, [MCP servers stop working after a Claude Desktop update on Windows](/2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows/) covers the adjacent path-moved trap.
+Also check `/mcp` in the session that will use the server. If only one server fails after the file parses, read its launch or connection error. If all entries from this file remain missing, check scope, approval, managed policy and the file location before changing server code.
 
-### 3. Comments
-
-JSON has no comments. A `//` note or a `/* ... */` block that you pasted from a tutorial (many of which use JSONC) fails the parse.
-
-```json
-{
-  "mcpServers": {
-    // add your servers below   <- illegal, JSON is not JSONC
-    "github": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-github"] }
-  }
-}
-```
-
-Strip every comment. If you want to leave a note, park it in an unused string key like `"_comment": "..."`, which is ugly but at least parses.
-
-### 4. Single quotes or smart quotes
-
-JSON strings and keys must use straight double quotes. Single quotes fail outright. Curly "smart" quotes (`"` and `"`) fail too, and they are invisible in most editors, so they are the hardest to spot. They creep in when you copy config out of a chat window, a Word doc, or a blog that ran text through a typographic filter.
-
-```json
-// All three of these break the parse
-'github': { ... }
-"github": { 'command': "npx" }
-"github": { "command": "npx" }   <- the quotes here are curly, not straight
-```
-
-If validation reports an error on a line that looks correct, retype the quotes by hand rather than trusting your eyes.
-
-### 5. A missing comma between entries
-
-The mirror image of the trailing-comma problem: two adjacent entries with no comma between them.
-
-```json
-{
-  "mcpServers": {
-    "github": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-github"] }   <- missing comma here
-    "filesystem": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-filesystem", "/data"] }
-  }
-}
-```
-
-The parser reports this as "expected `,` or `}`" at the start of the second entry.
-
-## The fix, step by step
-
-1. **Locate the right file** using the tables above. Do not guess; on Windows especially, `%APPDATA%` and OneDrive-redirected home folders trip people up.
-
-2. **Validate before you restart.** This is the whole game. Pick whichever is already on your machine:
-
-   ```bash
-   # Python (any OS)
-   python -m json.tool < claude_desktop_config.json
-
-   # Node 18+
-   node -e "JSON.parse(require('fs').readFileSync('.mcp.json','utf8'))"
-
-   # jq, if installed
-   jq . .mcp.json
-   ```
-
-   On Windows PowerShell, `Get-Content .\.mcp.json -Raw | ConvertFrom-Json` does the same and prints the parse error if there is one. A silent success means the file is valid JSON.
-
-3. **Fix the first error, then re-validate.** Parsers stop at the first bad token, so a clean run after one fix does not prove the file is clean; there may be a second error further down. Loop until the validator is silent.
-
-4. **Check the file encoding.** If PowerShell wrote the file with `Set-Content` or `Out-File` without `-Encoding utf8`, it may be UTF-16 with a byte-order mark, which some parsers reject before they read a single character. Re-save as UTF-8 without BOM.
-
-5. **Fully restart the client.** Claude Desktop must be quit from the tray, not just closed to the taskbar. Cursor needs a full Quit and relaunch, not a window reload. Claude Code re-reads `.mcp.json` on the next launch, or you can reconnect in-session with `/mcp`.
-
-6. **Confirm.** Run `claude mcp list` (Claude Code), open the tools menu (Claude Desktop), or open View > Output and select "MCP" from the dropdown (Cursor). All your servers should be back, not just the new one.
-
-## Reading the logs when validation passes but servers are still gone
-
-If the JSON validates cleanly and the servers still do not appear, you are no longer in a parse-error situation; you have a runtime or scope problem. Two quick checks:
-
-- **Claude Desktop logs**, on Windows at `%APPDATA%\Claude\logs\` and on macOS at `~/Library/Logs/Claude/`, contain `mcp.log` plus a per-server `mcp-server-<name>.log`. A parse failure leaves the main log noting it could not read the config; a runtime failure leaves a stack trace in the per-server log.
-- **Wrong scope in Claude Code.** A server you added with `--scope local` will not show up when you expected a project server, and vice versa. `claude mcp get <name>` tells you where it is configured.
-
-From there the problem is a specific server, not the file, and the fix depends on the transport and platform. If a stdio server hangs or dies on launch, [the MCP server stdio hang](/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code/) and the `-32000` triage linked above are the next stops. If you have simply configured too many servers and are hitting tool limits rather than a load failure, see [how to reduce the number of MCP tools Claude loads](/2026/05/how-to-reduce-the-number-of-mcp-tools-claude-loads/).
-
-## The habit that prevents all of this
-
-Keep the config open in an editor with JSON validation on (VS Code flags every one of the errors above as you type), and run the file through a parser before you restart the app. The five-second `python -m json.tool` check is faster than the restart-and-stare loop it replaces, and it turns a silent, all-servers-gone failure into a message with a line number. Choosing stdio over HTTP does not change this, and neither does the client; the file is JSON, and JSON is all-or-nothing. For the broader picture of which transport to pick once your config parses, [MCP stdio vs HTTP vs SSE transport](/2026/07/mcp-stdio-vs-http-vs-sse-transport-which-to-choose/) lays out the tradeoffs.
-
-## Sources
-
-- [Connect Claude Code to tools via MCP](https://code.claude.com/docs/en/mcp) - config file locations and the three installation scopes.
-- [Model Context Protocol specification, 2026-03-26](https://modelcontextprotocol.io/specification/2026-03-26) - the protocol these clients implement.
-- [MCP servers in .claude/.mcp.json not loading properly, anthropics/claude-code issue #5037](https://github.com/anthropics/claude-code/issues/5037) - real-world reports of the empty-list symptom.
-- [The JSON specification, RFC 8259](https://www.rfc-editor.org/rfc/rfc8259) - the grammar that forbids trailing commas and comments.
+A process failure belongs in [MCP connection-closed troubleshooting](/2026/06/fix-mcp-error-32000-connection-closed-in-claude-code/); a process that runs but never completes discovery belongs in [the stdio guide](/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code/). JSON syntax, client configuration and protocol operation are separate checks.

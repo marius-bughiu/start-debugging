@@ -1,8 +1,8 @@
 ---
 title: "C# UnsafeAccessor: приватные члены без рефлексии (.NET 8)"
-description: "Используйте атрибут `[UnsafeAccessor]` в .NET 8, чтобы читать приватные поля и вызывать приватные методы без накладных расходов: без рефлексии и с полной поддержкой AOT."
+description: "Доступ к известным приватным конструкторам, методам, свойствам и полям через UnsafeAccessor в .NET 8: проверенные примеры и ограничения версий."
 pubDate: 2023-10-31
-updatedDate: 2023-11-05
+updatedDate: 2026-11-02
 tags:
   - "dotnet"
   - "dotnet-8"
@@ -11,127 +11,91 @@ translationOf: "2023/10/unsafe-accessor"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-Рефлексия позволяет получать информацию о типах во время выполнения и с её помощью обращаться к приватным членам класса. Это особенно полезно при работе с классами, которые вы не контролируете — например, поставленными сторонним пакетом. Несмотря на свою мощь, рефлексия очень медленна, и это одна из главных причин, по которым её стараются избегать. Теперь это в прошлом.
+`UnsafeAccessorAttribute`, появившийся в .NET 8, связывает метод `static extern` с известным недоступным членом. Реализацию предоставляет среда выполнения. Это полезно, когда объявляющий тип и сигнатура известны при компиляции; для поиска членов во время выполнения рефлексия по-прежнему нужна.
 
-В .NET 8 появился новый способ обращения к приватным членам без накладных расходов — через атрибут `UnsafeAccessor`. Атрибут можно применить к методу `extern static`. Реализацию метода предоставит среда выполнения на основе информации из атрибута и сигнатуры метода. Если по предоставленной информации не найдено совпадение, вызов метода выбросит либо `MissingFieldException`, либо `MissingMethodException`.
+**Исправление — 2 ноября 2026 года:** исходная статья ошибочно исключала перегрузки и требовала экземпляр для статического доступа. Ниже это исправлено. Восстановленный пример выполнен на .NET 8.0.33; производительность рассматривается отдельно, без обещания универсальных нулевых накладных расходов.
 
-Рассмотрим несколько примеров использования `UnsafeAccessor`. Возьмём следующий класс с приватными членами:
+## Скачать полный пример
+
+[Скачайте исполняемый исходный проект ZIP](/examples/unsafe-accessor.zip) или откройте [инструкции](/examples/#unsafe-accessor). Включены проект, объявляющие типы, импорты и проверки всех приведённых способов доступа.
+
+```sh
+dotnet run -c Release
+```
+
+Программа проверяет ожидаемые значения и завершается с ошибкой при несовпадении. Успешный запуск выводит:
+
+```text
+PASS: constructors, instance/static members, field access, readonly accessor observation
+```
+
+## Приватные конструкторы и перегрузки
+
+В классе-помощнике разрешены обычные перегрузки методов C#. Аксессор конструктора возвращает объявляющий тип и принимает параметры целевого конструктора:
 
 ```cs
-class Foo
+using System.Runtime.CompilerServices;
+
+internal static class Accessors
 {
-    private Foo() { }
-    private Foo(string value) 
-    {
-        InstanceProperty = value;
-    }
+    [UnsafeAccessor(UnsafeAccessorKind.Constructor)]
+    internal static extern Foo Create();
 
-    private string InstanceProperty { get; set; } = "instance-property";
-    private static string StaticProperty { get; set; } = "static-property";
-
-    private int instanceField = 1;
-    private static int staticField = 2;
-
-    private string InstanceMethod(int value) => $"instance-method:{value}";
-    private static string StaticMethod(int value) => $"static-method:{value}";
+    [UnsafeAccessor(UnsafeAccessorKind.Constructor)]
+    internal static extern Foo Create(string value);
 }
 ```
 
-## Создание экземпляров объектов через приватные конструкторы
+Эти объявления связываются с `Foo()` и `Foo(string)`. Полный тип `Foo` находится в ZIP. У локальных функций верхнего уровня и методов класса-помощника разные правила имён C#; это не ограничение `UnsafeAccessor`.
 
-Как описано выше, начинаем с объявления методов `static extern`.
+## Методы экземпляра и свойства
 
--   помечаем методы атрибутом `UnsafeAccessor`: `[UnsafeAccessor(UnsafeAccessorKind.Constructor)]`
--   и подбираем сигнатуры конструкторов. В случае с конструкторами тип возвращаемого значения должен совпадать с типом класса, на который мы перенаправляем (`Foo`). Список параметров тоже должен совпадать.
--   имя extern-метода ни с чем не обязано совпадать и не должно следовать какой-либо конвенции. Один важный момент: нельзя иметь два метода `extern static` с одинаковым именем, но разными параметрами — это похоже на перегрузку, поэтому для каждой перегрузки нужно указывать уникальное имя.
-
-В итоге у вас должно получиться так:
-
-```cs
-[UnsafeAccessor(UnsafeAccessorKind.Constructor)]
-extern static Foo PrivateConstructor();
-
-[UnsafeAccessor(UnsafeAccessorKind.Constructor)]
-extern static Foo PrivateConstructorWithParameters(string value);
-```
-
-После этого создание экземпляров через приватные конструкторы становится тривиальным.
-
-```cs
-var instance1 = PrivateConstructor();
-var instance2 = PrivateConstructorWithParameters("bar");
-```
-
-## Вызов приватных методов экземпляра
-
-Первым аргументом метода `extern static` будет экземпляр объекта типа, содержащего приватный метод. Остальные аргументы должны соответствовать сигнатуре целевого метода. Тип возвращаемого значения тоже должен совпадать.
+Первый параметр задаёт объявляющий тип и передаёт экземпляр. Остальные типы параметров и результата должны соответствовать цели. Доступ к свойствам осуществляется через методы-аксессоры:
 
 ```cs
 [UnsafeAccessor(UnsafeAccessorKind.Method, Name = "InstanceMethod")]
-extern static string InstanceMethod(Foo @this, int value);
+internal static extern string CallInstance(Foo instance, int value);
 
-Console.WriteLine(InstanceMethod(instance1, 42)); 
-// Output: "instance-method:42"
-```
-
-## Чтение / запись приватных свойств экземпляра
-
-Вы заметите, что нет `UnsafeAccessorKind.Property`. Это потому, что, как и методы экземпляра, свойства экземпляра можно вызывать через их методы getter и setter:
-
--   `get_{PropertyName}`
--   `set_{PropertyName}`
-
-```cs
 [UnsafeAccessor(UnsafeAccessorKind.Method, Name = "get_InstanceProperty")]
-extern static string InstanceGetter(Foo @this);
+internal static extern string GetProperty(Foo instance);
 
 [UnsafeAccessor(UnsafeAccessorKind.Method, Name = "set_InstanceProperty")]
-extern static void InstanceSetter(Foo @this, string value);
-
-Console.WriteLine(InstanceGetter(instance1));
-// Output: "instance-property"
-
-InstanceSetter(instance1, "bar");
-
-Console.WriteLine(InstanceGetter(instance1));
-// Output: "bar"
+internal static extern void SetProperty(Foo instance, string value);
 ```
 
-## Статические методы и свойства
+Пример проверяет результат приватного метода, читает исходное значение свойства, изменяет его и читает снова. Для членов экземпляра структуры первый параметр нужно передавать по `ref`.
 
-Они ведут себя точно так же, как члены экземпляра, с единственным отличием: в атрибуте `UnsafeAccessor` нужно указать `UnsafeAccessorKind.StaticMethod`. При вызове необходимо даже передавать экземпляр объекта этого типа.
+## Статические члены
 
-А что насчёт `static`-классов? Статические классы пока не поддерживаются `UnsafeAccessor`. Существует предложение по API, нацеленное на закрытие этого пробела в .NET 9: [\[API Proposal\]: UnsafeAccessorTypeAttribute for static or private type access](https://github.com/dotnet/runtime/issues/90081)
+Используйте `StaticMethod` или `StaticField`. Первый параметр по-прежнему определяет объявляющий тип, но **его значение не используется** и может быть null:
 
 ```cs
 [UnsafeAccessor(UnsafeAccessorKind.StaticMethod, Name = "StaticMethod")]
-extern static string StaticMethod(Foo @this, int value);
+internal static extern string CallStatic(Foo? typeMarker, int value);
 
-[UnsafeAccessor(UnsafeAccessorKind.StaticMethod, Name = "get_StaticProperty")]
-extern static string StaticGetter(Foo @this);
-
-[UnsafeAccessor(UnsafeAccessorKind.StaticMethod, Name = "set_StaticProperty")]
-extern static void StaticSetter(Foo @this, string value);
+var result = Accessors.CallStatic(null, 42);
 ```
 
-## Приватные поля
+Здесь объявляющий тип — нестатический класс. C# не допускает статические классы в качестве типов параметров; нельзя заключать, что этим приёмом .NET 8 доступен любой API статического класса.
 
-С полями всё немного особеннее, что касается синтаксиса метода `extern static`. У нас больше нет доступных методов getter и setter, поэтому вместо них используем ключевое слово `ref`, чтобы получить ссылку на поле, которую можно использовать как для чтения, так и для записи значения.
+## Поля
+
+Аксессор поля возвращает ссылку. Пример читает и изменяет поля экземпляра и статические поля:
 
 ```cs
 [UnsafeAccessor(UnsafeAccessorKind.Field, Name = "instanceField")]
-extern static ref int InstanceField(Foo @this);
+internal static extern ref int InstanceField(Foo instance);
 
 [UnsafeAccessor(UnsafeAccessorKind.StaticField, Name = "staticField")]
-extern static ref int StaticField(Foo @this);
-
-// Read the field value
-var x = InstanceField(instance1);
-var y = StaticField(instance1);
-
-// Update the field value
-InstanceField(instance1) = 3;
-StaticField(instance1) = 4;
+internal static extern ref int StaticField(Foo? typeMarker);
 ```
 
-Хотите попробовать этот функционал? Все приведённые выше примеры можно [найти на GitHub](https://github.com/Start-Debugging/dotnet-samples/blob/main/unsafe-accessor/UnsafeAccessor/Program.cs).
+Для readonly-полей см. [отдельный пример](/ru/2023/11/c-how-to-update-a-readonly-field-using-unsafeaccessor/). Получение ссылки на поле не делает произвольную мутацию неизменяемого состояния поддерживаемым подходом.
+
+## Ограничения и производительность
+
+Поиск выполняется только в указанном объявляющем типе; иерархия наследования не обходится. Отсутствующие привязки к полям и методам вызывают ошибку при использовании. Неверные сигнатуры и ограничения могут приводить к другим ошибкам связывания. Поддержка generic-параметров появилась в .NET 9, поэтому для таких примеров нужна отдельная проверка версии.
+
+Аксессор может избежать поиска через рефлексию и обработки аргументов `Invoke`, но стоимость целевой операции и сгенерированного кода сохраняется. [Восстановленный benchmark](/ru/2023/11/net-8-performance-unsafeaccessor-vs-reflection/) включает прямой вызов, кешированную рефлексию и кешированный делегат с наблюдаемой работой.
+
+Источник: [справочник Microsoft по UnsafeAccessorAttribute](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.unsafeaccessorattribute).

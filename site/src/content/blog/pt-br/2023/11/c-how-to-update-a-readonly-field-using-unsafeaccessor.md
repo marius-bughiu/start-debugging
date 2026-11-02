@@ -1,7 +1,8 @@
 ---
-title: "C# como atualizar um campo readonly usando UnsafeAccessor"
-description: "Aprenda a atualizar um campo readonly em C# usando UnsafeAccessor, uma alternativa à reflexão sem a penalidade de desempenho. Disponível no .NET 8."
+title: "C#: como alterar um campo readonly com UnsafeAccessor"
+description: "Exemplo executável .NET 8 de um campo readonly exposto por UnsafeAccessor, com limites explícitos de mutação e comportamento observado."
 pubDate: 2023-11-02
+updatedDate: 2026-11-02
 tags:
   - "csharp"
   - "dotnet"
@@ -11,40 +12,39 @@ translationOf: "2023/11/c-how-to-update-a-readonly-field-using-unsafeaccessor"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-Os unsafe accessors podem ser usados para acessar membros privados de uma classe, exatamente como você faria com reflexão. O mesmo vale para alterar o valor de um campo readonly.
+Um unsafe accessor do .NET 8 pode expor por referência um campo de instância, inclusive declarado `readonly`. Escrever por essa referência contorna as regras normais de atribuição do C#. Isso não muda a declaração nem estabelece garantias gerais sobre leituras otimizadas de estado imutável.
 
-Vamos supor a seguinte classe:
+**Correção — 2 de novembro de 2026:** o exemplo indisponível foi restaurado. Foram removidos a alegação genérica de desempenho e o resultado incondicional da leitura direta; o exemplo verificado observa o valor pelo accessor.
+
+## Exemplo executável
+
+[Baixe o exemplo completo](/examples/unsafe-accessor.zip). Ele inclui demonstrações de membros privados e este caso readonly:
 
 ```cs
-class Foo
+using System.Runtime.CompilerServices;
+
+var holder = new ReadonlyHolder();
+Accessors.ReadonlyField(holder) = 42;
+Console.WriteLine(Accessors.ReadonlyField(holder)); // 42 in the verified run
+
+internal sealed class ReadonlyHolder
 {
-    public readonly int readonlyField = 3;
+    public readonly int Value = 3;
+}
+
+internal static class Accessors
+{
+    [UnsafeAccessor(UnsafeAccessorKind.Field, Name = "Value")]
+    internal static extern ref int ReadonlyField(ReadonlyHolder instance);
 }
 ```
 
-Imagine que por algum motivo você queira alterar o valor desse campo somente leitura. Já era possível fazer isso com reflexão, claro:
+Execute o projeto baixado com `dotnet run -c Release`. O exemplo completo verifica o valor inicial, faz a escrita e confere o resultado pelo accessor no .NET 8.0.33.
 
-```cs
-var instance = new Foo();
+## O que isso demonstra
 
-typeof(Foo)
-    .GetField("readonlyField", BindingFlags.Instance | BindingFlags.Public)
-    .SetValue(instance, 42);
+A assinatura corresponde ao tipo declarante, nome e tipo do campo. Retornar `ref int` permite a atribuição mostrada. Isso não faz escritas por outras referências, mutação concorrente ou todas as otimizações JIT/AOT se comportarem igualmente. Uma leitura direta em outro lugar não deve ser usada como promessa universal de mutação suportada.
 
-Console.WriteLine(instance.readonlyField); // 42
-```
+Para estado da aplicação, prefira inicialização no construtor ou uma API explicitamente mutável. Escritas por reflexão em campos de instância e campos static readonly também têm restrições diferentes do runtime; não são casos intercambiáveis.
 
-Mas a mesma coisa pode ser feita usando `UnsafeAccessorAttribute`, sem a penalidade de desempenho associada à reflexão. Modificar campos readonly não é diferente de modificar qualquer outro campo quando se fala em unsafe accessors.
-
-```cs
-var instance = new Foo();
-
-[UnsafeAccessor(UnsafeAccessorKind.Field, Name = "readonlyField")]
-extern static ref int ReadonlyField(Foo @this);
-
-ReadonlyField(instance) = 42;
-
-Console.WriteLine(instance.readonlyField); // 42
-```
-
-Esse código também está [disponível no GitHub](https://github.com/Start-Debugging/dotnet-samples/blob/24d4273803c67824b2885b6f18cb8d535ec75657/unsafe-accessor/UnsafeAccessor/Program.cs#L74), caso você queira testá-lo.
+Veja o [guia de acesso a membros](/pt-br/2023/10/unsafe-accessor/) para accessors comuns e o [projeto benchmark](/pt-br/2023/11/net-8-performance-unsafeaccessor-vs-reflection/) para comparar caminhos de chamada. A [referência oficial](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.unsafeaccessorattribute) descreve assinaturas e limites de versão.

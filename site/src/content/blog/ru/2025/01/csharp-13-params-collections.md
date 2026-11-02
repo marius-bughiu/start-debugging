@@ -1,8 +1,8 @@
 ---
 title: "C# 13: используйте params-коллекции с любым распознаваемым типом коллекции"
-description: "C# 13 расширяет модификатор params за пределы массивов, поддерживая Span, ReadOnlySpan, IEnumerable и другие типы коллекций, что уменьшает шаблонный код и повышает гибкость."
+description: "C# 13 расширяет params на поддерживаемые коллекции. Элементы, обычная и развёрнутая формы вызова, требования к типам и выделение памяти."
 pubDate: 2025-01-02
-updatedDate: 2025-01-07
+updatedDate: 2026-11-02
 tags:
   - "csharp-13"
   - "csharp"
@@ -13,97 +13,57 @@ translationOf: "2025/01/csharp-13-params-collections"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-Модификатор `params` в C# традиционно ассоциировался с типами массивов, позволяя методам принимать переменное число аргументов. Однако [начиная с C# 13](/ru/2025/01/how-to-switch-to-c-13/) вы можете использовать params-коллекции с разнообразными типами коллекций, расширяя сферу применения и делая код ещё более универсальным.
 
-## Поддерживаемые типы коллекций
+C# 13 разрешает `params` не только для одномерных массивов, но и для поддерживаемых коллекций. Развёрнутый вызов передаёт отдельные **элементы**, а не переменное число Span.
 
-Модификатор `params` теперь работает с несколькими распознаваемыми типами коллекций, включая:
+**Исправление — 2 ноября 2026 года:** уточнены элементы и требования к коллекциям. Передавать список обычному параметру `IEnumerable<T>` можно было и до C# 13. Оба примера проверены с SDK 10.0.302 и `LangVersion` 13.
 
--   `System.Span<T>`
--   `System.ReadOnlySpan<T>`
--   типы, реализующие `System.Collections.Generic.IEnumerable<T>` и при этом имеющие метод `Add`.
+## Параметры Span
 
-Кроме того, вы можете использовать `params` со следующими системными интерфейсами:
+```csharp
+using System;
 
--   `System.Collections.Generic.IEnumerable<T>`
--   `System.Collections.Generic.IReadOnlyCollection<T>`
--   `System.Collections.Generic.IReadOnlyList<T>`
--   `System.Collections.Generic.ICollection<T>`
--   `System.Collections.Generic.IList<T>`
+Print(1, 2, 3); // Expanded form: three int elements.
+int[] data = { 4, 5 };
+Print(data);    // Normal form: an existing buffer.
 
-## Практический пример: использование Span с `params`
-
-Одна из интересных возможностей этого улучшения — использовать span в качестве параметров `params`. Вот пример:
-
-```cs
-public void Concat<T>(params ReadOnlySpan<T> items)
+static void Print(params ReadOnlySpan<int> values)
 {
-    for (int i = 0; i < items.Length; i++)
-    {
-        Console.Write(items[i]);
-        Console.Write(" ");
-    }
-
-    Console.WriteLine();
-}
-```
-
-В этом методе `params` позволяет передать переменное число span в метод `Concat`. Метод обрабатывает каждый span по очереди, демонстрируя расширенную гибкость модификатора `params`.
-
-## Сравнение с C# 12.0
-
-В более ранних версиях C# ключевое слово `params` поддерживало только массивы, что вынуждало разработчиков вручную преобразовывать другие типы коллекций в массивы перед передачей в метод, использующий `params`. Этот процесс добавлял ненужный шаблонный код, например создание временных массивов или явный вызов методов преобразования.
-
-**Пример без новой возможности (до C# 13)**
-
-```cs
-void PrintValues(params int[] values)
-{
-    foreach (var value in values)
-    {
+    foreach (int value in values)
         Console.WriteLine(value);
-    }
 }
-
-var list = new List<int> { 1, 2, 3 };
-
-// Manual conversion to array
-PrintValues(list.ToArray());
 ```
 
-**Пример с новой возможностью (C# 13)**
+Обычная форма передаёт существующее значение, преобразуемое к типу параметра. Развёрнутая форма передаёт элементы, из которых компилятор создаёт коллекцию. `ReadOnlySpan<T>` может исключить массив в подходящих вызовах, но не гарантирует отсутствие выделений памяти для любых типов и вызовов.
 
-```cs
-void PrintValues(params IEnumerable<int> values)
+## Поддерживаемые коллекции
+
+Допустимы `Span<T>`, `ReadOnlySpan<T>`, поддерживаемые обобщённые интерфейсы и типы с builder, совместимые с выражениями коллекций. Конструируемой коллекции нужны требуемый доступный конструктор без параметров, подходящий экземплярный метод `Add` и поддержка перечисления. Одних `IEnumerable<T>` и произвольного метода с именем `Add` недостаточно.
+
+Интерфейсы включают `IEnumerable<T>`, `IReadOnlyCollection<T>`, `IReadOnlyList<T>`, `ICollection<T>` и `IList<T>`.
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+var values = new List<int> { 1, 2, 3 };
+Print(values);  // Normal form.
+Print(4, 5, 6); // Expanded form: enabled by params collections in C# 13.
+
+static void Print(params IEnumerable<int> values)
 {
-    foreach (var value in values)
-    {
+    foreach (int value in values)
         Console.WriteLine(value);
-    }
 }
-
-var list = new List<int> { 1, 2, 3 };
-
-// No conversion needed
-PrintValues(list);
 ```
 
-Новая возможность сокращает шаблонный код за счёт следующего:
+Первый вызов работал и раньше с обычным параметром `IEnumerable<int>` без `params`. C# 13 добавляет для этого типа развёрнутую форму `Print(4, 5, 6)`. Создание коллекции для неё может выделять память.
 
-1.  **Устранение ручного преобразования** – нет необходимости явно преобразовывать коллекции вроде `List<T>` или `IEnumerable<T>` в массивы.
-2.  **Упрощение кода** – вызовы методов становятся чище и читабельнее, напрямую принимая совместимые типы коллекций.
-3.  **Улучшение поддерживаемости** – уменьшается повторяющийся и подверженный ошибкам код, фокус смещается на саму логику, а не на обработку преобразований.
+`params` должен идти последним, не иметь значения по умолчанию и не сочетаться с `ref`, `in` или `out`. Добавление перегрузок с params-коллекциями может изменить выбор перегрузки при перекомпиляции потребителей; проверяйте реальные вызовы.
 
-## Поведение компилятора и разрешение перегрузок
+О владении и представлениях см. [List, Span и ReadOnlySpan](/ru/2026/05/list-vs-span-vs-readonlyspan-in-csharp/).
 
-Появление params-коллекций означает изменения в поведении компилятора, особенно в отношении разрешения перегрузок. Когда метод включает параметр `params` типа коллекции, отличного от массива, компилятор оценивает применимость как обычной, так и расширенной формы метода.
+## Источники
 
-## Обработка ошибок и лучшие практики
-
-При использовании `params` важно соблюдать лучшие практики, чтобы избежать распространённых ошибок:
-
--   **позиция параметра** – убедитесь, что параметр `params` является последним в списке формальных параметров
--   **ограничения модификаторов** – избегайте сочетания `params` с модификаторами `in`, `ref` или `out`
--   **значения по умолчанию** – не назначайте значения по умолчанию параметрам `params`, это не разрешено
-
-Подробнее можно посмотреть в [спецификации возможности](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-13.0/params-collections).
+- [C# 13 params collections specification](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-13.0/params-collections.md)
+- [C# method parameters: params modifier](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/method-parameters#params-modifier)

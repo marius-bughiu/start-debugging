@@ -7,6 +7,9 @@ import { buildLastmodMap } from "./src/lib/content-paths.mjs";
 import { isTagAliasPath } from "./src/lib/tags.mjs";
 import rehypeRaw from "rehype-raw";
 import { rehypeArticleImages } from "./src/lib/rehype-article-images.mjs";
+import { installAstroContentStoreWorkaround } from "./src/lib/astro-content-store.mjs";
+
+await installAstroContentStoreWorkaround();
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const CONTENT_DIR = path.join(__dirname, "src", "content");
@@ -50,7 +53,7 @@ export default defineConfig({
       // would advertise an unindexable URL.
       filter: (page) => {
         const pathname = new URL(page).pathname;
-        return !/\/page\/1\/?$/.test(pathname) && !isTagAliasPath(pathname);
+        return !/\/page\/1\/?$/.test(pathname) && !isTagAliasPath(pathname) && !/^\/examples\/[^/]+\.zip$/.test(pathname);
       },
       serialize(item) {
         try {

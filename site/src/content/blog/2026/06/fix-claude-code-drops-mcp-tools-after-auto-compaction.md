@@ -1,6 +1,7 @@
 ---
 title: "Fix: Claude Code Drops MCP Tools After Auto-Compaction"
-description: "After auto-compaction, Claude Code can leave your MCP server connected but with no tools. Run /mcp to reconnect; if tools stay gone, /clear or restart. Here is why and how to prevent it."
+description: "If MCP tools disappear around Claude Code compaction, distinguish a failed connection from deferred tools, authentication, permissions and discovery before reconnecting."
+updatedDate: 2026-11-02
 pubDate: 2026-06-30
 template: error-page
 tags:
@@ -10,127 +11,68 @@ tags:
   - "ai-agents"
 ---
 
-You are deep in a long Claude Code session, the context bar fills up, auto-compaction kicks in, and suddenly every MCP tool call fails. The fastest fix: run `/mcp` and reconnect the affected server. That re-establishes the transport and, in most builds, re-registers the tools. If `/mcp` reports the server as "connected" but the tools are still missing, you have hit the known re-registration bug and the only reliable recovery is `/clear` or a fresh session. This is tested against Claude Code 2.1.x and the MCP specification dated [2026-03-26](https://modelcontextprotocol.io/specification/2026-03-26).
+If MCP tools disappear around auto-compaction, open `/mcp` and check the affected server before clearing the conversation. A failed connection, deferred tool descriptions, authentication problems and a client bug can look similar. The timing alone does not establish that compaction disconnected the server.
 
-## What you actually see
+> **Correction — November 2, 2026:** Removed an invalid reproduction, an unpublished MCP version, and unsupported claims about registry internals and OAuth loss. Updated the recovery steps to reflect documented reconnection behavior. No compaction-related Claude Code defect was reproduced for this revision.
 
-There is no single exception string here, which is part of why this one is hard to search for. The tell is that a tool you were using two messages ago is gone. Claude Code injects a system message into the transcript when an MCP server drops mid-session:
+## Establish what disappeared
 
-```
-The following deferred tools are no longer available (their MCP server
-disconnected). Do not search for them; ToolSearch will return no match.
-```
+Record the Claude Code version and the time of the failure. In the **same interactive session**, use `/mcp` to inspect the server and its tools. Distinguish these observations:
 
-After that line appears, the model stops offering those tools, `ToolSearch` returns nothing for them, and any attempt to call one fails. Meanwhile `/mcp` may still list the server. That gap between "server shows connected" and "tools are unusable" is the signature of this bug, reported against Claude Code current as of 2026-03-23 on `claude-opus-4-6` in [issue #38043](https://github.com/anthropics/claude-code/issues/38043).
+| Observation | What to investigate |
+| --- | --- |
+| Server failed or disconnected | Launch errors, server exit, network interruption or exhausted retries. |
+| Server needs authentication | Reauthenticate through the supported client flow. |
+| Server connected, expected tool absent from its advertised list | Server registration, configuration, permissions or discovery behavior. |
+| Tool exists but its full schema is not in the current prompt | Tool search/deferred loading; absence from the prompt alone is not disconnection. |
+| Tool call returns a permission error | Permission policy, not necessarily transport availability. |
 
-The disconnect that triggers it is often silent. There is no error toast, no failed tool call to alert you. You only notice when you ask for something that needs the tool and the model says it cannot find it. That silent-drop behavior is tracked separately in [issue #24350](https://github.com/anthropics/claude-code/issues/24350).
+Claude Code's [MCP tool search documentation](https://code.claude.com/docs/en/mcp#scale-with-mcp-tool-search) explains on-demand tool loading. Asking the model to recite its tools is less reliable than inspecting the server state and attempting discovery of the particular tool.
 
-## Why auto-compaction is the trigger
-
-Claude Code keeps the whole conversation in the model's context window. When that window approaches its limit, auto-compaction summarizes the older turns into a compressed form and replaces them, freeing room to keep going. You can also trigger it yourself with `/compact`.
-
-MCP tools are not part of the message history that gets summarized. They live in a separate registry that is populated when each MCP server connects and completes its `tools/list` handshake. The problem is what happens to that registry around a compaction boundary:
-
-1. A long session keeps an stdio or HTTP MCP transport open for a long time. Idle connections get dropped by the OS, a proxy, or the server's own timeout.
-2. When the connection drops, Claude Code marks the server's tools as unavailable and writes the "deferred tools are no longer available" message.
-3. Compaction rebuilds the prompt from the summarized history, but it does not re-run the connect-and-list handshake for servers that dropped. The tool registry stays empty for that server.
-
-So compaction is rarely the literal cause of the disconnect. It is the moment the lost connection becomes visible, because the rebuilt context no longer carries whatever cached state was papering over the drop. For OAuth-based connectors the failure is sharper: the authenticated session is lost during compaction and every call returns an auth error until you reconnect, which is the Cowork variant in [issue #34832](https://github.com/anthropics/claude-code/issues/34832).
-
-## Reproducing it on purpose
-
-You do not need a flaky network to see this. The smallest repro is a stdio server with a short idle timeout plus a session long enough to compact:
-
-```jsonc
-// .mcp.json, Claude Code 2.1.x
-{
-  "mcpServers": {
-    "demo": {
-      "command": "node",
-      "args": ["./demo-server.js"]
-    }
-  }
-}
-```
-
-```js
-// demo-server.js -- MCP TypeScript SDK 1.x, spec 2026-03-26
-// Exits itself after 60s idle to simulate a transport drop.
-import { Server } from "@modelcontextprotocol/sdk/server/index.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-
-const server = new Server(
-  { name: "demo", version: "1.0.0" },
-  { capabilities: { tools: {} } }
-);
-
-let idle = setTimeout(() => process.exit(0), 60_000);
-const bump = () => { clearTimeout(idle); idle = setTimeout(() => process.exit(0), 60_000); };
-
-server.setRequestHandler(/* tools/list + tools/call handlers */ {}, bump);
-
-await server.connect(new StdioServerTransport());
-```
-
-Connect it, confirm the tool shows up in `/mcp`, then work in the session without touching that tool for a minute while the context grows past the auto-compaction threshold. After the compaction, the tool is gone and the deferred-tools message is in your scrollback. The mechanics are the same as the broader stdio lifecycle issues covered in [why an MCP server hangs when launched from Claude Code](/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code/).
-
-## The fix, in order of preference
-
-### 1. Run `/mcp` and reconnect
-
-`/mcp` opens the MCP management view inside the session. Select the dropped server and reconnect it. This re-runs the transport connect and the `tools/list` handshake, and in current 2.1.x builds it re-registers the tools into the active session without clearing your conversation. This is the headline workaround and it resolves the common case.
-
-If you are scripting around the problem, you can also check status from a second shell without disturbing the session:
+For a new debug session:
 
 ```bash
-# Claude Code 2.1.x -- list servers and their connection state
-claude mcp list
+claude --version
+claude mcp get my-server
+claude --debug
 ```
 
-### 2. If `/mcp` shows "connected" but tools are still missing
+A separate `claude mcp list` can check configuration and connectivity, but it does not expose the internal registry of an already-running conversation.
 
-This is the sharp edge of the bug. The transport reconnected, `/mcp` is green, but the tool registry was never repopulated for the rest of the session. There is no `/mcp refresh` to force re-registration as of 2.1.x, so the recovery options are:
+## Reconnect according to the transport
 
-- `/clear` to reset the conversation in the same process. You lose the chat history but keep the running Claude Code instance and its server connections, which re-list cleanly.
-- Start a fresh session. `claude --resume` in the same directory brings back the conversation and re-initializes every MCP server from scratch, which is the most reliable way to get the tools back.
+The current [Claude Code MCP reference](https://code.claude.com/docs/en/mcp#automatic-reconnection) documents automatic retries for remote servers. It separately describes exited stdio servers: in an interactive session, select the server in `/mcp` and choose Reconnect. That is different from supervising an independent HTTP service.
 
-Splitting the work is the durable answer: when a task is long enough to compact several times, it is long enough to hit this. End the session at a natural boundary and resume rather than running one marathon context.
+On Claude Code **2.1.284 or later**, an interactive terminal session also supports:
 
-### 3. Stop the drop from happening
-
-The reconnect dance is a symptom. The two levers that prevent it:
-
-- **Keep the context small enough that you rarely auto-compact.** Every compaction is a chance to lose a connection. Read large files in ranges instead of whole, push heavy file work into a subagent so it runs in its own context window, and `/compact` deliberately at clean checkpoints instead of letting the limit force it. The same context discipline that [keeps a monorepo's context small](/2026/05/how-to-structure-a-monorepo-so-claude-codes-context-stays-small/) directly reduces how often you compact.
-- **Trim how many MCP tools you load.** Fewer tools means a smaller registry to lose and fewer servers to babysit across a compaction. The mechanics of pruning the tool set are in [reducing the number of MCP tools Claude loads](/2026/05/how-to-reduce-the-number-of-mcp-tools-claude-loads/).
-
-## Auto-compaction thrashing is a different problem
-
-Do not confuse this with the thrashing error, which has its own message:
-
-```
-Autocompact is thrashing: the context refilled to the limit ...
+```text
+/mcp reconnect all
 ```
 
-That one means compaction succeeded but a single file or tool output immediately refilled the window several times in a row, so Claude Code stops retrying to avoid burning API calls in a loop. Per the official [troubleshooting docs](https://code.claude.com/docs/en/troubleshooting), the fixes are to read the oversized file in smaller chunks, run `/compact keep only the plan and the diff` to drop the large output, move the work to a subagent, or `/clear` if the earlier conversation is no longer needed. Thrashing is about context refilling too fast; the MCP tool drop is about a connection not being re-established. Different cause, different fix.
+Earlier versions do not support `all` here; use the server's menu. If the server requires authentication, complete that flow rather than repeatedly retrying an expired credential.
 
-## Telling this apart from the other MCP failures
+After reconnecting, check that the expected tool is advertised and run a harmless read operation. Do not automatically replay an interrupted write: a lost response does not establish whether the operation already took effect.
 
-This bug lands on the same search terms as several unrelated MCP problems. Quick triage:
+## If the connection is healthy but the tool is still missing
 
-- **Tools were never there.** If the server never connected in the first place, you are looking at a startup failure, not a drop. That usually surfaces as [MCP error -32000: Connection closed](/2026/06/fix-mcp-error-32000-connection-closed-in-claude-code/), which means the server process exited before the handshake finished.
-- **Disconnect only inside WSL.** If the drop is specific to a WSL environment and the server runs fine on native Windows or Linux, the cause is the cross-filesystem path and networking quirks covered in [Claude Code reports MCP server disconnected inside WSL](/2026/05/fix-claude-code-reports-mcp-server-disconnected-inside-wsl/).
-- **Everything broke after an app update.** If all servers stopped at once right after updating the desktop app, the config path likely moved. That is its own fix: [MCP servers stopped working after a Claude Desktop update on Windows](/2026/06/fix-mcp-servers-stop-working-after-claude-desktop-update-on-windows/).
+Check whether the server's tool list changed and whether tool-search or permission settings hide the operation. The current documentation describes refreshing discovery on supported `list_changed` notifications; those details depend on the runtime and server capabilities.
 
-The auto-compaction drop is specifically the case where the server *was* working, *is* still listed as connected, and the tools vanished around a context boundary. If your symptoms match a row above instead, follow that thread.
+For a persistent client-specific failure, save a short task checkpoint, capture redacted logs, and restart Claude Code. `claude --resume` can restore a conversation while establishing a new client process. This is a diagnostic and recovery attempt, not a guarantee that the underlying problem is fixed.
 
-## What to watch for going forward
+`/clear` clears conversation context. It should not be presented as a universal command to repair MCP transport state. Use it when a fresh conversation is useful, after preserving information you need.
 
-Automatic reconnection after a drop is the obvious fix and it is an open feature request, with proposals to re-inject tool definitions when a server reconnects and to mark tools as temporarily unavailable with retry rather than permanently removing them. Until that ships, treat MCP tools in a long Claude Code session as something that can quietly disappear at any compaction, and build the `/mcp` reconnect into your muscle memory the same way you would a `git fetch` after a long pull. When in doubt, `/clear` or `claude --resume` is the reset that always works.
+## Test the hypothesis before blaming compaction
 
-## Sources
+A useful reproduction compares the same tool before and after **manual** `/compact` while recording server logs and whether the process or connection remains alive. Repeat without compaction as a control. Include the exact Claude Code version, transport, SDK/server version and permission settings.
 
-- [anthropics/claude-code #38043 -- MCP tools permanently removed after a transient server disconnect](https://github.com/anthropics/claude-code/issues/38043)
-- [anthropics/claude-code #24350 -- MCP server connections drop silently and require manual /mcp reconnection](https://github.com/anthropics/claude-code/issues/24350)
-- [anthropics/claude-code #34832 -- Cowork MCP connectors lose auth after context compaction](https://github.com/anthropics/claude-code/issues/34832)
-- [Claude Code troubleshooting: performance, stability, and auto-compaction thrashing](https://code.claude.com/docs/en/troubleshooting)
-- [Model Context Protocol specification, 2026-03-26](https://modelcontextprotocol.io/specification/2026-03-26)
+A demo server that exits after a timer only demonstrates process termination. It does not establish a compaction bug. Likewise, a report involving Cowork authentication does not establish the same behavior in a local Claude Code stdio server.
+
+The previous example used an incomplete `setRequestHandler` call and registered no functioning tool. It was not a runnable reproduction and has been removed. For a working baseline, use the [tested echo server](/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code/#test-a-server-that-really-exposes-a-tool).
+
+## Separate context management from connection health
+
+Reducing oversized outputs and using focused subagents can make a long task easier to manage. It does not prove that an MCP transport will stop disconnecting. Investigate a server's actual idle policy, proxy timeouts, crashes and credentials when the logs point there.
+
+Auto-compaction thrashing is another issue: context repeatedly refills after summarization. Follow the [Claude Code troubleshooting guidance](https://code.claude.com/docs/en/troubleshooting) for that symptom rather than treating it as a network error.
+
+If tools never appeared at startup, use [stdio initialization troubleshooting](/2026/05/fix-mcp-server-stdio-hang-when-launched-from-claude-code/). If the log reports `-32000`, follow [transport-closure triage](/2026/06/fix-mcp-error-32000-connection-closed-in-claude-code/). Those observations provide a stronger starting point than the fact that compaction happened nearby.

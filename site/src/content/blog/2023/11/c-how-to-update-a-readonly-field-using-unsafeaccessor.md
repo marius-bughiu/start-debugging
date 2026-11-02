@@ -1,48 +1,46 @@
 ---
 title: "C# How to update a readonly field using UnsafeAccessor"
-description: "Learn how to update a readonly field in C# using UnsafeAccessor, an alternative to reflection without the performance penalty. Available in .NET 8."
+description: "A runnable .NET 8 example of a readonly field exposed by UnsafeAccessor, with explicit limits on mutation and observable runtime behavior."
 pubDate: 2023-11-02
+updatedDate: 2026-11-02
 tags:
   - "csharp"
   - "dotnet"
   - "dotnet-8"
 ---
-Unsafe accessors can be used to access private members of a class, just like you would with reflection. And the same can be said about changing the value of a readonly field.
+A .NET 8 unsafe accessor can expose an instance field by reference, including a field declared `readonly`. Writing through that reference bypasses normal C# assignment rules. It does not change the field's declaration or establish general guarantees about optimized reads of immutable state.
 
-Let’s assume the following class:
+**Correction — November 2, 2026:** The unavailable sample has been restored. The old blanket performance claim and unconditional direct-read result were removed; the verified example observes the value through the accessor.
+
+## Runnable example
+
+[Download the complete example](/examples/unsafe-accessor.zip). It includes private-member demonstrations and this focused readonly case:
 
 ```cs
-class Foo
+using System.Runtime.CompilerServices;
+
+var holder = new ReadonlyHolder();
+Accessors.ReadonlyField(holder) = 42;
+Console.WriteLine(Accessors.ReadonlyField(holder)); // 42 in the verified run
+
+internal sealed class ReadonlyHolder
 {
-    public readonly int readonlyField = 3;
+    public readonly int Value = 3;
+}
+
+internal static class Accessors
+{
+    [UnsafeAccessor(UnsafeAccessorKind.Field, Name = "Value")]
+    internal static extern ref int ReadonlyField(ReadonlyHolder instance);
 }
 ```
 
-Let’s say that for some reason you want to change the value of that read-only field. You could already do that with reflection, of course:
+Run the downloaded project with `dotnet run -c Release`. The full example checks the initial value, performs the write and checks the accessor result on .NET 8.0.33.
 
-```cs
-var instance = new Foo();
+## What this establishes
 
-typeof(Foo)
-    .GetField("readonlyField", BindingFlags.Instance | BindingFlags.Public)
-    .SetValue(instance, 42);
+The accessor signature matches the field's declaring type, name and type. Returning `ref int` permits the assignment shown above. It does not make writes through unrelated references, concurrent mutation or every JIT/AOT optimization behave identically. A direct read elsewhere should not be used as a universal promise that mutation is supported.
 
-Console.WriteLine(instance.readonlyField); // 42
-```
+For application state, prefer initialization in the constructor or an explicitly mutable API. Instance-field reflection writes and static readonly fields also have different runtime restrictions; they are not interchangeable cases.
 
-But the same can be achieved using the `UnsafeAccessorAttribute` without the performance penalty associated with reflection. Modifying readonly fields is no different than modifying any other field when it comes to unsafe accessors.
-
-The [UnsafeAccessor versus reflection benchmarks](/2023/11/net-8-performance-unsafeaccessor-vs-reflection/) compare the access costs, including cached reflection.
-
-```cs
-var instance = new Foo();
-
-[UnsafeAccessor(UnsafeAccessorKind.Field, Name = "readonlyField")]
-extern static ref int ReadonlyField(Foo @this);
-
-ReadonlyField(instance) = 42;
-
-Console.WriteLine(instance.readonlyField); // 42
-```
-
-This code is also [available on GitHub](https://github.com/Start-Debugging/dotnet-samples/blob/24d4273803c67824b2885b6f18cb8d535ec75657/unsafe-accessor/UnsafeAccessor/Program.cs#L74) in case you want to take it for a spin.
+See [the member-access guide](/2023/10/unsafe-accessor/) for ordinary accessors and [the benchmark project](/2023/11/net-8-performance-unsafeaccessor-vs-reflection/) for a measured comparison of call paths. The [official API reference](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.unsafeaccessorattribute) describes binding signatures and version limits.

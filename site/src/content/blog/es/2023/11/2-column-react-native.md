@@ -1,8 +1,8 @@
 ---
-title: "Cómo crear un layout Flexbox de 2 columnas en React Native"
-description: "Aprende a crear un layout Flexbox de 2 columnas en React Native usando flex-wrap, con número de columnas y espaciado entre elementos ajustables."
+title: "Cómo crear un diseño Flexbox de dos columnas en React Native"
+description: "Ejemplo Expo ejecutable de un diseño React Native de dos columnas con ajuste de línea, dimensiones numéricas y espaciado, sin px ni calc()."
 pubDate: 2023-11-07
-updatedDate: 2023-11-15
+updatedDate: 2026-11-02
 tags:
   - "react-native"
 lang: "es"
@@ -10,50 +10,61 @@ translationOf: "2023/11/2-column-react-native"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-Crear un layout de dos columnas en React Native, dada una lista de elementos, es una tarea bastante común. Este layout de 2 columnas en react native se puede lograr fácilmente usando flex. El ejemplo a continuación muestra cómo conseguir un layout de dos columnas con espaciado entre los elementos.
+Un diseño pequeño de dos columnas puede usar `flexDirection: 'row'`, `flexWrap: 'wrap'` y anchura `50%` en el contenedor de cada elemento. React Native acepta dimensiones numéricas y cadenas porcentuales; valores CSS como `'100px'` y `calc()` no son sustitutos válidos en estilos nativos de layout.
 
-Esta es nuestra vista:
+**Corrección — 2 de noviembre de 2026:** el Snack desaparecido se sustituyó por un proyecto Expo completo. Se corrigieron las cadenas `px` y la altura con `calc()`. El proyecto restaurado se exportó y comprobó en web; no se afirma una ejecución en dispositivo Android/iOS.
+
+## Descargar el ejemplo completo
+
+[Descarga el código Expo en ZIP](/examples/react-native-two-columns.zip). Incluye `App.js`, configuración del proyecto, dependencias fijadas y lockfile npm, con las versiones React/React Native compatibles con Expo SDK 58.0.22.
+
+```sh
+npm ci
+npm run web
+```
+
+Usa `npm run build` para una exportación web estática o `npm start` para el entorno de desarrollo de plataforma admitido por el SDK.
+
+## Filas con ajuste y espaciado
+
+El ejemplo muestra siete elementos para hacer visible la última fila incompleta:
 
 ```jsx
 <View style={styles.container}>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item1'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item2'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item3'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item4'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item5'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item6'}</Text></View></View>
-    <View style={styles.itemContainer}><View style={styles.item}><Text>{'item7'}</Text></View></View>
-
+  {items.map((label) => (
+    <View key={label} style={styles.itemContainer}>
+      <View style={styles.item}>
+        <Text>{label}</Text>
+      </View>
+    </View>
+  ))}
 </View>
 ```
 
-Y este es nuestro estilo:
+Los estilos relevantes son:
 
-```typescript
+```javascript
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    alignContent: 'flex-start'
+    alignContent: 'flex-start',
   },
   itemContainer: {
-    width: '50%', // 50% -> 2 columns | 33% -> 3 columns | 25% -> 4 columns
-    height: '100px'
+    width: '50%',
+    height: 100,
+    padding: 8,
   },
   item: {
-    padding: '8px',
-    margin: '8px',
-    backgroundColor: '#EEEEEE',
-    height: "calc(100% - 8px)"
-  }
-})
+    flex: 1,
+    padding: 8,
+    backgroundColor: '#dde8f6',
+  },
+});
 ```
 
-El resultado se ve así:
+El padding queda dentro de cada contenedor de media anchura, y la tarjeta interior llena la altura restante. No es necesario restarlo con una expresión CSS. Las dimensiones numéricas usan unidades de layout de React Native, no cadenas literales de píxeles CSS.
 
-[![Un layout flexbox de dos columnas en React Native.](/wp-content/uploads/2023/11/image.png)](/wp-content/uploads/2023/11/image.png)
+Para cambiar el número de columnas, modifica el porcentaje, por ejemplo `'25%'` para cuatro. Para conjuntos grandes usa una lista virtualizada como [`FlatList` con `numColumns`](https://reactnative.dev/docs/flatlist#numcolumns), en vez de renderizar todos los elementos en un `View` con wrap.
 
-Para ajustar la cantidad de columnas, simplemente cambia la propiedad `width` del `itemContainer`. `50%` dará como resultado 2 columnas, `33%` serán 3 columnas, `25%` serán 4 columnas, `20%` serán 5 columnas, y así sucesivamente.
-
-Puedes [jugar con este código en vivo, aquí](https://snack.expo.dev/GCz9-diFD).
+Fuentes: [altura y anchura en React Native](https://reactnative.dev/docs/height-and-width), [diseño Flexbox](https://reactnative.dev/docs/flexbox).

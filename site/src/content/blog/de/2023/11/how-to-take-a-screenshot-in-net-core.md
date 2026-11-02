@@ -1,7 +1,8 @@
 ---
-title: "Wie Sie unter .NET core einen Screenshot erstellen"
-description: "Erfahren Sie, wie Sie aus einer .NET-Konsolenanwendung mit System.Windows.Forms einen Screenshot Ihres gesamten Desktops aufnehmen. Eine reine Windows-Lösung, die alle Monitore abdeckt."
+title: "Einen Windows-Desktop-Screenshot mit .NET aufnehmen"
+description: "Ein lauffähiges .NET-Konsolenbeispiel nur für Windows: virtuellen Bildschirm erfassen, Zeichenressourcen freigeben und PNG speichern."
 pubDate: 2023-11-04
+updatedDate: 2026-11-02
 tags:
   - "csharp"
   - "dotnet"
@@ -10,41 +11,57 @@ translationOf: "2023/11/how-to-take-a-screenshot-in-net-core"
 translatedBy: "claude"
 translationDate: 2026-05-01
 ---
-In diesem Artikel sehen wir uns an, wie Sie aus einer Konsolenanwendung mit .NET core einen Screenshot Ihres gesamten Desktops aufnehmen können, also aller Monitore und nicht nur des primären. Diese Lösung basiert auf Windows-spezifischen Abhängigkeiten und funktioniert daher nicht plattformübergreifend, sondern nur unter Windows.
+Dieses Beispiel erfasst mit Windows Forms und `System.Drawing` das umschließende Rechteck des virtuellen Bildschirms der aktuellen Windows-Desktopsitzung. Es ist eine Windows-Anwendung, auch wenn das Projekt ein Konsolenprogramm ist.
 
-Wir beginnen mit einem kleinen Projekt-Setup. Um die Bildschirminformationen abzugreifen, benötigen wir Zugriff auf `System.Windows.Forms`. Damit dies in einer .NET-Konsolenanwendung verfügbar ist, fügen wir die folgende Referenz in unsere `.csproj` ein.
+**Korrektur — 2. November 2026:** Der fehlende Quellcode wurde mit vollständigen Projekteinstellungen, Ressourcenfreigabe, Behandlung des Ausgabeordners und einem Selbsttest mit synthetischem Bild wiederhergestellt. Er wurde unter macOS für Windows gebaut; eine echte Windows-Bildschirmaufnahme wurde bei dieser Prüfung nicht ausgeführt.
+
+## Download und Projekteinstellungen
+
+[Lauffähigen Quellcode herunterladen](/examples/windows-screenshot.zip). Die Projektdatei enthält:
 
 ```xml
-<ItemGroup>
-  <FrameworkReference Include="Microsoft.WindowsDesktop.App.WindowsForms" />
-</ItemGroup>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+</Project>
 ```
 
-Nachdem wir nun eine Referenz auf `System.Windows.Forms` haben, können wir die Abmessungen des Bildschirms ermitteln. Uns interessieren die Startkoordinaten (`x` und `y`) sowie die Größe (`w` und `h`). Diese Informationen erhalten wir aus `SystemInformation.VirtualScreen`.
+`UseWindowsForms` stellt den Verweis auf das Windows-Desktop-Framework bereit. `EnableWindowsTargeting` erlaubt einen Cross-Build, wenn die Targeting-Packs wiederhergestellt werden können; die Anwendung wird dadurch nicht unter macOS oder Linux ausführbar.
+
+## Den virtuellen Bildschirm erfassen
+
+Das vollständige Programm enthält Imports und einen STA-Einstiegspunkt. Die Aufnahme erfolgt so:
 
 ```cs
 var screen = SystemInformation.VirtualScreen;
-int x = screen.Left;
-int y = screen.Top;
-int w = screen.Width;
-int h = screen.Height;
+using var bitmap = new Bitmap(screen.Width, screen.Height);
+using (var graphics = Graphics.FromImage(bitmap))
+{
+    graphics.CopyFromScreen(
+        screen.Left, screen.Top, 0, 0, screen.Size,
+        CopyPixelOperation.SourceCopy);
+}
+bitmap.Save(filename, ImageFormat.Png);
 ```
 
-Als Nächstes legen wir ein Bitmap an und kopieren die Bildschirminformationen hinein. Damit erstellen wir unseren Screenshot im Arbeitsspeicher.
+`screen.Left` und `screen.Top` können negativ sein, wenn ein weiterer Monitor links oder oberhalb des Hauptbildschirms liegt. Das umschließende Rechteck kann ungenutzte Bereiche zwischen Bildschirmen enthalten. Andere Sitzungen, sichere Desktops oder geschützte Inhalte werden damit nicht garantiert erfasst.
 
-```cs
-var image = new Bitmap(w, h);
-using var graphics = Graphics.FromImage(image);
-graphics.CopyFromScreen(x, y, 0, 0, new Size(w, h));
+Das Programm erstellt den Ausgabeordner und einen eindeutigen PNG-Dateinamen und gibt Bitmap- und Graphics-Objekte frei.
+
+## Unter Windows ausführen
+
+```powershell
+dotnet run -c Release -- --self-test
+dotnet run -c Release
+dotnet run -c Release -- C:\Screenshots
 ```
 
-Im letzten Schritt schreiben wir den Screenshot aus dem Speicher in eine Datei auf der Festplatte. Um das Verhalten des Snipping Tools nachzuahmen, speichern wir das Bild im Ordner **Bilder** und fügen einen Zeitstempel in den Dateinamen ein.
+Der Selbsttest erzeugt und dekodiert eine synthetische PNG-Datei, ohne den Desktop aufzunehmen. Die normale Ausführung schreibt in den Bilderordner oder das angegebene Verzeichnis. Prüfe die echte Aufnahme in der vorgesehenen Windows-Sitzung einschließlich Monitoranordnung und DPI-Einstellungen.
 
-```cs
-string picturesDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-string fileName = $"Screenshot {DateTime.Now:yyyy-MM-dd HHmmss}.png";
-string filePath = Path.Combine(picturesDirectory, fileName);
-image.Save(filePath, ImageFormat.Png);
-```
-
-Wenn Sie an einem voll funktionsfähigen Beispiel interessiert sind, können Sie sich [den Code auf GitHub ansehen](https://github.com/Start-Debugging/dotnet-samples/blob/main/screenshot/Screenshot/Program.cs).
+Referenzen: [SystemInformation.VirtualScreen](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.systeminformation.virtualscreen), [Graphics.CopyFromScreen](https://learn.microsoft.com/en-us/dotnet/api/system.drawing.graphics.copyfromscreen).
