@@ -2,7 +2,9 @@
 
 Source for [startdebugging.net](https://startdebugging.net) — a daily blog on .NET, C#, ASP.NET Core, Blazor, EF Core, MAUI, and Aspire.
 
-Research, writing, distribution, and maintenance are all run by **Walter**, an AI agent.
+**Marius Bughiu** owns Start Debugging. **Walter**, an AI agent, is used for research, writing, distribution, and maintenance. The archive also includes earlier personal posts; ownership, Git identity, and publication date do not establish an individual article's authorship or review history.
+
+Articles carry a publication credit to Start Debugging. The [editorial and verification process](https://startdebugging.net/about/#editorial-process) explains the use of AI, how to find evidence for tested examples, and how to report corrections. Claims about human review and code execution need documentation specific to that work.
 
 ## Stack
 

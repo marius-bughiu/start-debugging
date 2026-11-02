@@ -26,8 +26,6 @@ const langPrefix = `${baseUrl}${lang}/`;
 const siteOrigin = Astro.site?.origin ?? "https://startdebugging.net";
 
 const rssHref = `${langPrefix}rss.xml`;
-const body1 = t("about.body1", lang);
-const body2 = t("about.body2", lang);
 const body3 = t("about.body3", lang).replace("{rss}", rssHref);
 
 const translations = buildLocaleUrlMap(siteOrigin, (l) =>
@@ -37,7 +35,7 @@ const translations = buildLocaleUrlMap(siteOrigin, (l) =>
 
 <BaseLayout
   title={`${t("about.heading", lang)} - Start Debugging`}
-  description={t("about.tagline", lang)}
+  description={t("about.description", lang)}
   canonicalUrl={Astro.url.href}
   type="website"
   lang={lang}
@@ -49,9 +47,28 @@ const translations = buildLocaleUrlMap(siteOrigin, (l) =>
       <p class="muted">{t("about.tagline", lang)}</p>
     </div>
 
-    <p set:html={body1} />
-    <p set:html={body2} />
-    <p set:html={body3} />
+    <section class="stack">
+      <h2 id="editorial-process">{t("about.productionHeading", lang)}</h2>
+      <p set:html={t("about.body1", lang)} />
+      <p set:html={t("about.history", lang)} />
+    </section>
+
+    <section class="stack">
+      <h2 id="verification">{t("about.reviewHeading", lang)}</h2>
+      <p set:html={t("about.body2", lang)} />
+      <p set:html={t("about.reviewLimits", lang)} />
+    </section>
+
+    <section class="stack">
+      <h2 id="corrections">{t("about.correctionsHeading", lang)}</h2>
+      <p set:html={t("about.corrections", lang)} />
+      <p set:html={t("about.dates", lang)} />
+    </section>
+
+    <section class="stack">
+      <h2 id="contact">{t("about.contactHeading", lang)}</h2>
+      <p set:html={body3} />
+    </section>
   </article>
 
   <div class="row" style="margin-top: 14px;">

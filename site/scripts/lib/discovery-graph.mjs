@@ -54,7 +54,7 @@ function categoryFor(ancestors, target, locales) {
   if (hasClass("pillar-index")) return "pillar-list";
   if (hasClass("article-toc")) return "toc";
   if (hasTag("header") || hasTag("footer") || hasTag("nav")) return "navigation";
-  if (hasClass("byline") || hasClass("share-row") || hasClass("inline-subscribe") || hasClass("post-edit-link") || hasTag("pre") || hasTag("code")) return "utility";
+  if (hasClass("byline") || hasClass("publication-credit") || hasClass("share-row") || hasClass("inline-subscribe") || hasClass("post-edit-link") || hasTag("pre") || hasTag("code")) return "utility";
   if (hasTag("aside")) return "sidebar";
   if (kindForPath(target, locales) === "taxonomy") return "taxonomy";
   if (hasClass("post-card")) return "listing";

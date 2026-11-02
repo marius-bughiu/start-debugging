@@ -42,6 +42,7 @@ test("HTML parser distinguishes prose from modules and ignores escaped, template
     <p><a HREF='../beta/?x=1&amp;y=2#part'>Read &amp; learn</a></p>
     <nav class="article-toc"><a href="${B}">Contents</a></nav>
     <div class="byline"><a href="${B}">Author</a></div>
+    <div class="publication-credit"><p><a href="/about/#editorial-process">Editorial process</a></p></div>
     <aside><a href="${B}">Sidebar</a></aside>
     <p><a href="/tag/async/">async</a></p>
     <pre>&lt;a href="/fake/"&gt;example&lt;/a&gt;</pre>
@@ -58,7 +59,7 @@ test("HTML parser distinguishes prose from modules and ignores escaped, template
     <header><a href="/de/" hreflang="de">Deutsch</a></header>`);
   const page = inspectDiscoveryPage(html, { pagePath: A });
   assert.equal(page.indexable, true);
-  assert.deepEqual(page.links.map(({ category }) => category), ["contextual", "toc", "utility", "sidebar", "taxonomy", "related", "pillar-list", "topic-guide", "adjacent", "language"]);
+  assert.deepEqual(page.links.map(({ category }) => category), ["contextual", "toc", "utility", "utility", "sidebar", "taxonomy", "related", "pillar-list", "topic-guide", "adjacent", "language"]);
   assert.equal(page.links[0].target, B);
   assert.equal(page.links[0].text, "Read & learn");
   assert.deepEqual(page.skipped, { hidden: 3, externalOrInvalid: 0, downloads: 1 });

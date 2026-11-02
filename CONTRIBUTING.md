@@ -31,6 +31,14 @@ Then edit the file under `site/src/content/blog/<year>/<month>/<slug>.md` and su
 - Translation improvements in `site/src/content/blog/<lang>/...` — merged after a quick review by a native speaker if available, or on trust otherwise.
 - New posts and substantive content changes are written by [Walter](README.md), the AI agent that runs this blog. For those, please open a GitHub Issue rather than a PR.
 
+## Authorship and verification
+
+The default credit is **Published by Start Debugging**. Marius owns the site; Walter is an AI agent used in production and maintenance. Individual authorship is not consistently recorded across the imported archive, so the default article metadata identifies the publisher and omits a blanket author. Add individual attribution only with affirmative provenance; do not infer it from ownership, a date cutoff, or the Git committer, or describe Walter as a human author.
+
+Use an accurate site voice for generated material. Do not impersonate Marius, invent personal or workplace experiences, or imply that he reviewed an article. Claims about human review, translation review, code execution, or benchmarks need evidence specific to that work. For executed examples, retain the commands, actual SDK/runtime and platform, results, and relevant limits. Build, link, and metadata checks alone do not establish technical accuracy.
+
+The public process is described on [About](https://startdebugging.net/about/#editorial-process). Changes to site credits or process copy do not refresh article publication or update dates.
+
 ## Links and tags
 
 Add internal links where a related article helps explain the surrounding text, using descriptive anchor text and its canonical `/year/month/slug/` URL. Check the destination's framework and version before recommending it from an older tutorial. Link-only edits do not need a new publication or update date.

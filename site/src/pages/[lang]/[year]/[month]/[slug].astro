@@ -4,6 +4,7 @@ import TableOfContents from "../../../../components/TableOfContents.astro";
 import RelatedArticles from "../../../../components/RelatedArticles.astro";
 import TopicGuides from "../../../../components/TopicGuides.astro";
 import ArticleBreadcrumbs from "../../../../components/ArticleBreadcrumbs.astro";
+import PublicationCredit from "../../../../components/PublicationCredit.astro";
 import Giscus from "../../../../components/Giscus.astro";
 import AdSlot from "../../../../components/AdSlot.astro";
 import { getCollection } from "astro:content";
@@ -131,13 +132,7 @@ const langPrefix = `${baseUrl}${lang}/`;
         </div>
         <h1 class="h1">{post.data.title}</h1>
         {post.data.description ? <p class="muted">{post.data.description}</p> : null}
-        <div class="byline">
-          <span>{t("post.by", lang)} <a class="byline-author" href={`${langPrefix}about/`}>Marius Bughiu</a></span>
-          <span class="byline-sep">&middot;</span>
-          <span>{readingMinutes} {t("post.minRead", lang)}</span>
-          <span class="byline-sep">&middot;</span>
-          <time datetime={effectivePubDate.toISOString()}>{pubDateIso}</time>
-        </div>
+        <PublicationCredit lang={lang} readingMinutes={readingMinutes} publishedDate={effectivePubDate} />
       </div>
 
       <TableOfContents headings={headings} lang={lang} />

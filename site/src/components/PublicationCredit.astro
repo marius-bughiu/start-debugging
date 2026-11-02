@@ -1,0 +1,40 @@
+---
+import { t } from "../i18n";
+import type { Locale } from "../lib/blog";
+
+interface Props {
+  lang?: Locale;
+  readingMinutes?: number;
+  publishedDate?: Date;
+}
+const { lang = "en", readingMinutes, publishedDate } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
+const localeBase = lang === "en" ? baseUrl : `${baseUrl}${lang}/`;
+const processUrl = `${localeBase}about/#editorial-process`;
+---
+
+<div class="publication-credit stack" data-pagefind-ignore>
+  <div class="byline">
+    <span>{t("post.publishedBy", lang)} <a class="byline-publisher" href={processUrl}>Start Debugging</a></span>
+    {readingMinutes !== undefined ? (
+      <>
+        <span class="byline-sep" aria-hidden="true">&middot;</span>
+        <span>{readingMinutes} {t("post.minRead", lang)}</span>
+      </>
+    ) : null}
+    {publishedDate ? (
+      <>
+        <span class="byline-sep" aria-hidden="true">&middot;</span>
+        <time datetime={publishedDate.toISOString()}>{publishedDate.toISOString().slice(0, 10)}</time>
+      </>
+    ) : null}
+  </div>
+  <p class="muted production-disclosure">
+    {t("post.productionDisclosure", lang)} <a href={processUrl}>{t("post.editorialProcess", lang)}</a>
+  </p>
+</div>
+
+<style>
+  .publication-credit { gap: 6px; }
+  .production-disclosure { margin: 0; font-size: 14px; line-height: 1.5; }
+</style>

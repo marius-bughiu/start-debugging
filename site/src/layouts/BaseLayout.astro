@@ -97,18 +97,9 @@ const translationEntries = translations
 // current page exists. Otherwise the control would mislead readers.
 const showLangSwitcher = translationEntries.length > 0;
 
-// Author identity used in JSON-LD (mirrors site/src/pages/about.astro).
-const author = {
-  "@type": "Person",
-  name: "Marius Bughiu",
-  url: `${siteUrl}/about/`,
-  sameAs: [
-    "https://github.com/marius-bughiu",
-    "https://x.com/mariusbughiu",
-    "https://www.linkedin.com/in/mariusbughiu/",
-  ],
-};
-
+// Publishing responsibility is known. Individual authorship is not recorded
+// reliably across the imported archive, so do not infer an author from the
+// owner, publication date, or Git committer. See /about/#editorial-process.
 const publisher = {
   "@type": "Organization",
   name: siteName,
@@ -136,7 +127,6 @@ const primaryJsonLd =
         ...(updatedDate ? { dateModified: updatedDate.toISOString() } : {}),
         ...(tags?.length ? { keywords: tags.join(", ") } : {}),
         inLanguage: ogLocale.replace("_", "-"),
-        author,
         publisher,
       }
     : {
@@ -273,7 +263,6 @@ const navigation = [
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@startdebugging_" />
-    <meta name="twitter:creator" content="@mariusbughiu" />
     <meta name="twitter:title" content={title} />
     {description ? <meta name="twitter:description" content={description} /> : null}
     <meta name="twitter:image" content={ogImageUrl} />

@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import TableOfContents from "../../components/TableOfContents.astro";
 import ArticleBreadcrumbs from "../../components/ArticleBreadcrumbs.astro";
+import PublicationCredit from "../../components/PublicationCredit.astro";
 import {
   getPublishedPillars,
   getPillarPosts,
@@ -65,6 +66,8 @@ const groupKeys = Array.from(groups.keys()).sort((a, b) =>
     {pillar.data.tagline ? (
       <p class="muted" style="font-size: 18px;">{pillar.data.tagline}</p>
     ) : null}
+
+    <PublicationCredit publishedDate={pillar.data.pubDate} />
 
     <TableOfContents headings={headings} />
 
