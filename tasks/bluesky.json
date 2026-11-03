@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/11/what-does-callerargumentexpression-capture-and-how-do-i-use-it-in-guard-methods",
-    "text": "Guard.NotNull(user.Address) can report 'user.Address' for free. What [CallerArgumentExpression] keeps, strips, and loses."
   }
 ]
