@@ -557,7 +557,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is `pubspec_overrides.yaml` and when should I use it in a Flutter monorepo? → slug: 2026/11/what-is-pubspec-overrides-yaml-and-when-should-i-use-it-in-a-flutter-monorepo
 
 ---
-- What is `[ModuleInitializer]` in C# and when should a library use it?
+- What is `[ModuleInitializer]` in C# and when should a library use it? → slug: 2026/11/what-is-moduleinitializer-in-csharp-and-when-should-a-library-use-it
 - What does `[CallerArgumentExpression]` capture, and how do I use it in my own guard methods?
 - What is `AsyncLocal<T>` and why doesn't a value set inside an awaited method flow back to the caller?
 - Why does enabling MARS stop `TransactionScope` from escalating to MSDTC in SQL Server?
