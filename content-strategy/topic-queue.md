@@ -559,7 +559,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 ---
 - What is `[ModuleInitializer]` in C# and when should a library use it? → slug: 2026/11/what-is-moduleinitializer-in-csharp-and-when-should-a-library-use-it
 - What does `[CallerArgumentExpression]` capture, and how do I use it in my own guard methods? → slug: 2026/11/what-does-callerargumentexpression-capture-and-how-do-i-use-it-in-guard-methods
-- What is `AsyncLocal<T>` and why doesn't a value set inside an awaited method flow back to the caller?
+- What is `AsyncLocal<T>` and why doesn't a value set inside an awaited method flow back to the caller? → slug: 2026/11/what-is-asynclocal-and-why-doesnt-a-value-set-in-an-awaited-method-flow-back
 - Why does enabling MARS stop `TransactionScope` from escalating to MSDTC in SQL Server?
 - What happens if you start a thread from a finalizer in .NET?
 - When is `Stopwatch` not high resolution in .NET, and what do `IsHighResolution` and `Frequency` report on each OS?
