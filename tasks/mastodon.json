@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/11/what-is-the-mcp-tasks-extension-and-when-do-you-need-poll-based-long-running-tools",
+    "text": "MCP tools that run for minutes can now answer tools/call with a durable taskId: the client polls tasks/get, answers mid-run questions via tasks/update, and can reconnect after a crash. Gotcha: the server may only return a task if that same request declared the extension, otherwise it is -32021."
   }
 ]

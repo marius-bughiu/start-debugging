@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/11/what-is-the-mcp-tasks-extension-and-when-do-you-need-poll-based-long-running-tools",
+    "text": "A 10-minute MCP tool call should return a task handle, not hold a request open. How tasks/get polling works."
   }
 ]
