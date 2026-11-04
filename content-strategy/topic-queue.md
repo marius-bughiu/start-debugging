@@ -562,7 +562,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is `AsyncLocal<T>` and why doesn't a value set inside an awaited method flow back to the caller? → slug: 2026/11/what-is-asynclocal-and-why-doesnt-a-value-set-in-an-awaited-method-flow-back
 - Why does enabling MARS stop `TransactionScope` from escalating to MSDTC in SQL Server? (skipped 2026-11-04: needs a SQL Server instance plus Windows MSDTC to reproduce escalation; neither is available to the scheduled run, so it cannot be verified)
 - What happens if you start a thread from a finalizer in .NET? → slug: 2026/11/what-happens-if-you-start-a-thread-from-a-finalizer-in-dotnet
-- When is `Stopwatch` not high resolution in .NET, and what do `IsHighResolution` and `Frequency` report on each OS?
+- When is `Stopwatch` not high resolution in .NET, and what do `IsHighResolution` and `Frequency` report on each OS? → slug: 2026/11/when-is-stopwatch-not-high-resolution-in-dotnet
 - Why is the first limiter in `PartitionedRateLimiter.CreateChained` called twice per request?
 - What is the difference between `==` and `identical` in Dart, and what does `==` fall back to?
 - Why does `Future.delayed` or a `Timer` fire later than the requested `Duration` in Dart?
