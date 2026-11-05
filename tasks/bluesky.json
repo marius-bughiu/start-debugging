@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/11/github-actions-blocks-pull-request-target-by-default-december-2",
-    "text": "pull_request_target is blocked by default in public repos from Dec 2. First brownout hits Nov 9. Audit your workflows."
   }
 ]
