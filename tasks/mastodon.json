@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/11/github-actions-blocks-pull-request-target-by-default-december-2",
+    "text": "GitHub Actions will block pull_request_target in every public repository from December 2, 2026 unless an Actions event policy allows it, with failing brownouts on November 9 and 16. For .NET repos: move build-and-test jobs to pull_request, and allow-list only the workflows that truly need secrets."
   }
 ]
