@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/why-createchained-calls-the-first-rate-limiter-twice-per-request",
-    "text": "CreateChained isn't calling your first limiter twice: the rate limiting middleware is. AttemptAcquire fails, then AcquireAsync walks the chain again, and with fixed window limiters every rejected or queued request burns two permits. Measured on .NET 10 and 11 RC3, with a fix."
   }
 ]

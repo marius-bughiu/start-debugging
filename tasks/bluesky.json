@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/11/why-createchained-calls-the-first-rate-limiter-twice-per-request",
-    "text": "A chained per-client fixed window limiter loses 2 permits per rejected request in ASP.NET Core. Repro and a 20-line fix."
   }
 ]
