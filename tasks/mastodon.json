@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/what-is-microsoft-execution-container-mxc-and-how-copilot-sandboxes-tool-execution",
-    "text": "Copilot's local sandbox is built on Microsoft eXecution Container (MXC), an MIT SDK for Rust, .NET and Node that you can embed in your own agent harness. The catch: MXC network rules are CIDR-only, so hostname allowlists and secret injection live in a proxy you run, and in-process tools are never covered."
   }
 ]
