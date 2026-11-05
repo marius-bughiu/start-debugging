@@ -565,7 +565,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - When is `Stopwatch` not high resolution in .NET, and what do `IsHighResolution` and `Frequency` report on each OS? → slug: 2026/11/when-is-stopwatch-not-high-resolution-in-dotnet
 - Why is the first limiter in `PartitionedRateLimiter.CreateChained` called twice per request? → slug: 2026/11/why-createchained-calls-the-first-rate-limiter-twice-per-request
 - What is the difference between `==` and `identical` in Dart, and what does `==` fall back to? → slug: 2026/11/what-is-the-difference-between-equals-and-identical-in-dart
-- Why does `Future.delayed` or a `Timer` fire later than the requested `Duration` in Dart?
+- Why does `Future.delayed` or a `Timer` fire later than the requested `Duration` in Dart? → slug: 2026/11/why-does-future-delayed-or-a-timer-fire-late-in-dart
 
 ## Consumed
 
