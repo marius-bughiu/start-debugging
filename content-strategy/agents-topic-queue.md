@@ -224,9 +224,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - What are declarative agent workflows and when is YAML better than code (skipped: same intent as 2026/08/agent-framework-declarative-yaml-vs-code-first-orchestration, which covers when YAML beats code-first WorkflowBuilder and the action catalog limits)
 - What is a Multi Round-Trip Request in MCP and why it replaced server-initiated sampling (skipped: same intent as 2026/07/mcp-csharp-sdk-2-0-stateless-by-default-and-mcp9005, 2026/08/fix-mcp9004-mcp9005-mcp9006-warnings-after-mcp-csharp-sdk-2-0 and 2026/08/safe-file-write-tools-for-an-agent-preview-confirm-apply, which explain InputRequiredResult, requestState and why server-initiated requests were dropped)
 - What is the MCP Tasks extension and when do you need poll-based long-running tools → slug: 2026/11/what-is-the-mcp-tasks-extension-and-when-do-you-need-poll-based-long-running-tools
-- What is Agent Plugins 1.0 and which agents can install the same plugin
-- What is a Copilot dynamic workflow and how is it different from a prompt
-- What is Microsoft eXecution Container (MXC) and how Copilot sandboxes tool execution
+- What is Agent Plugins 1.0 and which agents can install the same plugin (skipped: same intent as 2026/08/agent-plugins-1-0-vs-vendor-specific-plugin-formats, which defines the standard and has the per-client support matrix)
+- What is a Copilot dynamic workflow and how is it different from a prompt (skipped: same intent as 2026/10/how-to-define-a-github-copilot-cli-dynamic-workflow-and-run-it-from-ci, whose opening section explains a workflow as a program vs copilot -p, plus 2026/10/copilot-dynamic-workflows-vs-fleet-vs-github-agentic-workflows)
+- What is Microsoft eXecution Container (MXC) and how Copilot sandboxes tool execution → slug: 2026/11/what-is-microsoft-execution-container-mxc-and-how-copilot-sandboxes-tool-execution
 
 ---
 
