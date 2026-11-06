@@ -233,3 +233,4 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 ## Consumed
 
 <!-- entries move here with `→ slug: YYYY/MM/<slug>` annotations once a post is written -->
+- ACP vs MCP: what the Agent Client Protocol does that MCP does not (freshness fallback: Copilot in JetBrains Air over ACP, 2026-11-03; queue had no unconsumed items) → slug: 2026/11/acp-vs-mcp-what-the-agent-client-protocol-does-that-mcp-does-not
