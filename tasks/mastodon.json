@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/11/why-does-math-round-2-5-return-2-in-csharp",
+    "text": "Math.Round(2.5) returns 2 in C# because the default is MidpointRounding.ToEven. Pass AwayFromZero for school rounding. The bigger surprise: .NET 11 now rounds the exact binary value, so Math.Round(2.675, 2, AwayFromZero) goes from 2.68 to 2.67, and the old (decimal) cast trick changed too."
   }
 ]

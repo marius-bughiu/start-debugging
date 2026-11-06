@@ -567,6 +567,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - What is the difference between `==` and `identical` in Dart, and what does `==` fall back to? → slug: 2026/11/what-is-the-difference-between-equals-and-identical-in-dart
 - Why does `Future.delayed` or a `Timer` fire later than the requested `Duration` in Dart? → slug: 2026/11/why-does-future-delayed-or-a-timer-fire-late-in-dart
 - Why does `string.GetHashCode()` return a different value every run in .NET, and how do I get a stable hash? (fallback pick 2026-11-06: queue had no unconsumed items) → slug: 2026/11/why-does-string-gethashcode-return-a-different-value-every-run-in-dotnet
+- Why does `Math.Round(2.5)` return 2 in C#? (fallback pick 2026-11-06: queue had no unconsumed items) → slug: 2026/11/why-does-math-round-2-5-return-2-in-csharp
 
 ## Consumed
 
