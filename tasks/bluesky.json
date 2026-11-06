@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/11/why-does-math-round-2-5-return-2-in-csharp",
-    "text": "Math.Round(2.5) is 2 because .NET defaults to banker's rounding. And on .NET 11, Math.Round(2.675, 2) changed from 2.68 to 2.67."
   }
 ]
