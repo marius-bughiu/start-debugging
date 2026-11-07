@@ -570,6 +570,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Why does `Math.Round(2.5)` return 2 in C#? (fallback pick 2026-11-06: queue had no unconsumed items) → slug: 2026/11/why-does-math-round-2-5-return-2-in-csharp
 - Is `List<T>.Sort` stable in C#, and why do equal elements change order? (fallback pick 2026-11-06: queue had no unconsumed items) → slug: 2026/11/is-list-sort-stable-in-csharp
 - Why does a C# decimal keep trailing zeros, and how do I remove them? (fallback pick 2026-11-07: queue had no unconsumed items) → slug: 2026/11/why-does-csharp-decimal-keep-trailing-zeros
+- Fix: `Collection was modified; enumeration operation may not execute` in C# (fallback pick 2026-11-07: queue had no unconsumed items) → slug: 2026/11/fix-collection-was-modified-enumeration-operation-may-not-execute-in-csharp
 
 ## Consumed
 
