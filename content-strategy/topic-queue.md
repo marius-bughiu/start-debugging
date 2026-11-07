@@ -569,6 +569,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Why does `string.GetHashCode()` return a different value every run in .NET, and how do I get a stable hash? (fallback pick 2026-11-06: queue had no unconsumed items) → slug: 2026/11/why-does-string-gethashcode-return-a-different-value-every-run-in-dotnet
 - Why does `Math.Round(2.5)` return 2 in C#? (fallback pick 2026-11-06: queue had no unconsumed items) → slug: 2026/11/why-does-math-round-2-5-return-2-in-csharp
 - Is `List<T>.Sort` stable in C#, and why do equal elements change order? (fallback pick 2026-11-06: queue had no unconsumed items) → slug: 2026/11/is-list-sort-stable-in-csharp
+- Why does a C# decimal keep trailing zeros, and how do I remove them? (fallback pick 2026-11-07: queue had no unconsumed items) → slug: 2026/11/why-does-csharp-decimal-keep-trailing-zeros
 
 ## Consumed
 
