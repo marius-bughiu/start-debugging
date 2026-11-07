@@ -80,6 +80,17 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to make a Claude Code hook fail closed with `onFailure: "block"` → slug: 2026/10/how-to-make-a-claude-code-hook-fail-closed-with-onfailure-block
 - How to isolate users and sessions in a Foundry hosted Microsoft Agent Framework agent → slug: 2026/10/how-to-isolate-users-and-sessions-in-a-foundry-hosted-microsoft-agent-framework-agent
 - How to let GitHub Copilot drive a desktop app with computer use → slug: 2026/10/how-to-let-github-copilot-drive-a-desktop-app-with-computer-use
+- How to keep a long Claude agent loop under the context limit with on-demand API compaction (the `compaction` parameter)
+- How to add or change a tool mid-conversation without invalidating the Claude prompt cache (`tool_addition` blocks)
+- How to find out why a Claude API prompt cache missed with the `diagnostics` request object
+- How to trace Anthropic SDK calls with the built-in OpenTelemetry export
+- How to manage Claude Managed Agents, skills and memory stores as code with `ant apply` and `claude-lock.json`
+- How to scaffold, eval and replay a Cursor Agent SDK PR bot (`agent-sdk init`, `agent-sdk eval`, `agent-sdk github replay`)
+- How to give your coding agent the Microsoft Agent Framework builder skills (`gh skill install` / `npx skills add`)
+- How to make a Microsoft Agent Framework background run survive a host restart with resilient background responses
+- How to keep headless Claude Code runs from stalling on permission prompts with `permissions.denyInsteadOfPrompting`
+- How to stop a coding agent from writing outside the repo with `permissions.blockWritesOutsideWorkingDirectories`
+- How to change effort per turn in a Claude conversation with a mid-conversation system message
 
 ## Fix / error
 
@@ -121,6 +132,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: `529 overloaded_error` ends a long headless Claude Code run (tune the overloaded-retry backoff env vars) → slug: 2026/10/fix-claude-code-repeated-529-overloaded-errors-in-a-headless-run
 - Fix: a Copilot agent command fails with permission or network denied after local sandboxing is enabled → slug: 2026/10/fix-copilot-agent-command-fails-with-permission-or-network-denied-after-enabling-local-sandboxing
 - Fix: Claude Code hooks fail with "Plugin directory does not exist" → slug: 2026/10/fix-claude-code-hooks-fail-with-plugin-directory-does-not-exist
+- Fix: Claude Managed Agents `web_fetch` returns `url_not_in_prior_context` or `url_not_allowed`
+- Fix: self-paced Claude Code `/loop` stops after one turn instead of rescheduling (`CLAUDE_CODE_LOOP_KEEPALIVE`)
+- Fix: `claude -p` exits 1 because auto mode refused actions behind an LLM gateway (`CLAUDE_CODE_AUTO_MODE_SERVER`)
 
 ## Vs / comparison
 
@@ -154,6 +168,10 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Copilot local sandbox vs cloud sandbox vs a dev container: how much isolation each gives an agent → slug: 2026/10/copilot-local-sandbox-vs-cloud-sandbox-vs-dev-container
 - Claude Haiku 5.5 vs Sonnet 5.5 vs Opus 5.5 for coding-agent subagents: picking a model per role → slug: 2026/10/claude-haiku-5-5-vs-sonnet-5-5-vs-opus-5-5-for-coding-agent-subagents
 - Specialist A2A agents vs distributed skills over MCP: when to collapse agents into skills → slug: 2026/10/specialist-a2a-agents-vs-distributed-skills-over-mcp
+- On-demand compaction vs message threads vs client-side summarization for long Claude agent conversations
+- Cursor Agent SDK vs Claude Agent SDK vs GitHub Copilot SDK for building a PR-review bot
+- AG-UI vs A2A vs MCP: which protocol connects an agent to a user interface
+- Copilot Automations vs GitHub Agentic Workflows: which to use for repo automation now both are GA
 
 ## Migration / upgrade
 
@@ -179,6 +197,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Migrate a coding agent from Claude Sonnet 4.6 / Opus 4.7 to the 5.5 model family (model IDs, effort, cost) → slug: 2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family
 - Migrate a `/fleet` prompt to a reusable Copilot dynamic workflow (skipped: same intent as 2026/10/copilot-dynamic-workflows-vs-fleet-vs-github-agentic-workflows, whose dynamic-workflow section converts a repeated /fleet prompt into defineWorkflow code, plus 2026/10/how-to-define-a-github-copilot-cli-dynamic-workflow-and-run-it-from-ci)
 - Migrate specialist A2A agents in Microsoft Agent Framework to skills served over MCP (skipped: same intent as 2026/10/specialist-a2a-agents-vs-distributed-skills-over-mcp, which covers the collapse decision, the Agent Framework 1.17 wiring and a migrate-one-domain-first plan, plus 2026/08/serve-agent-skills-from-an-mcp-server-in-dotnet-with-usemcpskills)
+- Migrate an Anthropic SDK app to API version 2026-10-21 (Python SDK 2.0, TypeScript SDK 1.0, C# SDK 13)
+- Migrate from the legacy Anthropic Usage and Cost API to the Usage and Cost Analytics API
+- Migrate Semantic Kernel vector store code to Microsoft Agent Framework for Python vector stores
 
 ## Patterns
 
@@ -205,6 +226,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Patterns: post-merge verification for agent-authored PRs (monitoring plans and per-environment verdicts) (skipped: same intent as 2026/10/how-to-monitor-agent-authored-prs-after-deploy-with-cursor-rollouts-and-datadog, which covers Cursor Rollouts' rollout plan comment and per-environment checks at deploy, 20 minutes, 1 hour, 1 day and 3 days)
 - Patterns: retry and backoff for long agent loops under overloaded and rate-limit errors → slug: 2026/11/retry-and-backoff-for-long-agent-loops-under-overloaded-and-rate-limit-errors
 - Patterns: a coordinator agent plus worker agents for multi-day projects → slug: 2026/11/coordinator-agent-plus-worker-agents-for-multi-day-projects
+- Patterns: splitting agent memory into working, episodic and semantic layers (what stays in context and what moves out)
+- Patterns: detecting MCP tool schema drift so an agent notices when a tool it depends on changed
 
 ## What is / concept
 
@@ -227,6 +250,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - What is Agent Plugins 1.0 and which agents can install the same plugin (skipped: same intent as 2026/08/agent-plugins-1-0-vs-vendor-specific-plugin-formats, which defines the standard and has the per-client support matrix)
 - What is a Copilot dynamic workflow and how is it different from a prompt (skipped: same intent as 2026/10/how-to-define-a-github-copilot-cli-dynamic-workflow-and-run-it-from-ci, whose opening section explains a workflow as a program vs copilot -p, plus 2026/10/copilot-dynamic-workflows-vs-fleet-vs-github-agentic-workflows)
 - What is Microsoft eXecution Container (MXC) and how Copilot sandboxes tool execution → slug: 2026/11/what-is-microsoft-execution-container-mxc-and-how-copilot-sandboxes-tool-execution
+- What is the Claude advisor tool and when does a cheap executor plus a strong advisor beat the big model alone
+- What are Claude message threads and how do they differ from prompt caching
 
 ---
 
