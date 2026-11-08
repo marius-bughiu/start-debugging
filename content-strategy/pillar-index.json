@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-10-25",
-  "totalEnglishPublishedPosts": 1045,
-  "note": "Counts mirror getPillarPosts() in site/src/lib/blog.ts: English, non-draft posts whose lowercased tags intersect the pillar's indexTags.",
+  "lastRun": "2026-11-08",
+  "totalEnglishPublishedPosts": 1116,
+  "note": "Counts mirror getPillarPosts() in site/src/lib/blog.ts via selectPillarPosts(): English, non-draft posts whose canonicalized tags intersect indexTags (and indexRequireAnyTags when set).",
   "pillars": {
     "aspnetcore-11-cheat-sheet": {
       "indexTags": [
@@ -9,9 +9,9 @@
         "aspnet-core",
         "aspnet"
       ],
-      "count": 117,
-      "previousCount": 115,
-      "updatedDate": "2026-10-25",
+      "count": 127,
+      "previousCount": 117,
+      "updatedDate": "2026-11-08",
       "lastPassAction": "updated"
     },
     "async-and-concurrency-in-csharp": {
@@ -20,9 +20,16 @@
         "concurrency",
         "threading"
       ],
-      "count": 48,
-      "previousCount": 46,
-      "updatedDate": "2026-10-25",
+      "indexRequireAnyTags": [
+        "csharp",
+        "dotnet",
+        ".net",
+        "aspnetcore",
+        "ef-core"
+      ],
+      "count": 45,
+      "previousCount": 48,
+      "updatedDate": "2026-11-08",
       "lastPassAction": "updated"
     },
     "coding-agents-tracker": {
@@ -36,9 +43,9 @@
         "agent-skills",
         "microsoft-agent-framework"
       ],
-      "count": 243,
-      "previousCount": 235,
-      "updatedDate": "2026-10-25",
+      "count": 261,
+      "previousCount": 243,
+      "updatedDate": "2026-11-08",
       "lastPassAction": "updated"
     },
     "csharp-14-features": {
@@ -50,23 +57,30 @@
         "csharp",
         "c# language"
       ],
-      "count": 357,
-      "previousCount": 352,
-      "updatedDate": "2026-10-25",
+      "count": 384,
+      "previousCount": 357,
+      "updatedDate": "2026-11-08",
       "lastPassAction": "updated"
+    },
+    "dotnet-10-tracker": {
+      "indexTags": [
+        "dotnet-10"
+      ],
+      "count": 107,
+      "previousCount": null,
+      "updatedDate": "2026-11-08",
+      "lastPassAction": "created"
     },
     "dotnet-11-tracker": {
       "indexTags": [
         ".net 11",
         "dotnet 11",
         ".net 11 preview",
-        "dotnet-11",
-        "dotnet",
-        ".net"
+        "dotnet-11"
       ],
-      "count": 586,
-      "previousCount": 574,
-      "updatedDate": "2026-10-25",
+      "count": 328,
+      "previousCount": 586,
+      "updatedDate": "2026-11-08",
       "lastPassAction": "updated"
     },
     "efcore-11-cheat-sheet": {
@@ -77,9 +91,9 @@
         "efcore-11",
         "entity-framework"
       ],
-      "count": 110,
-      "previousCount": 109,
-      "updatedDate": "2026-10-25",
+      "count": 113,
+      "previousCount": 110,
+      "updatedDate": "2026-11-08",
       "lastPassAction": "updated"
     },
     "flutter-tracker": {
@@ -87,9 +101,9 @@
         "flutter",
         "dart"
       ],
-      "count": 157,
-      "previousCount": 144,
-      "updatedDate": "2026-10-25",
+      "count": 170,
+      "previousCount": 157,
+      "updatedDate": "2026-11-08",
       "lastPassAction": "updated"
     },
     "maui-xamarin-tracker": {
@@ -100,18 +114,18 @@
         "xamarin-forms"
       ],
       "count": 60,
-      "previousCount": 59,
+      "previousCount": 60,
       "updatedDate": "2026-10-25",
-      "lastPassAction": "updated"
+      "lastPassAction": "skipped (count unchanged, updatedDate exactly 14 days old)"
     },
     "performance-and-native-aot": {
       "indexTags": [
         "performance",
         "native-aot"
       ],
-      "count": 93,
-      "previousCount": 91,
-      "updatedDate": "2026-10-25",
+      "count": 101,
+      "previousCount": 93,
+      "updatedDate": "2026-11-08",
       "lastPassAction": "updated"
     },
     "security-tracker": {
@@ -122,9 +136,9 @@
         "authentication",
         "cryptography"
       ],
-      "count": 50,
-      "previousCount": 49,
-      "updatedDate": "2026-10-25",
+      "count": 58,
+      "previousCount": 50,
+      "updatedDate": "2026-11-08",
       "lastPassAction": "updated"
     }
   }

@@ -3,7 +3,7 @@ title: "The .NET 11 tracker"
 description: "Track the .NET 11 release candidate, support policy, runtime changes and upgrade checks, with links to integration testing, EF Core and request logging guides."
 tagline: "One bookmark for the whole .NET 11 cycle."
 pubDate: 2026-04-18
-updatedDate: 2026-11-02
+updatedDate: 2026-11-08
 indexTags:
   - ".net 11"
   - "dotnet 11"
