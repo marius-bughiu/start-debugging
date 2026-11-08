@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/how-to-distinctby-keep-the-last-element-in-csharp-preserving-order",
-    "text": "DistinctBy keeps the first element per key. Keeping the last one in source order is a backward HashSet scan plus a bool[]. Eight Stack Overflow approaches checked on .NET 10 and 11: two return the wrong order, Dictionary-based ones throw on null keys, and the OrderedDictionary one turned out quadratic (298x slower)."
   }
 ]
