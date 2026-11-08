@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/11/mcp-csharp-sdk-2-4-serves-agent-skills-with-skills-list-and-skills-get",
-    "text": "MCP C# SDK 2.4 can publish a folder of SKILL.md skills in one call, and the client checks every file against a SHA-256 manifest."
   }
 ]
