@@ -56,7 +56,7 @@ Hay otra ganancia menor: los radios en sí quedan más cortos. Un `Radio<int>` e
 
 1. **Envuelve el grupo en `RadioGroup<T>` y mueve `groupValue` y `onChanged` a él.** Esta es toda la migración en una sola edición. La variable de estado y la llamada a `setState` no se mueven; solo las propiedades.
 
-   Antes, en Flutter 3.44:
+   Antes, en [Flutter 3.44](/es/2026/07/flutter-3-44-read-the-screen-corner-radius-from-mediaquery/):
 
    ```dart
    // Flutter 3.44, Dart 3.12 - deprecated API
