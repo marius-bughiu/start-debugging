@@ -36,16 +36,6 @@ Move approved entries under `## Approved`, remove after posting.
 
 <!-- The scheduled task appends new entries here. Stale drafts (>14 days) are culled on the next run. -->
 
-### 2026-10-18 drafted - how-to-handle-network-errors-gracefully-in-a-flutter-app
-
-**Original:** 2026-06-01 - How to Handle Network Errors Gracefully in a Flutter App
-
-**Bluesky:** Flutter's http package never times out on its own and never throws on a 500. So a stalled request spins forever, and an error payload gets parsed as data. Add .timeout(), check statusCode, then map each failure to a state the user can act on.
-
-**Mastodon:** connectivity_plus reporting wifi does not mean your Flutter app is online. Behind a captive portal that has not been accepted yet, the request still fails with a SocketException or a timeout, and if the portal answers with a 200 HTML page, jsonDecode throws a FormatException instead. Use the connectivity stream for an offline banner, treat the exception handler as the source of truth, and only show Retry where retrying can actually succeed.
-
-**Notes:** 2552 words with 10 internal links into the Flutter cluster (dispose controllers, FormatException JSON, Dart isolates, GetX to Riverpod, RenderFlex overflow). The only longer eligible evergreen, how-to-add-a-health-check-endpoint-to-a-minimal-api-in-aspnetcore-11 (2658 words, 10 links), was passed over because last week's pick was also a minimal API post; it is the natural next pick. Flutter was last resurfaced on 09-13 (Dart records vs Freezed), so this rotates back to mobile after four .NET picks. gsc-candidates.json is an empty array, so no traction signal; depth and link count decided. Fresh angle: the obvious copy is the post's sealed NetworkResult plus exhaustive switch pattern. Neither hook repeats it. Bluesky leads with the two silent defaults of the http package (no timeout, no throw on non-2xx). Mastodon takes the captive portal trap, where connectivity_plus says online and the failure shows up as a socket error or a FormatException. Post refresh idea: since http 1.x, IOClient surfaces socket failures as ClientException (an internal subtype that also implements SocketException), so the on-clause ordering paragraph is worth re-checking against the current package.
-
 ### 2026-10-25 drafted - how-to-serialize-a-polymorphic-type-hierarchy-with-jsonderivedtype-in-system-text-json
 
 **Original:** 2026-07-27 - How to serialize a polymorphic type hierarchy with JsonDerivedType in System.Text.Json
@@ -65,6 +55,16 @@ Move approved entries under `## Approved`, remove after posting.
 **Mastodon:** .NET 11 ships this month, and one SDK change can break a container registry that used to work with dotnet publish /t:PublishContainer. The SDK now validates the bearer-token realm in the registry's auth challenge: it must be an absolute HTTPS URI (unless the registry is in DOTNET_CONTAINER_INSECURE_REGISTRIES) and cannot be a loopback or private IP literal. If an internal registry starts failing the publish after the upgrade, check that challenge first.
 
 **Notes:** Longest eligible evergreen (2816 words, 8 internal links into the build/publish, Native AOT, trimming and Aspire cluster), pubDate 2026-07-27 is 97 days back, and last week's notes flagged it as the natural next pick. Runners up: migrate-from-ilogger-string-interpolation-to-message-templates-in-dotnet-11 (2779 words, 5 links) and how-to-apply-ef-core-11-migrations-in-production-with-migrations-bundle (2768 words, 12 links), the latter a strong next pick. No container/DevOps post has been resurfaced in the past 90 days. gsc-candidates.json is an empty array, so no traction signal; depth and timing decided. Fresh angle: .NET 11 GA lands this month, so the timing is the hook. The obvious copy is the post's no-Dockerfile pitch and naming/tag properties; neither hook repeats it. Bluesky takes the multi-arch trap where --arch or -r silently collapses the OCI image index to one architecture. Mastodon takes the .NET 11 bearer-token realm validation (dotnet/sdk#54225) as an upgrade-time breaking change for internal registries. Post refresh idea: the intro still says 'preview 6 at the time of writing, GA in November 2026'; once GA ships, update that line and re-check whether the realm validation and Podman multi-arch changes shipped as described.
+
+### 2026-11-08 drafted - how-to-call-a-stored-procedure-and-map-its-results-in-ef-core-11
+
+**Original:** 2026-08-10 - How to call a stored procedure and map its results in EF Core 11
+
+**Bluesky:** EF Core stored procedure with an OUTPUT parameter? Its Value is null until the reader is disposed. Read it after ToListAsync, never mid-loop. And an enumerator you never dispose also breaks every later query on that DbContext with 'already an open DataReader'.
+
+**Mastodon:** Your stored procedure returns two result sets, and EF Core's FromSql hands back the first one and silently drops the second. No exception, no warning. The issue asking for multiple result sets has been open since 2017 and is still in the backlog, so EF Core 11 does not fix it. Drop to a DbCommand and NextResultAsync. Same escape hatch for a T-SQL RETURN value: ReturnValue needs CommandType.StoredProcedure, and EF always sends Text.
+
+**Notes:** Longest eligible evergreen (3142 words, 8 internal links into the EF Core cluster: FromSql missing-column fix, compiled queries vs Dapper, LINQ translation fix, SQL logging, ExecuteUpdate/ExecuteDelete). pubDate 2026-08-10 is exactly 90 days back, so it just cleared the floor. No EF Core post has been resurfaced in the past 90 days, and it rotates off two serialization/container picks. Runners up: fix-http-error-500-30-aspnet-core-app-failed-to-start-on-iis (2973 words, 10 links) and how-to-apply-ef-core-11-migrations-in-production-with-migrations-bundle (2768 words, 12 links); the IIS one is the natural next pick to avoid back-to-back EF Core. gsc-candidates.json is an empty array, so no traction signal; depth decided. Fresh angle: the obvious copy is the post's three-API decision (FromSql vs SqlQuery<T> vs ExecuteSql) and the non-composable EXEC exception. Neither hook repeats it. Bluesky takes the output parameter timing trap plus the undisposed-enumerator 'open DataReader' failure. Mastodon takes the silent drop of extra result sets (dotnet/efcore#8127, still Backlog) and the RETURN value needing CommandType.StoredProcedure. Post refresh idea: the post was measured on EF Core 10 because .NET 11 was not installed; with .NET 11 GA this month, re-run the samples on EF Core 11 and drop the caveat paragraph. Cull: removed the 2026-10-18 Flutter network errors draft (21 days old).
 
 ---
 
