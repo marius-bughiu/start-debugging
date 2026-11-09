@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/how-to-show-msbuild-exec-output-in-dotnet-build-with-the-terminal-logger",
-    "text": "Your MSBuild Exec output vanished from dotnet build since .NET 9? The terminal logger only prints High messages at detailed verbosity, so StandardOutputImportance=\"High\" does nothing. Fixes: -tlp:verbosity=detailed, a Directory.Build.rsp, -tl:off, or promote lines to warnings. Bonus: a failing Exec hides its output too."
   }
 ]
