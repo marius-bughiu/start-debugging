@@ -81,7 +81,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to isolate users and sessions in a Foundry hosted Microsoft Agent Framework agent → slug: 2026/10/how-to-isolate-users-and-sessions-in-a-foundry-hosted-microsoft-agent-framework-agent
 - How to let GitHub Copilot drive a desktop app with computer use → slug: 2026/10/how-to-let-github-copilot-drive-a-desktop-app-with-computer-use
 - How to keep a long Claude agent loop under the context limit with on-demand API compaction (the `compaction` parameter) → slug: 2026/11/how-to-keep-a-long-claude-agent-loop-under-the-context-limit-with-on-demand-compaction
-- How to add or change a tool mid-conversation without invalidating the Claude prompt cache (`tool_addition` blocks)
+- How to add or change a tool mid-conversation without invalidating the Claude prompt cache (`tool_addition` blocks) → slug: 2026/11/add-a-tool-mid-conversation-without-breaking-the-claude-prompt-cache
 - How to find out why a Claude API prompt cache missed with the `diagnostics` request object
 - How to trace Anthropic SDK calls with the built-in OpenTelemetry export
 - How to manage Claude Managed Agents, skills and memory stores as code with `ant apply` and `claude-lock.json`
