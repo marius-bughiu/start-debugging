@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/11/dotnet-8-and-dotnet-9-reach-end-of-support-on-november-10-2026",
-    "text": "Tomorrow .NET 8 and .NET 9 both lose support. Apps keep running, but security patches stop. The move to net10.0, step by step."
   }
 ]

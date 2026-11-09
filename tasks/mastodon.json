@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/dotnet-8-and-dotnet-9-reach-end-of-support-on-november-10-2026",
-    "text": "November 10, 2026 is the last day of support for .NET 8 (LTS) and .NET 9 (STS), which now share an end date because STS grew to 24 months. Apps keep running, but the next CVE stays unpatched. Here is what stops, and the project, SDK, container and CI changes to move to .NET 10 (supported until November 2028)."
   }
 ]
