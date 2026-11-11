@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/11/dotnet-11-is-generally-available-what-to-change-in-your-project",
-    "text": ".NET 11 is GA (SDK 11.0.100). Installing it retargets nothing, C# 15 unions are on, runtime async is still preview. The checklist."
   }
 ]

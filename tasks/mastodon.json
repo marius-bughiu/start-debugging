@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/dotnet-11-is-generally-available-what-to-change-in-your-project",
-    "text": ".NET 11.0.0 shipped November 10 as an STS release supported until November 2028, the same date as .NET 10 LTS. Before bumping to net11.0: check your hosts meet the new x86-64-v2 CPU baseline, clear leftover RC packages, and know which headline features (runtime async, Components.AI) are still opt-in."
   }
 ]
