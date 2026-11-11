@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/11/fix-dotnet-10-configuration-binding-drops-records-with-null-constructor-parameters",
+    "text": "Upgraded to .NET 10 and a list from appsettings.json lost items? A JSON null is now a real null, and binder 10.0.x reads it as missing config for a record's constructor parameter, then swallows the exception. Reference Binder 11.0.0 or add '= null' defaults. Measured on 9, 10.0.14 and 11."
   }
 ]
