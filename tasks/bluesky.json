@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/11/flutter-3-50-wasm-on-safari-and-firefox-and-web-content-hash",
-    "text": "Flutter 3.50: Wasm builds now run on Safari 26.2+ and Firefox 147+ via a wasmAllowList opt-in, plus --web-content-hash."
   }
 ]
