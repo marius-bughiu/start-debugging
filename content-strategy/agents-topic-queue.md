@@ -84,7 +84,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to add or change a tool mid-conversation without invalidating the Claude prompt cache (`tool_addition` blocks) → slug: 2026/11/add-a-tool-mid-conversation-without-breaking-the-claude-prompt-cache
 - How to find out why a Claude API prompt cache missed with the `diagnostics` request object → slug: 2026/11/how-to-find-out-why-a-claude-prompt-cache-missed-with-diagnostics
 - How to trace Anthropic SDK calls with the built-in OpenTelemetry export → slug: 2026/11/how-to-trace-anthropic-sdk-calls-with-built-in-opentelemetry
-- How to manage Claude Managed Agents, skills and memory stores as code with `ant apply` and `claude-lock.json`
+- How to manage Claude Managed Agents, skills and memory stores as code with `ant apply` and `claude-lock.json` → slug: 2026/11/how-to-manage-claude-managed-agents-skills-and-memory-stores-as-code-with-ant-apply
 - How to scaffold, eval and replay a Cursor Agent SDK PR bot (`agent-sdk init`, `agent-sdk eval`, `agent-sdk github replay`)
 - How to give your coding agent the Microsoft Agent Framework builder skills (`gh skill install` / `npx skills add`)
 - How to make a Microsoft Agent Framework background run survive a host restart with resilient background responses
