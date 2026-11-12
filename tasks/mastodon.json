@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/11/fix-cs0277-protected-setter-in-a-csharp-interface-is-not-public",
+    "text": "CS0277 'Offset.set is not public' when a C# interface declares { get; protected set; }: protected on an interface member only means derived interfaces can use it, so no class can satisfy it with a protected setter. Fixes compiled on .NET 11, plus why the public-setter workaround needs C# 10 (CS8704)."
   }
 ]
