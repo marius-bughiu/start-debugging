@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/fix-nu1903-microsoft-build-tasks-core-17-14-8-breaks-dotnet-ef-migrations",
-    "text": "EF Core 10's Package Manager Console stops on any NuGet Audit warning, because the Tools module now runs dotnet build -getItem and warnings land on stderr. NU1903 for MSBuild 17.14.8 comes from RC Design packages: upgrade to 10.0.2+. Pinning MSBuild alone leaves crypto advisories."
   }
 ]
