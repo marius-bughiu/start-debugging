@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/11/november-2026-dotnet-patch-two-cves-a-runtime-update-does-not-fix",
+    "text": "The November .NET servicing release fixes 25 CVEs, but two of them survive a runtime update. Scaffolded ASP.NET Core Identity handlers send reset links to the request email and must be edited by hand, and System.Formats.Cbor needs 9.0.24 (not 9.0.23) or 10.0.15 in your package references."
   }
 ]
