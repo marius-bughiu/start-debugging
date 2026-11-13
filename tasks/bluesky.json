@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/11/fix-nu1903-microsoft-build-tasks-core-17-14-8-breaks-dotnet-ef-migrations",
+    "text": "Add-Migration dies on NU1903? EF Core 10 RC Design pulls MSBuild 17.14.8. Pinning it alone moves the error."
   }
 ]
