@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/11/fix-cs0200-iopenapimediatype-example-cannot-be-assigned-to-it-is-read-only",
-    "text": "CS0200 on IOpenApiMediaType.Example means .NET 10 resolved Microsoft.OpenApi 3.x. Pin 2.x; hiding the generator gives a 500."
   }
 ]
