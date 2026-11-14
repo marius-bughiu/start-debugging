@@ -91,6 +91,22 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to keep headless Claude Code runs from stalling on permission prompts with `permissions.denyInsteadOfPrompting`
 - How to stop a coding agent from writing outside the repo with `permissions.blockWritesOutsideWorkingDirectories`
 - How to change effort per turn in a Claude conversation with a mid-conversation system message
+- How to turn on Code Mode in Claude Code with `CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1` and block it org-wide in managed settings
+- How to gate a Claude Code plugin to a version range with `engines["claude-code"]` in `plugin.json` and type-check its hooks with `claude plugin validate --strict`
+- How to let sandboxed Bash run without permission prompts in Claude Code with `sandbox.autoAllowBashIfSandboxed`
+- How to subscribe to Claude API organization webhooks (`/v1/organizations/webhooks`, beta header `webhooks-2026-10-07`)
+- How to keep secrets out of `.claude/settings.local.json` when "Don't ask again" saves a Bash command with an inline token as an allow rule
+- How to cut `claude -p` input tokens when claude.ai connectors add hundreds of thousands of tokens to every headless call
+- How to run Codex CLI against Google Cloud Vertex AI with `model_provider = "gcp"`
+- How to stop a coding agent desktop app from using your forwarded SSH agent keys on remote hosts
+- How to run OpenCode with Ollama on a 12-16 GB GPU: picking context size and quantized KV cache for 12B-14B dense vs MoE models
+- How to authenticate a GitHub Copilot SDK service as a GitHub App with the `Copilot Requests` permission (server-to-server, no signed-in user)
+- How to turn on Copilot assisted permissions in Copilot CLI and VS Code and lock down Allow All with enterprise-managed settings
+- How to connect GitHub-verified MCP connectors in Copilot CLI (`/mcp` Connectors tab) and allow them through an enterprise MCP allowlist
+- How to track Claude Code, Codex and OpenCode usage on Copilot billing with `totals_by_client` and `model_selection_mode` in the usage metrics API
+- How to let Copilot fix failing Actions checks and merge conflicts on a PR automatically with Agent Merge ("Watch and fix")
+- How to estimate GitHub Agentic Workflows AI credit spend with `gh aw forecast` before enabling a workflow
+- How to publish a Cursor cloud-agent-built internal app with Live Apps: security checks, Cursor SSO sharing and admin publish approval
 
 ## Fix / error
 
@@ -135,6 +151,10 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Fix: Claude Managed Agents `web_fetch` returns `url_not_in_prior_context` or `url_not_allowed`
 - Fix: self-paced Claude Code `/loop` stops after one turn instead of rescheduling (`CLAUDE_CODE_LOOP_KEEPALIVE`)
 - Fix: `claude -p` exits 1 because auto mode refused actions behind an LLM gateway (`CLAUDE_CODE_AUTO_MODE_SERVER`)
+- Fix: `Code Mode (experimental) isn't available` in Claude Code (API key helper, OpenTelemetry or agent teams turned on)
+- Fix: `codex exec` ignores project config and MCP servers in an untrusted directory (`--trust`)
+- Fix: Claude Code aborts API requests after 5 minutes with slow or local models (`BUN_CONFIG_HTTP_IDLE_TIMEOUT`)
+- Fix: Cursor CLI (`cursor-agent`) `MCP error -32000: Connection closed` for a stdio MCP server on Windows that works in the IDE
 
 ## Vs / comparison
 
@@ -172,6 +192,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Cursor Agent SDK vs Claude Agent SDK vs GitHub Copilot SDK for building a PR-review bot
 - AG-UI vs A2A vs MCP: which protocol connects an agent to a user interface
 - Copilot Automations vs GitHub Agentic Workflows: which to use for repo automation now both are GA
+- Git worktree isolation vs Claude Code's sandbox vs a container: which one stops a subagent's test from running `rm -rf ~`
+- OpenAI 12-hour prompt caching vs Claude prompt cache TTLs: write cost, break-even and when the longer cache pays off
 
 ## Migration / upgrade
 
@@ -200,6 +222,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Migrate an Anthropic SDK app to API version 2026-10-21 (Python SDK 2.0, TypeScript SDK 1.0, C# SDK 13)
 - Migrate from the legacy Anthropic Usage and Cost API to the Usage and Cost Analytics API
 - Migrate Semantic Kernel vector store code to Microsoft Agent Framework for Python vector stores
+- Migrate Claude fast mode off `claude-opus-4-8` before `speed: "fast"` stops working on 2026-11-30
+- Migrate an MCP Ruby SDK server to `mcp` 1.8 to serve 2026-07-28 stateless clients alongside the session handshake
+- Migrate from Cursor's retired terminal Cmd+K to generating shell commands with Agent
 
 ## Patterns
 
@@ -228,6 +253,9 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - Patterns: a coordinator agent plus worker agents for multi-day projects → slug: 2026/11/coordinator-agent-plus-worker-agents-for-multi-day-projects
 - Patterns: splitting agent memory into working, episodic and semantic layers (what stays in context and what moves out)
 - Patterns: detecting MCP tool schema drift so an agent notices when a tool it depends on changed
+- Patterns: auditing Claude Code Code Mode scripts with a `PreToolUse` hook that matches `REPL` and reads `tool_input.code`
+- Patterns: supervising `claude remote-control` as a service with exit codes `4` and `69` and a pinned `--settings` file
+- Patterns: capping Copilot Automations spend with per-run, daily, weekly and monthly AI credit limits and the "Can be triggered by" setting
 
 ## What is / concept
 
@@ -252,6 +280,8 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - What is Microsoft eXecution Container (MXC) and how Copilot sandboxes tool execution → slug: 2026/11/what-is-microsoft-execution-container-mxc-and-how-copilot-sandboxes-tool-execution
 - What is the Claude advisor tool and when does a cheap executor plus a strong advisor beat the big model alone
 - What are Claude message threads and how do they differ from prompt caching
+- What is the MCP file uploads extension (`io.modelcontextprotocol/files`): `x-mcp-file`, `upload_required` results and `requestState` retries
+- What is Claude Code's `agent_summary` query and does `disableAgentView` stop background agents from spending tokens on it
 
 ---
 
