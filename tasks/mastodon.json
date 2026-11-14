@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/11/fix-ef-core-scaffold-partial-unique-index-maps-one-to-one",
+    "text": "dotnet ef dbcontext scaffold reads a unique index WHERE is_active = true as a one-to-one relationship. With that model, Include().ToList() marks sibling rows Deleted and the next SaveChanges removes them. A custom IScaffoldingModelFactory fixes it; the INCLUDE workaround does not with Npgsql."
   }
 ]
