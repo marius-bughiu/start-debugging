@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/11/fix-cs0200-iopenapimediatype-example-cannot-be-assigned-to-it-is-read-only",
+    "text": "CS0200 'IOpenApiMediaType.Example cannot be assigned' in generated OpenAPI code means a .NET 10 app resolved Microsoft.OpenApi 3.x. Remove the direct ref or pin 2.13.0. Gotcha: removing the source generator builds fine, then /openapi/v1.json returns 500 with MissingMethodException. Want 3.x? That's ASP.NET Core 11."
   }
 ]
