@@ -3,7 +3,7 @@ title: "Async and concurrency in C#: a practical guide"
 description: "Async and concurrency in C# and .NET in one place: async void vs async Task, ConfigureAwait, cancellation, ValueTask, Channels, locking, and common failure modes."
 tagline: "Practical await, cancellation, and coordination decisions."
 pubDate: 2026-09-06
-updatedDate: 2026-11-08
+updatedDate: 2026-11-15
 indexTags:
   - "async"
   - "concurrency"
@@ -24,7 +24,7 @@ Start with the daily pair: [async void vs async Task](/2026/05/async-void-vs-asy
 
 For return types, [what ValueTask is and when it's worth it](/2026/06/what-is-valuetask-and-when-is-it-worth-it/), [IEnumerable vs IAsyncEnumerable vs IQueryable](/2026/05/ienumerable-vs-iasyncenumerable-vs-iqueryable-in-csharp/), and [returning a Task directly vs an async passthrough](/2026/09/return-task-directly-vs-async-await-passthrough-in-a-csharp-repository-method/) cover the signature choices; stuck in sync code, [wait on a ValueTask without allocating](/2026/10/how-to-wait-for-a-valuetask-synchronously-without-allocating/). For running work in parallel, [Parallel.ForEach vs Parallel.ForEachAsync vs Task.WhenAll](/2026/05/parallel-foreach-vs-parallel-foreachasync-vs-task-whenall/) decides, with [inspect all failures from Task.WhenAll](/2026/08/fix-aggregateexception-one-or-more-errors-occurred-when-awaiting-task-whenall/) as the gotcha. For coordination, [lock vs Monitor vs SemaphoreSlim vs System.Threading.Lock](/2026/05/lock-vs-monitor-vs-semaphoreslim-vs-system-threading-lock-in-csharp/) and [Channels instead of BlockingCollection](/2026/04/how-to-use-channels-instead-of-blockingcollection-in-csharp/) are the primitives. Below the locks, [Volatile.Read vs Volatile.ReadBarrier](/2026/10/volatile-read-vs-volatile-readbarrier-in-dotnet-10/) picks the fence, [Thread.Sleep vs Task.Delay vs SpinWait](/2026/10/thread-sleep-vs-task-delay-vs-spinwait-for-waiting-in-csharp/) the way to wait, [`AsyncLocal<T>` flow](/2026/11/what-is-asynclocal-and-why-doesnt-a-value-set-in-an-awaited-method-flow-back/) the context rule, and [`Lazy<T>` vs LazyInitializer vs double-checked locking](/2026/10/lazy-t-vs-lazyinitializer-vs-double-checked-locking-in-csharp/) the way to initialize once. For shutdown, [propagating a CancellationToken](/2026/07/how-to-propagate-a-cancellationtoken-through-async-methods-in-dotnet-11/) and [CancelAfter timeouts](/2026/07/how-to-time-out-an-async-operation-with-cancellationtokensource-cancelafter-in-csharp/) are the pair.
 
-For external programs, [waiting for a process in C#](/2023/08/c-how-to-wait-for-a-process-to-end/) demonstrates `WaitForExit`, `WaitForExitAsync`, exit codes, and timeout handling in a runnable project. Canceling the wait and terminating the child are separate operations.
+At startup, [initializing interdependent async singletons](/2026/11/how-to-initialize-interdependent-async-singletons-at-startup-in-aspnetcore/) replaces sync-over-async in DI. For external programs, [waiting for a process in C#](/2023/08/c-how-to-wait-for-a-process-to-end/) covers `WaitForExitAsync` and timeouts.
 
 ## What's on this page
 

@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-11-08",
-  "totalEnglishPublishedPosts": 1116,
+  "lastRun": "2026-11-15",
+  "totalEnglishPublishedPosts": 1151,
   "note": "Counts mirror getPillarPosts() in site/src/lib/blog.ts via selectPillarPosts(): English, non-draft posts whose canonicalized tags intersect indexTags (and indexRequireAnyTags when set).",
   "pillars": {
     "aspnetcore-11-cheat-sheet": {
@@ -9,9 +9,9 @@
         "aspnet-core",
         "aspnet"
       ],
-      "count": 127,
-      "previousCount": 117,
-      "updatedDate": "2026-11-08",
+      "count": 133,
+      "previousCount": 127,
+      "updatedDate": "2026-11-15",
       "lastPassAction": "updated"
     },
     "async-and-concurrency-in-csharp": {
@@ -27,9 +27,9 @@
         "aspnetcore",
         "ef-core"
       ],
-      "count": 45,
-      "previousCount": 48,
-      "updatedDate": "2026-11-08",
+      "count": 46,
+      "previousCount": 45,
+      "updatedDate": "2026-11-15",
       "lastPassAction": "updated"
     },
     "coding-agents-tracker": {
@@ -43,9 +43,9 @@
         "agent-skills",
         "microsoft-agent-framework"
       ],
-      "count": 261,
-      "previousCount": 243,
-      "updatedDate": "2026-11-08",
+      "count": 270,
+      "previousCount": 261,
+      "updatedDate": "2026-11-15",
       "lastPassAction": "updated"
     },
     "csharp-14-features": {
@@ -57,19 +57,19 @@
         "csharp",
         "c# language"
       ],
-      "count": 384,
-      "previousCount": 357,
-      "updatedDate": "2026-11-08",
+      "count": 397,
+      "previousCount": 384,
+      "updatedDate": "2026-11-15",
       "lastPassAction": "updated"
     },
     "dotnet-10-tracker": {
       "indexTags": [
         "dotnet-10"
       ],
-      "count": 107,
-      "previousCount": null,
-      "updatedDate": "2026-11-08",
-      "lastPassAction": "created"
+      "count": 120,
+      "previousCount": 107,
+      "updatedDate": "2026-11-15",
+      "lastPassAction": "updated"
     },
     "dotnet-11-tracker": {
       "indexTags": [
@@ -78,9 +78,9 @@
         ".net 11 preview",
         "dotnet-11"
       ],
-      "count": 328,
-      "previousCount": 586,
-      "updatedDate": "2026-11-08",
+      "count": 334,
+      "previousCount": 328,
+      "updatedDate": "2026-11-15",
       "lastPassAction": "updated"
     },
     "efcore-11-cheat-sheet": {
@@ -91,9 +91,9 @@
         "efcore-11",
         "entity-framework"
       ],
-      "count": 113,
-      "previousCount": 110,
-      "updatedDate": "2026-11-08",
+      "count": 115,
+      "previousCount": 113,
+      "updatedDate": "2026-11-15",
       "lastPassAction": "updated"
     },
     "flutter-tracker": {
@@ -101,9 +101,9 @@
         "flutter",
         "dart"
       ],
-      "count": 170,
-      "previousCount": 157,
-      "updatedDate": "2026-11-08",
+      "count": 174,
+      "previousCount": 170,
+      "updatedDate": "2026-11-15",
       "lastPassAction": "updated"
     },
     "maui-xamarin-tracker": {
@@ -115,17 +115,17 @@
       ],
       "count": 60,
       "previousCount": 60,
-      "updatedDate": "2026-10-25",
-      "lastPassAction": "skipped (count unchanged, updatedDate exactly 14 days old)"
+      "updatedDate": "2026-11-15",
+      "lastPassAction": "updated (count unchanged, updatedDate 21 days old)"
     },
     "performance-and-native-aot": {
       "indexTags": [
         "performance",
         "native-aot"
       ],
-      "count": 101,
-      "previousCount": 93,
-      "updatedDate": "2026-11-08",
+      "count": 104,
+      "previousCount": 101,
+      "updatedDate": "2026-11-15",
       "lastPassAction": "updated"
     },
     "security-tracker": {
@@ -136,10 +136,13 @@
         "authentication",
         "cryptography"
       ],
-      "count": 58,
-      "previousCount": 50,
-      "updatedDate": "2026-11-08",
+      "count": 59,
+      "previousCount": 58,
+      "updatedDate": "2026-11-15",
       "lastPassAction": "updated"
     }
+  },
+  "newPillarCandidates": {
+    "2026-11-15": "dotnet-8 (40 posts, 19 not in any pillar) left uncreated: .NET 8 reached end of support 2026-11-10, so the EoS post is linked from the .NET 10 and .NET 11 trackers instead."
   }
 }

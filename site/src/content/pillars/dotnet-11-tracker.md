@@ -3,7 +3,7 @@ title: "The .NET 11 tracker"
 description: "Track the .NET 11 release candidate, support policy, runtime changes and upgrade checks, with links to integration testing, EF Core and request logging guides."
 tagline: "One bookmark for the whole .NET 11 cycle."
 pubDate: 2026-04-18
-updatedDate: 2026-11-08
+updatedDate: 2026-11-15
 indexTags:
   - ".net 11"
   - "dotnet 11"
@@ -11,13 +11,13 @@ indexTags:
   - "dotnet-11"
 ---
 
-As of November 2, 2026, **.NET 11 RC3** is the current release candidate. Microsoft released it on October 25 as an [out-of-band security update](https://devblogs.microsoft.com/dotnet/dotnet-october-2026-oob-security-updates/). Its [support policy](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core) identifies the go-live release and its support window. .NET 11 is a Standard Term Support (STS) release. Teams moving from .NET 8 LTS should account for that difference when planning the next upgrade.
+**.NET 11 is generally available.** Runtime 11.0.0 and SDK 11.0.100 shipped on November 10, 2026; start with [what to change in your project at GA](/2026/11/dotnet-11-is-generally-available-what-to-change-in-your-project/). It is a Standard Term Support (STS) release, while .NET 8 and 9 [left support the same day](/2026/11/dotnet-8-and-dotnet-9-reach-end-of-support-on-november-10-2026/), so teams on .NET 8 LTS should weigh it against .NET 10 LTS.
 
 **Correction, November 2, 2026.** An earlier version listed RC2 as newest and described the .NET 8 to 11 move as LTS-to-LTS. The index now selects .NET 11 tags so articles about other versions no longer appear solely because they carry a general .NET tag.
 
 ## Release and runtime changes
 
-For RC2, see [incremental CBOR parsing](/2026/10/dotnet-11-rc-2-cborreader-reads-cbor-incrementally/). RC1 introduced work on [reproducible container images](/2026/09/dotnet-11-rc-1-reproducible-container-images-source-date-epoch/), [process signals](/2026/09/dotnet-11-rc-1-process-signal-exit-status/) and [SignalR authentication refresh](/2026/09/signalr-authentication-refresh-finalized-dotnet-11-rc-1/). Runtime topics include [generic virtual method devirtualization](/2026/09/dotnet-11-jit-devirtualizes-generic-virtual-methods/), [struct calling conventions](/2026/10/what-is-transparent-struct-layout-and-why-does-a-single-field-wrapper-struct-change-the-calling-convention-in-dotnet/) and [CPU compatibility](/2026/06/dotnet-11-minimum-cpu-baseline-x86-64-v2/).
+From the release candidates, RC2 added [incremental CBOR parsing](/2026/10/dotnet-11-rc-2-cborreader-reads-cbor-incrementally/), and RC1 introduced work on [reproducible container images](/2026/09/dotnet-11-rc-1-reproducible-container-images-source-date-epoch/), [process signals](/2026/09/dotnet-11-rc-1-process-signal-exit-status/) and [SignalR authentication refresh](/2026/09/signalr-authentication-refresh-finalized-dotnet-11-rc-1/). Runtime topics include [generic virtual method devirtualization](/2026/09/dotnet-11-jit-devirtualizes-generic-virtual-methods/), [struct calling conventions](/2026/10/what-is-transparent-struct-layout-and-why-does-a-single-field-wrapper-struct-change-the-calling-convention-in-dotnet/) and [CPU compatibility](/2026/06/dotnet-11-minimum-cpu-baseline-x86-64-v2/).
 
 ## Plan and validate an upgrade
 
