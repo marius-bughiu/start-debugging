@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/11/visual-studio-2026-ltsc-18-11-two-years-of-support",
+    "text": "Visual Studio 2026 LTSC 18.11 is out: .NET 10 LTS and MSVC toolsets, security fixes only, supported until November 2028."
   }
 ]
