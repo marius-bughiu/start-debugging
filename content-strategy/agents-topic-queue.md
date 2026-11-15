@@ -87,7 +87,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to manage Claude Managed Agents, skills and memory stores as code with `ant apply` and `claude-lock.json` → slug: 2026/11/how-to-manage-claude-managed-agents-skills-and-memory-stores-as-code-with-ant-apply
 - How to scaffold, eval and replay a Cursor Agent SDK PR bot (`agent-sdk init`, `agent-sdk eval`, `agent-sdk github replay`) → slug: 2026/11/how-to-scaffold-eval-and-replay-a-cursor-agent-sdk-pr-bot
 - How to give your coding agent the Microsoft Agent Framework builder skills (`gh skill install` / `npx skills add`) → slug: 2026/11/how-to-give-your-coding-agent-the-microsoft-agent-framework-builder-skills
-- How to make a Microsoft Agent Framework background run survive a host restart with resilient background responses
+- How to make a Microsoft Agent Framework background run survive a host restart with resilient background responses → slug: 2026/11/how-to-make-a-microsoft-agent-framework-background-run-survive-a-host-restart
 - How to keep headless Claude Code runs from stalling on permission prompts with `permissions.denyInsteadOfPrompting`
 - How to stop a coding agent from writing outside the repo with `permissions.blockWritesOutsideWorkingDirectories`
 - How to change effort per turn in a Claude conversation with a mid-conversation system message
