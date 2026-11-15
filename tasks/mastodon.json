@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/fix-blazor-webassembly-dotnet-10-ignores-blazor-environment-header",
-    "text": "Upgraded a standalone Blazor WebAssembly app to .NET 10 and the environment is always Production, even though the server sends Blazor-Environment? The boot config is now inlined into dotnet.js, so the header is never read. Bake it in with WasmApplicationEnvironmentName, or pass it to Blazor.start at runtime."
   }
 ]
