@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/fix-error-loading-or-parsing-pubspec-yaml-flutter-ios-swiftpm-path-with-space",
-    "text": "Upgraded to Flutter 3.44 and flutter build ios now crashes in a plugin's Package.swift with 'Error loading or parsing pubspec.yaml'? If your project folder has a space, FlutterFire manifests before April 2026 turn it into %20. Upgrade to firebase_core 4.7.0+ with matching plugins, or move the project. A symlink won't help."
   }
 ]
