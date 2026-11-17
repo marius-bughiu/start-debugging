@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/11/communitytoolkit-maui-17-dotnet-11-converters-use-the-binding-culture",
-    "text": "CommunityToolkit.Maui 17 is .NET 11 only, and 8 converters now use the binding culture: tr-TR uppercases istanbul to İSTANBUL."
   }
 ]

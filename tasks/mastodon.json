@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/communitytoolkit-maui-17-dotnet-11-converters-use-the-binding-culture",
-    "text": "CommunityToolkit.Maui 17.0.0 moves to .NET MAUI 11 and quietly changes which culture eight converters use: the binding's, not CurrentCulture. MathExpressionConverter is now culture-invariant, and DoubleToIntConverter reads 1.000 as 1 under de-DE. Worth a check if you ship non-English locales."
   }
 ]
