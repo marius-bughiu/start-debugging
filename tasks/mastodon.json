@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/fix-unobfuscated-dwarf-debugging-information-warning-in-flutter-android-builds",
-    "text": "Upgraded to Flutter 3.44 and --obfuscate now prints 'unobfuscated DWARF debugging information'? The tool stopped passing --strip on Android and lets AGP strip instead, so the warning is about an intermediate file. Checked with llvm-readelf: the shipped libapp.so is clean. Adding --strip makes appbundle builds fail."
   }
 ]
