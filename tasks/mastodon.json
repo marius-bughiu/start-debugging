@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/fix-shared-preferences-nosuchmethoderror-in-flutter-android-release-builds",
-    "text": "NoSuchMethodError in SharedPreferencesAsyncApiRegistrar.getAll, release builds only: R8 renamed kotlin.coroutines.Continuation, which the JNI bindings look up by name. Needs shared_preferences_android 2.5.0/2.5.1 plus jni 1.1.0, and pub get keeps that pair locked after bumping shared_preferences."
   }
 ]
