@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/11/migrate-dynamic-executeupdate-setters-to-ef-core-10",
-    "text": "EF Core 10 deleted SetPropertyCalls<T>, so update-by-property-name helpers stop compiling. Here is the replacement."
   }
 ]
