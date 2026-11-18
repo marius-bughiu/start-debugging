@@ -550,7 +550,7 @@ Source of high-intent evergreen topics for `content-strategy/evergreen-prompt.md
 - Migrate a .NET test project from FluentAssertions 8 to AwesomeAssertions after the license change → slug: 2026/11/migrate-a-dotnet-test-project-from-fluentassertions-8-to-awesomeassertions
 - Migrate an ASP.NET Core app from `Startup.cs` to the minimal hosting model (rejected as duplicate: same intent already covered by 2026/06/migrate-from-iwebhostbuilder-to-webapplication-createbuilder)
 - Migrate a Flutter app from `textScaleFactor` to `TextScaler` → slug: 2026/11/migrate-a-flutter-app-from-textscalefactor-to-textscaler
-- Migrate dynamic `ExecuteUpdate` setters (property name known only at runtime) to EF Core 10's `Action<UpdateSettersBuilder>` `SetProperty` API | demand: https://stackoverflow.com/questions/79819339 (score 1, 483 views, 1 answer, asked 2025-11) | contribution: existing ExecuteUpdate post covers only static lambdas; port a reflection/expression-based generic "update field X of T" helper from EF 9 to EF 10/11, show the compile break and the new setter pattern, verify on SQLite and PostgreSQL with captured SQL
+- Migrate dynamic `ExecuteUpdate` setters (property name known only at runtime) to EF Core 10's `Action<UpdateSettersBuilder>` `SetProperty` API | demand: https://stackoverflow.com/questions/79819339 (score 1, 483 views, 1 answer, asked 2025-11) | contribution: existing ExecuteUpdate post covers only static lambdas; port a reflection/expression-based generic "update field X of T" helper from EF 9 to EF 10/11, show the compile break and the new setter pattern, verify on SQLite and PostgreSQL with captured SQL → slug: 2026/11/migrate-dynamic-executeupdate-setters-to-ef-core-10
 
 ## What is / concept
 
