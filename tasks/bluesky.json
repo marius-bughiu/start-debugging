@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/11/how-to-change-claude-effort-per-turn-with-a-mid-conversation-system-message",
-    "text": "Drop Claude to low effort for the cheap turns without losing the prompt cache: one role:system message with output_config."
   }
 ]
