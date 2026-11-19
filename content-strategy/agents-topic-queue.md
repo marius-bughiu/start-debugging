@@ -91,7 +91,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to keep headless Claude Code runs from stalling on permission prompts with `permissions.denyInsteadOfPrompting` → slug: 2026/11/how-to-keep-headless-claude-code-runs-from-stalling-on-permission-prompts
 - How to stop a coding agent from writing outside the repo with `permissions.blockWritesOutsideWorkingDirectories` → slug: 2026/11/how-to-stop-claude-code-writing-outside-the-repo-with-blockwritesoutsideworkingdirectories
 - How to change effort per turn in a Claude conversation with a mid-conversation system message → slug: 2026/11/how-to-change-claude-effort-per-turn-with-a-mid-conversation-system-message
-- How to turn on Code Mode in Claude Code with `CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1` and block it org-wide in managed settings
+- How to turn on Code Mode in Claude Code with `CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1` and block it org-wide in managed settings → slug: 2026/11/how-to-turn-on-code-mode-in-claude-code-and-block-it-org-wide
 - How to gate a Claude Code plugin to a version range with `engines["claude-code"]` in `plugin.json` and type-check its hooks with `claude plugin validate --strict`
 - How to let sandboxed Bash run without permission prompts in Claude Code with `sandbox.autoAllowBashIfSandboxed`
 - How to subscribe to Claude API organization webhooks (`/v1/organizations/webhooks`, beta header `webhooks-2026-10-07`)
