@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/11/fix-flutter-analyze-not-reporting-analyzer-plugin-diagnostics",
+    "text": "flutter analyze: No issues found. dart analyze: your plugin's warnings. Before Flutter 3.50 it quits too early."
   }
 ]
