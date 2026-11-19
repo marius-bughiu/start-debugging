@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/kdebugmode-vs-assert-for-stripping-debug-code-from-flutter-release-builds",
-    "text": "if (kDebugMode) and assert(() {...}()) strip debug code from Flutter release and profile builds equally well, measured on 3.44.8 for Android, macOS and web. The real leaks: !kReleaseMode in profile, flags written at runtime, strings passed to a log helper, and about 800 KB of APK for a plugin you only call in debug."
   }
 ]
