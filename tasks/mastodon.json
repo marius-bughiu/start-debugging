@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/11/fix-go-router-routes-lose-page-transition-notransitionpage-material-ui",
+    "text": "Bumped go_router to 18 and every page now appears instantly? go_router detects MaterialApp by exact type, and 18.0 switched that type to package:material_ui. Reproduced both directions, plus why the pageBuilder workaround can still ignore your PageTransitionsTheme and fly Heroes in a straight line."
   }
 ]
