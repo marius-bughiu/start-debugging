@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/11/claude-code-plugin-engines-version-range-and-validate-strict",
+    "text": "Claude Code plugins now declare engines[\"claude-code\"]: what happens when a build doesn't fit, plus a validate --strict CI job."
   }
 ]
