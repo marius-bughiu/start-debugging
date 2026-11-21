@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/how-to-let-sandboxed-bash-run-without-permission-prompts-in-claude-code",
-    "text": "Since Claude Code 2.1.324/2.1.325, sandbox.autoAllowBashIfSandboxed defaults to false, so every sandboxed command prompts again. Turning it back on is one key, but deny rules, Bash(git push *) ask rules, critical rm paths, env-prefix commands and unknown network hosts still stop it. Plus the managed-settings line admins need."
   }
 ]
