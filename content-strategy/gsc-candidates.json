@@ -1,9 +1,30 @@
 [
   {
-    "query": "defaultjsontypeinforesolver",
-    "position": 14,
+    "query": "error msb3027",
+    "position": 19.5,
+    "impressions": 2,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "file-based apps",
+    "position": 17,
     "impressions": 1,
-    "clicks": 1,
-    "ctr": 1
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "mib in mb",
+    "position": 11,
+    "impressions": 1,
+    "clicks": 0,
+    "ctr": 0
+  },
+  {
+    "query": "msb3027 could not copy",
+    "position": 19,
+    "impressions": 1,
+    "clicks": 0,
+    "ctr": 0
   }
 ]
