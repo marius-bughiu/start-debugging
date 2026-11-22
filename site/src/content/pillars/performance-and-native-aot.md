@@ -3,7 +3,7 @@ title: "The performance and Native AOT cheat sheet"
 description: "Making .NET code faster and smaller in one place: profiling, allocation and Span, caching, the JIT and GC work in .NET 11, and what Native AOT costs you."
 tagline: "Measure first, then pick the knob."
 pubDate: 2026-09-20
-updatedDate: 2026-11-15
+updatedDate: 2026-11-22
 indexTags:
   - "performance"
   - "native-aot"

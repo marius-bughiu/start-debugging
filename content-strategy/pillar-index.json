@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-11-15",
-  "totalEnglishPublishedPosts": 1151,
+  "lastRun": "2026-11-22",
+  "totalEnglishPublishedPosts": 1186,
   "note": "Counts mirror getPillarPosts() in site/src/lib/blog.ts via selectPillarPosts(): English, non-draft posts whose canonicalized tags intersect indexTags (and indexRequireAnyTags when set).",
   "pillars": {
     "aspnetcore-11-cheat-sheet": {
@@ -9,9 +9,9 @@
         "aspnet-core",
         "aspnet"
       ],
-      "count": 133,
-      "previousCount": 127,
-      "updatedDate": "2026-11-15",
+      "count": 138,
+      "previousCount": 133,
+      "updatedDate": "2026-11-22",
       "lastPassAction": "updated"
     },
     "async-and-concurrency-in-csharp": {
@@ -28,9 +28,9 @@
         "ef-core"
       ],
       "count": 46,
-      "previousCount": 45,
+      "previousCount": 46,
       "updatedDate": "2026-11-15",
-      "lastPassAction": "updated"
+      "lastPassAction": "skipped (count unchanged, updatedDate 7 days old)"
     },
     "coding-agents-tracker": {
       "indexTags": [
@@ -43,9 +43,9 @@
         "agent-skills",
         "microsoft-agent-framework"
       ],
-      "count": 270,
-      "previousCount": 261,
-      "updatedDate": "2026-11-15",
+      "count": 280,
+      "previousCount": 270,
+      "updatedDate": "2026-11-22",
       "lastPassAction": "updated"
     },
     "csharp-14-features": {
@@ -57,18 +57,18 @@
         "csharp",
         "c# language"
       ],
-      "count": 397,
-      "previousCount": 384,
-      "updatedDate": "2026-11-15",
+      "count": 399,
+      "previousCount": 397,
+      "updatedDate": "2026-11-22",
       "lastPassAction": "updated"
     },
     "dotnet-10-tracker": {
       "indexTags": [
         "dotnet-10"
       ],
-      "count": 120,
-      "previousCount": 107,
-      "updatedDate": "2026-11-15",
+      "count": 129,
+      "previousCount": 120,
+      "updatedDate": "2026-11-22",
       "lastPassAction": "updated"
     },
     "dotnet-11-tracker": {
@@ -78,9 +78,9 @@
         ".net 11 preview",
         "dotnet-11"
       ],
-      "count": 334,
-      "previousCount": 328,
-      "updatedDate": "2026-11-15",
+      "count": 342,
+      "previousCount": 334,
+      "updatedDate": "2026-11-22",
       "lastPassAction": "updated"
     },
     "efcore-11-cheat-sheet": {
@@ -91,9 +91,9 @@
         "efcore-11",
         "entity-framework"
       ],
-      "count": 115,
-      "previousCount": 113,
-      "updatedDate": "2026-11-15",
+      "count": 117,
+      "previousCount": 115,
+      "updatedDate": "2026-11-22",
       "lastPassAction": "updated"
     },
     "flutter-tracker": {
@@ -101,9 +101,9 @@
         "flutter",
         "dart"
       ],
-      "count": 174,
-      "previousCount": 170,
-      "updatedDate": "2026-11-15",
+      "count": 184,
+      "previousCount": 174,
+      "updatedDate": "2026-11-22",
       "lastPassAction": "updated"
     },
     "maui-xamarin-tracker": {
@@ -113,20 +113,20 @@
         "xamarin",
         "xamarin-forms"
       ],
-      "count": 60,
+      "count": 62,
       "previousCount": 60,
-      "updatedDate": "2026-11-15",
-      "lastPassAction": "updated (count unchanged, updatedDate 21 days old)"
+      "updatedDate": "2026-11-22",
+      "lastPassAction": "updated"
     },
     "performance-and-native-aot": {
       "indexTags": [
         "performance",
         "native-aot"
       ],
-      "count": 104,
-      "previousCount": 101,
-      "updatedDate": "2026-11-15",
-      "lastPassAction": "updated"
+      "count": 106,
+      "previousCount": 104,
+      "updatedDate": "2026-11-22",
+      "lastPassAction": "updated (updatedDate only; prose already at length cap)"
     },
     "security-tracker": {
       "indexTags": [
@@ -136,13 +136,14 @@
         "authentication",
         "cryptography"
       ],
-      "count": 59,
-      "previousCount": 58,
-      "updatedDate": "2026-11-15",
+      "count": 63,
+      "previousCount": 59,
+      "updatedDate": "2026-11-22",
       "lastPassAction": "updated"
     }
   },
   "newPillarCandidates": {
-    "2026-11-15": "dotnet-8 (40 posts, 19 not in any pillar) left uncreated: .NET 8 reached end of support 2026-11-10, so the EoS post is linked from the .NET 10 and .NET 11 trackers instead."
+    "2026-11-15": "dotnet-8 (40 posts, 19 not in any pillar) left uncreated: .NET 8 reached end of support 2026-11-10, so the EoS post is linked from the .NET 10 and .NET 11 trackers instead.",
+    "2026-11-22": "No new pillar: 100 English posts sit outside every pillar; the only 10+ cluster is dotnet-8 (19), still left uncreated per the 2026-11-15 decision. Next largest: windows-phone 8, wpf 7, aspire 7."
   }
 }
