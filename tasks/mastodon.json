@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/11/how-to-subscribe-to-claude-api-organization-webhooks",
+    "text": "Claude API organization webhooks are in beta (webhooks-2026-10-07). Register an endpoint, store the whsec_ secret it returns once, verify with client.beta.webhooks.unwrap() and reply 2xx within 5s. Gotcha: secret rotation has no overlap window, and dropped events are never redelivered."
   }
 ]
