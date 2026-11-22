@@ -36,16 +36,6 @@ Move approved entries under `## Approved`, remove after posting.
 
 <!-- The scheduled task appends new entries here. Stale drafts (>14 days) are culled on the next run. -->
 
-### 2026-11-01 drafted - how-to-publish-a-dotnet-11-app-as-a-container-image-with-publishcontainer
-
-**Original:** 2026-07-27 - How to publish a .NET 11 app as a container image with dotnet publish /t:PublishContainer
-
-**Bluesky:** dotnet publish /t:PublishContainer can push a real multi-arch image with no Buildx or QEMU. The catch: list RuntimeIdentifiers in the csproj and drop --arch and -r from the command. Pass either one and you silently get a single-architecture image.
-
-**Mastodon:** .NET 11 ships this month, and one SDK change can break a container registry that used to work with dotnet publish /t:PublishContainer. The SDK now validates the bearer-token realm in the registry's auth challenge: it must be an absolute HTTPS URI (unless the registry is in DOTNET_CONTAINER_INSECURE_REGISTRIES) and cannot be a loopback or private IP literal. If an internal registry starts failing the publish after the upgrade, check that challenge first.
-
-**Notes:** Longest eligible evergreen (2816 words, 8 internal links into the build/publish, Native AOT, trimming and Aspire cluster), pubDate 2026-07-27 is 97 days back, and last week's notes flagged it as the natural next pick. Runners up: migrate-from-ilogger-string-interpolation-to-message-templates-in-dotnet-11 (2779 words, 5 links) and how-to-apply-ef-core-11-migrations-in-production-with-migrations-bundle (2768 words, 12 links), the latter a strong next pick. No container/DevOps post has been resurfaced in the past 90 days. gsc-candidates.json is an empty array, so no traction signal; depth and timing decided. Fresh angle: .NET 11 GA lands this month, so the timing is the hook. The obvious copy is the post's no-Dockerfile pitch and naming/tag properties; neither hook repeats it. Bluesky takes the multi-arch trap where --arch or -r silently collapses the OCI image index to one architecture. Mastodon takes the .NET 11 bearer-token realm validation (dotnet/sdk#54225) as an upgrade-time breaking change for internal registries. Post refresh idea: the intro still says 'preview 6 at the time of writing, GA in November 2026'; once GA ships, update that line and re-check whether the realm validation and Podman multi-arch changes shipped as described.
-
 ### 2026-11-08 drafted - how-to-call-a-stored-procedure-and-map-its-results-in-ef-core-11
 
 **Original:** 2026-08-10 - How to call a stored procedure and map its results in EF Core 11
@@ -65,6 +55,16 @@ Move approved entries under `## Approved`, remove after posting.
 **Mastodon:** Chasing an ASP.NET Core 500.30 on IIS? Before touching web.config, check the Application event log: the 'IIS AspNetCore Module V2' entry often already holds the full startup stack trace. Only 0xe0434352? Turn on stdout logging. An empty stdout file means the process died before managed code, so check app pool bitness. And if you add the ANCM debugFile, create the logs folder first: unlike stdoutLogFile, the module will not, and you get silence.
 
 **Notes:** Flagged as the natural next pick last week (2973 words, 10 internal links into the DI errors, options validation, connection string and migration cluster). pubDate 2026-08-05 is 102 days back. No IIS/deployment-error post has been resurfaced in the past 90 days, and it rotates off back-to-back EF Core. Longer eligible runners up were already resurfaced (stored procedure, Flutter vs RN vs MAUI) or are too close in topic; next picks: zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11 (2961 words, pubDate 2026-08-15, eligible from today) and how-to-implement-optimistic-concurrency-with-a-rowversion-token-in-ef-core-11 (2778 words, 9 links). gsc-candidates.json has one hit (defaultjsontypeinforesolver), unrelated, so depth and timing decided. Fresh angle: .NET 11 GA this month means teams retargeting to net11.0 hit 500.30 on IIS servers that still only have the 10.0 Hosting Bundle, so Bluesky leads with that upgrade trap. Mastodon skips the post's four-fix ranking and the 500.3x table and takes the diagnostic order: event log first, empty stdout file means bitness, and the debugFile folder gotcha. Post refresh idea: the post says verified on .NET 11 Preview 6; with GA out, re-check and drop the preview SDK string.
+
+### 2026-11-22 drafted - fix-msbuild-msb3027-could-not-copy-exceeded-retry-count
+
+**Original:** 2026-05-11 - Fix: MSB3027 Could not copy X to Y. Exceeded retry count of 10. Failed
+
+**Bluesky:** MSB3027 says the file is locked by 'System (4)'? taskkill can't help: that's a kernel-mode antivirus driver scanning the DLL you just built. Exclude bin/, obj/ and the NuGet cache. And treat repeated MSB3026 warnings as next week's MSB3027.
+
+**Mastodon:** MSB3027 'Exceeded retry count of 10' is a ten-second budget: CopyRetryCount 10 times CopyRetryDelayMilliseconds 1000. Before raising it in Directory.Build.props, name the holder: handle64.exe on the destination DLL usually points at your own previous run, an IIS Express worker or dotnet watch. And if two projects copy the same shared DLL under /m, the cleaner fix is BuildInParallel=false or a PackageReference, not a bigger retry count.
+
+**Notes:** Picked on search traction rather than depth: it is the only eligible evergreen matching gsc-candidates.json (queries 'error msb3027' and 'msb3027 could not copy', positions 19-19.5, so a nudge off page 2 is worth more than another deep-dive share). 2252 words, 5 internal links, pubDate 2026-05-11 is 195 days back, never resurfaced, and it rotates off back-to-back ASP.NET/EF Core picks. Last week's flagged runners up stay queued for later weeks: zstandard-vs-brotli-vs-gzip-response-compression-in-dotnet-11 (2961 words, 7 links) and how-to-implement-optimistic-concurrency-with-a-rowversion-token-in-ef-core-11. Fresh angle: the post leads with 'kill the locking process'; the hooks skip that and take the less obvious material. Bluesky: the 'System (4)' holder means a kernel-mode AV driver, plus MSB3026 as an early warning. Mastodon: the retry budget math and why the /m shared-DLL race wants BuildInParallel=false or a PackageReference instead of a bigger CopyRetryCount. Post refresh idea: it was written against SDK 11.0.100-preview.4; with .NET 11 GA out, re-run the repro on 11.0.100 and update the version line. Cull: removed the 2026-11-01 PublishContainer draft (21 days old).
 
 ---
 
