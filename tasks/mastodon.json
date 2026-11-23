@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/11/flutter-3-50-1-hotfix-dot-file-assets-and-split-apk-versioncode",
+    "text": "Flutter 3.50.1 is out. On 3.50.0, Android builds could succeed while leaving dot-file assets like .env out of the APK, and --split-per-abi produced APKs with identical versionCodes that Google Play rejects. The hotfix also stops flutter build web from deleting index.html."
   }
 ]
