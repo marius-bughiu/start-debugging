@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/fix-jquery-validation-unobtrusive-not-working-with-jquery-4-in-aspnetcore-mvc",
-    "text": "ASP.NET Core MVC form posts with no client-side errors and an empty console? jquery-validation-unobtrusive 4.0.0 calls $.parseJSON and $.isFunction, which jQuery 4 removed. The throw happens inside the submit handler, so the form posts anyway. Reproduced on jQuery 4.0 and 4.1, with three verified fixes."
   }
 ]
