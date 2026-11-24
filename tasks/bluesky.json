@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/11/fix-you-must-install-or-update-dotnet-with-dotnet-11-rc-runtime-installed",
+    "text": "Built with the .NET 11 GA SDK, failing on a box with 11.0.0-rc.2? The RC sorts below 11.0.0. No RollForward fixes it."
   }
 ]
