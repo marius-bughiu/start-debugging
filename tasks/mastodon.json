@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/11/llama-on-windows-call-local-models-from-dotnet-11-with-ichatclient",
+    "text": "Hugging Face and llama.cpp shipped Llama, a Windows 11 tray app that runs a local OpenAI-compatible server on port 9931. A .NET 11 file-based app can stream chat and call tools through Microsoft.Extensions.AI 11.0.0 by changing one endpoint. Tool support still depends on the model you pick."
   }
 ]
