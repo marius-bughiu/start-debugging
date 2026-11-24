@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/11/how-to-cut-claude-p-input-tokens-from-claude-ai-connectors",
+    "text": "A claude -p health check on a claude.ai subscription reported 429,388 input tokens, nearly all connector tool definitions. The trigger: --tools \"\" also drops ToolSearch, so every MCP tool loads upfront. ENABLE_CLAUDEAI_MCP_SERVERS=false or --strict-mcp-config gets it to ~2.8k. Plus a token ceiling for the next surprise."
   }
 ]

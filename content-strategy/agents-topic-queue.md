@@ -96,7 +96,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to let sandboxed Bash run without permission prompts in Claude Code with `sandbox.autoAllowBashIfSandboxed` → slug: 2026/11/how-to-let-sandboxed-bash-run-without-permission-prompts-in-claude-code
 - How to subscribe to Claude API organization webhooks (`/v1/organizations/webhooks`, beta header `webhooks-2026-10-07`) → slug: 2026/11/how-to-subscribe-to-claude-api-organization-webhooks
 - How to keep secrets out of `.claude/settings.local.json` when "Don't ask again" saves a Bash command with an inline token as an allow rule → slug: 2026/11/how-to-keep-secrets-out-of-claude-code-settings-local-json
-- How to cut `claude -p` input tokens when claude.ai connectors add hundreds of thousands of tokens to every headless call
+- How to cut `claude -p` input tokens when claude.ai connectors add hundreds of thousands of tokens to every headless call → slug: 2026/11/how-to-cut-claude-p-input-tokens-from-claude-ai-connectors
 - How to run Codex CLI against Google Cloud Vertex AI with `model_provider = "gcp"`
 - How to stop a coding agent desktop app from using your forwarded SSH agent keys on remote hosts
 - How to run OpenCode with Ollama on a 12-16 GB GPU: picking context size and quantized KV cache for 12B-14B dense vs MoE models
