@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/fix-cs1660-cannot-convert-lambda-to-csharp-15-union-type",
-    "text": "Why `ValueSource s = () => 42;` fails with CS1660 on a C# 15 union even though Func<int> is a case type: union conversions need a standard implicit conversion, and lambdas only get a type via anonymous function conversion. Fixes: new(...), a cast, or a typed local. Plus the generic-inference trap."
   }
 ]
