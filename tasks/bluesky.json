@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/11/fix-cs1660-cannot-convert-lambda-to-csharp-15-union-type",
+    "text": "C# 15 union with a Func<int> case, yet `() => 42` gives CS1660? Lambdas have no type, so no union conversion. The fixes:"
   }
 ]
