@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/11/how-to-run-codex-cli-against-google-cloud-vertex-ai",
+    "text": "Codex CLI now has a built-in Vertex AI provider: model_provider = \"gcp\", a project_id, ADC from gcloud, and your Google Cloud project pays. Gotchas: project-local .codex/config.toml ignores provider keys, \"global\" is not data residency, and hosted web search is off on this provider."
   }
 ]
