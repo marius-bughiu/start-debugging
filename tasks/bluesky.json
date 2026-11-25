@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/11/migrate-a-csvhelper-33-primary-constructor-class-to-csvhelper-34",
-    "text": "CsvHelper 34 fails with CSVH002 on a class whose primary constructor takes an object. Four fixes, all byte-identical to 33.1 output."
   }
 ]
