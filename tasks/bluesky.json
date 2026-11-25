@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/11/which-buildcontext-to-use-inside-nested-builders-in-flutter",
+    "text": "Builder context or outer context? Widget tests show the outer one rebuilds all of build() and can miss a Theme."
   }
 ]
