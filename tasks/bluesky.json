@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/11/how-does-microsoft-extensions-dependencyinjection-resolve-a-service-internally",
-    "text": "AddSingleton stores no instance. .NET 11 DI keeps singletons on the call site and compiles IL after the 2nd resolve."
   }
 ]
