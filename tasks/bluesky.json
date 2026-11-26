@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/11/why-cant-i-cast-a-generic-interface-of-derived-to-base-in-csharp",
+    "text": "IDisplayVM<Derived> is not an IDisplayVM<Base> in C#. Why 'as' returns null, when 'out T' fixes it, and the CS1961 rules."
   }
 ]
