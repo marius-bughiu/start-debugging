@@ -98,7 +98,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to keep secrets out of `.claude/settings.local.json` when "Don't ask again" saves a Bash command with an inline token as an allow rule → slug: 2026/11/how-to-keep-secrets-out-of-claude-code-settings-local-json
 - How to cut `claude -p` input tokens when claude.ai connectors add hundreds of thousands of tokens to every headless call → slug: 2026/11/how-to-cut-claude-p-input-tokens-from-claude-ai-connectors
 - How to run Codex CLI against Google Cloud Vertex AI with `model_provider = "gcp"` → slug: 2026/11/how-to-run-codex-cli-against-google-cloud-vertex-ai
-- How to stop a coding agent desktop app from using your forwarded SSH agent keys on remote hosts
+- How to stop a coding agent desktop app from using your forwarded SSH agent keys on remote hosts → slug: 2026/11/how-to-stop-a-coding-agent-desktop-app-from-using-your-forwarded-ssh-agent
 - How to run OpenCode with Ollama on a 12-16 GB GPU: picking context size and quantized KV cache for 12B-14B dense vs MoE models
 - How to authenticate a GitHub Copilot SDK service as a GitHub App with the `Copilot Requests` permission (server-to-server, no signed-in user)
 - How to turn on Copilot assisted permissions in Copilot CLI and VS Code and lock down Allow All with enterprise-managed settings
