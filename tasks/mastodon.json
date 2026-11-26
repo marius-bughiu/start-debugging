@@ -74,9 +74,5 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
-  },
-  {
-    "slug": "2026/11/github-notifications-december-2026-reason-priority-and-no-resubscribe",
-    "text": "GitHub notifications change on December 1, 2026: routine activity stops resubscribing you, team mentions follow team membership, and the reason shown is picked by priority instead of recency. An issue where you are assigned and mentioned now reads \"assign\", so check mail rules and scripts that match on \"mention\"."
   }
 ]
