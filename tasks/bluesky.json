@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/11/how-to-keep-a-semaphoreslim-concurrency-limit-when-a-call-ignores-cancellation",
-    "text": "Releasing a SemaphoreSlim on timeout let 21 calls run against a limit of 5. Three fixes that hold, measured on .NET 11."
   }
 ]
