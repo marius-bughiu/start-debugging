@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/11/how-to-run-opencode-with-ollama-on-a-12-16-gb-gpu",
+    "text": "Running OpenCode on a 12-16 GB GPU? Ollama defaults to 4k context under 24 GiB, and OpenCode trusts model metadata, so prompts get truncated silently. Per-model KV cache math, why gpt-oss:20b fits 64k on 16 GB while qwen3:14b tops out at 40k, and how to make num_ctx and limit.context agree."
   }
 ]
