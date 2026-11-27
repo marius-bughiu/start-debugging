@@ -46,9 +46,5 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
-  },
-  {
-    "slug": "2026/11/how-to-run-opencode-with-ollama-on-a-12-16-gb-gpu",
-    "text": "OpenCode wants 64k context; Ollama gives a 16 GB GPU 4k. KV cache math for qwen3:14b, gpt-oss:20b, qwen3-coder:30b."
   }
 ]
