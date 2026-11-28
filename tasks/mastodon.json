@@ -74,5 +74,9 @@
   {
     "slug": "2026/10/migrate-a-coding-agent-from-claude-sonnet-4-6-and-opus-4-7-to-the-5-5-model-family",
     "text": "Swapping claude-opus-4-7 for claude-opus-5-5 is not a one-line change: thinking is always on, thinking-off and forced tool_choice return 400, and Sonnet 5.5 counts ~30% more tokens. Gotcha: Claude Code ignores your old user-level effortLevel on Opus 5.5, so an xhigh setup silently drops to medium."
+  },
+  {
+    "slug": "2026/11/fix-timezonenotfoundexception-time-zone-id-not-found-in-dotnet-on-linux",
+    "text": "TimeZoneNotFoundException on Linux means .NET could not open /usr/share/zoneinfo/<id>. Chiseled and Alpine images ship no tzdata and no ICU, so Windows IDs fail too. Trap: ICU maps 'India Standard Time' to Asia/Calcutta, which Ubuntu 24.04+ only ships in tzdata-legacy. Reproduced on .NET 11 with TZDIR."
   }
 ]
