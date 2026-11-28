@@ -46,5 +46,9 @@
   {
     "slug": "2026/10/split-a-long-running-task-across-agents-with-a-cursor-projects-coordinator",
     "text": "Cursor Projects: seed shared Context with conventions and a slice ledger so worker 40 starts as warm as worker 1. Full setup."
+  },
+  {
+    "slug": "2026/11/agent-framework-pypi-1-26-1-and-1-26-2-were-malicious-repo-offline",
+    "text": "agent-framework 1.26.1 and 1.26.2 on PyPI shipped a .pth credential stealer that ran on every Python start. Pin 1.26.0."
   }
 ]
