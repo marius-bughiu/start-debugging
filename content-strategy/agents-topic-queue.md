@@ -100,7 +100,7 @@ Source of high-intent topics for `content-strategy/agents-prompt.md` (the AI cod
 - How to run Codex CLI against Google Cloud Vertex AI with `model_provider = "gcp"` → slug: 2026/11/how-to-run-codex-cli-against-google-cloud-vertex-ai
 - How to stop a coding agent desktop app from using your forwarded SSH agent keys on remote hosts → slug: 2026/11/how-to-stop-a-coding-agent-desktop-app-from-using-your-forwarded-ssh-agent
 - How to run OpenCode with Ollama on a 12-16 GB GPU: picking context size and quantized KV cache for 12B-14B dense vs MoE models → slug: 2026/11/how-to-run-opencode-with-ollama-on-a-12-16-gb-gpu
-- How to authenticate a GitHub Copilot SDK service as a GitHub App with the `Copilot Requests` permission (server-to-server, no signed-in user)
+- How to authenticate a GitHub Copilot SDK service as a GitHub App with the `Copilot Requests` permission (server-to-server, no signed-in user) → slug: 2026/11/how-to-authenticate-a-github-copilot-sdk-service-as-a-github-app
 - How to turn on Copilot assisted permissions in Copilot CLI and VS Code and lock down Allow All with enterprise-managed settings
 - How to connect GitHub-verified MCP connectors in Copilot CLI (`/mcp` Connectors tab) and allow them through an enterprise MCP allowlist
 - How to track Claude Code, Codex and OpenCode usage on Copilot billing with `totals_by_client` and `model_selection_mode` in the usage metrics API
